@@ -24,12 +24,13 @@ license_notes: >-
   The binary engine library sdk/lib/libfm1_engine.a is under M-VAVE's separate terms for FM-1 devices
   (THIRD_PARTY.md). The repository contains M-VAVE's licensed V15 recovery image sdk/firmware/FM-1_015.fwsc,
   Apache-2.0, git blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd, the same file as in m-vave/fm1_open.
-  The 0.1.0-beta installer page FM1-GLITCH.html embeds that same V15 image (699,956 bytes, same blob).
+  The installer pages FM1-GLITCH.html of 0.1.0-beta and 0.2.0-beta embed that same V15 image (699,956 bytes, same blob).
 homepage: https://subcity.at/fm1-glitch-drums/
 distribution: browser-installer
 requires_stock: V15 or FM1 Open
 install_notes: >-
-  Download FM1-GLITCH.html from the release, open it in Chrome or Edge with the FM-1 on USB and use Device update;
+  Use the browser installer at https://subcity.at/flash/fm1-glitch-drums/ or download FM1-GLITCH.html from the
+  release, open it in Chrome or Edge with the FM-1 on USB and use Device update;
   its Recovery & force update option goes back to the V15 image it carries. Back up projects, voices and samples
   first: GLITCH keeps its patterns in the sample area and cannot read FM1 projects, voices or samples. The release also
   has FM1-GLITCH.fwsc for tools/flash_fm1.py on macOS, from a unit already running FM1 Open firmware.
@@ -42,6 +43,10 @@ image:
   source_url: https://subcity.at/fm1-glitch-drums/
   first_party: true
 versions:
+- version: 0.2.0-beta
+  date: 2026-10-29
+  url: https://github.com/ttreu/fm1-glitch/releases/tag/v0.2.0-beta
+  notes: Beta pre-release; own update identity FM-1_8730200 instead of FM1 Open's FM-1_8000014, tested on one FM-1 switching between GLIDER, GLITCH and ARPHONY, back to V15 and from V15 again.
 - version: 0.1.0-beta
   date: 2026-10-27
   url: https://github.com/ttreu/fm1-glitch/releases/tag/v0.1.0-beta

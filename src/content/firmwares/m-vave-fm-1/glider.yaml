@@ -29,10 +29,11 @@ homepage: https://subcity.at/fm1-glider/
 distribution: browser-installer
 requires_stock: V15 or FM1 Open
 install_notes: >-
-  The project page is a workbench with the firmware and the V15 recovery image: open it in Chrome or Edge with the
-  FM-1 on USB and use Device update; a first install from the stock firmware needs Recovery & force update. Back up
-  projects, voices and samples first, since GLIDER does not use them but leaves them in flash. With FM1 Open already
-  on the device, macOS users can flash with tools/flash_fm1.py.
+  Browser installer at https://subcity.at/flash/fm1-glider/ (also FM1-GLIDER.html in the release), with the firmware
+  and the V15 recovery image: open it in Chrome or Edge with the FM-1 on USB and use Device update; a first install
+  from the stock firmware needs Recovery & force update. Back up projects, voices and samples first, since GLIDER does
+  not use them but leaves them in flash. With FM1 Open already on the device, macOS users can flash with
+  tools/flash_fm1.py.
 brick_risk: true
 tags: [drone, synth-engine, fx, reverb, delay, scales, midi, emulator, fork]
 image:
@@ -42,7 +43,11 @@ image:
   source_url: https://subcity.at/fm1-glider/
   first_party: true
 versions:
+- version: 0.4.0-beta
+  date: 2026-10-29
+  url: https://github.com/ttreu/fm1-glider/releases/tag/v0.4.0-beta
+  notes: First GitHub release, marked as a beta pre-release, with FM1-GLIDER.fwsc and FM1-GLIDER.html; own update identity FM-1_8730100 instead of FM1 Open's FM-1_8000014, tested on one FM-1 switching between GLIDER, GLITCH and ARPHONY, back to V15 and from V15 again.
 - version: main @ 51ea259
   date: 2026-10-27
   url: https://github.com/ttreu/fm1-glider/commit/51ea2590ef9a14a0083c5fd628e1e6f1062da2f7
-  notes: No tagged releases; this is the latest commit.
+  notes: Untagged commit before the first release.

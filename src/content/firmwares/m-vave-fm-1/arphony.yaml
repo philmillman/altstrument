@@ -32,7 +32,8 @@ install_notes: >-
   update; a first install from the stock firmware needs Recovery & force update. The same page, with the V15
   recovery image, is in the download. Back up projects, voices and samples first: ARPHONY does not use them, but its
   user presets are stored in the last 64 KB of the sample area, so the first save overwrites the end of the sample
-  bank. With FM1 Open already on the device, macOS users can flash with tools/flash_fm1.py.
+  bank. With FM1 Open already on the device, macOS users can flash with tools/flash_fm1.py. The
+  release has the same page as FM1-ARPHONY.html and the package as FM1-ARPHONY.fwsc.
 brick_risk: true
 tags: [arpeggiator, sequencer, synth-engine, scales, fx, reverb, delay, midi, emulator, fork]
 image:
@@ -42,7 +43,11 @@ image:
   source_url: https://subcity.at/fm1-arphony/
   first_party: true
 versions:
+- version: 0.2.0-beta
+  date: 2026-10-29
+  url: https://github.com/ttreu/fm1-arphony/releases/tag/v0.2.0-beta
+  notes: First release, marked as a beta pre-release, with FM1-ARPHONY.fwsc and FM1-ARPHONY.html; own update identity FM-1_8730300 instead of FM1 Open's FM-1_8000014, tested on one FM-1 switching between GLIDER, GLITCH and ARPHONY, back to V15 and from V15 again.
 - version: main @ b30009d
   date: 2026-10-29
   url: https://github.com/ttreu/fm1-arphony/commit/b30009d60c783ae9f95b99d5957df59adc72b13d
-  notes: No tagged releases; this is the latest commit.
+  notes: Untagged commit before the first release.

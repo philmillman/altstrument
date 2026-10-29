@@ -1,0 +1,48 @@
+device: m-vave-fm-1
+name: ARPHONY
+summary: >-
+  Arpeggiator that plays repeating single-note riffs over modal chord progressions, with a bass and up to two chord
+  tones below, chords on the keys, rule-based random riffs and chords, and a display coloured by the chord.
+description: >-
+  A fork of M-VAVE's FM1 Open V14 that reuses the voice engine and effects of GLIDER by the same author and drops the
+  FM1 sequencer, DX7 and project pages. Seventeen riffs and rule-based random riffs play over 14 chord progressions,
+  each written in its own mode; turning the mode recolours the chords. Harmony modes keep the riff on the tonic chord,
+  move it to the nearest tones of each chord, transpose it with the chord or keep it on the key's pentatonic. Each key
+  plays a chord on its note, with its own bass or over the tonic. There are six riff sounds, a tape echo, a ladder
+  filter, a delay and a shimmer reverb, 15 presets and 16 user presets. MIDI notes choose chords, and MIDI out sends
+  the riff, bass and chord tones on channels 1 to 3. The author calls it a beta hobby project, tested on one FM-1 in
+  October 2026.
+status: active
+authors:
+- name: ttreu
+  url: https://github.com/ttreu
+source: https://github.com/ttreu/fm1-arphony
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE.md: GPL-3.0-only with M-VAVE's additional permission to link the FM1 binary SDK, inherited from FM1 Open.
+  The binary engine library sdk/lib/libfm1_engine.a is under M-VAVE's separate terms for FM-1 devices
+  (THIRD_PARTY.md). The repository contains M-VAVE's licensed V15 recovery image sdk/firmware/FM-1_015.fwsc,
+  Apache-2.0, git blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd, the same file as in m-vave/fm1_open.
+homepage: https://subcity.at/fm1-arphony/
+distribution: browser-installer
+requires_stock: V15 or FM1 Open
+install_notes: >-
+  Browser installer at https://subcity.at/flash/fm1-arphony/ in Chrome or Edge with the FM-1 on USB: use Device
+  update; a first install from the stock firmware needs Recovery & force update. The same page, with the V15
+  recovery image, is in the download. Back up projects, voices and samples first: ARPHONY does not use them, but its
+  user presets are stored in the last 64 KB of the sample area, so the first save overwrites the end of the sample
+  bank. With FM1 Open already on the device, macOS users can flash with tools/flash_fm1.py.
+brick_risk: true
+tags: [arpeggiator, sequencer, synth-engine, scales, fx, reverb, delay, midi, emulator, fork]
+image:
+  url: https://subcity.at/assets/img/fm1-arphony/panel.webp
+  alt: "The FM-1 workbench simulator running ARPHONY: the screen is coloured light green for the chord A add9, with four knob boxes, two progression dots and the riff as bars, and the keys of the chord lit"
+  credit: ttreu
+  source_url: https://subcity.at/fm1-arphony/
+  first_party: true
+versions:
+- version: main @ b30009d
+  date: 2026-10-29
+  url: https://github.com/ttreu/fm1-arphony/commit/b30009d60c783ae9f95b99d5957df59adc72b13d
+  notes: No tagged releases; this is the latest commit.

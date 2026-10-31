@@ -1,19 +1,19 @@
 device: m-vave-fm-1
 name: PERF-1
 summary: >-
-  Live-performance groovebox for the FM-1: sixteen genres of self-playing pieces you
-  steer in real time, with an auto-DJ, a deep drum sequencer, an acid line that
-  answers itself, chord progressions, editable effects, Flex Beat, DJ snips,
-  a web editor and your own DX7 voices.
+  Live-performance groovebox for the FM-1: seventeen genres of self-playing pieces you
+  steer live, with an auto-DJ, a drum sequencer, an acid line that answers
+  itself, your own chord progressions, editable effects, MIDI control from pads and
+  keyboards, and your own DX7 voices.
 description: >-
   A fork of RedtailWorks' HYP-1. The pad, bass, acid line, pluck and drums play
   by themselves from power-on; one button breaks the music down, builds it and drops
   it, and an auto-DJ can run that whole arc, bring in the next piece and follow the
-  chords. There are sixteen genres of ten pieces (hypnotic techno, lofi, house, dubstep,
+  chords. There are seventeen genres of ten pieces (hypnotic techno, lofi, house, dubstep,
   dub, DnB, breaks, garage, electro, trap, disco, funk, reggae, synthwave, amapiano,
-  trip-hop), each with its own kits, patterns, effects, compressor and harmony: the chord
+  trip-hop, industrial), each with its own kits, patterns, effects, compressor and harmony: the chord
   changes every so many bars by genre, minor keys get a real dominant, and most genres loop
-  a progression that starts from home. Any piece can be stored. A set page gives a piece
+  a progression that starts from home, or plays your own (8 chord slots from the scale). Any piece can be stored, and a set list of 16 pieces from any genre is stepped through by hand or by the auto-DJ. A set page gives a piece
   several auto-DJ rounds with a tempo ramp, and an intro brings the parts in one by one for
   mixing in. The drum sequencer has Euclidean fills, per-lane chance, lane
   lengths for polymeter, a density control, a source pattern per lane, drum drift, a steps
@@ -26,7 +26,9 @@ description: >-
   your own loaded from a .syx file. The home screen shows the chord as a turning sigil with an
   eye that follows the section. There are four banks of effects (every effect has a page
   that draws it), beat FX, 27 Flex Beat patterns and DJ snips, scenes, undo, a mood macro,
-  a JAM page, a stereo compressor and look-ahead limiter, and MIDI clock in. The second
+  a JAM page (with accents), punch-in filter, delay and phaser on chosen tracks, filter types for the pad, bass and acid,
+  a stereo compressor and look-ahead limiter, and MIDI clock in. Over MIDI an MPC's pads, a Model:Samples or an Akai
+  MPK mini (keys, pads, knobs, pitch bend, mod wheel) can play it, with velocity, and its FX knobs send CCs out. The second
   core renders the reverb, pad and DX voices, with load shedding and a USB status log. The
   project site has the installer (with backup and restore), a browser emulator with sound,
   a parameter and DX7 voice editor, and a manual that opens with a beginner's guide, with
@@ -64,6 +66,14 @@ image:
   source_url: https://github.com/deamonSLINKY/PERF-1
   first_party: true
 versions:
+  - version: 0.16.0
+    date: 2026-10-31
+    url: https://github.com/deamonSLINKY/PERF-1/releases/tag/v0.16.0
+    notes: Your own chord progressions, punch-in effects on chosen tracks, filter types, Industrial as the 17th genre, a set list, the playing chord lit on the keys, and MIDI control from MPC pads, a Model:Samples and an Akai MPK mini with velocity, plus knob CCs out.
+  - version: 0.15.2
+    date: 2026-10-30
+    url: https://github.com/deamonSLINKY/PERF-1/releases/tag/v0.15.2
+    notes: Gentler factory basses, the Pluck steps page tidied, and the manuals rewritten in plain words.
   - version: 0.15.1
     date: 2026-10-30
     url: https://github.com/deamonSLINKY/PERF-1/releases/tag/v0.15.1

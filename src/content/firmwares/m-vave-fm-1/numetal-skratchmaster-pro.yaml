@@ -1,19 +1,21 @@
 device: m-vave-fm-1
 name: NU//METAL SKRATCHMASTER PRO
 summary: >-
-  Robot-turntablist firmware: a speech synthesizer says 27 words onto a virtual record that you scratch with the
-  keys and encoder, over a drop-tuned guitar, bass and drum band, with a rap mode, an LFO and a mixer.
+  Robot-turntablist firmware: a speech synthesizer says 27 words onto a virtual record that you scratch with the keys and encoder, or you scratch an endless generated record, over a drop-tuned guitar, bass and drum band, with a rap mode, an LFO and a mixer.
 description: >-
   Rights warning: the speech engine is a C port of SAM, the 1982 Software Automatic Mouth, via ESP8266SAM
   (GPL-3.0); the original program has no stated licence. Built on Dinghy and Felucca's platform code, it says its
   words in eight voices and scratches them with 17 techniques scored the way turntablists notate them, plus combo
   routines, a hamster switch, crossfader curve and motor torque settings. Rap mode alternates four bars of rhyming
-  verse with four bars of hook in a growled voice, over ten grooves. The PRO edition adds a tempo-locked LFO with
+  verse with four bars of hook in a growled voice, over the band's grooves. The PRO edition adds a tempo-locked LFO with
   seven shapes and six destinations, a tone-play mode where the keys are a pitch fader, a mixer page and a
-  larger sound chain with reverb, compressor and limiter. Version 2.1 makes the TRS MIDI input play the kit from an
-  e-kit, sends every drum and the deck's scratch, crossfader and platter angle out over USB-MIDI for visuals, and
-  replaces the drums and guitar with an 808 kit and a drop-B guitar rendered as 16-bit samples. It installs over the
-  earlier 1.0 release, which uses the same identity, FM-1_926. The README says 2.1 runs on the FM-1.
+  larger sound chain with reverb, compressor and limiter. Version 2.1 made the TRS MIDI input play the kit from an
+  e-kit, sent every drum and the deck's scratch, crossfader and platter angle out over USB-MIDI for visuals, and
+  replaced the drums and guitar with an 808 kit and a drop-B guitar rendered as 16-bit samples. Version 3.0 adds SURF
+  mode, which plays an endless record computed as you scratch it (seven materials and a WORLD control) instead of
+  storing a record, a 7-string drop-A guitar as the default tuning, whammy dives, twelve grooves and MIDI clock over the
+  TRS jack. It installs over the earlier 1.0, 2.0 and 2.1 releases, which use the same identity, FM-1_926. The README
+  says 3.0 runs on the FM-1.
 status: active
 authors:
 - name: Mark Hellar (mhellar)
@@ -28,9 +30,9 @@ homepage: https://mhellar.github.io/numetal-skratchmaster-pro-fm1/
 distribution: browser-installer
 requires_stock: V15
 install_notes: >-
-  Web installer on the project's page in Chrome or Edge over USB, or numetal-pro-2.1.fwsc from the repository
+  Web installer on the project's page in Chrome or Edge over USB, or numetal-pro-3.0.fwsc from the releases page
   with tools/fm1_install.py. Holding OCT- at power-on enters a rescue mode with only the updater. The
-  first start of 2.0 resets saved settings to defaults, and 2.1 keeps 2.0's settings.
+  first start of 2.0 resets saved settings to defaults, 2.1 keeps 2.0's settings, and 3.0 keeps 2.x settings and sets the tuning to drop A once.
 brick_risk: true
 tags: [fork, synth-engine, voice, sequencer, drums, lfo, fx, performance]
 image:
@@ -40,7 +42,7 @@ image:
   source_url: https://github.com/mhellar/numetal-skratchmaster-pro-fm1
   first_party: true
 versions:
-- version: main @ 5488d08
-  date: 2026-10-30
-  url: https://github.com/mhellar/numetal-skratchmaster-pro-fm1/commit/5488d085ce9519436aab6ff0eedebff7af9e9756
-  notes: No tagged releases; this is the latest commit, titled 2.1.
+- version: '3.0'
+  date: 2026-11-01
+  url: https://github.com/mhellar/numetal-skratchmaster-pro-fm1/releases/tag/v3.0
+  notes: Adds SURF mode, an endless record computed as you scratch it, a 7-string drop-A guitar as the default tuning, four new grooves in place of two, and MIDI clock over TRS. Installs over 2.x and keeps its settings.

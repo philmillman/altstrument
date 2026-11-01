@@ -13,9 +13,8 @@ description: >-
   Python tools send and fetch songs, convert WAV files into the sample bank and drive the device remotely. The
   project site has a browser build of the same firmware and a manual. This is not a fork of Felucca: it takes
   Felucca's hardware layer, drivers, update loader and build tools, and UPSTREAM.md lists each file and what was
-  changed. The repository's own README describes the web installer page as living in web/installer, which has to be
-  served from a build of the package; the project site links only the emulator and manual, and no package is
-  released yet, so the firmware has to be built from source.
+  changed. The project site has a browser installer, a browser build of the same firmware and a manual, and the
+  GitHub releases (0.1 and 0.2, both marked pre-releases) attach the .fwsc package.
 status: active
 authors:
 - name: Jaeger
@@ -29,10 +28,11 @@ license_notes: >-
   The fonts are SIL OFL 1.1, and three JieLi AC79 SDK files (Apache-2.0) are read from your SDK checkout at build time.
   The name MOONDAW is reserved by the author; forks are asked to use another name.
 homepage: https://moondaw.com/
-distribution: source-only
+distribution: browser-installer
 install_notes: >-
-  Build with ./build.sh (Docker is used if the JieLi toolchain is not installed), then install build/moondaw.fwsc
-  with tools/fm1_install.py. The README warns that installing is at your own risk, says to back up the stock flash
+  Use the install page on the project site (Chrome or Edge, USB), or run tools/fm1_install.py on the .fwsc from a
+  release (Python 3 and python-rtmidi). To build it yourself, run ./build.sh (Docker is used if the JieLi toolchain is
+  not installed) and install build/moondaw.fwsc. Installing 0.2 over 0.1 keeps songs and the sample bank. The README warns that installing is at your own risk, says to back up the stock flash
   first and keep FM-1-transporter ready to restore it, and points to docs/ARRIVEE.md for a rescue path that needs no
   extra hardware.
 brick_risk: true
@@ -44,7 +44,11 @@ image:
   source_url: https://github.com/jaeggerr/moondaw-fm1
   first_party: true
 versions:
-- version: main @ 355ccf2
-  date: 2026-10-31
-  url: https://github.com/jaeggerr/moondaw-fm1/commit/355ccf2beb979626def0941eea95d87cb4f88f73
-  notes: No tagged releases; this is the latest commit.
+- version: '0.2'
+  date: 2026-11-01
+  url: https://github.com/jaeggerr/moondaw-fm1/releases/tag/v0.2
+  notes: Pre-release. Same tracker as 0.1 with its own firmware identity, FM-1_9330002, instead of the FM-1_900 that many other firmwares share; installs over 0.1 and keeps songs and samples.
+- version: '0.1'
+  date: 2026-11-01
+  url: https://github.com/jaeggerr/moondaw-fm1/releases/tag/v0.1
+  notes: Pre-release. First public beta, with a built-in demo song and ten starter instruments; identity FM-1_900.

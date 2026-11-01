@@ -1,0 +1,53 @@
+device: polyend-tracker
+name: PLATFORM
+summary: >-
+  Runs Lua scripts and native C++ apps from the SD card, in the manner of monome norns, with a launcher, a norns-style API, a
+  16-voice sound engine and a crash-safe runner; seven apps host the other lab firmwares.
+description: >-
+  PLATFORM is not an instrument. Its launcher lists the scripts and apps on the card with icons, descriptions and a source
+  preview, reopens the last one at power-on, and offers a safe boot; holding Shift and F8 returns to it from anywhere. Lua
+  5.4 scripts use a norns-like API (init, redraw, key, enc, pad, screen drawing, clocks, MIDI, metros and params). The
+  parameters a script adds get the shared LABKIT navigation of the lab: parameter pads, a map, macros, modulation routes
+  and MIDI learn, all saved per script. Scripts play a built-in voice engine of 16 voices (anti-aliased waves, noise, FM,
+  samples, grains, clicks) with filter, envelopes, delay and reverb, and notes from Lua clocks land on exact samples. The
+  runner logs a failing callback and stops a script after repeated errors, endless loops or running out of memory, and a
+  LOG view with a small REPL typed on the pads is available. Native apps (.papp) are C or C++ built against an SDK and
+  loaded from the card. Eight example scripts are written to a fresh card, among them a pinball Markov walker, an Ikeda-style
+  bit register and a makam scale player. Seven station apps in release/Apps run BULUT, DATAMATICS, FLIPPER, GRAF, KONSOL,
+  MAKAM and TILT inside PLATFORM, and PLATFORM installs them at boot from /Firmware/Apps. The repository README calls the
+  whole set v0.1: every image passed the author's simulator and QEMU checks, and none has been tested on a real Tracker.
+status: active
+authors:
+  - name: semierendonmez-commits
+    url: https://github.com/semierendonmez-commits
+source: https://github.com/semierendonmez-commits/polyend-tracker-lab/tree/main/firmwares/platform
+source_status: open
+license: Apache-2.0
+license_notes: >-
+  The folder's LICENSE is the Apache-2.0 text. Its THIRD_PARTY.md copies Lua 5.4.7 under MIT with one guarded define changed,
+  and the rest follows published algorithms. The seven .papp station apps in release/Apps are separate files built from the
+  sibling firmwares' own source under those firmwares' licences, which for BULUT and GRAF is GPL-3.0 as noted on their
+  entries, plus TILT's MIT-licensed Plaits code, so the Apache-2.0 of the PLATFORM image does not cover them. OpenTracker had
+  no LICENSE file when the work began; upstream added Apache-2.0 on 2026-10-28, which the README's credits do not yet reflect.
+distribution: download
+requires_stock: Polyend stock firmware or OpenTracker; keep a stock image in /Firmware
+install_notes: >-
+  Copy PolyendTrackerPLATFM.ptf from firmwares/platform/release/ in the repository into /Firmware on the SD card, keeping its
+  24-character name, and install it from Config, Firmware update on stock or OpenTracker. To get the station apps, also copy
+  the release/Apps folder to /Firmware/Apps; PLATFORM installs any missing or changed .papp at boot. Every lab firmware can
+  list and install other .ptf files from its own Config, Firmware page, and OpenTracker's ot_restore.txt escape hatch works
+  too. Keep only one lab image plus stock in /Firmware, since the rear reset button installs a random .ptf from the folder.
+  The README says the set has not been tested on a real unit.
+brick_risk: true
+tags: [platform, scripting, lua, synth-engine, performance, fork, ui]
+image:
+  url: https://raw.githubusercontent.com/semierendonmez-commits/polyend-tracker-lab/main/firmwares/platform/docs/screenshots/launcher-preview.png
+  alt: "PLATFORM launcher in the simulator: cards for the Lua scripts Drift, Euclid, Hello and Pinball beside a source preview of Hello, with a message that 7 apps were installed from /Firmware/Apps"
+  credit: semierendonmez-commits
+  source_url: https://github.com/semierendonmez-commits/polyend-tracker-lab
+  first_party: true
+versions:
+  - version: main @ f142239
+    date: 2026-10-30
+    url: https://github.com/semierendonmez-commits/polyend-tracker-lab/commit/f14223960bbb7b9580534663a5b7c6110ee6ff7b
+    notes: Latest commit. It touched this folder and rebuilt the image on upstream OpenTracker v2 1c8a529. PLATFORM has no release asset; its image is only at firmwares/platform/release/ in the repository.

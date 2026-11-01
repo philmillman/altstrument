@@ -1,17 +1,20 @@
 device: m-vave-fm-1
 name: CHOPPAH
 summary: >-
-  Breakbeat chopper for the FM-1: a recorded Amen break cut into sixteen slices on the white keys, momentary effect
-  pads on the black keys, a pattern generator, a soundboard of sound-system effects and a DJ filter.
+  Breakbeat chopper for the FM-1: eight classic breaks cut into sixteen slices on the white keys, momentary effect
+  pads on the black keys, a pattern generator, a four-slot master effects chain, a soundboard and a DJ filter.
 description: >-
-  Built on charlesvestal's fm1-base, with Felucca's board support code underneath. Seventeen breaks are selectable
-  on the ALGORITHM knob: five are played by a small drum synth and twelve are recorded two-bar Amen loops stored in the
-  firmware as ADPCM. Holding a slice loops it and the four knobs set its length, pitch, start and mode. The black-key
-  pads cover rolls, reverse, freeze, tape stop, gate, random, a filter throw and a dub delay. The generator rearranges
-  the break as it plays, the soundboard fires sixteen synthesized effects such as horns and sirens, and the FX page
-  adds ring modulator, high-pass, flanger and degrader. MIDI clock in and out and Bluetooth MIDI are included. The
-  README calls it an early 0.x release: saved patterns, a step sequencer, a looper and loading your own breaks are
-  planned. A browser emulator and a manual are published on the project site.
+  Rights warning: since 0.13 the firmware's eight breaks are two-bar cuts of commercial records, among them The Winstons'
+  "Amen, Brother", James Brown's "Funky Drummer" and "Cold Sweat" and the Incredible Bongo Band's "Apache". The
+  repository's breaks folder says the rights belong to the labels and artists and that the owner chose to publish them.
+  Built on charlesvestal's fm1-base, with Felucca's board support code underneath. The ALGORITHM knob steps through the eight
+  breaks; versions up to 0.12 instead had seventeen, five played by a small drum synth and twelve recorded Amen loops. Holding
+  a slice loops it and the four knobs set its length, pitch, start and mode. The black-key pads cover rolls, reverse,
+  freeze, tape stop, gate, random, a filter throw and a dub delay. The generator rearranges the break as it plays, the
+  soundboard fires sixteen synthesized effects such as horns and sirens, and the FX page holds a master chain of four
+  slots in any order (filter, crunch, drive, punch, flanger, ring modulator, tremolo, reverb and delay), with further effects per slice. MIDI clock in and out and
+  Bluetooth MIDI are included. The README calls it an early 0.x release: saved patterns, a step sequencer, a looper
+  and loading your own breaks are planned. A browser emulator and a manual are published on the project site.
 status: active
 authors:
 - name: Laurens Profittlich (profikid)
@@ -20,8 +23,10 @@ source: https://github.com/profikid/fm1-break-choppah
 source_status: open
 license: MPL-2.0
 license_notes: >-
-  MPL-2.0 (LICENSE). The breaks in breaks/ are Cyberworm's Amen loop collections from rhythm-lab.com, which the
-  collection's info file describes as royalty free; they are not covered by the repository licence. No M-VAVE stock
+  MPL-2.0 (LICENSE). The ten classic breaks in breaks/classics/ are commercial recordings whose rights belong to the
+  labels and artists (breaks/README.md); the firmware has used eight of them since 0.13 and they are not covered by the
+  repository licence. The Amen loops in breaks/cw/ and breaks/huge/ are Cyberworm's collections from rhythm-lab.com, which
+  the collection's info file describes as royalty free; they were the firmware's breaks up to 0.12. No M-VAVE stock
   image is bundled.
 homepage: https://profikid.github.io/fm1-break-choppah/
 distribution: browser-installer
@@ -40,6 +45,14 @@ image:
   source_url: https://github.com/profikid/fm1-break-choppah
   first_party: true
 versions:
+- version: '0.19'
+  date: 2026-11-01
+  url: https://github.com/profikid/fm1-break-choppah/releases/tag/v0.19
+  notes: Latest of nineteen releases; adds a level meter in the header and shows the effects chain's mix on the FX page. Every push to main is released automatically.
+- version: '0.13'
+  date: 2026-11-01
+  url: https://github.com/profikid/fm1-break-choppah/releases/tag/v0.13
+  notes: Replaces the earlier breaks with eight two-bar classics cut from records, and drops the synth drum styles.
 - version: '0.12'
   date: 2026-10-31
   url: https://github.com/profikid/fm1-break-choppah/releases/tag/v0.12

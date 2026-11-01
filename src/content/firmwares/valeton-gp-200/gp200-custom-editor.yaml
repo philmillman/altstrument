@@ -1,0 +1,56 @@
+device: valeton-gp-200
+name: GP200 Custom Editor
+kind: tool
+summary: Windows desktop editor for the GP-200 with Stock and Custom firmware profiles, built to use the features of the GP-200 Firmware Mods build, such as scenes, NAM loading and the parallel chain.
+description: >-
+  Rights warning: the repository includes Editor/Data/algorithms.json, which its docs say is
+  compatibility metadata derived from Valeton's official editor XML, and the effect catalogs and a
+  conversion stimulus WAV are shipped the same way. The docs state this is not a claim that
+  Valeton's material was relicensed under the GPL. Valeton's original editor images, chain icons and
+  firmware images are left out, and the README tells users to copy the official images themselves if
+  they want them, which this entry does not endorse. The 306 MB release ZIP was not downloaded or opened.
+
+  The editor is a .NET 10 WPF application for Windows that talks to the pedal over USB MIDI. Its device
+  profile setting chooses Stock, for the unmodified firmware, or Custom, for the GP-200 Firmware Mods
+  build, and the Custom profile relies on the capabilities the pedal reports over USB. It edits effect
+  parameters, bypass and block order live, with undo and redo, and has a preset library with save, save as,
+  import, export, backups and readback checks after writes. For Custom firmware it also manages the signal
+  chain with parallel paths, scenes A to D, and loading Neural Amp Modeler models into 32 stored slots with
+  at most one selected NAM block per preset. A converter built from the repository's own source turns
+  NAM models into CLO SnapTones, and the editor loads impulse responses. Firmware updates and factory
+  reset are outside its scope, and the docs list that multi-position writes are not atomic. The author says
+  it was largely written with AI assistance.
+status: active
+authors:
+  - name: Goaltoday
+    url: https://github.com/Goaltoday
+source: https://github.com/Goaltoday/GP200_Custom_Editor
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  COPYRIGHT states that project-owned code is GPL-3.0-only. Bundled third-party code keeps its own
+  licences: the NAM-to-CLO converter sources, NeuralAmpModelerCore, AudioDSPTools and r8brain (MIT),
+  Eigen (mostly MPL-2.0) and SoXR FFT support headers (LGPL-2.1). The catalog files derived from
+  Valeton's editor are not relicensed.
+homepage: https://github.com/Goaltoday/GP200_Custom_Editor#readme
+distribution: download
+requires_stock: GP-200 on stock firmware (Stock profile) or on the GP-200 Firmware Mods build (Custom profile)
+install_notes: >-
+  Download the release ZIP, unzip it with the Data, Converter and runtime folders kept beside the
+  executable, run it on Windows x64 and choose the Stock or Custom device profile in Settings. It can also
+  be built with scripts/build-app.ps1 and the .NET 10 SDK. Back up the presets first, because device writes
+  can persist before a later verification error and are not rolled back automatically. The Custom
+  profile needs a pedal running the Firmware Mods build.
+brick_risk: false
+tags: [editor, usb-midi, midi, presets, nam, ir, scenes, routing, windows]
+image:
+  url: https://raw.githubusercontent.com/Goaltoday/GP200_Custom_Editor/main/docs/GP200CUSTOM%20EDITOR.PNG
+  alt: GP200 Custom Editor showing an amp page with three knobs, effect and preset lists, and a two-path signal chain of effect blocks
+  credit: Goaltoday
+  source_url: https://github.com/Goaltoday/GP200_Custom_Editor#readme
+  first_party: true
+versions:
+  - version: '0.1'
+    date: 2026-10-31
+    url: https://github.com/Goaltoday/GP200_Custom_Editor/releases/tag/0.1
+    notes: First release, a Windows x64 build.

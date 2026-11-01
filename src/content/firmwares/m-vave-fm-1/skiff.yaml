@@ -14,7 +14,7 @@ description: >-
   source, with the same tracks, engines and screens. On that keyboard the pads act as a step grid, the faders as
   a mixer, and the 37 keys and wheels add controls the FM-1 lacks. The SMK-37 build has been tried on one SMK-37
   Pro; the Elite and MKE-P37 packages are made the same way and have not been tried on a keyboard. Version 2.0 adds a new sequencer with per-note lengths, songs that chain, panned drum
-  lanes and drum kits made from user samples.
+  lanes and drum kits made from user samples. Version 2.1 adds chord follow and QUANTIZE SOLO.
 status: active
 authors:
 - name: illuminus5
@@ -34,18 +34,27 @@ install_notes: >-
   Transporter. SMK-37 Pro: the keyboard must already run M-VAVE's V016, which the installers enforce, and
   a backup of its flash should be made first, because the flash holds the keyboard's key and pad calibration and
   its Bluetooth pairings (SMK37.md in the repository gives the steps, using jl-uboot-tool on Windows or Linux).
-  Use skiff-2.0.3-smk37.fwsc for the Pro; the -elite and -mke packages are for those models. Returning to
+  Use skiff-2.1.1-smk37.fwsc for the Pro; the -elite and -mke packages are for those models. Returning to
   M-VAVE's firmware takes your own unmodified SMK-37_Pro_016.fwsc. If an install is cut off, the keyboard waits in
   update mode and the installer resumes the write.
 brick_risk: true
 tags: [synth-engine, sequencer, drums, fm, fx, performance, editor, emulator, usb-audio, midi]
-image:
-  url: https://raw.githubusercontent.com/illuminus5/skiff/main/docs/skiff.png
-  alt: "Six Skiff screens: home with six tracks, a step page, perform, the mixer, delay and the shift key map"
-  credit: "illuminus5"
-  source_url: https://github.com/illuminus5/skiff
+video:
+  url: https://youtu.be/c0HFI7AvN1M
+  title: "Skiff 1.3 for the M-VAVE FM-1: two cores, 12 voices, MIDI LEARN (what's new)"
+  credit: Skiff
   first_party: true
+  found_via: https://github.com/illuminus5/skiff#readme
+  version: '1.3'
 versions:
+- version: 2.1.1
+  date: 2026-10-31
+  url: https://github.com/illuminus5/skiff/releases/tag/v2.1.1
+  notes: Fixes a click when a DRUM kit lane is struck again while it still rings; the new hit starts from where the last one was and the old one falls away over about 3 ms. Saved data is unchanged from 2.1. The release says the fix was tested on a computer, not yet on a unit, and builds for the SMK-37 Pro, Elite and MKE-P37 come with it.
+- version: '2.1'
+  date: 2026-10-31
+  url: https://github.com/illuminus5/skiff/releases/tag/v2.1
+  notes: Adds chord follow, where one track's chords move another track's notes by key, along the scale or to the nearest chord note, and QUANTIZE SOLO, which plays chords on the white keys and a tune on the black ones. Both were tried on an FM-1, not yet on an SMK-37.
 - version: 2.0.3
   date: 2026-10-29
   url: https://github.com/illuminus5/skiff/releases/tag/v2.0.3

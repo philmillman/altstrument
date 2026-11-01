@@ -10,7 +10,9 @@ description: >-
   conditions, ratchets, swing and live recording; a Grids drum-pattern generator can fill tracks, and PERFORM has two banks of live effects. Each track can loop at its own length, and the sound library holds 96 sounds. The bus adds a reverb, beat repeat and ADPCM
   crunch, and MIDI uses Monomachine-style channels and CC numbers. The core also runs in a browser emulator and in
   a desktop test harness. The README gives the FM-1 build as released since 1.0, installed from the project's
-  installer page or the FM-1 Firmware Hub, and keeps one project of 64 patterns in its own storage area.
+  installer page or the FM-1 Firmware Hub, and keeps one project of 64 patterns in its own storage area. Each track keeps its own arpeggiator
+  notes and hold. The repository also releases the same core as a MONO2K module for the Ableton Move (a Schwung module with
+  its own releases); this entry lists the FM-1 builds only.
 status: active
 authors:
 - name: InigoHernandez
@@ -19,17 +21,26 @@ source: https://github.com/InigoHernandez/mono2k
 source_status: open
 license: GPL-3.0-only
 license_notes: >-
-  LICENSE file and README state GPL-3.0-only; the Inter Tight font is SIL OFL 1.1.
+  LICENSE file and README state GPL-3.0-only. The screen's type is an adaptation of Elektron Pixel Font by savingaurora
+  (CC BY-SA 3.0, with the firmware's 1-bit renderings under CC BY-SA 4.0), and the Orbitron wordmark font is SIL OFL 1.1.
 homepage: https://inigohernandez.github.io/mono2k/
 distribution: download
 install_notes: >-
-  Download mono2k-1.5.fwsc (identity FM-1_980) from the releases page, or install it from the project's installer
+  Download mono2k-1.6.2.fwsc (identity FM-1_980) from the releases page, or install it from the project's installer
   page or the FM-1 Firmware Hub over USB in Chrome or Edge. Back up what the FM-1 holds first. Installing another
   firmware replaces it, and holding OCT- while switching on reaches the updater. The repository also holds the
   sound and sequencer core, a browser emulator (web/build.sh) and a host harness.
 brick_risk: true
 tags: [sequencer, synth-engine, fx, lfo, emulator, midi]
 versions:
+- version: 1.6.2
+  date: 2026-11-01
+  url: https://github.com/InigoHernandez/mono2k/releases/tag/v1.6.2
+  notes: Removes clicks on legato notes and accents on most machines, brings the VO-6 vowel machine up to level within about 40 ms and puts the first echo of long delay times on time. Patterns load as they played.
+- version: '1.6'
+  date: 2026-10-30
+  url: https://github.com/InigoHernandez/mono2k/releases/tag/v1.6
+  notes: Adds MONO2K's own pixel font with every knob shown as a picture, a second HOME page with per-track length, speed, probability and lane, a track chance (PROB) and a CPU load readout under GLO > PLAY. Patterns that use PROB open only on 1.6 or later.
 - version: '1.5'
   date: 2026-10-30
   url: https://github.com/InigoHernandez/mono2k/releases/tag/v1.5

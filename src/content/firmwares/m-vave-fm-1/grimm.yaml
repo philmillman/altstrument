@@ -2,13 +2,15 @@ device: m-vave-fm-1
 name: GR!MM
 summary: >-
   Dark ambient, dungeon synth and drone firmware: four tracks on seven sound sources, long tape, grain, delay and
-  reverb effects, a 64-step sequencer per track, one-key chords, song mode and a browser demo and editor.
+  reverb effects, a 64-step sequencer per track, one-key chords, tracks that can play by themselves, song mode and a
+  browser demo and editor.
 description: >-
   The seven sources are virtual analog with supersaw, six-operator FM, a sample played like a tape loop, a
-  formant choir, a tonewheel organ, bowed and struck physical models and phase distortion, with 40 factory sounds
+  formant voice with three recorded choirs, a tonewheel organ, bowed and struck physical models and phase distortion, with 44 factory sounds
   and 64 user slots. The effects are tape wear, a granular cloud with freeze, a tape echo and a reverb that runs
-  up to about 32 seconds or indefinitely. Each track has an envelope, LFO, filter, scale snapping, chords, an
-  arpeggiator and latch for drones, and the sequencer has chance, ratchets, step locks and editing tools. Four
+  up to about 32 seconds or indefinitely, with a master filter and four kinds of drive. Each track has an envelope, LFO, filter, scale snapping, chords, an
+  arpeggiator and latch for drones, and the sequencer has chance, ratchets, step locks and editing tools. Generate mode
+  (DRIFT, PULSE, STORM) lets a track play by itself in its scale, and MIDI clock can be received and sent. Four
   song slots can be chained by hand or recorded live. Four factory samples (CC0) can be replaced from the web
   editor, which also edits sounds live, renames slots and backs up the FM-1. The browser demo runs the firmware
   itself. It is a modified Dinghy, so it shares Felucca's platform layer.
@@ -21,7 +23,7 @@ source_status: open
 license: GPL-3.0-only
 license_notes: >-
   LICENSING.md states GPL-3.0 only. msfa is Apache-2.0, the DaisySP and Rings models are MIT, the four factory
-  samples are CC0 1.0 and the fonts are SIL OFL 1.1.
+  samples are CC0 1.0, the choir wavetables are made from VocalSet recordings (CC BY 4.0) and the fonts are SIL OFL 1.1.
 homepage: https://grimmbient.github.io/grimm/
 distribution: browser-installer
 install_notes: >-
@@ -37,6 +39,10 @@ image:
   source_url: https://github.com/GRiMMBIENT/grimm
   first_party: true
 versions:
+- version: '2.0'
+  date: 2026-10-31
+  url: https://github.com/GRiMMBIENT/grimm/releases/tag/v2.0
+  notes: Adds a generate mode, three recorded choirs and four choir presets (44 factory sounds), glide on every source, a master filter, four drive types, tape per track, MIDI clock in and out and TRS MIDI in. Sounds, projects and samples stay on the FM-1.
 - version: '1.0'
   date: 2026-10-17
   url: https://github.com/GRiMMBIENT/grimm/releases/tag/v1.0

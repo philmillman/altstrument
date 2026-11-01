@@ -1,0 +1,40 @@
+device: m-vave-fm-1
+name: GRANA
+summary: >-
+  Granular sample player with four layers, lo-fi effects, an arpeggiator, a 64-step sequencer and 64 presets, installed
+  from a browser editor that also loads your own samples. The interface is in Italian.
+description: >-
+  Rights warning: the rescue/ folder holds jl-uboot-tool unchanged, including a 24 KB binary JieLi USB loader
+  (wl82loader.bin); the tool's own notes do not say where that blob comes from.
+
+  Up to four layers play together or split across the keyboard, each with its own pitch, start, area and pan. Grain
+  size, density, spray, jitter and direction are adjustable, with a multimode filter, chorus, flanger, phaser, ring
+  modulator and frequency shifter, tape echo, a plate reverb with shimmer, a compressor, two LFOs and key scales. The
+  firmware holds eight synthesised stock sounds as its factory bank and has a separate 276 KB user bank that the
+  editor sends over USB without reinstalling, for up to 48 samples at 22 or 11 kHz. A second build adds Bluetooth for BLE
+  MIDI controllers such as the SMC-Mixer. MIDI over USB and TRS includes learn and clock in and out. It builds on
+  Dinghy and the Felucca platform and, per its notes, was written with Claude's help.
+status: active
+authors:
+- name: Mario Texture
+  url: https://github.com/mongio
+source: https://github.com/mongio/grana-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only for GRANA's own files and for the code of Dinghy and Felucca it builds on. The
+  Bluetooth stack from Optimist is GPL-3.0-only OR MPL-2.0, the Terminus font is SIL OFL 1.1, and jl-uboot-tool is MIT.
+  Three JieLi SDK files (Apache-2.0) are read from the builder's SDK checkout and are not in the repository.
+distribution: browser-installer
+install_notes: >-
+  Download grana-editor-1.6.2.html from the release and open it in Chrome or Edge, which need Web MIDI and WebUSB, then
+  press Installa with the FM-1 on USB. The page has a simulator and a Bluetooth checkbox. The .fwsc packages in the
+  release hold the stock sounds, for other installers. Holding OCT- at power-on starts only the USB updater, and rescue/
+  has tools for worse cases. To go back, reinstall M-VAVE's firmware with its updater or the FM-1 Firmware Hub.
+brick_risk: true
+tags: [granular, sampler, sequencer, arpeggiator, fx, reverb, lfo, midi, editor, web, fork]
+versions:
+- version: 1.6.2
+  date: 2026-10-31
+  url: https://github.com/mongio/grana-fm1/releases/tag/1.6.2
+  notes: Adds a user sample bank sent over USB, 22 or 11 kHz samples, 12-bit output, a keyboard page with 15 scales, split mode and layer volumes.

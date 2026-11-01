@@ -1,18 +1,19 @@
 device: m-vave-fm-1
 name: Zombie Groovebox
 summary: >-
-  Dedicated FM-1 groovebox firmware from the Zombie Core project: six synth tracks (track six a synthesized drum kit
-  from 0.8.1), 64 presets, a four-note piano roll and DAW profiles for FL Studio and Ableton Live.
+  FM-1 groovebox firmware from the Zombie Core project: five synth tracks plus a 16-sound drum kit, eight engines
+  including user WAV samples, 128 presets, up to 64 steps per track, and DAW modes.
 description: >-
-  Part of Zombie Core, an FM-1 firmware project with Russian and English labels, whose earlier Core 0.7.x builds are still on
-  the project page. Groovebox boots into Standalone mode with local sound, and HOME plus SEL steps through
-  Standalone, DAW Synth and DAW Controller for the session. It has a colour interface with track colours, an output meter
-  and a moving playhead. Track six plays 16 synthesized kit sounds with a drum grid and hat choke from 0.8.1.
-  Release 0.8.2 made SELECT always set BPM and added page memory, a HOME layer lock and bank shortcuts, and 0.8.3
-  fixed the SAVE LED staying lit after K2 edits. The editor and matching Python profiles for FL Studio and Live
-  are published beside it. The developer says the builds pass host, WebAssembly and stub-DAW tests and that
-  flashing and display on a physical FM-1 and real DAW sessions are not verified; the release notes mark hardware
-  confirmation as pending. Build 0.8.1 and later reset the chip fully after an install.
+  Part of Zombie Core, an FM-1 firmware project with Russian and English labels. Each of the five synth tracks picks
+  from eight engines (analog, FM, phase, wavetable, noise, percussion and SAMPLE, which plays WAVs sent to slots
+  USR1 to USR4), with filter, envelope, LFO, drive, delay, reverb and arpeggiator. The presets come in Factory, IDM
+  and ZMB banks. The sequencer offers chords, scale and root, held-step editing with the knobs, Euclid and beat
+  generators and eight-step undo; each drum sound has its own loop length and per-step chance, velocity and roll.
+  It also has count-in live recording, USB MIDI in and out, MIDI clock out, DAW modes, a SYSTEM tab and four
+  screensavers. A browser editor adds a mouse piano roll and sample loading, and an emulator runs the same C code.
+  The project dropped its separate Sampler edition on 2026-11-01; the sample engine stays in Groovebox. The README
+  says releases are tested in the emulator and by the automated test suite, and are not tried on a physical FM-1
+  before publishing.
 status: active
 authors:
 - name: Joolo09
@@ -22,17 +23,17 @@ source_status: open
 license: MIT
 license_notes: >-
   Application, DSP, UI and DAW profiles are MIT; the hardware, boot and update platform is MPL-2.0 (derived from
-  fm1-base and felucca-bsp, with Leo Kuroshita's and Charles Vestal's notices). The matching platform source is in
-  the repository's source archives rather than a plain source tree.
+  fm1-base and felucca-bsp, with Leo Kuroshita's and Charles Vestal's notices). The repository's source folder holds
+  the code, and per-release source archives are in downloads.
 homepage: https://joolo09.github.io/zombie-fm1-web/
 distribution: browser-installer
 install_notes: >-
-  Open the project page in Chrome or Edge, choose a version, find the FM-1 and install; the installer checks size,
-  SHA-256 and package identity and verifies the restarted unit. Close DAWs and other MIDI tabs, and back up
-  projects and WAVs first. The earlier Core 0.7.1 package is offered as a rollback. 0.8.1 turned track six into a
-  drum kit, so back up older projects before upgrading. No stock-return tool is documented.
+  Open the project page in Chrome or Edge, connect the FM-1 with a USB data cable, find it and install. Export projects
+  as JSON in the editor first. If writing stops and the screen is black, the unit is in loader mode: reload the page
+  and install again. No stock-return tool is documented, and the README suggests trying a new version in the emulator
+  first.
 brick_risk: true
-tags: [synth-engine, sequencer, drums, performance, midi, editor, emulator]
+tags: [synth-engine, sequencer, drums, sampler, performance, midi, editor, emulator]
 image:
   url: https://raw.githubusercontent.com/Joolo09/zombie-fm1-web/main/previews/groovebox-piano.png
   alt: "Simulator screen of the drum-kit page: a step grid with kick, snare, hats, clap, rim and toms, track tabs 1 to 6 and a tempo of 132 BPM, with Russian labels"
@@ -40,6 +41,18 @@ image:
   source_url: https://joolo09.github.io/zombie-fm1-web/
   first_party: true
 versions:
+- version: 0.20.1
+  date: 2026-11-01
+  url: https://github.com/Joolo09/zombie-fm1-web/commit/aff35e9
+  notes: Makes a held-step drum edit one undo step, and the emulator now follows the page language and lists 128 presets; no tagged release, date from the merge commit.
+- version: '0.19'
+  date: 2026-10-31
+  url: https://github.com/Joolo09/zombie-fm1-web/commit/5b429f6
+  notes: No tagged release, date from the merge commit.
+- version: 0.15.0
+  date: 2026-10-29
+  url: https://github.com/Joolo09/zombie-fm1-web/commit/22c3106
+  notes: No tagged release, date from the merge commit.
 - version: 0.8.3
   date: 2026-10-24
   url: https://github.com/Joolo09/zombie-fm1-web/commit/a7fde4e

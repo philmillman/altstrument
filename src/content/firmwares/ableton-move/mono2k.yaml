@@ -1,0 +1,38 @@
+device: ableton-move
+name: MONO2K
+summary: Full-screen Schwung module that runs the MONO2K Monomachine-style groovebox on the Move, with eight mono-machine tracks, a 64-step sequencer with parameter locks, live effects and a lofi bus.
+description: >-
+  The module uses the same sound and sequencer core as the MONO2K build for the M-VAVE FM-1, so
+  the sound matches sample for sample, and it ships from the same repository under its own
+  move- release tags. Each of the eight tracks has one machine (FM, superwave, wavetable, SID-style,
+  voice and drum machines). The top two pad rows select pages and the bottom two form a piano,
+  while the sixteen step buttons stay on the sequencer on every page, with parameter locks set
+  by holding a step and turning a knob. PERFORM puts stacking effects and one-at-a-time moves on
+  the keys. Play starts the module and the Move together, and Shift with knob 1 sets the tempo.
+  The release notes list Grids drum patterns from Mutable Instruments, whose pattern map is GPL-3.0.
+status: active
+authors:
+  - name: InigoHernandez
+    url: https://github.com/InigoHernandez
+source: https://github.com/InigoHernandez/mono2k/tree/move-v0.2.0/move
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The move/README and release notes state GPL-3.0-only, as for the rest of the repository. The
+  screen's type is an adaptation of Elektron Pixel Font by savingaurora (CC BY-SA 3.0, with the
+  1-bit renderings under CC BY-SA 4.0), and Grids' pattern map is Mutable Instruments' (GPL-3.0).
+homepage: https://inigohernandez.github.io/mono2k/move/install.html
+distribution: download
+requires_stock: Schwung 1.8.2 or later on Move OS 2.1
+install_notes: >-
+  Needs Schwung, which is unofficial; back up your sets first. In Schwung Manager choose Install
+  Custom Module and pick mono2k-module.tar.gz from the release, then open it from the Tools menu
+  under Overtake Modules. Remove it in Schwung Manager; its saves stay in
+  /data/UserData/schwung/mono2k/ until that folder is deleted.
+brick_risk: false
+tags: [synth-engine, sequencer, fx, performance, midi, machines]
+versions:
+  - version: move-v0.2.0
+    date: 2026-11-01
+    url: https://github.com/InigoHernandez/mono2k/releases/tag/move-v0.2.0
+    notes: First release of the Move module.

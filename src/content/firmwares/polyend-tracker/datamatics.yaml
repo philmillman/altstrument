@@ -1,0 +1,54 @@
+device: polyend-tracker
+name: DATAMATICS
+summary: >-
+  Data-music instrument in the manner of Ryoji Ikeda: any file on the card is read as sequence data by eight streams that
+  fire sine tones, clicks, noise and single-sample impulses on millisecond or beat grids.
+description: >-
+  Four data slots each hold one decoded file of up to 262,144 values, read as raw bytes, bits, image pixels (BMP and
+  PGM/PPM/PBM), a WAV envelope, MIDI notes or text, or picked automatically from the file. Five built-in data sets (primes,
+  a test card, a shift-register sequence, a chirp and a Fibonacci word) play without a card. Eight streams, each patched to
+  a slot, walk the data on their own grid, compare each value with a threshold and fire an event whose pitch, filter cut-off
+  or polarity comes from the value. The Perform page mutes and solos streams, launches sections (play, scan, densify, thin,
+  silence, cut, freeze) live or in a chain, recalls eight scenes that morph, and holds eight throws (cut, freeze, stutter,
+  dense, thin, reverse, invert, octave up) on the pads. Data can be scrubbed live, and a performance take can be recorded
+  and replayed. Five full-screen visual modes draw the data, and the screen is black and white with one red accent. Pieces
+  are saved as small text files that point at the data files by path. The firmware uses the shared LABKIT navigation of the
+  lab: parameter pads, a map of every page, macros, modulation routes and MIDI learn. The repository README calls the whole
+  set v0.1: every image passed the author's simulator and QEMU checks, and none has been tested on a real Tracker.
+status: active
+authors:
+  - name: semierendonmez-commits
+    url: https://github.com/semierendonmez-commits
+source: https://github.com/semierendonmez-commits/polyend-tracker-lab/tree/main/firmwares/datamatics
+source_status: open
+license: Apache-2.0
+license_notes: >-
+  The folder's LICENSE is the Apache-2.0 text. Its THIRD_PARTY.md says no third-party source code is compiled into the
+  workstation, the visual designs were redrawn from the author's own IKEDAT plug-in without copying code, and no GPL code
+  is used. OpenTracker had no LICENSE file when the work began; upstream added Apache-2.0 on 2026-10-28, which the
+  README's credits do not yet reflect.
+distribution: download
+requires_stock: Polyend stock firmware or OpenTracker; keep a stock image in /Firmware
+install_notes: >-
+  Copy PolyendTrackerDATAMT.ptf into /Firmware on the SD card, keeping its 24-character name, and install it from Config,
+  Firmware update on stock or OpenTracker. Every lab firmware can list and install other .ptf files from its own Config,
+  Firmware page, and OpenTracker's ot_restore.txt escape hatch works too. Keep only one lab image plus stock in /Firmware,
+  since the rear reset button installs a random .ptf from the folder. The README says the set has not been tested on a real
+  unit.
+brick_risk: true
+tags: [generative, synth-engine, sequencer, performance, fork, ui]
+image:
+  url: https://raw.githubusercontent.com/semierendonmez-commits/polyend-tracker-lab/main/firmwares/datamatics/docs/screenshots/perform.png
+  alt: "DATAMATICS Perform page in the simulator: eight colour-coded stream rows with tick patterns, rows of section, scene and throw buttons below, and settings for quantise, morph, stutter and freeze"
+  credit: semierendonmez-commits
+  source_url: https://github.com/semierendonmez-commits/polyend-tracker-lab
+  first_party: true
+versions:
+  - version: main @ f142239
+    date: 2026-10-30
+    url: https://github.com/semierendonmez-commits/polyend-tracker-lab/commit/f14223960bbb7b9580534663a5b7c6110ee6ff7b
+    notes: Latest commit. It touched this folder and rebuilt the image on upstream OpenTracker v2 1c8a529.
+  - version: non-trackerfirmwares1.0
+    date: 2026-10-26
+    url: https://github.com/semierendonmez-commits/polyend-tracker-lab/releases/tag/non-trackerfirmwares1.0
+    notes: Release with images for six of the eight lab firmwares and no release notes. The attached image is smaller than the one now in release/, so it is an earlier build.

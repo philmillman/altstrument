@@ -1,0 +1,43 @@
+device: making-sound-machines-stolperbeats
+name: Stolperbank
+kind: tool
+summary: Browser pattern bank editor for the Stolperbeats that draws or generates 24 drum patterns in many styles, previews them and exports the text file the module reads from its SD card.
+description: >-
+  The page holds a bank of 24 patterns with six tracks each: kick and snare of
+  64 steps, and four shorter 16-step tracks for two hats and two percussion
+  parts. Patterns can be drawn by hand or generated from a style, with density,
+  complexity and variation settings, per-track locks and per-track overrides, and
+  a whole bank can be generated at once. A preview plays the pattern in the
+  browser. Banks are exported as a PatternBankNNN.txt file, or imported from one,
+  and the README explains which digit of PATTERNBANK_ACTIVE in MachineConfig.txt
+  to set on the card. The bank is kept in the browser's own storage and is not
+  uploaded. The README calls the project vibe-coded. It is a web page and does
+  not change the module's firmware.
+status: active
+authors:
+  - name: gordonbleu-modular
+    url: https://github.com/gordonbleu-modular
+source: https://github.com/gordonbleu-modular/stolperbank
+source_status: open
+license: unspecified
+license_notes: The repository has no license file and the README gives no license.
+homepage: https://gordonbleu-modular.github.io/stolperbank/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page, build or generate a bank, and export the text file.
+  Power the module off, copy the file to the SD card and set the matching digit
+  of PATTERNBANK_ACTIVE in MachineConfig.txt to 1. The tool writes pattern files
+  only and does not flash anything.
+brick_risk: false
+tags: [editor, web, sequencer, drums, generative]
+image:
+  url: https://raw.githubusercontent.com/gordonbleu-modular/stolperbank/main/docs/tutorial/overview.png
+  alt: Stolperbank editor in dark orange tones, with a grid of 24 pattern pads on the left and the kick track of pattern 00 shown as four bars of lit steps beside style, density and generate controls
+  credit: gordonbleu-modular
+  source_url: https://github.com/gordonbleu-modular/stolperbank
+  first_party: true
+versions:
+  - version: main @ d8a4095
+    date: 2026-10-31
+    url: https://github.com/gordonbleu-modular/stolperbank/commit/d8a40959371bcbc5b8075f3835430c68e1cb2ecb
+    notes: No tagged releases; this is the latest commit.

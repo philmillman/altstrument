@@ -25,7 +25,7 @@ license_notes: >-
 homepage: https://andrewgg.one/s1vave/
 distribution: browser-installer
 install_notes: >-
-  The homepage has a WebMIDI installer for Chrome, Edge, Brave or Opera that flashes the v1.1 package it hosts,
+  The homepage has a WebMIDI installer for Chrome, Edge, Brave or Opera that flashes the v1.11 package,
   and the README also names the FM-1 Firmware Hub. To build and flash it yourself, run build.sh and
   tools/fm1_install.py. The installer warns that flashing erases the presets and settings of the previous firmware
   and that an interrupted flash can brick the FM-1.
@@ -38,6 +38,10 @@ image:
   source_url: https://github.com/AndrewGG88/S1Vave
   first_party: true
 versions:
+- version: '1.11'
+  date: 2026-10-31
+  url: https://github.com/AndrewGG88/S1Vave/releases/tag/v1.11
+  notes: The release page has no notes beyond a changelog link. Its commits fix sequences longer than 16 steps, add mod wheel vibrato on MIDI CC 1 and a transpose shortcut on OCT+ and ALGORITHM, convert old presets centred on 60 to 64, and show the transpose while OCT is held. The homepage installer offers 1.11.
 - version: '1.1'
   date: 2026-10-30
   url: https://github.com/AndrewGG88/S1Vave/releases/tag/v1.1

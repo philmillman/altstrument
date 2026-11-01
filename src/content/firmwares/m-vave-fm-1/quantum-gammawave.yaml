@@ -1,0 +1,39 @@
+device: m-vave-fm-1
+name: Quantum GammaWave
+summary: >-
+  Fork of Pocket GammaWave with ten-voice polyphony, reworked saturation types, biquad EQ filters, a stricter
+  installer and a Web Studio that falls back to a simulated device.
+description: >-
+  Takes the Pocket GammaWave (GW-1) firmware, itself built on JIANT FM and Felucca, and calls its own build QG-1.
+  The additions in the repository's v1.4-QG notes are ten voices in place of eight with a voice-stealing rule that
+  prefers quiet release tails, reworked drive types (TAPE, HEARTH, PLASMA, FLUX) in place of the older wave-shapers,
+  fixed-point biquad peak and notch filters, a diagnostics window, and an installer with a SHA-256 check, a
+  verify-only mode and an automatic backup. The synth engines, the 49-genre song generator, the TAKES reel,
+  the shift deck and the Web Studio come from Pocket GammaWave. Many of the newer commits are authored by
+  google-labs-jules[bot] and merged by the owner. The status document lists host, installer and web tests and
+  records no hardware result for these changes. Like the parent it keeps songs and the FM6 user bank in the user
+  sample flash, so user samples are lost.
+status: active
+authors:
+- name: Guillel51
+  url: https://github.com/Guillel51
+source: https://github.com/Guillel51/Quantum-GammaWave
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only, inherited from Pocket GammaWave and Felucca (copyright lines there name
+  Frederic Valente and Leo Kuroshita). msfa is Apache-2.0, fonts are SIL OFL 1.1 and the Fukiai icon font is MIT.
+  The repository carries no M-VAVE firmware; the installer's return to V15 asks you to pick M-VAVE's own file.
+homepage: https://guillel51.github.io/Quantum-GammaWave/
+distribution: browser-installer
+install_notes: >-
+  Web installer in Chrome, Edge or Opera over USB. From another custom firmware, use its return-to-V15 option first,
+  which also backs up flash. The README mentions a release package, but the repository has no releases yet. Back up
+  any user samples before flashing.
+brick_risk: true
+tags: [synth-engine, sequencer, generative, fx, filter, editor, emulator, fork]
+versions:
+- version: main @ 0d40aef
+  date: 2026-11-01
+  url: https://github.com/Guillel51/Quantum-GammaWave/commit/0d40aef9a822cf5c358984372cc4204ec0838faa
+  notes: No tagged releases; this is the latest commit. The README names the build v1.4-QG.

@@ -8,7 +8,7 @@ description: >-
   sync and cross-modulation, per-voice drift, and four voice modes. There are 32 programs, 8 patterns in flash,
   USB MIDI in and out, and a browser simulator that compiles the firmware's own C sources. Version 3.0 replaced the
   two sequencer tracks with four that share the eight voices, added a mixer with four sends and a master section
-  (DJ filter, drive, compressor, limiter), and made each pattern keep its own sounds and mix. It is built on
+  (DJ filter, drive, compressor, limiter), and made each pattern keep its own sounds and mix. Version 3.3 makes the 24 dB low-pass a four-pole ladder and replaces hard clipping in a voice with soft stages. It is built on
   Dinghy and uses sloopDX-style panel layers. The same repository carries SMK-37 beta builds (see OberVave SMK-37).
 status: active
 authors:
@@ -35,6 +35,10 @@ image:
   source_url: https://github.com/zvenson/obervave
   first_party: true
 versions:
+- version: '3.3'
+  date: 2026-10-31
+  url: https://github.com/zvenson/obervave/releases/tag/v3.3
+  notes: The release has no notes; the README describes a four-pole ladder LP 24 with the resonance fed around all poles, soft stages in place of hard clipping, a VINTAGE drift on the cutoff, and the VOICE page moved under EDIT. Package identity FM-1_9533.
 - version: 3.0.1
   date: 2026-10-23
   url: https://github.com/zvenson/obervave/releases/tag/v3.0.1

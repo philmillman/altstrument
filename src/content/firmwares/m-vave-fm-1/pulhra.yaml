@@ -1,0 +1,39 @@
+device: m-vave-fm-1
+name: Pulhra
+summary: >-
+  Hard fork of Felucca that turns the FM-1 into a four-track Elektron-style groovebox with parameter locks, trig states,
+  chains, a per-track arpeggiator and per-pattern kits, on the MONOFM sound core.
+description: >-
+  Each of the four tracks has its own machine (SAW, FM-ST, STRING and BBOX) and plays 1 to 32 steps. Patterns live in
+  banks A to E, eight per bank, and can be chained. Steps carry trig states and parameter locks, and notes can be
+  entered from the grid with REC armed or played in from the keys or from MIDI channels 1 to 4. The sound core comes
+  from MONOFM, an earlier Felucca-based firmware whose history is kept in a separate repository; the application on
+  top is new. A web editor talks to the device over USB MIDI, and the browser installer can return the unit to
+  official V15 with a file you download yourself. The repository has no tagged releases; the installer package built
+  from the latest commit is named pulhra-1.5.1. The author's notes are largely in Russian.
+status: active
+authors:
+- name: 646timur-cell
+  url: https://github.com/646timur-cell
+source: https://github.com/646timur-cell/pulhra_main
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the unmodified GPL-3.0 text and LICENSING.md, inherited from Felucca, states GPL-3.0-only. Ported DSP
+  (DaisySP and Rings, MIT; msfa, Apache-2.0) and the bundled fonts keep their own licences. Every package carries
+  three unmodified JieLi AC79 SDK files (Apache-2.0) read from the builder's SDK checkout; none are in the repository.
+  The repository holds no M-VAVE material.
+homepage: https://646timur-cell.github.io/pulhra_main/
+distribution: browser-installer
+install_notes: >-
+  Open the installer page in Chrome or Edge with the FM-1 on USB. Pulhra keeps its project and banks in flash
+  0xB4000 to 0xDC000, which MONOFM uses for its project and Felucca and STRANGE use for user samples, so the first
+  save erases whatever those firmwares left there, and installing one of them afterwards erases Pulhra's banks. Back up
+  first. Going back to official V15 works from the installer page with M-VAVE's FM-1.fwsc file.
+brick_risk: true
+tags: [sequencer, synth-engine, performance, fork, drums, web]
+versions:
+- version: main @ 3750f32
+  date: 2026-11-01
+  url: https://github.com/646timur-cell/pulhra_main/commit/3750f32b18e813e978eed13b061f820c2c0ef383
+  notes: No tagged releases; this is the latest commit.

@@ -1,12 +1,16 @@
 device: moog-matriarch
 name: Matriarch Firmware Fixes
-summary: Patcher that applies a fix for the paraphonic mixer gate hold to your own copy of Moog's Matriarch v1.3.0 firmware, as a browser page or a Python script.
+summary: Patcher that applies fixes for the paraphonic mixer gate hold and for HOLD sending sustain while the Arp/Seq plays to your own copy of Moog's Matriarch v1.3.0 firmware, as a browser page or a Python script.
 description: >-
-  In 2- and 4-note paraphonic modes, v1.3.0 keeps a released oscillator sounding for 125 ms while other keys are
-  still held, which smears staccato playing. The patch rewrites the constant that sets that hold, and the user
-  chooses a value from 0 to 125 ms (5 ms recommended, 50 ms matches v1.1.0). It changes two 16-bit words of the
-  SysEx file and recomputes the affected record's checksum. The project documents the firmware's SysEx format and
-  includes Ghidra scripts used to analyse it. The other known issues on Moog's v1.3.0 list are not fixed yet.
+  Two fixes from Moog's v1.3.0 known-issues list. In 2- and 4-note paraphonic modes, v1.3.0 keeps a released oscillator
+  sounding for 125 ms while other keys are still held, which smears staccato playing. The mixer gate fix lets the user
+  choose a hold from 0 to 125 ms (5 ms recommended, 50 ms matches v1.1.0). Its chord-aware mode keeps Moog's 125 ms
+  for notes pressed together with a key that is still held, so lifted chords ring out with the release; a simple mode
+  gives every released note the short hold. The second fix stops HOLD sending MIDI sustain to connected gear while
+  the Arp/Seq is playing. The page offers a checkbox for each fix. The patches change a few words of the SysEx file and
+  add short routines in unused flash, and the affected record's checksum is recomputed. The project documents the
+  firmware's SysEx format and includes Ghidra scripts used to analyse it. The other known issues on Moog's v1.3.0 list
+  are not fixed yet.
 status: active
 authors:
   - name: Benjamin Dehli
@@ -21,7 +25,7 @@ homepage: https://benjamindehli.github.io/matriarch-firmware-fixes/
 distribution: patch-your-own
 requires_stock: 1.3.0
 install_notes: >-
-  Get Moog's official Matriarch_Firmware_v1_3_0.syx, patch it in the browser page or with tools/patch_mixgate.py
+  Get Moog's official Matriarch_Firmware_v1_3_0.syx, patch it in the browser page or with tools/patch.py
   (other versions are refused), then send it with a SysEx tool using Moog's usual procedure: the invalidate file,
   the erase file, then the patched file. Sending Moog's original v1.3.0 file the same way restores stock.
 brick_risk: false
@@ -33,6 +37,18 @@ image:
   source_url: https://github.com/benjamindehli/matriarch-firmware-fixes#readme
   first_party: true
 versions:
+  - version: v1.4.0
+    date: 2026-10-31
+    url: https://github.com/benjamindehli/matriarch-firmware-fixes/releases/tag/v1.4.0
+    notes: Adds a simple mode for the mixer gate fix, where every released note gets the short hold, chords included.
+  - version: v1.3.0
+    date: 2026-10-25
+    url: https://github.com/benjamindehli/matriarch-firmware-fixes/releases/tag/v1.3.0
+    notes: Makes the mixer gate fix chord-aware so lifted chords with a long release keep ringing out; files patched with earlier versions must be patched again from Moog's original.
+  - version: v1.2.0
+    date: 2026-10-18
+    url: https://github.com/benjamindehli/matriarch-firmware-fixes/releases/tag/v1.2.0
+    notes: Adds the HOLD fix, so HOLD no longer sends sustain while the Arp/Seq plays, with a checkbox per fix in the web patcher.
   - version: v1.1.0
     date: 2026-10-18
     url: https://github.com/benjamindehli/matriarch-firmware-fixes/releases/tag/v1.1.0

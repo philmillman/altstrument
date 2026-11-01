@@ -1,0 +1,80 @@
+device: m-vave-fm-1
+name: SynthMaven
+summary: >-
+  Oriental groove box on the Melodee base: four layered parts with maqam microtuning, an eight-lane drum machine,
+  a 64-step sequencer with a song arranger, programs with scenes and setlists, and web and iPad editors.
+description: >-
+  Rights warning: the repository bundles Casio's 64 CZ-1 factory tones and Sequential's 200 Prophet-5/10 factory
+  programs (v1.03) as SysEx sound data compiled in as factory presets, plus two DX7 voice files (ROM1A and ARABESC)
+  that its README says were supplied by the user. Its licensing file says the rights stay with Casio and Sequential
+  and that no licence is granted.
+  Version 4.0 plays four layers stacked or split across the keys, each with its own range, level and pan, beside an
+  independent drum machine with factory grooves (Maksoom, Wahda, Baladi and Fox among them). Tuning has 46 maqam
+  settings, 14 Western scales and custom offsets in 10-cent steps on the unit or 1-cent steps in the editors. The
+  sequencer takes patterns up to 64 steps per track, and the arranger builds songs of up to 16 sections. Programs
+  hold four scenes each, with a 32-entry setlist, and up to 16 learned pedal or controller actions. Each layer and
+  the drummer can listen to its own MIDI input and channel. The engines include DX7-style FM6, CZ-1, Prophet-5, SID
+  and Vital-translated HYBRID voices, with 610 melodic presets and 27 punch effects. Versions 2.x were built on
+  Clipper; 3.5 moved to Melodee 1.5.1. The release notes for 4.0 say it has not been tested on FM-1 hardware, while
+  the 3.5 notes describe physical tests of the USB-only build. An iPad editor exists; its latest build is a TestFlight
+  build for invited testers.
+status: active
+authors:
+- name: KingXeryus
+  url: https://github.com/KingXeryus
+- name: MolhamK
+  url: https://github.com/MolhamK
+source: https://github.com/KingXeryus/SynthMaven
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md, carried over from Melodee, states GPL-3.0-only with ported parts under their own licences (MSFA
+  Apache-2.0, DaisySP and Rings MIT, MAME uPD933 BSD-3-Clause, reSID GPL-2.0-or-later, installer code MPL-2.0, fonts
+  SIL OFL 1.1), listed in LICENSES/. The CZ-1 tones (assets/cz1-factory) and the Prophet-5/10 programs
+  (assets/prophet5-factory) are sound data owned by Casio and Sequential, and the DX7 files in assets/fm6 keep their
+  owners' rights; the file says no licence is granted for them. The JieLi recovery helper (wl82loader.bin) and the
+  optional m-bootloader package (MIT) are unmodified third-party files.
+homepage: https://kingxeryus.github.io/SynthMaven/
+distribution: browser-installer
+install_notes: >-
+  Web installer in Chrome or Edge over USB, with USB ROLE set to COMPUTER. Every flash resets user settings and
+  programs, so export a full backup first. Releases also carry recovery archives for Windows, macOS and Linux. The
+  installer can put M-VAVE's V15 back from a file you download yourself. M-VAVE's own updater may no longer find a
+  unit running SynthMaven. Bluetooth is not part of the current build.
+brick_risk: true
+tags: [synth-engine, sequencer, drums, scales, midi, usb-audio, editor, performance, fork]
+image:
+  url: https://raw.githubusercontent.com/KingXeryus/SynthMaven/main/assets/readme-home.png
+  alt: "SynthMaven Home screen: program P6 PROPHET LEAD at 124 BPM, four layer cards (Prophet lead, bass, synth lead, 808 drums) and four knob dials below"
+  credit: KingXeryus
+  source_url: https://github.com/KingXeryus/SynthMaven
+  first_party: true
+versions:
+- version: '4.0'
+  date: 2026-11-01
+  url: https://github.com/KingXeryus/SynthMaven/releases/tag/v4.0
+  notes: Redesigned screens with four themes, factory drum grooves, a song arranger that can change the groove per section, loudness matching of factory sounds and a new Home screen of four layer cards.
+- version: '3.6'
+  date: 2026-10-31
+  url: https://github.com/KingXeryus/SynthMaven/releases/tag/v3.6
+  notes: Per-layer MIDI routing for several keyboards, a pooled voice budget, eight new factory programs and the device name SynthMaven FM1.
+- version: '3.5'
+  date: 2026-10-30
+  url: https://github.com/KingXeryus/SynthMaven/releases/tag/v3.5
+  notes: Moves the base to Melodee 1.5.1 with four-part programs, scenes and setlists, 46 maqam settings, MIDI Learn and independent eight-lane drums; Bluetooth is left out.
+- version: '3.0'
+  date: 2026-10-29
+  url: https://github.com/KingXeryus/SynthMaven/releases/tag/v3.0
+  notes: A new device interface and an offline iPhone and iPad editor, with USB editing and no Bluetooth radio support.
+- version: '2.2'
+  date: 2026-10-29
+  url: https://github.com/KingXeryus/SynthMaven/releases/tag/v2.2
+  notes: Eight four-part performance programs with scenes, level-matched factory sounds and a printed guide to every menu.
+- version: '2.1'
+  date: 2026-10-26
+  url: https://github.com/KingXeryus/SynthMaven/releases/tag/v2.1
+  notes: Refreshed screens and chord tools including AUTO and AUTO2 harmony, extra voicings and strum timings.
+- version: '2.0'
+  date: 2026-10-26
+  url: https://github.com/KingXeryus/SynthMaven/releases/tag/v2.0
+  notes: First packaged release, labelled experimental; four-part layering, USB pedal MIDI Learn, 46 maqam tunings and 23 engines.

@@ -1,0 +1,56 @@
+device: waldorf-microwave-xt
+name: Microwave XT Tallent Edition
+summary: Browser patcher that adds a separate wavetable for oscillator 2, X-Mod phase and amplitude modulation, Warp, Piston Honda-style aliasing, interpolation, effect modulation destinations and MPE input to Waldorf's 2.33 update.
+description: >-
+  The patch lets oscillator 2 play its own wavetable, adds phase and amplitude
+  modulation alongside FM, adds nine warp shapes for each oscillator with W1 Warp
+  and W2 Warp as modulation destinations, and adds two aliasing settings and
+  smooth wavetable interpolation modeled on Eurorack oscillators. Version 1.1.0
+  adds FX Para 1 to 3, modulation destinations that move the three settings of a
+  Sound's effect. MPE input gives each note its own pitch bend, pressure and Y,
+  and every new setting has a MIDI controller. The release also carries the
+  Tallent Edition Sounds, a set of Sounds and wavetables that use the new features
+  and still load in Waldorf's system, which ignores those settings.
+
+  On an XT or XTk the new pages sit behind Shift with the Wavetable, FM Amount and
+  Env Amount knobs. A Microwave II plays 8 voices, has no X-Mod or Warp, and
+  reaches the new pages with the Page dial. An XT with the 30-voice expansion
+  plays 25 voices. The demo song and the power-up front-panel test are removed.
+  The repository holds the project's own assembly code, patch data and patcher,
+  not Waldorf's operating system, and the project states it is not affiliated
+  with or endorsed by Waldorf.
+status: active
+authors:
+  - name: Brandon Tallent
+    url: https://github.com/brandon-tallent
+source: https://github.com/brandon-tallent/microwave-xt-extended-firmware
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE covers the project's own code, tools, Sounds and documentation. No
+  rights to Waldorf's software are granted, and the patched update file contains
+  Waldorf's code, so it is a local output and not a release asset.
+homepage: https://brandon-tallent.github.io/microwave-xt-extended-firmware/
+distribution: patch-your-own
+requires_stock: Operating system 2.33 (mw2_xt_xtk_sys_v233.mid)
+install_notes: >-
+  Download the 2.33 update from Waldorf's Microwave II/XT/XTk page, open the
+  patcher page and select that file. It returns a patched MIDI file with
+  _tallent added to its name. Play that file from a sequencer into the synth's
+  MIDI In with MIDI Clock and MIDI Time Code off; the update takes a few
+  minutes and the synth must stay on until it restarts. The display then names
+  the Tallent Edition on the second line at startup. To go back, play Waldorf's
+  own 2.33 file the same way. An update replaces the operating system only, so
+  Sounds, Multis, wavetables and Global settings stay. Your file stays in the
+  browser.
+brick_risk: false
+tags: [wavetable, synth-engine, patcher, mpe, midi, fx, presets, sysex]
+versions:
+  - version: 1.1.0
+    date: 2026-10-28
+    url: https://github.com/brandon-tallent/microwave-xt-extended-firmware/releases/tag/v1.1.0
+    notes: Adds FX Para 1 to 3 destinations and 16 FX Sounds, makes MPE Y use CC 74 only, and fixes effects freezing or distorting on a Microwave II.
+  - version: 1.0.0
+    date: 2026-10-26
+    url: https://github.com/brandon-tallent/microwave-xt-extended-firmware/releases/tag/v1.0.0
+    notes: First release, with Osc2 wavetable, X-Mod, Warp, Honda aliasing, interpolation, MPE input and 60 Sounds.

@@ -1,0 +1,51 @@
+device: free-modular-quantizer
+name: Free Modular Quantizer C++ firmware
+summary: PlatformIO and C++17 reimplementation of the Quantizer firmware that adds an arpeggiator layer, factory scale presets, restored live state, CRC-checked storage and per-channel analog calibration.
+description: >-
+  A rewrite of Quinn Freedman's Rust firmware for the same Arduino Nano and
+  ATmega328P hardware, using the original pin mapping and front-panel workflow.
+  A double-click on Shift enters a second layer with an arpeggiator that has free
+  or external clock, ratios, scale-aware patterns, length, octave range, swing and
+  optional step triggers. Empty full-configuration slots fall back to twelve
+  built-in scales, the working state returns after power-up, and stored data is
+  versioned and checked with a CRC. The project's development tree adds a
+  separate maintenance image for ADC and DAC calibration from the front panel,
+  which is not in a tagged release yet. The repository also holds host-side
+  tests, a user manual and an analysis of the original firmware, and it states it
+  is not an official Free Modular project.
+status: active
+authors:
+  - name: napolitano
+    url: https://github.com/napolitano
+source: https://github.com/napolitano/eurorack-quantizer-firmware
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The LICENSE file is the plain GPL v3 text. The README badge and the SPDX header
+  in the source files give GPL-3.0-or-later. The original firmware by Quinn
+  Freedman is credited as the basis.
+homepage: https://github.com/napolitano/eurorack-quantizer-firmware#readme
+distribution: download
+requires_stock: Original Free Modular Quantizer hardware (Arduino Nano, ATmega328P)
+install_notes: >-
+  Power the Eurorack case off, take the module out and disconnect its power
+  ribbon before connecting USB; the Nano must never be on USB and the Eurorack bus
+  at once. Flash the release HEX file that matches the Nano's bootloader, the new
+  or the old one, with avrdude or AVRDUDESS; an EEPROM-preserving update keeps
+  saved scales. The README advises running calibration only for a module that
+  has never been calibrated or shows pitch errors.
+brick_risk: false
+tags: [quantizer, arpeggiator, eurorack, arduino, calibration, platformio, open-hardware]
+versions:
+  - version: 0.2.1
+    date: 2026-08-17
+    url: https://github.com/napolitano/eurorack-quantizer-firmware/releases/tag/v0.2.1
+    notes: Calibration console verification, pinned builds and a larger test suite, with no change to the musical workflow.
+  - version: 0.2.0
+    date: 2026-08-10
+    url: https://github.com/napolitano/eurorack-quantizer-firmware/releases/tag/v0.2.0
+    notes: Adds the arpeggiator layer and restores live state and full configurations after power-up.
+  - version: 0.1.1
+    date: 2026-08-07
+    url: https://github.com/napolitano/eurorack-quantizer-firmware/releases/tag/v0.1.1
+    notes: GitHub release with the first HEX files; no notes are given beyond a compare link.

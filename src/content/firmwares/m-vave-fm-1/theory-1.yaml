@@ -1,0 +1,45 @@
+device: m-vave-fm-1
+name: THEORY-1
+summary: >-
+  Music theory teaching firmware: lessons, quizzes answered on the keys or by ear, and a lab that names the notes,
+  intervals and chords you play, in five languages.
+description: >-
+  Lessons cover the basics, reading notes on a staff in up to seven clefs, intervals, nine scales, the seven modes,
+  thirteen chord types, the chords on each scale degree with roman numerals and harmonic function, and the circle of
+  fifths. The quiz has eleven kinds of question at three levels, scores them and keeps best scores. The lab names
+  whatever you play, including chord inversions. The keys light up with the lesson's notes and a keyboard on the screen
+  repeats the colours. Text is in English, Italian, Spanish, German and French, and notes can be shown as solfege,
+  letters or the German names. An outside keyboard works over USB, the TRS jack or Bluetooth MIDI. It writes only its
+  own settings sector. The repository is built on fm1-base and felucca-bsp.
+status: active
+authors:
+- name: wave00066
+  url: https://github.com/wave00066
+source: https://github.com/wave00066/theory1
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The author's code in app/, docs/ and tests/ is MPL-2.0 (LICENSE). The fm1-base and felucca-bsp submodules are MPL-2.0,
+  the Barlow and Bravura fonts are SIL OFL 1.1, and every package gets three unmodified JieLi AC79 SDK files
+  (Apache-2.0) and binary Bluetooth libraries added at build time; none are in the repository.
+distribution: source-only
+install_notes: >-
+  There are no GitHub releases yet. A tag vX.Y builds a signed release with theory1-X.Y.fwsc, and each push to main
+  builds theory1.fwsc as an Actions artifact. Install the package from a clone with python3 base/tools/fm1_install.py
+  over a USB data cable, without a hub. The Firmware Hub installer does not list it. To go back, install M-VAVE's
+  official V15 package the same way, or use the safe mode that appears after two failed starts. The author says it is
+  not tested on every unit.
+brick_risk: true
+tags: [education, chords, scales, midi, usb-midi, ui]
+image:
+  url: https://raw.githubusercontent.com/wave00066/theory1/main/docs/img/features.png
+  alt: >-
+    Three FM-1 screens labelled Lessons, Quiz and Lab: chords on the degrees of Do major, a scale question for Fa natural minor, and a Do major chord in first inversion, with coloured keyboards.
+  credit: wave00066
+  source_url: https://github.com/wave00066/theory1#readme
+  first_party: true
+versions:
+- version: main @ 340c69d
+  date: 2026-11-01
+  url: https://github.com/wave00066/theory1/commit/340c69d28223a673c6c4c128e23aea3d725bdd30
+  notes: No tagged releases; this is the latest commit.

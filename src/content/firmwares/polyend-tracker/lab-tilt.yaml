@@ -1,0 +1,52 @@
+device: polyend-tracker
+name: TILT
+summary: >-
+  Pinball-style Markov sequencer: a ball walks 16 steps by a 17 by 17 probability matrix and fires one of eight sample or
+  synth channels, with flippers, bumpers, ramps, combos, multiball and weights that evolve.
+description: >-
+  Built after the Pinball 2 Max for Live device by nouserid, as reworked in the author's TILT plug-in. The ball sits on one
+  of 16 steps, and its next move is drawn from the matrix row for that step, with a drain as one of the destinations. Each
+  step fires one of eight channels, which play a WAV from the card or a built-in sample, one-shot or sliced, or a synth:
+  Plaits analog and synthetic kick and snare, the Plaits 808 hat, a 303-style acid voice or a two-operator FM voice. Around
+  the walk sit flippers on the pads or MIDI notes, bumpers that ratchet, ramps, four combos, multiball, tilt, ball save,
+  gravity and per-move transpose, delay and velocity. The matrix has four pages with a 4 by 4 meta matrix, plus memory,
+  mutation, a melody mode on scale degrees, rules and a randomizer with locks. The graph view shows heat, the ball's trail,
+  next-move odds and entropy. The last one to eight bars can be captured and saved as a MIDI file, and patterns are saved
+  as JSON files; the README says the JSON layout has not yet been checked against the plug-in's own format file. Fifteen
+  factory patterns and the built-in samples are in the image, so it runs without a card. The firmware uses the shared
+  LABKIT navigation of the lab, with 13 parameter pages and nine TILT modulation sources such as the ball position, heat and
+  entropy. The repository README calls the whole set v0.1: every image passed the author's simulator and QEMU checks, and
+  none has been tested on a real Tracker.
+status: active
+authors:
+  - name: semierendonmez-commits
+    url: https://github.com/semierendonmez-commits
+source: https://github.com/semierendonmez-commits/polyend-tracker-lab/tree/main/firmwares/tilt
+source_status: open
+license: Apache-2.0
+license_notes: >-
+  The folder's LICENSE is the Apache-2.0 text. Its THIRD_PARTY.md says the Plaits drum models and the stmlib parts they need
+  are copied under MIT with their licence files, everything else was written for TILT, and no GPL code is used. OpenTracker
+  had no LICENSE file when the work began; upstream added Apache-2.0 on 2026-10-28, which the README's credits do not yet
+  reflect.
+distribution: download
+requires_stock: Polyend stock firmware or OpenTracker; keep a stock image in /Firmware
+install_notes: >-
+  Copy PolyendTrackerTILTPB.ptf from firmwares/tilt/release/ in the repository into /Firmware on the SD card, keeping its
+  24-character name, and install it from Config, Firmware update on stock or OpenTracker. Every lab firmware can list and
+  install other .ptf files from its own Config, Firmware page, and OpenTracker's ot_restore.txt escape hatch works too. Keep
+  only one lab image plus stock in /Firmware, since the rear reset button installs a random .ptf from the folder. The
+  README says the set has not been tested on a real unit.
+brick_risk: true
+tags: [sequencer, generative, synth-engine, sampler, plaits, acid, performance, fork, ui]
+image:
+  url: https://raw.githubusercontent.com/semierendonmez-commits/polyend-tracker-lab/main/firmwares/tilt/docs/screenshots/graph.png
+  alt: "TILT Graph page in the simulator: sixteen numbered step nodes on a circle joined by purple lines, pink arrows for the ball's next moves, and a panel with next-move percentages, entropy and combos"
+  credit: semierendonmez-commits
+  source_url: https://github.com/semierendonmez-commits/polyend-tracker-lab
+  first_party: true
+versions:
+  - version: main @ f142239
+    date: 2026-10-30
+    url: https://github.com/semierendonmez-commits/polyend-tracker-lab/commit/f14223960bbb7b9580534663a5b7c6110ee6ff7b
+    notes: Latest commit. It touched this folder and rebuilt the image on upstream OpenTracker v2 1c8a529. TILT has no release asset; its image is only at firmwares/tilt/release/ in the repository.

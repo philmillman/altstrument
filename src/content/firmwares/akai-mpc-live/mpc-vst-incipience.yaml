@@ -1,0 +1,49 @@
+device: akai-mpc-live
+name: Incipience
+summary: Native VST2 drum synth for MPC OS with eleven instruments laid out like the Jomox AlphaBase Mk II, its own touchscreen skin, 737 automatable parameters, a sample browser and a companion output-routing effect.
+description: >-
+  A drum synthesiser written from the AlphaBase manual, not an emulation of its circuits or firmware. It has a kick,
+  a two-resonator membrane voice, closed and open hats, clap, rim, crash, ride, two sample players and a four-operator
+  FM voice, each with the AlphaBase's controls and ranges and three Q-Link sub-pages. The sequencer is left out and
+  MPC's pads and sequencer play it. Four LFOs and 16 modulation slots, a reverb and a delay, five built-in kits and a
+  SAMPLES tab for browsing any WAV folder on the device with preview are included. Extra MIDI channels reach it
+  through its own MIDI port, and a second plugin, Incipience OUT, plays one instrument on another track. The
+  AlphaBase sample set is not shipped; the README links Jomox's download, which is unpacked into the plugin's data
+  folder, and without it the built-in kits still work. Checked on an MPC Live II by its author.
+status: active
+authors:
+  - name: Steve A
+    url: https://github.com/saustin2010
+source: https://github.com/saustin2010/mpc-vst-incipience
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT license, copyright Steve A. The Jomox AlphaBase sample set is not included.
+distribution: download
+requires_stock: MPC OS 3.x
+install_notes: >-
+  Needs root SSH access to the device. Download the release zip, copy it to the MPC, unzip it and run install.sh as
+  root; it stops MPC, backs up MPC.settings, installs the plugin folder and restarts MPC. Incipience OUT is a separate
+  release zip installed the same way. The optional AlphaBase samples are unpacked into the plugin's incipience data
+  folder. Installing plugins this way is unofficial.
+brick_risk: false
+tags: [drums, synth-engine, sampler, platform]
+image:
+  url: https://raw.githubusercontent.com/saustin2010/mpc-vst-incipience/main/screenshots/page_0.png
+  alt: Incipience KICK page, a cream panel with wooden side cheeks, sixteen black knobs with green LEDs, a dark display reading KD Kick Drum, a Randomise button and eleven instrument keys on a red band
+  credit: Steve A
+  source_url: https://github.com/saustin2010/mpc-vst-incipience
+  first_party: true
+versions:
+  - version: v1.1.1
+    date: 2026-10-23
+    url: https://github.com/saustin2010/mpc-vst-incipience/releases/tag/v1.1.1
+    notes: Rebuilt on the wrapper fix that lets Q-Links move parameters on the track edit automation screen again.
+  - version: v1.1.0
+    date: 2026-10-20
+    url: https://github.com/saustin2010/mpc-vst-incipience/releases/tag/v1.1.0
+    notes: New sample browser that lists a folder and its subfolders in one list.
+  - version: v1.0.0
+    date: 2026-10-19
+    url: https://github.com/saustin2010/mpc-vst-incipience/releases/tag/v1.0.0
+    notes: First release.

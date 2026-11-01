@@ -9,8 +9,8 @@ description: >-
   web editor, TRS MIDI input, a USB audio host, an interpreter several times faster than upstream, panel themes, remembered
   settings, flash kept between runs and an SD card on the LCD's SPI bus for Optimist's SD mod. The README says upstream
   cannot run several of these firmwares. It also ships headless tools for scripted panel sessions, benchmarks and finding
-  undecoded instructions. The README presents the fork as temporary and lists five upstream pull requests carrying the same
-  work. Desktop builds are published for macOS on Apple silicon, Windows and Linux. No firmware is included; you load a
+  undecoded instructions. The README says the same work was offered upstream as five pull requests, all closed unmerged on
+  2026-10-09, so the fork carries it on its own. Desktop builds are published for macOS on Apple silicon, Windows and Linux. No firmware is included; you load a
   .fwsc, .elf or .bin. The repository moved from hdavid to w0ts.
 status: active
 authors:
@@ -39,6 +39,10 @@ image:
   source_url: https://github.com/w0ts/fm1-emulator#readme
   first_party: true
 versions:
+- version: commit-8265d46
+  date: 2026-10-31
+  url: https://github.com/w0ts/fm1-emulator/releases/tag/commit-8265d46573664fe3df1c57c5d031d5f9da783013
+  notes: Per-commit build of the feat/upstream-merge branch; adds a panel stress test that taps keys and turns encoders at random.
 - version: commit-14aecb9
   date: 2026-10-26
   url: https://github.com/w0ts/fm1-emulator/releases/tag/commit-14aecb91031998cf0742b3cc0a94bcfe868c1698

@@ -3,11 +3,13 @@ name: fm1buddy
 kind: tool
 summary: >-
   Firmware for a Freenove ESP32-S3 2.8-inch touch screen board that installs FM-1 firmware packages from its SD
-  card or the FM-1 Firmware Hub, and connects USB and Bluetooth MIDI controllers to the FM-1 without a
+  card or from mutant.cloud, and connects USB and Bluetooth MIDI controllers to the FM-1 and SMK-37 without a
   computer.
 description: >-
-  The board lists the .fwsc packages on its SD card and in the FM-1 Firmware Hub's catalogue, downloads them
-  over Wi-Fi after checking size and SHA-256, and installs them on the FM-1 through a USB hub. Its USB-C port
+  The board lists the .fwsc packages on its SD card and in the mutant.cloud catalogue (the FM-1 Firmware Hub's catalogue
+  before 0.1.19), downloads them over Wi-Fi after checking size and SHA-256, and installs them on the FM-1 through a USB
+  hub. The README says it also switches the firmware of the SMK-37 Pro, Elite and MKE-P37 keyboards, which use the
+  FM-1's chip, and can put back M-VAVE's stock firmware. Its USB-C port
   acts as a USB host for up to four MIDI devices, which all hear each other, and Bluetooth MIDI devices can
   join; Bluetooth is off while Wi-Fi is on. Version 0.1.0 rebuilt the project around this board and dropped the
   earlier Feather RP2040, OLED and CYD variants. The repository also holds a printable case and a browser
@@ -32,15 +34,17 @@ install_notes: >-
   starts its USB rescue mode.
 brick_risk: true
 tags: [flasher, usb-midi, midi, utility]
-image:
-  url: https://raw.githubusercontent.com/konsumer/fm1buddy/main/site/case/s3.png
-  alt: >-
-    Render of the CYD-S3 case: a green 3D-printed tray holding a black screen module, with an orange frame
-    lid floating above it
-  credit: konsumer
-  source_url: https://konsumer.js.org/fm1buddy/
+video:
+  url: https://www.youtube.com/watch?v=mT8rAArBcnE
+  title: fm1buddy - basic tour
+  credit: David Konsumer
   first_party: true
+  found_via: https://github.com/konsumer/fm1buddy
 versions:
+- version: 0.1.19
+  date: 2026-11-01
+  url: https://github.com/konsumer/fm1buddy/releases/tag/v0.1.19
+  notes: Switches the firmware catalogue source to mutant.cloud.
 - version: 0.1.16
   date: 2026-10-30
   url: https://github.com/konsumer/fm1buddy/releases/tag/v0.1.16

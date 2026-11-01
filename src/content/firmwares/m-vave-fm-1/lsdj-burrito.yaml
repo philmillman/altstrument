@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+name: LSDJ Burrito
+summary: >-
+  Runs Little Sound Dj on the FM-1 from its keys and knobs, with per-channel effects, a master echo and compressor,
+  MIDI sync and themes. You bring your own LSDj ROM; a web page builds the firmware around it.
+description: >-
+  Built on GameDude's Game Boy emulator and the Felucca hardware layer, with the games loader, website and
+  Bluetooth removed. The FM-1's keys and knobs play and edit LSDj, and note mode and incoming MIDI notes reach it as
+  keyboard input. It adds per-channel filters (including notch and 24 dB low-pass), drive, lo-fi and an LFO to
+  cutoff, volume or pan, a shared echo with a compressor, MIDI clock in and out, MIDI notes and control changes,
+  colour themes, and a mirror of the unit's screen on the web page. The release file contains no LSDj: installed
+  as it is, the FM-1 shows a splash saying that no LSDj is present and waits for an update. The project page asks for
+  your own lsdj.gb, checks it and builds the firmware in the browser, so the ROM stays on your computer; installed
+  LSDj can also be read back for later updates. Johan Kotlinski's LSDj is not distributed here and keeps its own
+  terms; LSDj 9.3.9 is the version the author verified, and other versions get fewer of the helpers. The project
+  calls itself alpha.
+status: active
+authors:
+- name: dreamsofbacon
+  url: https://github.com/dreamsofbacon
+source: https://github.com/dreamsofbacon/lsdj-burrito-src
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states GPL-3.0-only, with the retained notices of GameDude, Felucca (GPL-3.0-only), Peanut-GB and
+  minigb_apu (MIT), the SMK updater and the JieLi SDK package files (Apache-2.0). LSDj and Game Boy ROMs are not in
+  the repository or the release and are not covered by this licence.
+homepage: https://dreamsofbacon.github.io/lsdj-burrito/
+distribution: browser-installer
+requires_stock: M-VAVE FM-1 V15 or another firmware with a compatible USB updater; your own LSDj ROM
+install_notes: >-
+  Open the project page in Chrome or Edge, choose your own lsdj.gb and install over USB, which builds the firmware on
+  your computer. The release .fwsc alone installs without LSDj. The README says it was installed from V15 and from
+  another firmware and that another firmware installs over it, and that an interrupted update is repeated with
+  Install. The project calls itself experimental and unofficial, so back up your songs first.
+brick_risk: true
+tags: [tracker, chiptune, emulator, fx, midi, performance, fork]
+versions:
+- version: 0.9.96
+  date: 2026-10-31
+  url: https://github.com/dreamsofbacon/lsdj-burrito-src/releases/tag/v0.9.96
+  notes: Switches to normal version numbers published as releases, and the firmware file without LSDj now shows how to add it instead of a blank screen.

@@ -1,0 +1,54 @@
+device: akai-force
+also_devices:
+  - akai-mpc-live
+name: RMXXXL
+summary: Native VST2 insert effect for MPC OS that works like a Pioneer RMX-1000 remix unit, with build-up and break-down knobs, a 3-band kill isolator, DJ filter, echo, Clouds, reverbs, drum pads and a limiter.
+description: >-
+  An effect that sits in one insert slot of a track, a submix or the master and has its own touchscreen pages and
+  Q-Link sets. Two scene knobs move a filter, echo, Clouds, reverb and a noise riser together, and a Release switch
+  or Release FX (echo out, vinyl brake, backspin over 1/2 to 4 beats) drops the mix back to dry. Other parts are an
+  eighth-order three-band isolator with kill buttons, a bipolar DJ filter, a tempo-synced echo, Mutable Instruments
+  Clouds with the Parasites firmware, Dragonfly plate, room and hall reverbs, four pads with a drum or a WAV
+  one-shot each, a look-ahead limiter, a Panic button and 16 saved presets. MPC OS sends no MIDI to insert effects,
+  so each instance opens its own MIDI input port that a MIDI track can play. The wrapper, skin generator and
+  installer come from sd88me's mpc-vst-plugins. It was tested on an Akai Force with MockbaMod; the README calls
+  other first-generation MPC OS units untested.
+status: active
+authors:
+  - name: L'Cronx
+    url: https://github.com/sunskiefer
+source: https://github.com/sunskiefer/RMXXXL
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The LICENSE file is the GPL version 3 text, and the README says "GNU GPL v3.0 or later", because the project
+  includes Dragonfly Reverb. Third-party parts keep their own licenses: Clouds with Parasites (MIT), the
+  mpc-vst-plugins wrapper (MIT) and the Titillium Web font (SIL OFL 1.1).
+distribution: download
+requires_stock: MPC OS 3.x (tested on 3.9.1)
+install_notes: >-
+  Needs root SSH access to the device, for example through MockbaMod, since stock MPC OS does not load third-party
+  plugins. Unzip the release, copy it to the device with scp and run install.sh, which stops MPC, so save the project
+  first. It copies the plugin to /sdcard/Synths, backs up and edits MPC.settings and restarts MPC. Pad samples and
+  presets live outside the plugin folder and survive updates. uninstall.sh removes the plugin. Installing plugins this
+  way is unofficial.
+brick_risk: false
+tags: [fx, performance, sampler, synth-engine, platform]
+image:
+  url: https://raw.githubusercontent.com/sunskiefer/RMXXXL/main/docs/img/remix.png
+  alt: RMXXXL REMIX page with a row of Scene FX knobs (Build, Break, Filter, Echo, Verb), a Release switch, isolator knobs with kill buttons, echo beat buttons, and orange Release FX and red Panic buttons
+  credit: L'Cronx
+  source_url: https://github.com/sunskiefer/RMXXXL
+  first_party: true
+versions:
+  - version: v1.3.0
+    date: 2026-10-29
+    url: https://github.com/sunskiefer/RMXXXL/releases/tag/v1.3.0
+    notes: Adds EQ kill buttons, a Panic that crossfades instead of clicking, and bigger knobs and text.
+  - version: v1.2.0
+    date: 2026-10-08
+    url: https://github.com/sunskiefer/RMXXXL/releases/tag/v1.2.0
+    notes: Fixes from the first Force test, plus a Release kill switch, Release FX button, Panic, 16 presets and riser tune and duck.
+  - version: v1.1.1
+    date: 2026-10-07
+    url: https://github.com/sunskiefer/RMXXXL/releases/tag/v1.1.1

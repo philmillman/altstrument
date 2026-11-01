@@ -6,7 +6,7 @@ summary: >-
 description: >-
   The repository is fm1-loom, its GitHub description and design notes call the project XY-1, and the README and
   licence file call it LOOM-8. It is a separate project from Loom FM-1 by Co-oscillator. Eight tracks each get a colour and an
-  instrument, with eight synth engines, a sample player, a break slicer and a drum kit. The sequencer has
+  instrument, with seven synth engines (one is acid, a TB-303), a sample player, a break slicer, a drum kit with 909 models and MIDI out. The sequencer has
   parameter locks and step tricks, players (arpeggiator, strum, hold) and weave, which crosses two patterns bar by
   bar, step by step, or one's rhythm with the other's notes. A conductor track moves the song through a chord
   progression, throws are momentary effects, and there are two send-effect tracks (one reverb has the PlayStation
@@ -22,8 +22,8 @@ source: https://github.com/charlesvestal/fm1-loom
 source_status: open
 license: GPL-3.0-only
 license_notes: >-
-  LICENSING.md states GPL-3.0 only for LOOM-8's own code. The fm1-base and felucca-bsp submodule files stay
-  MPL-2.0 file by file. The Braids engine ports, the PlayStation reverb port and the supersaw bank are MIT, the
+  LICENSING.md states that LOOM-8 as a whole is GPL-3.0-only: the acid engine and the 909 kit models are
+  GPL-3.0-only and most other files are MPL-2.0 file by file, as are the fm1-base and felucca-bsp submodule files. The Braids engine ports, the PlayStation reverb port and the supersaw bank are MIT, the
   fonts are SIL OFL 1.1, and the package uses three Apache-2.0 JieLi AC79 SDK files at build time.
 homepage: https://charlesvestal.github.io/fm1-loom/
 distribution: browser-installer
@@ -41,6 +41,18 @@ image:
   source_url: https://github.com/charlesvestal/fm1-loom/blob/main/docs/MANUAL.md
   first_party: true
 versions:
+- version: 0.12.1
+  date: 2026-11-01
+  url: https://github.com/charlesvestal/fm1-loom/releases/tag/v0.12.1
+  notes: Acid's filter cutoff now reaches down to 60 Hz, so acid tracks below the knob's middle sound darker than before; adds a ping width setting to the delay and fixes the install page. Projects saved by 0.12.1 do not open in 0.12 or earlier.
+- version: '0.12'
+  date: 2026-11-01
+  url: https://github.com/charlesvestal/fm1-loom/releases/tag/v0.12
+  notes: Adds the acid engine (a TB-303), 909 kit models, a random player, harmony following, large type and an endless setting for relative CC encoders; fixes USB audio on macOS 15. Projects and backups from 0.11 load as they were.
+- version: '0.11'
+  date: 2026-10-29
+  url: https://github.com/charlesvestal/fm1-loom/releases/tag/v0.11
+  notes: Fixes a sample change that could silence a looping sample track, adds a held solo on the Mix page, an on-note count-in for REC, and makes the black-and-white theme the default.
 - version: '0.10'
   date: 2026-10-29
   url: https://github.com/charlesvestal/fm1-loom/releases/tag/v0.10

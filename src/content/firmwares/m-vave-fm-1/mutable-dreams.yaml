@@ -1,7 +1,7 @@
 device: m-vave-fm-1
 name: Mutable Dreams
 summary: >-
-  Six-track generative instrument with 15 engines, 108 editable Biomes plus Blank, 336 tones,
+  Six-track generative instrument with 15 engines, 156 editable Biomes plus Blank, 352 tones,
   user banks and granular, delay and room sends, with a playable browser instrument and live editor.
 description: >-
   Each of the six tracks can use any engine, or three synth tracks can share the space with one of five Lo-Fi drum
@@ -15,9 +15,10 @@ description: >-
   The device stores sixteen named User Biomes and 64 User Sounds. The browser instrument also works as
   a bidirectional hardware editor, with live-patch JSON transfer and full .mddb saved-bank backup and restore.
   Full-bank restore requires physical SEL confirmation. Granular audio is not saved in a Biome.
-  Version 1.3 adds two LFOs per synth track, five sequence directions and more generators and chord journeys.
+  Version 1.3 adds two LFOs per synth track, five sequence directions and more generators and chord journeys. Version 1.4
+  adds 48 Biomes and 16 tones, five scales (thirteen in all), per-track USB MIDI input channels and dimmed muted tracks.
   USB MIDI was tested; TRS MIDI input is implemented but its physical cable test remains outstanding.
-  The complete 1.3 source tree is directly browsable, with build instructions and a device test report
+  The complete 1.4 source tree is directly browsable, with build instructions and a device test report
   describing the qualification scope. These are selected algorithms and inspired functions, not full
   ports of every Mutable Instruments module.
 status: active
@@ -37,12 +38,12 @@ homepage: https://mutable-dreams.sugarypixie10.chatgpt.site/
 distribution: browser-installer
 install_notes: >-
   Use the project installer in desktop Chrome or Edge over USB, or the Python installer kit.
-  Stock V15 and V16 installation and return are documented in Recovery-1.3.txt; M-VAVE's M-UPGRADE rejects the
-  1.3 package, so use the project installer. For 1.0, use the documented route through 1.1 first and back up in
+  Stock V15 and V16 installation and return are documented in Recovery-1.4.txt; M-VAVE's M-UPGRADE rejected a
+  custom Mutable Dreams package, so use the project installer. For 1.0, use the documented route through 1.1 first and back up in
   1.1 before installing a later version. Follow the published instructions for other starting firmwares; not
   every route is tested. Back up first. On 1.1 and later save both .mddb for stored banks and JSON for unsaved
   live edits; 1.0 does not support the .mddb protocol. Returning to V15 erases User Banks and preferences. A
-  1.2 or 1.3 patch is newer than 1.1, so keep a backup from before updating if you may downgrade.
+  1.2 or later patch is newer than 1.1, so keep a backup from before updating if you may downgrade.
 brick_risk: true
 tags: [generative, ambient, synth-engine, drums, granular, sequencer, physical-modeling, emulator]
 video:
@@ -66,6 +67,10 @@ videos:
   found_via: https://github.com/kidbee85-beep/mutable-dreams#readme
   version: v1.1
 versions:
+- version: v1.4
+  date: 2026-10-31
+  url: https://github.com/kidbee85-beep/mutable-dreams/releases/tag/v1.4
+  notes: Adds 48 factory Biomes (156 plus Blank) and 16 tones (352), five scales, USB MIDI input routing per track, dimmed muted tracks and clearer labels. Package ID FM-1_710010400.
 - version: v1.3
   date: 2026-10-29
   url: https://github.com/kidbee85-beep/mutable-dreams/releases/tag/v1.3

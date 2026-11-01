@@ -5,12 +5,11 @@ summary: >-
   Browser editor, in-browser synth preview and USB MIDI installer for the Zombie Core FM-1 firmwares, in Russian and
   English, with FL Studio and Ableton Live profiles.
 description: >-
-  Serves the Groovebox and Sampler editors and an installer page that checks a package's size, SHA-256 and identity
-  before writing and confirms the identity after the restart. The editors run the firmware's synth as WebAssembly, so
-  sounds can be tried without a unit. Older Groovebox and Core builds stay selectable on the installer page, which
-  can be used for rollback. The same repository holds the Python control-surface profiles for FL Studio and Ableton
-  Live, the firmware packages and the matching source archives. The installer's transport code is adapted from
-  Charles Vestal's fm1-base.
+  Serves the Groovebox editor, an emulator and an installer page that checks a package's size, SHA-256 and identity
+  before writing and confirms the identity after the restart. The editor runs the firmware's synth as WebAssembly, so
+  sounds can be tried without a unit. The same repository holds Python control-surface profiles for FL Studio and
+  Ableton Live, the firmware packages and the matching source archives. The installer's transport code is adapted
+  from Charles Vestal's fm1-base. The Sampler editor was removed on 2026-11-01 along with that edition.
 status: active
 authors:
 - name: Joolo09
@@ -20,7 +19,8 @@ source_status: open
 license: MIT
 license_notes: >-
   MIT, with MPL-2.0 for the platform and update transport (fm1ota.js and fm1pkg.js derive from fm1-base). The
-  Sampler's Minecraft sound effects belong to Mojang/Microsoft; see the Zombie Sampler entry.
+  project's notices say the Minecraft sound effects in older Core source archives belong to Mojang/Microsoft and
+  that the current block-zombie display contains no Mojang textures or sounds.
 homepage: https://joolo09.github.io/zombie-fm1-web/
 distribution: browser-installer
 install_notes: >-
@@ -28,7 +28,7 @@ install_notes: >-
   It writes only the package you select and never starts a flash by itself.
 tags: [editor, emulator, flasher, web, midi, usb-midi]
 versions:
-- version: Web 1.1
-  date: 2026-10-24
-  url: https://github.com/Joolo09/zombie-fm1-web/commit/a7fde4e
+- version: main @ 636074e
+  date: 2026-11-01
+  url: https://github.com/Joolo09/zombie-fm1-web/commit/636074e
   notes: No tagged releases; this is the latest commit.

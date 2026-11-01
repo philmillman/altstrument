@@ -1,0 +1,45 @@
+device: m5stack-cardputer
+name: Microgroove
+summary: Pocket groovebox firmware for the Cardputer-ADV with three mono or polyphonic 303-style synth tracks, eight 808, 909 or sample drum lanes, microphone sampling, a pattern sequencer and a song mode.
+description: >-
+  Microgroove turns the Cardputer's keys into a one-key-one-function groovebox, with a held second
+  function on the orange-labelled keys and a note layout that follows a piano. Each of the three synth
+  tracks switches between a mono 303-style voice with accent and slide and two- or three-voice
+  polyphony. The eight drum lanes each use 808 synthesis, 909 synthesis or a sample from the SD card,
+  with volume, tune, decay and choke groups. Holding a key samples the microphone onto a drum lane,
+  and holding SONG while playing bounces the mix onto a pad. Patterns are 16 steps, eight of them, with
+  live recording, and a song mode chains up to 64 slots. Projects are saved to eight slots on the SD
+  card, and single-cycle WAV files placed on the card become extra oscillators. The synth voice, 808
+  synthesis and audio task layout are derived from qwertyuu's Cardputer Tracker. A printable shell and
+  keycap label sheet are listed on MakerWorld and in the repository's hardware folder.
+status: active
+authors:
+  - name: lebiro.studio
+    url: https://lebiro.studio
+source: https://github.com/matoslav/MicroGroove
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file names lebiro.studio as copyright holder and credits qwertyuu's Cardputer-Adv-Tracker
+  (MIT) for derived parts. The factory sample pack in factory-sd is CC0.
+homepage: https://lebiro.studio/microgroove
+distribution: download
+requires_stock: Cardputer-ADV
+install_notes: >-
+  Flash Microgroove.bin, a merged image, to offset 0x0 with esptool or another ESP32-S3 flashing tool, or
+  open the sketch from the source ZIP in the Arduino IDE with the M5Cardputer library. Copy the contents
+  of the SD card ZIP to a FAT32 microSD for the demo project and samples. Without a card, holding LOAD and
+  SAVE together plays a built-in demo. The firmware targets the Cardputer-ADV only.
+brick_risk: false
+tags: [groovebox, sequencer, synth-engine, drums, sampler, "303", "808", "909", wavetable]
+image:
+  url: https://raw.githubusercontent.com/matoslav/MicroGroove/main/docs/hero.jpg
+  alt: A red, white and blue 3D-printed shell around a Cardputer-ADV, with a small screen, a row of pattern keys and keycaps laid out like a piano
+  credit: lebiro.studio
+  source_url: https://github.com/matoslav/MicroGroove#readme
+  first_party: true
+versions:
+  - version: v1.0.0
+    date: 2026-07-12
+    url: https://github.com/matoslav/MicroGroove/releases/tag/v1.0.0
+    notes: First public release, with a merged firmware image, the source ZIP and an SD card pack.

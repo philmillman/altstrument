@@ -1,0 +1,46 @@
+device: m-vave-fm-1
+name: Wanderer
+summary: >-
+  Sixteen-step event-memory synth built for low vision: capture a phrase, protect it as an Anchor and evolve a copy
+  with Melt, Drift and Decay, with 100 sounds, large symbols and audible cues.
+description: >-
+  A new app on the Dinghy platform, with its own storage. A phrase of note and velocity events is captured, the
+  first one is kept as an immutable Anchor, and a working copy changes through Melt (timbre), Drift (bounded pitch
+  variation) and Decay (velocity ageing); a second phrase can be layered and a variation committed as a branch.
+  It is a four-voice synth with 100 patches in ten banks of ten, band-limited wavetable oscillators, chorus, tempo
+  delay and reverb. The screen shows the one word Wanderer, large symbols, fixed positions and a zoom setting, and
+  actions have short tones; the README says the screen is still needed for full information. One slot can be saved
+  while stopped, and old SLOOP projects are not imported. It records note events, not audio. The author, a visually
+  impaired musician behind Low Vision Music, reports installing it on their FM-1 from V15 and from SLOOP and going
+  back to V15 and to SLOOP. This is a work-in-progress pre-release.
+status: active
+authors:
+- name: Nicholas James (Low Vision Music)
+  url: https://github.com/spinnicholas
+source: https://github.com/spinnicholas/lvm-wanderer-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only for Dinghy and for the Wanderer app, with the platform code from Felucca, SLOOP
+  and OberVave under their notices. Atkinson Hyperlegible Bold and Terminus are SIL OFL 1.1. The release file and the
+  repository do not include M-VAVE firmware.
+homepage: https://www.lowvisionmusic.info
+distribution: download
+requires_stock: M-VAVE FM-1 V15 or SLOOP (the routes the author tested)
+install_notes: >-
+  Download LVM-Wanderer-0.9-FM1.fwsc, or the testing bundle with the installer, and write it with the bundled
+  tools/fm1_install.py (Python with mido and python-rtmidi) over a USB data cable. The README says to back up your
+  work, keep a known-working recovery package and install at your own risk. The release lists a SHA-256 for the file.
+brick_risk: true
+tags: [synth-engine, sequencer, generative, fx, ui]
+image:
+  url: https://raw.githubusercontent.com/spinnicholas/lvm-wanderer-fm1/main/docs/card.png
+  alt: "Wanderer screen: the word WANDERER above a ring of dots around a pulse-waveform symbol, the number 100 in large type, and a yellow slider along the bottom"
+  credit: Nicholas James (Low Vision Music)
+  source_url: https://github.com/spinnicholas/lvm-wanderer-fm1
+  first_party: true
+versions:
+- version: 0.9.0-wip
+  date: 2026-11-01
+  url: https://github.com/spinnicholas/lvm-wanderer-fm1/releases/tag/v0.9.0-wip
+  notes: Pre-release with 100 original patches, chorus, delay and reverb, and the author's installation and rollback test report.

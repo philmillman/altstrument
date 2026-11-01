@@ -1,0 +1,50 @@
+device: simonmueller-git-chordbox
+name: ChordBox
+summary: Arduino firmware for a DIY ESP32-S3 instrument that plays chord progressions from 16 pads and a bassline that follows them, synced to the Ableton Move's MIDI clock.
+description: >-
+  The pads play 317 progressions grouped into 24 banks by mood and style, and
+  chords sound the instant a pad is pressed, with inversions, voicings, strum,
+  arp, echo, latch and a loop recorder. The bass side holds 214 hand-written lines
+  in 16 genres, written as roles such as root, fifth and approach note so they
+  follow the chord being played. Harmony modes find the chords of a sample by ear,
+  work them out from incoming MIDI, build and extend a 16-slot loop, add a
+  melody, and print the loop into a Move clip. Chords go out on MIDI channel 1,
+  bass on 2 and melody on 3. A phone page served over Wi-Fi works as a remote.
+  The repository also has 672 MIDI files of the progressions, a printable
+  reference sheet and host-side tests that run the UI logic on a computer. The
+  progressions derive from the free-midi-chords project. The commit credits an AI
+  assistant as co-author, and the README calls it a one-person build shared as it
+  is, not affiliated with Ableton.
+status: active
+authors:
+  - name: simonmueller-git
+    url: https://github.com/simonmueller-git
+source: https://github.com/simonmueller-git/ChordBox
+source_status: open
+license: MIT
+license_notes: >-
+  The code is MIT. The wiring diagram and documentation are CC BY-SA 4.0, and the
+  chord progression data derives from free-midi-chords by Ludovic Drolez (MIT),
+  as THIRD_PARTY.md lists.
+distribution: source-only
+requires_stock: The ESP32-S3 N16R8 build in BOM.md
+install_notes: >-
+  Build the instrument from BOM.md and docs/WIRING.md, install the esp32 board
+  package and the libraries named in THIRD_PARTY.md, and run ./build.sh esp32
+  flash with the board's COM USB port attached to a computer. On first boot, press
+  the four OLED buttons when asked, then connect the board's native USB-C port to
+  the Move. The default hotspot password is public, so set your own in
+  local_config.h before using the Wi-Fi page. Only the ESP32-S3 build is tested.
+brick_risk: false
+tags: [chords, arpeggiator, usb-midi, esp32-s3, diy, midi, performance, arduino]
+image:
+  url: https://raw.githubusercontent.com/simonmueller-git/ChordBox/main/docs/images/02_chord_playing.png
+  alt: "ChordBox chord screen rendered on a computer: a four by four grid of chord pads in F minor with Db highlighted, a large Db, a keyboard diagram and a bass line panel, with the Move clock shown at 124"
+  credit: simonmueller-git
+  source_url: https://github.com/simonmueller-git/ChordBox#readme
+  first_party: true
+versions:
+  - version: main @ 8feb718
+    date: 2026-10-31
+    url: https://github.com/simonmueller-git/ChordBox/commit/8feb718
+    notes: No tagged releases; this is the latest commit.

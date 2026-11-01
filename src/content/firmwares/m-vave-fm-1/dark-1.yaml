@@ -1,0 +1,40 @@
+device: m-vave-fm-1
+name: DARK-1
+summary: >-
+  PERF-1 with its music replaced: sixteen dark genres of ten pieces each, a rewritten engine per genre, and Wander
+  pages that make the music change on its own. The instrument and its controls are PERF-1's.
+description: >-
+  A modification of deamonSLINKY's PERF-1 that keeps its pages, screens, sequencer, auto-DJ, effects and project
+  saving, and changes what plays. The genres are dark techno, horror, dark EDM, industrial, dark rave, cinematic,
+  dark electro, dark trance, EBM, dystopian techno, industrial horror, dark synthwave, dark drum and bass, dark
+  dubstep, ritual and experimental. Each has its own drum kits and patterns, bass, scales, chord habits, builds and
+  breakdowns and latched effects, and the thirty FM voices are new. Wander, added in 1.0.1, is a pair of settings
+  pages that move between pieces and genres, swap sounds, drift knobs and mute layers on a schedule you set; it
+  leaves the kick and snare alone, does not touch stored pieces and does not keep its settings over a power cycle.
+  The project page plays the engine in the browser with a preset picker. The README says it has been tried on one
+  FM-1 only. The README and manual below the first section are PERF-1's and still describe its genre list.
+status: active
+authors:
+- name: sparky480v
+  url: https://github.com/sparky480v
+source: https://github.com/sparky480v/Dark-1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Stated in LICENSING.md, which keeps PERF-1's chain (HYP-1, AMB-1, Felucca, Melodee's FM engine) and says the
+  DARK-1 additions are GPL-3.0-only too. Fonts are SIL OFL 1.1. The JieLi SDK files that go into the package are
+  read from your own SDK checkout at build time and are not in the repository.
+homepage: https://sparky480v.github.io/Dark-1/play/
+distribution: download
+install_notes: >-
+  Download the .fwsc from the release and flash it with an FM-1 installer page; the package carries its own update
+  loader, so another firmware can be installed afterwards. PERF-1 keeps its own pieces and settings and does not
+  read other firmwares' projects, so expect stored data to be lost when switching. Back up first and keep a way to
+  put M-VAVE's firmware back.
+brick_risk: true
+tags: [generative, sequencer, drums, synth-engine, performance, emulator, fork]
+versions:
+- version: 1.0.1
+  date: 2026-11-01
+  url: https://github.com/sparky480v/Dark-1/releases/tag/v1.0.1
+  notes: Adds Wander, and gives the firmware its own hub identity (FM-1_32010001).

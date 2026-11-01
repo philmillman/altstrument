@@ -1,0 +1,51 @@
+device: akai-mpc-live
+name: CrateSurf
+summary: Alpha web browser for rooted MPC One+ and MPC Live II units that runs Chromium on the touchscreen from a Debian chroot, with downloads saved straight into MPC Documents and unpacked on the device.
+description: >-
+  Gives the MPC a browser for finding samples. A chroot of Debian armhf packages holds Chromium, weston and PulseAudio
+  and is copied to /data/browser, and a small Node server on port 8798 switches the panel between the MPC application
+  and the browser, because the application holds the display and the two cannot share it. Browse mode is entered with a
+  three-finger hold, Ctrl+Alt+B on a USB keyboard or a page served by the device, and a bar on every page offers
+  navigation, an on-screen keyboard, a recorder that writes the page audio as WAV files and an exit button. Downloads
+  go to MPC Documents/Samples or another chosen folder, show their size and free space first, and zip files unpack on
+  the device. Confirmed on an MPC One+ up to firmware 3.10 and an MPC Live II up to 3.9.1; scrolling is slow because
+  the GPU path tears the display. The installer does not bundle or download an SSH-enabled firmware image.
+status: active
+authors:
+  - name: Silentpartnersmpls
+    url: https://github.com/Silentpartnersmpls
+source: https://github.com/Silentpartnersmpls/cratesurf
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT license, copyright CrateSurf by SPS. The Debian packages in the chroot and the Node
+  runtime keep their own licenses.
+distribution: download
+requires_stock: Rooted MPC One+ (firmware up to 3.10) or MPC Live II (up to 3.9.1)
+install_notes: >-
+  Needs root SSH on the unit, which the project does not provide beyond pointing to where SSH-enabled images come
+  from. Run the installer for Windows, macOS or Linux from the release page and type the MPC's IP address; it checks
+  the device, downloads a payload of about 350 MB, installs the toggle service and by default sets a root password
+  and key. With the boot option it writes a unit file into the read-only firmware partition. Browse mode stops the
+  MPC application, which does not save on exit, so save the project first. The toggle port has no authentication.
+brick_risk: true
+tags: [utility, platform, ui]
+image:
+  url: https://raw.githubusercontent.com/Silentpartnersmpls/cratesurf/main/docs/start-page.png
+  alt: CrateSurf start page on the MPC panel, a dark browser with a location bar, six site cards (Freesound, Looperman, Archive.org and others) and a button bar with REC and MPC at the bottom right
+  credit: Silentpartnersmpls
+  source_url: https://github.com/Silentpartnersmpls/cratesurf
+  first_party: true
+versions:
+  - version: 0.1.2-alpha
+    date: 2026-10-31
+    url: https://github.com/Silentpartnersmpls/cratesurf/releases/tag/v0.1.2-alpha
+    notes: Adds Bluetooth keyboard support, an opt-in GPU path and frame capture.
+  - version: 0.1.1-alpha
+    date: 2026-10-30
+    url: https://github.com/Silentpartnersmpls/cratesurf/releases/tag/v0.1.1-alpha
+    notes: Fixes a blank screen and a stuck exit.
+  - version: 0.1.0-alpha
+    date: 2026-10-29
+    url: https://github.com/Silentpartnersmpls/cratesurf/releases/tag/v0.1.0-alpha
+    notes: First public build.

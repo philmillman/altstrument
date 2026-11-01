@@ -1,0 +1,41 @@
+device: making-sound-machines-stolperbeats
+name: Stolperbeats Programmer
+kind: tool
+summary: Browser editor for the files on the Stolperbeats SD card, covering pattern banks, envelope settings, machine config and default state, with a pattern preview and direct saving to the card in Chrome or Edge.
+description: >-
+  Rights warning: the repository's default_settings folder holds copies of files from the author's
+  module card at firmware 163, including PatternBank000 to 004, which are Making Sound Machines' factory
+  banks, and the repository also has a photo of the module panel. The repository states no permission
+  to redistribute them.
+
+  The page opens PatternBank000 to 063, EnvelopeSettings, MachineConfig and MachineState files, each in
+  its own tab. It edits patterns, plays them in the browser, sets which banks are active, and edits the
+  two envelope outputs and the default tempo, timing, shuffle and feeling. Info buttons explain each
+  setting, and settings the author inferred rather than found in the manual are tagged. Chrome and
+  Edge write back to the card directly and other browsers download the files. MIDI map files cannot be
+  edited yet. The page loads nothing from the internet and uploads nothing. The repository has no
+  README; a CLAUDE.md file documents the file formats, and commits credit Claude. The page does not
+  change the module's firmware.
+status: active
+authors:
+  - name: wittysalt8451
+    url: https://github.com/wittysalt8451
+source: https://github.com/wittysalt8451/stolperbeats-programmer
+source_status: open
+license: unspecified
+license_notes: The repository has no license file and no license statement.
+homepage: https://wittysalt8451.github.io/stolperbeats-programmer/
+distribution: browser-installer
+requires_stock: Stolperbeats firmware 163 (the version the files were taken from)
+install_notes: >-
+  Press stop on the module and power it off, copy every file from the SD card to a folder as a backup,
+  then open the hosted page and open the files. Save, eject the card and power the module on. The
+  module rewrites the card when the sequencer stops, so edit the card only with the module off. The
+  tool writes text files only and does not flash anything.
+brick_risk: false
+tags: [editor, web, sequencer, drums, envelope, midi]
+versions:
+  - version: main @ 21db245
+    date: 2026-10-14
+    url: https://github.com/wittysalt8451/stolperbeats-programmer/commit/21db245d9bc0084e9ffe195148449be8c3e60efa
+    notes: No tagged releases; this is the latest commit.

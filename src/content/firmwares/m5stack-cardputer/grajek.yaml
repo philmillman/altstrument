@@ -1,0 +1,51 @@
+device: m5stack-cardputer
+name: Grajek
+summary: Cardputer-ADV instrument in just intonation that is hard to play badly, with an ageing tape loop, remembered phrases, shake and tilt gestures, and five musical worlds.
+description: >-
+  Grajek is a playable box in which every grid key makes music: a pentatonic just-intonation scale and
+  plucked-tine sound are the default, with further scales and timbres in a settings list. The engine
+  adds equal-loudness key tracking, polyphony compensation, sympathetic string resonators, chorus, a
+  tape echo and reverb, and a tempo follower that locks to the player's key presses rather than a set BPM.
+  It saves settings and short phrases at pauses, shaking the device replays the latest phrase, tilting
+  changes brightness and depth, and laying it face down lets it play itself to sleep. A short press of
+  GO changes world among meadow, ocean, cosmos, fireworks and mandala, and a held GO opens eight
+  settings. The release images come in English and Polish. The same engine runs on a laptop, and the
+  repository's unreleased changelog covers the worlds feature, which is newer than the v0.3.0 release.
+status: active
+authors:
+  - name: Szymon Teżewski
+    url: https://github.com/jasisz
+source: https://github.com/jasisz/grajek
+source_status: open
+license: MIT
+license_notes: The LICENSE file names Szymon Teżewski as copyright holder.
+homepage: https://jasisz.github.io/grajek/
+distribution: browser-installer
+requires_stock: Cardputer-ADV
+install_notes: >-
+  Open the web installer in a Web Serial browser, connect the Cardputer-ADV over USB-C and choose English
+  or Polish; the browser writes a full image from offset 0x0, which replaces the current firmware and
+  clears saved Grajek settings and phrases. If no port appears, hold G0 while switching the device on.
+  The merged .bin files from the release also install with esptool or M5Launcher 2.8 or newer. The images
+  are for the Cardputer-ADV only, not the original Cardputer.
+brick_risk: false
+tags: [synth-engine, microtonal, fx, looper, generative, imu, web]
+versions:
+  - version: v0.3.0
+    date: 2026-08-09
+    url: https://github.com/jasisz/grajek/releases/tag/v0.3.0
+    notes: Adds a volume setting and raises the output ceiling and default gain.
+  - version: v0.2.0
+    date: 2026-08-04
+    url: https://github.com/jasisz/grajek/releases/tag/v0.2.0
+    notes: Adds the warm and hollow timbres, glide, a speaker or jack output mode and automatic sleep.
+  - version: v0.1.2
+    date: 2026-08-03
+    url: https://github.com/jasisz/grajek/releases/tag/v0.1.2
+  - version: v0.1.1
+    date: 2026-08-03
+    url: https://github.com/jasisz/grajek/releases/tag/v0.1.1
+  - version: v0.1.0
+    date: 2026-08-03
+    url: https://github.com/jasisz/grajek/releases/tag/v0.1.0
+    notes: First release.

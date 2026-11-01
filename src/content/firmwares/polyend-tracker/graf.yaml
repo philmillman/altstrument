@@ -1,0 +1,57 @@
+device: polyend-tracker
+name: GRAF
+summary: >-
+  Modular synthesizer with 49 module types patched on the pads and shown both as a node graph and as a VCS3-style pin
+  matrix, with Plaits, a resonator, a 303 voice, snapshots and an A/B crossfader.
+description: >-
+  Modules sit on a 12 by 4 canvas, one cell per pad. Holding one module's pad and tapping another draws a cable and the
+  encoder sets its amount; the same patch is also drawn as a pin matrix with outputs as rows and inputs as columns. The
+  module types include oscillators, a wavetable and a sampler, filters, envelopes, step, Euclidean, Turing, Markov and
+  pinball sequencers, Mutable Instruments Plaits with its 24 models and up to four at once, a resonator and exciter in the
+  style of Rings and Elements, an Open303-based acid voice, drum voices and microsound particles from the author's own
+  plug-ins, chaos and random generators, two recurrent noise networks and effects. An add page offers nine templates and
+  shows the CPU share of each module, and a CPU guard refuses a module or Plaits model that would not fit. Patch states are
+  stored as snapshots that morph along a 32-step timeline or through an A/B fader, and undo and redo cover 24 steps. A
+  setting chooses one big rack patch or eight small patches, one per MIDI channel. The firmware uses the shared LABKIT
+  navigation of the lab, so every knob can be reached by parameter pads, macros, modulation routes and MIDI learn, and
+  module outputs can be marked as modulation sources. The repository README calls the whole set v0.1: every image passed
+  the author's simulator and QEMU checks, and none has been tested on a real Tracker.
+status: active
+authors:
+  - name: semierendonmez-commits
+    url: https://github.com/semierendonmez-commits
+source: https://github.com/semierendonmez-commits/polyend-tracker-lab/tree/main/firmwares/graf
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The folder's LICENSE is the Apache-2.0 text, but its THIRD_PARTY.md lists rewritten ports of GPL-3.0 modules (forsitan
+  modulare's rete, VCV Fundamental's Random Values, TinyTricks' modulation generator, Count Modula's Manual Gate) and says
+  GPL-3.0 code is approved for this firmware. It does not say which licence the image carries; GPL-3.0-only follows the
+  BULUT file, which states that GPL-derived code makes its image GPL-3.0, with no "or later" wording. Plaits, stmlib and
+  Open303 are MIT, and the FLOATER, QUANTA and schwung-303 parts are the author's own code. OpenTracker had no LICENSE file
+  when the work began; upstream added Apache-2.0 on 2026-10-28, which the README's credits do not yet reflect.
+distribution: download
+requires_stock: Polyend stock firmware or OpenTracker; keep a stock image in /Firmware
+install_notes: >-
+  Copy PolyendTrackerGRAFMD.ptf into /Firmware on the SD card, keeping its 24-character name, and install it from Config,
+  Firmware update on stock or OpenTracker. Every lab firmware can list and install other .ptf files from its own Config,
+  Firmware page, and OpenTracker's ot_restore.txt escape hatch works too. Keep only one lab image plus stock in /Firmware,
+  since the rear reset button installs a random .ptf from the folder. The README says the set has not been tested on a real
+  unit.
+brick_risk: true
+tags: [modular, synth-engine, sequencer, generative, plaits, acid, fork, ui]
+image:
+  url: https://raw.githubusercontent.com/semierendonmez-commits/polyend-tracker-lab/main/firmwares/graf/docs/screenshots/graph-resonators.png
+  alt: "GRAF Graph page in the simulator: boxes CLK1, EXCT1, RESO1, MIX1, VERB1 and OUT1 in a row joined by coloured cables, with EUCL1, TURG1, PLTS1 and LFO1 below and the pad grid"
+  credit: semierendonmez-commits
+  source_url: https://github.com/semierendonmez-commits/polyend-tracker-lab
+  first_party: true
+versions:
+  - version: main @ f142239
+    date: 2026-10-30
+    url: https://github.com/semierendonmez-commits/polyend-tracker-lab/commit/f14223960bbb7b9580534663a5b7c6110ee6ff7b
+    notes: Latest commit. It touched this folder and rebuilt the image on upstream OpenTracker v2 1c8a529.
+  - version: non-trackerfirmwares1.0
+    date: 2026-10-26
+    url: https://github.com/semierendonmez-commits/polyend-tracker-lab/releases/tag/non-trackerfirmwares1.0
+    notes: Release with images for six of the eight lab firmwares and no release notes. The attached image is smaller than the one now in release/, so it is an earlier build.

@@ -1,0 +1,34 @@
+device: making-sound-machines-stolperbeats
+name: Tripwire
+kind: tool
+summary: Browser pattern editor for the Stolperbeats that edits each track's 24 patterns, arranges and sorts them, generates patterns from Strudel mini-notation, previews them and saves the bank text file.
+description: >-
+  Tripwire loads a PatternBank text file, lets you toggle or paint steps, and saves it back for the SD
+  card. Each track keeps its own 24 patterns, shown in a library beside the editor where a thumbnail
+  selects the active pattern, a drag reorders a track and a sort menu orders a track by energy or by
+  similarity. Kick and snare can be shortened to 4, 8, 16 or 32 steps with the remaining steps filled
+  with repeats. It has per-track copy, paste and clear, undo and redo, and a preview at straight
+  sixteenth notes with mute and hat choke. A track's pattern can also be generated from Strudel
+  mini-notation by the page's own parser. The README says it was built by a human and Claude. The page is
+  a single HTML file and does not change the module's firmware.
+status: active
+authors:
+  - name: plentyofnames
+    url: https://github.com/plentyofnames
+source: https://github.com/plentyofnames/tripwire
+source_status: open
+license: unspecified
+license_notes: The repository has no license file and the README gives no license.
+homepage: https://plentyofnames.github.io/tripwire/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page, load a PatternBank text file from the SD card or start empty, edit, and save the
+  file. Power the module off, put the file back on the card and activate the bank in MachineConfig.txt.
+  Keep a copy of the original file first. The tool writes pattern files only and does not flash anything.
+brick_risk: false
+tags: [editor, web, sequencer, drums, generative]
+versions:
+  - version: main @ ad42f1b
+    date: 2026-09-28
+    url: https://github.com/plentyofnames/tripwire/commit/ad42f1bd623cf1db50f19b6c2946055618179ba2
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,42 @@
+device: erica-synths-lxr-drum-module
+name: LXR Eurorack sample mode and IDM mod
+summary: Fork of Erica Synths' open LXR Eurorack firmware, kept on branches, that adds a Drum 1 mono rumble, glitch-style trigger mutation, and a SYN/SMP mode that plays a built-in bank of 12 samples in place of the synth voices.
+description: >-
+  Rights warning: the sample bank is about 1 MB of audio embedded in Core/Src/Soundengine/UserSampleBank.c, which the
+  branch notes describe only as 12 user-provided WAV files converted to 8-bit mono. The repository does not say where
+  the recordings come from or on what terms they are shared.
+
+
+  The fork's main branch is identical to erica-synths/lxr-eurorack-app; the changes live on separate branches, and the
+  newest build, 1.58.0, is on fix/sample-kit-recall-rearm-v1580. Drum 1 gets a mono rumble stage with level, decay,
+  low-pass and ducking controls. Every drum voice gets a glitch page with burst, divide, ball, delay, rotate and break
+  modes that mutate incoming triggers and MIDI notes through a small event scheduler, written as an approximation
+  of an IDUM-style module without its source. Each oscillator gets a SYN/SMP page with a sample slot, pitch and volume,
+  hi-hat choke between the sample voices and per-kit storage of those settings. The author's notes say none of this
+  was tested on a module when written. Other branches try a dedicated CV1 input and audio routed to OUT3, and are
+  marked experimental. The mod is not an official Erica Synths release.
+status: active
+authors:
+  - name: julianearle97
+    url: https://github.com/julianearle97
+source: https://github.com/julianearle97/lxr-eurorack-app/tree/fix/sample-kit-recall-rearm-v1580
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Inherited from the upstream fork: the LICENSE file is the GPL version 3 text and NOTICE.md names GPL-3.0-only with
+  Erica Synths' added terms, which require modified firmware to be marked and keep the Erica Synths and LXR names
+  out of unofficial builds. The embedded sample bank has no stated license.
+distribution: source-only
+requires_stock: Not stated; builds a complete LXRE image for the LXR Eurorack module
+install_notes: >-
+  Build with CMake, Ninja, Python 3 and the Arm GNU Toolchain as the upstream README describes, copy the resulting
+  LXRE_V2_V<version>.img to a FAT32 SD card and run the encoder-button update. The updater is not touched, so a failed
+  update can be repeated. No prebuilt image is published. The author's notes advise keeping a working image and an SD
+  card backup, and starting with low monitor volume.
+brick_risk: false
+tags: [fork, drums, sampler, generative, open-source]
+versions:
+  - version: fix/sample-kit-recall-rearm-v1580 @ b89a75d
+    date: 2026-10-30
+    url: https://github.com/julianearle97/lxr-eurorack-app/commit/b89a75d1ce49975280e082b02680ff77e9563dca
+    notes: No tagged releases; this is the latest commit on this branch, which builds firmware 1.58.0.

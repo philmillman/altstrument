@@ -1,0 +1,56 @@
+device: polyend-tracker
+name: FLIPPER
+summary: >-
+  Pinball sequencer in which the song is a machine of eight tables: bumpers play instruments, ramps trigger effects, and a
+  ball moved by physics and Markov weights decides what sounds, with flippers on the pads and an auto-player.
+description: >-
+  Each table is a 12 by 4 grid that matches the pads. Its cells hold bumpers, ramps, holes, targets, flippers or walls, and
+  every cell has four Markov transition weights. A setting chooses the ball mode. In hybrid mode a simulated ball with
+  gravity and flipper impulses runs on screen while a grid ball hops between cells on the beat, with weights tilted toward
+  the real ball. In Markov-only mode the ball takes one step per musical step, locked to the tempo. Bumpers play internal
+  sounds and send MIDI notes, ramps apply a filter sweep, crush, stutter, delay or reverb, and holes and targets trigger
+  events such as multiball, ball save, jackpots and table changes. The tables are linked by a weighted graph that picks the
+  next one when a table ends. The pads are the flippers, and an auto-player with a skill setting takes over when you let go.
+  Rules cover score, combo, heat, tilt and game over, and the music keeps running after a game ends. There are eight sound
+  engines (kick, snare, hat, zap, Karplus-Strong pluck, FM bell, lead and a WAV sampler) on ten shared voices, and a good
+  run can be captured into a loop and saved with the machine in one of eight slots. FLIPPER is the one firmware of the set
+  that does not use the shared LABKIT navigation; it still uses the lab Shell's Config page, transport, MIDI clock and
+  recorder. The repository README calls the whole set v0.1: every image passed the author's simulator and QEMU checks, and
+  none has been tested on a real Tracker.
+status: active
+authors:
+  - name: semierendonmez-commits
+    url: https://github.com/semierendonmez-commits
+source: https://github.com/semierendonmez-commits/polyend-tracker-lab/tree/main/firmwares/flipper
+source_status: open
+license: Apache-2.0
+license_notes: >-
+  The folder's LICENSE is the Apache-2.0 text, and its THIRD_PARTY.md says no third-party source code is copied into the
+  workstation; the sound and game code follow published algorithms and the idea of the Pinball 2 Max for Live device.
+  OpenTracker had no LICENSE file when the work began; upstream added Apache-2.0 on 2026-10-28, which the README's credits
+  do not yet reflect.
+distribution: download
+requires_stock: Polyend stock firmware or OpenTracker; keep a stock image in /Firmware
+install_notes: >-
+  Copy PolyendTrackerFLIPPR.ptf into /Firmware on the SD card, keeping its 24-character name, and install it from Config,
+  Firmware update on stock or OpenTracker. Every lab firmware can list and install other .ptf files from its own Config,
+  Firmware page, and OpenTracker's ot_restore.txt escape hatch works too. Keep only one lab image plus stock in /Firmware,
+  since the rear reset button installs a random .ptf from the folder. The README says the set has not been tested on a real
+  unit.
+brick_risk: true
+tags: [sequencer, generative, synth-engine, sampler, performance, fork]
+image:
+  url: https://raw.githubusercontent.com/semierendonmez-commits/polyend-tracker-lab/main/firmwares/flipper/docs/screenshots/play-hybrid.png
+  alt: "FLIPPER play page in hybrid mode: a pinball table with note-labelled bumpers, delay and reverb ramps and a ball above two pink flippers, beside a panel with score, balls, heat and combo"
+  credit: semierendonmez-commits
+  source_url: https://github.com/semierendonmez-commits/polyend-tracker-lab
+  first_party: true
+versions:
+  - version: main @ f142239
+    date: 2026-10-30
+    url: https://github.com/semierendonmez-commits/polyend-tracker-lab/commit/f14223960bbb7b9580534663a5b7c6110ee6ff7b
+    notes: Latest commit. It touched this folder and rebuilt the image on upstream OpenTracker v2 1c8a529.
+  - version: non-trackerfirmwares1.0
+    date: 2026-10-26
+    url: https://github.com/semierendonmez-commits/polyend-tracker-lab/releases/tag/non-trackerfirmwares1.0
+    notes: Release with images for six of the eight lab firmwares and no release notes. The attached image is smaller than the one now in release/, so it is an earlier build.

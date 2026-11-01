@@ -1,0 +1,39 @@
+device: chase-bliss-chompi
+name: CIRCLES
+summary: Firmware that turns the CHOMPI into an ensemble of up to fifteen mallet-instrument players that loop short figures at their own lengths, in the manner of In C, with a guided web tutorial.
+description: >-
+  Each of the fifteen players has one of fourteen mallet and percussion
+  instruments on the white keys: wood, marimba, amadinda, gangsa, mbira, kora, a
+  snare bar and a muffled voice for rhythm, and vibes, bell, hang, singing bowl,
+  gong and glass for melodies. The player plays a short figure and presses loop,
+  and that player repeats it. A figure can be copied to other players, and each
+  player can be given its own length as a ratio of the shared beat, from one
+  third to three, so that its copy drifts against the others. Knobs K1 to K4
+  shape each player, K6 sets the room and volume, and with the switch on all the
+  knobs and black keys act on every player. Holding K6 shows the voice count and
+  load. A tutorial page with six lessons talks to the CHOMPI over USB MIDI in
+  Chrome or Edge and runs as a demo without one. The release notes say that long
+  overlapping notes can use up the CPU, in which case the quietest voices drop
+  first. The author states it was written with Claude and tested on one unit.
+status: active
+authors:
+  - name: ugrossek
+    url: https://github.com/ugrossek
+source: https://github.com/ugrossek/CHOMPI/tree/meter-fw/firmware/chompi-meter
+source_status: open
+license: MIT
+license_notes: The LICENSE file names CHOMPI Club as copyright holder; the CHOMPI name and marks are not covered, see TRADEMARKS.md.
+homepage: https://ugrossek.github.io/CHOMPI/circles/
+distribution: download
+install_notes: >-
+  With multi-firmware launcher 1.1 or later, send CHOMPI_CIRCLES_beta_1.bin to a
+  free key from the setup page. On a stock card, put it in the card root as the
+  only .bin. The release is marked beta and the release notes list the SHA-256
+  of the file.
+brick_risk: false
+tags: [sequencer, generative, percussion, mallet, performance, looper]
+versions:
+  - version: circles-beta-1
+    date: 2026-11-01
+    url: https://github.com/ugrossek/CHOMPI/releases/tag/circles-beta-1
+    notes: Pre-release. Fifteen players, fourteen instruments, figure copying and per-player lengths.

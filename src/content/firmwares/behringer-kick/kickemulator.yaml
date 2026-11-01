@@ -4,19 +4,19 @@ kind: tool
 summary: Desktop emulator for the Behringer KICK firmware (0700-AAM) and forks of it, which fetches a firmware repository and ref, builds the Kick app and runs it against an emulated front panel.
 description: >-
   Gives a change to the Kick application, the audio engine or the Linux image
-  something to run against without a unit. The firmware needs no emulator code;
-  the emulator is a separate panel program that speaks the control-surface
-  serial protocol over a pseudo-terminal, a TCP socket or a real serial port,
-  taking the protocol headers from the firmware ref under test so forks that
-  extend the protocol still work. Fast mode builds the app for the desktop and
-  runs on macOS on Apple Silicon; a Linux desktop run is untried. A faithful mode
-  that would run the Linux arm64 build in a QEMU VM and a reusable CI workflow
-  are listed as not started. The README says fast mode cannot show anything
-  specific to the unit's Linux build, nor its timing or CPU load. It builds
-  against a fork, KickEm-Tools/0700-AAM, because the upstream main does not build
-  as published; that fork's integration/standalone branch merges the author's
-  open pull requests. Included Starter Kit samples are synthesised by a script
-  and dedicated to the public domain, and no manufacturer logo is drawn.
+  something to run against without a unit. The firmware needs no emulator code
+  beyond an opt-in screen mirror for the embedded display; the emulator is a
+  separate panel program that speaks the control-surface serial protocol over a
+  pseudo-terminal, a TCP socket or a real serial port, taking the protocol
+  headers from the firmware ref under test so forks that extend the protocol
+  still work. Fast mode builds the app for the desktop and runs on macOS on Apple
+  Silicon, with the Kick's screen inside the panel. Faithful mode runs the Linux
+  arm64 build in a QEMU VM, and forks can call a reusable CI workflow. The README
+  says fast mode cannot show anything specific to the unit's Linux build, nor its
+  timing or CPU load, and that faithful mode cannot show latency, CPU headroom,
+  the codec or the GPU driver. It builds KickEm-Tools/0700-AAM's main branch by
+  default. Included Starter Kit samples are synthesised by a script and dedicated
+  to the public domain, and no manufacturer logo is drawn.
 status: active
 authors:
   - name: rbdone
@@ -30,12 +30,12 @@ license_notes: >-
 distribution: source-only
 install_notes: >-
   Needs Xcode command-line tools, CMake 3.22 or later, git and Python 3.8 or
-  later. Clone the repository and run ./kickem run --ref integration/standalone,
-  which fetches and builds the firmware (about two minutes for the first build,
-  plus a one-time JUCE download of about 170 MB) and opens the panel and the
-  Kick screen. Point --firmware and --ref at your own fork to test it. A prebuilt panel is on the release page for driving a serial port
-  without building. Nothing
-  is flashed to a device.
+  later. Clone the repository and run ./kickem run, which fetches and builds
+  KickEm-Tools/0700-AAM main (about two minutes for the first build, plus a
+  one-time JUCE download of about 170 MB) and opens the panel with the Kick screen
+  inside it. Point --firmware and --ref at your own fork to test it. Faithful mode
+  (--mode vm) also needs QEMU and Docker Desktop. A prebuilt panel is on the release
+  page for driving a serial port without building. Nothing is flashed to a device.
 brick_risk: false
 tags: [emulator, sampler, sequencer, open-source]
 versions:

@@ -1,0 +1,47 @@
+device: m-vave-fm-1
+name: FM Stud1o
+summary: >-
+  Felucca fork that makes the FM-1 an eight-track groovebox laid out like a DAW: channel rack, global patterns, piano
+  roll, drum grid, song arranger, mixer and a per-track effect chain.
+description: >-
+  Based on Felucca 1.6.1, whose engines, hardware layer and update loader it keeps. Each of up to eight tracks has its
+  own engine, envelope, LFO, arpeggiator, scale, pattern and FX chain, and patterns are global across tracks. Patterns
+  run up to 256 steps with chance, conditions, ratchets, nudge and parameter locks, and knob moves can be recorded as
+  automation. A SONG screen arranges up to 16 sections, and the mixer has per-track pan, width and reverb send with mute
+  and solo. Effects include sidechain ducking from other tracks, a four-band master EQ and held-key performance
+  effects, and the GROWL engine for FM basses is this fork's own. Part of the rendering can run on the chip's second
+  core. A browser emulator builds from the sources and starts with a demo song. The repository has no tagged releases and no web installer for this fork: the package is built locally and
+  installed with the bundled Python script, and the author notes the public Felucca installer installs upstream Felucca.
+status: active
+authors:
+- name: MPASTEAU
+  url: https://github.com/MPASTEAU
+source: https://github.com/MPASTEAU/FM-Stud1o-FM-1-Firmware
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL-3.0 text and LICENSING.md, inherited from Felucca, states GPL-3.0-only. Five engines and the shared
+  DSP come from the MIT-licensed Felucca-Engines submodule, ported DSP (DaisySP, Rings, msfa) and fonts keep their own
+  licences, and the drum and instrument samples are CC0 1.0. Every package holds three unmodified JieLi AC79 SDK files
+  (Apache-2.0) that are not in the repository.
+distribution: source-only
+install_notes: >-
+  Build with the JieLi toolchain and AC79 SDK (BUILDING.md), then run python3 tools/fm1_install.py build/fm-stud1o.fwsc
+  with the FM-1 on USB. Installing keeps saved projects. To return to stock, give the installer M-VAVE's
+  official V15 file, or use M-VAVE's updater. If an install is cut off and the unit no longer starts, recovery needs
+  FM-1-transporter.
+brick_risk: true
+tags: [sequencer, synth-engine, fx, performance, drums, sampler, emulator, fork]
+image:
+  url: https://raw.githubusercontent.com/MPASTEAU/FM-Stud1o-FM-1-Firmware/main/assets/readme/home.png
+  alt: >-
+    FM Stud1o HOME screen: four knobs for octave, brightness, damp and symp, a step ruler, and eight coloured track
+    lanes numbered 1 to 8 with note blocks and level meters, a playhead through the middle.
+  credit: MPASTEAU
+  source_url: https://github.com/MPASTEAU/FM-Stud1o-FM-1-Firmware#readme
+  first_party: true
+versions:
+- version: main @ cc04511
+  date: 2026-11-01
+  url: https://github.com/MPASTEAU/FM-Stud1o-FM-1-Firmware/commit/cc045119a386a0f652ba0022c7795ffabab5b657
+  notes: No tagged releases; this is the latest commit.

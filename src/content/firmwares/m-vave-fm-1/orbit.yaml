@@ -6,8 +6,8 @@ summary: >-
 description: >-
   Started from a SLOOP v2.3 snapshot rather than a fork, with later SLOOP changes merged in. Releases
   carry only the firmware file, installed with a script from the source; there is no browser installer.
-  From 0.9.0 a MIDI controller mode turns the panel into a MIDI controller, and 0.9.B is a separate package with
-  Bluetooth MIDI that swaps the melodic samples for FM voices. Extracted OP-1 tables and factory data are noted separately in LICENSING.md. From 0.8.0 the source tree also
+  From 0.9.0 a MIDI controller mode turns the panel into a MIDI controller (a tap of OCT- and OCT+ toggles it from 0.10), and 0.9.B and 0.10.B are separate
+  packages with Bluetooth MIDI that swap the melodic samples for FM voices. From 0.10 ORBIT can send MIDI clock. Extracted OP-1 tables and factory data are noted separately in LICENSING.md. From 0.8.0 the source tree also
   builds for the SMK-37 Pro, SMK-37 Elite and MKE-P37; the published binaries are for the FM-1 only.
 status: active
 authors:
@@ -32,6 +32,14 @@ image:
   source_url: https://github.com/dspaudio/orbit
   first_party: true
 versions:
+- version: 0.10.B
+  date: 2026-10-31
+  url: https://github.com/dspaudio/orbit/releases/tag/v0.10.B
+  notes: The Bluetooth MIDI package, orbit-ble.fwsc, with all of 0.10.0 and MIDI clock and START/STOP also sent over Bluetooth. Bluetooth now starts on FM-1s whose radio calibration other firmware had erased, using the stock record, a copy ORBIT kept or built-in recovery values; the release says the recovery values are untested on such a unit.
+- version: 0.10.0
+  date: 2026-10-31
+  url: https://github.com/dspaudio/orbit/releases/tag/v0.10.0
+  notes: Adds MIDI clock out (GLO > SYSTEM > SYNC = OUT, with START and STOP over USB MIDI), silent hit editing on the drum GRID page with black-key recording, and a tap of OCT- and OCT+ together to toggle controller mode. Projects and USER banks are unchanged. The release says development builds were installed on an FM-1 and that clock jitter was not measured.
 - version: 0.9.B
   date: 2026-10-30
   url: https://github.com/dspaudio/orbit/releases/tag/v0.9.B

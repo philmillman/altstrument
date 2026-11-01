@@ -1,0 +1,40 @@
+device: making-sound-machines-stolperbeats
+name: Stolperbeats Pattern Creator
+kind: tool
+summary: Browser tool that builds Stolperbeats pattern banks from MIDI files or from the Mutable Instruments Grids pattern table and saves them as the text files the module reads from its SD card.
+description: >-
+  Rights warning: the source tree holds src/core/stock-banks/bank000.ts, which appears to be a copy of
+  the module's factory pattern bank 000 written out as code. The app does not import it, but the file
+  is Making Sound Machines' content and the repository has no statement that it may be redistributed.
+
+  The page has two modes. In MIDI mode up to 24 MIDI files become the 24 patterns of one bank, with an
+  editable table that maps MIDI note numbers to the six tracks, and the result is saved as
+  PatternBank000.txt. In Grids mode a bank set is generated from the Grids pattern table in two ways: a
+  path drawn through the X/Y plane across banks with density varying between patterns, or X across banks
+  and Y across patterns with a fixed density. The generated banks are saved as a ZIP of numbered
+  PatternBank files filling the top of the 64 slots. It is a Next.js app hosted on Vercel, with no
+  README, and it does not change the module's firmware.
+status: dormant
+authors:
+  - name: 21echoes
+    url: https://github.com/21echoes
+source: https://github.com/21echoes/stolperbeats-pattern-creator
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL version 3 text with no "or later" statement. The Grids pattern table comes
+  from Mutable Instruments' Grids (GPL-3.0). The factory bank copy mentioned above is not covered by
+  the repository's licence.
+homepage: https://stolperbeats-pattern-creator.vercel.app
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page, load MIDI files or choose a Grids approach, and save the result. Power the module
+  off, copy the file or files to the SD card and activate the bank in MachineConfig.txt. The tool writes
+  pattern files only and does not flash anything.
+brick_risk: false
+tags: [editor, web, sequencer, drums, generative, midi]
+versions:
+  - version: main @ e639bc1
+    date: 2025-08-08
+    url: https://github.com/21echoes/stolperbeats-pattern-creator/commit/e639bc1c9ae2243d6cfd31790186562d680855fb
+    notes: No tagged releases; this is the latest commit. It only upgrades Node, and the app itself dates from 2023.

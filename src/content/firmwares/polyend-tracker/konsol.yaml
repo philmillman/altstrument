@@ -1,0 +1,58 @@
+device: polyend-tracker
+name: KONSOL
+summary: >-
+  Clip and scene workstation with eight tracks and sixteen scenes, sixteen sound engines including Plaits and a 303, ten
+  note players, a kit builder, time-stretching and streaming of long WAVs, mixed on a console with sends and a compressor.
+description: >-
+  The pads are the clip grid and the screen is laid out like a mixing desk; there is no tracker pattern. Each track has one
+  of sixteen engines: Mutable Instruments Plaits with all 24 models, a TB303 built on Open303, neuro-bass models, QUANTA
+  microsound particles, a makam synth, an Ikeda-style engine, OpenTracker's ACD, VAP, FAT and WTFM synths, drum voices
+  from the author's FLOATER plug-in, analog-style and percussion kits, a 16-pad kit, and stereo sampler and grain players. A
+  clip's notes are written by hand, on a piano roll or live, or by one of ten players: notes, Euclid, Usul, Pinball, Markov
+  and generators for acid lines, call and response, BBCut cuts, turnarounds, genotype variations and a station mode. Clips
+  have trig conditions, per-clip quantise and 16-level undo. Samples can be warped to the tempo live, stretched offline by
+  WSOLA, phase vocoder or repitch, and sliced by onset detection, and the kit builder turns a break's slices into 16 pads
+  sorted into kick, snare and hat. WAVs of 30 seconds or more play straight from the card instead of memory. The mixer has
+  Hall, Shimmer and Gated reverbs, Tape and Lo-fi delays, a master compressor and four stem groups. The firmware uses the
+  shared LABKIT navigation of the lab: parameter pads, a map of every page, macros, modulation routes and MIDI learn. The
+  repository README calls the whole set v0.1: every image passed the author's simulator and QEMU checks, and none has been
+  tested on a real Tracker.
+status: active
+authors:
+  - name: semierendonmez-commits
+    url: https://github.com/semierendonmez-commits
+source: https://github.com/semierendonmez-commits/polyend-tracker-lab/tree/main/firmwares/konsol
+source_status: open
+license: Apache-2.0
+license_notes: >-
+  The folder's LICENSE is the Apache-2.0 text. Its THIRD_PARTY.md copies Plaits and stmlib under MIT, uses Open303 and a
+  call-and-response generator under MIT, and calls the ports of the author's own plug-ins (FLOATER, NEUROSTACK, QUANTA,
+  schwung-303 mappings) "GPL-3 approved" without listing any third-party GPL source. The BBCut player follows Nick Collins'
+  BBCut procedures through the bencodec/BBenCut port, rewritten for the Tracker; MAKAM's THIRD_PARTY.md calls BBCut
+  GPL and the BBenCut repository has no licence file, so the terms of that part are unclear. OpenTracker had no LICENSE file when
+  the work began; upstream added Apache-2.0 on 2026-10-28, which the README's credits do not yet reflect.
+distribution: download
+requires_stock: Polyend stock firmware or OpenTracker; keep a stock image in /Firmware
+install_notes: >-
+  Copy PolyendTrackerKONSOL.ptf into /Firmware on the SD card, keeping its 24-character name, and install it from Config,
+  Firmware update on stock or OpenTracker. Every lab firmware can list and install other .ptf files from its own Config,
+  Firmware page, and OpenTracker's ot_restore.txt escape hatch works too. Keep only one lab image plus stock in /Firmware,
+  since the rear reset button installs a random .ptf from the folder. The README says the set has not been tested on a real
+  unit.
+brick_risk: true
+tags: [clip, sequencer, synth-engine, sampler, generative, time-stretch, slicer, fx, fork, ui]
+image:
+  url: https://raw.githubusercontent.com/semierendonmez-commits/polyend-tracker-lab/main/firmwares/konsol/docs/screenshots/session.png
+  alt: "KONSOL Session page in the simulator: eight track columns named by engine over a grid of clips such as notes, Acid, BBCut, Markov and Euclid, and a scene list 1 to 8 with scene 4 lit"
+  credit: semierendonmez-commits
+  source_url: https://github.com/semierendonmez-commits/polyend-tracker-lab
+  first_party: true
+versions:
+  - version: main @ f142239
+    date: 2026-10-30
+    url: https://github.com/semierendonmez-commits/polyend-tracker-lab/commit/f14223960bbb7b9580534663a5b7c6110ee6ff7b
+    notes: Latest commit. It touched this folder, rebuilt the image on upstream OpenTracker v2 1c8a529 and lets KONSOL stream long samples from the card.
+  - version: non-trackerfirmwares1.0
+    date: 2026-10-26
+    url: https://github.com/semierendonmez-commits/polyend-tracker-lab/releases/tag/non-trackerfirmwares1.0
+    notes: Release with images for six of the eight lab firmwares and no release notes. The attached image is smaller than the one now in release/, so it is an earlier build.

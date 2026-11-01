@@ -1,0 +1,55 @@
+device: polyend-tracker
+name: BULUT
+summary: >-
+  Granular workstation with four channels that each turn a live input, the radio, the firmware's own output, a card WAV or
+  a generator into grains through one of four engines: Granular, Quanta, Beads or Tape.
+description: >-
+  There is no pattern grid. Each channel reads its source through an adjustable region and plays it as grains on the 48
+  pads: the columns choose the position inside the region and the rows choose the density. The engines are a Clouds-style
+  granulator, a Quanta engine of microsound particles (glissons, pulsars and others), a Beads-style engine with its four
+  recording media, and a Tape engine with a moving playhead and separate speed and pitch. Each channel has its own drive,
+  filter, one of seven effect modes (Texture, Shifter, Flanger, Panner, Crusher, Slicer, Freezer), an LFO and delay and
+  reverb sends. Pad and encoder moves can be recorded as looping gestures, a moment can be frozen into a spectral loop and
+  kept in a library, the output can be resampled into a channel, and eight scenes morph along a timeline. A browser with
+  preview loads WAVs from the card, and a CPU guard bypasses effects before a channel overloads. The firmware uses the
+  shared LABKIT navigation of the lab: parameter pads on I.Param, a map of every page, macros, modulation routes and MIDI
+  learn. A recorder writes the master and optional stems to the card. The repository README calls the whole set v0.1: every
+  image passed the author's simulator and QEMU checks, and none has been tested on a real Tracker.
+status: active
+authors:
+  - name: semierendonmez-commits
+    url: https://github.com/semierendonmez-commits
+source: https://github.com/semierendonmez-commits/polyend-tracker-lab/tree/main/firmwares/bulut
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The folder's LICENSE is the Apache-2.0 text, but its THIRD_PARTY.md says code derived from GPL-3.0 sources (forsitan
+  modulare's artifex and rete) makes the BULUT image a GPL-3.0 combined work, distributed under GPL v3 with the MIT notices
+  kept. It gives no "or later" wording, hence GPL-3.0-only. Mutable Instruments Clouds, Beads and stmlib files are copied
+  unchanged under MIT, and the OpenTracker base is Apache-2.0. OpenTracker had no LICENSE file when the work began; upstream
+  added Apache-2.0 on 2026-10-28, which the README's credits do not yet reflect.
+distribution: download
+requires_stock: Polyend stock firmware or OpenTracker; keep a stock image in /Firmware
+install_notes: >-
+  Copy PolyendTrackerBULUTG.ptf into /Firmware on the SD card, keeping its 24-character name, and install it from Config,
+  Firmware update on stock or OpenTracker. Every lab firmware can list and install other .ptf files from its own Config,
+  Firmware page, and OpenTracker's ot_restore.txt escape hatch works too. Keep only one lab image plus stock in /Firmware,
+  since the rear reset button installs a random .ptf from the folder. The README says the set has not been tested on a real
+  unit.
+brick_risk: true
+tags: [granular, synth-engine, sampler, fx, performance, fork, ui]
+image:
+  url: https://raw.githubusercontent.com/semierendonmez-commits/polyend-tracker-lab/main/firmwares/bulut/docs/screenshots/clouds.png
+  alt: "BULUT Clouds page in the simulator: four channel strips named Granular, Beads, Quanta and Tape, a send FX row, page tabs and the pad grid"
+  credit: semierendonmez-commits
+  source_url: https://github.com/semierendonmez-commits/polyend-tracker-lab
+  first_party: true
+versions:
+  - version: main @ f142239
+    date: 2026-10-30
+    url: https://github.com/semierendonmez-commits/polyend-tracker-lab/commit/f14223960bbb7b9580534663a5b7c6110ee6ff7b
+    notes: Latest commit. It touched this folder and rebuilt the image on upstream OpenTracker v2 1c8a529.
+  - version: non-trackerfirmwares1.0
+    date: 2026-10-26
+    url: https://github.com/semierendonmez-commits/polyend-tracker-lab/releases/tag/non-trackerfirmwares1.0
+    notes: Release with images for six of the eight lab firmwares and no release notes. The attached image is smaller than the one now in release/, so it is an earlier build.

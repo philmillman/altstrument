@@ -4,14 +4,16 @@ summary: >-
   Ambient sequencer firmware with 16 scenes of four layered voices around a chosen major key, a crystal-orbit home
   screen, a four-track mixer and a global effects chain of drive, tone, granular texture, reverb and tape echo.
 description: >-
-  Built on M-VAVE's FM1 Open V14 SDK. Each scene stacks four voices (typically an arp, a lead, a bass and a swell)
+  Built on fm1-base and felucca-bsp since 2.0; 1.x was built on M-VAVE's FM1 Open V14 SDK and stays on the repository's
+  v1 branch. Each scene stacks four voices (typically an arp, a lead, a bass and a swell)
   in a major key set on HOME, where K2 is a single SPACE control that adds grains, shimmer, reverb and echo. The keys
   can play the focused voice live, REC writes what is played into the sequence, and EDIT has five pages per voice
   (sound, tone, oscillator, voice and mix with pan and sends). The global chain runs DIRT, TONE, TEXTURE, then reverb
-  and delay, and the GLO page offers four colour themes. Piano, marimba and glockenspiel voices use a sample bank of
-  CC0 recordings that the updater writes with the firmware and asks before replacing existing samples. It keeps
-  M-VAVE's update loader, so the unit can go back to V15 or move to another firmware. Sixteen user slots hold
-  saved scenes. The repository also contains Chinese-language documentation and the V14 README.
+  and delay, and the GLO page offers four colour themes. Piano, marimba and glockenspiel voices use CC0 recordings
+  that are built into the firmware from 2.0 (1.x wrote a separate sample bank with the updater). Sixteen user slots hold
+  saved scenes, which keep their scene, sounds, FX and SPACE when renamed. The installer page can return the unit to
+  V15 from a file you supply, or you can install another firmware. Projects saved in 1.x do not carry over to 2.0, and
+  Bluetooth MIDI is not in 2.0.
 status: active
 authors:
 - name: Fat Cat Studios
@@ -21,18 +23,20 @@ source_status: open
 license: GPL-3.0-only
 license_notes: >-
   LICENSE.md: the application sources are GPL-3.0-only with M-VAVE's additional permission to link the FM1 binary
-  SDK, inherited from FM1 Open. The binary engine library sdk/lib/libfm1_engine.a is under M-VAVE's separate terms
-  for FM-1 devices (THIRD_PARTY.md). The repository contains M-VAVE's licensed V15 recovery image
-  sdk/firmware/FM-1_015.fwsc, Apache-2.0, git blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd, the same file as in
-  m-vave/fm1_open. The sample bank is CC0 material from VSCO-2 Community Edition.
+  SDK, inherited from FM1 Open; the README says the open FM1 engine VESPER plays through is under the same terms and
+  that fm1-base and felucca-bsp are MPL-2.0. The binary engine library sdk/lib/libfm1_engine.a is under M-VAVE's
+  separate terms for FM-1 devices (THIRD_PARTY.md). Up to 1.1.0, on the v1 branch, the repository contained M-VAVE's
+  licensed V15 recovery image sdk/firmware/FM-1_015.fwsc, Apache-2.0, git blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd,
+  the same file as in m-vave/fm1_open; the 2.0.1 tree no longer has an sdk directory, though THIRD_PARTY.md still lists
+  those parts. The sample bank is CC0 material from VSCO-2 Community Edition.
 distribution: browser-installer
 requires_stock: V15 or another open firmware
 install_notes: >-
-  Open FM1-VESPER-1.1.0-Updater.html from the release in Chrome or Edge with the FM-1 on USB; the same page installs
-  the sample bank and offers Restore original V15. A unit running a Felucca-family firmware should be returned to V15
-  with that firmware's installer first. Back up projects first, because project formats differ between firmwares.
-  Building uses a safety gate that refuses changes to start-up, display transfer, audio output and input scanning
-  code unless the build is marked as a test build. Installing is at your own risk.
+  Install from the FM-1 Firmware Hub, or open FM1-VESPER-2.0.1-Installer.html from the release in Chrome or Edge with
+  the FM-1 on USB. The page installs over M-VAVE's V15 or another open firmware, and its Back to the stock firmware
+  option needs M-VAVE's own FM-1.fwsc, which you supply. Saved presets stay when updating from 2.0.0, but projects from
+  1.x do not carry over, so back them up first. Holding REC while switching on enters the chip's update mode if the
+  unit will not start. Installing is at your own risk.
 brick_risk: true
 tags: [ambient, sequencer, synth-engine, fx, granular, reverb, delay, sampler, performance, fork]
 image:
@@ -42,6 +46,14 @@ image:
   source_url: https://github.com/fatcatstudios-hub/vesper-fm1
   first_party: true
 versions:
+- version: 2.0.1
+  date: 2026-10-31
+  url: https://github.com/fatcatstudios-hub/vesper-fm1/releases/tag/vesper-2.0.1
+  notes: Makes notes from a MIDI keyboard (USB or the TRS jack) sound again on the focused layer's voice; 2.0.0 left them silent. VESPER's ID now matches its Firmware Hub listing. Saved presets stay when updating from 2.0.0.
+- version: 2.0.0
+  date: 2026-10-30
+  url: https://github.com/fatcatstudios-hub/vesper-fm1/releases/tag/vesper-2.0.0
+  notes: Rebuilt on fm1-base and felucca-bsp instead of M-VAVE's FM1 Open SDK, with the same scenes, sounds and screens. The piano, marimba and glockenspiel samples are built in, user presets are stepped by holding SEL and turning PRESETS, and under heavy load the oldest voices are released first. Bluetooth MIDI is not in yet and projects saved in 1.x do not carry over.
 - version: 1.1.0
   date: 2026-10-30
   url: https://github.com/fatcatstudios-hub/vesper-fm1/releases/tag/vesper-1.1.0

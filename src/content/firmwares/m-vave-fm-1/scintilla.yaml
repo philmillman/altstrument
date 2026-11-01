@@ -9,8 +9,10 @@ description: >-
   modulation per voice. Rendered output is compared sample by sample against the browser original, and the same
   code runs on a computer and in the author's FM-1 emulator. The firmware offers single, split and double layers,
   poly, mono and unison modes, a chorus, an algorithmic reverb, pages for each part of the voice and a joystick
-  page. It takes notes, bend, a few CCs and program changes over USB and the DIN jack. The delay and saving
-  edited sounds are not in yet, and the author says it was installed and played on a real FM-1 on 2026-10-23.
+  page. It takes notes, bend, a few CCs and program changes over USB and the DIN jack, and from 0.2.0 velocity and
+  aftertouch from the FM-1's own keys, and the 40 PRESETS carry the values decoded from the Synthex's EPROMs. The delay and
+  saving edited sounds are not in yet (the README says the unit keeps only its settings), and the author says it was
+  installed and played on a real FM-1 on 2026-10-23 and again for 0.2.0 on 2026-11-01.
 status: active
 authors:
 - name: Joakim Eriksson (joakimeriksson)
@@ -39,6 +41,10 @@ image:
   source_url: https://github.com/joakimeriksson/scintilla-fm1
   first_party: true
 versions:
+- version: 0.2.0
+  date: 2026-11-01
+  url: https://github.com/joakimeriksson/scintilla-fm1/releases/tag/v0.2.0
+  notes: The 40 PRESETS now use the values decoded from the Synthex's EPROMs, so many sounds change. Adds a chorus built as two bucket-brigade lines, band-limited hard sync, velocity and aftertouch from the FM-1's keys on a SETTINGS page (off until turned on), and cheaper fast filter attacks; MIDI CC 7 sets the volume. Identity FM-1_96300200.
 - version: 0.1.1
   date: 2026-10-23
   url: https://github.com/joakimeriksson/scintilla-fm1/releases/tag/v0.1.1

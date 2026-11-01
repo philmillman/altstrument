@@ -1,0 +1,48 @@
+device: akai-mpc-live
+name: Mr Drums for MPC
+summary: Native VST2 16-pad drum sampler for MPC OS, ported from a Schwung module, that loads kits from folders of samples onto pads 36 to 51 and has its own touchscreen skin.
+description: >-
+  Each kit is a folder of up to 16 WAV or AIFF files that go to MIDI notes 36 to 51, so the MPC pads play it. Every pad
+  has volume, pan, tune, start, attack, decay, choke group and gate or one-shot mode, with random pan, volume and
+  decay and a play chance for humanised hits, and the kit has master volume, polyphony, a velocity curve and humanise.
+  Kits are VST programs in MPC's preset menu, and folders added to the plugin's kits directory show up there. The
+  engine is the MrDrums module from Ableton Move's Schwung host by move-anything contributors, which the port patches
+  to read kit folders, fix parameter ranges and avoid a crash when a playing sample is replaced. The only bundled kit
+  is a starter set synthesised by a script. The wrapper and skin tools come from sd88me's mpc-vst-plugins. Checked on
+  an MPC Live II by its author.
+status: active
+authors:
+  - name: Steve A
+    url: https://github.com/saustin2010
+source: https://github.com/saustin2010/mpc-vst-mrdrums
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT license, with copyright given to Handcrafted Media; the README says the engine is MIT
+  as declared by the Schwung module. The author name used here comes from the same account's Incipience license.
+distribution: download
+requires_stock: MPC OS 3.x
+install_notes: >-
+  Needs root SSH access to the device. Download the release zip, copy it to the MPC, unzip it and run install.sh as
+  root; it stops MPC, backs up MPC.settings, installs the plugin folder and restarts MPC. Add kit folders of WAV
+  files under mrdrums/kits next to the plugin; they are kept on update. Installing plugins this way is unofficial.
+brick_risk: false
+tags: [drums, sampler, platform, ui]
+image:
+  url: https://raw.githubusercontent.com/saustin2010/mpc-vst-mrdrums/main/screenshots/page_0.png
+  alt: Mr Drums KIT page, four dark panels with pink accents, with a kit selector reading 01_Starter, master volume, polyphony, velocity curve and humanize, an auto select button and a rand loop knob
+  credit: Steve A
+  source_url: https://github.com/saustin2010/mpc-vst-mrdrums
+  first_party: true
+versions:
+  - version: v1.1.1
+    date: 2026-10-23
+    url: https://github.com/saustin2010/mpc-vst-mrdrums/releases/tag/v1.1.1
+    notes: Rebuilt on the wrapper fix that lets Q-Links move parameters on the track edit automation screen again.
+  - version: v1.1.0
+    date: 2026-10-18
+    url: https://github.com/saustin2010/mpc-vst-mrdrums/releases/tag/v1.1.0
+  - version: v1.0.0
+    date: 2026-10-08
+    url: https://github.com/saustin2010/mpc-vst-mrdrums/releases/tag/v1.0.0
+    notes: First release.

@@ -8,7 +8,9 @@ description: >-
   XOR logic, a Turing-machine register, humaniser, Bernoulli routing, a trance gate and a
   preset manager. Output calibration at 0 V, +5 V and -5 V is stored per board in EEPROM. The
   sources credit an acid-pattern generator by drakh (CC0) as inspiration for one mode. The
-  README says the 2.0.2 sound changes still need listening and bench checks.
+  README says the 2.0.2 sound changes still need listening and bench checks. A separate
+  experimental 2.1.0 sketch in the same repository replaces the Mutant Drums mode with an Acid Voice mode and is marked
+  untested on hardware.
 status: active
 authors:
   - name: E103-designs
@@ -23,7 +25,7 @@ distribution: source-only
 install_notes: >-
   Open firmware/ALTERIA_ALLROUNDER/ALTERIA_ALLROUNDER.ino in the Arduino IDE and build for
   Arduino Nano with an ATmega328P at 16 MHz, choosing the old bootloader only if the board needs
-  it. Upload one of the two ALTERIA sketches at a time. Calibrate the outputs with a multimeter
+  it. Upload one of the three ALTERIA sketches at a time. Calibrate the outputs with a multimeter
   before use, and disconnect external signals from the I/O jack before entering modes 3 or 10.
 brick_risk: false
 tags: [official, generative, sequencer, drums, envelope, arduino, eurorack]
@@ -34,7 +36,7 @@ image:
   source_url: https://github.com/E103-designs/ALTERIA#readme
   first_party: true
 versions:
-  - version: main @ ce71f58
-    date: 2026-10-28
-    url: https://github.com/E103-designs/ALTERIA/commit/ce71f5802c20b8b3bfc3fcfd2b0d5b0ec3799189
-    notes: No tagged releases; this is the latest commit. The README lists ALLROUNDER 2.0.2.
+  - version: main @ 0276815
+    date: 2026-11-01
+    url: https://github.com/E103-designs/ALTERIA/commit/0276815e05c3fc8c433595d59265a2f650f48441
+    notes: No tagged releases; this is the latest commit. The README lists ALLROUNDER 2.0.2 and an experimental 2.1.0 variant that is untested on hardware.

@@ -1,0 +1,47 @@
+device: m-vave-fm-1
+name: FM1-TRAX
+summary: >-
+  Sega Mega Drive music tracker: emulates the YM2612 FM chip and the SN76489 PSG, with a Deflemask and Furnace style
+  pattern editor on the FM-1's keys and knobs, a browser emulator and installer, and a VGM-capable web editor.
+description: >-
+  The project was called FM1-DRIVE until October 2026. It emulates six four-operator FM channels with the eight
+  algorithms, SSG-EG, the global LFO, FM3 extended mode and the DAC on FM6, plus three PSG tone channels and noise.
+  The tracker has up to 256 patterns per channel, up to 256 order positions, Genesis effect columns, 128 FM presets,
+  32 PSG presets, a 48-sample drum kit and 256 song slots in about 258 KB of flash. The demo song is "Sunset Beach
+  Galaxy" by Tobikomi, taken from the GPL-3.0 YM2017 music cart. The project site runs the firmware in the browser and
+  installs it over Web MIDI, and its editor imports Mega Drive VGM files, exports VGM and WAV, and reads and writes the
+  songs on a connected FM-1. The platform layer comes from the author's FM1-GM, itself from Felucca, X0X and FoMni;
+  the chip emulation, tracker, presets, song store and screens are new. The firmware cannot read other firmwares'
+  data, and its song store may overwrite data they left in flash.
+status: active
+authors:
+- name: jartificer
+  url: https://github.com/jartificer
+source: https://github.com/jartificer/fm1-trax
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL-3.0 text and the README states GPL-3.0-only. The Terminus font is SIL OFL 1.1. The YM2612 reference
+  Nuked-OPN2 (LGPL-2.1) is downloaded for the tests only and is not part of the firmware.
+homepage: https://jartificer.github.io/fm1-trax/
+distribution: browser-installer
+install_notes: >-
+  Open the project site in Chrome, Edge or Opera, connect the FM-1 and press Install, or run tools/fm1_install.py on
+  fm1trax.fwsc from the release. It installs from stock or from Felucca-based firmware, and M-VAVE's stock package
+  brings the unit back. After two failed starts the firmware comes up in a safe mode with USB on, and after four it
+  enters the chip's own update mode, from which tools/fm1_rescue.py writes the stock firmware back. OCT- and OCT+ held
+  for five seconds enters update mode. The author reports testing on a real FM-1. Back up other firmwares' data first.
+brick_risk: true
+tags: [tracker, chiptune, sequencer, synth-engine, editor, emulator, web, fork]
+image:
+  url: https://raw.githubusercontent.com/jartificer/fm1-trax/main/docs/fm1trax-collage.png
+  alt: >-
+    Collage of FM1-TRAX screens: the pattern grid, the starfield intro with the Mega Drive Sound Tracker logo, the stage view with channel scopes, and the FM operator editor at algorithm 4.
+  credit: jartificer
+  source_url: https://github.com/jartificer/fm1-trax#readme
+  first_party: true
+versions:
+- version: 0.9.0
+  date: 2026-11-01
+  url: https://github.com/jartificer/fm1-trax/releases/tag/v0.9.0
+  notes: First release.

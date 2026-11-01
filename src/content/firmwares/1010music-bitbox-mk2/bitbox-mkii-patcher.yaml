@@ -1,0 +1,52 @@
+device: 1010music-bitbox-mk2
+name: Bitbox MkII patcher (2.3.4+c)
+summary: Browser patcher that turns your own official 2.3.4 image into 2.3.4+c, adding vertical waveform zoom, a screen saver with MIDI or CV wake, pitch-preserving sample speed and default-reset on dial double-tap.
+description: >-
+  Licence note: the repository has no licence file or licence statement, only an
+  "as is" disclaimer from the author, so the terms for reuse are not stated.
+
+  The page checks your 2.3.4 image by SHA-256, applies a binary delta held in the
+  repository, checks the result again and offers it as BITBOXMK2.bin to copy to
+  the card; the module identifies itself as 2.3.4+c. The changes are vertical
+  waveform zoom from 25 to 3200 percent, an optional screen saver with a MIDI or
+  CV trigger wake, Sample Speed from 50 to 200 percent that keeps pitch and takes
+  LFO or CV modulation, and double-tap dial defaults that keep modulation
+  settings. Several native Pitch voices or one exclusive Speed voice can play at
+  a time. The repository holds the static site, the delta and a reference PDF,
+  not 1010music's firmware or the patched firmware; the source of the changes is
+  not published. The page says it is an independent customization and not an
+  official release.
+status: active
+authors:
+  - name: vwal
+    url: https://github.com/vwal
+source: https://github.com/vwal/bitbox-mkii-patcher
+source_status: patcher-only
+license: unspecified
+license_notes: >-
+  No LICENSE file. The README's closing note says the modification is shared "as
+  is" without warranty and free of charge, which disclaims liability but grants
+  no licence.
+homepage: https://vwal.github.io/bitbox-mkii-patcher/
+distribution: patch-your-own
+requires_stock: 2.3.4
+install_notes: >-
+  Back up the microSD card, download 1010music's 2.3.4 package (BITBOXMK2234.zip)
+  yourself and extract it, then select the firmware on the patcher page, which
+  runs in the browser. Save the result as BITBOXMK2.bin with no duplicate-download
+  suffix, copy it to the card root, power off, insert the card, hold INFO while
+  powering on and release it when the upgrade message appears. The update takes
+  about 30 seconds and the module reboots by itself. To go back, put the original
+  BITBOXMK2.bin from the official 2.3.4 archive on the card and repeat the steps.
+tags: [sampler, ui, performance, time-stretch, midi, patcher]
+video:
+  url: https://youtu.be/OjgC4UoyOIA
+  title: Bitbox Mk2 Custom Firmware Overview
+  credit: Ville Walveranta
+  first_party: true
+  found_via: https://github.com/vwal/bitbox-mkii-patcher#readme
+versions:
+  - version: 2.3.4+c
+    date: 2026-10-29
+    url: https://github.com/vwal/bitbox-mkii-patcher/commit/5178362
+    notes: First publish of the patcher. Date is the commit date.

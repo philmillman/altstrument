@@ -1,4 +1,5 @@
 device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
 name: fm1-dock
 summary: >-
   One firmware for the FM-1 that is installed once and then hosts synths as modules in flash, switched from a
@@ -12,9 +13,12 @@ description: >-
   USB and the updater stay available. Holding OCT+ at power-on starts the sine only, and holding OCT- starts the
   USB rescue. The 0.6 package ships CS-1 (twochannels), Scintilla (the author's Elka Synthex port) and OberVave
   (zvenson), plus Dinghy's four-voice sine as the built-in module. FM-1 SID, the author's Commodore 64 SID
-  firmware catalogued separately, and two modules by Charles Vestal, AMB-1 (a generative ambient machine) and
-  FoMni (an Omnichord-style chord harp), are not in the package and are added to the dock from the project's page
-  or the command line. A module that accepts data can be sent a file over USB that is never written to flash, and
+  firmware catalogued separately, two modules by Charles Vestal, AMB-1 (a generative ambient machine) and
+  FoMni (an Omnichord-style chord harp), and from 0.7 five more (PatttF's FM-106, Charles Vestal's MONK-1, FiMba-1 by
+  Adam Sowers, npi3pak's GATOR and sbegueria's DUB-1) are not in the package and are added to the dock from the
+  project's page or the command line. 0.7 also adds Bluetooth MIDI that holds a connection, the second core running
+  with Bluetooth on, a master EQ and a module catalog on the project page, and ships separate packages for the
+  SMK-37 Pro, SMK-37 Elite and MKE-P37. A module that accepts data can be sent a file over USB that is never written to flash, and
   a solo build can package one module of your own on fm1-dock with its USB, installer and rescue. Since 0.6 the
   picker's last line turns BLE-MIDI on (off by default), and OCT+ at power-on is a safe start that runs the sine
   only with the radio off. Your own modules are built with the repository's Python tools and deployed from the
@@ -44,7 +48,8 @@ distribution: download
 install_notes: >-
   Download the fm1-dock .fwsc package from the releases page and install it over USB with the repository's
   tools/fm1_install.py (needs Python with mido and python-rtmidi); it asks before it writes and then restarts
-  into fm1-dock. The README says the package also answers the FM-1 Firmware Hub's updater, which is the way
+  into fm1-dock. The SMK-37 models have their own packages, described in the repository's SMK37.md; an FM-1 package is
+  refused on an SMK-37 and the other way round. The README says the package also answers the FM-1 Firmware Hub's updater, which is the way
   back to any other firmware or to the official one, and that installing a newer fm1-dock keeps deployed
   modules, settings and presets. The author states that installing firmware is at your own risk. OCT- held at
   power-on starts the USB rescue. Building needs Linux x86-64 (or Docker or WSL), the JieLi toolchain and files
@@ -58,6 +63,17 @@ image:
   source_url: https://github.com/joakimeriksson/fm1-dock
   first_party: true
 versions:
+- version: 0.7.1
+  date: 2026-10-31
+  url: https://github.com/joakimeriksson/fm1-dock/releases/tag/v0.7.1
+  notes: Scintilla's synth sound is brought closer to the Elka Synthex, with band-limited hard sync, a remade resonance curve and a regenerated factory bank.
+- version: '0.7'
+  date: 2026-10-31
+  url: https://github.com/joakimeriksson/fm1-dock/releases/tag/v0.7
+  notes: >-
+    Bluetooth MIDI that holds a connection with both CPU cores running, five added modules, a master EQ and MIDI options
+    for every module, and a catalog and installer page. The first release built and signed on GitHub from source, with
+    packages for the SMK-37 models.
 - version: '0.6'
   date: 2026-10-25
   url: https://github.com/joakimeriksson/fm1-dock/releases/tag/v0.6

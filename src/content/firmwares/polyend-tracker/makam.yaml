@@ -1,0 +1,56 @@
+device: polyend-tracker
+name: MAKAM
+summary: >-
+  Turkish makam at jungle tempo: a break, built in or from the card, is cut on the strokes of an usul rhythm cycle, with
+  bass and lead voices tuned to 24-tone or 53-TET makam scales and a seyir melody generator.
+description: >-
+  The screen draws the usul as a clock dial and the makam as a ring of pitches on the 53-comma circle. The firmware has 25
+  makams and 13 usuls; dum strokes cut kick slices, tek strokes cut snare slices and ke strokes cut ghost notes. Breaks are
+  one of three synthesised built-in ones or a card WAV of up to 12 seconds, which is sliced at its onsets. Each section
+  has one of four cut modes (Usul, BBCut, Warp, DNA), and phrase-end fills run at 4, 8 and 16 cycles. The bass voices are
+  Reese, Sub, Growl, Talk, FM and Hoover over a clean sine sub, and the leads are Ney, Kanun, Saz and Zurna at microtonal
+  pitch, in the Arel-Ezgi-Uzdilek 24-tone tuning by default or 53-TET, with an optional practice intonation. The seyir
+  generator writes phrases that start where the makam starts, rest on the dominant and cadence to the tonic, live or into an
+  editable phrase, and has a call and response form. Sends are a delay (Clean, Tape, Lo-fi, Ping-pong) and a reverb (Plate,
+  Hall, Gated), eight scenes morph over a set time, and MIDI out carries pitch bend. The firmware uses the shared LABKIT
+  navigation of the lab: parameter pads, a map of every page, macros, modulation routes and MIDI learn, with four macros
+  ready on first boot. The repository README calls the whole set v0.1: every image passed the author's simulator and QEMU
+  checks, and none has been tested on a real Tracker.
+status: active
+authors:
+  - name: semierendonmez-commits
+    url: https://github.com/semierendonmez-commits
+source: https://github.com/semierendonmez-commits/polyend-tracker-lab/tree/main/firmwares/makam
+source_status: open
+license: Apache-2.0
+license_notes: >-
+  The folder's LICENSE is the Apache-2.0 text. Its THIRD_PARTY.md says the break cutting, fills and bass models were
+  rewritten from the author's own plug-ins and OpenTracker semi fork (called "GPL-3.0 approved") with no code copied
+  verbatim, that the BBCut procedures follow Nick Collins' GPL SuperCollider library via the bencodec/BBenCut port, and
+  that the AGPL and commercial JUCE parts of the plug-ins were not used. That file still says upstream OpenTracker has no
+  licence file; upstream added Apache-2.0 on 2026-10-28.
+distribution: download
+requires_stock: Polyend stock firmware or OpenTracker; keep a stock image in /Firmware
+install_notes: >-
+  Copy PolyendTrackerMAKAMJ.ptf into /Firmware on the SD card, keeping its 24-character name, and install it from Config,
+  Firmware update on stock or OpenTracker. Every lab firmware can list and install other .ptf files from its own Config,
+  Firmware page, and OpenTracker's ot_restore.txt escape hatch works too. Keep only one lab image plus stock in /Firmware,
+  since the rear reset button installs a random .ptf from the folder. The README says the set has not been tested on a real
+  unit.
+brick_risk: true
+tags: [microtonal, breakbeat, sequencer, generative, synth-engine, sampler, fx, fork, ui]
+image:
+  url: https://raw.githubusercontent.com/semierendonmez-commits/polyend-tracker-lab/main/firmwares/makam/docs/screenshots/usul-dial.png
+  alt: "MAKAM Usul page in the simulator: a clock dial for the Aksak 9/8 cycle with red, yellow and teal stroke dots and a sweeping hand, beside a list showing Usul, Tempo 172 and Break kit Kirik Break"
+  credit: semierendonmez-commits
+  source_url: https://github.com/semierendonmez-commits/polyend-tracker-lab
+  first_party: true
+versions:
+  - version: main @ f142239
+    date: 2026-10-30
+    url: https://github.com/semierendonmez-commits/polyend-tracker-lab/commit/f14223960bbb7b9580534663a5b7c6110ee6ff7b
+    notes: Latest commit. It touched this folder and rebuilt the image on upstream OpenTracker v2 1c8a529.
+  - version: non-trackerfirmwares1.0
+    date: 2026-10-26
+    url: https://github.com/semierendonmez-commits/polyend-tracker-lab/releases/tag/non-trackerfirmwares1.0
+    notes: Release with images for six of the eight lab firmwares and no release notes. The attached image is smaller than the one now in release/, so it is an earlier build.

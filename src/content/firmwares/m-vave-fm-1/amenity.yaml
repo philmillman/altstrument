@@ -1,0 +1,50 @@
+device: m-vave-fm-1
+name: Amenity
+summary: >-
+  Live jungle firmware built on FM1 Open: the Amen break sliced into sixteen steps, with rolls, builds, echo and
+  stretch effects on the white keys, a self-varying pattern, MIDI clock and a lo-fi, EQ, saturation and compressor chain.
+description: >-
+  Rights warning: the repository carries amen.wav, a two-bar loop of the drum break from The Winstons' "Amen, Brother"
+  (1969). The author states it is not covered by the project's licence, that all rights stay with the original holders
+  and that it is included for convenience; it is also built into the firmware image and the installer page. Deleting
+  assets/third-party/amen/ gives a build without it.
+
+  Hold a white key for a repeat, roll, build, echo or old-sampler stretch while the pattern keeps running; black keys
+  play single hits. Knobs set a short ringing feedback delay, how much the pattern varies, how many hits are warped, and
+  a DJ filter. The firmware follows MIDI clock from any input and sends its own clock when it leads. It is built on
+  M-VAVE's FM1 Open V14 SDK and ported from the author's Jungle Choppa plugin. M-VAVE's update loader is included, so
+  the unit can go back to V15 or move to another firmware.
+status: active
+authors:
+- name: Presethead
+  url: https://github.com/ejtb76
+source: https://github.com/ejtb76/amenity
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE.md is M-VAVE's FM1 APP licence: GPL-3.0 only with an added permission to link the binary SDK, whose engine
+  library keeps M-VAVE's separate terms (THIRD_PARTY.md). Files under assets/third-party/ are excluded from the licence.
+  sdk/firmware/FM-1_015.fwsc matches M-VAVE's FM-1 V15 image licensed Apache-2.0 (git blob
+  ce49cc1595b67347c68a3ac7463017f9fa8c19dd).
+homepage: https://ejtb76.github.io/amenity/
+distribution: browser-installer
+install_notes: >-
+  Open the installer page in Chrome or Edge with the FM-1 on USB, connected directly without a hub, and confirm you
+  have a backup. If the FM-1 has no valid sample bank the page also writes the full-quality break to it; otherwise the
+  firmware plays its built-in 20 kHz copy unless you load the bank from the page, which replaces all eight sample
+  slots. The same page restores V15. Projects and samples are not shared between firmwares.
+brick_risk: true
+tags: [sampler, sequencer, performance, fx, drums, midi, fork]
+image:
+  url: https://raw.githubusercontent.com/ejtb76/amenity/main/docs/screen.png
+  alt: >-
+    Amenity's screen: AMENITY with the tempo 170.0, two rows of step boxes with the current one in cyan,
+    the word PLAYING, SEQ FILL and TRANSPOSE -3, and knobs for feedback, variation, warp and filter.
+  credit: Presethead
+  source_url: https://github.com/ejtb76/amenity
+  first_party: true
+versions:
+- version: 1.0.0
+  date: 2026-11-01
+  url: https://github.com/ejtb76/amenity/releases/tag/v1.0.0
+  notes: First release.

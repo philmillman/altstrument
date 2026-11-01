@@ -1,0 +1,45 @@
+device: e103-designs-alteria
+name: ALTERIA FULL VOICE
+summary: Experimental Arduino firmware that turns the ALTERIA module into a monophonic digital voice with an oscillator, drive, resonant low-pass filter, VCA and a shared AD envelope.
+description: >-
+  FULL VOICE 1.0.0 is a separate sketch from ALLROUNDER and DRUM LAB and does not change their
+  presets. One voice runs through four pages selected with the mode button: oscillator (sine,
+  triangle, saw or pulse with pulse width and fine tune), filter (cutoff, resonance and envelope
+  amount), VCA (level, envelope amount with a drone setting, and drive) and envelope (attack,
+  decay and curve). CV in sets pitch at a nominal 1 V per octave, a rising edge on the I/O jack
+  starts the AD cycle, output 1 carries the audio and output 2 carries the envelope. The sound is
+  digital and lo-fi at 6.4 kHz, with no audio input and no sequencer. The repository marks the
+  firmware as untested on hardware: it compiles and passes host and AVR simulator tests, but
+  pitch tracking, levels and noise have not been checked on a physical module, and the
+  output calibration does not cover the pitch input.
+status: active
+authors:
+  - name: E103-designs
+    url: https://github.com/E103-designs
+source: https://github.com/E103-designs/ALTERIA
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Covers the original source, documentation, photographs and design files in the repository.
+homepage: https://github.com/E103-designs/ALTERIA/tree/main/firmware/ALTERIA_FULL_VOICE#readme
+distribution: source-only
+install_notes: >-
+  Open firmware/ALTERIA_FULL_VOICE/ALTERIA_FULL_VOICE.ino in the Arduino IDE and build for
+  Arduino Nano with an ATmega328P at 16 MHz. Upload one ALTERIA sketch at a time, and disconnect
+  external gate sources from the I/O jack before changing firmware because other sketches drive
+  it as an output. Calibrate the outputs with a multimeter by holding both buttons at power-up,
+  use only positive voltages that your board is known to accept on CV in, and send the outputs
+  to a mixer or interface at modular levels, not to headphones.
+brick_risk: false
+tags: [official, synth, voice, filter, envelope, arduino, eurorack]
+image:
+  url: https://raw.githubusercontent.com/E103-designs/ALTERIA/main/images/ALTERIA_front_IMG_3251_clean.png
+  alt: Front panel of the ALTERIA module with four LEDs, two buttons, three white knobs and four jacks
+  credit: E103-designs
+  source_url: https://github.com/E103-designs/ALTERIA#readme
+  first_party: true
+versions:
+  - version: main @ 0276815
+    date: 2026-11-01
+    url: https://github.com/E103-designs/ALTERIA/commit/0276815e05c3fc8c433595d59265a2f650f48441
+    notes: No tagged releases; this is the latest commit. The README dates FULL VOICE 1.0.0 to 2026-10-31 and marks it untested on hardware.

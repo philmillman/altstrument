@@ -1,0 +1,40 @@
+device: m5stack-cardputer
+name: Cardputer Modular
+summary: Monophonic modular synth for the Cardputer ADV where patches are built on a 12 by 4 grid that matches the keyboard, with 68 module types, sequencers, a piano roll and over 50 presets.
+description: >-
+  Modules are placed on a grid whose cells map to the 12 by 4 centre of the
+  keyboard, and cables are carried between module pins with the fn key, so there
+  are no text menus. The 68 module types cover oscillators including a Plaits-based
+  voice, filters, envelopes, LFOs, drums, effects, quantizer, Euclidean and Turing
+  sequencers, a piano roll and a global transport. Signals run at audio rate with
+  Eurorack-style voltages, patches are saved to the SD card and the device's tilt
+  can modulate a knob. The output feeds the speaker and the line jack, and the
+  author uses it to sample into a Teenage Engineering PO-33 K.O!. It installs as
+  an app through the bmorcelli Launcher or as a full image. The README says the
+  code and docs were written almost entirely by Claude under the owner's direction
+  and calls the project a proof of concept with rough edges. There are no tagged
+  releases.
+status: active
+authors:
+  - name: Tianyu Qi
+    url: https://github.com/2540825244
+source: https://github.com/2540825244/CardputerModularSynth
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE covers the project's own code. Vendored DaisySP and Plaits and
+  stmlib keep their MIT notices, as THIRD_PARTY_NOTICES.md lists.
+distribution: source-only
+requires_stock: Cardputer-Adv with the bmorcelli Launcher installed
+install_notes: >-
+  Build firmware.bin with PlatformIO (pio run -e cardputer), copy it to the SD
+  card and install it from the Launcher, which supplies the partition table; the
+  overview says tools/release.sh also makes a full image for M5Burner at 0x0.
+  Patches are saved under /modsynth/patches/ on the card.
+brick_risk: false
+tags: [synth-engine, modular, sequencer, fx, drums, esp32-s3, performance]
+versions:
+  - version: main @ 1dc9e33
+    date: 2026-11-01
+    url: https://github.com/2540825244/CardputerModularSynth/commit/1dc9e33
+    notes: No tagged releases; this is the latest commit. The overview names v1.5 as the current build.

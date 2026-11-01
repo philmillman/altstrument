@@ -1,0 +1,56 @@
+device: sonicake-pocket-master
+name: Molecular
+summary: Replacement application for the Pocket Master that plays a random FM generator through up to five effect atoms, with motion that rearranges the sound over time, twelve patch slots and a browser installer.
+description: >-
+  Rights warning: the source includes the settings of one Sonicake factory preset,
+  read from Sonicake's 1.3.3 firmware, and a linker script and start-up code from
+  MVsilicon's BP10xx SDK, which states no licence. The installed build also links
+  the SDK's driver library, which is not in the repository.
+
+  Each sound is a molecule: an FM generator with patches from 40 families, bonded
+  to as many as five effects drawn from 25, plus delay and reverb. The engine and
+  the effects come unchanged from the author's Tonitor and Norilsk projects. The
+  controls ask for a new molecule, rewire it or draw new values rather than set
+  parameters one by one, and a motion mode drifts the atoms and rewires the
+  molecule at a set rate, with the sound morphing instead of jumping. Twelve patches
+  are stored in the pedal's flash. The screen uses very large type and high
+  contrast. The page installs only the application section of a Sonicake update; the
+  effects processor's firmware, the factory presets and Sonicake's loader stay as
+  shipped. The author states it is unofficial, not endorsed by Sonicake, and may
+  void the warranty.
+status: active
+authors:
+  - name: Nuno Zimas
+    url: https://github.com/nzimas
+source: https://github.com/nzimas/molecular
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md puts the firmware, installer and tools under GPL-3.0-only and the
+  website and documentation text under MIT. Vendored Tonitor and Norilsk code is
+  GPL-3.0-only, the FM core is msfa under Apache-2.0, and the MVsilicon SDK files
+  and the Sonicake preset data keep their owners' terms.
+homepage: https://nzimas.github.io/molecular/
+distribution: browser-installer
+requires_stock: Sonicake firmware 1.3.3
+install_notes: >-
+  Use desktop Chrome, Edge or Opera with the pedal on a data USB cable and no other
+  MIDI program open, and allow MIDI access. The install page restarts the pedal
+  into Sonicake's update mode, writes Molecular in under a minute and the pedal
+  restarts into it. The loader is never written, so an interrupted install can be run
+  again from the same page. Holding both side buttons for three seconds from
+  Molecular returns to update mode. To go back, install a Sonicake firmware file
+  downloaded from Sonicake on the same page.
+brick_risk: false
+tags: [synth-engine, fm, fx, generative, ui, usb-midi]
+image:
+  url: https://raw.githubusercontent.com/nzimas/molecular/main/docs/assets/screens/04_molecule.png
+  alt: "Molecular screen on black: a yellow FM circle joined by bonds to a lilac SM circle and a pale DL circle, with an orange XO circle bonded to the SM one"
+  credit: Nuno Zimas
+  source_url: https://nzimas.github.io/molecular/
+  first_party: true
+versions:
+  - version: "0.61"
+    date: 2026-11-01
+    url: https://github.com/nzimas/molecular/commit/cd869a3
+    notes: First public release, as dated in the changelog, with motion, patches, 40 families and the browser installer. No GitHub release page.

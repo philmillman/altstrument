@@ -1,0 +1,50 @@
+device: m-vave-fm-1
+name: FM1-Lofi
+summary: >-
+  Sampler firmware that stores samples as 16 kHz mono 2-bit audio, with 27-key zones, per-zone envelope and LFO,
+  four send effects, an arpeggiator and a loop sequencer, plus a one-file web editor that builds and uploads packs.
+description: >-
+  Rights warning: the repository's samples/ folder holds four WAV files (TrapKit, Tape Key, Shiny and Phonk) that
+  feed the demo pack and the codec tests. Its own notes say Tape Key, Shiny and Phonk come from LOOPA kits and that
+  their origin and licence still have to be confirmed, and that the GPL does not cover them.
+
+  About 100 seconds of audio fit in the 520 KB the firmware sets aside for a pack. Ten screens (FX, SEL, ENV, LFO,
+  EDIT, GLO, HOME, SAVE, ARP and SEQ) carry four parameters each. A zone is a bank of 27 keys, switched with OCT- and
+  OCT+, and holds either a kit with one sample per key or one melodic sample spread over a scale. Each zone has its own
+  envelope, LFO, start, end and reverse settings. The editor page, which runs in Chrome or Edge, imports audio, slices
+  it, maps slices to zones, previews the 2-bit result and sends the pack over USB or Bluetooth MIDI. The firmware is a
+  fork of M-VAVE's FM1 Open code, and the flash page embeds M-VAVE's V15 image for the way back. The author calls the
+  project experimental: v0.9.3 is confirmed on a real FM-1, v0.9.1 and v0.9.2 are known bad, and CPU load, Bluetooth
+  speed and latency are unmeasured.
+status: active
+authors:
+- name: ferluht
+  url: https://github.com/ferluht
+source: https://github.com/ferluht/fm1-lofi-sampler
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL-3.0 text with no "or later" grant, and firmware/LICENSE.md, inherited from FM1 Open, states GPL-3.0
+  only with a permission to link the binary SDK. The SDK engine library keeps M-VAVE's terms (FM-1 devices only; see
+  firmware/THIRD_PARTY.md). firmware/sdk/firmware/FM-1_015.fwsc matches M-VAVE's FM-1 V15 image licensed Apache-2.0
+  (git blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd). The 2-bit codec derives from the MIT-licensed SEA codec.
+distribution: browser-installer
+install_notes: >-
+  Open FM1-Lofi-Workbench.html from the release in Chrome or Edge with the FM-1 on USB and follow the page; it also
+  restores V15. Then open FM1-Lofi-Editor.html to build and upload sample packs. The author reports that v0.9.1 and
+  v0.9.2 left too little heap and bricked the device, and that the editor has not been tried on a real FM-1 over
+  Web MIDI. Back up first.
+brick_risk: true
+tags: [sampler, sequencer, fx, arpeggiator, looper, editor, web, fork]
+image:
+  url: https://raw.githubusercontent.com/ferluht/fm1-lofi-sampler/main/docs/img/firmware_pages3.png
+  alt: >-
+    Five FM-1 screen renders: HOME with a waveform, SEL with a zone list, ENV with an envelope curve, EDIT with start and end markers on a waveform, and SEQ with a piano roll.
+  credit: ferluht
+  source_url: https://github.com/ferluht/fm1-lofi-sampler#readme
+  first_party: true
+versions:
+- version: 0.9.3
+  date: 2026-11-01
+  url: https://github.com/ferluht/fm1-lofi-sampler/releases/tag/v0.9.3
+  notes: Restores the heap to 105 KB after 0.9.1 and 0.9.2; confirmed booting and playing on a real FM-1.

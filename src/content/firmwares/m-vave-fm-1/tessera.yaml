@@ -11,8 +11,8 @@ description: >-
   Morph, Atlas (a drum map after Mutable Instruments Grids), Bounce, Awake, Chord and Answer. Evolve, Form and
   Tweak pages mutate phrases and build sections, and a modulation matrix routes any source to any destination.
   Version 2.0 played three engines (FM6, TRIO and DRUM), dropping the SID, PHYS, CZ-1 and Prophet engines and their
-  sound banks; projects saved by 1.x do not load. Version 3.0 adds ORACLE, a polyphonic analogue-style voice with
-  sounds of its own, and draws every screen in one ink on black with its own 5 x 7 font and nine colours. Version 3.1 adds a USB host mode for one USB-MIDI device, a fixed MIDI CC map and NRPN control of every parameter, untested on a device at release. The README calls it experimental. A browser
+  sound banks (PHYS returned in 3.2); projects saved by 1.x do not load. Version 3.0 adds ORACLE, a polyphonic analogue-style voice with
+  sounds of its own, and draws every screen in one ink on black with its own 5 x 7 font and nine colours. Version 3.1 adds a USB host mode for one USB-MIDI device, a fixed MIDI CC map and NRPN control of every parameter, untested on a device at release. Version 3.2 brings back the PHYS physical-modelling engine, 3.2.1 adds tunings loaded from Scala files and 3.2.2 adds Snap to scale. The README calls it experimental. A browser
   simulator, installer and editor are included.
 status: active
 authors:
@@ -41,6 +41,18 @@ image:
   source_url: https://github.com/Rastapopolix/tessera
   first_party: true
 versions:
+- version: 3.2.2
+  date: 2026-11-01
+  url: https://github.com/Rastapopolix/tessera/releases/tag/v3.2.2
+  notes: Adds Snap to scale, which moves a pattern's already written notes onto the scale once, each to the nearest scale note and down when halfway; hold EDIT to undo. Projects, presets and settings from 2.x onwards carry over. The release calls it new and not yet tried on many devices.
+- version: 3.2.1
+  date: 2026-11-01
+  url: https://github.com/Rastapopolix/tessera/releases/tag/v3.2.1
+  notes: Adds up to four tunings of your own loaded from Scala .scl files in the web editor (up to 64 notes per period, saved with the project), a MIDI OUT transpose for each track, an always-visible battery indicator and a USB host that follows hubs with a second hub inside. A project saved with tunings or MIDI OUT transpose opens in an older version without them.
+- version: '3.2'
+  date: 2026-10-31
+  url: https://github.com/Rastapopolix/tessera/releases/tag/v3.2
+  notes: Brings back PHYS, the physical-modelling engine, with 17 sounds, makes live recording into STEP layer pass after pass, starts tracks you add while others play in time with them and makes MODS clearer. Projects from 2.x onwards load. The release says the 3.1 USB host and MIDI CC control were still untested on a device.
 - version: '3.1'
   date: 2026-10-31
   url: https://github.com/Rastapopolix/tessera/releases/tag/v3.1

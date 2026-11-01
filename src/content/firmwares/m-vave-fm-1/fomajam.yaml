@@ -1,4 +1,5 @@
 device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
 name: FOMAJAM
 summary: >-
   Nine-track groovebox where each track plays its own drum machine, Felucca synth engine or MIDI out, with
@@ -8,7 +9,8 @@ description: >-
   ROMs, and you can add your own samples at build time. Synths are Felucca's engines plus a plucked-string and a
   supersaw engine written for this firmware. Tracks send to delay, reverb and chorus, with kick ducking, a master
   filter and eleven distortion types. MIDI notes and all parameters are reachable over USB MIDI by CC, and a
-  scope and a MIDI log page are included. It is made with the author's foma framework and builds on Felucca, SLOOP
+  scope and a MIDI log page are included. A second package adds Bluetooth MIDI: a phone, tablet or computer connects to it,
+  or the FM-1 connects out to another FM-1 or a Bluetooth controller. It is made with the author's foma framework and builds on Felucca, SLOOP
   and Dinghy.
 status: active
 authors:
@@ -26,10 +28,19 @@ distribution: browser-installer
 install_notes: >-
   Browser installer and emulator on the project page (Chrome or Edge, USB), or the .fwsc from the releases
   page. The page's Back to the official firmware option asks you to download M-VAVE's V15 file from M-VAVE and
-  select it. Holding OCT- at power-on starts a USB rescue mode.
+  select it. Holding OCT- at power-on starts a USB rescue mode. Releases also carry packages for the SMK-37 Pro, Elite
+  and MKE-P37.
 brick_risk: true
 tags: [drums, synth-engine, sequencer, fx, midi, usb-midi, sampler, emulator]
 versions:
+- version: 0.1.9
+  date: 2026-11-01
+  url: https://github.com/konsumer/fomajam/releases/tag/v0.1.9
+  notes: The release has no notes; the commits since 0.1.8 make the SMK-37 keybed enter notes at the cursor, apart from the pads.
+- version: 0.1.8
+  date: 2026-11-01
+  url: https://github.com/konsumer/fomajam/releases/tag/v0.1.8
+  notes: Adds a Bluetooth MIDI package with exact time stamps, links between two FM-1s over Bluetooth and an ./fm1 flash command.
 - version: 0.1.7
   date: 2026-10-27
   url: https://github.com/konsumer/fomajam/releases/tag/v0.1.7

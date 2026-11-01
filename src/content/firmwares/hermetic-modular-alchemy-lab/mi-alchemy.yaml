@@ -7,8 +7,8 @@ description: >-
   controls onto the Lab's six pots, three buttons and ten jacks. Every firmware
   has the same SD-card firmware picker, autosaves its panel to the card after a
   change, and shows last session's CPU peak at boot. Elements needs an extra
-  samples file on the card for its exciters. Both releases are marked
-  pre-release and had not been run on a module at release.
+  samples file on the card for its exciters. All releases are marked
+  pre-release. Elements has been played on a module as of v0.2.2; the other six ports had not.
 status: active
 authors:
   - name: Tim Cox (timncox)
@@ -26,10 +26,14 @@ requires_stock: Alchemy Lab V2 board
 install_notes: >-
   Copy the .bin files into /alchemy on the Lab's SD card, plus elements.smp
   into /mi for Elements, then switch firmware from the Settings page. The
-  README says nothing has been flashed or heard on hardware yet.
+  README still says nothing has been flashed or heard on hardware, but the v0.2.2 release notes say Elements has been played on a module.
 brick_risk: false
 tags: [synth-engine, fx, granular, platform]
 versions:
+  - version: v0.2.2
+    date: 2026-10-31
+    url: https://github.com/timncox/mi-alchemy/releases/tag/v0.2.2
+    notes: Pre-release. Fixes panel settings not being saved to the SD card in v0.2.0, so no settings survived a power-off; a knob change is now saved five seconds after the last change. Also fixes out-of-table reads and NaNs found with sanitizers. Elements has been played on a module; the other six are tested on a computer only.
   - version: v0.2.0
     date: 2026-10-13
     url: https://github.com/timncox/mi-alchemy/releases/tag/v0.2.0

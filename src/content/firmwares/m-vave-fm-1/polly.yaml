@@ -7,7 +7,8 @@ description: >-
   A song is a list of sections, each playing a chord progression with one of a style's two grooves, plus two
   melody tracks. Grooves can be recorded and edited note by note. Owners of a QY70 can build its 128 preset
   styles from their own ROM image with a bundled tool; nothing of Yamaha's is included. The project has a
-  browser emulator and a ten-lesson course.
+  browser emulator and a ten-lesson course. From 0.6 it can play through Bluetooth headphones and speakers, take MIDI
+  in over Bluetooth and mix a computer's audio in over USB.
 status: active
 authors:
 - name: Charles Vestal
@@ -21,7 +22,7 @@ license_notes: >-
 homepage: https://charlesvestal.github.io/fm1-polly/
 distribution: browser-installer
 install_notes: >-
-  Browser installer in Chrome or Edge; songs are kept when updating. QY70 styles are optional and need your own
+  Browser installer in Chrome or Edge; it also writes the factory styles, and Polly shows STYLES MISSING if they are absent. Songs are kept when updating, but 0.6 moves them to a new layout, so back them up first. QY70 styles are optional and need your own
   qy70main.bin, installed with tools/qy70_install.py.
 brick_risk: true
 tags: [sequencer, chords, midi, usb-midi, emulator]
@@ -32,6 +33,10 @@ image:
   source_url: https://charlesvestal.github.io/fm1-polly/
   first_party: true
 versions:
+- version: '0.6'
+  date: 2026-11-01
+  url: https://github.com/charlesvestal/fm1-polly/releases/tag/v0.6
+  notes: Adds Bluetooth audio to headphones and speakers (about 150 to 300 ms late), Bluetooth MIDI in, optional computer audio mixed in over USB and a battery indicator. Songs and slots move to a new layout on first start, so back them up first; going back to 0.5 hides them until a backup is restored.
 - version: '0.5'
   date: 2026-10-17
   url: https://github.com/charlesvestal/fm1-polly/releases/tag/v0.5

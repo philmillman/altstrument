@@ -1,0 +1,46 @@
+device: polyend-tracker-plus
+name: Patternaut
+kind: tool
+summary: macOS app that generates and mutates patterns for the Tracker+ and Tracker Mini and reads and writes the device's own .mtp, .mt and .pti files on the SD card.
+description: >-
+  Patternaut has a tracker-style grid with sixteen tracks, both effect lanes per step and undo. Generate
+  builds a beat of kick, snare, hat, usually percussion and often a bass line in a chosen key, each
+  reproducible from its seed, and Mutate varies an existing pattern from subtle to chaotic. Export writes
+  patterns and samples to the SD card as files the Tracker reads, and the app also reads projects back off
+  the card and writes into an existing project without touching the instrument assignments, mixer and
+  effects it does not model. The file readers and writers live in a Swift package, PatternautCore, that
+  builds without Xcode and is checked byte for byte against Polyend's tracker-lib and against projects
+  written by the hardware. Version 1.1.0 adds an audio preview through the loaded samples, which leaves
+  out synth and MIDI instruments and several effects. The app does not touch the device's firmware. The
+  author states it was co-created with AI and tested the round trip on a Tracker+.
+status: active
+authors:
+  - name: Jarl Lyng
+    url: https://github.com/JarlLyng
+source: https://github.com/JarlLyng/patternaut
+source_status: open
+license: MIT
+license_notes: The LICENSE file names Jarl Lyng as copyright holder. The source is free to build, but the app is sold on the Mac App Store.
+homepage: https://patternaut.iamjarl.com
+distribution: commercial
+install_notes: >-
+  Buy it from the Mac App Store (macOS 14 or later; the README gives a one-time price of 7.99 US dollars),
+  or build it from the repository with xcodegen and Xcode. Back up the SD card before exporting into an
+  existing project. It does not play patterns on the device and replaces no firmware.
+brick_risk: false
+tags: [editor, generative, sequencer, tracker, macos]
+image:
+  url: https://raw.githubusercontent.com/JarlLyng/patternaut/main/docs/screenshot.png
+  alt: Patternaut window with a 32-step tracker grid of kick, snare, hat, percussion and bass tracks and a list of five instruments beside it
+  credit: Jarl Lyng
+  source_url: https://github.com/JarlLyng/patternaut#readme
+  first_party: true
+versions:
+  - version: 1.1.0
+    date: 2026-10-31
+    url: https://github.com/JarlLyng/patternaut/commit/f8ea3543ea1d8e323fdfd7ee7098f3874e8305ea
+    notes: Release commit that adds the audio preview. AGENTS.md says it was in TestFlight from this date, with 1.0.1 the live store version.
+  - version: v1.0.0
+    date: 2026-09-22
+    url: https://github.com/JarlLyng/patternaut/releases/tag/v1.0.0
+    notes: First release on the Mac App Store.

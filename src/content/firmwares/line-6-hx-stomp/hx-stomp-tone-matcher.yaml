@@ -1,0 +1,36 @@
+device: line-6-hx-stomp
+kind: tool
+name: HX Stomp Tone Matcher
+summary: Research project in Python that separates the guitar from a song, searches effect chains and settings on a render engine, and writes an HX Stomp .hlx preset with up to three snapshots, checked on a real pedal over USB or in Helix Native.
+description: >-
+  The README gives the status as an early research prototype. Both render engines are driven from code, Helix
+  Native on macOS and the HX Stomp over USB on macOS with firmware 3.50, and .hlx presets round-trip. Separation, a
+  reference dry-signal picker, a loss kit and a search core exist but are tested on synthetic and proxy data
+  only, a first song has been matched end to end and checked by ear, and the tone comparison is not yet
+  validated. The next stage is to test on a person playing real pedals one at a time. The repository holds the
+  package, tests, task and status reports, and agent definitions and skills for Claude Code, which is how the
+  project is run. No Line 6 files are committed: the model catalog is read at run time from your own HX Edit
+  install, and Helix Native is optional. Protocol work follows fretwire notes, with no code copied.
+status: active
+authors:
+  - name: Jason Hamilton
+    url: https://github.com/jasonhamilton
+source: https://github.com/jasonhamilton/helix-modeler
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT licence. THIRD-PARTY-NOTICES.md lists optional dependencies with their own
+  licences, including pedalboard under GPLv3, which runs only in a separate child process.
+distribution: source-only
+requires_stock: HX Stomp firmware 3.50 (the version the USB engine was driven on)
+install_notes: >-
+  Follow docs/SETUP.md; scripts/setup.sh --check shows what is missing. It needs a song file and either an HX Stomp
+  or Helix Native with your own licence, and a GPU is optional. Driving the pedal over USB sends edits and
+  presets to the unit, so back it up first.
+brick_risk: false
+tags: [generator, presets, research, ai, python, usb]
+versions:
+  - version: main @ 96d8597
+    date: 2026-10-26
+    url: https://github.com/jasonhamilton/helix-modeler/commit/96d8597fda28acf4c0f0915f83d84c996a0fd882
+    notes: No tagged releases; this is the latest commit.

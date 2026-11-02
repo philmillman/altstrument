@@ -1,0 +1,39 @@
+device: line-6-pod-xt
+kind: tool
+name: POD Flutter
+summary: Flutter MIDI controller for the POD XT Pro, with a hardware-style interface, all parameters, patch browsing, bulk import of 128 patches and editing over USB or Bluetooth MIDI. It is a spinoff of pod-ui, written with Claude Code, and covers the XT Pro only.
+description: >-
+  POD Flutter redraws the pod-ui idea as an app for macOS, Windows, iOS and Android with knobs, an LCD-style display and LED
+  indicators. It controls the 70-plus parameters, loads and saves the 128 patches, requests them one at a time because the XT Pro has
+  no bulk dump, and includes the expansion pack models and a tuner. A Bluetooth MIDI adapter on the POD's MIDI port gives wireless
+  control, and Windows uses USB MIDI with Line 6 drivers. The README is firm that only the POD XT Pro works, because
+  its 160-byte patches differ from the plain POD XT's 152-byte patches. The project says it was built with Claude Code and the
+  repository includes a CLAUDE.md. The author's v1.0.0 release has a macOS DMG and a Windows zip, while the Android and iOS builds
+  are from source.
+status: active
+authors:
+  - name: Bernardo Sardinha
+    url: https://github.com/bhsardinha
+source: https://github.com/bhsardinha/pod_flutter
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The LICENSE file is the GPL version 3 text, preceded by a notice for Bernardo Sardinha that grants version 3 or any later
+  version, so GitHub does not recognise it as a standard file.
+distribution: download
+install_notes: >-
+  Download the macOS DMG or Windows zip from the release, or build with Flutter. Connect the POD XT Pro by USB MIDI or through a
+  Bluetooth MIDI adapter. Saving a patch overwrites it in the unit, so import your patches first.
+brick_risk: false
+tags: [editor, midi, sysex, usb-midi, presets, librarian]
+image:
+  url: https://raw.githubusercontent.com/bhsardinha/pod_flutter/main/screenshots/01-main-screen.png
+  alt: POD Flutter main screen in a macOS window, with a red hardware-style panel, an LCD showing the amp MS-Diamondplate, gain to reverb knobs, a four-band EQ and effect buttons
+  credit: Bernardo Sardinha
+  source_url: https://github.com/bhsardinha/pod_flutter
+  first_party: true
+versions:
+  - version: v1.0.0
+    date: 2026-02-08
+    url: https://github.com/bhsardinha/pod_flutter/releases/tag/v1.0.0
+    notes: First release, with a macOS DMG and a Windows zip.

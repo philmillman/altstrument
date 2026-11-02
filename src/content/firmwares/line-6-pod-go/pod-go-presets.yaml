@@ -1,0 +1,44 @@
+device: line-6-pod-go
+kind: tool
+name: POD Go Presets
+summary: Knowledge base, tools and about 20 blank-slate .pgp presets that remove POD Go built-in blocks to free more slots than the factory preset, with notes on the .pgp format and a USB protocol capture toolkit.
+description: >-
+  Rights warning: the repository commits more than 100 stock POD Go preset dumps in data-presets, kept to harvest
+  model ids, a blank preset from Line 6 in original/, and registry/model-catalog/podgo-edit-2.50.json, a catalog
+  of about 1.5 MB that the author's extract_podgo_catalog.py took from the resource files of Line 6's POD Go Edit
+  app. These are Line 6 presets and model data.
+
+  The presets are named by what they keep, for example 7 free blocks with EQ, amp and cab, and the README labels each
+  as working or broken. Seven free blocks needs both the Volume and FX Loop blocks removed, and every preset keeps
+  EQ or Looper. The author made them for themselves on firmware 2.50 and says that viability can only be
+  confirmed on a unit. The project's own ledger lists the free-block rules as inferred rather than verified,
+  and records that POD Go drops trailing blocks silently on import once a limit is hit. A task list still asks for
+  hardware tests of three presets. The docs describe the .pgp file, a JSON schema and business rules. The repository also
+  holds a libusb interposer in C and Python decoders that capture POD Go Edit's USB traffic, a command dictionary
+  and a decoded map from USB block ids to model names, which the author hardware-checked at several points. No
+  command has been sent by the project to a unit. Notes mention inspecting POD Go Edit's binary; no decompiled
+  code is committed.
+status: active
+authors:
+  - name: Elevate Life Media LLC
+    url: https://github.com/fargraph
+source: https://github.com/fargraph/pod-go-presets
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE.md file is the MIT licence, held by Elevate Life Media LLC. It does not cover the Line 6 presets and
+  model data in the repository. The README asks that anyone redistributing presets based on the collection link to it.
+distribution: download
+requires_stock: POD Go firmware 2.50 (the version the presets were made on; no backward compatibility is promised)
+install_notes: >-
+  Open a preset's page on GitHub and download the raw .pgp, then import it with POD Go Edit. Back up your own
+  presets first, because a preset that breaks a limit can import with blocks dropped. The Python tools in
+  tools/ regenerate the registry and validate the files, and tools/usb-intercept needs macOS and a re-signed
+  local copy of POD Go Edit.
+brick_risk: false
+tags: [presets, research, protocol, pgp, usb]
+versions:
+  - version: main @ 5ccf6af
+    date: 2026-07-07
+    url: https://github.com/fargraph/pod-go-presets/commit/5ccf6aff0826b385ae442059717f4cc7c769f3e7
+    notes: No tagged releases; this is the latest commit.

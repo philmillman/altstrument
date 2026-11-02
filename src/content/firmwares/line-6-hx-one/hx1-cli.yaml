@@ -1,0 +1,43 @@
+device: line-6-hx-one
+kind: tool
+name: HX One CLI
+summary: TypeScript command-line tool that switches presets and toggles the effect on a Line 6 HX One over USB MIDI, and parses, inspects and compares its .hx1p preset files offline.
+description: >-
+  Rights warning: the repository includes what appear to be the HX One's factory presets, as .hx1p files
+  in presets and extracted-presets, and Line 6's HX One Owner's Manual as a PDF in docs. Neither is the
+  author's work and no permission is stated.
+
+  The CLI sends program change and control change messages for loading, stepping through and toggling,
+  plus the FLUX momentary function, and reports device status. Its offline commands read the .hx1p
+  format, a 1440-byte binary preset with a model ID, parameters and a name, and the docs record the
+  author's reverse engineering of that format and of .hx1b backups. Creating presets and uploading or
+  downloading them over MIDI are listed as future work. It was tested on HX One firmware 3.83, and the
+  repository includes a CLAUDE.md file for AI-assisted development.
+status: active
+authors:
+  - name: shad
+    url: https://github.com/shad
+source: https://github.com/shad/hx1-cli
+source_status: open
+license: MIT
+license_notes: >-
+  The MIT licence covers the author's code. The bundled presets, which appear to be factory presets, and the owner's manual PDF are
+  Line 6 material that the licence does not cover.
+homepage: https://www.npmjs.com/package/@shadr/hx1-cli
+distribution: download
+requires_stock: HX One firmware 3.83 (the tested version)
+install_notes: >-
+  Install with npm install -g @shadr/hx1-cli or the bun equivalent; it needs Node 18 or Bun 1 and an HX
+  One connected by USB. Device commands need the pedal; the preset file commands work offline. The author
+  recommends keeping preset backups.
+brick_risk: false
+tags: [cli, usb-midi, midi, presets, research]
+versions:
+  - version: v1.0.1
+    date: 2026-01-03
+    url: https://github.com/shad/hx1-cli/tree/v1.0.1
+    notes: Git tag; no GitHub release page.
+  - version: v1.0.0
+    date: 2026-01-03
+    url: https://github.com/shad/hx1-cli/tree/v1.0.0
+    notes: Git tag; no GitHub release page.

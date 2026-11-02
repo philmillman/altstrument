@@ -1,0 +1,33 @@
+device: line-6-pod-go
+kind: tool
+name: Guitar Worship Assistant
+summary: Python pipeline and gwa command that pulls guitar from a YouTube song, writes a tab and chords, analyses the tone and writes a POD Go preset file, tuned for Korean contemporary worship styles; documentation in Korean.
+description: >-
+  Most of the project is music transcription: yt-dlp audio extraction, Demucs source separation, a GAPS model for MIDI,
+  a fingering optimiser for tabs, chord recognition and a Guitar Pro export. The POD Go part is
+  src/preset_matcher.py, which maps a tone analysis or one of seven named worship styles to amp, drive, delay,
+  reverb and chorus settings, prints a guide and writes an L6Preset JSON file with the POD Go device id and a
+  .hlx extension. POD Go Edit's own preset files are .pgp, the README does not say whether the .hlx output
+  imports, and no hardware testing is recorded. The repository also vendors the BTC chord model with its own
+  licence.
+status: active
+authors:
+  - name: jang1563
+    url: https://github.com/jang1563
+source: https://github.com/jang1563/guitar-worship-assistant
+source_status: open
+license: MIT
+license_notes: >-
+  The README states MIT, but the repository has no LICENSE file. models/btc carries its own LICENSE file.
+distribution: source-only
+install_notes: >-
+  Needs Python 3.10 or newer and a GPU or Apple Silicon for reasonable speed. Install with pip install -e . and
+  the GAPS package from GitHub, then run gwa preset with a recording or a style name. Check the output in POD
+  Go Edit before loading it, as its format was not confirmed.
+brick_risk: false
+tags: [generator, presets, ai, python, cli]
+versions:
+  - version: main @ b5c59f0
+    date: 2026-02-10
+    url: https://github.com/jang1563/guitar-worship-assistant/commit/b5c59f0f2592b40eb9c70eb6ccdffcc5d83c258d
+    notes: No tagged releases; this is the latest commit.

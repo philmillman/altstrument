@@ -1,0 +1,37 @@
+device: line-6-helix
+also_devices: [line-6-pod-go]
+kind: tool
+name: Vesco Helix Namer
+summary: Python script that edits the JSON resource files of Line 6's HX Edit and POD Go Edit apps so the amp and effect model names shown are the real equipment names.
+description: >-
+  Rights warning: modelcatalog.dat and controls.dat hold name pairs the author copied from tables in Line 6's
+  manual, mapping each model's Line 6 name to the equipment it is based on. They are Line 6 documentation data, and the
+  script rewrites files that belong to Line 6's installed editor applications.
+
+  modelnames.py reads the two .dat files and runs a sed replacement for each pair over HelixControls.json,
+  PGControls.json, HX_ModelCatalog.json and PGModelCatalog.json, with directives to switch between name, short
+  name and raw string matching and to turn HX Edit or POD Go Edit processing on or off. A --reset flag restores
+  copies of the original files from the parent folder and --dryrun skips the edits. Paths are hard-coded, it
+  needs sudo, and the README warns that the sed backup is overwritten on each run, so back the files up first. It
+  changes only the editor's display text, not the device or presets. The README points to the author's site for
+  ready-made files, which were not opened.
+status: dormant
+authors:
+  - name: b-vesco
+    url: https://github.com/b-vesco
+source: https://github.com/MyGitHubSite/vesco-helixnamer
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and no license statement.
+distribution: source-only
+install_notes: >-
+  Needs Python 3 and a shell with sed. Copy your original HX Edit or POD Go Edit JSON files somewhere safe
+  first, then run sudo ./modelnames.py, with --dryrun to preview and --reset to put the originals back.
+  Reinstalling or updating the Line 6 editor replaces the changes.
+brick_risk: false
+tags: [editor, utility, python, mod]
+versions:
+  - version: 2.90.3
+    date: 2020-05-05
+    url: https://github.com/MyGitHubSite/vesco-helixnamer/tree/2.90.3
+    notes: Git tag; no GitHub release page.

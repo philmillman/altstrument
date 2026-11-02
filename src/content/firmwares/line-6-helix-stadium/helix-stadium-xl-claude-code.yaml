@@ -1,0 +1,47 @@
+device: line-6-helix-stadium
+kind: tool
+name: Helix patch building with Claude Code
+summary: Node.js toolkit and documentation for writing Helix Stadium .hsp presets with Claude Code, with a float-safe JSON writer, preset builders and validators, based on a format worked out from Stadium XL exports.
+description: >-
+  Rights warning: docs/MODEL-CATALOGUE.md lists 376 Line 6 model ids with parameter names and observed value ranges
+  mined from 114 of the author's own device exports. The author says it holds no preset content, and tools/model-lookup.js
+  fetches Line 6's published "Based on" list at run time, but the catalogue is Line 6 model data. The corpus folder
+  that holds your own exports is git-ignored, and factory presets are not redistributed.
+
+  The documents describe the .hsp container, block ids, model-id shapes, snapshots, controllers, Command Center and
+  stereo routing, and list traps found on hardware. The main one is that the firmware tells floats from integers by
+  whether the JSON text has a decimal point, so a stock JSON writer can make a preset fault the unit; the writer in
+  lib/ learns the right form per model and parameter from presets your own device exported. The tools validate
+  structure, ranges, device rules, snapshot coverage and firmware changes, and three example patches are built by
+  examples/build-examples.js. It was developed on one Helix Stadium XL on firmware 1.3.2.1340 and 1.4.1.1343, and
+  the author asks for reports from other Helix models. The skill and CLAUDE.md files are there for Claude Code.
+status: active
+authors:
+  - name: g3rtg3rt
+    url: https://github.com/g3rtg3rt
+source: https://github.com/g3rtg3rt/helix-stadiumXL-claudeCode-integration
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GNU GPL version 3 text with no "or later" statement in the README. The author says presets
+  you generate are your own work, not covered by the licence.
+distribution: source-only
+requires_stock: Helix Stadium XL firmware 1.3.2 or 1.4 (the versions the author tested)
+install_notes: >-
+  Needs Node.js 18 or newer and no packages. Export your own presets from HX Edit into corpus/, run
+  node tools/mine-catalogue.js, then build with the lib/ builders and check output with the validators. The README
+  warns that a malformed preset can make the unit restart a few seconds after it is selected, so back up and
+  audition each patch before relying on it.
+brick_risk: false
+tags: [generator, presets, research, ai, node]
+image:
+  url: https://raw.githubusercontent.com/g3rtg3rt/helix-stadiumXL-claudeCode-integration/main/docs/images/example-patch-on-the-device.png
+  alt: Helix Stadium editor window connected to a Stadium XL, with a generated preset named Voodoo Child Tele on its Riff snapshot, a wah block selected and its parameters shown at the bottom
+  credit: g3rtg3rt
+  source_url: https://github.com/g3rtg3rt/helix-stadiumXL-claudeCode-integration#readme
+  first_party: true
+versions:
+  - version: main @ 2367908
+    date: 2026-11-01
+    url: https://github.com/g3rtg3rt/helix-stadiumXL-claudeCode-integration/commit/23679082f8f66a08adfbc9431812f4ac9ce5a590
+    notes: No tagged releases; this is the latest commit.

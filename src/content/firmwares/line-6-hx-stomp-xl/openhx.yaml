@@ -1,0 +1,48 @@
+device: line-6-hx-stomp-xl
+also_devices: [line-6-hx-stomp, line-6-helix]
+kind: tool
+name: OpenHX
+summary: Rust command-line tool and desktop GUI that lists setlists and presets on Line 6 HX Stomp XL, HX Stomp and Helix Floor units and selects a preset, using a USB protocol recovered from HX Edit traffic.
+description: >-
+  OpenHX talks to the pedal over the vendor USB bulk interface that HX Edit uses, without HX Edit.
+  The author captured traffic between HX Edit and an HX Stomp XL to work out the protocol, and the
+  repository documents it under docs/protocol. Only a small part of HX Edit's job is done so far:
+  reading setlist names, listing presets and selecting one by setlist and slot, from the CLI or from
+  a GUI with a preset browser and setlist picker. Renaming, .hlx import and export, block editing,
+  impulse responses and global EQ are listed as planned. The README marks the HX Stomp, HX Stomp XL and
+  Helix Floor as validated, the HX Effects and Helix LT as planned, and Helix Floor support began as
+  partial support supplied by contributors. The README calls the project early development.
+status: active
+authors:
+  - name: Allan Somensi
+    url: https://github.com/allansomensi
+source: https://github.com/allansomensi/openhx
+source_status: open
+license: MIT
+homepage: https://github.com/allansomensi/openhx#readme
+distribution: download
+requires_stock: HX Stomp XL, HX Stomp or Helix Floor; the README does not give a firmware version
+install_notes: >-
+  Install a prebuilt binary, MSI or install script from the releases page, or build with Cargo, which
+  needs libusb 1.0 or newer. The Windows MSI is unsigned, so SmartScreen shows a warning. Quit HX Edit
+  first, since the pedal accepts one USB host at a time. The v0.2.2 release predates the setlist
+  support that is on the main branch.
+brick_risk: false
+tags: [editor, usb, presets, research, cli]
+versions:
+  - version: 0.2.2
+    date: 2026-06-08
+    url: https://github.com/allansomensi/openhx/releases/tag/v0.2.2
+    notes: Corrects the HX Stomp USB product ID.
+  - version: 0.2.1
+    date: 2026-04-29
+    url: https://github.com/allansomensi/openhx/releases/tag/v0.2.1
+    notes: Serializes USB access and adds partial Helix Floor support.
+  - version: 0.2.0
+    date: 2026-03-27
+    url: https://github.com/allansomensi/openhx/releases/tag/v0.2.0
+    notes: Adds preset selection from the GUI.
+  - version: 0.1.0
+    date: 2026-03-25
+    url: https://github.com/allansomensi/openhx/releases/tag/v0.1.0
+    notes: First release, listing preset names from the CLI and GUI.

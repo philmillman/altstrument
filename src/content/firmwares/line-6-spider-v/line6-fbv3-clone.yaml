@@ -1,0 +1,36 @@
+device: line-6-spider-v
+kind: tool
+name: Line6 FBV3 Clone
+summary: C program and KiCad design that make a Raspberry Pi behave like an FBV3 foot controller toward a Spider V amp over USB with libusb. It authenticates, changes presets and toggles effects. It does not decode amp feedback.
+description: >-
+  Rights warning: the Research folder includes Line 6's FBV3 Pilot's Guide PDF.
+
+  The author reverse engineered the USB protocol between the Spider V Remote app and a Spider V 30 amplifier with
+  Wireshark, and kept a protocol spreadsheet and a USB capture in the repository. The program handles the amp's
+  authentication, preset up and down, and simple effect on and off commands from momentary buttons with software
+  debouncing, and a MAX7219 driver for status LEDs that the author says was not finished or tested. It stores its
+  settings in a binary file with a default copy. The author tested it on a Raspberry Pi 4B and a Pi Zero W, says USB
+  response is slow, about a second per action, and suggests using the amp's RS-422 interface for anything serious.
+  Decoding amp feedback for effect state was left undone and the author considers the project finished anyway.
+status: dormant
+authors:
+  - name: stric9r
+    url: https://github.com/stric9r
+source: https://github.com/stric9r/Line6-FBV3-Clone
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL version 3 text with no "or later" statement. Research/ contains Line 6's FBV3 Pilot's
+  Guide PDF, which is Line 6's and not covered by that license.
+distribution: source-only
+install_notes: >-
+  Needs libusb and wiringPi 2.52 or newer on a Raspberry Pi. Build with the gcc command in the README, run as root,
+  and for automatic start copy fbv3_startup.sh and the binary to /opt/fbv3_clone and call the script from
+  rc.local.
+brick_risk: false
+tags: [controller, usb, research, raspberry-pi, hardware, linux]
+versions:
+  - version: main @ b99c45f
+    date: 2022-01-08
+    url: https://github.com/stric9r/Line6-FBV3-Clone/commit/b99c45f8c1713b190ea6a0f8167ff71f39b992a9
+    notes: No tagged releases; this is the latest commit.

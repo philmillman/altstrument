@@ -1,0 +1,38 @@
+device: line-6-helix
+kind: tool
+name: phelix
+summary: Python and tkinter tool that generates random Helix presets from a library of block files and a template, and mutates existing presets to find unusual sounds.
+description: >-
+  Rights warning: the blocks/ folder holds about 380 block JSON files for Line 6 amps, cabs and effects, each made
+  by snapshotting every parameter in HX Edit and exporting a preset, then split out with extractBlocks.py. They are
+  Line 6 model and parameter data.
+
+  The Generate tab substitutes random blocks into a template preset, shuffles block order, randomises the parameters
+  of eight snapshots and maps 16 parameters to expression pedal 2, producing five .hlx files at a time. The Mutate
+  tab swaps and shuffles blocks in a preset and nudges parameters, and a Probabilities tab sets how likely each block
+  type is. Legacy cabs, IR blocks, preamps and separate amp and cab blocks are not handled. The author tested it on
+  an LT with firmware 3.80, says it cannot guarantee it will not brick a Helix, notes that levels vary widely, and
+  says some generated presets import blank when they exceed the DSP budget.
+status: active
+authors:
+  - name: sensorium
+    url: https://github.com/sensorium
+source: https://github.com/sensorium/phelix
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GNU GPL version 3 text and the README says Version 3, with no "or later" statement. It
+  does not cover the Line 6 block data.
+distribution: source-only
+requires_stock: Helix LT firmware 3.80 (the version tested)
+install_notes: >-
+  Needs Python 3.11 or newer with working tkinter and numpy; the README explains the macOS tkinter caveat. Run
+  python3 phelix.py from the folder, then import the files in presets/generated with HX Edit. Back up first and
+  keep the output level low and a limiter on headphones, as the author advises.
+brick_risk: false
+tags: [generator, presets, python, tkinter]
+versions:
+  - version: main @ 8fdd03e
+    date: 2026-05-07
+    url: https://github.com/sensorium/phelix/commit/8fdd03e6a33c2b984733aa02672208e2c0dce26e
+    notes: No tagged releases; this is the latest commit.

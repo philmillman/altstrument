@@ -1,0 +1,38 @@
+device: line-6-pod-classic
+kind: tool
+name: PocketPOD Pure Data controller
+summary: Pure Data patches that run on a Raspberry Pi and control a PocketPOD with MIDI messages from a GUI, GPIO buttons and pots, or a phone running RoboRemo. Also contains a Digitech RP250 patch.
+description: >-
+  PocketPOD.pd puts all of the PocketPOD's controls on one Pure Data screen, reads buttons, LEDs and
+  potentiometers wired to a Raspberry Pi through an MCP3008 converter, and accepts commands from the RoboRemo
+  Android app over WiFi or Bluetooth, which also allows mapping phone motion sensors to the wah. The preset names
+  are typed in by hand because the patch cannot read them from the unit. The author lists reading and writing
+  presets over SysEx as work still wanted. The same repository holds a looper patch and a SysEx patch for a
+  Digitech RP250, which is not a Line 6 product. The author says the listed functions were tested, on a Raspberry Pi
+  Zero W and a Model B, and links four demo videos.
+status: dormant
+authors:
+  - name: OldFartingPhysicist
+    url: https://github.com/OldFartingPhysicist
+source: https://github.com/OldFartingPhysicist/PocketPOD
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL version 3 text with no "or later" statement.
+distribution: source-only
+install_notes: >-
+  Install Pure Data on the Pi, open PocketPOD.pd and select the PocketPOD's MIDI port. The RoboRemo layout is in
+  PocketPODMain.txt. Wiring for the buttons and pots is not documented beyond the screenshots.
+brick_risk: false
+tags: [controller, midi, pure-data, raspberry-pi]
+video:
+  url: https://www.youtube.com/watch?v=U2I2CBarQQ8
+  title: Raspberry Pi Pocket POD control with Pure Data (Demo)
+  credit: CISKENDER1
+  first_party: true
+  found_via: https://github.com/OldFartingPhysicist/PocketPOD#readme
+versions:
+  - version: master @ 5a5bd58
+    date: 2019-01-18
+    url: https://github.com/OldFartingPhysicist/PocketPOD/commit/5a5bd588b795a39605639a3b72d430fb7e81f16f
+    notes: No tagged releases; this is the latest commit.

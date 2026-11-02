@@ -1,0 +1,52 @@
+device: line-6-hx-stomp
+also_devices: [line-6-hx-stomp-xl]
+name: NAM A2 Lite for HX Stomp
+summary: >-
+  A patch for stock HX Stomp firmware 3.80.0 that adds Neural Amp Modeler A2 Lite as a new amp model, running up to three
+  captures at once on the pedal's own SHARC DSP. Built in the browser from your own firmware file.
+description: >-
+  The amp appears under Amp > NAM, with a second copy under Distortion > NAM, so a preset can hold three blocks where the
+  Stomp normally allows two amps. Each block has Model, Input, Bass, Mid, Treble, Presence, Ch Vol and Polarity knobs.
+  Captures go in as User IRs: a converter packs a .nam file's weights into a .wav that HX Edit imports, and the Model knob
+  picks the slot. Only 3-channel A2 Lite captures fit, and three blocks nearly fill the DSP. The kernel is hand-written
+  SHARC assembly, and the project has its own assembler and simulator, so no vendor toolchain is needed.
+
+  Four of the firmware's 15 parts change and the bootloader does not. A build can run from RAM first, which writes nothing
+  to the pedal. The author reports running three blocks from RAM on an HX Stomp. The current build has not run on an XL,
+  where only an earlier one-block build has run from RAM, and neither has been installed on one. The newest Polarity knob
+  has only run in the simulator. The same author's hx-stomp-nam is separate firmware that replaces the stock software
+  altogether.
+status: active
+authors:
+  - name: Derek Bui
+    url: https://github.com/nocaseguy
+source: https://github.com/nocaseguy/hx-stomp-nam-lite
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  NOTICE grants GPL-3.0 or any later version. The repository holds no Line 6 code or data: the build reads your own copy
+  of the stock file on your computer, and NOTICE says the result contains Line 6's firmware and should not be
+  redistributed. The SHARC opcode tables in sasm.py are adapted from ghidra-sharc under Apache-2.0. No .nam captures are
+  included.
+homepage: https://nocaseguy.github.io/hx-stomp-nam-lite/web/
+distribution: patch-your-own
+requires_stock: 3.80.0 (the build checks the stock file's MD5 and refuses any other)
+install_notes: >-
+  The setup page builds the firmware in Chrome or Edge from HX_Stomp_v3.80.0_0x103966115.hxf, or from the XL's own file, and
+  can run it from RAM over WebUSB. With Python, run build.py on the stock file. To install, back up in HX Edit, close it,
+  and pick the built .hxf with Choose File in Line 6 Updater, using only the file built for your unit. If the Stomp stops at
+  the splash screen, hold Page Right while powering on and reinstall the stock file with Line 6 Updater; the author has done
+  this on a real unit. The same button is untested on an XL.
+brick_risk: true
+tags: [nam, amp-modeling, patch]
+video:
+  url: https://www.youtube.com/watch?v=zQzj0qahJ6E
+  title: Neural Amp Modeler NAM on a Line 6 HX Stomp custom firmware
+  credit: Derek Haru Bui
+  first_party: true
+  found_via: https://github.com/nocaseguy/hx-stomp-nam-lite#readme
+versions:
+  - version: main @ 2e80164
+    date: 2026-10-31
+    url: https://github.com/nocaseguy/hx-stomp-nam-lite/commit/2e801641df4a083c29ee13c5718c047d336ef692
+    notes: No tagged releases; this is the latest commit.

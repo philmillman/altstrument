@@ -1,0 +1,40 @@
+device: line-6-helix
+kind: tool
+name: HX Ctrl
+summary: Electron and web app that reads a Helix .hlx preset and generates a REAPER JSFX plugin whose sliders send the MIDI CC messages assigned to the preset's controls.
+description: >-
+  The generator parses the preset's controller assignments and footswitch settings, names each slider after
+  the block and parameter it drives, and writes a JSFX effect so a DAW can automate the Helix through MIDI
+  CC, including bypass messages. The repository has an Nx workspace with the generator library, a Next.js page
+  and an Electron shell, and reference plugin files for guitar and vocal rigs. It takes its idea from an
+  automation-to-MIDI script on the REAPER stash. The last commits are from mid 2022, and the hosted page named
+  in the repository description no longer loads. The README does not say which Helix models or firmware it was
+  used with.
+status: dormant
+authors:
+  - name: mthines
+    url: https://github.com/mthines
+source: https://github.com/mthines/hx-ctrl
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and no license statement.
+distribution: source-only
+install_notes: >-
+  Build the Nx workspace with Yarn and run the Electron app or the web app, load an .hlx preset that has
+  controller assignments, and save the generated JSFX into REAPER's Effects folder. The repository has no
+  release pages. Send MIDI to the Helix over USB or DIN from the DAW track.
+brick_risk: false
+tags: [midi, presets, daw, reaper, generator]
+versions:
+  - version: v1.2.1
+    date: 2022-04-07
+    url: https://github.com/mthines/hx-ctrl/tree/v1.2.1
+    notes: Git tag; no GitHub release page.
+  - version: v1.1.0
+    date: 2022-04-06
+    url: https://github.com/mthines/hx-ctrl/tree/v1.1.0
+    notes: Git tag; no GitHub release page.
+  - version: v1.0.0
+    date: 2022-04-04
+    url: https://github.com/mthines/hx-ctrl/tree/v1.0.0
+    notes: Git tag; no GitHub release page.

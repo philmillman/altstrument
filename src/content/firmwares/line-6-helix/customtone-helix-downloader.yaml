@@ -1,0 +1,37 @@
+device: line-6-helix
+kind: tool
+name: CustomTone Helix Downloader
+summary: Go desktop app that scrapes Line 6's CustomTone website for Helix presets, bulk-downloads them as .hlx files and tracks them in a local database, with a companion manager app.
+description: >-
+  How it works: CTHD does not use an API. Its main.go fetches the HTML of line6.com CustomTone browse and search
+  pages for the Helix family with a Chrome browser user-agent string, parses the tone entries with goquery, and
+  requests each selected tone from the site's tone/deliver address with a 200 ms pause between downloads. It sends no
+  sign-in, and if the site returns a web page instead of a file the download is counted as failed. Files are saved
+  as .hlx into a PRESETS folder, with name, style, band, author, date and download count stored in a SQLite
+  file. CTHD Manager lists, filters and audits that collection. The tool therefore bulk-copies presets uploaded
+  by other people to Line 6's service, and whether that suits CustomTone's terms was not checked. It works on
+  Helix .hlx files only, does not parse them and does not talk to a unit. The interface is in English and Spanish.
+status: active
+authors:
+  - name: Blackchorima
+    url: https://github.com/blackchorimaGZ
+source: https://github.com/blackchorimaGZ/Customtone-Helix-Downloader
+source_status: open
+license: MIT
+license_notes: The LICENSE file is the MIT licence.
+distribution: download
+install_notes: >-
+  Zip and DMG builds for Windows, macOS and Linux are on the releases page. The macOS apps are unsigned, and the
+  README tells you to clear the quarantine flag with xattr -cr and to move the apps to /Applications. Choose a
+  download folder on first run. A scraper breaks whenever Line 6 changes its pages.
+brick_risk: false
+tags: [librarian, presets, scraper, desktop, go]
+versions:
+  - version: v1.0.8
+    date: 2026-03-23
+    url: https://github.com/blackchorimaGZ/Customtone-Helix-Downloader/releases/tag/v1.0.8
+    notes: Adds a theme switch and a donation button.
+  - version: v1.0.0
+    date: 2026-03-22
+    url: https://github.com/blackchorimaGZ/Customtone-Helix-Downloader/releases/tag/v1.0.0
+    notes: First Windows release.

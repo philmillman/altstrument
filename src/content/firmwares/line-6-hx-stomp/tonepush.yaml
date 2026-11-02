@@ -1,0 +1,72 @@
+device: line-6-hx-stomp
+also_devices: [line-6-hx-effects, line-6-helix]
+kind: tool
+name: TonePush
+summary: Cross-platform GUI, CLI and Rust crates that edit Line 6 HX pedals over USB without HX Edit, with a reverse-engineered protocol write-up, backups, setlists and a tone library, plus support for the Sonulab StompStation PRO.
+description: >-
+  The author developed and tested TonePush against an HX Stomp on firmware 3.80, and the README says each
+  operation was checked on that unit. It edits the signal chain, parameters, snapshots, footswitch and
+  expression assignments, tempo, impulse responses and device settings, and it saves, renames, copies,
+  imports, exports and backs up presets and whole setlists. Presets are stored as the device's own
+  documents byte for byte, and .hlx files are applied as ordinary parameter edits. Contributors have
+  tested a Helix Floor on firmware 3.80 (reading, backup, editing, saving) and an HX Effects, where
+  .hlx import and backup were fixed after user reports and a restore can still report a failure although
+  it landed. Helix LT and Helix Rack presets parse and render but have not been tried on real hardware,
+  and the HX Stomp XL is not mentioned in the README. The same editor also drives the Sonulab
+  StompStation PRO over its USB serial port, with writes enabled only for firmware 1.5, 2.0 and 2.2 that
+  the author verified; that pedal is not a Line 6 device and has no entry in this catalog yet. The
+  repository documents the HX USB protocol in PROTOCOL.md and an opcode reference, and holds
+  captured traffic and a sniffing script for HX Edit. Model names, ranges and artwork are read at
+  runtime from an HX Edit installation or installer that the user supplies, and Line 6's data is not
+  redistributed. The editor asks for a one-time setup, offers an opt-in online tone library and
+  update check, and has opt-in crash reports. The author warns that a client fault can lock a unit
+  until its power adapter is pulled.
+status: active
+authors:
+  - name: Carmine Paolino
+    url: https://github.com/crmne
+source: https://github.com/crmne/tonepush
+source_status: open
+license: MIT
+license_notes: >-
+  The captures directory holds USB logs plus an HX Stomp setlist export and a preset file used as test
+  fixtures; the repository does not say whether any of that content is Line 6 factory material.
+homepage: https://docs.tonepush.rocks/
+distribution: download
+requires_stock: HX Stomp on firmware 3.80 (the verified setup)
+install_notes: >-
+  Download the macOS DMG, Windows MSI, Linux archive, package or AppImage from the releases page, or
+  build with Rust and run install.sh, which also installs a udev rule on Linux. Quit HX Edit first,
+  because only one program can hold the vendor USB interface. On first launch the editor copies model
+  data from an installed HX Edit, or takes an HX Edit installer you download from Line 6; reading a
+  Windows or Linux installer needs 7-Zip. Back up the pedal before writing, and never trigger a USB
+  reset, which the README says makes the device leave the bus.
+brick_risk: false
+tags: [editor, usb, presets, research, librarian, cli]
+image:
+  url: https://raw.githubusercontent.com/crmne/tonepush/main/docs/screenshot.png
+  alt: TonePush editing a preset on an HX Stomp, with a preset list on the left, a signal chain of wah, drive, amp and two cabs above the amp's knobs, and footswitch assignments along the bottom
+  credit: Carmine Paolino
+  source_url: https://github.com/crmne/tonepush#readme
+  first_party: true
+versions:
+  - version: 0.11.0
+    date: 2026-11-01
+    url: https://github.com/crmne/tonepush/releases/tag/v0.11.0
+    notes: Adds a batch command, HX Effects .hlx import fix and signed Windows installers.
+  - version: 0.10.0
+    date: 2026-10-26
+    url: https://github.com/crmne/tonepush/releases/tag/v0.10.0
+    notes: Adds Helix Floor support, tested on firmware 3.80, and opt-in crash reports.
+  - version: 0.9.0
+    date: 2026-10-04
+    url: https://github.com/crmne/tonepush/releases/tag/v0.9.0
+    notes: Adds an audition mode for library tones and StompStation PRO saving on firmware 2.2.
+  - version: 0.2.0
+    date: 2026-08-06
+    url: https://github.com/crmne/tonepush/releases/tag/v0.2.0
+    notes: Adds a first-launch setup for HX Edit's model data.
+  - version: 0.1.0
+    date: 2026-08-06
+    url: https://github.com/crmne/tonepush/releases/tag/v0.1.0
+    notes: First release, verified against an HX Stomp on firmware 3.80.

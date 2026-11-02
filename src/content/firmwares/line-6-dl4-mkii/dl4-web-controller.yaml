@@ -1,0 +1,28 @@
+device: line-6-dl4-mkii
+kind: tool
+name: DL4 Controller
+summary: Web MIDI page that controls a DL4 MkII from a desktop or phone browser, with preset selection, delay and reverb model and parameter controls, looper controls and sync settings. Hosted on GitHub Pages and written in plain JavaScript.
+description: >-
+  The page sends MIDI to the pedal over USB through the browser's Web MIDI API and uses Material Design
+  Components for its layout, which is meant to work on desktop and mobile. It covers presets, the delay and reverb
+  models with their knobs, and the looper, and later commits added a settings view and a sync option. Web MIDI needs
+  a Chromium browser or Firefox with the MIDI permission. The README does not describe hardware testing or which
+  firmware versions were used.
+status: active
+authors:
+  - name: GarethW-York
+    url: https://github.com/GarethW-York
+source: https://github.com/GarethW-York/dl4_web_controller
+source_status: open
+license: MIT
+homepage: https://garethw-york.github.io/dl4_web_controller/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page, connect the pedal by USB, and allow MIDI access when asked.
+brick_risk: false
+tags: [controller, web-midi, web, midi, looper]
+versions:
+  - version: main @ 7b400cc
+    date: 2025-04-10
+    url: https://github.com/GarethW-York/dl4_web_controller/commit/7b400cc5a9bdfd59e8f619d06f0b04c2caf79f7b
+    notes: No tagged releases; this is the latest commit.

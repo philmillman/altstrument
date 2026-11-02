@@ -1,0 +1,43 @@
+device: line-6-pod-go
+kind: tool
+name: openpodgo
+summary: Linux editor and librarian for the POD Go, over the USB vendor protocol, with a visual block chain, snapshots, footswitch assignment and .pgp import and export.
+description: >-
+  Rights warning: the package ships models.json, controls.json and icon_map.json, which the README says are derived from the
+  resources of Line 6's POD Go Edit, describing them as factual mappings of ids, names and parameter ranges. No Line 6
+  artwork is included; the interface uses placeholder icons unless you copy the res folder from your own POD Go Edit install.
+
+  It streams and parses all 128 presets as MessagePack, writes parameters and block order back to the pedal, swaps models,
+  and syncs changes made on the pedal into the window in both directions. MIDI helpers go through ALSA amidi. The protocol
+  templates were ported from openhx's HX Stomp XL documentation and adapted to the POD Go. The README says the USB layer was
+  checked against a real pedal, that development tracked POD Go firmware up to 2.01 with other versions untested, and that
+  only Linux is tested.
+status: active
+authors:
+  - name: agarat
+    url: https://github.com/agarat
+source: https://github.com/agarat/openpodgo
+source_status: open
+license: MIT
+license_notes: >-
+  LICENSE is MIT, naming the OpenPODGo contributors. The derived catalog files came from Line 6's POD Go Edit resources, and
+  tools/build_catalog.py can rebuild them from your own install.
+distribution: download
+install_notes: >-
+  Linux with Python 3.10 or newer. Install a release tarball with pip, using the ui extra for the window, and copy 99-podgo.rules
+  to /etc/udev/rules.d for USB access without sudo. Back up your presets first.
+brick_risk: false
+tags: [editor, librarian, usb, linux, presets]
+image:
+  url: https://raw.githubusercontent.com/agarat/openpodgo/main/docs/img/main-window.png
+  alt: The openpodgo window with the factory preset list on the left, a row of coloured blocks from WAH to EQ, and sliders for the selected wah block
+  credit: agarat
+  source_url: https://github.com/agarat/openpodgo
+  first_party: true
+versions:
+  - version: 0.1.1
+    date: 2026-10-03
+    url: https://github.com/agarat/openpodgo/releases/tag/v0.1.1
+  - version: 0.1.0
+    date: 2026-07-15
+    url: https://github.com/agarat/openpodgo/releases/tag/v0.1.0

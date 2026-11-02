@@ -1,0 +1,35 @@
+device: line-6-hx-stomp
+kind: tool
+name: hxgen
+summary: Rust command-line tool that compiles a JSON description of an amp, cab and effect chain into an HX Stomp .hlx preset, with a searchable model catalog and a decoder that turns .hlx files back into JSON.
+description: >-
+  Rights warning: data/models.json, about 1.7 MB, is a catalog of Line 6 models and parameter ranges that the
+  author's extract_hxedit_catalog.js produced from an HX Edit installation, and it is embedded in the binary. The
+  examples folder also holds about 20 .hlx presets, several named after songs, whose origin is not stated.
+
+  hxgen list and hxgen show browse the catalog, hxgen generate builds a .hlx from a spec with blocks, parameter
+  overrides, tempo, an optional cab attached to an amp and standalone or dual cab blocks, and hxgen decode,
+  example and schema work in the other direction. The generator refuses any device except helix-stomp and caps
+  the number of user blocks. It writes files only and does not talk to the unit: import them with HX Edit or copy
+  them over USB mass storage. The README does not say what was tested on hardware. An agentskills.io skill in
+  skills/ guides coding agents through turning a tone description into a spec.
+status: active
+authors:
+  - name: planbnet
+    url: https://github.com/planbnet
+source: https://github.com/planbnet/hxgen
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and no license statement. It also embeds Line 6 model data extracted from HX Edit.
+distribution: download
+install_notes: >-
+  Download the binary for Linux, macOS or Windows from the releases page and put it on your PATH, or build with
+  cargo build --release. Import the generated .hlx with HX Edit and back up your presets first.
+brick_risk: false
+tags: [generator, presets, cli, rust, ai]
+versions:
+  - version: v0.2.0
+    date: 2026-06-21
+    url: https://github.com/planbnet/hxgen/releases/tag/v0.2.0
+    notes: Adds dual cab block support and mic index display.

@@ -1,0 +1,32 @@
+device: line-6-pod-xt
+kind: tool
+name: x3-mac
+summary: Unofficial macOS app and installer that makes a POD X3 Live work as a USB audio source, with clean or processed sound, and as a MIDI controller for knobs and switches. Documentation is in Portuguese. The release is built for Intel Macs.
+description: >-
+  A C audio core and a Swift app read the POD X3 Live's USB audio, choose between the dry guitar and the processed signal,
+  and pass it to a virtual BlackHole device for DAWs. A separate path decodes the pedal's control messages for knobs, block
+  switches, preset changes and tap tempo, and exposes them as a MIDI port called X3. Preset editing is not included, and the
+  volume or wah pedal position is not sent over USB, per the author's notes. The author tested a POD X3 Live on an Intel MacBook with
+  macOS 26 and Reaper, and says Apple Silicon is untested. The protocol notes were worked out from GearBox
+  captures. The DMG installs the app together with the GPL-3.0 BlackHole driver.
+status: active
+authors:
+  - name: Felippe Geleski
+    url: https://github.com/lippegeleski
+source: https://github.com/lippegeleski/x3-mac
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text. The README says the installer adds the separate GPL-3.0 BlackHole driver unchanged.
+distribution: download
+install_notes: >-
+  The release has POD.X3.Live.dmg, built on an Intel Mac and likely not to work on Apple Silicon. Open Instalar.command from
+  the DMG, enter your Mac password for the BlackHole install, then pick BlackHole 16ch as the DAW input and X3 as the MIDI
+  input. The README is in Portuguese. GearBox, Line 6's editor, does not work on this setup.
+brick_risk: false
+tags: [usb-audio, usb-midi, midi, usb, desktop, research]
+versions:
+  - version: v1.0
+    date: 2026-10-07
+    url: https://github.com/lippegeleski/x3-mac/releases/tag/v1.0
+    notes: Installer DMG for Intel Macs.

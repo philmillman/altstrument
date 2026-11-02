@@ -1,0 +1,48 @@
+device: line-6-pod-classic
+kind: tool
+name: PyPOD
+summary: Python command-line tool and GTK interface for the POD 2.0 over MIDI. It dumps, saves, loads and uploads programs, renames them, shows info, sends CC and program changes, and updates the GUI live when knobs move on the unit.
+description: >-
+  PyPOD was written and tested on Ubuntu 20.04 with a POD 2.0 and uses mido and python-rtmidi. The command-line tool dumps a
+  program or the edit buffer in decimal, hex or a readable form, writes it to a file, loads a file and uploads it to a chosen
+  program slot, and renames programs. The GTK interface, built with Glade, covers the amp and effect settings and sends CC and
+  program change messages. The author learned the SysEx format by experimenting and reading a JSynthLib implementation and a
+  scanned POD 2.0 MIDI document, and keeps a MIDI cheat sheet in the repository. The README lists a bug where turning many
+  knobs on the unit at once freezes the GUI, and says multi-byte values such as delay time were not fully worked out at one
+  stage. Windows and macOS are untested.
+status: dormant
+authors:
+  - name: Christoph Barth
+    url: https://github.com/ChrBarth
+source: https://github.com/ChrBarth/pypod
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text, copyright Christoph Barth.
+distribution: source-only
+install_notes: >-
+  Needs Python 3 with mido and python-rtmidi, plus PyGObject for the GUI. Set the MIDI ports with a .pypodrc JSON file or the
+  command-line options. Uploading a program overwrites that slot on the POD, so dump your programs first.
+brick_risk: false
+tags: [editor, midi, sysex, python, librarian, presets, cli]
+video:
+  url: https://www.youtube.com/watch?v=lPLfrbN7K4w
+  title: pyPOD GUI
+  credit: Christoph Barth
+  first_party: true
+  found_via: https://github.com/ChrBarth/pypod#readme
+videos:
+  - url: https://www.youtube.com/watch?v=CrxVrib7MgY
+    title: PyPOD (Line 6 POD 2.0 software written in python)
+    credit: Christoph Barth
+    first_party: true
+    found_via: https://github.com/ChrBarth/pypod#readme
+versions:
+  - version: main @ 4dccf6e
+    date: 2021-05-24
+    url: https://github.com/ChrBarth/pypod/commit/4dccf6e5f5f3584672e2bab5281220a15ee51de5
+    notes: No tagged releases beyond v0.9; this is the latest commit.
+  - version: v0.9
+    date: 2021-05-03
+    url: https://github.com/ChrBarth/pypod/releases/tag/v0.9
+    notes: First version the author considered fully working, mainly the GUI.

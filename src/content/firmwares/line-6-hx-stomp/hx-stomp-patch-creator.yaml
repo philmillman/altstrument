@@ -1,0 +1,33 @@
+device: line-6-hx-stomp
+also_devices: [line-6-helix, line-6-hx-effects]
+kind: tool
+name: HX Stomp Preset Builder
+summary: Small workspace of Python scripts, a recipe format and an agent skill that build HX Stomp and Helix family .hlx presets by applying a JSON recipe to a known-good preset, then inspect and validate the result.
+description: >-
+  build_hlx_from_recipe.py copies a base .hlx, sets the preset name and replaces models, names, enabled state and
+  parameters of the listed blocks, and the other two scripts print a preset's contents and check that it is
+  valid JSON with sensible block data. The README describes the workflow of keeping known-good presets,
+  writing a recipe, building, validating and importing in HX Edit, and a SKILL.md and an openai.yaml let an
+  AI agent drive it. The repository also holds about 20 .hlx files: the author's example presets, rough model
+  reference exports and five generated ones, some named after songs. The README names the Stomp, Helix and
+  HX Effects as targets and says the author checks results in HX Edit and on hardware, without listing what was
+  tried. It is small and early.
+status: active
+authors:
+  - name: rdalin82
+    url: https://github.com/rdalin82
+source: https://github.com/rdalin82/hx-stomp-patch-creator
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and no license statement.
+distribution: source-only
+install_notes: >-
+  Needs Python 3. Run build_hlx_from_recipe.py with --base, --recipe and --out, validate the output with
+  validate_hlx.py and import it with HX Edit. Keep backups of presets you care about.
+brick_risk: false
+tags: [generator, presets, python, cli, ai]
+versions:
+  - version: main @ c78bdff
+    date: 2026-05-02
+    url: https://github.com/rdalin82/hx-stomp-patch-creator/commit/c78bdffa2d93fb3345fcc072d478f0351af4f09b
+    notes: No tagged releases; this is the latest commit.

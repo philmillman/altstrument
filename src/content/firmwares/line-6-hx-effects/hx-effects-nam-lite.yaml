@@ -1,0 +1,42 @@
+device: line-6-hx-effects
+name: NAM A2 Lite for HX Effects
+summary: >-
+  A port of NAM A2 Lite to the HX Effects that patches stock firmware 3.80.0 so Neural Amp Modeler captures run on the
+  pedal's SHARC DSP, in place of the 1024-sample IR block.
+description: >-
+  The HX Effects has no amp blocks, so the NAM block takes over the identity of the 1024-sample IR block under IR > Single,
+  and that block is no longer available. The 2048-sample IR block stays, so a preset can run a capture into a cab IR. The knobs
+  are Model, Input, Bass, Mid, Treble, Presence, Ch Vol and Polarity, and captures load as User IRs like the HX Stomp version.
+  The kernel, assembler, simulator and firmware tools come from Derek Bui's hx-stomp-nam-lite, with a few hundred lines of offsets
+  and workarounds added. The kernel measures about 23% of a block in the simulator, and the README explains how to
+  tune the declared DSP cost by hand.
+
+  The repository includes demo captures that its author made, already converted to .wav. Its author warns that this is for
+  people comfortable with command line tools and with recovering the unit themselves.
+status: active
+authors:
+  - name: scottlynn73
+    url: https://github.com/scottlynn73
+  - name: Derek Bui
+    url: https://github.com/nocaseguy
+source: https://github.com/scottlynn73/hx-effects-nam-lite
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The README states GPL-3.0-or-later, as upstream. The repository holds no Line 6 code or data, and .gitignore keeps firmware/,
+  build/ and every .hxf out of it. The README says the built file is a derivative of Line 6's firmware and must not be shared.
+  The author releases the demo captures for free use.
+distribution: patch-your-own
+requires_stock: 3.80.0 (HX_Effects_v3.80.0_0xd97239907.hxf; the build checks the MD5 and refuses any other)
+install_notes: >-
+  Put the stock file in firmware/, then run build_effects.py (Python 3.10 or newer with numpy). Back up in HX Edit, close it,
+  and pick the built .hxf with Choose File in Line 6 Updater, on a unit already on 3.80.0. The author notes a flash may report
+  a problem and work on a second try. If it shows Boot Failure or stops at the splash, hold the > button at power on and
+  reinstall the stock file. Do not edit the MD5 check: a later firmware needs its offsets remapped.
+brick_risk: true
+tags: [nam, amp-modeling, patch]
+versions:
+  - version: main @ 85c4f6a
+    date: 2026-11-01
+    url: https://github.com/scottlynn73/hx-effects-nam-lite/commit/85c4f6ace9a3cc6674653e23fdf7f97c61319321
+    notes: No tagged releases; this is the latest commit.

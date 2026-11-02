@@ -1,0 +1,54 @@
+device: line-6-pod-hd
+kind: tool
+name: HD500 Editor
+summary: Electron and Node editor for the POD HD500 that talks to the pedal over its vendor USB protocol on Linux, Windows and macOS. Shows a signal graph, edits models and parameters live, manages 8 sets of presets, and includes an MCP server for AI editing.
+description: >-
+  Rights warning: the catalog folder holds amp, cab and effect tables derived from lpedit-lib and from Line 6's
+  published model list and POD HD Model Gallery, so some of the bundled data comes from Line 6 and others.
+
+  The HD500 is not a USB MIDI device, so the editor uses its vendor bulk endpoints with 64-byte packets and 4 KB
+  preset images, worked out from Line 6's last official editor and documented in docs/protocol.md and
+  docs/preset-format.md. Features are a drag-and-drop signal graph for paths A and B, live editing of every amp,
+  cab and effect model with footswitch and expression assignments, a mixer, input routing, tempo, a preset sidebar
+  for all 8 sets of 64 presets, library import and export, and import and export of Line 6 .h5e files. Edits go to
+  the pedal's edit buffer, and nothing reaches memory until Save to pedal is pressed, which first copies the old slot
+  to a backup file. The README says everything marked as working was verified on a real POD HD500 running
+  firmware 2.x, on Linux, in a Windows 10 VM with USB passthrough, and on macOS. It does not claim other POD HD models.
+  On Windows the editor and Line 6's audio driver cannot be used at the same time, because the editor needs the
+  control interface bound to WinUSB. The included MCP server lets an AI assistant read and edit a preset live,
+  with a snapshot first and an explicit confirmation to save. The first public release is a beta and its history
+  was rewritten before publication.
+status: active
+authors:
+  - name: linepix-idev
+    url: https://github.com/linepix-idev
+source: https://github.com/linepix-idev/hd500-editor
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is MIT. The NOTICE file says catalog/catalog.json derives from lpedit-lib by Nicolas Schwartz,
+  which is LGPL-3.0, and that amp-origins.json and fx-origins.json were transcribed from Line 6's published model
+  lists. Line 6's gallery text itself was removed from the repository before release. The Windows installers
+  bundle Zadig, which is GPL-3.0, as a separate program. The repository is not affiliated with Line 6.
+homepage: https://github.com/linepix-idev/hd500-editor
+distribution: download
+requires_stock: POD HD500 firmware 2.x
+install_notes: >-
+  Download the Linux deb or AppImage, the Windows setup or portable exe, or the macOS dmg from the releases page.
+  Linux needs the included udev rule, which the deb installs. Windows needs Zadig to bind the pedal's interface 1 to
+  WinUSB, which the installer offers, and this removes the pedal's sound card until Line 6's driver is
+  reinstalled. The macOS app is unsigned, so open it with right-click and Open. Export your library before
+  experimenting.
+brick_risk: false
+tags: [editor, librarian, presets, usb, research, mcp]
+image:
+  url: https://raw.githubusercontent.com/linepix-idev/hd500-editor/main/docs/img/editor.png
+  alt: HD500 Editor in dark theme with a preset library on the left and a signal chain of effect blocks on paths A and B joined by a mixer, with a Tape Echo block selected
+  credit: HD500 Editor contributors
+  source_url: https://github.com/linepix-idev/hd500-editor
+  first_party: true
+versions:
+  - version: v0.2.15
+    date: 2026-10-14
+    url: https://github.com/linepix-idev/hd500-editor/releases/tag/v0.2.15
+    notes: Pre-release that prepares the repository for public release and adds operating-system logos to the site.

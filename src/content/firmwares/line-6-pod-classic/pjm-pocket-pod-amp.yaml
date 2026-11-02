@@ -1,0 +1,36 @@
+device: line-6-pod-classic
+kind: tool
+name: pjm-pocket-pod-amp
+summary: Max for Live MIDI effect for Ableton Live that sends a PocketPOD its amp model, cab model, drive, EQ, presence, bright and AIR settings, with up and down buttons for the amp and cab lists.
+description: >-
+  The device sits on a MIDI track whose output goes to the PocketPOD's MIDI port, and covers only the amp section
+  of the unit. The up and down buttons are meant to be mapped to foot switches. It does not read anything back from
+  the PocketPOD, so turning the unit's knobs does not move the device. A Resend button sets all controls again.
+  Controls are auto-mapped to two banks of eight. The author used pod-ui while debugging, and the changelog says the
+  PocketPOD answers MIDI messages that Line 6's public documentation leaves out. It needs Ableton Live with Max for
+  Live.
+status: dormant
+authors:
+  - name: pmuellr
+    url: https://github.com/pmuellr
+source: https://github.com/pmuellr/pjm-pocket-pod-amp
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and no license statement.
+distribution: source-only
+install_notes: >-
+  Copy pjm-pocket-pod-amp.amxd into Live, add it to a MIDI track and set that track's output to the PocketPOD.
+  The repository also holds an example Live set.
+brick_risk: false
+tags: [midi, max-for-live, ableton, controller]
+image:
+  url: https://raw.githubusercontent.com/pmuellr/pjm-pocket-pod-amp/main/images/pjm-pocket-pod-amp.png
+  alt: pjm-pocket-pod-amp Max for Live device with amp and cab pickers, bright and AIR switches, and dials for drive, bass, mid, treble, presence and volume
+  credit: pmuellr
+  source_url: https://github.com/pmuellr/pjm-pocket-pod-amp
+  first_party: true
+versions:
+  - version: main @ 5f30de6
+    date: 2024-10-19
+    url: https://github.com/pmuellr/pjm-pocket-pod-amp/commit/5f30de61e71bffd0cda9332968826b60c5e3237e
+    notes: No tagged releases; this is the latest commit, which the README changelog labels version 2024.10.18.

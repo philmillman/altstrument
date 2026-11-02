@@ -1,0 +1,29 @@
+device: line-6-helix-stadium
+kind: tool
+name: Take Controller
+summary: SwiftUI app for iPad and Mac that sends MIDI control change messages to a Helix Stadium so another person can queue songs and drive Showcase mode.
+description: >-
+  Take Controller sends control changes on CC 47 to 51 for previous and next marker, cycle clear, cycle continue,
+  return to zero, previous and next song and play and pause, and CC 63 and CC 10 when a playlist or song is chosen. It
+  keeps names for playlists and songs, lets you choose the MIDI destination, and works through a USB-C to MIDI
+  adapter on an iPad. The author says an AI tool wrote it, and the README does not state which firmware or
+  unit it was tried on.
+status: active
+authors:
+  - name: maxwoodhams
+    url: https://github.com/maxwoodhams
+source: https://github.com/maxwoodhams/Take-Controller---Helix-Stadium-MIDI-Messager
+source_status: open
+license: Unlicense
+license_notes: The LICENSE file is the Unlicense public domain dedication.
+distribution: source-only
+install_notes: >-
+  Build HelixMIDI.xcodeproj in Xcode with your own signing settings (Config/Signing.xcconfig) and run it on an iPad
+  or Mac with a MIDI interface connected to the Stadium. No release is published.
+brick_risk: false
+tags: [controller, midi, ios, performance, setlists]
+versions:
+  - version: main @ 7cc6271
+    date: 2026-04-28
+    url: https://github.com/maxwoodhams/Take-Controller---Helix-Stadium-MIDI-Messager/commit/7cc62714e223097a040fb30da4d416f51f74e2e5
+    notes: No tagged releases; this is the latest commit.

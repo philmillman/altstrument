@@ -1,0 +1,33 @@
+device: line-6-hx-stomp
+also_devices: [line-6-helix]
+kind: tool
+name: hx-tools (frankdeath)
+summary: Python command-line tool that reads HX Edit backup files (.hxb) and set-list files (.hls) on Linux, prints preset, set-list and IR names and exports IRs as WAV, set lists as .hls and presets as .hlx. Tested only with HX Stomp backups from 2.81 and 2.82.
+description: >-
+  The author wanted to inspect Helix files on Linux without a Windows virtual machine or a connected HX Stomp. The tool parses the
+  sections of a backup file, global settings, set lists, IR labels and preset data, and writes the pieces out as separate files. It builds
+  on the file-format notes in Antony Corbett's HelixBackupFiles project. The README says testing was minimal and that exported
+  files should not be loaded onto a Helix or HX device, because the exported .hls and .hlx files differ from HX Edit's in subtle
+  ways. The author compared a few exported IRs with HX Edit's and found them identical. The README describes Helix backup and set-list files, but
+  only HX Stomp backups were tested, so the Helix line is untested.
+status: dormant
+authors:
+  - name: frankdeath
+    url: https://github.com/frankdeath
+source: https://github.com/frankdeath/hx-tools
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and no license statement.
+distribution: source-only
+requires_stock: HX Stomp backups from firmware 2.81 and 2.82
+install_notes: >-
+  Needs Linux and Python 3. Clone the repository and run hx-tool.py with the backup or set-list file. The author warns against loading
+  exported files onto a device. Windows is expected to break on file paths.
+brick_risk: false
+tags: [librarian, converter, presets, python, cli, research]
+versions:
+  - version: master @ 6a3affa
+    date: 2022-03-23
+    url: https://github.com/frankdeath/hx-tools/commit/6a3affa7acdaf2c84e3d49eefa8fb1346214a2dd
+    notes: No tagged releases; this is the latest commit.

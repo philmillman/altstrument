@@ -1,0 +1,39 @@
+device: line-6-pod-hd
+kind: tool
+name: LPEdit
+summary: Go library and Wails desktop app that reimplement parts of Line 6 HD Edit for the POD HD500X from a reverse-engineered USB protocol, reading and writing effect types and parameters. Linux only, through the kernel driver.
+description: >-
+  LPEdit talks to the unit through the Linux line6 kernel driver's ALSA hwdep interface, so it runs on Linux only.
+  The supported features are reading a preset's pedal values and positions when a preset or stomp switch is
+  activated, reading and writing effect types and parameters, and reading tempo from the TAP switch. Amps, moving
+  blocks and setup functions are listed as not yet done. Only the POD HD500X is named as supported. The HD Pro,
+  HD500, HD400 and HD300 are listed as wanted. Known bugs include crashes when starting to listen to the pedal
+  and when stopping and restarting it. The protocol library lives in the separate lpedit-lib repository, under
+  the LGPL, which the HD500 Editor project later used as the starting point for its tables. Releases up to v0.5 are
+  the older GUI, and the current master is a rewrite in Wails with only the left panel done.
+status: dormant
+authors:
+  - name: StarAurryon
+    url: https://github.com/StarAurryon
+source: https://github.com/StarAurryon/lpedit
+source_status: open
+license: GPL-2.0-only
+license_notes: >-
+  The LICENSE file is the GPL version 2 text. It has no "or later" statement for the program itself. The lpedit-lib
+  repository has an LGPL version 3 LICENSE file, while its source headers refer to the LGPL version 2 or later.
+distribution: source-only
+requires_stock: POD HD500X
+install_notes: >-
+  Linux with a kernel that includes the line6 driver. Building needs Node.js 18, Go 1.22 and Wails, then
+  wails dev or wails build. The README for the library says a kernel of 5.8 or newer fixes a problem with stopping
+  communication.
+brick_risk: false
+tags: [editor, research, usb, linux, protocol]
+versions:
+  - version: master @ 4027b60
+    date: 2024-03-08
+    url: https://github.com/StarAurryon/lpedit/commit/4027b60c0ff91a637ef924b9a87684eb53d85b5b
+    notes: Wails rewrite with the left panel working; the latest commit.
+  - version: v0.5
+    date: 2021-01-30
+    url: https://github.com/StarAurryon/lpedit/releases/tag/v0.5

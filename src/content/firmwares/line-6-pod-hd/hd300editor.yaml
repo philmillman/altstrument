@@ -1,0 +1,45 @@
+device: line-6-pod-hd
+kind: tool
+name: POD HD300 Unchained Editor
+summary: Python and PyQt6 editor for the POD HD300 that sends SysEx over MIDI, lifts the stock editor's limit on which effect type each FX slot can hold, and reads and writes .h3e and .syx presets. Includes drag-and-drop signal chain and a DI mode.
+description: >-
+  Rights warning: the repository bundles about 230 images named after Line 6 amp, cab and effect models, with no source
+  given, plus a JSON model table, and has no license file.
+
+  The HD300's stock editor ties FX1 to drive and compression, FX2 to modulation and so on. The author says that
+  limit is software only and this editor lets any effect category go into any of the four slots (FX1 to FX3 and
+  reverb). The rest of the editor offers drag-and-drop reordering of the amp, cab, FX, wah and volume blocks with
+  PRE and POST placement, full amp, cab, gate and wah parameters, two-way SysEx sync with the pedal, a list of all 128
+  presets with renaming, import and export of .h3e and .syx files, and a DI mode that switches to a clean preset and
+  mutes USB monitoring for reamping. Tempo is synced from the hardware and a persistent backup of the edit
+  buffer is kept. The README warns that free routing is experimental, may add latency and can reset effect
+  parameters, and that the mapping tool should be left alone. It does not describe what was tested on hardware. Changes reach the pedal's memory only when Send
+  Active is pressed.
+status: active
+authors:
+  - name: aleksandrlomtev
+    url: https://github.com/aleksandrlomtev
+source: https://github.com/aleksandrlomtev/hd300editor
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and no license statement. The img_converted folder holds images named after Line 6
+  models and the repository gives no source for them, and a workflow publishes them on GitHub Pages.
+distribution: source-only
+requires_stock: POD HD300
+install_notes: >-
+  Needs Python 3.8 or newer. Install requirements.txt, connect the HD300 over USB, then run python main.py. Export
+  presets before using free routing or the mapping tool.
+brick_risk: false
+tags: [editor, midi, sysex, python, presets, librarian]
+image:
+  url: https://raw.githubusercontent.com/aleksandrlomtev/hd300editor/main/img_converted/sh.png
+  alt: POD HD300 Unchained Editor in a dark theme, showing a signal chain of effect blocks, a preset list on the left, module names in the middle and amp parameter sliders on the right
+  credit: aleksandrlomtev
+  source_url: https://github.com/aleksandrlomtev/hd300editor
+  first_party: true
+versions:
+  - version: main @ 4088eb4
+    date: 2026-08-22
+    url: https://github.com/aleksandrlomtev/hd300editor/commit/4088eb46f4a5679935c7c9bfc9ebde2eb183a8ce
+    notes: No tagged releases; this is the latest commit.

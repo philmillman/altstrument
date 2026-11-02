@@ -1,0 +1,37 @@
+device: line-6-pod-xt
+kind: tool
+name: podx3
+summary: Python 2 and pyusb scripts and protocol notes for the POD X3 family. They decode the vendor USB bulk protocol, print knob and parameter changes, read the serial number and capture raw audio. The Linux driver work was upstreamed.
+description: >-
+  The POD X3 and X3 Live have no class-compliant USB interface, so the repository documents Line 6's vendor
+  protocol: a header with a length and flag byte, then parameter messages that use floats. pypodx3.py connects to a
+  POD X3, performs the handshake, prints the changes it sees when controls are turned, and has a function that
+  sets parameters. pypodx3_parser.py describes and parses the configuration format and can also read USBlyzer
+  CSV logs. getrawaudio.py reads isochronous audio, with the author noting that the data is not fully correct. The
+  repository also keeps lsusb output for the X3 and the X3 Live and an older notes file from the line6linux project
+  by Maciej Dziardziel. The author's kernel patches for the X3 and for settings access went to alsa-devel, and the README
+  says the Linux kernel now supports both, so only the userspace research stays here. The script header warns
+  that it may erase firmware and that the user takes the risk, and it was written for experimenting rather than
+  as a finished tool.
+status: dormant
+authors:
+  - name: andree182
+    url: https://github.com/andree182
+source: https://github.com/andree182/podx3
+source_status: open
+license: GPL-2.0-only
+license_notes: >-
+  The LICENSE file is the GPL version 2 text, and the script header says it is released under GPL v2, with no "or
+  later" statement.
+distribution: source-only
+install_notes: >-
+  Needs Python 2 and pyusb. Edit the calls at the end of pypodx3.py to choose what to run, make sure the kernel
+  line6 driver is not bound, and run it as root. The author reports that it sometimes works on the first and second
+  attempt and then needs the POD turned off and on again.
+brick_risk: false
+tags: [research, python, usb, protocol]
+versions:
+  - version: master @ 578e6b5
+    date: 2016-12-11
+    url: https://github.com/andree182/podx3/commit/578e6b5e3a6939e6d7c16fbcfd9b636e10c68cba
+    notes: No tagged releases; this is the latest commit.

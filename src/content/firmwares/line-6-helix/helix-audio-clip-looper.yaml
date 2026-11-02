@@ -1,0 +1,37 @@
+device: line-6-helix
+kind: tool
+name: Helix Audio Clip Looper
+summary: Java desktop app that plays a dropped audio file into a Helix and drives the Helix looper over MIDI so the clip is recorded as a loop with accurate loop points.
+description: >-
+  The app sends MIDI control changes to open the looper, record, overdub, play, stop and close it, and plays
+  the audio file through a chosen audio device that the Helix routes into the looper. The author routes USB
+  input 3/4 into the main path before the looper, and adds that the looper can crash the unit if it is sent
+  too many commands and sometimes ignores messages. It was used on macOS and has not been tested on Windows or
+  Linux. The repository includes the author's demo preset as an .hlx file.
+status: dormant
+authors:
+  - name: guyburton
+    url: https://github.com/guyburton
+source: https://github.com/guyburton/HelixAudioClipLooper
+source_status: open
+license: Apache-2.0
+license_notes: >-
+  The LICENSE file is the Apache 2.0 text with the copyright placeholder left unfilled.
+distribution: source-only
+install_notes: >-
+  Build with Maven and run the Java app, pick the Helix MIDI device and an audio device that reaches the
+  looper, drag a file onto the grey panel and press Play. The README describes an aggregate audio device on macOS
+  and a USB 3/4 routing in the Helix preset.
+brick_risk: false
+tags: [midi, looper, utility, java]
+image:
+  url: https://raw.githubusercontent.com/guyburton/HelixAudioClipLooper/master/screenshot.png
+  alt: Helix signal chain with a multi input path through wah, two distortion, amp and cab and modulation blocks to a looper, and a second path from USB 3/4 and a volume block feeding it
+  credit: guyburton
+  source_url: https://github.com/guyburton/HelixAudioClipLooper#readme
+  first_party: true
+versions:
+  - version: master @ 64f84f6
+    date: 2019-05-25
+    url: https://github.com/guyburton/HelixAudioClipLooper/commit/64f84f6fc0a0accf7ef048d23a44a93fb134a03d
+    notes: No tagged releases; this is the latest commit.

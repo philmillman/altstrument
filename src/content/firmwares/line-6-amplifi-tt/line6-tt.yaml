@@ -1,0 +1,50 @@
+device: line-6-amplifi-tt
+kind: tool
+name: line6-tt
+summary: Rust GUI and command-line tool that controls an AMPLIFi TT over USB from Linux, with tone librarian and editor, audio routing, and guarded firmware inspection and flashing. No custom firmware image is published.
+description: >-
+  Rights warning: the repository includes six block icons taken from Line 6's AMPLIFi app, two Line 6 tone files used as
+  test data, and the API key from Line 6's app in the source.
+
+  The author reverse engineered the TT's USB editor protocol, boot layout and firmware container from Line 6's own updater
+  and app, and documented it in a large set of research notes. The tools list and edit the 100 onboard tones, import and
+  export official .l6p presets, switch to a clean guitar signal, mute the guitar, set the master level, choose the Amp or Main
+  guitar route and set up JACK or PipeWire routing to an external effects host. Tone writes take a full bank backup first.
+  The Line 6 Cloud page logs in to Line 6's web service with your Line 6 account to search and download community tones, so
+  it sends your login to a vendor service.
+
+  Most of these features depend on a modified copy of the TT's 2.61 main firmware image that the author built and
+  installed on their own unit. It adds a loader that accepts small agent programs over USB into RAM, and those agents
+  carry the controls. The repository holds the C sources, patch builders and research for this, but no firmware image or
+  SD card image, and the builders read Line 6 files from the author's local directories that are not in the repository.
+  The documentation shows the modified build running on the author's unit through many iterations, with several failed
+  placements early on that needed the microSD card rewritten, and the author then returned the unit to stock 2.61 and
+  recorded a final recovery check. The firmware commands install a file you supply: stock-reflash accepts only the pinned
+  official 2.61 hash, and custom-reflash accepts any file that passes its checks. The README says a failed flash can leave a
+  unit needing its microSD card restored. 96 kHz, extra USB channels and onboard routing were ruled out by the author as
+  hardware limits.
+status: active
+authors:
+  - name: Jmainguy
+    url: https://github.com/Jmainguy
+source: https://github.com/Jmainguy/line6-tt
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text for the project's original code. The README says Line 6 and AMPLIFi names belong to
+  their owners. The repository holds no Line 6 firmware, installers, device backups or SD card images, but it includes the
+  Line 6 app icons, two Line 6 tone files and the app's API key noted above, which the MIT license does not cover.
+distribution: source-only
+requires_stock: AMPLIFi TT firmware 2.61
+install_notes: >-
+  Needs Linux, a Rust toolchain and libusb. Build with cargo build --release and run packaging/install-user.sh, then
+  install the included udev rule to use the TT without sudo. Offline firmware inspection with line6-tt inspect does not
+  touch the unit. Flashing needs the TT in its Tone+Tap recovery mode and a firmware file you obtained yourself. Keep a
+  verified copy of the original microSD card image before any flash, and do not cut power during a transfer.
+brick_risk: true
+tags: [editor, librarian, usb, research, flasher, usb-audio, desktop, presets]
+versions:
+  - version: main @ 1bce01b
+    date: 2026-09-09
+    url: https://github.com/Jmainguy/line6-tt/commit/1bce01b3f8dbaa4a472f48b330c7cc8883139287
+    notes: No tagged releases; this is the latest commit.

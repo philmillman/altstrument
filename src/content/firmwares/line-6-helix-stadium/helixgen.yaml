@@ -1,0 +1,52 @@
+device: line-6-helix-stadium
+kind: tool
+name: helixgen
+summary: Python library and command-line tool that generates and edits Helix Stadium .hsp presets from JSON recipes, manages IRs and setlists, and controls a Stadium over the LAN; a separate terminal UI builds on it.
+description: >-
+  Rights warning: the package vendors model, parameter and UI definition data (src/helixgen/device/_defs_data.json,
+  _modelmap.json and _param_ui.json) that the author's tools/build_device_defs.py decodes from the resource files of
+  Line 6's Helix Stadium editor app, and the README calls the shipped block library one built from device exports.
+
+  helixgen-core writes Stadium .hsp presets from a recipe covering paths, splits, snapshots, footswitches,
+  expression pedals, MIDI and Command Center, edits parameters, blocks and controller assignments in an existing
+  file, reads a preset back as a recipe, and can also produce legacy .hlx files. It computes the Stadium's IR hash
+  and talks to a Stadium over the LAN with OSC over ZeroMQ, with no editor app, to list, load, create, rename and
+  delete content, set parameters, sync setlists and back up. The protocol document says the CRUD operations and live
+  parameter edits were exercised on a Stadium XL on firmware 1.3.2, and the project has since added firmware 1.4
+  handling. The README warns that loading generated presets can be rejected, corrupt slots or crash the unit.
+  helixgen-tui is a separate repository and PyPI package, a Textual terminal librarian for tones, setlists, IRs and
+  device sync that depends on helixgen. A third repository, sheax0r/helixgen, is a Claude Code plugin for the
+  engine and was not reviewed here.
+status: active
+authors:
+  - name: Mike Shea
+    url: https://github.com/sheax0r
+source: https://github.com/sheax0r/helixgen-core
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT licence, and helixgen-tui carries the same licence. The vendored definition data
+  comes from Line 6's editor and is not covered by it.
+homepage: https://github.com/sheax0r/helixgen-tui
+distribution: download
+requires_stock: Helix Stadium XL on firmware 1.3.2 or 1.4 (the versions the author tested)
+install_notes: >-
+  Needs Python 3.11 or newer. Install with pip install 'helixgen[device]', then seed the block library from your own
+  device exports with helixgen ingest. The terminal UI installs with uv tool install helixgen-tui or pipx install
+  helixgen-tui. IR hashing from WAV files needs libsndfile. Run helixgen device backup before writing to the unit,
+  and note that the device link has no authentication.
+brick_risk: false
+tags: [generator, editor, protocol, research, python, cli, tui]
+versions:
+  - version: v0.58.1
+    date: 2026-10-29
+    url: https://github.com/sheax0r/helixgen-core/tree/v0.58.1
+    notes: Git tag; no GitHub release page.
+  - version: v0.58.0
+    date: 2026-10-28
+    url: https://github.com/sheax0r/helixgen-core/tree/v0.58.0
+    notes: Git tag; no GitHub release page.
+  - version: v0.50.0
+    date: 2026-08-18
+    url: https://github.com/sheax0r/helixgen-core/tree/v0.50.0
+    notes: Git tag; no GitHub release page.

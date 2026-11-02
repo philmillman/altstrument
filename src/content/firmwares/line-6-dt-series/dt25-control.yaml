@@ -1,0 +1,33 @@
+device: line-6-dt-series
+kind: tool
+name: DT25 Control
+summary: Browser-based MIDI controller for the Line 6 DT25 that sends CC messages over USB MIDI or Bluetooth MIDI to the amp's MIDI input. It covers channels, voicings, amp, cab, power amp and reverb, with presets kept in the browser. DT50 options are hidden by default.
+description: >-
+  The page generates its controls from a JSON parameter file built from Line 6's DT amplifier MIDI implementation guides. Since
+  the amp has no MIDI output and no program change, the app keeps its own copy of all eight channel and voicing slots, and its Send
+  slot and Sync all buttons push them to the amp. It lists the amp, cab and reverb models, has a mode for amps on firmware before
+  2.0 that accept only the CCs from the Pilot's Guide, and can show DT50 controls for the 12AX7 boost, PI B+ voltage and
+  feedback cap. The README notes that one documented CC, 122, did not respond on a real DT25, and nothing says the DT50 settings
+  were tried on a DT50. Presets export and import as JSON, and a profile file moves the whole setup between devices. It runs on GitHub Pages.
+status: active
+authors:
+  - name: Giovanni-Russo-Boscoli
+    url: https://github.com/Giovanni-Russo-Boscoli
+source: https://github.com/Giovanni-Russo-Boscoli/line6-dt25-MIDI-controller
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and no license statement. data/dt25-params.json lists parameter names, CC numbers and model
+  names taken from Line 6's MIDI implementation guides.
+homepage: https://giovanni-russo-boscoli.github.io/line6-dt25-MIDI-controller/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, Edge or Opera, or serve the folder locally, since Web MIDI needs https or localhost. Connect a
+  USB-to-MIDI interface from its MIDI OUT to the amp's 5-pin MIDI IN. The amp listens on MIDI channel 1. Safari has no Web MIDI.
+brick_risk: false
+tags: [controller, midi, web-midi, presets, web]
+versions:
+  - version: main @ e94f17d
+    date: 2026-10-23
+    url: https://github.com/Giovanni-Russo-Boscoli/line6-dt25-MIDI-controller/commit/e94f17d7c4d1661279ffd83319b0d8d66f2de32c
+    notes: No tagged releases; this is the latest commit.

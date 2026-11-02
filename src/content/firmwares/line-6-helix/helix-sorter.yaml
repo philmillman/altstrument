@@ -1,0 +1,37 @@
+device: line-6-helix
+kind: tool
+name: Vesco's Helix Sorter
+summary: Java command-line utility that copies a folder of Helix .hlx patches into subfolders named after the amp models each patch uses.
+description: >-
+  The program searches a directory and its subdirectories for .hlx files, reads each preset's amp blocks
+  through a small Jackson-based model of the file and copies the file into a sorted folder named for each amp
+  model. A patch with several amps is copied into every matching folder and its file name gets an underscore
+  prefix. The originals are left in place. It was written for the first Helix in 2016 and the last release, in 2019, fixed a
+  failure on newer files. It does not talk to the unit.
+status: dormant
+authors:
+  - name: b-vesco
+    url: https://github.com/b-vesco
+source: https://github.com/b-vesco/vesco-helixsorter
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and no license statement.
+distribution: download
+install_notes: >-
+  Needs Java. Drop the jar from the releases page into your base patch folder and run java -jar with its name, or
+  pass a directory as the argument. It writes a sorted folder in the current directory. Building from source uses
+  Maven.
+brick_risk: false
+tags: [librarian, presets, java, utility]
+versions:
+  - version: 1.0.4
+    date: 2019-01-27
+    url: https://github.com/b-vesco/vesco-helixsorter/releases/tag/1.0.4
+    notes: Fixes a null pointer failure by tolerating unknown fields in preset files.
+  - version: 1.0.3
+    date: 2017-08-20
+    url: https://github.com/b-vesco/vesco-helixsorter/releases/tag/1.0.3
+  - version: v1.0.0
+    date: 2016-03-28
+    url: https://github.com/b-vesco/vesco-helixsorter/releases/tag/v1.0.0
+    notes: First release.

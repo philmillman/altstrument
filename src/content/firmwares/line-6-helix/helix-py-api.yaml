@@ -1,0 +1,32 @@
+device: line-6-helix
+kind: tool
+name: Helix Py API
+summary: Python library for editing Line 6 Helix bundle, setlist and preset files and for sending MIDI preset, setlist and snapshot changes to Helix hardware or Helix Native.
+description: >-
+  The library models bundles (.hlb), setlists (.hls), presets (.hlx) and snapshots as Python objects. It can
+  rename, reorder, clone, import and export them, split a bundle into individual files, build setlists from
+  many presets, tidy names and standardise snapshot colours across a whole bundle. A MIDI module switches
+  setlists, presets and snapshots on Helix hardware or on Helix Native through a virtual MIDI cable, and
+  can send raw messages to other devices such as an FBV. The README lists what it cannot do: read state
+  from the Helix, import or export files to the unit, and anything about blocks, impulse responses or
+  favorites. The batch files in docs/helpers are for Windows. The README does not say which Helix models
+  were used for testing.
+status: dormant
+authors:
+  - name: Hack Labs Guitar
+    url: https://github.com/HackLabsGuitar
+source: https://github.com/HackLabsGuitar/helix-py-api
+source_status: open
+license: BSD-3-Clause
+homepage: https://hacklabsguitar.github.io/helix-py-api
+distribution: source-only
+install_notes: >-
+  Clone the repository and install the Python dependencies; the README points at a requirements.txt that the repository does not contain. For Helix Native, install a virtual MIDI
+  cable, and note that the Helix Native manual limits remote MIDI control to the AU and AAX plugin formats.
+brick_risk: false
+tags: [library, python, midi, presets, setlists]
+versions:
+  - version: main @ 4c13af8
+    date: 2024-06-03
+    url: https://github.com/HackLabsGuitar/helix-py-api/commit/4c13af8fe58a3ad977333c57d49c4eca2b932135
+    notes: No tagged releases; this is the latest commit.

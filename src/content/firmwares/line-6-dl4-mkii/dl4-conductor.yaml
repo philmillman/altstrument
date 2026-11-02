@@ -1,0 +1,33 @@
+device: line-6-dl4-mkii
+kind: tool
+name: DL4 Conductor
+summary: macOS Swift app and CLI that makes a Mac the MIDI clock master for one to four DL4 MkII pedals, sequences delay subdivisions and feedback sweeps, routes a MIDI grid controller to the loopers, and serves a phone looper remote.
+description: >-
+  The conduct mode sends MIDI clock so the pedal's repeats follow the tempo, steps through subdivisions per bar and
+  sweeps feedback with a tempo-synced LFO, and plays a different subdivision on a second pedal. The grid mode
+  learns pad presses from a USB MIDI controller such as a Midi Fighter 64 and turns them into looper commands for a
+  chosen pedal, with LED feedback, quantised triggers and a re-sync of running loops from an incoming clock, because the
+  DL4's looper ignores MIDI clock. The loop mode serves a small web page on the local network for a phone. All
+  control is MIDI on channel 1 using the DL4 MkII's documented messages, and the app only sends MIDI. Several roadmap
+  items, such as four-pedal addressing and LED colour calibration, are marked as still needing checks on real
+  hardware. It builds with the Swift toolchain on macOS 13 or newer.
+status: active
+authors:
+  - name: clearchaos3
+    url: https://github.com/clearchaos3
+source: https://github.com/clearchaos3/dl4-conductor
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and no license statement.
+distribution: source-only
+install_notes: >-
+  Run make-app.sh to build and install the app into Applications, or use swift run dl4 with list, test, conduct or
+  loop. For clock sync set the pedal's Receive MIDI Clock global setting to Auto or On. The DL4 MkII's USB-C port
+  carries MIDI and firmware only, not audio.
+brick_risk: false
+tags: [controller, midi, usb-midi, looper, macos]
+versions:
+  - version: main @ 8021bc4
+    date: 2026-08-06
+    url: https://github.com/clearchaos3/dl4-conductor/commit/8021bc4aaff4a03fbdb57fd46d81039daffb2313
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,33 @@
+device: line-6-pod-xt
+also_devices: [line-6-pod-classic]
+kind: tool
+name: Line 6 Control
+summary: Experimental Python and GTK editor for a PODxt over ALSA raw MIDI, with channel switching and live reading and writing of amp, stomp, mod and delay parameters. A C extension handles the MIDI link. PocketPOD support is basic.
+description: >-
+  The project began in 2006 and was revived in April 2020 as a Python 3 application with a Glade interface. A small C extension,
+  pypod.c, opens an ALSA raw MIDI port and sends and parses POD messages, and the Python side builds knob and switch controls
+  for amp, stomp box, modulation, delay, EQ, noise gate and reverb. It can import Line 6 Edit .l6t files. Code paths exist for
+  the PODxt and the PocketPOD, and a 2020 commit adds basic PocketPOD support and a PocketPOD dump parser. The README calls
+  it experimental with only a few features, and lists a known problem where time and speed parameters can crash the application.
+  The repository does not say which devices were tested on hardware.
+status: dormant
+authors:
+  - name: Gregory Thiemonge
+    url: https://github.com/gthiemonge
+source: https://github.com/gthiemonge/line6control
+source_status: open
+license: GPL-2.0-only
+license_notes: >-
+  The repository has no LICENSE file. File headers state the GNU GPL: the C module says version 2 only, while most Python
+  files say version 2 or any later version, so the combined work is treated as GPL-2.0-only.
+distribution: source-only
+install_notes: >-
+  Needs Python 3, PyGObject, the Glib and ALSA development headers and a PODxt on an ALSA MIDI port. Run make to build the C module,
+  then start line6control.py.
+brick_risk: false
+tags: [editor, midi, sysex, python, presets]
+versions:
+  - version: master @ 1fb0d5d
+    date: 2020-04-19
+    url: https://github.com/gthiemonge/line6control/commit/1fb0d5d595dc416f3b3d85943fa70426243b9c4f
+    notes: No tagged releases; this is the latest commit.

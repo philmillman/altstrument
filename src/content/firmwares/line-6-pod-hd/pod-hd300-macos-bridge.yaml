@@ -1,0 +1,35 @@
+device: line-6-pod-hd
+kind: tool
+name: POD HD300 macOS Bridge
+summary: Experimental user-space USB audio receiver for the POD HD300 on Apple Silicon Macs. A Python bridge feeds a BlackHole-based virtual input so GarageBand and other apps can record from the HD300. The control window is in Korean, and there is no preset editing or playback.
+description: >-
+  The bridge reads the HD300's 48 kHz 24-bit stereo USB audio with libusb, using format details taken from the Linux line6
+  driver sources, which the repository keeps under vendor/linux-line6. It passes the audio through a FIFO and resampler to a
+  virtual Core Audio device named POD HD300 USB Bridge 2ch, built from a pinned BlackHole submodule. A small control window sets
+  latency modes, extra gain and a level meter, and the bridge reconnects up to three times after USB errors. The author
+  confirms device recognition and data transfer in GarageBand on macOS 27.2, and says long sessions, other Macs and other
+  DAWs are not guaranteed, with dropouts and USB reconnects seen. The HD400, HD500 and other models are unverified, playback
+  to the HD300 is not implemented, and preset editing and firmware updates are outside its scope. The README is in Korean with
+  an English summary line.
+status: active
+authors:
+  - name: toto9999
+    url: https://github.com/toto9999
+source: https://github.com/toto9999/pod-hd300-macos-bridge
+source_status: open
+license: GPL-2.0-only
+license_notes: >-
+  The LICENSE file is the GPL version 2 text, and THIRD_PARTY_NOTICES.md says the project's own code is GPL-2.0-only. The vendored
+  Linux line6 reference sources keep their GPL-2.0 notices, and the BlackHole plug-in is a separate GPL-3.0 component.
+distribution: download
+install_notes: >-
+  Download the arm64 zip from the release into a permanent folder, run Setup.command, then Install Bridge.command, which installs a
+  HAL plug-in with an administrator prompt and restarts Core Audio. The release is not signed or notarized. Start the bridge from HD300
+  Control.command. Source builds need git submodules, which GitHub's source zip omits.
+brick_risk: false
+tags: [usb-audio, usb, desktop, python, research]
+versions:
+  - version: v0.1.0-experimental
+    date: 2026-10-27
+    url: https://github.com/toto9999/pod-hd300-macos-bridge/releases/tag/v0.1.0-experimental
+    notes: First experimental release for Apple Silicon.

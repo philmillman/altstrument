@@ -1,0 +1,42 @@
+device: line-6-helix
+also_devices: [line-6-hx-stomp, line-6-hx-stomp-xl, line-6-hx-effects]
+kind: tool
+name: MIDI to HX Adapter
+summary: Python script with a Tk window that turns MIDI keyboard notes into the control change messages that drive the 3 Note Generator block on Helix and HX devices, in mono or three-voice poly mode.
+description: >-
+  The generator block cannot be played by MIDI notes, only through control changes on its oscillator shape,
+  note, octave, glide and level. The adapter listens to a keyboard, splits each note into a note and an octave
+  value, and sends those and the bypass message on configurable CC numbers, with intervals for the second and
+  third oscillators. It runs headless on a Raspberry Pi if the port names are given. The README title lists the
+  Helix Floor, LT, Rack, HX Stomp, HX Stomp XL and HX Effects, but the author describes setting it up on an LT
+  and the screenshot shows Helix LT selected, so the other models are claimed and untested. It lists known
+  problems with duplicate ports on Linux and with MIDI Thru.
+status: dormant
+authors:
+  - name: te-regenhardt
+    url: https://github.com/te-regenhardt
+source: https://github.com/te-regenhardt/midi-2-helix-adapter
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL version 3 text, and no file offers a later version.
+distribution: source-only
+requires_stock: Helix LT; the README does not give a firmware version
+install_notes: >-
+  Install mido, python-rtmidi, tk and Pillow, set the 3 Note Generator's parameters and bypass to the CC
+  numbers shown in the window using HX Edit or the unit's own menus, then run helix_midi_adapter.py. Stop it
+  with CC 18 or by holding seven keys. The HX Stomp, HX Stomp XL, HX Effects, Helix Floor and Rack are
+  claimed but untested.
+brick_risk: false
+tags: [midi, synth, utility, python]
+image:
+  url: https://raw.githubusercontent.com/te-regenhardt/midi-2-helix-adapter/main/assets/screencap_adapter.jpg
+  alt: The MIDI to HX Adapter window with a Helix LT device choice, MIDI input and output menus, oscillator CC number menus and a Start adapter button
+  credit: te-regenhardt
+  source_url: https://github.com/te-regenhardt/midi-2-helix-adapter#readme
+  first_party: true
+versions:
+  - version: main @ c0c4189
+    date: 2021-12-16
+    url: https://github.com/te-regenhardt/midi-2-helix-adapter/commit/c0c4189501dac492dec07ce57597c06ae580deea
+    notes: No tagged releases; this is the latest commit.

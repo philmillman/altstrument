@@ -1,0 +1,32 @@
+device: line-6-pod-hd
+kind: tool
+name: pod_hd_edit
+summary: Early C library and Qt skeleton for controlling a POD HD500 from Linux through the kernel's ALSA hwdep interface. The library receives preset, pedal and parameter events, and the GUI is a stub that draws an FX chain.
+description: >-
+  The author wrote a small library, podhdctrl, that opens the Line 6
+  hwdep device and parses incoming messages into events: preset changed, setlist and preset index, pedal state,
+  parameter changes, effect on and off, and a raw preset blob. A test program prints them, and a Qt 5 GUI under
+  gui draws the amp and effect chain without editing yet. The README is two lines that say it is work in progress.
+  A separate repository, line6_hwdep_test, holds a short ALSA test program for HD500 hwdep access that the same author
+  wrote the same month. The last commit was in May 2020.
+status: dormant
+authors:
+  - name: anarsoul
+    url: https://github.com/anarsoul
+source: https://github.com/anarsoul/pod_hd_edit
+source_status: open
+license: GPL-2.0-only
+license_notes: >-
+  The repository has COPYING.GPL-2.0 and COPYING.LGPL-2.0 files. Source files carry SPDX tags of GPL-2.0 for the
+  GUI and test program and LGPL-2.0 for the library, with no "or later" statement.
+distribution: source-only
+requires_stock: POD HD500
+install_notes: >-
+  Linux only, with ALSA headers and the kernel line6 driver. Build with Meson, using the top-level meson.build.
+brick_risk: false
+tags: [editor, research, linux, usb, protocol]
+versions:
+  - version: master @ ef947ef
+    date: 2020-05-12
+    url: https://github.com/anarsoul/pod_hd_edit/commit/ef947efd83be7972d9b367ab46d93e1c0f65e3d2
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,35 @@
+device: line-6-helix
+also_devices: [line-6-pod-go]
+kind: tool
+name: POD GO to Helix converter
+summary: Tauri and React desktop app that converts POD Go .pgp preset files into Helix .hlx files for import into a Helix or Helix Native.
+description: >-
+  Rights warning: ConversionTests and sampleFiles hold about 30 .pgp and .hlx presets used as test input and output.
+  Their origin is not stated, and one is named like a Line 6 factory preset, so they may include Line 6 content.
+
+  The converter reads the L6Preset JSON of a .pgp file, rewrites the metadata to those of a Helix Native export, removes
+  controller data, strips model name suffixes, spreads blocks across two DSP paths, handles delay, reverb and mono
+  or stereo variants and special cases, and applies block colours. The TypeScript code has unit tests, and
+  an editor page lets you rearrange blocks before saving. The README calls it a simple mockup that may fail on
+  some effects and says it is unclear whether it works with amps and effects added in newer POD Go firmware. The README says
+  Electron where the code uses Tauri.
+status: active
+authors:
+  - name: Zavsek
+    url: https://github.com/Zavsek
+source: https://github.com/Zavsek/POD_GO-Helix_converter
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and no license statement.
+distribution: source-only
+install_notes: >-
+  The README links a Windows installer on Google Drive, which was not opened or checked; building from source
+  needs Node.js and Rust for Tauri. Convert a .pgp, save the .hlx and import it with HX Edit or Helix Native, then
+  check the chain and levels by ear. Keep the original preset.
+brick_risk: false
+tags: [converter, presets, desktop, typescript]
+versions:
+  - version: main @ f3b3b34
+    date: 2025-12-16
+    url: https://github.com/Zavsek/POD_GO-Helix_converter/commit/f3b3b34
+    notes: No tagged releases; this is the latest commit.

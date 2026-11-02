@@ -1,0 +1,45 @@
+device: line-6-helix
+kind: tool
+name: Helix Setlist Editor
+summary: Tauri desktop app for macOS and Windows that opens, builds and edits Helix .hls setlist files outside HX Edit, loading presets from a separate .hlx library folder.
+description: >-
+  Rights warning: tests/fixtures/IMGL Fibs.hls is an HX Edit setlist of 128 presets named after songs, committed
+  as a test fixture, and its origin is not stated, so it may contain third-party or Line 6 preset content.
+
+  The app can open an .hls file, start a new one from a bundled blank template, reorder, insert, replace, remove and
+  sort presets alphabetically, and save a file Helix can import. Its codec keeps the container valid by
+  rebuilding the zlib-compressed payload, the CRC and the decompressed size on save. A website on GitHub Pages
+  holds download links and a walkthrough. The app checks for updates on launch. The README does not say which
+  Helix units or firmware it was tested on, and the macOS build is ad-hoc signed but not notarized.
+status: active
+authors:
+  - name: johnsherlock
+    url: https://github.com/johnsherlock
+source: https://github.com/johnsherlock/HelixSetlistEditor
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and no license statement.
+homepage: https://johnsherlock.github.io/HelixSetlistEditor/
+distribution: download
+install_notes: >-
+  Download the Apple Silicon or Intel DMG or the Windows MSI from the releases page. If macOS blocks the first
+  launch, right-click the app and choose Open. Keep a copy of your .hls files before saving over them.
+brick_risk: false
+tags: [librarian, setlists, desktop, typescript, utility]
+image:
+  url: https://raw.githubusercontent.com/johnsherlock/HelixSetlistEditor/main/site/assets/HelixSelistEditorScreenshot.png
+  alt: Helix Setlist Editor window with a list of eight setlists on the left, 128 presets below it, and a setlist named Factory Faves open on the right showing presets 1A to 3B
+  credit: johnsherlock
+  source_url: https://johnsherlock.github.io/HelixSetlistEditor/
+  first_party: true
+versions:
+  - version: v0.1.11
+    date: 2026-03-13
+    url: https://github.com/johnsherlock/HelixSetlistEditor/releases/tag/v0.1.11
+  - version: v0.1.8
+    date: 2026-03-12
+    url: https://github.com/johnsherlock/HelixSetlistEditor/releases/tag/v0.1.8
+  - version: v0.1.3
+    date: 2026-03-10
+    url: https://github.com/johnsherlock/HelixSetlistEditor/releases/tag/v0.1.3
+    notes: First beta pre-release.

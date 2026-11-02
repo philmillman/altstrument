@@ -1,0 +1,41 @@
+device: line-6-m-series
+kind: tool
+name: MIDI9 controller for M9 and M13
+summary: PIC12F675 firmware in BoostC with schematic, hex and manual for a small three-switch MIDI foot controller that steps through the M9's folders and scenes, toggles tuner and bypass, and drives the looper. The author names the M9 and M13.
+description: >-
+  The controller is a separate DIY box, not a change to the Line 6 pedal. It has up, down and mode switches and an LED
+  that shows the mode: four colours for the folders of scenes, one for tuner and bypass, one for the looper. It covers
+  24 scenes in four folders of six, remembers a favourite scene in EEPROM, and in looper mode gives play, record
+  and overdub. The source is a single BoostC file of about 700 lines with a version history from 1.0 to 2.0 in 2011.
+  The repository adds a hex file, a schematic image, a user's manual in PDF and Word, and a photo of the layout. The
+  manual was written for the M9, and the author's README title adds the M13. Whether it was tested on an M13 is not stated.
+  The README says the project is for individual use only and commercial use is not allowed, which conflicts with the
+  GPL text in the LICENSE file.
+status: dormant
+authors:
+  - name: Vanderson Pimenta
+    url: https://github.com/vandersonpc
+source: https://github.com/vandersonpc/m9midi
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL version 3 text with no "or later" statement. The README separately says the project is
+  supplied as is for individual use only and that commercial use is not authorised, which conflicts with the LICENSE file.
+distribution: source-only
+install_notes: >-
+  Build the BoostC project, or program the included hex file, onto a PIC12F675 wired as in the schematic, and
+  connect its MIDI out to the pedal's MIDI input with a standard cable. Power is 9 to 15 V DC, centre negative, according to
+  the manual.
+brick_risk: false
+tags: [controller, midi, looper, tuner, hardware]
+image:
+  url: https://raw.githubusercontent.com/vandersonpc/m9midi/master/img/midi9.png
+  alt: Front panel drawing of the MIDI9 controller with UP and DN switches with blue LEDs, a MODE switch above a red LED, and the MIDI9 name
+  credit: Vanderson Pimenta
+  source_url: https://github.com/vandersonpc/m9midi
+  first_party: true
+versions:
+  - version: master @ 3c5e55b
+    date: 2018-08-09
+    url: https://github.com/vandersonpc/m9midi/commit/3c5e55bae06be7ce69bf886d6145a6933665aac8
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,70 @@
+device: line-6-hx-stomp
+also_devices: [line-6-hx-stomp-xl, line-6-hx-effects, line-6-helix, line-6-pod-go]
+kind: tool
+name: fretwire
+summary: Linux editor for Line 6 HX and Helix units and the POD Go, with a Tauri GUI, CLI, browser serve mode and an MCP server, built on a USB protocol recovered from HX Edit traffic.
+description: >-
+  fretwire edits presets, blocks, parameters, snapshots, footswitch labels and controller assignments,
+  manages impulse responses and global settings, and backs up and restores a whole device, including
+  .hxb backups made by HX Edit and POD Go .pgb backups. The project is developed against an HX Stomp.
+  The README grades each unit: HX Stomp, Helix Floor, Helix Rack, POD Go and POD Go Wireless as
+  verified, with the Floor tested over many logged sessions with a remote tester and the others by
+  individual owners; Helix LT as verified for reads only, with no edit ever sent to one; and HX Stomp XL
+  and HX Effects as reported working by one owner each, with no captures or logged session for the
+  Effects. Firmware, flash and DFU traffic is never sent. The editor can also run as an HTTP daemon
+  on a headless machine such as a Raspberry Pi. fretwire-mcp is a Model Context Protocol server for AI
+  assistants that is read-only unless started with flags that allow edits or saves. The repository holds
+  captured preset streams used as test fixtures. Line 6's model data is not included: on first run the
+  user imports it from their own HX Edit installer, or POD Go Edit for a POD Go.
+status: active
+authors:
+  - name: john-baxter-dev
+    url: https://github.com/john-baxter-dev
+source: https://github.com/john-baxter-dev/fretwire
+source_status: open
+license: Apache-2.0
+license_notes: >-
+  Dual-licensed under Apache-2.0 or MIT at the user's option (LICENSE-APACHE and LICENSE-MIT).
+  The repository's captures directory includes small preset-stream fixtures and a PodGoInit.zip
+  capture that were not opened.
+homepage: https://fretwire.org
+distribution: download
+requires_stock: >-
+  HX Stomp (verified); other units as graded in the README; HX Edit or POD Go Edit data imported by the user
+install_notes: >-
+  Install the .deb, .rpm, Arch package or AppImage from the releases page. The packages add a udev rule;
+  for an AppImage run fretwire install-udev, then unplug and replug the pedal. On first run import model
+  data from your own HX Edit installer or res folder (POD Go Edit for a POD Go). Only one program can hold
+  the pedal's USB interface at a time. Back up the device before writing to it.
+brick_risk: false
+tags: [editor, usb, presets, research, cli, mcp, linux]
+image:
+  url: https://raw.githubusercontent.com/john-baxter-dev/fretwire/master/docs/screenshots/editor.png
+  alt: fretwire connected to a Line 6 pedal, showing a preset list, three snapshot buttons, a chain of six blocks and the Tremolo block's parameter sliders
+  credit: The fretwire authors
+  source_url: https://github.com/john-baxter-dev/fretwire#readme
+  first_party: true
+versions:
+  - version: 0.6.2
+    date: 2026-10-31
+    url: https://github.com/john-baxter-dev/fretwire/releases/tag/v0.6.2
+    notes: Adds dual cabs, a fixed device backup and POD Go Wireless support.
+  - version: 0.6.0
+    date: 2026-09-26
+    url: https://github.com/john-baxter-dev/fretwire/releases/tag/v0.6.0
+    notes: Adds favorites and fixes device backup.
+  - version: 0.5.0
+    date: 2026-09-03
+    url: https://github.com/john-baxter-dev/fretwire/releases/tag/v0.5.0
+    notes: Adds serve mode and the MCP server, and verifies the POD Go.
+  - version: 0.4.0
+    date: 2026-08-27
+    url: https://github.com/john-baxter-dev/fretwire/releases/tag/v0.4.0
+    notes: Opens HX Edit .hxb backups and recognises the POD Go and HX Effects.
+  - version: 0.3.0
+    date: 2026-08-22
+    url: https://github.com/john-baxter-dev/fretwire/releases/tag/v0.3.0
+    notes: Adds impulse response management and global settings reads.
+  - version: 0.1.0
+    date: 2026-07-22
+    url: https://github.com/john-baxter-dev/fretwire/releases/tag/v0.1.0

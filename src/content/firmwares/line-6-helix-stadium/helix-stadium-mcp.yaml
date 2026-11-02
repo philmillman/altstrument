@@ -1,0 +1,42 @@
+device: line-6-helix-stadium
+kind: tool
+name: Helix Stadium MCP
+summary: MCP server that lets an AI assistant read, explain, edit and build Helix Stadium .hsp preset files, with validation and a backup before each write.
+description: >-
+  The server works on .hsp files on disk and never connects to the unit. Read tools return a preset's structure,
+  explain the signal chain in real units and diff two snapshots. Edit tools change parameters, add, remove, move and
+  toggle blocks, configure and rename snapshots and presets, create a blank preset and assemble a folder of .hsp
+  files with a checklist. The README states that every write passes a validation step and a byte-exact round-trip
+  check, then an atomic write that keeps a .bak copy, and that HELIX_MCP_READONLY removes the write tools. Model
+  data is read at run time from the user's own Helix Stadium installation, so no Line 6 data is committed. Setlist
+  .hss files and Stadium Native conversion are listed as future work, and the README does not say whether the
+  output was loaded on hardware.
+status: active
+authors:
+  - name: TwelveTake Studios LLC
+    url: https://github.com/TwelveTake-Studios
+source: https://github.com/TwelveTake-Studios/helix-stadium-mcp
+source_status: open
+license: MIT
+license_notes: The LICENSE file is the MIT licence, held by TwelveTake Studios LLC.
+distribution: download
+install_notes: >-
+  Needs Python 3.10 or newer and Helix Stadium installed on Windows or macOS. Run it from an MCP client with
+  uvx twelvetake-helix-stadium-mcp@latest serve. If the catalog is not found, set HELIX_STADIUM_RES to the
+  folder holding P35ModelCatalog.json, and use helix-stadium-mcp doctor to check detection. Set HELIX_MCP_READONLY=1
+  to leave out the write tools.
+brick_risk: false
+tags: [mcp, presets, editor, python, cli]
+versions:
+  - version: v0.2.4
+    date: 2026-10-27
+    url: https://github.com/TwelveTake-Studios/helix-stadium-mcp/releases/tag/v0.2.4
+    notes: macOS catalog detection checks the folder Line 6's installer uses.
+  - version: v0.2.0
+    date: 2026-07-09
+    url: https://github.com/TwelveTake-Studios/helix-stadium-mcp/releases/tag/v0.2.0
+    notes: Adds editing, preset creation and setlist assembly to the read-only v0.1 tools.
+  - version: v0.1.0
+    date: 2026-07-04
+    url: https://github.com/TwelveTake-Studios/helix-stadium-mcp/releases/tag/v0.1.0
+    notes: First public release.

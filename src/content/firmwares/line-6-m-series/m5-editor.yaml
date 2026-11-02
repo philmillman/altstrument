@@ -1,0 +1,33 @@
+device: line-6-m-series
+kind: tool
+name: M5 Editor
+summary: Single-page browser tool for the Line 6 M5 that reads a DUMP ALL as MIDI SysEx or a .syx file, shows all 24 presets with their knob settings, renames and reorders them, and sends the set back to the pedal.
+description: >-
+  The author made it for their own M5 with help from Claude, which did most of the reverse engineering and coding from dumps
+  of the pedal. The page unpacks the M5's 244-message dump, which uses 7-bit packing and checksums, into 24 presets. It lists the
+  effect type and name, 16-character preset names, and each preset's knob values including the expression pedal heel and toe
+  range. Names can be edited and presets swapped by dragging. The result can be saved as .syx or sent back to the M5, and a
+  send replaces all 24 presets. Single-preset dumps and real knob names per effect are not done, and effect names for models outside
+  the factory set can be entered by hand. Only the M5 is covered, not the M9 or M13. The author tested it on a real M5.
+status: active
+authors:
+  - name: Maurice Hissink
+    url: https://github.com/harmonicworks
+source: https://github.com/harmonicworks/M5-editor
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text, copyright Maurice Hissink.
+homepage: https://harmonicworks.org/M5-editor/
+distribution: browser-installer
+install_notes: >-
+  Open the page in Chrome or Edge and allow MIDI with SysEx access, since Safari has no Web MIDI. Start a dump on the M5 from
+  setup page 2 with Model Select set to DUMP ALL, then hold ON/OFF and press Model Select. Sending a dump overwrites all 24 presets,
+  so keep a saved .syx backup first.
+brick_risk: false
+tags: [editor, web-midi, sysex, librarian, presets, web]
+versions:
+  - version: v0.9
+    date: 2026-10-28
+    url: https://github.com/harmonicworks/M5-editor/releases/tag/v0.9
+    notes: First public release.

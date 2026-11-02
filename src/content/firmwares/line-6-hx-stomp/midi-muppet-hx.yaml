@@ -1,0 +1,38 @@
+device: line-6-hx-stomp
+kind: tool
+name: MIDI Muppet HX
+summary: Arduino sketch and build guide for a two-button DIN MIDI footswitch that scrolls HX Stomp presets and snapshots, acts as FS4 and FS5, calls the tuner and runs the looper.
+description: >-
+  The controller uses an Arduino Pro Mini, two footswitches, a bicolor LED and a MIDI DIN socket in a small
+  stomp box, with a wiring list and a parts cost of about 20 euros in the README. Its modes are preset scroll,
+  footswitch emulation and looper control, with long presses for the tuner and snapshot mode. The MIDI channel
+  and whether looper mode is enabled are set by holding buttons at power-up and kept in EEPROM. It uses the
+  preset scroll control changes that Line 6 added in HX Stomp firmware 3.10. An expression pedal stays usable
+  on the Stomp. The README names only the HX Stomp.
+status: dormant
+authors:
+  - name: Matthias Wientapper
+    url: https://github.com/mattzzw
+source: https://github.com/mattzzw/midi_muppet_hx_2btn
+source_status: open
+license: BSD-3-Clause
+distribution: source-only
+requires_stock: HX Stomp firmware 3.10 or newer for the preset scroll messages
+install_notes: >-
+  Build the circuit in the README, install the OneButton and JC_Button libraries in the Arduino IDE, select
+  Arduino Pro or Pro Mini and upload the sketch through an FTDI adapter with external power disconnected. Match the
+  3.3 V or 5 V version of the Pro Mini when choosing the MIDI resistors. The HX Stomp listens on MIDI channel 1 by
+  default.
+brick_risk: false
+tags: [arduino, midi, footswitch, diy, hardware]
+image:
+  url: https://raw.githubusercontent.com/mattzzw/midi_muppet_hx_2btn/master/images/midi_muppet_hx.jpg
+  alt: A two-button stomp box with a green LED between red footswitch caps, sitting on a pedalboard below an HX Stomp
+  credit: Matthias Wientapper
+  source_url: https://github.com/mattzzw/midi_muppet_hx_2btn#readme
+  first_party: true
+versions:
+  - version: master @ df13d68
+    date: 2021-04-26
+    url: https://github.com/mattzzw/midi_muppet_hx_2btn/commit/df13d68bf415a473a4ba9ae9918fdee471f724d6
+    notes: No tagged releases; this is the latest commit.

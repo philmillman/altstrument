@@ -1,0 +1,44 @@
+device: line-6-helix-stadium
+kind: tool
+name: Helix Stadium Tools
+summary: Python library, command-line scripts and the HELYON Expo phone app that talk to a Helix Stadium over USB or Wi-Fi, built on notes about the editor's OSC-over-ZeroMQ protocol and model catalogues.
+description: >-
+  Rights warning: the repository commits JSON model catalogues, a model id map and Markdown and PDF knowledge files
+  generated from the model definition files of Line 6's Helix Stadium editor app, version 1.4.0.20. The README says
+  the mobile app uses Line 6 category icons with permission on the condition that the app stays free, and that this
+  permission covers nothing else from Line 6 or Yamaha.
+
+  The Python package finds a Stadium through Bonjour and speaks the editor's protocol: OSC messages inside ZeroMQ
+  frames on two TCP ports. It can read product info, edit snapshots and parameters, work with the edit buffer and
+  receive device updates. The mobile app, HELYON, edits presets from a phone or tablet over USB or Wi-Fi and has
+  Perform views for stomp and snapshot assignments. docs/ holds the protocol notes, a CLI reference and a firmware
+  1.4 support page. The author owns a Stadium and verified the model data against firmware 1.4.0.1341; the README
+  advises trying live writes on a spare preset. Not affiliated with Line 6.
+status: active
+authors:
+  - name: Dwayne Charrington
+    url: https://github.com/Vheissu
+source: https://github.com/Vheissu/helix-stadium-tools
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT licence. It covers the author's code only; the generated model data comes from
+  Line 6's editor app and the category icons are used with Line 6's limited permission.
+distribution: download
+requires_stock: Helix Stadium firmware 1.4 for USB editing; the editor's Remote Access setting for Wi-Fi
+install_notes: >-
+  The Python tools run from a clone with Python 3.10 or newer and the msgpack package. The release page carries
+  sideload builds of the mobile app: an Android APK signed with a debug key and an unsigned iOS IPA that you must
+  sign yourself, each with a .sha256 file to check first. The author also records TestFlight and Play Store testing
+  builds in docs/. Test edits on a spare preset.
+brick_risk: false
+tags: [editor, protocol, research, python, mobile, osc]
+versions:
+  - version: main @ 35f8e1c
+    date: 2026-10-20
+    url: https://github.com/Vheissu/helix-stadium-tools/commit/35f8e1c1cf3644449c55fff24a2ef46fdd2e4700
+    notes: Adds Perform modes and accessible block movement to the mobile app.
+  - version: v1.0.0
+    date: 2026-05-14
+    url: https://github.com/Vheissu/helix-stadium-tools/releases/tag/v1.0.0
+    notes: First open-source release, with Android and iOS sideload builds.

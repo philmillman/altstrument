@@ -1,0 +1,46 @@
+device: line-6-hx-stomp
+name: hx-stomp-nam
+summary: >-
+  Independent firmware for the HX Stomp, with no Line 6 code, that loads into RAM over USB and plays a full 8-channel Neural
+  Amp Modeler A2 model through a small amp, EQ and delay pedal. The stock firmware stays untouched.
+description: >-
+  Everything is written from scratch: a boot loader and programs for the ADSP-21469 SHARC, an assembler and simulator for it,
+  and images for the LPC4350 that load them. Images go in through the USB loader in the chip's boot ROM, so they vanish at
+  the next power cycle. On a real HX Stomp, the author reports the display, codecs, knobs, buttons, footswitches and their
+  rings all working, with an A2-Full model using 86.9% of the audio period. Compared with NeuralAmpModelerCore on the same
+  model, its output differs by less than four steps of a 24-bit converter.
+
+  make pedal builds the chain on a 16-colour screen, and make stomp builds it with a full-colour interface. This is a working
+  experiment and not a replacement for the stock firmware: there are no presets, no stereo, no model choice at run time and
+  nothing saved. The XL has not been tried. HARDWARE.md records what the author found about the board. For NAM alongside the
+  stock firmware's effects, see the same author's NAM A2 Lite patch.
+status: active
+authors:
+  - name: Derek Bui
+    url: https://github.com/nocaseguy
+source: https://github.com/nocaseguy/hx-stomp-nam
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  NOTICE grants GPL-3.0 or any later version. The SHARC opcode tables in sasm.py are adapted from ghidra-sharc under
+  Apache-2.0, and the two UI fonts are under the SIL Open Font License. The repository says it holds no Line 6 code,
+  firmware, presets, pictures or sounds, and none are needed to build it. No .nam model is included.
+distribution: source-only
+install_notes: >-
+  Needs arm-none-eabi-gcc, Python 3, dfu-util and a NAM A2 model of your own. Build with make pedal or make stomp, hold Page
+  Right while powering on so the pedal appears as 1fc9:000c, then load the .dfu with dfu-util. Turn your amp or headphones
+  down first, because the level is fixed until the volume knob first moves. A power cycle returns to stock. RECOVERY.md covers
+  the details.
+brick_risk: false
+tags: [nam, amp-modeling, replacement-firmware]
+image:
+  url: https://raw.githubusercontent.com/nocaseguy/hx-stomp-nam/main/docs/stomp-on-the-unit.png
+  alt: The HX Stomp screen running this firmware, showing NAM A2-FULL at 89% DSP over a pixel-art sunset, with AMP, EQ and DLY blocks and GAIN and LEVEL values
+  credit: Derek Bui
+  source_url: https://github.com/nocaseguy/hx-stomp-nam
+  first_party: true
+versions:
+  - version: main @ 5b4388b
+    date: 2026-10-11
+    url: https://github.com/nocaseguy/hx-stomp-nam/commit/5b4388bebaa836b6b0b78805409818898ede46cd
+    notes: No tagged releases; this is the latest commit.

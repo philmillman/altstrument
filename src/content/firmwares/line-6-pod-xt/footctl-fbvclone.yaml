@@ -1,0 +1,33 @@
+device: line-6-pod-xt
+kind: tool
+name: footctl FBV Clone
+summary: STM32 firmware, KiCad board and Python capture scripts for a homemade foot controller that answers a POD's FBV port and sends MIDI back. Its control table is written for the Bass POD xt. The README is one line, and the repository documents no hardware test beyond commit messages.
+description: >-
+  The project implements the FBV serial protocol at 31,250 baud in libfbv, including the handshake, ping, LED, text, channel and tuner
+  messages, and a libpod layer that sends MIDI controller and program changes on a second UART. A footctl firmware for an STM32F1 reads
+  twelve buttons and two expression inputs, drives an LCD and ten LEDs, and mirrors the unit's LED and display state. A comment in
+  libpod says controls are implemented only for the Bass POD xt. The repository also has a KiCad schematic and board, a build for a
+  virtual hardware test on a PC, and debug scripts with captured FBV traffic. The 2019 commit messages say it works more or less, and
+  a later commit makes the board mostly complete. The repository does not state which units it was tried on, so use with other
+  PODs is untested.
+status: dormant
+authors:
+  - name: Bruno Morais
+    url: https://github.com/brunosmmm
+source: https://github.com/brunosmmm/footctl_fbvclone
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file holds the MIT license text, copyright Bruno Morais, with no title line. The libopencm3 library is a submodule from
+  its own project.
+distribution: source-only
+install_notes: >-
+  Build the firmware with make target_board, after fetching the libopencm3 submodule, for an STM32F1 board flashed with OpenOCD. The
+  board files are for KiCad. This is a hardware project with no prebuilt images.
+brick_risk: false
+tags: [controller, midi, research]
+versions:
+  - version: master @ 93c3570
+    date: 2020-08-11
+    url: https://github.com/brunosmmm/footctl_fbvclone/commit/93c357099f961e2ffa0ba0edc3043183c758849c
+    notes: No tagged releases; this is the latest commit.

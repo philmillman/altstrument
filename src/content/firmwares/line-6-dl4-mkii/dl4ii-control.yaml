@@ -1,0 +1,51 @@
+device: line-6-dl4-mkii
+kind: tool
+name: DL4 MkII Control
+summary: Windows desktop app that sends the DL4 MkII's documented MIDI messages over USB, with separate delay and reverb selectors, preset recall, bypass, tap and channel and preset step buttons, so models can be changed without the pedal's menus.
+description: >-
+  The author built it because choosing delays on a pedalboard, and reverbs in particular, is awkward on the pedal
+  itself. It follows the MIDI commands in the DL4 MkII manual and splits the delay and reverb pickers into two
+  panels that update together. It has a MIDI channel setting, a preset number box, bypass by pressing the active
+  footswitch as on the pedal, preset store in the app's configuration file, footswitches for the three lowest
+  presets, and error messages for MIDI that could not be sent. Version 1.7 was updated for DL4 MkII firmware 1.10,
+  which changed the bypass command. The tap tempo light does not show the current tempo, and looper
+  controls are still listed as pending. It is a C# WPF application.
+status: dormant
+authors:
+  - name: DavidMolTor
+    url: https://github.com/DavidMolTor
+source: https://github.com/DavidMolTor/DL4II_Control
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The License.md file is the GPL version 3 text with no "or later" statement.
+distribution: download
+requires_stock: DL4 MkII firmware 1.10 for release 1.7
+install_notes: >-
+  Download DL4MkII_Control.zip from the releases page. Connect the pedal by USB-C and set the app's MIDI channel
+  to match the pedal's, because the stored default is channel 2.
+brick_risk: false
+tags: [controller, midi, usb-midi, fx]
+image:
+  url: https://raw.githubusercontent.com/DavidMolTor/DL4II_Control/main/build/MidiControl/Resources/Original/DL4MkII%20Control.gif
+  alt: DL4 MkII Control window drawn like the green pedal, with a MIDI badge, a delay model knob, time, repeats, tweak, tweez and mix knobs, reverb knobs and footswitches A, B, C and TAP
+  credit: DavidMolTor
+  source_url: https://github.com/DavidMolTor/DL4II_Control
+  first_party: true
+versions:
+  - version: v1.7
+    date: 2024-10-31
+    url: https://github.com/DavidMolTor/DL4II_Control/releases/tag/v1.7
+    notes: Updated for device firmware 1.10 by changing the bypass command.
+  - version: v1.6
+    date: 2024-09-20
+    url: https://github.com/DavidMolTor/DL4II_Control/releases/tag/v1.6
+    notes: Tap tempo shows the current subdivision using the Time and Subdivision knob.
+  - version: v1.5
+    date: 2024-03-08
+    url: https://github.com/DavidMolTor/DL4II_Control/releases/tag/v1.5
+    notes: Adds channel and preset up and down controls.
+  - version: v1.0
+    date: 2023-02-09
+    url: https://github.com/DavidMolTor/DL4II_Control/releases/tag/v1.0
+    notes: Reworks the MIDI command queue and fixes repeated disconnects.

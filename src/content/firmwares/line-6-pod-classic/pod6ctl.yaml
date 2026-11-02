@@ -1,0 +1,32 @@
+device: line-6-pod-classic
+kind: tool
+name: pod6ctl
+summary: C command-line tool for Linux that queries, saves and restores POD 2.0 bank settings over ALSA raw MIDI, with a deep-edit mode. It supports firmware 2.3 only unless you disable device discovery. The author archived it after selling their POD.
+description: >-
+  pod6ctl reads a bank from a POD 2.0, from 1A to 9D, saves it to a file, restores it and lets you edit settings from the
+  command line. Before talking to the unit it checks the version string against the POD 2.3 firmware's reply, and an option skips that
+  check for other versions, which the author says to try only after saving your settings. The author wrote it in 2013, made the
+  public repository in 2017 and gave it version 1.0 because they no longer owned a POD. It includes a man page, and parts of the code
+  derive from ALSA's amidi utility. Only POD 2.3 is supported, and the man page says other POD 2.0 versions and perhaps the 1.0 might work.
+status: archived
+authors:
+  - name: Eldad Zack
+    url: https://github.com/eldad
+source: https://github.com/eldad/pod6ctl
+source_status: open
+license: GPL-2.0-or-later
+license_notes: >-
+  The LICENSE file is the GPL version 2 text. The source and man page headers grant version 2 or any later version, while the
+  COPYRIGHT file says only the GNU GPL version 2.
+distribution: source-only
+requires_stock: POD 2.0 firmware 2.3
+install_notes: >-
+  Run make in the source directory on Linux with the ALSA headers. Pick the MIDI port with -p hw:N and the bank with -b. Save your settings
+  before using --nohello with any firmware other than 2.3.
+brick_risk: false
+tags: [midi, sysex, cli, librarian, presets]
+versions:
+  - version: master @ 9124def
+    date: 2018-02-11
+    url: https://github.com/eldad/pod6ctl/commit/9124def19e97ce4405f4c75c88f3763882ae5fc4
+    notes: No tagged releases; this is the latest commit.

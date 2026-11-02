@@ -1,0 +1,43 @@
+device: line-6-pod-classic
+kind: tool
+name: Pocket POD Online Editor
+summary: Angular web app that edits a PocketPOD over Web MIDI in the browser, including on phones, with amp, cab and effect controls, program selection and several layouts. Hosted at pocket-pod.web.app.
+description: >-
+  Rights warning: the repository bundles Line 6 documentation, namely the MIDI Continuous Controller reference PDF, the
+  SysEx reference, and an HTML copy of the Pocket POD manual, and the repository has no license file.
+
+  The app is served from Firebase and runs offline once loaded. It needs Web MIDI, so it works in Chromium
+  browsers and Firefox with the MIDI permission, not in Safari. It sends the PocketPOD's controller messages for the
+  amp, cab, effect, EQ, gate, reverb, delay, chorus and wah sections, selects programs, and decodes Line 6 SysEx
+  dumps with a parser in the source. The interface offers card and column layouts with round dials, sliders or
+  number fields. The README says it works with the PocketPOD attached to a PC, laptop or mobile device, and does not
+  list other models. The single commit is from December 2021.
+status: dormant
+authors:
+  - name: daniele-pecora
+    url: https://github.com/daniele-pecora
+source: https://github.com/daniele-pecora/pocketpod-editor
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and no license statement. It includes Line 6's MIDI CC reference PDF (Rev F),
+  SysEx tables and a Pocket POD manual page in docs/ and src/, which are Line 6's and are not covered by anything
+  the author could grant.
+homepage: https://pocket-pod.web.app/
+distribution: browser-installer
+install_notes: >-
+  Open pocket-pod.web.app in a browser with Web MIDI, allow MIDI access when asked and reload. Connect the PocketPOD
+  by USB first. To build it yourself, run it as an Angular project from the repository.
+brick_risk: false
+tags: [editor, web-midi, web, midi, sysex]
+image:
+  url: https://raw.githubusercontent.com/daniele-pecora/pocketpod-editor/master/readme/big-screen-preview.png
+  alt: Pocket POD Online Editor in a desktop browser, with red cards for program, volume, drive, EQ, noise gate, boost, reverb, delay, chorus and wah, each with dials and switches
+  credit: daniele-pecora
+  source_url: https://github.com/daniele-pecora/pocketpod-editor
+  first_party: true
+versions:
+  - version: master @ b41cd65
+    date: 2021-12-09
+    url: https://github.com/daniele-pecora/pocketpod-editor/commit/b41cd655dd8289e88e3090b0783e27f9435c4250
+    notes: No tagged releases; this is the latest commit.

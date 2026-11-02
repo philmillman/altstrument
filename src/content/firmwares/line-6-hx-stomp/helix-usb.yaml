@@ -1,0 +1,39 @@
+device: line-6-hx-stomp
+kind: tool
+name: helix_usb
+summary: Python scripts and a small Qt UI that talk to an HX Stomp over USB, based on the author's reverse engineering of the HX Edit protocol, with preset browsing, packet parsers and capture tools.
+description: >-
+  helix_usb reads preset names and the current preset's slots, switches presets through MIDI program
+  change, and parses preset and footswitch data. Its repository also holds converters from packet captures
+  and a large folder of raw capture and parameter notes, and a wiki documents the protocol. A Qt window
+  added in 2026 by a contributor shows the preset list and a block view of the current preset. The README
+  says it was built for the HX Stomp and that it may also work with the Helix LT, Pod Go, HX Effects and
+  Helix Rack, which it does not claim to have tested. Several later projects, including TonePush and
+  HXLinux, name it as their starting point.
+status: active
+authors:
+  - name: Heiko Sparenberg
+    url: https://github.com/kempline
+source: https://github.com/kempline/helix_usb
+source_status: open
+license: MIT
+homepage: https://github.com/kempline/helix_usb/wiki
+distribution: source-only
+requires_stock: HX Stomp; the README does not give a firmware version
+install_notes: >-
+  Clone the repository, create a Python virtual environment and install pyusb, xlsxwriter and PySide6
+  (or PyQt6). Run the scripts for command line use or helix_qt_ui.py for the window. Switching presets
+  needs a MIDI interface, and the Helix can serve only one USB host at a time.
+brick_risk: false
+tags: [usb, midi, research, presets, python]
+video:
+  url: https://www.youtube.com/watch?v=mRKcDVy7ZhU
+  title: helix_usb - Feature Overview
+  credit: Heiko Sparenberg
+  first_party: true
+  found_via: https://github.com/kempline/helix_usb#readme
+versions:
+  - version: main @ 771b362
+    date: 2026-03-08
+    url: https://github.com/kempline/helix_usb/commit/771b3623122257a17d62471c83cb2cf21815b054
+    notes: No tagged releases; this is the latest commit.

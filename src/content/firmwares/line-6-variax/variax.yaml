@@ -1,0 +1,40 @@
+device: line-6-variax
+kind: tool
+name: variax
+summary: Python command-line tool and MIDI bridge that controls a James Tyler Variax through the Line 6 Variax USB Interface on macOS and Linux. Selects models, volume, tone, tunings, 12-string and modeling, and turns other apps' MIDI into guitar changes.
+description: >-
+  The Variax USB Interface does not appear as a MIDI device, so the tool talks to it with libusb. The protocol
+  notes in docs/PROTOCOL.md cover the handshake, the interface's raw MIDI over interrupt endpoints, and every
+  message and how it was found, from the author's own captures of Line 6 Workbench HD traffic, the Linux kernel
+  driver and a community MIDI spreadsheet. The send command picks a model by name or program number and sets
+  volume, tone, tuning by name, notes or semitones, 12-string and the magnetic pickups. The monitor, tunings, dump
+  and read commands show what the guitar reports, and the midi command creates a virtual port so a DAW, MainStage
+  or a foot controller can change the model and tuning on each patch, with optional patches defined in a TOML file.
+  Nothing is saved to the guitar. It was tested on a JTV-59, a Raspberry Pi for Linux, and a guitar reporting
+  firmware 0223. Other JTV models and the Variax Standard are expected to work and are untested. Windows is not
+  supported.
+status: active
+authors:
+  - name: Peter Hulst
+    url: https://github.com/phulst
+source: https://github.com/phulst/variax
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is MIT. The repository includes captures of Workbench HD USB traffic from the author's own guitar,
+  and model names from the JTV-59 and JTV-69 Pilot's Guide. Line 6, Variax and James Tyler names are trademarks of
+  their owners.
+homepage: https://pypi.org/project/variax/
+distribution: download
+install_notes: >-
+  Needs Python 3.11 or newer, a Line 6 Variax USB Interface on the guitar's VDI jack, and the guitar switched on
+  with a cable in its output jack. Install with pip, uv tool or pipx. Linux also needs libusb, build packages and a
+  udev rule for 0e41:534d, and the tool detaches the kernel's variax driver while it runs. Close Line 6 Central and
+  Workbench HD first.
+brick_risk: false
+tags: [controller, midi, usb-midi, usb, python, research, linux, macos]
+versions:
+  - version: v0.2.1
+    date: 2026-10-14
+    url: https://github.com/phulst/variax/tree/v0.2.1
+    notes: Git tag; no GitHub release page.

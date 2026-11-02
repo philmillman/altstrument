@@ -1,0 +1,33 @@
+device: line-6-pod-xt
+kind: tool
+name: line6-coreaudio
+summary: User-space macOS audio input driver for the POD X3 and X3 Live. A Rust USB daemon feeds a CoreAudio plug-in through shared memory, so the POD's eight capture channels appear in DAWs on Apple Silicon. Playback to the POD is not implemented.
+description: >-
+  The project runs without a kernel extension. A Rust daemon reads the POD's isochronous audio with libusb and writes it into a
+  shared-memory ring, and a C CoreAudio AudioServerPlugin loaded by coreaudiod presents it as an input device. The X3 sends
+  eight channels at 48 kHz: main output, tone 1, tone 2 and the two dry inputs. The USB protocol notes follow the Linux kernel
+  line6 driver and the author confirmed them on POD X3 hardware. Input only is supported, and a long session can produce a faint click when
+  the Mac and POD clocks drift. The docs explain how other devices handled by the Linux driver could be added. There is no preset
+  control. A prebuilt universal release is ad-hoc signed and not notarized, and the installer removes the download quarantine.
+status: dormant
+authors:
+  - name: pbannykh
+    url: https://github.com/pbannykh
+source: https://github.com/pbannykh/line6-coreaudio
+source_status: open
+license: GPL-2.0-only
+license_notes: >-
+  The LICENSE file is the GPL version 2 text and the daemon's Cargo.toml says GPL-2.0-only.
+distribution: download
+install_notes: >-
+  Download the macOS tarball from the release and run ./install.sh ondemand, which asks for your password once to install the audio
+  plug-in. Or build from source with Rust and the Xcode command line tools and run ./scripts/install.sh ondemand. The plug-in
+  test harness should pass before installing, because a faulty plug-in can make coreaudiod use full CPU. Uninstall with the matching
+  uninstall script.
+brick_risk: false
+tags: [usb-audio, usb, desktop, research]
+versions:
+  - version: v0.1.0
+    date: 2026-06-13
+    url: https://github.com/pbannykh/line6-coreaudio/releases/tag/v0.1.0
+    notes: First release, with prebuilt macOS universal builds.

@@ -1,0 +1,35 @@
+device: line-6-hx-stomp
+kind: tool
+name: helixcli
+summary: Swift command-line tool for macOS that reads presets and blocks from an HX Stomp over USB and switches presets, with JSON output for scripts and AI agents; it is based on the helix_usb protocol notes.
+description: >-
+  helixcli implements the proprietary HX USB handshake and data requests in Swift on top of libusb, and
+  switches presets through USB MIDI. Verified against an HX Stomp, it lists presets, reads the loaded
+  preset and its blocks with model and category names, backs up the current preset to a JSON file, and
+  lists snapshots. Snapshot switching sends a MIDI control change but its effect is not yet confirmed by a
+  read-back, and block writes, restore and import, parameter unit scaling and the tuner are not
+  implemented. The README says it relies heavily on kempline/helix_usb, and it ships parser fixtures from
+  four captured presets and a skill file for the OpenClaw agent tool.
+status: active
+authors:
+  - name: acwilan
+    url: https://github.com/acwilan
+source: https://github.com/acwilan/helixcli
+source_status: open
+license: MIT
+license_notes: >-
+  The README's License section says MIT and the Homebrew formula says MIT, but the repository has no
+  LICENSE file.
+distribution: source-only
+requires_stock: HX Stomp; the README does not give a firmware version
+install_notes: >-
+  Needs macOS 14 or newer, Swift 6 and libusb. Build with swift build -c release, or use the author's
+  Homebrew tap, whose formula points at a v0.1.0 archive although the repository has no tags and the
+  formula's checksum is a placeholder. Only the HX Stomp is claimed.
+brick_risk: false
+tags: [cli, usb, presets, research, macos]
+versions:
+  - version: main @ 5871181
+    date: 2026-05-04
+    url: https://github.com/acwilan/helixcli/commit/5871181df2a4ad5d0f6b5a58c64b435d8b0b9f73
+    notes: No tagged releases; this is the latest commit.

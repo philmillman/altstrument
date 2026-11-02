@@ -1,0 +1,57 @@
+device: line-6-helix
+also_devices: [line-6-hx-stomp, line-6-hx-stomp-xl]
+kind: tool
+name: HelAIx
+summary: Wails desktop app that turns a tone description into a Helix .hlx preset through Google Gemini, with a DSP budget check, snapshots and Variax settings, and exports the file for HX Edit.
+description: >-
+  Rights warning: app/pkg/helix/data holds a catalog.json of about 1 MB listing Line 6 models and their parameters,
+  plus template, effects correspondence and Variax model files. The README says sensorium/phelix helped create the
+  catalog and template, and that a community cheat sheet for firmware 3.80 supplied the DSP data. The model data is
+  Line 6's, and phelix is GPL-3.0 licensed, which the MIT licence of this repository does not address.
+
+  You chat with an assistant that proposes a real-gear chain and then builds the Helix mapping, with song-based
+  snapshots, expression pedal defaults, bass support, Variax guitar models and limits on delay feedback and reverb
+  decay. The chain is shown as blocks and exported as a .hlx file. Only Gemini is supported and an API key is
+  required. The README says it was tested only on a Helix Floor on firmware 3.80, that results will need hand
+  tuning in HX Edit, and lists the Floor and Rack, LT, HX Stomp and HX Stomp XL as hardware targets, so Stomp
+  output is untested. Direct upload to a unit is listed as future work.
+status: active
+authors:
+  - name: MrCitron
+    url: https://github.com/MrCitron
+source: https://github.com/MrCitron/helaix
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT licence, held by HelAIx Contributors. It does not cover the Line 6 model data in
+  the bundled catalog, and the catalog's derivation from the GPL-3.0 phelix project is unresolved.
+distribution: download
+requires_stock: Helix firmware 3.80 (the version tested, on a Helix Floor)
+install_notes: >-
+  Download helaix.exe for Windows or the macOS zip from the releases page, or build it with Go, Node.js and the
+  Wails CLI. Add a Google Gemini API key in Settings and choose your Helix model. Back up your presets before
+  importing generated files; the README describes Line 6's recovery steps if a preset locks the unit up.
+brick_risk: false
+tags: [generator, presets, ai, desktop, go]
+image:
+  url: https://raw.githubusercontent.com/MrCitron/helaix/main/docs/screenshot2.png
+  alt: HelAIx window showing a proposed chain as five real-gear blocks (distortion, amp, cab, modulation, reverb) and the matching five Helix blocks, with an Export .hlx file button
+  credit: MrCitron
+  source_url: https://github.com/MrCitron/helaix#readme
+  first_party: true
+versions:
+  - version: v0.11.0
+    date: 2026-10-03
+    url: https://github.com/MrCitron/helaix/releases/tag/v0.11.0
+    notes: Adds an in-app log viewer.
+  - version: v0.10.0
+    date: 2026-09-10
+    url: https://github.com/MrCitron/helaix/releases/tag/v0.10.0
+    notes: Adds bass support and formalises Variax model selection.
+  - version: v0.8.0
+    date: 2026-01-27
+    url: https://github.com/MrCitron/helaix/releases/tag/v0.8.0
+    notes: Adds song-based snapshots.
+  - version: v0.1
+    date: 2026-01-10
+    url: https://github.com/MrCitron/helaix/releases/tag/v0.1

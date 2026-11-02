@@ -1,0 +1,34 @@
+device: line-6-pod-classic
+kind: tool
+name: PODFBV
+summary: C program that translates MIDI between a Line 6 FBV Express MkII foot controller and a PocketPOD, so the floor board can switch banks, tap, and control volume and wah. Runs on Linux, with a Windows build and an Android app.
+description: >-
+  Both Line 6 devices connect to the host by USB, for example a Raspberry Pi. PODFBV opens their raw MIDI interfaces
+  and converts the FBV's messages into what the PocketPOD expects. It covers bank switching, tapping, volume and
+  wah, with a volume threshold setting. Turning the tuner on and off is not supported because the program cannot
+  drive the FBV's LEDs. The FBV must be loaded with the settings file in the repository, using Line 6's own tools.
+  It can run as a command-line program or as a systemd daemon. The repository also holds an Android variant, a
+  Windows cross-build and a service template. The README does not say how much was tested on hardware beyond the
+  author's own setup.
+status: dormant
+authors:
+  - name: kurzlo
+    url: https://github.com/kurzlo
+source: https://github.com/kurzlo/podfbv
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and no license statement. The README carries a no-warranty disclaimer only.
+distribution: source-only
+requires_stock: FBV Express MkII programmed with misc/fbv_settings.fbv
+install_notes: >-
+  Build with make on the host, or cross-compile with CROSS_COMPILE set, or API=win for Windows. Run it as a
+  command-line program or install podfbv.service. By default it looks for the devices under /dev/snd/by-id/, and
+  switches --fbv_id, --pod_id, --fbv_dev and --pod_dev override that.
+brick_risk: false
+tags: [midi, usb-midi, controller, linux, raspberry-pi]
+versions:
+  - version: master @ 500bc10
+    date: 2023-04-29
+    url: https://github.com/kurzlo/podfbv/commit/500bc101801ef3646977219a01431f36a4639161
+    notes: No tagged releases; this is the latest commit.

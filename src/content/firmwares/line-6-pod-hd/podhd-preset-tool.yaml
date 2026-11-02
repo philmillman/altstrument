@@ -1,0 +1,39 @@
+device: line-6-pod-hd
+kind: tool
+name: PODHD Preset Tool
+summary: Qt desktop app that converts POD HD presets, setlists and bundles between HD300, HD400, HD500, HD500X, Desktop, Pro and Pro X file formats, and mass-edits amps, cabs, mics and inputs in files. Works on files only, not on the unit.
+description: >-
+  The tool reads a folder of preset, setlist or bundle files and rewrites them for another model without changing
+  amp, cab or effect settings. It also translates HD300 and HD400 presets to the HD500 family and back, and can
+  change inputs, impedance, amps, cabs and mics across a whole setlist, for example turning every preamp into a full
+  amp with a cabinet. It has an option to back up the originals. The docs folder has the author's notes on the
+  file layouts of presets, setlists, bundles, inputs and effects. The current version is C++ with Qt for Windows and
+  macOS. Older ports in Objective-C and Java live in the podhd-objc and podhd-java repositories. The README does not
+  describe testing on hardware.
+status: dormant
+authors:
+  - name: johanneszab
+    url: https://github.com/johanneszab
+source: https://github.com/johanneszab/podhd
+source_status: open
+license: GPL-2.0-only
+license_notes: >-
+  The LICENSE file is the GPL version 2 text with no "or later" statement.
+homepage: https://www.jzab.de/
+distribution: download
+install_notes: >-
+  Download the Windows exe, in normal and XP builds, or the macOS dmg from the v1.0.0 release. Pick the tab for
+  your model, choose the folder of presets, tick the conversions you want and press Run. Leave the backup box ticked.
+brick_risk: false
+tags: [converter, presets, editor, librarian, utility]
+image:
+  url: https://www.jzab.de/sites/default/files/images/podhd_convert_qt_mac.png
+  alt: POD HD Converter window on macOS with tabs for HD 500, HD 500X, Desktop, Pro, Pro X and HD 300 / 400, a folder field and tick boxes for patching, translating and modifying presets
+  credit: johanneszab
+  source_url: https://github.com/johanneszab/podhd
+  first_party: true
+versions:
+  - version: v1.0.0
+    date: 2016-06-30
+    url: https://github.com/johanneszab/podhd/releases/tag/v1.0.0
+    notes: Initial release with Windows and macOS builds.

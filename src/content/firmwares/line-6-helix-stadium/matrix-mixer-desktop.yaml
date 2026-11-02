@@ -1,0 +1,48 @@
+device: line-6-helix-stadium
+kind: tool
+name: Matrix Mixer Desktop
+summary: Electron app for macOS and Windows that sends MIDI control changes to a Helix Stadium's 1.4 Matrix Mixer and serves a Wi-Fi page so a sound engineer and band members can adjust their own mixes.
+description: >-
+  The app sends control changes over USB MIDI to the Stadium's Matrix Mixer and relays MIDI to browsers on the
+  stage network, which are normally an iPad at front of house and phones for in-ear mixes. It shows up to 19
+  faders for the Home master, DSP paths 1A to 1D, song and track stems, click, count-in and external inputs,
+  across the 1/4 inch, XLR and phones outputs, with named presets, pan, mute and solo. Three roles limit what a
+  login can change: an administrator, a front-of-house operator and a band member restricted to the phones mix.
+  Data lives in local JSON files. The README does not say whether it was tested on a unit, and the repository
+  has no licence file. The release notes are partly in Dutch, and the repository holds several long security
+  and compliance reports generated for the project.
+status: active
+authors:
+  - name: tooh
+    url: https://github.com/tooh
+source: https://github.com/tooh/matrix-mixer-desktop
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and no license statement.
+distribution: download
+requires_stock: Helix Stadium firmware 1.4 (the version the README names)
+install_notes: >-
+  The macOS DMG for Apple Silicon and the Windows portable ZIP are on the releases page. The builds are not
+  signed, so macOS may block the first launch until you allow it under Privacy and Security. The release
+  notes list one-tap stage logins with fixed PINs, so change the defaults before using it on a shared network.
+brick_risk: false
+tags: [controller, midi, mixer, web, performance]
+image:
+  url: https://raw.githubusercontent.com/tooh/matrix-mixer-desktop/main/docs/screenshots/role-1-admin.png
+  alt: Matrix Mixer v1.9.0 in the administrator role, showing 19 channel faders for Home, paths 1A to 1D, song, tracks 1 to 8, click, count-in and input channels, each with a CC number, pan, mute and solo
+  credit: tooh
+  source_url: https://github.com/tooh/matrix-mixer-desktop#readme
+  first_party: true
+versions:
+  - version: v1.9.0
+    date: 2026-10-31
+    url: https://github.com/tooh/matrix-mixer-desktop/releases/tag/v1.9.0
+    notes: Adds role-based access control and a Windows portable build.
+  - version: v1.6.0
+    date: 2026-10-29
+    url: https://github.com/tooh/matrix-mixer-desktop/releases/tag/v1.6.0
+    notes: Adds the stage Wi-Fi hub and a 19-channel console.
+  - version: v1.5.0
+    date: 2026-10-29
+    url: https://github.com/tooh/matrix-mixer-desktop/releases/tag/v1.5.0
+    notes: First release.

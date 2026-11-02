@@ -1,0 +1,36 @@
+device: line-6-hx-stomp
+kind: tool
+name: HX Stomp MCP
+summary: Python MCP server that talks to an HX Stomp over its USB vendor protocol to read presets and back them up and to edit blocks, models and parameters in the edit buffer, with a built-in warning that edits can wedge the pedal.
+description: >-
+  The server reimplements the USB protocol HX Edit uses: framing and msgpack codec, opcodes, a persistent session with
+  a drain and keepalive thread, and a pyusb transport. Read tools return device info, setlists, preset lists, the
+  current preset with model names, a block's parameters and a footswitch's configuration, back up every
+  preset read-only, and parse .hlx files offline. Write tools change a block's model, set parameters, assign or
+  clear footswitches, apply a saved tone and reload to discard. The README says saving to a slot is not supported
+  because it broke later saves on the test unit, that an edit leaves the pedal unable to scroll or switch presets,
+  and that it can drop off the USB bus until the 9V adapter is pulled. It never sends firmware or DFU messages.
+  Hardware tested: handshake and reads on an HX Stomp on firmware 3.80 under Windows. Model names are read from
+  the user's HX Edit install at run time and nothing from Line 6 is committed.
+status: active
+authors:
+  - name: cookie444
+    url: https://github.com/cookie444
+source: https://github.com/cookie444/HX-Stomp-MCP
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and no license statement.
+distribution: source-only
+requires_stock: HX Stomp firmware 3.80 (the version tested)
+install_notes: >-
+  Needs Python 3.11 or newer. On Windows, bind WinUSB to the pedal's MI_00 vendor interface with Zadig, which stops
+  HX Edit working until the driver is removed. Run server.py from an MCP client. Build the tone in the edit buffer,
+  play it, then reload the preset to discard it, and run the read-only backup first. Recovering a wedged pedal
+  means pulling its power adapter.
+brick_risk: false
+tags: [mcp, usb, protocol, presets, research, python]
+versions:
+  - version: main @ f8cf3ae
+    date: 2026-10-12
+    url: https://github.com/cookie444/HX-Stomp-MCP/commit/f8cf3aed5e56840f9cb8741e64d84e9bfefdf703
+    notes: No tagged releases; this is the latest commit.

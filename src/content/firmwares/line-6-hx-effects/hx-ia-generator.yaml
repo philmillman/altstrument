@@ -1,0 +1,40 @@
+device: line-6-hx-effects
+kind: tool
+name: HX-IA-generator
+summary: Personal Python and Claude Code project in French that analyses recordings of songs and writes HX Effects .hlx presets and .hls setlists for a cover repertoire, with codecs, a preset builder and a diff tool.
+description: >-
+  Rights warning: the repository commits the HX Effects 3.80 Owner's Manual as a 10 MB PDF, and data/catalog and
+  data/models hold files copied from an HX Edit installation (HX_ModelCatalog.json, HelixControls.json and the
+  .models definitions). They are Line 6 documentation and model data. data/examples also holds an HX Edit
+  setlist export and two presets whose origin is not stated.
+
+  src/ contains .hlx and .hls codecs, a decoder, a preset builder, a differ and an audio analysis package for
+  tempo, key, sections, source separation and effect detection such as saturation, delay, reverb and modulation.
+  The workflow in .claude/commands/new-preset.md has Claude research the real gear on a song, analyse the audio,
+  validate and write the preset, and presets/songs.py defines the owner's repertoire. The project is tuned to one
+  player's Stratocaster and amp, and the repository has no README or licence. Notes in CLAUDE.md describe
+  adjustments made after listening on the author's unit, which is the only hardware testing recorded.
+status: active
+authors:
+  - name: GetPsycho
+    url: https://github.com/GetPsycho
+source: https://github.com/GetPsycho/HX-IA-generator
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and no license statement.
+distribution: source-only
+install_notes: >-
+  Run the Python scripts from a clone; the project notes, in French, describe the /new-preset workflow in Claude
+  Code. Source separation and audio analysis need extra Python packages. Back up the unit before importing
+  generated presets.
+brick_risk: false
+tags: [generator, presets, setlists, ai, python, research]
+versions:
+  - version: master @ 4df1448
+    date: 2026-09-23
+    url: https://github.com/GetPsycho/HX-IA-generator/commit/4df144829455bfc4fdad664a4c69736bd5a4bd4d
+    notes: No newer tags; this is the latest commit.
+  - version: v1
+    date: 2026-05-10
+    url: https://github.com/GetPsycho/HX-IA-generator/tree/v1
+    notes: Git tag; no GitHub release page.

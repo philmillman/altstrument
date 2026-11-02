@@ -1,0 +1,34 @@
+device: line-6-helix
+kind: tool
+name: Helix Cab Upgrade
+summary: Hosted ASP.NET web tool, with its C# source, that rewrites legacy cab blocks in Helix .hlx presets made before firmware 3.50 into the newer mic and IR cab models.
+description: >-
+  You upload a .hlx file, optionally choose a replacement cab model, mic and position, and download the changed
+  preset. The library maps each legacy HD2_Cab model to its newer HD2_CabMicIr counterpart, carries over the
+  matching parameters and handles single, amp plus cab and dual cab blocks. It accepts only preset version 6
+  with the L6Preset schema. Unit tests cover the mappers and the updater. The README calls it a solo side project
+  and does not say which units it was tried on. The site also has an unrelated page for a video-triggering program
+  by the same author.
+status: dormant
+authors:
+  - name: chriscore
+    url: https://github.com/chriscore
+source: https://github.com/chriscore/Helix.CabUpgrade
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file. A GPL 3 licence file was added on 2022-11-10 and removed in a commit
+  later the same day, and GitHub's repository metadata still lists GPL-3.0, but no licence statement remains in
+  the tree.
+homepage: https://helixcabupgrade.azurewebsites.net/
+distribution: browser-installer
+install_notes: >-
+  Use the hosted page, or build the .NET 6 site from source, which has a Dockerfile. Upload a .hlx file and
+  import the result into HX Edit. Keep the original preset as a backup.
+brick_risk: false
+tags: [converter, presets, web, dotnet, utility]
+versions:
+  - version: main @ e640f73
+    date: 2024-09-14
+    url: https://github.com/chriscore/Helix.CabUpgrade/commit/e640f73b76997bafdb75d0182ea04ff007c2bbb1
+    notes: No tagged releases; this is the latest commit.

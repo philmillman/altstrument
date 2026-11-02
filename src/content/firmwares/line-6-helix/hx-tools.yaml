@@ -1,0 +1,35 @@
+device: line-6-helix
+also_devices: [line-6-hx-stomp, line-6-hx-stomp-xl, line-6-hx-effects]
+kind: tool
+name: hx-tools
+summary: Clean-room Python command-line tool and MCP server for reading, diffing and editing Helix and HX .hlx presets byte-exactly, plus a Next.js browser viewer and editor that also draws the unit's panel.
+description: >-
+  Both parts use a codec that reproduces the way Helix writes .hlx files, including a space before each colon
+  and floats printed with 17 significant digits, so an unedited preset saves identically and an edited parameter changes
+  one line. The hx command explains a chain, lists snapshots, diffs two snapshots, validates the round trip and sets a
+  parameter with a backup and an atomic write, and the MCP server exposes the same reads plus get and set
+  parameter. The viewer adds block, amp and cab editing, model swaps, snapshot recall and renaming, and a
+  hardware view of the grid, knobs, twelve footswitches and the LT's Performance view. The author built and tested
+  against a Helix LT on firmware 3.80 and states that the format is shared with the Floor, Rack, HX Stomp, Stomp
+  XL and HX Effects, which they did not test. No Line 6 artwork or catalogue is committed: an import script
+  reads names, icons and DSP costs from your own HX Edit installation into an ignored folder.
+status: active
+authors:
+  - name: Arief Samuel
+    url: https://github.com/ariefs-dev
+source: https://github.com/ariefs-dev/hx-tools
+source_status: open
+license: MIT
+license_notes: The LICENSE file is the MIT licence. No Line 6 assets are bundled.
+distribution: source-only
+install_notes: >-
+  For the CLI, run pip install -e . in src/hxcli, adding the mcp extra for the MCP server. The viewer is a Next.js
+  app in src/hxviewer; run npm run import-res to pull model data from your own HX Edit installation. Back up presets
+  before saving edits.
+brick_risk: false
+tags: [editor, presets, mcp, python, cli, web]
+versions:
+  - version: main @ 2377ecd
+    date: 2026-08-18
+    url: https://github.com/ariefs-dev/hx-tools/commit/2377ecd2a6ada7bda92f84bba22c7dbb0f8bebd6
+    notes: No tagged releases; this is the latest commit.

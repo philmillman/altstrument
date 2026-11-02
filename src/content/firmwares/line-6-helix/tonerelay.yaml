@@ -1,0 +1,41 @@
+device: line-6-helix
+kind: tool
+name: ToneRelay
+summary: Raspberry Pi service that talks to a Helix Floor over USB and serves a browser editor on the local network, so presets can be edited from a phone or laptop without HX Edit.
+description: >-
+  A Rust USB daemon reuses TonePush's protocol, catalog and USB crates, vendored in the repository, and a
+  web GUI built for phone screens browses presets and models, edits every parameter, drags blocks within
+  a path and draws a parametric EQ graph. The README says it is verified on Helix Floor firmware 3.80,
+  and plans support for the Helix LT, HX Stomp, HX Stomp XL and HX Effects. A beta feature plays audio from
+  an iPhone into Helix USB 1 and 2 over AirPlay or Bluetooth. The same repository carries early firmware
+  and hardware notes for a battery-powered ESP32-P4 version, and a Helrig Box product is built on its relay
+  profile. Model names and ranges come from HX Edit's own files, which the user supplies from an HX Edit
+  installer and which are not included. The web page has no login and uses plain HTTP, so the README limits
+  it to a trusted network.
+status: active
+authors:
+  - name: mpeskett88
+    url: https://github.com/mpeskett88
+source: https://github.com/mpeskett88/ToneRelay
+source_status: open
+license: MIT
+distribution: source-only
+requires_stock: Helix Floor firmware 3.80 (the verified version)
+install_notes: >-
+  Needs a Raspberry Pi 4 or 5 on 64-bit Raspberry Pi OS with internet access for the first build. Clone with
+  submodules and run sudo ./scripts/install.sh, optionally with HX_EDIT_INSTALLER pointing at a Windows HX Edit
+  installer so model names load. The first build can take a long time on a Pi. Stop the Pi services before
+  connecting the Helix to a computer running HX Edit, and never expose the editor to the internet.
+brick_risk: false
+tags: [editor, usb, web, presets, raspberry-pi]
+image:
+  url: https://raw.githubusercontent.com/mpeskett88/ToneRelay/main/images/desktop.png
+  alt: ToneRelay's browser editor showing a four-row grid of Helix blocks, eight snapshot buttons and the parameter sliders of a Vintage Digital delay
+  credit: The ToneRelay authors
+  source_url: https://github.com/mpeskett88/ToneRelay#readme
+  first_party: true
+versions:
+  - version: r1
+    date: 2026-09-07
+    url: https://github.com/mpeskett88/ToneRelay/releases/tag/release
+    notes: First release; later commits add the ESP32-P4 firmware work.

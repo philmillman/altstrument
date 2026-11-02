@@ -1,0 +1,28 @@
+device: line-6-spider-jam
+kind: tool
+name: jam2wav
+summary: Small Python script that converts Spider Jam .JAM recording files to WAV by finding the embedded RIFF audio. The author thinks it works for JM4 Looper files too but did not test that.
+description: >-
+  The script looks for the first RIFF marker in a .JAM file and writes everything from there to a WAV file. A sample recording from a
+  Spider Jam, REC_#08.JAM, sits in the repository and the one unit test checks the output length on that file. The sample starts with a
+  header that carries the recording name, so the format is a small wrapper around ordinary WAV data. The script is about twenty lines,
+  and the author notes it probably also works for the JM4 Looper but did not try. It needs Python 3 and does not talk to the amp.
+status: dormant
+authors:
+  - name: Bernt R. Brenna
+    url: https://github.com/codeape2
+source: https://github.com/codeape2/jam2wav
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE.txt file is the MIT text, copyright Bernt R. Brenna. The repository also holds one sample .JAM recording used by the test.
+distribution: source-only
+install_notes: >-
+  Run python jam2wav.py input.JAM output.WAV with Python 3.
+brick_risk: false
+tags: [converter, python, cli, looper]
+versions:
+  - version: master @ 80ed010
+    date: 2018-03-02
+    url: https://github.com/codeape2/jam2wav/commit/80ed010312b16226ec43a0e4ea31691185085ebe
+    notes: No tagged releases; this is the latest commit.

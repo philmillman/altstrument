@@ -1,0 +1,58 @@
+device: line-6-pod-classic
+also_devices: [line-6-pod-xt]
+kind: tool
+name: POD UI
+summary: Rust and GTK editor that edits live and backs up programs on POD 1.0, POD 2.0, POD Pro and PocketPOD, and on PODxt and Bass PODxt units, over MIDI or raw USB. Stand-in for Line 6 Edit.
+description: >-
+  POD UI is modelled on Line 6 Edit. It changes the connected unit's settings as you move controls, sends and
+  receives single programs and whole program libraries, and renames programs. Separate modules cover the POD 1.0,
+  POD 2.0 and POD Pro, PocketPOD, PODxt, PODxt Pro and PODxt Live, and the Bass PODxt family. The author developed
+  it on Linux with their own POD units, starting from a POD 2.0. Bass PODxt support was written from Line 6's MIDI
+  documentation and from watching Line 6 Edit, since the author has no Bass PODxt, and the project site asks for
+  testers for it and for Bass POD, POD X3 Pro and Live, and Floor POD Plus, none of which are supported yet. The POD
+  X3 without MIDI ports and the PocketPOD Express cannot be supported. Since version 1.5.0 it can also talk to
+  supported units over raw USB with libusb, without Line 6 drivers, which the author calls finicky; Linux builds use
+  the kernel driver instead. Loading Line 6 Edit .l6t and .lib files and editing amp and effect presets on the PODxt
+  are not done. A sibling library, l6t-rs, reads Line 6 Edit file formats.
+status: active
+authors:
+  - name: arteme
+    url: https://github.com/arteme
+source: https://github.com/arteme/pod-ui
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL version 3 text with no "or later" statement, and the project site says GPLv3.
+homepage: https://arteme.github.io/pod-ui/
+distribution: download
+install_notes: >-
+  Download a build from the releases page. Windows has two zips, one of them a winrt build to try first on Windows
+  10 and 11. macOS has a dmg. Linux has two AppImages in v1.5.0, one for older Debian 10 based systems. Version 1.5.1
+  has Windows and macOS builds only, so Linux users stay on 1.5.0. Connect the unit by MIDI cable, a USB MIDI
+  interface or, for supported models, USB. Storing a program overwrites it in the unit's memory, so download your
+  library first.
+brick_risk: false
+tags: [editor, midi, sysex, usb-midi, librarian, presets]
+image:
+  url: https://arteme.github.io/pod-ui/images/pod-ui-v1.0.0-podxt.jpg
+  alt: POD UI 1.0.0 window connected to a PODxt, with a program grid on the left and preamp, cabinet, delay, stomp, modulation, reverb and EQ sections on the right
+  credit: arteme
+  source_url: https://arteme.github.io/pod-ui/
+  first_party: true
+versions:
+  - version: v1.5.1
+    date: 2025-02-08
+    url: https://github.com/arteme/pod-ui/releases/tag/v1.5.1
+    notes: Fixes a use-after-free crash in the USB code that hit Apple Silicon Macs.
+  - version: v1.5.0
+    date: 2024-11-20
+    url: https://github.com/arteme/pod-ui/releases/tag/v1.5.0
+    notes: Adds communication over raw USB with libusb, so no Line 6 driver is needed.
+  - version: v1.3.0
+    date: 2023-09-16
+    url: https://github.com/arteme/pod-ui/releases/tag/v1.3.0
+    notes: Adds POD 1.0 support and experimental Bass PODxt support.
+  - version: v1.0.0
+    date: 2022-12-24
+    url: https://github.com/arteme/pod-ui/releases/tag/v1.0.0
+    notes: Adds PODxt, PODxt Pro and PODxt Live support and rewrites the application core.

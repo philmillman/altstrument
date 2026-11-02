@@ -1,0 +1,35 @@
+device: line-6-pod-classic
+also_devices: [line-6-pod-xt]
+kind: tool
+name: l6t-rs
+summary: Rust library, command-line dumper and GTK viewer for Line 6 Edit files (.l6t tones, .l6b bundles, .l6c collections) from POD 2.0, PocketPOD, Floor POD, PODxt and Bass PODxt. Reading is the working part, and the README says writing is not supported yet.
+description: >-
+  l6t-rs is a companion to the author's pod-ui editor and shares its model of how POD units behave. The workspace has a file crate
+  that decodes the IFF containers, a symbolic crate with data models that give names and value ranges for POD 2.0, PocketPOD, Floor POD,
+  PODxt and Bass PODxt parameters, an info command that dumps chunks or decoded patches, and an l6t-viewer GTK app. The
+  README calls it beta quality and says Sounddiver .lib and MidiQuest .sqs files are goals rather than done. The code has an
+  encoder and an option to write a tone, but the README says writing is not supported yet. It works on files only and does not
+  touch a device.
+status: active
+authors:
+  - name: arteme
+    url: https://github.com/arteme
+source: https://github.com/arteme/l6t-rs
+source_status: open
+license: MIT
+license_notes: >-
+  The repository has no LICENSE file. The workspace Cargo.toml declares license = "MIT" and each crate inherits it.
+distribution: source-only
+install_notes: >-
+  Build with cargo. The viewer needs GTK 4 development libraries. You supply your own .l6t, .l6b or .l6c files from Line 6 Edit.
+brick_risk: false
+tags: [research, converter, presets, desktop]
+versions:
+  - version: master @ 1ef21ff
+    date: 2026-08-09
+    url: https://github.com/arteme/l6t-rs/commit/1ef21ffc5bd8f3197523d098f79e5af863790dbb
+    notes: Latest commit, with the GTK viewer.
+  - version: v0.1.0
+    date: 2024-01-02
+    url: https://github.com/arteme/l6t-rs/tree/v0.1.0
+    notes: Git tag; no GitHub release page.

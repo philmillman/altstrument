@@ -12,7 +12,8 @@ description: >-
   ASID to a SidStation, TherapSID, TeensyROM, USBSID-Pico or other ASID receiver. The FM-1 holds a few dozen tunes
   (240 KB) that you add from the project's web page or a command-line tool (the page can also save the song list as a
   setlist .zip and load it back), and tunes for two or three SIDs and BASIC
-  tunes are not played. The repository bundles two tunes by the author, which its LICENSING.md excludes from the GPL.
+  tunes are not played. It can send a MIDI clock over USB, with the beat found in the tune, and a clock coming in over
+  USB or MIDI IN starts, stops and continues the song. The repository bundles two tunes by the author, which its LICENSING.md excludes from the GPL.
   It is built on Felucca by way of X0X, has a browser emulator, and the author says AI coding tools helped write it.
 status: active
 authors:
@@ -44,6 +45,10 @@ video:
   first_party: true
   found_via: https://github.com/thomasj/fm1-sidj#readme
 versions:
+- version: 1.3.0
+  date: 2026-11-01
+  url: https://github.com/thomasj/fm1-sidj/releases/tag/v1.3.0
+  notes: Adds MIDI clock in both directions. SID+CLK sends a clock over USB with its beat found in the tune, and an incoming clock starts, stops and continues the song. Also restores full speed on an FM-1 that last ran M-VAVE's V16, where SiDJ ran 12 percent slow, and lets tools/fm1_rescue.sh restore V15 as well as V16.
 - version: 1.2.0
   date: 2026-10-31
   url: https://github.com/thomasj/fm1-sidj/releases/tag/v1.2.0

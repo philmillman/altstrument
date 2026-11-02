@@ -1,0 +1,60 @@
+device: m-vave-fm-1
+name: CLATTER Pocket
+summary: >-
+  Drum machine firmware for the FM-1 that runs Erica Synths' LXR-02 drum voices: six voices, a 64-step pattern generator with conditional steps, 16 kits and 9 saved projects. Not yet run on hardware.
+description: >-
+  Rights warning: the project site's installer republishes M-VAVE's official Open V14 package as its first stage, and
+  V14 is not one of the files M-VAVE licenses for redistribution by name. The repository itself does not commit it.
+
+  A port of CLATTER, a generative drum synthesizer built on the open LXR-02 sound engine, to the FM-1 through M-VAVE's
+  fm1_open application. The LXR voices run in a real-time engine, and the panel gives three banks of nine
+  sounds, a pitched keyboard, live and step recording, one level of undo, sixteen kits and kit generation from LXR
+  parameters. The sequencer has seven tracks of 64 steps on four pages with variations and conditions, pattern styles
+  taken from CLATTER, and whole-pattern or single-track generation and mutation. Nine projects are saved to user flash.
+  The replacement build removes the stock instrument application, and the version that would run beside it is
+  53,671 bytes too large for the flash layout. The README says nothing has run on a device yet; the engine is checked
+  on a host against CLATTER's output, and the sequencer, controls and storage are tested in an FM-1 emulator. The
+  site has a browser demo and an installer for what it labels an unverified experimental release, which has been tested
+  only against a simulated device.
+status: active
+authors:
+- name: The CLATTER contributors
+  url: https://github.com/clickysteve
+source: https://github.com/clickysteve/clatter-pocket
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  NOTICE.md gives GPL-3.0-only with the additional terms of Erica Synths' LXR-02 firmware (GPL section 7): no rights in the
+  Erica Synths, LXR and LXR-02 names, and modified versions must be marked as modified. The LXR files are unchanged
+  under lxr/upstream, and the DOWNBEAT parts are MIT. The FM-1 build links M-VAVE's fm1_open application (GPL-3.0-only with an
+  SDK linking exception) and its binary SDK, which is licensed for FM-1 devices only. The project site's installer
+  publishes M-VAVE's official Open V14 package unmodified, fetched from M-VAVE's release at deployment and checked by hash,
+  as its first stage for an FM-1 on stock firmware.
+homepage: https://clatter-pocket.allmyfriendsaresynths.com/
+distribution: browser-installer
+requires_stock: V15 or V14 Open (installer first stage)
+install_notes: >-
+  Use the installer on the project site in Chrome or Edge, or build with the JieLi toolchain as described in
+  BUILDING.md. HARDWARE.md and FIRST-HARDWARE-TEST.md are the author's required reading before flashing; the package
+  filename carries UNVERIFIED. Holding HOME after power-on starts a safe mode with the engine off.
+brick_risk: true
+tags: [drums, sequencer, generative, synth-engine, performance, emulator, open-source]
+image:
+  url: https://raw.githubusercontent.com/clickysteve/clatter-pocket/main/docs/panel.png
+  alt: "CLATTER Pocket main page from the host tests: black text on white reading LXR ENGINE READY, voice DRUM 1, mode LIVE HITS, with a row of voice buttons D1 to OH above a level bar"
+  credit: The CLATTER contributors
+  source_url: https://github.com/clickysteve/clatter-pocket
+  first_party: true
+versions:
+- version: main @ 5ae7ddd
+  date: 2026-11-02
+  url: https://github.com/clickysteve/clatter-pocket/commit/5ae7ddda5bbf637fd9ce996256f7959cfde9835c
+  notes: No tagged releases; this is the latest commit.
+- version: 0.7.1
+  date: 2026-11-02
+  url: https://github.com/clickysteve/clatter-pocket/commit/91395d6339a621982508ca1e5dea06d743924035
+  notes: Package in the repository's releases folder, marked UNVERIFIED; the commit adds a pattern length control on SEQ and KNOB 3. No GitHub release page.
+- version: 0.7.0
+  date: 2026-10-31
+  url: https://github.com/clickysteve/clatter-pocket/commit/d731b6baeb0aab9a361431a82880f55d88a6d2e1
+  notes: Package in the repository's releases folder, marked UNVERIFIED. No GitHub release page.

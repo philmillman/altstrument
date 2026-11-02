@@ -6,7 +6,7 @@ summary: >-
 description: >-
   The prerelease firmware builds add one-to-32-bar blocks with undo, copy and paste of sequences between drum rows and the
   two 303s, a RAM query command for inspecting unsaved patterns, a searchable MIDI implementation chart with CC readback,
-  and a global straight-rate policy with per-sound triplet overrides. A browser emulator runs the X0X engine compiled to
+  and a global straight-rate policy with per-sound triplet overrides. The 0.1.60 build, titled Acultur8 FM-1 Kick, adds hybrid 808 kick shaping and native preset store and recall. A browser emulator runs the X0X engine compiled to
   WebAssembly and plays imported WAV slice banks with marker files at the sequencer tempo without changing pitch. The
   releases are labelled experimental, each with known-issues and rollback notes; the notes report checks on one unit and
   list advanced remote-action and Reason clock-sync checks as open. Recorded loops and the optional REX decoder are not
@@ -30,6 +30,10 @@ install_notes: >-
 brick_risk: true
 tags: [drums, synth-engine, sequencer, midi, emulator, sampler, fork]
 versions:
+- version: 0.1.60-stoppedtrace
+  date: 2026-11-02
+  url: https://github.com/keyboy250/fm1-x0x-acultur8/releases/tag/v0.1.60-stoppedtrace
+  notes: Pre-release, titled Acultur8 FM-1 Kick. Adds hybrid 808 kick shaping, velocity expression, and native preset store and recall, and extends retained dropout diagnostics to blocks that begin while stopped. The notes list unmeasured limits and report a 25-minute test on one unit with no dropouts.
 - version: 0.1.32-straightbeta
   date: 2026-10-27
   url: https://github.com/keyboy250/fm1-x0x-acultur8/releases/tag/v0.1.32-straightbeta

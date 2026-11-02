@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+name: Blop
+summary: >-
+  One-finger chord firmware for the FM-1 (repository OSR-1): 38 chord grids, 16 chord rhythms, a bass with riffs, drums with sidechain, 32 sounds, and a creature on the screen that swims to the chords.
+description: >-
+  Each of the 27 keys plays a chord from the chosen grid, with white keys as the safe chords and black keys as the
+  spicier ones. A chord rhythm can repeat the chord, and a chord that is latched stops when the same key is pressed
+  again. The bass has six sounds and eight riff patterns, there are ten drum patterns with their own kits, and a
+  kick sidechain pumps the chords. Pages cover effects (delay, tremolo, chorus, reverb), chord voicing and strum,
+  groove, bass, drums and the screen's scenery. Notes go out over USB MIDI on channel 1 as they sound. The README
+  is in French, calls the project a prototype and says it has never been tested on a real FM-1; the author measured
+  about a fifth of the audio interrupt's time in an emulator. It builds on fm1-base and felucca-bsp.
+status: active
+authors:
+- name: Obsimo
+  url: https://github.com/OSR-Experiment
+source: https://github.com/OSR-Experiment/OSR-1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and CREDITS.md state GPL-3.0-only. The fm1-base and felucca-bsp files stay MPL-2.0, and each package holds
+  three JieLi AC79 SDK files (Apache-2.0).
+homepage: https://osr-experiment.github.io/OSR-1/
+distribution: browser-installer
+install_notes: >-
+  Use the install page on the project site in Chrome or Edge with the FM-1 on USB, or flash blop-1.0.1.fwsc from
+  the release. The README says the build has not been tested on a real FM-1.
+brick_risk: true
+tags: [chords, synth-engine, drums, performance, midi, usb-midi, emulator]
+image:
+  url: https://osr-experiment.github.io/OSR-1/img/screen.png
+  alt: "Blop screen: the chord Gm7 in large white type over a blue pixel-grid background with a black spiky creature in a ring, sound SYRUP, style PSYCH INDIE, and four knob values below"
+  credit: Obsimo
+  source_url: https://osr-experiment.github.io/OSR-1/
+  first_party: true
+versions:
+- version: 1.0.1
+  date: 2026-11-01
+  url: https://github.com/OSR-Experiment/OSR-1/releases/tag/v1.0.1
+- version: 1.0.0
+  date: 2026-11-01
+  url: https://github.com/OSR-Experiment/OSR-1/releases/tag/v1.0.0

@@ -2,8 +2,8 @@ device: arturia-keystep-pro
 also_devices: [arturia-keystep-pro-chroma]
 name: keystep-mods
 summary: >-
-  Browser patcher that applies mods to your own KeyStep Pro 2.5.20 update file, adding generative Flux and Pulse tracks and
-  pattern switches that skip repeated Bank and Program Change messages. Builds images for the KeyStep Pro and the Chroma.
+  Browser patcher that applies mods to your own KeyStep Pro 2.5.20 update file: generative Flux and Pulse tracks, cleaner pattern
+  switches, and Control mode that follows the selected track. Builds images for the KeyStep Pro and the Chroma.
 description: >-
   Each mod is a set of hooks written in C or assembly that the patcher inserts into the stock update file in your
   browser, after checking that the file is the unmodified 2.5.20 update. The generative mod adds Flux, which loops up to
@@ -12,10 +12,11 @@ description: >-
   the five encoders then set the generator. The step LEDs show the loop, Record writes what was played into the
   pattern, and nothing is stored in the project. The filter-midicc mod stops a pattern switch from re-sending Bank
   MSB, Bank LSB and Program Change when that channel already has the same values, so synths that reload a sound on
-  every program change are not late on the first note. Mods can be combined into one update. The update file holds
-  images for both the standard model and the Chroma, and the patcher builds both. The repository stores only the
-  added code, never Arturia's firmware, and says that both mods were flashed to a KeyStep Pro and the generative
-  mod was played on it.
+  every program change are not late on the first note. The track-cc mod makes a knob on the Global channel in Control
+  mode send its CC on the MIDI channel of the track it was entered from. Mods can be combined into one update. The update
+  file holds images for both the standard model and the Chroma, and the patcher builds both. The repository stores only
+  the added code, never Arturia's firmware, and says that the generative and filter-midicc mods were flashed to a
+  KeyStep Pro, the generative mod was played on it, and track-cc has not been tried on a real unit.
 status: active
 authors:
   - name: Ronald Klarenbeek
@@ -47,7 +48,7 @@ image:
   source_url: https://github.com/yonie/keystep-mods
   first_party: true
 versions:
-  - version: main @ 90ad455
-    date: 2026-10-27
-    url: https://github.com/yonie/keystep-mods/commit/90ad455aaa39a7fab2ed9ff1e992aca997d99def
+  - version: main @ c464077
+    date: 2026-11-01
+    url: https://github.com/yonie/keystep-mods/commit/c464077f4172b96800af04a7d609d2ef5f1190e3
     notes: No tagged releases; this is the latest commit.

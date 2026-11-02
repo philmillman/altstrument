@@ -5,7 +5,7 @@ summary: >-
   rendering into the Push Hack virtual audio device.
 description: >-
   The module reads pad and button MIDI from the Push's own ALSA sequencer, feeds notes into a Braids macro
-  oscillator DSP module ported by Charles Vestal from Schwung, and writes audio to the virtual sound card from push-hack-audio-loopback. Shift +
+  oscillator DSP module ported by Charles Vestal from Schwung, and writes audio to the virtual sound card from push-hack-audio-loopback, through that module's mixer when it is running. Shift +
   Device opens pages for the oscillator and amplitude envelope, the filter and an I/O picker for MIDI port, audio
   device and channel pair. Live needs an audio track whose input is the virtual device to route the sound out. It
   runs as a service that restarts itself if it crashes, and its settings survive reboots. Pitch bend and aftertouch
@@ -30,6 +30,10 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, oscillator, performance, midi]
 versions:
+  - version: v0.4.0-alpha
+    date: 2026-11-02
+    url: https://github.com/federico-pepe/push-hack-braids/releases/tag/v0.4.0-alpha
+    notes: Sends audio to the loopback audio bus mixer when it is running, so other hacks can play at the same time.
   - version: v0.3.2-alpha
     date: 2026-10-28
     url: https://github.com/federico-pepe/push-hack-braids/releases/tag/v0.3.2-alpha

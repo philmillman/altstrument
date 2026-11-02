@@ -6,10 +6,10 @@ summary: >-
 description: >-
   Carries on from the last Felucca release after its author stepped back from development. It keeps Felucca's
   storage formats, so projects and presets saved by Felucca open in Caravel; projects that use Caravel-only
-  parameters need Caravel to open, and projects saved by 0.3.0 or later do not open on 0.2.0 or earlier, and projects saved by 0.7.1 or later do not open on 0.7.0. Added
+  parameters need Caravel to open, and projects saved by 0.3.0 or later do not open on 0.2.0 or earlier, projects saved by 0.7.1 or later do not open on 0.7.0, and projects saved by 0.8.0 do not open on 0.7.x or earlier. Added
   features include a latch for held keys, a button to clear the step under the cursor, per-track voice reservations
   and a MORE page for spread and morph; 0.6.0 adds a STASIS hold with ADD and BLEND, and leaves out ROOM, SPRING
-  and the SLICE engine. DRUM-X, MORPH and the BYTE and FLOAT waves in LOFI are adapted from the
+  and the SLICE engine; 0.8.0 adds a Morph Journey bank that chains the four Random Morph snapshots into a hands-free loop. DRUM-X, MORPH and the BYTE and FLOAT waves in LOFI are adapted from the
   JIANT FM fork. A web installer, editor and browser emulator are published on the project site. The README says
   hardware acceptance on a real FM-1 is still pending, and that the firmware uses USB test IDs that the pid.codes
   policy does not allow on devices that are shared or sold. Not affiliated with Hügelton Instruments or M-VAVE.
@@ -40,6 +40,14 @@ video:
   first_party: true
   found_via: https://github.com/bonszaimusic/caravel#readme
 versions:
+- version: 0.8.0
+  date: 2026-11-01
+  url: https://github.com/bonszaimusic/caravel/releases/tag/v0.8.0
+  notes: >-
+    Adds the Morph Journey ACTION bank, which chains the Random Morph snapshots S1 to S4 into a looping movement, and
+    makes a MIDI CC override a running morph for every target. Journey settings are saved with the project, and 0.7.x
+    and earlier refuse such projects, so back up first. Only 352 bytes remain free in the app slot, and the author
+    describes their install on an FM-1 as a first trial.
 - version: 0.7.2
   date: 2026-10-31
   url: https://github.com/bonszaimusic/caravel/releases/tag/v0.7.2

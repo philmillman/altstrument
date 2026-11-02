@@ -31,7 +31,7 @@ distribution: download
 install_notes: >-
   Back up your patches first (build/pro800 backup <dir>); the first start
   wipes patch records written by 0.7.x and tunes the oscillators silently. Send
-  the release's pro800-0.9.3.syx with the repository's macOS command-line tool
+  the release's pro800-0.9.4.syx with the repository's macOS command-line tool
   (build/pro800 install), or hold buttons 0 and 7 at power-up to enter the
   bootloader and send the file with SynthTribe or a SysEx sender that paces its
   output (the bootloader takes about 9.6 kB/s). Building from source needs zig,
@@ -42,6 +42,10 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, lfo, sequencer, arpeggiator, midi, usb-midi, editor, web-midi, open-source]
 versions:
+  - version: v0.9.4
+    date: 2026-11-01
+    url: https://github.com/klaine/pro-8000/releases/tag/v0.9.4
+    notes: New sounds respond to velocity from the start, with velocity knobs in the editor, and a synced LFO's delay and fade can run in note values. The synth boots on the last patch and leaves a record after a crash. Knob pickup moves to Shift plus PMOD FIL ENV.
   - version: v0.9.3
     date: 2026-10-30
     url: https://github.com/klaine/pro-8000/releases/tag/v0.9.3

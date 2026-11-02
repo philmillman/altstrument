@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+name: GIO-1
+summary: >-
+  Generative disco firmware for the FM-1, a fork of AMB-1: nine song presets with bass, strings or choir, a lead that writes phrases and answers the keys, drums and sixteen effects.
+description: >-
+  The instrument plays itself from power-on. Each of the nine presets is a song form with its own tempo, key and
+  chord changes, such as intro, verse, chorus and break, and it loops while sections repeat, layers drop out and the key
+  shifts. A bass sequencer, a pad of strings, choir or detuned saws through a phaser, a ten-voice lead and four-on-the-floor
+  drums are generated from tables in the source. The white keys play the lead and the black keys are held effects;
+  the Chords page rewrites a section's changes while it plays. The songs follow the tempo, key and chord shape of
+  disco records, and the licence notes say none of their melodies or samples are included. It keeps AMB-1's platform, plate reverb and
+  tape echo. The author describes the first release as an alpha that has been installed on a single FM-1.
+status: active
+authors:
+- name: GuinanNo1
+  url: https://github.com/GuinanNo1
+source: https://github.com/GuinanNo1/fm1-gio
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSING.md states MPL-2.0 file by file. It builds on fm1-base and felucca-bsp (MPL-2.0) and on AMB-1 (MPL-2.0).
+  Fonts are SIL OFL 1.1 and the three JieLi SDK files in each package are Apache-2.0. The project says it takes only
+  ideas, not code, from DUB-1 and NACHTFAHRT.
+homepage: https://guinanno1.github.io/fm1-gio/
+distribution: download
+install_notes: >-
+  Flash gio-0.1-alpha.fwsc from the release with an FM-1 installer. The release notes describe a crash screen, a
+  safe mode after two failed starts, a hold of OCT- and OCT+ for update mode and a macOS rescue script that puts
+  M-VAVE's firmware back. The author says installing could brick the device.
+brick_risk: true
+tags: [generative, sequencer, synth-engine, drums, fx, performance, midi, fork]
+image:
+  url: https://raw.githubusercontent.com/GuinanNo1/fm1-gio/main/docs/img/screen-song.png
+  alt: "GIO-1 Song page for the preset Feel at 126 BPM in C: a section bar labelled Verse, coloured level meters around a ring showing the chord C, and tempo, evolve, motion and arrange knobs"
+  credit: GuinanNo1
+  source_url: https://github.com/GuinanNo1/fm1-gio
+  first_party: true
+versions:
+- version: 0.1-alpha
+  date: 2026-11-02
+  url: https://github.com/GuinanNo1/fm1-gio/releases/tag/v0.1-alpha
+  notes: Marked pre-release. First build, package identity FM-1_58, installed on one FM-1 by the author.

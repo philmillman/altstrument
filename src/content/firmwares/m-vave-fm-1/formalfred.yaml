@@ -1,0 +1,46 @@
+device: m-vave-fm-1
+name: FORMALFRED
+summary: >-
+  Self-playing generative instrument for the FM-1: four lanes of Euclidean, cellular-automaton and ratchet rhythms
+  with Braids, FM and 808 voices, filter, reverb and delay. Its sequencer and voice code is Lean 4 with over 300 proved theorems.
+description: >-
+  Each lane divides the clock into a rhythm and picks a note at every hit from one of eleven note sources, snapped
+  to a scale and optionally to a chord progression. The voices are all 48 Braids shapes, eight four-operator FM
+  sounds and ten 808-style drums, each through a state-variable filter, with a plate reverb and a delay on the
+  sends. A punch page on REC gives momentary effects such as stutter, roll, freeze and fill, and an arpeggiator
+  and 142 factory patches are included. The sequencer, the voice arithmetic, the effects and the patch format are
+  written in Lean 4 and compiled for the chip, and the repository checks theorems about them on every build. A
+  pixel-art butler on the screen is the project's mascot. The same firmware code is compiled to WebAssembly
+  for a browser simulator on the project site, which also hosts the installer. It is built on Dinghy, and the
+  build instructions list Linux on x86-64 as the only supported build host. The README says the hardware facts
+  were not tested by the authors.
+status: active
+authors:
+- name: mpancia
+  url: https://github.com/mpancia
+source: https://github.com/mpancia/fmfm
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and fw/LICENSING.md give GPL-3.0 and the vendored Dinghy platform is GPL-3.0-only. Braids and Clouds
+  code in voices/ and fx/ is MIT.
+homepage: https://mpancia.github.io/fmfm/
+distribution: browser-installer
+requires_stock: V15
+install_notes: >-
+  Use the installer page on the project site in Chrome or Edge, or fw/tools/fm1_install.py. The package keeps the
+  update loader and the OCT- USB rescue, so another firmware can be installed over it. The hardware notes say to back
+  up the full flash first and to install over stock V15 rather than over another custom firmware.
+brick_risk: true
+tags: [generative, sequencer, synth-engine, drums, fx, performance, emulator, open-source]
+image:
+  url: https://raw.githubusercontent.com/mpancia/fmfm/main/docs/card.png
+  alt: "FORMALFRED home screen with four lanes, each showing a step bar, the Dorian scale and a voice name (SAW SUB, PLUCK, MORPH, BELL), with key D and chord D below"
+  credit: mpancia
+  source_url: https://github.com/mpancia/fmfm
+  first_party: true
+versions:
+- version: 1.0.0
+  date: 2026-11-02
+  url: https://github.com/mpancia/fmfm/releases/tag/v1.0.0
+  notes: First release; package identity FM-1_960.

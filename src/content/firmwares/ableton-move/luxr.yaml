@@ -1,0 +1,39 @@
+device: ableton-move
+name: LUXR for Move
+summary: >-
+  LUXR's eight-voice drum engine as a Schwung sound generator, played from Move's pads and sequenced by Move, with kit
+  effects, master filter, compressor and limiter. Not yet run on a Move.
+description: >-
+  Rights warning: the sample layer uses the transient samples from the Sonic Potions LXR firmware, which the repository
+  does not contain. The build fetches them, and their licence allows non-commercial use only, so a module built with
+  them is not pure GPL.
+
+  This is the sound engine of the FM-1 firmware of the same name, built from the same fixed-point code. LUXR's own
+  sequencer and panel stay on the FM-1. Pads 1 to 8 play the kick, snare, clap, closed and open hat, tom, rim and
+  cymbal, and pads 9 to 16 play the same sounds with accent; General MIDI and tonal note maps are also offered. A
+  full-screen page and a Perform mode give the eight knobs a second row with Shift. The module's README is in German
+  and says version 0.3.0 was tested on a computer and under QEMU and has never run on a Move.
+status: active
+authors:
+- name: Orbitator
+  url: https://github.com/Orbitator
+source: https://github.com/Orbitator/LUXR
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  schwung/NOTICE-LXR.txt says the module code is GPL-3.0 like the rest of the repository, and the FM-1 entry's NOTICE
+  file says GPL-3.0-only. The LXR transient samples (Copyright 2013 Julian Schmidt) forbid commercial use and are not
+  GPL-compatible: a build with them is for personal, non-commercial use and must not be sold or passed on as plain GPL.
+  plugin_api_v1.h comes from Schwung under the MIT licence.
+distribution: download
+install_notes: >-
+  Needs Schwung. In Schwung Manager use Install Custom Module with the LUXR repository URL, or upload
+  luxr-module.tar.gz from the schwung release, then load LUXR as a synth on a track in Shadow mode. Not tested on a Move
+  by the author.
+brick_risk: false
+tags: [drums, synth-engine, sampler, fx]
+versions:
+- version: 0.3.0 build 5
+  date: 2026-11-02
+  url: https://github.com/Orbitator/LUXR/releases/tag/schwung
+  notes: Pre-release on the rolling schwung tag, which the project rebuilds on every push to main; this build comes from commit c0f211c.

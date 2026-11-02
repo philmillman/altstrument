@@ -23,8 +23,9 @@ homepage: https://modwerk.app/
 distribution: patch-your-own
 requires_stock: 1.40C
 install_notes: >-
-  Build from your own stock 1.40C .syx, then flash with Elektron Transfer or
-  from the CF card. Bootloader is not modified.
+  Build from your own stock 1.40C .syx, in the browser builder named in the
+  release notes or with the repository's tools, then flash with Elektron
+  Transfer or from the CF card. Bootloader is not modified.
 tags: [fx, machines, usb-audio, usb-midi, bugfixes]
 video:
   url: https://www.youtube.com/watch?v=GGpkCyshUak
@@ -32,6 +33,14 @@ video:
   credit: Sam Banks
   first_party: true
 versions:
+  - version: v0.2
+    date: 2026-11-01
+    url: https://github.com/sambanks/octabam/releases/tag/v0.2
+    notes: Adds VARISPEED, a fifth TSTR position on STATIC and FLEX tracks, and removes FX2 LOCK from the octabam remix because it stopped FX2 picks from taking effect. The author lists some checks as not yet run on a unit.
+  - version: v0.1
+    date: 2026-11-01
+    url: https://github.com/sambanks/octabam/releases/tag/v0.1
+    notes: First numbered release, built in the browser on your own 1.40C. The author marks it superseded by v0.2 because its FX2 LOCK blocks FX2 effect picks.
   - version: "MIDI SCENES engine latch (PR #754)"
     date: 2026-10-15
     url: https://github.com/sambanks/octabam/pull/754

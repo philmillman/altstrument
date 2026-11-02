@@ -1,17 +1,22 @@
 device: zoom-multistomp
 name: MIDISTOMP
-summary: Patched OS for the Zoom MS-50G, MS-60B and MS-70CDR, built from your own MS-50G 3.10 updater, that adds MIDI program change, MIDI CC, MIDI clock with Start and Stop, a tempo screen and footswitch hold options.
+summary: Patched OS for the Zoom MS-50G, MS-60B and MS-70CDR, built from your own MS-70CDR 2.10 updater, that adds MIDI program change, CC and clock, effect chain routing, Perform mode, a looper, meters and footswitch hold options.
 description: >-
-  A builder program writes a patched updater from Zoom's official MS-50G 3.10
-  updater, which you then run with Zoom's own flasher; it refuses any other file
-  and never rewrites the bootloader, so update mode stays available for recovery.
-  Added features include program change for loading patches, CC control of the
-  six effect slots and every knob, a MIDI menu for per-message receive and channel,
-  tempo set by clock, knob or tap with a tempo lock across patches, and a HOLD FOR
-  footswitch option for tuner, tempo or momentary use. Tested only on an MS-60B
-  flashed with the MS-50G firmware; the MS-50G and MS-70CDR are untested. It pairs
-  with the author's custom effects, which follow its tempo and Start and Stop. The
-  repository also holds a parser and build tool for the pedals' updaters.
+  A builder program writes a patched updater from Zoom's official MS-70CDR 2.10
+  updater, which you then run with the pedal in update mode. One build runs on the
+  MS-50G, MS-60B and MS-70CDR and updates a pedal from stock or earlier MIDISTOMP
+  firmware. The README says the updater never rewrites the bootloader, so update
+  mode stays available for recovery. Added features include program change for
+  loading patches, CC control of the six effect slots and every knob, a MIDI menu
+  for per-message receive and channel, tempo set by clock, knob or tap with a tempo
+  lock across patches, and a HOLD FOR footswitch option for tuner, tempo or
+  momentary use. Version 2.0 adds routing that splits the effect chain into two
+  parallel buses, a Perform mode that assigns knobs and the footswitch to targets
+  with beat-quantised moves, a tempo-synced looper that works with the GRDLOOP
+  effect, metering pages, a visual that follows the MIDI clock and a higher DSP
+  limit of 300. Tested on an MS-70CDR and an MS-60B (v1.2) and an MS-50G (v2.0).
+  It pairs with the author's custom effects, which follow its tempo and Start and
+  Stop. The repository also holds a parser and build tool for the pedals' updaters.
 status: active
 authors:
   - name: Luca Matturro (matujuice)
@@ -20,12 +25,14 @@ source: https://github.com/matujuice/zoom-ms-midistomp
 source_status: open
 license: MIT
 distribution: patch-your-own
-requires_stock: "3.10"
+requires_stock: "MS-70CDR 2.10 updater"
 install_notes: >-
-  Download Zoom's official MS-50G 3.10 updater, drag it onto MIDISTOMP-builder.exe
-  from the releases page and run the updater it writes. Zoom's own updater takes
-  the pedal back to stock. Since v1.1 the builder also accepts Zoom's Mac updater
-  (tested on an MS-50G). The author warns that flashing modified firmware can
+  Download Zoom's official MS-70CDR 2.10 updater, which is also the file to use for
+  the MS-50G and MS-60B, drag it onto MIDISTOMP-builder-Windows.exe from the
+  releases page and run the updater it writes with the pedal in update mode. On a
+  Mac use the Apple Silicon or Intel builder with Zoom's Mac updater. Set Settings,
+  Input to stereo on an MS-70CDR and mono on the others. Zoom's own updater takes
+  the pedal back to stock. The author warns that flashing modified firmware can
   brick a pedal and points to docs/safety.md in the repository.
 brick_risk: true
 tags: [midi, performance, fx, ui, patch]
@@ -36,6 +43,14 @@ video:
   first_party: true
   found_via: https://github.com/matujuice/zoom-ms-midistomp#demo
 versions:
+  - version: v2.0
+    date: 2026-11-02
+    url: https://github.com/matujuice/zoom-ms-midistomp/releases/tag/v2.0
+    notes: Adds effect chain routing with two parallel buses, Perform mode, a looper, metering pages, a clock-driven visual and a 300 DSP limit; Mac builders for Apple Silicon and Intel.
+  - version: v1.2
+    date: 2026-10-15
+    url: https://github.com/matujuice/zoom-ms-midistomp/releases/tag/v1.2
+    notes: One build made from the MS-70CDR 2.10 updater runs on the MS-50G, MS-60B and MS-70CDR, with stereo input on the MS-70CDR and updates from any firmware; no Mac builder in this release.
   - version: v1.1
     date: 2026-10-15
     url: https://github.com/matujuice/zoom-ms-midistomp/releases/tag/v1.1

@@ -8,7 +8,7 @@ description: >-
   gives Live a selectable device named Push Hack Virtual Audio without touching the exclusively locked hardware
   audio device. The repository ships a prebuilt snd-aloop kernel module for the stock Push kernel, and
   declines to load anything if the running kernel does not match. For other kernels the README explains how to build
-  a module from the GPL sources that Ableton publishes. Push Hack Braids and puXenia depend on it.
+  a module from the GPL sources that Ableton publishes. Since v0.2.0-alpha a mixer inside the service adds up the audio of several hacks that play through the card at once. Push Hack Braids and puXenia depend on it.
 status: active
 authors:
   - name: Federico P.
@@ -28,6 +28,10 @@ install_notes: >-
 brick_risk: false
 tags: [usb-audio, platform, utility]
 versions:
+  - version: v0.2.0-alpha
+    date: 2026-11-02
+    url: https://github.com/federico-pepe/push-hack-audio-loopback/releases/tag/v0.2.0-alpha
+    notes: Adds an audio bus mixer that runs inside the service, so several hacks can play through the loopback card at once.
   - version: v0.1.2-alpha
     date: 2026-10-19
     url: https://github.com/federico-pepe/push-hack-audio-loopback/releases/tag/v0.1.2-alpha

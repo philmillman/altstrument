@@ -1,0 +1,55 @@
+device: m-vave-fm-1
+name: RUPTURE
+summary: >-
+  Monophonic bass synth for the FM-1 built on ETCH: a Cycle Exchange Synthesis or bandlimited saw oscillator, two sub-oscillators, a ladder filter, eight effects, a step sequencer and an arpeggiator.
+description: >-
+  The main oscillator is either CXS, the author's own synthesis method, or a saw from bandlimited tables, each with
+  four macro knobs. Two sub-oscillators offer OFF, CXS, classic, square and saw types with octave, detune and drift. The
+  rest of the voice is a resonant filter with a 24 dB ladder option, an ADSR, an LFO, a four-band channel EQ, a six-note memory
+  with last, high or low priority, glide and legato. Effects are reverb, delay, chorus, MOSFET, compressor, tilt EQ, octave fuzz and
+  sandpaper. The sequencer runs 4 to 128 steps with recording, and the arpeggiator has several riff modes. There are 12
+  named project slots with 8 sequences each. The screen has a waveform bar that animates as a leaking dam while notes
+  are held, and a screensaver of Utrecht's skyline that cracks. The release notes say a later version added recognition
+  of M-VAVE's V15 package so the unit can return to stock, and that an earlier version cannot do so.
+status: active
+authors:
+- name: SikkenWorks
+  url: https://github.com/SikkenWorks
+source: https://github.com/SikkenWorks/RUPTURE
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states that Felucca-derived material is GPL-3.0-only and points to LICENSE and licenses/FELUCCA-LICENSING.txt; the source
+  tree under vendor/etch-v1.88-source keeps the notices of its upstream parts (DaisySP, Rings, msfa and others). The repository
+  also commits earlier RUPTURE and ETCH reference .fwsc builds.
+homepage: https://sikkenworks.github.io/RUPTURE/
+distribution: browser-installer
+install_notes: >-
+  Use the WebInstaller on the project site in Chrome or Edge, or flash the .fwsc from a release. The README says to back
+  up projects first, since M-VAVE's V15 does not read RUPTURE's storage, and that a unit still running V1.43 or earlier
+  cannot take the V15 package until it is updated. The USB name is SIKKENWORKS / RUPTURE with package identity FM-1_968.
+brick_risk: true
+tags: [synth-engine, sequencer, arpeggiator, fx, filter, usb-audio, fork]
+image:
+  url: https://raw.githubusercontent.com/SikkenWorks/RUPTURE/main/assets/boot-final.png
+  alt: "RUPTURE boot image: the white word SIKKENWORKS and the line Born out of passion. inside a ragged white lightning-burst shape on black, in 1-bit pixel art"
+  credit: SikkenWorks
+  source_url: https://sikkenworks.github.io/RUPTURE/
+  first_party: true
+versions:
+- version: V1.50
+  date: 2026-11-02
+  url: https://github.com/SikkenWorks/RUPTURE/releases/tag/V1.50
+  notes: The Utrecht screensaver crack now climbs through the streets and splits the Dom Tower.
+- version: V1.48
+  date: 2026-11-01
+  url: https://github.com/SikkenWorks/RUPTURE/releases/tag/V1.48
+  notes: SAVE opens the project browser from any normal page, and a harmonic guard reduces aliasing in the SAW voice at extreme settings.
+- version: V1.44
+  date: 2026-11-01
+  url: https://github.com/SikkenWorks/RUPTURE/releases/tag/V1.44
+  notes: Recognises M-VAVE's V15 package so a unit can be switched back to stock.
+- version: V1.33
+  date: 2026-11-01
+  url: https://github.com/SikkenWorks/RUPTURE/releases/tag/V1.33
+  notes: Earliest GitHub release.

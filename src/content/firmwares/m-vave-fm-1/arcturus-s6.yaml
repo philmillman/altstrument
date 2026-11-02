@@ -1,0 +1,41 @@
+device: m-vave-fm-1
+name: Arcturus S6
+summary: >-
+  Self-playing wavetable instrument for the FM-1: four wavetable oscillators patched by Serge-style function and gate generators and an EMS-style mod matrix, with 21 tunings and a green-phosphor screen. No sequencer or filter.
+description: >-
+  Oscillators 1 and 2 phase-modulate each other, A and B have wavefolders, and each has a 12 dB high cut, level and pan.
+  There are 13 wavetables, the last generated at random, six function generators with several curves, two sample-and-holds, a
+  quadrature LFO and four gate generators with logic combinations, all routed through a mod matrix and a gate matrix
+  that accept feedback. Tunings include just intonation, shruti, Bohlen-Pierce and the Carlos scales, with a quantiser per oscillator.
+  Effects are a plate reverb with freeze, a shift-register delay and a flanger in any order. Sixteen named patches are kept
+  on a disk-style page, and a random drone starts at every power-on. The engine works at 12 bit and 22.05 kHz on 8-bit
+  tables. The README says it is experimental, was written by Claude with human guidance, and has been tested on one FM-1.
+  It builds on Dinghy.
+status: active
+authors:
+- name: Zeptosecond DSP
+  url: https://github.com/zeptosecond-dsp
+source: https://github.com/zeptosecond-dsp/Arcturus-S6
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only, as Dinghy. The platform files are Felucca's, with changes from SLOOP and the SMK-37 layer. font8x8 is
+  public domain, Terminus is SIL OFL 1.1, and three JieLi SDK files are read from your own SDK checkout at build time.
+  Dinghy's logo is excluded from the licence and is not part of this fork.
+distribution: browser-installer
+install_notes: >-
+  Install from The Firmware Hub in Chrome or Edge over USB, or run tools/fm1_install.py with the .fwsc from a release
+  (on Windows, with tools/windows/install.bat). Hold OCT- while switching on for the USB rescue, which loads only the
+  updater so another firmware can be installed. The author says installing is at your own risk.
+brick_risk: true
+tags: [generative, wavetable, synth-engine, ambient, fx, scales, emulator]
+image:
+  url: https://raw.githubusercontent.com/zeptosecond-dsp/Arcturus-S6/main/assets/card.png
+  alt: "Arcturus S6 boot screen in green phosphor on black: title ARCTURUS S6 V1.7, the line Waveform Animation System, then wavetables 13, tunings 21 and patch memory 16"
+  credit: Zeptosecond DSP
+  source_url: https://github.com/zeptosecond-dsp/Arcturus-S6
+  first_party: true
+versions:
+- version: '1.7'
+  date: 2026-11-01
+  url: https://github.com/zeptosecond-dsp/Arcturus-S6/releases/tag/v1.7

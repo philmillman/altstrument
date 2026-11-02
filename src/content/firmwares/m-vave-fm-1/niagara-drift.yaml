@@ -19,8 +19,9 @@ homepage: https://evanyerburgh.github.io/niagara-drift/
 distribution: browser-installer
 install_notes: >-
   Web installer in Chrome or Edge over USB, or tools/fm1_install.py with the .fwsc from the releases page.
-  The installer's Back to M-VAVE's firmware option writes V15 back; a failed start twice in a row enters a
-  safe mode the installer can still reach. The author has tested it on one unit so far.
+  The installer's Back to M-VAVE's firmware option writes a stock file you pick, and links V16 on M-VAVE's own server
+  and V15 through a Wayback Machine copy of that address; nothing stock is in the repository. A failed start twice in a
+  row enters a safe mode the installer can still reach. The author has tested it on one unit so far.
 brick_risk: true
 tags: [synth-engine, lfo, fx, reverb, delay, performance, emulator]
 image:
@@ -30,6 +31,10 @@ image:
   source_url: https://github.com/evanyerburgh/niagara-drift
   first_party: true
 versions:
+- version: 0.2.1
+  date: 2026-11-02
+  url: https://github.com/evanyerburgh/niagara-drift/releases/tag/v0.2.1
+  notes: The sound is the same as 0.2. Adds support for the memory chip of some newer FM-1s, which 0.2 could not save on, and returning to either M-VAVE V16 or V15 whichever bootloader is fitted. The installer also takes V16, and the install page has a troubleshooting section.
 - version: '0.2'
   date: 2026-10-21
   url: https://github.com/evanyerburgh/niagara-drift/releases/tag/v0.2

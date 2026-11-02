@@ -1,0 +1,43 @@
+device: m-vave-fm-1
+name: Outrigger
+kind: tool
+summary: >-
+  USB MIDI host on a Waveshare ESP32-S3 touchscreen board that lets a controller play the FM-1 with no computer, and switches the FM-1's firmware with a backup first. Beta.
+description: >-
+  The board sits on a powered USB hub next to the FM-1 and routes MIDI from a controller to it; its screen shows the
+  signal chain. The firmware loader keeps up to ten FM-1 firmware packages on the board's flash, backs up the running firmware
+  before a switch and can resume an interrupted install. A new board comes with M-VAVE's V15, Felucca and Skiff, and
+  more can be added from The Firmware Hub's list. The ESP32 firmware is installed from a browser installer that
+  writes four partitions without touching stored settings. M-VAVE's firmware and JieLi's loader are fetched by the
+  browser at install time and checked by hash, and are not in the repository. The beta notes list Wi-Fi, a web page on the board,
+  loading your own firmware files and removing a firmware as not yet done. It has been tested with one controller,
+  and the hub's USB-A ports do not work on the tested hub.
+status: active
+authors:
+- name: Chad Thornton
+  url: https://github.com/chadthornton
+source: https://github.com/chadthornton/outrigger
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  NOTICE says GPL-3.0 with no later-version wording, and the author is Chad Thornton. Vendored EspUsbHost and Arduino_GFX are MIT and BSD, esptool-js
+  is Apache-2.0, and the ESP32 Arduino core is LGPL-2.1. No M-VAVE firmware or JieLi wl82loader.bin is committed.
+homepage: https://outrigger.music
+distribution: browser-installer
+install_notes: >-
+  Install the board firmware from outrigger.music in Chrome or Edge. Switching writes to the FM-1's flash, so read the
+  beta guide first; the guide says to leave the FM-1 switched on if a switch stops partway, and lists a recovery kit. The
+  release notes say Skiff to stock is untested.
+brick_risk: true
+tags: [flasher, loader, utility, backup, midi, usb-midi, platform]
+image:
+  url: https://outrigger.music/shots/M_play.png
+  alt: "Outrigger Play screen on the board's 240 by 280 display: a vertical chain of four green dots labelled Hub (USB 8/8), Controller (LAU playing), Router (123k sent) and FM-1 (Skiff 1.4)"
+  credit: Chad Thornton
+  source_url: https://outrigger.music
+  first_party: true
+versions:
+- version: 0.1.0-beta.1
+  date: 2026-11-01
+  url: https://github.com/chadthornton/outrigger/releases/tag/v0.1.0-beta.1
+  notes: Marked pre-release. First public beta, the build the production installer serves.

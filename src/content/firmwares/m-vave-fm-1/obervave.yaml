@@ -19,7 +19,8 @@ source_status: open
 license: GPL-3.0-only
 license_notes: >-
   Platform code carries Leo Kuroshita's Felucca copyright and SLOOP's changes; LICENSING.md lists who wrote
-  each part, including the SMK-37 board layer by M. Geisler.
+  each part, including the SMK-37 board layer by M. Geisler. The screen mirror added in 3.3.2 comes from Patrick F. Kellogg's
+  viewer app and is MIT.
 homepage: https://github.com/zvenson/obervave
 distribution: download
 install_notes: >-
@@ -35,6 +36,14 @@ image:
   source_url: https://github.com/zvenson/obervave
   first_party: true
 versions:
+- version: 3.3.2
+  date: 2026-11-02
+  url: https://github.com/zvenson/obervave/releases/tag/v3.3.2
+  notes: The release page has no notes; the commits add an FM-1 Mirror, which shows the FM-1's screen on a computer or phone through a separate MIT-licensed viewer app, and sends nothing unless the app asks. The package is the CI build, FM-1_9533.
+- version: 3.3.1
+  date: 2026-11-02
+  url: https://github.com/zvenson/obervave/releases/tag/v3.3.1
+  notes: The release page has no notes; the commits accept the UC25HQ80 flash chip found in some newer FM-1s, which previously kept settings in RAM only and refused updates.
 - version: '3.3'
   date: 2026-10-31
   url: https://github.com/zvenson/obervave/releases/tag/v3.3

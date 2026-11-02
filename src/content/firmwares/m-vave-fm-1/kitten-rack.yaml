@@ -1,0 +1,56 @@
+device: m-vave-fm-1
+name: Kitten Rack
+summary: >-
+  Modular synth inside the FM-1, a fork of Matryoshka: over 50 patchable Eurorack-style modules edited on the device or in a web editor, a recording sequencer, 33 factory patches, visuals and USB audio.
+description: >-
+  A patch is a rack of modules whose outputs can be cabled to any input, built and edited on the FM-1's panel
+  or in the web editor, which also runs the patch and plays it in the browser. The modules include three oscillator types,
+  a Minimoog-style ladder filter, a low pass gate, Turing, Marbles, Euclidean and Lorenz generators, Maths-style
+  functions, a tape echo, a spring reverb and granular. The sequencer stores up to 64 patterns of 64 steps per patch
+  with a piano roll, a drum grid and songs, and records live takes with or without quantizing. MIDI learn maps a
+  controller's knobs in the editor and the map is saved in the patch. The device is a USB audio and MIDI
+  interface, and screens are in English or Spanish. The code starts from Matryoshka 1.5.1 and so from Modular-1,
+  with the VCF Muug taken from FMini-1. The repository holds M-VAVE's unmodified V15 package for the installer's way back to stock.
+status: active
+authors:
+- name: Black Kitten Devices
+  url: https://github.com/BlackKittenDevices
+source: https://github.com/BlackKittenDevices/kitten-rack
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md and the README state GPL-3.0-only, with Felucca, Matryoshka and Modular-1 code under the same licence. web/public/firmware/FM-1_015.fwsc is
+  M-VAVE's FM-1 V15 image, git blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd, the file M-VAVE licenses for redistribution under Apache-2.0 in
+  m-vave/fm1_open. The JieLi SDK files embedded in each package are Apache-2.0, and fonts are SIL OFL 1.1.
+homepage: https://blackkittendevices.github.io/kitten-rack/
+distribution: download
+install_notes: >-
+  Unzip KittenRack-instalador from the release and run KittenRack.pyw (Python 3.8 or newer, with a USB data
+  cable); the window installs the firmware and can install any other .fwsc to leave. The README says to back up first with
+  the editor of the firmware you run now. Hold OCT- and OCT+ at power-on for the update mode. The factory patches are
+  written on the first start.
+brick_risk: true
+tags: [synth-engine, sequencer, generative, editor, emulator, usb-audio, usb-midi, midi, fork]
+image:
+  url: https://raw.githubusercontent.com/BlackKittenDevices/kitten-rack/main/docs/img/rack.png
+  alt: "Kitten Rack screen for the patch 22 ARPEGIO MARBLES: panels MIDI-CV, PATTERN, MUUG, ARP, LFO, FUNCTION, MARBLES, VCA, DELAY, VCO CZ and OUT joined by orange and green cables"
+  credit: Black Kitten Devices
+  source_url: https://github.com/BlackKittenDevices/kitten-rack
+  first_party: true
+versions:
+- version: 1.3.0
+  date: 2026-11-01
+  url: https://github.com/BlackKittenDevices/kitten-rack/releases/tag/v1.3.0
+  notes: Buttons stay lit while the page they opened shows, and keys light while played.
+- version: 1.2.0
+  date: 2026-11-01
+  url: https://github.com/BlackKittenDevices/kitten-rack/releases/tag/v1.2.0
+  notes: Live takes keep the played timing, a REC window, a click, undo and tap tempo.
+- version: 1.1.0
+  date: 2026-10-30
+  url: https://github.com/BlackKittenDevices/kitten-rack/releases/tag/v1.1.0
+  notes: MIDI learn in the editor, with the map stored in the patch.
+- version: 1.0.0
+  date: 2026-10-29
+  url: https://github.com/BlackKittenDevices/kitten-rack/releases/tag/v1.0.0
+  notes: First full release, with the English and Spanish setting, the browser player and the big-screen visuals.

@@ -1,0 +1,52 @@
+device: m-vave-fm-1
+name: BEETLE BLUE
+summary: >-
+  Drum-only fork of BEETLE for the FM-1: six drum lanes with their own loop lengths of 1 to 16 steps, a sample-ROM kit and a procedural MONOLITH kit, 12 user kits, per-step FX, song mode and a live setlist.
+description: >-
+  Rights warning: the repository holds sixteen reference WAV files for the MONOLITH kit that the author's credits
+  file says were supplied by a user and whose redistribution rights have not been verified.
+  The firmware has 48 patterns of six lanes, each lane with its own loop length stored per pattern, a 64-position song
+  chain, and a 24-slot setlist for playing saved projects in order with a loading overlay. Each lane picks the BEETLE
+  kit (fourteen PCM and mu-law components), the MONOLITH kit (sixteen procedurally generated sounds) or one of twelve
+  global user kits of timbre presets, and imported user samples need a compatible storage format. Step FX, punch-in
+  effects, groove, ratchets, mute groups, snapshots and a mixer are included, and USB audio captures a stereo master or six
+  mono stems. Projects use a new BDR1 V33 format that older firmware cannot read and that differs from BEETLE's. Web pages
+  for the installer and for project management are in the repository. The author reports tests on two FM-1 units, says
+  the exact release has no logged test of returning to stock through The Firmware Hub, and says the stock V16 image is not accepted by its return check.
+status: active
+authors:
+- name: SikkenWorks
+  url: https://github.com/SikkenWorks
+source: https://github.com/SikkenWorks/BEETLE-BLUE
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  docs/CREDITS-AND-LICENSES.md states GPL-3.0-only for the native source, subject to retained third-party notices, and
+  the work derives from BEETLE, ETCH and Felucca. The credits file also says the MONOLITH reference WAVs
+  were user-supplied and their public redistribution rights are unverified, and that the packages keep protected loader and SDK data from the
+  ETCH and Felucca lineage. The repository also commits earlier BEETLE and ETCH reference .fwsc builds. The README says reSID and
+  Nes_Snd_Emu are not used in this build.
+homepage: https://sikkenworks.github.io/BEETLE-BLUE/
+distribution: browser-installer
+install_notes: >-
+  Use WebInstaller.html on the project site in Chrome or Edge over USB, or flash the .fwsc from a release. The README
+  says to back up projects and user kits, to know a recovery route first, and not to update with unsaved music in RAM,
+  and that WIPE ALL STORAGE deletes projects, setlists, samples and user kits. The firmware can receive M-VAVE's V15 from
+  The Firmware Hub for the way back to stock; V16 has to be installed another way.
+brick_risk: true
+tags: [tracker, drums, sequencer, sampler, mixer, fx, usb-audio, fork]
+image:
+  url: https://raw.githubusercontent.com/SikkenWorks/BEETLE-BLUE/main/assets/BEETLE-DRUM-blue-boot-frame1.png
+  alt: "BEETLE BLUE boot image in pixel art: a blue beetle in the centre, a grey cratered moon at top left and a bare tree branch at right on a black background"
+  credit: SikkenWorks
+  source_url: https://github.com/SikkenWorks/BEETLE-BLUE
+  first_party: true
+versions:
+- version: '1.2'
+  date: 2026-11-02
+  url: https://github.com/SikkenWorks/BEETLE-BLUE/releases/tag/V1.2
+  notes: An update request for official V15 now takes priority over an unfinished project or sample transfer, which is cancelled, so the Firmware Hub's return to stock can proceed.
+- version: '1.1'
+  date: 2026-11-02
+  url: https://github.com/SikkenWorks/BEETLE-BLUE/releases/tag/V1.1
+  notes: Renamed from release candidates to the stable name; the changelog says no installation test of this exact package is provided.

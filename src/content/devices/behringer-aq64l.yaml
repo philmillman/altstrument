@@ -1,0 +1,39 @@
+name: AQ64L
+manufacturer: Behringer
+category: controller
+tagline: 64-pad RGB grid MIDI controller with 16 function keys
+description: >-
+  The AQ64L (BE 0715-AAX) is a USB-powered grid controller from Behringer with
+  64 RGB velocity pads in an 8 by 8 layout and 16 RGB function keys. It
+  connects over USB-C and shows up as a USB MIDI device with two ports plus a
+  USB HID keyboard interface. The manufacturer's page lists Ableton Live and FL
+  Studio integration scripts. The controller is built around a GigaDevice
+  GD32F350 Cortex-M4 microcontroller with 128 KB of flash.
+platform: GigaDevice GD32F350 (Arm Cortex-M4), bare metal
+stock_firmware: Behringer factory firmware (closed source)
+links:
+  manufacturer: https://www.behringer.com/en/products/0715-AAX
+  community:
+    - label: Music Tribe Open Source organisation
+      url: https://github.com/MusicTribeOpenSource
+    - label: AQ64L developer kit repository
+      url: https://github.com/MusicTribeOpenSource/0715-AAX
+notes: >-
+  The developer kit installs custom firmware over USB without a debug probe.
+  The bootloader accepts packages signed with a key that the repository
+  publishes, so a signature does not show who built a package. Holding USER1 and
+  USER2 while plugging the unit in keeps it in the bootloader, where the
+  official package from the release page can be installed again. The factory
+  firmware and the bootloader stay closed.
+related: [behringer-bcr32]
+image:
+  src: /images/devices/behringer-aq64l.webp
+  style: photo
+  alt: Top view of the Behringer AQ64L, a black unit with eight white function keys above an 8 by 8 grid of pads lit in a cyan, yellow, red and violet gradient, plus a column of side pads
+  width: 1200
+  height: 722
+  credit: Behringer
+  license: manufacturer product image
+  source_url: https://www.behringer.com/en/products/0715-AAX
+  original_url: https://cdn-media.empowertribe.com/3cf1a4c86b4f018105d3c9e5602cebff/AE3_CREA-PROD_Image_BE_0715-AAX_AQ64L_Top.png
+pinned: [aq64l-demo]

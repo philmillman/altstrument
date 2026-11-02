@@ -7,7 +7,7 @@ summary: >-
 description: >-
   Based on the SLOOP web editor, it edits tracks, synth parameters, pattern notes with a piano roll and drum
   grid, DX7 SysEx patches, the user sample slots (loading files or recording from the phone, converted in the app)
-  and the song order, with undo. It needs a phone with USB host support and an FM-1 already running a recent
+  and the song order, with undo. Version 1.8.0 adds a recorder that captures the FM-1's USB audio as WAV or FLAC. It needs a phone with USB host support and an FM-1 already running a recent
   SLOOP. The release APK is signed with a debug key, so Android and Play Protect warn on install, and the app
   checks GitHub releases for updates.
 status: active
@@ -33,6 +33,10 @@ image:
   source_url: https://github.com/jahlib/sloop-fm1-go
   first_party: true
 versions:
+- version: 1.8.0
+  date: 2026-11-01
+  url: https://github.com/jahlib/sloop-fm1-go/releases/tag/1.8.0
+  notes: The release page has no notes. Its commits add a USB audio recorder (WAV or FLAC) with spectrum, pan and waveform analyzers, an FM6 algorithm diagram and compact editor, a theme setting, compressor and limiter knobs, and sampling from the FM-1's USB audio.
 - version: 1.7.25
   date: 2026-10-23
   url: https://github.com/jahlib/sloop-fm1-go/releases/tag/1.7.25

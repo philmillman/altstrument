@@ -1,8 +1,8 @@
 device: novation-circuit-rhythm
-name: Arrhythmia
-summary: Browser-installed patch of Novation's Circuit Rhythm 5706 firmware that fixes parameter-lock carry-over and a sound-processor hang, and adds a four-voice, four-operator FM synth on track 8 that plays chords, ten scales on tracks 1 to 7 and an SD card module loader.
+name: Circus Arrhythmia FM
+summary: Browser-installed patch of Novation's Circuit Rhythm 5706 firmware that fixes parameter-lock carry-over and a sound-processor hang, and adds a four-voice, four-operator FM synth on track 8 that plays chords, eight scales on tracks 1 to 7 and an SD card module loader.
 description: >-
-  Arrhythmia does not ship Novation's firmware. The installer page reads the
+  Arrhythmia, renamed Circus Arrhythmia FM in 0.2.2, does not ship Novation's firmware. The installer page reads the
   5706 update file you supply, checks its SHA-256, patches it in the browser and
   sends it to the unit over USB MIDI, and the user confirms on the unit. Two
   builds are offered. The firmware build turns track 8 into a four-voice FM synth that
@@ -10,17 +10,18 @@ description: >-
   Sixteen sounds are chosen in the Sample view or per step, and eight macros set
   feedback, the envelope, FM depth, cutoff and resonance, with tune on the synth page, and a step can
   hold a chord of up to four notes. Earlier 0.1.x releases had
-  a fixed saw sound instead. It also adds ten scales on tracks 1 to 7 and a
-  loader for small programs on the microSD card. The 0.2.1 release ships ten
-  example modules as card files, among them Euclidean rhythms, Game of Life,
-  snake and a puzzle.
+  a fixed saw sound instead. It also adds eight scales on tracks 1 to 7 (the devkit build keeps ten) and a
+  loader for small programs on the microSD card. Ten example modules, among them
+  Euclidean rhythms, Game of Life, snake and a puzzle, are published on the
+  project site, and a module page writes them to the card over USB. Version 0.2.2
+  moves the chord and scale settings to a synth page opened with Shift and Track 8.
   The devkit build adds a DSP load meter and module tools and has no synth. Both
   fix parameter locks so that a step without a lock returns to the knob's value,
   and limit how long the unit waits for the sound processor before flagging a
   fault with the Rec button. The 0.2.1 release notes say the synth's processing time
   has not been measured on the unit and that the conversion of projects saved by
   0.2.0 and most modules were checked only in emulation; the 0.2.0 notes add that
-  the fault handling and the devkit build are untested on hardware. The DSP voice source is
+  the fault handling and the devkit build are untested on hardware, and the 0.2.2 notes say the published image itself was not run on a unit. The DSP voice source is
   now published, so the image rebuilds from the repository. Novation Components cannot restore stock; the
   installer has a Back to stock option.
 status: active
@@ -47,6 +48,10 @@ install_notes: >-
 brick_risk: true
 tags: [synth, chords, scales, sequencer, parameter-locks, modules]
 versions:
+  - version: v0.2.2
+    date: 2026-11-01
+    url: https://github.com/llcoolkm/arrhythmia/releases/tag/v0.2.2
+    notes: Adds a synth page opened with Shift and Track 8 for chords, scales and keys, writing module files to the card over USB from a web page, and a synth output 3 dB louder; the firmware build drops Phrygian and Lydian. The project is renamed Circus Arrhythmia FM.
   - version: v0.2.1
     date: 2026-10-30
     url: https://github.com/llcoolkm/arrhythmia/releases/tag/v0.2.1

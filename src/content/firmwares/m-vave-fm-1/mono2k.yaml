@@ -26,13 +26,17 @@ license_notes: >-
 homepage: https://inigohernandez.github.io/mono2k/
 distribution: download
 install_notes: >-
-  Download mono2k-1.6.2.fwsc (identity FM-1_980) from the releases page, or install it from the project's installer
+  Download mono2k-1.7.fwsc (identity FM-1_980) from the releases page, or install it from the project's installer
   page or the FM-1 Firmware Hub over USB in Chrome or Edge. Back up what the FM-1 holds first. Installing another
   firmware replaces it, and holding OCT- while switching on reaches the updater. The repository also holds the
   sound and sequencer core, a browser emulator (web/build.sh) and a host harness.
 brick_risk: true
 tags: [sequencer, synth-engine, fx, lfo, emulator, midi]
 versions:
+- version: '1.7'
+  date: 2026-11-02
+  url: https://github.com/InigoHernandez/mono2k/releases/tag/v1.7
+  notes: Stops dropouts when the CPU is full. The quietest track for its cost fades out in 3 ms and rests until its next note, and the CPU FULL message names the track that rested and the heaviest one. Patterns that fit play as before.
 - version: 1.6.2
   date: 2026-11-01
   url: https://github.com/InigoHernandez/mono2k/releases/tag/v1.6.2

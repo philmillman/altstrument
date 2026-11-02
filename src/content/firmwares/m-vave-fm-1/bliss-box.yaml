@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: Bliss Box
+summary: >-
+  Prototype ambient firmware for the FM-1 styled on 1980s new age cassettes: a self-playing Grove of pads and bells, seeded stings, nine solo voices and a cassette effect that can be worn down.
+description: >-
+  The Grove piece runs for five to thirty minutes or without end and moves through six named seasons. A sting is a
+  seeded cue of 3, 5, 10 or 30 seconds that is the same for the same seed. Solo voices (Rhodes, CP-80, flute, harp,
+  zither, bells, strings, choir and glass) can be played over the bed in one of seven keys named after the chakras,
+  with four modes, just intonation and an A=432 option. A cassette model on the master bus adds wow, flutter, hiss and
+  dropouts that increase with a wear setting, and a TALK dip makes room for a voice. The commits say the engine
+  was tuned to fit the FM-1's processor budget, and a note in the README says it has run only in the host simulator
+  and the fm1-emu emulator, not on hardware. The repository has no releases and no prebuilt package, so it
+  has to be built. Commit messages credit Claude as co-author.
+status: active
+authors:
+- name: Manzanita Research
+  url: https://github.com/Manzanita-Research
+source: https://github.com/Manzanita-Research/bliss-box
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The README states MPL-2.0 like fm1-base, which it builds on, with the copyright held by Manzanita Research.
+distribution: source-only
+install_notes: >-
+  Build with tools/fw.sh, which needs the JieLi toolchain (through Docker on macOS), then install the resulting
+  blissbox.fwsc with a FM-1 installer. The author says it has not been run on a real FM-1, so treat flashing as
+  experimental.
+brick_risk: true
+tags: [generative, ambient, synth-engine, performance, fx, emulator]
+versions:
+- version: main @ eca9992
+  date: 2026-11-02
+  url: https://github.com/Manzanita-Research/bliss-box/commit/eca99923edf578651ef6721391d6b45528e3e69c
+  notes: No tagged releases; this is the latest commit.

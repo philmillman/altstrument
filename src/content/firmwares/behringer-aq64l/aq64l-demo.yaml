@@ -1,0 +1,46 @@
+device: behringer-aq64l
+name: AQ64L developer kit
+summary: Music Tribe's developer kit for the Behringer AQ64L, with a bare-metal example firmware for the GD32F350, signing and USB upload tools, and the main-board schematic.
+description: >-
+  The repository is published by the Music Tribe Open Source organisation. The
+  example firmware in demo/ is a C project for the GD32F350 with a Keil MDK
+  project and a CMake build for the GNU Arm toolchain. It covers the LED chain
+  for the pads and function keys, the key matrix, USB MIDI and the hand-off to
+  the bootloader, which a SysEx message triggers so that later builds flash
+  without a key combination. The tools folder has a Python script that turns a
+  built image into an upgrade package and another that verifies, uploads and
+  reads device information over USB MIDI. The docs folder covers building, USB
+  upgrade and probe flashing, and the hardware folder has the schematic. The
+  factory firmware, the bootloader source and the Ableton and FL Studio
+  integration are not included. No build or flash was attempted for this entry.
+status: active
+authors:
+  - name: Music Tribe
+    url: https://github.com/MusicTribeOpenSource
+source: https://github.com/MusicTribeOpenSource/0715-AAX
+source_status: open
+license: AGPL-3.0-or-later
+license_notes: >-
+  The root LICENSE file is the AGPL-3.0 text. The README and LICENSE-EXCEPTION.md
+  state AGPL-3.0-or-later for the example firmware, tools and docs, with extra
+  permission to link the GigaDevice firmware library. GigaDevice and ARM CMSIS
+  code keep their own licenses, and GigaDevice's terms limit software built from
+  its library to GigaDevice parts. The schematic is CC-BY-NC-SA-4.0. The
+  Behringer and AQ64L names and logos are excluded.
+distribution: source-only
+install_notes: >-
+  Build with Keil MDK 5 or with CMake and the GNU Arm Embedded toolchain; the
+  build ends in an AQ64L_APP_upgrade.bin package. Upload it over USB MIDI with
+  the Python tool or with the aq64l_upload.exe from the release page. If the new
+  firmware does not start, hold USER1 and USER2 while plugging the unit in to
+  stay in the bootloader, then install the official package from the Behringer
+  release page. The signing key is public, so check hashes before flashing a
+  package you did not build. The bootloader region is left alone, so an SWD
+  probe is only needed if that region is damaged.
+brick_risk: false
+tags: [official, open-source, sdk, examples, usb-midi, pads]
+versions:
+  - version: v0.1.0
+    date: 2026-10-28
+    url: https://github.com/MusicTribeOpenSource/0715-AAX/releases/tag/v0.1.0
+    notes: First release; attaches the Windows signing and upload tools.

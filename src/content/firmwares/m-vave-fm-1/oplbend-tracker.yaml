@@ -1,0 +1,43 @@
+device: m-vave-fm-1
+name: OPLBend Tracker
+summary: >-
+  LSDJ-style tracker for the FM-1 on an OPL3-style FM engine with 18 voices, circuit-bending effects, a drum machine and a looper; opens and saves AdLib Tracker II .A2M songs.
+description: >-
+  Rights warning: the repository holds 486 instrument preset files from AdLib Tracker II (presets/at2) with no licence
+  statement of their own, and the header of firmware/amber/main.cpp reads "all rights reserved" although the repository licence is the GPL.
+  The structure is song, chain, phrase, instrument, table and project, driven from the keys and knobs, with a mode that turns
+  the keys into a D-pad. The engine is described as OPL3-style and not cycle-accurate, with eight waveforms, stereo output and the AdLib Tracker II
+  instrument presets (2,103 according to the site). The circuit-bending effects switch parts of the virtual chip per track and bend its clock
+  in pitch and speed, and there are glitch, master effects, a drum machine with a drum keyboard, and a looper with layers. USB audio
+  goes to a computer. A transfer page on the project site sends .A2M songs to the FM-1 and copies the FM-1's songs back. The author
+  lists a test of the accurate Nuked-OPL3 emulator on the FM-1 as planned.
+status: active
+authors:
+- name: Audren Thibault
+  url: https://github.com/AudrenThibault
+source: https://github.com/AudrenThibault/OPLBend-Tracker
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is GPL-3.0 and the sources checked carry SPDX GPL-3.0-only headers, with Felucca's hardware layer and SLOOP's looper recording code
+  under the same licence. The README does not say which licence the AdLib Tracker II presets are under. firmware/amber/main.cpp
+  carries an all-rights-reserved header from the author. IBM Plex Mono is SIL OFL 1.1 and three JieLi SDK files in the package are Apache-2.0.
+homepage: https://mazmusique.fr/oplbendtracker/
+distribution: browser-installer
+requires_stock: V15
+install_notes: >-
+  Use the web installer in Chrome or Edge, or tools/fm1_install.py. The README recommends running M-VAVE's V15 first, since it cannot say
+  whether installing over V16 works, and notes use is at your own risk. The M-UPGRADE app is the fallback when the web installer fails.
+brick_risk: true
+tags: [tracker, synth-engine, chiptune, fm, drums, looper, fx, usb-audio, editor]
+image:
+  url: https://raw.githubusercontent.com/AudrenThibault/OPLBend-Tracker/main/docs/media/tracker-song.png
+  alt: "OPLBend Tracker SONG page: a purple and pink grid of two-digit hex values in four coloured channel columns on a dark background, with the first cell highlighted in red"
+  credit: Audren Thibault
+  source_url: https://github.com/AudrenThibault/OPLBend-Tracker
+  first_party: true
+versions:
+- version: main @ 36800fe
+  date: 2026-11-02
+  url: https://github.com/AudrenThibault/OPLBend-Tracker/commit/36800fe7e5a0a6d0430e9c1333b8c748cc06c986
+  notes: No tagged releases; this is the latest commit. The site's package is named oplbend-tracker-0.2.fwsc.

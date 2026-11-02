@@ -1,4 +1,5 @@
 device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
 name: S1Vave
 summary: >-
   Eight-voice virtual analog synth modelled on the Roland S-1 and SH-101: sub-oscillator, 4-pole filter, calibrated
@@ -10,7 +11,7 @@ description: >-
   tempo-synced mode and an audio-rate mode. A riser and downer sweep generator, stereo chorus, ping-pong delay and
   plate reverb are included, along with a two-track sequencer with ratchets and per-step probability, 64 factory
   programs and USB audio and MIDI. The firmware's MIDI CC map follows the S-1's, and the 1.1 release adds arp hold, battery monitoring and SysEx preset sync. The repository's build script has
-  an SMK-37 board option, but no SMK-37 build is published.
+  an SMK-37 board option, and release 1.12 attaches packages for the SMK-37 Pro, Elite and MKE-P37.
 status: active
 authors:
 - name: Andrew GG
@@ -21,14 +22,17 @@ license: GPL-3.0-only
 license_notes: >-
   LICENSING.md states GPL-3.0 only. The platform layer keeps Leo Kuroshita's Felucca copyright and the
   changes of OberVave's author zvenson and of isod89's SLOOP. The Terminus font is SIL OFL 1.1, the S1Vave artwork
-  is CC BY 4.0, and the JieLi SDK files read at build time are Apache-2.0.
+  is CC BY 4.0, and the JieLi SDK files read at build time are Apache-2.0. Since 2026-11-01 LICENSING.md and a new
+  TRADEMARK.md reserve the Andrew GG logo, splash image and related brand assets (all rights reserved, outside the
+  GPL) and ask forks to remove that branding.
 homepage: https://andrewgg.one/s1vave/
 distribution: browser-installer
 install_notes: >-
-  The homepage has a WebMIDI installer for Chrome, Edge, Brave or Opera that flashes the v1.11 package,
+  The homepage has a WebMIDI installer for Chrome, Edge, Brave or Opera that flashes the current package,
   and the README also names the FM-1 Firmware Hub. To build and flash it yourself, run build.sh and
   tools/fm1_install.py. The installer warns that flashing erases the presets and settings of the previous firmware
-  and that an interrupted flash can brick the FM-1.
+  and that an interrupted flash can brick the FM-1. On the SMK-37 Pro, Elite and MKE-P37 the same flasher detects the
+  model and picks its package; the project's SMK37.md says the keyboard's factory calibration sector is not written.
 brick_risk: true
 tags: [synth-engine, sequencer, fx, reverb, delay, filter, lfo, midi, usb-midi, usb-audio, emulator]
 image:
@@ -38,6 +42,10 @@ image:
   source_url: https://github.com/AndrewGG88/S1Vave
   first_party: true
 versions:
+- version: '1.12'
+  date: 2026-11-02
+  url: https://github.com/AndrewGG88/S1Vave/releases/tag/v1.12
+  notes: The release page has no notes beyond a changelog link. Its commits add packages for the SMK-37 Pro, Elite and MKE-P37, a native VST build, a deeper phaser sweep and a trademark policy. The homepage installer offers 1.12.
 - version: '1.11'
   date: 2026-10-31
   url: https://github.com/AndrewGG88/S1Vave/releases/tag/v1.11

@@ -1,12 +1,12 @@
 device: m-vave-fm-1
 name: Kitten Synths
 summary: >-
-  SLOOP 2.8 groovebox with a MUUG three-oscillator ladder-filter engine ported from FMini-1 (100 factory sounds), a fourth lightweight LITE synth part and a cat-themed screen, shipped as patches on SLOOP.
+  SLOOP 2.8 groovebox with a MUUG three-oscillator ladder-filter engine ported from FMini-1 (100 factory sounds), a fourth lightweight LITE synth part, a second drum track and a cat-themed screen, shipped as patches on SLOOP.
 description: >-
-  Keeps SLOOP's engines, 64-step sequencer, song mode, punch-in effects and MIDI map, and sends USB audio on eight channels (the master, then each synth track, the LITE synth and the drums separately), and adds the MUUG engine, a
+  Keeps SLOOP's engines, 64-step sequencer, song mode, punch-in effects and MIDI map, and sends USB audio on eight channels (the master, then each of the six tracks separately), and adds the MUUG engine, a
   Minimoog-style voice with up to eight voices, a 24 dB ladder filter and its own edit pages on the FM-1's panel, and a
-  LITE track that plays only the DIGITAL, PHASE, LOFI, SAMPLE and VOICE engines so a fourth synth part costs little CPU. The
-  web installer and editor handle five tracks. Seven SLOOP sounds and three visualisers were removed to free program
+  LITE track that plays only the DIGITAL, PHASE, LOFI, SAMPLE and VOICE engines so a fourth synth part costs little CPU. Since 2.8-kitten.8 there is also a second drum track with its own kit, pattern,
+  mixer settings and MIDI channel 11, and the screens and web editor show six tracks. Seven SLOOP sounds and four visualisers were removed to free program
   memory, which the notes say is almost full. The repository holds no copy of SLOOP: a GitHub Actions workflow downloads a
   pinned SLOOP commit and applies the patch files. The documentation is in Spanish, the credits say development was assisted
   by Claude, and the README calls it a beta tested on one real FM-1.
@@ -35,6 +35,22 @@ image:
   source_url: https://github.com/BlackKittenDevices/Kitten-Synths
   first_party: true
 versions:
+- version: 2.8-kitten.8
+  date: 2026-11-02
+  url: https://github.com/BlackKittenDevices/Kitten-Synths/releases/tag/v2.8-kitten.8
+  notes: Adds a second drum track (track 6) with its own kit, pattern and mixer settings on MIDI channel 11, giving six tracks and eight USB audio channels with each track on its own channel. Also carries the SLOOP 2.8.1 to 2.8.4 fixes and the blinking kitten at power-on. The USR4 sample slot shrinks to 76 KiB.
+- version: 2.8-kitten.7
+  date: 2026-11-02
+  url: https://github.com/BlackKittenDevices/Kitten-Synths/releases/tag/v2.8-kitten.7
+  notes: Marked pre-release. Test build of the second drum track, which the web editor did not yet show; sends on USB audio channel 8.
+- version: 2.8-kitten.6
+  date: 2026-11-02
+  url: https://github.com/BlackKittenDevices/Kitten-Synths/releases/tag/v2.8-kitten.6
+  notes: Brings in the SLOOP 2.8.1 to 2.8.4 fixes for held notes while recording, distorted note ends and in-phase unison voices, and shows a blinking kitten at power-on. Four SLOOP visualisers were dropped to make room.
+- version: 2.8-kitten.5
+  date: 2026-11-01
+  url: https://github.com/BlackKittenDevices/Kitten-Synths/releases/tag/v2.8-kitten.5
+  notes: Marked pre-release. First build with the SLOOP 2.8.1 to 2.8.4 sequencer, audio and stability fixes; the release page lists the changes as fix-17 and fix-18.
 - version: 2.8-kitten.4
   date: 2026-10-30
   url: https://github.com/BlackKittenDevices/Kitten-Synths/releases/tag/v2.8-kitten.4

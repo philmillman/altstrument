@@ -1,0 +1,44 @@
+device: polyend-tracker
+name: Tracker Instrument Editor (tracker-pti-editor)
+kind: tool
+summary: Vue web app for creating, editing and auditioning Tracker instrument (.pti) files, with a sampler, sample editing, slicing helpers and a Web Audio playback engine, built on Polyend's tracker-lib.
+description: >-
+  Records or loads audio, edits it with cut, fades, normalise, compress and
+  equaliser functions and exposes instrument parameters such as filter, tuning,
+  envelopes, LFOs, volume, panning, overdrive and bit-depth reduction. It
+  supports the one-shot, loop, wavetable and granular playback modes and plays
+  instruments from a MIDI or computer keyboard. The README says the granular
+  engine, reverb and delay are approximations of the hardware and that some
+  auto-sampling work was never finished. The author wrote it as an example of what
+  tracker-lib allows and does not expect to continue it.
+status: active
+authors:
+  - name: sandroidmusic
+    url: https://github.com/sandroidmusic
+source: https://github.com/sandroidmusic/tracker-pti-editor
+source_status: open
+license: CC-BY-NC-4.0
+license_notes: >-
+  The LICENSE file is the Creative Commons Attribution-NonCommercial 4.0 text and
+  names no licensor. The README applies it to this repository, forbids commercial
+  use of it or of derived projects and offers a commercial licence on request.
+  tracker-lib, which it uses, is MIT.
+homepage: https://polyend.sandroid.xyz/instrumented/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted editor in a browser, build or edit an instrument and save the
+  .pti file, then copy it to the Tracker's SD card. To run it locally, use npm
+  install and npm run dev.
+brick_risk: false
+tags: [web, editor, samples, tracker]
+video:
+  url: https://www.youtube.com/watch?v=6vzHuB2HkdE
+  title: The Polyend Tracker Ecosystem is opening up
+  credit: Sandroid
+  first_party: true
+  found_via: https://github.com/sandroidmusic/tracker-pti-editor#readme
+versions:
+  - version: main @ 2ef91dc
+    date: 2026-06-18
+    url: https://github.com/sandroidmusic/tracker-pti-editor/commit/2ef91dcbd5f10a3c84525d164890b174f15861b8
+    notes: No tagged releases; this is the latest commit.

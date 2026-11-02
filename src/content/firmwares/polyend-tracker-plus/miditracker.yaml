@@ -1,0 +1,48 @@
+device: polyend-tracker-plus
+name: MidiTracker
+kind: tool
+summary: Browser app that imports Standard MIDI files, maps them onto eight Tracker+ tracks with tempo changes and CC and program change effects, lets you edit the grid and exports a Tracker+ project zip or .mtp patterns.
+description: >-
+  Rights warning: the repository bundles roughly 280 third-party MIDI files of
+  game and other music under fixtures/, which its README says are for automated
+  testing only and not to be redistributed as a collection.
+
+
+  Runs without a server. It quantises to four rows per beat, splits patterns at
+  tempo changes, previews with a General MIDI SoundFont, and checks its output
+  by reading it back with tracker-lib before download. It can also export the
+  grid as MIDI for comparison with the hardware. The README names only the
+  Tracker+ and describes eight-track mapping.
+status: active
+authors:
+  - name: David Malcher
+    url: https://github.com/david9up
+source: https://github.com/david9up/miditracker
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is MIT, copyright David Malcher. The MIDI files under fixtures/ are third-party
+  content that the licence does not cover and that the fixtures README restricts to testing use.
+homepage: https://david9up.github.io/miditracker/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted app, load a .mid file, edit if needed and download the project
+  zip, then unzip it into /Projects on the Tracker+'s SD card. To run it locally,
+  use npm install and npm run dev.
+brick_risk: false
+tags: [web, converter, midi, editor]
+image:
+  url: https://raw.githubusercontent.com/david9up/miditracker/main/docs/screenshots/main-overview.png
+  alt: MidiTracker window with transport and menu bars, an eight-track pattern grid with notes in the first two tracks, and a channel list of instrument names with mute and solo buttons
+  credit: David Malcher
+  source_url: https://github.com/david9up/miditracker#readme
+  first_party: true
+versions:
+  - version: v1.0.1
+    date: 2026-06-27
+    url: https://github.com/david9up/miditracker/tree/v1.0.1
+    notes: Git tag; no GitHub release page. Shows full channel and pattern names.
+  - version: v1.0.0
+    date: 2026-06-27
+    url: https://github.com/david9up/miditracker/tree/v1.0.0
+    notes: Git tag; no GitHub release page. First public release.

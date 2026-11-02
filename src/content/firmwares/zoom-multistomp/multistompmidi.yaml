@@ -1,0 +1,31 @@
+device: zoom-multistomp
+kind: tool
+name: MultistompMidi
+summary: Python functions that add external effect switching, tap tempo control and parameter editing to the Zoom MultiStomp over MIDI, with expression pedal modules as a starting point.
+description: >-
+  msmidi_fx_edit.py edits parameters on the first three effects, switches the focused effect and reads or sets tap
+  tempo. Switching and tap tempo work by copying the patch data, changing the relevant bits and sending it back, so the
+  README warns that effect tails are cut off. The author says the expression pedal modules are a basis at most, having
+  been written for the HX Stomp first.
+status: dormant
+authors:
+  - name: PhilDaThrill
+    url: https://github.com/PhilDaThrill
+source: https://github.com/PhilDaThrill/MultistompMidi
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and no license statement.
+distribution: source-only
+brick_risk: false
+tags: [midi, python, performance]
+video:
+  url: https://www.youtube.com/watch?v=W0LHTxjAvKs
+  title: External Effect Switching, Tap Tempo and Expression Pedal on the Zoom Multistomp
+  credit: amateurfunk
+  first_party: true
+  found_via: https://github.com/PhilDaThrill/MultistompMidi#readme
+versions:
+  - version: main @ 9636381
+    date: 2024-02-21
+    url: https://github.com/PhilDaThrill/MultistompMidi/commit/9636381bc947ae33fe9a59522456ce96d551205f
+    notes: No tagged releases; this is the latest commit.

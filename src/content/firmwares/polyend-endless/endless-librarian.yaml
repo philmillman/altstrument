@@ -1,0 +1,28 @@
+device: polyend-endless
+kind: tool
+name: Endless Librarian
+summary: Local macOS web app that browses, searches and filters Endless effects, shows each one's knobs, and copies the chosen effect to the pedal with one click.
+description: >-
+  Runs on the Mac at a local address using the system's python3, with no accounts. A setup script downloads the free
+  community plates and their pictures from polyend.com; none are stored in the repository. You can add your own
+  effects with an optional picture and description. Knob positions are saved only as notes to yourself, because the
+  pedal cannot report or set its knobs. It also offers favourites, side-by-side comparison and a keep-alive option for
+  Macs that unmount the pedal. Not affiliated with Polyend.
+status: active
+authors:
+  - name: gghub1981
+    url: https://github.com/gghub1981
+source: https://github.com/gghub1981/endless-librarian
+source_status: open
+license: MIT
+distribution: source-only
+install_notes: >-
+  Download the repository, run Setup.command to fetch the plates, then Start Librarian.command. Connect the pedal over
+  USB; macOS may warn that the disk was not ejected properly after a load, which the README says is expected.
+brick_risk: false
+tags: [librarian, editor, web]
+versions:
+  - version: main @ 90cab09
+    date: 2026-10-20
+    url: https://github.com/gghub1981/endless-librarian/commit/90cab09c5fbc3c4ad3bb347e40bb704a07598870
+    notes: No tagged releases; this is the latest commit.

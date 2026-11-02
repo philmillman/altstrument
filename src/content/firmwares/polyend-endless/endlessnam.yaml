@@ -1,0 +1,28 @@
+device: polyend-endless
+name: endlessNam
+summary: Runs Neural Amp Modeler A2 Lite captures and a cab model or impulse response on the Endless, with gain, tilt EQ and level knobs and a footswitch that steps through the amps in a rig. Not yet measured on hardware.
+description: >-
+  Written in no_std Rust against the patch interface of Polyend's SDK. A rig is a small JSON file naming the captures
+  and the cab, and building it compiles those models into one .endl file, because patches cannot read files from the
+  pedal. Each rig is its own effect. Processing is mono: the left input goes to both outputs. The README says each A2
+  Lite model takes about 93 KB of state, that the larger A2 Full network will not keep up on this processor, and that
+  on-device CPU load is still an estimate. The LED turns red on overload. Models are not part of the build; you
+  download them into models/.
+status: active
+authors:
+  - name: Matt Eliot
+    url: https://github.com/matteliot
+source: https://github.com/matteliot/endlessNam
+source_status: open
+license: MIT
+distribution: source-only
+install_notes: >-
+  Clone with submodules and add the Rust target thumbv7em-none-eabihf, download models, then run cargo xtask build, or
+  cargo xtask deploy to copy the result to the mounted pedal.
+brick_risk: false
+tags: [fx, nam, ir, amp]
+versions:
+  - version: master @ c4d2380
+    date: 2026-11-01
+    url: https://github.com/matteliot/endlessNam/commit/c4d238097dec0f3892819d163dff433103bcf093
+    notes: No tagged releases; this is the latest commit.

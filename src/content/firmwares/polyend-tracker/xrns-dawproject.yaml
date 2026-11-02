@@ -1,0 +1,36 @@
+device: polyend-tracker
+also_devices: [polyend-tracker-plus, polyend-tracker-mini]
+name: xrnsdaw (xrns-dawproject)
+kind: tool
+summary: Swift command line converter between Renoise, DAWproject and MIDI files that also imports about 50 legacy tracker module formats and, experimentally, reads and writes Polyend Tracker project folders.
+description: >-
+  The Polyend target works on project folders with project.mt, patterns and
+  instruments, and the code handles the 8, 12 and 16 track layouts. The README
+  marks Polyend export as experimental and untested on hardware, and says it
+  snaps notes to the step grid and keeps each track monophonic. The tool is
+  mainly a converter for re-working old module files in a modern DAW; module
+  parsing comes from a vendored copy of libxmp. It builds with SwiftPM on macOS
+  and Linux, and releases ship binaries for both.
+status: active
+authors:
+  - name: Douglas Carmichael
+    url: https://github.com/douglas-carmichael
+source: https://github.com/douglas-carmichael/xrns-dawproject
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is MIT. The vendored libxmp sources carry their own MIT licence
+  file.
+distribution: download
+install_notes: >-
+  Download the macOS arm64 or Linux x86_64 binary from a release, or build with
+  swift build -c release. Use --to polyend to write a Tracker project folder and
+  copy it to the card only after backing up, since the README says the output is
+  not yet tested on hardware.
+brick_risk: false
+tags: [converter, cli, tracker, utility]
+versions:
+  - version: xrnsdaw-v1.2.0
+    date: 2026-06-26
+    url: https://github.com/douglas-carmichael/xrns-dawproject/releases/tag/xrnsdaw-v1.2.0
+    notes: Folds same-pitch overlaps in the instrument layout into one playable line.

@@ -1,0 +1,28 @@
+device: polyend-endless
+kind: tool
+name: FxPatch SDK
+summary: Polyend's official C++ SDK for writing Endless effects by hand, with a bitcrush example and a Makefile that builds a patch for the pedal.
+description: >-
+  Polyend marks the SDK as a beta. You replace the example in source/PatchImpl.cpp with your own effect, which fills
+  in audio processing, knob parameters, footswitch actions and the LED colour. The README asks for no dynamic memory
+  allocation, output kept within -1 to 1, and processing fast enough that no frames are dropped. It covers effects
+  only and does not include the pedal's own firmware.
+status: active
+authors:
+  - name: Polyend
+    url: https://github.com/polyend
+source: https://github.com/polyend/FxPatchSDK
+source_status: open
+license: MIT
+homepage: https://polyend.com/endless/
+distribution: source-only
+install_notes: >-
+  Needs the GNU Arm Embedded Toolchain. Build with make, then connect the pedal over USB and copy the result to the
+  Endless drive.
+brick_risk: false
+tags: [sdk, official, fx]
+versions:
+  - version: master @ 708f08d
+    date: 2026-03-17
+    url: https://github.com/polyend/FxPatchSDK/commit/708f08d7c8e365b8a153c66e0e5200fbdaff1ce0
+    notes: No tagged releases; this is the latest commit.

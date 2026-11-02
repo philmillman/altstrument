@@ -1,0 +1,38 @@
+device: zoom-multistomp
+kind: tool
+name: HYBRID IR
+summary: Free desktop app that prepares cabinet impulse responses, fits shorter FIR and IIR models and packages them as a selectable ZDL effect bank for the MS-50G, MS-60B, MS-70CDR, G1on, G1Xon and B1on. Experimental.
+description: >-
+  You import a WAV, choose a conventional IR or a shorter FIR with supporting IIR filters, and export a bank of one to
+  eight IR slots plus OFF. The standard patcher needs no TI compiler and uses the project's own synthetic template.
+  The README says hardware validation varies by model and bank, that new banks need checking on the pedal, and that two
+  long IRs plus an amp can overload it. The resulting ZDL is transferred with Zoom Effect Manager. Ready-made
+  effects from the same author are catalogued as Zoom ZDL FX.
+status: active
+authors:
+  - name: Leemuzhko
+    url: https://github.com/Leemuzhko
+source: https://github.com/Leemuzhko/HYBRID-IR
+source_status: open
+license: MIT
+distribution: download
+install_notes: >-
+  Windows x64 Standalone or Lite packages and macOS preview builds are on the releases page. Choose the ZIP under
+  release assets; GitHub's Download ZIP holds source only.
+brick_risk: false
+tags: [fx, editor, ir, zdl]
+image:
+  url: https://raw.githubusercontent.com/Leemuzhko/HYBRID-IR/main/assets/IR_CAB-1200x800.png
+  alt: HYBRID IR effect card in black and white pixel lettering, with Left and Right sections each showing Reso and Pres knobs and two Out sliders between them
+  credit: Leemuzhko
+  source_url: https://github.com/Leemuzhko/HYBRID-IR
+  first_party: true
+versions:
+  - version: macos-compat12-0.4.1-preview.1
+    date: 2026-10-01
+    url: https://github.com/Leemuzhko/HYBRID-IR/releases/tag/macos-compat12-0.4.1-preview.1
+    notes: Compatibility builds of 0.4.1 for older macOS versions.
+  - version: v0.4.1
+    date: 2026-09-29
+    url: https://github.com/Leemuzhko/HYBRID-IR/releases/tag/v0.4.1
+    notes: Selects the HIR3A template automatically for the no-compiler patcher and adds K-weighted normalization.

@@ -1,0 +1,43 @@
+device: polyend-tracker
+also_devices: [polyend-tracker-plus, polyend-tracker-mini]
+name: polygen::tracker
+kind: tool
+summary: Offline-capable web app that generates eight-channel chiptune songs from 15 vibe templates and Markov and other algorithms, lets you edit them, and exports a Tracker project folder with patterns and rendered instruments.
+description: >-
+  Builds lead, chord, bass, three drum, arpeggio and pad channels, auditions the
+  song in the browser with a small ZzFX synth and offers per-channel
+  regeneration, mutate and resample variations, block editing and undo. The
+  export writes a project with one .pti per channel and patterns for 8, 12 or
+  16 track slots; effects such as slide, gate length, bit depth and chance map to
+  the Tracker's own step effects. Patterns alone, WAV, stems, MIDI and the app's
+  own JSON can also be exported. The engine derives from zzfx-studio and file
+  output uses Polyend's tracker-lib. The repository has no licence file.
+status: active
+authors:
+  - name: henrytriplette
+    url: https://github.com/henrytriplette
+source: https://github.com/henrytriplette/polygen-tracker
+source_status: open
+license: unspecified
+license_notes: >-
+  No LICENSE file or licence statement in the repository. The README credits
+  zzfx-studio (MIT) and ZzFX for parts of the engine.
+homepage: https://tracker.triplette.it
+distribution: browser-installer
+install_notes: >-
+  Open the app in a browser, press Generate and export the Polyend project zip,
+  then unzip it into /Projects on the Tracker's SD card; pick the track count
+  that matches the device and firmware. Run locally with yarn and yarn dev.
+brick_risk: false
+tags: [web, generative, sequencer, tracker]
+image:
+  url: https://raw.githubusercontent.com/henrytriplette/polygen-tracker/main/docs/screenshot-dark.png
+  alt: polygen-tracker with song, chord and instrument panels above an eight-channel pattern grid of lead, harmony, bass, kick, snare, hat, arp and pad, and export buttons below
+  credit: henrytriplette
+  source_url: https://github.com/henrytriplette/polygen-tracker#readme
+  first_party: true
+versions:
+  - version: main @ 4864d1a
+    date: 2026-09-16
+    url: https://github.com/henrytriplette/polygen-tracker/commit/4864d1a19cc01dba16ec087a73b8baa5378ea68c
+    notes: No tagged releases; this is the latest commit.

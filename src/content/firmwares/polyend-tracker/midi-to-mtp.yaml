@@ -1,0 +1,33 @@
+device: polyend-tracker
+name: midi-to-mtp
+kind: tool
+summary: Python command line and Tk tool that converts MIDI files into Tracker pattern (.mtp) files, spreading chords over tracks and optionally merging several files into one pattern.
+description: >-
+  Writes pattern files in a binary layout the author worked out from files
+  that the hardware wrote and loaded. It can set the step resolution and
+  one instrument for all notes, takes the pattern length from the MIDI file's
+  duration, and can write each MIDI file as its own pattern or merge up to eight
+  files onto separate tracks. The README describes 8-track patterns and does not
+  mention the Tracker+ or Tracker Mini. Needs Python 3.9 or later and the
+  mido package.
+status: active
+authors:
+  - name: simoianni
+    url: https://github.com/simoianni
+source: https://github.com/simoianni/Polyend-midi-to-mtp
+source_status: open
+license: MIT
+license_notes: The README states MIT; the repository has no LICENSE file.
+distribution: source-only
+install_notes: >-
+  Install mido with pip install -r requirements.txt, then run
+  python midi_to_mtp_gui.py for the window or python midi_to_mtp.py input.mid for
+  the command line. Copy the .mtp files into a project's patterns folder on the
+  SD card after backing it up.
+brick_risk: false
+tags: [converter, midi, python, utility]
+versions:
+  - version: main @ dc3b231
+    date: 2026-04-24
+    url: https://github.com/simoianni/Polyend-midi-to-mtp/commit/dc3b231c45c38e5128a7feee2f6c2fc95a8b19ca
+    notes: No tagged releases; this is the latest commit.

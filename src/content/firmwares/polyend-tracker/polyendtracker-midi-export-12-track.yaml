@@ -1,0 +1,39 @@
+device: polyend-tracker
+name: Polyend Tracker MIDI export (12-track)
+kind: tool
+summary: Docker and web app that converts Tracker projects and patterns to MIDI files, with support for the 12-track format of firmware 1.9, chord effects as polyphonic notes and older 8-track projects. Based on DataGreed's exporter.
+description: >-
+  Reads zipped project folders or .mtp pattern files and writes standard MIDI
+  files in a zip. This version adds the 12-track pattern layout introduced in
+  firmware 1.9.0, which the author worked out by comparing known patterns with
+  their hex dumps, turns the Chord effect into simultaneous notes, accepts newer
+  file headers and patches the bundled midiutil library so patterns that start
+  with note-offs no longer crash it. The upstream project is DataGreed's polyendtracker-midi-export,
+  from which it was copied rather than forked on GitHub. A Streamlit interface runs in Docker
+  or on Render. The README says the code is vibe-coded.
+status: active
+authors:
+  - name: Alexey Strelkov
+    url: https://github.com/DataGreed
+  - name: SaturnsGithubSaga
+    url: https://github.com/SaturnsGithubSaga
+source: https://github.com/SaturnsGithubSaga/polyendtracker-midi-export-12-track
+source_status: open
+license: MIT
+license_notes: >-
+  LICENSE.txt is the MIT licence with the copyright line of Alexey Strelkov, 2022,
+  the author of the upstream exporter; the README says this fork follows the
+  upstream licence. The repository includes a patched copy of the midiutil
+  library.
+distribution: source-only
+install_notes: >-
+  Build the Docker image from the repository and run it with port 8501 mapped,
+  then upload a zipped project folder in the browser. The README also has a one-click
+  deploy to Render. Reads files only; it does not touch the SD card.
+brick_risk: false
+tags: [converter, midi, python, web, utility]
+versions:
+  - version: main @ 563ec8b
+    date: 2026-06-19
+    url: https://github.com/SaturnsGithubSaga/polyendtracker-midi-export-12-track/commit/563ec8ba5c881149d89ccae01beff19ba72bec55
+    notes: No tagged releases; this is the latest commit.

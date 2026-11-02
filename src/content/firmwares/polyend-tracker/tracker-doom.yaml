@@ -1,0 +1,47 @@
+device: polyend-tracker
+name: Polyend Tracker DOOM
+summary: Firmware for the original Tracker that boots into a launcher and a Doom port, plays sound effects through the Tracker and sends the music out as MIDI. It can install another firmware image from the SD card.
+description: >-
+  The game engine is doomgeneric, vendored in the repository, and board support
+  comes from OpenTracker, which is vendored the same way. The Tracker's keys,
+  encoder and pads are mapped to movement, weapons, the automap and save names,
+  and the pad lights show weapons, keys, health and armour. No game data is
+  included: a WAD file such as the shareware doom1.wad, a Freedoom WAD or an
+  owned commercial WAD is copied to /DOOM on the card. The launcher has a
+  firmware update entry for going back to OpenTracker or the stock image. The
+  README says v3 has not been tested on hardware yet, although earlier builds
+  ran on a real Tracker, and lists music played by the Tracker itself as the next
+  step. The screenshots show the PC build.
+status: active
+authors:
+  - name: Marcin Spoczynski (sandlbn)
+    url: https://github.com/sandlbn
+source: https://github.com/sandlbn/polyend-tracker-doom
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file of its own. The vendored doomgeneric engine
+  carries its own GPL-2.0 licence file and the vendored OpenTracker code is
+  covered by that project's licence, which is Apache-2.0 in the OpenTracker entry. The
+  README says no game data is included.
+distribution: download
+install_notes: >-
+  Copy PolyendTrackerDOOMv3.ptf from the release to /Firmware on the SD card and
+  keep the file name, copy a WAD to /DOOM, then use Config, Firmware update on
+  the Tracker. Keep Polyend's stock PolyendTracker_1.9.2.ptf in /Firmware as the
+  way back; the launcher's Firmware update entry installs it. The project can
+  also be built with arm-none-eabi-gcc and make after initialising the
+  submodules.
+brick_risk: true
+tags: [game, emulator, midi]
+image:
+  url: https://raw.githubusercontent.com/sandlbn/polyend-tracker-doom/main/screenshots/gameplay.png
+  alt: Doom first-person view down a corridor of wooden crates with a pistol in the foreground and a status bar showing 92 percent health and 99 percent armor
+  credit: Marcin Spoczynski
+  source_url: https://github.com/sandlbn/polyend-tracker-doom#readme
+  first_party: true
+versions:
+  - version: v0.3
+    date: 2026-10-25
+    url: https://github.com/sandlbn/polyend-tracker-doom/releases/tag/v0.3
+    notes: Only release. Adds key labels, a controls card and a save-name keyboard; not yet tested on hardware according to the README.

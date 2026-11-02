@@ -1,0 +1,50 @@
+device: polyend-tracker
+also_devices: [polyend-tracker-plus, polyend-tracker-mini]
+name: Polyend Tracker Studio
+kind: tool
+summary: Browser editor for Tracker patterns and instruments that imports and exports whole SD-card projects as zip files, plays patterns in the browser and exports MIDI and Ableton Live projects. A fork of Sandroid's instrument editor.
+description: >-
+  Combines a step-sequencer pattern editor with an instrument editor that has a
+  waveform view, sample editing, a recorder and the Tracker's play modes. It
+  imports .pti instruments, .mtp patterns and project folders, and exports a
+  zip laid out like a project folder for /Projects on the card, as well as .pti,
+  .mtp, .mid, WAV and an Ableton Live 12 project. Re-exporting a project that
+  was imported from the device keeps its song structure and track names, and the
+  code reads older 8- and 12-track patterns. The README credits Sandro
+  Ducceschi's instrument editor as the base and lists the pattern editor, beat
+  slice mode, Ableton and MIDI export, project import and export and the tests as the additions. Its
+  README warns that the pattern names file is not part of the older public format
+  documentation.
+status: active
+authors:
+  - name: simoianni
+    url: https://github.com/simoianni
+  - name: Sandro 'Sandroid' Ducceschi
+    url: https://github.com/sandroidmusic
+source: https://github.com/simoianni/polyend-tracker-studio
+source_status: open
+license: CC-BY-NC-4.0
+license_notes: >-
+  The LICENSE file is the Creative Commons Attribution-NonCommercial 4.0 text and
+  names no licensor; the README states CC BY-NC 4.0 for the project and MIT for
+  tracker-lib. It is a fork of tracker-pti-editor, which carries the same licence.
+homepage: https://simoianni.github.io/polyend-tracker-studio/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted editor in a browser, then unzip an exported project into the
+  /Projects folder of the SD card. Back up the card first; the README asks for
+  an issue if pattern names do not show on the device. To run it locally, use
+  npm install and npm run dev.
+brick_risk: false
+tags: [web, editor, tracker, sequencer, samples]
+image:
+  url: https://raw.githubusercontent.com/simoianni/polyend-tracker-studio/master/screenshot-pattern.png
+  alt: Dark pattern editor with an eight-track grid of notes, instrument numbers and effect columns, and buttons for New, Load, Import Project, Save, Play, BPM, Export MIDI and Export Ableton
+  credit: simoianni
+  source_url: https://github.com/simoianni/polyend-tracker-studio#readme
+  first_party: true
+versions:
+  - version: master @ 9d61b33
+    date: 2026-07-18
+    url: https://github.com/simoianni/polyend-tracker-studio/commit/9d61b3392356a1600fd94ad964db09beb880145c
+    notes: No tagged releases; this is the latest commit.

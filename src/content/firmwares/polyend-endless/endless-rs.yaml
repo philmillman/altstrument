@@ -1,0 +1,24 @@
+device: polyend-endless
+kind: tool
+name: endless-rs
+summary: Rust SDK for the Endless, with a safe Patch trait and a macro that generates the interface code needed to build .endl files, plus a port of Polyend's bitcrush example.
+description: >-
+  A no_std alternative to Polyend's C++ SDK. An effect is a struct implementing the Patch trait, whose methods have
+  no-op defaults, so you override only what you use: audio processing, knob metadata, parameter changes, footswitch
+  actions and the LED colour. It needs the thumbv7em-none-eabihf target and arm-none-eabi-objcopy.
+status: active
+authors:
+  - name: ceejbot
+    url: https://github.com/ceejbot
+source: https://github.com/ceejbot/endless-rs
+source_status: open
+license: MIT
+distribution: source-only
+install_notes: Build an effect with a stable Rust toolchain and the GNU Arm tools, then copy the .endl file to the Endless drive over USB.
+brick_risk: false
+tags: [sdk, rust, fx]
+versions:
+  - version: v0.2.0
+    date: 2026-10-10
+    url: https://github.com/ceejbot/endless-rs/tree/v0.2.0
+    notes: Git tag; no GitHub release page.

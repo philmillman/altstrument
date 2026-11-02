@@ -1,0 +1,52 @@
+device: polyend-tracker
+name: chirashi
+kind: tool
+summary: Go command line tool that converts sliced sample and instrument formats between samplers and DAWs, including reading and writing Tracker .pti instruments with slice markers, alongside REX2, Renoise, Ableton, Elektron, M8 and others.
+description: >-
+  A general converter with about two dozen input and output formats; the Tracker
+  is one of them. It reads .pti files and writes them, mapping slice positions
+  to the instrument's 48 slice slots and splitting a source with more slices
+  into several files. Other formats include REX, RX2 and RCY loops, Renoise
+  XRNI, Ableton racks, Octatrack, Dirtywave M8 sliced WAV, Roland SP-404 MKII,
+  Akai programs and Bitwig multisamples. The README lists only the original
+  Polyend Tracker. It can also run a read-only info or dry-run pass and handles
+  folders in batch. The repository includes an AGENTS.md file for AI coding
+  assistants.
+status: active
+authors:
+  - name: g-lok
+    url: https://github.com/g-lok
+source: https://github.com/g-lok/chirashi
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is MIT with the copyright line "G". The tests directory holds
+  sample loops and other audio files whose origin the repository does not state.
+distribution: download
+install_notes: >-
+  Download the binary for macOS, Linux or Windows from a release and check it
+  against CHECKSUMS.txt, then run it, for example chirashi kit.xrni -f pti
+  -o kit.pti. Copy the .pti file to the Tracker's SD card.
+brick_risk: false
+tags: [converter, cli, samples, utility]
+versions:
+  - version: v1.8.0
+    date: 2026-09-28
+    url: https://github.com/g-lok/chirashi/releases/tag/v1.8.0
+    notes: Adds read-only info and dry-run modes and JSON output for them.
+  - version: v1.7.0
+    date: 2026-09-16
+    url: https://github.com/g-lok/chirashi/releases/tag/v1.7.0
+    notes: Adds Bitwig multisample, Roland SP-404 MKII, Akai MPC program and Reason NN-XT formats.
+  - version: v1.5.0
+    date: 2026-09-12
+    url: https://github.com/g-lok/chirashi/releases/tag/v1.5.0
+    notes: Adds Yamaha TX16W and Amiga 8SVX formats, a ProTracker MOD sample reader and wider WAV support.
+  - version: v1.0.0
+    date: 2026-08-12
+    url: https://github.com/g-lok/chirashi/releases/tag/v1.0.0
+    notes: REX2 output with a bit-exact encoder.
+  - version: v0.1.0
+    date: 2026-06-23
+    url: https://github.com/g-lok/chirashi/releases/tag/v0.1.0
+    notes: First release, with PTI among the output formats.

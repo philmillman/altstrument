@@ -1,0 +1,39 @@
+device: polyend-tracker
+also_devices: [polyend-tracker-plus, polyend-tracker-mini]
+name: Tracker Pattern Editor (tracker-mtp-editor)
+kind: tool
+summary: Vue web app for editing Tracker pattern (.mtp) files in a tracker-style grid with keyboard control, built on Polyend's tracker-lib and offered as a hosted demo.
+description: >-
+  Edits notes, instrument assignments and effect parameters in a grid and reads
+  and writes pattern files through tracker-lib. A new pattern can be created for
+  the original Tracker's 12 tracks or the 16 tracks of the Tracker+ and Tracker
+  Mini. The author wrote it as an example of what tracker-lib allows, says there
+  are no immediate plans to continue it and invites pull requests. The same
+  author's instrument editor is a separate entry.
+status: active
+authors:
+  - name: Sandro 'Sandroid' Ducceschi
+    url: https://github.com/sandroidmusic
+source: https://github.com/sandroidmusic/tracker-mtp-editor
+source_status: open
+license: MIT
+license_notes: The LICENSE file names Sandro 'Sandroid' Ducceschi as copyright holder.
+homepage: https://polyend.sandroid.xyz/patterned/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted editor in a browser, load or create a pattern and save the
+  .mtp file, then copy it into a project on the Tracker's SD card. To run it
+  locally, use npm install and npm run dev.
+brick_risk: false
+tags: [web, editor, tracker, sequencer]
+video:
+  url: https://www.youtube.com/watch?v=6vzHuB2HkdE
+  title: The Polyend Tracker Ecosystem is opening up
+  credit: Sandroid
+  first_party: true
+  found_via: https://github.com/sandroidmusic/tracker-mtp-editor#readme
+versions:
+  - version: main @ b1c893b
+    date: 2026-06-25
+    url: https://github.com/sandroidmusic/tracker-mtp-editor/commit/b1c893bfc37e240ae1a77b8e1b699ec6ffa53611
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,39 @@
+device: zoom-multistomp
+name: Zoom FX Modding
+summary: IPS patches for Zoom's LineSel effect on ZDL pedals, plus reverse-engineering notes. RainSel mixes dry and wet signals or splits them to L and R, and RTFM and Div0 let the left and right channels carry different effects.
+description: >-
+  The patches modify your own copy of LINESEL.ZDL, so the repository and its releases carry no Zoom code. RainSel mixes
+  dry and processed signals with its own knobs, or outputs them separately on each side. RTFM and Div0 are a pair that
+  gives each channel its own effects, which the author calls especially useful on the MS-70CDR. The library folder holds
+  the author's notes on how Zoom's effect files work, including removing debug information to save memory.
+status: dormant
+authors:
+  - name: ELynx
+    url: https://github.com/ELynx
+source: https://github.com/ELynx/zoom-fx-modding
+source_status: open
+license: GPL-3.0-only
+license_notes: The LICENSE file is the GPL v3, with no "or later" statement.
+distribution: patch-your-own
+install_notes: >-
+  Unpack Zoom's updater, apply the .ips to a copy of the unmodified LINESEL.ZDL with Lunar IPS, build a customized
+  firmware with it and flash the pedal. The instructions advise a reliable USB cable, a laptop or UPS, and a backup of
+  your settings first.
+brick_risk: true
+tags: [fx, patch, research, zdl]
+image:
+  url: https://raw.githubusercontent.com/ELynx/zoom-fx-modding/main/media/rainsel_photo.jpg
+  alt: Photo of a Zoom pedal's screen showing the RainSel effect in BOTH MIX mode, with WET and DRY knobs, an L:WET R:DRY label and the text MOD BY E.L.
+  credit: ELynx
+  source_url: https://github.com/ELynx/zoom-fx-modding
+  first_party: true
+versions:
+  - version: RainSel-v1.1.0
+    date: 2022-08-03
+    url: https://github.com/ELynx/zoom-fx-modding/releases/tag/RainSel-v1.1.0
+  - version: RTFM-v1.1.0
+    date: 2022-07-26
+    url: https://github.com/ELynx/zoom-fx-modding/releases/tag/RTFM-v1.1.0
+  - version: Div0-v1.0.0
+    date: 2022-07-26
+    url: https://github.com/ELynx/zoom-fx-modding/releases/tag/Div0-v1.0.0

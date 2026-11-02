@@ -1,0 +1,55 @@
+device: polyend-tracker-plus
+also_devices: [polyend-tracker-mini]
+name: Ableton Live and Polyend Tracker Pattern Converter
+kind: tool
+summary: Ableton Live 12 extension with a grid editor that converts MIDI clips to and from Tracker .mtp pattern files, covering velocity, chance and micro-timing, chord detection, rolls and drum-map instrument routing.
+description: >-
+  Rights warning: the v1.0.1 release notes say the packaged .ablx bundles
+  Ableton's extensions SDK, while the README says that SDK is left out of the
+  repository because its licence forbids redistribution; the repository also
+  contains a built .ablx.
+
+
+  Runs inside Live as a WebView. Merging into an existing pattern works track by
+  track with a warning before tracks that hold notes are overwritten and a revert
+  button, and pattern lengths from 1 to 128 steps are supported. The code limits
+  patterns to 16 tracks, which matches the Tracker+ and Tracker Mini format. The author
+  says it was built together with an AI coding assistant. The README names the
+  Polyend Tracker without saying which models.
+status: active
+authors:
+  - name: adriananders
+    url: https://github.com/adriananders
+source: https://github.com/adriananders/ableton-polyend-tracker-pattern-converter
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is MIT, copyright adriananders. Building needs Ableton's
+  Extensions SDK, which is not in the repository, and the SDK's own licence
+  applies to it.
+distribution: download
+install_notes: >-
+  Needs Ableton Live 12. Download the .ablx file from a release and install it
+  as a Live extension, or build it with Node.js 20 and the SDK from Ableton.
+  Files are saved and loaded through native macOS dialogs.
+brick_risk: false
+tags: [converter, midi, editor, tracker]
+image:
+  url: https://raw.githubusercontent.com/adriananders/ableton-polyend-tracker-pattern-converter/main/assets/ui_screenshot.png
+  alt: Converter window with New Pattern, Load .MTP, Save .MTP, Import MIDI and Export MIDI buttons, a step grid of note, instrument and effect columns, and import settings with FX extraction priority
+  credit: adriananders
+  source_url: https://github.com/adriananders/ableton-polyend-tracker-pattern-converter#readme
+  first_party: true
+versions:
+  - version: v1.0.2
+    date: 2026-07-22
+    url: https://github.com/adriananders/ableton-polyend-tracker-pattern-converter/releases/tag/v1.0.2
+    notes: Slice map adjustment now shifts down one octave instead of two.
+  - version: v1.0.1
+    date: 2026-07-21
+    url: https://github.com/adriananders/ableton-polyend-tracker-pattern-converter/releases/tag/v1.0.1
+    notes: Fixes saving and loading .mtp files in installed extensions and bundles the SDK dependency.
+  - version: v1.0.0
+    date: 2026-07-19
+    url: https://github.com/adriananders/ableton-polyend-tracker-pattern-converter/releases/tag/v1.0.0
+    notes: First release.

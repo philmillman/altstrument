@@ -1,0 +1,34 @@
+device: polyend-medusa
+kind: tool
+name: Medusa Wavetable Utility
+summary: macOS app and command line tool that build Polyend Medusa wavetable banks from audio files, and extract and recompile existing .polyend banks.
+description: >-
+  Rights warning: the repository includes source wavetables in a folder named sq80, with no stated origin or licence for
+  them, and the name points to Ensoniq's SQ-80.
+
+  The GUI and CLI share one core and use FFmpeg for audio conversion. Files can be ordered alphanumerically or at random
+  when building a bank. The author says about 90 percent of the code was written with AI assistants. macOS only.
+status: active
+authors:
+  - name: Justin Maxwell
+    url: https://github.com/jkmaxwell
+source: https://github.com/jkmaxwell/medusa_tools
+source_status: open
+license: AGPL-3.0-or-later
+license_notes: >-
+  LICENSE is the AGPL notice with "any later version", under a line reading "All rights reserved" that names no one. The
+  packaged app includes FFmpeg under the LGPL.
+distribution: download
+install_notes: >-
+  Download the app or medusa_cli from the releases page and clear the macOS quarantine flag as the README describes. The
+  CLI needs FFmpeg installed.
+brick_risk: false
+tags: [wavetable, editor, utility]
+versions:
+  - version: v1.5.3
+    date: 2026-07-03
+    url: https://github.com/jkmaxwell/medusa_tools/releases/tag/v1.5.3
+    notes: Fixes FFmpeg lookup in the packaged app and applies alphabetical or random ordering at 64 or fewer files.
+  - version: v1.5.2
+    date: 2026-06-05
+    url: https://github.com/jkmaxwell/medusa_tools/releases/tag/v1.5.2

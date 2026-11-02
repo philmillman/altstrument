@@ -1,0 +1,42 @@
+device: polyend-tracker
+also_devices: [polyend-tracker-plus, polyend-tracker-mini]
+name: Tracker Community Edition
+summary: Polyend's official community firmware for the Tracker, Tracker+ and Tracker Mini, built from its own firmware source, adding sample editor plugins, wavetable envelopes and LFOs, custom themes and fonts, per-step micro-move and volume columns, and open synth engines.
+description: >-
+  Licence note: this is source-available, not open source. The PolyForm Noncommercial terms forbid selling the firmware
+  or using it in a commercial product, though Polyend expressly allows commercial music made with it, and the two
+  precompiled synth libraries stay closed.
+
+  One codebase builds all three devices. Sample editor effects and generators load as .ptfx files from the SD card, with
+  an MIT-licensed SDK and six reference plugins. The Tracker+ and Tracker Mini gain an Open Synth SDK and the CHIP and DIRT
+  engines. Wavetable envelopes and LFOs can modulate seven instrument parameters, themes and fonts load from the card,
+  and Performance Mode can page between sample and MIDI or synth tracks. Polyend offers the code as is and says it has no
+  obligation to support it; community help is on its Backstage forum. Custom firmware is not covered by the standard
+  warranty, though Polyend offers paid repairs.
+status: active
+authors:
+  - name: Polyend
+    url: https://github.com/polyend
+source: https://github.com/polyend/tracker-ce
+source_status: open
+license: PolyForm-Noncommercial-1.0.0
+license_notes: >-
+  LICENSE is the PolyForm Noncommercial License 1.0.0 with Polyend's additional permissions, which allow commercial music
+  production, performance and monetized content but not selling the firmware or derivatives. editor-fx-sdk/ is MIT, so
+  .ptfx plugins may be sold. synth/lib/libPolySynth.a and libPolyDSP.a are proprietary binaries, redistributable unmodified
+  only to build firmware for authentic Tracker+ and Tracker Mini units. Third-party parts are listed in NOTICE.md.
+homepage: https://polyend.com/
+distribution: download
+install_notes: >-
+  Copy the device's .ptf from the release to /Firmware/ on the microSD card, then choose Config > Firmware > Firmware
+  update. Back up first: saving a project on this firmware moves its patterns to a format older firmware cannot read. The
+  README calls experimenting safe because the bootloader is isolated. A build that will not boot is recovered with a
+  known-good .ptf on the card and the recessed reset button (bottom of the Tracker and Tracker+, next to USB-C on the
+  Mini). Polyend's disclaimer still leaves flashing, including the risk of bricking, at your own risk.
+brick_risk: true
+tags: [official, platform, sdk, synth-engine, fx, ui, sampler]
+versions:
+  - version: v1.0.0
+    date: 2026-11-02
+    url: https://github.com/polyend/tracker-ce/releases/tag/v1.0.0
+    notes: First Community Edition release, with builds for all three devices.

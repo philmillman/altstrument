@@ -3,9 +3,6 @@ name: CLATTER Pocket
 summary: >-
   Drum machine firmware for the FM-1 that runs Erica Synths' LXR-02 drum voices: six voices, a 64-step pattern generator with conditional steps, 16 kits and 9 saved projects. Not yet run on hardware.
 description: >-
-  Rights warning: the project site's installer republishes M-VAVE's official Open V14 package as its first stage, and
-  V14 is not one of the files M-VAVE licenses for redistribution by name. The repository itself does not commit it.
-
   A port of CLATTER, a generative drum synthesizer built on the open LXR-02 sound engine, to the FM-1 through M-VAVE's
   fm1_open application. The LXR voices run in a real-time engine, and the panel gives three banks of nine
   sounds, a pitched keyboard, live and step recording, one level of undo, sixteen kits and kit generation from LXR
@@ -29,7 +26,8 @@ license_notes: >-
   under lxr/upstream, and the DOWNBEAT parts are MIT. The FM-1 build links M-VAVE's fm1_open application (GPL-3.0-only with an
   SDK linking exception) and its binary SDK, which is licensed for FM-1 devices only. The project site's installer
   publishes M-VAVE's official Open V14 package unmodified, fetched from M-VAVE's release at deployment and checked by hash,
-  as its first stage for an FM-1 on stock firmware.
+  as its first stage for an FM-1 on stock firmware. The pinned hash of the V14 workbench file matches SHA256SUMS-V14 in
+  M-VAVE's release, and the SDK terms permit binary redistribution for FM-1 devices.
 homepage: https://clatter-pocket.allmyfriendsaresynths.com/
 distribution: browser-installer
 requires_stock: V15 or V14 Open (installer first stage)

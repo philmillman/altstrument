@@ -1,0 +1,50 @@
+device: teenage-engineering-op-xy
+name: Found Motive OP-XY kit
+summary: Fixed set of twelve machines built with the Open-XY SDK, including a Martin guitar sampler that strums chords in time, a choir, shaker, piano, groove kit, upright bass, granular pad, tape effects and vocal tuner, installed with an offline builder.
+description: >-
+  Rights warning: the builder patches a copy of your own stock OP-XY OS, so the output holds teenage engineering's code. The
+  kit itself states that it contains no firmware.
+
+  The kit is a zip with a README, a layout file that keeps machine numbers stable between versions, a checksum and an offline
+  HTML builder that runs in desktop Chrome, Edge or Opera and reads your own os.ldr. Kit 031 has twelve machines: a guitar built from recorded
+  Martin HD28 single notes that plays the chord of each scale degree in tempo-locked patterns, a choir of eight
+  synthesised voices, a shaker, a modal piano, a drum groove kit from CC0 Virtuosity Drums hits, a Karplus-Strong upright
+  bass, a granular sampler, a phase-distortion voice, a tape effect, a tape loop send effect and a pad-based vocal tuner, plus a
+  Scale Chord note player. Kit 031 adds a Conductor by Max Mockett that plays notes on tracks 1 to 8 using their current
+  sounds, and drops the electric guitar that kit 030 has to fit memory. The page marks 031 experimental and says the
+  Conductor was not tested on hardware. The demo audio was rendered on a computer from the machines' C++ source, not
+  recorded on a device. A separate Live Visuals web page reacts to the stock MIDI output, so nothing is flashed for it. The repository
+  holds the downloads, demos and licence texts but no machine source, which the site calls MIT.
+status: active
+authors:
+  - name: Found Motive
+    url: https://foundmotive.com/opxy/
+source_status: patcher-only
+license: MIT
+license_notes: >-
+  The site says the code is MIT and credits Open-XY (MIT), Mutable Instruments Braids code (MIT), a STMicroelectronics notice
+  for third_party/STM, Martin HD28 samples (CC0) and Virtuosity Drums (CC0). The repository has no machine source and no
+  LICENSE file of its own, only the licence texts of those parts. The kit contains no teenage engineering firmware.
+homepage: https://foundmotive.com/opxy/
+distribution: patch-your-own
+requires_stock: "1.2.1"
+install_notes: >-
+  Update the OP-XY to OS 1.2.1 with teenage engineering's updater, copy your own os.ldr from the device (hold COM at power
+  on for te-boot, then the dev menu and file transfer), open opxy-builder.html from the unzipped kit, load the os.ldr and the
+  kit's layout.json, build and follow the builder's install guide. A kit 028b exists for OS 1.2.0. Holding COM while powering
+  on reaches te-boot, which starts before the installed OS; the official 1.2.1 update or your backed-up os.ldr restores stock.
+brick_risk: true
+tags: [machines, synth-engine, sampler, fx, drums, patch]
+versions:
+  - version: kit 031
+    date: 2026-11-02
+    url: https://github.com/FoundMotive/opxy-kit/commit/976958272062394261ce3eb95893874923cc2d1f
+    notes: Experimental build for OS 1.2.1 that adds a Conductor by Max Mockett and leaves out the electric guitar.
+  - version: kit 030
+    date: 2026-11-01
+    url: https://github.com/FoundMotive/opxy-kit/commit/2197bfca76919c1320e3fde838f8316a150d68ac
+    notes: Fixes chord mode and adds an electric guitar with patterns, riffs and a Lead mode, plus the Live Visuals web page.
+  - version: kit 028b
+    date: 2026-10-30
+    url: https://github.com/FoundMotive/opxy-kit/commit/044870e3f355830b100e35fdad9ea9f6c595826a
+    notes: Last kit for OS 1.2.0.

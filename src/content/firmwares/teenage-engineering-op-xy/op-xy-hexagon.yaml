@@ -1,0 +1,76 @@
+device: teenage-engineering-op-xy
+name: OP-XY Hexagon
+summary: >-
+  Six synth engines for the OP-XY with matched levels, Wane (tape polysynth), Bloom (additive), Hollow (blown and bowed
+  resonator), Orbit (vector), Bend (phase distortion) and Moth (west-coast), each with a screen drawing its sound, built on
+  the Open-XY SDK.
+description: >-
+  Hexagon is one set of six machines built together, with a shared layout and levels matched so that an eight-note chord
+  on any preset peaks between 0.4 and 0.8 of full scale. Each has eight controls on two pages, and the OP-XY's own
+  envelopes, filter, LFOs and effects apply on top. Wane is two detuned oscillators with a sub-oscillator and noise,
+  played through a worn cassette whose wow, flutter and sag move every note together. Bloom is 24 sine partials with a
+  vowel formant control and breath, blur and haze controls that drift them. Hollow drives eight tuned resonances in the
+  shape of a voice, string-instrument body, organ pipe or glass, with sympathy between held notes. Orbit mixes four
+  single-cycle waves from one of eight banks with a point that travels a path, followed by a bit and rate reducer. Bend
+  is Casio CZ-style phase distortion with two lines at an interval, detuned or ring-modulated. Moth runs a frequency
+  modulated sine through a fold and a vactrol-style lowpass gate. Each screen is a drawing, among them a cassette, a
+  field of partials, an acoustics plate and a moth. Presets ship with the machines.
+
+  The README calls the set experimental and says all six pass the SDK's tests, have been played on an OP-XY and have had
+  their CPU use measured on OS 1.2.1: a single voice costs 2.4% to 4.1% of the audio block, and Wane, Hollow and Moth cost
+  about twice what the OP-XY's own engines do. Several tracks of big Bloom or Hollow chords with effects can run out of
+  processing. The Open-XY machine catalog lists all six.
+status: active
+authors:
+  - name: mmockett
+    url: https://github.com/mmockett
+source: https://github.com/mmockett/OP-XY-Hexagon
+source_status: open
+license: MIT
+license_notes: >-
+  The repository holds source, tests, presets and rendered screens, with no OP-XY OS file, sample or third-party data.
+  Builds link the machines into a modified copy of the user's own OP-XY OS.
+homepage: https://github.com/mmockett/OP-XY-Hexagon#readme
+distribution: source-only
+requires_stock: "1.2.1"
+install_notes: >-
+  Check out the Open-XY SDK's staging branch beside this repository, fetch its toolchain and run its tests on the six
+  machine folders. Build with sdk.py against your own stock 1.2.1 os.ldr, passing your last build's layout.json so
+  machines already on the device keep their numbers, then install the build's candidate files as the SDK's build guide
+  describes, which ends with writing the OS from the device's boot menu. The SDK's authors say a faulty image may not be
+  recoverable, and the stock update restores the original. Two tracks using the same synth share some state, such as
+  Wane's tape.
+brick_risk: true
+tags: [machines, synth-engine, oscillator, sdk, additive]
+image:
+  url: https://raw.githubusercontent.com/mmockett/OP-XY-Hexagon/main/docs/screens/hexagon.gif
+  alt: >-
+    Six OP-XY screens in white on black: a cassette, partial stems beside a sun, a sectioned head beside resonators, a diamond with a moving point, a phase map beside a waveform, and an outlined moth
+  credit: mmockett
+  source_url: https://github.com/mmockett/OP-XY-Hexagon#readme
+  first_party: true
+versions:
+  - version: v1.5.0
+    date: 2026-11-02
+    url: https://github.com/mmockett/OP-XY-Hexagon/tree/v1.5.0
+    notes: Git tag; no GitHub release page. Bloom leaves out unheard partials and its screen still draws them.
+  - version: v1.4.0
+    date: 2026-10-31
+    url: https://github.com/mmockett/OP-XY-Hexagon/tree/v1.4.0
+    notes: Git tag; no GitHub release page. Moth costs about half as much at its lower rate.
+  - version: v1.3.0
+    date: 2026-10-31
+    url: https://github.com/mmockett/OP-XY-Hexagon/tree/v1.3.0
+    notes: Git tag; no GitHub release page. Bloom and Hollow cost less with the same output.
+  - version: v1.2.0
+    date: 2026-10-31
+    url: https://github.com/mmockett/OP-XY-Hexagon/tree/v1.2.0
+    notes: Git tag; no GitHub release page. Redrawn screens for Bloom, Hollow, Orbit, Moth and Bend.
+  - version: v1.1.0
+    date: 2026-10-30
+    url: https://github.com/mmockett/OP-XY-Hexagon/tree/v1.1.0
+    notes: Git tag; no GitHub release page. Each synth ships its named presets, with two more for Wane.
+  - version: v1.0.0
+    date: 2026-10-28
+    url: https://github.com/mmockett/OP-XY-Hexagon/tree/v1.0.0
+    notes: Git tag; no GitHub release page.

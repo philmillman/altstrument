@@ -6,7 +6,7 @@ summary: >-
   SysEx, so a firmware can be swapped without a computer. A touchscreen lists the firmwares on the card and starts the install.
 description: >-
   An Adafruit Feather RP2040 USB Host acts as the USB host for the FM-1, with the Feather's own PIO USB port or a MAX3421E USB Host FeatherWing, and a 3.5-inch TFT FeatherWing that provides the
-  touch screen and the microSD slot (its pins clash with the MAX3421E wing). A Feather RP2350 with the wing also installs, once the display's CS and DC pins are rewired and a CircuitPython fix for the shared SPI bus is applied. The screen browses the card's firmwares as cards or a list,
+  touch screen and the microSD slot (its pins clash with the MAX3421E wing). A Feather RP2350 with the wing also installs, once the display's CS and DC pins are rewired; a GitHub release (firmware-20261102) offers a custom CircuitPython .uf2 for that board that drives the wing, which stock CircuitPython cannot yet do. The release reports 5 of 5 installs of DUB-1 and 4 of 5 of V15 with it, the one failure unexplained. The screen browses the card's firmwares as cards or a list,
   keeps favourites and shows a firmware's details before installing. The update
   protocol is ported from M-VAVE's WebUpdate.js, with each package checked the way the FM-1 checks it before writing.
   The README reports installs from the REPL of V15 to SLOOP in 70 seconds, SLOOP back to V15 with the factory voices
@@ -34,7 +34,7 @@ install_notes: >-
 brick_risk: true
 tags: [flasher, loader, usb-midi, sysex, python, utility]
 versions:
-- version: main @ 82a98a4
-  date: 2026-10-31
-  url: https://github.com/jedgarpark/FM-1_Flasher/commit/82a98a4c3eb500206347cb373733c1d45b6c5e28
-  notes: No tagged releases; this is the latest commit.
+- version: main @ d842444
+  date: 2026-11-03
+  url: https://github.com/jedgarpark/FM-1_Flasher/commit/d8424442eb2a7b1c0f8ff7607cfdf872d0e30afb
+  notes: No tagged releases of the flasher itself; this is the latest commit. A separate release, firmware-20261102, holds only a CircuitPython build for the Feather RP2350.

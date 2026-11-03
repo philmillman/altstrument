@@ -1,0 +1,44 @@
+device: akai-mpc3000
+name: MPC3000 OS 3.40 Track Mute Edition
+summary: Free bootable modification of MPC3000 OS 3.12 that adds a Track Mute page, sampling while the sequencer runs, stop-sampling, a bit and sample rate crusher, normalize, incremental chop and double-stop.
+description: >-
+  Rights warning: this is a modified copy of Akai's MPC3000 operating system 3.12, shared as a zip from the author's own
+  site, with no source and no stated licence. Only the page's own wording says it is unofficial and free.
+
+  The Track Mute page opens from the SONG key and shows the first 16 tracks, with TIMING CORRECTION plus a pad
+  triggering note repeat. Other additions are keeping the sequencer running in the Sample and Edit Sound pages, a stop soft
+  key while sampling, a Crush page (4 to 16 bits, rates from 11 kHz to 44.1 kHz including the SP-1200 rate, drive, the 45 rpm
+  pitch trick and an anti-aliasing filter), Normalize, Chop Incr for equal slices with repeated presses of DO, a Filter Live
+  option, the slider in Edit Sound, a choice of Zone Play behaviour and hybrid SCSI mode for formatting disks that a computer
+  can read. Program, sequence and all-file formats stay compatible with 3.11 and Vailixi, which ignore the mute groups. It is
+  a bootable update only: put a .sys file on a floppy or on a Gotek image, with no EPROM version, and the author says
+  it will never be sold. The author used MAME's MPC3000 emulation for early tests and says SCSI, including hybrid mode, was
+  tested with 3.11 and Vailixi 3.50. The author used ChatGPT for the code.
+status: active
+authors:
+  - name: Deep88
+    url: https://www.deep88.com/
+source_status: binary-only
+license: proprietary
+license_notes: >-
+  Licence note: the page calls it "unofficial and free", says it is a gift shared with anyone and that it will never be
+  sold, and invites others to improve it, but gives no licence text and publishes no source. It contains Akai's code.
+homepage: https://www.deep88.com/vibecod/mpc3000/
+distribution: download
+install_notes: >-
+  Download the zip from the author's page, copy the .sys file to a floppy disk, or the .hfe or .img file to a Gotek floppy
+  emulator, and start the MPC3000 with it inserted. The page warns to back up all data first, particularly with ZuluSCSI,
+  SCSI2SD or a SCSI Zip drive, and accepts no responsibility for data loss.
+brick_risk: false
+tags: [os, sequencer, sampler, ui, fx]
+video:
+  url: https://www.youtube.com/watch?v=Rn2LC58llOA
+  title: new OS for AKAI Mpc3000 Track Mute Edition
+  credit: deepeightyeight
+  first_party: true
+  found_via: https://www.deep88.com/vibecod/mpc3000/
+  version: 3.40.0
+versions:
+  - version: 3.40.0
+    url: https://www.deep88.com/vibecod/mpc3000/
+    notes: Track Mute Edition; first release on the author's page, shown by Matrixsynth on 2026-11-02.

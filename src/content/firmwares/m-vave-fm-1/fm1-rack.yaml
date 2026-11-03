@@ -1,0 +1,50 @@
+device: m-vave-fm-1
+name: FM1 Rack
+summary: >-
+  Sound-design instrument that chains Mutable Instruments modules into one voice with a mod matrix and sequencer. It
+  runs in a browser, and a first-stage firmware port with a benchmark build is in early testing for the FM-1.
+description: >-
+  A voice is built from a fixed chain of a source, a shaper and an amp, two modulators and two effects, using
+  Plaits, Braids, Elements, Rings, Warps, Clouds, Peaks, Tides 2, Marbles and Grids code, patched through a 12-row
+  mod matrix and played through four macros, scale chords, a sequencer with a piano roll, parameter locks and
+  ratchets, an arpeggiator, 13 tunings, a master EQ and limiter, and MIDI in and out over USB. The browser build
+  runs the original module code as WebAssembly and has a manual.
+
+  The firmware side is a first-stage port called FM1 Rack Lite. It plays 57 factory presets from the keys and MIDI,
+  with macros on K1 to K4, and the sequencer, editing pages and user presets are still to come. The repository also
+  holds a benchmark firmware, and its results page records a run on a real FM-1: the FPU works, one core plays about
+  two Plaits voices, and the second core was then put to work. The firmware README still says FM1 Rack Lite has not
+  run on an FM-1, so treat the Lite build as untested. The module names of Mutable Instruments are still on screen,
+  and the README lists renaming them before any public release.
+status: active
+authors:
+- name: JoshCowley
+  url: https://github.com/JoshCowley
+source: https://github.com/JoshCowley/MODFM1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL-3.0 text and the README says the project as a whole is GPL-3.0 with no later-version
+  clause. The Mutable Instruments module code and stmlib are MIT, Grids and the Felucca platform are GPL-3.0, and the
+  FM-1 app files in firmware/fm1 carry MPL-2.0 headers because they are adapted from fm1-base. The screen font is
+  SIL OFL 1.1.
+homepage: https://github.com/JoshCowley/MODFM1
+distribution: download
+install_notes: >-
+  firmware/packages holds fm1bench.fwsc and fm1rack.fwsc with SHA-256 sums, and INSTALL.md says to install over USB
+  with fm1-base's tools/fm1_install.py. It asks you to run the recovery round trip through Felucca's web installer
+  and Return to official V15 first, and to install the benchmark before the rack build. The sources fetch fm1-base,
+  the Mutable code and JieLi's SDK files from JieLi's Gitee repository. Both packages are test builds.
+brick_risk: true
+tags: [synth-engine, sequencer, fx, modular, emulator, arpeggiator, midi, research]
+image:
+  url: https://raw.githubusercontent.com/JoshCowley/MODFM1/main/firmware/fm1/rack/screen.png
+  alt: "FM1 Rack Lite screen on the FM-1: preset INIT, 1 of 57, a waveform trace, a PLAITS module slot and four macro bars K1 to K4 each at 50, with CPU and RAM meters and 2C POLY OCT+0 at the bottom"
+  credit: JoshCowley
+  source_url: https://github.com/JoshCowley/MODFM1/tree/main/firmware/fm1/rack
+  first_party: true
+versions:
+- version: main @ 296c148
+  date: 2026-11-03
+  url: https://github.com/JoshCowley/MODFM1/commit/296c1487880c7f016eab6fdc36d2da14f801a1ff
+  notes: No tagged releases; this is the latest commit.

@@ -7,9 +7,12 @@ description: >-
   Up to eight drone voices have three layers each: detuned saws, drifting additive partials and tuned noise. They
   feed an eight-line reverb with shimmer and a freeze control. A second voice, GLINT, plays two-operator FM bells
   by hand, through an arpeggiator that follows MIDI clock or through a 32-step sequencer, and a BASS voice holds a
-  deep note under the drones. There are twelve scales, chords built in the scale, three LFOs, a master filter, lofi tape and master EQ (from 2.5), sixteen scene slots
-  with eight factory scenes, and MIDI over USB and TRS that sends incoming notes through the harmony. The drones'
-  notes are the ones you latch and do not change by themselves. It is built on fm1-base and felucca-bsp.
+  deep note under the drones. Since 3.0 the three tracks (DRONE, GLINT and BASS) each have their own keys, sound,
+  arpeggiator and sequence, picked with SEL, so the drone's chords and the bass's notes can be sequenced in steps of
+  up to 32, and there are sixteen saved sounds per track. There are twelve scales, chords built in the scale, three LFOs, a master filter, lofi tape and master EQ (from 2.5), sixteen scene slots
+  with eight factory scenes, and MIDI over USB and TRS that sends incoming notes through the harmony. Three web
+  tools go with it: the FRASIL River for backing up the unit and sharing scenes, an Editor and a Perform second screen
+  over Web MIDI. It is built on fm1-base and felucca-bsp.
 status: active
 authors:
 - name: Styves Goupil
@@ -35,6 +38,10 @@ image:
   source_url: https://github.com/styvesgoupil/frasil
   first_party: true
 versions:
+- version: '3.0'
+  date: 2026-11-03
+  url: https://github.com/styvesgoupil/frasil/releases/tag/v3.0
+  notes: Redesigns the controls around three tracks (DRONE, GLINT, BASS), each with its own keys, sound, arpeggiator and sequence. Adds sixteen saved sounds per track, simpler recording, a sequenced drone and bass, an arpeggiator on the bass, BASS TONE, ARP SNAP, STACK and a screensaver, plus the River, Editor and Perform web tools. Earlier scenes and backups convert on their own.
 - version: '2.6'
   date: 2026-10-31
   url: https://github.com/styvesgoupil/frasil/releases/tag/v2.6

@@ -1,0 +1,50 @@
+device: m-vave-fm-1
+name: Quasar
+summary: >-
+  Six-track firmware modelled on the SOMA Pulsar-23, with 16 engine profiles over 147 sound families, internal
+  routes, wreck and transform effects, a polymeter phrase generator and a performance mode, for experimental IDM.
+description: >-
+  Quasar models the Pulsar-23 as a whole instrument, with its bass drum, bass, snare and hi-hat circuits, shift
+  register, LFO, clock dividers, effects processor and distortion, using an audio engine written from scratch for the
+  FM-1 chip. Each of six tracks takes one of 16 engine profiles and draws sounds from 147 families, with four macros
+  and four internal routes per sound. Pitch always follows the note played, so drums follow the scale. WRECK folds,
+  rings and crushes every voice, TRANSFORM stacks drive and crush over random tracks, BREAK has ten ways of
+  rearranging the pattern, and the phrase generator makes polymeters, ratchets and crossed Euclidean layers. There is
+  also a looper, 16 patterns and sessions, MIDI learn and a PERFORMANCE mode.
+
+  The control, sequencer and storage code comes from the author's Bigorna firmware, which is built on Tonitor, Felucca
+  and SLOOP, and the dual-core start comes from Melodee. The README says the model follows the published behaviour of
+  the Pulsar-23, uses no circuit values and has not been compared by ear with a real one. It does not state a hardware
+  test, although its tools include a build that reports audio timing over USB MIDI. The second core renders about
+  half of the sounding tracks.
+status: active
+authors:
+- name: Nuno Zimas
+  url: https://github.com/nzimas
+source: https://github.com/nzimas/quasar
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only for the firmware and its engine. Retained files keep their Felucca, SLOOP,
+  Melodee and Bigorna notices. The website and logo are MIT, the fonts are SIL OFL 1.1, and the JieLi SDK files are
+  read from your own SDK checkout at build time. The SOMA manual kept in the author's research copies is excluded from
+  the repository.
+homepage: https://nzimas.github.io/quasar/
+distribution: browser-installer
+install_notes: >-
+  Browser installer in desktop Chrome, Edge or Opera over USB, then switch the FM-1 off and on once; or ./setup.sh and
+  ./install.sh from the source on macOS or Linux. The README warns that an interrupted update can leave the FM-1 unable
+  to start until it is recovered and that installing may void the warranty.
+brick_risk: true
+tags: [synth-engine, drums, sequencer, looper, generative, fx, performance, midi, fork]
+image:
+  url: https://raw.githubusercontent.com/nzimas/quasar/main/docs/assets/screens/native_track_view1.png
+  alt: "Quasar track view: P1 and octave -1 at the top corners, a yellow bar with track 1 and HAMMER, then four macro sliders PUNCH, SHAPE, CHAOS and DECAY and a row of 16 step cells"
+  credit: Nuno Zimas
+  source_url: https://github.com/nzimas/quasar
+  first_party: true
+versions:
+- version: main @ c82136e
+  date: 2026-11-03
+  url: https://github.com/nzimas/quasar/commit/c82136e71aaf1861b0a0e7d68025903eb55ee47a
+  notes: No tagged releases; this is the latest commit. The changelog calls build 3 the first public build.

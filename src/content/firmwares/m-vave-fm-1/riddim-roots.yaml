@@ -1,0 +1,51 @@
+device: m-vave-fm-1
+name: RIDDIM ROOTS
+summary: >-
+  Generative reggae and dub band on M-VAVE's FM1 Open SDK: six players, 11 styles, an evolve control, a dub effects
+  lab, an animated lion screen and Alesis Vortex Wireless 2 mapping. Emulator-tested only.
+description: >-
+  Six players (drums and percussion, bass, skank, organ, horns or lead, piano) follow a harmony and arrangement
+  that move through intro, verse, chorus, dub, break, build, drop and outro. The 11 styles run from ska and
+  rocksteady to digital dancehall, ragga jungle and dub techno. EVOLVE sets how much the music changes, with
+  keep, reject, mutate and recall controls, and style changes happen without stopping. Other parts are 27
+  instruments built from DX7-format voices, Karplus-Strong guitars, a 303 voice and 808 kits, eight keyboard
+  modes, a 24-effect dub lab with tape echo, tape stop, rewind and siren, and an animated Lion of Judah on the
+  screen. A MIDI map covers the Alesis Vortex Wireless 2 with fader banks, pads and ribbon.
+
+  It is a new implementation on the official FM1 Open SDK, not derived from earlier community firmwares, and it
+  does not link M-VAVE's 128-voice DX7 bank to fit the size limit. The documents are in Ukrainian. The README and
+  LIMITATIONS.md say it has not been flashed to or tested on any FM-1: all checks ran in the fm1-emu emulator, the
+  sound was judged by measurement, and the MIDI wiring to the Vortex is unverified. M-VAVE's online workbench
+  accepts only its own built-in firmwares, so installing needs the offline update page.
+status: active
+authors:
+- name: tskorbenko
+  url: https://github.com/tskorbenko
+source: https://github.com/tskorbenko/riddim-roots-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE.md is M-VAVE's FM1 APP licence text, with M-VAVE's copyright line. It is GPL-3.0-only with an extra
+  section 7 permission to link the binary FM1 SDK, whose components keep the terms in the SDK's THIRD_PARTY.md. The
+  committed dist/RIDDIM_ROOTS_v0.3.0_update.html is the SDK's offline update page and carries M-VAVE's V15 recovery
+  image, which decodes to the licensed FM-1_015 package (699,956 bytes, git blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd,
+  Apache-2.0 from m-vave/fm1_open). The lion artwork was supplied by an unnamed user, and THIRD_PARTY.md and
+  assets/lion/README.md say the supplier's rights apply, so no licence for it is recorded. fm1-emu in demo/emulator is MIT.
+homepage: https://github.com/tskorbenko/riddim-roots-fm1
+distribution: download
+install_notes: >-
+  Open dist/RIDDIM_ROOTS_v0.3.0_update.html in Chrome or Edge. The page bundles the firmware, M-VAVE's V15 for
+  rolling back and the official USB-MIDI update protocol with CRC checks, and the README says it can be rebuilt with
+  the SDK on Windows. Back up projects and samples first. The user manual in docs/INSTRUKTSIIA_UA.md has the safety
+  rules.
+brick_risk: true
+tags: [generative, ambient, sequencer, synth-engine, drums, fx, sdk, emulator, performance]
+versions:
+- version: v0.3.0-1
+  date: 2026-11-03
+  url: https://github.com/tskorbenko/riddim-roots-fm1/tree/v0.3.0-1
+  notes: Git tag; no GitHub release page. Adds the offline update page with V15 rollback.
+- version: v0.3.0
+  date: 2026-11-03
+  url: https://github.com/tskorbenko/riddim-roots-fm1/tree/v0.3.0
+  notes: Git tag; no GitHub release page.

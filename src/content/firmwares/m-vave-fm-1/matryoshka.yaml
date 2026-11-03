@@ -9,7 +9,7 @@ description: >-
   assemblies, factory patches that model other synths, and a library for the FM-1's 64 patch slots. Patches too big
   for the FM-1's CPU budget can still be edited and heard in the browser. Patches live in flash sectors that Felucca
   also uses, so a first start erases Felucca's projects and samples there; the README says to save them first.
-  Patches stored by M-VAVE's own firmware are not touched. A browser emulator view runs the firmware itself. The README reports tests on
+  Patches stored by M-VAVE's own firmware are not touched. A browser emulator view runs the firmware itself. The FM-1 sends MIDI clock over USB and, since 1.8.3, works with an iPad as a MIDI and audio device. The README reports tests on
   a real FM-1 for installing, update mode, returning to V15 and recovery.
 status: active
 authors:
@@ -35,6 +35,14 @@ install_notes: >-
 brick_risk: true
 tags: [synth-engine, modular, editor, emulator, patch, sequencer, arpeggiator, fork]
 versions:
+- version: 1.8.4
+  date: 2026-11-03
+  url: https://github.com/glvno/matryoshka/releases/tag/v1.8.4
+  notes: Web editor only; the firmware stays at 1.8.3. Corrects the editor's help card so its FM-1 rows match the device's buttons.
+- version: 1.8.3
+  date: 2026-11-02
+  url: https://github.com/glvno/matryoshka/releases/tag/v1.8.3
+  notes: The FM-1 now works with an iPad as a USB MIDI device and an audio input (tested on iPadOS 26 through a hub), sends MIDI clock over USB, records notes step by step on the SEQ page and moves the piano roll 8 pitches at a time. The editor adds signal-range labels, a readable scope and comment boxes.
 - version: 1.8.2
   date: 2026-11-01
   url: https://github.com/glvno/matryoshka/releases/tag/v1.8.2

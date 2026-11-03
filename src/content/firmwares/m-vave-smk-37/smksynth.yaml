@@ -1,0 +1,54 @@
+device: m-vave-smk-37
+name: SMKSYNTH
+summary: >-
+  Performance firmware for the SMK-37 Pro that pairs OberVave's analog synth with the DRUM-X drum engine on four
+  parts, with favourites, split and layer, a four-track sequencer, 16 scenes and a browser simulator.
+description: >-
+  Each of four parts plays either the OberVave ANALOG synth on eight shared voices or the DRUM-X drum engine
+  adapted from JIANT with eight instruments per kit. The pads work as banks for part selection and sends, eight
+  favourite sounds, split and layer setups, 16 saved patterns or scenes and drum hits with velocity. The sequencer
+  has four tracks of up to 256 steps with live or step recording and keyboard transposition. The factory content is five
+  patterns and eight favourites by the author, and the README says no third-party samples are included. A browser
+  simulator runs the same C code, and there are pages for backup and restore.
+
+  The README says ChatGPT generated and revised the adaptation code, web tools and documentation under the author's
+  direction. The author reports testing the earlier DP2 build on a real SMK-37 Pro and confirming the first USB
+  install of 1.0.0 on the instrument after publication. The V016 to 1.0.0 path was also tested on simulated flash
+  with interruptions. The manual and pages are in Portuguese and English.
+status: active
+authors:
+- name: Marcus Padrini
+  url: https://github.com/4t59m4f784-creator
+source: https://github.com/4t59m4f784-creator/SMKSYNTH
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only for the firmware and the adaptations. OberVave is GPL-3.0-only and the JIANT DRUM-X
+  adapter is stated to be GPL-3.0-only with the original notices kept; the JIANT repository's licence is GPL-3.0. The
+  Terminus font is SIL OFL 1.1, and the JieLi SDK files are read from your own SDK checkout at build time. The
+  committed packages are SMKSYNTH's own builds and match none of M-VAVE's licensed images by size or blob hash, and
+  the README states that M-VAVE's firmware is not redistributed.
+homepage: https://4t59m4f784-creator.github.io/SMKSYNTH/
+distribution: browser-installer
+requires_stock: SMK-37 Pro official V016 (identity SMK-37 Pro_016)
+install_notes: >-
+  A first-install package for an SMK-37 Pro running M-VAVE's official V016 only; the installer refuses the Elite,
+  MKE-P37, FM-1, other versions and other firmwares. Get V016 for the Pro from M-VAVE's download page and install
+  it with M-UPGRADE, then use the browser installer in Chrome or Edge over USB and wait for the new identity
+  SMK-37 Pro_19618. It resets the bank to the factory content and does not keep a previous SMKSYNTH bank, so export
+  it first. An interrupted transfer resumes with the same browser and package. Return to M-VAVE firmware as the
+  installation guide describes.
+brick_risk: true
+tags: [synth-engine, drums, sequencer, performance, emulator, backup, usb-midi]
+video:
+  url: https://www.youtube.com/watch?v=Ax-RqjtUFjc
+  title: "M-VAVE SMK37 Pro: de controlador MIDI a sintetizador multitimbral! (Obervave + IA)"
+  credit: Marcus Padrini
+  first_party: true
+  found_via: https://github.com/4t59m4f784-creator/SMKSYNTH#readme
+  version: v1.0.0
+versions:
+- version: v1.0.0
+  date: 2026-11-02
+  url: https://github.com/4t59m4f784-creator/SMKSYNTH/releases/tag/v1.0.0
+  notes: First public release, with the SMK-37 Pro package, source archive, manuals and checksums.

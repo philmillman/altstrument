@@ -10,7 +10,11 @@ description: >-
   file through SYNC IN like Korg's own updates. The author removed Korg's
   version-downgrade check so the official 1.14 file can be played to go back,
   but 1.14 does not understand negative SLICE or ACCENT values stored in
-  programs.
+  programs. Version 1.22 adds round-robin polyphony across two to six parts, a
+  keyboard mode on the STEP keys, pitched MIDI play with channel layouts, Wave
+  Guide tuning and glide, and export and import of sounds and sequences as audio
+  through the SYNC jacks. The README warns that the export signal is a harsh 5 V
+  and should not be monitored.
 status: active
 authors:
   - name: hj-oja
@@ -23,17 +27,16 @@ homepage: https://sonicstate.com/news/2026/08/20/free-custom-firmware-for-the-vo
 distribution: download
 requires_stock: "1.14"
 install_notes: >-
-  Hold FUNC and REC while powering on, then play Volca_Drum_0121.wav into SYNC
+  Hold FUNC and REC while powering on, then play Volca_Drum_0122.wav into SYNC
   IN with all audio processing disabled. A failed transfer leaves the existing
   firmware intact, according to the README. Hold PLAY while powering on to
   check the version.
 tags: [sequencer, filter, fx, midi, performance]
-video:
-  url: https://www.youtube.com/watch?v=KMIR9ekU9i4
-  title: 'hj Firmware v1.21 - Quick Feature Guide | Custom Firmware for KORG volca drum'
-  credit: hj-oja
-  first_party: true
 versions:
+  - version: "1.22"
+    date: 2026-11-03
+    url: https://github.com/hj-oja/vdcf/commit/3a302eca6543febaa8db9bce133413cfcf6d006c
+    notes: The commit that renames the firmware file to Volca_Drum_0122.wav and rewrites the README.
   - version: "1.21"
     date: 2026-09-11
     url: https://github.com/hj-oja/vdcf

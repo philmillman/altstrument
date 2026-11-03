@@ -1,0 +1,33 @@
+device: electrosmith-daisy-patch
+name: MultiFX
+summary: Sixteen-effect processor for a Patch.Init() with a 64 by 48 OLED, in four banks of reverbs, delays, filters and pitch or distortion effects, with CV on every knob and a global dry and wet control.
+description: >-
+  Effects are arranged as four banks of four. The reverb bank has classic, plate, tank and shimmer patches, the delay bank
+  ping, tape, multitap and echo with reverb, the tone bank a ladder filter, a morphing state-variable filter, a comb and two
+  independent low-pass filters, and the last bank a resonator, pitch shifter, drive and bit crusher. A button press steps
+  through the patches and a long press opens a bank menu on the OLED. Knob 4 is the dry and wet mix for every patch, each knob
+  sums with its CV jack, and the ping and echo patches lock their delay time to a clock on gate input 1. Patch changes fade the
+  output out and reset the effect so they do not click. The DSP and navigation sit in a shared library that the author also
+  uses for a bare Daisy Seed version in the same repository. The README gives the display modification pins and build steps
+  and says nothing about hardware testing.
+status: active
+authors:
+  - name: David Baghurst (Eight4aWish)
+    url: https://github.com/Eight4aWish
+source: https://github.com/Eight4aWish/eurorack_daisy_patch_init/tree/main/daisy_multifx_oled
+source_status: open
+license: MIT
+license_notes: The repository's LICENSE is MIT and its licence table lists the multifx projects as the author's MIT work. The build uses Electrosmith's libDaisy and DaisySP.
+homepage: https://eight4awish.com/modules/
+distribution: source-only
+requires_stock: Daisy Patch.Init() with a 0.66 inch SSD1306 OLED wired to the expansion header
+install_notes: >-
+  Wire the OLED SDA to A2 and SCL to A3 with 3.3 V and ground, build with make in daisy_multifx_oled after initialising the
+  repository's submodules, put the module in DFU mode (hold BOOT, press RESET) and run make program-dfu.
+brick_risk: false
+tags: [fx, reverb, delay, filter, ui, open-source]
+versions:
+  - version: main @ 179e66c
+    date: 2026-07-10
+    url: https://github.com/Eight4aWish/eurorack_daisy_patch_init/commit/179e66cf0cc619e9653fe5bf747a81c0cdd4bd34
+    notes: No tagged releases; this is the latest commit that touched this folder.

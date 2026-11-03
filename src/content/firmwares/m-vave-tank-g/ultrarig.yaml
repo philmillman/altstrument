@@ -10,9 +10,11 @@ description: >-
   firmware. It holds up to 15 NAM A2-Lite captures and eight user cabinet IRs, and its preset chain can
   use parallel branches and up to 16 of its 32 effect blocks. Presets have four scenes each (called snapshots before alpha 4), the
   footswitches have separate tap, double-tap and hold actions, and tap tempo and a tuner are built in.
-  The pedal's knobs do nothing yet: everything is set from a web control page in Chrome or Edge over USB,
-  or an Android app over Bluetooth. It is an early alpha, and the author advises against relying on it
-  at a gig. The source code is not published.
+  Since alpha 7 the pedal's knobs work (MASTER sets the volume) and the footswitches default to a layout
+  like the factory one, with A to D picking presets, B and C together for Live mode and Scenes as an
+  option. Effects and presets are edited from a web control page in Chrome or Edge over USB, or an Android
+  app over Bluetooth. It is an alpha, and the author says to expect bugs and to use it at your own risk.
+  The source code is not published.
 status: active
 authors:
 - name: Manuel Aguirre
@@ -35,11 +37,23 @@ install_notes: >-
   v2), run UltraRig-Installer.exe (as administrator on the v1) and click Cancel if Windows offers to
   format a disk. The installer reads the full 1 MiB flash twice as a backup, leaves the bootloader alone
   and writes only the application area. Keep the backup_<date> folder in Documents\tankg_installer and
-  never share it: restoring it is the only way back to the factory firmware. Alpha 6 accepts factory firmware 98; to move a pedal already on UltraRig to 98, go
+  never share it: restoring it is the only way back to the factory firmware. Alpha 6 and later accept factory firmware 98; to move a pedal already on UltraRig to 98, go
   back to the factory firmware first, update with M-UPGRADE and install again, and keep both backups.
 brick_risk: true
 tags: [fx, amp-sim, nam, ir, editor, android]
 versions:
+- version: alpha8
+  date: 2026-11-03
+  url: https://github.com/manuaguirre9/ultrarig/releases/tag/alpha8
+  notes: >-
+    Firmware M5.26. Stops missed footswitch taps while the pedal is busy, smooths scene changes that
+    move a parallel branch, and brings a new installer.
+- version: alpha7
+  date: 2026-11-02
+  url: https://github.com/manuaguirre9/ultrarig/releases/tag/alpha7
+  notes: >-
+    Firmware M5.25. Makes the pedal's knobs work, defaults the footswitches to a factory-like layout
+    with a hold-to-save, and adds Plate, Spring and Cloud reverbs and a Low cut on the delay.
 - version: alpha6
   date: 2026-10-31
   url: https://github.com/manuaguirre9/ultrarig/releases/tag/alpha6

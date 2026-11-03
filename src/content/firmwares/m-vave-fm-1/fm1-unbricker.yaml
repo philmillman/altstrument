@@ -13,7 +13,8 @@ description: >-
   for flashing the XIAO RP2040 and wiring it. The repository has a guide for each route, mock-device tests and
   a prebuilt Transporter placeholder firmware, and does not contain M-VAVE's firmware. Windows and Linux are
   supported for the USB route; macOS is not. Version 1.2.0 adds a softkey command that drops a unit that still runs
-  into ROM boot mode over USB-MIDI, and a repair-settings command that returns the settings areas to factory state.
+  into ROM boot mode over USB-MIDI, and a repair-settings command that returns the settings areas to factory state. Version 1.2.1 accepts the second
+  flash chip (ID 0xB36014) found in 2026 units with the logo on the front.
 status: active
 authors:
 - name: Quixotic7
@@ -33,7 +34,7 @@ install_notes: >-
 brick_risk: true
 tags: [flasher, loader, utility]
 versions:
-- version: main @ 517b938
-  date: 2026-10-31
-  url: https://github.com/Quixotic7/MvaveFM1Unbricker/commit/517b9387e62e908115e5eec66c32d0ac3289f039
-  notes: No tagged releases; this is the latest commit. The README now links a third-party unbricking guide; softkey and repair-settings (fm1_unbrick 1.2.0) came in the previous code commit.
+- version: main @ a1eaf4d
+  date: 2026-11-03
+  url: https://github.com/Quixotic7/MvaveFM1Unbricker/commit/a1eaf4d71e690744aaa12b16372344b5ef791c78
+  notes: No tagged releases; this is the latest commit. It is fm1_unbrick 1.2.1, which accepts the 0xB36014 flash chip of the 2026 units with the logo on the front.

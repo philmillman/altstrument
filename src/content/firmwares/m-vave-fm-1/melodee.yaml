@@ -9,6 +9,10 @@ description: >-
   rights stay with Casio and Sequential and that no licence is granted.
   Four synth tracks, joined from 1.5 by four MIDI-only tracks and USB Host MIDI, 32 pattern banks and 1,024 recorded notes, plus a web editor. Its four audio outputs appear
   as discrete USB audio streams, which take-taker (an Android recorder) can capture as separate tracks.
+  Release 1.6.0 is about whole songs: 64 song sections with rests, timed punch effects, a preset per block or pattern, 16
+  patterns on each synth track, 32 projects in a shared pool, Bluetooth MIDI and MIDI learn; 1.6.1 adds MIDI clock and
+  transport output and removes internal clock drift, though the author says no external follower has been tried against it
+  on hardware yet.
   1.0.0 followed 0.13.1; the 1.0.0 release is noted to have crashed on some units (fixed in later 1.x).
 status: active
 authors:
@@ -36,6 +40,14 @@ image:
   source_url: https://github.com/keremimo/melodee
   first_party: true
 versions:
+- version: 1.6.1
+  date: 2026-11-02
+  url: https://github.com/keremimo/melodee/releases/tag/v1.6.1
+  notes: Sends MIDI clock and transport on USB, USB Host and Bluetooth, sends Song Position and follows it, fixes internal clock drift and rewrites the manual. Stored data is unchanged from 1.6.0. The author says clock output has not been tried against external gear on hardware.
+- version: 1.6.0
+  date: 2026-11-02
+  url: https://github.com/keremimo/melodee/releases/tag/v1.6.0
+  notes: Stable release of the 1.6 line (changes since 1.5.1). Adds 64 song sections, timed punch effects, a preset per block or pattern, 16 patterns per synth track, 32 projects, Bluetooth MIDI, MIDI learn, two drum kits and note editing during playback. Older firmware cannot read what 1.6 saves, so back up first.
 - version: 1.6.0-rc.8
   date: 2026-11-01
   url: https://github.com/keremimo/melodee/releases/tag/v1.6.0-rc.8

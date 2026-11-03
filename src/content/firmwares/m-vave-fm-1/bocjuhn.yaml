@@ -1,0 +1,54 @@
+device: m-vave-fm-1
+name: bocjuhn
+summary: >-
+  Fork of Tonitor with eight sound engines on six tracks, among them new ACID, DROPLETS, FRACT and RYUJI engines,
+  free loops and clocked sequences, and animated engine graphics, with a browser player.
+description: >-
+  Six tracks each choose one of eight engines: FM, ACID, DROPLETS, FRACT, DRUID, RYUJI, HIVE and OBRADOR. Tonitor's
+  list was FM, ANIMA, CALIGULA, RUSSOLO, DRUID, BAYAREA, HIVE and OBRADOR, so four engines are new: ACID in place of
+  ANIMA, a particle engine for DROPLETS where CALIGULA was, and FRACT and RYUJI, with the RUSSOLO and BAYAREA names
+  gone. Tonitor's granulator, filters, effects, BALLSY, BRICKLAYER and PLAY ALONG are kept. Loops and the BALLSY and
+  BRICKLAYER generators can run free or follow an internal clock with a note division, ACID is a monophonic bass
+  voice with accent and slide, and every engine has its own animated graphic on a black screen. The README credits
+  ryuji kanagawa, and the fork is four commits ahead of Tonitor build 68.
+
+  RC7 is a pre-release. The release notes and HARDWARE-TEST.md record that the author confirmed on 2 November 2026
+  that RC7 works on their own FM-1, with no separate record of the install routes or of recovering from an interrupted
+  update. The browser player runs the firmware's C code as WebAssembly. Sessions use the RC5 format, and earlier ANIMA
+  sessions migrate to ACID.
+status: active
+authors:
+- name: IanP06
+  url: https://github.com/IanP06
+source: https://github.com/IanP06/bocjuhn
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states that the modifications, browser adapter and renderer are GPL-3.0-only and keeps Tonitor's table of
+  notices: Felucca, SLOOP and Melodee code (GPL-3.0-only), msfa (Apache-2.0), Plaits and Rings parts (MIT), CALIGULA
+  after LIRA-8 (BSD) and fonts under SIL OFL 1.1. The release folders also keep Tonitor's own build 68 package, which
+  is a community image and not M-VAVE's.
+homepage: https://ianp06.github.io/bocjuhn/
+distribution: download
+install_notes: >-
+  Download bocjuhn-1.0-rc7.fwsc from the release, which carries SHA-256 sums and a manifest, or use the local
+  installer page that tools/serve_bocjuhn.cjs serves with Node in Chrome or Edge over USB. The README says to back up
+  the FM-1 first, because unrelated firmware projects and samples can be overwritten, and the package includes the
+  update loader. The README notes a Firmware Hub submission was prepared but not sent.
+brick_risk: true
+tags: [synth-engine, sequencer, looper, granular, fx, ui, emulator, performance, fork]
+image:
+  url: https://raw.githubusercontent.com/IanP06/bocjuhn/codex/living-rc6/docs/card.png
+  alt: "bocjuhn DROPLETS engine screen: small cyan particles scattered above the word DROPLETS and DEEP, with a level bar and a pan slider underneath"
+  credit: IanP06
+  source_url: https://github.com/IanP06/bocjuhn
+  first_party: true
+versions:
+- version: v1.0.0-rc7
+  date: 2026-11-02
+  url: https://github.com/IanP06/bocjuhn/releases/tag/v1.0.0-rc7
+  notes: Pre-release. Engine-specific animated graphics and redesigned temporary dials; engines, controls and session format unchanged from RC5.
+- version: v1.0.0-rc6
+  date: 2026-11-02
+  url: https://github.com/IanP06/bocjuhn/releases/tag/v1.0.0-rc6
+  notes: Pre-release. First release with the clean performance screens and the browser player.

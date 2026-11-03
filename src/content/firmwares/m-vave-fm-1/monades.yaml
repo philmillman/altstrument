@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+name: Monades
+summary: >-
+  Six-voice generative firmware forked from Mutable Dreams 1.1, with 91 scales including microtonal Scala sets and ragas, Markov
+  and motif generators, morphing between Worlds, and generated notes sent out over USB MIDI.
+description: >-
+  Each of the six voices follows its own logic while sharing one scale and tempo. On top of Mutable Dreams it adds pages that
+  draw what is being set, such as meters, an oscilloscope, filter and envelope curves, a granular strip and a piano roll. There
+  are 15 scale families, a custom scale, a deja vu control, section forms, step entry, two LFOs per track with 19 targets, high,
+  band and notch filters, chorus, synced echo and diffusion. USB MIDI output carries the generated notes per track or by note
+  zone, with clock, and each track picks its own channels. Fourteen Worlds can be randomised, morphed and left to drift.
+
+  The README says it has been installed and running on an FM-1 since 2026-10-29, while the full device checks are still under
+  way, and it points to Mutable Dreams for a better proven instrument. USB audio works towards the computer only, as in Mutable
+  Dreams. The site offers a browser simulator of the complete firmware, and the documentation is in French. Rhizome is a
+  further fork of this project.
+status: active
+authors:
+  - name: Dr-John-8bits
+    url: https://github.com/Dr-John-8bits
+  - name: Kid Bunka (Christoph Link / kidbee85-beep)
+    url: https://github.com/kidbee85-beep
+source: https://github.com/Dr-John-8bits/monades
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states a combined distribution under GPL-3.0-only, keeping the MIT notices for Mutable Instruments code and the
+  MPL-2.0 and font notices, listed in LICENSING-GPL.txt. The repository's v1.0 and v1.1 tags belong to Mutable Dreams.
+homepage: https://dr-john-8bits.github.io/monades/
+distribution: browser-installer
+requires_stock: V15
+install_notes: >-
+  From V15 or Mutable Dreams, use the browser installer in Chrome or Edge, or run base/tools/fm1_install.py with the .fwsc. The
+  FM-1 enters update mode on its own. The README warns against installing from V16, where install problems have been reported. To
+  go back, run the same tool with your V15 file.
+brick_risk: true
+tags: [generative, sequencer, granular, midi]
+versions:
+  - version: main @ 0b5a474
+    date: 2026-11-02
+    url: https://github.com/Dr-John-8bits/monades/commit/0b5a474b7b165a64b1c4cf46610646bed7980248
+    notes: No tagged releases of its own; this is the latest commit, which the README calls version 0.1.3.

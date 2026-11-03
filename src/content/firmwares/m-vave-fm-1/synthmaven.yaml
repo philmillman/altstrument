@@ -16,7 +16,10 @@ description: >-
   the drummer can listen to its own MIDI input and channel. The engines include DX7-style FM6, CZ-1, Prophet-5, SID
   and Vital-translated HYBRID voices, with 610 melodic presets and 27 punch effects. Versions 2.x were built on
   Clipper; 3.5 moved to Melodee 1.5.1. The release notes for 4.0 say it has not been tested on FM-1 hardware, while
-  the 3.5 notes describe physical tests of the USB-only build. An iPad editor exists; its latest build is a TestFlight
+  the 3.5 notes describe physical tests of the USB-only build. The 4.1.1 notes say that build was installed on an FM-1,
+  a backup restored and all eight programs loaded, and that layered chords of six or more keys can still miss the audio
+  deadline now and then. Version 4.1 adds an octave setting for each layer; the 4.1 tag was never released because its
+  firmware did not fit. An iPad editor exists; its latest build is a TestFlight
   build for invited testers.
 status: active
 authors:
@@ -50,6 +53,10 @@ image:
   source_url: https://github.com/KingXeryus/SynthMaven
   first_party: true
 versions:
+- version: 4.1.1
+  date: 2026-11-03
+  url: https://github.com/KingXeryus/SynthMaven/releases/tag/v4.1.1
+  notes: First published build of 4.1 (the 4.1 tag's firmware did not fit the app area). Adds an octave shift per layer on the OCT keys and in the editors, sound search in the editors, and a 6 dB cut before the limiter so layered chords no longer duck. Fixes programs 3 to 8 failing to load after a backup restore. The notes report an install on an FM-1 with a restored backup, and measure the ducking fix on the host only.
 - version: '4.0'
   date: 2026-11-01
   url: https://github.com/KingXeryus/SynthMaven/releases/tag/v4.0

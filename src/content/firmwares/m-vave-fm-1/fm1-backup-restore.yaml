@@ -14,7 +14,7 @@ description: >-
   library as a backup; the app does not ship that package. It needs Android 8 or later, a USB OTG cable that carries data,
   and permission to run in the background so a transfer survives the screen turning off. The app checks GitHub for new
   releases at most once a day and uses no other analytics. The README says it was tested over 100 times across firmwares
-  and versions, and asks for the VID/PID of any firmware it does not recognise.
+  and versions, has a diagnostics menu item that verifies the bootloader's state (0.9.5), and asks for the VID/PID of any firmware it does not recognise.
 status: active
 authors:
 - name: Chris Johnson
@@ -39,6 +39,10 @@ install_notes: >-
 brick_risk: true
 tags: [backup, flasher, android, recovery, utility]
 versions:
+- version: 0.9.5
+  date: 2026-11-02
+  url: https://github.com/workeffortwaste/fm1-backup-restore/releases/tag/v0.9.5
+  notes: Adds a diagnostics menu item that checks the state of the bootloader, and interface polish.
 - version: 0.9.4
   date: 2026-10-31
   url: https://github.com/workeffortwaste/fm1-backup-restore/releases/tag/v0.9.4

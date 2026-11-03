@@ -1,0 +1,71 @@
+device: teenage-engineering-op-xy
+name: OP-XY ModFX
+summary: >-
+  Omnifilter, a global filter and envelope that lives on the CV track and steers all eight instrument tracks, plus Lint
+  and Chroma send effects, built on the Open-XY SDK.
+description: >-
+  Three machines share one repository and one build. Omnifilter takes the CV track (12) in place of an instrument track.
+  Its cutoff, resonance, attack and release controls scale the same four settings on every instrument track, which keep
+  their own values underneath and return when the track goes back to CV. The controls can be locked per step, and
+  muting track 12 gives each track its own settings back. Its screen is a camera lens whose eight-bladed iris is the
+  filter. Lint is a send effect modelled on a 1970s effects box, with two tape saturations, a phaser, a PT2399-style echo
+  and a spring tank in one of six orders. Chroma is a stereo send effect with four modules chosen from 22 effects, drawn
+  as an optical bench.
+
+  The README calls it experimental. It says the machines run on an OP-XY on OS 1.2.1, and gives CPU figures measured on
+  the device for each: 0.80% of the audio block for Omnifilter, 5.40% for Lint and 7.31% for Chroma on its default effects,
+  rising to 10.91% on its heaviest setting, where a busy project may drop audio though nobody has heard it happen. Chroma is built
+  from the manual of the pedal it follows, which was not measured, so it follows the manual and not the pedal's sound. Send
+  effects cannot ship presets, so Lint's and Chroma's named settings appear only in the SDK's browser preview. A firmware needs
+  at least one synth machine alongside them. The Open-XY machine catalog lists all three.
+status: active
+authors:
+  - name: mmockett
+    url: https://github.com/mmockett
+source: https://github.com/mmockett/OP-XY-ModFX
+source_status: open
+license: MIT
+license_notes: >-
+  The repository holds source, tests and rendered screens, with no OP-XY OS file or audio. The pedals named in the README
+  are other makers' products that the effects imitate, and no code from them is included. Builds link the machines into
+  a modified copy of the user's own OP-XY OS.
+homepage: https://github.com/mmockett/OP-XY-ModFX#readme
+distribution: source-only
+requires_stock: "1.2.1"
+install_notes: >-
+  Check out the Open-XY SDK's staging branch (Omnifilter needs its SDK 1.9 for machines on track 12) beside this
+  repository. Build with sdk.py, naming the ModFX folders you want and at least one synth machine, against your own stock
+  1.2.1 os.ldr, then install the build's candidate files as the SDK's build guide describes, which ends with writing the OS
+  from the device's boot menu. The SDK's authors say a faulty image may not be recoverable, and the stock update restores
+  the original. Lint and Chroma go on a send with Shift and M1 on FX I or II, and Omnifilter is chosen the same way on
+  track 12.
+brick_risk: true
+tags: [machines, fx, filter, delay, sdk]
+image:
+  url: https://raw.githubusercontent.com/mmockett/OP-XY-ModFX/main/docs/screens/omnifilter.png
+  alt: >-
+    Four OP-XY screens in white on black, each a camera front with a ring lens whose iris is wide open, half open, a closed star and almost shut, under cutoff, reso, attack and release values
+  credit: mmockett
+  source_url: https://github.com/mmockett/OP-XY-ModFX#readme
+  first_party: true
+versions:
+  - version: v1.9.0
+    date: 2026-11-03
+    url: https://github.com/mmockett/OP-XY-ModFX/tree/v1.9.0
+    notes: Git tag; no GitHub release page. Moves Omnifilter to SDK 1.9, with track 12 as the SDK merged it, and adds its measured CPU cost.
+  - version: v1.8.0
+    date: 2026-11-01
+    url: https://github.com/mmockett/OP-XY-ModFX/tree/v1.8.0
+    notes: Git tag; no GitHub release page. Lint's sums saturate instead of wrapping.
+  - version: v1.7.0
+    date: 2026-11-01
+    url: https://github.com/mmockett/OP-XY-ModFX/tree/v1.7.0
+    notes: Git tag; no GitHub release page. Chroma no longer costs a block when its level falls, and its documents are filled in.
+  - version: v1.4.1
+    date: 2026-10-30
+    url: https://github.com/mmockett/OP-XY-ModFX/tree/v1.4.1
+    notes: Git tag; no GitHub release page. Chroma offers 22 effects.
+  - version: v1.0.0
+    date: 2026-10-29
+    url: https://github.com/mmockett/OP-XY-ModFX/tree/v1.0.0
+    notes: Git tag; no GitHub release page. The repository, until then Omnifilter alone, gains Lint and becomes ModFX.

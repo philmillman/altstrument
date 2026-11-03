@@ -1,0 +1,53 @@
+device: teenage-engineering-op-xy
+name: OP-XY Conductor
+summary: >-
+  Generative sequencer on the OP-XY's CV track (12) that plays eight lanes of drums, bass, chords, pads, arps and leads
+  live on instrument tracks 1 to 8 from one shared chord progression and groove, written on the Open-XY SDK.
+description: >-
+  Conductor sits on aux track 12 and makes no sound itself. It plays notes into the machines on tracks 1 to 8 while the
+  sequencer runs, without writing anything into those tracks' steps. All eight lanes follow one key, scale, chord
+  progression and groove, and the song changes a little every four bars as far as an evolve control allows. Notes are a
+  fixed function of the song, the controls and the bar, so it replays the same until something changes, and a freeze
+  holds the current phrase. Four pages cover the song, the lanes, the selected lane's role controls and the routing of
+  lanes to tracks, and the project saves the lanes, roles, routes and seed. Presets are Pop, Night and Jazz.
+
+  The README calls it experimental and says it runs on an OP-XY on OS 1.2.1 with a development build of the SDK. The SDK
+  changes it needs (notes played on other tracks, the machine's own encoders and sixteen display words) were not on
+  the SDK's main line when the repository was written, and an Open-XY issue tracks them. Timing was measured against a
+  recording of the device there, with notes starting up to 17 ms late, while the README lists timing as not yet measured. The
+  README adds that roles are set by hand per lane, that lanes cover instrument tracks 1 to 8 only and that it has no MIDI
+  routing of its own. Found Motive's kit 031 for the OP-XY lists a Conductor by the same author. This repository does not
+  mention the kit and the kit publishes no source, so they are probably the same sequencer, which is not confirmed.
+status: active
+authors:
+  - name: mmockett
+    url: https://github.com/mmockett
+source: https://github.com/mmockett/OP-XY-Conductor
+source_status: open
+license: MIT
+license_notes: >-
+  The licence file names "Open-XY contributors". The repository holds source, tests and screenshots only, with no OP-XY
+  OS file. Builds link the machine into a modified copy of the user's own OP-XY OS.
+homepage: https://github.com/mmockett/OP-XY-Conductor#readme
+distribution: source-only
+requires_stock: "1.2.1"
+install_notes: >-
+  Needs the Open-XY SDK with the changes the README lists, which sit on the author's fork branch sdk/control-notes until
+  they are merged, and the SDK's toolchain. Build with sdk.py against your own stock 1.2.1 os.ldr, then install the
+  build's candidate files as the SDK's build guide describes, which ends with writing the OS from the device's boot
+  menu. The SDK's authors say a faulty image may not be recoverable, and the stock update restores the original. On
+  track 12, Shift and M1 opens the engine list, where you choose Conductor.
+brick_risk: true
+tags: [machines, sequencer, generative, chords, sdk]
+image:
+  url: https://raw.githubusercontent.com/mmockett/OP-XY-Conductor/main/docs/screens.png
+  alt: >-
+    Four OP-XY screens in white and grey on black: a chord wheel with the progression Cm, Fm, G#, Fm; a grid of eight lanes; a piano roll of one lane; and a grid routing lanes to tracks
+  credit: mmockett
+  source_url: https://github.com/mmockett/OP-XY-Conductor#readme
+  first_party: true
+versions:
+  - version: main @ 52cfa23
+    date: 2026-11-02
+    url: https://github.com/mmockett/OP-XY-Conductor/commit/52cfa232dfc3bd5b685c54dbfbf247a5bc9f78cc
+    notes: No tagged releases; this is the latest commit.

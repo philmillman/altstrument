@@ -1,18 +1,19 @@
 device: m-vave-fm-1
 name: CLATTER Pocket
 summary: >-
-  Drum machine firmware for the FM-1 that runs Erica Synths' LXR-02 drum voices: six voices, a 64-step pattern generator with conditional steps, 16 kits and 9 saved projects. Not yet run on hardware.
+  Drum machine firmware for the FM-1 that runs Erica Synths' LXR-02 drum voices: six voices, a 64-step pattern generator with conditional steps, 16 kits, 9 saved projects and MIDI clock sync. Run on one unit up to 0.9.0.
 description: >-
   A port of CLATTER, a generative drum synthesizer built on the open LXR-02 sound engine, to the FM-1 through M-VAVE's
   fm1_open application. The LXR voices run in a real-time engine, and the panel gives three banks of nine
   sounds, a pitched keyboard, live and step recording, one level of undo, sixteen kits and kit generation from LXR
-  parameters. The sequencer has seven tracks of 64 steps on four pages with variations and conditions, pattern styles
+  parameters. MIDI clock on any port paces the sequencer (from 0.9.0), and since 0.9.1 MIDI notes from C1 each play a different sound, with General MIDI kept as an option. The sequencer has seven tracks of 64 steps on four pages with variations and conditions, pattern styles
   taken from CLATTER, and whole-pattern or single-track generation and mutation. Nine projects are saved to user flash.
   The replacement build removes the stock instrument application, and the version that would run beside it is
-  53,671 bytes too large for the flash layout. The README says nothing has run on a device yet; the engine is checked
-  on a host against CLATTER's output, and the sequencer, controls and storage are tested in an FM-1 emulator. The
-  site has a browser demo and an installer for what it labels an unverified experimental release, which has been tested
-  only against a simulated device.
+  53,671 bytes too large for the flash layout. The README's status table still says nothing has run on a device, but
+  the site's release notes say 0.9.0 ran on one unit with sound, USB audio, MIDI notes, MIDI clock over USB and
+  saving. 0.9.1 has not run on a device, and Bluetooth, long runs and leaving for official firmware are untested. The
+  engine is checked on a host against CLATTER's output. The site has a browser demo and an installer for what it labels
+  an unverified experimental release; the README says the install path was tested against a simulated device.
 status: active
 authors:
 - name: The CLATTER contributors
@@ -44,10 +45,22 @@ image:
   source_url: https://github.com/clickysteve/clatter-pocket
   first_party: true
 versions:
-- version: main @ 5ae7ddd
-  date: 2026-11-02
-  url: https://github.com/clickysteve/clatter-pocket/commit/5ae7ddda5bbf637fd9ce996256f7959cfde9835c
+- version: main @ c023f7e
+  date: 2026-11-03
+  url: https://github.com/clickysteve/clatter-pocket/commit/c023f7ef61db7330c5bc9b1d1dddec01855bc588
   notes: No tagged releases; this is the latest commit.
+- version: 0.9.1
+  date: 2026-11-03
+  url: https://github.com/clickysteve/clatter-pocket/commit/a13d57d9f563fa6cce3a2f2001a6e66ec95e8793
+  notes: Package in the repository's releases folder, marked UNVERIFIED. Puts the DRUM keys in the screen's order, makes MIDI from C1 play a different sound on every note (General MIDI stays on MIDI MAP) and sets SAVE to save, OCT+ to load and OCT- to erase on PROJECTS. Saves from 0.5.0 are no longer read. No GitHub release page.
+- version: 0.9.0
+  date: 2026-11-03
+  url: https://github.com/clickysteve/clatter-pocket/commit/305ce85f6dc87d166efb65042c70e50d8a64d9fd
+  notes: Package in the repository's releases folder, marked UNVERIFIED. Follows MIDI clock, with start, stop, continue and song position, and can erase user-flash sectors left over from stock firmware when asked. The author ran it on one unit. No GitHub release page.
+- version: 0.8.0
+  date: 2026-11-02
+  url: https://github.com/clickysteve/clatter-pocket/commit/cdccb64c2788383a161b398843e8e5898a3db445
+  notes: Package in the repository's releases folder, marked UNVERIFIED. Adds copying a page on SEQ with OCT. No GitHub release page.
 - version: 0.7.1
   date: 2026-11-02
   url: https://github.com/clickysteve/clatter-pocket/commit/91395d6339a621982508ca1e5dea06d743924035

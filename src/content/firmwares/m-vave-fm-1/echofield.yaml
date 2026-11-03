@@ -1,0 +1,52 @@
+device: m-vave-fm-1
+name: ECHOFIELD
+summary: >-
+  Granular sampler firmware with six modes, performance effects, RANDOM with parameter locks and RESAMPLE, plus a
+  browser emulator, flasher and companion app for loading your own samples.
+description: >-
+  It reads small grains from a sample, up to 32 at once across both cores, and overlaps them into a continuous sound.
+  The six modes are CLOUD, DUST, TAPE, BLOOM, PULSE and DRIFT, and the keys play the cloud at any pitch with velocity
+  and chords, with a DRIFT ORACLE that picks notes in a chosen key. Holding FX turns the black keys into freeze,
+  reverse, octave, stutter, tape stop, delay throw and shimmer, ARP rolls new settings with lockable knobs and undo,
+  and RESAMPLE records up to five seconds of the output as a new sound. After the grains come tape, filter, a
+  one-second ping-pong delay, an eight-line reverb with shimmer and output limiting.
+
+  It ships 14 CC0 factory sounds and has 16 slots for your own, stored as IMA ADPCM in 368 KB of flash. The companion
+  web app trims and sends samples, records from the FM-1 over USB audio, edits the sound live over SysEx and mirrors the
+  screen, and the project also has a browser emulator and a flasher that can restore M-VAVE's firmware from a file you
+  supply. The author made an earlier granular sampler for the R36S handheld. The hardware test checklist in
+  docs/HARDWARE_TESTS.md has every box unchecked, and the README states no run on an FM-1, so hardware testing is
+  not confirmed here.
+status: active
+authors:
+- name: Philip-Bos
+  url: https://github.com/Philip-Bos
+source: https://github.com/Philip-Bos/echofield-fm1
+source_status: open
+license: MIT
+license_notes: >-
+  LICENSE is the MIT text with an extra paragraph about fonts, SDL2 and ALSA that appears to be left over from the
+  author's handheld sampler, which is why GitHub reports no licence. LICENSING.md says the app, engine and tools are MIT, the factory sounds are CC0-1.0, and fm1-base
+  and felucca-bsp, which the build takes as a pinned submodule and vendors in the companion, are MPL-2.0 file by
+  file. Fonts are SIL OFL 1.1 and the JieLi SDK files are fetched at build time.
+homepage: https://philip-bos.github.io/echofield-fm1/
+distribution: browser-installer
+install_notes: >-
+  The flasher in Chrome, Edge or Opera on a computer, with the FM-1 on a USB data cable, checks identity and checksums
+  before writing and resumes an interrupted install; phones and tablets are refused. It never writes the boot area,
+  the FM-1 enters safe mode after two failed starts and the chip's update mode after four. Going back needs M-VAVE's
+  firmware file, which you download yourself, or M-UPGRADE. Other firmwares install straight over it, and ECHOFIELD
+  keeps its own sample bank. tools/flash.py installs from the command line.
+brick_risk: true
+tags: [granular, sampler, fx, reverb, delay, tape, editor, flasher, emulator, performance]
+image:
+  url: https://raw.githubusercontent.com/Philip-Bos/echofield-fm1/main/docs/img/02-play.png
+  alt: "ECHOFIELD PLAY page in CLOUD mode: a grey sample waveform with a highlighted grain window and the sample name SEED, above four dials TEXTURE 72%, SCATTER 45%, DRIFT 35% and EVOLVE 35%"
+  credit: Philip-Bos
+  source_url: https://github.com/Philip-Bos/echofield-fm1
+  first_party: true
+versions:
+- version: v0.2.8
+  date: 2026-11-03
+  url: https://github.com/Philip-Bos/echofield-fm1/releases/tag/v0.2.8
+  notes: Gives the firmware its own identity for the Firmware Hub; the release holds echofield-0.2.8.fwsc and a checksum file.

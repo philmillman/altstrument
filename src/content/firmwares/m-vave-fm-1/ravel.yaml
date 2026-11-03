@@ -12,7 +12,9 @@ description: >-
   modulation matrix, four macros, a granular tape delay, a 12-bit reverb, a feedback bus, an optional bus compressor on track 8,
   scenes, an arrangement and 32 compressed project slots. It takes MIDI in (notes by channel, clock, start and stop, and
   aftertouch and pitch bend as modulation sources), lets CCs move the knobs, with MIDI learn, and records steps from the keys. Earlier releases had tape tracks that played back a shared capture tape; version 0.9.0
-  removed them. The same C sources build the FM-1 firmware, a desktop simulator and a one-file WebAssembly emulator. The
+  removed them. Version 1.7.0 adds a GLITCH LOOPER, a kind that any one track can take: it records the main mix or a
+  single track into four lanes with their own level, pitch and speed, overdubs, and plays lanes from trigs on the steps. It borrows
+  the effects' memory, so the buses rest while it runs, and recordings are not saved with a project. The same C sources build the FM-1 firmware, a desktop simulator and a one-file WebAssembly emulator. The
   fuller engine and effect set, including the vocoder, is kept as a browser-only Ravel Software edition. The FM-1 side takes
   its platform layer from Felucca by way of X0X. The README status line says it runs on the FM-1 and the v0.9.0 release notes
   say it was tested on hardware, though the README's architecture section still lists everything as not checked on hardware.
@@ -44,6 +46,18 @@ image:
   source_url: https://github.com/De-Pattern/Ravel_FM1
   first_party: true
 versions:
+- version: 1.8.0
+  date: 2026-11-02
+  url: https://github.com/De-Pattern/Ravel_FM1/releases/tag/v1.8.0
+  notes: The release page lists only files. The commits since 1.7.0 add an animated start screen, a storm of dust that gathers into the RAVEL name.
+- version: 1.7.0
+  date: 2026-11-02
+  url: https://github.com/De-Pattern/Ravel_FM1/releases/tag/v1.7.0
+  notes: The release page lists only files. The commit it tags merges the GLITCH LOOPER, a looper with four lanes of recorded audio, into the main firmware. Voice stealing also spares lone held notes.
+- version: 1.6.0
+  date: 2026-11-02
+  url: https://github.com/De-Pattern/Ravel_FM1/releases/tag/v1.6.0
+  notes: The release page lists only files. Its commits add a MUTE / SOLO page after the mixers, a STAY option for step recording and loading of a track of an unknown kind as a blank synth.
 - version: 1.5.0
   date: 2026-11-01
   url: https://github.com/De-Pattern/Ravel_FM1/releases/tag/v1.5.0

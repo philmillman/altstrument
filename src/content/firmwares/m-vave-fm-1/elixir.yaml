@@ -12,7 +12,9 @@ description: >-
   crunch, grain and others) that replace a voice's oscillators, seven filter types and per-pattern GROOVE templates from
   0.18, SPELLS for performance and the LXR-02's factory kits from 0.19, drum voices that can use ports of Rings
   resonators or Plaits engines, and a kit and sound library in flash. 0.20 adds three more MICRO types, per-pattern
-  Voices, a Play mode and a song ROWS page. The keys can play a voice as an
+  Voices, a Play mode and a song ROWS page. 0.23 adds WANDER, which changes the pattern slowly over minutes, plus RUSH and
+  TRANSPOSE performance controls, and 0.24 adds a CC map for assigning your own MIDI CC numbers and a global MIDI channel
+  for launching patterns and kits. 0.25 adds an ENSEMBLE model of eight stacked, warped sines. The keys can play a voice as an
   instrument. It was named Kettle up to version 0.13 and a unit running Kettle updates to Elixir keeping its
   projects. It is built on Felucca's hardware layer, USB stack and updater, and its flash data area is shared
   with Felucca, so installing it replaces Felucca's saved data. The project states it is not affiliated with Erica
@@ -45,6 +47,22 @@ image:
   source_url: https://dmajka.github.io/elixir/
   first_party: true
 versions:
+- version: 0.25.1
+  date: 2026-11-03
+  url: https://github.com/dmajka/elixir/releases/tag/v0.25.1
+  notes: Latest release; its page has no notes. Releases 0.24.1 and 0.24.2 in between added Wyrd data protection at power-on and the basic launch controls on the remote MIDI channels.
+- version: '0.25'
+  date: 2026-11-03
+  url: https://github.com/dmajka/elixir/releases/tag/v0.25
+  notes: Adds the ENSEMBLE model on every track, eight sines stacked from the voice's pitch, quantized to a scale and warped, at about 10% of the CPU each.
+- version: '0.24'
+  date: 2026-11-02
+  url: https://github.com/dmajka/elixir/releases/tag/v0.24
+  notes: Adds a CC map for pointing your own MIDI CC numbers at any parameter, a global MIDI channel that launches patterns and kits, and an install page that detects an FM-1 running Wyrd or Grimoire. Removes the P WTABLE model to free flash.
+- version: '0.23'
+  date: 2026-11-01
+  url: https://github.com/dmajka/elixir/releases/tag/v0.23
+  notes: Adds WANDER, a slow evolution of the pattern with eleven quests, plus POSTCARD, RUSH and TRANSPOSE performance controls, ten more arp orders and step lengths up to 64 bars. Removes three MICRO types for room.
 - version: '0.22'
   date: 2026-11-01
   url: https://github.com/dmajka/elixir/releases/tag/v0.22

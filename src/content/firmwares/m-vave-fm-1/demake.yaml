@@ -1,0 +1,60 @@
+device: m-vave-fm-1
+name: Demake
+summary: >-
+  Ambient lofi machine that plays 64 of the author's own pedal recordings through three synths with piano rolls,
+  per-synth reverb, delay and motion, shared space, colour and media effects, a chord machine, scenes and a song mode.
+description: >-
+  The 64 recordings are built into the firmware like a rompler, and three synths play them through a filter with seven
+  shapes, an envelope, an LFO and an optional second layer. Each synth has its own piano roll of up to 256 steps,
+  eight patterns, an arpeggiator and a reverb, delay or tape echo and motion chain. Over the mix sit one large shared
+  reverb, a colour stage (saturate, crush, noise, warm, distort) and a media stage (tape, cassette, VHS, vinyl,
+  radio). A chord machine with sixteen progressions can drive any synth, 16 scenes combine the patterns, and a
+  song of up to 128 steps arranges the scenes. MIDI works in and out over USB and in on the TRS jack, the FM-1 stores
+  14 songs and 32 of the user's own sounds, and each start shows one of thirteen pixel landscapes. A browser player
+  runs the same core.
+
+  The GitHub description still says plan stage, but the repository has released builds up to 0.4.24, and the commit
+  messages record the owner running 0.4.21 to 0.4.24 on their own FM-1. The recordings are the author's own, made with
+  pedals and processed by tools/gen_samples.py. It keeps its songs in 64 KiB of the FM-1's data area, which other
+  firmwares also use, so saving can overwrite what they stored there and the reverse. There is no backup tool for it
+  yet.
+status: active
+authors:
+- name: InigoHernandez
+  url: https://github.com/InigoHernandez
+source: https://github.com/InigoHernandez/demake-synth
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL-3.0 text, and the README says it is GPL-3.0-only because it runs on the open FM-1 platform of CS-1
+  and Felucca. Notices are kept in LICENSES and firmware/fm1/LICENSES, and the Geist font is SIL OFL 1.1. The
+  recordings are described as the author's own, and neither the README nor LICENSE gives them a separate licence. The
+  web/firmware folder keeps every earlier Demake package, and none of them is an M-VAVE image.
+homepage: https://inigohernandez.github.io/demake-synth/
+distribution: browser-installer
+install_notes: >-
+  Install page in Chrome or Edge over USB, or from the FM-1 Firmware Hub, or flash demake-0.4.24.fwsc from the
+  release. The package carries Felucca's update loader and always has identity FM-1_969. The README says to back up
+  what the FM-1 holds first, that other firmwares install straight over it, and that holding OCT- while switching on
+  starts the update loader only. Demake never reads other firmwares' projects or samples.
+brick_risk: true
+tags: [ambient, sampler, synth-engine, sequencer, arpeggiator, chords, reverb, delay, fx, emulator, midi]
+image:
+  url: https://raw.githubusercontent.com/InigoHernandez/demake-synth/main/docs/hub/screen-4x.png
+  alt: "Demake Home page: Level 1 to 3 and Verb at 100, 96, 92 and 84 above a pixel landscape of a palm-lined road at sunset labelled Washingtonia, with tempo 72 and Scene 1 along the bottom"
+  credit: InigoHernandez
+  source_url: https://github.com/InigoHernandez/demake-synth
+  first_party: true
+versions:
+- version: 0.4.24
+  date: 2026-10-28
+  url: https://github.com/InigoHernandez/demake-synth/releases/tag/v0.4.24
+  notes: Tune reaches plus 24 and strum is set per synth; the commit records a run on the owner's FM-1.
+- version: 0.4.23
+  date: 2026-10-28
+  url: https://github.com/InigoHernandez/demake-synth/releases/tag/v0.4.23
+  notes: Fixes the red crash screens by avoiding a 64-bit multiply next to a load, which the commit blames on the CPU, and adds a build check for it.
+- version: 0.4.11
+  date: 2026-10-25
+  url: https://github.com/InigoHernandez/demake-synth/releases/tag/v0.4.11
+  notes: The earliest release page, with identity FM-1_969.

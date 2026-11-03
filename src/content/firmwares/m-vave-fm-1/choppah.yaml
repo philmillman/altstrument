@@ -1,8 +1,9 @@
 device: m-vave-fm-1
 name: CHOPPAH
 summary: >-
-  Breakbeat chopper for the FM-1: eight classic breaks cut into sixteen slices on the white keys, momentary effect
-  pads on the black keys, a pattern generator, a four-slot master effects chain, a gabber kick, a soundboard and a DJ filter.
+  Breakbeat chopper for the FM-1: eight classic breaks cut into sixteen slices, effect pads, 16 step-sequenced
+  patterns, a pattern generator, sixteen overlay effects, a four-slot master effects chain, synthesized kick, snare
+  and hat, and a DJ filter.
 description: >-
   Rights warning: since 0.13 the firmware's eight breaks are two-bar cuts of commercial records, among them The Winstons'
   "Amen, Brother", James Brown's "Funky Drummer" and "Cold Sweat" and the Incredible Bongo Band's "Apache". The
@@ -11,13 +12,16 @@ description: >-
   breaks; versions up to 0.12 instead had seventeen, five played by a small drum synth and twelve recorded Amen loops. Holding
   a slice loops it and the four knobs set its length, pitch, start and mode. The black-key pads cover rolls, reverse,
   freeze, tape stop, gate, random, a filter throw and a dub delay. The generator rearranges the break as it plays, the
-  soundboard fires sixteen synthesized effects such as horns and sirens, and the FX page holds a master chain of four
-  slots in any order (filter, crunch, drive, punch, flanger, ring modulator, tremolo, reverb, delay, EQ, tape saturation,
-  multiband compressor and clipper), with further effects per slice. A four-layer synthesized gabber kick has its own
-  sixteen steps, a MIXER page sets the break, kick, effects chain and soundboard levels, and tapping SEL sets the tempo.
-  MIDI clock in and out and Bluetooth MIDI are included, as is Bluetooth audio out to headphones or a speaker, which the
-  README says runs 150 to 300 ms late and is for listening. The README calls it an early 0.x release: saved patterns, a step sequencer, a looper
-  and loading your own breaks are planned. A browser emulator and a manual are published on the project site.
+  ARP key turns the white keys into sixteen overlay effects (dive, rise, radio, wah, crush, wobble, jet and others) that
+  sound while held, and the FX page holds a master chain of four slots in any order (filter, crunch, drive, punch,
+  flanger, ring modulator, tremolo, reverb, delay, EQ, tape saturation, multiband compressor and clipper), with further
+  effects per slice. Since 0.32 the firmware has 16 patterns with a step sequencer and recording: 32 break steps, plus
+  kick, snare and hat lanes of 16 steps each, with MIDI notes for the slices and drums. The kick is a four-layer
+  synthesized gabber kick; the snare and hat have their own design page. A MIXER page sets the levels, and ENV is a
+  full-screen tap tempo with a metronome click. MIDI clock in and out and Bluetooth MIDI are included, as is Bluetooth
+  audio out to headphones or a speaker, which the README says runs 150 to 300 ms late and is for listening. The README
+  calls it an early 0.x release: the looper and a song mode are next, and the breaks are built in, so you cannot load
+  your own. A browser emulator and a manual are published on the project site.
 status: active
 authors:
 - name: Laurens Profittlich (profikid)
@@ -48,10 +52,26 @@ image:
   source_url: https://github.com/profikid/fm1-break-choppah
   first_party: true
 versions:
+- version: '0.54'
+  date: 2026-11-03
+  url: https://github.com/profikid/fm1-break-choppah/releases/tag/v0.54
+  notes: Latest of fifty-four releases; adds sixteen overlay effects on the white keys under ARP and removes the short-lived FILL feature. Release pages carry only a changelog link.
+- version: '0.36'
+  date: 2026-11-03
+  url: https://github.com/profikid/fm1-break-choppah/releases/tag/v0.36
+  notes: SEQ sequences and EDIT designs, with a tab bar for the parts of each page.
+- version: '0.35'
+  date: 2026-11-03
+  url: https://github.com/profikid/fm1-break-choppah/releases/tag/v0.35
+  notes: Fixed encoder roles, press-again parts, undo and a help line on the controls.
+- version: '0.32'
+  date: 2026-11-03
+  url: https://github.com/profikid/fm1-break-choppah/releases/tag/v0.32
+  notes: Adds 16 patterns, snare and hat drums, MIDI notes for the slices and RESET ALL, and removes the soundboard.
 - version: '0.26'
   date: 2026-11-02
   url: https://github.com/profikid/fm1-break-choppah/releases/tag/v0.26
-  notes: Latest of twenty-six releases; adds tap tempo on SEL from any page. Release pages carry only a changelog link.
+  notes: Adds tap tempo on SEL from any page; moved to ENV in a later release.
 - version: '0.24'
   date: 2026-11-02
   url: https://github.com/profikid/fm1-break-choppah/releases/tag/v0.24

@@ -7,7 +7,7 @@ summary: >-
 description: >-
   The app speaks the FM-1's SysEx update protocol through the FM1Kit Swift package, including the reboot into
   the update loader, the identity check and resuming an interrupted write. Its firmware list merges the Firmware
-  Hub catalogue with the list on fm1-editor.com and the FM1 Resource Hub, and finds .fwsc packages in GitHub
+  Hub catalogue with the lists on fm1-editor.com, mutant.cloud and the FM1 Resource Hub, can sort by the Hub's install counts, and finds .fwsc packages in GitHub
   releases and project pages. It shows a note on whether each firmware supports USB rescue mode, keeps saved and
   starred firmwares in sync through iCloud and can notify you when a saved firmware has an update. The Mac app also
   has a Backup and rescue page that uses the FM-1's USB download mode to back up and restore the whole flash and to
@@ -28,7 +28,7 @@ license_notes: >-
   the bundled file matches. It is the only stock file in the repository.
 distribution: download
 install_notes: >-
-  Mac: download FM-SWITCH-0.1.0.dmg from the release (signed and notarised, macOS 14 or later) and drag the app to
+  Mac: download FM-SWITCH.dmg from the release (signed and notarised, macOS 14 or later) and drag the app to
   Applications; it asks for an administrator password so that its flash tool can reach the FM-1 in download mode.
   iPhone and iPad: generate the Xcode project with xcodegen and build it (iOS 17 or later; project.yml expects an
   FM1Kit release). The app says that it cannot repair a device that no longer starts from an iPhone, since the chip's
@@ -36,6 +36,10 @@ install_notes: >-
 brick_risk: true
 tags: [flasher, utility, midi, ios, macos, backup]
 versions:
+- version: 0.1.1
+  date: 2026-11-03
+  url: https://github.com/ocean/FM-SWITCH/releases/tag/0.1.1
+  notes: Adds sorting by most installed, filters that wrap and are remembered, a separate sort and filters for My firmwares, mutant.cloud as another firmware source, and keeps earlier saved releases of a firmware. Fixes the firmware list hanging for several seconds.
 - version: 0.1.0
   date: 2026-10-30
   url: https://github.com/ocean/FM-SWITCH/releases/tag/0.1.0

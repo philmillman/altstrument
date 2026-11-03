@@ -1,11 +1,13 @@
 device: m-vave-fm-1
 name: FMini-1
 summary: >-
-  Three-oscillator monosynth for the FM-1 in the manner of the classic Moog synthesizers: 24 dB/octave ladder
-  filter, two contours, 100 factory patches, an arpeggiator, a sequencer and MIDI.
+  Minimoog emulation for the FM-1, monophonic or with 12 voices: three oscillators, 24 dB/octave ladder filter,
+  two contours, 200 factory presets, an arpeggiator, a sequencer and MIDI.
 description: >-
-  Replaces the FM-1's engines with a single monophonic voice organised in pages for oscillators, mixer, filter,
-  filter and amplifier envelopes and effects, with preset, arpeggiator and sequencer pop-ups. It is a fork of
+  Replaces the FM-1's engines with a model of the Minimoog, organised in pages for oscillators, mixer, filter,
+  filter and amplifier envelopes and effects, with preset, arpeggiator and sequencer pop-ups. It plays monophonically
+  like the original or with up to 12 voices, and has 200 factory presets in twenty groups of ten, any of which you can
+  overwrite. The project site also offers a browser emulator and a patch editor. It is a fork of
   Felucca and keeps Felucca's platform layer, USB, update loader and storage. The author says it was developed
   with the assistance of Claude.
 status: active
@@ -34,6 +36,10 @@ image:
   source_url: https://github.com/ruppert/fmini-1
   first_party: true
 versions:
+- version: 2.0.0
+  date: 2026-11-02
+  url: https://github.com/ruppert/fmini-1/releases/tag/v2.0.0
+  notes: The commit for this release only changes the version number. Since 1.14.3 the firmware gained MIDI bank select across presets 100 to 199, a steady tempo on an external MIDI clock, a CPU overload warning, rests when recording in SEQ and one pitch-bend wheel for all MIDI channels, and the factory presets were reworked.
 - version: 1.14.3
   date: 2026-10-31
   url: https://github.com/ruppert/fmini-1/releases/tag/v1.14.3

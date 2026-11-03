@@ -8,7 +8,8 @@ description: >-
   pages with their own start and end, chance, ratchets and chords of up to six notes. MIDI FX groups per track
   include an arpeggiator, and releases add recording modes, tools such as stretch and clip, a mixer with mute and
   solo, a global scale and a routing page that runs the chorus, delay, reverb and filter in parallel or in a chain.
-  A web manager handles presets and edits sounds. The FM TONE voice and effects come from the author's
+  A web manager handles presets and edits sounds; beta.13 gives it a new look, a live mix, a virtual FM-1 panel and
+  Digitone .syx imports. The FM TONE voice and effects come from the author's
   ChoralRoot, while the Felucca-derived code was rewritten. The README still describes an earlier phase that ran on
   a Mac through FM1VST and RemoteFM1 and an eight-track design, but the releases are FM-1 firmware packages with six
   tracks, all marked as pre-releases.
@@ -26,13 +27,17 @@ license_notes: >-
 homepage: https://quixotic7.github.io/FIZZ/
 distribution: browser-installer
 install_notes: >-
-  Install from the page at quixotic7.github.io/FIZZ/install/ in Chrome or Edge over USB, which writes the firmware
-  and then FIZZ's data. With the release files instead, install the .fwsc and then push the xdata file with
-  firmware/tools/fizz_xdata.py. Updating between betas keeps projects and presets, but switching between the USB and Bluetooth packages
-  erases them, so back up in the manager first.
+  Install from the page at quixotic7.github.io/FIZZ/install/ in Chrome or Edge over USB, from The Firmware Hub, or
+  with fm1_install.py. Since beta.13 each .fwsc carries FIZZ's data, so one install is enough. Updating between betas
+  keeps projects and presets, but switching between the USB and Bluetooth packages erases them, so back up in the
+  manager first. The Bluetooth package uses flash where other firmwares keep their data, so back up first.
 brick_risk: true
 tags: [sequencer, synth-engine, fm, fx, chords, arpeggiator, performance, editor, midi]
 versions:
+- version: 0.12.0-beta.13
+  date: 2026-11-03
+  url: https://github.com/Quixotic7/FIZZ/releases/tag/v0.12.0-beta.13
+  notes: Each package now carries FIZZ's data, so one install is enough, including from The Firmware Hub. A new project starts on a drum-beat pattern, and the manager gets a new look, live mix, a virtual panel, drag-and-drop pattern copying and Digitone .syx imports.
 - version: 0.12.0-beta.12
   date: 2026-10-28
   url: https://github.com/Quixotic7/FIZZ/releases/tag/v0.12.0-beta.12

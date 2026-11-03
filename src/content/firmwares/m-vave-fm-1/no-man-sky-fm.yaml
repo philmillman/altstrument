@@ -1,14 +1,18 @@
 device: m-vave-fm-1
 name: No Man Sky FM
 summary: >-
-  SLOOP 2.7.1 fork that turns the FM-1's home screen into a space game: knobs steer a ship, planets can be
+  SLOOP 2.8.4 fork that turns the FM-1's home screen into a space game: knobs steer a ship, planets can be
   landed on and mined, robots chase you, and a warp map links star systems while SLOOP keeps playing.
 description: >-
   A fan-made demake of No Man's Sky. On HOME the knobs turn and speed the ship or walk on a planet, and holding
   or double-tapping OCT-, OCT+ and HOME boosts, lands, fires the mining laser, opens the warp map and
   the radar; a quick press keeps each key's normal SLOOP function. It also adds key-light effects, a drum sound
-  page and a QUANT off option on the record screen. Everything from SLOOP 2.6 to 2.7.1 is merged in. The project
-  site has an installer and a 3D simulator that runs the firmware compiled to WebAssembly. The author asks
+  page and a QUANT off option on the record screen. Version 0.9 draws the planet in 3D so you land on the ground
+  you flew over, adds races over planets, shows each sound change as a CD carousel, and brings in features from
+  winampFM (a PARTY page and a scale arpeggio) and a small wave editor. It merges SLOOP up to 2.8.4. The
+  author warns that the 3D flight and some screens can still drop frames, and that the flash is nearly full,
+  so a few drum and bass samples were stored at a lower rate. The project
+  site has an installer, an editor and a 3D simulator that runs the firmware compiled to WebAssembly. The author asks
   that features reused elsewhere be credited. Not affiliated with Hello Games or M-VAVE.
 status: active
 authors:
@@ -25,7 +29,7 @@ homepage: https://hericdk.github.io/nomanskyFM/
 distribution: browser-installer
 install_notes: >-
   Open the project site in Chrome or Edge, connect the FM-1 over USB and press install. The package is also in
-  the repository's release folder. The installer can write M-VAVE's V15 back from the file you download
+  the release page. The installer can write M-VAVE's V15 back from the file you download
   from M-VAVE. To reach USB rescue mode, hold OCT- alone while switching the FM-1 on.
 brick_risk: true
 tags: [game, ui, sequencer, synth-engine, emulator]
@@ -36,7 +40,7 @@ video:
   first_party: true
   found_via: https://hericdk.github.io/nomanskyFM/
 versions:
-- version: main @ 32e7f4c
-  date: 2026-10-20
-  url: https://github.com/hericdk/nomanskyFM/commit/32e7f4c
-  notes: No tagged releases; this is the latest commit. The README and the package name it v0.5.
+- version: '0.9'
+  date: 2026-11-02
+  url: https://github.com/hericdk/nomanskyFM/releases/tag/v0.9
+  notes: Planet flight in 3D with landing, two new races, a CD carousel on every sound change, SLOOP 2.8.4, PARTY and scale-arpeggio pages from winampFM, a mini wave editor and an editor on the site. The release removes the planet race flags, the station gates and the neon space race to make room.

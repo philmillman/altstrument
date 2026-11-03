@@ -12,7 +12,8 @@ description: >-
   chained, and steps take sound and mix locks, conditions, probability, ratchets and micro-timing. There are 16 live
   effects, an arpeggiator, random sound and random pattern functions, and undo. USB audio carries eight tracks at 44.1
   kHz, and MIDI works over USB and TRS. The engine code is plain fixed-point C that does not depend on the device, with a
-  browser version of the box and a visuals mirror in the repository, and a host simulator that writes screenshots and
+  browser version of the box (the real 0.10 firmware compiled to WebAssembly, no longer a JavaScript reimplementation)
+  and a visuals mirror in the repository, and a host simulator that writes screenshots and
   WAV files. The repository also holds Estación, a web app for Chrome or Edge that talks to the FM-1 over SysEx
   (mirror, sequence, sound, mix, samples, projects and recording). The platform layer is a fork of Felucca on a groovebox branch. The sample bank is built into the
   firmware as C arrays; the latest bank list has 20 entries, 14 of them excerpts from the author's own sample library and 6 generated
@@ -43,7 +44,7 @@ install_notes: >-
 brick_risk: true
 tags: [groovebox, sequencer, drums, synth-engine, fx, arpeggiator, usb-audio, midi, emulator]
 versions:
-- version: main @ b1f4f44
-  date: 2026-11-02
-  url: https://github.com/fantasmogenesis/fntsmg-1/commit/b1f4f4488f7c1cd69622d704cab86c03a8ecb582
-  notes: No tagged releases; this is the latest commit, titled FNTSMG-1 0.10. It adds a sound per pattern, twelve new engines with presets and a new button map.
+- version: main @ 4d12d8e
+  date: 2026-11-03
+  url: https://github.com/fantasmogenesis/fntsmg-1/commit/4d12d8e8ce9f7b73b0158e9f9d498bd3ebb907b2
+  notes: No tagged releases; this is the latest commit. The firmware is FNTSMG-1 0.10 (b1f4f44), which adds a sound per pattern, twelve new engines with presets and a new button map; this commit moves the browser box to the real firmware built to WebAssembly.

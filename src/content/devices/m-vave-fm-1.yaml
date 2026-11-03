@@ -38,6 +38,10 @@ notes: >-
   need your own V15 (or V14) file; never share the patched result. The current stock firmware is V16 (2026-10-21),
   which makes the FM-1 eight-part multitimbral with 20 voices; the custom firmware tools, their return-to-stock
   steps and M-VAVE's licensed recovery image are still built around V15 (2026-07-30).
+  FM-1s sold from late 2026, with the logo printed on the front, use a second flash chip (id 0xB36014, against the
+  earlier Puya chip's 0x856014). ChoralRoot's author reports that firmware knowing only the Puya chip runs on these units
+  but saves nothing and refuses updates, leaving the unit stuck until the official firmware is written back over ROM boot.
+  ChoralRoot 0.29.1, sloopDX 4.0.1, OberVave 3.3.1 and the FM-1 Unbricker 1.2.1 accept it; check any other firmware first.
   Hubs: aroum/fm1-custom-fw (curated directory plus REVERSE_ENGINEERING.md), fm1-editor.com/firmware,
   cicloid/awesome-fm-1, AL-255/FM-1-RE (WTFPL). The same JieLi AC791N (WL82) chip runs the SMK-37 Pro / Elite keyboards.
 related: [m-vave-smk-37, m-vave-chocolate]

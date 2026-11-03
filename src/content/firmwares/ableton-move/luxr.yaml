@@ -10,9 +10,11 @@ description: >-
 
   This is the sound engine of the FM-1 firmware of the same name, built from the same fixed-point code. LUXR's own
   sequencer and panel stay on the FM-1. Pads 1 to 8 play the kick, snare, clap, closed and open hat, tom, rim and
-  cymbal, and pads 9 to 16 play the same sounds with accent; General MIDI and tonal note maps are also offered. A
+  cymbal, the upper eight pads play nothing, and a velocity above 110 gives an accent; General MIDI and tonal note maps are
+  also offered, and a MIDI channel setting lets LUXR ignore notes meant for other tracks. Since 0.3.0 a sample layer can
+  also use a WAV file of your own, and since 0.4.0 you can save kits of your own. A
   full-screen page and a Perform mode give the eight knobs a second row with Shift. The module's README is in German
-  and says version 0.3.0 was tested on a computer and under QEMU and has never run on a Move.
+  and says version 0.5.1 was tested on a computer and under QEMU and has never run on a Move.
 status: active
 authors:
 - name: Orbitator
@@ -33,7 +35,7 @@ install_notes: >-
 brick_risk: false
 tags: [drums, synth-engine, sampler, fx]
 versions:
-- version: 0.3.0 build 5
+- version: 0.5.1 build 14
   date: 2026-11-02
   url: https://github.com/Orbitator/LUXR/releases/tag/schwung
-  notes: Pre-release on the rolling schwung tag, which the project rebuilds on every push to main; this build comes from commit c0f211c.
+  notes: Pre-release on the rolling schwung tag, which the project rebuilds on every push to main; this build comes from commit 89908da.

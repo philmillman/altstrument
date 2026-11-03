@@ -1,0 +1,49 @@
+device: m-vave-fm-1
+name: Rhizome
+summary: >-
+  Ambient firmware derived from Monades and Mutable Dreams, built around a Kepler-style orbital sequencer, Beads
+  granular synthesis, a hall reverb and a tape delay. Simulator and source only; not yet run on an FM-1.
+description: >-
+  Written as the companion to Monades, which handles the notes, so that Rhizome handles space and time. Up to four
+  bodies orbit a star, and each time one crosses a gate on its orbit it triggers a note, a grain cloud, a chord or a
+  sound change. The orbits are ellipses, so the beats speed up and slow down as a rubato, conjunctions work as
+  accents, and moons add ornaments. Real planetary systems can be loaded. Around the sequencer are the Beads granular
+  processor from Mutable Instruments, a large 1980s-style hall reverb and a tape delay with reels drawn on the
+  screen, plus 12 scenes called Mondes and the Monades scales. The manual and the roadmap are in French.
+
+  The README dates its state to 2 November 2026 and says the orbital sequencer, tape delay, HALL and Beads run in the
+  browser simulator, that Rhizome has not been compiled or measured on an FM-1 and that it should not be installed
+  yet. The commit log records a first and a second compilation for the FM-1 with 168 KB of flash free, but no package
+  is committed and there are no releases. It is derived from Monades by the same author, which is in turn a fork of
+  Mutable Dreams.
+status: active
+authors:
+- name: Dr-John-8bits
+  url: https://github.com/Dr-John-8bits
+source: https://github.com/Dr-John-8bits/rhizome
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING-GPL.txt states that the combined distribution is GPL-3.0-only, with the MIT notices of Mutable
+  Instruments (Plaits, Rings, Elements, Clouds, Beads and stmlib), the MPL-2.0 notices of fm1-base and felucca-bsp,
+  and the font notices kept. The repository still holds the Mutable Dreams 1.1 package and source archives inherited
+  from its parent; they are not M-VAVE images.
+homepage: https://dr-john-8bits.github.io/rhizome/
+distribution: source-only
+install_notes: >-
+  Nothing is released. The README says not to install it for now, and BUILDING.md covers only the inherited Mutable
+  Dreams build. The inherited fm1-base installer page links M-VAVE's V15 file for returning to stock. Back up the
+  FM-1 first if you build it yourself.
+brick_risk: true
+tags: [generative, ambient, granular, reverb, delay, sequencer, synth-engine, scales, emulator, fork]
+image:
+  url: https://raw.githubusercontent.com/Dr-John-8bits/rhizome/main/docs/rhizome/captures/orbit.png
+  alt: "Rhizome ORBIT page in the simulator: orbiting coloured bodies and elliptical paths around a central star, 76 BPM at the top right and four parameter labels along the bottom"
+  credit: Dr-John-8bits
+  source_url: https://dr-john-8bits.github.io/rhizome/
+  first_party: true
+versions:
+- version: main @ 0db6575
+  date: 2026-11-03
+  url: https://github.com/Dr-John-8bits/rhizome/commit/0db6575ec98623e758076444c7766fcb0e53db8e
+  notes: No tagged releases; this is the latest commit.

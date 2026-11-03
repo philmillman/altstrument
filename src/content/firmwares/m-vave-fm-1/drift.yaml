@@ -9,8 +9,10 @@ description: >-
   three delay modes and six reverb types. The sequencer repeats Euclidean patterns with bars, note count,
   duration, probability, direction, interval, chaos and timing settings, and keeps running while you edit.
   Root, scale and note range can be set, with optional scale LEDs and a scale-only keyboard. Patches are
-  kept in a six-row list with favourites. The author notes that the 0.9.1 package still needed testing on
-  a physical FM-1 before submission to the Firmware Hub. This is a different project from DriftSeq and
+  kept in a six-row list with favourites. Since 0.9.6 the sequence TIME setting picks deterministic rhythms
+  (short and long pairs, dotted notes, shorter subdivisions and rests) instead of timing offsets, and the piano roll shows
+  each note's length. The author notes that the 0.9.6 package still needed installation and recovery testing on a
+  physical FM-1 before submission to the Firmware Hub. This is a different project from DriftSeq and
   from Haave.
 status: active
 authors:
@@ -39,6 +41,10 @@ image:
   source_url: https://github.com/FBNFRTG/drift-fm1
   first_party: true
 versions:
+- version: 0.9.6
+  date: 2026-11-02
+  url: https://github.com/FBNFRTG/drift-fm1/releases/tag/v0.9.6
+  notes: Replaces the sequence TIME setting with deterministic musical rhythms, shows per-note duration in the piano roll and keeps the playhead through live changes. Patches with TIME above zero play the new rhythm, patch and sample storage keep the 0.8 layout, and older firmware cannot reproduce all the new settings.
 - version: 0.9.1
   date: 2026-10-25
   url: https://github.com/FBNFRTG/drift-fm1/releases/tag/v0.9.1

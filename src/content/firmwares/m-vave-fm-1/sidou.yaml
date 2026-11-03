@@ -8,7 +8,9 @@ description: >-
   and MIDI over TRS and USB, and adds three stereo effect slots after the chip. Songs are written on the panel with
   a step view and a tracker, can record notes from the keys, and are saved to the FM-1's flash as GoatTracker 2 files.
   The SID core is the author's own C code and the repository carries reference tests against libresidfp. Since 0.5.0
-  it also plays PSID .sid tunes from the FM-1's store, and 1.0.0 adds a LAB view for shaping and keeping sounds, which 1.1.0 extends. It is built on Felucca's hardware layer, USB stack and update loader, and is also checked
+  it also plays PSID .sid tunes from the FM-1's store, and 1.0.0 adds a LAB view for shaping and keeping sounds, which 1.1.0 extends. Version 1.5.0 sends LAB sounds to the song
+  as GoatTracker instruments, lifts a sound from a playing .sid tune, and adds a browser Live Link that shows the FM-1's
+  screen and a library and song editor on the project site. It is built on Felucca's hardware layer, USB stack and update loader, and is also checked
   in the fm1-emu emulator. The 0.2.0 release notes say that version had run on one real FM-1 and that the earlier
   0.2.0-m2-preview could not be updated over USB. It is a separate project from FM-1 SID.
 status: active
@@ -25,13 +27,17 @@ license_notes: >-
   (Apache-2.0) in each package (LICENSING.md).
 distribution: download
 install_notes: >-
-  Install the .fwsc from the releases page with Felucca's installer (fm1_install.py sidou-1.1.0.fwsc); the README
+  Install the .fwsc from the releases page with Felucca's installer (fm1_install.py sidou-1.5.0.fwsc); the README
   says to read docs/flash-day.md first and keep the way back ready. To return to stock, install M-VAVE's official
   FM-1.fwsc the same way. If the unit does not boot, hold OCT- at power-on for the chip's ROM boot mode and restore
   with the unbricker. The 1.0.0 release notes list long 48 kHz USB audio recordings as untested on a real FM-1.
 brick_risk: true
 tags: [synth-engine, fx, midi, emulator, research]
 versions:
+- version: 1.5.0
+  date: 2026-11-02
+  url: https://github.com/dsablic/sidou/releases/tag/v1.5.0
+  notes: Adds a song bridge from LAB (REC sends the sound to the song as an instrument, and an instrument can be pulled back), lifting a sound from a playing .sid tune, chords and drums from DICE lane roles, larger value popups and one way to confirm destructive actions. On the computer it adds Live Link, a library manager and a song editor on the site, and MIDI controller maps. The release says Live Link and the site's library and editor were tested in the emulator, not yet on a real FM-1.
 - version: 1.1.0
   date: 2026-10-30
   url: https://github.com/dsablic/sidou/releases/tag/v1.1.0

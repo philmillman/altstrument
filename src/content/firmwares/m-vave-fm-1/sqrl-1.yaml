@@ -4,8 +4,9 @@ summary: >-
   Felucca fork with a new shell built on pairs: a SOUND engine and a NOTE engine picked on a key wheel, with eight
   sounds, eleven note engines (chords, lanes, cellular automaton, Tonnetz, acid, harp) and shared tape, reverb and chorus.
 description: >-
-  Forked from Felucca 1.5.6, keeping its engines, voices, sequencer, effects, storage and installer, and replacing its
-  screens. Holding HOME turns the octave C4 to C5 into a wheel where a white key picks one of eight SOUNDs (FM6, LIZARD,
+  Forked from Felucca 1.5.6 and brought up to Felucca 1.8.0 in release 1.1.0, keeping its engines, voices, sequencer,
+  effects, storage and installer, and replacing its screens. Release 1.1.0 adds a TOUCH page that routes key pressure or
+  MIDI channel pressure to a destination, and an option to use Felucca's second core. Holding HOME turns the octave C4 to C5 into a wheel where a white key picks one of eight SOUNDs (FM6, LIZARD,
   SHOCK, DRUMS, MOUTH, ANALOG, PHASE, PHYS) and a black key picks a NOTE engine (KEYS, CHORD, RUDIMENT, LINES, ALIVE,
   TONNETZ, ENIGMA, S+H, CANON, ACID, HARP). Shared effects are a three-head tape echo, a reverb with pre-delay, a chorus
   and a rotating-speaker insert, and a harmony page adds intervals to the notes an engine plays. A manual in the
@@ -41,6 +42,14 @@ image:
   source_url: https://github.com/hed0rah/sqrl-1
   first_party: true
 versions:
+- version: 1.1.0
+  date: 2026-11-03
+  url: https://github.com/hed0rah/sqrl-1/releases/tag/v1.1.0
+  notes: >-
+    Moves onto Felucca 1.8.0. Adds TOUCH, a SOUND page for key or channel pressure with a destination and amount, and a
+    system option to run on Felucca's second core (2CORE, OFF or BETA) from the next power-on. Felucca's fixes bring
+    the LFO to FM6 operators with AMS, steadier external and TRS MIDI clock, no divide by zero at 0 BPM, and an update
+    loader that refuses a package made for another device. TALK is not in it.
 - version: 1.0.0
   date: 2026-10-28
   url: https://github.com/hed0rah/sqrl-1/releases/tag/v1.0.0

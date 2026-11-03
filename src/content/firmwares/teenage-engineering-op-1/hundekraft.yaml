@@ -32,7 +32,8 @@ install_notes: >-
   Open the workshop, choose the parts to include, and supply the official R246 image (op1_246.op1); the build runs
   locally and nothing is uploaded. Install the result through the OP-1's boot menu (upload mode). After one such
   install, later updates can go over USB MIDI from the workshop, which checks the installed core first and prepares a
-  full update from the original image if it differs. The README says a normal update does not need a drive format,
+  full update from the original image if it differs. From 3.1.4 on, USB updates no longer need the R246 file, which is
+  still required once to install 3.1.4 itself. The README says a normal update does not need a drive format,
   a factory reset clears user data, and to back up before any recovery step. The same page manages imported .knl and
   .op1p plugin files.
 brick_risk: false
@@ -44,6 +45,16 @@ image:
   source_url: https://hundekraft.github.io/op1-workshop/manual.html
   first_party: true
 versions:
+  - version: v3.1.4
+    date: 2026-11-02
+    url: https://github.com/Hundekraft/op1-workshop/releases/tag/v3.1.4
+    notes: USB updates no longer need the op1_246.op1 file; it is needed once more to install 3.1.4 itself.
+  - version: v3.1.3
+    date: 2026-11-02
+    url: https://github.com/Hundekraft/op1-workshop/releases/tag/v3.1.3
+    notes: >-
+      Fixes clicks and short dropouts in tape recordings, which came from a bug in the original 246
+      firmware that tape undo's flash writes made worse.
   - version: v3.1
     date: 2026-11-01
     url: https://github.com/Hundekraft/op1-workshop/releases/tag/v3.1

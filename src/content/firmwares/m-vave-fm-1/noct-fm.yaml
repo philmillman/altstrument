@@ -4,7 +4,7 @@ summary: >-
   MIDI controller firmware for the FM-1 with an animated pixel-world screen and DAW control for FL Studio and Ableton
   Live, plus pages for chords, a phrase generator, rhythm, an arpeggiator and clock sync, with DAW scripts for both.
 description: >-
-  Modifies CTL-1. It is one permanent MIDI preset (the README calls the project NOCT / AFTERGLOW 0.9.2). The HOME page
+  Modifies CTL-1. It is one permanent MIDI preset (the changelog's newest entry is 0.9.2, which the README's build command also names). The HOME page
   sends fixed CCs 20 to 23 on MIDI channel 16 for volume, pan and two further DAW controls, with transport, record, panic,
   sustain and modulation, and notes go out on channel 1 from a chromatic keyboard. The PRESETS knob steps through pages
   for chords, a four-bar melody and chord generator, a rhythm generator, an arpeggiator and clock sync (automatic,
@@ -13,9 +13,9 @@ description: >-
   to the notes sent. The synth, USB audio and Bluetooth are off in this build. The repository holds an FL Studio MIDI
   script and an Ableton Live remote script, a browser installer that checks the package size, SHA-256 and identity before
   writing, and an emulator that runs the firmware's C code in a browser page served from a local Python script. The README
-  is in Russian and calls the build experimental: the USB package builds in GitHub Actions, and it says the simulator
-  checks do not replace testing USB, flash and DAW audio on a real FM-1, and that the full hardware cycle with two DAWs is
-  unverified. It cannot import FM-1 factory projects.
+  is in English with a Russian copy and a separate changelog. It calls the build experimental: the USB package builds in
+  GitHub Actions, and it says tests on the simulator and against mocked DAW interfaces do not replace testing on a real
+  FM-1 with a DAW. It gives no hardware test result. It cannot import FM-1 factory projects.
 status: active
 authors:
 - name: Joolo09
@@ -45,7 +45,7 @@ image:
   source_url: https://github.com/Joolo09/noct-fm
   first_party: true
 versions:
-- version: main @ a71297e
-  date: 2026-11-01
-  url: https://github.com/Joolo09/noct-fm/commit/a71297e5d2615ab7a1bd3d3978a4f8864b751a87
-  notes: No tagged releases; this is the latest commit, a merge of the 0.9.2 work. The README names version 0.9.2.
+- version: main @ a04fb2e
+  date: 2026-11-03
+  url: https://github.com/Joolo09/noct-fm/commit/a04fb2e04e7912d263c7f9ff2235d225b98794b9
+  notes: No tagged releases; this is the latest commit, a merge of the README rewrite after the 0.9.2 work. The changelog's newest entry is 0.9.2.

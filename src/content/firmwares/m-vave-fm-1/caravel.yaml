@@ -1,17 +1,17 @@
 device: m-vave-fm-1
 name: Caravel
 summary: >-
-  Independent continuation of Felucca 1.6.1 for the FM-1, adding SEM, HADES, DRONE and DRUM-X engines, a second LFO,
+  Independent continuation of Felucca 1.6.1 for the FM-1, adding SEM, HADES, DRONE, DRUM-X and ENSEMBLE engines, a second LFO,
   a per-track filter and a menu layout that shows two parameter groups per screen.
 description: >-
   Carries on from the last Felucca release after its author stepped back from development. It keeps Felucca's
   storage formats, so projects and presets saved by Felucca open in Caravel; projects that use Caravel-only
-  parameters need Caravel to open, and projects saved by 0.3.0 or later do not open on 0.2.0 or earlier, projects saved by 0.7.1 or later do not open on 0.7.0, and projects saved by 0.8.0 do not open on 0.7.x or earlier. Added
+  parameters need Caravel to open, and projects saved by 0.3.0 or later do not open on 0.2.0 or earlier, projects saved by 0.7.1 or later do not open on 0.7.0, and projects saved by 0.8.0 do not open on 0.7.x or earlier, and projects saved by 0.9.0 (new project format 3) do not open on 0.8.0. Added
   features include a latch for held keys, a button to clear the step under the cursor, per-track voice reservations
   and a MORE page for spread and morph; 0.6.0 adds a STASIS hold with ADD and BLEND, and leaves out ROOM, SPRING
-  and the SLICE engine; 0.8.0 adds a Morph Journey bank that chains the four Random Morph snapshots into a hands-free loop. DRUM-X, MORPH and the BYTE and FLOAT waves in LOFI are adapted from the
+  and the SLICE engine; 0.8.0 adds a Morph Journey bank that chains the four Random Morph snapshots into a hands-free loop; 0.9.0 makes Random Morph and Morph Journey per track and retires the SAX sample set; 0.10.0 adds the ENSEMBLE strings, choir and dark-texture engine with fourteen factory presets. DRUM-X, MORPH and the BYTE and FLOAT waves in LOFI are adapted from the
   JIANT FM fork. A web installer, editor and browser emulator are published on the project site. The README says
-  hardware acceptance on a real FM-1 is still pending, and that the firmware uses USB test IDs that the pid.codes
+  hardware acceptance on a real FM-1 is still pending (the 0.10.0 notes say only an earlier test build was installed on a unit, and no judgement of how ENSEMBLE sounds has been recorded), and that the firmware uses USB test IDs that the pid.codes
   policy does not allow on devices that are shared or sold. Not affiliated with Hügelton Instruments or M-VAVE.
 status: active
 authors:
@@ -39,7 +39,29 @@ video:
   credit: "BonszaiMusic"
   first_party: true
   found_via: https://github.com/bonszaimusic/caravel#readme
+videos:
+  - url: https://www.youtube.com/watch?v=N08Vx3x7fLE
+    title: "M-VAVE FM-1 Caravel: Lyra Inspired Drone Engine Demo"
+    credit: BonszaiMusic
+    first_party: true
+    found_via: https://github.com/bonszaimusic/caravel#readme
 versions:
+- version: 0.10.0
+  date: 2026-11-03
+  url: https://github.com/bonszaimusic/caravel/releases/tag/v0.10.0
+  notes: >-
+    Adds the ENSEMBLE engine (strings, choir and a rough dark timbre through a built-in three-tap ensemble, up to six
+    voices per track) with fourteen factory presets and five Pair Morph layer recipes, and fixes the backup script
+    stopping on project format 3. No project-format change, but a project that uses ENSEMBLE shows as an empty slot on
+    0.9.0, so back up first. The notes say the exact release build was not recorded as installed on an FM-1.
+- version: 0.9.0
+  date: 2026-11-02
+  url: https://github.com/bonszaimusic/caravel/releases/tag/v0.9.0
+  notes: >-
+    Gives every track its own Random Morph snapshots, morph engine and journey, adds a JOURNEY SETUP page, and retires
+    the SAX sample set to free flash (SAX sounds now play PIANO). Projects move to a new format 3 that 0.8.0 shows as an
+    empty slot, so back up before installing. The author tried a pre-release build on an FM-1; the final build was not
+    installed.
 - version: 0.8.0
   date: 2026-11-01
   url: https://github.com/bonszaimusic/caravel/releases/tag/v0.8.0

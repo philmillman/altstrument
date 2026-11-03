@@ -1,0 +1,42 @@
+device: noise-engineering-versio
+name: Sublustris Versio
+summary: Long-tail reverb for the Versio with plate, hall and canyon spaces, an endless decay setting, a freeze you can play over, and tape or AM-radio style motion. Also released as a macOS AU/VST3 plugin.
+description: >-
+  Seven knobs each have a CV input, with two switches, a button and a gate. SPACE chooses a plate, a hall or a canyon, and
+  turning DECAY past about three o'clock makes the tail endless while it holds a played chord. The button freezes the tail
+  into a pad, and holding it while frozen paints what is being played into the pad. WEAR adds tape saturation, bucket-brigade
+  delay movement, grit and hiss to the reverb only, MOTION moves the tail either way from noon, and ONSET picks natural,
+  bloom or octave-up shimmer entry. The Versio's printed panel labels do not match the controls, so the release notes list
+  which knob is which. The same DSP core runs in the firmware, an offline renderer and the plugin. The README says the author
+  set the sound goals and chose every sound, and that Claude wrote the DSP, firmware and tools. It reports timing runs on the
+  module itself for the busiest moments. A sibling project of Resilio Versio by the same author.
+status: active
+authors:
+  - name: Jesse Bauer
+    url: https://github.com/jeffebauer
+source: https://github.com/jeffebauer/sublustris-versio
+source_status: open
+license: MIT
+license_notes: >-
+  Code, tools and docs are MIT per LICENSE. The firmware adds libDaisy (MIT), the STM32 HAL (BSD-3-Clause) and CMSIS
+  (Apache-2.0), with no JUCE or Noise Engineering code. The macOS plugin binaries are AGPL-3.0 because they are built with
+  JUCE.
+homepage: https://sublustris-versio.vercel.app
+distribution: download
+install_notes: >-
+  Download sublustris-versio-firmware.bin from the release and install it with Noise Engineering's Firmware Swap page in
+  Chrome, with the module powered from USB only. The release notes warn never to connect USB and Eurorack power at the same
+  time. Firmware Swap restores any Noise Engineering firmware. The release lists a known crackle after unfreezing in the
+  canyon space when SIZE was moved while frozen.
+tags: [reverb, fx, ambient, drone, emulator]
+image:
+  url: https://raw.githubusercontent.com/jeffebauer/sublustris-versio/main/docs/minisite/assets/renders/og-hero-large.jpg
+  alt: Render of a Versio module with Sublustris panel art on a dark stage, showing Blend, Decay, Tone, Wear, Size, Motion and Depth knobs, two switches, a Freeze button and three rows of jacks
+  credit: Jesse Bauer
+  source_url: https://github.com/jeffebauer/sublustris-versio
+  first_party: true
+versions:
+  - version: v1.0.68
+    date: 2026-11-03
+    url: https://github.com/jeffebauer/sublustris-versio/releases/tag/v1.0.68
+    notes: First public release, with the firmware image and the macOS plugin.

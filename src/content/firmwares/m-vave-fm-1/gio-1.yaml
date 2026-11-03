@@ -1,15 +1,18 @@
 device: m-vave-fm-1
 name: GIO-1
 summary: >-
-  Generative disco firmware for the FM-1, a fork of AMB-1: nine song presets with bass, strings or choir, a lead that writes phrases and answers the keys, drums and sixteen effects.
+  Generative disco firmware for the FM-1, a fork of AMB-1: nine song presets with bass, strings or choir, a lead that writes phrases and answers the keys, drums and sixteen effects, with editable bass and drum patterns from 0.3-alpha.
 description: >-
   The instrument plays itself from power-on. Each of the nine presets is a song form with its own tempo, key and
   chord changes, such as intro, verse, chorus and break, and it loops while sections repeat, layers drop out and the key
   shifts. A bass sequencer, a pad of strings, choir or detuned saws through a phaser, a ten-voice lead and four-on-the-floor
   drums are generated from tables in the source. The white keys play the lead and the black keys are held effects;
-  the Chords page rewrites a section's changes while it plays. The songs follow the tempo, key and chord shape of
+  the Chords page rewrites a section's changes while it plays. 0.2-alpha added a start-up intro, an optional FM bass, FX
+  pages per instrument, a mixer and a screen mirror on the website, and 0.3-alpha made the bass line and a drum grid
+  editable and widened the tempo to 80 to 150 BPM. The songs follow the tempo, key and chord shape of
   disco records, and the licence notes say none of their melodies or samples are included. It keeps AMB-1's platform, plate reverb and
-  tape echo. The author describes the first release as an alpha that has been installed on a single FM-1.
+  tape echo. The author describes it as an alpha; the 0.3-alpha release is said to have been installed on two FM-1s, with other
+  firmware installed over it and GIO-1 put back.
 status: active
 authors:
 - name: GuinanNo1
@@ -25,7 +28,7 @@ homepage: https://guinanno1.github.io/fm1-gio/
 distribution: download
 install_notes: >-
   Flash gio-0.1-alpha.fwsc from the release with an FM-1 installer. The release notes describe a crash screen, a
-  safe mode after two failed starts, a hold of OCT- and OCT+ for update mode and a macOS rescue script that puts
+  safe mode after two failed starts, a hold of REC at switch-on for update mode (earlier notes said OCT- and OCT+) and a macOS rescue script that puts
   M-VAVE's firmware back. The author says installing could brick the device.
 brick_risk: true
 tags: [generative, sequencer, synth-engine, drums, fx, performance, midi, fork]
@@ -36,6 +39,14 @@ image:
   source_url: https://github.com/GuinanNo1/fm1-gio
   first_party: true
 versions:
+- version: 0.3-alpha
+  date: 2026-11-03
+  url: https://github.com/GuinanNo1/fm1-gio/releases/tag/v0.3-alpha
+  notes: Marked pre-release. Adds three EDIT pages (bass line as a piano roll, chords, drum grid), tempo from 80 to 150 BPM and stronger echo and reverb at the top of their range. Said to be installed on two FM-1s.
+- version: 0.2-alpha
+  date: 2026-11-03
+  url: https://github.com/GuinanNo1/fm1-gio/releases/tag/v0.2-alpha
+  notes: Marked pre-release. Adds a start-up intro, an FM bass option, FX pages for each instrument, a mixer page and a screen mirror on the website. Saved songs from 0.1-alpha are kept, but 0.1-alpha cannot read the newer save.
 - version: 0.1-alpha
   date: 2026-11-02
   url: https://github.com/GuinanNo1/fm1-gio/releases/tag/v0.1-alpha

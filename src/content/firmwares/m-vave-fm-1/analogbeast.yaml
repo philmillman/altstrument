@@ -12,7 +12,9 @@ description: >-
   songs, and ALBUM mode plays up to 32 songs from each of four albums. Version 1.1 added live bank and pattern
   switching on the keys and six more song commands. The package identity stays FM-1_901 for updater
   compatibility. The README calls the .fwsc hardware tested; the web apps are deployed separately from the
-  repository.
+  repository. A 2.0 release candidate, marked as a pre-release, adds a flash-based MUSIC DISK file system for patterns,
+  songs and albums, a Felucca-based ANALOG and LOFI engine pair and USB host and audio profiles; its notes say these are
+  not yet fully validated on a real FM-1.
 status: active
 authors:
 - name: dzwerg
@@ -33,6 +35,10 @@ install_notes: >-
 brick_risk: true
 tags: [synth-engine, sequencer, filter, arpeggiator, editor, emulator, fork]
 versions:
+- version: 2.0.0-rc1
+  date: 2026-11-02
+  url: https://github.com/dzwerg/analogBEAST/releases/tag/v2.0.0-rc1
+  notes: Pre-release, written in German. Adds the MD16 MUSIC DISK file system in a 292 KiB flash area for patterns, songs and albums, extra Felucca ANALOG and LOFI engines, an experimental B1 bass engine and switchable USB profiles. The notes call it an experimental release candidate, with MUSIC DISK, USB host and preset switching not fully validated on hardware, and advise keeping the USB8 fallback build.
 - version: '1.1'
   date: 2026-10-23
   url: https://github.com/dzwerg/analogBEAST/releases/tag/v1.1

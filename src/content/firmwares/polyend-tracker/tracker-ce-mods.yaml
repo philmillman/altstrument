@@ -1,0 +1,44 @@
+device: polyend-tracker
+also_devices: [polyend-tracker-plus, polyend-tracker-mini]
+name: Tracker CE Mods
+summary: Modified builds of Polyend's Tracker Community Edition 1.0 for the Tracker, Tracker+ and Tracker Mini, adding per-track pattern lengths, step rotation, pass-based chance conditions, live fill, per-track MIDI input and a tempo grid in the sample editor.
+description: >-
+  Rights warning: only the compiled .ptf images and a PDF manual are published, with no source. The images are derived
+  from Polyend's Community Edition and so contain its precompiled synth libraries, which Polyend's licence allows to be
+  redistributed only unmodified. The repository carries Polyend's licence text unchanged, so the PolyForm Noncommercial
+  terms and the ban on selling the firmware apply.
+
+  Each track can have its own length inside the pattern and loops on it while the pattern length stays the master, with a
+  Rotate control that wraps the steps of a track or selection. The Chance effect gains pass-based values such as pass A of
+  every B, first pass only and negated forms, and a live fill: on the Tracker Mini, holding the Middle button plays steps
+  marked as fill, while on the other two models fill steps never play. The Song screen shows repeated patterns as one row
+  with a count, each MIDI channel can play and record its own track with CCs editing that track's instrument, and the sample
+  editor draws bar and beat lines at the project tempo. The manual also lists fixes for track-length handling in
+  Performance mode. Projects open on the official Community Edition, which ignores the extra data and plays every track at
+  the length of track 1. The README names the file versions 1.0.0 and says nothing about hardware testing.
+status: active
+authors:
+  - name: simoianni
+    url: https://github.com/simoianni
+source: https://github.com/simoianni/tracker-ce-mods
+source_status: binary-only
+license: PolyForm-Noncommercial-1.0.0
+license_notes: >-
+  The LICENSE file is byte for byte the Polyend Tracker Community Edition License: PolyForm Noncommercial 1.0.0 with
+  Polyend's additional permissions. Commercial music production is allowed, selling the firmware or derivatives is not,
+  and the precompiled libPolySynth and libPolyDSP libraries stay Polyend's proprietary code. The README says the project is
+  not affiliated with or endorsed by Polyend.
+distribution: download
+requires_stock: Polyend Tracker Community Edition 1.0
+install_notes: >-
+  Back up the Projects folder of the SD card, copy the .ptf for your model (TrackerMini_CE, TrackerPlus_CE or
+  PolyendTracker_CE) into /Firmware and run Config > Firmware > Firmware update. Saving a project with any Community
+  Edition firmware converts its patterns to a format older firmware cannot read. Recovery uses a known-good .ptf and the
+  bootloader route in Polyend's Community Edition documentation.
+brick_risk: true
+tags: [fork, sequencer, tracker, midi, sampler, ui, performance]
+versions:
+  - version: main @ be98215
+    date: 2026-11-03
+    url: https://github.com/simoianni/tracker-ce-mods/commit/be98215e37bf24fbe278ecd7e05533c67e1bdac0
+    notes: No tagged releases; this is the latest commit.

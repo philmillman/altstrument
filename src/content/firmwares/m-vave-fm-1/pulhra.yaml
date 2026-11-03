@@ -9,8 +9,9 @@ description: >-
   entered from the grid with REC armed or played in from the keys or from MIDI channels 1 to 4. The sound core comes
   from MONOFM, an earlier Felucca-based firmware whose history is kept in a separate repository; the application on
   top is new. A web editor talks to the device over USB MIDI, and the browser installer can return the unit to
-  official V15 with a file you download yourself. The repository has no tagged releases; the installer package built
-  from the latest commit is named pulhra-1.5.1. The author's notes are largely in Russian.
+  official V15 with a file you download yourself. The main branch holds stable source and tagged releases, while a
+  develop branch publishes experimental previews. The 1.5.1 release notes list a known issue, crackling on USB audio
+  from the regular stereo firmware, which is under investigation on develop. The author's notes are largely in Russian.
 status: active
 authors:
 - name: 646timur-cell
@@ -26,14 +27,15 @@ license_notes: >-
 homepage: https://646timur-cell.github.io/pulhra_main/
 distribution: browser-installer
 install_notes: >-
-  Open the installer page in Chrome or Edge with the FM-1 on USB. Pulhra keeps its project and banks in flash
+  Open the installer page in Chrome or Edge with the FM-1 on USB, or use the installer file and .fwsc attached to the
+  release. Pulhra keeps its project and banks in flash
   0xB4000 to 0xDC000, which MONOFM uses for its project and Felucca and STRANGE use for user samples, so the first
   save erases whatever those firmwares left there, and installing one of them afterwards erases Pulhra's banks. Back up
   first. Going back to official V15 works from the installer page with M-VAVE's FM-1.fwsc file.
 brick_risk: true
 tags: [sequencer, synth-engine, performance, fork, drums, web]
 versions:
-- version: main @ bb7566e
+- version: 1.5.1
   date: 2026-11-02
-  url: https://github.com/646timur-cell/pulhra_main/commit/bb7566ef5b93e3520f1ae66e50e18ae7857d7433
-  notes: No tagged releases; this is the latest commit.
+  url: https://github.com/646timur-cell/pulhra_main/releases/tag/v1.5.1
+  notes: First tagged release. It records the baseline the notes call hardware-tested and carries the .fwsc, the installer and the editor page. The known issue is USB audio crackling on the regular stereo firmware.

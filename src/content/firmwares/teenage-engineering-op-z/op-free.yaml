@@ -1,0 +1,44 @@
+device: teenage-engineering-op-z
+name: OP-FREE
+summary: Community synth, drum and effect engines for the OP-Z, with a browser lab to audition them, a Web MIDI loader that installs them over USB, a C SDK with a host simulator, and research notes on the OS.
+description: >-
+  Engines are small DSP modules that the OP-Z OS loads as user plugs and runs in sound slots beside the stock ones. The repository
+  holds 31 of them, including a 32-patch six-operator FM voice, a granular effect, phase distortion, wavetable, modal, mallet and
+  vowel voices, a synthesized drum kit and reverbs, delays and a shimmer effect. The website lets you play each engine in the
+  browser, tick what to install, back up the unit's settings, install over the same file protocol the official app uses and
+  write presets into the on-device preset store, with a restore that puts the backup back. Nothing is flashed. The SDK has the
+  engine header, templates and linker script, and the simulator renders scenarios and checks the engine rules on a computer.
+  Firmware modifications are only research and proposals so far, and the folder for them is empty. The repository says it holds
+  no teenage engineering firmware, keys or code, and its safety notes warn that a faulty engine can crash the OS because
+  engines run without memory protection. The roadmap says the author's private lab does the hardware tests and publishes what
+  has been checked; the committed .wasm files are builds of the engines for the website.
+status: active
+authors:
+  - name: Lourens Smit
+    url: https://github.com/mutlisensor
+source: https://github.com/mutlisensor/op-free
+source_status: open
+license: MIT
+license_notes: >-
+  LICENSE is MIT, with the copyright line naming Lourens Smit and the op-z-engines contributors. The README says engines that
+  port DSP from other projects credit them and that only MIT, BSD, ISC or public-domain sources are accepted. The README
+  states that the project is not affiliated with teenage engineering.
+homepage: https://mutlisensor.github.io/op-free/
+distribution: browser-installer
+install_notes: >-
+  Open the site in Chrome or Edge, accept the risk notice, pick engines, connect the OP-Z over USB and let the site back up
+  settings/plugs.json and slotConfiguration.json before installing. Close teenage engineering's app first, since two clients
+  break the session. Try engines in a spare project, not the one the unit starts with, and keep your own samples in a slot
+  before using content mode. SAFETY.md lists the recovery ladder, which ends with the official firmware in update mode.
+tags: [synth-engine, fx, sdk, loader, drums, research, web-midi]
+image:
+  url: https://raw.githubusercontent.com/mutlisensor/op-free/main/site/public/img/op-free-header.webp
+  alt: Rendered illustration of an OP-Z standing as a huge slab on a moon surface at night with two astronauts below it, floodlights on both sides, Earth in the sky and the title OP-FREE above
+  credit: mutlisensor
+  source_url: https://mutlisensor.github.io/op-free/
+  first_party: true
+versions:
+  - version: main @ ba7a074
+    date: 2026-11-02
+    url: https://github.com/mutlisensor/op-free/commit/ba7a074d36d79a13db98dd9bfffda89a8ab39ec0
+    notes: No tagged releases; this is the latest commit.

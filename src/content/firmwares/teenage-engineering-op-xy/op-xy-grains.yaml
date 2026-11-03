@@ -1,0 +1,55 @@
+device: teenage-engineering-op-xy
+name: OP-XY Grains
+summary: >-
+  Granular sample engine for the OP-XY on the stock sampler page, with a screen that draws each grain, six presets and
+  controls for position, scan, grain size, density, spread, chords and window shape, built on the Open-XY SDK.
+description: >-
+  Grains plays one loaded sample across the keyboard like the stock sampler, but reads it as grains. Page one holds
+  position, scan speed, grain size and density, and page two holds spread, a chord setting, the grain window and a mode
+  of cloud, sync to the tempo or evenly overlapped, each also with a backwards variant. The OP-XY's own envelopes, LFOs,
+  filter and effects apply on top. All notes share 64 grains at once, and a note that has to give some up fades them
+  over about 6 ms. The screen draws each grain at its read position and pitch. The six presets bring no sample, so the
+  engine stays silent until one is loaded.
+
+  The README calls it experimental. It says Grains plays on an OP-XY running OS 1.2.1 and targets SDK 1.8, and gives one
+  on-device capture of its render callback at 3.067% of the stock block budget for its default settings, graphics
+  excluded, with heavier settings costing more. Its screen preview was rendered on a computer. The Open-XY machine catalog
+  lists it.
+status: active
+authors:
+  - name: mmockett
+    url: https://github.com/mmockett
+source: https://github.com/mmockett/OP-XY-Grains
+source_status: open
+license: MIT
+license_notes: >-
+  The README says Grains takes ideas, not code, from the Oi, Grandad! machine and Elektron's Tonverk Grainer. The
+  repository holds source, tests, presets and screenshots, with no OP-XY OS file or sample. Builds link the engine into
+  a modified copy of the user's own OP-XY OS.
+homepage: https://github.com/mmockett/OP-XY-Grains#readme
+distribution: source-only
+requires_stock: "1.2.1"
+install_notes: >-
+  Check out the Open-XY SDK's staging branch beside this repository, run its tests on the machine, then build with
+  sdk.py against your own stock 1.2.1 os.ldr and install the build's candidate files as the SDK's build guide
+  describes, which ends with writing the OS from the device's boot menu. Command-line builds carry no presets, so copy
+  this repository's presets folder to the device's content/presets/grains. The SDK's authors say a faulty image may
+  not be recoverable, and the stock update restores the original.
+brick_risk: true
+tags: [machines, synth-engine, sampler, granular, sdk]
+image:
+  url: https://raw.githubusercontent.com/mmockett/OP-XY-Grains/main/docs/screen/preview.png
+  alt: >-
+    Four OP-XY screens in white on black: a load a sample prompt, a waveform at rest with pitch lines, a held note with grains on the root line, and a minor chord with grains on three lines
+  credit: mmockett
+  source_url: https://github.com/mmockett/OP-XY-Grains#readme
+  first_party: true
+versions:
+  - version: v1.1.0
+    date: 2026-11-01
+    url: https://github.com/mmockett/OP-XY-Grains/tree/v1.1.0
+    notes: Git tag; no GitHub release page. Adds the six presets, draws the grain window on the screen and follows SDK 1.8's final sample overview.
+  - version: v1.0.0
+    date: 2026-10-29
+    url: https://github.com/mmockett/OP-XY-Grains/tree/v1.0.0
+    notes: Git tag; no GitHub release page.

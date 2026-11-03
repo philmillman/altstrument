@@ -4,15 +4,18 @@ summary: >-
   Sixteen-step event-memory synth built for low vision: capture a phrase, protect it as an Anchor and evolve a copy
   with Melt, Drift and Decay, with 100 sounds, large symbols and audible cues.
 description: >-
-  A new app on the Dinghy platform, with its own storage. A phrase of note and velocity events is captured, the
-  first one is kept as an immutable Anchor, and a working copy changes through Melt (timbre), Drift (bounded pitch
-  variation) and Decay (velocity ageing); a second phrase can be layered and a variation committed as a branch.
-  It is a four-voice synth with 100 patches in ten banks of ten, band-limited wavetable oscillators, chorus, tempo
-  delay and reverb. The screen shows the one word Wanderer, large symbols, fixed positions and a zoom setting, and
-  actions have short tones; the README says the screen is still needed for full information. One slot can be saved
-  while stopped, and old SLOOP projects are not imported. It records note events, not audio. The author, a visually
-  impaired musician behind Low Vision Music, reports installing it on their FM-1 from V15 and from SLOOP and going
-  back to V15 and to SLOOP. This is a work-in-progress pre-release.
+  A four-voice event-memory synth on the Dinghy platform, with its own storage. A phrase of note and velocity events is
+  captured, the first one is kept as an immutable Anchor, and a working copy changes through Melt (timbre), Drift
+  (bounded pitch variation) and Decay (velocity ageing); a second phrase can be layered and a variation committed as a
+  branch. Version 1.4 has 100 sounds with a four-pole low-pass, chorus, delay and reverb, a Scatter page with eight modes
+  (Size, Amount and Smooth shape the result before the effects), and an arpeggiator with 13 patterns, 12 rates, gate,
+  swing, latch and octave range that follows USB or TRS clock and can record its notes into Memory or Layer. Print renders
+  an evolving phrase to RAM audio with undo and redo; it is not saved. The screen uses large symbols, fixed positions and an
+  adaptive or steady Zoom that HOME and EDIT toggle, with a display-hold time and optional audio cues. The 1.4 notes
+  say the author, a visually impaired musician behind Low Vision Music, ran their standard physical tests on this exact
+  build on 2 November 2026, and an earlier 1.2 RC2 was installed from V15 and from SLOOP and taken back to both. New saves
+  use project format v8; older Wanderer projects import without overwriting their slots. The engine is 6 dB louder than 1.3, so start with the master lower. The README also announces 1.7 RC4, which
+  is not yet a GitHub release.
 status: active
 authors:
 - name: Nicholas James (Low Vision Music)
@@ -28,9 +31,10 @@ homepage: https://www.lowvisionmusic.info
 distribution: download
 requires_stock: M-VAVE FM-1 V15 or SLOOP (the routes the author tested)
 install_notes: >-
-  Download LVM-Wanderer-0.9-FM1.fwsc, or the testing bundle with the installer, and write it with the bundled
-  tools/fm1_install.py (Python with mido and python-rtmidi) over a USB data cable. The README says to back up your
-  work, keep a known-working recovery package and install at your own risk. The release lists a SHA-256 for the file.
+  Download LVM-Wanderer-1.4-RC6-FM1.fwsc, or Wanderer-1.4-Release.zip with the installer, and write the package with the
+  bundled tools/fm1_install.py (Python with mido and python-rtmidi) over a USB data cable. The install guide says to
+  back up your work first, and it explains returning to V15 with your own original file and the OCT- rescue mode. The
+  release lists a SHA-256 for the file. The source bundle carries a 0.9 rollback package.
 brick_risk: true
 tags: [synth-engine, sequencer, generative, fx, ui]
 image:
@@ -40,6 +44,14 @@ image:
   source_url: https://github.com/spinnicholas/lvm-wanderer-fm1
   first_party: true
 versions:
+- version: 1.4.0
+  date: 2026-11-02
+  url: https://github.com/spinnicholas/lvm-wanderer-fm1/releases/tag/v1.4.0
+  notes: Published as the author's RC6 build, whose file keeps the RC6 label, after it passed their physical FM-1 tests. Adds the Scatter modes, the arpeggiator, Print, Zoom and access settings and a fuller 100-preset synth. The identity is FM-1_929.
+- version: 1.2.0-rc2
+  date: 2026-11-01
+  url: https://github.com/spinnicholas/lvm-wanderer-fm1/releases/tag/v1.2.0-rc2
+  notes: Pre-release. Adds four-note chord recording, 16 and 32-step loops, scale-aware Drift, an oscilloscope and earcons. The author installed it from V15 and from SLOOP and returned to both. The notes say no worst-case CPU or latency measurement is claimed.
 - version: 0.9.0-wip
   date: 2026-11-01
   url: https://github.com/spinnicholas/lvm-wanderer-fm1/releases/tag/v0.9.0-wip

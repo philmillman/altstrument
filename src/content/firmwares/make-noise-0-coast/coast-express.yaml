@@ -1,0 +1,33 @@
+device: make-noise-0-coast
+name: Coast Express
+kind: tool
+summary: Settings manager for the 0-Coast's MIDI configuration, as a Chrome-based web app and as a Max patch. Buttons set the synth's MIDI behaviour, patches are saved in the browser and can be shared as links. The Max version adds a keyboard, mod wheel and MIDI clock.
+description: >-
+  The web app sends the MIDI messages that change the 0-Coast's MIDI settings, much as Make Noise's own Max for Live
+  device does, and keeps the current settings in the browser so they are there on the next visit. The Max version, for regular Max and not Max for Live,
+  uses buttons in place of menus, can be shown on an iPad through Mira, and sends its last saved state on launch. The README says to store the
+  settings on the 0-Coast itself with PGM A and PGM B, or they are lost at power-off, and has notes for firmware 1.6.8. Nothing is flashed.
+status: dormant
+authors:
+  - name: Damon Holzborn
+    url: https://github.com/damonholzborn
+source: https://github.com/damonholzborn/CoastExpress
+source_status: open
+license: MIT
+license_notes: The LICENSE.md file is the MIT text with the year 2018.
+homepage: https://ce.rustle.works
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, Opera or Edge, connect a MIDI interface to the 0-Coast's MIDI input and choose the port. To keep
+  a setting through a power cycle, hold PGM A for the program pages and then hold PGM B on the 0-Coast. The Max version needs Max
+  and the Coast Works folder in its search path.
+brick_risk: false
+tags: [editor, web-midi, midi, presets, utility, web]
+versions:
+  - version: Max2.1
+    date: 2021-04-12
+    url: https://github.com/damonholzborn/CoastExpress/releases/tag/Max2.1
+    notes: Max patch release; the web app is served from the main branch.
+  - version: Max2.0
+    date: 2020-06-26
+    url: https://github.com/damonholzborn/CoastExpress/releases/tag/Max2.0

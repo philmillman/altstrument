@@ -1,0 +1,32 @@
+device: ableton-push-1
+name: Ableton Push Type
+kind: tool
+summary: Browser prototype that turns Push 1 into a graphics surface. Each pad cycles a geometric shape in a grid drawn with p5.js, the encoders change the grid method, colours and gaps, and each press also plays a note with Tone.js. It uses Web MIDI with the unit in User Mode.
+description: >-
+  The pads show which cells hold a shape, and the left encoders and the first three knobs choose the grid layout, the shaping function, a colour pair and the horizontal and vertical gaps.
+  The New and Play buttons reset one cell or all of them, and the canvas can be saved as a PNG. The author says it was tested only with Chrome and Push 1, and Push 2 and 3 are not supported.
+  A video demonstration is linked from the README.
+status: active
+authors:
+  - name: Bernhard Hoffmann
+    url: https://github.com/bhoffmann93
+source: https://github.com/bhoffmann93/ableton-push-type
+source_status: open
+license: MIT
+homepage: https://push-tool.netlify.app/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Edge, connect Push 1 over USB and hold the User button to put it in User Mode, then use the grid buttons. Press the audio button on the page to hear the notes. To run it yourself, use npm install and npm run dev.
+brick_risk: false
+tags: [web-midi, midi, usb-midi, generative, web]
+video:
+  url: https://www.youtube.com/watch?v=qIMF-jOBgYc
+  title: Push Modular Graphics Synthesizer Prototype
+  credit: Bernhard
+  first_party: true
+  found_via: https://github.com/bhoffmann93/ableton-push-type#readme
+versions:
+  - version: main @ e896489
+    date: 2026-09-23
+    url: https://github.com/bhoffmann93/ableton-push-type/commit/e896489928b2a67cc1b8ce4ea24f40e05f82fb9e
+    notes: No tagged releases; this is the latest commit.

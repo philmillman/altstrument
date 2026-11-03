@@ -1,0 +1,35 @@
+device: korg-electribe-2
+name: Elfer
+kind: tool
+summary: Flutter tracker-style pattern editor for the Electribe 2 synth, sampler and Hacktribe. It reads the current pattern over USB MIDI, edits notes from the keyboard or from the Electribe's panel on Hacktribe, and sends the pattern back. Linux and Android only; archived.
+description: >-
+  The app connects to the Electribe 2 over USB, loads a pattern into a tracker grid showing step on and off, velocity and gate, and
+  sends edits back to the current pattern without saving to a slot. Navigation works from the computer keyboard, and with
+  Hacktribe firmware the Select knob, part buttons and pads move around and enter notes, which needs the Global parameter
+  pattern change lock turned on. The README calls it work in progress. Sample editing, file saving and other formats remain
+  on its list. The repository was archived in 2022. Nothing is flashed.
+status: archived
+authors:
+  - name: Maksim Lin
+    url: https://github.com/maks
+source: https://github.com/maks/elfer
+source_status: open
+license: GPL-3.0-only
+license_notes: The LICENSE file is the GNU GPL version 3 text.
+distribution: source-only
+install_notes: >-
+  Build with the Flutter beta channel from 2022 on Linux or Android, connect the Electribe 2 by USB and press Connect. Set the
+  Electribe's Global parameter PTN. CHANGE LOCK to On before using the panel controls.
+brick_risk: false
+tags: [editor, sequencer, midi, usb-midi, tracker]
+video:
+  url: https://www.youtube.com/watch?v=-vGEu_1CHNk
+  title: demo of work-in-progress of Elfer
+  credit: Maks Makes
+  first_party: true
+  found_via: https://github.com/maks/elfer#readme
+versions:
+  - version: main @ 2592c73
+    date: 2022-04-27
+    url: https://github.com/maks/elfer/commit/2592c73fa060f3a3400111da9dd6d39d59c8fa85
+    notes: No tagged releases; this is the latest commit.

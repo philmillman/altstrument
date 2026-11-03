@@ -1,0 +1,32 @@
+device: akai-mpc-live
+name: MPC Chord Progression Generator and Finder
+kind: tool
+summary: Two browser tools for the standalone MPCs' chord progressions. The generator builds .progression files for Pad Perform on MPC One, Live, X and Key 61 from templates or scales. The finder reads existing files and names their chords and keys.
+description: >-
+  The generator offers 173 progression templates and 34 scales, shows each chord on the MPC pad grid, a keyboard, a guitar neck or staff notation, and exports single files, MIDI files or the whole
+  catalogue as a prebuilt download. The README documents how the MPC reads the name inside a .progression file and sets the exported names to match. Chords can also be sent over Web MIDI to external gear.
+  The repository also has Roland MX-1, TR-8 and VT-4 MIDI program files (.xpm) for MPC programs. Nothing is sent to the MPC from the browser except as files you copy over.
+status: active
+authors:
+  - name: Jean-Marc Liotier
+    url: https://github.com/liotier
+source: https://github.com/liotier/AkaiMPC
+source_status: open
+license: Unlicense
+homepage: https://liotier.github.io/AkaiMPC/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page, generate or analyse progressions, and copy the downloaded .progression files to the MPC's storage. Web MIDI output works in Chrome, Edge and Firefox.
+brick_risk: false
+tags: [chords, midi, web-midi, web, generative, converter]
+image:
+  url: https://raw.githubusercontent.com/liotier/AkaiMPC/main/AkaiMPCChordProgressionGenerator/MPC%20Chord%20Progression%20Generator%20-%20Screenshot.png
+  alt: MPC Chord Progression Generator page with key, mode and template menus, a Generate button and results as 4 by 4 grids of chord cards with small piano keyboards
+  credit: Jean-Marc Liotier
+  source_url: https://github.com/liotier/AkaiMPC/blob/main/AkaiMPCChordProgressionGenerator/README.md
+  first_party: true
+versions:
+  - version: main @ 0593d6d
+    date: 2026-09-12
+    url: https://github.com/liotier/AkaiMPC/commit/0593d6dcf7139157a67360c6ce4388df7d7cb1e6
+    notes: No tagged releases; this is the latest commit.

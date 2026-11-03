@@ -1,0 +1,29 @@
+device: dirtywave-m8
+name: M8 Web Display
+kind: tool
+summary: Browser front end for the M8 Headless firmware on a Teensy 4.1 or an M8, over Web Serial or WebUSB. It draws the screen, routes the M8's audio, takes keyboard and gamepad input and includes a loader for a Teensy firmware .hex.
+description: >-
+  The page renders the M8 display in WebGL, plays the audio the M8 sends over USB, maps keyboard keys and gamepad buttons
+  to the M8 controls, shows touch buttons and sends MIDI notes from a typing keyboard. It works offline once loaded and
+  installs as a PWA. The firmware loader asks the user to select a .hex file and writes it to a Teensy through its HID
+  bootloader; the project bundles no firmware. WebUSB is the fallback on Chrome for Android, where audio cannot be routed.
+  The author's to-do list names automatic reboot into the bootloader as unfinished.
+status: dormant
+authors:
+  - name: James Deery
+    url: https://github.com/derkyjadex
+source: https://github.com/derkyjadex/M8WebDisplay
+source_status: open
+license: MIT
+homepage: https://derkyjadex.github.io/M8WebDisplay/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Edge 89 or later and connect the Teensy or the M8. On Linux add your user to the
+  dialout group. To flash, choose the .hex file for the M8 Headless firmware from Dirtywave.
+brick_risk: false
+tags: [web, serial, display, flasher, usb-audio]
+versions:
+  - version: master @ 6037d59
+    date: 2023-06-30
+    url: https://github.com/derkyjadex/M8WebDisplay/commit/6037d59
+    notes: No tagged releases; this is the latest commit.

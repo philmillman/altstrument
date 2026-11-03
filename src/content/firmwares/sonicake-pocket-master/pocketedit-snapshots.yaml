@@ -1,0 +1,33 @@
+device: sonicake-pocket-master
+kind: tool
+name: Pocket Edit (snapshots fork)
+summary: >-
+  Fork of suckyble's PocketEdit browser editor that adds snapshot scenes stored in the browser, up to eight per preset, with a backup file, a PWA manifest and service worker, and phone layouts. It edits the Pocket Master over USB MIDI or Bluetooth.
+description: >-
+  The single index.html grows from the upstream editor's 1.09 MB to 1.27 MB. Commit messages describe horizontal and
+  vertical snapshot views, eight scenes per preset with the first selected automatically, effect order saved with each
+  scene, and an enlarged tap tempo for phones. A change notes that switching snapshots sends only the pedals that differ
+  to avoid cutting reverb and delay tails, and that auto-save to flash is prevented while switching. Snapshots are kept in
+  persistent browser storage, mirrored to IndexedDB, and can be exported to and restored from a JSON file. The README is
+  the upstream text and does not mention these additions, which come from the commit history and the page itself. The
+  connection and parameter code is upstream's, so everything else in the editor behaves as in that project.
+status: active
+authors:
+  - name: ocarlosads
+    url: https://github.com/ocarlosads
+source: https://github.com/ocarlosads/pocket
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file; the upstream project listed here has none either.
+homepage: https://ocarlosads.github.io/pocket/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Edge for USB MIDI or Web Bluetooth, connect the pedal and press Connect. Snapshots live in
+  this browser only, so use the export before clearing site data.
+brick_risk: false
+tags: [editor, web-midi, sysex, usb-midi, midi, bluetooth, presets, fork, web]
+versions:
+  - version: main @ 7ee3815
+    date: 2026-10-23
+    url: https://github.com/ocarlosads/pocket/commit/7ee3815
+    notes: No tagged releases; this is the latest commit.

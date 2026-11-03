@@ -1,0 +1,44 @@
+device: korg-nts-1
+name: NTS-web
+kind: tool
+summary: Browser editor and controller for the Nu:Tekt NTS-1 over Web MIDI. It shows every panel parameter as a knob, follows changes made on the synth, and has 16 patch banks, an on-screen keyboard and a step sequencer. It also installs as an offline PWA.
+description: >-
+  The page sends MIDI control changes to the NTS-1 and reads the synth's own knob moves back, so the screen and the hardware
+  stay in step. It reads the names of user oscillators and effects from the connected unit. Patches are kept in sixteen named
+  banks in the browser and can be imported and exported as files, together with sequences and the whole app state. A built-in
+  keyboard has octave shift and pitch bend, and a step sequencer plays notes at a set tempo. MIDI from other controllers can
+  be passed through to the NTS-1. The app is installable as a PWA and is also published as an Android app through Google
+  Play. Nothing is flashed. The project is not affiliated with Korg.
+status: active
+authors:
+  - name: Oscar R.C.
+    url: https://github.com/oscarrc
+source: https://github.com/oscarrc/nts-web
+source_status: open
+license: MIT
+homepage: https://nts-web.oscarrc.me
+distribution: browser-installer
+install_notes: >-
+  Open the hosted app in a browser with Web MIDI, connect the NTS-1 over USB and allow MIDI access. If the device was
+  plugged in after the page loaded, refresh the page.
+brick_risk: false
+tags: [editor, web-midi, midi, usb-midi, presets, web]
+image:
+  url: https://raw.githubusercontent.com/oscarrc/nts-web/master/public/static/media/screenshot.png
+  alt: NTS-web in a dark theme with a step display on the left and knob groups for oscillator, arpeggiator, amp, effects, filter and LFO, with a block of 16 memory bank buttons at the lower right
+  credit: Oscar R.C.
+  source_url: https://github.com/oscarrc/nts-web#readme
+  first_party: true
+versions:
+  - version: v4.0.0
+    date: 2024-07-26
+    url: https://github.com/oscarrc/nts-web/releases/tag/v4.0.0
+  - version: v3.0.1
+    date: 2024-01-22
+    url: https://github.com/oscarrc/nts-web/releases/tag/v3.0.1
+  - version: v3.0.0
+    date: 2022-12-12
+    url: https://github.com/oscarrc/nts-web/releases/tag/v3.0.0
+  - version: v2.1.0
+    date: 2022-11-09
+    url: https://github.com/oscarrc/nts-web/releases/tag/v2.1.0

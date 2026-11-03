@@ -1,0 +1,37 @@
+device: valeton-gp-5
+kind: tool
+name: GP-5 Web Controller
+summary: Single-page control surface for the Valeton GP-5 with two modes. Over Web Bluetooth and SysEx it shows patch names, switches blocks and effects and sets parameters. Over USB Web MIDI it sends the pedal's documented Control Change commands.
+description: >-
+  A static page with a connection selector. In Bluetooth mode it uses the pedal's own service and SysEx commands, listed in a
+  JSON file, to sync with the pedal, load the patch list and names, toggle the ten effect blocks, pick effects and change
+  parameters, and it follows changes made on the pedal. In USB mode it sends the Control Change numbers
+  from Valeton's MIDI table to select presets, step banks, toggle blocks, move patch volume and call the tuner, and the mapping can be
+  edited as JSON. Nothing is flashed.
+status: active
+authors:
+  - name: Helvecio B. Leal Neto
+    url: https://github.com/helvecioneto
+source: https://github.com/helvecioneto/gp5-wc
+source_status: open
+license: Apache-2.0
+license_notes: >-
+  The LICENSE file is the Apache License 2.0, although the README says the project is under the MIT License.
+homepage: https://helvecioneto.github.io/gp5-wc/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, Edge or Opera, choose Bluetooth or USB and press Connect. The page can also be served
+  locally with python3 -m http.server. Close Valeton's app first, as the pedal accepts one Bluetooth connection.
+brick_risk: false
+tags: [controller, web-midi, bluetooth, sysex, midi, web]
+image:
+  url: https://raw.githubusercontent.com/helvecioneto/gp5-wc/main/misc/example.png
+  alt: GP-5 Web Controller in Bluetooth mode, with a preset selector showing 23 Twin Clean, Prev and Next buttons and ten effect block buttons, several switched on in blue
+  credit: Helvecio B. Leal Neto
+  source_url: https://github.com/helvecioneto/gp5-wc#readme
+  first_party: true
+versions:
+  - version: main @ f14a398
+    date: 2025-11-05
+    url: https://github.com/helvecioneto/gp5-wc/commit/f14a398
+    notes: No tagged releases; this is the latest commit.

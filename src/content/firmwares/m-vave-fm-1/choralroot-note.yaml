@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: ChoralRoot Note
+summary: >-
+  ChoralRoot 0.28 with six options for recording the FM-1 into Ableton Note on an iPhone or iPad one part at a time: part selection, octave shifts, a start/stop CC on the loop and a one-press setup.
+description: >-
+  Rights warning: the repository bundles the 64 Casio CZ-1 factory tones and the 200 Sequential Prophet-5/10 factory programs (v1.03) as SysEx sound data, as upstream ChoralRoot does. Its licensing file states the rights stay with Casio and Sequential and that no licence is granted.
+  A branch of ChoralRoot imported at 0.28 that adds six entries to the Options list. They choose which part (chords, bass or raw chord) goes out on MIDI, carry the master or the chosen part dry on the USB audio channels that Ableton Note records, shift the sent notes by up to two octaves, send controller 102 when the loop starts and stops so Note starts on the same beat, and apply a USB setup in one press that also shows the key and tempo to enter in Note. With the options at their defaults the firmware behaves as 0.28. The notes are written in French, say it is not an official release and that it has not yet been played on a unit. The commits are written with Claude. A workflow builds the packages, which are kept on a branch named firmware.
+status: active
+authors:
+- name: persocomplet
+  url: https://github.com/persocomplet
+source: https://github.com/persocomplet/choralroot-note
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only for the code; fonts, samples and ported parts keep their own licences. The
+  repository bundles Casio's CZ-1 factory tones (assets/cz1-factory) and Sequential's Prophet-5/10 factory programs
+  v1.03 (assets/prophet5-factory) as sound data, for which LICENSING.md and the folders' READMEs say no licence is granted
+  and the rights stay with Casio and Sequential. Upstream ChoralRoot is catalogued under the same licence.
+distribution: download
+requires_stock: ChoralRoot 0.28 or any firmware with the M-UPGRADE update path
+install_notes: >-
+  Download choralroot-0.28-note1.fwsc (or the 1core variant) from the firmware branch, which also holds SHA256SUMS, and
+  install it with tools/fm1_install.py; the ChoralRoot web installer does not offer this build. Back up first, as for
+  ChoralRoot. The notes say it has not yet been played on a unit. Setting up Ableton Note is described in
+  docs/ABLETON-NOTE.md, in French.
+brick_risk: true
+tags: [chords, performance, midi, usb-audio, fork]
+versions:
+- version: ableton-note @ 37c2e95
+  date: 2026-11-01
+  url: https://github.com/persocomplet/choralroot-note/commit/37c2e95d89c5c58ac1753149905efb0dca446d57
+  notes: No tagged releases; this is the latest commit. Firmware name 0.28-note1.

@@ -1,0 +1,43 @@
+device: valeton-gp-200
+kind: tool
+name: GP200 Librarian
+summary: >-
+  Browser librarian for the GP-200 over Web MIDI with SysEx. It reads all patches, backs them up, compares backups, and copies, moves and swaps patches with a before-image saved and a read-back check on every write, plus an undo and a journal.
+description: >-
+  The pedal view shows the banks, a bank map and a patch panel. It reads the pedal, makes backups to ZIP files, opens a
+  backup or .prst file read-only and compares a backup with the pedal or two backups byte by byte, including backups made
+  by GP-200 Patch Manager. Writes go one patch at a time: the destination is read first and saved as a file confirmed on disk,
+  read again to check it has not changed, written, then read back to verify. Copy, move and swap patches have a single-level
+  undo, and templates of whole patches are kept in the browser. A log can record every MIDI message, and a demo mode uses a
+  simulated pedal. The published repository holds only the built pages, which include the readable source modules, and
+  the README says they were built from a private repository. ATTRIBUTION.md lists the code adapted from GP-200 Patch Manager
+  Web, GP200 Studio and its own parts. A test copy is published separately as asheers/gp200-librarian-preview.
+status: active
+authors:
+  - name: asheers
+    url: https://github.com/asheers
+source: https://github.com/asheers/gp200-librarian-web
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL v3 text and the README says GPL-3.0-only. The repository only carries the files that are served;
+  the build source is in a private repository. Bundled fonts are under the SIL Open Font License 1.1.
+homepage: https://asheers.github.io/gp200-librarian-web/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Edge, connect the GP-200 by USB and press Connect. The live and test pages share one
+  browser storage, so use only one at a time and close any other editor or controller before writing. Keep the confirmed
+  before-image files the page makes.
+brick_risk: false
+tags: [librarian, editor, web-midi, sysex, usb-midi, midi, presets, backup, web]
+versions:
+  - version: 0.11.0
+    date: 2026-11-03
+    url: https://github.com/asheers/gp200-librarian-web/commit/840b3ed
+    notes: Published build, from private commit 7cb7840; no tagged releases.
+  - version: 0.9.1
+    date: 2026-11-02
+    url: https://github.com/asheers/gp200-librarian-web/commit/27c6620
+  - version: 0.7.1
+    date: 2026-11-02
+    url: https://github.com/asheers/gp200-librarian-web/commit/258e745

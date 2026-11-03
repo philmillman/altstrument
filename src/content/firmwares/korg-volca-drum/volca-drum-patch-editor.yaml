@@ -1,0 +1,30 @@
+device: korg-volca-drum
+name: Volca Drum Patch Editor
+kind: tool
+summary: Browser patch editor for the volca drum over Web MIDI built from native web components. It edits all six parts and both layers, streams changes live, links layers, and produces shareable patch codes with LCD-style values.
+description: >-
+  Every per-layer and per-part parameter the volca drum accepts over MIDI has a control, and turning Live on streams edits to
+  the chosen MIDI output as the sliders move. A link option drives both layers of a part from one set of controls using the
+  both-layers control changes. Layers and whole parts can be turned into copyable patch codes with comments, and values are
+  shown the way the synth's screen shows them. A pitch quantization switch adds a chromatic pitch picker. The README says it
+  was inspired by synthmata's volca drum editor. Nothing is flashed.
+status: active
+authors:
+  - name: alexgpg
+    url: https://github.com/alexgpg
+source: https://github.com/alexgpg/volca-drum-patch-editor
+source_status: open
+license: unspecified
+license_notes: No license file or statement in the repository.
+homepage: https://alexgpg.github.io/volca-drum-patch-editor/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, Edge or Opera, connect the volca drum through USB-MIDI or a MIDI interface, pick the output
+  and switch Live on.
+brick_risk: false
+tags: [editor, presets, web-midi, midi, web]
+versions:
+  - version: main @ e770397
+    date: 2026-06-10
+    url: https://github.com/alexgpg/volca-drum-patch-editor/commit/e7703978235d4640629f18f80bcede36074509ea
+    notes: No tagged releases; this is the latest commit.

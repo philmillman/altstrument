@@ -1,0 +1,37 @@
+device: ableton-move
+name: Crest
+summary: >-
+  Schwung sound generator for an 8-voice hybrid polysynth with three oscillators, a multimode filter, three envelopes, four LFOs, a 20-slot mod matrix, an arpeggiator and an effects chain, with a browser build and a Novation Peak bank importer.
+description: >-
+  Crest has three band-limited oscillators with 75 wavetables, FM between the oscillators and a six-mode saturating filter. It takes
+  its modulation structure from the Novation Peak. It has poly, mono and legato voice modes, unison, glide,
+  8 macros and a 20-slot matrix, and effects in seven routings. Eleven factory patches ship with it. Peak patch banks can
+  be loaded as .syx files in the browser build or from the Move's UserLibrary, and the importer converts them.
+  The repository does not include any Peak banks and says their redistribution rights are unclear. A release build
+  is checked so that no Peak patch name appears in it. The browser page runs the engine on its own, with Web MIDI input.
+status: active
+authors:
+  - name: klaine
+    url: https://github.com/klaine
+source: https://github.com/klaine/crest
+source_status: open
+license: MIT
+license_notes: >-
+  The Schwung plugin API headers are copied from Schwung (MIT), as THIRD_PARTY_NOTICES.md states. Converted Peak banks have their own authors and are
+  kept out of the repository and the release package.
+homepage: https://klaine.github.io/crest/
+distribution: download
+requires_stock: Schwung installed on the Move, with SSH access enabled
+install_notes: >-
+  Needs Schwung. Download crest-module.tar.gz from a release, install it through Schwung Manager or extract it into
+  /data/UserData/schwung/modules/sound_generators/, then rescan modules or restart Schwung.
+brick_risk: false
+tags: [synth-engine, synth, wavetable, web]
+versions:
+  - version: v0.2.0
+    date: 2026-10-30
+    url: https://github.com/klaine/crest/releases/tag/v0.2.0
+    notes: Adds an arpeggiator scale lock, web keyboard improvements, and a fix for chords lost after an all-off.
+  - version: v0.1.0
+    date: 2026-10-27
+    url: https://github.com/klaine/crest/releases/tag/v0.1.0

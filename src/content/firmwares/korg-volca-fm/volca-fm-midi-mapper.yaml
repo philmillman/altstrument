@@ -1,0 +1,30 @@
+device: korg-volca-fm
+name: Volca FM MIDI mapper
+kind: tool
+summary: Small Web MIDI page that sits between a MIDI keyboard and the volca fm. It sends note velocity as a control change and imitates a sustain pedal by holding back note-offs, which the volca fm lacks.
+description: >-
+  Rights warning: the doc folder holds a text copy of Korg's volca fm MIDI implementation document.
+
+  The page reads notes from a connected MIDI keyboard and writes to the volca fm. Each note-on also sends the velocity as
+  control change 41, and the sustain pedal is handled in the page by holding back note-offs until it is released, since the
+  volca fm does not do either itself. Everything else is passed through. It is a few files with no build step and no hosted
+  copy. The last commit is from 2017. Nothing is flashed.
+status: dormant
+authors:
+  - name: kristianj
+    url: https://github.com/kristianj
+source: https://github.com/kristianj/volcafm
+source_status: open
+license: unspecified
+license_notes: No license file or statement in the repository.
+distribution: source-only
+install_notes: >-
+  Open index.html from a local web server in a browser with Web MIDI, then connect the keyboard to the
+  MIDI input and the volca fm to the MIDI output.
+brick_risk: false
+tags: [midi, web-midi, web]
+versions:
+  - version: master @ 0a8826b
+    date: 2017-05-08
+    url: https://github.com/kristianj/volcafm/commit/0a8826bdb160df40162b41acfedba9c6c020aa47
+    notes: No tagged releases; this is the latest commit.

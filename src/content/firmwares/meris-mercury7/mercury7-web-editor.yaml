@@ -1,0 +1,31 @@
+device: meris-mercury7
+kind: tool
+name: Mercury7 Editor
+summary: Browser editor for the Meris Mercury7 reverb pedal over Web MIDI. It shows every control at once, sets expression toe values, saves presets to the pedal's memory and keeps a preset library in the browser. The repository is archived.
+description: >-
+  The page lays out all of the pedal's knobs, the Ultraplate and Cathedra choice, the Pitch Vector modes, Swell and the global settings in one view, and mirrors knob moves on the pedal. It has a 16-slot preset bar that writes to the pedal's memory, INIT and RANDOMIZE commands, a printable settings sheet and a library that is stored in the browser and can be exported. A second MIDI input forwards an expression pedal or controller to the pedal and drops messages the pedal does not support. A shift key shows the expression pedal's toe values. The author archived the repository in January 2025, and the hosted page is still served. Nothing is flashed.
+status: archived
+authors:
+  - name: François Georgy
+    url: https://github.com/francoisgeorgy
+source: https://github.com/francoisgeorgy/mercury7-web-editor
+source_status: open
+license: GPL-3.0-only
+license_notes: The LICENSE file is the GNU GPL version 3 text; the repository gives no later-version option.
+homepage: https://studiocode.dev/mercury7-editor/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Opera and allow MIDI access. Set the pedal's EXP/MIDI jack to MIDI and its MIDI mode to out, pick a channel, and connect it with a TRS cable to a MIDI interface such as Meris's MIDI I/O or a Disaster Area MIDI Baby. Choose the interface's input, output and channel in the editor. The Global Settings are locked until you unlock them, and they reach every Meris pedal on the same interface.
+brick_risk: false
+tags: [editor, web-midi, midi, presets, web]
+image:
+  url: https://studiocode.dev/images/doc/doc-mercury7-anim-2.gif
+  alt: Mercury7 Editor in blue with MIDI port selectors, a row of 16 preset buttons, twelve knobs from Space Decay to Pitch V. Mix, and algorithm and pitch vector buttons
+  credit: François Georgy
+  source_url: https://studiocode.dev/doc/mercury7-editor/
+  first_party: true
+versions:
+  - version: v1.5
+    date: 2020-09-05
+    url: https://github.com/francoisgeorgy/mercury7-web-editor/tree/v1.5
+    notes: Git tag; no GitHub release page.

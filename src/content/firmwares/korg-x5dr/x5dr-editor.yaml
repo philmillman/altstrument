@@ -1,0 +1,54 @@
+device: korg-x5dr
+kind: tool
+name: X5DR Editor
+summary: Browser editor and librarian for the Korg X5DR over Web MIDI SysEx. It edits programs, combinations, multis, drum kits and global settings in real time, reads and writes the module, and loads and saves .syx files. X5D, X5 and 05R/W are expected to work but are untested.
+description: >-
+  Rights warning: the editor ships both factory soundbanks as data captured from a real X5DR, which the README says are Korg's
+  original sound data and are not covered by the MIT licence. The repository also holds hardware capture .syx files and tables
+  transcribed from Korg's owner's manual.
+
+  Programs have six pages with draggable envelopes and an equaliser curve, and edits are sent as you move a control. The app
+  covers all 47 effect types with routing diagrams, combinations, multis, both drum kits and the global settings. Changes can be
+  written in place or to a new slot, and anything not written can be discarded. Data files can hold any mix of programs,
+  combinations, multi, drums and global data, and the device menu imports from or writes to the module. A browser-side All Notes Off
+  button stops stuck notes. The editor sends no notes. The same page can be installed as an app, or downloaded from the
+  releases as a single offline HTML file. Nothing is flashed.
+status: active
+authors:
+  - name: Mark Baylis
+    url: https://github.com/Baylo1
+source: https://github.com/Baylo1/x5dr-editor
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text, copyright 2026 Mark Baylis, and covers the editor's code. The README excludes the built-in
+  factory soundbanks A and B, which are Korg's sound data, and notes that the tables under docs/ are transcribed from Korg's
+  manual. Fonts are under the SIL Open Font License.
+homepage: https://baylo1.github.io/x5dr-editor/
+distribution: browser-installer
+requires_stock: X5DR; X5D, X5 and 05R/W untested
+install_notes: >-
+  Use Chrome or Edge, with a MIDI interface wired both ways between computer and module. On the X5DR enable SysEx reception in
+  the global settings, turn off program and combination write protection to write, and set the editor's channel to the
+  module's global MIDI channel, since other channels are ignored. Close any DAW that holds the MIDI port.
+brick_risk: false
+tags: [editor, librarian, web-midi, sysex, midi, presets, web]
+image:
+  url: https://raw.githubusercontent.com/Baylo1/x5dr-editor/main/docs/images/prog-easy.png
+  alt: X5DR Editor on the Easy page of program A00 PipeDreams, with oscillator mode and multisound selectors, envelope graphs for VDA and VDF, two effect blocks and expression knobs on a dark background
+  credit: Mark Baylis
+  source_url: https://github.com/Baylo1/x5dr-editor#readme
+  first_party: true
+versions:
+  - version: v1.0.2
+    date: 2026-10-24
+    url: https://github.com/Baylo1/x5dr-editor/releases/tag/v1.0.2
+    notes: Initialising a patch starts the VDF and VDA envelopes with decay and slope times of 30.
+  - version: v1.0.1
+    date: 2026-10-22
+    url: https://github.com/Baylo1/x5dr-editor/releases/tag/v1.0.1
+    notes: Adds an All Notes Off button and finer equaliser dragging.
+  - version: v1.0.0
+    date: 2026-10-15
+    url: https://github.com/Baylo1/x5dr-editor/releases/tag/v1.0.0
+    notes: First public release.

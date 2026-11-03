@@ -1,0 +1,39 @@
+device: monome-norns
+name: ingenue
+kind: tool
+summary: Responsive browser interface for norns that runs as its own service on the device at port 7777, with an editor, matron REPL, live parameter and PSET editing, a script and mod browser, a file manager and themes. It sits beside maiden.
+description: >-
+  Installed from maiden or over SSH, it runs on the norns and is opened from any browser on the network at
+  norns.local:7777. It edits scripts in an Ace editor, shows the matron REPL, edits parameters in both directions with
+  browser preset slots and JSON export, installs scripts from the community catalogue with dependency handling, manages mods
+  and the dust file tree, and offers a GitHub search with a user-supplied token that stays in the browser. On a 64-bit norns
+  it can install 64-bit SuperCollider plugin builds. A static demo with faked device calls is hosted on GitHub Pages. The
+  README says the code was written with substantial help from an AI coding assistant and tested on norns hardware, and
+  lists a Web MIDI bridge for parameters as a stretch goal. The OS is not replaced.
+status: active
+authors:
+  - name: seajaysec
+    url: https://github.com/seajaysec
+source: https://github.com/seajaysec/ingenue
+source_status: open
+license: unspecified
+license_notes: No LICENSE file and no licence statement in the repository.
+homepage: https://seajaysec.github.io/ingenue/
+distribution: download
+install_notes: >-
+  From maiden's REPL run ;install https://github.com/seajaysec/ingenue, then run ingenue once from SELECT on the norns to
+  finish setup, or use the install script over SSH. It installs a service and can be removed with the uninstall script.
+  The page on GitHub Pages is only a demo; the real interface is served by the device.
+brick_risk: false
+tags: [editor, scripting, ui, web]
+image:
+  url: https://raw.githubusercontent.com/seajaysec/ingenue/main/screenshots/desktop/params.png
+  alt: ingenue parameters view for the script at_sea with browser preset slots, export and import buttons, a MxSamples group and note, mode, tempo and pulse sliders
+  credit: seajaysec
+  source_url: https://github.com/seajaysec/ingenue#readme
+  first_party: true
+versions:
+  - version: main @ 3766017
+    date: 2026-07-06
+    url: https://github.com/seajaysec/ingenue/commit/3766017
+    notes: No tagged releases; this is the latest commit.

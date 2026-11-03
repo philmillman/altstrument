@@ -1,0 +1,32 @@
+device: roland-ef-303
+kind: tool
+name: EF-303 Editor (stylus)
+summary: Browser editor for the Roland EF-303 Groove Effects over Web MIDI. It sets the effect type and parameters, programs the 16-step modulator and assigns the C1 to C8 knobs, sending edits to the temporary patch as Roland SysEx or control changes. Stored patches are never overwritten.
+description: >-
+  The page is laid out like the front panel. Edits go to the temporary patch as single-parameter SysEx writes, or optionally as
+  control changes for the parameters that have a mapping, so they are heard at once. It reads the temporary patch back when an
+  input is selected and can push the whole editor state. Saving to a user patch is left to the unit's own STORE button. Outgoing
+  messages are queued with a minimum gap and rapid edits to one parameter are merged. The parameter tables were transcribed
+  from Roland's MIDI implementation, and the author's note says the owner's manual is not included. It was made as a companion to
+  the same author's Lexicon Reflex editor. Nothing is flashed.
+status: active
+authors:
+  - name: pdondl
+    url: https://github.com/plentyofnames
+source: https://github.com/plentyofnames/stylus
+source_status: open
+license: MIT
+license_notes: The LICENSE file is the MIT text, copyright 2026 pdondl.
+homepage: https://plentyofnam.es/stylus/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Edge, connect the EF-303's MIDI IN, and its MIDI OUT if you want to read patches back, to
+  your interface, and allow MIDI with SysEx access. Choose output, input, channel and device ID (default 0x10) to match the unit.
+  Control change mode needs the unit's Receive Control Change set to MODE2.
+brick_risk: false
+tags: [editor, web-midi, sysex, midi, fx, web]
+versions:
+  - version: main @ e07b8dd
+    date: 2026-09-11
+    url: https://github.com/plentyofnames/stylus/commit/e07b8dd758ea86e60b2e87bde9dc91e281568667
+    notes: No tagged releases; this is the latest commit.

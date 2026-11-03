@@ -1,0 +1,42 @@
+device: livtra-nanocore
+also_devices: [livtra-mosaic]
+kind: tool
+name: NanoCore Editor
+summary: Browser editor for the Livtra NanoCore and Mosaic over Web MIDI or Web Bluetooth. It edits all eight effect blocks, reads the device's live state back, switches and saves presets, loads amp and FX profiles, and has an MCP server so an AI assistant can edit the pedal.
+description: >-
+  The parameter map comes from Livtra's own manual and MIDI guide, which are not copied into the repository, and model
+  selection, state read-back, preset save, rename, effect order and global settings use SysEx the author decoded from traffic
+  between Livtra's app and a real NanoCore. The page shows the eight-block chain, lists the 64 preset names, follows
+  footswitch and knob changes made on the device, keeps a local preset library in the browser, uploads .ead profile files
+  into the amp and FX2 slots, and lists every CC for use with an external controller. A simulator transport lets it run
+  without a device. A Mosaic gives the same SysEx replies, which the author confirmed from a capture and a real unit. A
+  separate MCP package exposes the same protocol to AI assistants. A single-file portable build is also provided. The editor
+  never writes firmware.
+status: active
+authors:
+  - name: Luca Nenni
+    url: https://github.com/lucanenni
+source: https://github.com/lucanenni/livtra-nanocore-editor
+source_status: open
+license: MIT
+homepage: https://lucanenni.github.io/livtra-nanocore-editor/
+distribution: browser-installer
+requires_stock: NanoCore firmware 1.04 or newer
+install_notes: >-
+  Open the hosted page in Chrome, Edge or Opera and choose Web MIDI, or Bluetooth to connect from the page. Switch the
+  device's Bluetooth off and on first to wake it, and close Livtra's phone app, which holds the connection. Loading a
+  profile overwrites that AMP or FX2 slot; the official app's factory restore undoes it. Updating firmware needs Livtra's
+  own updater.
+brick_risk: false
+tags: [editor, web-midi, bluetooth, sysex, usb-midi, presets, mcp, web]
+image:
+  url: https://raw.githubusercontent.com/lucanenni/livtra-nanocore-editor/main/docs/screenshots/editor-desktop-light.png
+  alt: NanoCore Editor with an effect chain strip from FX1 to EQ, the AMP block selected with a BogXTC1 type and sliders for gain, bass, mid, treble and level, and a MIDI connection panel on the left
+  credit: Luca Nenni
+  source_url: https://github.com/lucanenni/livtra-nanocore-editor#readme
+  first_party: true
+versions:
+  - version: v1.0.0
+    date: 2026-08-19
+    url: https://github.com/lucanenni/livtra-nanocore-editor/releases/tag/v1.0.0
+    notes: First tagged release, with three MIDI transports and the full parameter map.

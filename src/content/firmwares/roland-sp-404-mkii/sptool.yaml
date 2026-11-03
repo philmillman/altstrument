@@ -1,0 +1,28 @@
+device: roland-sp-404-mkii
+kind: tool
+name: SP-Tool
+summary: Installable Web MIDI app for controlling the SP-404MKII's effects live, with bus on/off switches, effect menus and sliders for each bus's parameters. It works as a PWA on desktop and phones.
+description: >-
+  The app has separate FX and input-FX views, each with bus controls, plus settings and info views, and sends the matching
+  MIDI control changes to the sampler. It can be added to the home screen to run offline and checks for updates when online; an update can reset saved
+  parameters. The author calls it their first open source project, and the repository holds the page's JavaScript modules, Sass
+  sources and a Rollup bundle. Nothing is flashed.
+status: active
+authors:
+  - name: c023-DeV
+    url: https://github.com/c023-DeV
+source: https://github.com/c023-DeV/SpTool
+source_status: open
+license: MIT
+homepage: https://sptool.dev-zoo.net
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, Brave, Edge or Opera, allow MIDI access, connect the SP-404MKII directly by USB and set its
+  MIDI mode as the in-app help describes. Clear the site's browser cache if an update misbehaves.
+brick_risk: false
+tags: [web-midi, midi, usb-midi, performance, fx, web]
+versions:
+  - version: main @ e6566c9
+    date: 2026-10-26
+    url: https://github.com/c023-DeV/SpTool/commit/e6566c9eeb82a9993cbf14caf4b335dbc0420ad4
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,32 @@
+device: elektron-machinedrum
+name: Say A!
+kind: tool
+summary: Browser sample prep and transfer tool for the Machinedrum UW. It shifts each sample so its root note lands on an A for MegaCommand's chromatic mode, resamples it, processes loops, and sends it over MIDI Sample Dump or saves WAV and .syx files.
+description: >-
+  Dropped WAV files are read for root note and loop points, with a pitch detector as a fallback, then pitched and resampled in
+  a single windowed-sinc pass at twice the target rate, loop-snapped, optionally cross-faded and cropped, and dithered
+  to 16-bit. A queue mirrors the Machinedrum's 32 or 48 sample slots with a memory gauge and 4-character names, and sends
+  selected or all slots over SDS with closed-loop handshake or open-loop timing and optional turbo speeds. Exports are WAV,
+  a 32-bit float WAV and SDS .syx, and existing .syx or .sds files can be dropped onto a slot. An experiment lab sends
+  deliberately odd SDS headers to see how the unit reacts. Two Python scripts convert between WAV and SDS. The page needs Web MIDI with
+  SysEx.
+status: active
+authors:
+  - name: BartBral
+    url: https://github.com/BartBral
+source: https://github.com/BartBral/MCL-Chromatic-A-tool
+source_status: open
+license: unspecified
+license_notes: The repository has no license file or license statement.
+homepage: https://bartbral.github.io/MCL-Chromatic-A-tool/md-transfer.html
+distribution: browser-installer
+install_notes: >-
+  Open the page in Chrome or another Chromium browser, set the hardware version (MK1 or MK2) and the MIDI output port in
+  Settings, drop WAV files, process them and send. Use turbo speeds only with a Turbo MIDI interface.
+brick_risk: false
+tags: [sample-transfer, sampler, converter, web-midi, sysex, midi, web]
+versions:
+  - version: main @ c241980
+    date: 2026-05-21
+    url: https://github.com/BartBral/MCL-Chromatic-A-tool/commit/c241980e1fec72f0b29e8ccfadeb976a341c172a
+    notes: No tagged releases; this is the latest commit.

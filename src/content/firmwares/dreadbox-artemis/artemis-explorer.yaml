@@ -1,0 +1,33 @@
+device: dreadbox-artemis
+name: Artemis Preset Explorer
+kind: tool
+summary: Browser librarian for the Artemis that receives bank and single-preset dumps over Web MIDI, sends presets and banks back, and lets you browse, search, compare and edit presets. It bundles Dreadbox's factory banks for the first load.
+description: >-
+  Rights warning: the repository and hosted page include eight binary files, artemis-bank-a to artemis-bank-h, which are
+  Dreadbox's factory preset banks.
+
+  The app shows eight banks of 64 presets with a searchable sidebar, detail cards for the oscillators, filter, envelopes,
+  LFOs, effects, sequencer and modulation matrix, a sortable table and a side-by-side comparison of up to three presets. Presets load from dropped .syx files or by
+  receiving dumps from the synth, and a preset or bank can be sent back, after which the synth's Save button keeps it. Banks can be downloaded as a zip. The
+  SysEx data are JSON documents inside the manufacturer's SysEx envelope, which the repository describes. Nothing is flashed.
+status: active
+authors:
+  - name: Lyle Hayhurst
+    url: https://github.com/lhayhurst
+source: https://github.com/lhayhurst/artemis-explorer
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no license file or license statement. The factory bank files in it are Dreadbox's.
+homepage: https://lhayhurst.github.io/artemis-explorer/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Edge, connect the Artemis over USB and allow MIDI access with SysEx. After sending a
+  preset, press Save on the synth to keep it. Back up the synth's banks before sending a bank.
+brick_risk: false
+tags: [librarian, editor, web-midi, sysex, usb-midi, midi, presets, web]
+versions:
+  - version: main @ d153b2d
+    date: 2026-06-25
+    url: https://github.com/lhayhurst/artemis-explorer/commit/d153b2d0f06f783e53b70f641dce6b785b092a70
+    notes: No tagged releases; this is the latest commit.

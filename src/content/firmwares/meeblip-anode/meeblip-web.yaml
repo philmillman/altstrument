@@ -1,0 +1,32 @@
+device: meeblip-anode
+name: MeeBlip Web editors
+kind: tool
+summary: Web MIDI patch editors for the anode and the triode that send knob and switch settings to the synth, add a built-in sequencer and a randomizer, and save a patch as a shareable link. The hosted copy mentioned in 2016 coverage is gone, so it has to be served locally.
+description: >-
+  A start page offers an anode editor and a triode editor, each with on-screen knobs and switches that send MIDI to the chosen
+  port and channel, including parameters that can only be reached over MIDI. A patch browser has sample patches, and the patch-link button encodes the
+  current settings in a URL. The anode analog resonance control is not covered. The code began as Ben Schmaus's Blipweb and was moved into MeeBlip's
+  own repository, where it is served as static files. Nothing is flashed.
+status: dormant
+authors:
+  - name: MeeBlip
+    url: https://github.com/MeeBlip
+  - name: Ben Schmaus
+    url: https://github.com/benschmaus
+source: https://github.com/MeeBlip/meeblip-web
+source_status: open
+license: GPL-3.0-only
+license_notes: The LICENSE file is the GNU GPL version 3 text.
+distribution: source-only
+install_notes: >-
+  Clone the repository and serve its folder with any static web server, such as python -m http.server, then open it in Chrome,
+  Chromium or Opera and select the MIDI port and channel. Resonance on the anode is analog only and cannot be set from the page.
+brick_risk: false
+tags: [editor, web-midi, midi, presets, sequencer, web]
+versions:
+  - version: v1.0.1
+    date: 2017-03-09
+    url: https://github.com/MeeBlip/meeblip-web/releases/tag/v1.0.1
+  - version: v1.0.0
+    date: 2017-02-28
+    url: https://github.com/MeeBlip/meeblip-web/releases/tag/v1.0.0

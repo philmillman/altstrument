@@ -1,0 +1,37 @@
+device: roland-sc-55
+name: SoundPalette
+kind: tool
+summary: Browser tool for building and reading Roland GS SysEx messages for the SC-55 and SC-55mkII, and Roland SC-7 messages, with a collection that exports to a MIDI file. It sends messages and test notes to a connected MIDI device. Written in Rust and compiled to WebAssembly.
+description: >-
+  Drop-down menus pick the manufacturer, model, address block and parameter and then the value, and the page writes the SysEx bytes
+  with a checksum. A pasted message is decoded into names and values, messages can be collected and exported as a
+  standard MIDI file, and a MIDI file can be inspected for the SysEx it contains. A button sends the message to a connected device,
+  and a sound test sends notes and controllers to hear the effect. Version 1.1.0 added GS drum setup messages, and SC-88 Port B
+  parameter blocks were added after it. The author says it is not affiliated with Roland. Nothing is flashed.
+status: dormant
+authors:
+  - name: hikari_no_yume
+    url: https://github.com/hikari-no-yume
+source: https://github.com/hikari-no-yume/SoundPalette
+source_status: open
+license: MPL-2.0
+homepage: https://hikari.noyu.me/etc/SoundPalette/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Firefox and allow MIDI access to send messages to a device. A release zip is available
+  for local use but needs a local web server. Bulk dumps and partial reserve editing are not supported.
+brick_risk: false
+tags: [editor, web-midi, sysex, midi, utility, web]
+image:
+  url: https://raw.githubusercontent.com/hikari-no-yume/SoundPalette/trunk/screenshot-sketchpad.png
+  alt: SoundPalette SysEx sketchpad with drop-downs for Roland, SC-7 and a patch parameter, a hex box showing F0 41 10 56 12 and the closing F7, and a decoded breakdown below it
+  credit: hikari_no_yume
+  source_url: https://github.com/hikari-no-yume/SoundPalette#readme
+  first_party: true
+versions:
+  - version: v1.1.0
+    date: 2024-10-30
+    url: https://github.com/hikari-no-yume/SoundPalette/releases/tag/v1.1.0
+  - version: v1.0.0
+    date: 2023-12-01
+    url: https://github.com/hikari-no-yume/SoundPalette/releases/tag/v1.0.0

@@ -1,0 +1,25 @@
+device: meris-hedra
+kind: tool
+name: Hedra Editor
+summary: Browser editor for the Meris Hedra pitch shifter pedal over Web MIDI, written by the author of the Mercury7 and Enzo editors. It shows the key, micro tune, mix and three pitch controls at once. The repository is archived and no hosted copy is served.
+description: >-
+  The source is the same editor framework as the author's other Meris editors, with the Hedra's key, micro tune, mix, three pitch knobs and dual or series routing. It has a preset bar, a library kept in the browser and global settings. The README links a demo video that is actually the author's Enzo demo, so none is listed here. The README's link to the hosted editor returns a 404, so it has to be built from source, and the documentation page on studiocode.dev is still served. The author archived the repository in January 2025. Nothing is flashed.
+status: archived
+authors:
+  - name: François Georgy
+    url: https://github.com/francoisgeorgy
+source: https://github.com/francoisgeorgy/hedra-web-editor
+source_status: open
+license: GPL-3.0-only
+license_notes: The LICENSE file is the GNU GPL version 3 text; the repository gives no later-version option.
+homepage: https://studiocode.dev/doc/hedra-editor/
+distribution: source-only
+install_notes: >-
+  No hosted copy is served; the README's editor link is dead. Build it from the repository with npm, serve it over HTTPS or localhost, and open it in Chrome or Opera. Set the pedal's EXP/MIDI jack to MIDI out, pick a channel and connect it by TRS cable to a MIDI interface.
+brick_risk: false
+tags: [editor, web-midi, midi, presets, web]
+versions:
+  - version: master @ bb4dd19
+    date: 2025-01-21
+    url: https://github.com/francoisgeorgy/hedra-web-editor/commit/bb4dd19
+    notes: No tagged releases; this is the latest commit, which adds the archive notice.

@@ -1,0 +1,33 @@
+device: elektron-digitakt
+name: digitakt-reorder
+kind: tool
+summary: Python library and job template that reorders, drops and de-duplicates the sample pool of a Digitakt project dump and remaps every kit and sample-lock reference. It works on a .syx file you fetch and send with elk-herd; there is no MIDI code or web page.
+description: >-
+  A job script gives a new order for the pool slots, a set to drop and a map of duplicates; the engine rewrites the pool and
+  the sample references in all 128 patterns and runs nine checks, among them that every reference still resolves to the same
+  sample hash and that only the pool and the reference bytes changed. It reads and writes project dumps, not
+  Transfer's .dtprj files, and the README explains why. The two steps that touch the device are done by hand in elk-herd:
+  fetching the active project and sending it back, which overwrites the loaded project. The target is the original Digitakt on OS
+  1.52A; Digitakt II dumps are refused. The author reports two real projects reordered and loaded back.
+status: active
+authors:
+  - name: Diego Aguilar-Canabal
+    url: https://github.com/daguilarc
+source: https://github.com/daguilarc/digitakt_reorder
+source_status: open
+license: MIT
+license_notes: >-
+  MIT, Copyright 2026 Diego Aguilar-Canabal. The README says the format knowledge comes from elk-herd by mzero, whose
+  code it does not include.
+distribution: source-only
+install_notes: >-
+  Needs only the Python standard library. Copy job_template.py, fill in the new order, drop set and duplicate map, and
+  run it on a project .syx saved from elk-herd. Send the result with elk-herd, then use SAVE PROJECT AS to an empty slot so
+  the original project is kept. LFOs that target Sample Slot are not remapped.
+brick_risk: false
+tags: [librarian, sysex, converter, python, sample-transfer, midi, utility]
+versions:
+  - version: main @ 21b4103
+    date: 2026-08-20
+    url: https://github.com/daguilarc/digitakt_reorder/commit/21b4103416e957e0fc82c88903a36a3a36097974
+    notes: No tagged releases; this is the latest commit.

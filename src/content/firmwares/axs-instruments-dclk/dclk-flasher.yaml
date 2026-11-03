@@ -1,0 +1,28 @@
+device: axs-instruments-dclk
+name: DCLK-Flasher
+kind: tool
+summary: >-
+  Browser tools for the DCLK dual MIDI clock: a WebUSB DfuSe flasher for the STM32 ROM bootloader with a bundled v1.4 build, and a settings editor over Web MIDI SysEx that changes tempo, dividers, wait length and more live. Both pages have a demo mode.
+description: >-
+  The editor needs firmware 1.3 or later, polls the unit several times a second to follow panel changes, and can start and stop each output. The flasher leaves the last flash sector alone so saved settings survive an update. The repository has a simulated STM32 bootloader for its tests.
+  It also bundles the WeAct Black Pill's HID bootloader image and MC8P MkII firmware files as test fixtures. Commit messages credit Claude as a co-author.
+status: active
+authors:
+  - name: Joe Bowyer
+    url: https://github.com/joebmz98
+source: https://github.com/joebmz98/DCLK-Flasher
+source_status: open
+license: MIT
+license_notes: The LICENSE file says MIT. The bundled dclk_midi_clock.ino.hex is the maker's own build.
+homepage: https://joebmz98.github.io/DCLK-Flasher/
+distribution: browser-installer
+requires_stock: DCLK; the editor needs firmware v1.3 or later
+install_notes: >-
+  Open the hosted page in Chrome or Edge on a computer, connect DCLK with a USB-C data cable, hold BOOT0, tap NRST and keep holding BOOT0 for about a second, then press Flash Firmware and choose STM32 BOOTLOADER. Windows needs a one-time WinUSB driver through Zadig.
+brick_risk: false
+tags: [flasher, editor, web-midi, sysex, midi, web]
+versions:
+  - version: main @ c456352
+    date: 2026-11-03
+    url: https://github.com/joebmz98/DCLK-Flasher/commit/c456352019c3188d4533a2c23fd5d7f575e38d1c
+    notes: No tagged releases; this is the latest commit, which builds firmware v1.4.

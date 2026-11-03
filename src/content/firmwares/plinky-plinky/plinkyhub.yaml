@@ -1,0 +1,26 @@
+device: plinky-plinky
+name: PlinkyHub
+kind: tool
+summary: Community site and editor for Plinky presets, samples, wavetables and packs. It has a visual preset editor and slice editor, builds wavetab.uf2 files and writes to Plinky over WebUSB when the synth is mounted as a drive.
+description: >-
+  Users share and star presets, upload WAV samples or import them from Plinky UF2 files, set slice points, and make wavetables from fifteen single-cycle
+  WAV files using the same algorithm as the official wavetable tool. Presets, samples and a wavetable can be bundled into a pack and saved to the synth, or
+  loaded back from it as a backup. The app is Flutter compiled to WebAssembly with a Supabase back end, so sharing needs an account on the site. It also has a webcam play mode.
+status: active
+authors:
+  - name: Lukas Klingsbo
+    url: https://github.com/spydon
+source: https://github.com/spydon/plinkyhub
+source_status: open
+license: CC-BY-NC-SA-4.0
+homepage: https://plinkyhub.com/
+distribution: browser-installer
+install_notes: >-
+  Open the site in a Chromium browser with WebUSB and WebAssembly. To save to the synth, put Plinky in its boot mode (hold the encoder while connecting USB) so it mounts as a drive. On Linux a udev rule for vendor ID cafe may be needed.
+brick_risk: false
+tags: [editor, librarian, web, presets, sample-transfer, wavetable, usb-midi]
+versions:
+  - version: main @ f7bd99f
+    date: 2026-10-30
+    url: https://github.com/spydon/plinkyhub/commit/f7bd99f1de918d3114a6b89365f438dcec754108
+    notes: No tagged releases; this is the latest commit.

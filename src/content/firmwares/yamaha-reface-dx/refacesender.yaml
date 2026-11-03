@@ -1,0 +1,35 @@
+device: yamaha-reface-dx
+kind: tool
+name: reface DX patch sender
+summary: Installable Web MIDI app that lists about 9,300 community reface DX voices and sends the chosen one to the synth over SysEx. It has search, favourites, auto-send, a panic button and an offline service worker. Voices land in the edit buffer.
+description: >-
+  Rights warning: the repository bundles roughly 9,300 .syx voice files made by Soundmondo community users and published by
+  Martin Tarenskeen, with no licence or permission statement.
+
+  The page reads a manifest of voice names, fetches each .syx only when it is sent, and sends the seven or so SysEx
+  messages of a voice with an adjustable gap between them. Settings include the gap, a panic control and a one-shot SysEx that
+  disables the synth's auto power-off. As a PWA it can be installed on Android in Chrome with the synth on USB OTG, and it
+  caches voices it has sent for offline use. A voice sent this way replaces unsaved edits, and the synth's STORE button must be
+  pressed to keep it. The developer notes say it worked from Chrome on Linux. Nothing is flashed.
+status: active
+authors:
+  - name: normaldotcom
+    url: https://github.com/normaldotcom
+source: https://github.com/normaldotcom/refacesender
+source_status: open
+license: unspecified
+license_notes: >-
+  There is no LICENSE file and the README states no licence. The bundled voice files are credited to the Soundmondo
+  community and Martin Tarenskeen's conversion work.
+homepage: https://normaldotcom.github.io/refacesender/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Edge and allow MIDI with SysEx access, with the reface DX connected over USB. If voices
+  arrive garbled, raise the inter-message gap in Settings. Safari and iOS browsers have no Web MIDI.
+brick_risk: false
+tags: [librarian, web-midi, sysex, usb-midi, presets, fm, web]
+versions:
+  - version: master @ 9a6f9ed
+    date: 2026-08-31
+    url: https://github.com/normaldotcom/refacesender/commit/9a6f9ed732c9988f6b545ab1f2ee182dc46941b3
+    notes: No tagged releases; this is the latest commit.

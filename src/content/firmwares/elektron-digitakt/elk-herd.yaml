@@ -1,0 +1,45 @@
+device: elektron-digitakt
+also_devices: [elektron-digitakt-ii]
+name: Elk-Herd
+kind: tool
+summary: Browser app, written in Elm, for managing Digitakt and Digitakt II content over Web MIDI. It transfers whole projects to and from the device and files, reorders patterns, the sample pool and the sound pool, and renames items.
+description: >-
+  The app fetches the active project from the instrument, saves it to a .syx file and sends it back, and lets you reorder
+  patterns, reorder the sample pool or sound pool while keeping every pattern's sample and sound locks in step, and rename
+  patterns and sounds. Its release notes list support for Digitakt OS up to 1.54 and Digitakt II OS up to 1.17. The in-app
+  text asks users to back up a project to a file first and notes that sending a project overwrites the loaded one.
+  Other tools in this catalog borrow its format code. The hosted app shows version 3.3.7 dated 9 October 2026 in its own release notes.
+  The code moved from GitHub to the author's own forge in August 2026, and the GitHub repository now holds only a notice
+  with a pledge against AI-generated contributions.
+status: active
+authors:
+  - name: Mark Lentczner
+    url: https://github.com/mzero
+source: https://forge.glyphic.com/mark/elk-herd
+source_status: open
+license: BSD-2-Clause
+license_notes: >-
+  Could not be read at the source: GitHub holds only a notice branch and the forge sits behind a bot check. The BSD
+  2-Clause text with Mark Lentczner's copyright for elk-herd is reproduced in the LICENSE of mk3stn3r/digitaktEditor, a derivative,
+  and the SYXGRID and DNX READMEs give the same licence. One other project's README calls it GPL.
+homepage: https://electric.kitchen/crunch/elk-herd/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, choose Digitakt or Digitakt II, and pick the MIDI ports. Set USB CONFIG to USB MIDI on
+  the device, as Overbridge blocks it, and stop the sequencer before sending a project. A project fetch can fail partway
+  and is retried by hand.
+brick_risk: false
+tags: [editor, librarian, web-midi, sysex, usb-midi, presets, web, midi]
+versions:
+  - version: 3.3.7
+    date: 2026-10-09
+    url: https://electric.kitchen/crunch/elk-herd/
+    notes: Adds Digitakt OS 1.54; dated in the app's release notes.
+  - version: 3.3.6
+    date: 2026-10-08
+    url: https://electric.kitchen/crunch/elk-herd/
+    notes: Adds Digitakt OS 1.53 and Digitakt II OS 1.16 and 1.17.
+  - version: 3.3.4
+    date: 2025-08-03
+    url: https://electric.kitchen/crunch/elk-herd/
+    notes: Adds Digitakt II OS 1.15 and 1.15A.

@@ -1,0 +1,40 @@
+device: arturia-microfreak
+name: MicroFreak Reader
+kind: tool
+summary: Read-only browser viewer for the MicroFreak's saved presets, built from reverse-engineered SysEx. It reads presets over Web MIDI and shows oscillator, filter, envelope, LFO and modulation matrix values. It cannot edit or write.
+description: >-
+  Rights warning: the app ships pre-loaded preset data in public/data for the factory banks 1.1 and 2.0 and for the free packs Arp
+  Monster, Naughty Bass, Plaisir Pads and Tech Loop, which are other people's work.
+
+  Reading one preset or ranges up to all 256 sends requests over MIDI, and the app displays each preset's controls, the modulation
+  matrix and the preset name. Reads go to memory until the page is closed, and the loaded set can be saved to the app's own
+  file, which is not a SysEx or preset file Arturia's software can use. It does not read sequences, the unsaved
+  state of the panel or any factory preset in the newer format, which can be converted by saving it to a user slot on
+  the synth. The author warns that the decoding came from reverse engineering the exchange with Arturia's MIDI Control Center and may
+  be wrong. The README, which has a French section, says the project is no longer maintained and invites forks.
+status: archived
+authors:
+  - name: François Georgy
+    url: https://github.com/francoisgeorgy
+source: https://github.com/francoisgeorgy/microfreak-reader
+source_status: open
+license: unspecified
+license_notes: The repository has no license file or license statement. It includes the preset data files of Arturia's factory banks and free packs.
+homepage: https://homestudio.app/microfreak-reader/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted app in Chrome or Opera, connect the MicroFreak over USB or MIDI, select its input and output ports,
+  enter a preset number and press READ. Restart the MicroFreak and reload the page if nothing is displayed.
+brick_risk: false
+tags: [librarian, web-midi, sysex, usb-midi, presets, web, research, midi]
+image:
+  url: https://raw.githubusercontent.com/francoisgeorgy/microfreak-reader/master/screenshots/light-theme.png
+  alt: MicroFreak Reader in light theme showing preset 10 Invitation, with a modulation matrix, MIDI port selection, oscillator, filter, envelope, LFO and keyboard panels and a preset list on the right
+  credit: François Georgy
+  source_url: https://github.com/francoisgeorgy/microfreak-reader#readme
+  first_party: true
+versions:
+  - version: v1.0.0
+    date: 2019-10-20
+    url: https://github.com/francoisgeorgy/microfreak-reader/tree/v1.0.0
+    notes: Git tag; no GitHub release page. The default branch has later commits.

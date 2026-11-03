@@ -1,0 +1,31 @@
+device: korg-nts-1
+name: Korg NTS-1 Modular Web Suite
+kind: tool
+summary: Set of single-file browser apps that compose and play ABC-notation music through the NTS-1 over Web MIDI, sending the synth's CC patch values before each track. It also has an internal synth for use without hardware. Labelled an early public beta.
+description: >-
+  A hub page with a MIDI diagnostic bench and four small apps: an ABC generator that arranges melodies from lyrics and a
+  mood, a player with an endless generative mode, a playlist builder, and a jukebox that plays a playlist. The apps send notes
+  to the NTS-1 on a chosen channel and set the oscillator type, shape, alternate, cutoff, resonance, attack, release, delay
+  time and reverb mix by control change. The oscillator list matches the NTS-1's built-in engines and several community units
+  such as tweeeeeak's and Hypercubed's. A panic button sends all-notes-off. Tracks export as ABC, MIDI, JSON or WAV.
+  The repository has no build step and the apps run as plain HTML files. Nothing is flashed.
+status: active
+authors:
+  - name: Samuele de Tomasi
+    url: https://github.com/el3um4s
+source: https://github.com/el3um4s/korg-nts1-web-sequencer
+source_status: open
+license: MIT
+homepage: https://el3um4s.github.io/korg-nts1-web-sequencer/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted hub in a Chromium browser, connect the NTS-1 over USB or through a MIDI interface and allow MIDI access.
+  Choose the internal speakers to try the apps without hardware. Custom oscillators named in the apps must be loaded onto
+  the NTS-1 separately.
+brick_risk: false
+tags: [sequencer, web-midi, midi, usb-midi, web]
+versions:
+  - version: main @ e0721d9
+    date: 2026-09-27
+    url: https://github.com/el3um4s/korg-nts1-web-sequencer/commit/e0721d967142b2b3f9d47f6f884351c1d146af42
+    notes: No tagged releases; this is the latest commit.

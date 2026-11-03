@@ -1,0 +1,26 @@
+device: mowry-stringed-instruments-warbl
+name: WARBL Configuration Tool
+kind: tool
+summary: The maker's browser configuration tool for WARBL and WARBL2. It sets the fingering chart, sensor and breath behavior, button actions and presets over Web MIDI, shows the firmware version, and can run a built-in soundfont synth. A separate page serves an app build.
+description: >-
+  The page reports when a WARBL is not detected and reads the connected device's firmware version before showing settings. The source lives in the webconfig folder of the WARBL2 repository, with a copy in the original WARBL repository, and the
+  page's own comment says the web version is named configure.html and the app version configureForApp.html, for older iOS app users. The hosted page works with the firmware released alongside it, so update the firmware too.
+status: active
+authors:
+  - name: Andrew Mowry
+    url: https://github.com/amowry
+source: https://github.com/amowry/WARBL2
+source_status: open
+license: GPL-3.0-or-later
+license_notes: Shares the repository's GPL version 3 license; the source headers say version 3 or, at your option, any later version.
+homepage: https://warbl.xyz/configure.html
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a Web MIDI browser and connect the WARBL over USB or, for WARBL2, Bluetooth LE MIDI. Nothing is flashed. On iOS use the WARBL app or a browser that supports Web MIDI.
+brick_risk: false
+tags: [official, editor, web-midi, midi, usb-midi, ble-midi, presets, web]
+versions:
+  - version: v4.7
+    date: 2026-06-15
+    url: https://github.com/amowry/WARBL2/releases/tag/v4.7
+    notes: Latest release of the repository that holds the tool's source.

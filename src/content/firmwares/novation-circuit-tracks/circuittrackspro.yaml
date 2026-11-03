@@ -1,0 +1,33 @@
+device: novation-circuit-tracks
+kind: tool
+name: CircuitTracksPro
+summary: Browser editor for Circuit Tracks patches and drum slots over Web MIDI SysEx, with a codec for the 340-byte patch dump and an optional Firebase library behind Google sign-in. Sample audio upload to the unit is not implemented.
+description: >-
+  Reads and writes the full synth patch: two oscillators with sub and noise, mixer, filter, three envelopes, two LFOs, FX and
+  the 16-slot mod matrix. It detects the Circuit's ports, requests patch dumps for either synth, can send a patch and read it
+  back to confirm the unit took it, and can audition notes and drum slots. A sample view prepares a file with start, end,
+  pitch, decay, distortion and filter settings and pushes slot parameters, but the README says the audio itself is not
+  transferred and the drum parameter indices are partly guesswork. The library stores patches and samples in Firestore and
+  needs a Google sign-in, which is optional for editing. It is the successor to two earlier projects by the same author:
+  NovationCircuitTracksPatchEditor (Bun and React with a local MIDI server, archived) and Circuit Tracks Web UI, which has
+  its own entry. No hosted copy was found, and there is no licence file. Nothing is flashed.
+status: active
+authors:
+  - name: 0mandrock1
+    url: https://github.com/0mandrock1
+source: https://github.com/0mandrock1/CircuitTracksPro
+source_status: open
+license: unspecified
+license_notes: There is no LICENSE file and the README states no licence. The archived PatchEditor predecessor is MIT.
+distribution: source-only
+install_notes: >-
+  Run npm install and npm run dev, then open the printed address in Chrome or Edge, which are needed for Web MIDI with SysEx.
+  The library uses the Firebase project in firebase-applet-config.json, so point it at your own project to keep patches.
+  Sending patches overwrites the unit's edit buffer.
+brick_risk: false
+tags: [editor, web-midi, sysex, usb-midi, presets, web]
+versions:
+  - version: main @ 622379f
+    date: 2026-07-31
+    url: https://github.com/0mandrock1/CircuitTracksPro/commit/622379f4a06df06c3e7031047e1f6fdf84023ae3
+    notes: No tagged releases; this is the latest commit.

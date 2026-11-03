@@ -1,0 +1,37 @@
+device: korg-minilogue-xd
+name: XXD Virtual Mod Matrix
+kind: tool
+summary: Browser mod matrix for the minilogue xd over Web MIDI. It adds two LFOs, two note-triggered envelopes and live mod wheel, aftertouch, pitch bend and velocity as sources routed to synth parameters by control change, with the knob positions read back.
+description: >-
+  The page mirrors the synth's signal path as a diagram. Each destination such as pitch, shape, wave, mixer levels, cutoff or
+  resonance opens a popup with two routing slots, each with a source, a bipolar depth and an on switch. The base value follows
+  the physical knob, which the app reads from the synth's KBD/KNOB port, so turning a knob and using the app do not fight
+  each other. Modulation goes out to the MIDI port as control changes. It needs a Chromium browser, has no build step and is
+  started with any static web server. Nothing is flashed.
+status: active
+authors:
+  - name: seandunn
+    url: https://github.com/seandunn
+source: https://github.com/seandunn/xxd
+source_status: open
+license: MIT
+license_notes: >-
+  The README says MIT. The MIT-LICENSE file names David Heinemeier Hansson as copyright holder, which looks like a leftover from
+  a project template.
+distribution: source-only
+install_notes: >-
+  Serve the repository with a static server, for example ruby -run -e httpd . -p 8000, open it in a Chromium browser, choose
+  the minilogue xd KBD/KNOB port as input and its MIDI out port as output, then press Connect MIDI.
+brick_risk: false
+tags: [midi, web-midi, usb-midi, web, performance]
+image:
+  url: https://raw.githubusercontent.com/seandunn/xxd/master/docs/img/Overall_layout.png
+  alt: Dark page with a row of modulation sources, then VCO 1, VCO 2, mixer and filter boxes with parameter values, and a lower row for portamento, synth LFO and mod envelope
+  credit: seandunn
+  source_url: https://github.com/seandunn/xxd#readme
+  first_party: true
+versions:
+  - version: master @ e21fb49
+    date: 2026-07-19
+    url: https://github.com/seandunn/xxd/commit/e21fb495a9f72a72ef8d679d53d938d4d43bc9e2
+    notes: No tagged releases; this is the latest commit.

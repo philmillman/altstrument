@@ -1,0 +1,28 @@
+device: neural-dsp-nano-cortex
+kind: tool
+name: Nano Cortex Preset Switcher
+summary: React web app that switches the Nano Cortex's presets 1 to 64, toggles its gate, capture, cab and effect slots, sends expression and tap tempo, and listens for changes made on the pedal, using USB Web MIDI Program Change and Control Change messages.
+description: >-
+  A Vite and TypeScript page with a preset grid, effect toggle buttons, an expression slider, a tap tempo button and keyboard
+  shortcuts for preset selection. It sends the Control Change numbers the pedal documents for the gate, capture, cab, five
+  effect slots, tap tempo, tuner and expression, and listens for Program Change and Control Change messages coming back, finding
+  the pedal by its port name. An experimental Bluetooth MIDI path exists in the code but is switched off. Nothing is flashed.
+status: active
+authors:
+  - name: AlieksieievOU
+    url: https://github.com/AlieksieievOU
+source: https://github.com/AlieksieievOU/nanoCortexPresetSwitcher
+source_status: open
+license: MIT
+homepage: https://alieksieievou.github.io/nanoCortexPresetSwitcher/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, Edge or Opera, connect the pedal over USB and press Connect MIDI. Close other software that
+  holds the pedal's MIDI port, such as Cortex Cloud.
+brick_risk: false
+tags: [controller, web-midi, usb-midi, midi, web]
+versions:
+  - version: main @ 9c48496
+    date: 2026-01-26
+    url: https://github.com/AlieksieievOU/nanoCortexPresetSwitcher/commit/9c48496
+    notes: No tagged releases; this is the latest commit.

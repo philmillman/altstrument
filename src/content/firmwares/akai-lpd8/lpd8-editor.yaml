@@ -1,0 +1,33 @@
+device: akai-lpd8
+name: LPD8 Editor
+kind: tool
+summary: Browser editor for the Akai LPD8, a React and TypeScript app that loads a bank from the controller over Web MIDI, edits the pad and knob settings and sends them back. The project has moved from GitHub to Codeberg. A hosted copy is on Netlify.
+description: >-
+  The page shows the eight pads (note, controller number, program change and toggle) and eight knobs (controller number, minimum and maximum) of the selected bank, with
+  a choice of MIDI input, output and channel. The README says saving and loading config files was not finished, and lists optional online storage of configurations with a token. The
+  author wrote it because Akai's own LPD8 editor was not updated. The SysEx layout comes from the community notes the README links.
+status: dormant
+authors:
+  - name: Erwin Goossen
+    url: https://codeberg.org/Navelpluisje
+source: https://codeberg.org/Navelpluisje/LPD8-Editor
+source_status: open
+license: MIT
+license_notes: The license file says Copyright 2019-2023 Erwin Goossen. The GitHub repository navelpluisje/LPD8-Editor is archived and only points here.
+homepage: https://lpd8-editor.netlify.app/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a Web MIDI browser with SysEx access, connect the LPD8, pick the input and output, then press Load Config. The old lpd8-editor.com domain no longer serves the editor. To run it yourself, use npm install and npm start.
+brick_risk: false
+tags: [editor, web-midi, sysex, usb-midi, midi, presets, web]
+image:
+  url: https://raw.githubusercontent.com/navelpluisje/LPD8-Editor/master/docs/screenshot.png
+  alt: LPD8 Editor showing the LPD8 logo, Load, Send and Save Config buttons, bank buttons 1 to 4, eight pad panels and eight knob panels with their values, and MIDI input, output and channel menus
+  credit: Erwin Goossen
+  source_url: https://github.com/navelpluisje/LPD8-Editor#readme
+  first_party: true
+versions:
+  - version: master @ fd41812
+    date: 2024-01-07
+    url: https://codeberg.org/Navelpluisje/LPD8-Editor/commit/fd418126baaeebb490bc538729b9ada2fbfdc404
+    notes: No tagged releases; this is the latest commit.

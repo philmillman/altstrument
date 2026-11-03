@@ -1,0 +1,46 @@
+device: plinky-plinky
+name: Plinky LPE
+kind: firmware
+summary: Lucky Phoenix Edition, a user-maintained firmware branch for Plinky and Plinky+ with a reworked screen interface, manual preset and pattern saving and tidier parameter displays. It follows the official source and is aimed at merging back.
+description: >-
+  Version 0.2 reimplemented the 0.B2 features in a new base, and later releases clean up how parameters, icons and values are shown, add a load screen
+  that saves and loads presets, patterns and samples by pad, and stop saving the active preset automatically. Presets saved with other firmware can sound
+  different. The author's roadmap covers MIDI and MPE work, arpeggiator and LFO additions and an eventual merge with the official firmware. The repository
+  also carries copies of the official project's built images.
+status: active
+authors:
+  - name: RJ-Eckie
+    url: https://github.com/RJ-Eckie
+source: https://github.com/ember-labs-io/Plinky_LPE
+source_status: open
+license: MIT
+license_notes: The LICENSE.md is the official Plinky license text copied word for word. The software is MIT, graphics are CC BY-SA 4.0, the hardware design is CERN-OHL-P v2 and third-party code keeps its own licenses. The builds folder holds the official project's own MIT-licensed images, which match the official repository by hash except BOOTLOAD.UF2.
+homepage: https://github.com/ember-labs-io/Plinky_LPE
+distribution: download
+requires_stock: Plinky or Plinky+ with the official bootloader
+install_notes: >-
+  Download the UF2 from the builds folder and install it the way the official firmware page describes, by holding the encoder at power-up and
+  copying the file onto the drive that appears. When updating from an older version the file may need to be renamed to CURRENT.UF2. The author advises backing up presets before upgrading, because presets are no longer saved automatically in 0.4.0.
+brick_risk: false
+tags: [fork, open-source, synth-engine, sequencer, sampler, midi, ui, platform]
+versions:
+  - version: v0.4.0
+    date: 2025-11-26
+    url: https://github.com/ember-labs-io/Plinky_LPE/releases/tag/v0.4.0
+    notes: Manual saving of presets and patterns and a redesigned load screen.
+  - version: v0.3.1
+    date: 2025-11-11
+    url: https://github.com/ember-labs-io/Plinky_LPE/releases/tag/v0.3.1
+    notes: Fixes LFO rate mapping, unsynced delay time and CV A/B/X/Y input behavior.
+  - version: v0.3.0
+    date: 2025-10-10
+    url: https://github.com/ember-labs-io/Plinky_LPE/releases/tag/v0.3.0
+    notes: Cleans up how parameters, categories and values are displayed.
+  - version: v0.2.1
+    date: 2025-08-03
+    url: https://github.com/ember-labs-io/Plinky_LPE/releases/tag/v0.2.1
+    notes: Beta; restores the touch and CV calibration procedures.
+  - version: v0.2.0
+    date: 2025-07-24
+    url: https://github.com/ember-labs-io/Plinky_LPE/releases/tag/v0.2.0
+    notes: Alpha; no calibration procedure and a non-working USB editor.

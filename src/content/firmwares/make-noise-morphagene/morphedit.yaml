@@ -1,0 +1,42 @@
+device: make-noise-morphagene
+name: MorphEdit
+kind: tool
+summary: Browser audio editor, also a PWA and Electron app, for preparing Morphagene reels. It places splice markers with transient detection and zero-crossing snap, edits, fades and joins audio, and exports 48 kHz 32-bit WAV files with cue points. It does not connect to the module.
+description: >-
+  The editor works on audio files entirely in the browser. It detects transients and adds, locks and removes splice markers,
+  imports cue points from files, crops, fades, normalises, reverses and concatenates audio, changes tempo and pitch with
+  the RubberBand library, and shows the BPM. Export options include the Morphagene reel format, with a warning about the
+  module's reel length, individual splice segments and other sample rates and bit depths for other samplers. The reel files
+  are then copied to the module's SD card. Nothing is flashed.
+status: active
+authors:
+  - name: Carlos Eduardo de Paula
+    url: https://github.com/carlosedp
+source: https://github.com/carlosedp/morphedit
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file was changed to the GNU GPL version 3 text in July 2025. The README badge and package.json still say MIT.
+homepage: https://audioedit.carlosedp.com/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a browser, or install it as an app from Chrome or Edge. Desktop builds for Windows, macOS and Linux are on the releases
+  page. Export the reel as WAV and copy it to the Morphagene's SD card.
+brick_risk: false
+tags: [editor, sampler, samples, sample-transfer, granular, web]
+image:
+  url: https://raw.githubusercontent.com/carlosedp/morphedit/main/public/img/overview.png
+  alt: MorphEdit with a yellow waveform view, playback and zoom controls, save and slice buttons, crop, fade and normalise tools, and a splice marker panel with auto slice and detection sensitivity
+  credit: Carlos Eduardo de Paula
+  source_url: https://github.com/carlosedp/morphedit#readme
+  first_party: true
+versions:
+  - version: v7.0.0
+    date: 2025-10-08
+    url: https://github.com/carlosedp/morphedit/releases/tag/v7.0.0
+  - version: v6.0.1
+    date: 2025-08-18
+    url: https://github.com/carlosedp/morphedit/releases/tag/v6.0.1
+  - version: v5.7.0
+    date: 2025-07-14
+    url: https://github.com/carlosedp/morphedit/releases/tag/v5.7.0

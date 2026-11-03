@@ -1,0 +1,28 @@
+device: m-vave-fm-1
+name: SLOOP UC25HQ80
+summary: >-
+  Experimental SLOOP 2.8.4 build that also accepts the UC25HQ80 flash chip (JEDEC ID 0xB36014), so projects can be saved on FM-1 units that carry it. A five-file source patch; one user reports it installed and saves.
+description: >-
+  Stock SLOOP 2.8.4 checks for one flash chip ID (0x856014) in three places: when it enables project storage, in the update loader's known-chip check and in the recovery entry, so on a unit with the UC25HQ80 it installs but keeps data only in RAM. This build allows 0xB36014 as well and leaves unknown IDs refused. Five production files changed, adding 23 lines and removing 4, which grows the application by 56 bytes and the loader by 22. The SPI commands, flash layout, timeouts and project format are untouched. The firmware shows SLOOP 2.8.4 UC TEST and keeps the package identity FM-1_900. The case report records one user's install with M-Flasher on a unit that came with V16, and states that a cold power-cycle persistence test, long-term use and recovery were not established. The wider test suite did not finish fully green. The release is a pre-release with the package, the full source, test reports and hashes.
+status: active
+authors:
+- name: 1andesc
+  url: https://github.com/1andesc
+- name: isod89
+  url: https://github.com/isod89
+source: https://github.com/1andesc/fm1-firmware-downloader
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The patch applies to isod89/sloop-fm1 commit 91f3018 and is GPL-3.0-only, as SLOOP is. It is not covered by the MIT licence of the downloader userscript in the same repository. No SDK files or firmware images are in the repository; the release carries the complete corresponding source.
+distribution: download
+requires_stock: An FM-1 that reports flash ID 0xB36014 (UCUN UC25HQ80)
+install_notes: >-
+  Back up the whole 1 MiB flash with M-Flasher first, install only on a unit that reports 0xB36014, and leave the bootloader replacement and settings erase options unticked, as in the case report. Then boot, check the screen reads SLOOP 2.8.4 UC TEST, save a test project, power off with USB disconnected and reload it before trusting the unit with important work. The packaged .fwsc is on the release page next to its SHA-256 list.
+brick_risk: true
+tags: [sequencer, groovebox, drums, fx, fork]
+versions:
+- version: uc25hq80-experimental-v1
+  date: 2026-11-02
+  url: https://github.com/1andesc/fm1-firmware-downloader/releases/tag/uc25hq80-experimental-v1
+  notes: Pre-release. SLOOP 2.8.4 with the UC25HQ80 flash ID added.

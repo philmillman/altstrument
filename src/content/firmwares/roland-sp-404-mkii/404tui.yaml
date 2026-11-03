@@ -1,0 +1,32 @@
+device: roland-sp-404-mkii
+kind: tool
+name: 404tui
+summary: Go terminal UI and command-line tool for the SP-404MKII over its USB serial link, a port of SparkyMK2. It manages pads, samples, patterns, projects and files, slices samples, and has a Perform dashboard that reads MIDI. Not yet verified on real hardware.
+description: >-
+  The program works through the unit's USB serial protocol as documented by the SparkyMK2 project. Tabs cover pads, a file
+  browser for the unit and SD card, projects, a slicer that renders slices onto pads, a pattern sequencer, and a Perform
+  dashboard that counts the bar from the unit's MIDI clock, shows pad hits and effect state, and can record the unit's USB
+  audio to a WAV file through ffmpeg or sox. It can also serve Perform as a phone page from the host computer, and a
+  separate page at the project site runs over Web MIDI. A handheld front end for an R36S was added in the latest commit. The README
+  says the protocol and interface were tested against a simulated device only, not yet against a real unit. It does not
+  change the unit's firmware.
+status: active
+authors:
+  - name: moahbeatlab
+    url: https://github.com/moahbeatlab
+source: https://github.com/moahbeatlab/404tui
+source_status: open
+license: GPL-3.0-or-later
+license_notes: The README states GPL-3.0-or-later, as SparkyMK2, and the LICENSE file is the GPL version 3 text.
+homepage: https://moahbeatlab.github.io/404tui/
+distribution: download
+install_notes: >-
+  The v0.1-alpha release has builds for macOS (universal), Linux and Windows on x86-64 and ARM64, with a SHA256SUMS file. The
+  Windows build is unsigned. Run sp404 -sim to try it without a unit. Recording needs ffmpeg or sox installed. Work on a copy
+  of your project data, since the tool has not been tested on real hardware.
+brick_risk: false
+tags: [cli, tui, sample-transfer, samples, utility, midi, usb-midi, go]
+versions:
+  - version: v0.1-alpha
+    date: 2026-10-19
+    url: https://github.com/moahbeatlab/404tui/releases/tag/v0.1-alpha

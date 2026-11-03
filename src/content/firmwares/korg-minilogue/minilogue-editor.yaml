@@ -1,0 +1,30 @@
+device: korg-minilogue
+kind: tool
+name: Minilogue Editor
+summary: Browser editor for the original minilogue's programs over Web MIDI, written in 2018. It shows a panel of every parameter, imports and exports Korg Librarian files, sends and receives programs, and sends control changes while you turn its knobs.
+description: >-
+  The page draws the minilogue's panel and lets you view and change each program parameter. It keeps a library of programs
+  in the browser, and it opens and saves the program files used by Korg's own Minilogue Librarian. Programs are loaded from and
+  sent to the synthesizer over MIDI, and the editor can send and receive control changes for the panel controls. It was built with
+  React and Redux and has not changed since early 2018, but the hosted page still loads and shows the panel. The author notes
+  that MIDI support was limited to Chrome when it was written. Nothing is flashed.
+status: dormant
+authors:
+  - name: Jeff Kistler
+    url: https://github.com/jeffkistler
+source: https://github.com/jeffkistler/minilogue-editor
+source_status: open
+license: MIT
+license_notes: The LICENSE file is the MIT text, copyright 2018 Jeff Kistler.
+homepage: https://jeffkistler.github.io/minilogue-editor/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or another Chromium browser, connect the minilogue by USB and allow MIDI access. It targets
+  the original minilogue, not the minilogue xd.
+brick_risk: false
+tags: [editor, librarian, web-midi, sysex, usb-midi, presets, web]
+versions:
+  - version: master @ c864768
+    date: 2018-02-06
+    url: https://github.com/jeffkistler/minilogue-editor/commit/c864768866680f3cf958d00c20cc240df00208de
+    notes: No tagged releases; this is the latest commit.

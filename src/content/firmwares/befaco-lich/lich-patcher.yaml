@@ -1,0 +1,38 @@
+device: befaco-lich
+name: Lich Patcher
+kind: tool
+summary: Browser patch manager for the Lich over Web MIDI SysEx, with upload, backup, a local library, remote control of parameters and a Pure Data editor with audio preview. An optional separate compiler service builds patches.
+description: >-
+  Connected to the module's USB port, the page lists the patches on the device and uploads, downloads and backs them up,
+  keeps a local library, controls knobs and extra parameters remotely and monitors MIDI traffic. A second view edits
+  Pure Data patches with subpatches, undo, clickable controls and a preview that runs in the browser through libpd.
+  Hardware builds use Heavy, so the preview can differ. Building a patch for the module uses a compiler service whose
+  source is not published; the interface can point at another compatible server. Firmware flashing is outside its scope.
+status: active
+authors:
+  - name: shmuga
+    url: https://github.com/shmuga
+source: https://github.com/shmuga/lich-patcher
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The README states GPL version 3 or later and CREDITS.md lists the third-party components with their own licences. The
+  hosted compiler service that builds patches for the hardware is closed source and not in the repository.
+homepage: https://lich.markorel.ninja/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted site in Chrome or Edge, connect the Lich through its square USB-B port, click Connect and allow MIDI
+  and SysEx access.
+brick_risk: false
+tags: [editor, librarian, web-midi, sysex, usb-midi, midi, web]
+image:
+  url: https://raw.githubusercontent.com/shmuga/lich-patcher/main/docs/images/lich-patcher.png
+  alt: Lich Patcher showing a Lich panel with knobs and jacks on the left and a patch upload area above a table of patches on the device on the right
+  credit: shmuga
+  source_url: https://github.com/shmuga/lich-patcher#readme
+  first_party: true
+versions:
+  - version: main @ 9e44802
+    date: 2026-10-18
+    url: https://github.com/shmuga/lich-patcher/commit/9e44802
+    notes: No tagged releases; this is the latest commit.

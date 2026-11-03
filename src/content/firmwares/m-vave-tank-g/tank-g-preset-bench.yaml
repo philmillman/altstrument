@@ -1,0 +1,37 @@
+device: m-vave-tank-g
+kind: tool
+name: Tank G Preset Bench (TANK-G-AI)
+summary: >-
+  Single-page browser tool that builds Tank G presets and saves them as the 21-byte .tkg files the official editor opens. It can push settings to the pedal over MIDI using frames it learns from the pedal, and builds a prompt for an AI.
+description: >-
+  Rights warning: index.html embeds a library of 67 presets, 91 amp profiles and 2,298 IR cabs harvested from a Tank G
+  folder. The README says its reference material includes the vendor's manual and editor screenshots and .tkg presets
+  from community and commercial packs, though the reference folder it describes is not in the current tree.
+
+  The page has a replica of the pedal's panel with every knob and footswitch live, per-block locks and a view of the 21
+  bytes, and FORMAT.md documents the .tkg layout, derived from 96 sample files that round-trip exactly. A text request is
+  scored against the library to place the controls, or turned into a prompt to paste into an AI. It also has a
+  microphone tuner. For MIDI it does not use a known message format: you move a control on the pedal, and the page
+  diffs the messages to learn which byte carries the value, then replays that frame with new values. The README says storing
+  to flash and reading presets are not possible this way, so sends only change the active preset. Nothing is flashed.
+status: active
+authors:
+  - name: Kuysvan
+    url: https://github.com/Kuysvan
+source: https://github.com/Kuysvan/TANK-G-AI
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and the README states no license.
+homepage: https://kuysvan.github.io/TANK-G-AI/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in desktop Chrome or Edge. Connect the pedal by USB, or by Bluetooth once M-VAVE's bt_midi_Connector
+  exposes it as a system MIDI device. The page cannot work from file://, so serve it locally if you self-host. Commit a tone
+  with the pedal's own save.
+brick_risk: false
+tags: [editor, web-midi, midi, presets, tuner, ai, web]
+versions:
+  - version: main @ 0365afa
+    date: 2026-08-19
+    url: https://github.com/Kuysvan/TANK-G-AI/commit/0365afa
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,35 @@
+device: bricasti-m7
+kind: tool
+name: Freecasti
+summary: Browser editor for Bricasti M7 program and system SysEx dumps, together with an unofficial byte-level specification of both formats. It edits the 18 sound parameters, loads 222 factory presets and can talk to the unit over Web MIDI.
+description: >-
+  Rights warning: the repository holds hundreds of .syx dumps captured from a hardware M7, including 222 factory presets, and a
+  preset sheet parsed from Bricasti's published PDF.
+
+  The specification describes the 157-byte program dump and the 77-byte system dump, with the frame, a CRC-16 checksum, the name,
+  bank and slot fields and the encoding of each parameter, checked against 452 captured dumps and written out as Kaitai
+  and JSON schemas. A Python toolchain decodes, rebuilds and analyses dumps. The static web editor shows the parameters with
+  tooltips, serializes dumps live, loads presets and system settings, and sends them over Web MIDI, which is off until you
+  enable it. Nothing is flashed.
+status: active
+authors:
+  - name: Stuart Cam
+    url: https://github.com/codebrain
+source: https://github.com/codebrain/freecasti
+source_status: open
+license: Apache-2.0
+license_notes: >-
+  The LICENSE file is the Apache License 2.0, with the copyright line "codebrain contributors". Its sysex/ folder holds preset and parameter dumps from a real M7 whose factory contents belong to Bricasti, and the licence does not give rights in them.
+homepage: https://codebrain.github.io/freecasti/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a Web MIDI browser. Web MIDI is off by default in the editor, so enable it, then choose the MIDI ports
+  and hold PROG, EDIT or SYSTEM on the M7 to send a dump. The specification tools need Python 3.11 and the web UI build
+  needs Node 20 and Java or kaitai-struct-compiler.
+brick_risk: false
+tags: [editor, web-midi, sysex, midi, presets, research, web]
+versions:
+  - version: main @ a946627
+    date: 2026-07-21
+    url: https://github.com/codebrain/freecasti/commit/a946627
+    notes: No tagged releases; this is the latest commit.

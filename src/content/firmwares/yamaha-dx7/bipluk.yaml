@@ -1,0 +1,26 @@
+device: yamaha-dx7
+also_devices: [casio-cz-101, oberheim-matrix-1000]
+name: bipluk
+kind: tool
+summary: Closed hosted SysEx librarian that backs up synth patches over Web MIDI to a cloud vault, reads patch names from the dumps and restores them. It has pages for the DX7, Casio CZ-101 and Oberheim Matrix-1000. The free tier is limited and a lifetime plan is paid.
+description: >-
+  The site also lists Roland Juno-106, Jupiter-6 and D-50, Korg M1, Ensoniq and Yamaha TX81Z pages, which this entry does not cover. The page connects to the synth through Web MIDI, requests bulk dumps, decodes the preset names, stores the dumps in an account
+  vault with search and CSV export and sends them back with paced messages. Each supported synth has a wiki page with the front-panel steps needed
+  to allow SysEx, a MIDI test console and a factory preset list. The free tier has one vault slot and the
+  paid lifetime tier lifts the limits; the site quotes several different prices in different places. Nothing is flashed. The domain knob.monster redirects to
+  bipluk.com.
+status: active
+authors:
+  - name: Half Radiation LLC
+    url: https://bipluk.com/
+source_status: closed
+license: proprietary
+license_notes: >-
+  Hosted commercial software with a free tier and a paid lifetime plan. The site names Half Radiation LLC as its publisher and states no source licence.
+homepage: https://bipluk.com/
+distribution: browser-installer
+install_notes: >-
+  Open the site in Chrome or Edge, sign in with Google or an emailed link, connect the synth and allow MIDI access with SysEx.
+  Each synth page lists the front-panel settings that enable SysEx, such as the DX7's memory protect and SYS INFO screens.
+brick_risk: false
+tags: [librarian, sysex, web-midi, midi, presets, web]

@@ -1,0 +1,45 @@
+device: valeton-gp-50
+also_devices: [valeton-gp-5]
+kind: tool
+name: Valeton GP-50 Editor
+summary: Browser editor for the Valeton GP-50 and GP-5 over Web MIDI, built on a reverse-engineered SysEx protocol. It reads every preset, edits blocks live, reorders and renames slots, browses SnapTone captures and IRs, and converts .prst files. The hosted copy is retired.
+description: >-
+  Rights warning: the repository holds effect and model tables decoded from Valeton's own software, notes that quote names
+  from Valeton's firmware and editor, and two GP-5 .prst files used as test fixtures that may be Valeton factory presets.
+
+  The page connects to the pedal over Web MIDI with SysEx, scans all presets one by one, and shows each signal chain with
+  block names from Valeton's catalogue. Edits to blocks, models and parameters go to the pedal as you make them, and the
+  page can rename, reorder, copy, swap and clear preset slots, and show which presets use a given SnapTone capture or user
+  IR. It can wrap a saved effects chain around a capture and write the result to a slot, and convert .prst files between
+  the GP-5 and GP-50 layouts in the browser. A local Python server is only used for development and for an older NAM
+  converter that has moved to its own project. Writes are verified against a GP-50; GP-5 writes reuse the same commands. The
+  author sold their pedal in September 2026, stopped testing against hardware and, on 26 October 2026, replaced the hosted
+  site with a notice that the project is not maintained. Nothing is flashed.
+status: archived
+authors:
+  - name: Andrew Mercurio
+    url: https://github.com/drewmerc302
+source: https://github.com/drewmerc302/valeton-gp50
+source_status: open
+license: MIT
+license_notes: >-
+  The repository has an MIT LICENSE. It also holds reverse-engineering notes and Ghidra scripts for Valeton's desktop
+  app and firmware format, a decoded model catalogue and sample NAM files; no firmware image is committed.
+distribution: source-only
+install_notes: >-
+  The hosted copy now shows a retirement notice, so run it locally with ./run.sh from the repository (a Python FastAPI
+  server on 127.0.0.1:8756) and use Chrome or Edge with the pedal on USB. Chrome 152 corrupts SysEx and cannot talk to
+  the pedal; use Chrome 153 or newer. The author no longer has hardware to test fixes.
+brick_risk: false
+tags: [editor, web-midi, sysex, usb-midi, presets, librarian, converter, research, web]
+image:
+  url: https://raw.githubusercontent.com/drewmerc302/valeton-gp50/master/docs/screenshots/02-preset-detail.png
+  alt: Preset detail page for a patch named Power Lead, with a signal chain strip, per-block parameter sliders for a booster, an amp, a cabinet and a reverb, and a Write edits to device button
+  credit: Andrew Mercurio
+  source_url: https://github.com/drewmerc302/valeton-gp50#readme
+  first_party: true
+versions:
+  - version: master @ 47b2b58
+    date: 2026-10-26
+    url: https://github.com/drewmerc302/valeton-gp50/commit/47b2b58
+    notes: No tagged releases; this is the latest commit, which retires the hosted editor.

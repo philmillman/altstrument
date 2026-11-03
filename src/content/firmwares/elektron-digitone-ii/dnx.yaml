@@ -1,0 +1,48 @@
+device: elektron-digitone-ii
+also_devices: [elektron-digitone]
+name: DNX
+kind: tool
+summary: Browser tools for Digitone and Digitone II projects over Web MIDI. An expander spreads a Digitone 1 sketch over the 16 tracks of a Digitone II, a manager moves patterns between slots and projects, and a library browses the +Drive presets and backs it up.
+description: >-
+  The expander gives each sound that a Digitone 1 track switches between with sound locks its own track on a Digitone II,
+  with its trigs and locks. The manager moves, copies, swaps, clears and renames patterns across banks and projects with undo,
+  and an Insights view reports polymeter cycles, trigs stored past a track's end, voice use and key fit. The library lists the 2,048 +Drive presets with tags, renames them
+  and drags them into a project's sound pool, and a wavetables pane works on a Digitone II running the Waverider firmware. Backups of every project, soundbank and kit
+  go into one .dnx file; global settings are not included because the instrument cannot send them. Writing is off until a toolbar switch is
+  turned on, a copy of the old contents is saved before anything is replaced, every write is read back, and the loaded
+  project is never written to. A probe page asks an instrument what it is and captures what it sends. The core is a separate
+  package and there is a command-line version. The project is a beta, and its documentation grades each format claim as
+  verified, decoded, inferred or unknown.
+status: active
+authors:
+  - name: Noise and Matter
+    url: https://github.com/NoiseAndMatter
+source: https://github.com/NoiseAndMatter/DNX
+source_status: open
+license: AGPL-3.0-or-later
+license_notes: >-
+  The README names AGPL-3.0-or-later and package.json agrees. A different licence is offered on request. The repository
+  vendors web/vendor/dksample.wasm, the sample converter from digikit (AGPL-3.0-or-later), and commits one test zip.
+homepage: https://noiseandmatter.github.io/DNX/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a Chromium browser and allow MIDI with SysEx; Firefox and Safari have no Web MIDI. Close
+  Elektron Transfer and Overbridge first. Turn WRITE on only when you want to change the instrument, and keep the copy it
+  saves before each write.
+brick_risk: false
+tags: [editor, librarian, web-midi, sysex, usb-midi, presets, web, converter, research]
+image:
+  url: https://raw.githubusercontent.com/NoiseAndMatter/DNX/main/docs/img/dnx-boot.png
+  alt: DNX boot screen with the letters DNX drawn in dotted pale green characters on a dark screen with faint scan lines
+  credit: Noise and Matter
+  source_url: https://github.com/NoiseAndMatter/DNX#readme
+  first_party: true
+versions:
+  - version: main @ 695e9b7
+    date: 2026-11-02
+    url: https://github.com/NoiseAndMatter/DNX/commit/695e9b774fbfc7bbdbfe629e774e84afc5630dee
+    notes: No tagged releases; this is the latest commit.
+  - version: 0.9.0-beta.8
+    date: 2026-10-03
+    url: https://github.com/NoiseAndMatter/DNX/blob/main/CHANGELOG.md
+    notes: Latest version named in the changelog; fixes song reading for OS 1.11 projects.

@@ -1,0 +1,31 @@
+device: roland-s-1
+kind: tool
+name: S1 Web
+summary: Svelte browser synth modelled on the S-1 with a 64-step sequencer, motion recording and OSC Draw. It reads the S-1's pattern .PRM backup files and writes them back, so patterns made in the page can be restored to the unit. Audio is the page's own; Web MIDI is input only.
+description: >-
+  Mostly a software recreation: subtractive voices, sliders for the panel, an arpeggiator, effects, LFO, D-MOTION and
+  a 64-step sequencer with gate, velocity, probability, ties and motion steps. For the hardware, the Import .PRM button
+  reads one pattern backup file and Export .PRM writes it out, keeping unknown keys, so the file can be placed in the S-1's backup
+  folder before a restore. The README, in French, says encodings come from S1Utility's documentation and were checked
+  against 77 real backups round-trip, and that sub-steps, tie encoding and pitch bend motion are not verified on a machine.
+  Web MIDI receives notes and knob CCs but the code sends nothing to the synth. The README warns to make a full S-1 backup
+  before restoring an exported file. The repository has no licence file. Nothing is flashed.
+status: active
+authors:
+  - name: jobarbo
+    url: https://github.com/jobarbo
+source: https://github.com/jobarbo/web-synth-s1
+source_status: open
+license: unspecified
+license_notes: There is no LICENSE file and the README states no licence.
+distribution: source-only
+install_notes: >-
+  Run npm install and npm run dev and open http://localhost:5173. The server must send COOP and COEP headers, which the dev
+  and preview scripts do. Back up the S-1 before restoring any exported .PRM.
+brick_risk: false
+tags: [synth, sequencer, emulator, midi, web-midi, converter, web]
+versions:
+  - version: main @ 27c56a2
+    date: 2026-10-23
+    url: https://github.com/jobarbo/web-synth-s1/commit/27c56a2d6ea68a3f9f6dd4934f010140e3322cd3
+    notes: No tagged releases; this is the latest commit.

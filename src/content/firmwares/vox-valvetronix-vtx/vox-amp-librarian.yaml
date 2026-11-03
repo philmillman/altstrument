@@ -1,0 +1,38 @@
+device: vox-valvetronix-vtx
+kind: tool
+name: VOX VTX Amp Librarian
+summary: Browser librarian and live editor for Vox VT20X, VT40X and VT100X amps over Web MIDI, written as a replacement for Vox's ToneRoom app. It edits parameters on the amp, copies programs to and from files, imports ToneRoom .VTXPROG files and keeps a library.
+description: >-
+  A Kotlin/JS web app, installable as a PWA, that talks to the amp's USB MIDI port with the SysEx protocol the author recorded
+  from ToneRoom on a VT20X and wrote up in the repository. It shows the eight program slots and the amp model, pedal,
+  modulation, delay and reverb settings with their knobs, applies edits to the amp live, saves programs to a slot or to a
+  file and loads them back, applies a whole saved set to the amp, and reads ToneRoom's .VTXPROG files. The protocol code is
+  kept separate from the interface so other programs can reuse it. Only one program may use the amp at a time, so close
+  ToneRoom first. It was made because ToneRoom's file import and export stopped working on Android 12. The last commit is from
+  September 2024. Nothing is flashed.
+status: dormant
+authors:
+  - name: Tobias Marstaller
+    url: https://github.com/tmarsteel
+source: https://github.com/tmarsteel/vox-amp-librarian
+source_status: open
+license: MIT
+homepage: https://tmarsteel.github.io/vox-amp-librarian/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a recent Chrome, Edge or Firefox and connect the amp by USB. On Android use a USB-OTG adapter;
+  Firefox on Android and Safari on iOS do not work. Close ToneRoom and other MIDI software first. Saving to a slot
+  overwrites that program, so export your programs to a file first.
+brick_risk: false
+tags: [editor, librarian, web-midi, sysex, usb-midi, presets, web]
+image:
+  url: https://raw.githubusercontent.com/tmarsteel/vox-amp-librarian/main/doc/screenshot_desktop_mixed_schemes.png
+  alt: VOX VTX Amp Librarian with program slots A1 to B4 and saved sets on the left and amplifier, pedal and delay knobs for a program called Amon Ld on the right, half light and half dark
+  credit: Tobias Marstaller
+  source_url: https://github.com/tmarsteel/vox-amp-librarian#readme
+  first_party: true
+versions:
+  - version: main @ c979950
+    date: 2024-09-15
+    url: https://github.com/tmarsteel/vox-amp-librarian/commit/c979950
+    notes: No tagged releases; this is the latest commit.

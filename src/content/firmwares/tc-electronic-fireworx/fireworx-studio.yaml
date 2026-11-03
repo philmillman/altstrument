@@ -1,0 +1,33 @@
+device: tc-electronic-fireworx
+kind: tool
+name: FireworX Studio
+summary: Browser editor and librarian for the TC Electronic FireworX over Web MIDI SysEx, built on the MIDI Studio platform. It edits blocks, routing and modulation links, keeps a preset library and can store to the User bank or card. It is an alpha for OS 2.00 and newer.
+description: >-
+  The editor reads the unit's live status with two matching reads before it allows editing, then offers a hardware-style and
+  a modern view, the routing and signal matrix, block settings, decoded modulation links and MIDI Learn. It has a local
+  librarian with progressive bank reads and JSON and SysEx export, seeded random variations with a rough DSP budget estimate, and temporary
+  writes that are compared with a read-back. Storing to the User bank or card backs up the destination and verifies it, but the
+  author says hardware qualification and retention after a restart are still pending. Some data is preserved without being decoded, including packed User
+  dumps. The repository is a clean snapshot with no vendor manuals, and its test dumps are synthetic. English and French,
+  with an illustrated manual. Nothing is flashed.
+status: active
+authors:
+  - name: TheLazyGeekGuy
+    url: https://github.com/TheLazyGeekGuy
+source: https://github.com/TheLazyGeekGuy/fireworx-studio
+source_status: open
+license: MIT
+homepage: https://thelazygeekguy.github.io/fireworx-studio/editor/
+distribution: browser-installer
+requires_stock: OS 2.00 or newer
+install_notes: >-
+  Open the hosted editor in a Web MIDI browser and allow MIDI with SysEx access, then pick the FireworX input and output
+  ports if automatic discovery cannot. Only one program should control the unit at a time. Treat storing as unproven: the
+  author lists full qualification as pending.
+brick_risk: false
+tags: [editor, librarian, web-midi, sysex, midi, presets, web]
+versions:
+  - version: main @ 8c80af8
+    date: 2026-10-30
+    url: https://github.com/TheLazyGeekGuy/fireworx-studio/commit/8c80af8
+    notes: No tagged releases; this is the latest commit.

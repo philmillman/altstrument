@@ -1,0 +1,33 @@
+device: elektron-model-cycles
+name: Model:Cycles Web Editor
+kind: tool
+summary: Browser piano-roll editor and sequencer for the Model:Cycles over Web MIDI. It sends parameters as CC, selects patterns with program change, and records a sequence into the unit one track at a time by playing it in over MIDI clock.
+description: >-
+  Six piano rolls hold up to 64 steps each with per-track length, swing, a key and scale aid and several pattern tabs, with
+  undo and JSON export. Knobs send Pitch, Decay, Color, Shape, Sweep, Contour, level, pan, delay, reverb and chance as CC.
+  Because Elektron's pattern SysEx format is undocumented, the app does not try to write patterns. It transfers a sequence by sending MIDI start,
+  clock and notes on the AUTO channel while the unit is in live recording, one track at a time. A table in the
+  README says which data reaches the unit: notes, parameters, swing and pattern selection do, and per-step parameter locks,
+  machine locks and pattern length do not. The author tested the transfer on OS 1.11. The interface is in English and
+  Japanese. It requests Web MIDI without SysEx permission. A handoff note says it was developed with Claude.
+status: active
+authors:
+  - name: tkawamu0622-cmd
+    url: https://github.com/tkawamu0622-cmd
+source: https://github.com/tkawamu0622-cmd/model-cycles-web-editor
+source_status: open
+license: unspecified
+license_notes: The repository has no license file or license statement.
+homepage: https://tkawamu0622-cmd.github.io/model-cycles-web-editor/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Edge with the Model:Cycles connected over USB. For transfers set CLK IN on and CLK
+  OUT off, PCH IN on, RCV NOTE and RCV CC on, and the AUTO channel to match the app, then press REC and PLAY on the unit and the
+  track's transfer button in the app. Set the input from to USB in MIDI settings.
+brick_risk: false
+tags: [editor, sequencer, web-midi, usb-midi, midi, web]
+versions:
+  - version: main @ 351ea86
+    date: 2026-08-25
+    url: https://github.com/tkawamu0622-cmd/model-cycles-web-editor/commit/351ea86ffc6bda958a4acdae07581d48ceabae28
+    notes: No tagged releases; this is the latest commit.

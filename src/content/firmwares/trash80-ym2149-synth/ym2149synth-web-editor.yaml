@@ -1,0 +1,28 @@
+device: trash80-ym2149-synth
+name: YM2149 Synth Web Editor
+kind: tool
+summary: Chrome-based patch editor for trash80's YM2149 synth that loads and saves its presets over Web MIDI. It is a Vue app served from GitHub Pages and works over the synth's USB MIDI connection.
+description: >-
+  The editor connects to the synth after Chrome grants MIDI access and edits the synth's parameters and presets through its
+  MIDI controller map. The README warns not to use another MIDI program with the synth while loading or saving patches, because
+  it can corrupt the data, and points to Catskull Electronics for built units and to the designer's repository for the schematic and code. Nothing is flashed.
+status: dormant
+authors:
+  - name: Sam Wray
+    url: https://github.com/2xAA
+source: https://github.com/2xAA/ym2149synth-web-editor
+source_status: open
+license: GPL-3.0-only
+license_notes: The LICENSE file is the GNU GPL version 3 text, and the README states that it is under the GPL v3.0.
+homepage: https://2xaa.github.io/ym2149synth-web-editor/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, accept the MIDI permission prompt and plug the synth in over USB. Do not use other MIDI
+  software with the synth while loading or saving patches.
+brick_risk: false
+tags: [editor, web-midi, usb-midi, midi, presets, chiptune, web]
+versions:
+  - version: master @ 9c5b35b
+    date: 2022-06-27
+    url: https://github.com/2xAA/ym2149synth-web-editor/commit/9c5b35b4466fc193326bb59329a0160a0f10c380
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,30 @@
+device: roland-s-1
+kind: tool
+name: S-1 Web Editor
+summary: Astro and React dashboard that edits the S-1's 54 MIDI CC parameters from browser cards with waveform views, snapshots and a USB oscilloscope. The S-1 takes no SysEx, so it cannot read the patch; Send All pushes the screen to the synth.
+description: >-
+  Parameters are grouped into LFO, oscillator, filter, envelope, effects, voice and controls cards, each marked unsynced
+  until a value is confirmed by moving the hardware knob or pressing Send All. The page draws estimated oscillator mix, LFO,
+  filter and envelope shapes, shows the tempo from MIDI clock, monitors the unit's USB audio through the browser, and keeps
+  patch snapshots in browser storage with JSON import and export. Its limits section says it is CC-only and does not write
+  .PRM files. There is a mock MIDI mode, a hardware verification checklist and an English and French interface switch. No hosted copy
+  was found, and the repository has no licence file. Nothing is flashed.
+status: active
+authors:
+  - name: jobarbo
+    url: https://github.com/jobarbo
+source: https://github.com/jobarbo/s1_dashboard
+source_status: open
+license: unspecified
+license_notes: There is no LICENSE file and the README states no licence.
+distribution: source-only
+install_notes: >-
+  Run npm install and npm run dev, open http://localhost:4321 in Chrome or Edge, untick Mock MIDI and press Connect. The
+  S-1 listens on MIDI channel 3 by default.
+brick_risk: false
+tags: [editor, web-midi, usb-midi, midi, usb-audio, presets, web]
+versions:
+  - version: main @ 0f72a65
+    date: 2026-10-25
+    url: https://github.com/jobarbo/s1_dashboard/commit/0f72a654f9dd8405d8850edd71bb302ae9798162
+    notes: No tagged releases; this is the latest commit.

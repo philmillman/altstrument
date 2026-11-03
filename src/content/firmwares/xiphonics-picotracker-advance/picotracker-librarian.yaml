@@ -1,0 +1,47 @@
+device: xiphonics-picotracker-advance
+also_devices: [xiphonics-picotracker]
+name: picoTracker Librarian
+kind: tool
+summary: Single-file browser librarian and arrangement editor for picoTracker and Advance SD cards that browses projects, instruments, samples and themes, repairs sample references, plays songs, exports MIDI and mirrors the screen over Web Serial.
+description: >-
+  The card is opened through the File System Access API and indexed in the browser. Projects, .pti instruments and .ptt
+  themes are decoded, a Web Audio preview plays sampler instruments, and the arrangement, chains, phrases, slice points and
+  instrument parameters can be edited. Every write backs the original up to a folder on the card, verifies it and rolls
+  back on failure; the README marks the editing as beta. A Device page mirrors the screen of a connected unit with display
+  effects. A key-state input opcode is written but disabled because it made the Advance flicker. Format knowledge comes
+  from the open picoTracker firmware and from card files made by the closed Advance firmware. Nothing is flashed.
+status: active
+authors:
+  - name: Steve Blythe
+    url: https://github.com/clickysteve
+source: https://github.com/clickysteve/pico-tracker-librarian
+source_status: open
+license: MIT
+license_notes: >-
+  The Advance mirror font is Ubuntu Mono-derived and is under the Ubuntu Font Licence 1.0, with its text in the repository.
+homepage: https://pt-librarian.allmyfriendsaresynths.com
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Edge and choose the SD card, or use the demo card. Copy the card first, since edits
+  write to it. The screen mirror needs Web Serial over HTTPS.
+brick_risk: false
+tags: [librarian, editor, tracker, web, sample-transfer]
+image:
+  url: https://raw.githubusercontent.com/clickysteve/pico-tracker-librarian/main/screenshots/projects-screen.png
+  alt: picoTracker Librarian Projects tab on a demo card, listing four projects with BPM, instrument counts and missing-sample badges, and one project expanded
+  credit: clickysteve
+  source_url: https://github.com/clickysteve/pico-tracker-librarian#readme
+  first_party: true
+versions:
+  - version: v1.5.2
+    date: 2026-08-24
+    url: https://github.com/clickysteve/pico-tracker-librarian/tree/v1.5.2
+    notes: Git tag; no GitHub release page.
+  - version: v1.5.1
+    date: 2026-08-24
+    url: https://github.com/clickysteve/pico-tracker-librarian/tree/v1.5.1
+    notes: Git tag; no GitHub release page.
+  - version: v1.5.0
+    date: 2026-08-07
+    url: https://github.com/clickysteve/pico-tracker-librarian/tree/v1.5.0
+    notes: Git tag; no GitHub release page.

@@ -1,0 +1,32 @@
+device: elektron-machinedrum
+name: MDDT
+kind: tool
+summary: Browser tool for Machinedrum SPS-1 MK1, MK2 and UW data over Web MIDI. It requests and sends kits, patterns, songs and globals, edits kits and patterns, and has a sample manager for the UW that uses MIDI Sample Dump.
+description: >-
+  The page requests and sends kits, patterns, songs and global settings as SysEx, singly or all at once, with copy, paste
+  and clear for slots and a console of sent messages. It edits kits across synthesis, effects, master FX and routing, edits patterns with parameter locks,
+  and has a song mode. A lab area holds experimental generators. The UW sample manager shows ROM and RAM slots, receives and
+  transmits samples with a closed or open handshake, and imports and exports WAV, SYX, JSON and ZIP. The README warns that
+  sending SysEx can overwrite data on the device. A Firmware button in the toolbar calls a function that the code never
+  defines, so it does nothing. The hosted page is labelled 2.0.0 Beta, while the only release is v1.0.0. The page loads
+  noUiSlider, wNumb and Tone.js from CDNs.
+status: active
+authors:
+  - name: waftlord
+    url: https://github.com/waftlord
+source: https://github.com/waftlord/mddt
+source_status: open
+license: Apache-2.0
+license_notes: The repository also carries a NOTICE file and a third-party notice for the MIT-licensed libraries.
+homepage: https://wftlrd.uk/mddt/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or another Chromium browser, allow MIDI with SysEx, choose the ports and set the base
+  channel to match the Machinedrum. Back up first, since sending overwrites data on the device.
+brick_risk: false
+tags: [editor, librarian, sample-transfer, web-midi, sysex, midi, web, sampler, sequencer]
+versions:
+  - version: v1.0.0
+    date: 2026-01-03
+    url: https://github.com/waftlord/mddt/releases/tag/v1.0.0
+    notes: The only release; the default branch has later commits.

@@ -1,0 +1,34 @@
+device: korg-volca-bass
+also_devices: [korg-volca-keys]
+name: VolcaShare
+kind: tool
+summary: Patch sharing site for the volca bass and volca keys, with a Rails back end. Patches are edited on forms that look like the panel and can be sent to the synth over Web MIDI. Also has randomise, sequence storage and browser emulators.
+description: >-
+  A Ruby on Rails and MongoDB application behind volcashare.com. Users can sign in, save and tag patches for either synth,
+  keep some private, attach audio samples and note sequences, and browse patches ranked by completeness and age. A patch
+  page can sync its settings to a connected volca over Web MIDI by sending control changes, and a randomise button changes
+  parameters at random. Two in-browser emulators, a three-oscillator monosynth with a step sequencer for the bass and a
+  polysynth for the keys, let you try settings without the hardware. The repository can be run locally with Ruby, Node and
+  MongoDB, and the README says to remove the reCAPTCHA code first. Nothing is flashed.
+status: active
+authors:
+  - name: waterjump
+    url: https://github.com/waterjump
+source: https://github.com/waterjump/volca-share
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE.md file is the GNU GPL version 3 text with no "or later" wording of its own. The older copy at meowsus/volca-share
+  carries the same license.
+homepage: https://www.volcashare.com
+distribution: browser-installer
+install_notes: >-
+  Open the hosted site, build a patch on the bass or keys form, connect the volca by USB-MIDI or a MIDI interface and use the
+  sync button in a browser with Web MIDI. To run your own copy, follow the README steps for Ruby, Node and MongoDB.
+brick_risk: false
+tags: [librarian, presets, web-midi, midi, patch-library, web]
+versions:
+  - version: master @ 34d2bc5
+    date: 2026-04-27
+    url: https://github.com/waterjump/volca-share/commit/34d2bc57d7e8a81673a1a1bcb12bd7f5f5f3ee87
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,30 @@
+device: behringer-td-3
+kind: tool
+name: Acid Injector
+summary: Browser page that converts MIDI clips from the free STING Max for Live device into .seq pattern files for Behringer's SynthTribe and .syx dumps for the TD-3. It only reads and writes files; it does not connect to the synth.
+description: >-
+  The page reads a type 0 MIDI file with one track, such as a clip exported from STING, and works out the TD-3's step data from
+  it: notes, accents from maximum-velocity notes, slides from overlapping notes, ties and a triplet mode. It then offers a .seq file that
+  SynthTribe can send to the unit and a .syx file that any SysEx librarian or DAW can transmit. All processing is JavaScript in
+  the page and no MIDI port or server is involved. The author points to 303patterns.com as a fuller TD-3 manager. Nothing is
+  flashed.
+status: dormant
+authors:
+  - name: echolevel
+    url: https://github.com/echolevel
+source: https://github.com/echolevel/Acid-Injector
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and the README does not state a licence.
+homepage: https://echolevel.co.uk/Acid-Injector/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page, choose a one-track MIDI file and download the .seq or .syx file. Send the .seq file with SynthTribe, or
+  transmit the .syx file with a SysEx-capable librarian or DAW. Back up the unit's patterns first.
+brick_risk: false
+tags: [converter, utility, sysex, midi, web]
+versions:
+  - version: main @ 5adef19
+    date: 2022-09-22
+    url: https://github.com/echolevel/Acid-Injector/commit/5adef198ef8ab856d55059e4fe932a53b4cfb2f4
+    notes: No tagged releases; this is the latest commit.

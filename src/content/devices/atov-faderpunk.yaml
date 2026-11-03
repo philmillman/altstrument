@@ -1,0 +1,35 @@
+name: Faderpunk
+manufacturer: ATOV
+category: eurorack
+tagline: 16-fader Eurorack and USB MIDI controller that runs small apps
+description: >-
+  Faderpunk is a Eurorack module and USB MIDI controller from ATOV. It has sixteen faders, each with a backlit button, an RGB LED and a
+  configurable CV jack, plus extra jacks for clock and reset. Each fader channel runs an app, such as an LFO, sequencer, quantizer,
+  envelope or CV-to-MIDI converter, and one app can span several channels. A browser configurator sets the layout, app parameters and
+  scenes over USB MIDI.
+
+  The firmware is written in Rust for an RP2350B and is open source, and the maker's repository also holds the configurator and the
+  libraries for writing apps.
+platform: RP2350B (dual Arm Cortex-M33), MAX11300 mixed-signal I/O
+stock_firmware: 1.12.0
+links:
+  manufacturer: https://atov.de/products/faderpunk
+  community:
+    - label: Faderpunk repository (firmware and configurator)
+      url: https://github.com/ATOVproject/faderpunk
+    - label: ATOV Discord
+      url: https://atov.de/discord
+notes: >-
+  The maker publishes the firmware, so the entry for it is tagged official. Firmware updates are UF2 files copied to the
+  module in its USB boot mode (hold the bottom right Shift button while connecting USB).
+pinned: [faderpunk-firmware]
+image:
+  src: /images/devices/atov-faderpunk.webp
+  style: photo
+  alt: Front panel of the Faderpunk, a black Eurorack panel with sixteen faders at different heights, a jack above each and a lit button below each, and three more jacks at the right edge
+  width: 1200
+  height: 593
+  credit: ATOV
+  license: manufacturer product image
+  source_url: https://atov.de/products/faderpunk
+  original_url: https://cdn.shopify.com/s/files/1/0999/4498/9015/files/FaderpunkFront_small_80d2de55-26d5-4642-aa8d-c109d51e4b6a.jpg?v=1773148957

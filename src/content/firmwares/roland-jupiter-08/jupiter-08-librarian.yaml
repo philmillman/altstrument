@@ -1,0 +1,43 @@
+device: roland-jupiter-08
+kind: tool
+name: Jupiter-08 Librarian
+summary: Browser patch librarian for the Roland JUPITER-08. It edits the unit's whole-memory backup file so a restore brings in exactly the patches and presets you chose, and adds viewers that can follow panel edits and send a patch to the unit's edit buffer over Web MIDI.
+description: >-
+  The JUPITER-08 accepts no SysEx, so patches only move in bulk through a backup and restore over its USB drive mode. The page
+  opens JUPITER08Backup.svd, shows every patch and preset slot, and lets you bring in patches from other backups or from .j08set
+  sets, move, copy and swap slots, rename them and build a new backup file. It checks that no byte outside the edited slots has
+  changed before offering the download, and it never modifies the original file. A patch viewer shows each control's stored value
+  and, in Chrome or Edge, follows knob moves on the unit over MIDI and pushes a patch's panel controls to the edit buffer. A
+  preset viewer shows sequences, part settings and effects. The README says it was tested on one unit on firmware 1.00 and was
+  written with AI assistance. Restoring a backup replaces everything on the unit, including system settings.
+status: active
+authors:
+  - name: ryanmgilmore
+    url: https://github.com/ryanmgilmore
+source: https://github.com/ryanmgilmore/jupiter-08-librarian
+source_status: open
+license: GPL-3.0-or-later
+license_notes: The README states GPL-3.0-or-later; the LICENSE file is the GNU GPL version 3 text with no copyright line.
+homepage: https://ryanmgilmore.github.io/jupiter-08-librarian/
+distribution: browser-installer
+requires_stock: Firmware 1.00 (decoding verified only on that version)
+install_notes: >-
+  Back up the unit first by holding MENU at power-on and copying BACKUP/JUPITER08Backup.svd off its USB drive, and keep that
+  original. Drop it on the hosted page, build a new backup and keep the file name. To restore, hold MENU at power-on, delete
+  BACKUP/ on the drive, copy the new file into RESTORE/, eject and press PAGE/TIE. The live MIDI features need Chrome or Edge
+  and Roland's USB driver. Files from other firmware versions are likely to be refused.
+brick_risk: false
+tags: [librarian, editor, web-midi, usb-midi, presets, backup, web]
+versions:
+  - version: v0.2.1
+    date: 2026-10-30
+    url: https://github.com/ryanmgilmore/jupiter-08-librarian/releases/tag/v0.2.1
+    notes: Adds a link to the repository in the page header.
+  - version: v0.2.0
+    date: 2026-10-30
+    url: https://github.com/ryanmgilmore/jupiter-08-librarian/releases/tag/v0.2.0
+    notes: Adds the patch viewer and editor and the preset viewer next to the librarian.
+  - version: v0.1.0
+    date: 2026-10-28
+    url: https://github.com/ryanmgilmore/jupiter-08-librarian/releases/tag/v0.1.0
+    notes: First release, the patch manager.

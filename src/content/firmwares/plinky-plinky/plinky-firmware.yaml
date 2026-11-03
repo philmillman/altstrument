@@ -1,0 +1,42 @@
+device: plinky-plinky
+name: Plinky firmware
+kind: firmware
+summary: The project's own open source firmware for Plinky and Plinky+, written in C for the STM32L4. The repository also holds the bootloader, the KiCad hardware files, an emulator build, and the built UF2 images.
+description: >-
+  Releases since 0.B0 rewrote the sequencer, latching, voice allocation and MIDI handling, adding overdub and substep recording. Version 0.B2 added
+  detection of Plinky+. Updates are UF2 files copied to the drive that Plinky shows in its boot mode. The maker's firmware page lists the stable and
+  beta builds and the install steps, and release_notes.md in the repository lists the changes.
+status: maintained
+authors:
+  - name: Alex Evans
+    url: https://github.com/mmalex
+  - name: RJ-Eckie
+    url: https://github.com/RJ-Eckie
+source: https://github.com/plinkysynth/plinky_public
+source_status: open
+license: MIT
+license_notes: Software is MIT. The logo, panel design and other graphics are CC BY-SA 4.0, the hardware design is CERN-OHL-P v2, and some third-party code keeps its own licenses. The repository includes the project's own built .uf2 and .bin images.
+homepage: https://plinkysynth.com/firmware
+distribution: download
+install_notes: >-
+  Unplug other cables, hold down the encoder while connecting USB (on Plinky+, hold it while pressing the power button), wait for the tunnel of lights
+  and the drive to appear, then drag the UF2 file onto the drive, named CURRENT.uf2. Plinky+ needs 0.B2 or later. Mac and Linux users on older firmware
+  may need to mount the drive by hand once.
+brick_risk: false
+tags: [official, open-source, synth-engine, sequencer, sampler, wavetable, midi, eurorack, platform]
+versions:
+  - version: 0.B4 (beta)
+    url: https://github.com/plinkysynth/plinky_public/commit/61d0406082be697251d60595adfb548bd7bd3cf1
+    notes: Removes the front panel soldering check, which gave false positives.
+  - version: 0.B3
+    date: 2025-08-19
+    url: https://plinkysynth.com/firmware
+    notes: Fixes for Shift during sequencer playback, sample slice previews and oscillator spread over MIDI; boot logo on Plinky+.
+  - version: 0.B2
+    date: 2025-05-21
+    url: https://github.com/plinkysynth/plinky_public/blob/main/release_notes.md
+    notes: Adds Plinky+ detection, sequencer substep fixes and clock handling changes.
+  - version: 0.B0
+    date: 2025-02-17
+    url: https://plinkysynth.com/firmware
+    notes: Rewrites the sequencer, latch and MIDI code, with new voice allocation.

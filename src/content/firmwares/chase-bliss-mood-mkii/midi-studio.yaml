@@ -1,0 +1,35 @@
+device: chase-bliss-mood-mkii
+also_devices: [chase-bliss-lost-and-found, roland-tr-8s, arturia-microfreak]
+kind: tool
+name: MIDI Studio
+summary: Static Web MIDI hub with a controller page for each of fourteen devices, including Chase Bliss MOOD MKII, Lost + Found, Generation Loss MKII and BAD MOOD, plus Roland TR-8S and Arturia MicroFreak. Each page sends the device's documented CC, NRPN or note messages.
+description: >-
+  The repository began as a controller for MOOD MKII and grew into a hub of ten pedals and four synths and drum machines.
+  The Chase Bliss pages cover MOOD MKII, Lost + Found, Generation Loss MKII and BAD MOOD with every CC from their MIDI
+  manuals, the hidden parameter banks, preset recall and save, and a local preset library and setlist. The other pedals
+  are the BOSS SL-2 Slicer, Strymon Deco v2 and Mobius, Source Audio EQ2 and Nemesis ADT, and the Empress Reverb. The synths
+  are the Behringer DeepMind 12 and PRO-VS Mini, the Arturia MicroFreak and the Roland TR-8S. Controls draw each panel's layout, and a demo mode sends
+  nothing. The author states that the pages send only what the manuals document, request no SysEx access and cannot read
+  state back, and that nothing was tested on hardware. A Sound Journal section for audio recordings is unrelated to MIDI.
+  Nothing is flashed.
+status: active
+authors:
+  - name: JoaoBAfonso
+    url: https://github.com/JoaoBAfonso
+source: https://github.com/JoaoBAfonso/mood-mkii-controller
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and the README states no licence. It includes the OFL text for the Outfit font it serves.
+homepage: https://joaobafonso.github.io/mood-mkii-controller/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Edge, pick a device and press Connect MIDI. The Chase Bliss pedals have no USB MIDI, so connect
+  a MIDI interface to the pedal's TRS MIDI input with a Chase Bliss-compatible adapter. Check each device's MIDI receive
+  settings under Connection and setup. Saving a preset overwrites the pedal's slot after a confirmation.
+brick_risk: false
+tags: [controller, web-midi, midi, presets, setlist, web]
+versions:
+  - version: main @ f419346
+    date: 2026-11-01
+    url: https://github.com/JoaoBAfonso/mood-mkii-controller/commit/f419346
+    notes: No tagged releases; this is the latest commit.

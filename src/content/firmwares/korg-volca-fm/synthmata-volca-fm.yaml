@@ -1,0 +1,33 @@
+device: korg-volca-fm
+also_devices: [korg-volca-fm-2, yamaha-dx7]
+name: synthmata Volca FM Editor
+kind: tool
+summary: Browser patch editor for the volca fm and the 2022 volca fm 2 over Web MIDI, also usable with a Yamaha DX7. Every operator and global parameter has a control, with a randomiser and a sharable patch link.
+description: >-
+  A page of operator panels and a global panel that sends DX7 SysEx parameter changes to the connected instrument as you move
+  them. The instrument menu offers the original volca fm, the 2022 model with the green display, or a DX7, which can also send
+  its voice back when it is set to channel 1. The patch is sent automatically when the interface, instrument or channel is
+  chosen. Envelope shapes are drawn on the page, a randomiser changes parameters in bulk, and the whole patch can be stored in
+  a shareable link. The page adds notes on MIDI interfaces and on the type A adapter for the minijack MIDI ports of the newer
+  model. Nothing is flashed.
+status: dormant
+authors:
+  - name: synthmata
+    url: https://github.com/synthmata
+source: https://github.com/synthmata/synthmata.github.io
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The repository LICENSE file is the GNU GPL version 3 text with no copyright line.
+homepage: https://synthmata.com/volca-fm/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a browser with Web MIDI and SysEx permission, connect a MIDI interface to the instrument's MIDI IN
+  and choose the interface, instrument type and channel.
+brick_risk: false
+tags: [editor, web-midi, sysex, midi, presets, web]
+versions:
+  - version: master @ 193704a
+    date: 2022-05-09
+    url: https://github.com/synthmata/synthmata.github.io/commit/193704a0667e5cce6a925ad9d961abe9e1d3fb9e
+    notes: Latest commit that changed the volca-fm folder; the repository has no tagged releases.

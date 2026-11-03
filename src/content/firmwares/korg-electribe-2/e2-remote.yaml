@@ -1,0 +1,35 @@
+device: korg-electribe-2
+name: E2 Fernsteuerung
+kind: tool
+summary: German-language browser remote for an Electribe 2 running BLECH SysEx. Over USB MIDI it presses the buttons and turns the knobs, reads the display, edits effect presets and the startup image, and reads and writes SYSTEM.VSB on the card.
+description: >-
+  The page talks to a unit that has been patched with BLECH, using that project's SysEx protocol; stock firmware does not
+  answer. It sends the 35 key and 5 knob commands through the BLECH runtime, reads the screen image from memory and can refresh
+  it, reads effect presets and writes changed ones back, replaces or inverts the startup image, reads any memory address as
+  a hex view, and sets the file name the SOFTWARE UPDATE menu opens. Changed effects and startup image go into a SYSTEM.VSB
+  file written to the SD card, and become permanent only when you start SOFTWARE UPDATE on the synth, so Korg's own updater does
+  the flash write. The page deliberately does not use the direct flash write commands. A NOTICE file lists the BLECH and
+  Hacktribe sources the protocol facts come from, and says the repository holds no firmware.
+status: active
+authors:
+  - name: EliasTX09
+    url: https://github.com/EliasTX09
+source: https://github.com/EliasTX09/e2-remote
+source_status: open
+license: AGPL-3.0-only
+license_notes: >-
+  The LICENSE file is the AGPL-3.0 text. The NOTICE file says the page is its own implementation in JavaScript with no code
+  taken from the AGPL-3.0 BLECH and Hacktribe projects it draws protocol facts from.
+homepage: https://eliastx09.github.io/e2-remote/
+distribution: browser-installer
+requires_stock: Electribe 2 with BLECH SysEx and the BLECH plugin runtime
+install_notes: >-
+  Open the hosted page in Chrome or Edge over HTTPS, connect the Electribe 2 by USB with an SD card inserted and allow MIDI
+  with SysEx. Back up the SD card and the original SYSTEM.VSB first. Firefox and Safari have no Web MIDI.
+brick_risk: false
+tags: [editor, web-midi, sysex, usb-midi, research, web]
+versions:
+  - version: main @ b471327
+    date: 2026-10-28
+    url: https://github.com/EliasTX09/e2-remote/commit/b471327062d290af8e331c29fd8591ef8e681d3d
+    notes: No tagged releases; this is the latest commit.

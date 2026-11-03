@@ -1,0 +1,33 @@
+device: ableton-move
+name: movewire
+kind: tool
+summary: Zero-dependency JavaScript library for the Move's Live control-surface protocol over Web MIDI or any transport. It switches the Move into controller mode and gives typed events for pads, steps, knobs, wheel and buttons, plus LED control.
+description: >-
+  Connecting asks for identity, switches to control-surface mode, wakes the
+  display, enables polyphonic aftertouch and keeps LEDs alive with a two-second
+  refresh. Events cover pads with row and column, step buttons, relative encoders,
+  the wheel, touch and named buttons. LED values index the Move's 128-colour
+  palette, with a helper to match a screen colour. In this mode the Move's own
+  synth is silent. The README says the protocol was read from Live's own Move
+  remote script and checked on hardware with firmware 2.x. Driving the display is
+  not implemented. No firmware changes are made. It does the job of MoveControlHost
+  for browsers and Node, with an API rather than an app.
+status: active
+authors:
+  - name: Aureliano Bergese
+    url: https://github.com/auridevil
+source: https://github.com/auridevil/movewire
+source_status: open
+license: MIT
+distribution: source-only
+install_notes: >-
+  Install with npm install github:auridevil/movewire, or add an import map in a
+  plain page. Use Chrome or Edge with SysEx allowed. Quit Live first because it
+  claims the ports and sends the same handshake.
+brick_risk: false
+tags: [sdk, controller-mode, web-midi, midi, sysex, usb-midi]
+versions:
+  - version: main @ 59c1f52
+    date: 2026-10-01
+    url: https://github.com/auridevil/movewire/commit/59c1f52
+    notes: No tagged releases; this is the latest commit.

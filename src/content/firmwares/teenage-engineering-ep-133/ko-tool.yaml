@@ -1,0 +1,38 @@
+device: teenage-engineering-ep-133
+name: K.O. Tool
+kind: tool
+summary: Browser workspace for EP samplers with a sample preparation app that doubles the speed of audio and tags it for pitch compensation, a My EP app that connects over Web MIDI to browse samples and projects and make backups, and a set of audio visualisers.
+description: >-
+  SpeedUpperCut converts audio to half the length with a sound.pitch of minus
+  twelve in the metadata, so the device plays it back at the original pitch, and
+  exports WAV files or a ZIP. My EP connects to an EP-133, EP-1320 or EP-40 over
+  Web MIDI with SysEx, lists the sample library, shows metadata and saved
+  projects, can write official-format .pak and .ppak backups and inspect them
+  read-only, and includes a limited 16-step project editor. The README says
+  recognising a model does not allow writes, and that automated tests use a
+  fake device and do not prove writes are safe on hardware. Visuals shows waveform,
+  spectrum and meters from a chosen audio input. The README is in Russian. The
+  repository states that it has no licence file.
+status: active
+authors:
+  - name: Zatumanen
+    url: https://github.com/Zatumanen
+source: https://github.com/Zatumanen/Ko-tool
+source_status: open
+license: unspecified
+license_notes: >-
+  There is no LICENSE file. The README says source access does not give
+  permission to copy or reuse the code without agreement.
+homepage: https://zatumanen.github.io/Ko-tool/
+distribution: browser-installer
+install_notes: >-
+  Use a desktop Chrome or Edge over HTTPS, connect the device by USB and allow
+  Web MIDI with SysEx. The README tells you to back up before changing projects,
+  deleting or restoring, and not to run two device apps at once.
+brick_risk: false
+tags: [librarian, sample-transfer, web-midi, sysex, samples, web]
+versions:
+  - version: main @ 58bcc3e
+    date: 2026-10-21
+    url: https://github.com/Zatumanen/Ko-tool/commit/58bcc3e
+    notes: No tagged releases; this is the latest commit.

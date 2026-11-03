@@ -1,0 +1,27 @@
+device: axs-instruments-4-tme
+name: 4-TME PolySynth firmware
+kind: firmware
+summary: >-
+  The maker's open source firmware sketch for the 4-TME four-voice polysynth, written for the Daisy Seed with DaisyDuino, with the KiCad board files. The repository has no README or license file, and the web flasher entry carries a newer v16 build with a USB editor link.
+description: >-
+  The 4-tme-fw sketch is about 80 kB of Arduino code. The device page describes the synth, which the author says is based on the Vermona PERfourMER, and the web flasher repository holds the v15.6 sketch plus a patch for the v16 USB link.
+  This repository's latest commit set up an MCP23017 I/O expander.
+status: active
+authors:
+  - name: Joe Bowyer
+    url: https://github.com/joebmz98
+source: https://github.com/joebmz98/4-TME-PolySynth
+source_status: open
+license: unspecified
+license_notes: No license file or statement in the repository.
+homepage: https://github.com/joebmz98/4-TME-PolySynth
+distribution: source-only
+install_notes: >-
+  Open src/4-tme-fw/4-tme-fw.ino in the Arduino IDE with DaisyDuino and upload to the Daisy Seed. There is no README, so the web flasher entry's install notes apply.
+brick_risk: false
+tags: [official, open-source, synth-engine, midi, daisy, platform]
+versions:
+  - version: main @ c722fa0
+    date: 2026-11-01
+    url: https://github.com/joebmz98/4-TME-PolySynth/commit/c722fa01f1c52a8e82a7fdf6848ee123c4a899cd
+    notes: No tagged releases; this is the latest commit.

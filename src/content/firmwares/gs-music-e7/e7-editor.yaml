@@ -1,0 +1,30 @@
+device: gs-music-e7
+name: e7 Editor
+kind: tool
+summary: Browser editor and local library for the GS Music e7 that reads and writes its presets and multis over Web MIDI SysEx and forwards knob moves as CC. It has no README or hosted copy yet, and has to be built from source with Bun.
+description: >-
+  The code has a protocol layer for the e7's memory map, the 128-byte single preset and 512-byte multi layouts, SysEx framing,
+  the configuration memory and the CC table, a MIDI layer on the WebMIDI library with rate-limited CC output, and a Solid
+  interface with sections for oscillators, filter, envelopes, effects and a panel layout. A library kept in the browser stores
+  presets with tags and can write a group or bank back to the synth. The docs include a read-only hardware smoke test page and notes on
+  quirks found in the synth's SysEx behaviour. The changelog is still under Unreleased and the package is version 0.1.0.
+  Nothing is flashed.
+status: active
+authors:
+  - name: Ivan
+    url: https://github.com/iromerox
+source: https://github.com/iromerox/e7-editor
+source_status: open
+license: MIT
+license_notes: The LICENSE file is the MIT text with the name Ivan and the year 2026.
+distribution: source-only
+install_notes: >-
+  Install Bun, run bun install and bun run dev, then open the dev server in Chrome, Edge, Opera or Firefox 108 or later and
+  allow MIDI access with SysEx. The hardware smoke test page is read-only; writing presets back is not.
+brick_risk: false
+tags: [editor, librarian, web-midi, sysex, usb-midi, midi, presets, web]
+versions:
+  - version: main @ 966d00a
+    date: 2026-09-08
+    url: https://github.com/iromerox/e7-editor/commit/966d00af6f851bd53800804e61963df6a20ba184
+    notes: No tagged releases; this is the latest commit.

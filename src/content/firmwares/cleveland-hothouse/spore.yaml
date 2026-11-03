@@ -1,0 +1,86 @@
+device: cleveland-hothouse
+name: Spore
+summary: >-
+  Three-mode firmware for a Daisy Seed in a Hothouse pedal: a USB MIDI synth, a granular processor with freeze and a self-playing generative voice, with a mod matrix, delay and reverb. Configured live from the Propagator web editor.
+description: >-
+  Toggle 1 selects the mode. The synth plays up to six voices from USB MIDI with analog or wavetable oscillators and a
+  two-pole or four-pole filter, the granular mode reshapes the audio input and freezes it, and the generative mode plays itself
+  with a random-walk pitch. A shared modulation engine has hardware-random LFOs, sample and hold and a six-slot
+  matrix, and there is a tempo-synced delay and an analog sensor input on a free ADC pin. Each mode has three presets in
+  QSPI flash. It runs from SRAM through the Daisy bootloader, which has to be installed once, and a MIDI control change
+  reboots the pedal into DFU. The same binary supports the original Seed and Seed 3. The author states that the project was written
+  with substantial help from Claude.
+status: active
+authors:
+  - name: Joakim Langkilde
+    url: https://github.com/rainybit-code
+source: https://github.com/rainybit-code/spore
+source_status: open
+license: GPL-3.0-or-later
+homepage: https://rainybit-code.github.io/propagator/
+distribution: download
+requires_stock: Daisy Seed or Seed 3 with the Daisy bootloader (flashed once)
+install_notes: >-
+  Download spore-vX.Y.Z.bin from a release, or build with the Daisy toolchain. Put the Seed in DFU mode (hold BOOT, tap
+  RESET), install the bootloader once with scripts/install-bootloader, then flash the app to QSPI, most easily from the
+  Propagator page over WebUSB. A bootloader image is attached to each release. Windows needs the WinUSB driver once, through Zadig.
+brick_risk: false
+tags: [synth-engine, fx, granular, midi, performance, web-midi]
+image:
+  url: https://raw.githubusercontent.com/rainybit-code/propagator/main/docs/propagator.png
+  alt: Propagator editor with a Spore pedal panel at the centre, six labelled knobs, mode switches and footswitches, flanked by oscillator, envelope, voice, LFO and patchbay panels on a blue grid
+  credit: Joakim Langkilde
+  source_url: https://github.com/rainybit-code/spore#readme
+  first_party: true
+versions:
+  - version: v0.5.4
+    date: 2026-10-12
+    url: https://github.com/rainybit-code/spore/releases/tag/v0.5.4
+    notes: Fixes CPU overload, crackle and a reverb lockup in generative mode.
+  - version: v0.5.3
+    date: 2026-10-12
+    url: https://github.com/rainybit-code/spore/releases/tag/v0.5.3
+    notes: Confirms the same binary runs on Daisy Seed 3.
+  - version: v0.5.2
+    date: 2026-10-12
+    url: https://github.com/rainybit-code/spore/releases/tag/v0.5.2
+    notes: Fixes crackle in the tempo-synced delay.
+  - version: v0.5.1
+    date: 2026-09-07
+    url: https://github.com/rainybit-code/spore/releases/tag/v0.5.1
+  - version: v0.5.0
+    date: 2026-06-26
+    url: https://github.com/rainybit-code/spore/releases/tag/v0.5.0
+  - version: v0.4.0
+    date: 2026-06-25
+    url: https://github.com/rainybit-code/spore/releases/tag/v0.4.0
+  - version: v0.3.4
+    date: 2026-06-24
+    url: https://github.com/rainybit-code/spore/releases/tag/v0.3.4
+  - version: v0.3.3
+    date: 2026-06-24
+    url: https://github.com/rainybit-code/spore/releases/tag/v0.3.3
+  - version: v0.3.2
+    date: 2026-06-24
+    url: https://github.com/rainybit-code/spore/releases/tag/v0.3.2
+  - version: v0.3.1
+    date: 2026-06-19
+    url: https://github.com/rainybit-code/spore/releases/tag/v0.3.1
+  - version: v0.3.0
+    date: 2026-06-19
+    url: https://github.com/rainybit-code/spore/releases/tag/v0.3.0
+  - version: v0.2.1
+    date: 2026-06-18
+    url: https://github.com/rainybit-code/spore/releases/tag/v0.2.1
+  - version: v0.2.0
+    date: 2026-06-18
+    url: https://github.com/rainybit-code/spore/releases/tag/v0.2.0
+  - version: v0.1.2
+    date: 2026-06-18
+    url: https://github.com/rainybit-code/spore/releases/tag/v0.1.2
+  - version: v0.1.1
+    date: 2026-06-17
+    url: https://github.com/rainybit-code/spore/releases/tag/v0.1.1
+  - version: v0.1.0
+    date: 2026-06-17
+    url: https://github.com/rainybit-code/spore/releases/tag/v0.1.0

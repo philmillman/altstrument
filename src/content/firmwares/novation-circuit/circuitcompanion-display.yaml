@@ -1,0 +1,36 @@
+device: novation-circuit
+kind: tool
+name: CircuitCompanion
+summary: Python and pygame display that listens to a Circuit over USB MIDI, requests patch dumps, and shows the current patch name, macro knob assignments and a 64-slot patch library. It is built for an 800x480 screen on a Raspberry Pi.
+description: >-
+  Rights warning: the macro destination table was recovered from the GPL-3.0 Circuit Web Synth Editor, while this repository
+  is licensed MIT.
+
+  circuit_patch.py decodes Circuit patch dumps, macro destinations and the mod matrix from the layout in Novation's
+  programmer's reference guide. circuit_display.py watches channels 1 and 2, follows knob moves and patch changes, and
+  re-reads the patch when Components edits it. A library view lays the 64 slots out like the two pages of pads. Scanning the
+  library loads every patch on the selected synth in turn, so it changes the sound while it runs and is never automatic;
+  results are cached in library.json. A demo mode simulates knobs without a Circuit. The author plans a standalone build on a
+  Pi with a 7-inch touchscreen and a wiring diagram is included. The project notes say Novation's guide is not included in the
+  repository. Nothing is flashed.
+status: active
+authors:
+  - name: Bill Van Loo
+    url: https://github.com/billvanloo
+source: https://github.com/billvanloo/CircuitCompanion
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text. The README says the macro destination table (0 to 70) was recovered from the GPL-3.0
+  Circuit Web Synth Editor, which may bring that project's licence terms to the derived table.
+distribution: source-only
+install_notes: >-
+  Create a Python virtual environment, install requirements.txt (pygame-ce, not pygame), then run circuit_display.py with the
+  Circuit connected by USB. Use --demo to try it without hardware. Stop playback before starting a library scan.
+brick_risk: false
+tags: [python, midi, sysex, usb-midi, librarian, utility]
+versions:
+  - version: main @ 0da4b32
+    date: 2026-10-13
+    url: https://github.com/billvanloo/CircuitCompanion/commit/0da4b321889e9fe136006e377833acc444c4696c
+    notes: No tagged releases; this is the latest commit.

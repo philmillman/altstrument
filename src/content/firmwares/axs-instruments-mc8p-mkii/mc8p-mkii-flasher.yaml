@@ -1,0 +1,28 @@
+device: axs-instruments-mc8p-mkii
+name: MC8P-MkII-Flasher
+kind: tool
+summary: >-
+  Browser tools for the MC8P MkII: a WebUSB DfuSe flasher for the STM32 ROM bootloader with a bundled v3.2 build, and a knob-assignment editor over Web MIDI SysEx that edits each pot's messages, curves, scenes and display options and saves them to the unit. Both have a demo mode.
+description: >-
+  The editor needs firmware 3.2 or later. Each knob holds 1 to 10 messages with channel, CC number, curve (normal, inverted, log, inverse log) and output range, and a knob's list can be copied to another. Settings can also be backed up to JSON. Live edits reach the unit at once but are kept only after Save to MC8P.
+  The firmware folder also holds the WeAct Black Pill's HID bootloader image. Commit messages credit Claude as a co-author.
+status: active
+authors:
+  - name: Joe Bowyer
+    url: https://github.com/joebmz98
+source: https://github.com/joebmz98/MC8P-MkII-Flasher
+source_status: open
+license: unspecified
+license_notes: No license file or statement in the repository. The bundled firmware is the maker's own build.
+homepage: https://joebmz98.github.io/MC8P-MkII-Flasher/
+distribution: browser-installer
+requires_stock: MC8P MkII; the editor needs firmware v3.2 or later
+install_notes: >-
+  Open the hosted page in Chrome or Edge on a computer and connect the Black Pill with a USB-C data cable. Hold BOOT0, tap NRST and keep BOOT0 held for about a second to enter DFU mode, then choose Flash Firmware and STM32 BOOTLOADER. Windows needs a WinUSB driver through Zadig.
+brick_risk: false
+tags: [flasher, editor, web-midi, sysex, midi, presets, web]
+versions:
+  - version: main @ ab396a0
+    date: 2026-10-30
+    url: https://github.com/joebmz98/MC8P-MkII-Flasher/commit/ab396a03ca8680437bd1c332d9f8a16513b1e40c
+    notes: No tagged releases; this is the latest commit, which bundles firmware v3.2.

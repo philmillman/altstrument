@@ -1,0 +1,31 @@
+device: ableton-push-2
+name: Learn Push 2 with Svelte
+kind: tool
+summary: Browser app that teaches chords, scales and chord progressions on a Push 2 over Web MIDI. It lights the pads, overlays theory on the grid, detects the chord you play and mirrors the controller on screen. Includes an experimental Push 2 display driver using WebUSB and Pyodide.
+description: >-
+  Highlights chords and scales on screen, on the pads and on the Push display,
+  predicts the chord being played, offers chord progressions to practise in a game
+  style and plays a few built-in sounds. The README says it also works on Push 1
+  without a display driver. The display driver is written in Python and runs in the
+  browser through Pyodide, sending frames over WebUSB. The README marks it as very
+  early and lists further controllers as future work. The latter half of the README
+  is the unedited Svelte template text.
+status: dormant
+authors:
+  - name: greyivy
+    url: https://github.com/greyivy
+source: https://github.com/greyivy/learn-push2-with-svelte
+source_status: open
+license: Unlicense
+homepage: https://greyivy.github.io/learn-push2-with-svelte
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a Chromium browser and allow MIDI. The display needs
+  WebUSB access to the Push, which Ableton Live also claims, so close Live.
+brick_risk: false
+tags: [web-midi, usb-midi, chords, scales, web]
+versions:
+  - version: main @ fd909cb
+    date: 2022-05-13
+    url: https://github.com/greyivy/learn-push2-with-svelte/commit/fd909cb
+    notes: No tagged releases; this is the latest commit.

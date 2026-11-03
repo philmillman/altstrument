@@ -1,0 +1,31 @@
+device: expert-sleepers-disting-nt
+name: disting NT tools (official)
+kind: tool
+summary: Expert Sleepers' own host tools for the disting NT. Single-file browser pages over Web MIDI SysEx edit presets, send Scala tunings, take screenshots and work with the SD card, and Python scripts upload compiled plugins.
+description: >-
+  Each browser tool is one HTML file you can open locally: a preset editor, a
+  remote control, a Scala .scl and .kbm uploader, a screenshot tool, an SD card
+  tool and a Lua console. The Python tools send and receive files, measure CPU
+  use and push a compiled plugin to the module, with the ntpush command wrapping
+  that upload, which needs firmware 1.13 or later. They sit in the tools folder of
+  the distingNT repository; this entry covers only that folder.
+status: active
+authors:
+  - name: Expert Sleepers
+    url: https://www.expert-sleepers.co.uk/
+source: https://github.com/expertsleepersltd/distingNT/tree/main/tools
+source_status: open
+license: MIT
+license_notes: The tools folder has its own MIT LICENSE file, copyright Expert Sleepers Ltd.
+homepage: https://www.expert-sleepers.co.uk/distingNT.html
+distribution: source-only
+install_notes: >-
+  Download the HTML file you want from the tools folder and open it in a browser with Web MIDI and SysEx access, with the
+  module connected over USB. The plugin uploader needs Python 3 with mido and python-rtmidi.
+brick_risk: false
+tags: [official, editor, web-midi, sysex, usb-midi, presets, web]
+versions:
+  - version: main @ 2b71ea0
+    date: 2026-10-08
+    url: https://github.com/expertsleepersltd/distingNT/commit/2b71ea0149d2334dd70f001b8d5a149ddd497179
+    notes: No tagged releases; this is the latest commit.

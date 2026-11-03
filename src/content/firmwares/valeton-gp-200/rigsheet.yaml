@@ -1,0 +1,39 @@
+device: valeton-gp-200
+also_devices: [valeton-gp-200lt]
+kind: tool
+name: RigSheet
+summary: >-
+  Browser spreadsheet-style bulk editor for the GP-200 family. It works on .prst files or, over Web MIDI, on the pedal's 256 presets, editing, reordering and exporting many at once, writing back only what changed after a backup and read-back.
+description: >-
+  Rights warning: the effect names, parameters, ranges and descriptions for 305 effects are generated from algorithm.xml and
+  description_en.xml, files Valeton ships with its desktop editor.
+
+  A table shows all 256 slots with effect chain, author, style and notes, with search and edits to a single parameter
+  across many presets by matching the knob name. It also edits the FX loop wiring in bulk, reorders and exports to .prst
+  ZIPs, CSV and Excel, and prints a recall sheet. Block catalogs follow the official editor, and a model placed in a block that
+  does not accept it is flagged because the README says the pedal mutes that preset. The README names the GP-200, R, X, JR
+  and LT. Moving a knob goes to the edit buffer and nothing is stored until you save. A mobile page is in the repository.
+  The source is readable but all rights are reserved.
+status: active
+authors:
+  - name: RicardoMV
+    url: https://github.com/ricardo-mv
+source: https://github.com/ricardo-mv/rigsheet
+source_status: open
+license: proprietary
+license_notes: >-
+  LICENSE.txt says all rights reserved by RicardoMV, free use as provided, and no redistribution, mirroring, sale or
+  derivative works without written permission. The page served at rigsheet.rocks is the index.html in the repository.
+homepage: https://rigsheet.rocks
+distribution: browser-installer
+requires_stock: GP-200 firmware 1.8.0 and editor 1.8.1 (the data source)
+install_notes: >-
+  Open the hosted page. File editing works in any modern browser; the USB connection needs a browser with Web MIDI
+  (not Safari). A backup ZIP is downloaded before anything is written. Close Valeton's editor first.
+brick_risk: false
+tags: [editor, librarian, web-midi, sysex, usb-midi, midi, presets, backup, web]
+versions:
+  - version: main @ fe75272
+    date: 2026-10-29
+    url: https://github.com/ricardo-mv/rigsheet/commit/fe75272
+    notes: No tagged releases; this is the latest commit.

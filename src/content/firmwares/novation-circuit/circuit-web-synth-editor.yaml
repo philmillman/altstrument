@@ -1,0 +1,47 @@
+device: novation-circuit
+kind: tool
+name: Circuit Web Synth Editor
+summary: Browser patch editor for the original Circuit over Web MIDI SysEx. It edits the current synth patch, loads one from the Circuit, and exports SysEx files that Novation Components accepts. Listed here is the GitHub Pages copy; the framagit original was unreachable.
+description: >-
+  Rights warning: the repository includes a PDF of Novation's Circuit Programmer's Reference Guide in its resources folder.
+
+  The editor shows the synth engine (voice, oscillators, filter, envelopes, LFOs, effects and EQ), the mod matrix and the
+  macro controls as sliders and menus. It finds the Circuit by port name, plays a short note on connect, and sends each
+  change to the unit. It can request the patch currently selected on a synth, edit it, start a new patch, and save patches
+  as .syx files. The README says it was written because other editors did not run on GNU/Linux. It also documents the LFO
+  and session byte layout. The project began at framagit.org/pumpkin/circuit-web-synth-editor, which redirected to a
+  sign-in page and returned not found from its API on 2026-11-03. This entry follows the copy by cgoehl, which adds a more
+  compact layout and a GitHub Pages site. The copies by ewe2 (a 2020 backup) and Jihuxa (an older snapshot that keeps the
+  original author's commits) hold the same code. Nothing is flashed.
+status: dormant
+authors:
+  - name: pumpkin
+    url: https://framagit.org/pumpkin
+  - name: cgoehl
+    url: https://github.com/cgoehl
+source: https://github.com/cgoehl/circuit-web-synth-editor
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README says the application is published under the GPL3 license and the COPYING file is the GNU GPL version 3 text;
+  no "or later" grant was found. The Programmer's Reference Guide PDF in resources/ is Novation's document and is not covered
+  by it.
+homepage: https://cgoehl.github.io/circuit-web-synth-editor/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a browser with Web MIDI and allow MIDI with SysEx access. Plug in the Circuit first, or reload the
+  page after connecting it. Close Novation Components and other editors while editing, because two programs talking to the
+  unit can overwrite your edits. The README says to use it at your own risk.
+brick_risk: false
+tags: [editor, web-midi, sysex, usb-midi, presets, web]
+image:
+  url: https://raw.githubusercontent.com/cgoehl/circuit-web-synth-editor/master/resources/printscreen.png
+  alt: Circuit Web Synth Editor with a dark toolbar, a patch name field and a Synth 1 selector, tabs for synth engine, mod matrix and macro controls, and magenta voice, filter and envelope sliders
+  credit: pumpkin
+  source_url: https://github.com/cgoehl/circuit-web-synth-editor#readme
+  first_party: true
+versions:
+  - version: master @ 52e58bd
+    date: 2019-12-01
+    url: https://github.com/cgoehl/circuit-web-synth-editor/commit/52e58bd7547fef964c93e5dbdee9b2463b912d1b
+    notes: No tagged releases; this is the latest commit.

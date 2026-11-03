@@ -1,0 +1,36 @@
+device: elektron-machinedrum
+name: elektron-sysex-to-midi
+kind: tool
+summary: Small Windows command-line tool, written in C#, that converts Machinedrum pattern SysEx dumps into MIDI files, built to read the patterns in Autechre's released 2008 dumps. It reads files only and does not use MIDI ports.
+description: >-
+  Rights warning: the repository commits 128 MIDI files extracted from Autechre's 2008 live-set SysEx dumps, in a folder and as a
+  zip, along with a built Windows executable. The music data is not the author's and the repository has no license.
+
+  The tool reads trig data for the 16 tracks of a pattern and writes a single-track MIDI file. It does not handle
+  accents, swing, kit contents or Monomachine dumps, which the README lists as possible additions. The last commit is from January 2019.
+status: dormant
+authors:
+  - name: Knut Andreas Ruud
+    url: https://github.com/carrierdown
+source: https://github.com/carrierdown/elektron-sysex-to-midi
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no license file or license statement. It includes a prebuilt .exe and the extracted Autechre MIDI
+  files.
+distribution: download
+install_notes: >-
+  Run dist/MDSysExToMidi.exe on a SysEx dump file on Windows x64, or build the C# project.
+brick_risk: false
+tags: [converter, sysex, midi, utility, research]
+image:
+  url: https://raw.githubusercontent.com/carrierdown/elektron-sysex-to-midi/master/pattern.png
+  alt: Ableton Live piano roll showing a converted Machinedrum pattern with pink notes labelled Kck, Sna, Tom, Clp, Cym, Cwb, Rim and Cw on a dark grid
+  credit: Knut Andreas Ruud
+  source_url: https://github.com/carrierdown/elektron-sysex-to-midi#readme
+  first_party: true
+versions:
+  - version: master @ 9461ee6
+    date: 2019-01-25
+    url: https://github.com/carrierdown/elektron-sysex-to-midi/commit/9461ee66aaee008434efd57999437787172706a6
+    notes: No tagged releases; this is the latest commit.

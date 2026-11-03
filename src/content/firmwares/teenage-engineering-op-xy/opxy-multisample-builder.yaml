@@ -1,0 +1,42 @@
+device: teenage-engineering-op-xy
+name: multisample builder for OP-XY
+kind: tool
+summary: Browser app that builds OP-XY multisampler presets either from dropped samples or by auto-sampling a connected synth over Web MIDI and its audio input. It trims, finds loop points, normalises and exports a .preset folder as a ZIP. Nothing is sent to the OP-XY.
+description: >-
+  Import mode takes one-note-per-file WAV or AIFF samples, or one long recording
+  of ascending notes cut by silence. Auto-sample mode plays a synth by MIDI,
+  records it through an audio interface, measures latency and noise, and
+  plans up to 24 zones. A loop editor snaps to zero crossings and shows the
+  splice, pitch detection can correct root notes, and the patch.json is cloned
+  from a preset the device saved. It was written for firmware 1.2.0 and the README
+  says each build is checked on hardware. It differs from the other preset
+  builder in this directory by its auto-sampling and loop editing. The author's
+  custom domain did not resolve on 2026-11-03.
+status: active
+authors:
+  - name: David Odlum
+    url: https://github.com/Dodlum
+source: https://github.com/Dodlum/OPXY_Multisample
+source_status: open
+license: MIT
+distribution: source-only
+requires_stock: 1.2.0
+install_notes: >-
+  The README gives opxy.davidodlum.com and the GitHub Pages address, but the
+  domain had no DNS record when checked and the Pages address redirects to it.
+  Serve the repository root with any static server, for example python3 -m
+  http.server, and open it in Chrome or Edge. Unzip the download, put the
+  device in disk mode and copy the .preset folder into its presets directory.
+brick_risk: false
+tags: [sampler, converter, presets, samples, web-midi, web]
+image:
+  url: https://raw.githubusercontent.com/Dodlum/OPXY_Multisample/main/docs/screenshot-light.png
+  alt: Multisample builder page in light theme with a preset name field, a drop area, processing dials, three loaded zones with waveforms, a loop editor and a keyboard
+  credit: Dodlum
+  source_url: https://github.com/Dodlum/OPXY_Multisample#readme
+  first_party: true
+versions:
+  - version: main @ cb07271
+    date: 2026-10-17
+    url: https://github.com/Dodlum/OPXY_Multisample/commit/cb07271
+    notes: No tagged releases; this is the latest commit.

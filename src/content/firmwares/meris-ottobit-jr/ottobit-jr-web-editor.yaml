@@ -1,0 +1,27 @@
+device: meris-ottobit-jr
+kind: tool
+name: Ottobit Jr. Editor
+summary: Browser editor for the Meris Ottobit Jr. bit-crusher pedal over Web MIDI. It shows the sample rate, filter, bits, stutter and sequencer controls at once, with a preset bar and a browser library. The repository is archived.
+description: >-
+  The page shows the sample rate, filter, bits, stutter, sequencer and sequencer multiplier knobs and the pitch and filter sequencer switches together, mirrors changes made on the pedal and writes the current settings to a preset slot in its memory. It has INIT and RANDOMIZE commands and a library kept in the browser. The README marks the editor link and demo video as unfinished, but the hosted page is served and credits a second contributor. The author archived the repository in January 2025. Nothing is flashed.
+status: archived
+authors:
+  - name: François Georgy
+    url: https://github.com/francoisgeorgy
+  - name: Robert Smith
+    url: https://github.com/smithrobs
+source: https://github.com/francoisgeorgy/ottobit-web-editor
+source_status: open
+license: GPL-3.0-only
+license_notes: The LICENSE file is the GNU GPL version 3 text; the repository gives no later-version option.
+homepage: https://studiocode.dev/ottobit-editor/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Opera and allow MIDI access. Set the pedal's EXP/MIDI jack to MIDI and its MIDI mode to out, pick a channel, and connect it with a TRS cable to a MIDI interface such as Meris's MIDI I/O or a Disaster Area MIDI Baby. Choose the interface's input, output and channel in the editor. The Global Settings are locked until you unlock them, and they reach every Meris pedal on the same interface.
+brick_risk: false
+tags: [editor, web-midi, midi, presets, web]
+versions:
+  - version: master @ 8005d66
+    date: 2025-01-21
+    url: https://github.com/francoisgeorgy/ottobit-web-editor/commit/8005d66
+    notes: No tagged releases; this is the latest commit, which adds the archive notice.

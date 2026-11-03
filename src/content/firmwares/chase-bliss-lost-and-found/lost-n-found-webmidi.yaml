@@ -1,0 +1,41 @@
+device: chase-bliss-lost-and-found
+kind: tool
+name: Lost + Found MIDI Editor
+summary: Web MIDI editor and preset manager for the Chase Bliss Lost + Found. It drives the knobs, effects, routing, ramping and DIP-style settings by CC, recalls and stores presets, and keeps a named preset library with optional cloud backup.
+description: >-
+  A TypeScript page with a knob grid laid out like the pedal's panel. It sends Control Change messages for knobs and
+  settings, Program Change for recall, and SysEx for storing a preset, to a MIDI output you choose. It has per-knob locks and
+  a randomizer, ramp assignments and speed, tap tempo, MIDI clock follow, tooltips for each control, and a manager for the 122
+  preset slots with naming, swapping, per-slot import and JSON export. The three resonator modes added in newer
+  pedal firmware are selectable. The page cannot read knob positions back from the pedal, so only values set in the editor are
+  saved. An optional Google sign-in backs up preset names and metadata through Firebase. Nothing is flashed.
+status: active
+authors:
+  - name: Function Store
+    url: https://github.com/function-store
+source: https://github.com/function-store/Lost-n-Found-WebMIDI
+source_status: open
+license: MIT
+homepage: https://lost-n-found.functionstore.xyz
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, Edge or Opera and press Enable MIDI. The pedal has no USB MIDI, so connect a MIDI interface
+  to its TRS MIDI input with a Chase Bliss-compatible adapter and match the MIDI channel. Safari has no Web MIDI. On
+  iPhone or iPad use a Web MIDI browser app and the email sign-in for cloud backup.
+brick_risk: false
+tags: [editor, web-midi, sysex, midi, presets, librarian, web]
+image:
+  url: https://raw.githubusercontent.com/function-store/Lost-n-Found-WebMIDI/master/docs/main_interface.png
+  alt: Lost + Found editor with a MIDI and preset toolbar above a grid of twelve knobs on a green panel, with effect selectors for Reverb, Pitch, Warp, Delay, Synth and Bend below
+  credit: Function Store
+  source_url: https://github.com/function-store/Lost-n-Found-WebMIDI#readme
+  first_party: true
+versions:
+  - version: v2.1.0
+    date: 2026-02-02
+    url: https://github.com/function-store/Lost-n-Found-WebMIDI/tree/v2.1.0
+    notes: Git tag; no GitHub release page.
+  - version: v2.0.0
+    date: 2026-02-01
+    url: https://github.com/function-store/Lost-n-Found-WebMIDI/tree/v2.0.0
+    notes: Git tag; no GitHub release page.

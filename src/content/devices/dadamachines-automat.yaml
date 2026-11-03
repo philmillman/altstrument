@@ -1,0 +1,30 @@
+name: automat
+manufacturer: dadamachines
+category: other
+tagline: MIDI-to-solenoid controller with 12 outputs for playing acoustic objects
+description: >-
+  The automat is a small controller from dadamachines that turns MIDI notes into pulses on twelve solenoid outputs, so physical actuators can strike drums, bells and other objects.
+  It takes MIDI over USB and a DIN input and has a MIDI thru jack and a status LED per output. Velocity programs set how long each output is driven, and the settings are stored in the unit
+  and edited by SysEx from a browser configurator. Solenoid power comes from an external supply.
+platform: Microchip SAMD21G18A (Arm Cortex-M0+), UF2 bootloader
+stock_firmware: "3.11"
+links:
+  manufacturer: https://dadamachines.com/products/automat-controller/
+  community:
+    - label: automat firmware repository
+      url: https://github.com/dadamachines/automat-software
+    - label: dadamachines forum
+      url: https://forum.dadamachines.com/
+notes: >-
+  The maker publishes the firmware as open source, so its entry is tagged official. Firmware updates need the dadamachines UF2 bootloader; units that still have the original SAM-BA bootloader use a serial upload instead.
+pinned: [automat-software]
+image:
+  src: /images/devices/dadamachines-automat.webp
+  style: photo
+  alt: The dadamachines automat, a flat black aluminium plate with two MIDI DIN sockets labelled midi in and midi thru at the left and twelve round output sockets in two columns at the right
+  width: 860
+  height: 740
+  credit: dadamachines
+  license: manufacturer product image
+  source_url: https://dadamachines.com/products/automat-controller/
+  original_url: https://dadamachines.com/img/products/dadamachines-automat-floating.jpg

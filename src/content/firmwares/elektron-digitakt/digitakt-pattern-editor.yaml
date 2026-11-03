@@ -1,0 +1,46 @@
+device: elektron-digitakt
+name: Digitakt Pattern Editor
+kind: tool
+summary: Native desktop pattern editor for the original Digitakt, written with JUCE. It downloads patterns or a project over USB MIDI, edits trigs and sample locks, uploads samples to the +Drive and plays patterns offline. Not a browser tool.
+description: >-
+  Rights warning: the repository commits prebuilt Linux VST3 and CLAP plugin binaries for Dexed, Junior, Pivot,
+  Monomodule One and Sala, together with their guides, presets, tables and themes. These are other people's work and are not
+  covered by the BSD licence of the editor.
+
+  The app asks the machine for a pattern or a whole project over SysEx, or listens while you start a dump on the device,
+  and sends edits back. It edits the step grid, imports a MIDI file onto it, and sets a different +Drive sample on any step
+  through sample parameter locks. A +Drive tab lists, creates folders, uploads converted audio to the machine and
+  downloads samples as WAV, and a sample pool mirrors the 128 slots so patterns play from the computer with no Digitakt connected.
+  A Remote tab makes the editor the clock master and plays the Digitakt's own samples with notes. The MIDI tracks
+  can drive hosted VST3 or LV2 instruments, and USB audio can resample them into the Digitakt. Its format layer is a C++ port
+  of the author's earlier Python tool, which derives from elk-herd, and a test checks that both write identical files. It targets the first Digitakt; the author says it builds on Linux,
+  macOS and Windows and was built on Linux.
+status: active
+authors:
+  - name: mk3stn3r
+    url: https://github.com/mk3stn3r
+source: https://github.com/mk3stn3r/digitaktEditor
+source_status: open
+license: BSD-2-Clause
+license_notes: >-
+  LICENSE.txt is the BSD 2-Clause text with Mark Lentczner's copyright, from elk-herd. It says the project is a derivative
+  of elk-herd, whose storage formats, offset tables, seven-bit codec and blank pattern data it uses. The bundled plugin
+  binaries and presets have their own terms.
+distribution: source-only
+install_notes: >-
+  Build with CMake; JUCE is fetched on the first configure. Set USB CONFIG to USB MIDI on the Digitakt. Sending a pattern
+  needs the machine at SETTINGS > SYSEX DUMP > SYSEX RECEIVE > PATTERN, and Auto-send in the Remote tab overwrites the
+  chosen slot on every edit, so point it at a scratch pattern.
+brick_risk: false
+tags: [editor, sysex, usb-midi, midi, sampler, sequencer, sample-transfer, research]
+image:
+  url: https://raw.githubusercontent.com/mk3stn3r/digitaktEditor/main/docs/screenshot.png
+  alt: Digitakt Pattern Editor window with a step grid for tracks T1 to T8 and M1 to M8 with blue and amber trigs, a toolbar with Download, Send and Play, and tabs for Pattern, +Drive samples and Remote
+  credit: mk3stn3r
+  source_url: https://github.com/mk3stn3r/digitaktEditor#readme
+  first_party: true
+versions:
+  - version: main @ 08a6c0c
+    date: 2026-10-16
+    url: https://github.com/mk3stn3r/digitaktEditor/commit/08a6c0c0c7161038824dae1484961aae113c2b90
+    notes: No tagged releases; this is the latest commit.

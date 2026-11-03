@@ -1,0 +1,30 @@
+device: yamaha-dx7
+also_devices: [korg-volca-fm, korg-volca-fm-2]
+name: DXWire
+kind: tool
+summary: Browser editor and bank manager for the DX7 over Web MIDI. It edits all six operators, the algorithm, LFO and pitch envelope, reads and writes .syx and JSON files, and sends voices to the synth. The author lists the Volca FM and FM 2 among compatible synths.
+description: >-
+  The editor shows each operator's envelope, frequency, detune, key scaling and level, draws the selected algorithm and the
+  envelope curves, and keeps several 32-voice banks open at once, with copy, rename and initialise for single voices. Banks
+  load from DX7 .syx dumps or from its own JSON format, and a voice or bank can be saved to the same formats or sent to the synth,
+  which is reached through Web MIDI with SysEx permission using the author's midiwire library. A bank can be exported for the
+  Volca FM and FM 2. Changes are tracked and saved in the browser. Nothing is flashed.
+status: active
+authors:
+  - name: alexferl
+    url: https://github.com/alexferl
+source: https://github.com/alexferl/dxwire
+source_status: open
+license: MIT
+homepage: https://alexferl.github.io/dxwire/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, Edge or Firefox, connect the synth through a MIDI interface and allow MIDI access with SysEx.
+  Safari has no Web MIDI. The README builds it with npm and Vite for local use.
+brick_risk: false
+tags: [editor, librarian, web-midi, sysex, midi, presets, fm, web]
+versions:
+  - version: master @ 1543dca
+    date: 2026-02-23
+    url: https://github.com/alexferl/dxwire/commit/1543dcafca2d5602d314014cde76d3a87caa1462
+    notes: No tagged releases; this is the latest commit.

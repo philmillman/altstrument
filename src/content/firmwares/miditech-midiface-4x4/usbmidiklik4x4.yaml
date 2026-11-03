@@ -1,0 +1,51 @@
+device: miditech-midiface-4x4
+name: USBMidiKliK4x4
+summary: >-
+  Replacement firmware for the Miditech and Midiplus 4x4 USB MIDI interface and for STM32F103 Bluepill boards, with 16 USB ports, a routing engine with transformation pipes, standalone mode and browser configuration. The 4x4 needs a hardware mod that erases the stock firmware.
+description: >-
+  The author wrote it after finding that two stock 4x4 interfaces could not be used together on one computer and that the stock firmware could not be
+  updated. It handles 16 USB MIDI ports in and out, three physical jacks each way on the author's own board, eight virtual ports, four clock and
+  MTC generators, and a router that can send any input to any output through chains of
+  pipes, including transpose, split, channel and CC mapping, message filters and velocity curves. Standalone mode works with only a power supply, and
+  up to five boards can be stacked over I2C to look like one interface. Configuration is by SysEx or a serial menu, and release 2.5.4 added three hosted browser pages:
+  a graphical configurator, a SysEx utility and a serial terminal. The builds target the author's TKG HID bootloader. Separate
+  builds exist for 64 KB and 128 KB Bluepills and for the Miditech board, which has an STM32F103RC.
+  The author also sells a ready-made board on Tindie.
+status: active
+authors:
+  - name: TheKikGen (Franck Touanen)
+    url: https://github.com/TheKikGen
+source: https://github.com/TheKikGen/USBMidiKliK4x4
+source_status: open
+license: CC-BY-NC-4.0
+license_notes: >-
+  Stated in the README with the Creative Commons badge; the repository has no LICENSE file.
+homepage: https://thekikgen.github.io/umk4x4-Configurator.html
+distribution: download
+requires_stock: Miditech or Midiplus 4x4 board modified for serial bootloading, or an STM32F103 Bluepill
+install_notes: >-
+  For the Miditech or Midiplus 4x4, open the case, remove resistor R28, add a 10 K resistor on BOOT1, temporarily wire BOOT0 to
+  3.3 V, connect a TTL serial adapter and use ST's flash loader to remove read protection and write the modified bootloader. The wiki says
+  there is no way back from that step, since the original firmware is erased. After that, flash the release firmware over USB with tkg-flash or the web HID updater. The
+  Bluepill version needs the TKG HID bootloader flashed once first.
+brick_risk: true
+tags: [midi, usb-midi, routing, sysex, editor, web-midi, open-source]
+versions:
+  - version: v2.5.4
+    date: 2025-01-05
+    url: https://github.com/TheKikGen/USBMidiKliK4x4/releases/tag/v2.5.4
+    notes: Adds the browser configurator, SysEx utility and serial terminal.
+  - version: v2.5.3
+    date: 2024-12-31
+    url: https://github.com/TheKikGen/USBMidiKliK4x4/releases/tag/v2.5.3
+    notes: Fixes a hang in standalone mode.
+  - version: v2.5.2
+    date: 2023-10-23
+    url: https://github.com/TheKikGen/USBMidiKliK4x4/releases/tag/v2.5.2
+    notes: Adds three velocity curve pipes.
+  - version: v2.5.1
+    date: 2020-07-09
+    url: https://github.com/TheKikGen/USBMidiKliK4x4/releases/tag/v2.5.1
+  - version: v2.5.0
+    date: 2020-06-18
+    url: https://github.com/TheKikGen/USBMidiKliK4x4/releases/tag/V2.5.0

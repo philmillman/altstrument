@@ -1,0 +1,44 @@
+device: atov-faderpunk
+name: Faderpunk firmware
+kind: firmware
+summary: The maker's open source firmware for the Faderpunk, written in Rust for the RP2350B. It runs a set of apps on the 16 fader channels, handles USB MIDI, clock and I2C, and can install community apps without reflashing.
+description: >-
+  The firmware runs on both processor cores, with hardware tasks on one core and the apps on the other. The factory app list
+  covers LFOs, sequencers, random and Turing-machine style generators, quantizers, envelopes, clock and Euclidean rhythm tools,
+  and MIDI and CV converters. Scenes are saved to the module's FRAM chip, and the I2C bus can drive Ansible, ER-301 and disting NT
+  devices. Newer builds can install packaged community apps (.fpapp files) from the configurator into free slots. The repository
+  holds the firmware, the configurator and the shared protocol library. Release builds are published as UF2 files.
+status: active
+authors:
+  - name: ATOV
+    url: https://github.com/ATOVproject
+source: https://github.com/ATOVproject/faderpunk
+source_status: open
+license: GPL-3.0-only
+license_notes: The LICENSE file is the GNU GPL version 3 text with no later-version clause, and Cargo.toml says GPL-3.0.
+homepage: https://faderpunk.io/
+distribution: download
+install_notes: >-
+  Download the UF2 file from a release page. Hold the Shift button (bottom right) while connecting the Faderpunk over USB, so it
+  shows up as a drive, then copy the file onto it. The module restarts on the new firmware. To build it yourself, use stable
+  Rust with the thumbv8m.main-none-eabihf target and the repository's build-uf2.sh script. Beta builds are published as pre-releases
+  and are not listed here.
+brick_risk: false
+tags: [official, open-source, sequencer, lfo, midi, eurorack, rust, platform]
+versions:
+  - version: v1.12.0
+    date: 2026-09-04
+    url: https://github.com/ATOVproject/faderpunk/releases/tag/faderpunk/v1.12.0
+    notes: Envelope MIDI out, variable-PPQN external clock input, a gain calibration wizard and fixes for false fader events.
+  - version: v1.11.0
+    date: 2026-08-07
+    url: https://github.com/ATOVproject/faderpunk/releases/tag/faderpunk/v1.11.0
+    notes: Adds the Bernoulli Gate app; the configurator link moves from WebUSB to MIDI SysEx.
+  - version: v1.10.1
+    date: 2026-07-10
+    url: https://github.com/ATOVproject/faderpunk/releases/tag/faderpunk/v1.10.1
+    notes: Fixes in the Automator, Random and Random+ apps.
+  - version: v1.10.0
+    date: 2026-07-07
+    url: https://github.com/ATOVproject/faderpunk/releases/tag/faderpunk/v1.10.0
+    notes: Adds the TB-3PO, Automator and GenSeq apps and a Program Change mode for the Control app.

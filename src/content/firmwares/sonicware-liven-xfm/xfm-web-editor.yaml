@@ -1,0 +1,36 @@
+device: sonicware-liven-xfm
+name: XFM Web Editor
+kind: tool
+summary: Browser patch editor for the LIVEN XFM that receives the current patch over MIDI SysEx and sends changes back. It has knobs and envelope graphs for all four operators, JSON and SYX import, a randomizer, copy and paste between operators and MIDI CC mapping.
+description: >-
+  After the XFM is put in Edit mode and its MIDI export is triggered, the page receives the patch and shows each operator's level, ratio,
+  detune, feedback, modulation inputs and envelope, with draggable envelope points, a pitch envelope switch and scaling
+  controls. Changes are sent to the synth as SysEx, and a patch can be saved as JSON, or a JSON, single-patch SYX, bank or full
+  backup file dropped on the page to load a patch from it. A mapping view assigns MIDI controller CCs to on-screen controls
+  and saves the mappings as JSON. The author converted parts of Cliff Lawson's Python XFM editor to TypeScript and reads and writes the same JSON structure.
+  Undo and the randomizer are marked as unfinished. Nothing is flashed.
+status: dormant
+authors:
+  - name: Bruno Babic
+    url: https://github.com/aesqe
+source: https://github.com/aesqe/sonicware-liven-xfm-web-editor
+source_status: open
+license: MIT
+homepage: https://aesqe.github.io/sonicware-liven-xfm-web-editor/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a browser with Web MIDI, connect the XFM's MIDI IN and OUT ports to the computer, choose them in the
+  header and switch the XFM to Edit mode. Changes made on the synth only appear in the editor after MIDI EXPORT is pressed on it.
+brick_risk: false
+tags: [editor, web-midi, sysex, midi, presets, fm, web]
+image:
+  url: https://raw.githubusercontent.com/aesqe/sonicware-liven-xfm-web-editor/main/src/assets/screenshot-default.png
+  alt: XFM Web Editor with a toolbar of patch actions and toggles, a randomizer panel and a pitch envelope on top, and below it four operator panels, each with knobs and a draggable envelope graph
+  credit: Bruno Babic
+  source_url: https://github.com/aesqe/sonicware-liven-xfm-web-editor#readme
+  first_party: true
+versions:
+  - version: main @ 325b4e6
+    date: 2025-05-02
+    url: https://github.com/aesqe/sonicware-liven-xfm-web-editor/commit/325b4e631423f2b5aee6e961b13d2a75b78e1f1c
+    notes: No tagged releases; this is the latest commit.

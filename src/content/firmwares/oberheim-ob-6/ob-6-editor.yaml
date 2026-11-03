@@ -1,0 +1,28 @@
+device: oberheim-ob-6
+name: OB-6 Editor
+kind: tool
+summary: Free, closed browser editor and librarian for the OB-6 keyboard and desktop module. It edits every program parameter live over NRPN, draws the sequencer, manages banks as SysEx and gets the factory sounds from the connected synth. It also runs offline as an installable app.
+description: >-
+  The page sends parameter changes as NRPN messages while a knob is dragged, requests programs, the edit buffer and the
+  global settings by SysEx and sends programs back to user banks. It includes the filter response graph, an editor for the
+  64-step polyphonic sequencer with transport buttons, A and B compare with a morph between them, a randomizer, a MIDI monitor,
+  an on-screen keyboard and a table of NRPN and CC numbers that exports to CSV. The librarian keeps banks in the browser's
+  storage, imports and exports .syx files and has a staging area for building banks. It lists the 500 factory program names
+  and reads the factory sounds from the synth. It also controls parameters the manual does not document, which the author captured from hardware running OS 1.6.6, and it corrects errors in the printed manual. An offline zip is also offered. It is one of a family of free editors by the same maker, and states it is not
+  affiliated with Sequential or Oberheim. Nothing is flashed.
+status: active
+authors:
+  - name: Patrik Pistol
+    url: https://pistolinstruments.com/
+source_status: closed
+license: proprietary
+license_notes: >-
+  The page footer reads "All rights reserved". The editor is free to use, and no source is published.
+homepage: https://ob6editor.pistolinstruments.com/
+distribution: browser-installer
+install_notes: >-
+  Open the page in Chrome, Edge or Opera, connect the OB-6 over USB and allow MIDI access with SysEx. On the synth, set Globals
+  so that Param Xmit and Param Rcv use NRPN and MIDI SysEx uses USB, then press Get from Synth. Back up the user banks before
+  sending programs to them.
+brick_risk: false
+tags: [editor, librarian, web-midi, sysex, usb-midi, midi, presets, sequencer, web]

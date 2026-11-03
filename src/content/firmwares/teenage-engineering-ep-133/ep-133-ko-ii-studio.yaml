@@ -1,0 +1,43 @@
+device: teenage-engineering-ep-133
+name: EP-133 KO II Studio
+kind: tool
+summary: React app that clones an EP-133's projects and samples to a local mirror, opens .pak and .ppak archives as patterns, scenes and songs for editing, plays through the device over MIDI, and writes pads, samples and projects back. A local Python bridge handles the file protocol.
+description: >-
+  A pattern and song editor with four pad groups, a multi-bar step grid, a KEYS
+  piano roll and a song arranger. A read-only scan copies the device's projects
+  and samples into a private folder with SHA-256 hashes and incremental updates,
+  so the app can work offline. Sounds and Transfer drags projects between the
+  machine and the library and uploads samples or reassigns pads, taking a
+  checkpoint before each write and reading it back byte for byte afterwards. A
+  test page draws the front panel over the live MIDI and SysEx stream. The
+  README says the write path was tested on hardware for targeted cases only, a
+  fuller test campaign is pending, and sound deletion stays locked. The local
+  bridge, tools/local_clone_bridge.py, builds on the epsysex package. A rhythm
+  coach module is included. The README is in French, with English and Spanish
+  versions.
+status: active
+authors:
+  - name: Enzo (propann)
+    url: https://github.com/propann
+source: https://github.com/propann/EP-133-KO-II-Studio
+source_status: open
+license: MIT
+distribution: source-only
+install_notes: >-
+  Needs Node.js 22 and Chrome or Chromium. Run npm ci and npm run dev, then open
+  the Vite address. Scanning and cloning need the Python bridge described in
+  docs/PONT_LOCAL_CLONAGE.md, and Ableton Live must not be holding the device.
+  Back up first; the author lists write reliability as not yet fully validated.
+brick_risk: false
+tags: [editor, librarian, sample-transfer, sequencer, web-midi, sysex, python]
+image:
+  url: https://raw.githubusercontent.com/propann/EP-133-KO-II-Studio/main/docs/screenshots/05-studio.webp
+  alt: EP-133 KO II Studio pattern editor with pad groups A to D along the top, a row of twelve pads and a step grid with one orange note on the third track
+  credit: propann
+  source_url: https://github.com/propann/EP-133-KO-II-Studio#readme
+  first_party: true
+versions:
+  - version: main @ 8b444c9
+    date: 2026-08-13
+    url: https://github.com/propann/EP-133-KO-II-Studio/commit/8b444c9
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,47 @@
+device: roland-sp-404-mkii
+kind: tool
+name: 404jam
+summary: Fork of 404 Busdriver that adds tablet-friendly faders, a JAM tab of pinned custom MIDI controls, a recipe library, XY presets, punch and motion recording, and an Android wrapper. Controls the SP-404MKII over Web MIDI. Unofficial.
+description: >-
+  Rights warning: the app ships six factory FX recipes taken from ElectroNoir's FX Recipe cards, which are sold on Gumroad.
+
+  It keeps Busdriver's bus control, snapshots, XY pad, LFOs, play surfaces and pattern grid. New in this fork are a recipe
+  library that takes a five-bus chain typed in using the effects' own units, XY presets built from real parameter names, and a
+  Perf bar with Punch (hold a snapshot and let go to revert) and Motion (record a bus's knob moves over one to eight bars and loop
+  them). The JAM tab pins SP-404 bus parameters, raw MIDI controls for another connected device, or captured bus scenes, and
+  has a preset for a Roland MC-101 knob layout. The README says the look and some ideas come from the author's 404tui
+  project. An Android app that wraps the live site is on the releases page as an APK to sideload. Nothing is flashed.
+status: active
+authors:
+  - name: moahbeatlab
+    url: https://github.com/moahbeatlab
+  - name: littletools404
+    url: https://github.com/littletools404
+source: https://github.com/moahbeatlab/404jam
+source_status: open
+license: MIT
+license_notes: The LICENSE file is the MIT text, with the copyright line given to 404 Busdriver contributors, as in the project it was forked from.
+homepage: https://moahbeatlab.github.io/404jam/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Edge, connect the SP-404MKII by USB-C and allow MIDI access. On iPhone and iPad use the
+  MIDIWeb Browser app. The Android APK is not on Google Play and needs installation of unknown apps to be enabled.
+brick_risk: false
+tags: [web-midi, midi, usb-midi, performance, fx, fork, web]
+versions:
+  - version: v0.4.0
+    date: 2026-10-21
+    url: https://github.com/moahbeatlab/404jam/releases/tag/v0.4.0
+  - version: v0.3.2
+    date: 2026-10-20
+    url: https://github.com/moahbeatlab/404jam/releases/tag/v0.3.2
+  - version: v0.3.1
+    date: 2026-10-19
+    url: https://github.com/moahbeatlab/404jam/releases/tag/v0.3.1
+  - version: v0.3
+    date: 2026-10-19
+    url: https://github.com/moahbeatlab/404jam/releases/tag/v0.3
+  - version: android-v1.0.0
+    date: 2026-09-29
+    url: https://github.com/moahbeatlab/404jam/releases/tag/android-v1.0.0
+    notes: Android wrapper APK around the hosted site.

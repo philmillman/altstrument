@@ -1,0 +1,31 @@
+device: meeblip-anode
+name: MeeBlip anode firmware
+kind: firmware
+summary: The anode's own firmware, published by MeeBlip as AVR assembly source with a prebuilt hex file, schematics and board files. It runs the wavetable oscillators, filter control, envelopes, LFO and MIDI input on the synth's ATmega32.
+description: >-
+  The repository holds the assembly source split into include files for the oscillator sample generation, wavetables, envelopes,
+  LFO, filter modulation, knob and switch scanning, MIDI input and note handling, along with the compiled anode.hex, a make
+  batch file that programs it with avrdude, and the core and top board schematics and layouts. The makers release the hardware designs under CC BY-SA 4.0 and
+  the code under the GPL. Nothing is flashed by this entry; the hex file is for an ISP programmer.
+status: dormant
+authors:
+  - name: MeeBlip
+    url: https://github.com/MeeBlip
+source: https://github.com/MeeBlip/meeblip-anode
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GNU GPL version 3 text. The hardware files are under CC BY-SA 4.0 and the MeeBlip name is reserved by its makers.
+  The repository is the manufacturer's own, so its hex file is the maker's firmware and not a redistributed copy.
+homepage: https://meeblip.com/collections/all/products/meeblip-anode-synth
+distribution: download
+install_notes: >-
+  Program the ATmega32 through its ISP header with an AVR programmer. The repository's make-anode.bat shows the avrdude
+  command for a USBtiny programmer, including the fuse settings. Use a separate programmer and read the fuse values before writing them.
+brick_risk: false
+tags: [official, synth-engine, wavetable, midi, open-source]
+versions:
+  - version: master @ cad2e04
+    date: 2015-11-05
+    url: https://github.com/MeeBlip/meeblip-anode/commit/cad2e04cf75b47c1f7dd5bfaf2a73afe79801746
+    notes: No tagged releases; this is the latest commit.

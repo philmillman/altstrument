@@ -1,0 +1,23 @@
+name: 4-TME
+manufacturer: .axs instruments
+category: synth
+tagline: DIY four-voice Daisy Seed polysynth with 16 encoders and an OLED
+description: >-
+  The 4-TME is a one-person DIY synthesizer project by Joe Bowyer of .axs instruments. It runs four voices on a Daisy Seed, each with
+  a variable-shape oscillator, a Moog-style ladder low-pass filter, an ADSR amplifier, a triangle LFO and pan, and notes
+  arrive over MIDI and rotate through the voices. The panel has sixteen encoders, a menu encoder, voice and shift buttons with LEDs,
+  and a 128 by 32 OLED. The author says it is based on the Vermona PERfourMER. Presets and settings are stored in an SPI flash chip. The
+  project's repository has the firmware sketch and KiCad board files.
+platform: Electrosmith Daisy Seed (STM32H750, Arm Cortex-M7), Arduino (DaisyDuino)
+links:
+  community:
+    - label: 4-TME PolySynth (firmware and KiCad files)
+      url: https://github.com/joebmz98/4-TME-PolySynth
+    - label: .axs instruments on GitHub
+      url: https://github.com/joebmz98
+notes: >-
+  A prototype with no published bill of materials or product page. The repository for the instrument has no license file. The
+  web tools replace the whole internal flash image over the STM32 ROM DFU bootloader, and the author says presets, settings
+  and the last sound live in a separate flash chip that the flasher does not touch.
+pinned: [4-tme-polysynth]
+related: [electrosmith-daisy-patch]

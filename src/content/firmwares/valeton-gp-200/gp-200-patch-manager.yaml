@@ -1,0 +1,34 @@
+device: valeton-gp-200
+kind: tool
+name: GP-200 Patch Manager
+summary: >-
+  Command-line Python tool for bulk backup and restore of GP-200 patches over USB MIDI. It exports slots to .prst or ZIP, uploads files, applies one template across a range and has diagnostics for the link, with prebuilt executables.
+description: >-
+  It moves whole .prst patches between the pedal and files. Commands list ports and slot names, export one slot, a range or
+  all 256, upload files or a ZIP from a starting slot, and apply a template across a range. Reads match the web version's
+  backups byte for byte on the author's pedal. The default flash upload method is confirmed on hardware, and a live method
+  has a known bug for some effect parameters. PROTOCOL.md and PROTOCOL_NOTES.md document the messages and the author's
+  timing tests. The README steers most people to the web version, which restores far faster, and keeps this one for scripts.
+  A full restore here takes about eight minutes. It also warns that a patch stores only the number of the IR or NAM slot
+  it uses. Prebuilt files for Windows, Linux and macOS are attached to a rolling release. The macOS build is unsigned and unverified.
+status: active
+authors:
+  - name: donpark2000
+    url: https://github.com/donpark2000
+source: https://github.com/donpark2000/GP-200-Patch-Manager
+source_status: open
+license: GPL-3.0-only
+license_notes: The LICENSE file is the GPL v3 text with no later-version statement, and the sibling web project states GPL-3.0-only.
+homepage: https://github.com/donpark2000/GP-200-Patch-Manager/releases/tag/latest
+distribution: download
+requires_stock: GP-200 firmware 1.8.0 (the tested version)
+install_notes: >-
+  Download the executable for your system from the rolling release page, or run gp200.py with Python. On Linux make it
+  executable, and on macOS remove the quarantine flag. Close Valeton's editor first. Back up before any upload.
+brick_risk: false
+tags: [cli, librarian, sysex, usb-midi, midi, presets, backup, python]
+versions:
+  - version: latest
+    date: 2026-09-28
+    url: https://github.com/donpark2000/GP-200-Patch-Manager/releases/tag/latest
+    notes: Rolling release rebuilt by CI on each change to main.

@@ -1,0 +1,28 @@
+device: elektron-machinedrum
+name: MachineDrandom
+kind: tool
+summary: Closed browser app that randomises the loaded Machinedrum kit live over Web MIDI, engine by engine and parameter by parameter, and can also generate and play rhythm patterns as MIDI notes with the unit as sound module. Nothing is stored on the unit until you save the kit.
+description: >-
+  Rights warning: the page embeds kits and 128 patterns decoded from the md010308 SysEx dump, which it labels as Autechre's. The page does not say
+  whether it has permission to include them.
+
+  The page sets a policy per parameter of randomise, send default or fix a value, with an engine pool by machine family and a
+  16-track matrix for locking engines or single parameters. A Tame mode keeps levels and sends in musical ranges. It
+  can also randomise the kit's echo, reverb, EQ and compressor, then sends the roll as MIDI messages. A pattern section builds rhythms with
+  Euclidean, random, linear and genre algorithms, plus swing, ghost notes and humanise, and plays them on the unit by streaming
+  notes with internal or external clock. It targets the MKII and UW on OS X.12 and excludes the sample machines. It is a
+  single HTML file with no source repository or licence shown.
+status: active
+authors:
+  - name: Kerem Ergener
+    url: https://www.keremergener.com/
+source_status: closed
+license: proprietary
+license_notes: A hosted single-page app with no source repository and no licence text; the footer is marked with a 2026 copyright.
+homepage: https://machinedrandom.keremergener.com/
+distribution: browser-installer
+install_notes: >-
+  Open the page in a Chromium browser and allow MIDI with SysEx. Enable CC and SysEx receive on the Machinedrum, set the
+  base channel to GLOBAL SETTINGS > MIDI CHANNELS > BASE CH, and use SAVE KIT on the unit to keep a result.
+brick_risk: false
+tags: [web-midi, sysex, midi, web, generative, sequencer, drums, utility]

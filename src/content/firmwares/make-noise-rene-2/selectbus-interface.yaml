@@ -1,0 +1,28 @@
+device: make-noise-rene-2
+name: René 2 Select Bus Interface
+kind: tool
+summary: Web interface that recalls and stores René 2 states over its Select Bus from an Expert Sleepers FH-2 using Web MIDI. It shows 64 slots, loads one on a click and stores to one on a right click, and keeps names and tags in the browser. Run it locally; there is no hosted copy.
+description: >-
+  The FH-2 is set up in its configuration tool to send one of its MIDI outputs to the Select Bus on the Eurorack power header. The page
+  then sends a controller 16 message and a program change to load a state, and the reverse order to store the
+  module's current state. It names, describes and tags slots, which are kept in the browser's local storage and not
+  in the module, and exports and imports that metadata as JSON. Nothing is flashed.
+status: active
+authors:
+  - name: Viktor Kelemen
+    url: https://github.com/viktorkelemen
+source: https://github.com/viktorkelemen/selectbus-interface
+source_status: open
+license: MIT
+license_notes: The README says MIT, and the repository has no LICENSE file.
+distribution: source-only
+install_notes: >-
+  Needs an Expert Sleepers FH-2 Rev 2 with Select Bus support and the module on the same power bus with a 16-pin cable. Run npm install and
+  npm run dev, open the page in Chrome or Edge and pick the FH-2 as the MIDI output.
+brick_risk: false
+tags: [controller, web-midi, usb-midi, midi, presets, utility, web]
+versions:
+  - version: main @ 6bf1427
+    date: 2026-01-31
+    url: https://github.com/viktorkelemen/selectbus-interface/commit/6bf142710b014779a28e3a0793994b15a4cb985a
+    notes: No tagged releases; this is the latest commit.

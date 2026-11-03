@@ -1,0 +1,20 @@
+name: DCLK
+manufacturer: .axs instruments
+category: other
+tagline: DIY dual MIDI clock with quantised start and stop, built on a Black Pill
+description: >-
+  DCLK is a dual MIDI clock by Joe Bowyer of .axs instruments, based on the Sim'n Tonic Nome II. It sends MIDI clock to two 3.5 mm TRS outputs and over USB MIDI, with quantised start and stop
+  and a separate clock divider for each output, so two machines can be started on the bar. It has an encoder, capacitive touch buttons, a 128 by 32 OLED and three LEDs, runs on an STM32F411 Black Pill, and saves its settings to flash.
+platform: STM32F411CEU6 Black Pill (Arm Cortex-M4), Arduino (STM32duino)
+links:
+  community:
+    - label: DCLK repository (firmware and KiCad files)
+      url: https://github.com/joebmz98/DCLK
+    - label: DCLK Web Flasher and Editor
+      url: https://joebmz98.github.io/DCLK-Flasher/
+    - label: .axs instruments on GitHub
+      url: https://github.com/joebmz98
+notes: >-
+  A DIY design with KiCad files and production files for a PCB maker but no product page. The firmware and web tools are the maker's own and are tagged official. The web flasher keeps saved settings across updates because it leaves the last flash sector alone.
+pinned: [dclk-firmware]
+related: [axs-instruments-mc8p-mkii]

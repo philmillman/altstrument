@@ -1,0 +1,28 @@
+device: akai-mpk-mini
+name: Akai MPK mini editor
+kind: tool
+summary: Browser preset editor for the Akai MPK mini, a React app that reads and edits the four programs over Web MIDI. It covers the pad banks, knobs, channels, octave, transpose and arpeggiator, and the README documents the 110-byte program SysEx.
+description: >-
+  The page requests a program from the controller with a SysEx query and decodes the reply into pad notes, program changes, controller numbers and
+  toggle or momentary types for two banks of eight pads, plus the low and high values of eight knobs and the arpeggiator settings. The README
+  lists the byte layout and the four factory presets as decimal and hex dumps. Its to-do list says saving and loading preset files was not done,
+  and the project has not changed since 2020.
+status: dormant
+authors:
+  - name: Goran Ljubojević
+    url: https://github.com/gljubojevic
+source: https://github.com/gljubojevic/akai-mpk-mini-editor
+source_status: open
+license: unspecified
+license_notes: There is no license file or license statement in the repository.
+homepage: https://gljubojevic.github.io/akai-mpk-mini-editor/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a Web MIDI browser with SysEx access, connect the MPK mini over USB and choose it as input and output. To run it yourself, use npm install and npm start.
+brick_risk: false
+tags: [editor, web-midi, sysex, usb-midi, midi, presets, web]
+versions:
+  - version: master @ e2b446d
+    date: 2020-06-14
+    url: https://github.com/gljubojevic/akai-mpk-mini-editor/commit/e2b446d586e5f0b3656fb6ae15680fdd6aa764c5
+    notes: No tagged releases; this is the latest commit.

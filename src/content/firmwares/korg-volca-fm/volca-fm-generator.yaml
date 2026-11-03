@@ -1,0 +1,47 @@
+device: korg-volca-fm
+also_devices: [korg-volca-fm-2]
+name: volca fm generator
+kind: tool
+summary: Browser tool that builds DX7-style voices from a tonality wheel instead of parameters and plays them in a built-in DX7 engine or sends them to a volca fm or volca fm 2 over Web MIDI. Voices export as .syx.
+description: >-
+  Rights warning: the Start from list reproduces the parameters of 41 classic Yamaha DX7 factory voices, and two piano voices
+  of unknown authorship taken from the cartridge collection that comes with Dexed.
+
+  You place up to three pins on a wheel of twelve tonalities, then shape envelope, brightness, register, effects and
+  velocity, and the app builds the six operators, algorithm and envelopes. Variation and mutate buttons move the result, and
+  an advanced view edits every parameter. Voices can be kept in the browser, exported as .syx files or as a 32-voice DX7
+  cartridge, and DX7 cartridges can be opened and auditioned. The sound engine in the page follows the DX7 and is tuned
+  against a volca fm 2. Voices go to the volca over Web MIDI through a MIDI interface and replace the sound of the program
+  that is selected until another program is chosen. The page cannot read voices back. The author tested on a volca fm 2 and
+  the original volca fm, and the original model has no velocity or chorus control. The code was written with Claude under the
+  author's direction. Nothing is flashed.
+status: active
+authors:
+  - name: Peter Witzel
+    url: https://github.com/privatepublic-de
+source: https://github.com/privatepublic-de/volca-fm-generator
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is MIT. THIRD_PARTY_NOTICES.md says the sound engine follows Google's MSFA (Apache-2.0) and that the
+  instrument voices reproduce the parameters of Yamaha's factory voices, which remain the work of their makers.
+homepage: https://privatepublic-de.github.io/volca-fm-generator/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted app in Chrome, Edge or Firefox, pick the volca model, press Connect the volca and allow MIDI access.
+  Firefox first offers a small site-permission add-on for MIDI with SysEx. Connect a MIDI interface to the volca's MIDI IN.
+  On the volca fm 2, turn on MIDI Short Message to control chorus and reverb depth. To keep a voice, write it on the volca
+  itself.
+brick_risk: false
+tags: [editor, web-midi, sysex, midi, presets, web]
+image:
+  url: https://raw.githubusercontent.com/privatepublic-de/volca-fm-generator/main/docs/screenshot.png
+  alt: volca fm generator with a colour wheel of tonalities and two pins, envelope and tone controls, a voice panel with six operators and an algorithm diagram, and a keyboard along the bottom
+  credit: Peter Witzel
+  source_url: https://github.com/privatepublic-de/volca-fm-generator#readme
+  first_party: true
+versions:
+  - version: main @ f10175b
+    date: 2026-10-27
+    url: https://github.com/privatepublic-de/volca-fm-generator/commit/f10175b365eed132db373a3a6bb5e074ff992646
+    notes: No tagged releases; this is the latest commit.

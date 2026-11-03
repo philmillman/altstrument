@@ -1,0 +1,33 @@
+device: teenage-engineering-ep-133
+name: EP-133 K.O.II MIDI CTRL
+kind: tool
+summary: Single-file web page that detects an EP-133 over Web MIDI and offers a pitch bend and mod wheel panel, a MIDI clock monitor, a 16-step sequencer, a pad keyboard for note groups A to D and a MIDI log. A settings sheet is reference only. A SysEx protocol document sits alongside.
+description: >-
+  One index.html with no dependencies. The Live tab sends pitch bend and mod
+  wheel and shows the BPM and beat grid of clock from the device; the sequencer
+  plays 16 steps on a chosen channel; Keys mode plays the device's pads as a
+  chromatic keyboard across the four groups (notes 36 to 83). The Config tab only
+  lists settings to change on the hardware itself. The page requests MIDI access
+  without SysEx and does not transfer files. PROTOCOL.md separately documents the
+  file-transfer SysEx format with command tables. The README is in Spanish and
+  credits punk_bit, while the repository belongs to drullandev.
+status: active
+authors:
+  - name: drullandev
+    url: https://github.com/drullandev
+source: https://github.com/drullandev/EP133-plain-web
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and the README states no terms.
+distribution: source-only
+install_notes: >-
+  Download or clone the repository and open index.html in Google Chrome, then
+  allow MIDI access. No hosted copy was found. Set MIDI clock to Clock Out on the
+  device if you want the clock panel to show tempo.
+brick_risk: false
+tags: [midi, web-midi, usb-midi, sequencer, research, web]
+versions:
+  - version: main @ 20ac69d
+    date: 2026-07-09
+    url: https://github.com/drullandev/EP133-plain-web/commit/20ac69d
+    notes: No tagged releases; this is the latest commit.

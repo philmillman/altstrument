@@ -1,0 +1,37 @@
+device: roland-sp-404-mkii
+kind: tool
+name: 404 Busdriver
+summary: Single HTML page that controls the SP-404MKII over Web MIDI. It drives the five effect buses with named parameters, snapshots, an XY pad and beat-synced LFOs, and adds play surfaces, pattern switching and a looper remote. Unofficial.
+description: >-
+  The page sets each bus's effect and six faders using parameter names taken from Roland's reference manual, and follows
+  moves of the unit's encoders. It keeps eight snapshots that export as JSON, a freely mappable XY pad, and four LFOs that
+  follow incoming MIDI clock or tap tempo. Play surfaces include a chromatic keyboard on channel 16, scale pads, a vocoder
+  keyboard on channel 11 and a pad board. A pattern grid switches patterns by program change, and a looper remote sends the
+  record command. Effect control works in MIDI mode A and B; pattern switching needs mode B with program change receive on.
+  On iPhone and iPad the README points to the MIDIWeb Browser app. The latest commit carries a Claude co-author line.
+  Settings stay in browser storage. Nothing is flashed.
+status: active
+authors:
+  - name: littletools404
+    url: https://github.com/littletools404
+source: https://github.com/littletools404/404busdriver
+source_status: open
+license: MIT
+license_notes: The LICENSE file is the MIT text, with the copyright line given to 404 Busdriver contributors.
+homepage: https://littletools404.github.io/404busdriver/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Edge, connect the SP-404MKII by USB-C and allow MIDI access. The manual is built into the
+  app under Setup. 404jam is a fork of this page with more features and has its own entry.
+brick_risk: false
+tags: [web-midi, midi, usb-midi, performance, fx, web]
+video:
+  url: https://www.youtube.com/watch?v=nbw5h7pACqI
+  title: "404 BUS DRIVER: CONTROL YOUR SP-404MK2 FROM YOUR SMARTPHONE  - #sp404mk2 #tutorial #tipsntricks"
+  credit: ElectroNoir
+  first_party: false
+versions:
+  - version: main @ e3abb23
+    date: 2026-07-25
+    url: https://github.com/littletools404/404busdriver/commit/e3abb2384ee1b6c4920630155e2acfda6df882fc
+    notes: No tagged releases; this is the latest commit.

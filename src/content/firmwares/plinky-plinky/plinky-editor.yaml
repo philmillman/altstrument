@@ -1,0 +1,28 @@
+device: plinky-plinky
+name: Plinky Editor
+kind: tool
+summary: The project's browser patch editor for Plinky, a Svelte app that reads and writes presets over WebUSB. It lists the synth's parameters by category, randomizes by category and loads and saves one patch at a time.
+description: >-
+  The page connects to Plinky over its WebUSB interface and reads or writes a preset using the six-command protocol described in the source. It
+  was published as a WebUSB playground and has not changed since 2022, so it does not know about parameters the newer firmware added. Nothing is flashed.
+status: dormant
+authors:
+  - name: Orangetronic
+    url: https://github.com/Orangetronic
+  - name: miunau
+    url: https://github.com/miunau
+source: https://github.com/plinkysynth/editor
+source_status: open
+license: CC-BY-NC-SA-4.0
+license_notes: The LICENSE file says all Plinky-contributed material is under CC BY-NC-SA 4.0.
+homepage: https://plinkysynth.github.io/editor/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a WebUSB browser such as Chrome or Edge and connect Plinky over USB in its normal mode. On Linux, a udev rule may be needed for USB access.
+brick_risk: false
+tags: [official, editor, web, presets, usb-midi]
+versions:
+  - version: main @ 0ed9e9c
+    date: 2022-06-15
+    url: https://github.com/plinkysynth/editor/commit/0ed9e9c815867bfb7713bcf05fade45041dd02b8
+    notes: No tagged releases; this is the latest commit.

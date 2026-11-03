@@ -1,0 +1,28 @@
+device: arturia-beatstep
+name: p5.beatstep
+kind: tool
+summary: Small JavaScript library and sketches that read a BeatStep's 16 knobs and 16 pads through webmidi.js and use them to drive p5.js drawings and sounds. The README is copied from a Korg nanoKONTROL library and is not accurate. There is no hosted page.
+description: >-
+  p5.beatstep.js defines a BeatStep class with the controller's default knob and pad maps, smoothing of knob values over a
+  window, and pad and encoder state, and the example sketches use it for a jittery grid, rain, motion, a simple sequencer and pad
+  sound effects, with a few WAV drum samples. It listens to the controller and sends nothing to it. The README says the
+  library listens for Korg nano controllers, which conflicts with the code. The last commit is from February 2024.
+status: dormant
+authors:
+  - name: hypergrace
+    url: https://github.com/hypergrace
+source: https://github.com/hypergrace/p5.beatstep
+source_status: open
+license: Unlicense
+license_notes: The repository also commits webmidi.js and a few WAV samples, which have their own terms.
+distribution: source-only
+install_notes: >-
+  Clone the repository and open index.html in a Web MIDI browser with a BeatStep connected; webmidi.js is also loaded
+  from a CDN in the example page.
+brick_risk: false
+tags: [midi, web-midi, usb-midi, web, controller, generative, utility]
+versions:
+  - version: main @ 84685eb
+    date: 2024-02-28
+    url: https://github.com/hypergrace/p5.beatstep/commit/84685eb1cc8b4645c0dcd212b89fd65de0d8fdd4
+    notes: No tagged releases; this is the latest commit.

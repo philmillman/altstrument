@@ -1,0 +1,27 @@
+device: body-synths-metal-fetishist
+name: Body Synths Firmware Update Utility
+kind: tool
+summary: The maker's own WebUSB programmer for Body Synths instruments, based on Electrosmith's Programmer. It flashes the Metal Fetishist over the Daisy DFU bootloader with the maker's release files v1.0 to v2.0, which are bundled in the repository. Only the Metal Fetishist is listed.
+description: >-
+  Rights warning: the repository bundles Body Synths' own closed firmware images for the Metal Fetishist (v1.0, v1.1, v1.2 and v2.0) as .bin files, so the code is open but the firmware it ships is not. The page lists releases with dates and notes from a releases.json
+  file, and supports pre-release tags and several instruments, though only the Metal Fetishist is defined. Version 2.0 adds MIDI playing and clock changes, a second oscillator, phaser, flanger and chorus effects, new step modulation targets and a settings menu. The maker
+  also keeps a separate repository of release downloads.
+status: active
+authors:
+  - name: Body Synths
+    url: https://github.com/bodysynths
+source: https://github.com/bodysynths/firmware.bodysynths.com
+source_status: open
+license: MIT
+license_notes: The MIT license (Copyright 2024 Body Synths) covers the programmer's code. The bundled public/firmware/MetalFetishist-v1.0.bin to v2.0.bin are the maker's own closed firmware images with no separate license stated. They come from the maker's own site, so this is first-party distribution, not a mirror.
+homepage: https://firmware.bodysynths.com/
+distribution: browser-installer
+install_notes: >-
+  Use Chrome or another Chromium browser. Unplug the instrument, remove the bottom plate, connect the micro-USB data cable to the port marked Step 1, hold the top of the two small buttons and tap the bottom one to enter DFU mode, then Connect and choose DFU in FS Mode, pick a release and press Update. On Windows the driver may need to be replaced with WinUSB using Zadig.
+brick_risk: false
+tags: [official, flasher, webusb, dfu, web]
+versions:
+  - version: main @ 7a9b70c
+    date: 2026-07-02
+    url: https://github.com/bodysynths/firmware.bodysynths.com/commit/7a9b70c0d644455309a3ef05bd353d8cae54cc80
+    notes: No tagged releases; this is the latest commit. The bundled Metal Fetishist releases date from 2024-06-11 (v1.0) to 2025-09-12 (v2.0).

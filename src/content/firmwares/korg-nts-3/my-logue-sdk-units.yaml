@@ -1,0 +1,36 @@
+device: korg-nts-3
+also_devices: [korg-nts-1-mkii, korg-microkorg-2]
+name: my-logue-sdk-units
+summary: >-
+  Collection of about sixty logue SDK units, mostly NTS-3 kaoss pad effect and drum units plus a few oscillators for the NTS-1 mkII and microKORG2, with a hosted page that previews them in the browser and sends them over Web MIDI SysEx.
+description: >-
+  Rights warning: several drum units embed audio read from Roland TR-909 ROM chips (the hi-hat and ride images in plugins/common, hhat and ride909, and a ride WAV), and the README
+  names the 909 ROM as the voice source. Roland's rights in that audio are not addressed in the repository.
+
+  Each plugin keeps one shared DSP header and a thin adapter per target. In the source tree, 58 plugins have an NTS-3 genericfx target, 7 have an NTS-1 mkII target and 4 a microKORG2 target. The set includes
+  feedback and saw-stack oscillators, a shaker, an acid bass, tempo-synced slicers and glitch effects, and many drum and groove
+  units, some flagged experimental and shown only with a query option on the page. The page loads the compiled units, previews them with a WebAssembly
+  build and sends NTS-1 mkII and NTS-3 units to the instrument over Web MIDI SysEx. microKORG2 units are copied by USB mass storage instead, since SysEx loading does not work there. The README lists minilogue xd, prologue, NTS-1 and
+  drumlogue as targets, but the tree has no plugin with a target for them. The author calls the project under construction.
+status: active
+authors:
+  - name: mosynthkey
+    url: https://github.com/mosynthkey
+source: https://github.com/mosynthkey/my-logue-sdk-units
+source_status: open
+license: BSD-3-Clause
+license_notes: >-
+  Korg's logue SDK, included as a submodule, keeps its own BSD 3-Clause license. The TR-909 ROM-derived audio is not covered by this license.
+homepage: https://mosynthkey.github.io/my-logue-sdk-units/
+distribution: browser-installer
+requires_stock: NTS-3 or NTS-1 mkII with unit support; microKORG2 firmware 2.0 or later
+install_notes: >-
+  Open the hosted page in a Chromium browser, preview a unit and send it to an NTS-1 mkII or NTS-3. For the microKORG2, download the mk2unit file,
+  boot the synth into USB mass storage with FUNCTION 1 held, copy the file into an empty folder under Units/Oscs, and pick it with FUNCTION 5. Units run next to the stock firmware, which is not changed.
+brick_risk: false
+tags: [synth-engine, genericfx, nts-3, fx, drum-synth, web-midi, sysex, web]
+versions:
+  - version: main @ 1b4c695
+    date: 2026-09-27
+    url: https://github.com/mosynthkey/my-logue-sdk-units/commit/1b4c69508a2e8c409b22916f956ca58099b6fc34
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,31 @@
+device: yamaha-pss-480
+name: PortaSound JS
+kind: tool
+summary: Browser SysEx editor for the Yamaha PSS-480, with sliders for its two-operator FM voice. The author says it also handles the PSS-580, 680 and 780 and the PortaTone DSR-1000 and DSR-2000. It talks to the keyboard over Web MIDI.
+description: >-
+  Rights warning: the repository holds Yamaha product photographs, a screenshot of a Yamaha SysEx specification, a PortaSound logo
+  and two DSR-2000 voice dumps, none of which comes with a stated licence.
+
+  The app, written in React, shows the FM voice parameters as sliders and buttons, with algorithm drawings, and sends parameter messages to
+  the keyboard as they change. A separate DSR-2000 page and a test bench are included. The README lists the supported models and the browsers with
+  Web MIDI, and the hosted copy is on Cloudflare Pages. Nothing is flashed.
+status: dormant
+authors:
+  - name: Matt Montag
+    url: https://github.com/mmontag
+source: https://github.com/mmontag/portasound-js
+source_status: open
+license: unspecified
+license_notes: The repository has no license file or license statement.
+homepage: https://portasound.pages.dev/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, Edge or Opera, connect the keyboard's MIDI ports through an interface and allow MIDI access
+  with SysEx.
+brick_risk: false
+tags: [editor, web-midi, sysex, midi, presets, fm, web]
+versions:
+  - version: master @ a9e3126
+    date: 2021-12-06
+    url: https://github.com/mmontag/portasound-js/commit/a9e312623191db1922583f31981f824bec081f36
+    notes: No tagged releases; this is the latest commit.

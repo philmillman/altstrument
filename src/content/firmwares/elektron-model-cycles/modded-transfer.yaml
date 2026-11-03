@@ -1,0 +1,34 @@
+device: elektron-model-cycles
+name: ModdedTransfer
+kind: tool
+summary: Web MIDI page for uploading samples from a phone or tablet to a Model:Cycles running Model-TG or Modded Cycles. It converts audio in the browser to 48 kHz 16-bit and sends it with Elektron's sample-transfer SysEx.
+description: >-
+  Written because there was no sample upload tool for an iPad, and meant for use in the Web MIDI Browser app on iOS. It
+  takes WAV, MP3, M4A, AAC, OGG, AIFF, FLAC, MP4 and MOV files, with video contributing only its audio, converts them on
+  the page, and lets you rename each sample, normalise it to 0 dB and choose mono or stereo before sending. A Probe
+  button retests the send path and remembers a format that crashed the iOS bridge. The author says it was written entirely
+  by AI and tested with Modded Cycles 1.21 on a Model:Cycles with an iPad mini 6. It needs the unit's Transfer setting
+  switched to SMP, which a firmware mod provides, and its protocol follows elektroid. The page borrows the look of
+  Modded Cycles.
+status: active
+authors:
+  - name: ktwzk
+    url: https://github.com/ktwzk
+source: https://github.com/ktwzk/modded-transfer
+source_status: open
+license: WTFPL
+license_notes: The LICENSE file adds a line saying the WTFPL applies to everything in the repository.
+homepage: https://ktwzk.github.io/modded-transfer/
+distribution: browser-installer
+requires_stock: "1.13"
+install_notes: >-
+  The Model:Cycles must run a mod that supports sample transfer, such as Model-TG or Modded Cycles. On the unit set
+  Device Config > Transfer to SMP, which resets to CYC after a power cycle. Open the page in Web MIDI Browser on iOS, or
+  any Web MIDI browser with SysEx allowed, press Connect, pick the ports and Upload.
+brick_risk: false
+tags: [sample-transfer, sampler, web-midi, sysex, usb-midi, web, midi]
+versions:
+  - version: main @ 75ad8f3
+    date: 2026-10-15
+    url: https://github.com/ktwzk/modded-transfer/commit/75ad8f3afa5e5ccfde5413835cfe3103a160f362
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,47 @@
+device: roland-tr-606
+name: SuperOS-606
+summary: Open firmware for the TR-606 that runs on an AT90USB1286 board in place of the µPD650C. Adds 64-step patterns, probability, ratchets, polymeter, MIDI in/out with clock sync, a SysEx web pattern editor and MIDI firmware updates.
+description: >-
+  The firmware keeps the 606's pattern and track model, its mode dial and its tempo and DIN sync circuits, and puts
+  extra tools behind the FUNCTION button. The tools cover pattern length, swing, copy, transform, per-step probability and
+  ratchet, polymeter, mute, reslice, drum arpeggio, direction and pattern generation. A config menu sets the MIDI
+  channel, the clock source and whether the SysEx link is on. The combined build also carries an emulator of the stock
+  µPD650C, so one board can boot either the original program or SuperOS. No Roland ROM is distributed: you upload a dump you
+  are entitled to read, over SysEx from the web editor, or compile it into a local build that must not be shared.
+  Patterns and settings are stored in the board's flash. The firmware can be updated over MIDI through a resident
+  bootloader. The repository includes a single-file web pattern editor that talks to the box over SysEx, but no hosted
+  copy is online. The author describes it as running on a real machine, and the releases are alpha builds.
+status: active
+authors:
+  - name: Bjorn Lustic
+    url: https://github.com/bjornlustic
+source: https://github.com/bjornlustic/SuperOS-606
+source_status: open
+license: MIT
+license_notes: >-
+  The µPD650C core in the emulator is a port of MAME's ucom4 core, which the README credits as BSD-3-Clause. The
+  stock mask ROM is not included, and ROM-embedded builds are not published.
+homepage: https://github.com/bjornlustic/SuperOS-606
+distribution: download
+requires_stock: Hardware modification; the µPD650C CPU is replaced by an AT90USB1286 (Teensy++ 2.0 class) board or a dedicated CPU board in its socket
+install_notes: >-
+  Needs the CPU replacement board. Flash the bootloader and flash service once over ISP with the -full.hex file,
+  never a bare app hex, because the chip erase would remove the bootloader. After that, send the release .syx with
+  tools/send_syx.py or any throttled SysEx utility. A MIDI update keeps patterns and settings. The stock emulator mode
+  needs your own µPD650C ROM dump.
+brick_risk: false
+tags: [sequencer, midi, sysex, editor, emulator, hardware-mod, os]
+versions:
+  - version: 0.6a
+    date: 2026-08-28
+    url: https://github.com/bjornlustic/SuperOS-606/releases/tag/0.6a
+    notes: Firmware updates over MIDI, jitter-smoothed MIDI clock sync, config menu, and the same menu in emulator mode.
+  - version: 0.5a
+    date: 2026-08-01
+    url: https://github.com/bjornlustic/SuperOS-606/releases/tag/0.5a
+  - version: 0.2a
+    date: 2026-06-11
+    url: https://github.com/bjornlustic/SuperOS-606/releases/tag/0.2a
+  - version: v0.1-alpha
+    date: 2026-06-08
+    url: https://github.com/bjornlustic/SuperOS-606/releases/tag/v0.1-alpha

@@ -1,0 +1,34 @@
+name: WARBL / WARBL2
+manufacturer: Mowry Stringed Instruments
+category: other
+tagline: Open source MIDI wind controller that senses finger positions with infrared sensors
+description: >-
+  WARBL is a MIDI wind controller by Andrew Mowry, made in Oregon, shaped like a small tube with tone holes. Infrared sensors detect how far each finger is from a hole, so the firmware
+  can send pitch bend for slides and vibrato, and a breath sensor sets the note level. It has fingering charts for instruments such as the tin whistle, Irish flute, uilleann pipes and
+  Great Highland bagpipes, and a browser configuration tool changes the settings.
+
+  The original WARBL sends USB MIDI from an ATmega32U4. WARBL2 is the later model, built on an nRF52840, which adds Bluetooth LE MIDI, a battery and more sensors. Both have open source firmware.
+platform: ATmega32U4 (WARBL), Nordic nRF52840 (WARBL2)
+stock_firmware: "4.7 (WARBL2), 2.1 (WARBL)"
+links:
+  manufacturer: https://warbl.xyz/
+  community:
+    - label: WARBL2 firmware and design files
+      url: https://github.com/amowry/WARBL2
+    - label: WARBL firmware
+      url: https://github.com/amowry/warbl
+    - label: WARBL forum
+      url: https://warbl.xyz/phpbb/
+notes: >-
+  The maker publishes the firmware and the configuration tool as open source, so their entries are tagged official. WARBL2 firmware updates are UF2 files copied to the WARBLBOOT drive; the original WARBL uses an installer with a .hex file.
+pinned: [warbl2-firmware, warbl-firmware]
+image:
+  src: /images/devices/mowry-stringed-instruments-warbl.webp
+  style: photo
+  alt: A black WARBL tube with seven small sensor holes along it, lying on a wooden table beside a coiled USB cable, a WARBL sticker and a black mouthpiece
+  width: 900
+  height: 459
+  credit: Mowry Stringed Instruments
+  license: manufacturer product image
+  source_url: https://warbl.xyz/Store/
+  original_url: https://warbl.xyz/Store/image/catalog/warbl2.jpg

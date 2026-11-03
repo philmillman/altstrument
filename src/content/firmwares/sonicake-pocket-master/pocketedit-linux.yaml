@@ -1,0 +1,30 @@
+device: sonicake-pocket-master
+kind: tool
+name: PocketEdit (Linux bridge fork)
+summary: >-
+  Copy of suckyble's PocketEdit browser editor with a Linux addition: a Python script that relays the pedal's Bluetooth MIDI to the page over a WebSocket, and an index_linux.html that uses it. The editor itself is unchanged.
+description: >-
+  The repository holds the same index.html as suckyble/PocketEdit, which is already listed, and its reverse-engineering
+  tools. The new part is linux/ble_midi_bridge.py, which uses bleak and websockets to connect to the pedal by its
+  Bluetooth address, and index_linux.html, a copy of the editor that talks to that bridge instead of the browser's Web
+  Bluetooth. The README credits the Linux support to ahermosa. USB MIDI in the original editor already works on Linux in
+  Chrome, Edge and Firefox, so the bridge matters only for the wireless link. The README text is the original's.
+status: dormant
+authors:
+  - name: vahr76
+    url: https://github.com/vahr76
+source: https://github.com/vahr76/PocketEdit
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file; the upstream project listed here has none either.
+distribution: source-only
+install_notes: >-
+  Pair the pedal with bluetoothctl, run python linux/ble_midi_bridge.py with its address, then open index_linux.html in
+  Chrome or Brave. Install bleak and websockets first. For the original editor, use the upstream hosted page instead.
+brick_risk: false
+tags: [editor, web-midi, sysex, midi, bluetooth, presets, fork, web]
+versions:
+  - version: main @ 3314114
+    date: 2026-06-04
+    url: https://github.com/vahr76/PocketEdit/commit/3314114
+    notes: No tagged releases; this is the latest commit.

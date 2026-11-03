@@ -1,0 +1,27 @@
+device: teenage-engineering-tp-7
+name: TP7-MIDI
+kind: tool
+summary: Browser remote control for the Teenage Engineering TP-7. It sends transport, cue, loop and speed commands over Web MIDI on USB or over Web Bluetooth, and the repository documents the TP-7's MIDI commands and the limits found by testing. It works on phones and desktops.
+description: >-
+  Rights warning: the repository includes a full text copy of the TP-7 manual and a firmware changelog compiled from Teenage Engineering's pages, which are the maker's documentation. The app lets you play, stop, record-arm, set cue markers and
+  loops and change speed. The README's tables of known limits say the TP-7 reports no state over MIDI, that Controller Mode cannot be used together with receiving commands, and that the MIDI-CUE setting must be on. It is unofficial.
+status: active
+authors:
+  - name: Ilya Baryshnikov
+    url: https://github.com/lucidyan
+source: https://github.com/lucidyan/tp7-midi
+source_status: open
+license: unspecified
+license_notes: There is no license file or statement. The manual and changelog copies in docs/ are Teenage Engineering's content.
+homepage: https://lucidyan.github.io/tp7-midi/
+distribution: browser-installer
+requires_stock: TP-7 firmware 1.1.11 (the version the author documents)
+install_notes: >-
+  Open the hosted page in Chrome or Edge on a desktop or Android, connect the TP-7 by USB or Bluetooth and press Connect. On Android, set the USB mode to MIDI. On iPhone and iPad only Bluetooth works, through the Bluefy browser. Nothing is flashed.
+brick_risk: false
+tags: [web-midi, midi, usb-midi, ble-midi, web, research]
+versions:
+  - version: main @ f3af600
+    date: 2026-01-26
+    url: https://github.com/lucidyan/tp7-midi/commit/f3af600d98be248d873fdd6adbcf96f259c080f7
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,32 @@
+device: roland-sp-404-mkii
+kind: tool
+name: SP-404 MKII Browser MIDI Sketchpad
+summary: Single-page Web MIDI controller for the SP-404MKII with a hand-drawn sleeve look. It has effect strips for the five buses, a pad grid, keys, pattern and looper buttons, a clock generator, a shortcut finder and a MIDI monitor, all driven by JSON map files.
+description: >-
+  Each bus strip has an on/off switch, an effect menu and six knobs relabelled for the chosen effect. Other sections send pad
+  notes by bank, chromatic and vocoder keys, program changes for patterns, looper commands, MIDI transport and a 24 ppqn
+  clock with a BPM knob, and the CCs of the DJ mode. A searchable finder lists the unit's 70 hardware button combinations
+  from a JSON file and notes which can be reproduced over MIDI. Developer panels hold a MIDI monitor, a raw hex sender and a
+  hardware verification checklist. The effect tables, CC numbers and note ranges all come from sp404mk2-midi-map.json. The
+  repository has no licence file. Nothing is flashed.
+status: active
+authors:
+  - name: fxcircus
+    url: https://github.com/fxcircus
+source: https://github.com/fxcircus/roland-sp404mkii-controller
+source_status: open
+license: unspecified
+license_notes: There is no LICENSE file and the README states no licence.
+homepage: https://fxcircus.github.io/roland-sp404mkii-controller/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Edge, connect the SP-404MKII by USB and pick it as both MIDI ports. Pad control assumes
+  MIDI Mode A. To run it locally, serve the folder, for example with python3 -m http.server 8404, since the page fetches its
+  JSON files.
+brick_risk: false
+tags: [web-midi, midi, usb-midi, performance, fx, reference, web]
+versions:
+  - version: main @ 7ec95b9
+    date: 2026-07-27
+    url: https://github.com/fxcircus/roland-sp404mkii-controller/commit/7ec95b93d6a155c4a3a9848ec75d590371cdd133
+    notes: No tagged releases; this is the latest commit.

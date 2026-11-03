@@ -1,0 +1,35 @@
+device: yamaha-reface-dx
+kind: tool
+name: RefaceDX
+summary: Plain browser editor for all voice parameters of the reface DX over Web MIDI, from 2018. A Sync button reads the current voice, fields and menus change it, and the voice can be saved to and loaded from a text file.
+description: >-
+  The page shows form fields for the part mode, portamento, effects, algorithm, pitch EG, LFO, and for each of the four
+  operators the frequency, level, feedback, envelope, LFO and key scaling settings, with a name box. After choosing MIDI
+  input and output ports, Sync requests the voice from the synth, and edits are sent back as SysEx. It is one of a set of
+  Web MIDI experiments by the author, listed at mikatahara.github.io, which has no other reface DX page. The code is on the
+  gh-pages branch; the master branch holds only the README and licence. Nothing is flashed.
+status: dormant
+authors:
+  - name: mikatahara
+    url: https://github.com/mikatahara
+source: https://github.com/mikatahara/RefaceDX/tree/gh-pages
+source_status: open
+license: MIT
+homepage: https://mikatahara.github.io/RefaceDX/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, connect the reface DX, allow MIDI with SysEx access, select the synth for both ports and
+  press Sync before editing.
+brick_risk: false
+tags: [editor, web-midi, sysex, usb-midi, midi, fm, web]
+image:
+  url: https://raw.githubusercontent.com/mikatahara/RefaceDX/gh-pages/jpg/refacedx00.jpg
+  alt: Reface DX Editor page with a name box, sync button and MIDI port menus, then plain form fields for function, effects, pitch EG, LFO, four operators with envelope settings and key scaling
+  credit: mikatahara
+  source_url: https://github.com/mikatahara/RefaceDX#readme
+  first_party: true
+versions:
+  - version: gh-pages @ c3759cc
+    date: 2024-01-18
+    url: https://github.com/mikatahara/RefaceDX/commit/c3759cce07e1b940ad4ae916a2933c95b9716707
+    notes: No tagged releases; this is the latest commit on the gh-pages branch, which holds the code.

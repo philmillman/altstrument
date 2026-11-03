@@ -1,0 +1,28 @@
+device: korg-volca-beats
+name: volca-beats (JavaScript driver)
+kind: tool
+summary: JavaScript library that wraps the volca beats MIDI notes and parameter control changes and transmits timed messages through Web MIDI, so drum patterns can be sequenced from browser code. Published to npm as a beta.
+description: >-
+  The package exports a dictionary of note codes for each drum part, a dictionary of parameter codes, message builders for
+  note-on and parameter change, and a transmit function that sends a message at a given time. Examples in the README sequence
+  a beat in a loop and set a hi-hat grain before a note. The code has to be bundled and run in a browser because it uses Web MIDI,
+  though the code tables can be reused elsewhere. The last commit is from 2018. Nothing is flashed.
+status: dormant
+authors:
+  - name: danielstern
+    url: https://github.com/danielstern
+source: https://github.com/danielstern/volca-beats
+source_status: open
+license: ISC
+license_notes: package.json and the npm package metadata give ISC. The repository has no LICENSE file.
+distribution: source-only
+install_notes: >-
+  Install with npm install volca-beats and compile with Babel or another bundler for the browser, then connect the volca beats
+  to a MIDI output.
+brick_risk: false
+tags: [sequencer, midi, web-midi, web]
+versions:
+  - version: master @ 9d2b419
+    date: 2018-09-23
+    url: https://github.com/danielstern/volca-beats/commit/9d2b419e9b7f5d5f23dd5be0250010f146c01b47
+    notes: No tagged releases; this is the latest commit. The npm package is 1.0.2-beta.

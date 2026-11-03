@@ -1,0 +1,37 @@
+device: yamaha-reface-dx
+kind: tool
+name: reface DX web editor
+summary: Local Node.js server and browser panel that edit all 124 voice parameters of the reface DX over USB MIDI, with patch files, MIDI thru, a command-line client and an optional prompt bar that asks Claude (your own API key) to program a voice.
+description: >-
+  The server owns the MIDI port and talks to the synth with SysEx; the browser panel shows the algorithm graph, envelope
+  editors, LFO and effects with undo and redo, and stays in sync both ways, so knob moves on the synth appear on screen. Patches are
+  saved as JSON files on the computer. The command-line client can read and set parameters, save and open patches, and set
+  up MIDI thru from another keyboard. The AI bar sends a text description to the Anthropic API with a key stored in a local
+  .env file and fills in a full voice. Edits change only the synth's edit buffer, and the editor never writes its system
+  settings. Developed on macOS, with Windows and Linux untested. The repository has no licence file. Nothing is flashed.
+status: active
+authors:
+  - name: P3tr4-sway
+    url: https://github.com/P3tr4-sway
+source: https://github.com/P3tr4-sway/reface-dx-web-editor
+source_status: open
+license: unspecified
+license_notes: There is no LICENSE file and the README states no licence.
+distribution: source-only
+install_notes: >-
+  Needs Node.js 24 or newer. Clone the repository, run npm install, npm run web:build and npm start, then open
+  http://localhost:7777 with the reface DX connected over USB. The AI bar needs an Anthropic API key in .env and is optional.
+  Press STORE on the synth to keep a sound.
+brick_risk: false
+tags: [editor, midi, sysex, usb-midi, presets, cli, fm, web]
+image:
+  url: https://raw.githubusercontent.com/P3tr4-sway/reface-dx-web-editor/main/design/impl/editor.png
+  alt: reface DX web editor panel with a patch called LegendEP, algorithm 3 selector, LFO and pitch EG sections, four colour-coded operator rows with envelope graphs, effects and an audition keyboard
+  credit: P3tr4-sway
+  source_url: https://github.com/P3tr4-sway/reface-dx-web-editor#readme
+  first_party: true
+versions:
+  - version: main @ 5af28ca
+    date: 2026-10-19
+    url: https://github.com/P3tr4-sway/reface-dx-web-editor/commit/5af28caaef6a40712f6c2541e67c742356500ea0
+    notes: No tagged releases; this is the latest commit.

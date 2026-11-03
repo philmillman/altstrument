@@ -1,0 +1,35 @@
+device: sequential-take-5
+name: CekkEditor
+kind: tool
+summary: Installable browser app of hand-written Web MIDI editors and librarians, with a Take 5 editor that sets parameters over NRPN and reads and saves programs and banks as SysEx. Korg microKORG XL and Moog Little Phatty editors sit beside it.
+description: >-
+  The app finds each synth's ports by name, opens the chosen editor full screen and shares the MIDI ports with it. The
+  Take 5 page changes parameters live through NRPN, reads and sends single programs and banks as .syx files and keeps a
+  library in the browser, with confirmation before anything is written to the synth's memory. It is an early version: the
+  commit history shows the author still working out which bytes of a program dump hold which parameter, and that the synth
+  stopped answering after several quick SysEx reads. The interface is in Italian. Rights warning: the repository also
+  holds PDF copies of Sequential's Take 5 MIDI implementation and user guide, a Korg microKORG XL manual and MIDI chart, and
+  a Moog Little Phatty manual. Nothing is flashed.
+status: active
+authors:
+  - name: cekkomusic
+    url: https://github.com/cekkomusic
+source: https://github.com/cekkomusic/CekkEditor
+source_status: open
+license: unspecified
+license_notes: >-
+  No LICENSE file and no licence statement. The docs folder redistributes manufacturers' manuals and MIDI documents
+  (Take-5-MIDI-Implementation-1.2.pdf, Take-5-Users-Guide-v2_3.pdf, microKORG_XL_MIDIChart_E1.pdf and others) that are not
+  covered by any licence in the repository. The default branch is ccr-650e1c9a-a8zli2, from which GitHub Pages publishes.
+homepage: https://cekkomusic.github.io/CekkEditor/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted app in Chrome or Edge, or install it from the browser menu on Android with the synth on a USB OTG
+  cable, and allow MIDI and SysEx access. The Take 5 editor also opens on its own at /take5/.
+brick_risk: false
+tags: [editor, librarian, web-midi, sysex, usb-midi, midi, presets, web]
+versions:
+  - version: ccr-650e1c9a-a8zli2 @ 680a142
+    date: 2026-10-21
+    url: https://github.com/cekkomusic/CekkEditor/commit/680a142
+    notes: No tagged releases; this is the latest commit on the default branch.

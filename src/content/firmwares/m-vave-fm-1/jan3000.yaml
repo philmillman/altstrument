@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: JAN3000
+summary: >-
+  Felucca fork with an OP-1 and OP-Z style workflow: 16 scenes per project, two FX tracks, J-6 style chord sets, live punch-in effects and extra engines including Plaits models, a TB-303 style ACID engine and a drum resonator.
+description: >-
+  Four instrument tracks sit beside two FX lanes of up to 64 steps that record repeat, reverse, filter, tape stop, freeze, pitch and similar effects. Scenes switch while playing and can be chained into a song, and a KEY track moves patterns through a chord progression. Chord Mode holds chord shapes and the 100 chord sets listed in the Roland J-6 manual, transcribed as note data, and plays them live, in steps and through the arpeggiator. Punch-in effects are played from the keys while FX is held. The added engines are ANALOG2, VDRUM and five engines after Mutable Instruments' Plaits, plus ACID. The README calls it v0.1 alpha, the first public test version, and warns that the FM-1 has a single firmware bank and no recovery button. A manual in English and German is on the project's Vercel page. The installer zip serves a local page that talks to the FM-1 over Web MIDI and also holds M-VAVE's V15 image for the way back.
+status: active
+authors:
+- name: JanSchulten
+  url: https://github.com/JanSchulten
+source: https://github.com/JanSchulten/JAN3000-M-Wave-Firmware
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only; Plaits and stmlib (MIT), msfa (Apache-2.0), DaisySP and Rings (MIT) and the CC0 sample sets keep their own licences, and the JieLi SDK files placed in each package are Apache-2.0. The installer zip and vendor/m-vave/FM-1_015.fwsc include M-VAVE's FM-1 V15 image, the file M-VAVE licenses under Apache-2.0 in m-vave/fm1_open; the git blob and the copy inside the zip both match ce49cc1. The J-6 chord sets are note data transcribed from Roland's manual, with Roland named only as the source.
+homepage: https://jan3000-manual.vercel.app/
+distribution: download
+requires_stock: An FM-1 that starts and runs normally; the installer's way back needs the V15 image from the zip
+install_notes: >-
+  Download M-Vave-OP1-Installer.zip from the releases page, unzip it, start START-Mac.command or START-Windows.bat, and use
+  Chrome or Edge to press Install; the starter serves the page on your computer and needs Python 3. If an install is
+  interrupted, open the installer again and press Install to resume. The installer has a Return to official V15 option
+  that backs up your music first. Recovery from a unit that no longer starts needs extra hardware (an FM-1 Transporter
+  with an RP2040).
+brick_risk: true
+tags: [groovebox, sequencer, chords, synth-engine, fx, performance, fork]
+image:
+  url: https://raw.githubusercontent.com/JanSchulten/JAN3000-M-Wave-Firmware/main/docs/jan3000-banner.png
+  alt: "JAN3000 v0.1-alpha banner next to six FM-1 screens: scene mode, four instrument tracks, J-6 chord mode, FX tracks, live punch-in FX and the engine picker"
+  credit: JanSchulten
+  source_url: https://github.com/JanSchulten/JAN3000-M-Wave-Firmware
+  first_party: true
+versions:
+- version: v0.1-alpha
+  date: 2026-11-02
+  url: https://github.com/JanSchulten/JAN3000-M-Wave-Firmware/releases/tag/v0.1-alpha
+  notes: Pre-release; the first public test version.

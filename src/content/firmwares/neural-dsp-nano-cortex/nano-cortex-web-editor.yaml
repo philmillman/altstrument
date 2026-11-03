@@ -1,0 +1,31 @@
+device: neural-dsp-nano-cortex
+kind: tool
+name: Nano Cortex Web Editor
+summary: Single-file browser editor for the Nano Cortex over Web Bluetooth. It sets the amp knobs, capture and cab slots, gate and effects from a reverse-engineered protocol, switches presets by Web MIDI and saves changes to the current preset.
+description: >-
+  One HTML file with no dependencies and no build step. It talks to the pedal's Bluetooth service with a hand-written
+  protobuf parser, using parameter indexes the author checked against traffic captured from Neural DSP's Cortex Cloud
+  app. The page shows the amp panel, selects capture, cab and mic positions, edits the gate and every effect category,
+  and writes the change back to the current preset on the pedal. Preset changes go out as Program Change over Web MIDI.
+  It cannot rename presets or manage the capture and IR library, and the pedal accepts one Bluetooth connection at a
+  time. The author tested it on pedal firmware 2.2.1. Nothing is flashed.
+status: active
+authors:
+  - name: choldy
+    url: https://github.com/choldy
+source: https://github.com/choldy/nano-cortex-web-editor
+source_status: open
+license: MIT
+distribution: source-only
+requires_stock: 2.2.1 (the tested version)
+install_notes: >-
+  There is no hosted copy. Download index.html and open it in Chrome or Edge on a desktop; the README says it can run
+  offline. Pair with the pedal when asked and disconnect the Cortex Cloud app first. Back up presets in Cortex Cloud
+  before saving, since changes written to the pedal are persistent.
+brick_risk: false
+tags: [editor, web-midi, bluetooth, presets, research, web]
+versions:
+  - version: main @ 9b30ad2
+    date: 2026-06-22
+    url: https://github.com/choldy/nano-cortex-web-editor/commit/9b30ad2
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,27 @@
+device: axs-instruments-drm
+name: DRM firmware
+kind: firmware
+summary: >-
+  The maker's open source firmware for the DRM drum synthesizer, Arduino sketches for the Daisy Seed. They give a kick, snare, hi-hat and two FM voices with a pot per parameter, trigger LEDs and MIDI note input. A second sketch is the same size and named for an FM variant.
+description: >-
+  The kick has a sine and triangle oscillator with pitch and amplitude envelopes and a noise layer, the snare mixes a pitched oscillator with filtered noise, the hats use six oscillators, and the two FM voices each have carrier and modulator tuning, decay and modulation amount.
+  Pots are read through two 16-channel multiplexers. The repository has no README. It also holds a KiCad project with Gerber files and logo images.
+status: dormant
+authors:
+  - name: joebmz98
+    url: https://github.com/joebmz98
+source: https://github.com/joebmz98/DRM-Digital-Drum-Synthesiser
+source_status: open
+license: MIT
+license_notes: The LICENSE file says MIT, Copyright (c) 2026 joebmz98.
+homepage: https://github.com/joebmz98/DRM-Digital-Drum-Synthesiser
+distribution: source-only
+install_notes: >-
+  Open src/DAISY_DRUMMACHINE/DAISY_DRUMMACHINE.ino in the Arduino IDE with DaisyDuino and the MIDI library, select the Daisy Seed board and upload. There is no README, so the sketch is the only guide.
+brick_risk: false
+tags: [official, open-source, drums, synth-engine, midi, daisy, platform]
+versions:
+  - version: main @ 76683fd
+    date: 2026-04-23
+    url: https://github.com/joebmz98/DRM-Digital-Drum-Synthesiser/commit/76683fd20f7c74afacfaade7c7a4b7a9980d32c6
+    notes: No tagged releases; this is the latest commit.

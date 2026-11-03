@@ -1,0 +1,24 @@
+device: elektron-digitone-ii
+name: Digitone 2 Pattern Manager
+kind: tool
+summary: Closed browser app that requests Pattern+Kit dumps from a Digitone II slot over Web MIDI, keeps them in a local library and sends them back to a chosen slot. It also imports project capture .syx files and replays a captured project stream to the unit.
+description: >-
+  The page lists connected Digitone devices, asks the selected unit for a pattern and kit dump, and stores the result in a library
+  with a detail view. Stored patterns can be imported from .syx files, sent to a slot, or removed. Imported project captures
+  are shown as pattern banks and can be sent back to the unit as a stream, which replaces the device's project data.
+  Only full Pattern+Kit dumps can be sent, and pattern-only files are refused. A hosted bundle, with no source repository, licence
+  or credit on the page; the domain's owner has a GitHub account of the same name with no related repository. The files on the site date from August 2026.
+status: active
+authors:
+  - name: morukutsu
+    url: https://morukutsu.fr/
+source_status: closed
+license: proprietary
+license_notes: A hosted app with no source repository and no licence text.
+homepage: https://digitone2.morukutsu.fr/
+distribution: browser-installer
+install_notes: >-
+  Open the page in Chrome or Edge and allow MIDI with SysEx. Back up the unit's projects first, because sending a project
+  stream replaces the device's project data.
+brick_risk: false
+tags: [librarian, web-midi, sysex, usb-midi, presets, midi, web]

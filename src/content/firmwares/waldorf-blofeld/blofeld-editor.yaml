@@ -1,0 +1,29 @@
+device: waldorf-blofeld
+name: Blofeld Editor
+kind: tool
+summary: Single-file browser editor for the Blofeld in Sound mode over Web MIDI. It covers oscillators, filters, envelopes, LFOs, effects, the arpeggiator, modifiers and the modulation matrix, sends edits live and saves or loads the edit buffer as a SysEx dump.
+description: >-
+  The whole app is one HTML file. It follows version 1.04 of the Blofeld SysEx specification, sends each parameter change as it
+  is made, asks the synth for its edit buffer and can save that buffer, or load one, as a .syx sound dump. It handles
+  Sound mode only, not Multi mode. The author added touch controls and a fix for the file picker on iPad, though iOS browsers
+  have no Web MIDI. Nothing is flashed.
+status: active
+authors:
+  - name: shiroco8305-agent
+    url: https://github.com/shiroco8305-agent
+source: https://github.com/shiroco8305-agent/blofeld-editor
+source_status: open
+license: unspecified
+license_notes: The repository has no license file or license statement.
+homepage: https://shiroco8305-agent.github.io/blofeld-editor/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Edge on a computer or Android phone, connect the Blofeld over USB or a MIDI interface and
+  allow MIDI access with SysEx.
+brick_risk: false
+tags: [editor, web-midi, sysex, usb-midi, midi, presets, web]
+versions:
+  - version: main @ 2daef13
+    date: 2026-10-05
+    url: https://github.com/shiroco8305-agent/blofeld-editor/commit/2daef1362f4ba6bc48209a888115abd43ad8235e
+    notes: No tagged releases; this is the latest commit.

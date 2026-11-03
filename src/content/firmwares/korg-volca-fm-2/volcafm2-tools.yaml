@@ -1,0 +1,48 @@
+device: korg-volca-fm-2
+kind: tool
+name: volca fm2 tools
+summary: Browser and macOS desktop editor for the volca fm2's programs and sequences over MIDI SysEx. It edits and reorders the 64 programs, edits sequences on a piano roll, imports and exports DX7 SysEx, backs up the unit and previews sounds with a Dexed engine.
+description: >-
+  The app reads programs and the 16 sequences from the volca fm2 and writes them back, with a piano roll and motion editing for
+  sequences and an editor for every program parameter. It can reorder the 64 programs stored on the unit, import and export DX7
+  SysEx files, and keep programs, sequences and whole-unit backups in a library in the browser. A preview plays a program or a
+  sequence through a WebAssembly build of the Dexed FM engine, which the author says does not fully match the hardware's
+  sequencer. The unit connects through a MIDI interface on both its MIDI IN and MIDI OUT. The README says the web version needs a
+  recent Chrome, and the macOS desktop app is offered for setups where Chrome cannot find the unit. Nothing is flashed.
+status: active
+authors:
+  - name: Masaki Ono
+    url: https://github.com/mosynthkey
+source: https://github.com/mosynthkey/volcafm2-tools
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text, copyright 2025 Masaki Ono. THIRD_PARTY.md says the preview engine contains Apache-2.0 code
+  from Google's music-synthesizer-for-android as vendored by Dexed; the GPL-3.0 parts of Dexed are not compiled in.
+homepage: https://mosynthkey.github.io/volcafm2-tools/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted app in Google Chrome 153 or later, or install the macOS app from the releases page. Connect a MIDI interface
+  to both MIDI IN and MIDI OUT of the volca fm2 and allow MIDI with SysEx access. Back up the unit from the app's library before writing over programs.
+brick_risk: false
+tags: [editor, librarian, sequencer, web-midi, sysex, midi, presets, web]
+versions:
+  - version: v2.3.1
+    date: 2026-09-12
+    url: https://github.com/mosynthkey/volcafm2-tools/releases/tag/v2.3.1
+    notes: Shows connection hints for the Chrome and Firefox SysEx problems and a desktop auto-update.
+  - version: v2.3.0
+    date: 2026-09-05
+    url: https://github.com/mosynthkey/volcafm2-tools/releases/tag/v2.3.0
+    notes: Adds desktop apps.
+  - version: v2.2.0
+    date: 2026-09-01
+    url: https://github.com/mosynthkey/volcafm2-tools/releases/tag/v2.2.0
+    notes: Adds program and sequence preview with the Dexed engine and library improvements.
+  - version: v2.1.1
+    date: 2026-08-25
+    url: https://github.com/mosynthkey/volcafm2-tools/releases/tag/v2.1.1
+  - version: v2.1.0
+    date: 2026-08-19
+    url: https://github.com/mosynthkey/volcafm2-tools/releases/tag/v2.1.0
+    notes: Adds backup and restore of programs and the 16 sequences.

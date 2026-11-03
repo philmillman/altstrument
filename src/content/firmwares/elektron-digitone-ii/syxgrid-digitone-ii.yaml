@@ -1,0 +1,52 @@
+device: elektron-digitone-ii
+name: SYXGRID Digitone II
+kind: tool
+summary: Single-file browser editor for whole Digitone II projects. It reads a project from the +Drive over Web MIDI or opens .dn2prj and .syx files, edits sequences, sounds and kits, exports MIDI, and writes the project back. Nothing is flashed.
+description: >-
+  The editor shows 16 tracks of up to 128 steps with lanes for notes, velocity, length and microtiming, trig conditions,
+  probability, retrigs and parameter locks, and clicking a step places a note, a chord from the pattern's chord memory or a chord in its scale. Each
+  track's preset has editable pages named as on the device, and presets can be saved to disk, the project pool or the
+  +Drive. Whole projects go to a +Drive slot with a read-back check, patterns go to a chosen slot, and a +Drive manager renames,
+  copies, moves and swaps projects, kits and presets after saving anything that would be lost. All projects can be backed up into one
+  zip. Patterns export as MIDI or Ableton clips, and a generator writes pads, drones, plucks, arps and basslines
+  into a track. An optional live mode sends knob moves both ways and lights the playing step. An unedited project saves
+  back byte for byte. The repository also holds a reverse-engineered SysEx format map with confidence levels. It works on stock OS
+  1.10E, 1.11 and 1.12, and opens Digitone I projects as their converted form. The author says it is not
+  affiliated with Elektron.
+status: active
+authors:
+  - name: XRCST
+    url: https://github.com/xrcstrecords
+source: https://github.com/xrcstrecords/syxgrid-digitone-ii
+source_status: open
+license: AGPL-3.0-or-later
+license_notes: >-
+  The LICENSE file is the AGPL v3 text. The notice inside the HTML file offers the choice of a later version, and the
+  same notice and the README say every release from v22.45 on is AGPLv3 only, so the two statements disagree. Earlier
+  releases up to v22.37 were MIT. The sysexmap/ format documentation is CC-BY-4.0. A commercial licence is offered on request.
+homepage: https://syxgrid.xrcst.com/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, Edge, Brave or Opera and allow MIDI with SysEx; Firefox needs a site permission and
+  Safari has no Web MIDI. Close Elektron Transfer and Overbridge first. Files open and edit in any browser without a
+  device. Run the Backup button before writing, because writes overwrite real slots on the +Drive and in the SysEx
+  receive slot.
+brick_risk: false
+tags: [editor, web-midi, sysex, usb-midi, librarian, sequencer, midi, web, research]
+versions:
+  - version: v2.4
+    date: 2026-10-11
+    url: https://github.com/xrcstrecords/syxgrid-digitone-ii/releases/tag/v2.4
+    notes: Generate parts and chords; export many patterns at once.
+  - version: v1.3
+    date: 2026-09-05
+    url: https://github.com/xrcstrecords/syxgrid-digitone-ii/releases/tag/v1.3
+  - version: v1.2
+    date: 2026-09-05
+    url: https://github.com/xrcstrecords/syxgrid-digitone-ii/releases/tag/v1.2
+  - version: v1.1
+    date: 2026-09-05
+    url: https://github.com/xrcstrecords/syxgrid-digitone-ii/releases/tag/v1.1
+  - version: v1.0
+    date: 2026-09-05
+    url: https://github.com/xrcstrecords/syxgrid-digitone-ii/releases/tag/v1.0

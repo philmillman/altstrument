@@ -1,0 +1,34 @@
+device: akai-apc64
+name: APC64 Control
+kind: tool
+summary: Linux host and layout lab for the Akai APC64. It takes the unit over in its DAW mode and maps pads, buttons and strips to MIDI by YAML layout files, generates harmonic pad layouts such as Tonnetz and isomorphic grids, and shows a live replica of the unit on a local web page.
+description: >-
+  The host asks before taking the unit and releases it on request so another program can use the ports. A layout lab writes generated layouts into the unit's live edit buffer for its Custom view, backing up first, and can back up and
+  restore the unit's project slots and global settings through a guarded write path. A performer plays strumming and fingerpicking patterns over held chords, and harmony views follow what is played. The page is served by the host on the local network and
+  there is a command line and HTTP API. The author reports testing only on firmware 1.2.1.6 and says it is not affiliated with Akai. The v0.2.0 release is marked as a work in progress, partly untested on hardware, and a simulator runs without a unit.
+status: active
+authors:
+  - name: esazhin
+    url: https://github.com/esazhin
+source: https://github.com/esazhin/apc64-control
+source_status: open
+license: Apache-2.0
+license_notes: The repository's fixtures include captures of the unit's own MIDI output and one preset file the author saved with Akai's editor; no Akai program files are redistributed according to the NOTICE file.
+homepage: https://github.com/esazhin/apc64-control
+distribution: source-only
+requires_stock: APC64 firmware 1.2.1.6 (the only version the author has verified)
+install_notes: >-
+  Needs Linux with Python 3.14 or later and the APC64 on USB. Clone the repository and run ./start.sh, then open http://localhost:5058/ and answer Yes to take control. The unit's memory writes are backed up first, but back up your projects separately. Use ./start.sh --simulate to try it with no unit.
+brick_risk: false
+tags: [editor, midi, usb-midi, sysex, presets, python, research]
+image:
+  url: https://raw.githubusercontent.com/esazhin/apc64-control/main/docs/screenshot.png
+  alt: APC64 Control web page with a layout menu, page and bank buttons, a replica of the APC64 and a Lab panel listing the Tonnetz C and Fourths generated layouts
+  credit: esazhin
+  source_url: https://github.com/esazhin/apc64-control#readme
+  first_party: true
+versions:
+  - version: v0.2.0
+    date: 2026-10-29
+    url: https://github.com/esazhin/apc64-control/releases/tag/v0.2.0
+    notes: Pre-release. Adds the guitar performer, chords in key and a reworked modes layout.

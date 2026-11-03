@@ -1,0 +1,38 @@
+device: roland-jd-990
+kind: tool
+name: JDTools
+summary: Command-line patch converter for the JD-800 and JD-990 SysEx dumps. It converts both ways, merges temporary-patch dumps, lists and verifies checksums, and converts to the JD-800 plugin, JD-08 and ZC1 patch bank formats. C++ for Windows and CMake.
+description: >-
+  It reads SYX and MIDI files and converts JD-800 patches to the JD-990 format and the reverse, warning where the 990's extra
+  waveforms or structures have no JD-800 equivalent and substituting waveforms where it can. Other targets are the JD-800 VST and
+  Zenology bank format, the JD-08's backup file (written into an existing backup from your unit) and the ZC1 hardware bank format used by the Jupiter-X
+  with the JD-800 expansion. Merge combines dumps, list and list-verbose print patch contents, and verify checks SysEx checksums.
+  It works on files and does not send MIDI to the module, so the output is loaded with a SysEx librarian. The author sells
+  JD-800 and JD-990 sound sets and asks for donations; the README links to both. Nothing is flashed.
+status: dormant
+authors:
+  - name: Johannes Schultz
+    url: https://github.com/sagamusix
+source: https://github.com/sagamusix/JDTools
+source_status: open
+license: BSD-3-Clause
+license_notes: >-
+  license.md is the BSD 3-clause text. The README says JDTools also uses miniz, released under the MIT licence.
+distribution: download
+install_notes: >-
+  Download the release build or build it with CMake or the Visual Studio solution. Run it from a command prompt, for example
+  JDTools convert syx input.syx output.syx. Converting to the JD-08 format overwrites a JD08Backup.svd file, so use a copy.
+brick_risk: false
+tags: [cli, converter, sysex, patch, utility]
+versions:
+  - version: v0.19
+    date: 2024-11-17
+    url: https://github.com/sagamusix/JDTools/releases/tag/v0.19
+    notes: Adds list-verbose to print all patch or setup parameters.
+  - version: v0.18
+    date: 2024-09-19
+    url: https://github.com/sagamusix/JDTools/releases/tag/v0.18
+    notes: Adds verify to find checksum errors in SysEx dumps.
+  - version: v0.17
+    date: 2024-01-04
+    url: https://github.com/sagamusix/JDTools/releases/tag/v0.17

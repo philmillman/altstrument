@@ -1,0 +1,40 @@
+device: yamaha-reface-dx
+kind: tool
+name: reface DX Editor
+summary: Browser voice editor and librarian for the reface DX over Web MIDI. It shows every voice parameter on one screen, reads all 32 locations, converts DX7 voices to four operators, and has a demo mode with a simulated synth. Built with Claude from tests on a real unit.
+description: >-
+  Edits go to the synth's current voice as parameter changes. The panel draws the algorithm, four operators with envelopes and
+  keyboard scaling, the LFO, pitch EG and effects, with undo and redo, and also edits the synth's own settings such as MIDI
+  channels, local control and auto power-off. A Style view builds a voice from a wheel of twelve tonalities or from 41 DX7
+  instruments converted to four operators, and the README says imported DX7 voices are approximations. The library reads the 32
+  locations, keeps voices in browser storage, and imports and exports .syx files. The synth stores only from its own panel, so
+  the editor guides the STORE step and reads the location back. The README says the code was written with Claude from Yamaha's
+  data list and tests on a reface DX; each commit carries a Claude co-author line. Everything runs in the browser and nothing
+  is flashed.
+status: active
+authors:
+  - name: Peter Witzel
+    url: https://github.com/privatepublic-de
+source: https://github.com/privatepublic-de/reface-dx-editor
+source_status: open
+license: MIT
+license_notes: THIRD_PARTY_NOTICES.md lists the Apache-2.0 MSFA engine tables the DX7 import follows and the instruments' origin.
+homepage: https://privatepublic-de.github.io/reface-dx-editor/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, Edge or Firefox, connect the reface DX over USB and allow MIDI access. Firefox offers a
+  site permission add-on for SysEx. Turn on MIDI Control on the synth to see its knob moves. The README also describes
+  an offline launcher that serves the editor from a local Node.js server. Add ?demo to the address to try it without a synth.
+brick_risk: false
+tags: [editor, librarian, web-midi, sysex, usb-midi, presets, fm, web]
+image:
+  url: https://raw.githubusercontent.com/privatepublic-de/reface-dx-editor/main/docs/screenshot.png
+  alt: reface DX Editor in demo mode, showing the algorithm and voice panels on the left, four operator columns with ratio, envelope and keyboard scaling graphs, and two effect sections along the bottom
+  credit: Peter Witzel
+  source_url: https://github.com/privatepublic-de/reface-dx-editor#readme
+  first_party: true
+versions:
+  - version: main @ 9cebfc1
+    date: 2026-10-26
+    url: https://github.com/privatepublic-de/reface-dx-editor/commit/9cebfc1dbbd66015adefbd26c54c457b7c87e909
+    notes: No tagged releases; this is the latest commit.

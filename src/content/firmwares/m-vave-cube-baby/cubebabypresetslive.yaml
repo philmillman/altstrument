@@ -1,0 +1,56 @@
+device: m-vave-cube-baby
+kind: tool
+name: Cube Baby Presets Live
+summary: >-
+  Editor for the Cube Baby with the same React interface on Electron desktop, an Android app over USB-MIDI and Web MIDI in a browser. It reads and writes the A, B and C presets over SysEx and uploads WAV files as cabinet impulse responses.
+description: >-
+  The interface edits drive type and gain, tone, modulation, delay time, feedback and mix, reverb, cabinet and volume, and
+  toggles the IR, delay and tone sections. Edits go to the pedal live, and a preset can be written to flash and switched
+  with the LED following. A WAV is resampled to 48 kHz, normalised and trimmed to 512 samples for the RAM preview, or
+  written to one of nine ROM cabinet slots in the 4096-byte format, with backup and restore of the factory cabinets. The
+  repository's scripts dump and scan the pedal's memory from Node, and knowledge_base.md documents the protocol. The
+  README says it builds on the cuvave-midi research. Releases carry a Windows installer and an Android APK. Writing to ROM
+  cabinet slots replaces what is stored there, so keep the backups the app makes.
+status: active
+authors:
+  - name: F1LIP3
+    url: https://github.com/F1LIP3
+source: https://github.com/F1LIP3/cubeBabyPresetsLive
+source_status: open
+license: MIT
+license_notes: The README states MIT. The repository has no LICENSE file.
+distribution: download
+install_notes: >-
+  Use the installer or APK from the releases page, or build with npm; the Android build needs JDK 21 and a USB OTG
+  cable with a USB-MIDI adapter. Close other software that holds the pedal's MIDI port. Back up the factory cabinets
+  before uploading an impulse response to ROM.
+brick_risk: false
+tags: [editor, usb-midi, midi, sysex, web-midi, presets, ir, android, desktop]
+versions:
+  - version: v0.10.0
+    date: 2026-06-21
+    url: https://github.com/F1LIP3/cubeBabyPresetsLive/releases/tag/v0.10.0
+  - version: v0.7.2
+    date: 2026-06-16
+    url: https://github.com/F1LIP3/cubeBabyPresetsLive/releases/tag/v0.7.2
+  - version: v0.7.1
+    date: 2026-06-16
+    url: https://github.com/F1LIP3/cubeBabyPresetsLive/releases/tag/v0.7.1
+  - version: v0.7.0
+    date: 2026-06-16
+    url: https://github.com/F1LIP3/cubeBabyPresetsLive/releases/tag/v0.7.0
+  - version: v0.6.0
+    date: 2026-06-16
+    url: https://github.com/F1LIP3/cubeBabyPresetsLive/releases/tag/v0.6.0
+  - version: v0.5.0
+    date: 2026-06-15
+    url: https://github.com/F1LIP3/cubeBabyPresetsLive/releases/tag/v0.5.0
+  - version: v0.4.0
+    date: 2026-06-15
+    url: https://github.com/F1LIP3/cubeBabyPresetsLive/releases/tag/v0.4.0
+  - version: v0.3.3
+    date: 2026-06-15
+    url: https://github.com/F1LIP3/cubeBabyPresetsLive/releases/tag/v0.3.3
+  - version: v0.2.0-android
+    date: 2026-06-14
+    url: https://github.com/F1LIP3/cubeBabyPresetsLive/releases/tag/v0.2.0-android

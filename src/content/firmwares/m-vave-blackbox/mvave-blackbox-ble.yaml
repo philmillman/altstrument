@@ -1,0 +1,33 @@
+device: m-vave-blackbox
+kind: tool
+name: M-Vave Blackbox BLE Protocol
+summary: Reverse-engineering notes for the M-VAVE Blackbox, covering its Bluetooth GATT service, the preset memory map, checksums and the SysEx framing used over USB. It is the reference behind the BlackboxEdit web editor.
+description: >-
+  Three Markdown documents describe how the official app talks to the pedal: the custom Bluetooth LE service and its
+  write and notify characteristics, the layout of a 92-byte preset record and the other memory regions, and the
+  Base-128 SysEx framing used over USB MIDI. The author derived the Bluetooth side from HCI snoop logs of the official
+  app and notes that the Bluetooth stack's acceptance of the USB SysEx form is untested. The README lists Python
+  reference scripts and packet logs, but only the documents are in the repository. Nothing is flashed.
+status: active
+authors:
+  - name: Joel Victor Sobrinho
+    url: https://github.com/jvsobrinho
+source: https://github.com/jvsobrinho/mvave-blackbox-ble
+source_status: open
+license: CC-BY-SA-4.0
+license_notes: >-
+  The README splits the licence: the documentation and research are CC-BY-SA-4.0, and any scripts and code are
+  GPL-3.0 (LICENSE-GPL), though no code files are in the repository now. It asks for visible attribution when the
+  research is used commercially.
+homepage: https://github.com/jvsobrinho/mvave-blackbox-ble#readme
+distribution: source-only
+install_notes: >-
+  Documentation only; there is nothing to install. Use it to build an editor or controller, or read it beside
+  BlackboxEdit.
+brick_risk: false
+tags: [research, sysex, bluetooth, usb-midi, presets, docs]
+versions:
+  - version: main @ cdcf3b3
+    date: 2026-06-29
+    url: https://github.com/jvsobrinho/mvave-blackbox-ble/commit/cdcf3b3
+    notes: No tagged releases; this is the latest commit.

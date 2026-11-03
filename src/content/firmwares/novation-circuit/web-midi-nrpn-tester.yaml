@@ -1,0 +1,28 @@
+device: novation-circuit
+kind: tool
+name: Web MIDI NRPN Tester
+summary: Small browser app for building NRPN test controllers (slider, select or radio) and sending the messages over Web MIDI. It looks for an output named Circuit, and its guide uses the Circuit's session FX Bypass NRPN as the worked example.
+description: >-
+  The user enters an NRPN's MSB, LSB, value range and MIDI channel and picks a control type, then moves the control to send
+  the resulting CC 99, 98, 6 sequence. A status window shows the last message sent. The README walks through the Circuit's FX
+  Bypass parameter from Novation's programmer's reference guide, and the code only selects a MIDI output whose name is
+  exactly Circuit, ignoring case. The controllers themselves are generic NRPN senders. Nothing is flashed.
+status: dormant
+authors:
+  - name: Scrawlon
+    url: https://github.com/scrawlon
+source: https://github.com/scrawlon/web-midi-nrpn-tester
+source_status: open
+license: MIT
+homepage: https://scrawlon.com/web-midi-nrpn-tester/app/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, connect the Circuit over USB and allow MIDI access. The MIDI OUT indicator shows a tick
+  once a port named circuit is found.
+brick_risk: false
+tags: [web-midi, midi, utility, web]
+versions:
+  - version: main @ abce93c
+    date: 2021-08-17
+    url: https://github.com/scrawlon/web-midi-nrpn-tester/commit/abce93c3021a6c1f583261e5565f8932d961f4a3
+    notes: No tagged releases; this is the latest commit.

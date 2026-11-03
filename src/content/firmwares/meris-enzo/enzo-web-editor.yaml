@@ -1,0 +1,39 @@
+device: meris-enzo
+kind: tool
+name: Enzo Editor
+summary: Browser editor for the Meris Enzo synthesizer pedal over Web MIDI. It shows every control at once, including filter and envelope types and the mono, poly and arpeggiator voices, with tap tempo, a preset bar, a browser library and expression toe values. The repository is archived.
+description: >-
+  The page shows the pitch, portamento, filter, ring mod, delay and modulation knobs, the filter type and envelope choices, the synth voice and oscillator buttons and a tempo control that can switch between milliseconds and BPM. It has a 16-slot preset bar that writes to the pedal's memory, INIT and RANDOMIZE commands, a printable sheet and a library kept in the browser. A second MIDI input forwards an expression pedal or controller to the Enzo. Holding shift edits the expression pedal's toe values. The author linked a demo video. They archived the repository in January 2025, and the hosted page is still served. Nothing is flashed.
+status: archived
+authors:
+  - name: François Georgy
+    url: https://github.com/francoisgeorgy
+source: https://github.com/francoisgeorgy/enzo-web-editor
+source_status: open
+license: GPL-3.0-only
+license_notes: The LICENSE file is the GNU GPL version 3 text; the repository gives no later-version option.
+homepage: https://studiocode.dev/enzo-editor/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Opera and allow MIDI access. Set the pedal's EXP/MIDI jack to MIDI and its MIDI mode to out, pick a channel, and connect it with a TRS cable to a MIDI interface such as Meris's MIDI I/O or a Disaster Area MIDI Baby. Choose the interface's input, output and channel in the editor. The Global Settings are locked until you unlock them, and they reach every Meris pedal on the same interface.
+brick_risk: false
+tags: [editor, web-midi, midi, presets, web]
+video:
+  url: https://www.youtube.com/watch?v=lWIpPJFARDQ
+  title: Meris Enzo web editor demo
+  credit: François Georgy
+  first_party: true
+  found_via: https://github.com/francoisgeorgy/enzo-web-editor#readme
+versions:
+  - version: v1.5
+    date: 2020-09-05
+    url: https://github.com/francoisgeorgy/enzo-web-editor/tree/v1.5
+    notes: Git tag; no GitHub release page.
+  - version: v1.0
+    date: 2020-07-31
+    url: https://github.com/francoisgeorgy/enzo-web-editor/tree/v1.0
+    notes: Git tag; no GitHub release page.
+  - version: v0.31.2
+    date: 2019-03-01
+    url: https://github.com/francoisgeorgy/enzo-web-editor/tree/v0.31.2
+    notes: Git tag; no GitHub release page.

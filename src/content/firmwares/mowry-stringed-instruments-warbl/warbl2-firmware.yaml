@@ -1,0 +1,38 @@
+device: mowry-stringed-instruments-warbl
+name: WARBL2 firmware
+kind: firmware
+summary: The maker's open source firmware for WARBL2, an Arduino sketch for the nRF52840 that gives USB and Bluetooth LE MIDI, fingering charts, pressure and sensor handling and button actions. Releases are UF2 files copied to the WARBLBOOT drive.
+description: >-
+  The repository has the firmware sketch, a bootloader folder, an ATmega firmware for a companion chip, the web configuration tool and the KiCad design files. Version 4.6.2 fixed a legato slide bug and Windows BLE MIDI connection interval renegotiation. A
+  newer 4.7.2 build sits in the repository's build folder without its own release page. The README warns that changing the battery management code could shorten the battery's life.
+status: active
+authors:
+  - name: Andrew Mowry
+    url: https://github.com/amowry
+source: https://github.com/amowry/WARBL2
+source_status: open
+license: GPL-3.0-or-later
+license_notes: The LICENSE file is the GNU GPL version 3 text and the source headers say version 3 or, at your option, any later version. The repository includes the maker's own built .uf2, .hex and .elf files.
+homepage: https://warbl.xyz/
+distribution: download
+install_notes: >-
+  Hold button 1 while plugging the WARBL into USB, then drag the .uf2 file onto the drive named WARBLBOOT. If it is already plugged in, double-click the reset button to enter the bootloader. To build it, use the Arduino IDE with the Adafruit nRF52 board package and the boards.local.txt file from the repository, and use a release rather than the main branch.
+brick_risk: false
+tags: [official, open-source, midi, usb-midi, ble-midi, presets, platform]
+versions:
+  - version: v4.7
+    date: 2026-06-15
+    url: https://github.com/amowry/WARBL2/releases/tag/v4.7
+  - version: v4.6.2
+    date: 2026-04-30
+    url: https://github.com/amowry/WARBL2/releases/tag/v4.6.2
+    notes: Fixes a legato slide bug and Windows BLE MIDI connection interval renegotiation.
+  - version: v4.6
+    date: 2026-04-21
+    url: https://github.com/amowry/WARBL2/releases/tag/v4.6
+  - version: v4.5
+    date: 2025-08-13
+    url: https://github.com/amowry/WARBL2/releases/tag/v4.5
+  - version: v4.4
+    date: 2025-02-13
+    url: https://github.com/amowry/WARBL2/releases/tag/v4.4

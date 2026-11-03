@@ -1,0 +1,34 @@
+device: casio-vz-1
+name: VZEdit
+kind: tool
+summary: Browser editor for Casio VZ synthesizers that edits tones and banks with on-screen modules, envelopes and key follow curves, reads and writes SysEx and transmits to the synth over Web MIDI. A 2020 update moved it from a browser plug-in to Web MIDI.
+description: >-
+  The page lays out the VZ's global settings, the connection lines between its modules, each module's envelope and key follow,
+  and the modulation settings, and it accepts a bank file dropped on it. It has a test chord button, a transmit button that
+  sends the tone to the synth, and MIDI input, output and channel selectors. A PDF help file and a reference guide are in the
+  repository. The README still describes an older version that depended on the Jazz plug-in and Firefox, but the hosted page
+  uses the standard Web MIDI interface with SysEx. Nothing is flashed.
+status: dormant
+authors:
+  - name: pete-cain
+    url: https://github.com/pete-cain
+source: https://github.com/pete-cain/VZEdit
+source_status: open
+license: unspecified
+license_notes: The repository has no license file or license statement.
+homepage: https://pete-cain.github.io/VZEdit/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a browser with Web MIDI, connect the VZ through a MIDI interface, allow MIDI access with SysEx,
+  pick the input, output and channel, and press Transmit to send the current tone.
+brick_risk: false
+tags: [editor, web-midi, sysex, midi, presets, web]
+versions:
+  - version: master @ 40f6883
+    date: 2020-12-13
+    url: https://github.com/pete-cain/VZEdit/commit/40f6883b786f23103713712709f281ff36bca065
+    notes: Latest commit; the repository also has a Last-working-before-merge tag.
+  - version: Last-working-before-merge
+    date: 2020-12-06
+    url: https://github.com/pete-cain/VZEdit/tree/Last-working-before-merge
+    notes: Git tag; no GitHub release page.

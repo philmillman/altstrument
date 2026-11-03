@@ -1,0 +1,36 @@
+device: ableton-push-2
+name: push2.js
+kind: tool
+summary: JavaScript library for driving a Push 2 from the browser over Web MIDI, with example pages, a teaching demo and an experimental Chrome extension that shows the contents of a chosen window on the Push 2 display. A 2017 project by an Ableton employee, unofficial.
+description: >-
+  push2.js wraps the controller's pads, buttons, encoders and lights. The demos
+  are a small instrument page and a teaching page with drum sounds. Window2Push2
+  is a developer-mode Chrome extension that captures a window and relays it to the
+  display; the README lists blur and pixel-format problems. SysEx over Web MIDI
+  needs a secure page, so a Python script serves the examples over HTTPS. The
+  author says the project has nothing to do with Ableton and that Live and a
+  push2.js page cannot use the Push at once.
+status: dormant
+authors:
+  - name: benbenbenbenbenbenbenbenben
+    url: https://github.com/benbenbenbenbenbenbenbenben
+source: https://github.com/benbenbenbenbenbenbenbenben/push2.js
+source_status: open
+license: unspecified
+license_notes: >-
+  There is no LICENSE file. The README says the author regards the code as public
+  domain and will take contributions on the same terms. The repository also holds
+  demo audio and an impulse response with no stated origin.
+distribution: source-only
+install_notes: >-
+  Run python3 secureHttpServer.py and open the example page on localhost over
+  HTTPS, accepting the certificate warning. Quit Live first, and power the Push
+  off and on between apps. The repository includes a localhost.pem file that
+  contains a private key.
+brick_risk: false
+tags: [sdk, web-midi, midi, sysex, display, web]
+versions:
+  - version: master @ 58c130f
+    date: 2017-04-18
+    url: https://github.com/benbenbenbenbenbenbenbenben/push2.js/commit/58c130f
+    notes: No tagged releases; this is the latest commit.

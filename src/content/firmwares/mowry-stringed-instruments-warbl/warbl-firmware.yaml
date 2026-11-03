@@ -1,0 +1,32 @@
+device: mowry-stringed-instruments-warbl
+name: WARBL firmware
+kind: firmware
+summary: The maker's open source firmware for the original WARBL, an Arduino sketch for the ATmega32U4 that sends USB MIDI from the finger sensors and breath sensor. Updates are .hex files installed with an installer from the maker's site.
+description: >-
+  The repository holds the current sketch, archives of earlier versions from 1.4 to 2.0, a folder of built .hex files for each release from 1.6 to 2.1, and the older web configuration tool. Setting up the Arduino IDE for it needs board settings edited for the
+  WARBL USB IDs and a 20 mA USB power request, which the README explains. The original device is superseded by WARBL2, and the repository's last change was in December 2023.
+status: dormant
+authors:
+  - name: Andrew Mowry
+    url: https://github.com/amowry
+source: https://github.com/amowry/warbl
+source_status: open
+license: GPL-3.0-or-later
+license_notes: The LICENSE file is the GNU GPL version 3 text and the source headers say version 3 or, at your option, any later version. The repository includes the maker's own built .hex files.
+homepage: https://warbl.xyz/documentation.html
+distribution: download
+install_notes: >-
+  Typical users install the .hex file with the installer linked from the maker's documentation page. To build it yourself, set up the Arduino IDE for the Adafruit ItsyBitsy 32u4 3.3V board with the WARBL USB settings described in the README.
+brick_risk: false
+tags: [official, open-source, midi, usb-midi, presets, platform]
+versions:
+  - version: v2.1
+    date: 2022-10-24
+    url: https://github.com/amowry/warbl/releases/tag/v2.1
+  - version: v2.0b
+    date: 2021-11-11
+    url: https://github.com/amowry/warbl/releases/tag/v2.0b
+    notes: Fixes custom vibrato for uilleann pipes.
+  - version: v2.0
+    date: 2021-10-01
+    url: https://github.com/amowry/warbl/releases/tag/v2.0

@@ -1,0 +1,30 @@
+device: novation-circuit-tracks
+kind: tool
+name: Circuit Tracks Web UI
+summary: Vue app with a Node.js MIDI bridge that tries to replace Novation Components, with a patch editor, sample browser, step sequencer, mixer and session export. The author marks it deprecated and archived in favour of CircuitTracksPro.
+description: >-
+  The front end talks to the unit over Web MIDI for CC and notes, while SysEx patch dumps and bank transfers go through a
+  local Node.js server using easymidi and a WebSocket. Tabs cover the synth editor with macro and mod matrix pages, drum
+  sample upload converted with ffmpeg, a step grid with velocity and probability, a mixer, MIDI settings, sessions, and a
+  device page. A standalone MIDI tester page is included. The README lists limits: no firmware query, CC-based tempo is
+  approximate, and only one session should control the unit. A Vercel copy of the front end answered when checked, but patch
+  transfer needs the Node server running on the machine the synth is plugged into. Nothing is flashed.
+status: archived
+authors:
+  - name: 0mandrock1
+    url: https://github.com/0mandrock1
+source: https://github.com/0mandrock1/NovationCircuitTracksAlternativeToComponents
+source_status: open
+license: MIT
+homepage: https://novation-circuit-tracks-alternative.vercel.app
+distribution: source-only
+install_notes: >-
+  Run npm run install:all and npm run dev, which start Vite on port 5173 and the Node server on port 3000, then open the app
+  in Chrome or Edge. The hosted front end alone cannot do SysEx transfers.
+brick_risk: false
+tags: [editor, sequencer, sample-transfer, web-midi, sysex, usb-midi, web]
+versions:
+  - version: main @ 6bbdf8e
+    date: 2026-04-05
+    url: https://github.com/0mandrock1/NovationCircuitTracksAlternativeToComponents/commit/6bbdf8e13ef182d320cd4d34018db15d4d1de9fe
+    notes: No tagged releases; this is the latest commit, which marks the README deprecated.

@@ -1,0 +1,29 @@
+device: yamaha-reface-dx
+kind: tool
+name: Reface DX Control Panel
+summary: Single HTML file that edits a reface DX voice over Web MIDI with CC and Yamaha SysEx. It covers algorithm, four operators with draggable envelopes, pitch EG, LFO and global settings, follows changes made on the synth, and syncs with a full voice dump.
+description: >-
+  The page selects ports whose names contain reface, sends CC for real-time controls and SysEx for the rest, and parses
+  incoming CC, parameter changes and bulk voice dumps so the controls follow the hardware. A Sync button requests a full patch
+  dump, and program changes and bank-change bursts trigger a fresh request. It has no dependencies and no build step. There is no
+  hosted copy; open index.html in Chrome or Edge, or serve the folder locally if SysEx is blocked on file addresses. The
+  README says MIT, but the repository has no LICENSE file. Nothing is flashed.
+status: active
+authors:
+  - name: lucian-labs
+    url: https://github.com/lucian-labs
+source: https://github.com/lucian-labs/reface-dx-panel
+source_status: open
+license: MIT
+license_notes: The README states MIT in a License heading; there is no LICENSE file.
+distribution: source-only
+install_notes: >-
+  Download index.html, or clone the repository, and open it in Chrome or Edge with the synth connected over USB. If file
+  access causes SysEx permission problems, run npx serve . and open the local address.
+brick_risk: false
+tags: [editor, web-midi, sysex, usb-midi, midi, fm, web]
+versions:
+  - version: main @ bd7faa2
+    date: 2026-03-24
+    url: https://github.com/lucian-labs/reface-dx-panel/commit/bd7faa230e1c47c4c065d6bbd722bd304b491dbc
+    notes: No tagged releases; this is the latest commit.

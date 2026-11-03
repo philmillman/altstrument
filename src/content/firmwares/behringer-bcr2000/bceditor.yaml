@@ -1,0 +1,32 @@
+device: behringer-bcr2000
+also_devices: [behringer-bcf2000]
+kind: tool
+name: BCEditor
+summary: Closed browser editor for the Behringer BCR2000 and BCF2000 from MidiQ. It shows the controller as a virtual panel, sets each encoder, button and fader's MIDI assignment, edits the BCL code, and sends banks to the unit over Web MIDI SysEx. Free to use with a paid Pro tier.
+description: >-
+  The page draws the BCR2000 or the BCF2000 and opens an editor for any element: MIDI type, channel, range, encoder mode,
+  LED ring style, button behaviour and a custom SysEx template. A code view shows the raw BCL lines for the element and checks
+  them as you type. Whole banks can be received from the unit, sent to it, or exchanged as BCL and SysEx files, and the global
+  setup, which holds MIDI mode, receive channel and timing, can be edited and sent. A MIDI monitor and a community library of
+  presets are included. No account is needed for local editing, while saving to the cloud and importing community presets use a
+  free account, and the terms say Pro features need a one-time payment. The site also links a separate macOS driver fix called
+  BCDriver, which corrects the BCR2000's USB descriptor on Apple silicon and needs a change to kernel extension signing in
+  Recovery. That driver is not part of this entry. Nothing is flashed.
+status: active
+authors:
+  - name: MidiQ
+    url: https://midiq.online/
+source_status: closed
+license: proprietary
+license_notes: >-
+  The terms say all software, design and content remain MidiQ's exclusive property and may not be copied, redistributed or
+  reverse-engineered without written permission. Some features are paid.
+homepage: https://midiq.online/bceditor/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, Edge or Opera, connect the controller by USB or through a DIN MIDI interface, choose the
+  ports in Settings and press Connect. On Apple silicon Macs USB works in one direction only, so use DIN MIDI with the unit in
+  an S mode, or see the site's BCDriver note. Back up the unit's presets before sending a bank. The editor does not trigger the
+  unit's STORE, LEARN, EDIT or EXIT keys, which are hardware operations.
+brick_risk: false
+tags: [editor, librarian, web-midi, sysex, usb-midi, presets, web]

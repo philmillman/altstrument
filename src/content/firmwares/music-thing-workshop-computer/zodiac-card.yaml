@@ -1,0 +1,33 @@
+device: music-thing-workshop-computer
+name: Zodiac Card
+summary: >-
+  Markov chain sequencer program card for the Workshop System Computer. A graph of pitch nodes with weighted links drives two chains that output scale-quantised CV, gates and sine audio, with a browser view of the graph over Web MIDI.
+description: >-
+  Nodes hold pitches, and each clock step walks a chain to the next node by the weights of its outgoing links. Two chains
+  share the graph, each with its own pulse input, CV and gate outputs and audio channel. New nodes link to the newest node, and the main knob adds
+  extra random links. There are 16 nodes, eight scales and an auto mode that adds nodes on a timer. The graph is stored in flash. A
+  SvelteKit page shows a force-directed graph with the chains moving through it, lets you add, link and delete nodes, and talks to the card over USB MIDI and
+  SysEx. The hosted copy also offers the UF2 files for download. The author calls it a prototype built late at night with heavy LLM use
+  and little testing. No card of this name is in the Workshop_Computer releases folder at the time of writing.
+status: active
+authors:
+  - name: chicoe
+    url: https://github.com/chicoe
+source: https://github.com/chicoe/zodiac-card
+source_status: open
+license: CC-BY-NC-SA-4.0
+license_notes: >-
+  The LICENSE file is the CC BY-NC-SA 4.0 text. The vendored ComputerCard.h is Chris Johnson's library with one local patch.
+homepage: https://zodiac-card.incomputable.io/
+distribution: download
+install_notes: >-
+  Hold the card's boot button while connecting USB so it mounts as RPI-RP2, then copy a zodiac-card .uf2 file onto it. The
+  hosted page links v0.3.1, and the repository holds the UF2 builds too. Build from source with the Arduino IDE, the Earle Philhower RP2040 core 5.5.0
+  or later, the Pico SDK USB stack and the Raspberry Pi Pico board. Use Chrome for the web page.
+brick_risk: false
+tags: [web-midi, sysex, generative, sequencer, web]
+versions:
+  - version: main @ 6ac5e43
+    date: 2026-07-22
+    url: https://github.com/chicoe/zodiac-card/commit/6ac5e435b42d2721bd90fa7b18426da0a3933f73
+    notes: No tagged releases; this is the latest commit.

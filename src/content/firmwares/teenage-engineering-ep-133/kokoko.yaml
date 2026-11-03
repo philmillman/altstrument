@@ -1,0 +1,34 @@
+device: teenage-engineering-ep-133
+also_devices: [teenage-engineering-ep-40]
+name: kokoko
+kind: tool
+summary: Native SwiftUI sample manager for iPad and Mac that talks to an EP-133 over USB-C through CoreMIDI. It lists, previews, adds, renames, moves, edits and deletes sounds with a recycle bin, and backs up and restores sounds and projects. A text-style interface.
+description: >-
+  Built for iPadOS, which has no Web MIDI. It finds the device, shows its serial
+  and OS version, lists sounds by slot, converts audio to the device format,
+  draws waveforms with loop points, edits root note, pitch, envelope and play
+  modes, and moves, swaps or bulk-moves slots. Deleted sounds go to a recycle
+  bin before removal. Projects download and upload as .tar archives. The wire
+  protocol is documented in docs/protocol.md from published tool bundles and
+  probing of a device. The README says only device discovery, listing, metadata
+  reading and sending, reading back and deleting a file were checked on an
+  EP-133 on OS 2.5.1, and that the EP-1320 and EP-40 it lists are unchecked.
+status: active
+authors:
+  - name: Aleksei Sviridkin
+    url: https://github.com/lexfrei
+source: https://github.com/lexfrei/kokoko
+source_status: open
+license: BSD-3-Clause
+distribution: source-only
+install_notes: >-
+  Build with Xcode and XcodeGen; choose My Mac or an iPad as the destination and
+  set your own signing team for a physical iPad. A virtual device and an
+  end-to-end check are included for trying it without hardware.
+brick_risk: false
+tags: [librarian, sample-transfer, sysex, usb-midi, samples, desktop]
+versions:
+  - version: main @ b42e5d7
+    date: 2026-11-03
+    url: https://github.com/lexfrei/kokoko/commit/b42e5d7
+    notes: No tagged releases; this is the latest commit.

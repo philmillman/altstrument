@@ -1,0 +1,32 @@
+device: music-thing-workshop-computer
+name: StepBridge
+summary: Four-track step sequencer program card for the Workshop System Computer, edited live from a Web Serial page in Chrome or Edge. Two tracks give CV and gate, all four send USB MIDI, and eight save slots survive power cycles.
+description: >-
+  Each track has its own length, time signature, scale and generative tools: a piano-roll ribbon with gate lengths, ties,
+  accents, ratchets and per-step probability, arpeggiation, glide, a pitch-drift mutation that can be latched, and Markov
+  randomisation with undo. Pulse in 1 is an external clock and pulse in 2 a reset. The web page is a single HTML file in the
+  repository that connects over the same USB cable that powers the module, and the card also appears as a USB MIDI device. The
+  README calls it early alpha with incomplete panel controls. The earlier SysEx and Web MIDI version is kept in a
+  stepbridge_v1 folder. The repository also holds the author's notes on RP2040 flash safety. No card of this name is in
+  the Workshop_Computer releases folder at the time of writing.
+status: active
+authors:
+  - name: sjbrownrigg
+    url: https://github.com/sjbrownrigg
+source: https://github.com/sjbrownrigg/workshop-computer
+source_status: open
+license: unspecified
+license_notes: No LICENSE file and no licence statement in the repository.
+homepage: https://github.com/sjbrownrigg/workshop-computer/tree/main/stepbridge
+distribution: download
+install_notes: >-
+  Hold the small button on the back of the module while connecting USB so it mounts as RPI-RP2, then copy stepbridge.uf2
+  from the release onto the drive. Open stepbridge/web/index.html from a download of the repository in Chrome or Edge and
+  click Connect. No hosted copy of the page was found.
+brick_risk: false
+tags: [sequencer, midi, usb-midi, editor, web]
+versions:
+  - version: v0.10.0-alpha
+    date: 2026-07-14
+    url: https://github.com/sjbrownrigg/workshop-computer/releases/tag/v0.10.0-alpha
+    notes: Pre-release with stepbridge.uf2.

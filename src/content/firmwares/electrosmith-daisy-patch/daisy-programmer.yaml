@@ -1,0 +1,33 @@
+device: electrosmith-daisy-patch
+name: Daisy Programmer
+kind: tool
+summary: Electrosmith's WebUSB DFU programmer for Daisy boards. The page flashes a user-chosen binary or a listed example such as Blink to a Seed in bootloader mode, and replaced an earlier JavaScript page whose source is in the repository.
+description: >-
+  Users put the board in the bootloader by holding Boot and Reset, press the button on the page, pick the DFU device in the
+  browser's USB dialog and flash. The page offers a File Upload tab and a Select an Example tab, and Windows needs the
+  WinUSB driver step from the docs. The linked repository holds the earlier JavaScript version based on webdfu, whose
+  README says it is no longer used and gets no further development; the current page at flash.daisy.audio is a WebAssembly
+  build whose source was not found. The old repository includes dsy_bootloader_v5_4.bin, a bootloader image from Electrosmith
+  itself. The tool can flash other DFU boards. A mistaken image can leave the board needing the bootloader again.
+status: dormant
+authors:
+  - name: Electrosmith
+    url: https://github.com/daisyaudio
+source: https://github.com/daisyaudio/Programmer
+source_status: open
+license: MIT
+license_notes: >-
+  The licence covers the repository's earlier JavaScript version. The source of the current flash.daisy.audio build was not
+  found, so the live page may differ. The data folder includes an Electrosmith bootloader binary.
+homepage: https://flash.daisy.audio
+distribution: browser-installer
+install_notes: >-
+  Open the page in Chrome or Edge, connect the board, hold Boot, press and release Reset, then release Boot and use the
+  Flash button. Windows users need the Zadig driver step from the Daisy docs.
+brick_risk: false
+tags: [flasher, usb, official, web]
+versions:
+  - version: gh-pages @ 47b0cc0
+    date: 2025-04-29
+    url: https://github.com/daisyaudio/Programmer/commit/47b0cc0
+    notes: No tagged releases; this is the latest commit on the default branch.

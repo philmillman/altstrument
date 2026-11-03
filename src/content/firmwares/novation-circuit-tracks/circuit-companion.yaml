@@ -1,0 +1,33 @@
+device: novation-circuit-tracks
+kind: tool
+name: Circuit Companion
+summary: React patch editor and librarian for the Circuit Tracks over Web MIDI SysEx. It reads the active patch or all 64, edits oscillators, the mod matrix and macros with draggable envelopes, and writes patches back to slots. Not the Python CircuitCompanion for the original Circuit.
+description: >-
+  The app reads the unit's patch dumps with a parser built for the Circuit Tracks 348-byte payload, shows oscillator, filter,
+  envelope, FX and drum tabs, and offers full read and write access to the 20-slot mod matrix and the 32-slot macro matrix
+  with drag-and-drop routing. CC and NRPN changes go both ways, so knob moves on the unit update the page. Patches can be
+  fetched one at a time or in bulk from device memory, queued and sent to chosen slots. Patches and projects, including
+  sequencer sketches and step locks, are kept in browser storage and can be exported and imported as JSON. The README does not
+  name a licence. Nothing is flashed.
+status: active
+authors:
+  - name: Alphapolygon
+    url: https://github.com/Alphapolygon
+  - name: JannePiekkola
+    url: https://github.com/JannePiekkola
+source: https://github.com/Alphapolygon/circuit-companion
+source_status: open
+license: unspecified
+license_notes: There is no LICENSE file and the README states no licence.
+homepage: https://alphapolygon.github.io/circuit-companion/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Edge, connect the Circuit Tracks over USB and allow MIDI with SysEx access. Sending a
+  patch to a slot overwrites what is stored there, so back up your patches first. Close Novation Components while editing.
+brick_risk: false
+tags: [editor, librarian, web-midi, sysex, usb-midi, presets, web]
+versions:
+  - version: main @ ae9a78d
+    date: 2026-05-01
+    url: https://github.com/Alphapolygon/circuit-companion/commit/ae9a78dbba3780665c34445284ea73e6dcfa5059
+    notes: No tagged releases; this is the latest commit.

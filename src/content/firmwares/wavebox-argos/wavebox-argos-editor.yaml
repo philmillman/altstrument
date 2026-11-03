@@ -1,0 +1,33 @@
+device: wavebox-argos
+kind: tool
+name: Wavebox Argos Editor
+summary: React web app that sends parameter changes and Program Change messages from knobs on screen to a Wavebox Argos over Web MIDI and keeps a preset library in the browser. It cannot read the pedal's presets back, because the manual documents no SysEx.
+description: >-
+  Rights warning: the repository includes Wavebox's Argos manual as a PDF and as an .mht page.
+
+  The page connects to a MIDI port, selects presets 1 to 40 with Program Change and sends knob changes, with value limits
+  taken from the manual and a MIDI monitor. Presets 1 to 10 are treated as factory presets and cannot be overwritten, so edits to them
+  go to a Save As step that offers slots 11 to 40. The library is stored in the browser with Zustand. The functions that would read
+  and write a whole preset on the pedal are stubs, which the author says would need SysEx captured from the hardware. It
+  was built in March 2026 and has a few unit tests. Nothing is flashed.
+status: active
+authors:
+  - name: Alexandre Lunelli da Silva
+    url: https://github.com/ovelhaaa
+source: https://github.com/ovelhaaa/WaveBoxArgos-editor
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and the README states no licence. docs/ holds Wavebox's manual, which is not covered by any grant.
+homepage: https://ovelhaaa.github.io/WaveBoxArgos-editor/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Edge and allow MIDI access, then pick the Argos's MIDI port. Edits are one way, so the
+  page's values may not match the pedal's.
+brick_risk: false
+tags: [editor, web-midi, midi, presets, librarian, web]
+versions:
+  - version: main @ 40977af
+    date: 2026-03-22
+    url: https://github.com/ovelhaaa/WaveBoxArgos-editor/commit/40977af
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,28 @@
+device: roland-integra-7
+kind: tool
+name: Integra-7 MIDI Utilities
+summary: 2014 Web MIDI page that reads every user tone and installed expansion from an INTEGRA-7 over SysEx and writes a Cubase patch script describing them. It is a one-purpose generator, not an editor, and the repository has no licence.
+description: >-
+  The page opens the MIDI ports with SysEx permission, sends Roland data requests to the unit to walk its tone banks, collects the
+  names of all tones including those in installed expansion sounds, and downloads a Cubase patch script file that models them.
+  The README says it needs only Chrome, with no drivers or installs. The page is rough and the author says so in its commit
+  history. Nothing is flashed.
+status: dormant
+authors:
+  - name: gregsimon
+    url: https://github.com/gregsimon
+source: https://github.com/gregsimon/integra7editor
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and no licence statement in the README.
+distribution: source-only
+install_notes: >-
+  There is no hosted copy. Serve the repository folder from a local web server, open it in Chrome and allow MIDI with SysEx
+  access, with the INTEGRA-7 connected over USB. The tool only reads from the unit.
+brick_risk: false
+tags: [librarian, utility, web-midi, sysex, usb-midi, converter, web]
+versions:
+  - version: master @ 0359303
+    date: 2014-08-20
+    url: https://github.com/gregsimon/integra7editor/commit/03593030becf97fb1a52bfcf6b082ffc14ae93d3
+    notes: No tagged releases; this is the latest commit.

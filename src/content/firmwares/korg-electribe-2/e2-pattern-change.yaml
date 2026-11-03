@@ -1,0 +1,29 @@
+device: korg-electribe-2
+name: Electribe 2 Pattern Change
+kind: tool
+summary: Single-page browser remote that changes patterns on an Electribe 2 over USB MIDI. It sends bank select and program change for patterns 1 to 250 from a number pad, and has an 8-step chain with repeat counts that loops until stopped.
+description: >-
+  The page opens a MIDI output through Web MIDI, shows a large pattern number and sends bank select (control change 0 and 32)
+  and a program change for the number you enter. Quick-jump buttons go to set patterns, and a chain of eight boxes can hold
+  pattern numbers with repeat counts and plays through only the filled steps. It is one HTML file with no README, built for a
+  phone or tablet screen. Nothing is flashed.
+status: active
+authors:
+  - name: gallegherplus
+    url: https://github.com/gallegherplus
+source: https://github.com/gallegherplus/e2-pattern-change
+source_status: open
+license: unspecified
+license_notes: No license file or statement in the repository.
+homepage: https://gallegherplus.github.io/e2-pattern-change/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a browser with Web MIDI, connect the Electribe 2 by USB and allow MIDI access. The synth must be
+  set to receive program changes.
+brick_risk: false
+tags: [midi, sequencer, web-midi, usb-midi, performance, web]
+versions:
+  - version: main @ 9a271f8
+    date: 2026-08-08
+    url: https://github.com/gallegherplus/e2-pattern-change/commit/9a271f8b1271472edfac03bf71f466c190480563
+    notes: No tagged releases; this is the latest commit.

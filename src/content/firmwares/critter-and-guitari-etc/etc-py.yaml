@@ -1,0 +1,25 @@
+device: critter-and-guitari-etc
+name: ETC.py
+kind: tool
+summary: Browser sandbox that runs ETC-style Python modes with the setup and draw functions, four knobs, triggers and audio input, then exports the result as main.py. Alpha-stage and closed, one hosted page; it does not connect to the ETC.
+description: >-
+  The page has a canvas, a CodeMirror Python editor with Run and Export buttons, knob and trigger controls and a scope view.
+  It translates the Python to JavaScript in the browser, so only code written to its subset of the mode API runs there.
+  Several example modes are built in. It is a development aid like the EYESY simulator, not a replacement for the unit, and
+  nothing is sent to the hardware; the exported file has to be copied to the ETC by the user.
+status: active
+authors:
+  - name: realtimeprayer
+    url: https://realtimeprayer.neocities.org/
+source_status: closed
+license: proprietary
+license_notes: >-
+  No licence terms are published on the page, which is a single HTML file on neocities.org. The server's last-modified date
+  is 2025-12-08.
+homepage: https://realtimeprayer.neocities.org/etc
+distribution: browser-installer
+install_notes: >-
+  Open the page in a browser, edit or paste a mode, press Run, then use Export to download main.py and copy it to the
+  ETC's mode folder.
+brick_risk: false
+tags: [simulator, modes, python, emulator, web]

@@ -1,0 +1,25 @@
+device: meris-polymoon
+kind: tool
+name: Polymoon Editor
+summary: Browser editor for the Meris Polymoon delay pedal over Web MIDI. It shows the time, feedback, mix, multiply, dimension and dynamics controls at once, with a preset bar and a browser library. The repository is archived.
+description: >-
+  The page shows the Polymoon's six knobs, its sync phase and slow options and its tap tempo, with a 16-slot preset bar that writes to the pedal's memory, INIT and RANDOMIZE commands and a library kept in the browser. A second MIDI input forwards an expression pedal or controller to the pedal. The author archived the repository in January 2025, and the hosted page is still served. Nothing is flashed.
+status: archived
+authors:
+  - name: François Georgy
+    url: https://github.com/francoisgeorgy
+source: https://github.com/francoisgeorgy/polymoon-web-editor
+source_status: open
+license: GPL-3.0-only
+license_notes: The LICENSE file is the GNU GPL version 3 text; the repository gives no later-version option.
+homepage: https://studiocode.dev/polymoon-editor/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Opera and allow MIDI access. Set the pedal's EXP/MIDI jack to MIDI and its MIDI mode to out, pick a channel, and connect it with a TRS cable to a MIDI interface such as Meris's MIDI I/O or a Disaster Area MIDI Baby. Choose the interface's input, output and channel in the editor. The Global Settings are locked until you unlock them, and they reach every Meris pedal on the same interface.
+brick_risk: false
+tags: [editor, web-midi, midi, presets, web]
+versions:
+  - version: master @ d4843a8
+    date: 2025-01-21
+    url: https://github.com/francoisgeorgy/polymoon-web-editor/commit/d4843a8
+    notes: No tagged releases; this is the latest commit, which adds the archive notice.

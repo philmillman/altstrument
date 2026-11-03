@@ -1,0 +1,30 @@
+device: elektron-digitakt
+also_devices: [elektron-digitakt-ii, elektron-analog-rytm, elektron-model-samples]
+name: ElekPrep
+kind: tool
+summary: Single-page browser sample prep tool for Elektron samplers. It trims at zero crossings, converts to 48 kHz 16-bit WAV, works out loop lengths from BPM and steps, and has profiles for four devices. It does not use MIDI; files go to the device through Transfer or Elektroid.
+description: >-
+  Audio files of any format the browser can decode are dropped in, a device profile sets the target format and a warning
+  about length limits, and the page exports a WAV. Features include trim handles that snap to zero crossings, a loop
+  calculator from tempo and step count, optional peak normalisation, an A/B preview, zoom with a minimap, loop playback,
+  dragging the whole trim region and batch conversion. The profiles are Digitakt, Digitakt II, Analog Rytm and Model:Samples.
+  Processing happens locally and nothing is uploaded.
+status: active
+authors:
+  - name: Luiz Varela
+    url: https://github.com/luizvarela
+source: https://github.com/luizvarela/elektron-sample-prep
+source_status: open
+license: MIT
+homepage: https://luizvarela.github.io/elektron-sample-prep/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in any current browser, export the WAV, and copy it to the device with Elektron Transfer,
+  Elektroid or USB. The page is a single HTML file and can also be opened from a clone.
+brick_risk: false
+tags: [sample-transfer, converter, sampler, utility, web, editor]
+versions:
+  - version: main @ 9f85fc8
+    date: 2026-02-27
+    url: https://github.com/luizvarela/elektron-sample-prep/commit/9f85fc84fca6a58af81cbd36cb2e6952dc243625
+    notes: No tagged releases; this is the latest commit.

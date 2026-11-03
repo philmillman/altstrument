@@ -1,0 +1,25 @@
+device: plinky-plinky
+name: Plinky wavetable generator
+kind: tool
+summary: The project's command line tool that turns fifteen single-cycle WAV files into Plinky's wavetable data. It writes a wavetab.uf2 that is copied to the synth, or a header file for building the firmware. Prebuilt Mac and Windows builds are in the repository.
+description: >-
+  The tool expects files c0.wav to c14.wav, which are single-cycle, 16-bit, mono and at least 512 samples. It resamples them, downsamples for
+  Plinky's 32 kHz rate and pre-filters octaves. A later script makes wavetables in the style of the Plinky12 line. The core wavetables come from miunau.
+status: dormant
+authors:
+  - name: Alex Evans
+    url: https://github.com/mmalex
+source: https://github.com/plinkysynth/wavetable
+source_status: open
+license: CC-BY-NC-SA-4.0
+license_notes: The LICENSE file says all Plinky-contributed material is under CC BY-NC-SA 4.0.
+distribution: source-only
+install_notes: >-
+  Build wavetable.cpp with clang++ -O2 (or use the prebuilt binary in the repository), put the fifteen WAV files in the same folder, run it, and copy the wavetab.uf2 it writes onto Plinky while it is in boot mode.
+brick_risk: false
+tags: [official, wavetable, converter, cli, sample-transfer]
+versions:
+  - version: main @ c956a83
+    date: 2025-07-02
+    url: https://github.com/plinkysynth/wavetable/commit/c956a83f1961e34a89783658d56c42fe452bc0c9
+    notes: No tagged releases; this is the latest commit.

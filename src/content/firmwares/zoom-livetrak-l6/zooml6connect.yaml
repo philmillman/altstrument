@@ -1,0 +1,38 @@
+device: zoom-livetrak-l6
+kind: tool
+name: ZOOM L6 Connect
+summary: >-
+  Touch-first PWA mixer surface for the LiveTrak L6 over USB MIDI, built for an iPad. It sends and reads the documented Mixer Control CC mapping, adds LFOs per knob and meters USB audio, with an optional Xcode wrapper for native CoreMIDI.
+description: >-
+  The app shows channel strips for EQ, pan, AUX 1 and 2, EFX send and level, with mute, mono and USB routing toggles, the
+  compressor and scenes A to C. It connects to the mixer's Mixer Control port and rejects the editor-only port, mirrors
+  changes made on the mixer, and keeps a MIDI log. Any control can get a sine LFO whose output is rate-limited. The AUDIO
+  button opens the mixer's multichannel USB audio input and drives channel and master meters with Web Audio, which the
+  author checked on an iPad with 12 channels. Mixer state is stored in the browser and never sent back to the mixer on load.
+  Phantom power and the master level are not in the documented mapping, so those controls send nothing. An Xcode project in
+  ios/ wraps the same page in a web view and replaces Web MIDI with CoreMIDI and AVAudioEngine, because Safari has no Web
+  MIDI. The repository's AGENTS.MD says the design is inspired by Zoom L6 Companion but has its own interface and
+  architecture. Unlike that tool, it uses only the documented CC mapping, not SysEx, so it does not change the mixer's
+  device settings or sound pads. It names the L6 only, not the L6max. Nothing is flashed.
+status: active
+authors:
+  - name: enshtein
+    url: https://github.com/enshtein
+source: https://github.com/enshtein/zooml6connect
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and the README states no license.
+homepage: https://enshtein.github.io/zooml6connect/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a browser with Web MIDI and connect the mixer's top USB-C port. On iPad, use Safari's Add to Home
+  Screen for the PWA or build the Xcode wrapper from ios/ with a personal team; the README says Safari alone has no Web
+  MIDI, and a later commit points iOS users to the MIDIWeb Browser app. Choose AUTO CONNECT L6 and check that the selected
+  ports say Mixer Control.
+brick_risk: false
+tags: [controller, web-midi, usb-midi, midi, web, ios, lfo]
+versions:
+  - version: master @ c8816f5
+    date: 2026-08-30
+    url: https://github.com/enshtein/zooml6connect/commit/c8816f5
+    notes: No tagged releases; this is the latest commit.

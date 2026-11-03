@@ -1,0 +1,40 @@
+device: teenage-engineering-ep-133
+name: koii studio (mcp-koii)
+kind: tool
+summary: MCP server and local web page for writing patterns in a text notation, playing them on an EP-133 over USB MIDI, arranging songs, designing sounds and managing the device's samples, packs and pads over its file protocol. Python, run locally.
+description: >-
+  The server exposes tools to Claude or any MCP client for connecting, checking
+  and playing patterns with loop switching, saving patterns and songs, exporting
+  MIDI and MusicXML, and designing synthesised sounds that render at the
+  device's sample rate. A page on localhost shows a simulated device, a grid,
+  text and notation editor, a song arranger and a sample browser, and can run
+  without Claude. Using the file protocol documented by ep-series-sysex, it
+  lists, plays, backs up, uploads and deletes samples, reads and edits pad
+  settings, switches projects and installs sample packs. The README says
+  uploads follow a full backup and only touch sounds the tool uploaded, and that
+  a firmware update or unexpected reply could still lose data.
+status: active
+authors:
+  - name: Benjamin Rowell
+    url: https://github.com/benjaminr
+source: https://github.com/benjaminr/mcp-koii
+source_status: open
+license: MIT
+distribution: source-only
+install_notes: >-
+  Needs Python 3.9 to 3.12 and the device connected by USB-C. Install the
+  requirements with uv, then register the server with mcp install or claude mcp
+  add. Close the official EP Sample Tool while it runs.
+brick_risk: false
+tags: [midi, sequencer, sample-transfer, python, sysex, generative]
+image:
+  url: https://raw.githubusercontent.com/benjaminr/mcp-koii/main/screenshots/overview.jpg
+  alt: koii studio page with a simulated EP-133 on the left, a boom-bap pattern as a step grid with kick, snare, hat and bass tracks in the middle and a list of saved patterns on the right
+  credit: benjaminr
+  source_url: https://github.com/benjaminr/mcp-koii#readme
+  first_party: true
+versions:
+  - version: main @ b0fabe0
+    date: 2026-10-25
+    url: https://github.com/benjaminr/mcp-koii/commit/b0fabe0
+    notes: No tagged releases; this is the latest commit.

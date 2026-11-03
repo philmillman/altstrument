@@ -1,0 +1,29 @@
+device: elektron-machinedrum
+name: PolyMD
+kind: tool
+summary: Web MIDI translator that turns incoming MIDI notes into trigger notes and pitch CCs for the Machinedrum's GND-PU and GND-SW machines, so they play paraphonically or polyphonically across the 16 tracks. It is a live note router, not an editor.
+description: >-
+  Incoming notes are allocated to voices across tracks. Presets give a single mono track, 4, 8 or 16 tracks of one voice, 8 x 2
+  layers, or paraphonic tracks that use the PTCH parameters around an anchor pitch. Tracks can join one of two polygroups
+  that pool voices, and a sustain mode holds the decay while keys are down. Latch, retrigger, unison and fixed-velocity options are
+  available. The four groups of four tracks each use a MIDI channel for CCs. Core logic has unit tests, and the page needs a MIDI interface
+  between the host and the Machinedrum. The repository includes a claude.md project file.
+status: active
+authors:
+  - name: PolyMD contributors
+    url: https://github.com/poly-md
+source: https://github.com/poly-md/poly-md.github.io
+source_status: open
+license: MIT
+homepage: https://poly-md.github.io/
+distribution: browser-installer
+install_notes: >-
+  Open the page in Chrome or Edge, choose Enable MIDI, pick the controller as input and the Machinedrum as output, then pick a
+  preset. Set the Machinedrum's note receive and track channels to match the note map.
+brick_risk: false
+tags: [midi, web-midi, usb-midi, web, performance, synth-engine, utility]
+versions:
+  - version: main @ 00c0767
+    date: 2026-05-16
+    url: https://github.com/poly-md/poly-md.github.io/commit/00c07672e75e7fe6b0d033552031259942826924
+    notes: No tagged releases; this is the latest commit.

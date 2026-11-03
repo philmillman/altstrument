@@ -1,0 +1,42 @@
+device: teenage-engineering-op-xy
+name: OP-XY Agent
+kind: tool
+summary: Browser app with a playable replica of the OP-XY and a chat agent that explains the instrument and writes patterns and sounds into it. Over Web MIDI it mirrors and drives a connected unit; over MTP it moves projects. Also a preset maker. Needs your own Anthropic key.
+description: >-
+  The replica draws the panel and screen from TE's published guide and camera
+  captures of a real unit on OS 1.1.33, with synth engines fitted to recordings
+  of the device, a sequencer and effects. The agent answers from its own manual,
+  tries key sequences on a copy of the replica first, and writes patterns,
+  scenes and songs; changes can be undone and anything touching a device asks
+  first. With a unit connected over USB it can play notes, start and stop, change
+  tracks, tempo, mutes and sounds, and load or save projects in the device's MTP
+  mode. A separate preset maker turns samples into drum, loop and multisample
+  presets and can install them over USB, which the README says has not been tried
+  on a unit. Every byte sent goes through one filter that blocks firmware-update
+  messages. The README calls it pre-production. Nothing is flashed.
+status: active
+authors:
+  - name: NeoVand
+    url: https://github.com/NeoVand
+source: https://github.com/NeoVand/op-xy-agent
+source_status: open
+license: MIT
+homepage: https://neovand.github.io/op-xy-agent/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted app in Chrome or Edge on a computer; a phone only gets a
+  preview. API keys are kept in the browser and sent only to Anthropic, and to
+  OpenAI for voice. To run it locally you need Node 24 and pnpm.
+brick_risk: false
+tags: [emulator, editor, web-midi, presets, web, generative]
+image:
+  url: https://raw.githubusercontent.com/NeoVand/op-xy-agent/main/docs/images/demo.gif
+  alt: OP-XY Agent with a dark OP-XY replica and screen in the centre and a chat panel at the right listing patterns the agent wrote as step grids
+  credit: NeoVand
+  source_url: https://github.com/NeoVand/op-xy-agent#readme
+  first_party: true
+versions:
+  - version: main @ 34df0c4
+    date: 2026-10-05
+    url: https://github.com/NeoVand/op-xy-agent/commit/34df0c4
+    notes: No tagged releases; this is the latest commit.

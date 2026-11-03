@@ -1,0 +1,26 @@
+device: dadamachines-automat
+name: automat configurator
+kind: tool
+summary: The maker's browser configurator for the automat. It sets the velocity program, minimum and maximum timing and gate duration of each solenoid output over Web MIDI SysEx, and the page also has an experimental view and a small sequencer. It needs a Web MIDI browser.
+description: >-
+  The page talks to the automat with the SysEx protocol that the firmware implements, which the firmware repository's README names as the way to set per-output programs and timing.
+  Its credits thank two community developers. The repository's last commit, in 2024, only set the custom domain, so the page has not changed since the firmware moved to version 3.
+status: dormant
+authors:
+  - name: dadamachines
+    url: https://github.com/dadamachines
+source: https://github.com/dadamachines/automat-configurator
+source_status: open
+license: MIT
+license_notes: The LICENSE file says Copyright (c) 2018 dadamachines.
+homepage: https://automat-configurator.dadamachines.com/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a Web MIDI browser, connect the automat over USB and allow MIDI access with SysEx. Nothing is flashed.
+brick_risk: false
+tags: [official, editor, web-midi, sysex, usb-midi, midi, web]
+versions:
+  - version: master @ d9dec3f
+    date: 2024-03-21
+    url: https://github.com/dadamachines/automat-configurator/commit/d9dec3f074f90b4853d0f11684a9e8c3c452ea38
+    notes: No tagged releases; this is the latest commit.

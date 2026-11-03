@@ -1,0 +1,28 @@
+device: korg-volca-keys
+name: VKWebEdit
+kind: tool
+summary: Experimental browser patch editor for the volca keys over Web MIDI, written against Korg's published MIDI specification. The author's own hosted copy is still live.
+description: >-
+  A jQuery and Bootstrap page that sends the volca keys control changes as sliders are moved, so patches can be built from
+  the browser. It is a single script of under 200 lines with its libraries managed through bower. The author
+  calls it experimental and invites comments. The last commit is from 2017. Nothing is flashed.
+status: dormant
+authors:
+  - name: davidsanchezcrespillo
+    url: https://github.com/davidsanchezcrespillo
+source: https://github.com/davidsanchezcrespillo/vkwebedit
+source_status: open
+license: Apache-2.0
+homepage: http://sanchezcrespillo.info/david/vkwebedit
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a browser with Web MIDI and choose the MIDI output that goes to the volca keys. The hosted copy is
+  served over plain http, so a browser that limits Web MIDI to secure pages may refuse it; in that case serve the repository
+  locally.
+brick_risk: false
+tags: [editor, web-midi, midi, web]
+versions:
+  - version: master @ e47298d
+    date: 2017-05-20
+    url: https://github.com/davidsanchezcrespillo/vkwebedit/commit/e47298ded2fa5957ac99d5068da1ef01a28c0a57
+    notes: No tagged releases; this is the latest commit.

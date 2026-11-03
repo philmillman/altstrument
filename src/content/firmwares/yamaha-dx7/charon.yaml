@@ -1,0 +1,39 @@
+device: yamaha-dx7
+also_devices: [korg-volca-fm]
+name: Charon
+kind: tool
+summary: Desktop app that sends DX7 and Volca FM SysEx files to a real MIDI port, checking each checksum first, and builds new 32-voice banks from two source banks without re-encoding the voices. It is not a browser tool; it runs from source with uv.
+description: >-
+  Charon lists the system's MIDI ports with hot-plug tracking, takes .syx files from a file picker or drag and drop, splits files
+  that hold several messages, and recognises DX7 32-voice bulk dumps and single voices. It checks the checksum before sending,
+  can force the MIDI channel and spaces messages with an adjustable delay, and never splits one message. The bank workshop loads two banks,
+  picks voices from them and writes or sends a third, copying the 128-byte voice blocks unchanged and recalculating the
+  checksum. It was written because the author's earlier Web MIDI loader needs a secure page, which is awkward in a studio. The
+  interface is in French. Nothing is flashed.
+status: active
+authors:
+  - name: Olivier BAREAU
+    url: https://github.com/obareau
+source: https://github.com/obareau/charon
+source_status: open
+license: MIT
+license_notes: >-
+  The code is MIT. The DotGothic16 font in the repository is under the SIL Open Font License 1.1, and its text is included.
+homepage: https://github.com/obareau/charon
+distribution: source-only
+install_notes: >-
+  Install uv, clone the repository and run uv run charon. On Linux, ALSA headers (libasound2-dev) are needed if the
+  python-rtmidi wheel has to be built. macOS uses CoreMIDI and Windows uses WinMM.
+brick_risk: false
+tags: [librarian, sysex, midi, presets, python, fm]
+image:
+  url: https://raw.githubusercontent.com/obareau/charon/main/docs/capture-envoi.png
+  alt: Charon send tab with a MIDI output selector, a table of five test .syx files with format, size, channel and checksum status, one marked as a wrong checksum, and a log pane below
+  credit: Olivier Bareau
+  source_url: https://github.com/obareau/charon#readme
+  first_party: true
+versions:
+  - version: main @ 19e8879
+    date: 2026-09-15
+    url: https://github.com/obareau/charon/commit/19e887961dd7121a41f68a57b86289e70ac7a7d8
+    notes: No tagged releases; this is the latest commit.

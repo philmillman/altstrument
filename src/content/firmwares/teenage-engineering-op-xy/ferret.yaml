@@ -1,0 +1,39 @@
+device: teenage-engineering-op-xy
+also_devices: [teenage-engineering-op-1-field]
+name: Ferret
+kind: tool
+summary: Browser pages that switch on the hidden dev menu in the bootloader of an OP-XY or OP-1 Field, over USB MIDI with SysEx while the unit is held in its boot menu. The same repository holds a TX-6 firmware key reader. No firmware is flashed to these two devices.
+description: >-
+  Rights warning: the repository also contains a tool for the TX-6, which is not
+  in this catalog. It reads the unit's AES key and derives a second key from the
+  user's own official update file, using a ciphertext patch appended to that file;
+  the README says the second key also decrypts OP-Z and older OP-1 Field firmware.
+  No keys or firmware are stored in the repository. The OP-XY and OP-1 Field
+  pages send te-boot console commands, including a challenge read live from the
+  unit, so that te-boot writes its own dev marker. The README says there is no
+  way to read the setting back, so the unit's screen is the confirmation, and that
+  the dev menu has destructive items such as a factory reset and writing the OS
+  to the boot partition. The OP-1 Field page is marked as confirmed on hardware.
+  The OP-1 original is not covered.
+status: active
+authors:
+  - name: Bag of Waffles
+    url: https://github.com/bagofwaffles
+source: https://github.com/bagofwaffles/ferret
+source_status: open
+license: MIT
+license_notes: The licence covers the repository's code; Teenage Engineering's firmware and keys are not included.
+homepage: https://bagofwaffles.github.io/ferret/
+distribution: browser-installer
+install_notes: >-
+  Use Chrome or Edge on a desktop. Power the unit off, hold COM while powering on
+  and connect USB so it stays on the te-boot menu, then follow the wizard on the
+  OP-XY or OP-1 Field page. Do not press track 1 for upload firmware, which drops
+  the MIDI port. Turn dev mode off from the same page.
+brick_risk: false
+tags: [research, web-midi, sysex, usb-midi, utility, web]
+versions:
+  - version: main @ 99d30a2
+    date: 2026-10-21
+    url: https://github.com/bagofwaffles/ferret/commit/99d30a2
+    notes: No tagged releases; this is the latest commit.

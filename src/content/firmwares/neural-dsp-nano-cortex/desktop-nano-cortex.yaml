@@ -1,0 +1,54 @@
+device: neural-dsp-nano-cortex
+kind: tool
+name: Desktop Nano Cortex
+summary: Tauri desktop app for macOS and Windows that controls the Nano Cortex over USB MIDI and reads its live state, preset names and knob positions over Bluetooth, with a preset browser, footswitch deck and an experimental tone editor. Linux builds are untested previews.
+description: >-
+  The author wrote it because browser tools need Web MIDI or Web Bluetooth and the pedal has no public preset or parameter
+  interface, so all device access runs in Rust behind a React interface. Over USB it sends the pedal's documented
+  Program Change and Control Change messages: preset recall, effect slots, tap tempo, tuner and expression. The pedal sends
+  nothing back over USB, so the live state comes from a Bluetooth decoder the README calls experimental and provisional. The
+  app lists all 64 presets in eight banks, shows and reassigns footswitch actions, edits amp knobs and the tone chain in a
+  floating Tone Studio, and exports diagnostics. It has opt-out Microsoft Clarity telemetry. Nothing is flashed. The
+  project is not affiliated with Neural DSP.
+status: active
+authors:
+  - name: Richard Sentino
+    url: https://github.com/rixrix
+source: https://github.com/rixrix/deskop-nano-cortex
+source_status: open
+license: Apache-2.0
+homepage: https://github.com/rixrix/deskop-nano-cortex#readme
+distribution: download
+install_notes: >-
+  Download the macOS DMG, Windows MSI or setup exe, or the Linux deb or AppImage from the releases page, and check them
+  against the SHA256SUMS file there. The builds are unsigned, so macOS and Windows show trust prompts. Connect both USB and
+  Bluetooth for full control. The Bluetooth path is not available on Linux.
+brick_risk: false
+tags: [controller, editor, usb-midi, bluetooth, presets, research]
+image:
+  url: https://raw.githubusercontent.com/rixrix/deskop-nano-cortex/main/docs/assets/screenshots/console-live.png
+  alt: Desktop Nano Cortex console connected over Bluetooth, with a preset list in banks, a signal path strip, six amp knobs, a footswitch deck and tempo, tuner and expression controls
+  credit: Richard Sentino
+  source_url: https://github.com/rixrix/deskop-nano-cortex#readme
+  first_party: true
+versions:
+  - version: v1.0.4
+    date: 2026-07-15
+    url: https://github.com/rixrix/deskop-nano-cortex/releases/tag/v1.0.4
+    notes: Acknowledges preset changes over Bluetooth and marks controls whose transport is not connected.
+  - version: v1.0.3
+    date: 2026-07-10
+    url: https://github.com/rixrix/deskop-nano-cortex/releases/tag/v1.0.3
+    notes: Adds capture and cab pickers to the footswitch deck and graph editing in Tone Studio.
+  - version: v1.0.2
+    date: 2026-07-08
+    url: https://github.com/rixrix/deskop-nano-cortex/releases/tag/v1.0.2
+    notes: Adds an update notice and more help pages.
+  - version: v1.0.1
+    date: 2026-07-07
+    url: https://github.com/rixrix/deskop-nano-cortex/releases/tag/v1.0.1
+    notes: Documentation update that marks macOS and Windows 11 as tested.
+  - version: v1.0.0
+    date: 2026-07-06
+    url: https://github.com/rixrix/deskop-nano-cortex/releases/tag/v1.0.0
+    notes: First release, with the console, USB MIDI commands and Bluetooth state view.

@@ -1,0 +1,38 @@
+device: sonicake-pocket-master
+kind: tool
+name: PocketLab
+summary: >-
+  Editor for the Pocket Master as a hosted Web MIDI and Web Bluetooth page and an Electron app for Windows, Linux and macOS. It edits the nine-block chain live, loads NAM captures and IRs into user slots, and manages the 100 presets.
+description: >-
+  The signal chain view shows the fixed drive, amp, IR and EQ core with free placement of the other blocks, with knobs and
+  faders that send SysEx as they move. The user NAM and IR slots take .nam and .wav files, and the page locks cabinet
+  processing when a full-rig capture is loaded. Preset tools cover the 50 user and 50 factory slots, renaming, JSON export
+  and import of banks, and fetching names from the pedal. A global panel sets volumes and USB and Bluetooth levels, and
+  a tuner and keyboard shortcuts are included. It connects over USB MIDI or Bluetooth LE. The README includes Windows and
+  Linux guides for MIDI permissions and says the project is not affiliated with Sonicake. It names the QME-20 as the
+  supported model. Nothing is flashed.
+status: active
+authors:
+  - name: hirokixd
+    url: https://github.com/Wrdn28
+source: https://github.com/Wrdn28/pocketlab
+source_status: open
+license: MIT
+homepage: https://pocketlab-two.vercel.app/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, Edge or Brave, press Connect and allow MIDI with SysEx, or pair Bluetooth. Close any DAW
+  using the pedal's MIDI port. On Linux, add your user to the audio group; the repository's LINUX_GUIDE.md has the details.
+brick_risk: false
+tags: [editor, web-midi, sysex, usb-midi, midi, bluetooth, presets, nam, ir, tuner, desktop, web]
+image:
+  url: https://raw.githubusercontent.com/Wrdn28/pocketlab/master/screenshot.png
+  alt: PocketLab with the signal chain of nine blocks from noise gate to reverb, the amp block set to Bog XT with six knobs, and preset buttons P01 to P04 at the bottom
+  credit: hirokixd
+  source_url: https://github.com/Wrdn28/pocketlab#readme
+  first_party: true
+versions:
+  - version: master @ 3a06980
+    date: 2026-10-18
+    url: https://github.com/Wrdn28/pocketlab/commit/3a06980
+    notes: No tagged releases; this is the latest commit.

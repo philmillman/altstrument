@@ -1,0 +1,41 @@
+device: shantea-opendeck
+name: OpenDeck Configurator
+kind: tool
+summary: Web configurator for OpenDeck boards that identifies the board, edits buttons, encoders, pots and LEDs, manages presets and backups, and updates firmware over WebUSB or the network. It also ships as offline desktop builds.
+description: >-
+  The configurator is a Vue 3 and Vite app, with Electron packaging for macOS, Linux and Windows. It identifies a board by
+  its OpenDeck target ID and uses that to find the matching firmware release asset for update checks and downloads. Firmware
+  updates run through a WebUSB or network bootloader. The firmware itself is in the main OpenDeck repository.
+status: active
+authors:
+  - name: Igor Petrovic (Shantea Controls)
+    url: https://shanteacontrols.com/
+source: https://github.com/shanteacontrols/OpenDeckUI
+source_status: open
+license: Apache-2.0
+homepage: https://config.shanteacontrols.com
+distribution: browser-installer
+install_notes: >-
+  Open the hosted configurator in a WebUSB and Web MIDI browser and connect the board, or download an offline package for
+  darwin-arm64, darwin-x64, linux-x64 or win32-x64 from the releases. macOS builds are unsigned.
+brick_risk: false
+tags: [editor, web-midi, usb-midi, midi, flasher, official, web]
+video:
+  url: https://www.youtube.com/watch?v=7X2LC0JMfAU
+  title: OpenDeck UI
+  credit: Shantea Controls
+  first_party: true
+  found_via: https://github.com/shanteacontrols/OpenDeckUI#readme
+versions:
+  - version: "202610032128"
+    date: 2026-10-03
+    url: https://github.com/shanteacontrols/OpenDeckUI/releases/tag/202610032128
+  - version: "202609221740"
+    date: 2026-09-22
+    url: https://github.com/shanteacontrols/OpenDeckUI/releases/tag/202609221740
+  - version: "202609041519"
+    date: 2026-09-04
+    url: https://github.com/shanteacontrols/OpenDeckUI/releases/tag/202609041519
+  - version: "202609041451"
+    date: 2026-09-04
+    url: https://github.com/shanteacontrols/OpenDeckUI/releases/tag/202609041451

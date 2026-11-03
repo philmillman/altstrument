@@ -1,0 +1,35 @@
+device: zack-hagan-major-midi
+name: Major MIDI firmware
+summary: >-
+  Firmware of the Major MIDI Eurorack module: plays MIDI files from SD through a SoundFont 2 synth, with per-channel mixing, MIDI routing, CV and gate outputs, saved song state, and a browser remote and file transfer over USB SysEx.
+description: >-
+  The module is sold with this firmware installed, and the repository is its published source. It reads .mid and .sf2 files
+  from the card, mixes, mutes and pans channels from the front panel, and routes MIDI to USB, the TRS jacks and the CV and gate engine. The
+  settings of each song are saved on the card. Two hosted pages use Web MIDI over USB SysEx. One page
+  browses and loads songs, mixes channels and runs the transport, and the other uploads .mid files. The build depends on a fork
+  of libDaisy with changes to the display driver, the MIDI UART handling and the USB identity, a patched copy of
+  TinySoundFont, and the LGPL part of DaisySP. The app is a BOOT_QSPI program, so it needs the Daisy bootloader in internal flash.
+status: active
+authors:
+  - name: Zack Hagan
+    url: https://github.com/zhagan
+source: https://github.com/zhagan/major-midi
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file. The README's Licensing section covers the dependencies only: libDaisy and DaisySP are MIT,
+  tsf.h is MIT, and the linked DaisySP-LGPL is LGPL, which the author says is satisfied by publishing full source.
+homepage: https://zackhagan.com/major-midi/
+distribution: source-only
+requires_stock: Daisy bootloader in internal flash; shipped modules already have it
+install_notes: >-
+  Build with the Arm GNU toolchain and make, then flash MajorMIDI.bin to the QSPI target at 0x90040000 within the
+  bootloader's two-second DFU window after tapping RESET, using the Electrosmith web programmer or dfu-util. A bare Patch SM needs the bootloader flashed once
+  first. The README points to a latest release for MajorMIDI.bin, but the repository lists no releases yet.
+brick_risk: false
+tags: [midi, synth-engine, sysex, web-midi, cv]
+versions:
+  - version: main @ 91a1855
+    date: 2026-08-20
+    url: https://github.com/zhagan/major-midi/commit/91a185501dbe4b9c02d45650e1ab3a480a16a6ba
+    notes: No tagged releases; this is the latest commit.

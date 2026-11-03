@@ -1,0 +1,38 @@
+device: novation-bass-station-ii
+name: BS2-Web
+kind: tool
+summary: Browser editor for the Bass Station II over Web MIDI that shows every panel parameter on screen, mirrors knob moves in both directions, loads and saves .syx patches, prints patch sheets and has a randomizer. The author has archived it.
+description: >-
+  The page opens a MIDI port to the synth and keeps the on-screen controls and the hardware in step, so moving a knob on
+  either one moves the other. It reads the synth's SysEx patch dump, loads and saves .syx files, keeps favourite patches as links
+  in the browser, produces a printable patch sheet, and offers a randomizer whose ranges can be set, a MIDI monitor and a
+  settings panel for the channel. The author's separate BS2-SysEx repository holds the reverse-engineered notes on the
+  undocumented dump format, which this editor reads. The README marks the project as archived and not maintained. Nothing is flashed.
+status: archived
+authors:
+  - name: François Georgy
+    url: https://github.com/francoisgeorgy
+source: https://github.com/francoisgeorgy/BS2-Web
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GNU GPL version 3 text; package.json declares ISC. The README's old address, sysex.io/bs2, no longer
+  serves the editor.
+homepage: https://homestudio.app/bs2-editor/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a browser with Web MIDI (Chrome or Chromium), connect the synth over USB and allow MIDI access. The
+  logo glows when the Bass Station II is recognised. The Global Dump function on the synth sends its patch to the editor.
+brick_risk: false
+tags: [editor, librarian, web-midi, sysex, usb-midi, midi, presets, web]
+video:
+  url: https://www.youtube.com/watch?v=_413q6qwQWY
+  title: Bass Station 2 Web Editor demo
+  credit: François Georgy
+  first_party: true
+  found_via: https://github.com/francoisgeorgy/BS2-Web#readme
+versions:
+  - version: 2.7.0
+    date: 2018-06-15
+    url: https://github.com/francoisgeorgy/BS2-Web/tree/2.7.0
+    notes: Git tag; no GitHub release page.

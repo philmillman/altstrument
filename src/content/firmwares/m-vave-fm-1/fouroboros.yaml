@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: FOUROBOROS
+summary: >-
+  SLOOP-based firmware where four snakes on a board write bass, lead, chords and drums into SLOOP's four tracks as they eat, with 16 levels, three sound groups per level and a hosted install page. Binary only; hardware verification pending.
+description: >-
+  FOUROBOROS appears as visualiser style 13 inside SLOOP. Each snake owns one part, steered with K1 to K4, and the colour of the food it eats decides what it writes next, so the length of a snake is the song. Snakes cannot die, the board wraps and an idle snake steers itself for about five seconds. There are 16 levels with their own tempo and key, some with arpeggio or note-hold layers, three sound groups per level and white-key chord playing with black-key transforms. Leaving the game restores SLOOP's state. The repository holds the install page and its package, not the firmware source, which is stated to come from a private repository at commit 04d0e62, so it is listed as binary only. The page marks the build as a smoke candidate that has not yet run on a physical FM-1, and installs only from official V15.
+status: active
+authors:
+- name: Ignignot
+  url: https://github.com/Ignignot
+source: https://github.com/Ignignot/fouroboros-v1-installer
+source_status: binary-only
+license: GPL-3.0-only
+license_notes: >-
+  The README says FOUROBOROS is built on SLOOP and Felucca (GPL-3.0) and the manual page carries an SPDX GPL-3.0-only header. There is no LICENSE file, and the firmware source is not in the repository.
+homepage: https://ignignot.github.io/fouroboros-v1-installer/installer/
+distribution: browser-installer
+requires_stock: M-VAVE FM-1 V15 (FM-1_015)
+install_notes: >-
+  Open the install page in Chrome on a computer or Android, or Edge, connect an FM-1 running stock V15 and press Install; the page checks the package SHA-256 and the device identity first. It refuses V16. The restore section at the bottom installs V15 and does not bundle M-VAVE's file: it fetches the exact V15 from m-vave/fm1_open, or accepts your own copy of FM-1.fwsc, and checks its size and SHA-256. Back up SLOOP projects first. An interrupted install resumes by pressing Install again.
+brick_risk: true
+tags: [generative, game, sequencer, fork]
+image:
+  url: https://raw.githubusercontent.com/Ignignot/fouroboros-v1-installer/main/installer/assets/attract-host-render.png
+  alt: "FOUROBOROS attract screen on black: the title, the level name Paper Kite Festival, K1 to K4 steer, preset level, and Turn a knob to start"
+  credit: Ignignot
+  source_url: https://ignignot.github.io/fouroboros-v1-installer/installer/manual.html
+  first_party: true
+versions:
+- version: V1
+  date: 2026-11-03
+  url: https://github.com/Ignignot/fouroboros-v1-installer/commit/947149824b4a979a65f6a2483495952d1fc3840e
+  notes: Install page for the V1 smoke candidate, built from firmware source commit 04d0e62; no tagged releases.

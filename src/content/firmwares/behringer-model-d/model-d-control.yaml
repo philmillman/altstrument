@@ -1,0 +1,30 @@
+device: behringer-model-d
+name: Model D control app
+kind: tool
+summary: Single-page browser app that sends SysEx to a Behringer Model D to change multitrigger mode, pitch bend mode and range, MIDI channel, note priority and modulation curve over Web MIDI. Written in 2018 for Chrome.
+description: >-
+  The page is one HTML file and one script with buttons and sliders for each setting. It opens the MIDI output called
+  MODEL D after the user clicks Request MIDI Access and writes the settings that the synth's manual describes as SysEx
+  commands. The page notes that the new multitrigger mode needs Model D firmware 1.0.6 and that pitch bend range is
+  disabled in 1.0.5. It does not read the synth's state back, which its to-do list names as missing. The address given in
+  the README no longer resolves; the same page is served from model-d.netlify.app. Nothing is flashed.
+status: dormant
+authors:
+  - name: Mikkel Gravgaard
+    url: https://github.com/grav
+source: https://github.com/grav/model-d
+source_status: open
+license: unspecified
+license_notes: No LICENSE file and no licence statement in the repository.
+homepage: https://model-d.netlify.app/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a Web MIDI browser such as Chrome, connect the Model D over USB, click Request MIDI Access and
+  allow SysEx. The multitrigger "new" mode needs Model D firmware 1.0.6.
+brick_risk: false
+tags: [editor, web-midi, sysex, midi, web]
+versions:
+  - version: master @ 8d392f4
+    date: 2018-08-24
+    url: https://github.com/grav/model-d/commit/8d392f4
+    notes: No tagged releases; this is the latest commit.

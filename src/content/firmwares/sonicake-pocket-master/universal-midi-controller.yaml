@@ -1,0 +1,35 @@
+device: sonicake-pocket-master
+also_devices: [valeton-gp-5]
+kind: tool
+name: Universal MIDI Controller
+summary: >-
+  Next.js PWA that turns a browser into a pedalboard controller with preset and FX pads. It has built-in profiles for the Sonicake Pocket Master, with CC numbers and tap delay by SysEx, and the Valeton GP-5, plus a looper, songbook and setlists.
+description: >-
+  Rights warning: docs/ holds two PDF MIDI tables, one for the Pocket Master and one for the Valeton GP-5, which look like
+  the makers' own documents.
+
+  The page sends Program Change and CC messages to a chosen Web MIDI output, with pads that select presets and pads
+  that toggle effects on and off. A setup wizard fills the pads from the chosen pedalboard profile. The Pocket Master
+  profile maps the effect blocks, tuner, looper and drum to CC numbers, and its tap delay sends SysEx using data from
+  suckyble's PocketEdit research, stored as a delay table. Other parts are a looper timed from the page, a songbook with
+  chord sheets and setlists, keyboard bindings and JSON export. It can drive other devices with generic messages.
+status: active
+authors:
+  - name: hitaloose
+    url: https://github.com/hitaloose
+source: https://github.com/hitaloose/universal-midi-controller
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and the README states no license.
+homepage: https://hitaloose.github.io/universal-midi-controller/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Edge, allow MIDI access and pick the pedal as the output. Install it from the browser to
+  use offline.
+brick_risk: false
+tags: [controller, web-midi, usb-midi, midi, looper, setlist, web]
+versions:
+  - version: main @ ce2fbd9
+    date: 2026-10-17
+    url: https://github.com/hitaloose/universal-midi-controller/commit/ce2fbd9
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,82 @@
+device: ableton-move
+name: Piano Practice
+summary: Schwung module that makes the Move a sight-reading trainer. Notes scroll across a staff on the display and you play them on the pads, scored on timing. Has scales, chords, songs, ear training and its own piano. The same practice runs in a browser.
+description: >-
+  Each exercise is played first guided, with pads lighting the way, then solo.
+  Scoring windows are 60 ms for perfect and 120 ms for good, and the scroll waits
+  at a missed note. Material comes from Move's 22 scales, chord qualities,
+  progressions, arranged pieces at four hand levels, hand-written JSON exercises and
+  five trainers. The piano is a built-in sampler using four velocity layers of the
+  Salamander Grand Piano, with a claves metronome, and MIDI out is optional. A
+  Rust DSP library is compiled into the module. A browser version is run with npm
+  from the same code. It needs Schwung, which the README describes as unofficial
+  software that modifies the Move's software. The README says it was developed with
+  AI assistance.
+status: active
+authors:
+  - name: Torben Gräber
+    url: https://github.com/graebe
+source: https://github.com/graebe/schwung-piano-practice
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  Releases up to 1.8.1 were MIT and keep that licence. The piano samples are
+  Salamander Grand Piano V3 under CC BY 3.0, modified, and the metronome is from
+  the Versilian Community Sample Library under CC0; their licence texts ship in
+  the tarball.
+homepage: https://github.com/graebe/schwung-piano-practice#readme
+distribution: download
+requires_stock: Schwung 1.4.0 or newer on the Move (tested on 1.7.3)
+install_notes: >-
+  Download piano-practice-module.tar.gz (about 36 MB) from the releases page, or
+  clone the repository and run sh scripts/install.sh, which copies the module to
+  the Move over SSH (move.local by default). Open it from the Schwung Tools menu.
+  Schwung's own recovery guidance applies.
+brick_risk: false
+tags: [chords, scales, game, utility, sdk]
+image:
+  url: https://raw.githubusercontent.com/graebe/schwung-piano-practice/main/docs/media/move-practice.png
+  alt: Move display showing a PRACTICE header, five round icons with the first selected, and the text Notes and JOG choose
+  credit: graebe
+  source_url: https://github.com/graebe/schwung-piano-practice#readme
+  first_party: true
+versions:
+  - version: v2026.10.23.4
+    date: 2026-10-26
+    url: https://github.com/graebe/schwung-piano-practice/releases/tag/v2026.10.23.4
+  - version: v2026.10.23.1
+    date: 2026-10-23
+    url: https://github.com/graebe/schwung-piano-practice/releases/tag/v2026.10.23.1
+  - version: v2026.10.22.9
+    date: 2026-10-23
+    url: https://github.com/graebe/schwung-piano-practice/releases/tag/v2026.10.22.9
+  - version: v2026.10.22.8
+    date: 2026-10-23
+    url: https://github.com/graebe/schwung-piano-practice/releases/tag/v2026.10.22.8
+  - version: v2026.10.22.7
+    date: 2026-10-23
+    url: https://github.com/graebe/schwung-piano-practice/releases/tag/v2026.10.22.7
+  - version: v2026.10.22.2
+    date: 2026-10-22
+    url: https://github.com/graebe/schwung-piano-practice/releases/tag/v2026.10.22.2
+  - version: v1.8.1
+    date: 2026-10-08
+    url: https://github.com/graebe/schwung-piano-practice/releases/tag/v1.8.1
+  - version: v1.5.1
+    date: 2026-10-07
+    url: https://github.com/graebe/schwung-piano-practice/releases/tag/v1.5.1
+  - version: v1.5.0
+    date: 2026-10-07
+    url: https://github.com/graebe/schwung-piano-practice/releases/tag/v1.5.0
+  - version: v1.4.0
+    date: 2026-09-24
+    url: https://github.com/graebe/schwung-piano-practice/releases/tag/v1.4.0
+  - version: v1.1.1
+    date: 2026-09-24
+    url: https://github.com/graebe/schwung-piano-practice/releases/tag/v1.1.1
+  - version: v1.0.0
+    date: 2026-09-24
+    url: https://github.com/graebe/schwung-piano-practice/releases/tag/v1.0.0
+  - version: v0.9.0
+    date: 2026-09-24
+    url: https://github.com/graebe/schwung-piano-practice/releases/tag/v0.9.0

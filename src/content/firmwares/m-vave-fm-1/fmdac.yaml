@@ -1,0 +1,26 @@
+device: m-vave-fm-1
+name: Fmdac
+summary: >-
+  Drum firmware built on Dinghy: four kit tracks that each play a built-in drum machine or send MIDI using chart maps for hardware and apps, a step grid with song chain, a take recorder and DAC-flavoured headphone effects, with a browser installer.
+description: >-
+  Each of the four tracks is a kit of eight lanes. A kit plays one of seven drum sets (808, 909, CR-78, SDS and original synthesised PCM sets for DMX, 707 and Linn styles, with no sample ROMs) or is a MIDI kit that stays silent locally and sends notes on its own channel using maps for drum machines and a long list of drum apps. The keys follow Skiff's General MIDI drum layout, SEQ is a step grid followed by a chain of four patterns, and REC while stopped quantises a take of one, two or four bars. The FX page runs the headphone mix through converter models named after a Prophet VS, DX7, SP-1200, Emulator II and S950. Computer audio streamed over USB is mixed into the headphones and resampled from 48 kHz when needed. The installer page also offers to reinstall Skiff, SLOOP or M-VAVE's own FM-1 package, each downloaded from its publisher after a size and SHA-256 check; none of them is stored in the repository.
+status: active
+authors:
+- name: chinotto1
+  url: https://github.com/chinotto1
+source: https://github.com/chinotto1/Fmdac
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  fw/LICENSING.md states GPL-3.0-only for the tree, which is Dinghy at commit 22acb91 renamed and extended. The update protocol in docs/vendor is adapted from Skiff and Felucca (GPL-3.0-only).
+homepage: https://chinotto1.github.io/Fmdac/
+distribution: browser-installer
+install_notes: >-
+  Open the page in Chrome or Edge on a computer, connect the FM-1 by USB data cable and install; the page checks the package identity FM-1_973, its size and its SHA-256 first. Its other tab restores Skiff 1.3.2, SLOOP 2.7.1 or M-VAVE's FM-1.fwsc, downloaded from their publishers (the M-VAVE file from M-VAVE's own download host). Installing replaces the firmware, and the README warns the FM-1 can be left unable to start until it is recovered. An interrupted write leaves the FM-1 in update mode.
+brick_risk: true
+tags: [drums, sequencer, midi, usb-audio, fx, fork]
+versions:
+- version: main @ 673850b
+  date: 2026-10-26
+  url: https://github.com/chinotto1/Fmdac/commit/673850b09b8d0e3e9e16cc516d4fddff5ae50b56
+  notes: No tagged releases; this is the latest commit. The README names the package Fmdac 0.13.

@@ -1,0 +1,42 @@
+device: teenage-engineering-ep-133
+also_devices: [teenage-engineering-ep-40]
+name: ep-133-project-export
+kind: tool
+summary: Independent fork of the EP-133 Export to DAW browser app that adds Ableton Live 10 export, recorded fader automation and a hybrid Drum Rack layout. No hosted copy; it is built from source.
+description: >-
+  A copy of phones24's EP-133 Export to DAW, listed in this directory as EP-133
+  Export to DAW, with its own commits. It reads projects from an EP-133, EP-1320
+  or EP-40 over Web MIDI, or from a .pak or .ppak backup, and exports Ableton
+  Live, DAWproject, REAPER or MIDI files with samples. The changes described in
+  its README are native Live 10 project output beside Live 11 and later,
+  decoded recorded fader automation (except time, attack and release), and
+  Ableton export that builds one Drum Rack per group for single-pitch pads while
+  keeping chromatic pads as MIDI tracks. Its README no longer lists the
+  upstream FastTracker 2 export. It still points to the upstream hosted site for
+  trying the app.
+status: active
+authors:
+  - name: Victor Giers
+    url: https://github.com/giers10
+source: https://github.com/giers10/ep-133-project-export
+source_status: open
+license: AGPL-3.0-only
+license_notes: The LICENSE file is the unmodified AGPL v3 text, and the README states no "or later" grant.
+distribution: source-only
+install_notes: >-
+  Install with pnpm and start the Vite dev server from a checkout, then open it
+  in a browser with Web MIDI. The README's "try it out" link goes to the upstream
+  project's site, not to this fork.
+brick_risk: false
+tags: [converter, fork, web, midi, sysex, samples]
+image:
+  url: https://raw.githubusercontent.com/giers10/ep-133-project-export/main/public/ep133-to-daw.png
+  alt: Export to DAW page connected to a device, showing tempo 124, five scenes and track rows of dark note blocks on a pink grid under a scene 01 bar
+  credit: giers10
+  source_url: https://github.com/giers10/ep-133-project-export#readme
+  first_party: true
+versions:
+  - version: main @ aacd6bb
+    date: 2026-07-15
+    url: https://github.com/giers10/ep-133-project-export/commit/aacd6bb
+    notes: No tagged releases; this is the latest commit.

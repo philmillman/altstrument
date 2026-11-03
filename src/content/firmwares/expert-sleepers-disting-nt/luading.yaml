@@ -1,0 +1,34 @@
+device: expert-sleepers-disting-nt
+name: Luading
+kind: tool
+summary: Browser workbench for writing and testing disting NT Lua scripts. It runs Lua 5.4 in a Web Worker, simulates the algorithm callbacks and the 256x64 display, scores scripts and can drive outputs to Web Audio or MIDI. It does not connect to the module.
+description: >-
+  A Monaco editor with disting NT completions sits next to simulated CV, gate, trigger and clock inputs, parameters and
+  front-panel controls. The simulator runs init, step, trigger, gate, draw and MIDI callbacks, reports average, 95th
+  percentile and maximum timing against a 1 ms budget measured in the browser, and checks scripts against the scripting
+  contract. Physical Web MIDI input can stand in for CV and gates. Bundled example scripts sit in folders named for Expert
+  Sleepers and for the author. Rights warning: the repository includes a PDF copy of Expert Sleepers' disting NT Lua scripting
+  manual 1.12 and example scripts adapted from Mutable Instruments Grids under the GPL. It is not affiliated with Expert
+  Sleepers, and timings are not a measure of the hardware's CPU use.
+status: active
+authors:
+  - name: Fredi Bach
+    url: https://github.com/FrediBach
+source: https://github.com/FrediBach/luading
+source_status: open
+license: MIT
+license_notes: >-
+  The project licence is MIT. THIRD_PARTY_NOTICES.md lists adaptations under their own terms, including Mutable Instruments
+  Grids (GPL-3.0-or-later) and display font atlases under CC BY-SA 3.0 and CC BY 3.0. The docs folder holds Expert Sleepers'
+  manual PDF, which the project licence does not cover.
+homepage: https://luading.dev
+distribution: browser-installer
+install_notes: >-
+  Open the hosted site in Chrome or Edge. For development, use Node.js 24 and run npm ci and npm run dev.
+brick_risk: false
+tags: [emulator, scripting, sdk, editor, web-midi, web]
+versions:
+  - version: main @ 607e614
+    date: 2026-09-19
+    url: https://github.com/FrediBach/luading/commit/607e614
+    notes: No tagged releases; this is the latest commit.

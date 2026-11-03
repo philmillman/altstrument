@@ -1,0 +1,28 @@
+device: m-vave-fm-1
+name: SloopUI
+kind: tool
+summary: >-
+  React and Tailwind studio for the FM-1 running SLOOP: Web MIDI synth, mixer, sequencer and FX editing, sample upload with a zone editor and a browser-only virtual mode that models SLOOP's engines for working without the unit.
+description: >-
+  Connects over Web MIDI with SysEx using SLOOP's editor protocol, reads the firmware's own parameter descriptors and keeps in sync by watching and pinging. It provides a four-track mixer, factory and user presets U01 to U32, project slots A to D, an arranger, a step grid, a piano roll, Standard MIDI File and JSON import and export, automation lanes, MIDI Learn and diagnostics. The Sample Lab builds the FM-1's sample format (IMA ADPCM with a CRC) from several zones with loops and uploads it to the USR1 to USR3 slots. The virtual mode uses a Tone.js model of the nine SLOOP engines that the README says is approximate, not a port of the firmware. Playback and record transport stay on the unit because the editor protocol does not expose them. Nothing is flashed. There is no hosted copy; run it with npm, and the README says a physical FM-1 acceptance run is still needed.
+status: active
+authors:
+- name: Alexander Seel (AlexanderSeel)
+  url: https://github.com/AlexanderSeel
+source: https://github.com/AlexanderSeel/SloopUI
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and no licence statement in the README or package.json.
+homepage: https://github.com/AlexanderSeel/SloopUI
+distribution: source-only
+requires_stock: SLOOP firmware with editor protocol v5
+install_notes: >-
+  npm install, then npm run dev; use Chrome or Edge on localhost or https and allow MIDI with SysEx. Choose HARDWARE, press SCAN, select the FM-1 ports and Connect. The sample upload overwrites the chosen USR slot.
+brick_risk: false
+tags: [editor, sampler, sample-transfer, sysex, midi, web, emulator]
+versions:
+- version: main @ cbd2466
+  date: 2026-10-07
+  url: https://github.com/AlexanderSeel/SloopUI/commit/cbd2466c6c5c8a685d56b9464de185e524d17aa9
+  notes: No tagged releases; this is the latest commit.

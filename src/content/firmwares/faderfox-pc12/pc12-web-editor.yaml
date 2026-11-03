@@ -1,0 +1,25 @@
+device: faderfox-pc12
+name: Faderfox PC12 Web Editor
+kind: tool
+summary: Single-file browser editor for the Faderfox PC12. It shows the grid of 72 pots, 12 buttons and the encoder, edits each control's command type, channel, number and range, and sends and receives setups over Web MIDI SysEx or as .syx and JSON files.
+description: >-
+  The unit is put in Setup Mode and told to send or receive, and the page fills its grid from the incoming dump or sends the edited setup back. Controls can be copied along a row or column with
+  incrementing CC numbers, and a setup can be reset to factory values. The code is one HTML file with no build step. It is unofficial.
+status: dormant
+authors:
+  - name: veroc
+    url: https://github.com/veroc
+source: https://github.com/veroc/faderfox-pc12
+source_status: open
+license: unspecified
+license_notes: There is no license file, and the README only calls it an unofficial community tool.
+distribution: source-only
+install_notes: >-
+  Download index.html and open it in Chrome or Edge, allow MIDI access with SysEx, and pick the PC12 as input and output. There is no hosted copy of the page. The README lists the unit's Setup Mode steps for receiving and sending.
+brick_risk: false
+tags: [editor, web-midi, sysex, usb-midi, midi, presets, web]
+versions:
+  - version: main @ 7ed46f3
+    date: 2026-04-05
+    url: https://github.com/veroc/faderfox-pc12/commit/7ed46f3e9296371797a9a9b7f3e16bfb73095799
+    notes: No tagged releases; this is the latest commit.

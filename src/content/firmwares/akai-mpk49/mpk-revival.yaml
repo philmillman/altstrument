@@ -1,0 +1,34 @@
+device: akai-mpk49
+name: MPK-Revival
+kind: tool
+summary: Browser editor and SysEx librarian for the Akai MPK49 with a reverse-engineered memory map of its 1,033-byte preset. It edits all 30 slots, senses control moves live, and sends to the keyboard. The repository also has Ableton Live and Reason control scripts.
+description: >-
+  Rights warning: the repository holds copies of the keyboard's 30 factory presets, as JSON and raw .syx backups and as base64 data inside the editor, which are Akai's preset data.
+  The editor shows the pad matrix, knobs, faders, switches and arpeggiator of a slot and highlights a control as you touch it on the hardware. Presets can also
+  be written as JSON and compiled to .syx files with a Node script. The remote scripts map the keyboard's three control banks to Ableton Live 12 and Reason 14, and a spec file documents the
+  memory map. The README says the project is experimental, asks users to back up their presets first, and credits Google Gemini for part of the code.
+status: active
+authors:
+  - name: Carlo Monjaraz-Tec
+    url: https://github.com/carlomontec
+source: https://github.com/carlomontec/mpk-revival
+source_status: open
+license: AGPL-3.0-only
+license_notes: The LICENSE file is the GNU AGPL version 3 text and the README says AGPLv3, with no later-version clause. The factory preset dumps and backups are Akai's data and are not covered by that license.
+homepage: https://github.com/carlomontec/mpk-revival
+distribution: source-only
+install_notes: >-
+  Serve the editor folder locally (python3 -m http.server 8080 in editor/), open it in Chrome, Edge or Brave, connect the MPK49 over USB and press Connect MIDI. There is no hosted copy. The optional DAW scripts install with daw-integration/install.sh. Back up your presets before writing to the keyboard.
+brick_risk: false
+tags: [editor, librarian, web-midi, sysex, usb-midi, midi, presets, web]
+image:
+  url: https://raw.githubusercontent.com/carlomontec/mpk-revival/main/docs/assets/mpk_revival_editor.png
+  alt: MPK-Revival Studio showing a 12-pad matrix with note names, a preset editor panel with note, play mode and arpeggiator settings, performance control buttons and an on-screen keyboard
+  credit: Carlo Monjaraz-Tec
+  source_url: https://github.com/carlomontec/mpk-revival#readme
+  first_party: true
+versions:
+  - version: main @ 7410327
+    date: 2026-09-20
+    url: https://github.com/carlomontec/mpk-revival/commit/7410327b64e1c2ae23de4f98100ecc653dcf41d8
+    notes: No tagged releases; this is the latest commit.

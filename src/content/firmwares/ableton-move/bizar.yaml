@@ -1,0 +1,35 @@
+device: ableton-move
+name: Bizar
+summary: >-
+  Schwung sound generator with two interacting digital engines, a modulation grid, a cycling envelope, a sequencer, an arpeggiator and three effect slots, plus 128 factory presets. A WebAssembly build runs in the browser.
+description: >-
+  The workflow follows two-engine performance synths such as Arturia's MiniFreak, and the README says it contains no Arturia code or
+  presets. It has six voices, with mono, unison and chord modes. Oscillator 1 offers engines such as wavetable, SuperWave, formant,
+  modal, speech and string models, and oscillator 2 adds processor modes that work on oscillator 1. Several engines are adapted from Plaits.
+  Modulation comes from two LFOs, a looping envelope, four macros and a grid of twelve destination columns. A
+  Remote UI gives a browser editor with envelope and matrix views. The repository also has a build option that compiles a bank
+  of your own MiniFreak V presets into the module for personal use, and says such a build must not be shared. The browser
+  page runs the engine on its own and does not connect to a Move.
+status: active
+authors:
+  - name: klaine
+    url: https://github.com/klaine
+source: https://github.com/klaine/bizar
+source_status: open
+license: MIT
+license_notes: >-
+  Parts of the engines are adapted from Plaits by Emilie Gillet, listed in THIRD_PARTY_NOTICES.md, and the 32 wavetable
+  banks come from the CC0 WaveEdit Online collection. The MiniFreak import tooling reads presets you export yourself; none are included.
+homepage: https://klaine.github.io/bizar/
+distribution: download
+requires_stock: Schwung installed on the Move, with SSH access enabled
+install_notes: >-
+  Needs Schwung. Download bizar-module.tar.gz from the release, extract it so the bizar folder sits in
+  /data/UserData/schwung/modules/sound_generators/ and rescan modules in Schwung Manager.
+brick_risk: false
+tags: [synth-engine, sequencer, synth, web]
+versions:
+  - version: v0.8.2
+    date: 2026-10-27
+    url: https://github.com/klaine/bizar/releases/tag/v0.8.2
+    notes: First public release.

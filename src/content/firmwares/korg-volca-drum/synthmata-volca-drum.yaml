@@ -1,0 +1,31 @@
+device: korg-volca-drum
+name: synthmata Volca Drum Editor
+kind: tool
+summary: Browser patch editor for the volca drum over Web MIDI, with a control for every part and layer parameter, LCD-style value readouts and a Create Sharable Patch Link button. It works in split-channel mode only and is one of several editors on the synthmata site.
+description: >-
+  The page is built with the author's own ccynthmata script, which turns marked range inputs into MIDI control change senders
+  and puts the whole patch into a shareable link. You pick the MIDI interface and the patch is sent to the synth straight away.
+  Source, modulation and envelope choices use small LCD images that look like the synth's screen. The page says that only
+  split-channel mode, the factory default, is supported. The author says saving a patch is best done by keeping the shared link. Nothing is flashed.
+status: dormant
+authors:
+  - name: synthmata
+    url: https://github.com/synthmata
+source: https://github.com/synthmata/synthmata.github.io
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The repository LICENSE file is the GNU GPL version 3 text with no copyright line. The ccynthmata helper script that the page
+  uses is published separately under MIT at synthmata/ccynthmata.
+homepage: https://synthmata.com/volca-drum/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a browser with Web MIDI, connect the volca drum through a USB-MIDI interface and choose that
+  interface in the setup panel. The synth must be in split-channel mode.
+brick_risk: false
+tags: [editor, web-midi, midi, presets, web]
+versions:
+  - version: master @ f69cdd7
+    date: 2019-09-21
+    url: https://github.com/synthmata/synthmata.github.io/commit/f69cdd780eabde49262ebdabe11202b9b6b67d9e
+    notes: Latest commit that changed the volca-drum folder; the repository has no tagged releases.

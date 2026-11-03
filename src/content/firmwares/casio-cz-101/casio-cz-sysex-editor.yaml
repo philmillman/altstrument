@@ -1,0 +1,33 @@
+device: casio-cz-101
+name: CZ SysEx Editor
+kind: tool
+summary: Small browser sound editor for Casio CZ synths that sends the sound over Web MIDI SysEx as sliders move. It has controls for the two DCO, DCW and DCA lines, the modulation mode, the wave choices, the envelopes and randomizers. The interface is in Spanish.
+description: >-
+  Rights warning: the repository contains sysex_definition.txt, a copy of an old text document on the CZ-101, CZ-1000 and CZ-5000
+  SysEx format, and a cert.pem and key.pem pair that were committed, which are not covered by the MIT licence.
+
+  The page asks for MIDI access with SysEx, and every change to a slider, switch or wave choice builds a CZ tone message and
+  sends it to the selected output. It offers per-line randomize buttons and envelope editing with up to eight steps. It is a
+  single static page with two scripts and no build step. Nothing is flashed.
+status: dormant
+authors:
+  - name: Emilio Norrmann
+    url: https://github.com/enorrmann
+source: https://github.com/enorrmann/casio-cz-sysex-editor
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text. The sysex_definition.txt document in the repository is a text written by someone else and is not covered by it, and
+  the repository includes a TLS certificate and private key.
+homepage: https://enorrmann.github.io/casio-cz-sysex-editor/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a browser with Web MIDI, connect the CZ through a MIDI interface, allow MIDI access with SysEx and
+  choose the output port.
+brick_risk: false
+tags: [editor, web-midi, sysex, midi, presets, web]
+versions:
+  - version: main @ 534ff68
+    date: 2025-09-04
+    url: https://github.com/enorrmann/casio-cz-sysex-editor/commit/534ff681d84dfa13235be6a4c0f792ec47ea8c4b
+    notes: No tagged releases; this is the latest commit.

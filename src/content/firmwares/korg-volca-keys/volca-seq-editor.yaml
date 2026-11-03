@@ -1,0 +1,33 @@
+device: korg-volca-keys
+also_devices: [korg-volca-bass]
+name: volca seq editor
+kind: tool
+summary: Browser piano-roll sequence editor for the volca keys and volca bass over Web MIDI. Neither synth has MIDI out or SysEx, so it transfers by playing the pattern into the synth's real-time record with MIDI start, clock, notes and optional CC motion.
+description: >-
+  A Vue 3 and Vuetify app with a model menu that switches the CC map and colours between the keys and the bass. It offers a
+  piano-roll with step on and active-step editing, a finer in-step timing mode for the keys, per-oscillator lanes for the bass,
+  Euclidean fills, and motion lanes that are sent as control changes. To send a sequence you press REC on the volca, then
+  start the transfer, which plays MIDI start, clock and notes for one or more passes before stopping. Sequences import and
+  export as standard MIDI files or JSON and are kept in a local library in the browser. The README, in Japanese, cites Korg's
+  MIDI implementation chart for the lack of SysEx and MIDI out, and says the editor adapts ideas from the author's volcafm2
+  tools. Nothing is flashed.
+status: active
+authors:
+  - name: Masaki Ono
+    url: https://github.com/mosynthkey
+source: https://github.com/mosynthkey/volca-seq-editor
+source_status: open
+license: MIT
+license_notes: The LICENSE file names Masaki Ono / Melissa Audio as copyright holder.
+homepage: https://mosynthkey.github.io/volca-seq-editor/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted app in Chrome or Edge, connect a MIDI interface to the volca's MIDI IN and choose it as the output. Put the
+  volca in REC before pressing the transfer button.
+brick_risk: false
+tags: [editor, sequencer, web-midi, midi, web]
+versions:
+  - version: main @ 03c037b
+    date: 2026-09-13
+    url: https://github.com/mosynthkey/volca-seq-editor/commit/03c037bba39872ade3793daca71789f00c677983
+    notes: No tagged releases; this is the latest commit.

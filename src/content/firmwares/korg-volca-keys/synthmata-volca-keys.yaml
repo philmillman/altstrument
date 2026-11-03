@@ -1,0 +1,29 @@
+device: korg-volca-keys
+name: synthmata Volca Keys Editor
+kind: tool
+summary: Browser patch editor for the volca keys over Web MIDI with sliders for the synth's control changes, an octave selector and a sharable patch link. It is one of the synthmata editors and was added after a pull request.
+description: >-
+  The page uses the author's ccynthmata script to turn its sliders into MIDI control changes for the volca keys on a chosen
+  channel and to pack the patch into a link. You choose the MIDI interface in the setup panel. The patch is not saved by the
+  page itself, so the author suggests keeping the link. Nothing is flashed.
+status: dormant
+authors:
+  - name: synthmata
+    url: https://github.com/synthmata
+source: https://github.com/synthmata/synthmata.github.io
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The repository LICENSE file is the GNU GPL version 3 text with no copyright line.
+homepage: https://synthmata.github.io/volca-keys/
+distribution: browser-installer
+install_notes: >-
+  Open the page in a browser with Web MIDI, connect the volca keys through a MIDI interface and choose it in the setup panel.
+  The same page at synthmata.com/volca-keys returned 404 on 2026-11-03, so use the github.io address.
+brick_risk: false
+tags: [editor, web-midi, midi, presets, web]
+versions:
+  - version: master @ 2ba4720
+    date: 2020-09-21
+    url: https://github.com/synthmata/synthmata.github.io/commit/2ba472039e12d1a0a5fdfa86250937f1786b9df0
+    notes: Latest commit that changed the volca-keys folder; the repository has no tagged releases.

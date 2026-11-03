@@ -1,0 +1,41 @@
+device: teenage-engineering-op-xy
+name: opxy-multisample (Glasside copy)
+kind: tool
+summary: Copy of the OP-XY multisample builder, published the same day under another account, with a hosted page that works. It adds an option to render loop crossfades into the audio and prefers longer loops. Otherwise the same import and auto-sample workflow and .preset export.
+description: >-
+  Starts from version 0.4.0 of the builder by David Odlum, listed in this
+  directory as multisample builder for OP-XY, and carries its README, MIT
+  licence text and screenshots with the author's links changed. Its changelog adds
+  version 0.4.1, which bakes crossfades into the audio and sets a 150 ms minimum
+  loop length, and 0.4.2, which switches to an equal-gain curve and leaves baking
+  off by default. Nothing is sent to the OP-XY; presets are downloaded as a ZIP.
+  This entry exists mainly because the original's domain did not resolve on
+  2026-11-03 and this copy's Pages address did.
+status: active
+authors:
+  - name: Glasside
+    url: https://github.com/Glassides
+source: https://github.com/Glassides/opxy-multisample
+source_status: open
+license: MIT
+license_notes: The LICENSE file is MIT with its own copyright line, copied from the original repository's text.
+homepage: https://glassides.github.io/opxy-multisample/
+distribution: browser-installer
+requires_stock: 1.2.0
+install_notes: >-
+  Open the hosted page in Chrome or Edge. Auto-sampling needs MIDI and an audio
+  input. Unzip the download, put the device in disk mode and copy the .preset
+  folder into its presets directory.
+brick_risk: false
+tags: [sampler, converter, presets, samples, web-midi, fork, web]
+image:
+  url: https://raw.githubusercontent.com/Glassides/opxy-multisample/main/docs/screenshot-light.png
+  alt: Multisample builder page in light theme with a preset name field, a drop area, processing dials, three loaded zones with waveforms, a loop editor and a keyboard
+  credit: Glassides
+  source_url: https://github.com/Glassides/opxy-multisample#readme
+  first_party: true
+versions:
+  - version: main @ 617b4d1
+    date: 2026-10-17
+    url: https://github.com/Glassides/opxy-multisample/commit/617b4d1
+    notes: No tagged releases; this is the latest commit.

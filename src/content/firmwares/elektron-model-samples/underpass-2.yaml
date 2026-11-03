@@ -1,0 +1,38 @@
+device: elektron-model-samples
+name: underpass-2
+kind: tool
+summary: Fork of underpass, the browser sampler that records audio and sends it to a Model:Samples over Web MIDI. It is rewritten in TypeScript and adds a record gate that drops leading silence, a single record toggle and more stable transfers.
+description: >-
+  Rights warning: the repository commits Elektron's Model:Samples and Transfer user manuals as PDF and text files.
+
+  The fork keeps the original's flow: pick an audio input, record at 48 kHz, sum to mono and send the sample as a MIDI
+  Sample Dump to the inbox folder or a chosen sample number. Changes listed in the README are a move to TypeScript with
+  Vite and Tailwind, a single record and stop button, fixes to sample rate handling and mono summing, steadier transfers with clearer
+  progress, an in-app help panel, and a gated recorder that waits for audio above a threshold and keeps a short pre-roll
+  so the attack is kept. The README also lists Firefox 108 and later on desktop as working. It was
+  made with Claude Code, according to the commit history and a CLAUDE.md in the repository, and keeps the original
+  copyright notice.
+status: active
+authors:
+  - name: Ed Johnson-Williams
+    url: https://github.com/edjw
+  - name: Markus Noga
+    url: https://github.com/mlnoga
+source: https://github.com/edjw/underpass-2
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The LICENSE file is the GPL v3 text and the page header offers the choice of any later version, as in the original. The
+  Elektron manual files in the repository are Elektron's and not covered by it.
+homepage: https://underpass-2.netlify.app/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, Edge, Firefox 108 or later, or Opera, connect the Model:Samples over USB, pick the
+  input and MIDI ports, then record and stop. The sample appears in inbox/0 on the unit, or at the Sample ID you set.
+brick_risk: false
+tags: [sample-transfer, sampler, web-midi, sysex, usb-midi, web, midi, fork]
+versions:
+  - version: main @ 8dd3bd3
+    date: 2026-03-28
+    url: https://github.com/edjw/underpass-2/commit/8dd3bd39ee8629d8cab1efc1e07602fbae206223
+    notes: No tagged releases; this is the latest commit.

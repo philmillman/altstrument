@@ -1,0 +1,30 @@
+device: roland-jv-1010
+kind: tool
+name: JV-1010 Tool
+summary: Small 2015 browser utility for the JV-1010. It requests the user patches and loads .syx files, lists the patches it holds, and can send an identity request. Run it from the repository, because the page published on the author's site is an older build.
+description: >-
+  The page uses Web MIDI with SysEx permission. It has buttons to fetch one user patch or all user patches from the module,
+  a drop zone for .syx files, and an identity request, and it lists the user, preset A to E, GM and session patches by name. A
+  second MIDI input can be chosen for a controller. The code is plain JavaScript with jQuery. Opening the repository's page from
+  a local web server shows the interface, while the copy at ahlzen.github.io/jv1010tool is an August 2015 snapshot that lacks
+  one of its scripts. Nothing is flashed.
+status: dormant
+authors:
+  - name: Lars Ahlzen
+    url: https://github.com/Ahlzen
+source: https://github.com/Ahlzen/jv1010tool
+source_status: open
+license: MIT
+license_notes: The LICENSE.md file is the MIT text, copyright 2015 Lars Ahlzen.
+distribution: source-only
+install_notes: >-
+  Serve the repository folder with any static web server and open it in Chrome or another browser with Web MIDI, then allow
+  SysEx access. The README says the tool targeted Chrome 43 or Opera 30 and later and suggests a polyfill and the Jazz plugin
+  for other browsers. Back up the module's user patches before sending anything.
+brick_risk: false
+tags: [editor, librarian, web-midi, sysex, midi, presets, web]
+versions:
+  - version: master @ eb54e55
+    date: 2015-09-29
+    url: https://github.com/Ahlzen/jv1010tool/commit/eb54e55d468c008eef4cd61a7c216e2c6c6915f9
+    notes: No tagged releases; this is the latest commit.

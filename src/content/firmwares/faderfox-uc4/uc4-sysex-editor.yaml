@@ -1,0 +1,27 @@
+device: faderfox-uc4
+name: UC4 SysEx Editor
+kind: tool
+summary: Single-page browser editor for all 18 setups of the Faderfox UC4. It edits the full SysEx dump file, with an overview grid, conflict detection, a setup manager, JSON backups and undo, and it runs from one HTML file with no server.
+description: >-
+  The page loads the factory defaults and lets you edit every control in all eight groups of each setup, either one control at a time or in an
+  overview grid of all 64 controls per type. It finds duplicate MIDI assignments, copies and swaps whole setups, and keeps labels for them. Setups go out as a
+  100,640 byte .syx file or as JSON. The page works on files, so the .syx dump is moved to and from the unit with a separate SysEx tool. The repository also has two example controller maps.
+status: dormant
+authors:
+  - name: thegdyne
+    url: https://github.com/thegdyne
+source: https://github.com/thegdyne/uc4-sysex-editor
+source_status: open
+license: MIT
+license_notes: The LICENSE file names no copyright holder.
+homepage: https://thegdyne.github.io/uc4-sysex-editor/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page, edit, then export the .syx file and send it to the UC4 with a SysEx utility. The README describes it as unofficial and not affiliated with Faderfox.
+brick_risk: false
+tags: [editor, librarian, sysex, midi, presets, web]
+versions:
+  - version: main @ 5f08b96
+    date: 2026-01-17
+    url: https://github.com/thegdyne/uc4-sysex-editor/commit/5f08b967f21db2d0d201c20fe233a3ca40b086e8
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,34 @@
+device: teenage-engineering-ep-133
+name: ep133-ppak
+kind: tool
+summary: Python library and command-line tools that write EP-133 .ppak project archives, load samples onto pads over USB MIDI from a manifest, and turn an arrangement plus stems into a song-mode project with scenes and a song position list.
+description: >-
+  Documents the file-transfer SysEx and the .ppak format, including the pad
+  record layout and the two pad numbering schemes, and builds on community work
+  by phones24, ep133-krate and others. Five command-line tools load one sample
+  onto a pad, bulk-load from a JSON manifest, set BPM time-stretch values,
+  export a song-mode archive from an arrangement file, and capture a reference
+  project from the device. Sample-mode loading was checked on hardware; the
+  README says song-mode export is checked only through its original consumer and
+  that validation of the packaged version is pending. Tested on OS 2.0.5. It
+  warns that adding a settings file to an archive causes a device error that
+  needs a flash-format recovery.
+status: active
+authors:
+  - name: Zak Brown
+    url: https://github.com/ZacharySBrown
+source: https://github.com/ZacharySBrown/ep133-ppak
+source_status: open
+license: MIT
+distribution: source-only
+install_notes: >-
+  Needs Python 3.11 or newer. Install with pip from a checkout; the midi extra
+  adds mido and python-rtmidi for live device use. Close other tools that hold
+  the device and keep a backup made with the official sample tool.
+brick_risk: false
+tags: [python, cli, sysex, converter, samples, research]
+versions:
+  - version: main @ 93f0f6b
+    date: 2026-05-02
+    url: https://github.com/ZacharySBrown/ep133-ppak/commit/93f0f6b
+    notes: No tagged releases; this is the latest commit.

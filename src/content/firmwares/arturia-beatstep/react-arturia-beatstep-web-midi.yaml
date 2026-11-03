@@ -1,0 +1,28 @@
+device: arturia-beatstep
+name: react-arturia-beatstep-web-midi
+kind: tool
+summary: Small React demo and hook that read the original BeatStep's pads and knobs through webmidi.js in the browser, plus a controller config file. A demo project from 2020 for building web pages controlled by a BeatStep; there is no hosted page.
+description: >-
+  The useArturia hook maps the unit's default pad notes and knob CCs to pad numbers 1 to 16 and knob numbers 1 to 16, and exposes
+  usePadPress and useKnobTurn with optional callbacks and a step size. The example app shows pads 1, 2 and 9 and knobs 1 and 2
+  reacting. A .beatstep controller configuration is included. The tool reads the controller only and sends nothing
+  to it. The last commit is from December 2020.
+status: dormant
+authors:
+  - name: signalwerk
+    url: https://github.com/signalwerk
+source: https://github.com/signalwerk/react-arturia-beatstep-web-midi
+source_status: open
+license: unspecified
+license_notes: The repository has no license file or license statement.
+distribution: source-only
+install_notes: >-
+  Copy src/useArturia.js into a React project and install webmidi, or run the demo from a clone with npm start and open it
+  in a Web MIDI browser.
+brick_risk: false
+tags: [midi, web-midi, usb-midi, web, controller, utility]
+versions:
+  - version: master @ 5d9cc0f
+    date: 2020-12-13
+    url: https://github.com/signalwerk/react-arturia-beatstep-web-midi/commit/5d9cc0f3916a89951d8ad3e47ee621b78746dbf0
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,37 @@
+device: elektron-digitone
+name: Elektron-Mods
+summary: Workspace for Digitone mk1 mods on OS 1.44. Holds the source of dnmono, a port of the Digitakt Mono, Macro and Sophie machines to the Digitone, plus manifests and notes for 8-track and 16-track expansion builds. No binaries are published.
+description: >-
+  Written for Digitone mk1 and Digitone Keys on OS 1.44, with 1.43 reported as compatible. The one module with source in
+  the repository is dnmono, which adds nine synth machines: saw and pulse, ensemble, chord, formant voice, noise, a
+  three-sine voice, eight Plaits engines and four metallic percussion models. It is a port of
+  Digitakt mods by gdeo607 and soejrd and of Plaits by Emilie Gillet. The release notes also describe builds that add
+  a second bank of four synth and four MIDI tracks, switched with the VOICE key. The module that does that lives in a
+  nested elekloader checkout that is not part of the repository, so only the build manifests and the README of each
+  build are published. The repository ignores every .syx, .bin and .elemod file, so neither stock nor modded firmware
+  is in it. The author's own notes list a known voice-cracking problem when the track and machine modules run
+  together. The repository is a working copy with Windows paths, WSL build steps and emulator checks.
+status: active
+authors:
+  - name: rumorismo
+    url: https://github.com/rumorismo
+source: https://github.com/rumorismo/Elektron-Mods
+source_status: open
+license: GPL-2.0-or-later
+license_notes: >-
+  Stated only in modules/dn-monomachine/mod.json; the repository has no LICENSE file. The ports derive from MIT-licensed
+  upstream code, and the reference sources in modules/ are gitlinks to other authors' repositories.
+homepage: https://github.com/rumorismo/Elektron-Mods
+distribution: source-only
+requires_stock: 1.44 (1.43 reported compatible)
+install_notes: >-
+  Compile the module with an m68k ColdFire cross compiler, link it with elekloader against the official OS file you
+  supply, and send the result with Elektron Transfer. Nothing in the repository replaces the bootloader, and the author
+  leaves hardware flashing to the user.
+brick_risk: false
+tags: [machines, synth-engine, sequencer, emulator, os]
+versions:
+  - version: main @ fe22cb2
+    date: 2026-10-26
+    url: https://github.com/rumorismo/Elektron-Mods/commit/fe22cb2
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,30 @@
+device: behringer-pro-800
+name: Pro 800 SysEx explorations
+kind: tool
+summary: Reverse-engineered tables of the PRO-800's system exclusive messages, with a single-file Web MIDI page that reads and edits the current patch and a few tuning patches as .syx files.
+description: >-
+  The repository documents the PRO-800's SysEx header, version and settings requests, patch dump format and 8-bit to 7-bit
+  encoding, with a CSV mapping cents to per-note tuning values and notes from other users on firmware 1.4.6. pro800.html
+  is a plain viewer and editor that requests the device and patch data, decodes the parameters, renames a patch, sends
+  raw decoded data after a warning prompt and downloads patch files. It is served through a third-party static host
+  rather than GitHub Pages. Four unequal-temperament patches are included as .syx files. Nothing is flashed.
+status: active
+authors:
+  - name: samstaton
+    url: https://github.com/samstaton
+source: https://github.com/samstaton/pro800
+source_status: open
+license: unspecified
+license_notes: No LICENSE file and no licence statement in the repository.
+homepage: https://raw.githack.com/samstaton/pro800/main/pro800.html
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a Web MIDI browser, connect the PRO-800 over USB and allow SysEx. The page sends SysEx to the
+  synth, so back up patches first.
+brick_risk: false
+tags: [editor, web-midi, sysex, usb-midi, midi, research, web]
+versions:
+  - version: main @ 8300c7e
+    date: 2026-04-28
+    url: https://github.com/samstaton/pro800/commit/8300c7e
+    notes: No tagged releases; this is the latest commit.

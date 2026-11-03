@@ -1,0 +1,34 @@
+device: zoom-multistomp
+kind: tool
+name: zoom-ms-utility
+summary: >-
+  Browser patch editor for the Zoom MS-50G, MS-60B and MS-70CDR over Web MIDI. It reads and writes the six-effect patches by SysEx, selects patches and the tuner, and ships with its own notes on the pedals' MIDI messages.
+description: >-
+  The page talks to the pedal's MIDI port named ZOOM MS Series, requests the patch data, lets you change effects and
+  parameters and rename patches, and writes them back to the pedal. Its midimessage.md lists the SysEx, program change and
+  tuner messages the author worked out by experiment, which the author says are not guaranteed. The README calls it a
+  tentative version for checking the MIDI functions. It also describes standalone builds made with NW.js and local web
+  server options, since Chrome blocks the page from file:// URLs. The repository keeps the 1.0.2 Windows and Mac
+  packages only as small placeholder files in dist/. A fork by Alex Radinsky (github.com/radinsky/zoom-ms-utility, hosted at
+  radinsky.github.io/zoom-ms-utility) keeps the web version only, restyles the page and turns off auto-save at start; the
+  editing code is otherwise the same, so it is not listed separately.
+status: dormant
+authors:
+  - name: g200kg
+    url: https://github.com/g200kg
+source: https://github.com/g200kg/zoom-ms-utility
+source_status: open
+license: MIT
+license_notes: The LICENSE file is the MIT text with no copyright holder name.
+homepage: https://g200kg.github.io/zoom-ms-utility/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, connect the pedal by USB, accept the MIDI prompt and choose the port ZOOM MS Series.
+  Opening index.html from disk does not work; use a local server or the standalone builds described in the README.
+brick_risk: false
+tags: [editor, web-midi, sysex, usb-midi, midi, presets, web]
+versions:
+  - version: master @ 5bf930c
+    date: 2022-12-20
+    url: https://github.com/g200kg/zoom-ms-utility/commit/5bf930c
+    notes: No tagged releases; this is the latest commit. The README's history lists v1.0.2 as the newest version.

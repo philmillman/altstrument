@@ -1,0 +1,42 @@
+device: akai-apc-mini-mk2
+name: APC Stage
+kind: tool
+summary: Desktop app for lighting the Akai APC mini mk2 without Ableton. It paints the 64 RGB pads and single-colour LEDs, plays animations, reacts to incoming notes, and can save a colour scheme as a small launch file that re-sends it. Electron with Web MIDI; the README is in Japanese.
+description: >-
+  Design mode paints pads with a brush, row and column colours and the maker's 128-colour palette, with named presets. Animation mode runs twelve timed effects and
+  sends only the pads that changed. Reactive mode lights pads from notes played on the controller or another keyboard. The app sends colours by SysEx in groups of eight pads, because the
+  unit drops longer messages. The release v0.3.1 stops it from sending to an unrelated MIDI port when no APC mini mk2 is found. The pad lighting is not stored in the controller, so it is sent again after power-up.
+status: active
+authors:
+  - name: llcheesell
+    url: https://github.com/llcheesell
+source: https://github.com/llcheesell/apc-mini-mk2-color-controller
+source_status: open
+license: unspecified
+license_notes: The README ends with the line "No license is specified yet." and there is no license file.
+homepage: https://github.com/llcheesell/apc-mini-mk2-color-controller
+distribution: download
+install_notes: >-
+  Download the macOS zip or dmg (Apple Silicon, not notarized, so open it with a right click) or the Windows installer from a release page. The unit takes one MIDI connection at a time, so close other programs that hold its port. Nothing is flashed.
+brick_risk: false
+tags: [editor, midi, usb-midi, sysex, presets]
+image:
+  url: https://raw.githubusercontent.com/llcheesell/apc-mini-mk2-color-controller/main/docs/screenshots/design.png
+  alt: APC Stage in design mode, with an 8 by 8 grid of coloured pads on a dark background, row and column buttons around it, and a side panel with a brush, colour picker and palette
+  credit: llcheesell
+  source_url: https://github.com/llcheesell/apc-mini-mk2-color-controller#readme
+  first_party: true
+versions:
+  - version: v0.3.1
+    date: 2026-08-22
+    url: https://github.com/llcheesell/apc-mini-mk2-color-controller/releases/tag/v0.3.1
+    notes: Stops sending APC data to other MIDI devices when no APC mini mk2 is connected.
+  - version: v0.3.0
+    date: 2026-08-21
+    url: https://github.com/llcheesell/apc-mini-mk2-color-controller/releases/tag/v0.3.0
+  - version: v0.2.0
+    date: 2026-06-18
+    url: https://github.com/llcheesell/apc-mini-mk2-color-controller/releases/tag/v0.2.0
+  - version: v0.1.0
+    date: 2026-06-07
+    url: https://github.com/llcheesell/apc-mini-mk2-color-controller/releases/tag/v0.1.0

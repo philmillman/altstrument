@@ -1,0 +1,44 @@
+device: ableton-push-2
+also_devices: [expert-sleepers-disting-nt]
+name: Push Surface
+kind: tool
+summary: Mac and Windows app that turns a Push 2 into an editor for an Expert Sleepers disting NT. Pads, encoders, buttons and screen edit slots, parameters, the algorithm library, SD presets and mappings. The Push talks MIDI and USB to the computer, the NT talks SysEx.
+description: >-
+  The app sits between the two devices; they are never connected to each other.
+  The NT is controlled over its USB MIDI SysEx interface: on connecting it reads
+  the preset, parameter pages and value ranges, then polls values so knob turns on
+  the module show on the Push. The Push is put in User mode, its buttons, encoders
+  and pads arrive as MIDI, and its 960 by 160 display is drawn over its USB bulk
+  endpoint. Modes cover device parameters, adding algorithms, browsing and saving
+  presets, the performance page, mappings, a mirror of the NT's front panel, CPU
+  load and a pad scale layout. A demo mode simulates an NT with its algorithm
+  library. Ableton Live is not needed, and can run alongside once it is told to
+  leave the Push. The performance page needs disting NT firmware 1.16 or later.
+  Nothing is flashed.
+status: active
+authors:
+  - name: Greg Dalmata
+    url: https://github.com/dregdrawer
+source: https://github.com/dregdrawer/push-surface
+source_status: open
+license: MIT
+homepage: https://github.com/dregdrawer/push-surface#readme
+distribution: download
+install_notes: >-
+  Download the DMG (Apple Silicon, needs Node.js 20 or newer) or the Windows zip
+  from the releases page. The Mac app is not notarised and Windows SmartScreen
+  warns because it is not code-signed. On Windows the Push screen needs a WinUSB
+  driver, which installing Live provides or Zadig can add. Set the NT's SysEx
+  Device ID to match the app's settings.
+brick_risk: false
+tags: [controller, editor, sysex, usb-midi, midi, desktop]
+image:
+  url: https://raw.githubusercontent.com/dregdrawer/push-surface/main/docs/screenshots/push-granulator-grains.png
+  alt: Push 2 screen showing the Grains page of a Granulator algorithm, with eight parameters such as shape, rate mean and size mean over page names along the bottom
+  credit: dregdrawer
+  source_url: https://github.com/dregdrawer/push-surface#readme
+  first_party: true
+versions:
+  - version: v1.6.0
+    date: 2026-11-03
+    url: https://github.com/dregdrawer/push-surface/releases/tag/v1.6.0

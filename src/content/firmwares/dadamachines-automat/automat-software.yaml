@@ -1,0 +1,42 @@
+device: dadamachines-automat
+name: automat firmware
+kind: firmware
+summary: The maker's open source firmware for the automat MIDI-to-solenoid controller, built with PlatformIO for the SAMD21. It maps incoming notes to twelve solenoid outputs through shift registers, with velocity programs, a MIDI learn mode and a SysEx configuration protocol.
+description: >-
+  Version 3 moved the project from the legacy Arduino board package to PlatformIO with the Adafruit SAMD core and added UF2 output. Releases 3.10 and 3.11 reduce the velocity programs to a
+  default velocity-mapped timing and a note-on or note-off mode and remove old PWM and motor code. The source holds the main program, the solenoid shift-register driver, MIDI learn, status LED and the SysEx code the
+  configurator uses. The README says USB power draw is declared as 100 mA and the automat works with iPads.
+status: maintained
+authors:
+  - name: Johannes Elias Lohbihler
+    url: https://github.com/dadamachines
+source: https://github.com/dadamachines/automat-software
+source_status: open
+license: GPL-3.0-only
+license_notes: The LICENSE file is the GNU GPL version 3 text and the README says GPLv3, with no later-version clause.
+homepage: https://github.com/dadamachines/automat-software
+distribution: source-only
+install_notes: >-
+  Build with PlatformIO (pio run), which writes a named .uf2 file. Double-tap reset on the automat so the AUTOMAT drive appears, then copy the UF2 onto it. This needs the dadamachines UF2 bootloader; with the original SAM-BA bootloader, use pio run -t upload.
+brick_risk: false
+tags: [official, open-source, midi, usb-midi, sysex, platform]
+versions:
+  - version: v3.11
+    date: 2026-02-14
+    url: https://github.com/dadamachines/automat-software/tree/v3.11
+    notes: Git tag; no GitHub release page. Removes PWM and motor code and pitch bend and mod wheel handlers.
+  - version: v3.10
+    date: 2026-02-14
+    url: https://github.com/dadamachines/automat-software/tree/v3.10
+    notes: Git tag; no GitHub release page. Simplifies the velocity programs.
+  - version: v3.02
+    date: 2026-02-14
+    url: https://github.com/dadamachines/automat-software/tree/v3.02
+    notes: Git tag; no GitHub release page.
+  - version: v3.01
+    date: 2026-02-14
+    url: https://github.com/dadamachines/automat-software/tree/v3.01
+    notes: Git tag; no GitHub release page.
+  - version: 1.3.0
+    date: 2018-10-29
+    url: https://github.com/dadamachines/automat-software/releases/tag/1.3.0

@@ -1,0 +1,27 @@
+device: axs-instruments-dclk
+name: DCLK firmware
+kind: firmware
+summary: >-
+  The maker's open source firmware for the DCLK dual MIDI clock, an Arduino sketch for the STM32F411 Black Pill. It sends clock to two TRS outputs and USB with quantised start and stop, per-output dividers, a screen saver, saved settings and USB clock input.
+description: >-
+  Tempo runs from 30 to 300 BPM at 24 PPQN. Start waits for the next bar boundary of a set wait length of 1 to 16 bars, stop can be quantised the same way, and each output divides the clock by 1, 2, 3, 4, 6 or 8. The menus cover LEDs, MIDI and screen settings, a monitor and an about page.
+  The README lists the build options, which need a custom board entry and an upload method without a bootloader offset, and the pin map.
+status: active
+authors:
+  - name: Joe Bowyer
+    url: https://github.com/joebmz98
+source: https://github.com/joebmz98/DCLK
+source_status: open
+license: MIT
+license_notes: The LICENSE file and README say MIT, Copyright 2026 .axs instruments.
+homepage: https://github.com/joebmz98/DCLK
+distribution: source-only
+install_notes: >-
+  Build src/dclk_midi_clock/dclk_midi_clock.ino in the Arduino IDE with STM32duino and the custom DCLK board entry, then upload with STM32CubeProgrammer by DFU or SWD. Most people will use the web flasher, which has a built release.
+brick_risk: false
+tags: [official, open-source, midi, usb-midi, platform]
+versions:
+  - version: main @ bc9b228
+    date: 2026-10-31
+    url: https://github.com/joebmz98/DCLK/commit/bc9b228fa234ce27442d1b9caad87e88a604df4a
+    notes: No tagged releases; this is the latest commit. The README says firmware v1.0, and the flasher lists v1.4.

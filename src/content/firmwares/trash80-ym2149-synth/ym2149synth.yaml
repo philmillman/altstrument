@@ -1,0 +1,30 @@
+device: trash80-ym2149-synth
+name: Ym2149Synth firmware
+kind: firmware
+summary: The synth's own open firmware for a Teensy 3.1, by its designer. It plays the YM2149F's three voices, one per MIDI channel, with CC control of synth type, glide, vibrato and envelopes, and stores 16 presets. The repository also has the schematic, board files and a Max editor.
+description: >-
+  The sketch reads MIDI from USB and from a serial port and drives the chip's registers, with eight synth types that mix the
+  square voice, the hardware envelope voice, a software PWM voice and noise. A CC map sets detune, glide, vibrato, a pitch
+  envelope, a volume envelope, noise delay and transpose, and further CCs load, save and dump the 16 presets. The repository includes the
+  schematic as a PDF, KiCad board files, the chip's datasheet and a Max patch editor. Its documentation section is marked as not written.
+status: dormant
+authors:
+  - name: trash80
+    url: https://github.com/trash80
+source: https://github.com/trash80/Ym2149Synth
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The LICENSE file is the GPL version 3 text and the source headers grant it as version 3 or later.
+homepage: https://github.com/trash80/Ym2149Synth
+distribution: source-only
+install_notes: >-
+  Build with PlatformIO for the teensy31 board at 120 MHz with USB MIDI, or in the Arduino IDE with Teensyduino, and upload to the
+  Teensy 3.1.
+brick_risk: false
+tags: [official, synth-engine, chiptune, midi, open-source]
+versions:
+  - version: master @ 13d8c7b
+    date: 2017-07-26
+    url: https://github.com/trash80/Ym2149Synth/commit/13d8c7b0720003056db62260399d6fef7f5b6533
+    notes: No tagged releases; this is the latest commit.

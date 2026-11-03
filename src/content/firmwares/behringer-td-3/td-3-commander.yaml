@@ -1,0 +1,40 @@
+device: behringer-td-3
+kind: tool
+name: TD-3 Commander (td3mo)
+summary: Linux pattern editor, librarian and generator for the Behringer TD-3-MO, expected to work on the plain TD-3 too. A local Python server shows a Windows 98 style desktop in the browser, and a command line covers backups and conversion. Firmware updates are left to SynthTribe.
+description: >-
+  The program talks to the synth over ALSA MIDI from a Python server bound to the local machine, so the browser needs no Web
+  MIDI permission. It has a step grid for patterns, a host-side audition that plays the pattern through the synth without
+  writing it, a generator with eight acid styles, a librarian for all 64 slots with backup and restore, and a settings page
+  for channels, transpose, clock source and similar options. Patterns import and export as raw .syx, SynthTribe .seq and .sqs,
+  JSON and text. The protocol notes were measured on the author's unit, which runs firmware 2.0.1, and the README reports two
+  corrections to published notes. Every write is read back and compared, the first write of a session backs up the bank, and the
+  command that includes firmware update mode is never sent. Nothing is flashed.
+status: active
+authors:
+  - name: Matt Woolly
+    url: https://github.com/mattWoolly
+source: https://github.com/mattWoolly/TD-3-Commander
+source_status: open
+license: MIT
+license_notes: The LICENSE file is the MIT text, copyright 2026 Matt Woolly.
+distribution: source-only
+requires_stock: TD-3-MO firmware 2.0.1 (tested); plain TD-3 expected to work
+install_notes: >-
+  Needs Python 3.12 or newer, ALSA and a USB connection to the synth. Clone the repository, create a virtual environment, run
+  pip install -e . and start the program with td3mo serve, which opens a page on 127.0.0.1. No root access or udev rules are
+  needed in a normal desktop session. The program writes patterns and settings but not firmware, so keep using SynthTribe for
+  updates.
+brick_risk: false
+tags: [editor, librarian, sysex, usb-midi, generative, cli, python]
+image:
+  url: https://raw.githubusercontent.com/mattWoolly/TD-3-Commander/main/docs/screenshot-live.png
+  alt: TD-3-MO Commander desktop in the browser with a 16-step pattern editor, a librarian window listing slots in groups I and II, and a transport window with tempo and start and stop buttons
+  credit: Matt Woolly
+  source_url: https://github.com/mattWoolly/TD-3-Commander#readme
+  first_party: true
+versions:
+  - version: main @ e5b0d9a
+    date: 2026-09-21
+    url: https://github.com/mattWoolly/TD-3-Commander/commit/e5b0d9ab3e1cfdc69e684ebe1078202277b5a7a4
+    notes: No tagged releases; this is the latest commit.

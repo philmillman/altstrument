@@ -1,0 +1,39 @@
+device: valeton-gp-200
+kind: tool
+name: GP-200 Patch Manager Web
+summary: >-
+  Browser tool for bulk backup and restore of GP-200 patches over Web MIDI. It lists all 256 slots, saves selected ones as .prst or ZIP, restores files to consecutive slots, or writes one template across a range, with read-back checks.
+description: >-
+  It is not a patch editor. You pick slots by dragging, clicking or typing, then back up to named .prst files, restore a
+  ZIP or files from a starting slot, or write one .prst into many slots, by default only empty ones. Each write shows
+  what will be replaced, asks for confirmation and is verified by reading the patch back. The author reports a full
+  256-slot restore taking about 30 seconds on a GP-200 on firmware 1.8.0, the only combination tested, and asks for reports
+  on the LT, JR and other firmware. The README warns that a patch stores only which user IR or NAM slot it uses, not the
+  capture itself. The page counts anonymous screen opens and actions through GoatCounter. The SysEx protocol came from
+  GP200 Studio through the command-line GP-200 Patch Manager, and the upload addressing was checked against RigSheet's
+  findings, though no RigSheet code is used. A separate command-line version is listed under its own name.
+status: active
+authors:
+  - name: donpark2000
+    url: https://github.com/donpark2000
+source: https://github.com/donpark2000/GP-200-Patch-Manager-Web
+source_status: open
+license: GPL-3.0-only
+license_notes: The LICENSE file is the GPL v3 text and package.json says GPL-3.0-only.
+homepage: https://donpark2000.github.io/GP-200-Patch-Manager-Web/
+distribution: browser-installer
+requires_stock: GP-200 firmware 1.8.0 (the tested version)
+install_notes: >-
+  Open the hosted page in Chrome or Edge on a computer, connect the pedal by USB and allow MIDI access. Back up before any
+  restore or template write.
+brick_risk: false
+tags: [librarian, web-midi, sysex, usb-midi, midi, presets, backup, web]
+versions:
+  - version: main @ 58c0117
+    date: 2026-10-10
+    url: https://github.com/donpark2000/GP-200-Patch-Manager-Web/commit/58c0117
+    notes: Latest commit, after the test-page-proven tag.
+  - version: test-page-proven
+    date: 2026-10-02
+    url: https://github.com/donpark2000/GP-200-Patch-Manager-Web/tree/test-page-proven
+    notes: Git tag; no GitHub release page.

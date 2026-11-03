@@ -1,0 +1,34 @@
+device: yamaha-thr-ii
+kind: tool
+name: Amp Workbench
+summary: Native SwiftUI editor for Yamaha THR-II amps on macOS and iPhone. It keeps a local sound library, edits tones, imports and exports THR Remote files, applies a temporary tone over USB MIDI and reads it back, and on iPhone can design sounds with AI.
+description: >-
+  A Swift package with a Mac app and an iPhone project. The Mac app opens an amp over USB MIDI, applies the tone being
+  edited, reads it back and keeps a history of tones. It reads and writes THR Remote .thrl6p files and JSON sounds. The
+  iPhone app edits sounds, shares and imports sound links and connects through USB-C MIDI. It can create or refine
+  sounds with Apple's on-device model, local rules or the user's own OpenAI key, and Bluetooth control is experimental.
+  The app writes only the amp's current temporary tone, not its stored memory slots. The author tested the Mac flow on a
+  THR10II Wireless on firmware 1.50.0b, and other models are unverified. The repository is a source snapshot without the
+  author's history, third-party preset catalogue or artwork. The Mac app can fetch community sounds from their original
+  sites on request. Nothing is flashed.
+status: active
+authors:
+  - name: Rory Bain
+    url: https://github.com/rorydbain
+source: https://github.com/rorydbain/amp-workbench
+source_status: open
+license: MIT
+license_notes: The MIT licence covers the source and the example sounds written for the app. It does not cover preset archives that the app can download from other sites.
+homepage: https://github.com/rorydbain/amp-workbench#readme
+distribution: source-only
+install_notes: >-
+  There are no prebuilt releases. Build on a Mac with Xcode: run scripts/build-app.sh for the Mac app, or open
+  iOSPrototype/AmpWorkbenchPhone.xcodeproj and choose your own signing team for the iPhone app. Turn the amp's volume
+  down before applying a tone.
+brick_risk: false
+tags: [editor, usb-midi, presets, librarian, ios, open-source]
+versions:
+  - version: main @ b9dd2d7
+    date: 2026-10-27
+    url: https://github.com/rorydbain/amp-workbench/commit/b9dd2d7
+    notes: No tagged releases; this is the latest commit.

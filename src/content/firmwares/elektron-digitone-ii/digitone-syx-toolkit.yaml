@@ -1,0 +1,32 @@
+device: elektron-digitone-ii
+name: digitone-syx-toolkit
+kind: tool
+summary: Python command-line and Tk toolkit for Digitone II SysEx research. It lists MIDI ports, captures and replays dumps, diffs and hex-views .syx files, and builds a Digitone II pattern .syx from an events YAML file. The README is in Japanese. There is no web page.
+description: >-
+  Rights warning: the repository commits about 400 SysEx capture files of Digitone II patterns, mostly from the author's own
+  single-variable experiments, and a blank pattern template, BASE_EMPTY.syx, used as the base for generated files.
+
+  The builder writes notes, velocity, length, micro-timing, pattern names, speeds, per-track length and chord triggers into that
+  template from YAML events. The repository holds analysis notes in Japanese with specs per field, hardware validation
+  write-ups for track scale mode, default velocity and chord triggers, and example event files. Its datasets of before
+  and after captures fed other projects, and SYXGRID's README credits it. There is no sign that it relates to the Digitone 2 Pattern Manager web app.
+  The code needs Python 3.10 or newer with mido, python-rtmidi and PyYAML.
+status: active
+authors:
+  - name: Emnyeca
+    url: https://github.com/emnyeca
+source: https://github.com/emnyeca/digitone-syx-toolkit
+source_status: open
+license: unspecified
+license_notes: The repository has no license file or license statement.
+distribution: source-only
+install_notes: >-
+  Install with pip install -e . and run digitone_syx_toolkit with list_ports, capture, replay, diff, view, validate_events,
+  build_from_events or gui. Sending a generated file through SYSEX RECEIVE overwrites the selected slot on the unit, so back up first.
+brick_risk: false
+tags: [research, sysex, usb-midi, midi, python, cli, converter, utility]
+versions:
+  - version: v0.1.0
+    date: 2026-06-05
+    url: https://github.com/emnyeca/digitone-syx-toolkit/tree/v0.1.0
+    notes: Git tag; no GitHub release page.

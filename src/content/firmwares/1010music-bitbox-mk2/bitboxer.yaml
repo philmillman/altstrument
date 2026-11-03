@@ -1,0 +1,32 @@
+device: 1010music-bitbox-mk2
+also_devices: [1010music-bitbox-micro]
+name: BITBOXER
+kind: tool
+summary: Browser preset editor for the 1010music Bitbox mk2 and Micro that opens preset.xml files, WAV and SFZ samples, edits pads, envelopes, modulation and effects, and saves a ZIP laid out for the SD card.
+description: >-
+  Works on files rather than over USB. A preset.xml or ZIP is loaded by drag and drop, samples are found in a working
+  folder the user picks, and WAV loop points and slices, SFZ multisamples and single pads can be imported. Each pad has
+  tabs for main, envelope, LFO, position, granular, multisample, configuration and modulation settings, and global delay,
+  reverb and EQ can be edited. A switch greys out the pads and controls the Micro lacks without changing the saved file. The
+  original preset.xml is never overwritten; the app exports a copy in a ZIP to unzip on the card. SFZ layer detection is
+  marked experimental. Nothing is flashed, and nothing leaves the computer.
+status: active
+authors:
+  - name: BartBral
+    url: https://github.com/BartBral
+source: https://github.com/BartBral/Bitbox-editor
+source_status: open
+license: unspecified
+license_notes: No LICENSE file and no licence statement in the repository.
+homepage: https://bartbral.github.io/Bitbox-editor/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page, set the working folder that holds your samples, load a preset, edit it and save the ZIP, then
+  unzip it into the presets folder on the SD card. Folder import works in Chromium browsers only.
+brick_risk: false
+tags: [editor, presets, sampler, sample-transfer, web]
+versions:
+  - version: main @ 5b98cd6
+    date: 2026-02-17
+    url: https://github.com/BartBral/Bitbox-editor/commit/5b98cd6
+    notes: No tagged releases; this is the latest commit.

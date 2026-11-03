@@ -1,0 +1,33 @@
+device: roland-t-8
+also_devices: [behringer-td-3]
+kind: tool
+name: 303box
+summary: Browser pattern sketchpad with a modelled 303 bass and a six-voice rhythm part. It plays through Web MIDI to hardware including the T-8, can capture USB audio for a scope, and exports T-8 rhythm patterns as .PRM backup files. The hosted site is ad-supported.
+description: >-
+  The page has a 16-step 303-style editor with note, rest, tie, accent, slide and up/down, a rule-based random generator, ten
+  synth and effect controls, and a rhythm grid for six drum voices mapped to the T-8's fields. Playback can stay in the browser, go to
+  both browser and MIDI, or go out by MIDI only, with channel selection, clock and start/stop sending. With the T-8 attached,
+  bass notes can be recorded into the unit after arming REC. The author found rhythm MIDI did not behave like front-panel entry,
+  so the rhythm pattern is written as a text .PRM file in the format they decoded from backups, and the page can download it or,
+  with the File System Access API, write it to a chosen file. The README advises testing on a copy of a pattern after a full backup. It also covers the
+  Behringer TD-3 over SysEx. The README mentions an AdSense review, so the hosted site carries advertising.
+  Nothing is flashed.
+status: active
+authors:
+  - name: Zafer Latif
+    url: https://github.com/zaferlatif
+source: https://github.com/zaferlatif/303box
+source_status: open
+license: MIT
+homepage: https://303box.com
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Edge, allow MIDI access and choose the T-8 as output. To restore an exported pattern, put the
+  .PRM file in the T-8's backup folder in USB disk mode, and make a full backup of the unit first.
+brick_risk: false
+tags: [sequencer, editor, web-midi, midi, sysex, usb-midi, usb-audio, web]
+versions:
+  - version: main @ 24193c4
+    date: 2026-10-23
+    url: https://github.com/zaferlatif/303box/commit/24193c47b0d7b351e3d2f35e6b709c636ebf2f7e
+    notes: No tagged releases; this is the latest commit.

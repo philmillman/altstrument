@@ -1,0 +1,30 @@
+device: atov-faderpunk
+name: Presetpunk and Scopepunk
+kind: tool
+summary: Two unofficial browser apps for the Faderpunk over Web MIDI SysEx. Presetpunk pulls and pushes whole layouts as a preset bank. Scopepunk shows the module's live MIDI output as scopes and can play it through the computer.
+description: >-
+  Presetpunk reads the connected module's layout, app parameters and global settings, stores them as presets in the browser, and
+  writes a chosen preset back using the same sequence as the official configurator. It also lets you attach instrument
+  definitions and a MIDI CC database so channels get readable names. Scopepunk draws the module's outputs as oscilloscope traces,
+  with gain, key and tempo controls and per-track mutes, and can monitor them audibly. Both keep their data in browser storage.
+  They are not part of the maker's repository.
+status: active
+authors:
+  - name: kosmar
+    url: https://github.com/kosmar
+source: https://github.com/kosmar/faderpunk-tools
+source_status: open
+license: unspecified
+license_notes: There is no license file at the repository root or in scopepunk/. The presetpunk/ folder has a LICENSE file with the GNU AGPL version 3 text.
+homepage: https://kosmar.github.io/faderpunk-tools/
+distribution: browser-installer
+requires_stock: Faderpunk firmware with the SysEx configuration link (v1.12.0 or later, the version its code checks for)
+install_notes: >-
+  Open the hosted page in a Chromium browser and allow MIDI access with SysEx. Close the official configurator and any other tab that holds the Faderpunk's MIDI ports first. Nothing is flashed.
+brick_risk: false
+tags: [editor, web-midi, sysex, usb-midi, presets, web]
+versions:
+  - version: main @ 2d4c721
+    date: 2026-10-14
+    url: https://github.com/kosmar/faderpunk-tools/commit/2d4c721573619c5808aee65a495b9a89ad84bf3f
+    notes: No tagged releases; this is the latest commit.

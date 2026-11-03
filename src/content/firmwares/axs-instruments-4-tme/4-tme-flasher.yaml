@@ -1,0 +1,32 @@
+device: axs-instruments-4-tme
+name: 4-TME-Flasher
+kind: tool
+summary: >-
+  Browser tools for the 4-TME polysynth: a sound and preset editor and a settings page over Web Serial and SysEx, and a WebUSB DfuSe flasher for the v16.0 beta firmware, which adds the USB link.
+description: >-
+  The editor shows the 128 by 32 OLED art and all sixteen parameters for four voices, supports shift groups and mutes, voice copy and
+  randomise tools, and the 32 flash presets with names, with backup to a JSON file and restore. The settings page sets MIDI channel, LED brightness, value readout and display timeout, and has a MIDI input monitor. Both pages talk to the synth with a private SysEx-framed
+  protocol over the Seed's USB serial port, and a demo mode runs against a simulated unit. The flasher writes the bundled v16.0 build to internal flash over the STM32
+  ROM DFU bootloader. The firmware source is the maker's v15.6 sketch plus a patch that adds the protocol, and the README
+  says the build has been compiled but not run on a 4-TME yet. Presets and settings sit in a separate SPI flash chip that the flasher does not touch. Commit messages credit Claude as a co-author.
+status: active
+authors:
+  - name: Joe Bowyer
+    url: https://github.com/joebmz98
+source: https://github.com/joebmz98/4-TME-Flasher
+source_status: open
+license: unspecified
+license_notes: No license file or statement in the repository.
+homepage: https://joebmz98.github.io/4-TME-Flasher/
+distribution: browser-installer
+requires_stock: 4-TME running its own firmware; the editor needs v16 or later
+install_notes: >-
+  Open the hosted page in Chrome or Edge on a computer and connect the Seed with a micro-USB data cable. Enter DFU mode by hand (hold BOOT, tap
+  RESET, release BOOT) or, once v16 runs, from the flasher page. Windows needs the WinUSB driver once, through Zadig. Build the firmware yourself with the Arduino IDE, USB support set to CDC and optimisation set to Faster (-O2) with LTO.
+brick_risk: false
+tags: [flasher, editor, web-midi, sysex, presets, web]
+versions:
+  - version: v16.0 beta
+    date: 2026-10-30
+    url: https://github.com/joebmz98/4-TME-Flasher/commit/06ae2da74f8b753e99cfc76127afcc734f9d743d
+    notes: First build with the USB editor link; commit that added the web tools and the bundled firmware.

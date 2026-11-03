@@ -1,0 +1,49 @@
+device: ensoniq-mirage
+name: Phantasm OS
+summary: Wavetable synthesizer OS that replaces the Mirage's sampling OS, scanning 8-bit single-cycle waves through the Mirage's analog filters. Loads from a Gotek floppy emulator, with a SysEx web editor.
+description: >-
+  Phantasm turns the Mirage into an eight-voice, two-oscillator wavetable synth. Each patch holds up to eight
+  wavetables, and the wave position moves with envelopes, the LFO, velocity, key and wheel. A sequence can pick the
+  starting wave of each new note. It also has chord, mono and unison modes, 100 patches per disk and a 512-wave pool
+  with a 128-wave user area filled over MIDI Sample Dump. The release disk carries 100 factory patches. The author
+  says the boot ROM is never touched and the disk is written only on a save. They also say the glitch sequences and
+  the newer wave families have not been tested on hardware. The repository holds documentation, release disk images
+  and a single-file editor for Web MIDI that edits parameters and patches over SysEx. The OS source is not in the
+  repository, which is a public release mirror of private repositories.
+status: active
+authors:
+  - name: Laurie Laptop
+    url: https://github.com/laurielaptop
+source: https://github.com/laurielaptop/phantasm-os
+source_status: binary-only
+license: MIT
+license_notes: >-
+  The repository LICENSE (MIT) covers the Phantasm OS and editor, but only the compiled disk images and the editor
+  page are published; the OS source is not. The documentation is CC BY 4.0, and the brand artwork is excluded and
+  licensed only for use inside the author's own projects.
+homepage: https://github.com/laurielaptop/phantasm-os
+distribution: download
+requires_stock: Gotek floppy emulator running FlashFloppy
+install_notes: >-
+  Copy the .hfe image to the USB stick of a Gotek floppy emulator and boot the Mirage from it. A .img file is
+  provided for a real floppy. The upgrade note says a new disk image replaces the patches on the disk, so back up
+  the old image first. The editor is a downloaded HTML file that needs Chrome with Web MIDI SysEx access.
+brick_risk: false
+tags: [wavetable, synth-engine, os, editor, sysex, web-midi]
+image:
+  url: https://raw.githubusercontent.com/laurielaptop/phantasm-os/main/images/phantasm-editor.png
+  alt: Phantasm Editor in a dark browser window with MIDI port selectors, a patch and bank librarian on the left and parameter groups for wave, oscillators and LFO on the right
+  credit: Laurie Laptop
+  source_url: https://github.com/laurielaptop/phantasm-os#phantasm-editor
+  first_party: true
+versions:
+  - version: v1.2.1
+    date: 2026-10-31
+    url: https://github.com/laurielaptop/phantasm-os/releases/tag/v1.2.1
+    notes: 100 new factory patches, fixes for wave-sequence mode on a loaded patch and for glide.
+  - version: v1.2.0
+    date: 2026-10-18
+    url: https://github.com/laurielaptop/phantasm-os/releases/tag/v1.2.0
+  - version: v1.1.0
+    date: 2026-10-14
+    url: https://github.com/laurielaptop/phantasm-os/releases/tag/v1.1.0

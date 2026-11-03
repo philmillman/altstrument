@@ -1,0 +1,28 @@
+device: korg-volca-drum
+name: MIDI Volca Drum Editor
+kind: tool
+summary: React and TypeScript patch editor for the volca drum that sends parameter changes over Web MIDI, with six parts, two layers, a pitch note display and part save and load as JSON. It has no hosted copy and runs from a local build.
+description: >-
+  A monorepo holding a web app, shared UI components and a MIDI helper package. The app shows the six parts of the volca drum
+  with layered controls, sends each change to the connected synth as a control change, saves and loads single parts as JSON
+  files and has keyboard shortcuts for switching parts. The repository also has a Railway deployment file and a folder of
+  Python MIDI utilities. Nothing is flashed.
+status: active
+authors:
+  - name: hansdesmedt
+    url: https://github.com/hansdesmedt
+source: https://github.com/hansdesmedt/midi-volca-drum
+source_status: open
+license: MIT
+license_notes: The README states MIT and refers to a LICENSE file, but the repository has none.
+distribution: source-only
+install_notes: >-
+  Run npm install at the repository root, then npm run dev inside the web folder, open the page in a browser with Web MIDI and
+  connect the volca drum.
+brick_risk: false
+tags: [editor, web-midi, midi, web]
+versions:
+  - version: main @ 125d50a
+    date: 2026-02-18
+    url: https://github.com/hansdesmedt/midi-volca-drum/commit/125d50a66f7027f6c9d2556895abc4ec7afa7c48
+    notes: No tagged releases; this is the latest commit.

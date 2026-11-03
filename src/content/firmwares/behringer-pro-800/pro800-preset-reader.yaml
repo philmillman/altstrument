@@ -1,0 +1,44 @@
+device: behringer-pro-800
+name: PRO-800 Preset Reader
+kind: tool
+summary: Closed, free browser page that opens a PRO-800 bank .syx file from disk and lists its preset names, for sorting a library. It reads files only and does not talk to the synth over MIDI.
+description: >-
+  The page reads a SysEx bank dump saved from the PRO-800 with SynthTribe or a generic SysEx utility and shows the preset
+  names, which can be copied into a text file or spreadsheet. It needs files made on firmware 1.4.4 or later and rejects
+  older formats. The release notes explain how to produce a compatible file, note a firmware bug that can blank preset
+  names, and say the page can be saved and run offline. It cannot write or rename presets. The release notes list
+  versions 1.0 to 1.3 with dates.
+status: active
+authors:
+  - name: llamamusic.com
+    url: https://llamamusic.com/
+source_status: closed
+license: proprietary
+license_notes: >-
+  The page states that its images, text, JavaScript and HTML are copyright llamamusic.com and gives no licence terms.
+  The release notes allow saving the page for offline use.
+homepage: https://llamamusic.com/behringer/PRO-800_reader.html
+distribution: browser-installer
+requires_stock: PRO-800 firmware 1.4.4 or later for the .syx files
+install_notes: >-
+  Open the page in any current browser, choose a bank .syx file saved from the PRO-800, and read the preset list. No MIDI
+  connection is used.
+brick_risk: false
+tags: [librarian, sysex, presets, web]
+versions:
+  - version: "1.3"
+    date: 2025-03-30
+    url: https://llamamusic.com/behringer/PRO-800_Reader_Release_Notes.html
+    notes: Ignores other Behringer SysEx files.
+  - version: "1.2"
+    date: 2025-01-23
+    url: https://llamamusic.com/behringer/PRO-800_Reader_Release_Notes.html
+    notes: Checks that the loaded file is a PRO-800 bank.
+  - version: "1.1"
+    date: 2024-08-13
+    url: https://llamamusic.com/behringer/PRO-800_Reader_Release_Notes.html
+    notes: Screen formatting fix.
+  - version: "1.0"
+    date: 2024-01-24
+    url: https://llamamusic.com/behringer/PRO-800_Reader_Release_Notes.html
+    notes: Beta test release.

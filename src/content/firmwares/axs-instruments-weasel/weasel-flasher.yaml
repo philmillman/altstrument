@@ -1,0 +1,28 @@
+device: axs-instruments-weasel
+name: WEASEL-Flasher
+kind: tool
+summary: >-
+  Browser tools for the WEASEL synth: a WebUSB DfuSe flasher for the Daisy Seed, a MIDI settings page and a presets page over Web Serial and SysEx, all with a demo mode. Its firmware 0.2 adds the USB link; no release build is published yet, so it flashes a file you supply.
+description: >-
+  The settings page sets the MIDI receive channel and shows a MIDI monitor, and the presets page stores and recalls the panel's button modes, kept in the browser and exportable as JSON. The flasher is built on the MC8P flasher and handles the H750's 32 byte flash words. The
+  repository holds the firmware 0.2 source with a patch against the 0.1 sketch and a fix for the complex oscillator waveform button. Its README says the full sketch has not been compiled for the Seed or tried on hardware yet. Commit messages credit Claude as a co-author.
+status: active
+authors:
+  - name: Joe Bowyer
+    url: https://github.com/joebmz98
+source: https://github.com/joebmz98/Weasel-Flasher
+source_status: open
+license: unspecified
+license_notes: No license file or statement in the repository.
+homepage: https://joebmz98.github.io/Weasel-Flasher/
+distribution: browser-installer
+requires_stock: WEASEL running its own firmware; the settings and presets pages need firmware 0.2 or later
+install_notes: >-
+  Open the hosted page in Chrome or Edge on a computer and connect the Seed with a micro-USB data cable. Enter DFU mode by hand (hold BOOT, tap RESET, release BOOT) or from the page once 0.2 runs, then choose DFU in FS Mode. Build the firmware yourself in the Arduino IDE with USB support set to CDC.
+brick_risk: false
+tags: [flasher, editor, web-midi, sysex, presets, web]
+versions:
+  - version: main @ 7549477
+    date: 2026-10-30
+    url: https://github.com/joebmz98/Weasel-Flasher/commit/75494775fa1950a14bcb3691084b74ec617489a6
+    notes: No tagged releases; this is the latest commit.

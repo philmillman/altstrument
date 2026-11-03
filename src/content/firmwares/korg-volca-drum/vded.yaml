@@ -1,0 +1,47 @@
+device: korg-volca-drum
+name: VDED
+kind: tool
+summary: Browser control surface for the volca drum over Web MIDI, with a 16-step sequencer for all six parts, per-layer knobs, a waveguide panel, presets and a MIDI map. It sends only control changes and notes; the synth does the sound. Japanese README.
+description: >-
+  A Vite app that edits the six parts and two layers of each part through the synth's published control changes, including the
+  packed source, modulation and envelope select value. It adds a step sequencer with tempo, swing, gate, per-step velocity and an
+  optional MIDI clock, plus a table and dial view of all layers, a remappable MIDI map and presets kept in the browser and
+  exportable as files. It works in the volca drum's split-channel mode and, with fewer controls, in single-channel mode. A
+  SEND ALL button pushes every on-screen value to the synth, because the volca drum does not send its knob positions back.
+  The README, in Japanese, asks for volca drum firmware 1.11 or later and for MIDI RX Short Message to be on, and says motion
+  sequences, choke and program storage cannot be controlled over MIDI. Nothing is flashed.
+status: active
+authors:
+  - name: LouisYOSHINAGA
+    url: https://github.com/LouisYOSHINAGA
+source: https://github.com/LouisYOSHINAGA/vded
+source_status: open
+license: MIT
+license_notes: The README states MIT. The repository has no LICENSE file.
+homepage: https://louisyoshinaga.github.io/vded/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a Chromium browser, connect a USB-MIDI interface to the volca drum's MIDI IN and choose it as the
+  device. On the synth, turn MIDI RX Short Message on and use split channel mode. Press SEND ALL PARAMETERS to bring the synth
+  in line with the screen.
+brick_risk: false
+tags: [editor, sequencer, web-midi, midi, presets, web]
+image:
+  url: https://raw.githubusercontent.com/LouisYOSHINAGA/vded/main/docs/screenshot.png
+  alt: VDED with a six-part step sequencer and velocity bars at the top, a waveguide panel at the right, and part edit tabs below with two layer panels of source, modulation and envelope buttons and knobs
+  credit: LouisYOSHINAGA
+  source_url: https://github.com/LouisYOSHINAGA/vded#readme
+  first_party: true
+versions:
+  - version: ver0.3.0
+    date: 2026-09-22
+    url: https://github.com/LouisYOSHINAGA/vded/tree/ver0.3.0
+    notes: Git tag; no GitHub release page.
+  - version: ver0.2.0
+    date: 2026-09-08
+    url: https://github.com/LouisYOSHINAGA/vded/tree/ver0.2.0
+    notes: Git tag; no GitHub release page.
+  - version: ver0.1.0
+    date: 2026-08-23
+    url: https://github.com/LouisYOSHINAGA/vded/tree/ver0.1.0
+    notes: Git tag; no GitHub release page.

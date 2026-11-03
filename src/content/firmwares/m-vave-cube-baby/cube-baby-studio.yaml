@@ -1,0 +1,39 @@
+device: m-vave-cube-baby
+kind: tool
+name: Cube Baby Studio (cuvave-app-2)
+summary: >-
+  Native Windows editor in Python and Qt for the Cube Baby, plus a React Web MIDI preset studio. They read the three presets over SysEx, edit live, import and export JSON presets and keep a local library with backups. IR upload and firmware update are not included.
+description: >-
+  Rights warning: the repository root holds the vendor's Windows program as CubeSuite.exe with its Qt DLLs, an
+  AppConfig.ini and a Qt style plugin, and a zip of the editor. These are not the author's work and no license for them
+  is stated.
+
+  The Python editor in cubebaby/ connects with python-rtmidi, finds the port by itself, reads presets A, B and C and edits
+  pre-amp type, gain, tone, delay, reverb, modulation, cabinet and volume as you turn them. It imports and exports preset
+  JSON files shared with the web studio and with CubeControl banks, and backs up before it writes an imported
+  preset to the pedal. A simulated pedal mode runs without hardware. The preset-studio/ folder is a Vite and React page
+  with knobs, a beginner mode, example presets and an IR panel, talking to the pedal through Web MIDI, with a README
+  and a hardware test guide in Portuguese. The README credits cubecontrol and cuvave-midi for the protocol and warns that
+  their licenses differ. Nothing is flashed.
+status: active
+authors:
+  - name: thiagotg30-blip
+    url: https://github.com/thiagotg30-blip
+source: https://github.com/thiagotg30-blip/cuvave-app-2
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and the README states no license. The README says the protocol code comes from
+  cubecontrol (MIT) and cuvave-midi (GPL-3.0, used only as a reference) and tells anyone distributing it to check those
+  licenses.
+distribution: source-only
+install_notes: >-
+  Windows: install Python 3.12 and run run_debug.bat, or build_exe.bat for an executable. Close the vendor CubeSuite
+  first, since two programs cannot hold the pedal's MIDI port. The web studio is in preset-studio/ and needs npm.
+brick_risk: false
+tags: [editor, usb-midi, midi, sysex, presets, backup, desktop, python, web-midi]
+versions:
+  - version: main @ 5035721
+    date: 2026-10-01
+    url: https://github.com/thiagotg30-blip/cuvave-app-2/commit/5035721
+    notes: No tagged releases; this is the latest commit.

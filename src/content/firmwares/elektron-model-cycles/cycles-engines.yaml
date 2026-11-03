@@ -1,0 +1,50 @@
+device: elektron-model-cycles
+name: Cycles Engines
+summary: Web flasher for Model:Cycles OS 1.13 that adds machines as separate engine packages and builds any ticked combination in the browser from your own official OS file, then sends it over USB. Current cards are PUNCH, BLAST and FERAL.
+description: >-
+  Each engine is a folder with a manifest and a relocatable object, and a composer places the ticked engines after the six
+  stock machines in the order chosen. The page asks for your own model-cycles_OS1.13.syx, checks its hash, builds the
+  image locally and sends it with a fast method over USB or a classic one through CONFIG > UPGRADE. Nothing is uploaded and the
+  repository holds only hashes and addresses of the stock OS, with no Elektron bytes; a tab flashes your own file
+  back unchanged. PUNCH is a set of twelve FM percussion engines, BLAST an OPL2-style FM engine and FERAL nine noisy synthesis models. A
+  SAM speech machine, derived from the Braids Renaissance vocalist and a C reconstruction of the SAM speech
+  synthesiser, and LiXR remain in the repository but are not offered on the page. A command-line composer builds the same
+  files. The toolchain is credited to Modded Cycles, model27 and the mtlib code by drumkilla, all MIT. The page calls
+  itself a demo area and the cards are marked experimental. Recovery from a failed flash uses the startup menu, which only listens
+  to the physical MIDI IN.
+status: active
+authors:
+  - name: 100demons
+    url: https://github.com/100demons
+source: https://github.com/100demons/cycles-engines
+source_status: open
+license: MIT
+license_notes: >-
+  MIT for the repository, with credit lines for Modded Cycles, model27 and mtlib, and an MIT LICENSE in each engine
+  folder. The repository commits compiled engine objects (.o files), and the SAM engine derives from the Braids
+  Renaissance vocalist, which derives from a C reconstruction of the original SAM program. No Elektron firmware is
+  included.
+homepage: https://100demons.github.io/cycles-engines/flasher/
+distribution: browser-installer
+requires_stock: "1.13"
+install_notes: >-
+  Open the flasher in a Web MIDI browser, tick engines, load your own official OS 1.13 file, connect the Model:Cycles
+  over USB with Elektron Transfer closed, tick the acknowledgement that flashing is at your own risk and flash. Back up
+  projects and samples first. Recovery goes through the startup menu and needs a MIDI interface on the MIDI IN.
+brick_risk: true
+tags: [flasher, machines, synth-engine, fm, drums, web, midi]
+video:
+  url: https://www.youtube.com/watch?v=MH_buA0-jHs
+  title: PUNCH - Yamaha OPL2 Soundblaster Percussion for Model Cycles
+  credit: J Tru
+  first_party: true
+  found_via: https://100demons.github.io/cycles-engines/flasher/
+versions:
+  - version: main @ fe061b6
+    date: 2026-10-30
+    url: https://github.com/100demons/cycles-engines/commit/fe061b640a2e035c8f0cea3fb2478698db2c7d99
+    notes: Names the cards BLAST 3.0, PUNCH 1.0 and FERAL 9.0.
+  - version: phase-5
+    date: 2026-10-24
+    url: https://github.com/100demons/cycles-engines/tree/phase-5
+    notes: Git tag; no GitHub release page. A checkpoint from the build log, one of five.

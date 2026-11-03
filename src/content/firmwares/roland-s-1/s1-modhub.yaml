@@ -1,0 +1,30 @@
+device: roland-s-1
+kind: tool
+name: S-1 ModHub
+summary: Browser modulation hub for the S-1. Four LFOs, a note envelope, velocity, key tracking and clocked trigs go through a mod matrix to the synth's MIDI CCs, rate-limited and following the S-1's MIDI clock. The page must stay open.
+description: >-
+  The modulation engine runs in the page on a worker timer and sends only the resulting CC stream to the S-1 over Web MIDI.
+  Sources include four LFOs, an AD or ASR note envelope, velocity, key tracking and trigs with probability, swing and
+  ratchets; the matrix routes them to any CC the S-1 accepts. Output uses change detection and an echo filter, and settings
+  save in browser storage with preset file export. The engine is pure TypeScript with unit tests and the interface is Svelte
+  5. The README says it is deployed on Netlify, but gives no address, so no hosted copy is linked here. The repository has no licence file.
+  Nothing is flashed.
+status: active
+authors:
+  - name: jobarbo
+    url: https://github.com/jobarbo
+source: https://github.com/jobarbo/S1-modular
+source_status: open
+license: unspecified
+license_notes: There is no LICENSE file and the README states no licence.
+distribution: source-only
+install_notes: >-
+  Needs Node 22 and pnpm. Run pnpm install and pnpm dev, then open the local address in Chrome or Edge and connect the S-1
+  over USB.
+brick_risk: false
+tags: [lfo, midi, web-midi, usb-midi, performance, sequencer, web]
+versions:
+  - version: main @ e88b2c5
+    date: 2026-10-22
+    url: https://github.com/jobarbo/S1-modular/commit/e88b2c5c7b7b6d1fa20e7447e65594f5ecaf777a
+    notes: No tagged releases; this is the latest commit.

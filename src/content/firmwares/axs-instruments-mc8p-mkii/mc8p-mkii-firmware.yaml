@@ -1,0 +1,33 @@
+device: axs-instruments-mc8p-mkii
+name: MC8P MkII firmware
+kind: firmware
+summary: >-
+  The maker's open source firmware for the MC8P MkII MIDI controller, an Arduino sketch for the STM32F411 Black Pill. Each of the 8 pots sends up to 10 CC messages, with step and custom scenes, a temporary override with catch-up, display themes and, from v3.2, a web editor link.
+description: >-
+  The README gives the parts list, the pin map and the build steps for STM32duino, and settings are stored in a W25Q64 SPI flash. Version 3.2 added the SysEx link that the web editor uses. The repository also has KiCad files, photos and diagrams. It
+  supersedes the maker's Teensy 4.0 design, which has its own repository.
+status: active
+authors:
+  - name: Joe Bowyer
+    url: https://github.com/joebmz98
+source: https://github.com/joebmz98/MC8P-MkII-Midi-Controller
+source_status: open
+license: MIT
+license_notes: The repository's LICENSE file says MIT.
+homepage: https://joebmz98.github.io/MC8P-MkII-Flasher/
+distribution: browser-installer
+install_notes: >-
+  Most people flash the release build with the web flasher. To build it yourself, use the Arduino IDE with STM32duino for the Black Pill and upload by DFU or SWD with no bootloader offset.
+brick_risk: false
+tags: [official, open-source, midi, presets, platform]
+video:
+  url: https://www.youtube.com/watch?v=sK4E2PJmlkE
+  title: Introducing the MC8P | Standalone, Open-source MIDI Controller | .axs instruments
+  credit: axs instruments
+  first_party: true
+  found_via: https://github.com/joebmz98/MC8P-MkII-Midi-Controller#readme
+versions:
+  - version: main @ 5cf74b4
+    date: 2026-10-29
+    url: https://github.com/joebmz98/MC8P-MkII-Midi-Controller/commit/5cf74b451b89d11217f569d504e38279eebd1270
+    notes: No tagged releases; this is the latest commit. The firmware is at v3.2.

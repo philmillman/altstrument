@@ -1,0 +1,44 @@
+device: elektron-digitone-ii
+name: DN2 Mod Patcher and Sample Import
+kind: firmware
+summary: Browser tools for a Digitone II mod on OS 1.11 that adds the Digitakt II sample machines, a recorder and Machinedrum and Monomachine machines. A patcher builds the OS from your own Elektron files, and a Web MIDI page sends WAVs to the mod's sample library.
+description: >-
+  The patcher runs the project's Python in the browser through Pyodide and builds a mod image from your own copies of
+  Digitone II OS 1.11, Digitakt II OS 1.17 or 1.16 and Machinedrum UW OS 1.63, plus Monomachine SFX-6/60 OS 1.32B for
+  one build. Saving is allowed only when the result has the sha256 listed in builds.json for that version. The README and page say no Elektron data is
+  committed, and the source files hold hashes and short patch records rather than OS bytes. The mod adds the Digitakt II's
+  sample machines, a sample library on the +Drive, a recorder, a Perc machine that stands in for the Machinedrum machines
+  other than its sample-based ones, polyphonic Monomachine machines, Direct Jump and parameter slides.
+  The sample import page connects over Web MIDI, shows what the mod holds on the instrument, and sends dropped files
+  or folders to the library with replace or add modes, using the mod's own SysEx commands. Builds from v0.24 to v0.39 are
+  kept as zip archives of the build code. The page is built on OS 1.11 only, so a unit on 1.12 or later goes back to a
+  1.11-based OS.
+status: active
+authors:
+  - name: De-Pattern
+    url: https://github.com/De-Pattern
+source: https://github.com/De-Pattern/dn2mk2
+source_status: patcher-only
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file. A comment in the zipped build code calls it an AGPL-3.0-or-later project, which is
+  not a licence file; the same code ports MIT-licensed work from mischa85/elektron-firmware-tool and a GPL-2.0-or-later
+  system-info routine from irpina/digihealth. The assembled DSP code is shipped as JSON; its assembly sources are not
+  in this repository. The author also publishes Ravel (m-vave-fm-1), which is GPL-3.0, and says the Perc machines
+  are re-expressed from it.
+homepage: https://de-pattern.github.io/dn2mk2/patcher.html
+distribution: patch-your-own
+requires_stock: "1.11"
+install_notes: >-
+  Open the patcher in a browser, give it the OS files it asks for, build, and save the .syx only if the page confirms the
+  hash. Back up the +Drive and projects with Elektron Transfer, then send the file like any OS update by dragging it onto
+  Transfer. Keep the stock 1.11 file and a DIN MIDI cable for recovery. ERASE MOD DATA in the sample browser clears the
+  mod's samples before returning to stock for good. Sample Import needs Chrome or Edge with Web MIDI, USB CONFIG set to
+  USB MIDI or Overbridge, and Elektron Transfer closed.
+brick_risk: true
+tags: [flasher, machines, sampler, web-midi, sysex, usb-midi, web, patch, os]
+versions:
+  - version: main @ 0980bb6
+    date: 2026-11-03
+    url: https://github.com/De-Pattern/dn2mk2/commit/0980bb66029aee56474573c40a555b2f1dc2cbee
+    notes: No tagged releases; this is the latest commit. The patcher offers builds up to v0.39 (SLIDE).

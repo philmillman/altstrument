@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: PULSAR-8
+summary: >-
+  Drum machine firmware with a Roland TR-8S style workflow: 8 tracks on 16 step pads, 16 patterns with variations and fills, 110 drum voices, effects, snapshots with morph and MIDI clock. Not yet run on a physical FM-1.
+description: >-
+  The white keys act as the 16 step pads and the black keys select the instrument, with variations A to H, two fill-ins, flams, sub-steps, probability, per-track length and direction, motion recording, parameter locks and step loops. Half of the 110 voices are synthesised models in the style of classic analog drum machines, and half are vintage sample-machine kits played from CC0 recordings with a fixed sample clock and low bit depth. Two themes share every screen. It also has reverb, a tempo-synced delay, master effects, USB MIDI in and out, TRS MIDI in and USB audio input. The package can be installed over the stock firmware, over SLOOP or over itself. Installing it replaces SLOOP's saved projects, which share the same data area. The README states that this is a 1.0 beta that builds with the JieLi toolchain and passes the host tests, but that nobody has run it on a physical FM-1.
+status: active
+authors:
+- name: Nicodesy06
+  url: https://github.com/Nicodesy06
+source: https://github.com/Nicodesy06/FM-1S---Roland-TR-8S-like-OS
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md covers the application code as GPL-3.0-only. The hardware layer and update loader come from SLOOP and
+  Felucca (GPL-3.0-only). The drum recordings are CC0 (Versilian Studios VCSL) and the font is SIL OFL 1.1.
+distribution: download
+requires_stock: Any FM-1 firmware with the M-UPGRADE update path; the package works over stock V15, SLOOP or itself
+install_notes: >-
+  Install docs/firmware/pulsar-1.0-beta.fwsc with tools/fm1_install.py, or with the installer page in docs/installer/,
+  which needs a secure context, so serve the docs folder locally or enable GitHub Pages for the repository (no hosted copy is live).
+  The page checks the package identity and SHA-256 before writing. Hold OCT- alone while switching on to enter USB
+  rescue. The README names the FM-1 Transporter with an RP2040 as the way back if even that fails. Back up SLOOP
+  projects first, because the install replaces them.
+brick_risk: true
+tags: [drums, sequencer, groovebox, sampler, fx, midi, usb-audio]
+image:
+  url: https://raw.githubusercontent.com/Nicodesy06/FM-1S---Roland-TR-8S-like-OS/pulsar-8/docs/images/overview.png
+  alt: "Six PULSAR-8 screens: step grid in black and silver themes, step edit, reverb and delay effects, snapshot morph and an eight-channel mixer"
+  credit: Nicodesy06
+  source_url: https://github.com/Nicodesy06/FM-1S---Roland-TR-8S-like-OS
+  first_party: true
+versions:
+- version: pulsar-8 @ 229fae5
+  date: 2026-10-12
+  url: https://github.com/Nicodesy06/FM-1S---Roland-TR-8S-like-OS/commit/229fae5f00310d015da8a47a9c6c17e4adaea435
+  notes: No tagged releases; this is the latest commit. The README calls it 1.0 beta.

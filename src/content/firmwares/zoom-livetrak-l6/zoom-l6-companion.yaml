@@ -1,0 +1,62 @@
+device: zoom-livetrak-l6
+also_devices: [zoom-livetrak-l6max]
+kind: tool
+name: Zoom L6 Companion
+summary: Browser control surface and settings editor for the LiveTrak L6 and L6max over Web MIDI. It mirrors the mixer's channels, adds an LFO to any knob, and changes the settings that otherwise need Zoom's L6 Editor, through a reverse-engineered SysEx protocol.
+description: >-
+  The main view has a strip per channel with EQ, sends, pan, level and mute, plus effect type and parameters, the compressor,
+  scenes and the sound pads. Any knob can get its own LFO, with a choice of waveform, rate, depth and direction. Over the mixer's editor port the app reads the current settings on connect and writes
+  MIDI mode and channel, battery type, auto power off, recorder mode, AUX send points, and each pad's play mode, level and
+  note. It can also mount the SD card as a USB drive. It detects an L6max and adds the extra channels, scenes and send, plus
+  monitor and sub-out points, USB audio settings and per-pad clock sync. CC mappings can be changed and are kept in the
+  browser. A debug drawer logs MIDI and has a SysEx explorer for sweeping and diffing parameters, and docs/PROTOCOL.md
+  documents the commands found so far. Nothing is flashed. The project is not affiliated with Zoom.
+status: active
+authors:
+  - name: philmillman
+    url: https://github.com/philmillman
+source: https://github.com/philmillman/zoom-l6-companion
+source_status: open
+license: MIT
+homepage: https://zooml6.webmidi.cc
+distribution: browser-installer
+install_notes: >-
+  Open the hosted app in a browser with Web MIDI (Chrome, Edge or Firefox), connect the mixer over USB and allow MIDI access.
+  On iPhone and iPad, use the free MIDIWeb Browser app. Windows may need Zoom's MIDI driver. Turn off the Editor link in
+  Device Settings before using the official Zoom L6 Editor.
+brick_risk: false
+tags: [editor, web-midi, sysex, usb-midi, midi, research, web]
+image:
+  url: https://raw.githubusercontent.com/philmillman/zoom-l6-companion/main/images/channel-full.png
+  alt: Zoom L6 Companion showing three channel strips, each with knobs for high, mid, mid frequency and low EQ, AUX 1, AUX 2 and EFX sends, pan and level, a mute switch and reset and LFO buttons
+  credit: philmillman
+  source_url: https://github.com/philmillman/zoom-l6-companion#readme
+  first_party: true
+versions:
+  - version: v1.0.0
+    date: 2026-10-05
+    url: https://github.com/philmillman/zoom-l6-companion/releases/tag/v1.0.0
+    notes: Device settings, effect knobs and a sound pad editor over SysEx; reads the mixer's settings on connect; iOS through MIDIWeb Browser.
+  - version: v0.6.0
+    date: 2026-04-20
+    url: https://github.com/philmillman/zoom-l6-companion/releases/tag/v0.6.0
+    notes: Switches the SD card to USB drive mode from the app.
+  - version: v0.5.0
+    date: 2025-11-19
+    url: https://github.com/philmillman/zoom-l6-companion/releases/tag/v0.5.0
+    notes: Adds L6max support.
+  - version: v0.4.0
+    date: 2025-10-19
+    url: https://github.com/philmillman/zoom-l6-companion/releases/tag/v0.4.0
+    notes: Adds scene recall.
+  - version: v0.3.0
+    date: 2025-10-13
+    url: https://github.com/philmillman/zoom-l6-companion/releases/tag/v0.3.0
+    notes: Adds Advanced Settings for custom CC mappings.
+  - version: v0.2.0
+    date: 2025-10-07
+    url: https://github.com/philmillman/zoom-l6-companion/releases/tag/v0.2.0
+    notes: Adds a debug console.
+  - version: v0.1.0
+    date: 2025-10-01
+    url: https://github.com/philmillman/zoom-l6-companion/releases/tag/v0.1.0

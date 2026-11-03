@@ -1,0 +1,44 @@
+device: korg-minilogue-xd
+name: minilogue xd viewer
+kind: tool
+summary: Browser viewer for minilogue xd programs and libraries with a faithful panel display. It can mirror a connected synth over Web MIDI and has a model that tries to match an audio clip to a patch, plus an Ableton Live extension.
+description: >-
+  Rights warning: the repository holds a product photo of the minilogue xd module (web/minilogue_xd_module.jpg) and vendored
+  Ableton extension SDK archives under ableton/vendor.
+
+  The page opens .mnlgxdprog and .mnlgxdlib files and shows every parameter on a drawn panel. With the synth connected over Web
+  MIDI it follows live changes. A resynthesis feature runs an ONNX model in the browser to guess a patch from an audio clip,
+  which can then be loaded on the hardware. A viewer-only build ships as an Ableton Live 12.4.5 or later extension, with a
+  bridge script in the repository. The releases page carries the extension and bridge archives.
+status: active
+authors:
+  - name: Ava Gunn
+    url: https://github.com/ava-gunn
+source: https://github.com/ava-gunn/minilogue-viewer
+source_status: open
+license: unspecified
+license_notes: No license file or statement in the repository.
+homepage: https://minilogue-xd-viewer.vercel.app/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted app in a browser with Web MIDI and allow MIDI access to mirror a connected minilogue xd. The Ableton
+  extension is installed in Live from Settings, Extensions, Add.
+brick_risk: false
+tags: [librarian, editor, web-midi, midi, usb-midi, presets, web]
+image:
+  url: https://raw.githubusercontent.com/ava-gunn/minilogue-viewer/main/screenshot.png
+  alt: Dark minilogue xd panel drawn in the browser with VCO, mixer, filter, amp EG, LFO and effects knobs and an INIT PROGRAM display reading click or drop a patch
+  credit: Ava Gunn
+  source_url: https://github.com/ava-gunn/minilogue-viewer#readme
+  first_party: true
+versions:
+  - version: ableton-v4.7.0
+    date: 2026-07-23
+    url: https://github.com/ava-gunn/minilogue-viewer/releases/tag/ableton-v4.7.0
+    notes: Ableton extension and bridge release.
+  - version: ableton-v4.6.0
+    date: 2026-07-23
+    url: https://github.com/ava-gunn/minilogue-viewer/releases/tag/ableton-v4.6.0
+  - version: ableton-v4.5.0
+    date: 2026-07-23
+    url: https://github.com/ava-gunn/minilogue-viewer/releases/tag/ableton-v4.5.0

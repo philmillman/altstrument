@@ -1,0 +1,43 @@
+device: valeton-gp-200
+kind: tool
+name: GP-200 Tone Desk
+summary: >-
+  Single-page Web MIDI app for the GP-200 that stores songs and a library of your SnapTone and IR slots, builds a complete patch from a Claude reply you paste in, and writes it to a preset over USB with backup, read-back and undo.
+description: >-
+  The Songs tab keeps a title, artist, part and guitar for each song with its patch, and the SnapTones tab lists what is in
+  each capture and user IR slot. The app builds a prompt from the song, your captures and every GP-200 model for you to
+  paste into Claude on claude.ai, then loads the JSON reply as a patch. Sending backs up the destination preset, writes
+  every knob and block state, and reads it back to check it, with an undo of the last send and a patch file for the official
+  editor. A per-song output level adjusts the volume block. Songs are kept in the browser with backup export and sharing
+  by file. Releases are a Windows launcher that opens the page in Edge or Chrome and a Mac HTML file. The repository
+  holds only the README, a LICENSE and screenshots; the app is in the release zips. The README says version 1.2.4 fixed
+  parameter mappings that could swap delay time and feedback.
+status: active
+authors:
+  - name: Kaprrrr
+    url: https://github.com/Kaprrrr
+source: https://github.com/Kaprrrr/GP-200-Tone-Desk
+source_status: binary-only
+license: MIT
+license_notes: >-
+  The LICENSE file is MIT. The repository holds no application code, only the README, license and screenshots, so the
+  license is what the repository states for the release downloads.
+homepage: https://github.com/Kaprrrr/GP-200-Tone-Desk/releases/latest
+distribution: download
+requires_stock: GP-200 firmware 1.8
+install_notes: >-
+  Unzip the Windows or Mac download, connect the pedal by USB and open the app in Chrome or Edge, then use Connect on the Pedal
+  tab. Close the official editor first. The Windows launcher is not signed, so Windows may warn. Do not use releases before
+  1.2.4 to send patches.
+brick_risk: false
+tags: [editor, web-midi, sysex, usb-midi, midi, presets, backup, ai, nam, ir, web]
+image:
+  url: https://raw.githubusercontent.com/Kaprrrr/GP-200-Tone-Desk/main/docs/song-page.png
+  alt: GP-200 Tone Desk Songs page showing a saved song with its tone description, a Send to pedal panel with an output level slider and destination preset, and a table of the patch blocks
+  credit: Kaprrrr
+  source_url: https://github.com/Kaprrrr/GP-200-Tone-Desk#readme
+  first_party: true
+versions:
+  - version: v1.2.6
+    date: 2026-10-02
+    url: https://github.com/Kaprrrr/GP-200-Tone-Desk/releases/tag/v1.2.6

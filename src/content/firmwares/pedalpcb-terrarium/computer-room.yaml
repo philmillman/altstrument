@@ -1,0 +1,49 @@
+device: pedalpcb-terrarium
+name: Computer Room
+summary: >-
+  CloudSeed algorithmic reverb for a Daisy Seed in a Terrarium pedal, forked from GuitarML's DaisyCloudSeed. It has ten presets in a presets.toml file, assignable knobs and switches with a secondary layer, a reverse-delay feed and a Web MIDI preset editor.
+description: >-
+  The project grew out of GuitarML's mono Terrarium port of the CloudSeed reverb and has moved far from it. Presets are
+  defined in presets.toml, which is validated and embedded in the firmware at build time. Every knob and switch can be assigned
+  per preset, with a second function while the right footswitch is held. Edits can be stored on the pedal by holding the
+  bypass footswitch, and holding both footswitches reverts to factory. Up to 5 delay lines are available. The reverb can also be
+  fed up to two seconds of reversed audio, and a bloom switch reverses the gain envelope of the multitap delays. The pedal is a USB MIDI device, and a
+  single-file browser editor reads and writes the preset bank over SysEx without reflashing. The editor
+  release must match the firmware version. The build uses the Daisy bootloader in boot-SRAM mode, so the bootloader has to be flashed once.
+status: active
+authors:
+  - name: Jim Battin
+    url: https://github.com/jimbattin
+source: https://github.com/jimbattin/ComputerRoom
+source_status: open
+license: MIT
+license_notes: >-
+  Builds on GuitarML's DaisyCloudSeed and Valdemar Erlingsson's CloudSeed, both MIT.
+homepage: https://github.com/jimbattin/ComputerRoom
+distribution: download
+install_notes: >-
+  Flash cloudseed.bin from a release with the Electrosmith web programmer, or build from source with the Daisy toolchain.
+  The README says this fork uses BOOT_SRAM, so flash the Daisy bootloader once first with make program-boot, then the
+  app with make program-dfu. Download editor.html from the same release as the firmware and open it in Chrome or Firefox.
+brick_risk: false
+tags: [fx, reverb, editor, presets, web-midi, sysex]
+image:
+  url: https://raw.githubusercontent.com/jimbattin/ComputerRoom/main/docs/pedal.png
+  alt: Brushed-metal Terrarium pedal with six brass knobs labelled dry, early, late, feedback, dampen and decay, four toggle switches, two LEDs and bypass and preset footswitches
+  credit: Jim Battin
+  source_url: https://github.com/jimbattin/ComputerRoom#readme
+  first_party: true
+versions:
+  - version: v1.0.0
+    date: 2026-09-27
+    url: https://github.com/jimbattin/ComputerRoom/releases/tag/v1.0.0
+    notes: Adds the editor.html and presets.toml release files.
+  - version: v0.2.0
+    date: 2026-09-20
+    url: https://github.com/jimbattin/ComputerRoom/releases/tag/v0.2.0
+  - version: v0.1.0
+    date: 2026-09-19
+    url: https://github.com/jimbattin/ComputerRoom/releases/tag/v0.1.0
+  - version: v0.0.1
+    date: 2026-08-07
+    url: https://github.com/jimbattin/ComputerRoom/releases/tag/v0.0.1

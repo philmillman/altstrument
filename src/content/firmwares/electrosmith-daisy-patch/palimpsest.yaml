@@ -1,0 +1,30 @@
+device: electrosmith-daisy-patch
+name: Palimpsest
+summary: >-
+  Eurorack looper for the Daisy Patch that carries the Echoplex Digital Pro's live-editing functions (substitute, reverse, loop window, speed, crop and tile) as gestures and CV or gate patch points. A guitar-pedal target is in progress.
+description: >-
+  Loop edits are meant to be performed rather than stacked, so every function can be set from a button, a gate jack or a MIDI note. Reverse, varispeed,
+  retrigger, overdub, substitute and undo use one copy-on-write mechanism, a scannable loop window snaps to the external clock, record, mute and
+  substitute can be clock quantised, and sync and phase CV outputs are provided. Nine of eleven planned milestones are listed as built and
+  tested on a Daisy Patch, and the next one, loop select, is under way. The engine is shared with a second target for a
+  bkShepherd 125B pedal, which is not yet running. A single-file Web MIDI page drives the module as a clickable panel; the README calls it a mockup, and it is not hosted.
+  The author says the project was developed in conversation with Claude.
+status: active
+authors:
+  - name: Mitchell Hudson
+    url: https://github.com/soggybag
+source: https://github.com/soggybag/Palimpsest
+source_status: open
+license: MIT
+homepage: https://github.com/soggybag/Palimpsest
+distribution: source-only
+install_notes: >-
+  Build targets/eurorack with the Daisy toolchain and a libDaisy and DaisySP checkout, then run make program-dfu with the Seed
+  in DFU mode (hold BOOT, tap RESET).
+brick_risk: false
+tags: [looper, fx, performance, midi, cv, web-midi]
+versions:
+  - version: main @ 2628f25
+    date: 2026-09-29
+    url: https://github.com/soggybag/Palimpsest/commit/2628f25
+    notes: No tagged releases; this is the latest commit.

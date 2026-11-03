@@ -1,0 +1,36 @@
+device: synthux-touch-2
+name: TouchTemplate
+kind: tool
+summary: >-
+  C++ hardware library and starter project for writing Daisy Seed firmware for the Synthux Touch 2. It wraps the pads, knobs, faders and switches in one Touch class, and has four examples including a USB MIDI controller with a browser debugger.
+description: >-
+  The library reads the twelve capacitive pads as pressure values, the six knobs and two faders with smoothing and pickup, and the two three-position
+  switches, using the Touch 2 pin layout from the README's board diagram. The repository includes a blank template and four examples:
+  a hardware test, a simple synth, a USB MIDI controller with CC and aftertouch output, and an audio effect. The
+  USB MIDI example comes with a single-page Web MIDI viewer that shows the controls and logs events. libDaisy and DaisySP are
+  git submodules, and the build and DFU flash use the usual make targets.
+status: active
+authors:
+  - name: Vincent Maurer
+    url: https://github.com/vincentltm
+source: https://github.com/vincentltm/TouchTemplate
+source_status: open
+license: MIT
+homepage: https://github.com/vincentltm/TouchTemplate#readme
+distribution: source-only
+install_notes: >-
+  Clone with submodules, run make libs and make, then flash with make program-dfu after putting the Daisy Seed in DFU
+  mode (hold BOOT, tap RESET, release BOOT). The Web MIDI viewer is a local file that needs Chrome or Edge.
+brick_risk: false
+tags: [sdk, midi, usb-midi, web-midi, platform]
+image:
+  url: https://raw.githubusercontent.com/vincentltm/TouchTemplate/main/assets/touch.jpeg
+  alt: Synthux Touch 2 board with a black and gold hand-drawn front, with its pads, knobs, faders and switches marked by labelled red and brown circles such as P00 to P11 and S30 to S37
+  credit: Vincent Maurer
+  source_url: https://github.com/vincentltm/TouchTemplate#readme
+  first_party: true
+versions:
+  - version: main @ f920588
+    date: 2026-09-18
+    url: https://github.com/vincentltm/TouchTemplate/commit/f9205880cdc465ef59c2ccf321ce1c37e917f08c
+    notes: No tagged releases; this is the latest commit.

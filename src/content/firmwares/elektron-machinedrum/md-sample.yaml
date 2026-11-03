@@ -1,0 +1,30 @@
+device: elektron-machinedrum
+name: MD Sample
+kind: tool
+summary: Single-page converter that turns an audio file into a MIDI Sample Dump .syx for the Machinedrum UW. It runs offline in the browser with no MIDI access, so you send the file with another tool.
+description: >-
+  Reads WAV and AIFF in common bit depths, and other formats through the browser's decoder, plays back the mono conversion,
+  and writes a mono 16-bit sample dump at 44.1, 22.05 or 11.025 kHz with device ID 0 and sample number 0, loop off. Downsampling
+  uses a 48-tap windowed-sinc filter and there is no normalising. Input is limited to 80 MiB and 180 seconds. Node tests
+  check decoding, packet checksums and counter rollover, and the README says hardware transfer has not been validated by
+  them. The page makes no uploads, analytics or MIDI requests. The README calls it an unofficial community tool.
+status: active
+authors:
+  - name: mathieustaub
+    url: https://github.com/mathieustaub
+source: https://github.com/mathieustaub/md-sample
+source_status: open
+license: GPL-3.0-only
+license_notes: The LICENSE file is the GPL v3 text; the README and source make no statement about later versions.
+homepage: https://mathieustaub.github.io/md-sample/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page, choose an audio file, listen to the preview and download the .syx. Choose the destination slot
+  on the Machinedrum before sending the file with a SysEx tool.
+brick_risk: false
+tags: [sample-transfer, sampler, converter, sysex, web, utility]
+versions:
+  - version: main @ fcda62a
+    date: 2026-10-27
+    url: https://github.com/mathieustaub/md-sample/commit/fcda62a5c4703076f91383339eac6785b1ca6ee8
+    notes: No tagged releases; this is the latest commit.

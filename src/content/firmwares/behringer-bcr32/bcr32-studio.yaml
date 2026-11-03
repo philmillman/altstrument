@@ -1,0 +1,32 @@
+device: behringer-bcr32
+name: BCR32 Studio
+kind: tool
+summary: Browser editor for the Behringer BCR32 that reads and edits the controller's 82 assignments over Web MIDI SysEx, with MIDI Learn, presets, BCL import and export, a step-sequencer editor and PDF overlays.
+description: >-
+  The editor reads the controller's identity and its current assignment on connection, shows a live front panel and
+  lets rotary, button and push assignments be edited, with changes written back and confirmed by a read of the unit.
+  Presets can be read from and saved to the hardware with a backup first, BCL files can be imported, exported and
+  captured, and a template catalogue of SysEx definitions for other synths is included. On firmware 1.0.3 it also reads
+  and edits the four-track, 32-step sequencer. The README lists what was tested on a unit and what was not, including
+  global restore, factory reset and firmware upload, which are not enabled. Nothing is flashed. The project is not
+  affiliated with Behringer.
+status: active
+authors:
+  - name: TheLazyGeekGuy
+    url: https://github.com/TheLazyGeekGuy
+source: https://github.com/TheLazyGeekGuy/bcr32-studio
+source_status: open
+license: MIT
+homepage: https://thelazygeekguy.github.io/bcr32-studio/
+distribution: browser-installer
+requires_stock: BCR32 firmware 1.0.2 or 1.0.3
+install_notes: >-
+  Open the hosted editor in a Chromium browser over HTTPS, connect the BCR32 and allow MIDI and SysEx access. Select the
+  controller or CTRL port, not the ZAQ port.
+brick_risk: false
+tags: [editor, web-midi, sysex, usb-midi, midi, presets, sequencer, web]
+versions:
+  - version: main @ b272012
+    date: 2026-10-29
+    url: https://github.com/TheLazyGeekGuy/bcr32-studio/commit/b2720127a902d18371105d71a1acc35acfd211fc
+    notes: The README and changelog name 0.46.0-alpha.8; the newest Git tag is v0.12.1 and there is no GitHub release page.

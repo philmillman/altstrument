@@ -1,0 +1,34 @@
+device: korg-volca-sample-2
+kind: tool
+name: sample loader for volca sample 2
+summary: Single-page browser app that records or opens audio, trims and processes it, and sends it to a volca sample2 over USB MIDI SysEx. It also lists the 200 slots, backs them up to a zip file, restores them, and plays the parts from on-screen pads.
+description: >-
+  The page records from a microphone or line input or opens common audio files, trims the sample on a waveform and applies gain,
+  pitch shift, high cut, fades, normalising and reverse. A preview plays the result as the unit will hold it, mono at 31.25 kHz and
+  16-bit. Samples go to a chosen slot over the volca's USB MIDI SysEx protocol, which Korg has not published and which the
+  author ported to JavaScript from the open-source volsa2 project. The library view lists all 200 slots with name and length,
+  and a backup saves every slot as a WAV file in one zip that can be restored later. The README says the code was tested against
+  captured data dumps and a simulated unit, and asks for reports from real hardware. Nothing is flashed.
+status: active
+authors:
+  - name: David Marques
+    url: https://github.com/dferreiramarques
+source: https://github.com/dferreiramarques/volca-sample-loader
+source_status: open
+license: MIT
+license_notes: The LICENSE file is the MIT text, copyright 2026 David Marques / monco.io.
+homepage: http://volca.monco.io/
+distribution: browser-installer
+install_notes: >-
+  Use Chrome or Edge on a computer, or Chrome on Android with a USB OTG cable, and connect the volca sample2 by its micro-USB
+  cable. Allow MIDI with SysEx access when asked. The hosted copy is served over plain HTTP, which browsers may treat as an
+  insecure page for MIDI; if the unit cannot be reached, download index.html from the repository and open it from disk or host
+  it over HTTPS. Back up all samples first. Very long samples can make the volca stop answering, and switching it off and on
+  recovers it with the memory intact.
+brick_risk: false
+tags: [sample-transfer, librarian, web-midi, sysex, usb-midi, samples, web]
+versions:
+  - version: main @ 1ec2bb1
+    date: 2026-10-21
+    url: https://github.com/dferreiramarques/volca-sample-loader/commit/1ec2bb1c040a5516d94f3d2b327c0196d4051f8a
+    notes: No tagged releases; this is the latest commit.

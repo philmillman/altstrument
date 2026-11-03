@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: FM-1 Firmware Downloader
+kind: tool
+summary: >-
+  Userscript for The Firmware Hub that adds search, size and SHA-256 checked downloads and a Flash via Hub button to its firmware cards, plus a written recovery route through M-Flasher for units with a different flash chip.
+description: >-
+  A Tampermonkey or Violentmonkey script that runs on thefirmwarehub.com. It reads the hub's own catalogue, lists the community firmware packages with search and category filters, and saves a package only after its size and SHA-256 match the catalogue and the file comes from the hub's own origin. The script reads only the community firmware list, not the hub's entry for M-VAVE's stock image, and the repository contains no firmware images. Flash via Hub hands over to the hub's Web MIDI installer. The README also documents recovery with M-Flasher through the chip's ROM download mode for FM-1 units whose flash chip makes the web updater drop out, and links the experimental SLOOP build for the UC25HQ80 chip that is catalogued separately. Nothing is flashed by the script itself.
+status: active
+authors:
+- name: 1andesc
+  url: https://github.com/1andesc
+source: https://github.com/1andesc/fm1-firmware-downloader
+source_status: open
+license: MIT
+license_notes: >-
+  The userscript is MIT. The SLOOP patch under docs/patches is GPL-3.0-only and is not covered by the MIT licence.
+homepage: https://github.com/1andesc/fm1-firmware-downloader
+distribution: download
+install_notes: >-
+  Install Tampermonkey or Violentmonkey, open the raw fm1-firmware-downloader.user.js link from the README, and reload The Firmware Hub. Downloads come from the hub, which mirrors packages from their authors. The recovery guide uses M-Flasher (jvitkauskas/m-flasher) with the whole-flash backup step first.
+brick_risk: false
+tags: [flasher, utility, web, backup]
+image:
+  url: https://raw.githubusercontent.com/1andesc/fm1-firmware-downloader/main/docs/screenshots/download-flash-panel.png
+  alt: "The Firmware Hub page with the userscript panel open, listing firmware cards B1, JIANT FM, LUXR and MONO2K, each with Flash via Hub, Download and Copy SHA buttons"
+  credit: 1andesc
+  source_url: https://github.com/1andesc/fm1-firmware-downloader
+  first_party: true
+versions:
+- version: main @ 67bbb9e
+  date: 2026-11-02
+  url: https://github.com/1andesc/fm1-firmware-downloader/commit/67bbb9edf8c9be74d8e5effc587045f066a44f59
+  notes: Userscript 1.1.1. No tagged releases other than the experimental firmware; this is the latest commit.

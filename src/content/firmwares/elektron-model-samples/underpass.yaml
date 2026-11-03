@@ -1,0 +1,38 @@
+device: elektron-model-samples
+name: underpass
+kind: tool
+summary: Single-page browser sampler for the Model:Samples. It records from any audio input, or resamples the unit's own USB audio output, and sends the result to the unit as a MIDI Sample Dump over Web MIDI into the inbox slots.
+description: >-
+  The page lists audio inputs and MIDI ports, shows a level meter, records at 48 kHz 16-bit, sums to mono and
+  sends the take as sample dump packets, numbering samples from 0 in the unit's inbox folder or at a number you choose.
+  It is plain HTML, CSS and JavaScript with two audio worklets, with no framework. The author tested it on Chrome on
+  Windows 10 and says Android may have problems with the class-compliant USB audio and iOS cannot work because Safari
+  has no Web MIDI. The last commit is from December 2021. A later fork, underpass-2, rewrites it in TypeScript.
+status: dormant
+authors:
+  - name: Markus Noga
+    url: https://github.com/mlnoga
+source: https://github.com/mlnoga/underpass
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The LICENSE file is the GPL v3 text, the README says GPL v3, and the headers in index.html and app.js offer the
+  choice of any later version.
+homepage: https://mlnoga.github.io/underpass/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, connect the Model:Samples over USB, choose the input and the MIDI ports, press record
+  and then stop. On the unit, open the sample selection and look in inbox/0.
+brick_risk: false
+tags: [sample-transfer, sampler, web-midi, sysex, usb-midi, web, midi]
+image:
+  url: https://mlnoga.github.io/underpass/screenshot.png
+  alt: underpass page with an orange arch logo, drop-downs for Audio In, MIDI In and MIDI Out all set to Elektron Model:Samples, a Sample ID field, an input level bar and large record and stop buttons
+  credit: Markus Noga
+  source_url: https://github.com/mlnoga/underpass#readme
+  first_party: true
+versions:
+  - version: main @ 96db6cd
+    date: 2021-12-04
+    url: https://github.com/mlnoga/underpass/commit/96db6cd68df7fdeb34b12bd3ec41355bf2c98bc5
+    notes: No tagged releases; this is the latest commit.

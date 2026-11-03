@@ -1,0 +1,35 @@
+device: korg-m1
+kind: tool
+name: Korg M1 Web Librarian
+summary: Early-stage browser librarian for the Korg M1 over Web MIDI SysEx. The hosted page detects the synth and requests its programs and combinations; the README lists backup, restore and editing as planned. It targets the M1 only and keeps patches in browser storage.
+description: >-
+  The page asks the connected MIDI port for a device inquiry reply, recognises the M1 by its model code, and requests the
+  internal and card program and combination banks with the M1's own SysEx dump requests. It shows the patches it receives and
+  can rename them, and it keeps what it has in the browser's local storage. The repository also holds two Markdown notes that
+  transcribe Korg's MIDI implementation for the M1, with a warning that the scan they came from may contain errors. The README's
+  roadmap lists program backup and restore, patch editing and combination support as unfinished, and the sample patch directory
+  in the repository holds placeholder entries. The code covers the M1 only and no other M-series model. Nothing is flashed.
+status: dormant
+authors:
+  - name: hsiboy
+    url: https://github.com/hsiboy
+source: https://github.com/hsiboy/Korg-Librarian
+source_status: open
+license: MIT
+license_notes: >-
+  The README says the project is under the MIT License and points to a LICENSE file, but the repository does not contain one,
+  so no copyright holder is named. The repository's source also lacks the hooks and constants folders that its main component
+  imports, so it cannot be built as published. The hosted page serves a prebuilt bundle.
+homepage: https://hsiboy.github.io/Korg-Librarian/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, Edge or Opera, connect the M1 through a MIDI interface in both directions and allow MIDI with
+  SysEx access. Turn on SysEx reception on the M1 first. The README notes that some MIDI interfaces need specific settings and
+  that the backup timing may need adjusting.
+brick_risk: false
+tags: [librarian, web-midi, sysex, midi, presets, web]
+versions:
+  - version: main @ 806f08b
+    date: 2025-03-25
+    url: https://github.com/hsiboy/Korg-Librarian/commit/806f08ba25075b3b458d8d8db462ca0eb31f6be3
+    notes: No tagged releases; this is the latest commit.

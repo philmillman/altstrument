@@ -1,0 +1,34 @@
+device: boss-cube-street-ii
+kind: tool
+name: CUBE Street II SysEx Reference
+summary: Documentation of the CUBE Street II's Roland SysEx address map, with a Python script that drives the amp from a BLE MIDI foot pedal. It also covers the BLE MIDI framing, the tuner data format and how the address map was found.
+description: >-
+  Rights warning: the README says the address map is based on a file that Roland's CUBE Street II Editor Android app
+  ships, so the parameter table comes from Roland's own data.
+
+  The README is a long reference of the message format, the addresses for system setup, mic and guitar effects,
+  reverb, mixer, panel controls, looper status, tuner and system commands, the BLE MIDI framing that generic sender apps get wrong, and the tuner
+  data format, with notes on extracting the map from the editor app and capturing Bluetooth traffic. The separate script,
+  pedal_control_ble.py, is an abandoned Linux prototype that uses gatttool and mido to send those messages when an EV-1-WL pedal
+  moves. The author replaced it with the Boss Cube Web Control app. Nothing is flashed.
+status: active
+authors:
+  - name: Petr Dlouhý
+    url: https://github.com/PetrDlouhy
+source: https://github.com/PetrDlouhy/street-cube-II-sysex
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GNU GPL version 3 text. The address map in the README is taken in part from Roland's own app data, which the licence does not cover.
+homepage: https://github.com/PetrDlouhy/street-cube-II-sysex#readme
+distribution: source-only
+install_notes: >-
+  Documentation plus one script. The script needs Python with mido and gatttool, and the author calls it a
+  prototype that no longer works on current BlueZ. Use the Boss Cube Web Control page to try the amp.
+brick_risk: false
+tags: [research, sysex, bluetooth, midi, python, docs]
+versions:
+  - version: main @ a957c65
+    date: 2026-03-27
+    url: https://github.com/PetrDlouhy/street-cube-II-sysex/commit/a957c65
+    notes: No tagged releases; this is the latest commit.

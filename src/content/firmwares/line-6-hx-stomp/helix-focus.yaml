@@ -1,0 +1,35 @@
+device: line-6-hx-stomp
+also_devices: [line-6-helix]
+kind: tool
+name: Helix Focus Controller
+summary: >-
+  Touch PWA that morphs between four Helix or HX Stomp presets on an XY pad. It reads amp parameters from four .hlx files and sends the interpolated values as MIDI CC messages over Web MIDI as you drag.
+description: >-
+  Four .hlx files are loaded into the corners of the pad, and the page pulls values from the amp block of each file's DSP0.
+  Dragging the cursor blends them by bilinear interpolation, with a smoothing step, and sends changes as MIDI CC numbers
+  4 to 10 for drive, bass, mid, treble, presence, master and channel volume. Only changed values are sent, timed with the
+  display's frame loop to avoid flooding the USB link. The pad keeps its loaded presets in browser storage, has
+  a double-tap to centre, keeps the screen awake and can be themed. It connects to the first output whose name contains
+  Helix, HX or Line 6. The pedal has to be set to receive those CC numbers; the README does not say how. The README text
+  is in Spanish. Nothing is flashed.
+status: active
+authors:
+  - name: VeritasShield
+    url: https://github.com/VeritasShield
+source: https://github.com/VeritasShield/helix-focus
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text, but its copyright line still holds the template placeholder instead of a name.
+homepage: https://veritasshield.github.io/helix-focus/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, Edge or an Android browser, connect the unit by USB, press the connect button and allow
+  MIDI. The README says iOS needs a Web MIDI bridge app.
+brick_risk: false
+tags: [controller, web-midi, usb-midi, midi, performance, pwa, web]
+versions:
+  - version: main @ c3c2019
+    date: 2026-04-08
+    url: https://github.com/VeritasShield/helix-focus/commit/c3c2019
+    notes: No tagged releases; this is the latest commit.

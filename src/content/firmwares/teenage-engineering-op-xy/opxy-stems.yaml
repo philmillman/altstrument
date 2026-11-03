@@ -1,0 +1,32 @@
+device: teenage-engineering-op-xy
+name: opxy-stems
+kind: tool
+summary: Single-file web page that bounces the OP-XY's eight tracks to WAV stems one pass at a time by muting over MIDI CC 9, starting and stopping the transport, and recording USB audio. Auto-detects BPM from clock and offers 16-bit, 24-bit and 32-bit float output as a ZIP.
+description: >-
+  A small, independent page with the same method as stembounce, listed beside it:
+  it mutes every track, unmutes one, records for a set number of bars and
+  repeats. Each stem is trimmed to the first clock tick after start, a mix pass
+  can be added, and a test mute button checks which track each cell mutes. It
+  has no build step. Nothing is flashed. The device needs clock send, note and
+  CC receive and transport receive turned on in the COM menu.
+status: active
+authors:
+  - name: mofongo
+    url: https://github.com/mofongo
+source: https://github.com/mofongo/opxy-stems
+source_status: open
+license: MIT
+license_notes: The README states MIT; the repository has no LICENSE file.
+homepage: https://mofongo.github.io/opxy-stems/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, Edge or Opera, or open index.html from a
+  checkout. Connect the device over a USB-C data cable and pick it as MIDI out
+  and audio in. Set the COM menu options listed in the README first.
+brick_risk: false
+tags: [web-midi, usb-midi, usb-audio, utility, web]
+versions:
+  - version: main @ e94b6f9
+    date: 2026-05-21
+    url: https://github.com/mofongo/opxy-stems/commit/e94b6f9
+    notes: No tagged releases; this is the latest commit.

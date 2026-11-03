@@ -1,0 +1,31 @@
+device: korg-volca-sample-2
+kind: tool
+name: PolyVolcaWeb
+summary: Browser app that turns a volca sample2 into an eight-voice chromatic sample player. It takes notes from a MIDI keyboard and sends them to the volca's parts as note and chromatic pitch messages over Web MIDI. No SysEx is used.
+description: >-
+  The page reads notes from a chosen MIDI input and shares them across the volca's channels so several notes can sound at once.
+  It sets each channel's pitch through the volca sample2's chromatic speed control change and maps velocity to level. Channel
+  allocation can be round robin or based on the number of active notes. Further options include an octave offset, a stereo spread
+  that pans lower notes left and higher notes right, a reverb switch, sustain pedal handling, a global sample selector and
+  layered sampling that picks a different sample for each velocity range. The page is plain JavaScript with no libraries. The
+  author first built it as a Max for Live device. Nothing is flashed.
+status: dormant
+authors:
+  - name: rafaelpernil2
+    url: https://github.com/rafaelpernil2
+source: https://github.com/rafaelpernil2/PolyVolcaWeb
+source_status: open
+license: CC-BY-NC-SA-4.0
+license_notes: LICENSE.md is the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 text with no named copyright holder.
+homepage: https://polyvolca.rafaelpernil.com
+distribution: browser-installer
+install_notes: >-
+  Open the hosted app in a browser with Web MIDI, connect the volca sample2 and a MIDI keyboard to the computer, pick the
+  keyboard as input and the volca as both output and loopback device, then choose a sample.
+brick_risk: false
+tags: [performance, web-midi, usb-midi, midi, sampler, web]
+versions:
+  - version: master @ f136374
+    date: 2025-10-30
+    url: https://github.com/rafaelpernil2/PolyVolcaWeb/commit/f1363748a07dd2b98cd6e89fd52548a4bbc383d0
+    notes: No tagged releases; this is the latest commit.

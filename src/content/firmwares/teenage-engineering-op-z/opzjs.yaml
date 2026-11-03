@@ -1,0 +1,34 @@
+device: teenage-engineering-op-z
+name: OPZ.js
+kind: tool
+summary: JavaScript library that decodes MIDI received from an OP-Z into track, action, velocity and value, covering keys, dials with colour and page, pitch bend and transport. Works with Web MIDI or node-midi. Published on npm as opzjs, with demo pages built on it.
+description: >-
+  The decode function takes the raw bytes of a message and returns which of the
+  device's tracks sent it, whether it was a key, dial or pitch bend, and a value
+  such as a note name or dial position. The README tables list the track names,
+  the controls that send no MIDI and the burst of notes sent when stop is pressed
+  during playback. Browser and Node examples are included. The author's site lists
+  four demo pages made with it, a Tetris game, shapes, a sinusoid and a sketch
+  pad, controlled from the device. It only receives and decodes; it does not
+  write to the OP-Z.
+status: dormant
+authors:
+  - name: Nathan Willson
+    url: https://github.com/nbw
+source: https://github.com/nbw/opz
+source_status: open
+license: MIT
+homepage: https://opz.nathanwillson.com
+distribution: source-only
+install_notes: >-
+  Install from npm with npm install opzjs, or include dist/opz.js in a page.
+  Turn MIDI out on in the device's settings first.
+brick_risk: false
+tags: [sdk, midi, web-midi, web]
+versions:
+  - version: v1.0.1
+    date: 2020-11-25
+    url: https://github.com/nbw/opz/releases/tag/v1.0.1
+  - version: v1.0.0
+    date: 2020-11-16
+    url: https://github.com/nbw/opz/releases/tag/v1.0.0

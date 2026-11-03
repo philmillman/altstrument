@@ -1,0 +1,37 @@
+device: teenage-engineering-ep-133
+name: KO II Web MIDI Lab
+kind: tool
+summary: Static browser page that connects to an EP-133 over Web MIDI with SysEx, sends identity, echo, file-init and root-list probes, and imports local audio for waveform preview and WAV export. Writes are switched off in code. The author has superseded it with a desktop app.
+description: >-
+  A small prototype for exploring the device's vendor SysEx file protocol from
+  the browser. It lists MIDI inputs and outputs, sends the universal identity
+  request, builds and parses Teenage Engineering SysEx frames with 7-bit
+  packing, and offers four read-only probes. Separately it decodes audio files
+  locally, draws waveforms and exports samples as WAV plus a JSON manifest. Put,
+  delete, move, metadata-set and playback commands are blocked by a flag in
+  te-sysex.js. The README says the page is superseded by the author's KO II
+  Sampler DAW and keeps this repository as a browser reference. It does not
+  upload samples to the device. Protocol notes taken from the official EP Sample
+  Tool's bundle are in docs/protocol-notes.md.
+status: dormant
+authors:
+  - name: generalgroovy
+    url: https://github.com/generalgroovy
+source: https://github.com/generalgroovy/ko2
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and the README states no terms.
+homepage: https://generalgroovy.github.io/ko2/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a Chromium browser, connect the device over USB with a
+  data cable and allow MIDI with SysEx. Close the official EP Sample Tool first,
+  because only one app can hold the ports. Leave the write flag off unless you
+  have a current backup.
+brick_risk: false
+tags: [research, web-midi, sysex, usb-midi, samples, web]
+versions:
+  - version: main @ 93bfc55
+    date: 2026-09-27
+    url: https://github.com/generalgroovy/ko2/commit/93bfc55
+    notes: No tagged releases; this is the latest commit. It adds the note pointing to the desktop project.

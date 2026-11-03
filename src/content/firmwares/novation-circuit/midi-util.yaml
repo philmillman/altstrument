@@ -1,0 +1,30 @@
+device: novation-circuit
+kind: tool
+name: midi-util
+summary: Single-page Web MIDI router that sends notes from other keyboards to a Circuit on channel 1, 2 or 10, or keeps them local, and passes the Circuit's clock back to those keyboards. It also sets a Yamaha reface CS and a YS200 up over SysEx.
+description: >-
+  The page finds MIDI ports by name, treats any port containing Circuit as the groove box and everything else as a keyboard,
+  and offers buttons for Internal, Channel 1, Channel 2 and Channel 10 output plus a reconnect button. The Circuit's timing
+  clock is forwarded to the keyboards. On connect it sends SysEx that turns off local control on a reface and enables its
+  slider CCs, and initial settings for a YS200. A screen wake lock keeps a phone awake while the page is open. A later
+  rewrite in React by the same person lives at github.com/Wattle-bird/midi-util; it has no licence file and no hosted copy.
+  Nothing is flashed.
+status: dormant
+authors:
+  - name: iman1000000
+    url: https://github.com/iman1000000
+source: https://github.com/iman1000000/midi-util
+source_status: open
+license: MIT
+homepage: https://iman1000000.github.io/midi-util/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a browser with Web MIDI and allow MIDI with SysEx access, with the Circuit and keyboards
+  connected. The SysEx sent to the reface and YS200 is hard-coded, so the page suits that setup only.
+brick_risk: false
+tags: [midi, web-midi, utility, sysex]
+versions:
+  - version: master @ 12324c4
+    date: 2018-08-09
+    url: https://github.com/iman1000000/midi-util/commit/12324c4e8519901b1ce5c67a8d494b2e07a8cf82
+    notes: No tagged releases; this is the latest commit.

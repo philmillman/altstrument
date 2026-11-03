@@ -1,0 +1,37 @@
+device: m-vave-blackbox
+kind: tool
+name: blackboxctl
+summary: macOS command-line tool that reads and writes an M-VAVE Blackbox over USB MIDI SysEx, backs up its 80 presets and manages the M-EFCS capture and IR library, with protocol notes and an example preset bank. Writes are dry runs unless confirmed.
+description: >-
+  A Python command line, with no third-party packages, that talks to the pedal through CoreMIDI. It checks the setup
+  with a doctor command, reads settings and presets, makes checksummed backups of all 80 preset slots, writes presets
+  with rollback bytes and a read-back check, and installs AMP and CAB entries into M-EFCS's on-disk library. Every
+  write is a dry run unless it gets --yes, and flash writes need a second capability; there is no generic address writer
+  or firmware writer. The repository also holds a protocol specification validated against the author's pedal, a recovery
+  guide and an example bank of 12 presets with 92-byte images from the author's own unit. Preparing a new amp record
+  needs the installed M-EFCS parser library. Nothing is flashed.
+status: active
+authors:
+  - name: mendong
+    url: https://github.com/mendong
+source: https://github.com/mendong/blackboxctl
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The repository has several licences. The tool under tools/blackboxctl/ is GPL-3.0-or-later. The protocol notes adapted
+  from mvave-blackbox-ble and the other documents and example preset bank are CC-BY-SA-4.0. The README says no
+  third-party capture, IR, manual or firmware binary is committed.
+homepage: https://github.com/mendong/blackboxctl#readme
+distribution: source-only
+requires_stock: Pedal reporting BLACKBOX v20 (the tested unit)
+install_notes: >-
+  Needs Python 3.10 or newer and a Mac; device commands are macOS-only. Run it from tools/blackboxctl with
+  python -m blackboxctl doctor. The author's recovery guide describes backup, restore and the point past which a write
+  cannot be undone. Take a backup before using --yes.
+brick_risk: false
+tags: [cli, sysex, usb-midi, presets, librarian, research, python]
+versions:
+  - version: main @ c418060
+    date: 2026-08-29
+    url: https://github.com/mendong/blackboxctl/commit/c418060
+    notes: No tagged releases; this is the latest commit.

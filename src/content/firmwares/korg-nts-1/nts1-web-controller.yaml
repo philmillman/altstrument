@@ -1,0 +1,37 @@
+device: korg-nts-1
+name: NTS-1 Web Controller
+kind: tool
+summary: Browser control surface for the Nu:Tekt NTS-1 over Web MIDI, with virtual knobs for every parameter, a keyboard with hold and arpeggiator modes, eight patch slots kept in the browser and live MIDI device monitoring.
+description: >-
+  A Vue and Quasar app that sends MIDI control changes to the NTS-1 as you move on-screen knobs and menus for the oscillator,
+  filter, envelope, modulation, delay, reverb and arpeggiator. The keyboard page plays notes with octave shifting and a hold
+  or arpeggiator mode. Patches can be stored and recalled from eight slots in the browser's local storage. It also
+  shows which MIDI devices are connected. The hosted copy is the quickest way to try it, and it can be built and run locally.
+  Nothing is flashed.
+status: dormant
+authors:
+  - name: directions4
+    url: https://github.com/directions4
+source: https://github.com/directions4/nts1-web-controller
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE.txt file is the MIT text, with a copyright line naming Jean-Philippe Côté rather than the repository owner.
+homepage: https://directions4.github.io/nts1-web-controller/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted app in Chrome or Chromium, connect the NTS-1 over USB and allow MIDI access. To run it yourself, use
+  npm install and npm run dev.
+brick_risk: false
+tags: [editor, web-midi, midi, usb-midi, presets, web]
+image:
+  url: https://raw.githubusercontent.com/directions4/nts1-web-controller/master/screenshot.png
+  alt: NTS-1 Web Controller with eight patch buttons above columns of round knobs for oscillator, filter, envelope, modulation, delay, reverb and arpeggiator, each with a type menu on top
+  credit: directions4
+  source_url: https://github.com/directions4/nts1-web-controller#readme
+  first_party: true
+versions:
+  - version: master @ ba524c1
+    date: 2025-08-17
+    url: https://github.com/directions4/nts1-web-controller/commit/ba524c104e1d868b0412397d5813cbcb26252cd8
+    notes: No tagged releases; this is the latest commit.

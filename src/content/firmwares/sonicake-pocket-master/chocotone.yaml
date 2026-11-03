@@ -1,0 +1,36 @@
+device: sonicake-pocket-master
+name: Chocotone
+kind: tool
+summary: Open firmware and web editor for a home-built ESP32 MIDI foot controller that drives the Pocket Master over BLE MIDI, with button templates for it and SysEx scroll commands such as a whammy-style pitch sweep from an expression pedal.
+description: >-
+  The controller firmware runs on ESP32 and ESP32-S3 boards with up to 16 buttons, an OLED, NeoPixels, a rotary encoder,
+  analog inputs and optional TFT, and can act as a BLE MIDI client, server or both, or as USB MIDI on the S3. Its editor
+  configures buttons, presets and actions over USB serial or Bluetooth from a browser, with templates for the Pocket Master
+  and a SysEx picker, and a web installer flashes the controller board. The Pocket Master itself is not modified. The Valeton GP-5 is
+  marked as in testing. Wiring diagrams and a bill of materials are in the repository.
+status: active
+authors:
+  - name: André Solis
+    url: https://github.com/solispensa
+source: https://github.com/solispensa/Chocotone
+source_status: open
+license: MIT
+homepage: https://solispensa.github.io/Chocotone/chocotone_midi_editor.html
+distribution: browser-installer
+install_notes: >-
+  Build the controller from the hardware guide, flash it from the web installer in Chrome, Edge or Brave, then open the
+  editor, connect over USB or Bluetooth and load the Pocket Master template. The S3 USB MIDI mode needs Arduino ESP32
+  core 3.1.2 when building from source.
+brick_risk: false
+tags: [editor, sysex, web-midi, midi, ble-midi, flasher, web]
+image:
+  url: https://raw.githubusercontent.com/solispensa/Chocotone/main/images/chocotone_editor_1v2.png
+  alt: Chocotone web editor with USB serial and Bluetooth connect panels, a preset section, eight coloured button tiles with CC numbers and a system configuration panel with a device template picker
+  credit: solispensa
+  source_url: https://github.com/solispensa/Chocotone#readme
+  first_party: true
+versions:
+  - version: main @ a9d841a
+    date: 2026-02-10
+    url: https://github.com/solispensa/Chocotone/commit/a9d841a
+    notes: No tagged releases; this is the latest commit. The README names version 1.5.0 beta.

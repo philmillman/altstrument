@@ -1,0 +1,35 @@
+device: novation-circuit-tracks
+kind: tool
+name: Circuit Tracks Buddy
+summary: One-page Web MIDI display that shows the names and categories of the patches loaded on the Circuit Tracks' two synth tracks. It requests a patch dump at start and after each program change, and reads the name out of the reply.
+description: >-
+  Meant as a sidecar screen on a phone or laptop plugged into the unit's USB port. The page sends the patch dump request
+  described in the Circuit Tracks programmer's guide when it loads and on every program change, then decodes the patch name
+  and category from the reply. The author hosts the page on a DigitalOcean app that deploys from the repository and says they
+  built it with little web experience. The README does not name a licence. Nothing is flashed.
+status: dormant
+authors:
+  - name: g7uhn
+    url: https://github.com/g7uhn
+source: https://github.com/g7uhn/circuit-tracks-buddy
+source_status: open
+license: unspecified
+license_notes: There is no LICENSE file and the README states no licence.
+homepage: https://circuit-tracks-buddy-3w89g.ondigitalocean.app/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, connect the Circuit Tracks over USB and accept the MIDI pop-ups. The page loads the
+  WebMidi.js library from a CDN.
+brick_risk: false
+tags: [web-midi, sysex, usb-midi, midi, utility, web]
+image:
+  url: https://raw.githubusercontent.com/g7uhn/circuit-tracks-buddy/main/CT_Buddy_serving_suggestion.png
+  alt: A phone propped above a Circuit Tracks and connected to it by a red USB cable, showing two patch names with their categories, Pad and Bass, on a dark page
+  credit: g7uhn
+  source_url: https://github.com/g7uhn/circuit-tracks-buddy#readme
+  first_party: true
+versions:
+  - version: main @ 3b5f906
+    date: 2025-07-13
+    url: https://github.com/g7uhn/circuit-tracks-buddy/commit/3b5f906ad43df3ee1143005af7f2e8a94c7415bf
+    notes: No tagged releases; this is the latest commit.

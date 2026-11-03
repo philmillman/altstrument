@@ -1,0 +1,65 @@
+device: m-vave-fm-1
+name: GATOR Call/Answer
+summary: >-
+  GATOR fork that adds a call and answer generator on the SEQ page: a short figure and its reply play on two Plaits voices, follow incoming MIDI clock and roll their own sounds, with delay, room and scale controls.
+description: >-
+  GATOR is the Plaits-based macro-oscillator firmware for the FM-1 by npi3pak, catalogued separately. This fork keeps its engines and installer and adds a generator that writes a call and an answer, one octave apart, in 8 or 16 steps. White keys set step pairs, the sounds are drawn at random from curated sets of Plaits models so that each family comes up once before any repeats, and the generator has its own length, effects (delay and room), movement and scale pages on the ENV, FX, LFO and SCL buttons. PLAY starts and stops it, and it follows MIDI clock. Later releases add a soft attack control and a limiter in place of a clipper to remove clicks at the start of notes. Eleven GitHub releases, 0.2 to 1.2, were published between 28 October and 1 November 2026.
+status: active
+authors:
+- name: Maggismo
+  url: https://github.com/Maggismo
+- name: npi3pak
+  url: https://github.com/npi3pak
+source: https://github.com/Maggismo/fm1-gator
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md as in upstream GATOR. Plaits and stmlib DSP are MIT (Emilie Gillet), the Terminus font is SIL OFL 1.1, and three JieLi AC79 SDK files in each package are Apache-2.0.
+homepage: https://maggismo.github.io/fm1-gator/
+distribution: browser-installer
+install_notes: >-
+  Web installer in Chrome or Edge over USB, or tools/fm1_install.py with a .fwsc from the releases page (a single
+  48 kHz package). The installer has a way back to the official firmware, which asks you to download M-VAVE's own file
+  and select it. Same recovery notes as upstream GATOR.
+brick_risk: true
+tags: [synth-engine, generative, sequencer, oscillator, fork]
+versions:
+- version: '1.2'
+  date: 2026-11-01
+  url: https://github.com/Maggismo/fm1-gator/releases/tag/v1.2
+  notes: Adds a soft attack control on the FX page, softer physical-model strikes and a limiter instead of a clipper, to remove crackle at note starts.
+- version: '1.1'
+  date: 2026-11-01
+  url: https://github.com/Maggismo/fm1-gator/releases/tag/v1.1
+  notes: Finer length control, own ENV, FX, LFO and SCL pages for the generator, and no hidden modulation on call and answer.
+- version: '1.0'
+  date: 2026-11-01
+  url: https://github.com/Maggismo/fm1-gator/releases/tag/v1.0
+  notes: Choice of 8 or 16 steps, truly random sound draws from a bag, and a centred stereo image.
+- version: '0.9'
+  date: 2026-10-30
+  url: https://github.com/Maggismo/fm1-gator/releases/tag/v0.9
+  notes: Two voices, smaller pitch rubbing, and a cleaner delay and room.
+- version: '0.8'
+  date: 2026-10-30
+  url: https://github.com/Maggismo/fm1-gator/releases/tag/v0.8
+  notes: A running 16-step call and answer sequencer.
+- version: '0.7'
+  date: 2026-10-28
+  url: https://github.com/Maggismo/fm1-gator/releases/tag/v0.7
+- version: '0.6'
+  date: 2026-10-28
+  url: https://github.com/Maggismo/fm1-gator/releases/tag/v0.6
+- version: '0.5'
+  date: 2026-10-28
+  url: https://github.com/Maggismo/fm1-gator/releases/tag/v0.5
+- version: '0.4'
+  date: 2026-10-28
+  url: https://github.com/Maggismo/fm1-gator/releases/tag/v0.4
+- version: '0.3'
+  date: 2026-10-28
+  url: https://github.com/Maggismo/fm1-gator/releases/tag/v0.3
+- version: '0.2'
+  date: 2026-10-28
+  url: https://github.com/Maggismo/fm1-gator/releases/tag/v0.2
+  notes: First release of the fork; adds the call and answer generator on the SEQ page.

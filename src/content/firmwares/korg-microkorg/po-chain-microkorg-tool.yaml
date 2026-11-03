@@ -1,0 +1,37 @@
+device: korg-microkorg
+kind: tool
+name: po-chain microKORG librarian
+summary: The microKORG part of po-chain, a Next.js workbench. It loads and saves bank .syx files, edits parameters from a 310-entry JSON map, requests and sends programs over Web MIDI SysEx, diffs a bank against a reference and checks that dumps round-trip byte for byte.
+description: >-
+  The /microkorg-tool page of this wider project loads a 128-program bank, lets you rename slots and edit the 240 parameter bytes
+  the author has mapped in each 254-byte program, and shows the raw bytes too. With Web MIDI it requests the whole bank or the
+  current program from the synth and sends a program or the bank back, and every transmitted message is logged. A factory
+  reference bank can be loaded to mark which slots have changed and to reset them. A second page repacks a folder of dumps and
+  compares them with the originals. The parameter map is published as JSON under CC BY 4.0, derived from two other open-source
+  microKORG projects. The rest of the repository is a Pocket Operator and Volca wiring planner and a sample tool for other
+  Teenage Engineering devices, which are not covered here. The project describes itself as a single-author build that changes
+  often. Nothing is flashed.
+status: active
+authors:
+  - name: sbauwow
+    url: https://github.com/sbauwow
+source: https://github.com/sbauwow/po-chain
+source_status: open
+license: MIT
+license_notes: >-
+  The README states the source code is MIT and tells forks to add a LICENSE file, but the repository has none, so no copyright
+  holder is named. The README publishes src/data/microkorg-paramap-v1.json under CC BY 4.0 and says src/lib/ep-backup.ts is
+  an independent reimplementation of Teenage Engineering's backup format.
+distribution: source-only
+install_notes: >-
+  There is no hosted copy. Clone the repository, run npm install and npm run build, then npm start, and open /microkorg-tool in
+  Chrome, Edge or another Chromium browser. Connect the microKORG through a MIDI interface, press Enable MIDI and allow SysEx
+  access. The synth's MIDI filter in its global menu must allow SysEx for anything to arrive. Keep a factory .syx backup before
+  sending a bank. Only the original microKORG (model ID 0x58) is supported, not the microKORG XL.
+brick_risk: false
+tags: [librarian, editor, web-midi, sysex, midi, presets, web]
+versions:
+  - version: main @ 6d0f1d9
+    date: 2026-05-30
+    url: https://github.com/sbauwow/po-chain/commit/6d0f1d9dcea888aae6059f525e268448fd58d2c2
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,31 @@
+device: arturia-beatstep-pro
+name: BeatStep Pro SysEx Editor
+kind: tool
+summary: Browser app that changes the BeatStep Pro's global settings by SysEx over Web MIDI. It sets sync, metronome and CV options, the note and channel of each drum pad, and user scales, and has a console that logs and exports the SysEx messages.
+description: >-
+  Each change goes out as a single parameter message to the unit. The drum map editor sets a note and channel for each of
+  the 16 pads, with presets such as General MIDI, chromatic runs and a Volca Sample layout that puts pads 1 to 10 on channels
+  1 to 10. A user scale designer builds scales and sends them, and a console shows sent and received SysEx in hex, filters
+  the log, injects raw bytes and saves a session as a .syx file. Number fields are validated before sending. It is a
+  React and Vite app with a light and dark theme. The README says it was built with Google AI Studio, and the hosted page still carries
+  that tool's default title.
+status: active
+authors:
+  - name: Analogue Egg
+    url: https://github.com/analogueegg
+source: https://github.com/analogueegg/beatstep-pro-sysex-editor
+source_status: open
+license: GPL-3.0-only
+license_notes: The LICENSE file is the GPL v3 text; the README and source make no statement about later versions.
+homepage: https://analogueegg.github.io/beatstep-pro-sysex-editor/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, Edge, Opera or Brave and allow MIDI with SysEx. It writes global settings to the
+  device as you change them, so note the current values first.
+brick_risk: false
+tags: [editor, web-midi, sysex, usb-midi, midi, web, utility]
+versions:
+  - version: main @ 354a7a1
+    date: 2026-07-05
+    url: https://github.com/analogueegg/beatstep-pro-sysex-editor/commit/354a7a14eb3065f59825a4da2aea8a661d12306d
+    notes: No tagged releases; this is the latest commit.

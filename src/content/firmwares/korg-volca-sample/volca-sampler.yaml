@@ -1,0 +1,43 @@
+device: korg-volca-sample
+also_devices: [korg-volca-sample-2]
+name: Volca Sampler
+kind: tool
+summary: Browser app that records or imports audio, trims and prepares it and sends it to a volca sample or volca sample 2 as an audio stream through the headphone-out-to-sync-in cable, using Korg's Syro encoder. It also backs up sample archives and takes JavaScript plugins.
+description: >-
+  Rights warning: the repository includes 100 WAV files of what look like the volca sample's factory samples in public/factory-samples, which the app offers as a starting set.
+
+  The app records from an audio input or opens WAV, MP3, OGG and other files, lets you trim, normalise, shift pitch and reduce
+  bit depth, then plays a Syro-encoded signal that the synth reads from its SYNC IN jack. This is an audio transfer, not MIDI,
+  and it runs on phones as well as computers. A plugin system lets users add their own JavaScript processing, and sample
+  libraries can be exported and restored. Korg's volcasample library is built to WebAssembly with Emscripten, from a fork kept as
+  a submodule. Everything runs in the browser and nothing is uploaded. The project was inspired by Korg's AudioPocket app.
+status: dormant
+authors:
+  - name: Ben Wiley
+    url: https://github.com/benwiley4000
+source: https://github.com/benwiley4000/volca-sampler
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is MIT. The Syro encoder submodule is a fork of Korg's volcasample repository, which is BSD-3-Clause. The
+  bundled factory sample files are not covered by the MIT grant.
+homepage: https://volcasampler.com
+distribution: browser-installer
+install_notes: >-
+  Open the hosted app, connect the headphone output of the computer or phone to the volca's SYNC IN with a 3.5 mm cable, set
+  the volume as the app describes and press transfer. Back up the synth's samples first if you want to keep them.
+brick_risk: false
+tags: [sample-transfer, editor, web, utility]
+versions:
+  - version: v1.5.0
+    date: 2025-07-08
+    url: https://github.com/benwiley4000/volca-sampler/releases/tag/v1.5.0
+  - version: v1.4.0
+    date: 2023-11-21
+    url: https://github.com/benwiley4000/volca-sampler/releases/tag/v1.4.0
+  - version: v1.3.0
+    date: 2023-11-12
+    url: https://github.com/benwiley4000/volca-sampler/releases/tag/v1.3.0
+  - version: v1.0.0
+    date: 2023-10-06
+    url: https://github.com/benwiley4000/volca-sampler/releases/tag/v1.0.0

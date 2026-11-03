@@ -1,0 +1,35 @@
+device: 16n-faderbank
+name: 16next firmware (morphing fork)
+summary: >-
+  Fork of the 16next RP2040 faderbank firmware that adds a per-fader morphing option. A fader marked as a morph master scales the faders below it, and the configuration block grows from 86 to 92 bytes.
+description: >-
+  The fork is based on 16next 3.1.1. A morph master fader multiplies the output of the faders with a lower index, for
+  USB and TRS output, in 7-bit or 14-bit resolution. The configuration gains two 16-bit flag fields, one for USB and one for TRS,
+  and the SysEx configuration payload becomes 92 bytes. The stock web editor does not know about those fields.
+  The fork's README is the upstream text and does not describe the new option. A code comment says the TRS path
+  does not consider morph masters yet and that high-resolution scaling is wrong. There are no releases,
+  so the firmware has to be built with the Pico SDK.
+status: active
+authors:
+  - name: skolari93
+    url: https://github.com/skolari93
+  - name: Damien Clarke
+    url: https://github.com/16n-faderbank
+source: https://github.com/skolari93/16next_firmware_alt
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE.md carries the copyright line of Damien Clarke (2016), the author of the upstream 16n firmware.
+homepage: https://github.com/16n-faderbank/16nx
+distribution: source-only
+requires_stock: 16nx revision C or another RP2040 board
+install_notes: >-
+  Build with the Pico SDK and CMake as in the upstream 16next README, then copy the UF2 to the RP2040 in bootloader mode.
+  Open the configuration afterwards, since the memory map differs from the upstream firmware.
+brick_risk: false
+tags: [midi, usb-midi, i2c, platform, fork]
+versions:
+  - version: main @ d1c6909
+    date: 2025-12-15
+    url: https://github.com/skolari93/16next_firmware_alt/commit/d1c690974230ee984c723ac024f904048af8c5bb
+    notes: No tagged releases; this is the latest commit.

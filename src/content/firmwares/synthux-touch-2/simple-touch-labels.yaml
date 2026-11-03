@@ -1,0 +1,42 @@
+device: synthux-touch-2
+name: Simple Touch labels
+kind: tool
+summary: >-
+  Browser library of control maps and manuals for Simple Touch firmwares, with a designer that makes labelled panel diagrams as PNG, PDF or a manual page, and a Play mode that runs an approved browser build of a firmware. It does not talk to the hardware.
+description: >-
+  Rights warning: the LICENSE says the original Simple Touch panel artwork stays with Synthux Academy and is outside the MIT terms. The shipped
+  panel_blank.svg is described as the Synthux panel drawing with a blank faceplate.
+
+  The library lists reference control maps with Synthux, libDaisy and Pd names, manuals for TouchBass, Touch FX, Touch String and
+  Audrey II Touch, and the Simple Touch entries of the Synthux community directory, whose labels are read from each firmware's
+  repository README. The designer sets labels, modifier layers, switch modes, notes, MIDI assignments and a theme,
+  saves a JSON label file, and exports a repository kit, a standalone manual page or a Pages site. Play runs a firmware built for the simple-touch-web runtime
+  inside the page, with Web MIDI input and output attached to the emulated device. The hosted page is the only part
+  needed; no Simple Touch has to be connected.
+status: active
+authors:
+  - name: Jon Waterschoot
+    url: https://github.com/jonwaterschoot
+source: https://github.com/jonwaterschoot/simple-touch-labels
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE text excludes the original Simple Touch panel illustrations (assets/panel_full_bartali*.svg) by Roey Tsemah of Synthux
+  Academy, adapted from Fabio Bartali's web manual. Those files are not in the repository's current tree.
+homepage: https://jonwaterschoot.github.io/simple-touch-labels/
+distribution: browser-installer
+install_notes: >-
+  Nothing is flashed. Open the hosted library or designer page in a browser. The pages need to be served over HTTP, so use a local server when running a copy.
+brick_risk: false
+tags: [editor, reference, web, web-midi, emulator]
+image:
+  url: https://raw.githubusercontent.com/jonwaterschoot/simple-touch-labels/main/assets/example_library_touchbass.png
+  alt: Library page with the TouchBass manual, showing two phone-layout panel diagrams with labelled knobs, faders and pads beside a table of controls and their functions
+  credit: Jon Waterschoot
+  source_url: https://github.com/jonwaterschoot/simple-touch-labels#readme
+  first_party: true
+versions:
+  - version: main @ da4be48
+    date: 2026-10-29
+    url: https://github.com/jonwaterschoot/simple-touch-labels/commit/da4be4808de97f2197978eb6f9c976ec4156c38a
+    notes: No tagged releases; this is the latest commit.

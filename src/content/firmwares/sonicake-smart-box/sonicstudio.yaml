@@ -1,0 +1,39 @@
+device: sonicake-smart-box
+also_devices: [sonicake-pocket-master]
+kind: tool
+name: SonicStudio
+summary: >-
+  Progressive web app that edits Sonicake multi-effects pedals over Web MIDI or Web Bluetooth. It manages the 100 presets, signal chain, user NAM and IR slots, with a TONE3000 library browser, share links, setlists and tools, plus a Flask service that converts NAM files.
+description: >-
+  The repository description names the Smart Box (QME-20); STRUCTURE.md says the web app is for the Sonicake multi-effects
+  range, with the QME-20 and the Pocket Master as the reference hardware. The page edits the nine-block chain with A and
+  B comparison and undo, reads and writes the 50 user and 50 factory presets, exports and imports .prst and JSON banks
+  and sends NAM and IR files into the pedal's five NAM and five IR slots. TONE3000 captures come through that service's
+  public API after you sign in, and shared bundles carry only a reference to a capture. A Flask backend converts a NAM
+  file to the clone amp model the pedal accepts; it needs Sonicake's proprietary library, which the repository does not
+  contain and which you extract from the vendor's own app. The site also has a tuner, drum machine, backing track
+  player and a live stage mode. The author's testing is on a QME-20. docs/PROTOCOL.md documents the framing and
+  commands. Nothing is flashed.
+status: active
+authors:
+  - name: andreaalcaini
+    url: https://github.com/andreaalcaini
+source: https://github.com/andreaalcaini/sonicake-preset-manager
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is MIT, copyright Sonicake Pedaliera Community and Contributors. The NAM converter in backend/ needs
+  Sonicake's proprietary libraries (5868USB.dll or the Android build), which are not in the repository.
+homepage: https://sonicstudio.alcaini.it/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, Edge or Brave, connect by USB or Bluetooth and allow MIDI with SysEx. On iPad or iPhone
+  the README suggests the Bluefy or WebBLE browsers with Bluetooth. Back up the presets from the page before saving.
+  Self-hosting uses Docker and needs the vendor library files described in backend/README.md.
+brick_risk: false
+tags: [editor, web-midi, sysex, usb-midi, midi, bluetooth, presets, backup, ir, nam, librarian, setlist, tuner, web, pwa]
+versions:
+  - version: master @ 2079ded
+    date: 2026-10-19
+    url: https://github.com/andreaalcaini/sonicake-preset-manager/commit/2079ded
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,35 @@
+device: oberheim-matrix-1000
+name: Matrix 1000 Editor
+kind: tool
+summary: Single-page Web MIDI editor for the Oberheim Matrix 1000 that edits all 100 parameters and the ten-slot modulation matrix live over SysEx, selects banks and patches, reads the current patch and stores to user banks.
+description: >-
+  Sliders, dropdowns and toggles are grouped by signal flow and every change is sent as SysEx with a minimum gap of ten
+  milliseconds so the V1.11 firmware is not overloaded. Get Patch reads the edit buffer back, which needs a MIDI cable
+  from the synth to the interface, and Store writes to user banks 0 and 1 after unlocking them; factory banks are
+  protected. A MIDI monitor and a channel selector are included. The README warns that SysEx sent while notes sound can
+  cause glitches on V1.11 and that the project was built with Claude Code. Nothing is flashed.
+status: active
+authors:
+  - name: Dirk Krause
+    url: https://github.com/dirkk0
+source: https://github.com/dirkk0/oberheim-matrix1000-editor
+source_status: open
+license: MIT
+homepage: https://dirkk0.github.io/oberheim-matrix1000-editor/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page, or index.html from a clone, in Chrome or another Web MIDI browser and allow SysEx. Choose the
+  interface for MIDI Out and, for Get Patch, MIDI In, and set the synth's MIDI channel.
+brick_risk: false
+tags: [editor, web-midi, sysex, midi, presets, web]
+image:
+  url: https://raw.githubusercontent.com/dirkk0/oberheim-matrix1000-editor/main/docs/screenshot.png
+  alt: Oberheim Matrix 1000 Editor with MIDI port and channel selectors, Get Patch and Store buttons, and DCO 1 and DCO 2 panels of sliders and dropdowns
+  credit: dirkk0
+  source_url: https://github.com/dirkk0/oberheim-matrix1000-editor#readme
+  first_party: true
+versions:
+  - version: main @ 2db10d2
+    date: 2026-03-03
+    url: https://github.com/dirkk0/oberheim-matrix1000-editor/commit/2db10d2
+    notes: No tagged releases; this is the latest commit.

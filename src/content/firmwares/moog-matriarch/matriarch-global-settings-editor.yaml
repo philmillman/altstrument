@@ -1,0 +1,30 @@
+device: moog-matriarch
+name: Matriarch Global Settings Editor
+kind: tool
+summary: Small JavaScript page that reads and writes the Matriarch's global settings through the SysEx messages added in firmware 1.2.0, using the JZZ.js Web MIDI library.
+description: >-
+  Moog's v1.2.0 firmware notes describe SysEx commands for the global settings, and this page sends and receives them
+  from the browser, with instructions for the Web MIDI extensions that Firefox and Safari need. It was written over a
+  weekend by a non-web-developer and tested on a Mac with Safari and Chrome. A pull request in October 2026 added a swing
+  range slider that snaps to 50 percent. Nothing is flashed.
+status: active
+authors:
+  - name: Mark Reid
+    url: https://github.com/mreid
+source: https://github.com/mreid/matriarch-editor
+source_status: open
+license: CC0-1.0
+license_notes: JZZ.js is bundled in js/ under its own licence.
+homepage: https://mark.reid.name/matriarch-editor/index.html
+distribution: browser-installer
+requires_stock: Matriarch firmware 1.2.0 or later
+install_notes: >-
+  Open the hosted page, connect the Matriarch over USB or a MIDI interface and allow MIDI access. The page has setup
+  instructions for Chrome, Firefox and Safari.
+brick_risk: false
+tags: [editor, web-midi, sysex, midi, web]
+versions:
+  - version: main @ 06ed1f4
+    date: 2026-10-05
+    url: https://github.com/mreid/matriarch-editor/commit/06ed1f4
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,31 @@
+device: zoom-multistomp
+kind: tool
+name: MidiToZoomMs
+summary: >-
+  Fork of zoom-ms-utility that adds a Web MIDI relay so a Line 6 M5, POD X3 Live, PODxt Live or Floor POD Plus can change patches on a Zoom MS-50G or MS-70CDR, and the Zoom can send program changes out.
+description: >-
+  The base is g200kg's zoom-ms-utility patch editor, including its SysEx patch editing, which this project keeps. The added
+  files js/sketch.js and js/sketchOutput.js use the WebMidi.js library and p5.js to listen on MIDI inputs whose names match a
+  MIDISPORT interface, PODxt Live or POD X3 Live and forward their program change messages to the Zoom, wrapping numbers
+  above the pedal's 50 patches. When the Zoom's own patch changes, the page sends a program change out to a chosen output
+  for the Line 6 gear, wrapping at 24 for the M5. A flag in the code applies a one-patch offset for the Floor POD Plus.
+  Device names are hard-coded. The README keeps the original project's text and adds a short note on what was tested.
+status: dormant
+authors:
+  - name: jiriartem
+    url: https://github.com/jiriartem
+source: https://github.com/jiriartem/MidiToZoomMs
+source_status: open
+license: MIT
+license_notes: The LICENSE file is the MIT text inherited from zoom-ms-utility, with no copyright holder name.
+distribution: source-only
+install_notes: >-
+  No hosted copy. Serve the folder from a local web server and open it in Chrome, because the page cannot run from file://.
+  The relay depends on the input and output names listed in js/sketch.js, so edit them for your MIDI interface.
+brick_risk: false
+tags: [midi, web-midi, usb-midi, utility, editor, web, fork]
+versions:
+  - version: main @ 34a5993
+    date: 2023-03-27
+    url: https://github.com/jiriartem/MidiToZoomMs/commit/34a5993
+    notes: No tagged releases; this is the latest commit.

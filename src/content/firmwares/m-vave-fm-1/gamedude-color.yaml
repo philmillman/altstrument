@@ -1,0 +1,41 @@
+device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
+name: GameDude Color
+summary: >-
+  Game Boy and Game Boy Color emulator for the FM-1 and the SMK-37 Pro and Elite, based on GameDude 2.0: games go into an on-device library over USB or Bluetooth from a browser page that also plays them.
+description: >-
+  A separate project from GameDude with a Color-capable core that supports colour palettes, banked video and work RAM, DMA and double speed, tested against the CGB Acid2 reference image. The second CPU core scales the picture to the 240 by 240 screen. Games of up to 256 KiB each are stored in the device library, 360 KiB in total on the FM-1 and 392 KiB on the SMK-37, with CRC checks and redundant catalogues to survive interrupted transfers. Ten homebrew titles with their own licences are bundled and no commercial ROMs or Nintendo boot ROM are. The page installs the firmware for the FM-1 or the chosen SMK model and can restore the official firmware. On Windows, SMK-37 Pro installs use a local USB helper, because Chrome's MIDI backend can hang when the SMK reappears as its updater. The author tested builds 981 and 982 on an FM-1 and an SMK-37 Pro, and later SMK builds fix pad light colours and add support for another flash chip. Save RAM on the device is lost at restart.
+status: active
+authors:
+- name: Chance Roth (ChanceTheMaker)
+  url: https://github.com/ChanceTheMaker
+source: https://github.com/ChanceTheMaker/gamedude-rgb
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  GPL-3.0-only with retained third-party notices; Peanut-GB (with a CGB fork) and MiniGB APU are MIT, and the bundled homebrew
+  ROMs each carry their own licence (see web/homebrew/catalog.json and the credits page). Includes M-VAVE's FM-1 V15
+  image (FM-1_015.fwsc), which M-VAVE licenses under Apache-2.0 in m-vave/fm1_open; the copy at web/firmware/fm1-original.fwsc
+  has the matching git blob ce49cc1. The README says it keeps its own ownership and is not covered by the GPL. For the
+  SMK-37 the page downloads M-VAVE's Pro and Elite V16 packages from the jonathaslacerda/smk-37-pro-docs mirror and checks
+  their SHA-256; both match the copies M-VAVE licenses for redistribution on SMK-37 Pro and Elite devices in
+  m-vave/smk37_open (git blobs ad5ff6a and 821236a).
+homepage: https://chancethemaker.github.io/gamedude-rgb/
+distribution: browser-installer
+requires_stock: M-VAVE FM-1 V15 or a firmware with a compatible USB updater; SMK-37 Pro or Elite 016
+install_notes: >-
+  Chrome or Edge over USB. In the Install firmware tab choose FM-1 or the exact SMK model; this replaces the firmware and
+  the game library. Then use the Add games tab to send cartridges over USB or Bluetooth. On Windows, SMK-37 Pro installs
+  go through python tools/start_windows_usb.py running locally. A Restore button reinstalls the official firmware (V15
+  for the FM-1). Hold PLAY and REC for two seconds on the instrument to return to the library.
+brick_risk: true
+tags: [game, emulator]
+versions:
+- version: smk-pad-lights-985
+  date: 2026-10-22
+  url: https://github.com/ChanceTheMaker/gamedude-rgb/releases/tag/smk-pad-lights-985
+  notes: Pre-release. SMK pad colours stay stable while pads are pressed and when Fader 2 changes the brightness; the FM-1 firmware is unchanged.
+- version: smk-flash-compat-984
+  date: 2026-10-18
+  url: https://github.com/ChanceTheMaker/gamedude-rgb/releases/tag/smk-flash-compat-984
+  notes: Pre-release. The SMK update and restore path accepts the EB6014 flash chip as well as 856014.

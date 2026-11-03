@@ -1,0 +1,33 @@
+device: electrosmith-daisy-patch
+name: GroovyDaisy
+summary: >-
+  Groovebox and looper firmware for the Daisy Pod, played by several people at once from a MIDI keyboard, pads and a guitar input, with retrospective capture, swing, send effects, eight scenes and a WebSerial companion app.
+description: >-
+  Capture is retrospective: rolling buffers record pads, keys and the guitar input, and a button grabs the last one to
+  eight bars as a new track. Quantise, swing and velocity limiting apply to captures, CC movements are recorded with the notes, and live knob
+  moves blend over them. A shared reverb and tempo-synced ping-pong delay act as sends, scenes are eight mute snapshots switched on the bar line, and
+  loops can be edited on drum and piano-roll lanes in the companion app, which runs in Chrome or Edge over WebSerial and is not hosted.
+  Firmware can be flashed from the host over the serial link, and the code includes a hard-fault recorder and a watchdog. It was
+  built with an Arturia KeyLab Essential 61 on DIN MIDI. The README credits a human, Cleo, and Claude as the pair who wrote it,
+  and includes a short piece composed by Claude to be played over the serial link.
+status: active
+authors:
+  - name: nodnid
+    url: https://github.com/nodnid
+source: https://github.com/nodnid/groovydaisy
+source_status: open
+license: unspecified
+license_notes: No license file or statement in the repository.
+homepage: https://github.com/nodnid/groovydaisy
+distribution: source-only
+requires_stock: Daisy Pod
+install_notes: >-
+  Build with make, which uses libDaisy v5.4.0, then flash with python3 tools/flash.py. The README says that works hands-free
+  for firmware version 5 and later, so earlier builds need the usual DFU mode. The companion app runs from source with npm.
+brick_risk: false
+tags: [groovebox, looper, sequencer, synth-engine, fx, midi, performance]
+versions:
+  - version: v1-final
+    date: 2026-07-04
+    url: https://github.com/nodnid/groovydaisy/tree/v1-final
+    notes: Git tag; no GitHub release page.

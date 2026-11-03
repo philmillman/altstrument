@@ -1,0 +1,31 @@
+device: dirtywave-m8
+name: M8 Librarian
+kind: tool
+summary: Single-file browser librarian for M8 SD cards that browses songs, instruments, samples and themes, repairs broken sample references, edits arrangements and phrases, plays and renders songs, and mirrors the screen over Web Serial.
+description: >-
+  The user opens the card or any folder with the M8 layout, and the library is cached in the browser. Songs, .m8i
+  instruments and themes are decoded in full, a Web Audio preview plays sampler instruments, and songs can be rendered to
+  WAV or stems and exported as MIDI. Editors cover the song grid, chains, phrases, tables and grooves; edits stay in memory
+  until saved through a backup, verify and roll-back path. A Device page shows the M8's screen over USB with display
+  effects, and an input mode that sends key states is off by default. The card opens read-only. It states that it is not
+  affiliated with Dirtywave. Nothing is flashed.
+status: active
+authors:
+  - name: clickysteve
+    url: https://github.com/clickysteve
+source: https://github.com/clickysteve/m8-librarian
+source_status: open
+license: unspecified
+license_notes: No LICENSE file and no licence statement in the repository.
+homepage: https://m8librarian.allmyfriendsaresynths.com
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Edge, since the File System Access API is needed, and choose the SD card. The screen
+  mirror needs Web Serial over HTTPS.
+brick_risk: false
+tags: [librarian, editor, tracker, web, sample-transfer]
+versions:
+  - version: main @ eff22ff
+    date: 2026-08-07
+    url: https://github.com/clickysteve/m8-librarian/commit/eff22ff
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,38 @@
+device: teenage-engineering-op-xy
+name: OP-XY Drum and Multisample Patch Generator
+kind: tool
+summary: Two small browser pages, one that maps up to 24 dropped samples to the OP-XY drum slots and one that builds multisample patches with loop and sample markers. Each downloads a ZIP with patch.json to unzip into a .preset folder.
+description: >-
+  The drum page lets you drop a sample on each of 24 rows, play them from the
+  keyboard and re-encode to a lower sample rate. The multisample page assigns notes
+  from file names such as name-C3.wav or from metadata, lets you drag start, end
+  and loop markers on a waveform, and sets preset gain and loop options. The
+  pages state the device limits of 24 samples, 20 seconds each and no velocity
+  layers. It has no README; the pages link a video by the author about loading
+  samples onto the device. Nothing is sent to the OP-XY. OP-PatchStudio names it
+  as its inspiration.
+status: dormant
+authors:
+  - name: Brandon Withrow
+    url: https://github.com/buba447
+source: https://github.com/buba447/opxy-drum-tool
+source_status: open
+license: MIT
+homepage: https://buba447.github.io/opxy-drum-tool/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page, generate the patch, unzip it into a folder named
+  PresetName.preset and copy it to the device's presets directory in disk mode.
+brick_risk: false
+tags: [sampler, converter, presets, samples, web]
+video:
+  url: https://www.youtube.com/watch?v=u3f3tF35JwQ&t=330s
+  title: Create Multisample Instruments for the OP-XY or any Sampler automatically!
+  credit: Zeitgeese
+  first_party: true
+  found_via: https://buba447.github.io/opxy-drum-tool/
+versions:
+  - version: main @ 84870b4
+    date: 2025-06-26
+    url: https://github.com/buba447/opxy-drum-tool/commit/84870b4
+    notes: No tagged releases; this is the latest commit.

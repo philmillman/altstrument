@@ -1,0 +1,47 @@
+device: m-vave-blackbox
+kind: tool
+name: BlackboxEdit
+summary: Browser preset editor for the M-VAVE Blackbox over Web Bluetooth, with a wired USB MIDI SysEx transport added in v0.3.0. It edits parameters and amp models live, reorders the signal chain and saves presets to the pedal's flash.
+description: >-
+  The page connects to the pedal's own Bluetooth service, which the author reverse-engineered from the official app, and
+  polls the pedal so footswitch changes show up on screen. It changes parameters, amp models and effect on/off states,
+  lets you drag effect blocks to reorder the chain, and writes the edited preset to a flash slot, waiting for the pedal's
+  acknowledgement. Version 0.3.0 adds a wired transport that wraps the same messages in USB MIDI SysEx and a debug mode
+  that pauses polling for sniffing. Preset import and export and a full dump of the 80 slots are listed as planned. The
+  editor's logic is adapted from PocketEdit for the Sonicake Pocket Master, with its authors' permission. The README
+  warns that flash writes are experimental and at your own risk. It does not replace the pedal's firmware.
+status: active
+authors:
+  - name: Joel Victor Sobrinho
+    url: https://github.com/jvsobrinho
+source: https://github.com/jvsobrinho/mvave-blackbox-edit
+source_status: open
+license: MIT
+license_notes: >-
+  The README asks commercial users to credit this project and the mvave-blackbox-ble protocol repository, and says that
+  repository's research, documentation and reference tools carry separate licences (CC-BY-SA-4.0 and GPL-3.0).
+homepage: https://jvsobrinho.github.io/mvave-blackbox-edit/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Edge, which support Web Bluetooth, and pair with the pedal; wired use needs Web
+  MIDI with SysEx access. The README marks the project as an experimental beta and says the author is not responsible for
+  damaged devices or lost data, so keep a backup of presets you care about.
+brick_risk: false
+tags: [editor, web-midi, bluetooth, sysex, usb-midi, presets, web, research]
+versions:
+  - version: v0.3.0
+    date: 2026-05-24
+    url: https://github.com/jvsobrinho/mvave-blackbox-edit/releases/tag/v0.3.0
+    notes: Adds a wired USB MIDI transport beside Bluetooth and a debug mode that pauses polling.
+  - version: v0.2.1
+    date: 2026-05-19
+    url: https://github.com/jvsobrinho/mvave-blackbox-edit/releases/tag/v0.2.1
+    notes: Locks the Save button during a write and waits for the pedal's acknowledgement.
+  - version: v0.2.0
+    date: 2026-05-17
+    url: https://github.com/jvsobrinho/mvave-blackbox-edit/releases/tag/v0.2.0
+    notes: Adds saving presets to the pedal's flash.
+  - version: v0.1.0
+    date: 2026-05-17
+    url: https://github.com/jvsobrinho/mvave-blackbox-edit/releases/tag/v0.1.0
+    notes: First alpha release.

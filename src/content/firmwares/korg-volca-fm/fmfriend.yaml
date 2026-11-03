@@ -1,0 +1,34 @@
+device: korg-volca-fm
+name: FMFriend
+kind: tool
+summary: Browser patch editor for the volca fm over Web MIDI, with sliders for every operator and global DX7-style parameter plus a patch name field. The author says it might also work with a Yamaha DX7.
+description: >-
+  A small Vue page that lists the MIDI outputs, shows six operator panels and a global panel, and sends each slider change
+  to the volca fm as DX7-format parameter data. The patch name is edited in the same page. The volca fm cannot send its patch
+  back, so the page edits from its own values. The code is one HTML file and a few scripts, with its libraries included.
+  The last commit is from 2016. Nothing is flashed.
+status: dormant
+authors:
+  - name: ahihi
+    url: https://github.com/ahihi
+source: https://github.com/ahihi/fmfriend
+source_status: open
+license: CC0-1.0
+homepage: https://fmfriend.foldplop.com/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a browser with Web MIDI, connect a MIDI interface to the volca fm's MIDI IN and choose it as the
+  output.
+brick_risk: false
+tags: [editor, web-midi, sysex, midi, web]
+image:
+  url: https://static.foldplop.com/misc/fmfriend.png
+  alt: FMFriend page with a MIDI output menu and patch name box above six operator panels of sliders and a global panel for algorithm, feedback, pitch envelope and LFO
+  credit: ahihi
+  source_url: https://github.com/ahihi/fmfriend#readme
+  first_party: true
+versions:
+  - version: master @ 37c3470
+    date: 2016-11-06
+    url: https://github.com/ahihi/fmfriend/commit/37c3470bc5ac5bb82e73222303623e0fe9669ae2
+    notes: No tagged releases; this is the latest commit.

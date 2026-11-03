@@ -1,0 +1,39 @@
+device: music-thing-workshop-computer
+name: Lens
+summary: Program card for the Workshop System Computer that runs patches written in Loupe, a small S-expression language, with a browser editor that sends patches to the card over Web MIDI SysEx, live or saved to flash, and a Node command-line tool.
+description: >-
+  A Loupe patch is compiled in the browser or by the CLI into a snapshot that the card's C++ runtime plays at 48 kHz. A
+  patch can read the knobs, jacks, switch and USB MIDI, and write CV, gates and audio. The web editor offers live sending
+  with optional beat-quantised swaps, saves the running patch to flash, and loads example patches. Cards are flashed by
+  copying lens.uf2 to the RPI-RP2 drive. It can play DX7 voices only from banks the user compiles in; the project ships none.
+  The README marks 0.4 as alpha and says part of the compiler and runtime was written with Claude Code. The repository
+  has its own info.yaml, but no card of this name is in the Workshop_Computer releases folder at the time of writing.
+status: active
+authors:
+  - name: Graham Ritchie
+    url: https://github.com/grsr
+source: https://github.com/grsr/lens
+source_status: open
+license: MIT
+license_notes: ComputerCard.h and other adapted code carry their own notices, listed in the README's acknowledgements.
+homepage: https://grsr.github.io/lens/web/
+distribution: download
+install_notes: >-
+  Hold the card's boot button while connecting USB so it mounts as RPI-RP2, then copy lens.uf2 from the release. Use the
+  web editor in Chrome or Edge with the card connected to write patches.
+brick_risk: false
+tags: [web-midi, sysex, editor, scripting, generative, synth-engine, web]
+versions:
+  - version: 0.4.0
+    date: 2026-07-03
+    url: https://github.com/grsr/lens/releases/tag/0.4.0
+    notes: Alpha release with lens.uf2.
+  - version: v0.3.0
+    date: 2026-07-01
+    url: https://github.com/grsr/lens/releases/tag/v0.3.0
+  - version: v0.2.1
+    date: 2026-06-29
+    url: https://github.com/grsr/lens/releases/tag/v0.2.1
+  - version: v0.1.0
+    date: 2026-06-22
+    url: https://github.com/grsr/lens/releases/tag/v0.1.0

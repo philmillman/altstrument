@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: Chipwave
+summary: >-
+  Adds a chip voice engine to M-VAVE's FM1 Open V14: polyphonic NES-style or Sega SN76489 voices on MIDI channel 16, 34 presets, echo and a limiter, plus NES and Genesis DX7 voices and projects. Not yet flashed to a device.
+description: >-
+  The repository is a copy of M-VAVE's FM1 Open V14 history with a chipsynth branch on top. The sound engine and sequencer of FM1 Open are a sealed binary library, so the chip engine is mixed into the audio block after that library renders and before the output stage, and takes its notes from MIDI channel 16 through a tee in the MIDI router. It offers pulse, triangle, wavetable and noise voices in an NES flavour, an SN76489 flavour with square voices and Sega noise, polyphonic, mono legato and chip modes, program changes for 34 presets including drum kits and arpeggios, and control changes for echo, flavour, mode and volume. The branch also rebuilds the factory DX7 bank with NES and Genesis style voices, trims it to fit the flash budget with the original V15 banks kept as .syx files, adds two ready-made projects, a colour-cycling screen and a firmware name Chipwave V01. The handoff notes say the package builds with the JieLi toolchain and 48 host checks pass, but that it has not been connected to or flashed onto a device.
+status: active
+authors:
+- name: nickgudauskas
+  url: https://github.com/nickgudauskas
+source: https://github.com/nickgudauskas/fm1-chipsynth
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE.md is M-VAVE's FM1 APP license (GPL-3.0-only with an additional permission to link the binary SDK), carried
+  over from m-vave/fm1_open. The engine library sdk/lib/libfm1_engine.a is the proprietary binary M-VAVE's THIRD_PARTY.md
+  allows to be used, linked and redistributed for M-VAVE FM1 devices only; its git blob matches the one in fm1_open. The
+  copy of M-VAVE's stock V15 image at sdk/firmware/FM-1_015.fwsc has the git blob ce49cc1, the file M-VAVE licenses under
+  Apache-2.0 in fm1_open.
+homepage: https://github.com/nickgudauskas/fm1-chipsynth/tree/chipsynth
+distribution: source-only
+requires_stock: M-VAVE FM-1 V14 or V15 with the M-UPGRADE update path
+install_notes: >-
+  Build on Windows x64 with PowerShell and the JieLi 2.5.3 toolchain, following the FM1 Open build steps; the build
+  writes build/dx7/generated/Chipwave 01.fwsc and an offline workbench page that can flash it over USB. The workbench has a
+  way back to the V15 recovery image. The default branch is chipsynth. The firmware is close to the application size limit, so
+  the factory bank was trimmed and program numbers differ from stock, which changes what saved projects load.
+brick_risk: true
+tags: [chiptune, synth-engine, midi, presets, fork]
+versions:
+- version: chipsynth @ 89ef129
+  date: 2026-11-02
+  url: https://github.com/nickgudauskas/fm1-chipsynth/commit/89ef12914edaf3d340b3be402a7318ee0fb81ebd
+  notes: No tagged releases; this is the latest commit.

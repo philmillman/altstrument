@@ -1,0 +1,33 @@
+device: korg-electribe-2
+name: e2s-tools
+kind: tool
+summary: TypeScript library and 49-command command-line tool that reads and writes Electribe 2 Sampler sample libraries, single patterns, 250-pattern banks and SysEx dumps. It can import WAV files, edit patterns, and convert a pattern to SysEx and back. Published on npm.
+description: >-
+  Rights warning: the test fixtures include a 12 MB sample library file named e2sSample.all and a 4 MB pattern bank named
+  e2s-2016.e2sallpat, which look like Korg's factory files.
+
+  The tool parses the sampler's .all, .e2pat, .e2sallpat and .syx formats, documents their binary layout, and can create
+  libraries, list and trim samples, import and export WAV files in bulk, edit steps and parts of patterns, and split or merge
+  a pattern bank. Output is JSON by default, and the README says it is meant to be driven by scripts and AI agents. It works on files and does not open
+  a MIDI connection itself; a pattern is turned into a SysEx file for transfer by other means. Nothing is flashed.
+status: active
+authors:
+  - name: Giacomo Battaglia
+    url: https://github.com/g-battaglia
+source: https://github.com/g-battaglia/e2s-tools
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is MIT. The test fixtures, which look like Korg's own sample library and pattern bank, are not covered by
+  that grant.
+distribution: download
+install_notes: >-
+  Install from npm with npm install -g e2s-tools to get the e2s command, or add it as a library. Work on copies of your own
+  library and pattern files.
+brick_risk: false
+tags: [cli, converter, sample-transfer, sysex, patch-library]
+versions:
+  - version: main @ bb0ca3c
+    date: 2026-05-07
+    url: https://github.com/g-battaglia/e2s-tools/commit/bb0ca3c30e76fd338041956b7d2d52b4d97f079c
+    notes: No tagged releases; this is the latest commit. The npm package is version 1.0.2.

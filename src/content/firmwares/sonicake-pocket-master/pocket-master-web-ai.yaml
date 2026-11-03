@@ -1,0 +1,40 @@
+device: sonicake-pocket-master
+kind: tool
+name: Pocket Master Web-AI
+summary: >-
+  Portuguese and English browser editor for the Pocket Master over Web MIDI or Web Bluetooth, with preset read and save, full backups, user IR upload, setlists, stage mode and an AI tone builder that uses your own API key and the pedal's own models.
+description: >-
+  The editor shows the nine blocks and chain order, with undo, A and B comparison and live changes on the pedal. It reads
+  and saves presets with names, copies and imports or exports .prst files, makes a ZIP backup of all 50 presets and the
+  settings and asks for one before a factory reset. A WAV can be sent to user IR slots 1 to 5, and captures from TONE3000
+  are checked against the pedal's limits. The tone builder sends a text request to Gemini, Groq, Claude or OpenAI with a
+  key you enter, or lets you copy the request to any AI. Other parts are the pedal's tuner, drums and looper controls, a
+  stage mode for page-turner pedals and setlists shared by code or QR. The page is installable and works offline. The
+  author tested firmware 1.3.3 and the page does not run on Safari or iOS.
+status: active
+authors:
+  - name: jprocha-pt
+    url: https://github.com/josepedrorocha-star
+source: https://github.com/josepedrorocha-star/pocket-master-web-ai
+source_status: open
+license: MIT
+license_notes: The LICENSE file is MIT. THIRD_PARTY_NOTICES.md lists the bundled libraries and fonts.
+homepage: https://josepedrorocha-star.github.io/pocket-master-web-ai/
+distribution: browser-installer
+requires_stock: 1.3.3
+install_notes: >-
+  Open the hosted page in Chrome or Edge on a computer or Android phone, press Connect for USB or choose Bluetooth. Close the
+  official app and other editors first, and make a backup before saving anything.
+brick_risk: false
+tags: [editor, web-midi, sysex, usb-midi, midi, bluetooth, presets, backup, ir, nam, ai, looper, tuner, web]
+video:
+  url: https://www.youtube.com/watch?v=sc-fBliGY4E
+  title: AI builds my guitar tone – free web app for the Sonicake Pocket Master
+  credit: Blueprint & Riff
+  first_party: true
+  found_via: https://github.com/josepedrorocha-star/pocket-master-web-ai#readme
+  version: v1.0.0
+versions:
+  - version: v1.0.0
+    date: 2026-10-31
+    url: https://github.com/josepedrorocha-star/pocket-master-web-ai/releases/tag/v1.0.0

@@ -1,0 +1,30 @@
+device: meeblip-anode
+name: MeeBlip anode Limited Edition firmware
+kind: firmware
+summary: MeeBlip's firmware build for the Limited Edition anode, which adds a second envelope for the filter and easier access to the wavetable mode. It is published as AVR assembly source with a prebuilt hex file and the hardware files.
+description: >-
+  This repository is a copy of the anode project with a changed build, anode-le, whose envelope code, lookup tables, note handling,
+  MIDI input and knob scanning differ from the standard firmware. The hex file, the make batch file and the board files are included. It is the
+  maker's own repository. Nothing is flashed by this entry.
+status: dormant
+authors:
+  - name: MeeBlip
+    url: https://github.com/MeeBlip
+source: https://github.com/MeeBlip/meeblip-anode-limited-edition
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GNU GPL version 3 text. The hardware files are under CC BY-SA 4.0 and the MeeBlip name is reserved by its makers.
+  The repository is the manufacturer's own, so its hex file is the maker's firmware and not a redistributed copy.
+homepage: https://github.com/MeeBlip/meeblip-anode-limited-edition
+distribution: download
+install_notes: >-
+  Program the ATmega32 through its ISP header with an AVR programmer, as for the standard anode firmware. The repository's
+  make-anode-le.bat shows the avrdude command. Check that the board is a Limited Edition anode first.
+brick_risk: false
+tags: [official, synth-engine, wavetable, midi, open-source, fork]
+versions:
+  - version: master @ 7695dec
+    date: 2015-12-02
+    url: https://github.com/MeeBlip/meeblip-anode-limited-edition/commit/7695dec9f57faf19aaa75793a148e20c9dbaa9d3
+    notes: No tagged releases; this is the latest commit.

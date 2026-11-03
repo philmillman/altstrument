@@ -1,0 +1,27 @@
+device: m-vave-fm-1
+name: JIANT FM for tuttidaw
+kind: tool
+summary: >-
+  Plugin build of JIANT FM for the tuttidaw browser DAW: the firmware's WebAssembly emulator as the instrument, offline renders of the song or incoming MIDI to a mix and six part stems, and playing through a connected FM-1.
+description: >-
+  A repository by weavejam that mirrors JIANT FM (catalogued as the firmware) and adds a web/plugin folder wrapping its browser emulator as a tuttidaw plugin (protocol tutti-plugin/0), following the same author's plugin for Felucca. A headless renderer plays JIANT's own sequencer or MIDI from the host from the start of the song at the host's tempo, including fractional tempos, and returns the mix and one stem per part at 48 kHz. Builds with a JIANT_TUTTI flag keep the step clocks sample-accurate and split the output by part; the hardware build is unchanged. Later commits let tuttidaw play a hardware FM-1, passing its key presses and screen through. Nothing is flashed. The plugin page is hosted at jiant.plugins.tooljams.com and can only be embedded by tuttidaw.
+status: active
+authors:
+- name: weavejam
+  url: https://github.com/weavejam
+source: https://github.com/weavejam/JIANT
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  GPL-3.0-only like upstream JIANT (juanjiant-bit/JIANT), of which this repository is a mirror plus the plugin; the README says it is not affiliated with M-VAVE or Hugelton Instruments.
+homepage: https://jiant.plugins.tooljams.com/
+distribution: browser-installer
+install_notes: >-
+  Add the plugin from tuttidaw; the page is a static site that only accepts tuttidaw as its embedder. To build it you need emcc and Node (web/plugin/build.sh). Playing a hardware FM-1 from it goes through tuttidaw and needs Web MIDI.
+brick_risk: false
+tags: [emulator, vst, fork]
+versions:
+- version: main @ af8cdb8
+  date: 2026-10-25
+  url: https://github.com/weavejam/JIANT/commit/af8cdb8ee2a45a6ea3d43f20f259a2a2578b7c14
+  notes: No tagged releases; this is the latest commit.

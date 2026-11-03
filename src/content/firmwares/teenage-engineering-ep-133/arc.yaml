@@ -1,0 +1,38 @@
+device: teenage-engineering-ep-133
+name: arc
+kind: tool
+summary: Backup librarian for the EP-133 as an Android app and a matching browser app. It backs up and restores sounds and projects as .pak files, browses and uploads samples, compares backups and mirrors the pads live over USB MIDI. Not yet tried on a physical device.
+description: >-
+  The Android build uses android.media.midi and the web build uses Web MIDI, and
+  both read and write the same .pak files and library. Features include selective
+  restore, a device browser with sample playback and trim-before-upload, a
+  comparison of a backup with the device or another backup, sound search, a live
+  mirror that lights pads from incoming notes and plays sounds on the phone, a
+  recorder for what you play, and a guide of 100 key combinations paraphrased
+  from the official manual. The web app is a port of the Android one, which was
+  itself ported from an earlier web version kept under reference/. A small
+  separate MCP server shows beat cards in chat. The README says the protocol code
+  was checked against a simulator and captured frames, and that nobody has yet
+  run the app on a phone or on an EP-133. The default branch of the repository is
+  a generated branch name, not main.
+status: active
+authors:
+  - name: Nick Drobyshevski
+    url: https://github.com/n-drobyshevski
+source: https://github.com/n-drobyshevski/Arc
+source_status: open
+license: MIT
+homepage: https://arc-pi-mauve.vercel.app
+distribution: browser-installer
+install_notes: >-
+  Open the hosted app in Chrome or Edge and allow MIDI; adding ?demo to the
+  address uses a simulated device. Safari and iOS browsers cannot reach the
+  device. Keep the tab in front during transfers. The Android build is made from
+  source or from CI artefacts.
+brick_risk: false
+tags: [librarian, sample-transfer, web-midi, sysex, android, web]
+versions:
+  - version: ccr-4c421fa7-mbsoeg @ c82c972
+    date: 2026-10-25
+    url: https://github.com/n-drobyshevski/Arc/commit/c82c972
+    notes: No tagged or GitHub releases; this is the latest commit on the default branch. The changelog lists 0.2.0 as the current version.

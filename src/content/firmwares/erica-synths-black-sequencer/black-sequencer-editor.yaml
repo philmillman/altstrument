@@ -1,0 +1,39 @@
+device: erica-synths-black-sequencer
+name: Black Sequencer editor
+kind: tool
+summary: Local Python companion with a browser interface that edits patterns and songs in the Black Sequencer's SD-card project files, previews them through a rack of Mutable Instruments modules and records from a MIDI keyboard.
+description: >-
+  The program runs a small server on the user's computer and opens in a browser or a native window. It works on projects
+  kept in a studio folder or on a mounted card with a PROJECTS folder, writes .SEQ files and the performance data kept
+  with them, imports MIDI files onto the four channels and records notes from a controller attached to the computer. The
+  preview rack builds sound from Mutable Instruments DSP compiled to WebAssembly and is not a model of the hardware. The
+  README calls it a personal-use work in progress that is not fully tested. Nothing is flashed to the sequencer. An
+  unsigned macOS build is attached to the release.
+status: active
+authors:
+  - name: ph1r3574r73r
+    url: https://github.com/ph1r3574r73r
+source: https://github.com/ph1r3574r73r/black_seq_gui
+source_status: open
+license: Unlicense
+license_notes: >-
+  The Mutable Instruments preview DSP in web/dsp is separately MIT-licensed, as THIRD_PARTY.md describes. The project
+  states it is not an Erica Synths product.
+homepage: https://ph1r3574r73r.github.io/black_seq_gui/
+distribution: download
+install_notes: >-
+  Run it from source with Python 3 (pip install -r requirements.txt, then python3 -m blackseq), or use the unsigned
+  macOS zip from the release. Copy projects to the sequencer's SD card yourself.
+brick_risk: false
+tags: [editor, sequencer, midi, python, web]
+image:
+  url: https://raw.githubusercontent.com/ph1r3574r73r/black_seq_gui/main/docs/assets/pattern-editor.png
+  alt: Black Sequencer editor pattern view with bank, pattern and song buttons, a transport bar, and four coloured tracks with note bars
+  credit: ph1r3574r73r
+  source_url: https://ph1r3574r73r.github.io/black_seq_gui/
+  first_party: true
+versions:
+  - version: v0.2.0
+    date: 2026-10-30
+    url: https://github.com/ph1r3574r73r/black_seq_gui/releases/tag/v0.2.0
+    notes: Release with the unsigned macOS app zip.

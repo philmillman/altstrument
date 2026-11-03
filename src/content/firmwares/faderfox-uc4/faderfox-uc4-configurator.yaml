@@ -1,0 +1,44 @@
+device: faderfox-uc4
+name: Faderfox UC4 Configurator
+kind: tool
+summary: Browser configurator for one Faderfox UC4 setup with its eight groups. It draws the encoders, faders and buttons, shows a MIDI monitor, and reads the setup from the unit and writes it back over Web MIDI.
+description: >-
+  Clicking a control opens a panel for its channel, control code, value range, control type, mode and display scale. A group selector switches between the
+  eight groups of the setup. The page works on the unit's first setup (SE01) only and saves and loads a configuration file. The author thanks the
+  Faderfox maker for sharing part of the communication protocol. It is unofficial.
+status: active
+authors:
+  - name: Ivo Janssen
+    url: https://github.com/foxxyz
+source: https://github.com/foxxyz/faderfox-uc4-configurator
+source_status: open
+license: MIT
+homepage: https://uc4.ivo.tech/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a Web MIDI browser with SysEx access, connect the UC4 over USB and set it to setup SE01 before reading. To run it yourself, use Node 24 or later with npm install and npm run dev.
+brick_risk: false
+tags: [editor, web-midi, sysex, usb-midi, midi, presets, web]
+image:
+  url: https://raw.githubusercontent.com/foxxyz/faderfox-uc4-configurator/main/docs/screenshot.png
+  alt: UC4 Configurator showing a top panel of eight knobs with a group selector, a lower panel of faders and green buttons, a control details box and Read from Device and Write to Device buttons
+  credit: Ivo Janssen
+  source_url: https://github.com/foxxyz/faderfox-uc4-configurator#readme
+  first_party: true
+versions:
+  - version: v1.2.1
+    date: 2026-03-05
+    url: https://github.com/foxxyz/faderfox-uc4-configurator/tree/v1.2.1
+    notes: Git tag; no GitHub release page.
+  - version: v1.2.0
+    date: 2026-03-05
+    url: https://github.com/foxxyz/faderfox-uc4-configurator/tree/v1.2.0
+    notes: Git tag; no GitHub release page.
+  - version: v1.1.0
+    date: 2026-03-02
+    url: https://github.com/foxxyz/faderfox-uc4-configurator/tree/v1.1.0
+    notes: Git tag; no GitHub release page.
+  - version: v1.0.0
+    date: 2026-02-01
+    url: https://github.com/foxxyz/faderfox-uc4-configurator/tree/v1.0.0
+    notes: Git tag; no GitHub release page.

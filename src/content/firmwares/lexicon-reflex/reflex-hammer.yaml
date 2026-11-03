@@ -1,0 +1,29 @@
+device: lexicon-reflex
+kind: tool
+name: Reflex Hammer
+summary: Single-page Web MIDI SysEx editor for the Lexicon Reflex. It sends live parameter changes for all eight algorithms, reads registers 1 to 128 into the editor, switches the unit to a register and saves to the 16 user registers.
+description: >-
+  A static page that shows each algorithm's parameters with sliders and physical-unit readouts, sends them as SysEx while you
+  move them, and can read any register without disturbing the live sound. Switching to a register recalls it with a MIDI program change
+  and loads it into the editor, and saving writes to user registers 113 to 128. Two starting points imitate PCM 70 sounds.
+  Edits only change the active setup, which is volatile until saved. The README says no Lexicon manuals are included. Nothing is flashed.
+status: active
+authors:
+  - name: Patrick Dondl
+    url: https://github.com/plentyofnames
+source: https://github.com/plentyofnames/reflex-hammer
+source_status: open
+license: MIT
+homepage: https://plentyofnam.es/reflex-hammer/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, Edge or Opera, connect a MIDI interface to the Reflex's MIDI in and out, and choose the ports and the
+  unit's channel. To read data back, set the Reflex's internal MIDI output jumper to out instead of thru. Saving overwrites
+  a user register.
+brick_risk: false
+tags: [editor, web-midi, sysex, midi, presets, web]
+versions:
+  - version: main @ a7c8fa5
+    date: 2026-06-27
+    url: https://github.com/plentyofnames/reflex-hammer/commit/a7c8fa5
+    notes: No tagged releases; this is the latest commit.

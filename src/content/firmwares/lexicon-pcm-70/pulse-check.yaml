@@ -1,0 +1,33 @@
+device: lexicon-pcm-70
+kind: tool
+name: Pulse Check
+summary: Single-page Web MIDI SysEx editor and librarian for the Lexicon PCM 70. It edits all eleven programs on firmware 2.0 and 3.0x, sets the MIDI patch bay, sweeps and backs up the 50 registers and the factory presets, and imports and exports .syx files.
+description: >-
+  A static page with no build step. It sends parameter changes to the unit as you move controls and shows values in
+  physical units. Its parameter tables were checked against a real PCM 70 on both firmware generations, and a notes file
+  records where the Lexicon manuals misprint byte layouts and ranges. The librarian reads all 50 registers at the pace the unit
+  allows, stores with a byte-compare check, backs up and restores the whole bank, and sweeps the factory presets into an
+  unlimited browser library. A built-in MIDI clock drives the rhythm programs. The unit does not send front-panel edits,
+  so a Get button reads the active program. Nothing is flashed.
+status: active
+authors:
+  - name: Patrick Dondl
+    url: https://github.com/plentyofnames
+source: https://github.com/plentyofnames/pulse-check
+source_status: open
+license: MIT
+license_notes: The README says the Lexicon owner's manuals are copyrighted and are not part of the repository.
+homepage: https://plentyofnam.es/pulse-check/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, Edge or Opera and connect a MIDI interface to the PCM 70's MIDI in and out. On the unit set the
+  control program's MIDI channel, OMNI OFF, PGM CHNG to FIX and M PROTECT to OFF to store to registers, and set the
+  firmware selector in the page to match the unit. Inverse Room dumps can crash firmware 2.0 units, so the page blocks
+  sending them there. The active buffer is volatile, so store before loading something else.
+brick_risk: false
+tags: [editor, librarian, web-midi, sysex, midi, presets, research, web]
+versions:
+  - version: main @ 681ab02
+    date: 2026-07-18
+    url: https://github.com/plentyofnames/pulse-check/commit/681ab02
+    notes: No tagged releases; this is the latest commit.

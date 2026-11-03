@@ -1,0 +1,29 @@
+device: novation-circuit
+kind: tool
+name: NoC Web MIDI JS
+summary: JavaScript library holding the Circuit's MIDI control change parameters (names, ranges, defaults) for use in web pages and Node.js, with a sample browser patch editor that sends CC changes to the unit over Web MIDI.
+description: >-
+  The library exposes the Circuit's synth, drum and session parameters from Novation's Circuit MIDI parameters guide as
+  objects, grouped by channel and by section, plus a helper that looks up a parameter from a channel and a CC number. The
+  sample-app folder uses it for a small editor that lists the parameters and sends changes to the Circuit as control change
+  messages. The README points to noc-webmidi.com as the hosted editor, but that domain showed a placeholder page when checked
+  on 2026-11-03, so the sample has to be served locally. The library covers CC data only and does not read patches. Nothing is
+  flashed.
+status: active
+authors:
+  - name: Scrawlon
+    url: https://github.com/scrawlon
+source: https://github.com/scrawlon/noc-webmidi
+source_status: open
+license: MIT
+distribution: source-only
+install_notes: >-
+  Include dist/js/noc-webmidi.min.js in a page, or install the noc-webmidi package for Node.js. To try the sample editor,
+  serve the repository root with a local HTTP server and open sample-app/index.html in a browser with Web MIDI.
+brick_risk: false
+tags: [web-midi, midi, editor, utility]
+versions:
+  - version: master @ 0f6de95
+    date: 2026-01-01
+    url: https://github.com/scrawlon/noc-webmidi/commit/0f6de956b8a93e717ab414eb3f10135d8ac0ca9f
+    notes: No tagged releases; this is the latest commit.

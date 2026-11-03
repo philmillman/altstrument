@@ -1,0 +1,37 @@
+device: zoom-multistomp
+kind: tool
+name: G1on Editor
+summary: >-
+  Browser patch editor for the Zoom G1on and G1Xon over Web MIDI, with read-all, backup and restore to JSON, share links, program change and patch writing. Its README also lists the other G, B and MS pedals using the same codec.
+description: >-
+  Rights warning: data/fx_data.js holds effect tables the author says were extracted from ToneLib, Zoom's ZDL effect files
+  and a Zoom PDF.
+
+  The page identifies the pedal by its device id, reads all patches, and shows each effect slot with its parameters. It
+  edits and writes the current patch, selects a patch by program change, adjusts patch volume and clears effects. Patches
+  are saved in IndexedDB with a localStorage mirror, an automatic backup every 15 minutes and a copy made before any
+  restore, and can be exported or imported as JSON or shared through a link that carries one patch. The README's table
+  gives device ids and patch counts for the G1on, G1Xon, G1 Four, G1X Four, G3n, G5n, B1on, B1Xon, B1 Four and MS-50G;
+  only the G1on and G1Xon are named in the title and usage text, and the other models are not claimed as tested.
+  The README is in Portuguese. Nothing is flashed.
+status: active
+authors:
+  - name: angelomiggliori
+    url: https://github.com/angelomiggliori
+source: https://github.com/angelomiggliori/G1On-Editor
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and the README states no license.
+homepage: https://angelomiggliori.github.io/G1On-Editor/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Edge, connect the pedal by USB, allow MIDI with SysEx and press CONNECT, then READ ALL.
+  The README still shows a placeholder address for the page; the GitHub Pages address above is the live one. Make a JSON
+  backup before writing.
+brick_risk: false
+tags: [editor, web-midi, sysex, usb-midi, midi, presets, backup, web]
+versions:
+  - version: main @ 560dbd2
+    date: 2026-03-23
+    url: https://github.com/angelomiggliori/G1On-Editor/commit/560dbd2
+    notes: No tagged releases; this is the latest commit.

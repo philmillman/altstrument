@@ -1,0 +1,31 @@
+device: nektar-pacer
+name: Pacer Editor
+kind: tool
+summary: Browser editor for the Nektar Pacer that reads and writes presets over Web MIDI SysEx. Its author's repository is archived. The v2 repository rebuilds the original with Vite and is the code that the hosted page serves.
+description: >-
+  The page lists the Pacer's presets and the messages on each switch, encoder and expression input, shows note numbers with names, and imports and exports presets as files. A button on the import and export page
+  sends and receives all the data. The README says the Global configuration cannot be edited, and the author thanks Nektar support for the SysEx details. The original repository
+  was archived after v1.5.0 and the v2 repository carries an archived notice, so the editor is no longer developed.
+status: archived
+authors:
+  - name: François Georgy
+    url: https://github.com/francoisgeorgy
+source: https://github.com/francoisgeorgy/pacer-editor-v2
+source_status: open
+license: GPL-3.0-only
+license_notes: Both repositories have the GNU GPL version 3 text and the README says GPL v3, with no later-version clause. The original repository is francoisgeorgy/pacer-editor.
+homepage: https://studiocode.dev/pacer-editor/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a Chromium browser, allow MIDI access with SysEx and connect the Pacer over USB. To run it yourself, use the usual npm install and dev commands.
+brick_risk: false
+tags: [editor, web-midi, sysex, usb-midi, midi, presets, web]
+versions:
+  - version: 2.1.0
+    date: 2022-04-17
+    url: https://github.com/francoisgeorgy/pacer-editor-v2/tree/2.1.0
+    notes: Git tag; no GitHub release page.
+  - version: 2.0.1
+    date: 2021-10-10
+    url: https://github.com/francoisgeorgy/pacer-editor-v2/tree/2.0.1
+    notes: Git tag; no GitHub release page.

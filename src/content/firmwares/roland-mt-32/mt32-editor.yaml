@@ -1,0 +1,37 @@
+device: roland-mt-32
+name: MT-32 Editor
+kind: tool
+summary: Windows desktop editor and librarian for the MT-32, CM-32L and CM-64 and for the Munt emulator. It edits system, timbre, patch and rhythm data, loads and saves .syx and .mid files and previews timbres over a MIDI port. There is a modern build and one for older Windows.
+description: >-
+  A C# program with two builds: the main one for .NET on Windows 10 and 11, and a legacy build for .NET Framework 2.0, which runs on Windows 98
+  and later. It shows the 64 memory timbres, 128 patches and the rhythm keys, edits all timbre partials with envelope diagrams, has undo
+  and redo, saves single timbres as its own .timbre files and exports Cakewalk instrument definitions. It can add a delay between large messages
+  for real hardware, show text on the unit's display and flag sounds that need the CM-32L's PCM set. SysEx files made with it can be sent with other tools. Linux use is through Wine. It
+  bundles no ROM images. Nothing is flashed.
+status: active
+authors:
+  - name: sfryers
+    url: https://github.com/sfryers
+source: https://github.com/sfryers/MT32Editor
+source_status: open
+license: GPL-3.0-only
+license_notes: The LICENSE file is the GNU GPL version 3 text and the readme says the software is licensed under GPL 3.0.
+homepage: https://github.com/sfryers/MT32Editor/releases
+distribution: download
+install_notes: >-
+  Download MT32Edit.exe from the releases page, or the legacy build for older Windows, and run it from a folder you can write to. The
+  settings file MT32Edit.ini is created next to it. An MT-32 compatible output is needed to hear sounds, either hardware or the Munt
+  emulator with ROM images you supply.
+brick_risk: false
+tags: [editor, librarian, sysex, midi, presets, utility]
+versions:
+  - version: v1.1.0
+    date: 2026-03-28
+    url: https://github.com/sfryers/MT32Editor/releases/tag/v1.1.0
+  - version: v1.0.0
+    date: 2026-03-06
+    url: https://github.com/sfryers/MT32Editor/releases/tag/v1.0.0
+  - version: v0.9.11b
+    date: 2025-02-15
+    url: https://github.com/sfryers/MT32Editor/releases/tag/v0.9.11b
+    notes: Beta release.

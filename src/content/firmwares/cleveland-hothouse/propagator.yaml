@@ -1,0 +1,38 @@
+device: cleveland-hothouse
+name: Propagator
+kind: tool
+summary: >-
+  Browser control surface and WebUSB DFU flasher for Spore firmware. It mirrors the pedal's knobs and switches, edits the synth voice, envelopes, LFOs, patchbay and step sequencer over MIDI, and flashes the latest Spore release.
+description: >-
+  The page connects to a Spore pedal over Web MIDI and sends the control changes and SysEx defined in Spore's MIDI protocol
+  document. It saves presets in the browser. A wizard fetches the latest Spore release binary, or
+  takes a local file, reboots the pedal into the bootloader with a control change and writes the app to QSPI over WebUSB with a built-in DfuSe client. An
+  advanced option installs or repairs the bootloader through the STM32 ROM loader. It needs a Chromium browser, and Windows needs the WinUSB driver once.
+  The README says it was built with substantial help from Claude.
+status: active
+authors:
+  - name: Joakim Langkilde
+    url: https://github.com/rainybit-code
+source: https://github.com/rainybit-code/propagator
+source_status: open
+license: GPL-3.0-or-later
+homepage: https://rainybit-code.github.io/propagator/
+distribution: browser-installer
+requires_stock: Spore firmware on a Daisy Seed in a Hothouse
+install_notes: >-
+  Open the hosted page in Chrome or Edge with the pedal connected over USB. No install is needed, and the repository can be served locally with any static server.
+brick_risk: false
+tags: [editor, flasher, web-midi, web, presets]
+image:
+  url: https://raw.githubusercontent.com/rainybit-code/propagator/main/docs/propagator.png
+  alt: Propagator editor with a Spore pedal panel at the centre, six labelled knobs, mode switches and footswitches, flanked by oscillator, envelope, voice, LFO and patchbay panels on a blue grid
+  credit: Joakim Langkilde
+  source_url: https://github.com/rainybit-code/propagator#readme
+  first_party: true
+versions:
+  - version: v0.2.1
+    date: 2026-06-18
+    url: https://github.com/rainybit-code/propagator/releases/tag/v0.2.1
+  - version: v0.1.0
+    date: 2026-06-17
+    url: https://github.com/rainybit-code/propagator/releases/tag/v0.1.0

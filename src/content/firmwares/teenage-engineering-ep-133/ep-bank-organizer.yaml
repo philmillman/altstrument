@@ -1,0 +1,37 @@
+device: teenage-engineering-ep-133
+name: EP Bank Organizer
+kind: tool
+summary: Local web app that reads the sounds on an EP-133 over Web MIDI or from a .pak backup, sorts dropped WAV files into free slots in the right bank, and can send samples to USER slots 700 to 899. It runs from a small Node server and works offline as a PWA.
+description: >-
+  Classifies dropped WAV files into the device's ten banks from file and folder
+  names, assigns the first free slot in each bank while avoiding slots the
+  device reports as occupied, and flags duplicates, collisions and out-of-range
+  numbers. It scans the device's memory over Web MIDI, reads backups made by the
+  official sample tool to show every sound and each project's pad assignment,
+  and shows a pad grid and a memory estimate. Real writes use a SysEx upload
+  protocol the author documented in docs/PROTOCOL.md and checked against
+  reference dumps; they are limited to USER slots and need a confirmation.
+  Drag-and-drop reordering of device slots is also described. A transfer folder
+  with renamed WAV files and a mapping.csv can be exported instead, and the
+  plan exports as CSV, JSON or an .epack archive. The README is in French and
+  describes a clean-room implementation.
+status: active
+authors:
+  - name: Simon Grossi
+    url: https://github.com/simongrossi
+source: https://github.com/simongrossi/ep133-bank-organizer
+source_status: open
+license: MIT
+distribution: source-only
+install_notes: >-
+  Needs Node.js 20 or newer. Run npm start, or start_windows.bat or
+  start_mac_linux.sh, and open the printed localhost address in Chrome or Edge;
+  Web MIDI needs localhost or HTTPS. Writing replaces the contents of a slot, so
+  start with a slot you can lose.
+brick_risk: false
+tags: [librarian, sample-transfer, web-midi, sysex, samples, web]
+versions:
+  - version: master @ a1fb3d5
+    date: 2026-07-09
+    url: https://github.com/simongrossi/ep133-bank-organizer/commit/a1fb3d5
+    notes: No tagged releases; this is the latest commit.

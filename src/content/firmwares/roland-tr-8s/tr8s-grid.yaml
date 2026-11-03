@@ -1,0 +1,39 @@
+device: roland-tr-8s
+also_devices: [novation-launchpad]
+kind: tool
+name: TR-8S Grid
+summary: Python tool that turns two Launchpad Mini MK3 into a 16x8 step grid editing the TR-8S's own pattern over SysEx, live. It rests on a reverse-engineered pattern layout, documented in the repository, and includes a local web page. macOS-oriented; no licence.
+description: >-
+  Rights warning: the repository's capturas folder holds ToneDetailsConfigTable.dat, a data table from Roland's software, next to
+  the author's MIDI Monitor captures.
+
+  Pad presses on the Launchpads become SysEx writes to the TR-8S's pattern memory while LED colours show velocity, so a
+  variation can be edited while another plays. The author says the machine's pattern format was not published and decoded it
+  with hardware tests, listing step layout, velocity, flam, sub-steps, probability, ALT, accents, last step, track mute and the
+  current step in REFERENCIA.md, which separates what is proven from what is guessed. Pattern scale writing was not yet tested
+  on hardware. Scripts list ports, learn the Launchpad layout, run the grid, snapshot and diff machine state, and listen to
+  the unit. A LaunchAgent and a small app wrapper serve a web UI on localhost. The README is in Portuguese and warns that
+  requests to invalid addresses can drop the unit's control port. The README says no licence is defined and to ask before reuse.
+  Nothing is flashed.
+status: active
+authors:
+  - name: luanmoura-aimanager
+    url: https://github.com/luanmoura-aimanager
+source: https://github.com/luanmoura-aimanager/tr8s-grid
+source_status: open
+license: unspecified
+license_notes: >-
+  The README says "Sem licença definida ainda — pergunte antes de reutilizar" (no licence defined yet, ask before reusing);
+  there is no LICENSE file.
+distribution: source-only
+install_notes: >-
+  Needs Python 3 with mido on macOS, two Launchpad Mini MK3 and the TR-8S on USB. Close Roland's TR-EDITOR first, because two programs
+  reading the TR-8S CTRL port get each other's replies. Run lp_tr8s.py learn once, then run. Edit a copy of a pattern first
+  and back the unit up.
+brick_risk: false
+tags: [python, sequencer, sysex, usb-midi, midi, research, controller-mode]
+versions:
+  - version: main @ 2f4964b
+    date: 2026-09-25
+    url: https://github.com/luanmoura-aimanager/tr8s-grid/commit/2f4964b315962bdeeeaee78dab27ee9393c385a5
+    notes: No tagged releases; this is the latest commit.

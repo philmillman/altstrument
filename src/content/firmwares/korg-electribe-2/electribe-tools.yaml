@@ -1,0 +1,30 @@
+device: korg-electribe-2
+name: Electribe Tools
+kind: tool
+summary: Browser tool that splits an Electribe 2 all-patterns file into 250 pattern files plus a global settings backup, and builds an allpat file back from them, so patterns can be renamed and reordered. Everything runs in the page.
+description: >-
+  The Pattern Manager takes an .allpat file and returns a zip with the patterns and a global settings backup, or takes such a
+  zip with at least 250 pattern files and one settings backup and returns an allpat file. Patterns are ordered by file name, and
+  a four-character numeric prefix on each name sets how it is labelled. It is based on the Max for Live Electribe2 pattern editor
+  and on e2allpat. The to-do list names pattern editing, instrument remapping and sending to the device over SysEx, none of
+  which is built. The page has no link to the hardware. Nothing is flashed.
+status: dormant
+authors:
+  - name: David Konsumer (konsumer)
+    url: https://github.com/konsumer
+source: https://github.com/konsumer/electribe_tools
+source_status: open
+license: unspecified
+license_notes: No license file or statement in the repository.
+homepage: https://electribe_tools.surge.sh/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page and drop in a pattern backup made with Korg's Electribe 2 editor or a similar tool. Keep a copy of the
+  original file.
+brick_risk: false
+tags: [converter, librarian, patch-library, web]
+versions:
+  - version: main @ 91b672a
+    date: 2023-08-01
+    url: https://github.com/konsumer/electribe_tools/commit/91b672ae7f69a1f06df6c46e1d5c48f7f5fc4a70
+    notes: No tagged releases; this is the latest commit.

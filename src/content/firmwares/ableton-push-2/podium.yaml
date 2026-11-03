@@ -1,0 +1,34 @@
+device: ableton-push-2
+name: Podium (push-cc)
+kind: tool
+summary: Python program that uses a Push 2 as a hardware surface for running several Claude Code sessions in terminal panes. Pads send prompts, buttons focus agents and answer questions, and the display shows agents, pull requests and usage. A tablet app mirrors it.
+description: >-
+  push_cc.py puts the Push in User mode, lights pads by agent status and draws
+  960 by 160 views on the display over USB with pyusb: a focused agent, sessions,
+  pull requests from gh, and usage by model. The grid holds pages of canned
+  prompts, and when an agent asks a question the pads become the answer options.
+  An Expo app in app/ shows the same surface plus a git tab, guardrail and
+  integration panels, memory and telemetry. The README is very long and the code
+  is largely written with Claude. The project was renamed from midiAI to Podium
+  and the README title still says push-cc. It is not related to the music use of
+  the Push.
+status: active
+authors:
+  - name: DanielPCoyle
+    url: https://github.com/DanielPCoyle
+source: https://github.com/DanielPCoyle/podium
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and the README states no terms.
+distribution: source-only
+install_notes: >-
+  Needs Python with mido, python-rtmidi, pyusb, pillow and numpy, plus sox,
+  libusb and whisper-cpp from Homebrew, and npm for the app. Quit Ableton Live
+  first or turn off its Push 2 port settings, because Live repaints the surface.
+brick_risk: false
+tags: [controller, python, midi, usb-midi, utility]
+versions:
+  - version: main @ e5f257c
+    date: 2026-09-24
+    url: https://github.com/DanielPCoyle/podium/commit/e5f257c
+    notes: No tagged releases; this is the latest commit.

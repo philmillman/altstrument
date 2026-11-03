@@ -1,0 +1,28 @@
+device: plinky-plinky
+name: Plinky GUI Editor
+kind: tool
+summary: Independent patch editor for Plinky that lays the 96 parameters out as a synth front panel, with draggable envelopes, live LFO previews and an arpeggio keyboard. It saves patches as YAML and reads and writes patch slots over WebUSB.
+description: >-
+  The editor is a single self-contained HTML page with no dependencies. Its parameter model is generated from the official editor's parameter list and the
+  firmware headers, so it also reaches a few parameters the official editor shows as unused, such as the MIDI channels and stereo width. Patches can be
+  saved to and loaded from readable YAML files. Reading and writing a slot over WebUSB has been tried against a real Plinky, and the author says
+  sample audio, pattern steps and global settings are not reachable and the editor has no MIDI. It is not the official editor.
+status: active
+authors:
+  - name: mleysens
+    url: https://github.com/mleysens
+source: https://github.com/mleysens/plinky-gui-editor
+source_status: open
+license: CC-BY-NC-SA-4.0
+license_notes: The LICENSE file applies CC BY-NC-SA 4.0 to the code and generated model written for this project, to match the upstream Plinky material it derives from. Vendored upstream files in vendor/ keep their own licenses (CC BY-NC-SA 4.0 and MIT).
+homepage: https://mleysens.github.io/plinky-gui-editor/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Edge, or build the single HTML file with make. The device buttons need a secure context, so the page cannot talk to Plinky when opened straight from disk. Nothing is sent to the synth until a button is pressed.
+brick_risk: false
+tags: [editor, web, presets, sysex, midi]
+versions:
+  - version: main @ bdcf012
+    date: 2026-08-19
+    url: https://github.com/mleysens/plinky-gui-editor/commit/bdcf012bc774d74adf4e8fd7d3f1947076a64599
+    notes: No tagged releases; this is the latest commit.

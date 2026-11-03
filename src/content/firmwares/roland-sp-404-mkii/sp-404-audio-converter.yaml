@@ -1,0 +1,29 @@
+device: roland-sp-404-mkii
+also_devices: [roland-sp-404]
+kind: tool
+name: SP-404 Audio Converter
+summary: Browser page that converts a folder tree of audio files to the WAV format the SP-404 samplers need, 16-bit 44.1 kHz for the SX and A or 48 kHz for the MKII, keeping folder structure. No MIDI; you copy the output to the card yourself.
+description: >-
+  Choose a model, a source folder and a destination folder, and the page walks the tree, skips files that already match the
+  target format, and writes converted WAV files for the rest with their folder paths kept. It reads WAV, MP3, FLAC, AIFF, M4A
+  and OGG, runs entirely in the browser with the File System Access API, and can be used offline after the first load. The
+  source files are left alone. It does not talk to the sampler. The repository is one HTML file. Nothing is flashed.
+status: active
+authors:
+  - name: Alexander Osadchy
+    url: https://github.com/alei1180
+source: https://github.com/alei1180/sp-404-audio-converter
+source_status: open
+license: MIT
+homepage: https://alei1180.github.io/sp-404-audio-converter/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, Edge or Opera, which have the File System Access API, pick the sampler model and the
+  folders, then copy the converted files to the sampler's card or storage yourself. The page can also be saved and run as a
+  local file.
+brick_risk: false
+tags: [samples, converter, utility, sample-transfer, web]
+versions:
+  - version: ver1.0.0
+    date: 2026-03-25
+    url: https://github.com/alei1180/sp-404-audio-converter/releases/tag/ver1.0.0

@@ -1,0 +1,38 @@
+device: m-vave-fm-1
+name: CRATE
+summary: >-
+  Slice and performance sampler for the FM-1: WAV files go in over USB-MIDI SysEx, play from the keys and MIDI notes,
+  cut into 16 slices, run on a two-track sequencer and pass through a bit-crush, drive and vinyl chain.
+description: >-
+  The README describes it as an original sampler for jazz and hip-hop production, meant to sit beside a second FM-1
+  running SLOOP. Samples are stored as 4-bit ADPCM in the flash pool (about 292 KiB) in up to 64 slots, with a Python
+  uploader that encodes a WAV and sends it in acknowledged chunks. Slice mode cuts a sample into 16 equal parts or at
+  detected transients, and each slice has its own pitch, level, cutoff, envelope, loop, reverse and choke group. The
+  sequencer has two tracks of 16 steps with swing, micro-timing and ratchets, sends USB-MIDI clock and can follow an
+  external clock. It builds on the Felucca hardware layer. The author says flashing this build on a real FM-1 is the
+  step that is still outstanding; the sampler engine, upload protocol and sequencer are covered by host tests. TRS
+  MIDI input is untested on hardware, and TRS MIDI output is not confirmed.
+status: active
+authors:
+- name: zisonzishen
+  url: https://github.com/zisonzishen
+source: https://github.com/zisonzishen/crate-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL-3.0 text and the source files carry GPL-3.0-only SPDX headers.
+distribution: source-only
+requires_stock: any firmware with the M-UPGRADE update path
+install_notes: >-
+  Build with the JieLi toolchain on Linux x86-64 (WSL2 on Windows), then install build/crate.fwsc with the repository's
+  WebMIDI page, served locally from web/ over http://localhost, or with tools/fm1_install.py. The installers check the
+  package identity FM-1_900 before writing. A second FM-1 running SLOOP must be unplugged while CRATE is connected,
+  because both use the same USB-MIDI name. The M-VAVE update mode can be entered by holding OCT- and OCT+ for five
+  seconds at power-on.
+brick_risk: true
+tags: [sampler, sequencer, sample-transfer, sysex, usb-midi, fx]
+versions:
+- version: main @ 27c13ea
+  date: 2026-10-19
+  url: https://github.com/zisonzishen/crate-fm1/commit/27c13ea309388fb1f8f8706fbf1a604287e5705d
+  notes: No tagged releases; this is the latest commit.

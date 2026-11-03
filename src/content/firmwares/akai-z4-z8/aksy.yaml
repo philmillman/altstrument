@@ -1,0 +1,31 @@
+device: akai-z4-z8
+name: Aksy
+kind: tool
+summary: Python library for controlling Akai samplers over USB. It covers about 500 system exclusive functions and file transfer on the Z-series and MPC4000, and some functions on the S5000 and S6000, with a C USB extension, an OSC bridge and FUSE and FTP file systems.
+description: >-
+  The library gives Python modules for the sampler's disk, program, sample, multi, song, recording and system functions, generated from tab-delimited command tables, plus a transfer
+  module for sending and fetching files. Aksui, a small graphical front end, was added in version 0.3. The README lists limits, such as unimplemented sample loop commands and no
+  support for several samplers of the same model at once. The author describes it as a complement to Akai's Ak.Sys for batch work and scripting. It targets Python 2.7 and the README says Python 3 is being looked at.
+status: dormant
+authors:
+  - name: Walco van Loon
+    url: https://github.com/watzo
+source: https://github.com/watzo/aksy
+source_status: open
+license: GPL-2.0-or-later
+license_notes: The LICENSE.txt header says GPL version 2 or, at your option, any later version.
+homepage: https://github.com/watzo/aksy
+distribution: source-only
+install_notes: >-
+  Build and install the Python package with its libusb-based extension on a computer connected to the sampler by USB. On Linux the device permissions under /dev/bus/usb may need changing, and the FUSE file system needs user_allow_other in /etc/fuse.conf. The README lists the unit types it was tried with.
+brick_risk: false
+tags: [sysex, usb-midi, sample-transfer, python, sdk, midi]
+versions:
+  - version: "0.4"
+    date: 2021-10-10
+    url: https://github.com/watzo/aksy/tree/0.4
+    notes: Git tag; no GitHub release page.
+  - version: aksy-0_2
+    date: 2007-07-22
+    url: https://github.com/watzo/aksy/tree/aksy-0_2
+    notes: Git tag; no GitHub release page.

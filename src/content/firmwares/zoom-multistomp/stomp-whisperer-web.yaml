@@ -1,0 +1,31 @@
+device: zoom-multistomp
+kind: tool
+name: StompWhisperer Web
+summary: >-
+  Early TypeScript port of the Python StompWhisperer for the Zoom MS-50G+. It reads every patch over Web MIDI SysEx, makes a backup, compares it with the pedal and restores user slots 86 to 100, with no hosted copy yet.
+description: >-
+  The page connects to the pedal, reads the patches and shows each effect chain. It can download a backup, compare a
+  backup with the pedal and restore the user slots 86 to 100 after you confirm, reading the slot back to check the write.
+  The parsing and SysEx messages are tested against golden files from the Python version, which are kept out of the
+  repository. Sharing presets through accounts and a GitHub Pages site are listed in the README as planned, and it
+  describes the project as just started. The transport is separate from the pedal code so the tests can use a fake pedal.
+status: active
+authors:
+  - name: Flaco-Segura
+    url: https://github.com/Flaco-Segura
+source: https://github.com/Flaco-Segura/stomp-whisperer-web
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and the README states no license.
+distribution: source-only
+requires_stock: MS-50G+
+install_notes: >-
+  Build with npm and serve it locally with Vite, then open it in a Chromium browser and allow MIDI with SysEx. The README
+  says the web port is not published yet. Back up before restoring any slot.
+brick_risk: false
+tags: [editor, web-midi, sysex, usb-midi, librarian, backup, web]
+versions:
+  - version: master @ f9d75b3
+    date: 2026-10-22
+    url: https://github.com/Flaco-Segura/stomp-whisperer-web/commit/f9d75b3
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,35 @@
+device: pedalpcb-terrarium
+name: 224XL Emulator (bluebox)
+summary: >-
+  Lexicon 224XL emulator that runs the 224XL's own ROM images on an emulated 8080 and its DSP microcode, on a Daisy Seed in a Terrarium pedal. You supply the ROM set. A Web MIDI editor modelled on the 224's remote is included. Mono only.
+description: >-
+  The repository has a host command-line renderer, which turns a WAV file into a fully wet WAV, and Daisy Seed firmware that
+  runs the same engine in real time with the Terrarium's knobs, switches and footswitches. The knobs map to sliders from the 224XL's LARC
+  remote, a second layer is reached by holding the right footswitch, and the factory programs are chosen by bank switches and a
+  footswitch. The author tested the pedal controls and the editor's SysEx link on the device, and says the browser editor
+  had not yet been run against it. No ROM images are in the repository. The firmware can be built with
+  the set embedded from a local roms folder, or built without it and loaded later from the editor into flash. The project is
+  based on v8.21 ROMs and is presented as an experiment. There is no license file.
+status: active
+authors:
+  - name: jimbattin
+    url: https://github.com/jimbattin
+source: https://github.com/jimbattin/bluebox
+source_status: open
+license: unspecified
+license_notes: No license file or statement in the repository.
+homepage: https://github.com/jimbattin/bluebox
+distribution: source-only
+requires_stock: A complete set of Lexicon 224XL v8.21 ROM images (eight NVS 2732 and three SBC 2716 files), supplied by you
+install_notes: >-
+  Build with the Daisy toolchain after placing your ROM files in roms/224XL_v8_21/, or build with EMBED_ROMS=0 and load the
+  eleven ROMs from the editor. Put the Seed in DFU mode by hand (hold BOOT, tap RESET, release BOOT) and run make program-dfu
+  in the daisy folder. The editor is built with Bun and has no hosted copy. Do not share a firmware image with the ROMs
+  embedded.
+brick_risk: false
+tags: [fx, reverb, emulator, editor, web-midi, sysex]
+versions:
+  - version: v1.0
+    date: 2026-10-03
+    url: https://github.com/jimbattin/bluebox/tree/v1.0
+    notes: Git tag; no GitHub release page.

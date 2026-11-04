@@ -10,11 +10,11 @@ description: >-
   keyboard plays up to three live PSG notes over the backing. Twelve sources each have a level and independent DECAY,
   COLOR and ECHO amounts, saved to flash after three seconds without edits. The 0.7.0 release adds a GLO button that
   mutes the speaker and headphones while USB audio and MIDI continue, and 0.10.0 adds an EDIT mode that sends the
-  keyboard and sequencer notes out over USB MIDI, and 1.0.4 adds an 88-bar song mode. From 0.5.0 the FM-1 appears as a stereo 16-bit
+  keyboard and sequencer notes out over USB MIDI, 1.0.4 adds an 88-bar song mode, and 1.0.12 lets PLAY pause and resume the arrangement and REC restart it with a new seed. From 0.5.0 the FM-1 appears as a stereo 16-bit
   44.1 kHz USB audio input carrying the master mix, plus USB MIDI and a status interface. The project describes the
   music as original and inspired by the Mega Drive sound palette, with no game music or extracted samples, and says
   it is not affiliated with Sega, Yamaha or M-VAVE. Releases up to 0.10.0 are marked beta; 0.11.3 and 1.0.4 are marked
-  stable. It does not import presets or projects from other firmware.
+  stable, and 1.0.12 is not a pre-release. It does not import presets or projects from other firmware.
 status: active
 authors:
 - name: Caspius Labs
@@ -44,6 +44,10 @@ image:
   source_url: https://github.com/CaspiusLabs/Emerald-YM
   first_party: true
 versions:
+- version: 1.0.12
+  date: 2026-11-04
+  url: https://github.com/CaspiusLabs/Emerald-YM/releases/tag/v1.0.12
+  notes: PLAY pauses and resumes the arrangement at the same bar, and REC resets it with a new seed. USB MIDI out sends Stop on pause, Continue on resume and Start on a fresh play. The notes report a run on an FM-1 that confirmed both.
 - version: 1.0.4
   date: 2026-10-31
   url: https://github.com/CaspiusLabs/Emerald-YM/releases/tag/v1.0.4

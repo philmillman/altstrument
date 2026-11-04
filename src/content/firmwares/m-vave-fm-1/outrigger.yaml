@@ -9,7 +9,7 @@ description: >-
   before a switch and can resume an interrupted install. A new board comes with M-VAVE's V15, Felucca and Skiff, and
   more can be added from The Firmware Hub's list. The ESP32 firmware is installed from a browser installer that
   writes four partitions without touching stored settings. M-VAVE's firmware and JieLi's loader are fetched by the
-  browser at install time and checked by hash, and are not in the repository. The beta notes list Wi-Fi, a web page on the board,
+  browser at install time and checked by hash, and are not in the repository. Beta 2 adds a second supported board, the Waveshare ESP32-S3-Touch-LCD-3.5, beside the 1.69-inch one. The beta notes list Wi-Fi, a web page on the board,
   loading your own firmware files and removing a firmware as not yet done. It has been tested with one controller,
   and the hub's USB-A ports do not work on the tested hub.
 status: active
@@ -37,6 +37,10 @@ image:
   source_url: https://outrigger.music
   first_party: true
 versions:
+- version: 0.1.0-beta.2
+  date: 2026-11-03
+  url: https://github.com/chadthornton/outrigger/releases/tag/v0.1.0-beta.2
+  notes: Marked pre-release. Adds a second board, the Waveshare ESP32-S3-Touch-LCD-3.5 in landscape, with one firmware for both boards; the installer asks which board and checks the chip before writing. Known issues in the notes include a controller that may need replugging after a firmware switch.
 - version: 0.1.0-beta.1
   date: 2026-11-01
   url: https://github.com/chadthornton/outrigger/releases/tag/v0.1.0-beta.1

@@ -3,9 +3,10 @@ also_devices: [polyend-tracker-plus, polyend-tracker-mini]
 name: Tracker Community Edition
 summary: Polyend's official community firmware for the Tracker, Tracker+ and Tracker Mini, built from its own firmware source, adding sample editor plugins, wavetable envelopes and LFOs, custom themes and fonts, per-step micro-move and volume columns, and open synth engines.
 description: >-
-  Licence note: this is source-available, not open source. The PolyForm Noncommercial terms forbid selling the firmware
-  or using it in a commercial product, though Polyend expressly allows commercial music made with it, and the two
-  precompiled synth libraries stay closed.
+  Licence note: since 2026-11-03 the repository's main branch uses an MIT-based licence with a clone restriction, so
+  the complete firmware or a re-skin of it cannot be sold, on hardware or as paid software, while individual parts can be
+  reused commercially. Polyend expressly allows commercial music made with it, and the two precompiled synth libraries stay
+  closed.
 
   One codebase builds all three devices. Sample editor effects and generators load as .ptfx files from the SD card, with
   an MIT-licensed SDK and six reference plugins. The Tracker+ and Tracker Mini gain an Open Synth SDK and the CHIP and DIRT
@@ -22,12 +23,14 @@ authors:
     url: https://github.com/polyend
 source: https://github.com/polyend/tracker-ce
 source_status: open
-license: PolyForm-Noncommercial-1.0.0
+license: MIT
 license_notes: >-
-  LICENSE is the PolyForm Noncommercial License 1.0.0 with Polyend's additional permissions, which allow commercial music
-  production, performance and monetized content but not selling the firmware or derivatives. editor-fx-sdk/ is MIT, so
-  .ptfx plugins may be sold. synth/lib/libPolySynth.a and libPolyDSP.a are proprietary binaries, redistributable unmodified
-  only to build firmware for authentic Tracker+ and Tracker Mini units. Third-party parts are listed in NOTICE.md.
+  LICENSE is titled "MIT License with Wholesale Commercial Clone Restriction". Parts 1 and 2 put the source, SDKs and open
+  synth engines under MIT, but bar selling .ptf builds, selling commercial clone hardware, and selling a port or substantially
+  unmodified derivative of the complete application. Commercial music, paid .ptfx plugins and reuse of individual components
+  are expressly allowed. synth/lib/libPolySynth.a and libPolyDSP.a stay proprietary, usable on authentic Polyend hardware and
+  in personal or DIY non-commercial projects, with commercial embedding barred. Third-party parts are listed in NOTICE.md.
+  The v1.0.0 tag predates this change and carries the PolyForm Noncommercial 1.0.0 terms with Polyend's additional permissions.
 homepage: https://polyend.com/
 distribution: download
 install_notes: >-

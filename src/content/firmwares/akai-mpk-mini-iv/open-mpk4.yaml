@@ -1,0 +1,50 @@
+device: akai-mpk-mini-iv
+name: OPEN MPK4
+summary: >-
+  Replacement application firmware for the MPK mini IV with an eight-track MIDI looper, scale and chord harmony, nine
+  mod-wheel effects per track, a step editor and a themed screen. It makes no sound itself.
+description: >-
+  The keyboard becomes a MIDI sequencer. Each of eight tracks has its own MIDI channel and output (USB, DIN or both),
+  with record, overdub, undo, mute, solo, eight switchable patterns and polymeter of up to 256 steps. The keys play a chosen
+  scale, the pads play its chords or one of 53 chord styles, and an arpeggiator, octaver, echo, strum, trance gate and
+  ratchet run per track. The wheel runs one of nine effects chosen per track, among them GLIDE, BLOOM and STUTTER. Tempo
+  is internal or follows USB clock, with clock out on USB and DIN. The firmware keeps Akai's bootloader and its staged
+  copy byte for byte. The flasher assembles each image on your computer from the release's app package and Akai's stock
+  v1.41 image, which a script reads out of Akai's public installer download and checks by hash; no Akai bytes are in the
+  repository or in the release. The flasher does a dry run unless told to write, and a command returns the keyboard to
+  stock. The repository vendors TinyUSB and Artery's chip library.
+status: active
+authors:
+  - name: Gius.Marci
+    url: https://github.com/giusmarci
+source: https://github.com/giusmarci/open-mpk4
+source_status: open
+license: MIT
+license_notes: >-
+  MIT for the project. TinyUSB (MIT), Artery's AT32F402/405 library (BSD-3-Clause, for use with Artery microcontrollers) and Arm
+  CMSIS headers (Apache-2.0) in firmware/lib keep their own licences, listed in NOTICE. The repository states that it holds no
+  Akai firmware.
+homepage: https://giusmarci.github.io/open-mpk4/
+distribution: download
+requires_stock: "1.41"
+install_notes: >-
+  Needs Python 3.10 or later with mido, python-rtmidi and hidapi. Run tools/fetch_stock.py to get and verify Akai's v1.41
+  image, back up the keyboard's programs with tools/mpk4_backup.py, then run tools/mpk4_flash.py with the release's app package
+  once as a dry run that must report an acceptable image, then again with --write. The tool puts the keyboard into update
+  mode itself; do not unplug it while it writes. If flashing stops or the unit does not start, unplug it, hold SHIFT and UNDO
+  while plugging it back in to reach the Upgrade screen and flash again, or flash stock with the same tool. The author
+  documents that an image whose bootloader copy is not genuine can overwrite the real bootloader on the next stock boot,
+  which needs a debug probe to repair, and the flasher refuses images that fail its checks.
+brick_risk: true
+tags: [sequencer, looper, midi, chords, arpeggiator, performance, open-source, flasher]
+image:
+  url: https://raw.githubusercontent.com/giusmarci/open-mpk4/main/site/media/home.gif
+  alt: "OPEN MPK4 home screen in dot-matrix type: chord name DORIAN, track 2 BASS on channel 2, notes A3 C4 E4 G4 in red, eight scale-degree boxes with VI selected, a 4/4 beat ring and 124 BPM"
+  credit: Gius.Marci
+  source_url: https://github.com/giusmarci/open-mpk4#readme
+  first_party: true
+versions:
+  - version: v1.0.0
+    date: 2026-11-04
+    url: https://github.com/giusmarci/open-mpk4/releases/tag/v1.0.0
+    notes: First public release, firmware 40.07.

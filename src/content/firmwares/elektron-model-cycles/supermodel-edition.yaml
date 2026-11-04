@@ -2,6 +2,8 @@ device: elektron-model-cycles
 name: Supermodel Edition
 summary: Fork of Modded Cycles for Model:Cycles OS 1.13 with a separate Supermodel 909 flasher that replaces the six stock machines with a 909-style kit, plus the ACID machine, Sequence Genie, a second LFO and MIDI Bank.
 description: >-
+  Rights warning: the repository commits 67 prebuilt Supermodel upgrade files under docs/flasher/, each about 2 MB with Elektron's SysEx header, although its README says no Elektron firmware, original or modified, is included. See license_notes.
+
   Built on Modded Cycles by A.V. and published as a fork of it. The Supermodel
   909 flasher page asks for the official OS file and four of your own WAV files
   (closed hat, open hat, crash, ride), converts them in the browser and builds
@@ -9,9 +11,9 @@ description: >-
   voices come from Model909 by DMDaudio. The fork's main flasher also carries
   extra machines such as RETROSYN, Sample Wizard integration, ChordKeys and
   other options in its own selection. MIDI Bank data is held in RAM only and is
-  lost at power-off. The README's current documentation is for release 3.02,
+  lost at power-off. The README's current documentation is for release 3.03,
   which it says covers song mode, direct pattern jump, trig selection, per-track
-  ACID glide and legato, and arp envelope retriggering. The author reports hardware tests of the 909 edition on
+  ACID glide and legato, arp envelope retriggering and Wizard lock priority. The author reports hardware tests of the 909 edition on
   2026-10-14.
 status: active
 authors:
@@ -26,7 +28,13 @@ license_notes: >-
   The fork has no LICENSE file at its root (the upstream Modded Cycles repository
   has an MIT one). Bundled components carry their own MIT notices, such as
   LICENSE-Punch.txt, which is the file GitHub reports as the repository's
-  licence.
+  licence. The repository also commits 67 prebuilt Supermodel upgrade files in
+  docs/flasher/ (Full, Lite and Optional builds from 2.53 to 3.03, four of them added
+  with 3.03). They are about 2 MB each and start with Elektron's SysEx manufacturer
+  header, so they are complete modified OS images that probably contain Elektron's
+  code. The README says no Elektron firmware, original or modified, is included, and
+  the repository states no permission from Elektron; the stock file was not available
+  to compare, so this was not checked byte for byte.
 homepage: https://aveycole.github.io/Supermodel/flasher-supermodel-909/
 distribution: browser-installer
 requires_stock: "1.13"
@@ -38,7 +46,7 @@ install_notes: >-
   returns to stock.
 tags: [machines, drums, sampler, sequencer, lfo, midi, fx]
 versions:
-  - version: main @ e1a20b3
+  - version: main @ 14d7d7d
     date: 2026-11-03
-    url: https://github.com/AveyCole/Supermodel/commit/e1a20b3c0893bb145bc737b24ba73313f08f9f71
-    notes: No tagged releases; this is the latest commit.
+    url: https://github.com/AveyCole/Supermodel/commit/14d7d7d17c74372a36efbdc0b15ea0ae01e4d8d0
+    notes: No tagged releases; this is the latest commit, which releases Supermodel 3.03 across the editions. The only GitHub release is a wavetable archive.

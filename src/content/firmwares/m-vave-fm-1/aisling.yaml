@@ -11,7 +11,7 @@ description: >-
   six-note gapped scales, in D, G, A, E and B. Chords swing between two tonics, the harps run in jig-style groups
   of 12 and 9 steps with every third step accented, and eight pieces are named for places in the west of Ireland
   and for the harper Turlough O'Carolan. Three of the black-key effects are renamed Ceo, Macalla and Fras, and
-  there is a green triskele launch screen. A separate one-file browser visualiser reads the FM-1's MIDI out and
+  there is a green triskele launch screen. From 0.4, notes received over USB or TRS MIDI play the Lead. A separate one-file browser visualiser reads the FM-1's MIDI out and
   paints it as a landscape. AISLING saves its eight pieces in the same flash location as NACHTFAHRT, DUB-1 and
   AMB-1, so installing one of them can overwrite another's saves.
 status: active
@@ -42,6 +42,14 @@ image:
   source_url: https://github.com/stephencummins/fm1-aisling
   first_party: true
 versions:
+- version: "0.4"
+  date: 2026-11-03
+  url: https://github.com/stephencummins/fm1-aisling/releases/tag/v0.4
+  notes: Notes arriving over USB or TRS MIDI on any channel play the Lead, the harps' density drifts slowly in the Carolan piece, and the USB audio interface is listed first for macOS 15 and earlier. The scale toggle on channel 1 is gone; the scale is set on the Key page. Tested on a real FM-1 as an install over a test build.
+- version: "0.3"
+  date: 2026-11-02
+  url: https://github.com/stephencummins/fm1-aisling/releases/tag/v0.3
+  notes: Evens out sudden level jumps in the Lead's voice, and the visualiser's Sea and Space views are redrawn.
 - version: "0.2"
   date: 2026-11-02
   url: https://github.com/stephencummins/fm1-aisling/releases/tag/v0.2

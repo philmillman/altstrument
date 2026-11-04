@@ -1,12 +1,15 @@
 device: elektron-model-cycles
 name: Cycles Engines
-summary: Web flasher for Model:Cycles OS 1.13 that adds machines as separate engine packages and builds any ticked combination in the browser from your own official OS file, then sends it over USB. Current cards are PUNCH, BLAST and FERAL.
+summary: Web flasher for Model:Cycles OS 1.13 that adds machines as separate engine packages and builds any ticked combination in the browser from your own official OS file, then sends it over USB. Current cards are BIAS, PUNCH, BLAST and FERAL.
 description: >-
   Each engine is a folder with a manifest and a relocatable object, and a composer places the ticked engines after the six
   stock machines in the order chosen. The page asks for your own model-cycles_OS1.13.syx, checks its hash, builds the
   image locally and sends it with a fast method over USB or a classic one through CONFIG > UPGRADE. Nothing is uploaded and the
   repository holds only hashes and addresses of the stock OS, with no Elektron bytes; a tab flashes your own file
-  back unchanged. PUNCH is a set of twelve FM percussion engines, BLAST an OPL2-style FM engine and FERAL nine noisy synthesis models. A
+  back unchanged. PUNCH is a set of twelve FM percussion engines, BLAST an OPL2-style FM engine and FERAL nine noisy synthesis models. BIAS is a
+  six-oscillator wavefolder engine with DECAY, PUNCH and GATE knobs, modelled from public descriptions of the Skin and Liquid
+  engines of the Basimilus Iteritas Alia module; its sources come from the author's separate bias repository, and the page
+  marks it as tested on a Model:Cycles. A
   SAM speech machine, derived from the Braids Renaissance vocalist and a C reconstruction of the SAM speech
   synthesiser, and LiXR remain in the repository but are not offered on the page. A command-line composer builds the same
   files. The toolchain is credited to Modded Cycles, model27 and the mtlib code by drumkilla, all MIT. The page calls
@@ -40,10 +43,10 @@ video:
   first_party: true
   found_via: https://100demons.github.io/cycles-engines/flasher/
 versions:
-  - version: main @ fe061b6
-    date: 2026-10-30
-    url: https://github.com/100demons/cycles-engines/commit/fe061b640a2e035c8f0cea3fb2478698db2c7d99
-    notes: Names the cards BLAST 3.0, PUNCH 1.0 and FERAL 9.0.
+  - version: main @ 8e4ed9a
+    date: 2026-11-04
+    url: https://github.com/100demons/cycles-engines/commit/8e4ed9a2779984ae94a5f5c3bb5284c9415d5dea
+    notes: Adds BIAS 2.0 as the fourth engine card, marked tested on hardware. The cards before it are named BLAST 3.0, PUNCH 1.0 and FERAL 9.0.
   - version: phase-5
     date: 2026-10-24
     url: https://github.com/100demons/cycles-engines/tree/phase-5

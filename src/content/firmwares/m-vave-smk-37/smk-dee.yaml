@@ -7,9 +7,9 @@ description: >-
   Rights warning: it inherits Melodee's bundled sound data, the Casio CZ-1 factory tones and the Sequential Prophet-5/10
   factory programs, whose rights stay with Casio and Sequential and for which the project grants no licence. The
   repository also carries copies of M-VAVE's V16 packages for the Pro and Elite, which are the files M-VAVE licenses
-  for redistribution.
+  for redistribution, and wl82loader.bin, a chip loader with no stated origin or licence.
 
-  Based on Melodee 1.4.1, with the SMK-37's keys, 16 pads, eight encoders, four faders and wheels mapped onto its
+  Based on Melodee 1.4.1 up to SMK-dee 1.4.2 and on Melodee 1.6.1 from SMK-dee 1.6.1, with the SMK-37's keys, 16 pads, eight encoders, four faders and wheels mapped onto its
   four-track synth and sequencer. Holding PATCH and PARA for 600 ms switches to a controller mode that sends keys,
   knobs, faders and pads on separate MIDI channels with two banks of each and assignable CC numbers. A browser page flashes the keyboard, and
   remaps the buttons and MIDI assignments over USB-MIDI SysEx, either into RAM or saved to flash, so no reflash is
@@ -28,7 +28,7 @@ license_notes: >-
   and fonts keep their own licences (LICENSES/). The CZ-1 factory tones (assets/cz1-factory) and the Prophet-5
   programs (assets/prophet5-factory) are bundled sound data under their owners' rights. The tree holds SMK-37_Pro_016.fwsc and
   SMK-37_Elite_016.fwsc, which match M-VAVE's licensed V16 Pro and Elite images (git blobs ad5ff6aa3888 and
-  821236a1292a).
+  821236a1292a). assets/recovery/wl82loader.bin is a chip loader with no stated licence.
 homepage: https://djstrombo.github.io/SMK-dee/
 distribution: browser-installer
 install_notes: >-
@@ -45,6 +45,10 @@ image:
   source_url: https://github.com/djStrombo/SMK-dee
   first_party: true
 versions:
+- version: 1.6.1
+  date: 2026-11-03
+  url: https://github.com/djStrombo/SMK-dee/releases/tag/v1.6.1
+  notes: Final release again. Rebases on Melodee 1.6.1 with 22 sound engines, adds a dedicated Bluetooth button (short press on, long press off), moves the pad MIDI channel combo to GLOBAL plus SEQ REC, lights pads in the track colours, routes MIDI clock over USB, Bluetooth and TRS by mode, and the web flasher detects whether the keyboard runs 1.6.1 or 1.4.2.
 - version: 1.4.2-smk-dee-final
   date: 2026-10-20
   url: https://github.com/djStrombo/SMK-dee/releases/tag/v1.4.2-smk-dee-final

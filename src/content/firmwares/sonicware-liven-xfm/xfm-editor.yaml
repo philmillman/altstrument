@@ -1,0 +1,51 @@
+device: sonicware-liven-xfm
+name: XFM Editor
+kind: tool
+summary: Python and Tkinter SysEx editor for the LIVEN XFM with one animated knob per control, graphical envelopes, operator routing view and JSON patch files. It receives the current patch over MIDI and sends edits back. Windows builds are zipped releases.
+description: >-
+  Rights warning: the repository includes the XFM's factory presets as JSON files and a folder of SysEx dumps, which are
+  Sonicware's work, and the README does not say they are licensed for redistribution.
+
+  The author wrote it because editing through the synth's four-character display is hard to follow. The window shows all four
+  operators' levels, ratios, envelopes and routing at once, and a patch triggered on the XFM appears in it. Changes can be sent
+  back by hand or on a timer, and patches are saved as JSON files. The README documents the SysEx layout the author worked
+  out, including how Sonicware packs 8-bit values into 7-bit MIDI data. A Ctrlr panel and a Knobman source for the knobs are
+  also in the repository. Another browser editor in the catalog reads and writes the same JSON structure.
+status: dormant
+authors:
+  - name: Cliff Lawson
+    url: https://github.com/wrightflyer
+source: https://github.com/wrightflyer/XFM
+source_status: open
+license: Apache-2.0
+license_notes: >-
+  The LICENSE file is the Apache License 2.0 text. The factory preset JSON files and SysEx dumps are Sonicware's content and are
+  not covered by that licence; the repository has no statement about them.
+distribution: download
+requires_stock: LIVEN XFM firmware 3.0.46 or later
+install_notes: >-
+  Download a release zip, which holds a PyInstaller-built xfm.exe and support files, or run xfm.py with Python and the mido
+  library. Connect the XFM's MIDI ports, choose them in the setup screen and put the synth in Edit mode. The XFM has to run
+  firmware 3.0.46 or later; the editor does not work with the older V2 versions.
+brick_risk: false
+tags: [editor, python, sysex, midi, presets, fm, librarian]
+video:
+  url: https://www.youtube.com/watch?v=xW3tTtv1Zck
+  title: Definitive guide to using XFM patch editor
+  credit: Cliff Lawson
+  first_party: true
+  found_via: https://github.com/wrightflyer/XFM#readme
+videos:
+  - url: https://www.youtube.com/watch?v=i-gdSHQqYMY
+    title: XFM editor intro (part 1) - this is superceded, see comment
+    credit: Cliff Lawson
+    first_party: true
+    found_via: https://github.com/wrightflyer/XFM#readme
+versions:
+  - version: v1.01-release
+    date: 2023-03-21
+    url: https://github.com/wrightflyer/XFM/releases/tag/v1.01-release
+    notes: Release zip with the editor and its manual.
+  - version: v1.0-release
+    date: 2023-02-15
+    url: https://github.com/wrightflyer/XFM/releases/tag/v1.0-release

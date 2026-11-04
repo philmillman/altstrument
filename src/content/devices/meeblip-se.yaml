@@ -1,0 +1,34 @@
+name: MeeBlip SE
+manufacturer: MeeBlip
+category: synth
+tagline: Hackable digital monosynth that MeeBlip sold as a kit
+description: >-
+  The SE is a monophonic digital synthesizer from MeeBlip, built around an ATmega32 microcontroller, with knobs and switches
+  for its oscillators, filter, envelopes and LFO and a MIDI input. It was sold as a build-it-yourself kit and as a quick-build
+  kit, and the second hardware version adds sixteen patch memories and a MIDI channel setting from the panel. The firmware
+  source is published. MeeBlip's micro board, a smaller project board without knobs, runs a separate build from the same
+  source repository.
+platform: ATmega32
+links:
+  manufacturer: https://meeblip.com/
+  community:
+    - label: MeeBlip on GitHub
+      url: https://github.com/MeeBlip
+    - label: MeeBlip micro Q&A (archived MeeBlip blog)
+      url: https://web.archive.org/web/20121101095349/http://meeblip.com/2012/03/12/meeblip-micro-qa-how-the-meeblip-models-differ-how-to-choose/
+notes: >-
+  The SE is no longer listed on meeblip.com; the image comes from MeeBlip's archived blog. Flashing needs an AVR ISP
+  programmer; the repository's make files use avrdude with a USBtiny programmer and write fuse settings. The first hardware
+  version has no patch memory and sets the MIDI channel with a DIP switch.
+related: [meeblip-anode, meeblip-triode]
+pinned: [se-firmware]
+image:
+  src: /images/devices/meeblip-se.webp
+  style: photo
+  alt: Back-right view of the MeeBlip SE, a black case with a silver top panel of black knobs, small switches and three buttons, and a rear panel with a hack port, MIDI in, audio out and power jack
+  width: 1200
+  height: 900
+  credit: MeeBlip
+  license: manufacturer archive image
+  source_url: https://web.archive.org/web/20121101095349/http://meeblip.com/2012/03/12/meeblip-micro-qa-how-the-meeblip-models-differ-how-to-choose/
+  original_url: https://web.archive.org/web/20121101095349im_/http://meeblip.com/files/2012/03/meeblip_angle_back.jpg

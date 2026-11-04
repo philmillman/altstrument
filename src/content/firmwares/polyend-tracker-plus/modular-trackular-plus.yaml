@@ -1,0 +1,35 @@
+device: polyend-tracker-plus
+name: Modular-Trackular Plus
+summary: Fork of Polyend's Tracker Community Edition for the Tracker+ that adds a framework of mods switched on per project, with defaults in the Config menu, and a first mod that gives the Chord FX values 30 to 69 as chord inversions.
+description: >-
+  The successor to Modular-Trackular, which stays on stock firmware 1.2.0. The mods here are compiled into the firmware
+  rather than patched into a stock file. Which mods are on is saved with each project, Config > Mods holds the defaults for
+  new projects, and a project with no mod data opens with every mod off. So far the only mod is Chords, which gives Chord FX
+  values 30 to 69 the same chord inversions as the 1.2.0 patch, so old projects keep their numbers. Polyend has since merged
+  its own inversions from the same author, numbered differently from value 34 up, and the mod's numbering applies only when
+  it is on. Commits report each step tested on hardware. Builds name themselves 1.0.0 MT in Config, Original Tracker and
+  Tracker Mini builds stay plain Community Edition, and the project states it is not affiliated with Polyend.
+status: active
+authors:
+  - name: FatRodzianko
+    url: https://github.com/FatRodzianko
+source: https://github.com/FatRodzianko/Modular-Trackular-Plus
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE is Polyend's "MIT License with Wholesale Commercial Clone Restriction", so the complete firmware and .ptf builds
+  cannot be sold. The precompiled synth libraries stay Polyend's proprietary code. The files in core/mods carry MIT
+  identifiers.
+distribution: source-only
+install_notes: >-
+  No prebuilt firmware is published; the mods live on the modular branch, and main is an unchanged copy of Polyend's repository.
+  Build the Tracker+ target, copy the resulting .ptf to /Firmware/ on the microSD card and run Config > Firmware > Firmware
+  update. Back up first: saving a project on Community Edition firmware moves its patterns to a format older firmware cannot
+  read. Recovery follows Polyend's route, with a known-good .ptf and the recessed reset button.
+brick_risk: true
+tags: [fork, platform, midi, sequencer, tracker]
+versions:
+  - version: modular @ 750f463
+    date: 2026-11-04
+    url: https://github.com/FatRodzianko/Modular-Trackular-Plus/commit/750f463
+    notes: No tagged releases; this is the latest commit, adding the Chords mod on top of Polyend's main.

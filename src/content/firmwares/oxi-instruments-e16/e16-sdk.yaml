@@ -1,0 +1,39 @@
+device: oxi-instruments-e16
+name: E16 SDK
+kind: tool
+summary: >-
+  OXI Instruments' open C SDK for writing custom firmware for the E16: drivers for the encoders, LED rings, OLED, MIDI, USB and storage, a CMake build, an uploader and examples. Builds install through the E16's own bootloader.
+description: >-
+  The SDK has small C drivers for the E16's GD32F405 hardware, startup code that works with the built-in bootloader, and a
+  CMake function that turns a project into an ELF, raw image, SysEx update file and hex file. A Python tool uploads an image
+  over USB MIDI while the unit is in bootloader mode, and can also write a .syx file for sharing. Examples cover an LED test,
+  display, MIDI, storage and a BLE MIDI bridge, plus three by Charles Vestal that add USB functions of their own: a 32 KB
+  drive, an audio input and a webcam. A second toolchain installs an application on the nRF52832 Bluetooth chip through a small
+  updater firmware. The README says OXI does not support custom firmware, and that the official firmware can be
+  reinstalled the same way through bootloader mode.
+status: active
+authors:
+  - name: OXI Instruments
+    url: https://github.com/OXI-Instruments
+source: https://github.com/OXI-Instruments/E16-SDK
+source_status: open
+license: MIT
+license_notes: >-
+  MIT for the SDK. ST's CMSIS and STM32F4 HAL and TinyUSB come in as git submodules under their own licences
+  (Apache-2.0, BSD-3-Clause, MIT). The BLE MIDI example's nRF SDK configuration and linker script keep Nordic's licence, for
+  use with Nordic chips only.
+homepage: https://oxiinstruments.com/oxi-e16
+distribution: source-only
+install_notes: >-
+  Needs the Arm GNU toolchain, CMake 3.20 or later, Git and Python 3. Clone with --recursive and run make, then switch the
+  E16 off, hold encoders 15 and 16, press Shift to power on, and run the upload tool against the built .bin. To return to
+  the official firmware, install OXI's official update file the same way. Do not write the processor's internal flash, which
+  holds the bootloader, and install Bluetooth firmware only with the SDK's tools, since the Bluetooth chip's bootloader does not
+  protect itself.
+brick_risk: true
+tags: [official, sdk, midi, usb-midi, bluetooth, led, usb-audio]
+versions:
+  - version: main @ 52ff17a
+    date: 2026-11-04
+    url: https://github.com/OXI-Instruments/E16-SDK/commit/52ff17a01227aa1e74a8efbebf6b44bdae56f1c8
+    notes: No tagged releases; this is the latest commit, the initial public one.

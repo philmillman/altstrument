@@ -22,57 +22,65 @@ authors:
     url: https://github.com/sd88me
   - name: poloq-instruments
     url: https://github.com/poloq-instruments
-source: https://github.com/sd88me/mpc-vst-plugins/tree/main/tools/plugin_manager_g2
+source: https://github.com/open-mpc/mpc-vst-plugins/tree/main/tools/plugin_manager_g2
 source_status: open
 license: MIT
 license_notes: >-
   LICENSE is MIT and keeps poloq's copyright notice from the upstream manager;
   NOTICE.md lists the other contributors and sources. The repository is MIT
   overall. Nothing of Akai's firmware or skins is included.
-homepage: https://sd88me.github.io/mpc-vst-plugins/
+homepage: https://open-mpc.github.io/
 distribution: download
 requires_stock: MPC OS 3.x
 install_notes: >-
   Download the zip for your device (mpc-armv7 for Gen1, mpc-aarch64 for Gen2),
   copy the folder to the device over root SSH and run install.sh with -t and a
   Synths folder listed in SynthContentLocations in MPC.settings. It stops MPC,
-  backs up MPC.settings and starts MPC again. Needs a modded unit with root
-  access; the device needs a network connection for the catalog. Applying
-  changes restarts MPC, so save the project first.
+  backs up MPC.settings and starts MPC again. The scripted install needs a modded
+  unit with root access. Since v0.9.0 there is also a USB stick, written from the
+  project's install page in Chrome or Edge, that installs the manager without SSH
+  on MPC OS 3.9.1 and earlier; the stick runs a script as root once the prompt is
+  confirmed, and the project says MPC OS 3.10 is not supported by it. The device
+  needs a network connection for the catalog. Applying changes restarts MPC, so
+  save the project first.
 brick_risk: false
 tags: [loader, utility, platform, ui]
 image:
-  url: https://raw.githubusercontent.com/sd88me/mpc-vst-plugins/main/tools/plugin_manager_g2/docs/screenshots/manager-discover-light.png
+  url: https://raw.githubusercontent.com/open-mpc/mpc-vst-plugins/main/tools/plugin_manager_g2/docs/screenshots/manager-discover-light.png
   alt: Plugin Manager G2 Discover tab in the light theme, listing five plugins with Beta or Stable badges, versions and red INSTALL buttons, above Update All and Apply buttons
   credit: sd88me
-  source_url: https://github.com/sd88me/mpc-vst-plugins/tree/main/tools/plugin_manager_g2
+  source_url: https://github.com/open-mpc/mpc-vst-plugins/tree/main/tools/plugin_manager_g2
   first_party: true
 versions:
+  - version: plugin-manager-g2-v0.9.0
+    date: 2026-11-04
+    url: https://github.com/open-mpc/mpc-vst-plugins/releases/tag/plugin-manager-g2-v0.9.0
+    notes: Adds a web page on the local network for browsing and installing from a phone or computer, and finds drives with a space in their name. The same day's g2-stick-v0.9.0 release is a USB stick that installs this version on MPC OS 3.9.1 and earlier without SSH.
   - version: plugin-manager-g2-v0.2.5
     date: 2026-10-31
-    url: https://github.com/sd88me/mpc-vst-plugins/releases/tag/plugin-manager-g2-v0.2.5
+    url: https://github.com/open-mpc/mpc-vst-plugins/releases/tag/plugin-manager-g2-v0.2.5
     notes: Tapping the storage readout opens an install-to menu that lists each drive's free space and remembers the choice. The zip safety checks now run on the MPC, and reinstalling over a plugin from an older installer updates it in place.
   - version: plugin-manager-g2-v0.2.4
     date: 2026-10-30
-    url: https://github.com/sd88me/mpc-vst-plugins/releases/tag/plugin-manager-g2-v0.2.4
+    url: https://github.com/open-mpc/mpc-vst-plugins/releases/tag/plugin-manager-g2-v0.2.4
     notes: Fixes the on-screen keyboard typing every letter twice and buttons firing twice, by treating a second press within 250 ms as the same tap.
   - version: plugin-manager-g2-v0.2.3
     date: 2026-10-30
-    url: https://github.com/sd88me/mpc-vst-plugins/releases/tag/plugin-manager-g2-v0.2.3
+    url: https://github.com/open-mpc/mpc-vst-plugins/releases/tag/plugin-manager-g2-v0.2.3
     notes: Zips in the local-plugins folder are listed and installable with no network, and an unreachable catalog shows a warning instead of an empty list.
   - version: plugin-manager-g2-v0.2.2
     date: 2026-10-29
-    url: https://github.com/sd88me/mpc-vst-plugins/releases/tag/plugin-manager-g2-v0.2.2
+    url: https://github.com/open-mpc/mpc-vst-plugins/releases/tag/plugin-manager-g2-v0.2.2
     notes: Scripted install.sh that replaces an older install of the plugin in place, with armv7 and aarch64 zips.
   - version: plugin-manager-g2-v0.2.1
     date: 2026-10-28
-    url: https://github.com/sd88me/mpc-vst-plugins/releases/tag/plugin-manager-g2-v0.2.1
+    url: https://github.com/open-mpc/mpc-vst-plugins/releases/tag/plugin-manager-g2-v0.2.1
     notes: Remembers the chosen install folder, such as an SSD or card, as the default, and clears MPC's skin image cache on each restart.
   - version: plugin-manager-g2-v0.2.0
     date: 2026-10-28
-    url: https://github.com/sd88me/mpc-vst-plugins/releases/tag/plugin-manager-g2-v0.2.0
+    url: https://github.com/open-mpc/mpc-vst-plugins/releases/tag/plugin-manager-g2-v0.2.0
     notes: First release for Gen1 and Gen2 together, with an armv7 and an aarch64 zip, and a picker for the install folder.
   - version: plugin-manager-g2-v0.1.9
     date: 2026-10-28
-    url: https://github.com/sd88me/mpc-vst-plugins/releases/tag/plugin-manager-g2-v0.1.9
+    url: https://github.com/open-mpc/mpc-vst-plugins/releases/tag/plugin-manager-g2-v0.1.9
     notes: Gen2 only (aarch64); installs, updates and removes plugins with rollback.

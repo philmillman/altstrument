@@ -1,19 +1,23 @@
 device: m-vave-fm-1
 name: Dungeon Tracker
 summary: >-
-  Felucca fork with a tracker-style sequencer, four new engines (FM drums, two-operator FM voice, Ambika-style
-  wavetables, a SID-like voice) and a dungeon crawl on the home screen that the song plays.
+  Felucca fork with a tracker-style sequencer, FM, wavetable, Amiga-style sample and SID-like engines, and a dungeon
+  crawl on the home screen that the song plays.
 description: >-
   Based on Felucca 1.6.1 and formerly called RE-1 and, before that, RONDO. The step grid and piano roll are replaced by a
   tracker with per-track screens, commands and sequence dice, and sound design has a dice page that rolls and holds
   parameters. Each of the four tracks is played by a class (rogue for drums, cleric for chords, fighter for bass, mage for
-  lead) that fixes its voices and sound list, drawn from a 12-voice budget. The new engines are FMKIT, FMTONE, WAVES
-  (oscillators from Mutable Instruments' Ambika) and SID, together with a lo-fi acoustic kit and a dungeon-sound
-  kit, 96 more presets and extra CHIP presets. Other additions are a six-pattern bank with song mode, eleven whole-song
+  lead) that fixes its voices and sound list, drawn from a 12-voice budget. Version 1.0.0 named its new engines FMKIT,
+  FMTONE, WAVES (oscillators from Mutable Instruments' Ambika) and SID, with a lo-fi acoustic kit and a dungeon-sound
+  kit, 96 more presets and extra CHIP presets. Version 1.5 regroups them into four families of two engines: FM
+  (GENESIS, GEN KIT), wavetable (WAVES, WAVE 32), Amiga-style sampled (MOD, MOD KIT) and subtractive (ANALOG, SID). It
+  retires FMTONE, CHIP, SAMPLE, GRAIN and PHYS, whose songs load on substitutes, and adds a dice on every engine,
+  sound morph toward saved sounds, a bard that plays four voices, a choice of all eight classes for the party, and twelve
+  monsters and five bosses. Other additions are a six-pattern bank with song mode, eleven whole-song
   slots with power-safe saves, an autosave three seconds after stop, sound morph, extra track and master effects and
   a power-on song written at random. The home screen shows a first-person dungeon in which the party fights as the
-  song plays; it is optional. The package format and web editor are Felucca's. The README says the SID engine, the
-  lo-fi kit, the slots and the party pass host tests and are new to the hardware.
+  song plays; it is optional. The package format and web editor are Felucca's. The manual says the 1.5 engines GENESIS,
+  GEN KIT, WAVE 32, MOD, MOD KIT and ANALOG pass host tests and are new to the hardware.
 status: active
 authors:
 - name: BourbonWX
@@ -34,13 +38,11 @@ install_notes: >-
   build, and Felucca's USR2 and USR3 sample slots are retired.
 brick_risk: true
 tags: [tracker, sequencer, synth-engine, drums, fm, wavetable, chiptune, game, generative, fork]
-image:
-  url: https://raw.githubusercontent.com/BourbonWX/Dungeon-Tracker/main/DT_Screenshot.png
-  alt: "Dungeon Tracker home screen: four knob cards above a dark green first-person dungeon corridor, with four party slots (RGE, FTR, RGE, MAG) and a row of step lights"
-  credit: BourbonWX
-  source_url: https://github.com/BourbonWX/Dungeon-Tracker
-  first_party: true
 versions:
+- version: "1.5"
+  date: 2026-11-04
+  url: https://github.com/BourbonWX/Dungeon-Tracker/releases/tag/v1.5
+  notes: Regroups the engines into four families of two, adding GEN KIT, WAVE 32, MOD and MOD KIT, and retires FMTONE, CHIP, SAMPLE, GRAIN and PHYS. Adds a dice on every engine, sound morph toward saved sounds, a four-voice bard, twelve monsters and five bosses with new sprites. The image uses 555 KB of its 581 KB limit.
 - version: 1.0.0
   date: 2026-10-29
   url: https://github.com/BourbonWX/Dungeon-Tracker/releases/tag/v1.0.0

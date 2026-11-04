@@ -2,16 +2,18 @@ device: m-vave-fm-1
 name: FM-1 Transporter
 kind: tool
 summary: >-
-  Firmware for a Seeed XIAO RP2040 wired to the FM-1's USB lines that forces the chip into its ROM download
-  mode, then reads and writes the flash from a Mac, so it can recover a unit that no longer boots.
+  Firmware for an RP2040 board such as the Seeed XIAO, wired to the FM-1's USB lines, that forces the chip into its ROM
+  download mode, then reads and writes the flash from a computer, so it can recover a unit that no longer boots.
 description: >-
   The RP2040 sends the JieLi USB_KEY pattern at power-on to get the AC791N into its built-in UBOOT mode, or
-  asks stock V15 to enter it over USB-MIDI, then acts as a USB host to the FM-1. A Python script on the Mac
-  prints chip info, dumps the whole 1 MiB flash in a few seconds and writes only the 4 KiB sectors that
+  asks stock V15 to enter it over USB-MIDI, then acts as a USB host to the FM-1. A Python script, or
+  a web app in Chrome or Edge, prints chip info, dumps the whole 1 MiB flash in a few seconds and writes only the 4 KiB sectors that
   differ, checking each one. The firmware refuses writes outside 0x4000 to 0x93000, so the bootloader area and
   device data are never touched, and no erase-all or chip-key write exists. It can also load and run code in
-  RAM for research. Three wires go to the FM-1 (D+, D-, GND) and VBUS stays unconnected. It is built from
-  source and needs the WL82 loader from jl-uboot-tool, which the repository does not include.
+  RAM for research. Three wires go to the FM-1 (D+, D-, GND) and VBUS stays unconnected. Releases carry ready-made UF2
+  files for the XIAO RP2040, the Raspberry Pi Debug Probe, the Pico and the Pico 2. The README lists the XIAO as
+  recommended, the Debug Probe as tested and the Pico and Pico 2 as untested. It needs the WL82 loader from
+  jl-uboot-tool, which the repository does not include and which the host sends to the board at run time.
 status: active
 authors:
 - name: Leo Kuroshita (@kurogedelic)
@@ -21,16 +23,17 @@ source_status: open
 license: MIT
 license_notes: >-
   Includes Pico-PIO-USB (MIT) and routines ported from jl-uboot-tool (MIT).
-distribution: source-only
+distribution: download
 install_notes: >-
-  Build with pico-sdk 2.2.0, an ARM GCC toolchain, CMake and picotool, then load the UF2 onto a Seeed XIAO RP2040;
-  other RP2040 boards are untested and the Waveshare RP2350-USB-A is not supported. Wire GP0 (D6) to D+, GP1 (D7)
+  Download the UF2 for your board from the release, hold BOOTSEL while plugging the board in and copy the file to its
+  drive, or build with pico-sdk 2.2.0, an ARM GCC toolchain and CMake. The Waveshare RP2350-USB-A is experimental and not
+  recommended. Wire GP0 (D6) to D+, GP1 (D7)
   to D- and GND to GND, nothing to VBUS. Take a dump before writing; write needs the --write flag, and without
   it only checks.
 brick_risk: true
 tags: [flasher, loader, research]
 versions:
-- version: main @ a7fb5e8
-  date: 2026-10-26
-  url: https://github.com/kurogedelic/FM-1-transporter/commit/a7fb5e8ac692c528f8ed29e325911a3f4b8111d6
-  notes: No tagged releases; this is the latest commit.
+- version: v0.1.0
+  date: 2026-11-04
+  url: https://github.com/kurogedelic/FM-1-transporter/releases/tag/v0.1.0
+  notes: First GitHub release; four UF2 builds, for the XIAO RP2040, Debug Probe, Pico and Pico 2. The release has no notes text.

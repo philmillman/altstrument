@@ -1,19 +1,21 @@
 device: m-vave-fm-1
 name: CLATTER Pocket
 summary: >-
-  Drum machine firmware for the FM-1 that runs Erica Synths' LXR-02 drum voices: six voices, a 64-step pattern generator with conditional steps, 16 kits, 9 saved projects and MIDI clock sync. Run on one unit up to 0.9.0.
+  Drum machine firmware for the FM-1 that runs Erica Synths' LXR-02 drum voices: a 64-step pattern generator with conditional steps, 16 kits, 9 named projects and MIDI clock sync. The notes report 1.0.0 as verified on one unit.
 description: >-
   A port of CLATTER, a generative drum synthesizer built on the open LXR-02 sound engine, to the FM-1 through M-VAVE's
   fm1_open application. The LXR voices run in a real-time engine, and the panel gives three banks of nine
   sounds, a pitched keyboard, live and step recording, one level of undo, sixteen kits and kit generation from LXR
   parameters. MIDI clock on any port paces the sequencer (from 0.9.0), and since 0.9.1 MIDI notes from C1 each play a different sound, with General MIDI kept as an option. The sequencer has seven tracks of 64 steps on four pages with variations and conditions, pattern styles
-  taken from CLATTER, and whole-pattern or single-track generation and mutation. Nine projects are saved to user flash.
+  taken from CLATTER, and whole-pattern or single-track generation and mutation. Nine projects, named with eight letters from 0.9.2, are saved to user flash.
   The replacement build removes the stock instrument application, and the version that would run beside it is
   53,671 bytes too large for the flash layout. The README's status table still says nothing has run on a device, but
   the site's release notes say 0.9.0 ran on one unit with sound, USB audio, MIDI notes, MIDI clock over USB and
-  saving. 0.9.1 has not run on a device, and Bluetooth, long runs and leaving for official firmware are untested. The
-  engine is checked on a host against CLATTER's output. The site has a browser demo and an installer for what it labels
-  an unverified experimental release; the README says the install path was tested against a simulated device.
+  saving. 1.0.0 has its own update identity, FM-1_8133700, instead of official Open's. The README and the 1.0.0 release
+  notes report 1.0.0 as hardware verified on one FM-1: installed over earlier firmware and from stock V15, left for
+  V15 and installed again, with the same firmware as 0.9.4 passing the audio, keys, sequencer, MIDI notes and clock
+  over USB, saving after power-off and clearing patterns. Safe mode, Bluetooth, DIN MIDI and long runs are not recorded.
+  The engine is checked on a host against CLATTER's output. The site has a browser demo and an installer for 1.0.0.
 status: active
 authors:
 - name: The CLATTER contributors
@@ -34,8 +36,9 @@ distribution: browser-installer
 requires_stock: V15 or V14 Open (installer first stage)
 install_notes: >-
   Use the installer on the project site in Chrome or Edge, or build with the JieLi toolchain as described in
-  BUILDING.md. HARDWARE.md and FIRST-HARDWARE-TEST.md are the author's required reading before flashing; the package
-  filename carries UNVERIFIED. Holding HOME after power-on starts a safe mode with the engine off.
+  BUILDING.md. On stock V15 the installer first installs M-VAVE's official Open, then CLATTER Pocket. HARDWARE.md and
+  FIRST-HARDWARE-TEST.md are the author's required reading before flashing; packages before 1.0.0 carry UNVERIFIED in
+  the filename. Back up first, because moving between firmwares can erase projects and samples. Holding HOME after power-on starts a safe mode with the engine off.
 brick_risk: true
 tags: [drums, sequencer, generative, synth-engine, performance, emulator, open-source]
 image:
@@ -45,10 +48,22 @@ image:
   source_url: https://github.com/clickysteve/clatter-pocket
   first_party: true
 versions:
-- version: main @ c023f7e
+- version: 1.0.0
   date: 2026-11-03
-  url: https://github.com/clickysteve/clatter-pocket/commit/c023f7ef61db7330c5bc9b1d1dddec01855bc588
-  notes: No tagged releases; this is the latest commit.
+  url: https://github.com/clickysteve/clatter-pocket/releases/tag/v1.0.0
+  notes: First GitHub release. Gets its own update identity, FM-1_8133700, adds eight-letter project names, SEQ+REC to clear a pattern and a GLITCH kick that plays as a kick, and is reported as verified on one FM-1.
+- version: 0.9.4
+  date: 2026-11-03
+  url: https://github.com/clickysteve/clatter-pocket/commit/1baf912e9755a4bebfc9ad6ae488db481de06d06
+  notes: Package in the repository's releases folder, marked UNVERIFIED. Adds SEQ+REC to clear the pattern and makes GLITCH's kick a kick again. The 1.0.0 notes say this firmware passed the full test on a device. No GitHub release page.
+- version: 0.9.3
+  date: 2026-11-03
+  url: https://github.com/clickysteve/clatter-pocket/commit/ce9ea311cae358d726cfb6d0fbb767599a759101
+  notes: Package in the repository's releases folder, marked UNVERIFIED. Names show where you are in the list, and what stock V15 left in the saving area is erased without a question. No GitHub release page.
+- version: 0.9.2
+  date: 2026-11-03
+  url: https://github.com/clickysteve/clatter-pocket/commit/f749fb9213568eb616a8e3425f1065cc295a8cc4
+  notes: Package in the repository's releases folder, marked UNVERIFIED. GLOBAL's playing settings survive a power-off, projects have names, and the installer accepts the update loader under any ota- name. No GitHub release page.
 - version: 0.9.1
   date: 2026-11-03
   url: https://github.com/clickysteve/clatter-pocket/commit/a13d57d9f563fa6cce3a2f2001a6e66ec95e8793

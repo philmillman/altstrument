@@ -1,0 +1,36 @@
+device: livtra-mosaic
+name: JimCommanD
+kind: tool
+summary: Experimental Intel Mac controller for the Livtra Mosaic with a native CoreMIDI app, an offline editor with a simulator and local model libraries. It reads the pedal's model names over USB and sends mapped live controls; model upload and firmware update are not done.
+description: >-
+  The author began it because the ToneCommand builds they inspected only had Apple Silicon binaries. The app is an Objective-C
+  shell around a web interface and a CoreMIDI bridge. The editor shows the signal chain and effect controls, with 75 local
+  preset positions, 20 amp and 10 pedal positions and a separate 30-position IR library, and a simulator runs it without a
+  pedal. It inspects NAM, NAM2 and EADL model files and WAV impulse responses and stores them locally without writing them to the
+  pedal. Live use covers reading the 30 model names, incoming USB and Bluetooth MIDI such as footswitch events, and a bounded
+  set of controller messages for modulation, delay and reverb. The repository also keeps earlier React and Python versions, a
+  short promo video, packaged Intel builds of 0.2.0 to 0.3.1 and hardware capture notes and probe programs. Its third-party
+  notice lists limited assembly excerpts from vendor software kept as interoperability research.
+status: active
+authors:
+  - name: 3rud1te
+    url: https://github.com/3rud1te
+source: https://github.com/3rud1te/JimCommanD
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text, copyright JimCommanD contributors. THIRD_PARTY_NOTICES.md says the licence does not cover
+  vendor trademarks or protocol evidence quoted from vendor software, and that vendor manuals, firmware and model libraries are
+  not bundled.
+distribution: source-only
+install_notes: >-
+  Run the simulator with Node 24 or newer (npm start) or build the app on macOS with the Xcode command line tools
+  (npm run build:mac). Builds are ad-hoc signed and not notarized. The repository's archive folder keeps earlier packaged
+  Intel builds that were not rebuilt or tested again. The Mosaic's own Bluetooth MIDI connection is made in macOS.
+brick_risk: false
+tags: [editor, macos, usb-midi, bluetooth, presets, midi]
+versions:
+  - version: main @ a2ffc28
+    date: 2026-10-12
+    url: https://github.com/3rud1te/JimCommanD/commit/a2ffc2827a528323a8c5d625902442af29f884f0
+    notes: No tagged releases; this is the latest commit. The README calls it version 0.3.1.

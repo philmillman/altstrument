@@ -1,12 +1,14 @@
 device: m-vave-fm-1
 name: FMEL-1
 summary: >-
-  Mellotron-style keyboard built on Dinghy: four Mellotron M400S tapes (flute, choir, cello, vibraphone) and a piano,
-  two of which can be layered, with tape-style lo-fi effects, FX, an arpeggiator and a 16-step sequencer.
+  Mellotron-style keyboard built on Dinghy: five Mellotron M400S tapes (flute, choir, cello, vibraphone, tenor sax) and a
+  piano, two of which can be layered, with tape-style lo-fi effects, FX, an arpeggiator and a 16-step sequencer.
 description: >-
   Every key plays its own tape, packed as short ADPCM samples. The LOFI page has wow, flutter, drive, hiss, age,
   dropout, drift and crush, and there are vibrato or chorus, echo and reverb (hall or plate) effects, EQ, hold and half
-  speed. Version 1.0 adds a piano taken from SLOOP's LOFI KEYS. The screen shows drawn animals playing along. The tape samples are Bernie Kornowicz's (Taijiguy), used
+  speed. Version 1.0 adds a piano taken from SLOOP's LOFI KEYS; 1.1 plays a Steinway B from the CC0 VCSL library
+  instead, adds a tenor sax tape as the fifth tape, and adds separate packages for the SMK-37 Pro, Elite and MKE-P37 with
+  37 velocity keys, pads, faders and wheels. Version 1.2 restores the 1.0 flute tapes and keeps the sax. The screen shows drawn animals playing along. The tape samples are Bernie Kornowicz's (Taijiguy), used
   under the sample author's terms that they are free but not for commercial use, so they are not GPL and the firmware should not
   be sold. The 0.1 release notes say it had not been tried on an FM-1 and ran only in the host mode and in the
   browser.
@@ -20,18 +22,28 @@ license: GPL-3.0-only
 license_notes: >-
   Code is GPL-3.0-only (LICENSING.md). The Mellotron tape samples packed into every build are not GPL: their
   author's terms, quoted in the README, are "free to use, but cannot be used in any commercial, for profit
-  software". The sprite drawings are used with their artist's permission and are not under the GPL.
+  software". The piano is four keys of a Steinway B from Versilian Studios' VCSL, which the
+  README gives as CC0. The sprite drawings are used with their artist's permission and are not under the GPL.
 homepage: https://antonioaltea.github.io/fmel-1/
 distribution: browser-installer
 requires_stock: M-VAVE V15
 install_notes: >-
-  Web installer in Chrome or Edge, or tools/fm1_install.py with mel-1.0.fwsc from the release. The release notes
-  say to install over M-VAVE's V15 and to go back to V15 first from another custom firmware, since the installer
-  refuses otherwise. If it does not start, the FM-1 falls back to USB rescue after two tries (or hold OCT-).
+  Web installer in Chrome or Edge, or tools/fm1_install.py with mel-1.2.fwsc from the release. The release notes
+  say to install over M-VAVE's V15 or an earlier FMEL-1. Over another custom firmware, going back to the official
+  firmware first is safer, but the web installer installs over it anyway and the script takes --over-custom. The SMK-37
+  packages are for other keyboards. If it does not start, the FM-1 falls back to USB rescue after two tries (or hold OCT-).
   Browser simulator on the project site.
 brick_risk: true
 tags: [synth-engine, sampler, fx, sequencer, emulator]
 versions:
+- version: '1.2'
+  date: 2026-11-04
+  url: https://github.com/AntonioAltea/fmel-1/releases/tag/v1.2
+  notes: Brings back the 1.0 flute tapes, which 1.1 had rebuilt with a whoosh on low notes, packs the sax without loss to save 30 KB, and makes the installer give advice instead of stopping on what the keyboard is running.
+- version: '1.1'
+  date: 2026-11-03
+  url: https://github.com/AntonioAltea/fmel-1/releases/tag/v1.1
+  notes: Adds SMK-37 packages, a tenor sax tape, a Steinway piano in place of the SLOOP one, a mod-wheel and CC 1 vibrato depth, REC held to clear the pattern, a restart into USB rescue mode with OCT- and OCT+ held for 5 seconds and block ADPCM tape storage.
 - version: '1.0'
   date: 2026-10-19
   url: https://github.com/AntonioAltea/fmel-1/releases/tag/v1.0

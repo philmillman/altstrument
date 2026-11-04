@@ -8,7 +8,7 @@ description: >-
   Rights warning: the app bundles a 24 KB USB loader binary for the FM-1's WL82 chip whose origin and licence the
   repository does not state. The app restarts the FM-1 into its recovery mode, reads the full 1 MiB flash twice, checks the saved copy and adds it
   to a library where backups can be renamed, pinned, exported and restored. A restore writes the saved image back byte
-  for byte except for the protected bootloader region, and cannot be cancelled once it starts. Backups can also be
+  for byte except for the protected bootloader region, and cannot be cancelled once it starts; from 0.9.6 an emergency restore action also recovers the stock bootloader. Backups can also be
   imported from a .bin file. A menu option, Create recovery image, downloads M-VAVE's V15 package from the m-vave/fm1_open
   repository at a fixed commit, checks its size and SHA-256, and rebuilds a stock V15 flash layout that is added to the
   library as a backup; the app does not ship that package. It needs Android 8 or later, a USB OTG cable that carries data,
@@ -39,6 +39,10 @@ install_notes: >-
 brick_risk: true
 tags: [backup, flasher, android, recovery, utility]
 versions:
+- version: 0.9.6
+  date: 2026-11-03
+  url: https://github.com/workeffortwaste/fm1-backup-restore/releases/tag/v0.9.6
+  notes: Adds a stock bootloader recovery as an emergency restore action, and ejecting now reboots the device instead of dropping the USB connection.
 - version: 0.9.5
   date: 2026-11-02
   url: https://github.com/workeffortwaste/fm1-backup-restore/releases/tag/v0.9.5

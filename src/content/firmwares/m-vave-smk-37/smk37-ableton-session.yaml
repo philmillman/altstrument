@@ -1,0 +1,46 @@
+device: m-vave-smk-37
+name: SMK37 Custom
+kind: tool
+summary: >-
+  Ableton Live Remote Script that turns the SMK-37 Pro into a Session View controller on stock firmware, with clip launch, track and scene navigation, transport, selected-track faders and track-coloured RGB pads.
+description: >-
+  The script is a Python folder copied into Live's User Library. The top pad row launches the clip slots of eight tracks in
+  the selected scene, and the bottom row holds play, stop, arrangement record, delete clip, arrangement loop, metronome,
+  arm-follow-focus and undo. Knob 1 selects a track and knob 2 a scene, and the first four faders control the selected track's
+  volume and sends A to C. Pad colours follow the track colour and the clip state. They are set by replaying the SysEx writes
+  that M-VAVE's Midi Suite sends for the preset's RGB fields, one write per display tick, so a full repaint takes several
+  seconds. The author reports that a static analysis of the stock v15 image traces these writes to RAM, and that colours reverted
+  after power cycles; this is not a documented LED interface, and no save or firmware-update message is sent. It was tested on
+  one SMK-37 Pro with Live 12.4.7 on macOS over USB. Windows, the Elite, other firmware versions and Bluetooth are untested. The
+  author credits Codex with help in developing it.
+status: active
+authors:
+  - name: shalafidragon
+    url: https://github.com/shalafidragon
+source: https://github.com/shalafidragon/smk37-ableton-session
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no licence file and its README and release notes carry no licence statement; the README calls it a
+  source-included test release.
+homepage: https://github.com/shalafidragon/smk37-ableton-session/releases/tag/v1.7
+distribution: download
+requires_stock: SMK-37 Pro stock firmware shown as v15 in Midi Suite (the tested version)
+install_notes: >-
+  Export your keyboard preset from Midi Suite first. Copy the SMK37_Custom folder from the release zip into Live's User Library
+  under Remote Scripts, restart Live, and set a Control Surface row to SMK37_Custom with both input and output on SMK-37
+  Pro-Private. Enable input Track for Private only, stay on pad bank 1 with the documented MIDI assignments, and keep Midi Suite
+  closed during use. No keyboard firmware is changed; to stop, set the Control Surface to None or delete the folder.
+brick_risk: false
+tags: [controller-mode, performance, midi, sysex, python, scripting]
+video:
+  url: https://www.youtube.com/watch?v=uwFUuQ2l4w8
+  title: M-VAVE SMK-37 Pro custom script for live looping in Ableton Live (stock firmware)
+  credit: kbogomolov
+  first_party: true
+  found_via: https://github.com/shalafidragon/smk37-ableton-session#readme
+versions:
+  - version: v1.7
+    date: 2026-11-03
+    url: https://github.com/shalafidragon/smk37-ableton-session/releases/tag/v1.7
+    notes: First public release, a macOS test release.

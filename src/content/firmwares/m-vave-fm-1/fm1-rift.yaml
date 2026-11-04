@@ -1,0 +1,39 @@
+device: m-vave-fm-1
+name: RIFT
+summary: >-
+  Experimental nine-mode drone synth built on a modified Felucca: oscillator pairs and clusters, phase and ring
+  modulation, filtering, stereo delay feedback and frequency translation. Source only, with hardware validation pending.
+description: >-
+  RIFT adds an instrument to Felucca that owns the stereo output while it is active. Its nine modes are PAIR, FOLD,
+  SINES, WAVES, CHORD, CLUSTER, PARTIAL, CROSS and CAVERN, with three sounds stored per mode. SELECT sets the root
+  pitch, ALGORITHM chooses the mode, and the ENV, FX and LFO buttons open three macro pages edited with K1 to K4.
+  ARP switches between drone and keyed play. Felucca supplies the hardware layer, USB MIDI and audio, storage and the
+  updater. The README says it is inspired by the sound of the Forge TME VHIKK-X and that no VHIKK-X code or
+  wavetables were used. The repository builds against Felucca commit 7435517 with its history retained. No
+  installable release exists, and the author's hardware guide says the first install had not yet been run.
+status: active
+authors:
+- name: mykeln
+  url: https://github.com/mykeln
+source: https://github.com/mykeln/fm1-rift
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md: GPL-3.0-only for RIFT's own code, inherited from Felucca. The six engines are MIT, the board support
+  layer is MPL-2.0, and fonts, CC0 samples and ported DSP keep their own licences (firmware/LICENSING.md,
+  firmware/LICENSES/). Packages also carry three Apache-2.0 JieLi SDK files.
+homepage: https://github.com/mykeln/fm1-rift
+distribution: source-only
+requires_stock: Felucca installer on a V15 unit (not hardware-validated)
+install_notes: >-
+  Clone recursively, since the engine and board-support submodules are missing from GitHub's archives, then build with
+  rift.sh and the JieLi toolchain and AC79 SDK and install with tools/fm1_install.py. Installing may replace stored
+  data that Felucca's formats do not match. The README tells readers to set up a backup and recovery route first and
+  to read the hardware trial guide, and says full device validation is pending. Installing is at your own risk.
+brick_risk: true
+tags: [synth-engine, generative, fx, delay, filter, fork]
+versions:
+- version: main @ 0985802
+  date: 2026-11-04
+  url: https://github.com/mykeln/fm1-rift/commit/0985802
+  notes: No tagged releases; this is the latest commit, which the README calls RIFT 0.6.

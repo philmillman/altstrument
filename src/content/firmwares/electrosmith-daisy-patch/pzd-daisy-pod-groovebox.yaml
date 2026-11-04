@@ -6,8 +6,9 @@ summary: >-
 description: >-
   Needs a Daisy Pod with an added 128x64 I2C OLED and a hand-wired micro SD socket. The looper has four
   tempo-locked stereo layers with undo, per-layer filter, effects and reverb send, vari-speed, and WAV export of
-  the performance. Alongside it run a 16-voice FM engine built on the msfa DX7 core with a few thousand DX7 SysEx
-  presets, a granular instrument, an 8-voice string ensemble, and one sampler that works as a chromatic sound
+  the performance. Alongside it run an FM engine built on the msfa DX7 core with a few thousand DX7 SysEx
+  presets, of up to 16 voices and, since v3.6.0, a second Dexed engine with up to 24 voices across both, a granular
+  instrument, an 8-voice string ensemble, and one sampler that works as a chromatic sound
   player or a sliced drum kit and can import OP-1 drum and instrument packs you supply. All engines play at the
   same time, each on its own MIDI channel, and share a plate reverb and delay. Presets, performances and samples
   live on the SD card. From v1.6.0 the app runs from QSPI flash behind a separate Daisy bootloader, which each Pod
@@ -40,6 +41,10 @@ image:
   source_url: https://github.com/Peteranthony1st/PZD-Daisy-Pod-Groovebox
   first_party: true
 versions:
+  - version: v3.6.0
+    date: 2026-11-03
+    url: https://github.com/Peteranthony1st/PZD-Daisy-Pod-Groovebox/releases/tag/v3.6.0
+    notes: Adds a second Dexed engine with a shared bus, Mix and Split pages, a sustain pedal on several engines and a Global MIDI page. Reworks the granular engine with four-voice polyphony and new scan and loop controls, and adds a splash screen and a triple-click on the encoder to stop all notes. Older presets and snapshots convert automatically.
   - version: v3.5.3
     date: 2026-10-29
     url: https://github.com/Peteranthony1st/PZD-Daisy-Pod-Groovebox/releases/tag/v3.5.3

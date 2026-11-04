@@ -1,7 +1,7 @@
 device: m-vave-fm-1
 name: Big Beat Studio BB1
 summary: >-
-  Felucca-based rhythm firmware with two independent drum machines, Dillo acid bass, echo and spring reverb; version 2.0 adds a song arranger, ratchets, swung recording, a kit builder and 31 additional drum kits.
+  Felucca-based rhythm firmware with two independent drum machines, Dillo acid bass, echo and spring reverb; version 2.1 adds a Rhythm Conductor mode and a redesigned interface, 2.0 a song arranger and a kit builder.
 description: >-
   Rights warning: the sound library and pattern data come from commercial drum machines. The sampled LinnDrum,
   DrumTraks, DMX, LM-1, Simmons, Rhythm King and Drumulator kits live in a separate sound library, and the
@@ -22,6 +22,12 @@ description: >-
   and DMA miss were recorded in hardware testing; the owner released 2.0 with this known issue for investigation
   in a minor update. Formal whole-stack qualification remains open. See the release notes for the measured scope.
 
+  Version 2.1 reworks the interface around three instruments, Rhythm Conductor, Big Beat and Dillo, selected with
+  SELECT. Rhythm Conductor plays Kit A, Kit B and Dillo together, with the whole arrangement cued at once or one
+  player focused. It also adds full-screen song, era and preset lists, preset combining and context help on HOME.
+  SLOOP is removed to make room, and projects that depended on it are not supported. The 2.1 notes report a
+  20-second hardware run with no faults or deadline overruns. Version 2.1.1 only renames ambiguous section labels.
+
 status: active
 authors:
 - name: TexasRADIO
@@ -34,18 +40,19 @@ license_notes: >-
   the same for the Big Beat code, with the 9W9 TR-909 voices ported under their own GPL-3.0 text. The CC0 instrument
   samples, DaisySP, Rings and msfa parts keep their own licences, and three JieLi SDK files inside each package are
   Apache-2.0. The sampled drum kits and pattern data are not under the GPL; see the rights warning above. The release
-  also carries the sound library as a separate bb1-sounds-1.4.bin. ACID phrases carry the additional attribution and
+  also carries the sound library as a separate file (bb1-sounds-1.4.bin with 2.0, bb1-sounds-2.1.bin with 2.1). ACID phrases carry the additional attribution and
   adaptation statements in BIG-BEAT-LICENSING.md; the new phrase count is not a claim of original authorship.
 homepage: https://thebigbeat.app/fm1/
 distribution: browser-installer
 requires_stock: Corrected-ID BB1 1.5 or BB1 2.0 for the browser installer
 install_notes: >-
   Use the project's browser installer and follow its supported-browser and starting-firmware checks. Install the
-  2.0 application with its matched 1.4 sound library; do not treat the application package alone as the complete
+  application with the sound library of the same release (1.4 for 2.0, 2.1 for 2.1); the 2.1 notes warn against
+  mixing the 2.1 application with an older library, and do not treat the application package alone as the complete
   installation. Back up before switching firmware. The attended return to corrected BB1 1.5 was verified by
   restoring the original 1.2 sound library, installing 1.5 through the normal updater and comparing all four flash
   regions twice; saved data and region B were unchanged. This does not establish universal data preservation or
-  stock-firmware return. The source, downloads and limitations are on the public v2.0 release page.
+  stock-firmware return. The source, downloads and limitations are on the public release pages; the 2.1 notes name 2.0 as the rollback release.
 
 brick_risk: true
 tags: [drums, sequencer, sampler, synth-engine, fx, delay, reverb, emulator]
@@ -56,6 +63,14 @@ image:
   source_url: https://thebigbeat.app/fm1/
   first_party: true
 versions:
+- version: '2.1.1'
+  date: 2026-11-03
+  url: https://github.com/TexasRADIO/bb1-firmware/releases/tag/v2.1.1
+  notes: Renames three ambiguous Rhythm Conductor section labels without changing the music. The FM-1 still reports the firmware as BB-1 2.1.
+- version: '2.1'
+  date: 2026-11-03
+  url: https://github.com/TexasRADIO/bb1-firmware/releases/tag/v2.1
+  notes: New interface with three instruments, Rhythm Conductor, Big Beat and Dillo, plus full-screen lists, preset combining and context help; removes SLOOP and needs the matching 2.1 sound library.
 - version: '2.0'
   date: 2026-11-02
   url: https://github.com/TexasRADIO/bb1-firmware/releases/tag/v2.0

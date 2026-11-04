@@ -1,0 +1,31 @@
+device: line-6-fbv
+name: Line 6 Protocol Research
+kind: tool
+summary: Documentation and Python tools for the serial protocol between Line 6 FBV foot controllers and their hosts. It has a frame decoder, a capture differ, a structure analyzer and a receive-only serial logger, with notes on commands, IDs, handshake and FBV2 electronics.
+description: >-
+  The repository collects what public source code, forum posts and teardown reports say about the FBV message frames, and
+  labels each statement as confirmed in source, confirmed in two projects, inferred or reported by others. The docs cover
+  commands, the FBV 3 physical control IDs, the handshake, display and LED messages, electrical families and host mappings, and
+  have plans for custom pedals that imitate only the functions a target amp needs. The tools decode button, pedal, LED
+  and display frames from text or CSV captures, compare a baseline capture with an action capture, classify unknown bytes
+  and log serial traffic without transmitting. The README leaves the FBV2 wire protocol open and notes that two baud rates
+  appear in public code. The repository is independent and states no affiliation with Line 6.
+status: active
+authors:
+  - name: ocverclock
+    url: https://github.com/ocverclock
+source: https://github.com/ocverclock/line6_protocol_research
+source_status: open
+license: MIT
+license_notes: The LICENSE file is the MIT text, copyright ocverclock.
+distribution: source-only
+install_notes: >-
+  Run the Python tools from a checkout with the packages in tools/requirements.txt. The logger only receives, so a capture
+  needs separate receive taps on the cable.
+brick_risk: false
+tags: [research, python, cli, controller, midi]
+versions:
+  - version: main @ 8e05523
+    date: 2026-08-15
+    url: https://github.com/ocverclock/line6_protocol_research/commit/8e055234c1e6615484ca4e95d0a02565e6588f1f
+    notes: No tagged releases; this is the latest commit. The CHANGELOG lists version 0.7.

@@ -1,0 +1,39 @@
+device: meeblip-triode
+name: MeeBlip triode firmware
+kind: firmware
+summary: The triode's own firmware, published by MeeBlip as AVR assembly source with a prebuilt hex file, hardware schematics and board files. It runs the oscillators, wavetables, envelopes, LFO, filter control and MIDI input on the synth's ATmega32A.
+description: >-
+  The Firmware folder holds the assembly source split into include files for sample generation, wavetables, envelopes, LFO,
+  filter modulation, knob and switch scanning, MIDI input and note handling, with the compiled triode.hex, a make batch file that
+  programs it with avrdude, a version history and the quick start guide. The Hardware folder has the system and control
+  board schematics and layouts. The history runs from 1.00 in October 2016 to 1.20, which makes the synth handle MIDI clock
+  messages. The makers release the hardware designs under CC BY-SA 4.0 and the code under the GPL. Nothing is flashed by
+  this entry; the hex file is for an ISP programmer.
+status: dormant
+authors:
+  - name: MeeBlip
+    url: https://github.com/MeeBlip
+source: https://github.com/MeeBlip/meeblip-triode
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GNU GPL version 3 text and the readme says the source code and documentation are released under the
+  GPLv3, with no "or later" wording. The hardware files are under CC BY-SA 4.0 and the MeeBlip name is reserved by its makers.
+  The repository is the manufacturer's own, so its hex file is the maker's firmware and not a redistributed copy.
+homepage: https://meeblip.com/
+distribution: download
+install_notes: >-
+  Program the ATmega32A through its ISP header with an AVR programmer. The repository's make-triode.bat shows the avrdude
+  command for a USBtiny programmer, including the fuse settings. Use a separate programmer and read the fuse values before
+  writing them. MeeBlip sold the 1.20 update as a preprogrammed chip for early units; the page for it is archived.
+brick_risk: false
+tags: [official, synth-engine, wavetable, midi, open-source]
+versions:
+  - version: v1.20
+    date: 2017-03-08
+    url: https://github.com/MeeBlip/meeblip-triode/releases/tag/v1.20
+    notes: Makes the synth handle MIDI clock messages.
+  - version: v1.11
+    date: 2017-03-08
+    url: https://github.com/MeeBlip/meeblip-triode/releases/tag/v1.11
+    notes: Returns the filter decay envelope to following the sustain switch.

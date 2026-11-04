@@ -1,0 +1,56 @@
+device: m-vave-fm-1
+name: Veffbox
+summary: >-
+  Resampling sound-design firmware: build a sound from FM, analog, drum or resampled sources, add LFOs, envelopes
+  and effects, then resample it into a new source, with every resample's recipe kept so it can be rebuilt.
+description: >-
+  A one-sound-at-a-time instrument built on MNM-1's platform. A sound comes from one of six sources (four-operator
+  FM, analog, drum voices, or a resample played back as a sample, granular or chopped source) and can be played as
+  notes, a step sequence or strummed chord sequences of 16 chords with up to eight notes each. Six LFOs and three
+  envelopes, each with four destinations, modulate it, and up to eight effects can be stacked before RESAMPLE
+  records the result as the next source. Each of the 64 bank sounds keeps a generation tree and can be branched
+  from or rebuilt bit for bit. The README lists four tracks sounding at once, pitch as a modulation target and
+  resamples longer than 1.67 seconds as not done yet. The site has a browser emulator that runs the firmware as
+  WebAssembly, with a step-by-step tutorial.
+status: active
+authors:
+- name: galfaroth
+  url: https://github.com/galfaroth
+source: https://github.com/galfaroth/veffbox
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states GPL-3.0-only. The site's licence folder also carries Apache-2.0 (JieLi SDK), MIT texts for
+  DaisySP, Mutable Instruments code, Fukiai and jl-uboot-tool, and the installer comes from MNM-1, which is itself
+  built on Felucca and Hortator.
+homepage: https://galfaroth.github.io/veffbox/
+distribution: browser-installer
+install_notes: >-
+  Web installer in Chrome or Edge over USB, or tools/fm1_install.py (MNM-1's installer) with the release's
+  .fwsc. Building needs the JieLi toolchain on Linux x86-64 and a checkout of MNM-1. The site links a recovery
+  guide; installing is at your own risk.
+brick_risk: true
+tags: [synth-engine, sampler, granular, fx, lfo, sequencer, chords, fm, drums, emulator]
+image:
+  url: https://raw.githubusercontent.com/galfaroth/veffbox/main/docs/fmhub2.png
+  alt: Veffbox RESAMPLE page on the FM-1 screen, dark text on a pink background, with the next note G1 and four settings, length 2 bar, start grid, normalise on and after flat
+  credit: galfaroth
+  source_url: https://github.com/galfaroth/veffbox
+  first_party: true
+versions:
+- version: 0.3.2
+  date: 2026-11-03
+  url: https://github.com/galfaroth/veffbox/releases/tag/v0.3.2
+  notes: Screens draw the OP4 algorithm, the LFO wave and the ADSR shape, and the emulator on the site gains a step-by-step tutorial.
+- version: 0.3.1
+  date: 2026-11-03
+  url: https://github.com/galfaroth/veffbox/releases/tag/v0.3.1
+  notes: CHOP can slice evenly as well as at transients; banks from earlier versions convert automatically.
+- version: 0.3.0
+  date: 2026-11-03
+  url: https://github.com/galfaroth/veffbox/releases/tag/v0.3.0
+  notes: Chord sequences of 16 steps with up to eight notes, 22 chord types, a bass tone and voicings, plus step editing on the play page.
+- version: 0.2.2
+  date: 2026-11-03
+  url: https://github.com/galfaroth/veffbox/releases/tag/v0.2.2
+  notes: The 64-sound bank with generation trees is kept in flash and REBUILD renders a generation bit for bit.

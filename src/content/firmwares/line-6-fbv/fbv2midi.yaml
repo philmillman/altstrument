@@ -1,0 +1,39 @@
+device: line-6-fbv
+name: FBV2MIDI
+kind: tool
+summary: Arduino sketches and a library that let a Line 6 FBV Longboard control a Kemper Profiling Amplifier or a Vox AD60VT. The library reads the FBV's switches and pedals over a serial port and drives its LEDs and display, and the sketches turn that into MIDI.
+description: >-
+  The Line6Fbv library handles the controller's serial messages on an Arduino hardware serial port: key press, release and
+  hold, pedal position, the periodic heartbeat, LED on and off and flashing, display backlight and text. The FBV4KPA sketch
+  maps the switches to the Kemper's performance and slot selection and effect controls, and scans the rig comment for pedal
+  assignment. A second sketch and a VoxAd60Vt class do the same for the Vox amp, with a wah auto-on mode, and the author notes
+  minor bugs with the tuner switching. The repository also has wiring diagrams in Fritzing, photos of the build and older
+  versions of the sketches. The controller stays stock; the Arduino sits between it and the amp.
+status: dormant
+authors:
+  - name: Joachim Wrba
+    url: https://github.com/wrbi
+source: https://github.com/wrbi/FBV2MIDI
+source_status: open
+license: GPL-2.0-only
+license_notes: >-
+  The LICENSE file is the GNU GPL version 2 text. The source headers of the Kemper sketch and library say GPL v3.0 with an
+  "or later" clause, which differs from the file; the LICENSE file is followed here.
+distribution: source-only
+install_notes: >-
+  Build the sketches in the Arduino IDE with the Line6Fbv library from the repository and wire the board to the FBV and the
+  amp as in the wiring folder. The FBV connection needs 9 V power for the display light. The author says to use it at your own
+  risk. Nothing is flashed to the Line 6 hardware.
+brick_risk: false
+tags: [arduino, midi, controller, open-source]
+image:
+  url: https://raw.githubusercontent.com/wrbi/FBV2MIDI/master/VoxAd60Vt/hardware.jpg
+  alt: Open grey box holding an Arduino board and hand-wired adapter circuit on a Vox amp, beside a Line 6 FBV foot controller with a green display, two pedals and switches
+  credit: Joachim Wrba
+  source_url: https://github.com/wrbi/FBV2MIDI/tree/master/VoxAd60Vt
+  first_party: true
+versions:
+  - version: master @ b111912
+    date: 2020-10-07
+    url: https://github.com/wrbi/FBV2MIDI/commit/b1119126e10bc785d286c9c78d7fa77c102cefb5
+    notes: No tagged releases; this is the latest commit.

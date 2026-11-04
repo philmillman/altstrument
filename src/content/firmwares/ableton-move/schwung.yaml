@@ -23,10 +23,10 @@ source: https://github.com/charlesvestal/schwung
 source_status: open
 license: MIT
 license_notes: >-
-  The default build links the shim against eSpeak NG for the screen reader, and the README says that binary
-  is conveyed under GPL-3.0-or-later, while building with SCREEN_READER_ENABLED=0 gives an MIT shim. The
-  release also carries link-subscriber (Ableton Link) and a jack2 library, both GPL-2.0-or-later and shipped
-  as separate programs. See THIRD_PARTY_LICENSES.md in the repository.
+  Since v1.9.0 the screen reader's speech synthesis runs in a separate schwung-tts program linked against
+  eSpeak NG, which is conveyed under GPL-3.0-or-later, and the shim is MIT again; earlier releases linked
+  eSpeak NG into the shim itself. The release also carries link-subscriber (Ableton Link) and a jack2 library,
+  both GPL-2.0-or-later and shipped as separate programs. See THIRD_PARTY_LICENSES.md in the repository.
 homepage: https://schwung.dev
 distribution: download
 install_notes: >-
@@ -47,6 +47,14 @@ video:
   first_party: true
   found_via: https://github.com/charlesvestal/schwung#readme
 versions:
+  - version: v1.9.0
+    date: 2026-11-03
+    url: https://github.com/charlesvestal/schwung/releases/tag/v1.9.0
+    notes: Moves speech synthesis into a separate schwung-tts helper so the shim is MIT-licensed again, adds Delete plus jog click to remove a module from a chain, and fixes set-switching, knob and send problems. Adds Amino, Bizar, Crest and four other modules to the catalog.
+  - version: v1.8.2
+    date: 2026-10-26
+    url: https://github.com/charlesvestal/schwung/releases/tag/v1.8.2
+    notes: Fixes automation and p-locks staying unavailable when the reader of Move's song could not connect at boot.
   - version: v1.8.1
     date: 2026-10-26
     url: https://github.com/charlesvestal/schwung/releases/tag/v1.8.1

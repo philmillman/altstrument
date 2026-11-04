@@ -1,0 +1,47 @@
+device: meeblip-anode
+name: Meeblip Controller
+kind: tool
+summary: JUCE plug-in and standalone MIDI controller for the MeeBlip anode, with on-screen knobs and switches for every panel control and the parameters only reachable over MIDI. It runs as a VST, VST3 or Audio Unit plug-in or as an app on macOS, Windows and Linux.
+description: >-
+  The window mirrors the anode's panel with envelope, filter, oscillator and LFO sections and adds a section for the controls
+  that have no panel knob and can only be set by MIDI, such as glide, filter envelope amount, LFO randomise and retrigger and
+  the second oscillator's wave. Parameters are exposed to the plug-in host for automation, a Synchronize button runs a one-shot
+  sync with the hardware, and a preset system with undo and redo is built in. MIDI events can go to the host or to a chosen
+  external port. Releases are packaged builds for macOS, Windows and Linux. The artwork reuses graphics from MeeBlip's web
+  editor under the GPLv3. Nothing is flashed.
+status: dormant
+authors:
+  - name: Romain Clement
+    url: https://github.com/rclement
+source: https://github.com/rclement/meeblip-controller
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GNU GPL version 3 text and the README names the GNU General Public License v3.0, with
+  no "or later" wording. The build uses the JUCE, FRUT, VST3 SDK and pluginval projects, which the README lists as GPLv3,
+  and artwork from MeeBlip's web editor.
+distribution: download
+install_notes: >-
+  Download the build for your system from the releases page, or build from source with CMake as the README describes. In a
+  host, load the plug-in and pick the synth's MIDI port; the standalone app has its own port selector. The Synchronize
+  button does a one-time sync with the hardware.
+brick_risk: false
+tags: [editor, midi, presets, utility]
+image:
+  url: https://raw.githubusercontent.com/rclement/meeblip-controller/master/ext/meeblip-controller-screenshot.png
+  alt: Meeblip Controller window with a preset bar and Synchronize button, knobs and switches grouped as envelope, filter, oscillators and LFO, a MIDI only row, and an external MIDI port and channel selector
+  credit: Romain Clement
+  source_url: https://github.com/rclement/meeblip-controller#readme
+  first_party: true
+versions:
+  - version: 1.0.2
+    date: 2018-11-30
+    url: https://github.com/rclement/meeblip-controller/releases/tag/1.0.2
+    notes: Fixes the release deploy configuration and updates the README for Linux.
+  - version: 1.0.1
+    date: 2018-11-30
+    url: https://github.com/rclement/meeblip-controller/tree/1.0.1
+    notes: Git tag; no GitHub release page. Adds Linux support for the standalone app and the VST plug-in.
+  - version: 1.0.0
+    date: 2018-11-21
+    url: https://github.com/rclement/meeblip-controller/releases/tag/1.0.0

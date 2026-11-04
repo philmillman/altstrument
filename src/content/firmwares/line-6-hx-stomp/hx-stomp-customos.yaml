@@ -1,17 +1,22 @@
 device: line-6-hx-stomp
 name: HX Stomp CustomOS
 summary: >-
-  A fork of NAM A2 Lite that adds a CustomOS section to the HX Stomp's Global Settings, with tuner activation and a tuner
-  settings lock, as first steps towards a fully custom firmware. Patches stock 3.80.0.
+  A fork of NAM A2 Lite that patches stock 3.80.0 to add a CustomOS section to the HX Stomp's Global Settings and a feature
+  engine for its UI: tuner press-to-open and lock, a BPM readout, a DSP meter and a custom boot screen.
 description: >-
-  It builds everything in NAM A2 Lite and adds tools/patch_menu.py, which adds a seventh section to Global Settings. Tuner
-  Activation makes a TAP/Tunr footswitch open the tuner on a press instead of a hold, at the cost of tap tempo on that
-  switch. Lock Tuner Settings stops knob turns and resets from changing the tuner's settings. The author reports running these
-  from RAM on a unit. FIRMWARE_NOTES.md records what is known about the 3.80.0 firmware, marking each claim as verified on a
-  unit, verified offline or a hypothesis. The gr-meter-experiment branch holds unfinished gain reduction meter work.
+  It builds everything in NAM A2 Lite and adds an engine for the Cortex-M4 application, where each feature is a module under
+  tools/features with its own settings, hooks and tests. The settings sit in a seventh Global Settings section called CustomOS.
+  The tuner feature is always built in: Tuner Activation makes a TAP/Tunr footswitch open the tuner on a press instead of a
+  hold, at the cost of tap tempo on that switch, and Lock Tuner Settings stops knob turns and resets from changing the tuner's
+  settings. The other features are switched on at build time. BPM shows the tempo at the top left of the Home screen with a
+  beat dot that follows the TAP footswitch ring, with font, colour and dot position settings. DSP meter shows each Edit-view
+  block's share of the DSP in per cent and the total at the top right. The boot screen option replaces the boot picture and
+  the boot text, with emoji. The author reports running each feature from RAM on an HX Stomp. FIRMWARE_NOTES.md records what is
+  known about the 3.80.0 firmware, marking each claim as verified on a unit, verified offline or a hypothesis, and
+  docs/resource-limits.md covers how much room is left.
 
-  The added settings are for the HX Stomp only, and the XL build does not have them. The README inherits the upstream
-  project's setup page link, and that page builds upstream's firmware, not this fork's; use build.py here.
+  The added features are for the HX Stomp only. The README says the HX Stomp XL builds with NAM A2 Lite only and marks the XL as
+  untested. It no longer links a setup page, so use build.py.
 status: active
 authors:
   - name: wisemandenny
@@ -29,11 +34,13 @@ requires_stock: 3.80.0 (the build checks the stock file's MD5 and refuses any ot
 install_notes: >-
   Run build.py on HX_Stomp_v3.80.0_0x103966115.hxf, which writes build/HX_Stomp_v3.80.0_CustomOS.hxf. Try it from RAM first with
   tools/hxf_ram.py (needs pyusb), or install it with Choose File in Line 6 Updater. If the Stomp stops at the splash screen,
-  hold Page Right while powering on and reinstall the stock file.
+  hold Page Right while powering on and reinstall the stock file. Optional features are chosen with environment variables
+  such as HX_BPM=1 and HX_DSP_METER=1 or with build.py's --splash options; BPM and DSP meter need Apple's Command Line Tools
+  to assemble their code.
 brick_risk: true
 tags: [nam, amp-modeling, patch, tuner]
 versions:
-  - version: main @ 7c822b8
-    date: 2026-11-02
-    url: https://github.com/wisemandenny/hx-stomp-customOS/commit/7c822b8d8b99b828cf19120aa0a64d213c819509
+  - version: main @ ec0452f
+    date: 2026-11-04
+    url: https://github.com/wisemandenny/hx-stomp-customOS/commit/ec0452f7c87fd5d9ebb2deab1319472fbcf2a775
     notes: No tagged releases; this is the latest commit.

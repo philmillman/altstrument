@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: FM-1 Companion Suite
+kind: tool
+summary: Linux desktop suite for the FM-1, built for the Raspberry Pi 5, with backups, firmware installs, rescue tools, preset and sample management, project export, and a simulator that runs Melodee from a device backup.
+description: >-
+  Rights warning: the suite installs M-VAVE's stock firmware by download, taking V15 from M-VAVE's fm1_open repository
+  and V16 from M-VAVE's own server at run time. No stock image is committed to the repository.
+
+  The app gathers device profiles, backups with search and comparison, a firmware catalog and installer, the installed
+  firmware's own web editor run offline, presets with DX7 voice import, samples and kits, Melodee project viewing and export,
+  composing from MIDI files, and a MIDI tool. Its Studio page runs Melodee on the computer with the full device state from a
+  backup. The firmware features target the Felucca family (Melodee, Skiff, SLOOP) and the official firmware. The interface and
+  documentation are in German. The README says firmware changes, the return to stock, rescue stages 1 to 3 and writing back from
+  the Studio have only run against simulators so far; on hardware the author has used one Melodee update, backups, MIDI and
+  the Studio's basic functions, on one unit.
+status: active
+authors:
+- name: bit-wmike
+  url: https://github.com/bit-wmike
+source: https://github.com/bit-wmike/fm1-companion
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The bundled simulators are built from M-VAVE's FM1 Open source and from Melodee's source, with notices in
+  fm1companion/sims/*/NOTICE. The stock V15 it fetches is M-VAVE's Apache-2.0 FM-1_015.fwsc from m-vave/fm1_open; V16 carries no
+  such licence and comes straight from M-VAVE.
+distribution: download
+install_notes: >-
+  Runs on Raspberry Pi OS and other Debian or Ubuntu systems. Install from the release's .run assistant or .deb package, or
+  clone the repository and run install.sh, which asks for sudo to add system packages. Make a backup before using firmware
+  installs or rescue, which the author marks as at your own risk.
+brick_risk: true
+tags: [backup, flasher, recovery, utility, editor, emulator, simulator, presets]
+versions:
+- version: v2.3.2
+  date: 2026-11-04
+  url: https://github.com/bit-wmike/fm1-companion/releases/tag/v2.3.2

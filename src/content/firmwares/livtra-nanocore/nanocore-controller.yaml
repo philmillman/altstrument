@@ -1,0 +1,36 @@
+device: livtra-nanocore
+name: NANOCORE Controller
+kind: tool
+summary: Python command-line tool, library and local web editor for the Livtra NanoCore over Bluetooth or USB MIDI. It recalls and edits presets, backs up and restores state, changes pedal settings and rewrites amp and IR slots. It never writes firmware.
+description: >-
+  The command line lists and recalls presets, reads the full state of the eight effect blocks, sends live parameter and
+  model changes, makes lossless backups and restores them, saves the live state into the active preset, renames presets and
+  changes pedal-wide settings. Every command that writes asks for a new backup path first and reads the result back. A local
+  web server shows the whole chain on one screen, applies each change to the pedal as it is made, and keeps the preset as it
+  was first seen so an unwanted save can be undone. The tool can write amp and IR slots from model and WAV files, and the
+  repository has a PipeWire service that routes the pedal's USB audio to the PC speakers and a small MIDI router script.
+  The protocol notes come from watching the pedal and Livtra's own app. The README says the project holds no keys and no
+  decryption of Livtra's encrypted .ead files. The author calls it unofficial and written for a single pedal.
+status: active
+authors:
+  - name: dvilelaf
+    url: https://github.com/dvilelaf
+source: https://github.com/dvilelaf/nanocore-controller
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text, copyright dvilelaf, with an added line saying the web editor in web/ includes code under its
+  own MIT license; GitHub shows no licence for that reason.
+distribution: source-only
+requires_stock: Checked against NanoCore firmware 1.04 and 1.10
+install_notes: >-
+  Needs Python 3.11 or newer and uv; the web editor is built with Node 22. Pair the pedal's Nanocore Midi endpoint once with
+  Livtra's phone app, then close the app, since the pedal takes one Bluetooth connection at a time. Saving, restoring and
+  writing amp or IR slots change what is stored in the pedal, so keep the backups the tool asks for.
+brick_risk: false
+tags: [cli, editor, python, sysex, usb-midi, bluetooth, presets, midi]
+versions:
+  - version: master @ b6f190a
+    date: 2026-10-08
+    url: https://github.com/dvilelaf/nanocore-controller/commit/b6f190ab69d07647544c36916c23cbe9fa2029fc
+    notes: No tagged releases; this is the latest commit.

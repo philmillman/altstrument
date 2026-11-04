@@ -1,7 +1,8 @@
 device: m-vave-tank-g
+also_devices: [m-vave-tank-b]
 name: UltraRig
 summary: >-
-  Alternative firmware for the Tank-G v1 and v2 that runs NAM A2-Lite amp captures on the pedal, with an
+  Alternative firmware for the Tank-G and, from alpha 9, the Tank-B, in v1 and v2, that runs NAM A2-Lite amp captures on the pedal, with an
   editable effects chain, user IR cabinets, presets with scenes and a browser or Android editor.
 description: >-
   Rights warning: the Windows installer bundles wl82loader.bin, a JieLi second-stage loader taken from
@@ -13,7 +14,7 @@ description: >-
   Since alpha 7 the pedal's knobs work (MASTER sets the volume) and the footswitches default to a layout
   like the factory one, with A to D picking presets, B and C together for Live mode and Scenes as an
   option. Effects and presets are edited from a web control page in Chrome or Edge over USB, or an Android
-  app over Bluetooth. It is an alpha, and the author says to expect bugs and to use it at your own risk.
+  app over Bluetooth. Alpha 9 also runs on the Tank-B bass pedal and adds a bass EQ, a graphic EQ and crossover splits. It is an alpha, and the author says to expect bugs and to use it at your own risk.
   The source code is not published.
 status: active
 authors:
@@ -30,7 +31,7 @@ license_notes: >-
   MIT-licensed jl-uboot-tool and JieLi's unlicensed wl82loader.bin loader.
 homepage: https://ultrarig.app/
 distribution: download
-requires_stock: Tank-G factory firmware 97 or 98; 96 and older need M-UPGRADE first
+requires_stock: Tank-G factory firmware 97 or 98; 96 and older need M-UPGRADE first. Tank-B factory firmware 100
 install_notes: >-
   Windows 10 or 11 only, with a USB data cable straight to the computer and M-EFCS closed. Run the
   read-only UltraRig Check from the check1 release first. Download the package for your board (v1 or
@@ -42,6 +43,14 @@ install_notes: >-
 brick_risk: true
 tags: [fx, amp-sim, nam, ir, editor, android]
 versions:
+- version: alpha9
+  date: 2026-11-03
+  url: https://github.com/manuaguirre9/ultrarig/releases/tag/alpha9
+  notes: >-
+    Adds the Tank-B bass pedal (v1 and v2, factory firmware 100) beside the Tank-G, a 5-band bass EQ, a
+    6-band graphic EQ, crossover splits, a tuner that reaches the low B of a 5-string and an installer step
+    that finds the right speed for each pedal. A pre-release test build, alpha9.1, followed the next day and
+    is not listed.
 - version: alpha8
   date: 2026-11-03
   url: https://github.com/manuaguirre9/ultrarig/releases/tag/alpha8

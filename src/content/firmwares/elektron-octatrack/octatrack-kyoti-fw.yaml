@@ -7,7 +7,9 @@ description: >-
   DIRECT_JUMP_KYOTI, SIDECHAIN_COMPRESSOR, RELOAD_FROM_PROJECT, repitch
   (REPITCH_REPEAT98_KYOTI), VARISPEED, REC_TRIG_MUTE (TRACK + REC toggles the
   recorder-trig mute of each held track), live-record quantize toggle and trigless-lock
-  cleanup. KYOTI V1.7 is the current combined image. Unpromoted builds refuse to
+  cleanup. KYOTI V1.7 is the current combined image. BLACKPYRAMIDS_303, a
+  TB-303 voice added as a track machine (BLKPYRAMD, built on Open303), is a
+  separate standalone build and is not in the V1.7 image. Unpromoted builds refuse to
   run unless KYOTI_ALLOW_WIP=1 is set. KYOTI V1.0 was withdrawn on 2026-10-06 because it could crash; V1.2 broke
   PLATE REVERB, and V1.1 to V1.6 filter the stock DELAY darker than stock at most
   BASE and WDTH settings, which V1.7 fixes. Hardware testing is on an MKI only.
@@ -30,11 +32,12 @@ install_notes: >-
 tags: [fx, sequencer, performance, ui, bugfixes]
 versions:
   - version: KYOTI V1.7
-    date: 2026-11-02
-    url: https://github.com/Zac-Kyoti/octatrack-kyoti-fw/commit/826d23e16334285edee9c073426bfe76fcca463c
+    date: 2026-11-04
+    url: https://github.com/Zac-Kyoti/octatrack-kyoti-fw/commit/bb9beada9248fdae13bee32684a7f2564e586f6c
     notes: >-
       Combined image, flashed; fixes the stock DELAY sounding darker than stock and adds a KEYHOLD option
-      to MUTE_MODES that keeps a muted KEY track cut after its key time.
+      to MUTE_MODES that keeps a muted KEY track cut after its key time. Re-pinned on 2026-11-04 with
+      MUTE_MODES keeping a track cut when MUTE MODE leaves OT.
   - version: KYOTI V1.6
     date: 2026-10-22
     url: https://github.com/Zac-Kyoti/octatrack-kyoti-fw/commit/d4d2e7edae08529cbc66e3bd565a0c6379bebd00

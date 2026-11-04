@@ -9,7 +9,9 @@ description: >-
   as ported in fm-106. The chorus effect gains a stereo BBD type with the Juno's I, II and I+II modes. The 303 engine
   (15) is a single bass voice from Open303 as X0X ported it, with accent, slide and drive options. On a 303 track
   the ARP key opens TB-3PO, which writes a new 64-step line from density, accent, slide, octave and scale settings
-  and can mutate it every few passes while playing. Engine numbers are appended after Felucca's, so existing
+  and can mutate it every few passes while playing. A MODEL page sets the generator to AICD, which draws lines from an
+  n-gram model of acid patterns instead of TB-3PO's rules. The repository also holds the generator as a standalone C
+  library under packages/acidgen. Engine numbers are appended after Felucca's, so existing
   projects load unchanged, but 1.6.1 and older firmware show projects that use the DCO engine as empty. The
   README marks the changes as not yet released.
 status: active
@@ -22,7 +24,9 @@ license: GPL-3.0-only
 license_notes: >-
   Inherited from Felucca. The DCO engine follows fm-106 and the Ultramaster KR-106 (both GPL-3.0), and Open303 is
   MIT (LICENSING.md, LICENSES/); the TB-3PO generator is a port of X0X's, itself after the Phazerville Hemisphere
-  TB_3PO applet.
+  TB_3PO applet. The AICD mode uses the acid line model of Michael Ganss's Aicd (MIT, LICENSES/MIT-Aicd.txt), unchanged
+  and turned into flash tables at build time; the patterns it was trained on are not in the repository. The standalone
+  packages/acidgen library is GPL-3.0-only code with that MIT model data.
 distribution: source-only
 install_notes: >-
   Build it from the repository as Felucca is built (BUILDING.md) and install with Felucca's tools. The README
@@ -30,7 +34,7 @@ install_notes: >-
 brick_risk: true
 tags: [synth-engine, oscillator, fx, sequencer, generative, fork]
 versions:
-- version: main @ 9be30a5
-  date: 2026-10-22
-  url: https://github.com/mediaworkbench/felucca/commit/9be30a5f2c1a2376fc49f83e05b14777ea21e01b
+- version: main @ 0f20fc7
+  date: 2026-11-04
+  url: https://github.com/mediaworkbench/felucca/commit/0f20fc72a1c4ff4cd85c3641c874bfc6ab4fff37
   notes: No tagged releases; this is the latest commit.

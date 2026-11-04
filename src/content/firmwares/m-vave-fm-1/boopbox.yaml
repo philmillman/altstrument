@@ -1,0 +1,61 @@
+device: m-vave-fm-1
+name: BoopBox
+summary: >-
+  Eight-track live groovebox renamed from SLOOP: six synth and two drum tracks by default, twelve engines, parameter
+  locks, micro timing, fills, a song mode and a web editor, plus a Trainer build that teaches three songs.
+description: >-
+  A renamed fork of SLOOP that restarts its numbering at 1.0.0, continuing from SLOOP 2.8.3. The project format has
+  eight tracks, any of which can be a synth or a drum machine, and is not interchangeable with SLOOP's, although
+  presets, samples and themes carry over and the installer updates an FM-1 running SLOOP or Felucca. Additions over
+  SLOOP include physical-model strings, bells and hand drums, a noise engine, six-operator FM with DX7 patch import,
+  parameter locks, micro timing, fills, a chain of sections, sequencer output to MIDI out, a visualiser, and
+  factory sounds levelled against each other. The same repository builds BoopBox Trainer, a second firmware in
+  which an on-screen coach lights the controls to press and teaches lo-fi hip-hop, synthwave and melodic dubstep
+  songs step by step. The Hügelton icon atlas and sample pack that SLOOP carries were replaced with assets
+  generated in the repository.
+status: active
+authors:
+- name: Josh McFarlin
+  url: https://github.com/Josh-McFarlin
+source: https://github.com/Josh-McFarlin/boopbox
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md: GPL-3.0-only for the whole tree, with copyright lines for Felucca, SLOOP and BoopBox. Third-party
+  parts are CC0 samples, a CC BY 3.0 electric piano in the hip-hop pack, the Terminus font (SIL OFL 1.1), the Fukiai
+  icon font (MIT), ports from CrispyZebra (GPL-3.0), msfa from Dexed (Apache-2.0), DaisySP and Rings code (MIT), and
+  JieLi SDK files read from your SDK checkout at build time (Apache-2.0). The repository commits its own BoopBox
+  builds under docs/firmware; none of them is M-VAVE's stock firmware.
+homepage: https://josh-mcfarlin.github.io/boopbox/
+distribution: browser-installer
+install_notes: >-
+  Browser installer in Chrome or Edge over USB, where the page offers BoopBox or BoopBox Trainer, or
+  tools/fm1_install.py with a release's .fwsc. Projects and songs from SLOOP do not open in BoopBox, so back them up
+  in SLOOP's editor first. Holding OCT- alone while switching on enters USB rescue, an interrupted install finishes
+  when it is repeated, and M-VAVE's M-UPGRADE with the official V15 firmware puts the stock firmware back. Installing
+  is at your own risk.
+brick_risk: true
+tags: [sequencer, synth-engine, drums, sampler, fx, performance, usb-audio, midi, fm, physical-modeling, editor, fork]
+image:
+  url: https://raw.githubusercontent.com/Josh-McFarlin/boopbox/main/assets/screens/boopbox-screens.png
+  alt: Nine BoopBox screens on dark purple, covering the track banks 1 to 4 and 5 to 8, patterns, the drum grid, the piano roll, chords, punch-in effects, mix and song
+  credit: Josh McFarlin
+  source_url: https://github.com/Josh-McFarlin/boopbox
+  first_party: true
+versions:
+- version: 1.4.1
+  date: 2026-11-04
+  url: https://github.com/Josh-McFarlin/boopbox/releases/tag/v1.4.1
+  notes: BoopBox Trainer gains a level picker, progress saved to flash after every step and clearer hints; BoopBox itself is unchanged.
+- version: 1.4.0
+  date: 2026-11-04
+  url: https://github.com/Josh-McFarlin/boopbox/releases/tag/v1.4.0
+  notes: Adds BoopBox Trainer as a second firmware, chosen in the installer; BoopBox itself is unchanged.
+- version: 1.3.1
+  date: 2026-11-02
+  url: https://github.com/Josh-McFarlin/boopbox/releases/tag/v1.3.1
+  notes: Keeps the TANPURA sympathetic strings in tune on the top notes and frees 4.7 KB in the application slot.
+- version: 1.3.0
+  date: 2026-11-01
+  url: https://github.com/Josh-McFarlin/boopbox/releases/tag/v1.3.0
+  notes: Factory sounds are levelled against each other, the drum track's LEVEL works on the TRACKS screen, and LEVEL covers its full range on 39 presets.

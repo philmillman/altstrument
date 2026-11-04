@@ -7,7 +7,7 @@ description: >-
   spicier ones. A chord rhythm can repeat the chord, and a chord that is latched stops when the same key is pressed
   again. The bass has six sounds and eight riff patterns, there are ten drum patterns with their own kits, and a
   kick sidechain pumps the chords. Pages cover effects (delay, tremolo, chorus, reverb), chord voicing and strum,
-  groove, bass, drums and the screen's scenery. Notes go out over USB MIDI on channel 1 as they sound. The README
+  groove, bass, drums and the screen's scenery. Notes go out over USB MIDI on channel 1 as they sound, and from 1.1.0 the tempo and beats follow MIDI clock arriving over USB. The README
   is in French, calls the project a prototype and says it has never been tested on a real FM-1; the author measured
   about a fifth of the audio interrupt's time in an emulator. It builds on fm1-base and felucca-bsp.
 status: active
@@ -23,7 +23,7 @@ license_notes: >-
 homepage: https://osr-experiment.github.io/OSR-1/
 distribution: browser-installer
 install_notes: >-
-  Use the install page on the project site in Chrome or Edge with the FM-1 on USB, or flash blop-1.0.1.fwsc from
+  Use the install page on the project site in Chrome or Edge with the FM-1 on USB, or flash blop-1.1.0.fwsc from
   the release. The README says the build has not been tested on a real FM-1.
 brick_risk: true
 tags: [chords, synth-engine, drums, performance, midi, usb-midi, emulator]
@@ -34,6 +34,10 @@ image:
   source_url: https://osr-experiment.github.io/OSR-1/
   first_party: true
 versions:
+- version: 1.1.0
+  date: 2026-11-03
+  url: https://github.com/OSR-Experiment/OSR-1/releases/tag/v1.1.0
+  notes: Follows MIDI clock received over USB, so a DAW's tempo replaces the BPM, and sends new MIDI notes before the old ones end so a legato-glide synth glides between them.
 - version: 1.0.1
   date: 2026-11-01
   url: https://github.com/OSR-Experiment/OSR-1/releases/tag/v1.0.1

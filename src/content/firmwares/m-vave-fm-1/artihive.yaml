@@ -1,0 +1,45 @@
+device: m-vave-fm-1
+name: ARTIHIVE
+summary: >-
+  Eight-voice drone and polyphonic synth with a 27-key chromatic POLY mode, evolving FM voice pairs, Hyper LFO,
+  stereo motion, modulated delay, distortion, compression, presets and 10 to 400 BPM arpeggiation.
+description: >-
+  Two modes share one engine. In DRONE the eight lower keys act as envelope triggers for eight separately tuned
+  voices and the upper row latches them; in POLY all 27 keys form a chromatic keyboard with oldest-note stealing
+  across eight voices. The instrument stays silent until PLAY is pressed. Further controls are a global ROOT,
+  SHARP, DETUNE and MOD, envelope editing for all voices or the newest held note, a mutation button with undo, UI
+  themes and a drone and polyphonic preset set. It is built on the Dinghy template and the Felucca platform
+  layer, with an SMK-37 board layer from the SLOOP SMK-37 port described in its licence file. The author says it
+  was made with help from an AI coding assistant. The update loader accepts both known 1 MiB flash chips, the Puya
+  P25Q80 and the UC25HQ80 found in newer units.
+status: active
+authors:
+- name: KHAVld
+  url: https://github.com/KHAVld
+source: https://github.com/KHAVld/ARTIHIVE
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only for the application and for the platform code it inherits from Felucca, SLOOP,
+  OberVave and Dinghy. The Terminus font is SIL OFL 1.1 and the JieLi AC79 SDK files are read from your SDK checkout
+  at build time (Apache-2.0). Dinghy's logo was removed because it is not GPL.
+distribution: download
+requires_stock: V15 or another third-party firmware
+install_notes: >-
+  Download artihive-2.0.0.fwsc from the release and install it with M Flasher. The release notes report installs
+  on a real FM-1 from stock V15 and from another third-party firmware, and a return to another firmware. They say
+  an FM-1 with the UC25HQ80 flash chip was not tested directly. Building needs the JieLi toolchain and three AC79
+  SDK files, which are not in the repository. Installing is at your own risk.
+brick_risk: true
+tags: [synth-engine, generative, lfo, fx, delay, arpeggiator, performance]
+image:
+  url: https://raw.githubusercontent.com/KHAVld/ARTIHIVE/ARTIHIVE/docs/card.png
+  alt: ARTIHIVE on the FM-1 screen, a POLY page with root, sharp, detune and mod dials over a pink wave pattern and eight round key lights
+  credit: KHAV
+  source_url: https://github.com/KHAVld/ARTIHIVE
+  first_party: true
+versions:
+- version: 2.0.0
+  date: 2026-11-04
+  url: https://github.com/KHAVld/ARTIHIVE/releases/tag/artihive-2.0.0
+  notes: Adds POLY mode with all 27 keys, global envelope and tuning controls, 10 to 400 BPM arpeggiation, mutation, output compression and support for the UC25HQ80 flash chip.

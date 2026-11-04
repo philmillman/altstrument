@@ -1,0 +1,56 @@
+device: miyoo-miyoo-flip
+also_devices: [akai-mpk-mini-iv]
+name: Stame
+summary: >-
+  Chord instrument for the Miyoo Flip, played from an Akai MPK mini IV and a fifteen-key macro pad. One hand picks the chord type, the other the root, with strum and arpeggio performances, a drum beat and an event looper.
+description: >-
+  Stame is a native aarch64 app for the Flip that renders its own sound. Holding a chord button and pressing a key sounds a
+  voiced chord with its bass. Voicing windows, strum, arpeggio, pattern and harp performances, a Beat section and a
+  four-bar event looper with overdub and undo work from the MPK mini IV's pads, knobs and transport buttons and from the
+  macro pad. The sound engine has sixteen voices at 48 kHz with virtual-analog, FM, physical-model and sampler voices, 232
+  sounds, 38 basses, 43 drum kits and two effect slots per engine; the sampled sounds use a bank of CC0 samples built by a
+  script. A 640 by 480 panel has Day and Night themes, and the app plays a demo after twenty seconds without input.
+  The README describes this as phase 1 of the project, with a port to dedicated hardware planned, and lists MIDI out on the
+  DIN port, clock and loop slots as specified but not built. The repository states that it holds no presets or firmware of
+  other instruments. The documentation is mainly in Italian. The MPK mini IV is used only as an input device and its firmware
+  is not changed.
+status: active
+authors:
+  - name: Luigi Massari
+    url: https://github.com/luigismith
+source: https://github.com/luigismith/stame
+source_status: open
+license: MIT
+license_notes: >-
+  MIT, with the Spleen bitmap font (BSD-2-Clause) in third_party. The sample bank uses only CC0 samples from the Versilian
+  Community Sample Library and the Sonic Pi sample set, listed in assets/campioni/FONTI.md; the release archive of about 69 MB
+  carries the built bank. The repository also commits case design output (STL, OBJ, SVG and PDF files) next to the code.
+homepage: https://luigismith.github.io/stame/
+distribution: download
+requires_stock: spruceOS-based firmware (Cirmolo or spruceOS) on the Miyoo Flip; MPK mini IV on its DAW preset
+install_notes: >-
+  With the Cirmolo firmware, choose Install Stame under App, Music with Wi-Fi on. Otherwise download the .7z from the release
+  and unpack it at the root of the SD card to create App/Stame. Connect the MPK mini IV, set to its DAW preset, and the macro
+  pad through a plain USB 2.0 hub without Power Delivery on the Flip's top USB-C port. The app runs from the SD card and
+  does not flash the console or the keyboard.
+brick_risk: false
+tags: [chords, looper, synth-engine, sampler, drums, performance, usb-midi, open-source]
+image:
+  url: https://raw.githubusercontent.com/luigismith/stame/main/docs/sito/img/plancia_giorno.png
+  alt: "Stame play page, Day theme: 220 BPM in seven-segment digits, a looper bar showing PLAY, a piano keyboard with chord notes highlighted and the sound name Anther Keys"
+  credit: Luigi Massari
+  source_url: https://github.com/luigismith/stame#readme
+  first_party: true
+versions:
+  - version: v0.3.0
+    date: 2026-10-19
+    url: https://github.com/luigismith/stame/releases/tag/v0.3.0
+    notes: Adds 50 synthesized sounds, taking the total to 200, and a library of 35 synthesized drum kits.
+  - version: v0.2.0
+    date: 2026-10-18
+    url: https://github.com/luigismith/stame/releases/tag/v0.2.0
+    notes: Adds 37 sounds, taking the total to 150.
+  - version: v0.1.0
+    date: 2026-10-18
+    url: https://github.com/luigismith/stame/releases/tag/v0.1.0
+    notes: First release.

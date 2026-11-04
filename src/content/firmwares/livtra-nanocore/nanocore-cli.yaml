@@ -1,0 +1,35 @@
+device: livtra-nanocore
+name: nanocore-cli
+kind: tool
+summary: Rust command-line tool for the Livtra NanoCore over USB MIDI. It switches presets, sets effect modules, models and parameters, orders the chain, exports and imports presets, writes amp and IR assets and can replay the factory preset restore.
+description: >-
+  Rights warning: the repository embeds data/factory_preset_restore.bin and data/factory_preset_preamble.bin, recorded frames from
+  Livtra's official client that rewrite the pedal's 40 factory presets; the repository does not state the right to redistribute them.
+
+  The commands cover presets (list, select, rename, volume, export and import as .npreset files, optionally with the amp and
+  IR models they use), the eight modules (on or off, model, parameters), the chain order, the tuner, pedal settings such as
+  USB volume, input gain and MIDI channel, and writing .ead or .eadl models into amp slots. A debug group sends raw frames
+  and dumps inbound ones. The model and parameter tables are in JSON files in the repository. The project is unofficial and
+  research-oriented, and the README says to use it at your own risk.
+status: active
+authors:
+  - name: Golevka2001
+    url: https://github.com/Golevka2001
+source: https://github.com/Golevka2001/nanocore-cli
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GNU GPL version 3 text and the README says GPL-3.0-only. The two data/*.bin files are recorded
+  traffic from Livtra's official client and are not covered by that licence; the repository has no statement about them.
+distribution: source-only
+install_notes: >-
+  Build with cargo and the midi feature (cargo build --features midi); without it only the library is built. The commands
+  talk to the pedal's USB MIDI ports. preset restore-factory overwrites slots 1 to 40, and asset write replaces an amp or IR
+  slot, so export what you want to keep first.
+brick_risk: false
+tags: [cli, rust, sysex, usb-midi, presets, midi]
+versions:
+  - version: main @ 1f454f5
+    date: 2026-11-01
+    url: https://github.com/Golevka2001/nanocore-cli/commit/1f454f516d2cac03ef81c854ca964543724b076b
+    notes: No tagged releases; this is the latest commit.

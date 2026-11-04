@@ -7,7 +7,7 @@ description: >-
   The expander gives each sound that a Digitone 1 track switches between with sound locks its own track on a Digitone II,
   with its trigs and locks. The manager moves, copies, swaps, clears and renames patterns across banks and projects with undo,
   and an Insights view reports polymeter cycles, trigs stored past a track's end, voice use and key fit. The library lists the 2,048 +Drive presets with tags, renames them
-  and drags them into a project's sound pool, and a wavetables pane works on a Digitone II running the Waverider firmware. Backups of every project, soundbank and kit
+  and drags them into a project's sound pool, and a wavetables pane works on a Digitone II running the Waverider firmware, where it can install the two original tables, Prim. and Harm., on builds that have no built-in tables and keep an older project's saved table values. Backups of every project, soundbank and kit
   go into one .dnx file; global settings are not included because the instrument cannot send them. Writing is off until a toolbar switch is
   turned on, a copy of the old contents is saved before anything is replaced, every write is read back, and the loaded
   project is never written to. A probe page asks an instrument what it is and captures what it sends. The core is a separate
@@ -22,7 +22,7 @@ source_status: open
 license: AGPL-3.0-or-later
 license_notes: >-
   The README names AGPL-3.0-or-later and package.json agrees. A different licence is offered on request. The repository
-  vendors web/vendor/dksample.wasm, the sample converter from digikit (AGPL-3.0-or-later), and commits one test zip.
+  vendors web/vendor/dksample.wasm, the sample converter from digikit (AGPL-3.0-or-later), the Prim. and Harm. wavetable files from the dn2_firmware project (same licence, generated from formulas with no Elektron data, per the docs), and commits one test zip.
 homepage: https://noiseandmatter.github.io/DNX/
 distribution: browser-installer
 install_notes: >-
@@ -38,9 +38,9 @@ image:
   source_url: https://github.com/NoiseAndMatter/DNX#readme
   first_party: true
 versions:
-  - version: main @ 695e9b7
-    date: 2026-11-02
-    url: https://github.com/NoiseAndMatter/DNX/commit/695e9b774fbfc7bbdbfe629e774e84afc5630dee
+  - version: main @ 3ce58b6
+    date: 2026-11-04
+    url: https://github.com/NoiseAndMatter/DNX/commit/3ce58b69d0eea209133bf8c4b56216fc899672c3
     notes: No tagged releases; this is the latest commit.
   - version: 0.9.0-beta.8
     date: 2026-10-03

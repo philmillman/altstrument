@@ -11,7 +11,8 @@ description: >-
   open m-bootloader, and can put the stock bootloader back. A flash map shows what each sector holds and which
   ones a write will touch. Since 0.5.0 a unit that is running normally, on M-VAVE's own firmware or Felucca,
   is found over USB MIDI and a DOWNLOAD MODE button restarts it into download mode with a SysEx message, so a
-  stock unit can be backed up and given the open bootloader without a USB_KEY dongle. Supports the FM-1 and the
+  stock unit can be backed up and given the open bootloader without a USB_KEY dongle. Supports the FM-1, the Fame MiniFM (an FM-1 under
+  another name, so far checked only on simulated flash) and the
   SMK-37 Pro and Elite; the author tested on an FM-1 and an SMK-37 Pro, and tried the MIDI route on Linux and macOS. A command line is included.
 status: active
 authors:
@@ -40,6 +41,14 @@ image:
   source_url: https://github.com/jvitkauskas/m-flasher
   first_party: true
 versions:
+- version: 0.8.2
+  date: 2026-11-04
+  url: https://github.com/jvitkauskas/m-flasher/releases/tag/v0.8.2
+  notes: Bundles m-bootloader 1.3 and its flash loader 1.3, and warns before installing an older m-bootloader on a unit where it would show BAD CONFIG. Version 0.8.1, released earlier the same day, identifies FM-1s with the newer UC25HQ80 flash chip and warns before installing m-bootloader on it.
+- version: 0.8.0
+  date: 2026-11-04
+  url: https://github.com/jvitkauskas/m-flasher/releases/tag/v0.8.0
+  notes: Adds the Fame MiniFM, an FM-1 under another name, detected as an FM-1 with the DOWNLOAD MODE button. Packages of either name install on either unit, and the app warns first. Checked against both vendor packages on simulated flash, not yet on a real MiniFM.
 - version: 0.7.0
   date: 2026-10-29
   url: https://github.com/jvitkauskas/m-flasher/releases/tag/v0.7.0

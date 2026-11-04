@@ -10,7 +10,10 @@ description: >-
   delete and sample copy. Later alphas add a track menu, granular playback on up to four tracks, line input as a
   track's sound, a two-oscillator synth and an envelope page for the synth and granular sounds. The newest alphas add
   the Stock+ page and a waveshaper to granular and synth tracks, a count-in that follows the tempo or MIDI clock,
-  knob automation on steps with snapshots, and stereo link with per-knob offsets. Each version has an "S" variant without the features that create, change or delete SD
+  knob automation on steps with snapshots, and stereo link with per-knob offsets. Alpha 0.11 adds a modulation matrix of
+  eight sources to 32 destinations per track, lanes with their own destination, automation ramps, arpeggio modifiers and
+  a proof-of-concept loader for Arrhythmia .mod modules, which are third-party and not included; alpha 0.10 is the same
+  without the module code. Each version has an "S" variant without the features that create, change or delete SD
   card files by themselves. The repository holds the builders, an assembler, manuals in Spanish and English and
   per-version manifests, and no Novation code. The README says the features were checked mostly in emulation and
   partly on the device, and that the project was developed with Claude.
@@ -35,10 +38,18 @@ install_notes: >-
 brick_risk: true
 tags: [sampler, sequencer, drums, fx, midi, arpeggiator, performance]
 versions:
+  - version: alpha-0.11
+    date: 2026-11-03
+    url: https://github.com/Ghillermo/CIRCUIT-REMIX/releases/tag/alpha-0.11
+    notes: Pre-release. Fixes the alpha-0.09 boot loop and adds a modulation matrix, lanes with their own destination, an extra automation lane with ramps, arpeggio modifiers, save on stop and a proof-of-concept loader for Arrhythmia modules. It boots cold and after a restart on the device; most new features were checked only in emulation.
+  - version: alpha-0.10
+    date: 2026-11-03
+    url: https://github.com/Ghillermo/CIRCUIT-REMIX/releases/tag/alpha-0.10
+    notes: Pre-release. The same as alpha-0.11 without the code that runs Arrhythmia modules.
   - version: alpha-0.09
     date: 2026-10-29
     url: https://github.com/Ghillermo/CIRCUIT-REMIX/releases/tag/alpha-0.09
-    notes: Pre-release. Adds CIRCUIT-HACKS style knob automation steps with snapshots, track modes on the Samples pads, stereo link with offsets, and start and length controls for granular and synth sounds. Checked only in emulation.
+    notes: Pre-release. Adds CIRCUIT-HACKS style knob automation steps with snapshots, track modes on the Samples pads, stereo link with offsets, and start and length controls for granular and synth sounds. Checked only in emulation. The release notes say it boot-loops on the device and point to alpha-0.08.
   - version: alpha-0.08
     date: 2026-10-29
     url: https://github.com/Ghillermo/CIRCUIT-REMIX/releases/tag/alpha-0.08

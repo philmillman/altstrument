@@ -1,0 +1,50 @@
+device: m-vave-fm-1
+name: PHREAK
+summary: >-
+  SLOOP 2.8.4 fork with three drum tracks, drum kits loaded from a USB stick of WAV files, envelope, filter and LFO
+  shaping for those samples, and eight song sections A to H.
+description: >-
+  A six-track groovebox, three synth tracks and three drum tracks, built on SLOOP 2.8.4 and so on Felucca. Holding
+  OCT+ at power-on opens a browser for a FAT32 USB stick plugged in through a powered OTG adapter, and a folder of WAV
+  files, or one file, can be loaded into one of four user sample slots. Drum tracks D1 to D3 each have their own kit,
+  pattern, length, swing and level, and a user kit gets ENV, LFO and EDIT pages with an ADSR gate, a resonant
+  filter, tune, bit crush, drive and loop. Songs have sections A to H instead of A to D, and the build adds a few
+  808 basses and trap kits, a new boot screen and an ABOUT page. Sample slots shrink from 80 KB to 68 KB. The
+  author calls it a personal fork tested on one FM-1. Its history shares SLOOP's commits but not BoopBox's, so it is
+  a separate fork of SLOOP.
+status: active
+authors:
+- name: dagnazty
+  url: https://github.com/dagnazty
+source: https://github.com/dagnazty/phreak-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md is SLOOP's, carried over from Felucca: code is GPL-3.0-only, while Hügelton Instruments' icon atlas
+  (assets/icons.png) and panel image are separate all-rights-reserved assets that Felucca's GPL section 7 permission
+  lets you combine. Third-party parts are CC0 samples, the Terminus font (SIL OFL 1.1), the Fukiai font (MIT),
+  CrispyZebra (GPL-3.0), msfa (Apache-2.0), DaisySP and Rings code (MIT), and JieLi SDK files read from your SDK
+  checkout at build time (Apache-2.0). The repository commits SLOOP 2.8.4's own build under docs/firmware, not
+  M-VAVE's stock firmware.
+homepage: https://github.com/dagnazty/phreak-fm1
+distribution: source-only
+requires_stock: SLOOP, Felucca or stock FM-1 firmware
+install_notes: >-
+  Build phreak-1.2.fwsc (the JieLi toolchain and AC79 SDK are needed), then install it over USB with
+  tools/fm1_install.py, or serve the local installer page from your own build and use Chrome or Edge. Take a backup in
+  the editor first; projects, presets, samples and settings are kept on update. Holding OCT- alone while switching
+  on enters USB rescue, SLOOP 2.8.4 can be reinstalled the same way, and M-VAVE's M-UPGRADE with the official V16
+  firmware restores the stock firmware, according to the README. Installing is at your own risk.
+brick_risk: true
+tags: [sequencer, drums, sampler, fx, performance, usb-audio, midi, fork]
+image:
+  url: https://raw.githubusercontent.com/dagnazty/phreak-fm1/main/assets/screens/phreak-boot-about.png
+  alt: PHREAK boot screen, a lightning bolt in four colours inside an arc above the name, next to the ABOUT page listing credits and licences, on a black background
+  credit: dagnazty
+  source_url: https://github.com/dagnazty/phreak-fm1
+  first_party: true
+versions:
+- version: main @ 30b4c0d
+  date: 2026-11-04
+  url: https://github.com/dagnazty/phreak-fm1/commit/30b4c0d
+  notes: No tagged releases of its own; the tags in the repository are SLOOP's. The README names this state PHREAK 1.2, which lets LOAD FROM USB list a folder's files and load one alone.

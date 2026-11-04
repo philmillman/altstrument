@@ -9,9 +9,9 @@ description: >-
   parameters need Caravel to open, and projects saved by 0.3.0 or later do not open on 0.2.0 or earlier, projects saved by 0.7.1 or later do not open on 0.7.0, and projects saved by 0.8.0 do not open on 0.7.x or earlier, and projects saved by 0.9.0 (new project format 3) do not open on 0.8.0. Added
   features include a latch for held keys, a button to clear the step under the cursor, per-track voice reservations
   and a MORE page for spread and morph; 0.6.0 adds a STASIS hold with ADD and BLEND, and leaves out ROOM, SPRING
-  and the SLICE engine; 0.8.0 adds a Morph Journey bank that chains the four Random Morph snapshots into a hands-free loop; 0.9.0 makes Random Morph and Morph Journey per track and retires the SAX sample set; 0.10.0 adds the ENSEMBLE strings, choir and dark-texture engine with fourteen factory presets. DRUM-X, MORPH and the BYTE and FLOAT waves in LOFI are adapted from the
+  and the SLICE engine; 0.8.0 adds a Morph Journey bank that chains the four Random Morph snapshots into a hands-free loop; 0.9.0 makes Random Morph and Morph Journey per track and retires the SAX sample set; 0.10.0 adds the ENSEMBLE strings, choir and dark-texture engine with fourteen factory presets; 0.11.0 makes ENSEMBLE stereo, with the track's SPREAD setting as its width. DRUM-X, MORPH and the BYTE and FLOAT waves in LOFI are adapted from the
   JIANT FM fork. A web installer, editor and browser emulator are published on the project site. The README says
-  hardware acceptance on a real FM-1 is still pending (the 0.10.0 notes say only an earlier test build was installed on a unit, and no judgement of how ENSEMBLE sounds has been recorded), and that the firmware uses USB test IDs that the pid.codes
+  hardware acceptance on a real FM-1 is still pending (the 0.10.0 notes say only an earlier test build was installed on a unit; the 0.11.0 notes say the maintainer checked a release-candidate build on an FM-1 without recording per-item findings), and that the firmware uses USB test IDs that the pid.codes
   policy does not allow on devices that are shared or sold. Not affiliated with Hügelton Instruments or M-VAVE.
 status: active
 authors:
@@ -46,6 +46,21 @@ videos:
     first_party: true
     found_via: https://github.com/bonszaimusic/caravel#readme
 versions:
+- version: 0.11.0
+  date: 2026-11-04
+  url: https://github.com/bonszaimusic/caravel/releases/tag/v0.11.0
+  notes: >-
+    Makes the ENSEMBLE engine stereo: the track's SPREAD (SPRD) sets the width across six delay taps, and eleven factory
+    pads now load with a width. The mono sum is 2 to 3.5 dB lower and wide pads return less reverb, so REV or LEVEL may
+    need raising. No project-format change; a stereo ENSEMBLE project plays mono on 0.10.1. The notes say a
+    release-candidate build was checked on an FM-1 and no per-item findings are recorded.
+- version: 0.10.1
+  date: 2026-11-03
+  url: https://github.com/bonszaimusic/caravel/releases/tag/v0.10.1
+  notes: >-
+    Fixes the ENSEMBLE taps' slow LFOs, which ran in phase instead of 120 degrees apart, so all fourteen presets sound
+    slightly different, and fixes the sea-chart ship in RANDOM moving when another track's journey ran. The notes say
+    neither fix was tried on an FM-1 before release. No project-format change.
 - version: 0.10.0
   date: 2026-11-03
   url: https://github.com/bonszaimusic/caravel/releases/tag/v0.10.0

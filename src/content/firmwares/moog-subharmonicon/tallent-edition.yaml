@@ -1,0 +1,43 @@
+device: moog-subharmonicon
+name: Subharmonicon Tallent Edition
+summary: Browser patcher that adds Paraphonic, Harmony and Morph pitch modes, up to six MIDI voices, velocity, 303-style glide, CC control of the rhythm knobs and a gate-pattern rhythm mode to Moog's firmware 1.1.1.
+description: >-
+  The three new pitch modes give the subharmonic oscillators their own roles, and Paraphonic mode plays up to six
+  voices over MIDI. MIDI also gains velocity, legato glide and control changes for the rhythm knobs. An alternate
+  rhythm type replaces the divisions with selectable gate patterns, triggers the VCA and VCF envelopes separately, and
+  changes the tempo range to 40 to 239 BPM. Features are switched on one at a time in a settings mode, entered by
+  holding the SUB 1 and SUB 2 buttons with the sequencers stopped.
+
+  A few things change even with every feature off. The synth powers up stopped at step 1, and a MIDI transposition now
+  ends when the note is released. The repository holds the project's own code, tools and manual, not Moog's firmware,
+  and the project states it is not affiliated with or endorsed by Moog Music.
+status: active
+authors:
+  - name: Brandon Tallent
+    url: https://github.com/brandon-tallent
+source: https://github.com/brandon-tallent/subharmonicon-extended-firmware
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE covers the project's own code, tools and documentation. No rights to Moog's firmware are granted, and
+  the patched file contains Moog's code, so it is a local output and not a release asset.
+homepage: https://brandon-tallent.github.io/subharmonicon-extended-firmware/
+distribution: patch-your-own
+requires_stock: 1.1.1 (Subharmonicon_Firmware_v1_1_1.syx)
+install_notes: >-
+  Download firmware v1.1.1 from Moog's downloads page, unzip it, open the patcher page and select the .syx firmware
+  file. It returns subharmonicon-tallent-edition.syx. With a SysEx application and a 5-pin MIDI output, send Moog's
+  invalidate file, then its erase file, then the patched file; the transfer takes a couple of minutes and the synth
+  restarts. To go back, repeat those steps with Moog's own v1.1.1 file. The synth can be on any firmware version
+  beforehand, and your file stays in the browser.
+brick_risk: false
+tags: [patcher, sysex, paraphonic, midi, sequencer]
+versions:
+  - version: main @ fa76e5c
+    date: 2026-10-13
+    url: https://github.com/brandon-tallent/subharmonicon-extended-firmware/commit/fa76e5c
+    notes: No GitHub releases; this is the latest commit, 16 commits after the v0.1.0 tag.
+  - version: v0.1.0
+    date: 2026-09-06
+    url: https://github.com/brandon-tallent/subharmonicon-extended-firmware/tree/v0.1.0
+    notes: Git tag; no GitHub release page.

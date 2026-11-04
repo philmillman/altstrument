@@ -2,7 +2,8 @@ device: m-vave-fm-1
 name: 386DX KaraokeBot
 summary: >-
   Singing-robot firmware: sings words from imported .kar or .mid files, or lines typed on the unit, to the notes you
-  play, with Keys, Bass and Drums tracks, a step sequencer, sixteen punch-in effects, a browser installer and an emulator.
+  play, with Keys, Bass and Drums tracks, a step sequencer, sixteen punch-in effects, a SLAMJAM poetry mode, a browser
+  installer and an emulator.
 description: >-
   Rights warning: the thirteen bundled songs are third-party MIDI and karaoke files whose origin and licence are not
   stated, so the public-domain claim covers the compositions at most and not these particular sequences. A tribute to Alexei Shulgin's band 386 DX, which sang pop songs with text-to-speech voices over MIDI accompaniment. The voice is eSpeak NG's Klatt synthesizer with singing extensions, from the author's
@@ -11,8 +12,9 @@ description: >-
   and sung several times. The web page installs and updates the firmware, imports a karaoke or MIDI file into one of eight
   song slots, downloads or deletes slots, lists what changed in each version and runs the firmware in the browser. Thirteen
   standards described as public domain come with the page. The firmware also builds on Felucca, on Charles
-  Vestal's X0X synth, drum and effects code and browser emulator. The README says an FM-1 that keeps crashing
-  starts in a safe mode.
+  Vestal's X0X synth, drum and effects code and browser emulator. Version 2.0 adds SLAMJAM, a second mode in which a
+  band and a poet voice improvise, with a choice of poem styles, topics and band styles. The README says an FM-1 that keeps
+  crashing starts in a safe mode.
 status: active
 authors:
 - name: Chris Farrell (seajaysec)
@@ -38,12 +40,23 @@ install_notes: >-
 brick_risk: true
 tags: [voice, synth-engine, sequencer, drums, fx, emulator, performance, midi]
 video:
-  url: https://youtu.be/pwLnpyxqBS4
+  url: https://youtu.be/6pK_k7b8pGM
+  title: "NEW UPDATE 386DX v2 - Singing Karaoke Robot + Slam Poet for FM-1"
+  credit: line crossing
+  first_party: true
+  found_via: https://github.com/seajaysec/386-DX-FM1-KaraokeBot/releases/tag/v2.0
+  version: v2.0
+videos:
+- url: https://youtu.be/pwLnpyxqBS4
   title: "Meet 386DX - The Singing Robot for FM-1!"
   credit: line crossing
   first_party: true
   found_via: https://github.com/seajaysec/386-DX-FM1-KaraokeBot
 versions:
+- version: v2.0
+  date: 2026-11-04
+  url: https://github.com/seajaysec/386-DX-FM1-KaraokeBot/releases/tag/v2.0
+  notes: Adds SLAMJAM, a second mode where a band and a text-to-speech poet improvise, with songs written a phrase at a time and arranged in SEQ, help cards on every button, a SCALE setting and an arpeggiator.
 - version: v1.0.2
   date: 2026-10-19
   url: https://github.com/seajaysec/386-DX-FM1-KaraokeBot/releases/tag/v1.0.2

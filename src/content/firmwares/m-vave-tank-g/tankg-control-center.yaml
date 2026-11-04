@@ -30,10 +30,10 @@ license_notes: >-
 homepage: https://github.com/CamiloFerreira/tankg-control-center-releases
 distribution: download
 install_notes: >-
-  Download TankG-windows-x64.exe, TankG-linux-x86_64 or TankG-android.apk from the latest release and check it
+  Download TankG-windows-x64.exe, TankG-linux-x86_64, TankG-linux-amd64.deb (Debian, Ubuntu and Mint 22.04 and newer) or TankG-android.apk from the latest release and check it
   against SHA256SUMS. The Windows build is unsigned in the latest releases, so SmartScreen may warn. Close
   M-EFCS first, since Windows lets only one program use the MIDI port. Android connects by USB-OTG or, on the
-  v2, Bluetooth; the pedal accepts one Bluetooth connection at a time. It can also be run from source with
+  v2, Bluetooth; the pedal accepts one Bluetooth connection at a time. Since 1.11.0 an important security fix can lock older versions behind an update screen. It can also be run from source with
   Python 3.11 or newer using run.sh or run.bat.
 brick_risk: false
 tags: [editor, midi, usb-midi, bluetooth, android, presets, library, cli, python]
@@ -44,6 +44,14 @@ image:
   source_url: https://github.com/CamiloFerreira/tankg-control-center
   first_party: true
 versions:
+- version: v1.11.1
+  date: 2026-11-03
+  url: https://github.com/CamiloFerreira/tankg-control-center/releases/tag/v1.11.1
+  notes: The first release to put 1.11.0's forced-update screen to use, so 1.11.0 now asks to update before continuing. Nothing else changes. Linux users on the 1.10.2 .deb whose self-update fails with a permission error need to install the new .deb by hand once.
+- version: v1.11.0
+  date: 2026-11-03
+  url: https://github.com/CamiloFerreira/tankg-control-center/releases/tag/v1.11.0
+  notes: Mandatory security update. Closes an Android issue where another app could open arbitrary screens, makes the Linux Google Drive token and AI keys readable only by their owner, checks TYPE and CAB values in imported preset files before writing, and refuses API keys over plain internet http. Adds a forced-update screen for future important fixes and a Debian and Ubuntu .deb package that updates itself. Versions up to 1.10.2 have to be updated by hand.
 - version: v1.10.2
   date: 2026-10-30
   url: https://github.com/CamiloFerreira/tankg-control-center/releases/tag/v1.10.2

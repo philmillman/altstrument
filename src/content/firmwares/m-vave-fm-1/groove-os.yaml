@@ -1,13 +1,14 @@
 device: m-vave-fm-1
 name: Groove OS
 summary: >-
-  Commercial 8-track groovebox ($29): FM and virtual-analogue engines, up to 20 voices, per-track loop
-  lengths and effects, 64-step sequencer with parameter locks, sound packs.
+  Commercial 8-track groovebox ($29): FM and virtual-analogue engines, sampling and chopping on the device
+  since 2.0, per-track loop lengths and effects, 64-step sequencer with parameter locks, sound packs.
 description: >-
-  Runs on top of M-VAVE's V15 (the FM engine, 128 presets and effects remain M-VAVE's) and adds a ladder-filter
-  VA engine, drum kits, per-track DRIVE, CRUSH, FILTER and SLICER, shared reverb and delay, and 11 free
-  sound packs. Holding OCT- and OCT+ at power-on boots stock behaviour. All 1.x updates are included in
-  the price.
+  Runs on top of M-VAVE's V15 or V16 (the FM engine, 128 presets and effects remain M-VAVE's) and adds a
+  ladder-filter VA engine, drum kits, per-track DRIVE, CRUSH, FILTER and SLICER, shared reverb and delay, and 11
+  free sound packs. Version 2.0 adds a sampler that records from a phone over Bluetooth, a computer over USB-C or
+  the FM-1 itself, then chops, tunes, reverses and stretches samples on the pads or across the keys. Holding OCT-
+  and OCT+ at power-on boots stock behaviour. The price includes 1.4 and 2.x updates, not later major versions.
 status: active
 authors:
 - name: Peter Gombos
@@ -16,10 +17,11 @@ source_status: closed
 license: proprietary
 homepage: https://www.groove-os.com/
 distribution: commercial
-requires_stock: V15
+requires_stock: V15 or V16
 install_notes: >-
-  Install page works in Chrome or Edge over USB (not Safari, iOS or iPadOS). The same page reinstalls
-  M-VAVE's V15, which erases saved Groove projects, so copy them off first. Browser emulator available.
+  Install page works in Chrome or Edge over USB (not Safari, iOS or iPadOS), and handles an FM-1 on other custom
+  firmware in two steps. The same page goes back to Groove OS 1.4 or M-VAVE's V15 or V16; copy saved projects off
+  first. Browser emulator available.
 brick_risk: true
 tags: [sequencer, synth-engine, drums, fx, performance, fm]
 video:
@@ -28,6 +30,10 @@ video:
   credit: "DECIMA1"
   first_party: false
 versions:
+- version: '2.0'
+  date: 2026-10-30
+  url: https://www.groove-os.com/releases/2.0
+  notes: Adds sampling, chopping and Bluetooth audio from a phone, with safer updates that back up samples and projects first.
 - version: 1.4.1
   date: 2026-10-24
   url: https://www.groove-os.com/releases/1.4.1

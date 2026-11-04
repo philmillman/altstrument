@@ -1,0 +1,47 @@
+device: m-vave-fm-1
+name: Stamp Composer
+summary: >-
+  Mario Paint-style composer: stamp 31 character sounds on a scrolling staff, with eight layers, a song book,
+  MIDI out and clock sync, and autosave. Untested on hardware, and bundles Nintendo artwork and sounds.
+description: >-
+  Rights warning: the repository and its release package include character artwork and a sound pack taken from
+  Nintendo's Mario Paint through the Super Mario Paint project, and Nintendo has not licensed them to this project. The
+  rest is original code on the fm1-base platform. Each note is placed on a staff as one of 31 stamped characters
+  sharing one polyphonic engine, with C2 to C6 entry, chords, triplet and swing grids, per-sound tune, tone, decay and
+  pan, eight layers, 16 undo levels, eight song slots with autosave, per-sound MIDI out, and MIDI clock in and out.
+  Super Mario Paint text songs can be imported through a converter. The README calls it a development preview that
+  builds, passes tests and runs in an emulator and browser preview but has not been tried on a physical FM-1.
+status: active
+authors:
+- name: Michael Perry
+  url: https://github.com/MichaelAPerry
+source: https://github.com/MichaelAPerry/MPFM1
+source_status: open
+license: MIT
+license_notes: >-
+  The MIT licence covers the original application, tooling and generated placeholder sounds. fm1-base and felucca-bsp
+  are pinned submodules with their own licences (core platform files MPL-2.0, some Apache-2.0, fonts SIL OFL).
+  THIRD_PARTY.md says the Nintendo character PNGs, the treble clef and the sound pack assets/sounds/smp_bank.bin
+  (derived from Mario Paint's sounds) are not covered by the MIT licence and carry no licence from Nintendo. Building
+  with STAMP_BANK=placeholder swaps in generated tones, and the Mario Paint software the converter was written
+  against is MIT. The package also carries JieLi SDK boot files under Apache-2.0.
+homepage: https://michaelaperry.github.io/MPFM1/
+distribution: browser-installer
+install_notes: >-
+  Web installer on the project site in Chrome or Edge over USB, or base/tools/fm1_install.py with the release's
+  .fwsc. INSTALL.md says it is untested on a physical FM-1, advises keeping the stock firmware file and backing up
+  first, and says to leave "also write m-bootloader" unticked. A failed start leads to a safe mode and the chip's USB
+  update mode, and the installer's back-to-stock option or M-UPGRADE restores stock. Installing is at your own risk.
+brick_risk: true
+tags: [sequencer, synth-engine, sampler, midi, emulator, game]
+image:
+  url: https://raw.githubusercontent.com/MichaelAPerry/MPFM1/main/docs/hero.png
+  alt: Three FM-1 screens showing a staff of yellow star stamps, a MIDI out grid of 31 character icons and a song book of eight slots with a Twinkle Twinkle demo
+  credit: Michael Perry
+  source_url: https://github.com/MichaelAPerry/MPFM1
+  first_party: true
+versions:
+- version: 0.2-beta
+  date: 2026-11-03
+  url: https://github.com/MichaelAPerry/MPFM1/releases/tag/v0.2-beta
+  notes: GitHub pre-release with a flashable package, stamp-0.2-beta.fwsc, and an app binary.

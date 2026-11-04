@@ -1,0 +1,43 @@
+device: elektron-syntakt
+name: Synfact
+summary: >-
+  Custom firmware core and a bank of mods for Syntakt OS 1.41, built in the browser from your own official OS file at synfact.app and sent over Web MIDI. Mods include sample machines, an FM machine, an audio recorder, a third LFO, an arpeggiator and polyphony.
+description: >-
+  Synfact is the Syntakt part of elekloader with its own core firmware. The core adds a hook bus, extra settings, optional
+  machine banks (.smz4 files that can be changed without reinstalling the firmware), long-sample storage and a project sample
+  pool. The mods are the SP sample machines ONE SHOT, WERP, REPITCH and SLICE, the SY FM DTONE machine, an audio recorder, a
+  third LFO per track, a Digitone-style arpeggiator, POLY for polyphonic play, a system information page, and a sample
+  manager. The site reads the official OS 1.41 file you supply, checks its hash, then patches and verifies it in the browser
+  tab; nothing is uploaded. It offers the build as a download or sends it with a built-in transfer page that also browses the
+  unit's projects, sounds and samples. SY FM DTONE also needs your own Digitone OS 1.44 file, because its sound engine is
+  rebuilt from that file by a recipe and no Digitone bytes are kept in the repository. The author says builds keep the
+  bootloader, bootstrap and updater byte for byte and are re-read before delivery, and the build notes describe a recovery
+  core that skips the bank if a bank stops the unit from starting. The page calls the firmware experimental and unofficial and
+  advises backing up first.
+status: active
+authors:
+  - name: GSM1980
+    url: https://github.com/GSM1980
+source: https://github.com/GSM1980/synfact-dev
+source_status: open
+license: GPL-2.0-or-later
+license_notes: >-
+  GPL-2.0-or-later for the project, and GPL-3.0-or-later for the TypeScript engine in js/, which comes from elekloader and
+  modwerk. The code from elekloader and digikit is credited in NOTICE. The site's compiled core and mod objects are built
+  locally and are not committed to the repository. The FM DTONE mod holds a recipe, not
+  Elektron's bytes, and the site asks for your own Digitone OS file to rebuild them. The site's licenses.txt lists the licences.
+homepage: https://synfact.app
+distribution: browser-installer
+requires_stock: "1.41"
+install_notes: >-
+  Open synfact.app in Chrome or Edge, drop in your official Syntakt OS 1.41 file, tick the mods, build, then install the
+  resulting .syx like an OS update and send the .smz4 bank through the transfer page. Back up projects, sounds and samples
+  first and read the site's recovery instructions. Mods are changed later by sending a new bank only. Source builds follow
+  docs/SYNTAKT-BUILD.md in the repository.
+brick_risk: true
+tags: [machines, loader, flasher, sampler, fm, lfo, arpeggiator, web, web-midi, sdk]
+versions:
+  - version: main @ 1a6d0c7
+    date: 2026-11-03
+    url: https://github.com/GSM1980/synfact-dev/commit/1a6d0c74469db4c30423be29c90e0b07ba7f8003
+    notes: No tagged releases; this is the latest commit of the source repository, and the site is not tied to a commit.

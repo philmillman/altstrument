@@ -14,7 +14,8 @@ description: >-
   join; Bluetooth is off while Wi-Fi is on. Version 0.1.0 rebuilt the project around this board and dropped the
   earlier Feather RP2040, OLED and CYD variants. The repository also holds a printable case and a browser
   installer page. Later releases add a clock, arpeggiator and chords, a mapping editor, backups of SLOOP projects
-  and samples and recording of the FM-1's USB audio. No FM-1 firmware is bundled.
+  and samples and recording of the FM-1's USB audio. From 0.1.25 it accepts the B36014 flash chip of newer FM-1 units, and from 0.1.27 the
+  EB6014. No FM-1 firmware is bundled.
 status: active
 authors:
 - name: David Konsumer (konsumer)
@@ -41,6 +42,26 @@ video:
   first_party: true
   found_via: https://github.com/konsumer/fm1buddy
 versions:
+- version: 0.1.28
+  date: 2026-11-04
+  url: https://github.com/konsumer/fm1buddy/releases/tag/v0.1.28
+  notes: Restores calibration data lost from an SMK-37, using a backup.
+- version: 0.1.27
+  date: 2026-11-04
+  url: https://github.com/konsumer/fm1buddy/releases/tag/v0.1.27
+  notes: Accepts the EB6014 flash chip and shows the release version on the About page.
+- version: 0.1.25
+  date: 2026-11-04
+  url: https://github.com/konsumer/fm1buddy/releases/tag/v0.1.25
+  notes: The release page has no notes; the commits since 0.1.24 accept the B36014 flash chip of newer units, add a flash map for backup and recovery and let SMK-37 backups go on any SMK-37.
+- version: 0.1.24
+  date: 2026-11-01
+  url: https://github.com/konsumer/fm1buddy/releases/tag/v0.1.24
+  notes: Adds a battery icon and starts up faster.
+- version: 0.1.21
+  date: 2026-11-01
+  url: https://github.com/konsumer/fm1buddy/releases/tag/v0.1.21
+  notes: Makes sleep optional and suggests a battery.
 - version: 0.1.19
   date: 2026-11-01
   url: https://github.com/konsumer/fm1buddy/releases/tag/v0.1.19

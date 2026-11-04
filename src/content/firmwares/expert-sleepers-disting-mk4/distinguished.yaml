@@ -1,0 +1,36 @@
+device: expert-sleepers-disting-mk4
+name: Distinguished
+kind: tool
+summary: Web MIDI browser for the disting mk4 that lists its algorithms with their inputs, outputs and parameters, and sends MIDI controller and program change messages to select an algorithm and set its parameters. It targets firmware 4.22.
+description: >-
+  Rights warning: the repository includes src/data/algorithms.json, which holds the names, categories, input and output notes
+  and parameter descriptions of the 112 algorithms; it appears to come from Expert Sleepers' manual, and the repository has no
+  licence.
+
+  The page shows the algorithm list by category, the selected algorithm's X, Y, Z, A and B assignments, its MIDI
+  behaviour and its parameters as sliders. Moving a slider sends a controller message and choosing an algorithm sends a
+  controller message for that algorithm, and a program change can be sent as well. The author's notes list tools for converting
+  the manual from PDF to Markdown. The last commit is from December 2022.
+status: dormant
+authors:
+  - name: François Georgy
+    url: https://github.com/francoisgeorgy
+source: https://github.com/francoisgeorgy/distinguished
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no license file or license statement. It includes algorithm descriptions that appear to be taken from
+  Expert Sleepers' documentation.
+homepage: https://studiocode.dev/disting/
+distribution: browser-installer
+requires_stock: "4.22"
+install_notes: >-
+  Open the hosted page in a browser with Web MIDI, choose the MIDI output that reaches the module and set the channel. The
+  disting mk4 takes MIDI on its breakout header, so a MIDI interface or adapter is needed. Nothing is flashed.
+brick_risk: false
+tags: [editor, web-midi, midi, eurorack, web]
+versions:
+  - version: main @ c62be33
+    date: 2022-12-30
+    url: https://github.com/francoisgeorgy/distinguished/commit/c62be33cb97aeaaf3159537a84b2b9d74c8d7568
+    notes: No tagged releases; this is the latest commit.

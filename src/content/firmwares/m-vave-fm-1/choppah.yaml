@@ -15,13 +15,17 @@ description: >-
   ARP key turns the white keys into sixteen overlay effects (dive, rise, radio, wah, crush, wobble, jet and others) that
   sound while held, and the FX page holds a master chain of four slots in any order (filter, crunch, drive, punch,
   flanger, ring modulator, tremolo, reverb, delay, EQ, tape saturation, multiband compressor and clipper), with further
-  effects per slice. Since 0.32 the firmware has 16 patterns with a step sequencer and recording: 32 break steps, plus
+  effects per slice. From 0.60 each effect has MAIN, MORE and MOD parts, with extra knobs and a modulator, and a live
+  view, and MB COMP has a page of its own. Since 0.32 the firmware has 16 patterns with a step sequencer and recording: 32 break steps, plus
   kick, snare and hat lanes of 16 steps each, with MIDI notes for the slices and drums. The kick is a four-layer
   synthesized gabber kick; the snare and hat have their own design page. A MIXER page sets the levels, and ENV is a
   full-screen tap tempo with a metronome click. MIDI clock in and out and Bluetooth MIDI are included, as is Bluetooth
   audio out to headphones or a speaker, which the README says runs 150 to 300 ms late and is for listening. The README
   calls it an early 0.x release: the looper and a song mode are next, and the breaks are built in, so you cannot load
-  your own. A browser emulator and a manual are published on the project site.
+  your own. Left alone, the screen runs a demo of animated scenes. Units sold since late 2026 carry a UC25HQ80 flash
+  chip instead of the Puya P25Q80, and from 0.69 the firmware accepts both. The 0.86 notes report an install on a real
+  FM-1 over the official V15 and over another firmware, with another firmware installing again afterwards. A browser
+  emulator and a manual are published on the project site.
 status: active
 authors:
 - name: Laurens Profittlich (profikid)
@@ -52,6 +56,30 @@ image:
   source_url: https://github.com/profikid/fm1-break-choppah
   first_party: true
 versions:
+- version: '0.93'
+  date: 2026-11-04
+  url: https://github.com/profikid/fm1-break-choppah/releases/tag/v0.93
+  notes: Latest of ninety-three releases; every push to main is released, and the releases since 0.86 are documentation, site and catalogue changes, and the notes say the firmware is unchanged.
+- version: '0.86'
+  date: 2026-11-04
+  url: https://github.com/profikid/fm1-break-choppah/releases/tag/v0.86
+  notes: The notes report the firmware tested on a real FM-1, installed over the official V15 and over another firmware, and another firmware installs afterwards.
+- version: '0.69'
+  date: 2026-11-04
+  url: https://github.com/profikid/fm1-break-choppah/releases/tag/v0.69
+  notes: Accepts the UC25HQ80 flash chip found in newer units as well as the Puya P25Q80; before this, saving and the update loader failed on those units. The 0.74 notes tell owners of them to use 0.71 or later.
+- version: '0.62'
+  date: 2026-11-04
+  url: https://github.com/profikid/fm1-break-choppah/releases/tag/v0.62
+  notes: Per its commit message, runs the FX chain from RAM and adds an overload guard against glitches and resets. The release page has only a changelog link.
+- version: '0.60'
+  date: 2026-11-04
+  url: https://github.com/profikid/fm1-break-choppah/releases/tag/v0.60
+  notes: Gives every effect MAIN, MORE and MOD parts with a live view, and MB COMP, a three-band compressor, a page of its own. Release pages carry only a changelog link; this is read from the manual and commits.
+- version: '0.56'
+  date: 2026-11-03
+  url: https://github.com/profikid/fm1-break-choppah/releases/tag/v0.56
+  notes: Adds a demo that runs when the unit is left alone, with animated scenes and button lights; 0.55 lit the buttons on the start screen. Release pages carry only a changelog link.
 - version: '0.54'
   date: 2026-11-03
   url: https://github.com/profikid/fm1-break-choppah/releases/tag/v0.54

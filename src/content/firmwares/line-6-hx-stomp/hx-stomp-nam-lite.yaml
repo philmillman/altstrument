@@ -2,20 +2,23 @@ device: line-6-hx-stomp
 also_devices: [line-6-hx-stomp-xl]
 name: NAM A2 Lite for HX Stomp
 summary: >-
-  A patch for stock HX Stomp firmware 3.80.0 that adds Neural Amp Modeler A2 Lite as a new amp model, running up to three
-  captures at once on the pedal's own SHARC DSP. Built in the browser from your own firmware file.
+  A patch for stock HX Stomp and HX Stomp XL firmware 3.80.0 that adds Neural Amp Modeler A2 Lite with a ten-knob tone stack,
+  running up to three captures at once on the pedal's own SHARC DSP. Built in the browser from your own firmware file.
 description: >-
-  The amp appears under Amp > NAM, with a second copy under Distortion > NAM, so a preset can hold three blocks where the
-  Stomp normally allows two amps. Each block has Model, Input, Bass, Mid, Treble, Presence, Ch Vol and Polarity knobs.
-  Captures go in as User IRs: a converter packs a .nam file's weights into a .wav that HX Edit imports, and the Model knob
-  picks the slot. Only 3-channel A2 Lite captures fit, and three blocks nearly fill the DSP. The kernel is hand-written
-  SHARC assembly, and the project has its own assembler and simulator, so no vendor toolchain is needed.
+  The model appears under Amp > NAM and has ten knobs: Input, Treble, Output, Polarity, Bass, Mid, Model, Mid Freq, Q and
+  High Cut. Bass, Mid, Treble and a low-pass High Cut sit after the capture. NAM blocks count as effects, so the Stomp's
+  two-amp limit does not apply to them and a preset can hold three. Captures go in as User IRs: a converter packs a .nam
+  file's weights into a .wav that HX Edit imports, and the Model knob picks the slot. Only 3-channel A2 Lite captures fit, and
+  three blocks leave room for about one more light effect. The kernel is hand-written SHARC assembly, and the project has its
+  own assembler and simulator, so no vendor toolchain is needed. NAM takes the preset ID of the stock Xenomorph Fuzz Mono
+  model, so HX Edit keeps NAM blocks when it rewrites a preset, and presets saved with earlier NAM builds need the block added
+  again.
 
   Four of the firmware's 15 parts change and the bootloader does not. A build can run from RAM first, which writes nothing
-  to the pedal. The author reports running three blocks from RAM on an HX Stomp. The current build has not run on an XL,
-  where only an earlier one-block build has run from RAM, and neither has been installed on one. The newest Polarity knob
-  has only run in the simulator. The same author's hx-stomp-nam is separate firmware that replaces the stock software
-  altogether.
+  to the pedal. The author reports the current HX Stomp build passing its on-device test suite from RAM with up to three
+  blocks. NAM has run on an XL, but this ten-knob build has not. The README also lists an HX Effects build, which puts NAM
+  under Distortion > NAM, builds on the separate hx-effects-nam-lite port and has only been checked in the simulator. The same
+  author's hx-stomp-nam is separate firmware that replaces the stock software altogether.
 status: active
 authors:
   - name: Derek Bui
@@ -46,7 +49,7 @@ video:
   first_party: true
   found_via: https://github.com/nocaseguy/hx-stomp-nam-lite#readme
 versions:
-  - version: main @ 2e80164
-    date: 2026-10-31
-    url: https://github.com/nocaseguy/hx-stomp-nam-lite/commit/2e801641df4a083c29ee13c5718c047d336ef692
+  - version: main @ f88f347
+    date: 2026-11-04
+    url: https://github.com/nocaseguy/hx-stomp-nam-lite/commit/f88f3474aecd3bd84da3fa907450430e060ab0f9
     notes: No tagged releases; this is the latest commit.

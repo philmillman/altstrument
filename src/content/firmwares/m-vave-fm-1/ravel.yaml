@@ -14,7 +14,7 @@ description: >-
   aftertouch and pitch bend as modulation sources), lets CCs move the knobs, with MIDI learn, and records steps from the keys. Earlier releases had tape tracks that played back a shared capture tape; version 0.9.0
   removed them. Version 1.7.0 adds a GLITCH LOOPER, a kind that any one track can take: it records the main mix or a
   single track into four lanes with their own level, pitch and speed, overdubs, and plays lanes from trigs on the steps. It borrows
-  the effects' memory, so the buses rest while it runs, and recordings are not saved with a project. The same C sources build the FM-1 firmware, a desktop simulator and a one-file WebAssembly emulator. The
+  the effects' memory, so the buses rest while it runs, and recordings are not saved with a project. Version 1.9.0 adds WEFT, a kind that any track can take: its voice is patched from up to twelve blocks (oscillators, envelopes, filters, logic, delays, resonators and more), each with two inputs, on the FM-1's pages or in the emulator's patcher, with a patch library kept in the sound banks. The same C sources build the FM-1 firmware, a desktop simulator and a one-file WebAssembly emulator. The
   fuller engine and effect set, including the vocoder, is kept as a browser-only Ravel Software edition. The FM-1 side takes
   its platform layer from Felucca by way of X0X. The README status line says it runs on the FM-1 and the v0.9.0 release notes
   say it was tested on hardware, though the README's architecture section still lists everything as not checked on hardware.
@@ -46,6 +46,14 @@ image:
   source_url: https://github.com/De-Pattern/Ravel_FM1
   first_party: true
 versions:
+- version: 1.12.0
+  date: 2026-11-03
+  url: https://github.com/De-Pattern/Ravel_FM1/releases/tag/v1.12.0
+  notes: The release page lists only files. The commits since 1.11.0 add more WEFT blocks, among them sequential switches, string, chaos, crush, edge, follow, shape, Chebyshev, formant, vocoder, ring modulation, noise, Rungler and Lissajous. Versions 1.10.0 and 1.11.0, released the same day, add the WEFT library page and a start screen that melts, and widen WEFT to twelve blocks.
+- version: 1.9.0
+  date: 2026-11-03
+  url: https://github.com/De-Pattern/Ravel_FM1/releases/tag/v1.9.0
+  notes: The release page lists only files. The commits since 1.8.0 add WEFT, a track kind whose voice is patched from blocks with two inputs each, on FM-1 pages and in the emulator's patcher, along with a looper tab in the emulator and a phone layout for its page.
 - version: 1.8.0
   date: 2026-11-02
   url: https://github.com/De-Pattern/Ravel_FM1/releases/tag/v1.8.0

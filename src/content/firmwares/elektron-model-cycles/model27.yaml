@@ -5,13 +5,16 @@ description: >-
   The author describes a smaller, curated take on Modded Cycles, with mods that
   declare what they touch so that compatible combinations can be worked out
   rather than listed by hand. The web flasher builds the OS in your browser from
-  your own official file and sends it over USB. It currently offers eleven cards:
+  your own official file and sends it over USB. It currently offers thirteen cards:
   the SAMPLE machine from the author's Cycles One-Shot, a one-shot sampler for
   samples on the +Drive, Control All Config, two delay effects (Digital Delay
   and POTS), trig conditions that put A:B before the percentages, drumkilla's
   trig preview, and five Track FX: Samples, which puts SAMPLE's filter on any
   track, Crush, a sample-rate and bit reducer, Ring, a ring modulator, Reso, a
-  tuned resonator, and EQ, a three-band equalizer. The README, at release 0.32,
+  tuned resonator, and EQ, a three-band equalizer. The two newest cards are a CPU
+  page in SETTINGS that shows how much of the Model:Cycles' processing time the sound takes, and RESAMPLE, which
+  records a track, the main mix or USB audio and saves the take as a sample in /recordings. Since 0.38 POTS runs its
+  loop at 6 kHz, which cuts its load to about a third and changes its sound slightly. The README, at release 0.42,
   says up to six added machines can be combined and that every card was played
   on a Model:Cycles as the page builds it. Every other
   Modded Cycles 1.55 mod stays buildable with the command-line tools until the
@@ -46,7 +49,7 @@ install_notes: >-
   machines. The README describes recovery from the startup menu through MIDI IN.
 tags: [machines, sampler, fork, flasher, usb-audio]
 versions:
-  - version: main @ 3b4e972
-    date: 2026-11-02
-    url: https://github.com/durchgemacht/model27/commit/3b4e9721d056057052aa8c102aea1c9fe495919b
-    notes: No tagged releases; this is the latest commit.
+  - version: main @ 7363aa6
+    date: 2026-11-04
+    url: https://github.com/durchgemacht/model27/commit/7363aa61218c758ed5d36d71b65ab4de7d38c0fe
+    notes: No tagged releases; this is the latest commit, which the README calls release 0.42. Adds the CPU page and RESAMPLE cards and lower-load versions of several effects.

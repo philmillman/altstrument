@@ -1,0 +1,28 @@
+device: sonicware-smpltrek
+name: smpltrek-builder
+kind: tool
+summary: JavaScript library that writes a song from the author's drum-pattern-engine into a SmplTrek project Config file, with notes, velocity, micro-timing, swing, scene settings and per-step automation. It also has role-to-note maps for the 15 factory kits and genre presets.
+description: >-
+  The library clones a base project Config embedded in the package and writes the generated song into it. The result is copied to
+  SmplTrek/Project/<name>/Config on the SD card. The README sets out the parts of the Config format the author reverse-engineered:
+  nested chunks with 16-byte headers, and the layout of tempo, note, clip, scene and automation data. The pattern generator is a
+  separate device-agnostic package, drum-pattern-engine. Nothing is flashed.
+status: active
+authors:
+  - name: Alexander Schornberg
+    url: https://github.com/AlexGalax
+source: https://github.com/AlexGalax/smpltrek-builder-js
+source_status: open
+license: MIT
+license_notes: The base project Config in src/template.js is a device file stored as base64; the repository says nothing about it beyond the MIT licence.
+distribution: source-only
+install_notes: >-
+  Install smpltrek-builder and drum-pattern-engine from npm and call them from your own JavaScript, then copy the Config file to a
+  project folder on the card. There is no user interface.
+brick_risk: false
+tags: [sequencer, generative, drums, research, utility]
+versions:
+  - version: v1.0.0
+    date: 2026-07-01
+    url: https://github.com/AlexGalax/smpltrek-builder-js/tree/v1.0.0
+    notes: Git tag; no GitHub release page.

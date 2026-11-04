@@ -1,0 +1,29 @@
+device: sonicware-lofi-12-xt
+name: Lofi-12XT Pattern Transfer Tool
+kind: tool
+summary: Browser tool that moves a pattern and the samples it uses from one Lofi-12 XT project to another on the SD card. Dropping a pattern on an empty slot replaces that slot, and dropping it on an occupied slot shifts the patterns below it down.
+description: >-
+  The page opens the System folder of the card through the browser's folder access and parses the project files directly, so the
+  device itself is not connected. It writes to the card in place, and its own page warns that it overwrites pattern data and suggests
+  a backup first. Nothing is flashed.
+status: active
+authors:
+  - name: jay-maculate
+    url: https://github.com/jay-maculate
+source: https://github.com/jay-maculate/Lofi-12XT-Pattern-Transfer-Tool
+source_status: open
+license: unspecified
+license_notes: The repository has no licence file or statement.
+homepage: https://jay-maculate.github.io/Lofi-12XT-Pattern-Transfer-Tool/
+distribution: browser-installer
+requires_stock: Lofi-12 XT firmware 1.5
+install_notes: >-
+  Open the page in Chrome or Edge, choose the System folder on the SD card, pick a project on each side and drag a pattern across.
+  Back up the card first.
+brick_risk: false
+tags: [librarian, samples, web, utility]
+versions:
+  - version: main @ 516b9ae
+    date: 2026-10-19
+    url: https://github.com/jay-maculate/Lofi-12XT-Pattern-Transfer-Tool/commit/516b9ae3bec40c04f15b438663d5ffde19b89fff
+    notes: No tagged releases; this is the latest commit.

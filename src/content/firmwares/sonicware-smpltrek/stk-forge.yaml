@@ -1,0 +1,40 @@
+device: sonicware-smpltrek
+name: STK Forge
+kind: tool
+summary: Desktop drum kit editor for the SmplTrek, built with Tauri. It assigns WAV files to pads by drag and drop, saves an editable JSON project, compiles .stk files, opens compiled kits read-only and exports a card layout. The interface is in English, French and Japanese.
+description: >-
+  Beyond building kits, it can extract a compiled kit's samples into an editable package with a provenance record, read a SmplTrek
+  SD card to list its projects, presets and WAV files, and relink missing samples after a folder moves. The project keeps a separate
+  document of what it has verified: its file layout was checked against 15 factory kits on a real card, the target is SmplTrek
+  firmware 3.2, and the author describes the ELZ_1 play as unverified and other Sonicware products as unsupported. It calls its
+  builds beta and asks users to test each kit on their own device. Nothing is flashed.
+status: active
+authors:
+  - name: Patrick Gaumond
+    url: https://github.com/gaumondp
+source: https://github.com/gaumondp/stk-forge
+source_status: open
+license: MIT
+distribution: source-only
+requires_stock: SmplTrek firmware 3.2
+install_notes: >-
+  The README describes unsigned macOS and Windows builds on a releases page, but the repository had only tags and no published
+  releases on 2026-11-04, so build it from source with the Tauri toolchain. Unsigned builds need the usual first-launch override on
+  either system.
+brick_risk: false
+tags: [editor, drums, samples, librarian, converter, utility]
+image:
+  url: https://raw.githubusercontent.com/gaumondp/stk-forge/main/docs/screenshot-1.png
+  alt: STK Forge window with 15 WAV pad assignments, knobs for the selected pad, two rows of numbered drum pads and an audio file list on the right
+  credit: Patrick Gaumond
+  source_url: https://github.com/gaumondp/stk-forge#readme
+  first_party: true
+versions:
+  - version: v0.3.0
+    date: 2026-09-03
+    url: https://github.com/gaumondp/stk-forge/tree/v0.3.0
+    notes: Git tag; no GitHub release page. Adds per-file WAV compatibility status and a dialog for unreadable files.
+  - version: v0.2.0
+    date: 2026-09-02
+    url: https://github.com/gaumondp/stk-forge/tree/v0.2.0
+    notes: Git tag; no GitHub release page.

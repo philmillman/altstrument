@@ -1,0 +1,29 @@
+device: sonicware-elz-1-play
+also_devices: [sonicware-smpltrek]
+name: STK Writer
+kind: tool
+summary: Python command-line tool that packs up to 15 WAV files into a Sonicware .stk drum kit, converting them to 48 kHz 16-bit PCM. A second script unpacks a kit back into its samples. The release is tested on the ELZ_1 play V2.
+description: >-
+  stkpack.py takes a folder or a list of WAV files and writes the kit with its internal paths set to the SmplTrek drum folder. The
+  ELZ_1 play loads the same files through its STK_DRUMMER engine. An interactive option sets volume, pitch, pan and FX send per
+  sample, with a preview, and a mono option saves space. The repository also has a written description of the .stk format and small
+  scripts for analysing chunks. The author calls it an unofficial fan tool. Nothing is flashed.
+status: active
+authors:
+  - name: jblamber
+    url: https://github.com/jblamber
+source: https://github.com/jblamber/stk_writer
+source_status: open
+license: LGPL-2.1-only
+license_notes: The LICENSE file is the LGPL 2.1 text with no "or later" statement.
+distribution: source-only
+install_notes: >-
+  Run the script with Python 3.9 or later; there is nothing to install. It imports audioop, which Python 3.13 removed. On the
+  ELZ_1 play, copy the .stk file to ELZ_1 play/Kit/ on the SD card and pick it under the CARD kits of the STK_DRUMMER synth type.
+brick_risk: false
+tags: [converter, drums, samples, python, utility, research]
+versions:
+  - version: 1.0.0
+    date: 2026-02-20
+    url: https://github.com/jblamber/stk_writer/releases/tag/1.0.0
+    notes: Command-line kit writer, tested with the ELZ_1 play V2.

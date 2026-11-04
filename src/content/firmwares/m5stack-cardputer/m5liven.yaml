@@ -1,0 +1,32 @@
+device: m5stack-cardputer
+also_devices: [sonicware-liven-ambient]
+name: M5Liven
+summary: Cardputer firmware that controls a Sonicware LIVEN over DIN MIDI, with passthrough from USB, BLE or DIN inputs, large parameter readouts and a keyboard monitor. The LIVEN Ambient Ø profile covers all 45 parameter CCs in its MIDI chart; other models use a generic CC mode.
+description: >-
+  The Ambient Ø profile gives named selectors for its structures, effects, filters and LFO settings, based on the author's reading of
+  firmware 1.5.45, and shows other controls as raw 0 to 127 values. Displayed values are the last ones sent, since the firmware
+  does not read the synth back, and SysEx and editor dumps are not implemented. An optional USB control build replaces USB MIDI host
+  input with a serial link, so a computer can send ordered CC changes and JSON patches through the Cardputer and monitor what the
+  synth returns. The transport code derives from M5Chord. The README says no Sonicware firmware or disassembly is in the repository
+  and calls this a development build that is not hardware-qualified.
+status: active
+authors:
+  - name: jrdntnnr
+    url: https://github.com/jrdntnnr
+source: https://github.com/jrdntnnr/M5Liven
+source_status: open
+license: MIT
+license_notes: The LICENSE file names "Cardputer MIDI Brain contributors" and keeps M5Chord's MIT terms. Dependencies keep their own licences, listed in THIRD_PARTY_NOTICES.md.
+distribution: source-only
+requires_stock: LIVEN Ambient Ø firmware 1.5.45 for the named selectors
+install_notes: >-
+  Build with PlatformIO for cardputer-adv, cardputer-universal or cardputer-usb-control and flash the application image yourself; no
+  merged M5Burner image is published. It needs a separate M5 Unit MIDI or a compliant MIDI interface, since DIN MIDI must not be wired
+  straight to GPIO. Match the layer and pattern channels on the synth.
+brick_risk: false
+tags: [midi, usb-midi, performance, ui, open-source]
+versions:
+  - version: main @ 9781aa7
+    date: 2026-09-25
+    url: https://github.com/jrdntnnr/M5Liven/commit/9781aa78ffbdea81a6cbb609d1d7354db097c9b7
+    notes: No tagged releases; this is the latest commit. The README calls this 0.1.0-dev, and 0.2.0-dev-usb-rx for the USB control build.

@@ -1,0 +1,28 @@
+device: sonicware-liven-bass-and-beats
+name: Wavetable SysEx Deconverter
+kind: tool
+summary: Node command-line script that turns a LIVEN BASS&BEATS wavetable .syx file back into a WAV, the reverse of Sonicware's own Wavetable Converter. It filters the SysEx messages, undoes the 8-to-7-bit packing and writes the audio.
+description: >-
+  Rights warning: the original/ folder holds a copy of the page and scripts of Sonicware's Wavetable Converter, and the repository has
+  no statement that they may be redistributed.
+
+  The official converter only goes from WAV to SysEx, so this script recovers audio from an existing wavetable dump. The code also
+  shows the data header and packing the format uses, and a debug folder has plotting scripts. The README is two lines long. Nothing is
+  flashed.
+status: dormant
+authors:
+  - name: alarky
+    url: https://github.com/alarky
+source: https://github.com/alarky/liven-bassandbeats-wavetable-alt-converter
+source_status: open
+license: unspecified
+license_notes: The repository has no licence file or statement. The files under original/ are Sonicware's.
+distribution: source-only
+install_notes: >-
+  Clone the repository and run node deconvert.js with an input .syx and an output path.
+brick_risk: false
+tags: [converter, sysex, samples, research, utility]
+versions:
+  - version: 1.0.0
+    date: 2022-09-03
+    url: https://github.com/alarky/liven-bassandbeats-wavetable-alt-converter/releases/tag/1.0.0

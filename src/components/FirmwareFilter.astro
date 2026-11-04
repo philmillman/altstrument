@@ -4,7 +4,7 @@ import type { FirmwareItem } from '@/lib/catalog';
 import { SOURCE_INFO, STATUS_INFO } from '@/lib/labels';
 interface Props {
   firmwares: FirmwareItem[];
-  /** Search box and status/source/license filters. Off leaves only Sort by. */
+  /** Search box and status/source/license filters. Off leaves Type (when both kinds exist) and Sort by. */
   search?: boolean;
 }
 const { firmwares, search = true } = Astro.props;
@@ -23,6 +23,17 @@ const licenseCounts = tally(firmwares.map((f) => f.data.license));
 
 interface Opt { value: string; label: string }
 interface Select { id: string; label: string; all?: string; options: Opt[] }
+// Type also shows on short lists, so it sits apart from the search-only filters.
+const kindFilter: Select = {
+  id: 'fwf-kind',
+  label: 'Type',
+  all: 'All types',
+  options: [
+    { value: 'firmware', label: `Firmware (${firmwares.filter((f) => f.data.kind === 'firmware').length})` },
+    { value: 'tool', label: `Tools (${firmwares.filter((f) => f.data.kind === 'tool').length})` },
+  ],
+};
+const hasBothKinds = new Set(firmwares.map((f) => f.data.kind)).size === 2;
 const filters: Select[] = [
   {
     id: 'fwf-st',
@@ -62,12 +73,12 @@ const sortSelect: Select = {
     { value: 'name', label: 'Name' },
   ],
 };
-const selects = [...(search ? filters : []), sortSelect];
+const selects = [...(hasBothKinds ? [kindFilter] : []), ...(search ? filters : []), sortSelect];
 ---
-<form id="fw-filter" role={search ? 'search' : undefined} class="flex flex-col gap-2 sm:flex-row sm:items-end" hidden>
+<form id="fw-filter" role={search ? 'search' : undefined} class="flex flex-col gap-2 xl:flex-row xl:items-end" hidden>
   {search && (
     <div class="flex-1">
-      <label for="fwf-q" class="block text-sm font-medium">Search firmware</label>
+      <label for="fwf-q" class="block text-sm font-medium">Search</label>
       <input
         id="fwf-q"
         type="search"
@@ -77,7 +88,7 @@ const selects = [...(search ? filters : []), sortSelect];
       />
     </div>
   )}
-  <div class="grid grid-cols-2 gap-2 sm:flex">
+  <div class="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap xl:flex-nowrap">
     {selects.map((s, i) => (
       <div class:list={['min-w-0', selects.length % 2 === 1 && i === selects.length - 1 && 'col-span-2 sm:col-span-1']}>
         <label for={s.id} class="block text-sm font-medium">{s.label}</label>
@@ -103,6 +114,7 @@ const selects = [...(search ? filters : []), sortSelect];
       var none = document.getElementById('fwf-none');
       // Each select is optional: the component omits any with fewer than two values.
       var sels = [
+        { param: 'kind', attr: 'data-kind', el: document.getElementById('fwf-kind') },
         { param: 'status', attr: 'data-status', el: document.getElementById('fwf-st') },
         { param: 'source', attr: 'data-source', el: document.getElementById('fwf-src') },
         { param: 'license', attr: 'data-license', el: document.getElementById('fwf-lic') }

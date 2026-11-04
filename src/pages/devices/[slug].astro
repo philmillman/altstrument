@@ -45,6 +45,7 @@ const filterText = (f: FirmwareItem) =>
 // Filter and sort keys read by FirmwareFilter.
 const itemAttrs = (f: FirmwareItem) => ({
   'data-fw': f.slug,
+  'data-kind': f.data.kind,
   'data-status': f.data.status,
   'data-source': f.data.source_status,
   'data-license': f.data.license,

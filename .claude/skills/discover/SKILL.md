@@ -83,7 +83,7 @@ Dedupe once more by hand: grep `src/content` for the repository owner, the proje
 
 ## 4. Write the entries
 
-- Device first when it does not exist: `src/content/devices/<slug>.yaml` from the CONTRIBUTING device template. Slug is `manufacturer-device` in kebab-case. Fill `description` with two to four factual sentences, `platform` and `stock_firmware` when known, `links.manufacturer` and a community link or two.
+- Device first when it does not exist: `src/content/devices/<slug>.yaml` from the CONTRIBUTING device template. Slug is `manufacturer-device` in kebab-case. Set `added` to today's date. Fill `description` with two to four factual sentences, `platform` and `stock_firmware` when known, `links.manufacturer` and a community link or two.
 - Every new device gets an `image` whenever one can be sourced. The only exceptions are pseudo-devices that are not one product (the `*-tools` entries, `portmaster-compatible-handhelds`, `spin-fv-1`), which fall back to the manufacturer logo. Use the first source that works:
   1. the manufacturer's product page (`license: manufacturer product image`, `credit` the manufacturer's display name);
   2. the manufacturer's press kit (`manufacturer press kit`);

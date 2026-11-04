@@ -1,0 +1,22 @@
+---
+import type { DeviceItem } from '@/lib/catalog';
+import { isoDate } from '@/lib/catalog';
+import DeviceThumb from './DeviceThumb.astro';
+interface Props { device: DeviceItem }
+const { device } = Astro.props;
+const { data } = device;
+---
+<article class="relative flex h-full overflow-hidden rounded border border-line bg-surface hover:border-line-strong">
+  <div class="relative w-20 shrink-0 border-r border-line sm:w-12 lg:w-20">
+    <DeviceThumb device={device} small />
+  </div>
+  <div class="flex min-w-0 flex-1 flex-col gap-0.5 px-3 py-2 text-sm">
+    <h3 class="truncate text-base">
+      <a href={device.url} class="text-fg no-underline after:absolute after:inset-0 after:content-[''] hover:underline">{data.name}</a>
+    </h3>
+    <p class="truncate text-muted">{data.manufacturer}</p>
+    <p class="mt-auto flex items-baseline justify-end text-xs">
+      <time class="mono shrink-0 text-muted" datetime={isoDate(data.added)}>{isoDate(data.added)}</time>
+    </p>
+  </div>
+</article>

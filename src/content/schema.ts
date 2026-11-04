@@ -176,6 +176,8 @@ export const deviceSchema = z.object({
   name: z.string().min(1),
   manufacturer: z.string().min(1),
   category: z.enum(CATEGORIES),
+  /** ISO date the device joined the catalog. Drives the homepage's latest devices. */
+  added: z.coerce.date(),
   /** Short free-text, e.g. "pocket FM synth" or "8-track sampler". */
   tagline: z.string().max(140).optional(),
   /** What the device is: plain factual prose, blank lines between paragraphs. Shown first on the device page. */

@@ -57,6 +57,10 @@ manufacturer: Example Co
 # (handheld: game consoles and handhelds that run music software)
 category: synth
 
+# REQUIRED. The date you add the device (YYYY-MM-DD). Orders the homepage's
+# latest devices.
+added: 2026-01-31
+
 # OPTIONAL. Up to 140 characters, plain text.
 tagline: pocket FM synth
 

@@ -302,18 +302,24 @@ export function compareByPopularity(a: DeviceItem, b: DeviceItem): number {
  * busy release day can't fill a short list. `collapseRuns` folds back-to-back
  * versions of the same firmware (a batch of RCs and a release) into the first
  * row's `more`; `limit` then counts rows, not versions. An entry that targets
- * several devices is listed once, under its primary device.
+ * several devices is listed once, under its primary device. `kind` limits the
+ * list to firmware or to tools.
  */
 export function recentVersions(
   devices: DeviceItem[],
   limit = 50,
-  { onePerFirmware = false, collapseRuns = false }: { onePerFirmware?: boolean; collapseRuns?: boolean } = {},
+  {
+    onePerFirmware = false,
+    collapseRuns = false,
+    kind,
+  }: { onePerFirmware?: boolean; collapseRuns?: boolean; kind?: 'firmware' | 'tool' } = {},
 ): RecentVersion[] {
   const all: (RecentVersion & { order: number })[] = [];
   const deviceById = new Map(devices.map((d) => [d.id, d]));
   for (const device of devices) {
     for (const firmware of device.firmwares) {
       if (firmware.deviceId !== device.id) continue;
+      if (kind && firmware.data.kind !== kind) continue;
       const targets = firmware.deviceIds.map((id) => deviceById.get(id)).filter((d): d is DeviceItem => Boolean(d));
       // versions are sorted newest first, undated last
       for (const [order, version] of firmware.versions.entries()) {
@@ -341,6 +347,13 @@ export function recentVersions(
     rows.push(row);
   }
   return rows;
+}
+
+/** The devices most recently added to the catalog, newest first. */
+export function recentDevices(devices: DeviceItem[], limit: number): DeviceItem[] {
+  return [...devices]
+    .sort((a, b) => b.data.added.getTime() - a.data.added.getTime() || compareText(a.data.name, b.data.name))
+    .slice(0, limit);
 }
 
 export function siteStats(devices: DeviceItem[]) {

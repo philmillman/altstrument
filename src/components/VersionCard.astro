@@ -2,12 +2,12 @@
 import type { RecentVersion } from '@/lib/catalog';
 import { isoDate, versionAnchor } from '@/lib/catalog';
 import DeviceThumb from './DeviceThumb.astro';
-interface Props { row: RecentVersion }
-const { row: r } = Astro.props;
+interface Props { row: RecentVersion; compact?: boolean }
+const { row: r, compact = false } = Astro.props;
 ---
 {/* The firmware link covers the card; the device link sits above it. */}
 <article class="relative flex h-full overflow-hidden rounded border border-line bg-surface hover:border-line-strong">
-  <div class="relative w-20 shrink-0 border-r border-line">
+  <div class:list={['relative w-20 shrink-0 border-r border-line', compact && 'sm:w-12 lg:w-20']}>
     <DeviceThumb device={r.device} small />
   </div>
   <div class="flex min-w-0 flex-1 flex-col gap-0.5 px-3 py-2 text-sm">

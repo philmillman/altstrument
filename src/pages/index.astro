@@ -2,9 +2,11 @@
 import Base from '@/layouts/Base.astro';
 import DeviceCard from '@/components/DeviceCard.astro';
 import SearchBox, { type IndexEntry } from '@/components/SearchBox.astro';
-import LatestVersions from '@/components/LatestVersions.astro';
+import LatestSection from '@/components/LatestSection.astro';
+import VersionCard from '@/components/VersionCard.astro';
+import AddedDeviceCard from '@/components/AddedDeviceCard.astro';
 import type { DeviceItem } from '@/lib/catalog';
-import { getDevicesWithFirmwares, groupByCategory, groupByManufacturer, siteStats, plural, compareByPopularity, compareText, firmwareTotal, latestUpdate, latestUpdateOf, isoDate, recentVersions } from '@/lib/catalog';
+import { getDevicesWithFirmwares, groupByCategory, groupByManufacturer, siteStats, plural, compareByPopularity, compareText, firmwareTotal, latestUpdate, latestUpdateOf, isoDate, recentDevices, recentVersions } from '@/lib/catalog';
 
 const devices = await getDevicesWithFirmwares();
 const groups = groupByCategory(devices);
@@ -23,7 +25,9 @@ const sortAttrs = (name: string, ds: DeviceItem[]) => ({
   'data-updated': isoDate(latestUpdateOf(ds)) ?? '',
 });
 const stats = siteStats(devices);
-const latest = recentVersions(devices, 6, { onePerFirmware: true });
+const latestFirmware = recentVersions(devices, 3, { onePerFirmware: true, kind: 'firmware' });
+const latestTools = recentVersions(devices, 3, { onePerFirmware: true, kind: 'tool' });
+const latestDevices = recentDevices(devices, 3);
 const index: IndexEntry[] = devices.map((d) => ({
   id: d.id,
   name: d.data.name,
@@ -49,8 +53,22 @@ const index: IndexEntry[] = devices.map((d) => ({
     <div><dt class="text-xs uppercase tracking-wide text-muted">Manufacturers</dt><dd class="mono text-xl font-semibold">{stats.manufacturers}</dd></div>
   </dl>
 
-  <div class="mt-6">
-    <LatestVersions rows={latest} />
+  <div class="mt-6 space-y-6">
+    {latestFirmware.length > 0 && (
+      <LatestSection id="latest-firmware" title="Latest firmware" href="/recent">
+        {latestFirmware.map((r) => <li><VersionCard row={r} compact /></li>)}
+      </LatestSection>
+    )}
+    {latestTools.length > 0 && (
+      <LatestSection id="latest-tools" title="Latest tools" href="/recent">
+        {latestTools.map((r) => <li><VersionCard row={r} compact /></li>)}
+      </LatestSection>
+    )}
+    {latestDevices.length > 0 && (
+      <LatestSection id="latest-devices" title="Latest devices">
+        {latestDevices.map((d) => <li><AddedDeviceCard device={d} /></li>)}
+      </LatestSection>
+    )}
   </div>
 
   <div class="mt-6">

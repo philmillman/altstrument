@@ -30,7 +30,7 @@ const hasNotes = versions.some((v) => v.notes);
             <tr id={anchors ? versionAnchor(v.version) : undefined}>
               <td class="mono" data-label="Version">{v.url ? <a href={v.url} rel="noopener">{v.version}</a> : v.version}</td>
               <td class="nowrap mono" data-label="Date">{isoDate(v.date) ?? <span class="text-muted">undated</span>}</td>
-              {hasNotes && <td data-label="Notes" class="w-full">{v.notes}</td>}
+              {hasNotes && <td data-label="Notes" class="w-full [overflow-wrap:anywhere]">{v.notes}</td>}
             </tr>
           </Fragment>
         ))}
@@ -49,7 +49,7 @@ const hasNotes = versions.some((v) => v.notes);
               <tr id={anchors ? versionAnchor(v.version) : undefined}>
                 <td class="mono" data-label="Version">{v.url ? <a href={v.url} rel="noopener">{v.version}</a> : v.version}</td>
                 <td class="nowrap mono" data-label="Date">{isoDate(v.date) ?? <span class="text-muted">undated</span>}</td>
-                {hasNotes && <td data-label="Notes" class="w-full">{v.notes}</td>}
+                {hasNotes && <td data-label="Notes" class="w-full [overflow-wrap:anywhere]">{v.notes}</td>}
               </tr>
             ))}
           </tbody>

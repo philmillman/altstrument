@@ -94,7 +94,7 @@ const edit = d.generated_from
 
   {d.brick_risk && <div class="mt-4 max-w-[68ch]"><BrickWarning /></div>}
 
-  <dl class="mt-5 grid max-w-[68ch] grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-sm">
+  <dl class="mt-5 grid max-w-[68ch] grid-cols-[auto_minmax(0,1fr)] gap-x-4 gap-y-1 text-sm [&_dd]:[overflow-wrap:anywhere]">
     {d.distribution && (<><dt class="text-muted">Distribution</dt><dd>{DISTRIBUTION_LABELS[d.distribution]}</dd></>)}
     {d.requires_stock && (<><dt class="text-muted">Requires stock</dt><dd class="mono">{d.requires_stock}</dd></>)}
     {d.license_notes && (<><dt class="text-muted">License notes</dt><dd>{d.license_notes}</dd></>)}

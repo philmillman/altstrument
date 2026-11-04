@@ -45,9 +45,9 @@ const thumb = vid ? { src: youtubeThumb(vid), cover: true } : d.image ? { src: d
     <LicenseBadge license={d.license} />
   </div>
   {(d.distribution || d.requires_stock) && (
-    <dl class="mt-2 grid grid-cols-[auto_1fr] gap-x-3 gap-y-0.5 text-sm">
+    <dl class="mt-2 grid grid-cols-[auto_minmax(0,1fr)] gap-x-3 gap-y-0.5 text-sm">
       {d.distribution && (<><dt class="text-muted">Distribution</dt><dd>{DISTRIBUTION_LABELS[d.distribution]}</dd></>)}
-      {d.requires_stock && (<><dt class="text-muted">Requires stock</dt><dd class="mono">{d.requires_stock}</dd></>)}
+      {d.requires_stock && (<><dt class="text-muted">Requires stock</dt><dd class="mono [overflow-wrap:anywhere]">{d.requires_stock}</dd></>)}
     </dl>
   )}
   {d.brick_risk && <div class="mt-2"><BrickWarning compact /></div>}

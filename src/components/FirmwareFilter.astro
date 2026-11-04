@@ -88,11 +88,11 @@ const selects = [...(hasBothKinds ? [kindFilter] : []), ...(search ? filters : [
       />
     </div>
   )}
-  <div class="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap xl:flex-nowrap">
+  <div class:list={['grid grid-cols-2 gap-2 sm:flex sm:flex-wrap xl:flex-nowrap', !search && 'xl:flex-1']}>
     {selects.map((s, i) => (
-      <div class:list={['min-w-0', selects.length % 2 === 1 && i === selects.length - 1 && 'col-span-2 sm:col-span-1']}>
+      <div class:list={['min-w-0 sm:flex-auto', selects.length % 2 === 1 && i === selects.length - 1 && 'col-span-2 sm:col-span-1']}>
         <label for={s.id} class="block text-sm font-medium">{s.label}</label>
-        <select id={s.id} class="mt-1 w-full rounded border border-line-strong bg-surface px-2 py-2 text-base text-fg sm:w-auto sm:px-3">
+        <select id={s.id} class="mt-1 w-full rounded border border-line-strong bg-surface px-2 py-2 text-base text-fg sm:px-3">
           {s.all && <option value="">{s.all}</option>}
           {s.options.map((o) => <option value={o.value}>{o.label}</option>)}
         </select>

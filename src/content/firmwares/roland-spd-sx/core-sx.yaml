@@ -1,0 +1,46 @@
+device: roland-spd-sx
+name: Core SX
+kind: tool
+summary: Electron editor, MIDI controller and computer instrument for the SPD-SX and SPD-SX Special Edition, with a waveform editor, per-layer effects and a virtual MIDI port for DAWs.
+description: >-
+  Core SX opens in one of two modes, detected automatically. In Editor mode it
+  browses and edits the kits and waves of an SPD-SX that is in WAVE MGR mode. In
+  Instrument mode the computer plays the pads and the SPD-SX is only the
+  controller, over its audio and MIDI connections. Samples are dragged from the
+  library onto the main or sub layer of any of ten pads, and a Learn button maps
+  a physical pad to a software pad.
+
+  The waveform editor trims start and end, fades in and out with draggable
+  curves, reverses, normalizes and sets pitch, volume and pan, with undo and
+  export to WAV. Each layer can carry effects (noise gate, compressor, channel
+  EQ, filter, overdrive, distortion, chorus, flanger, delay and reverb), which are
+  rendered ahead of time. Core SX opens a virtual MIDI port named "Core SX" so a
+  DAW such as Logic Pro can play the pads as an external instrument, with or
+  without an SPD-SX connected. The interface is available in four languages and
+  there are MIDI and SysEx tools.
+
+  The project says it is independent of Roland. Its README gives macOS as the
+  requirement and tests cover the project parser and the effect engine.
+status: active
+authors:
+  - name: Agi0411
+    url: https://github.com/Agi0411
+source: https://github.com/Agi0411/core-sx
+source_status: open
+license: MIT
+distribution: source-only
+install_notes: >-
+  Needs macOS, Node.js 20 or newer and the Xcode Command Line Tools, because the
+  MIDI module is a native add-on compiled during npm install. Clone the
+  repository, run npm install and npm run dev, or build an unsigned Apple
+  silicon installer with npm run dist:mac:arm64:unsigned. There are no prebuilt
+  downloads. For Editor mode set the unit's USB mode to WAVE MGR, and back up the
+  unit's contents first, since the editor changes its kit and wave files. To send
+  sound into a DAW the README suggests a virtual audio device such as BlackHole
+  or Loopback.
+tags: [editor, sampler, midi, daw, macos, desktop, ui, utility]
+versions:
+  - version: main @ a089295
+    date: 2026-10-26
+    url: https://github.com/Agi0411/core-sx/commit/a08929513e121f9fe3d022244c3bc4dff0ec4b97
+    notes: No tagged releases; this is the latest commit.

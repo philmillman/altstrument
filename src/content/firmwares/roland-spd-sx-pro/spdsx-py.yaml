@@ -1,0 +1,30 @@
+device: roland-spd-sx-pro
+name: spdsx-py
+kind: tool
+summary: Python library for the SPD-SX PRO's USB serial protocol, reverse-engineered by the author, plus a script that puts triggers and pads into one pad link group across all kits.
+description: >-
+  spdsx.py speaks to the unit over its serial port from Python. The author worked
+  out the protocol with Claude over a few hours and links the conversation from
+  the README. link_all_kits.py uses the library to put the trigger inputs and pads
+  into a single pad link group in every kit, so that, for example, a kick pedal
+  trigger plugged into a trigger jack fires pad 7 in all kits without setting it
+  kit by kit. The repository also holds frida-scripts and debugging_scripts
+  directories used in the reverse engineering.
+status: active
+authors:
+  - name: Jonathan Feinberg
+    url: https://github.com/jdf
+source: https://github.com/jdf/spdsx-py
+source_status: open
+license: MIT
+distribution: source-only
+install_notes: >-
+  Clone the repository and run link_all_kits.py, or import spdsx.py from your own
+  Python code. The README gives no further setup steps. The scripts write to every
+  kit on the unit, so back it up first.
+tags: [research, sdk, utility, python]
+versions:
+  - version: main @ 554889d
+    date: 2026-07-12
+    url: https://github.com/jdf/spdsx-py/commit/554889dc095b7944dfc41f82ad508260ae96c3d5
+    notes: No tagged releases; this is the latest commit.

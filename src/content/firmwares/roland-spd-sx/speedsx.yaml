@@ -1,0 +1,40 @@
+device: roland-spd-sx
+name: SpeedSX
+kind: tool
+summary: Native configuration editor for the SPD-SX written in Zig, with kit and pad editing, sample import, kit chains, FX and MIDI settings, and release binaries for Linux, macOS and Windows.
+description: >-
+  SpeedSX opens the Roland folder on an SPD-SX that is connected over USB and
+  mounted as a drive, and edits its configuration there. It manages up to 100 kits
+  and all 15 pads (nine main pads, four triggers and two footswitches), with
+  copy and paste between pads and sample assignment by dragging from the wave
+  list. WAV and AIFF files are imported and converted to the unit's 44.1 kHz,
+  16-bit stereo format, and samples can be previewed in the editor.
+
+  It also edits kit chain sequences, the FX1 and FX2 parameters of each kit and
+  per-pad MIDI notes, channels and gate times. It uses SDL2 for its
+  window. The README says it is a native program with fast startup and low memory use.
+  The version numbers are in the 0.x range, and the project changelog lists the
+  first release as v0.1.0 and several early releases that only fixed the build.
+status: active
+authors:
+  - name: Alessandro Lucarini
+    url: https://github.com/dixiedream
+source: https://github.com/dixiedream/speedsx
+source_status: open
+license: MIT
+license_notes: Stated in the README; the repository has no LICENSE file.
+distribution: download
+install_notes: >-
+  Download the archive for your platform from the latest release (Linux x86_64 or
+  ARM64, macOS Intel or Apple silicon, Windows x86_64), extract it and run
+  speedsx from that folder. The Linux and macOS archives bundle SDL2 and the
+  Windows one carries SDL2.dll. Set the unit's USB mode to WAVE MGR, connect it,
+  launch SpeedSX and enter the path to the Roland folder on the mounted drive.
+  Building from source needs Zig 0.17.0 and the SDL2 development libraries. The
+  project does not say which platforms have been tested against a real unit.
+  Back up the unit's contents first, since saving writes to its files.
+tags: [editor, sampler, samples, desktop, ui, macos, windows, linux]
+versions:
+  - version: v0.2.6
+    date: 2026-10-31
+    url: https://github.com/dixiedream/speedsx/releases/tag/v0.2.6

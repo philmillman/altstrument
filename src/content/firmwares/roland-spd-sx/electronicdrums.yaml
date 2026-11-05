@@ -1,0 +1,44 @@
+device: roland-spd-sx
+name: electronicdrums
+kind: tool
+summary: Python scripts that upload kit definitions from JSON files to an SPD-SX, download kits back to JSON, diff against a backup and generate random kits, with a serial-controlled USB switch to avoid replugging.
+description: >-
+  The SPD-SX stores its drum kit configurations, signal routing and effects
+  settings as XML files. With the unit in WAVE MGR mode and mounted as a drive,
+  these scripts write kits there from JSON descriptions of the kit sounds,
+  and the author has checked their own kit files into the repository. kitToJson.py
+  goes the other way and builds a JSON file from an existing kit, and diffKits.py
+  compares the unit's kits with a local backup. upload.py can also generate a
+  set of random kits for a tempo, including polyrhythmic dual delays and
+  routing of the audio input through the effects.
+
+  While mounted as a drive the unit cannot be played, so the upload scripts can
+  switch the USB connection through a serial port, which can be a USB serial
+  adapter, using a switchable USB connector. The README says this needs some
+  specific hardware and that the wiring is still to follow. The repository also
+  holds an HTML demo and per-session setup scripts.
+status: active
+authors:
+  - name: Andrew Booker
+    url: https://github.com/andrewbooker
+source: https://github.com/andrewbooker/electronicdrums
+source_status: open
+license: unspecified
+license_notes: No LICENSE file in the repository and none stated in the README.
+distribution: source-only
+install_notes: >-
+  Clone the repository, copy py/exampleConfig.json to py/config.json and set
+  mediaLoc to the SPD-SX drive or to a local copy of it, then run upload.py from
+  the py directory, for example ./upload.py mab, or ./upload.py gen for random
+  kits. The scripts write into the Roland/SPD-SX folder, so the README advises
+  copying the whole unit contents (up to 4 GB) to a local disk and putting it
+  under git as a backup and test area, without the wav files. The automatic
+  mounting needs the serial-controlled USB hardware, which is not documented
+  yet; without it, connect and disconnect the unit by hand. The README gives
+  Linux style paths and does not mention other platforms.
+tags: [python, serial, hardware, librarian, generative, random, drums, utility]
+versions:
+  - version: main @ ae57c81
+    date: 2026-09-13
+    url: https://github.com/andrewbooker/electronicdrums/commit/ae57c81d1a7ed0bf17c7a850ef3f0cdc7c67eab9
+    notes: No tagged releases; this is the latest commit.

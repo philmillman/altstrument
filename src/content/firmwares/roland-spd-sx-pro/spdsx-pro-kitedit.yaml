@@ -1,0 +1,45 @@
+device: roland-spd-sx-pro
+name: SPD-SX PROgram and spdutil
+kind: tool
+summary: macOS desktop kit designer for the SPD-SX PRO, with a 3x3 pad grid, drag-and-drop samples and two-way kit sync, plus spdutil, a command-line utility that talks to the unit over USB serial.
+description: >-
+  SPD-SX PROgram is a C++20 app built on JUCE 8. Its main window mirrors the
+  pad layout as a 3x3 grid with a top and a bottom sample slot per pad, and audio
+  files (wav, aiff, flac, ogg, mp3) are dragged onto a slot, where each sample
+  shows as a spectrogram. A document is a single .spdsx file holding all 200 kits,
+  with a kit chooser, per-kit undo and autosave instead of a Save command. Each pad
+  emulates the eight layer modes (MIX, FADE1, FADE2, XFADE, SWITCH, SW(MONO),
+  ALTERNATE, HI-HAT) and the dynamics curves. Sync Changes with Device pushes edits
+  to the unit and pulls changes made on it, with per-pad conflict resolution, and
+  Load Device State replaces the document with the device's contents.
+
+  The bundled spdutil command-line tool pings the device, dumps its memory banks
+  to an image file, lists kits, pad parameters and the sample pool, selects and
+  names kits, assigns samples, sets layer modes and levels, links pads across kits,
+  and uploads or deletes samples. Writes land in working state until committed
+  with --commit, and spdutil refuses to write unless the unit reports firmware
+  2.00, the only version writing has been verified against. The protocol work,
+  Roland DT1 SysEx in a proprietary frame over USB serial, is being reverse-engineered
+  by sniffing the official app, with notes in the repository's re/ directory.
+status: active
+authors:
+  - name: Jonathan Feinberg
+    url: https://github.com/jdf
+source: https://github.com/jdf/spdsx-pro-kitedit
+source_status: open
+license: MIT
+license_notes: JUCE itself is AGPLv3 or commercial, which governs distribution of built binaries.
+distribution: download
+requires_stock: "2.00"
+install_notes: >-
+  Download the .dmg from the latest release, open it and drag the app to
+  Applications. The prebuilt app needs an Apple silicon Mac running macOS 26 or
+  later; other platforms need patches and a build with CMake, Ninja and vcpkg. The
+  app menu's Install Command-Line Tool puts spdutil on your PATH. Close Roland's
+  official app first, since only one program can hold the serial port, and back up
+  the unit before bulk writes or deletions, which cannot be undone on the device.
+tags: [editor, sampler, librarian, midi, sysex, research, cli, ui]
+versions:
+  - version: v0.6.2
+    date: 2026-07-29
+    url: https://github.com/jdf/spdsx-pro-kitedit/releases/tag/v0.6.2

@@ -1,0 +1,38 @@
+device: roland-spd-sx
+name: spdsx-manager
+kind: tool
+summary: Electron and React alternative to Roland's SPD-SX Wave Manager, which reads and writes the unit's wave and kit files on its mounted drive.
+description: >-
+  The project describes itself as a wave manager for the SPD-SX and an
+  alternative to Roland's Wave Manager. It is written in TypeScript on Electron
+  and React. After the user selects the folder where the unit is mounted, the
+  code reads and writes the XML parameter files and wave data under
+  Roland/SPD-SX/WAVE and the kit files, with classes for kits, pads and waves and
+  a drag-and-drop interface for assigning audio to them.
+
+  The README is mostly a development template covering install, running a hot-reload
+  dev build and packaging with electron-builder, and does not describe features or
+  supported platforms. The last real work is from 2020, and the later commits in
+  the repository are automated dependency updates, the newest from November 2021.
+status: dormant
+authors:
+  - name: IljaCooreman
+    url: https://github.com/IljaCooreman
+source: https://github.com/IljaCooreman/spdsx-manager
+source_status: open
+license: MIT
+license_notes: The MIT LICENSE file names R. Franken, not the repository owner, as copyright holder; the README is an Electron starter template, which is probably where the file came from.
+distribution: source-only
+install_notes: >-
+  Clone the repository, run npm install, then npm run start-dev for a development
+  build, or npm run dist to package an installer for your platform with
+  electron-builder. There are no releases. Set the unit's USB mode to WAVE MGR,
+  choose Connect to device in the app and select the mounted drive. The
+  dependencies are from 2020 and 2021, so a current Node.js may need older tooling
+  to build. Back up the unit's contents first, since the app writes to its files.
+tags: [editor, sampler, librarian, desktop, ui, samples, typescript]
+versions:
+  - version: main @ a20dc35
+    date: 2021-11-17
+    url: https://github.com/IljaCooreman/spdsx-manager/commit/a20dc35ac5b4cb5f876e7ec0c5293a21fe9141f0
+    notes: No tagged releases; this is the latest commit.

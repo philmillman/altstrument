@@ -9,7 +9,7 @@ description: >-
   favourite sounds, split and layer setups, 16 saved patterns or scenes and drum hits with velocity. The sequencer
   has four tracks of up to 256 steps with live or step recording and keyboard transposition. The factory content is five
   patterns and eight favourites by the author, and the README says no third-party samples are included. A browser
-  simulator runs the same C code, and there are pages for backup and restore.
+  simulator runs the same C code, and there are pages for backup and restore. Version 1.0.2 brings back stereo USB audio at 44.1 and 48 kHz, and 1.0.3 adds a SUPER oscillator type to the ANALOG engine: seven detuned saws per oscillator with separate detune and mix, adapted from the supersaw in Clipper and bypassing sync and cross-modulation while it is on.
 
   The README says ChatGPT generated and revised the adaptation code, web tools and documentation under the author's
   direction. The author reports testing the earlier DP2 build on a real SMK-37 Pro and confirming the first USB
@@ -24,7 +24,8 @@ source_status: open
 license: GPL-3.0-only
 license_notes: >-
   LICENSING.md states GPL-3.0-only for the firmware and the adaptations. OberVave is GPL-3.0-only and the JIANT DRUM-X
-  adapter is stated to be GPL-3.0-only with the original notices kept; the JIANT repository's licence is GPL-3.0. The
+  adapter is stated to be GPL-3.0-only with the original notices kept; the JIANT repository's licence is GPL-3.0. The SUPER
+  oscillator (1.0.3) adapts the detune curve of Clipper, itself on Felucca, and the repository's CREDITS.md and LICENSING.md keep its GPL-3.0-only notices. The
   Terminus font is SIL OFL 1.1, and the JieLi SDK files are read from your own SDK checkout at build time. The
   committed packages are SMKSYNTH's own builds and match none of M-VAVE's licensed images by size or blob hash, and
   the README states that M-VAVE's firmware is not redistributed.
@@ -48,6 +49,14 @@ video:
   found_via: https://github.com/4t59m4f784-creator/SMKSYNTH#readme
   version: v1.0.0
 versions:
+- version: v1.0.3
+  date: 2026-11-05
+  url: https://github.com/4t59m4f784-creator/SMKSYNTH/releases/tag/v1.0.3
+  notes: Adds a SUPER oscillator type to ANALOG, with seven saws per oscillator and separate DETUNE and MIX on a new page. The update package keeps the saved bank of 1.0.x and of the earlier SUPER test builds, but older firmware cannot read SUPER sounds.
+- version: v1.0.2
+  date: 2026-11-05
+  url: https://github.com/4t59m4f784-creator/SMKSYNTH/releases/tag/v1.0.2
+  notes: Stereo 16-bit USB audio at 44.1 and 48 kHz, tested on a Mac and an iPhone. The notes warn that iPhone video recordings made over USB audio may contain clicks and dropouts.
 - version: v1.0.1
   date: 2026-11-04
   url: https://github.com/4t59m4f784-creator/SMKSYNTH/releases/tag/v1.0.1

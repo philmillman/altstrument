@@ -1,0 +1,52 @@
+device: m-vave-fm-1
+name: Miku-FM
+summary: >-
+  Singing songwriter firmware built on Dinghy: a formant voice sings Japanese syllables over FM chords, bass and
+  drums, with a four-track pattern sequencer, a song generator and an animated pixel singer.
+description: >-
+  The voice is synthesised live from code with no samples and no voicebank, covering 70 Japanese morae with their
+  consonants, five characters from DEEP to TINY, four languages (Japanese, animal babble, scat and plain vowels),
+  tension, fry and whisper controls, a harmony voice, and chorus, delay, reverb, drive and tremolo. The song side has
+  four tracks (vocal, FM chords, bass, drums) with 16 patterns each, 64 rows, sections, a mixer, swing, undo and eight
+  song slots, and GEN writes a whole song in POP, BALLAD, DANCE or CHIP style with locks on individual tracks. On the
+  STAGE page the singer's face mouths each vowel, and the DANCE page animates the singer to the song. The singer is fan art of
+  Hatsune Miku, and the project says it is unofficial and unrelated to Crypton, Yamaha or M-VAVE. Songs are stored in
+  Dinghy's eight slots and a settings block that other Felucca-family firmwares also use, so saving replaces their
+  data. The README calls the 0.x builds development builds and the release notes report tests on a real FM-1.
+status: active
+authors:
+- name: Michael Perry
+  url: https://github.com/MichaelAPerry
+source: https://github.com/MichaelAPerry/MIKU-FM1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The firmware is GPL-3.0-only (LICENSE) because it is built on Dinghy; files marked MIT in the repository are the older
+  host prototype and some tools. The singer artwork is not GPL: LICENSING.md says the pictures in assets/singer/,
+  firmware/ui/singer_sprites.h, site/media/ and some docs images are fan art of Hatsune Miku used under Crypton's Piapro
+  Character License, which allows free non-commercial use only, forbids sale, donations and ads, requires the credit
+  line and cannot be sublicensed, so anyone redistributing the build also needs that licence themselves. The same file
+  says the code uses no voice data or software from Crypton or Yamaha, and no voicebank is in the repository. It
+  suggests replacing the art for a commercial or fully GPL build. The firmware package also carries three JieLi AC79 SDK
+  files that Dinghy's build adds.
+homepage: https://michaelaperry.github.io/MIKU-FM1/
+distribution: browser-installer
+requires_stock: V15 or another custom firmware
+install_notes: >-
+  Web installer in Chrome or Edge over a USB data cable, based on Felucca's installer. The release notes report installs
+  from stock V15 and from another firmware, and a return to another firmware. The installer page can return to official
+  V15 if you select the unmodified FM-1.fwsc from M-VAVE, and holding OCT- while switching on enters the USB rescue.
+  Miku-FM does not read other firmwares' projects or samples, so back up first. Installing is at your own risk.
+brick_risk: true
+tags: [voice, generative, sequencer, synth-engine, drums, emulator, fork]
+image:
+  url: https://raw.githubusercontent.com/MichaelAPerry/MIKU-FM1/main/site/media/screens/stage.png
+  alt: "Miku-FM STAGE screen: pixel-art face of a smiling singer with long teal twin tails above a syllable dial and the line VOICE JAPANESE MIKU 148 12%"
+  credit: Michael Perry
+  source_url: https://github.com/MichaelAPerry/MIKU-FM1
+  first_party: true
+versions:
+- version: '0.6'
+  date: 2026-11-04
+  url: https://github.com/MichaelAPerry/MIKU-FM1/releases/tag/v0.6
+  notes: Early build. Adds the STAGE page with its syllable dial, knob banks and deeper SOURCE, FX, articulation and harmony layers, a DANCE page and the GEN song generator; songs from earlier builds still load.

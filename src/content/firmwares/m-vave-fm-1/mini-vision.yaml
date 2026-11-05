@@ -1,0 +1,43 @@
+device: m-vave-fm-1
+name: Mini-Vision
+summary: >-
+  Mini-Tone fork modelled on Roland's n/vision: a two-layer wavetable engine with ladder-style filters and a TR-808
+  engine, six tracks, a 64-step sequencer and a redrawn interface.
+description: >-
+  Strips Mini-Tone down to two engines. WTSYNTH has two wavetable layers drawn from 63 tables in five families, a
+  position control that moves through each table's frames, a sine-fold wave shaper, phase modulation, and a filter with
+  twelve and twenty-four decibel types plus three ladder low passes named after Roland, Moog and Sequential designs.
+  The other is the TR-808 engine of 16 voices carried over from Mini-Tone. The remaining Mini-Tone engines are removed,
+  though their numbers stay reserved, so a sound that names one loads silent. The interface is redrawn after the
+  n/vision's screens with graph panels over four knob cards, eleven colour palettes and new sequencer pages. The
+  sequencer, songs, effects and MIDI features come from Mini-Tone and Felucca. The README lists what the n/vision has
+  that this does not yet: a high-pass filter, user wave-shaper tables, a step LFO, a drawing mode, an EQ and 56 voices
+  (this has 8). The bundled web editor is still Mini-Tone's.
+status: active
+authors:
+- name: Stéphane Schmitz (eldontyrellcorp)
+  url: https://github.com/eldontyrellcorp
+source: https://github.com/eldontyrellcorp/Mini-Vision
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Stated in the README, LICENSE and LICENSING.md, as for Mini-Tone and Felucca. The SID tables are GPL-2.0-or-later
+  (reSID), the Braids, DaisySP and Rings ports are MIT and msfa is Apache-2.0; the fonts are SIL OFL 1.1 and the Hügelton
+  Sample Pack is GPL-3.0-only.
+homepage: https://github.com/eldontyrellcorp/Mini-Vision
+distribution: download
+install_notes: >-
+  Download minivision-X.Y.Z.fwsc from the release page and write it over USB with tools/fm1_install.py from the
+  repository (needs mido and python-rtmidi); the README gives no install steps of its own. If an update leaves the unit
+  black, the README points to the FM-1 Transporter hardware route and writing M-VAVE's FM-1.fwsc back. Back up first.
+brick_risk: true
+tags: [synth-engine, wavetable, filter, sequencer, drums, fx, midi, fork]
+versions:
+- version: minivision-1.0.1
+  date: 2026-10-26
+  url: https://github.com/eldontyrellcorp/Mini-Vision/releases/tag/minivision-1.0.1
+  notes: Ends the ELEK reverb's tail in silence by rounding its feedback loops toward zero below a tiny level.
+- version: minivision-1.0.0
+  date: 2026-10-25
+  url: https://github.com/eldontyrellcorp/Mini-Vision/releases/tag/minivision-1.0.0
+  notes: First release, with the wavetable engine and the n/vision-style interface.

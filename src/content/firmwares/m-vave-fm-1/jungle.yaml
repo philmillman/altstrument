@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+name: JUNGLE
+summary: >-
+  Breakbeat slicer: a break loaded from a web page is cut into sixteenths and rearranged in time with shuffles, stutters,
+  reverses, dropouts and fills, following MIDI clock or its own tempo, with the keys for live repeats.
+description: >-
+  The loader page trims a dropped loop, estimates its bars and tempo, places slices on the hits and sends it over SysEx
+  into 272 KB of flash, at a sample rate chosen to fit, where it stays through power-off. A CHAOS knob sets how much of the
+  pattern is changed, EVOLVE how often it is redrawn, and separate controls set the amount of shuffle, stutter, reverse and
+  rest. Tone, drive, bit crush and swing are on an FX page, and the white and black keys play from a sixteenth or hold
+  repeats, rolls, tape stops and fills. Chop mode keeps slice pitch at any tempo and speed mode repitches the break. The
+  README says it has run only in the host simulator and not yet on a real FM-1. It builds on fm1-base.
+status: active
+authors:
+- name: jose-no
+  url: https://github.com/jose-no
+source: https://github.com/jose-no/Fm1-jungle
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README says GPL-3.0 and the LICENSE file is the GPL version 3 text, with no later-version option. fm1-base and
+  felucca-bsp, which it builds on, are MPL-2.0.
+homepage: https://jose-no.github.io/Fm1-jungle/
+distribution: browser-installer
+install_notes: >-
+  Open the project page in Chrome or Edge with the FM-1 on USB and use its installer, then its loader page to send a break.
+  Or build the package with build.sh on Linux x86-64. The README says the installer can put M-VAVE's firmware back and that
+  an FM-1 that does not start can be recovered with FM-1-transporter.
+brick_risk: true
+tags: [sampler, generative, drums, fx, sysex, web-midi, emulator]
+versions:
+- version: main @ c8f6301
+  date: 2026-10-31
+  url: https://github.com/jose-no/Fm1-jungle/commit/c8f6301297ed768b34123ae047b2b71e833f2a66
+  notes: No tagged releases; this is the latest commit.

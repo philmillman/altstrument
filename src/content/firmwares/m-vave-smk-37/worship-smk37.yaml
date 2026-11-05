@@ -1,0 +1,38 @@
+device: m-vave-smk-37
+name: WORSHIP
+summary: >-
+  Church-music performance mode on a Felucca base for the SMK-37 Pro: an ambient pad chosen by key, a 16-song setlist
+  and keys-plus-lead routing, with the full Felucca synth one button away.
+description: >-
+  The twelve pads select the pad's key with a crossfade of 0.3 to 8 seconds, and a second view stores 16 songs that each
+  keep a key, tempo, sounds, mode and pad. The keys can play a keys sound, a lead, both added together, or a split at C5.
+  The pad has its own generator, so it takes none of the eight keyboard voices. The mode adds a tap tempo, a dotted-eighth
+  delay on the lead and a pad swell on the mod wheel. The documentation is in Portuguese and credits Jeferson Mesquita
+  of IPB Mata da Praia. The author states it has been built and tested in simulation only and has not run on a real
+  SMK-37, and a browser simulator runs the firmware. The code sits behind a FELUCCA_WORSHIP switch, so an FM-1 build
+  is unchanged.
+status: active
+authors:
+- name: Jeferson Mesquita
+  url: https://github.com/jefersomusic-del
+source: https://github.com/jefersomusic-del/worship-smk37
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states Felucca's terms: GPL-3.0-only, with MIT for the Felucca-Engines part and MIT and Apache-2.0
+  ports of DaisySP, Rings and msfa. The bundled samples are CC0 and the fonts SIL OFL. Three JieLi SDK files
+  (Apache-2.0) are under vendor/ac79. The SMK-37 layer is genkigenki's.
+distribution: download
+requires_stock: V016
+install_notes: >-
+  WORSHIP.md has you put M-VAVE's official V016 on the keyboard first and keep that file for the way back, take a full
+  flash backup (the flash holds each keyboard's key calibration), then run tools/fm1_install.py with the release .fwsc
+  over USB on a Mac. Settings saved to flash briefly stop the audio, so build the setlist before a service. The
+  release page says it is untested on a real keyboard and at your own risk.
+brick_risk: true
+tags: [performance, ambient, synth-engine, sequencer, emulator, fork]
+versions:
+- version: build 5
+  date: 2026-11-02
+  url: https://github.com/jefersomusic-del/worship-smk37/releases/tag/build-5
+  notes: Latest of two CI builds, one per push to main; this one adds the browser simulator on GitHub Pages.

@@ -1,0 +1,39 @@
+device: m-vave-fm-1
+name: ChordBot
+summary: >-
+  Accompaniment sequencer for the FM-1 on Polly's platform: chord grid, 433 accompaniment parts, 76 styles, sections, a part mixer
+  and Sonivox General MIDI sound, with five demo songs.
+description: >-
+  Rights warning: the 433 accompaniment parts, the style presets, the chord catalogue and the five demo songs in data/ come from
+  the Android ChordBot app. The README calls the catalogue recovered, and the demo notes say the songs were converted from that
+  app's database; no permission or licence for this material is stated, and the repository's GPL does not cover it.
+
+  A song holds up to 16 sections of up to 32 chords each, with 78 chord types, separate bass notes, inversions, section repeats
+  and up to 12 parts per section, each with volume, mute and solo, plus reverb and chorus. It plays through Polly's General MIDI
+  engine at 32 voices, can send the accompaniment out over USB MIDI, and stores 16 songs. Python tools back up songs, mirror the
+  screen, drive the panel and exchange songs as YAML. A Linux simulator runs the same interface. The README says it has been
+  built and tested on a computer only, and still needs checks on a physical FM-1.
+status: active
+authors:
+- name: strijar
+  url: https://github.com/strijar
+source: https://github.com/strijar/fm1-chordbot
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL-3.0 text and nothing grants "or later". Polly's platform and its Sonivox EAS sound engine keep
+  their own licences; fonts are SIL OFL 1.1 and the JieLi SDK files in the package are Apache-2.0. The chord and accompaniment
+  catalogue taken from the Android ChordBot app is not covered by the GPL.
+homepage: https://github.com/strijar/fm1-chordbot
+distribution: download
+install_notes: >-
+  Download chordbot.fwsc from the v1.0 release and write it with tools/fm1_install.py from the repository (needs mido and
+  python-rtmidi). The update loader and recovery come from Polly: holding OCT- and OCT+ at power-on opens panel calibration, and
+  holding both for five seconds in use enters update mode. Back up first.
+brick_risk: true
+tags: [sequencer, chords, midi, usb-midi, emulator, fork]
+versions:
+- version: '1.0'
+  date: 2026-10-30
+  url: https://github.com/strijar/fm1-chordbot/releases/tag/v1.0
+  notes: First release.

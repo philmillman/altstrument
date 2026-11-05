@@ -2,23 +2,27 @@ device: m-vave-fm-1
 name: VIZZ
 summary: >-
   Browser MIDI visualizer for the FM-1 with its own firmware, a Skiff build that sends the sequencer's notes,
-  steps, bars and muted tracks over USB MIDI. The site installs the firmware in the browser; no source is linked.
+  steps, bars and muted tracks over USB MIDI. The site installs the firmware in the browser, and the patches against Skiff are in a separate repository.
 description: >-
   The web app turns incoming MIDI into 3D and 2D scenes, more than twenty of them, with camera direction,
   recording, audio analysis and a studio for your own scenes. Channels 1 to 6 are read as the FM-1's six tracks.
   Its firmware is Skiff with a SEQ MIDI OUT option, based on Skiff 2.0.1 in the 2.0 package and on Skiff 1.4 in
   1.0, so that VIZZ can show steps and bars. The firmware page lists each package with its base, size and
   SHA-256, installs it over Web MIDI and offers the .fwsc as a download. The site names no author and links no
-  source repository, so the changes to Skiff cannot be inspected.
+  source, but the patch series and build script for each version are in tumult2k4/vizz-firmware, whose branches hold
+  the same package names and sizes. The browser visualizer itself has no published source.
 status: active
 authors:
 - name: Netwove
   url: https://netwove.com
-source_status: binary-only
-license: unspecified
+- name: tumult2k4
+  url: https://github.com/tumult2k4
+source: https://github.com/tumult2k4/vizz-firmware/tree/vizz-2.0
+source_status: open
+license: GPL-3.0-only
 license_notes: >-
-  Skiff is GPL-3.0-only, and the installer page carries a GPL-3.0-only header with Leo Kuroshita's copyright from
-  Felucca, but the site gives no licence or source for VIZZ's own changes.
+  Covers the firmware: the patches modify GPL-3.0-only Skiff, and the repository's out/ folder carries its licence texts. The
+  repository has no licence file at its root. The browser visualizer has no published source or licence.
 homepage: https://vizz.netwove.com/
 distribution: browser-installer
 install_notes: >-
@@ -31,6 +35,8 @@ brick_risk: true
 tags: [sequencer, midi, fork, performance]
 versions:
 - version: '2.0'
+  url: https://github.com/tumult2k4/vizz-firmware/tree/vizz-2.0
   notes: Based on Skiff 2.0.1; package vizz-2.0.fwsc, 610,442 bytes.
 - version: '1.0'
+  url: https://github.com/tumult2k4/vizz-firmware/tree/vizz-1.0
   notes: Based on Skiff 1.4; package vizz-1.0.fwsc, 610,350 bytes.

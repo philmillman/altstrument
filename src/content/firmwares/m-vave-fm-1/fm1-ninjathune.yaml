@@ -1,0 +1,39 @@
+device: m-vave-fm-1
+name: FM-1 in the browser (Ninjathune)
+kind: tool
+summary: >-
+  Browser emulator with one FM-1 panel that runs a selector of 114 open-source firmwares, 59 of them compiled natively,
+  or FM-1+VA, a reimplementation of the stock instrument written from the manual.
+description: >-
+  Runs on computers, iPads and iPhones, with mouse, touch or stylus. Most firmwares run unchanged on Joakim Eriksson's
+  fm1-emu; 59 are compiled from source for the browser with no emulated processor. A local .fwsc can be opened, and a Duo
+  page runs two FM-1s side by side. Presets and patterns are kept in the browser for each firmware. The repository
+  publishes a verification report saying how each package ran. The interface and README are in French.
+status: active
+authors:
+- name: Ninjathune
+  url: https://github.com/Ninjathune-Human
+source: https://github.com/Ninjathune-Human/Fm1
+source_status: open
+license: MIT
+license_notes: >-
+  MIT covers the project's own code. The bundled packages are the authors' published builds, checked by SHA-256 and each
+  keeping its own licence in firmwares/catalogue.json. The bundled M-VAVE V15 package matches FM-1_015.fwsc licensed
+  Apache-2.0 in m-vave/fm1_open (git blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd).
+homepage: https://ninjathune-human.github.io/Fm1/
+distribution: browser-installer
+install_notes: >-
+  Open the page in a recent browser. Nothing is flashed to a device, and a local .fwsc stays on the computer.
+brick_risk: false
+tags: [emulator, web-app]
+image:
+  url: https://raw.githubusercontent.com/Ninjathune-Human/Fm1/main/assets/banniere.png
+  alt: "Banner with the title FM-1 beside a rendered FM-1 panel with green keys and a screen showing the ANALOG engine"
+  credit: "Ninjathune"
+  source_url: https://github.com/Ninjathune-Human/Fm1
+  first_party: true
+versions:
+- version: main @ 682c390
+  date: 2026-11-04
+  url: https://github.com/Ninjathune-Human/Fm1/commit/682c39009e7ce2064222060628f40d9f1f5873e5
+  notes: Runtime builds are published as releases; this is the latest commit.

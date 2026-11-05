@@ -1,0 +1,40 @@
+device: m-vave-fm-1
+name: SkurkyMello
+summary: >-
+  Generative melody sequencer and synth: a 16-step lead with filter and grit, a bass line, chords, a four-voice drum
+  kit, samples, effects and a randomizer, ported from the author's browser instrument and built on Dinghy.
+description: >-
+  The sequence is split into segments A to D and held in 16 pattern slots, one per white key. A randomizer rolls the
+  lead or the whole band in one of several styles, keeps three levels of undo and can lock single parts. The firmware is a
+  fork of Dinghy 0.3 with Dinghy 0.4's TRS MIDI input, on the Felucca and SLOOP platform. The README says every
+  package has run in the fm1-emu emulator and not on a real FM-1, and the first hardware flash is described in
+  docs/mello/FIRST_FLASH.md. The firmware is GPL-3.0-only, while the original browser instrument and the design notes
+  in the repository are not free software.
+status: active
+authors:
+- name: joakimskurk
+  url: https://github.com/joakimskurk
+source: https://github.com/joakimskurk/fm1mello
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md covers the firmware as GPL-3.0-only. reference/skurkymello.html and the design record under docs/mello/
+  are all rights reserved, may be kept unchanged in a clone, and are not built into the firmware. The screen mirror encoder is MIT
+  (Patrick F. Kellogg) and the Terminus font is SIL OFL 1.1.
+distribution: source-only
+install_notes: >-
+  Build a package with the Makefile, then install it over USB-MIDI with tools/fm1_install.py on an FM-1 running
+  M-VAVE's V15 or another firmware with the update loader. Holding OCT- while switching on reaches the updater.
+brick_risk: true
+tags: [sequencer, generative, synth-engine, drums, sampler, fork]
+image:
+  url: https://raw.githubusercontent.com/joakimskurk/fm1mello/main/docs/screens/home.png
+  alt: "SkurkyMello HOME page: sixteen bars for the steps in four coloured segments labelled A to D, with cutoff, decay, space and drive values and a row of keys including RNDMZR"
+  credit: joakimskurk
+  source_url: https://github.com/joakimskurk/fm1mello
+  first_party: true
+versions:
+- version: main @ 6b3e4a0
+  date: 2026-11-05
+  url: https://github.com/joakimskurk/fm1mello/commit/6b3e4a0b695b843163e73a95377e86ae9e04c809
+  notes: No tagged releases; this is the latest commit.

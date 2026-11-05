@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+name: FM-1 ESP32-C3 Recovery
+kind: tool
+summary: >-
+  Experimental ESP32-C3 Super Mini sketch and wiring guide that sends the JieLi USB key to a USB-silent FM-1 so the chip
+  enters ROM recovery mode and a separate tool can restore V15.
+description: >-
+  The sketch drives the two USB data lines directly with open-drain outputs and a pair of pull-ups. It repeats the
+  16-bit key, watches for the chip's low pulse as an acknowledgement, then pulses D+ for six seconds while the FM-1's
+  USB cable is moved by hand from the ESP32 adapter to a computer. The program never reads or writes the FM-1's flash;
+  backup and restore are left to a separate utility, and the README walks through Melodee's fm1-recover with the
+  official V15 package. The author reports one successful recovery after a failed first attempt, calls the circuit
+  experimental, and measured the signal with a logic analyser at the board, not inside the FM-1. The README
+  gives the wiring, a parts list and troubleshooting notes.
+status: active
+authors:
+- name: yvesk
+  url: https://github.com/yvesk
+source: https://github.com/yvesk/fm1-recovery
+source_status: open
+license: unspecified
+license_notes: There is no licence file or licence statement in the repository.
+distribution: source-only
+install_notes: >-
+  Needs an ESP32-C3 Super Mini, a USB-A socket breakout, a USB-A to USB-C data cable, two 2 kohm pull-up resistors to
+  3.3 V and a charged FM-1 battery; VBUS stays disconnected. Build and upload with PlatformIO, check the clock and data
+  signals at the socket, then follow the README's timing for the cable handoff. Take a verified full flash backup before
+  any write, and use a package you have checked.
+brick_risk: false
+tags: [loader, utility, platform]
+versions:
+- version: main @ 74a05ad
+  date: 2026-11-01
+  url: https://github.com/yvesk/fm1-recovery/commit/74a05ad2fc3edf24649c9b0d32062dc54bb5d842
+  notes: No tagged releases; this is the latest commit.

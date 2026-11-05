@@ -1,0 +1,50 @@
+device: erica-synths-lxr-drum-module
+name: RMX-0
+summary: Custom firmware built on Erica Synths' open LXR Eurorack source that adds MIDI input, voice links, glide, a global reverb, user WAV samples, eleven LFO shapes and a restart menu.
+description: >-
+  RMX-0 starts from Erica Synths' firmware 1.51 and keeps the stock features; kits
+  saved on stock load on it and the reverse. MIDI input is read on the OP HH jack,
+  with a channel and note per voice. Drums 1 to 3 can be linked to play as one
+  instrument in unison, chord or poly mode, and each drum has glide with three
+  curves and MIDI legato. A global reverb with per-voice sends sits alongside the
+  FX bus. WAV files from the SD card are installed into flash, about 1.5 MB in
+  total and up to 120 files, and play as oscillator waveforms with start and end
+  trims; every firmware update erases them. Pan now moves notes that are already
+  sounding, retriggers no longer click, and a restart menu reboots the module
+  without powering down the rack. Every change to Erica's code is marked in the
+  source. It is unofficial; the start-up screen shows the RMX-0 name and version
+  as Erica's terms require for modified firmware.
+status: active
+authors:
+  - name: mechanical-dance
+    url: https://github.com/mechanical-dance
+source: https://github.com/mechanical-dance/RMX-0
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL version 3 text and the README states GPL-3.0-only.
+  It carries Erica Synths' firmware/NOTICE.md, which adds terms: trademark limits
+  on the Erica Synths and LXR names, and a rule that modified firmware must be
+  marked on the start-up screen.
+homepage: https://mechanical-dance.github.io/RMX-0/
+distribution: download
+requires_stock: Not stated; installs as a complete LXRE update image
+install_notes: >-
+  Download LXRE_RMX0_V1.0.img from the release, copy it to the top folder of a
+  FAT32 SD card with any other LXRE image deleted, hold the encoder while powering
+  on and wait for the Update OK message. The updater is not changed, so a failed
+  update can be repeated, and installing Erica's official update goes back to
+  stock. Installed samples are erased by every update and must be reinstalled.
+brick_risk: false
+tags: [fork, drums, sampler, lfo, reverb, midi, open-source]
+image:
+  url: https://raw.githubusercontent.com/mechanical-dance/RMX-0/main/docs/assets/splash.png
+  alt: Red LED matrix display of the module's start-up screen, with RMX-0 on the first line and v1.0 at the right of the second line
+  credit: mechanical-dance
+  source_url: https://github.com/mechanical-dance/RMX-0
+  first_party: true
+versions:
+  - version: v1.0
+    date: 2026-11-04
+    url: https://github.com/mechanical-dance/RMX-0/releases/tag/v1.0
+    notes: First public release. Update file LXRE_RMX0_V1.0.img, based on Erica Synths firmware 1.51.

@@ -10,7 +10,7 @@ description: >-
   The SID core is the author's own C code and the repository carries reference tests against libresidfp. Since 0.5.0
   it also plays PSID .sid tunes from the FM-1's store, and 1.0.0 adds a LAB view for shaping and keeping sounds, which 1.1.0 extends. Version 1.5.0 sends LAB sounds to the song
   as GoatTracker instruments, lifts a sound from a playing .sid tune, and adds a browser Live Link that shows the FM-1's
-  screen and a library and song editor on the project site. It is built on Felucca's hardware layer, USB stack and update loader, and is also checked
+  screen and a library and song editor on the project site. Version 1.6.0 adds layers of up to three oscillators and a filter envelope to LAB, and an import tool for SidStation and MIDIbox SID banks. It is built on Felucca's hardware layer, USB stack and update loader, and is also checked
   in the fm1-emu emulator. The 0.2.0 release notes say that version had run on one real FM-1 and that the earlier
   0.2.0-m2-preview could not be updated over USB. It is a separate project from FM-1 SID.
 status: active
@@ -27,13 +27,17 @@ license_notes: >-
   (Apache-2.0) in each package (LICENSING.md).
 distribution: download
 install_notes: >-
-  Install the .fwsc from the releases page with Felucca's installer (fm1_install.py sidou-1.5.0.fwsc); the README
+  Install the .fwsc from the releases page with Felucca's installer (fm1_install.py sidou-1.6.0.fwsc); the README
   says to read docs/flash-day.md first and keep the way back ready. To return to stock, install M-VAVE's official
   FM-1.fwsc the same way. If the unit does not boot, hold OCT- at power-on for the chip's ROM boot mode and restore
   with the unbricker. The 1.0.0 release notes list long 48 kHz USB audio recordings as untested on a real FM-1.
 brick_risk: true
 tags: [synth-engine, fx, midi, emulator, research]
 versions:
+- version: 1.6.0
+  date: 2026-11-04
+  url: https://github.com/dsablic/sidou/releases/tag/v1.6.0
+  notes: Adds a LAYERS page to LAB so one key can play up to three oscillators, each with its own waveform and envelope, and an envelope for the filter. On the computer, sidou-sysex import turns Elektron SidStation and MIDIbox SID V2 banks into songs. The release says it was tested on a real FM-1 over a 1.5.0 install.
 - version: 1.5.0
   date: 2026-11-02
   url: https://github.com/dsablic/sidou/releases/tag/v1.5.0

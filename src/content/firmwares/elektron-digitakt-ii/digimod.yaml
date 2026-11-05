@@ -1,0 +1,48 @@
+device: elektron-digitakt-ii
+name: digimod
+summary: Local web builder that applies selectable mods to your own Digitakt II OS 1.16 file, checks the result and outputs a flashable .syx, with a macOS emulator to try it first.
+description: >-
+  Rights warning: the repository vendors the Digitakt II and Digitone II engines
+  of xerydian's elektron-emu, for which no license is published, and Elektron's
+  panel photo that the emulator uses as artwork. No Elektron firmware is
+  included; you add the official OS file yourself.
+
+  The builder takes the official OS 1.16 .syx, applies the mods you tick and
+  repacks it with mischa85's elektron-firmware-tool. It refuses to output a file
+  unless each patch matches the bytes it expects, no two mods touch the same byte,
+  the bootloader and updater are untouched, and the checksums and HMAC verify.
+  The mods are Polyphony (1 to 8 voices per track), a Plaits machine with 25
+  models and four DX7 banks, Musical WAVE and Deja Vu LFO waves, a One-Shot
+  Zoom view and a System Load page. Polyphony and System Load are written for
+  this project; the others are ports from digikit and the Digitakt II
+  All-in-One. It is a separate project from elekloader and does not use its
+  .elemod format. Only OS 1.16 has mods so far; 1.17 can be inspected and built
+  but nothing targets it.
+status: active
+authors:
+  - name: endlea
+    url: https://github.com/endlea
+source: https://github.com/endlea/digimod
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is MIT and covers the files written for digimod. The mods
+  ported from digikit and the Digitakt II All-in-One are AGPL-3.0-or-later, as is
+  the segment loader, per THIRD-PARTY.md; elektron-firmware-tool is MIT, and
+  the vendored elektron-emu engines have no published license.
+distribution: patch-your-own
+requires_stock: "1.16"
+install_notes: >-
+  Download Digitakt II OS 1.16 from Elektron and put the .syx in the firmware
+  folder, then run the builder with Docker (make up) or natively on macOS (make
+  setup, make run) and download the build. Send it with Elektron Transfer or use
+  SETTINGS, SYSTEM, OS UPGRADE. A mod with a bug can still hang the unit; hold
+  FUNC while powering on, choose OS UPGRADE and reflash a working file over USB
+  or MIDI DIN. Do not choose the reset options in that menu, which erase data.
+brick_risk: true
+tags: [machines, synth-engine, patch, emulator, lfo, os]
+versions:
+  - version: 0.1.0
+    date: 2026-11-05
+    url: https://github.com/endlea/digimod/releases/tag/0.1.0
+    notes: First release. Builder, macOS emulator and five mods for OS 1.16.

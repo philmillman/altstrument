@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: keySTEP ONE
+summary: >-
+  Controller and arranger firmware built on CTL-1: four pattern tracks with pattern, song and album playback, a
+  keyboard LIVE PLAY mode that queues patterns, USB and Bluetooth MIDI and a General MIDI engine.
+description: >-
+  Starts from CTL-1 and adds an arranger with four tracks, up to 512 stored patterns, and pattern, song and album
+  playback. LIVE PLAY, opened with LFO, uses the 11 black keys to pick a bank and the 16 white keys to pick one of its
+  patterns, so 176 patterns can be chosen from the keyboard; the choice waits for the end of the selected track's loop.
+  KNOB 1 to 4 set the four tracks' volumes. The sound comes from the Sonivox General MIDI engine on the FM-1 or from
+  external gear over USB (device or host), Bluetooth or TRS MIDI. The author reports LIVE PLAY working on hardware, but
+  the changelog says the release was packaged from a working copy with no fresh build or flash, and album playback in ONCE
+  mode can repeat after the last song. The user guide is in English and German.
+status: active
+authors:
+- name: dzwerg
+  url: https://github.com/dzwerg
+source: https://github.com/dzwerg/keySTEP-ONE
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The LICENSE file is the MPL-2.0 text, and LICENSING.md applies it to the modified CTL-1-derived application files. The
+  platform (fm1-base, felucca-bsp) comes from submodules under MPL-2.0, Sonivox EAS is Apache-2.0, and the JieLi AC79 SDK
+  parts linked into the prebuilt package keep their own terms. The release .fwsc was taken from the author's working copy
+  rather than built from this tree.
+distribution: download
+install_notes: >-
+  Download keySTEP_ONE_v0.5.35_BETA.fwsc from the releases page, not a source ZIP, and follow docs/FLASHING.md. Back up
+  music and settings first; the README calls the build a community beta and lists a known album-playback issue.
+brick_risk: true
+tags: [controller-mode, sequencer, midi, usb-midi, ble-midi, performance, fork]
+versions:
+- version: 0.5.35-beta
+  date: 2026-11-01
+  url: https://github.com/dzwerg/keySTEP-ONE/releases/tag/v0.5.35-beta
+  notes: Pre-release; first public snapshot, with the arranger, LIVE PLAY and the four-track volume knobs.

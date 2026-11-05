@@ -4,10 +4,10 @@ summary: >-
   Generative music firmware built on Felucca's engines that plays in the manner of 89 composers and styles and 86 genres, with Marbles-style randomness shaped by music theory.
 description: >-
   Tuna composes melody, bass, accompaniment and percussion as it plays; the same seed always plays the same music.
-  The library is organised by era and decade, each entry with its own harmony, rhythm and instruments (93 on
+  The library is organised by era and decade, each entry with its own harmony, rhythm and instruments (95 on
   Felucca's engines), and eight character presets work without a composer. It adds odd meters, historical
   tunings, a sympathetic-string resonator, a sequencer that freezes what you hear into an editable pattern with
-  conditions and parameter locks, 16 save slots, and per-part MIDI out with clock. The Marbles random section is
+  conditions and parameter locks, 16 save slots, per-part MIDI out with clock, share codes for pieces, favourites, a radio mode and MIDI clock in. The Marbles random section is
   a port (MIT). The project site has a browser emulator and a web installer, and the repository keeps Felucca's own
   README as docs/FELUCCA.md.
 status: active
@@ -36,6 +36,14 @@ image:
   source_url: https://github.com/delirioux/tuna
   first_party: true
 versions:
+- version: '1.2'
+  date: 2026-11-04
+  url: https://github.com/delirioux/tuna/releases/tag/v1.2
+  notes: Adds seeds sorted by type of work, up to 32 favourites kept across power-off, share codes that name the same piece on any FM-1 and in the browser, a radio mode that moves to another piece after 1 to 30 minutes, MIDI clock in, and a MOOD knob in place of MACRO. Flute and sax become FM patches of its own.
+- version: '1.1'
+  date: 2026-11-04
+  url: https://github.com/delirioux/tuna/releases/tag/v1.1
+  notes: Recognises the second maker's flash chip in newer FM-1 units, which 1.0 could not save to, and lets the sample clock run for days without a glitch.
 - version: '1.0'
   date: 2026-10-29
   url: https://github.com/delirioux/tuna/releases/tag/v1.0

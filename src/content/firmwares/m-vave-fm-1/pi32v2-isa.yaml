@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
+name: pi32v2-isa
+kind: tool
+summary: >-
+  Open reference for the pi32v2 instruction set of JieLi's AC791N chip, with an instruction table, assembler, linker, disassembler, objdump and LLVM backend generators that build FM-1 firmware without JieLi's closed tools.
+description: >-
+  The instruction table lists every form JieLi's objdump decodes, each confirmed against JieLi's toolchain, and the README
+  says 1,079 of 1,165 forms are also confirmed on the chip. The Python assembler, linker and objdump write and read the same
+  files as JieLi's, and FM-1 firmwares build byte for byte the same with them. An LLVM toolchain in separate forks builds
+  m-bootloader, fm1-base, Felucca and SLOOP from source, and a proof-of-concept Rust example blinks the FM-1's screen.
+  Hardware test runs are stored under hw/. The README says no JieLi code, binaries or firmware are in the repository,
+  and that JieLi's toolchain is only downloaded to check against. The first target is the FM-1 core, and the SMK-37 Pro uses the same chip
+  family.
+status: active
+authors:
+- name: Julius Vitkauskas (jvitkauskas)
+  url: https://github.com/jvitkauskas
+source: https://github.com/jvitkauskas/pi32v2-isa
+source_status: open
+license: MIT-0
+license_notes: >-
+  The code is MIT-0 (MIT No Attribution), which is not in the schema's licence list, so MIT is entered as the nearest
+  value. Documentation and the instruction table are CC0-1.0, and each file's licence is set by its SPDX header or
+  REUSE.toml. The rustc patch is MIT OR Apache-2.0, and the LLVM fork is Apache-2.0 with LLVM exceptions.
+distribution: source-only
+install_notes: >-
+  Python 3.11 or newer with no dependencies: run python3 -m pi32v2isa check, disasm, as, ld or objdump. The oracle
+  commands download JieLi's toolchain for comparison. Docs/TOOLCHAIN.md covers building FM-1 firmware with the LLVM
+  toolchain, and the example firmware is installed as any other FM-1 build, with the usual risk.
+brick_risk: false
+tags: [research, sdk, reference, compiler, platform]
+versions:
+- version: main @ 66ac37b
+  date: 2026-11-04
+  url: https://github.com/jvitkauskas/pi32v2-isa/commit/66ac37bb2ae40e5dbbd5588a6a7c2d7baf829d7f
+  notes: No tagged releases; this is the latest commit.

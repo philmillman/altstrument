@@ -1,0 +1,42 @@
+device: ableton-move
+name: Frodhes
+summary: Schwung sound generator that plays Frodhes' physically modelled electric piano, vibraphone and marimba on the Move, with every effect, an arpeggiator, 16 voices and its own eight-knob screen.
+description: >-
+  The module is the Frodhes engine from the FM-1 build with 16 voices per instrument and a higher-quality version of each
+  instrument, and it keeps the FM-1 effects chain: compressor, EQ, drive, tremolo or wah, phaser, chorus, delay and reverb,
+  the reverb at the full sample rate. It draws its own screen in which the Move's eight knobs appear as cards one page at
+  a time, with a double touch resetting a knob. Presets F01 to F19 are the FM-1's, F20 to F57 are 38 versions made for the
+  Move, and 16 user slots hold your own sounds. The arpeggiator follows the Move's tempo and transport, pad pressure can drive a
+  control through a CC number, and up to four Frodhes can run at once, one per track, though the release notes say four with
+  every effect on can drop audio. The Move's Full Velocity setting must be off to play at every velocity. The module ships from the
+  same repository and release as the FM-1 firmware.
+status: active
+authors:
+  - name: Leonardo Mirabal
+    url: https://github.com/leonardoMirabal
+source: https://github.com/leonardoMirabal/frodhes/tree/main/move
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Stated in the repository's LICENSING.md for the whole project. move/vendor holds Schwung's plugin API header unmodified,
+  with Schwung's MIT licence file beside it.
+homepage: https://github.com/leonardoMirabal/frodhes/blob/main/docs/MOVE.md
+distribution: download
+requires_stock: Schwung on the Move (tested with Schwung 1.8.2)
+install_notes: >-
+  Needs Schwung, which is unofficial. In Schwung Manager (port 7700 on the Move's address) choose Install Custom Module,
+  then either From GitHub URL with leonardoMirabal/frodhes or From Tarball with frodhes-module.tar.gz from the release.
+  Then pick Frodhes as a track's sound generator in the chain editor. Schwung Manager shows updates for it.
+brick_risk: false
+tags: [synth-engine, physical-modeling, fx, performance, midi, arpeggiator]
+image:
+  url: https://raw.githubusercontent.com/leonardoMirabal/frodhes/main/docs/manual/img/move/move-frodhes.png
+  alt: "Black and white Move screen of Frodhes page 1 of 13: TYPE ST77, SPRD 0, SUS OFF and FX ON knob cards over a PRESET card reading F01 STAGE 77 and a DLY card"
+  credit: Leonardo Mirabal
+  source_url: https://github.com/leonardoMirabal/frodhes/blob/main/docs/MOVE.md
+  first_party: true
+versions:
+  - version: 0.9.8
+    date: 2026-11-05
+    url: https://github.com/leonardoMirabal/frodhes/releases/tag/v0.9.8
+    notes: First release of the Move module, which shares the release page with the FM-1 build.

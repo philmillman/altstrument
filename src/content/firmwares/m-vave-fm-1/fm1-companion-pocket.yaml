@@ -1,0 +1,48 @@
+device: m-vave-fm-1
+name: FM-1 Companion Pocket
+kind: tool
+summary: >-
+  Raspberry Pi Zero box with a small screen that connects to the FM-1 by USB and adds Bluetooth audio and MIDI, a mixer, a recorder,
+  a sample editor, a MIDI matrix and a library for backing up and restoring several community firmwares.
+description: >-
+  The Pocket runs Python services on Raspberry Pi OS for a Pi Zero with wireless and a Waveshare screen HAT, and is controlled from the
+  screen, from a phone web page or from a linked XOXO Studio. It exposes a Bluetooth MIDI port, takes up to four USB keyboards and a second
+  FM-1 through a hub, records each source to WAV with a matching MIDI file, and turns a take into a sample. The library backs up and restores
+  SLOOP, Clipper, sloopDX, Felucca, JIANT FM, Melodee, Jangada, X0X and Baud Girl's FM-1+VA presets in each firmware's own file format, loads
+  DX7 banks, and installs SLOOP or Clipper through a vendored copy of SLOOP's installer. The README says only SLOOP had been tried on a real
+  FM-1 when version 3.0 was written. The Studio build moved to the XOXO Studio project.
+status: active
+authors:
+- name: XOXO Audio Labs
+  url: https://github.com/xoxoaudiolabs
+source: https://github.com/xoxoaudiolabs/FM-1-Companion
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README says GPL-3.0, like SLOOP, and the LICENSE file is the GPL v3 text with no "or later" statement. The vendored SLOOP installer
+  files are GPL-3.0-only and the Terminus font is under the SIL Open Font License 1.1.
+homepage: https://xoxoaudiolabs.com
+distribution: source-only
+install_notes: >-
+  Needs a Pi Zero W, Zero WH or Zero 2 W and a supported screen HAT. Copy the fm1-bt-bridge folder to the Pi and run its install script;
+  the installer stops on a Pi 3 or 4. The firmware install feature writes to the FM-1 through SLOOP's installer, so back up first. The
+  README lists which features are tested on real hardware and which are only covered by automated tests.
+brick_risk: true
+tags: [backup, usb-audio, midi, librarian, sampler]
+image:
+  url: https://raw.githubusercontent.com/xoxoaudiolabs/FM-1-Companion/main/docs/images/device-with-fm1.jpg
+  alt: >-
+    Top view of a black FM-1 with mint-green keys, cabled by USB to a Raspberry Pi Zero fitted with a small blue OLED screen HAT that
+    reads FM-1 LIVE, on a cloth mat with a tree-branch print.
+  credit: XOXO Audio Labs
+  source_url: https://github.com/xoxoaudiolabs/FM-1-Companion#readme
+  first_party: true
+versions:
+- version: v3.0.2
+  date: 2026-11-03
+  url: https://github.com/xoxoaudiolabs/FM-1-Companion/tree/v3.0.2
+  notes: Git tag; no GitHub release page.
+- version: v3.0
+  date: 2026-11-02
+  url: https://github.com/xoxoaudiolabs/FM-1-Companion/tree/v3.0
+  notes: Git tag; no GitHub release page. Adds library backups for ten FM-1 firmwares and a Settings menu in seven pages.

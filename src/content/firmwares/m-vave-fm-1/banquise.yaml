@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: Banquise
+summary: >-
+  Musical walking game in which a drone, wind and footsteps make the music and places on an ice field wake the synth; the FM-1
+  port, built on fm1-base, has only the first stage so far.
+description: >-
+  The game is also a browser page, in English and French. You walk an ice field from an igloo, and the wind, a drone and
+  footsteps become the music, while fishing holes, a boat, an ice cave, a pine forest, a lighthouse and singing seals each
+  change the synth. The FM-1 firmware is being ported in three steps. Step one, the walk with day and night, the igloo synth,
+  the ice rink and the river, is done and redrawn for the FM-1's small screen. The playable places, the quest and the outfits
+  are still to come. A WebAssembly build of the firmware code runs in the browser. The README says the build has not been tried
+  on a real FM-1. The author credits Claude as a collaborator, and the project belongs to the same OSR-1 effort as Blop.
+status: active
+authors:
+- name: Obsimo
+  url: https://github.com/OSR-Experiment
+source: https://github.com/OSR-Experiment/FM1_IGLOO_OSR
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README says GPL-3.0 and points to LICENSE, which is the GPL-3.0 text with no "or later" statement. The fm1-base
+  submodule is MPL-2.0.
+homepage: https://github.com/OSR-Experiment/FM1_IGLOO_OSR
+distribution: download
+install_notes: >-
+  Each push builds Banquise.fwsc in GitHub Actions and publishes it as the rolling latest pre-release on the releases page; the
+  README says it is not yet tested on a real FM-1. Build from source with firmware/fm1-base/tools/build.py.
+brick_risk: true
+tags: [game, synth-engine, generative, performance, emulator]
+versions:
+- version: main @ f625a9e
+  date: 2026-10-30
+  url: https://github.com/OSR-Experiment/FM1_IGLOO_OSR/commit/f625a9e783eb8cc944e44be8b3df9ffe8fb7b2ab
+  notes: No tagged releases; this is the latest commit. The CI build is published as a rolling pre-release named latest.

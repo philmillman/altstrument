@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: fm1-midi-capture
+summary: >-
+  Work-in-progress retrospective MIDI looper for the FM-1, built on a copy of the Dinghy starter firmware: it keeps a running
+  history of played notes and turns it into loops across eight tracks.
+description: >-
+  Starts from Dinghy, a minimal Felucca-platform firmware, and replaces its sine-wave app with a looper that is always
+  recording. The first capture works out a tempo and bar length, which are folded into the range 80 to 160 BPM. Eight
+  tracks each hold eight clip slots, the SELECT knob chooses the track, the top eight keys launch clips and the lower keys play
+  notes. REC arms capture and closes the loop, overdub can be toggled while a clip plays, and PLAY is a global
+  transport. Playback sounds through the built-in sine voices, with eight voices, and is sent to USB MIDI out. The
+  README is still Dinghy's, and the repository has no tagged releases, so only the commit history shows what has changed.
+  Its CI renders a test loop to a WAV file for inspection.
+status: active
+authors:
+- name: GondorianGrooves
+  url: https://github.com/GondorianGrooves
+source: https://github.com/GondorianGrooves/fm1-midi-capture
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  GPL-3.0-only as stated in the README inherited from Dinghy; LICENSING.md lists the credits for Felucca, SLOOP, the
+  SMK-37 layer and the loader screen.
+distribution: source-only
+install_notes: >-
+  Follow Dinghy's build steps, which the README still describes: the JieLi toolchain, three SDK files and Python tools. build.sh
+  produces build/dinghy.fwsc, which tools/fm1_install.py writes over USB. Hold OCT- while switching on to reach the
+  USB rescue if the firmware fails to start. The package keeps the Dinghy name and the project does not say it has been tried on
+  a unit.
+brick_risk: true
+tags: [fork, looper, midi, usb-midi]
+versions:
+- version: main @ e3e0e67
+  date: 2026-10-27
+  url: https://github.com/GondorianGrooves/fm1-midi-capture/commit/e3e0e67d3ef3f6f1bda662b8324729102490927b
+  notes: No tagged releases; this is the latest commit.

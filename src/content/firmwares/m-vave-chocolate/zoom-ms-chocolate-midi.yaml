@@ -1,0 +1,34 @@
+device: m-vave-chocolate
+name: zoom-ms-chocolate-midi
+kind: tool
+summary: >-
+  Python generator that writes CubeSuite preset files (.fcp) from a TOML layout so a Chocolate Plus switches effects,
+  the tuner and patches on a Zoom MS-50G, with notes on the Zoom's SysEx and two small macOS tools.
+description: >-
+  make_fcp.py builds a preset for the Chocolate's CubeSuite app, which the user imports with the footswitch in its
+  USB mode and then switches to host mode to drive the pedal over its USB-A port. A layout file lists one entry per
+  footswitch with an action such as a program change, a CC toggle or a patch step, and the generator refuses a
+  bank that mixes SysEx and MIDI messages in one switch. Stock Zoom 3.10 firmware allows on and off for effects one to three by SysEx, while
+  the MIDISTOMP firmware for the Zoom adds effects four to six, knobs and patch stepping over CC. The repository documents
+  the MS-50G's SysEx and MIDI messages and has two Swift command-line tools for backing up the pedal's 50 patches and
+  sending or monitoring raw messages. The author tested one MS-50G and one Chocolate Plus, and had checked the
+  MIDISTOMP messages from a Mac but not yet through the Chocolate.
+status: active
+authors:
+- name: Martin Olson
+  url: https://github.com/nilsjesper
+source: https://github.com/nilsjesper/zoom-ms-chocolate-midi
+source_status: open
+license: MIT
+distribution: source-only
+install_notes: >-
+  Needs Python 3.11 or newer for tomllib. Run python3 make_fcp.py with a layout file and import the resulting
+  .fcp in CubeSuite with the Chocolate's switch on U, then set it to H and plug 5 V into its USB-C port, since host mode
+  does not run on battery. The Swift tools run on macOS only.
+brick_risk: false
+tags: [config-tool, midi, sysex, python, research]
+versions:
+- version: main @ a1e164e
+  date: 2026-10-29
+  url: https://github.com/nilsjesper/zoom-ms-chocolate-midi/commit/a1e164ecfce698a556e102b415a880e8e6097d24
+  notes: No tagged releases; this is the latest commit.

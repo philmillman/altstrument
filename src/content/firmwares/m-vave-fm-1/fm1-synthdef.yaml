@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: FM1 SynthDef
+summary: >-
+  Experimental SuperCollider SynthDef runtime for the FM-1: patches are compiled on a Mac and sent over USB to run as
+  two-voice instruments with eight slots, four master effects and live knob control.
+description: >-
+  A local browser editor compiles SuperCollider source on the author's Mac into a graph of UGens, which the firmware
+  loads and runs. The published preview supports 53 UGen types and the development source lists 154, within stated rate and
+  operator limits, and it is not the full language or server. The screen shows the patch source with syntax colours and
+  stereo meters, knobs 1 to 4 feed synths, and FX switches them to effect parameters 5 to 8. Five example patches and
+  three reverb examples are included. The README says an arbitrary graph can exceed the audio budget and that power-cycle
+  recovery is not yet part of the acceptance record. It builds on fm1-base and felucca-bsp.
+status: active
+authors:
+- name: Sebastian Tomczak (little-scale)
+  url: https://github.com/little-scale
+source: https://github.com/little-scale/fm1-synthdef
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  THIRD_PARTY.md puts the new engine and instrument code under GPL-3.0-or-later; the root LICENSE is the GPL version 3
+  text. DSP adapted from SuperCollider (GPL-2.0-or-later) is distributed under GPL-3.0-or-later, mi-UGens MiVerb is
+  GPL-3.0-or-later with MIT Mutable Instruments parts, and fm1-base and felucca-bsp keep MPL-2.0.
+distribution: download
+install_notes: >-
+  The release archive holds the .fwsc; install it with fm1-base/tools/fm1_install.py after setting up the Mac environment
+  from docs/QUICKSTART.md, which needs SuperCollider 3.14.1 to compile patches. Only macOS on Apple silicon has been tried.
+  Installing replaces the current instrument, so export work first and keep USB and power connected. Stock recovery was not
+  exercised for the preview.
+brick_risk: true
+tags: [synth-engine, scripting, editor, fx, web, usb-midi]
+versions:
+- version: 0.1.0-preview
+  date: 2026-10-28
+  url: https://github.com/little-scale/fm1-synthdef/releases/tag/v0.1.0-preview
+  notes: First public preview; FM-1_1200 firmware with 53 UGen types and five example patches.

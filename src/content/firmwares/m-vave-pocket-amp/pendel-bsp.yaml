@@ -1,0 +1,33 @@
+device: m-vave-pocket-amp
+name: pendel-bsp
+kind: tool
+summary: >-
+  MPL-2.0 hardware layer for custom Pocket AMP firmware: a branch of felucca-bsp with the Pocket AMP's audio link,
+  buttons, 240 by 240 screen and update loader. No sound code or user interface.
+description: >-
+  Keeps the chip layer of felucca-bsp (clock, interrupts, flash, USB, timers, boot entry) and adds the Pocket AMP's
+  board folder: the full-duplex I2S audio link at 24 bits, the knob encoder, volume knob and battery inputs, six
+  debounced buttons, the SPI display and backlight, and a loader that writes the app area only. A pa-hwtest example
+  firmware exercises the screen, buttons, audio and USB serial. Pendel takes it as a submodule.
+status: active
+authors:
+- name: Leo Kuroshita (@kurogedelic), Hügelton Instruments
+  url: https://github.com/kurogedelic
+source: https://github.com/hugelton/pendel-bsp
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  Per file (LICENSING.md, NOTICE), as in felucca-bsp: change a file and distribute it and you publish that file, while
+  code on top may use any licence.
+homepage: https://github.com/hugelton/pendel-bsp
+distribution: source-only
+install_notes: >-
+  A base to build on, not an end-user firmware. Building needs JieLi's pi32v2 toolchain on Linux. Flashing is at
+  your own risk.
+brick_risk: true
+tags: [platform, sdk]
+versions:
+- version: main @ 6a85709
+  date: 2026-11-02
+  url: https://github.com/hugelton/pendel-bsp/commit/6a85709461ccf36a68ba2e169808011764e065e6
+  notes: No tagged releases; this is the latest commit.

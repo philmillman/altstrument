@@ -1,0 +1,39 @@
+device: m-vave-fm-1
+name: PocketFM for iOS
+kind: tool
+summary: >-
+  iPhone and iPad app with a touch FM-1 panel that plays fifteen community instruments compiled from their source, such as
+  SLOOP, Felucca, X0X and Skiff. It is a phone-side emulator that writes nothing to a real FM-1.
+description: >-
+  The app draws the FM-1's keys, knobs, buttons and screen in landscape, with six panel finishes, and runs each instrument
+  as a native engine built from a pinned upstream source tree. The listed instruments include SLOOP 2.8, Felucca 1.6.1, X0X,
+  Melodee, an FM1 Open V14 portable preview, Skiff, Jangada, AMB-1, GHOULBOX, Hortator and ChoralRoot. The app downloads
+  the selected release on demand after checking its size and SHA-256 against a catalogue, and arbitrary package import is
+  not offered. Each instrument keeps its own saved sounds, and SLOOP also has project files, sample import with trimming and
+  stereo WAV rendering. The README calls it an unofficial prototype and not an App Store release, and says the
+  community additions still need physical-iPhone testing. The factory banks of some instruments are replaced with INIT
+  sounds. It derives from Virtual FM-1.
+status: active
+authors:
+- name: HolidayMan
+  url: https://github.com/HolidayMan
+source: https://github.com/HolidayMan/fm1-ios
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states GPL-3.0-only. The vendored fm1-emu interpreter is MIT, the pinned SLOOP firmware is GPL-3.0-only, and
+  individual upstream components keep their own licences and notices in the NOTICE files. The repository holds no firmware
+  binaries or factory sound banks, and the README says rights to the downloaded firmware remain with their authors.
+homepage: https://github.com/HolidayMan/fm1-ios
+distribution: source-only
+install_notes: >-
+  Needs Xcode, Rust and Python 3 on a Mac: prepare the pinned upstream source trees, then run scripts/build.sh for the
+  simulator or an unsigned device build and sign it with your own team. The app runs firmware in emulation on the phone
+  and does not flash an FM-1.
+brick_risk: false
+tags: [emulator, ios]
+versions:
+- version: PocketFM 1.0 (31)
+  date: 2026-10-27
+  url: https://github.com/HolidayMan/fm1-ios/releases/tag/pocketfm-1.0-build31
+  notes: Adds ChoralRoot 0.27 beside CoralFlower, with its original factory banks replaced by INIT.

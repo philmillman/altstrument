@@ -1,0 +1,32 @@
+device: m-vave-fm-1
+name: Felucca-Engines
+kind: tool
+summary: >-
+  MIT-licensed C99 library of six fixed-point synthesis engines (analog, lofi, trio, wheel, noise, phase distortion) with shared DSP helpers, table generator and golden-hash tests, extracted from Felucca.
+description: >-
+  Each engine is a table entry with eight parameters, presets and per-voice and per-block hooks, compiled as one
+  translation unit with its host. The set is a two-oscillator analog voice, a chip voice with wave memory and arpeggio,
+  a three-oscillator voice with ring modulation and sync, a tonewheel organ with drawbars and a rotary effect, a noise
+  source through a resonant filter, and phase distortion with a wavefolder. The code uses fixed point only, with no
+  allocation, and the sample rate is chosen when the tables are generated, from 32 to 96 kHz. tests/fe_host.c is a
+  minimal host, and the test script renders 122 phrases and compares hashes. Felucca includes it as a submodule. The repository's description still says five engines; the README lists six.
+status: active
+authors:
+- name: Leo Kuroshita (@kurogedelic), Hügelton Instruments
+  url: https://github.com/kurogedelic
+source: https://github.com/hugelton/Felucca-Engines
+source_status: open
+license: MIT
+license_notes: >-
+  Stated in LICENSE and the README. A firmware built with Felucca is GPL-3.0-only as a whole, but these files stay MIT.
+distribution: source-only
+install_notes: >-
+  A library, not a flashable image. Clone it as a submodule with a host, generate the tables with
+  tools/gen_engine_tables.py, and run sh tests/run.sh. Felucca (clone with --recurse-submodules) is the firmware that uses it.
+brick_risk: false
+tags: [synth-engine, sdk, oscillator, filter, chiptune, organ, open-source]
+versions:
+- version: main @ d026007
+  date: 2026-10-28
+  url: https://github.com/hugelton/Felucca-Engines/commit/d0260074ce100a47675814b7f38d61f11176c926
+  notes: No tagged releases; this is the latest commit.

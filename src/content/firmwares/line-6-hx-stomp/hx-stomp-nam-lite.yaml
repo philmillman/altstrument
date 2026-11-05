@@ -1,11 +1,11 @@
 device: line-6-hx-stomp
-also_devices: [line-6-hx-stomp-xl]
+also_devices: [line-6-hx-stomp-xl, line-6-hx-effects]
 name: NAM A2 Lite for HX Stomp
 summary: >-
-  A patch for stock HX Stomp and HX Stomp XL firmware 3.80.0 that adds Neural Amp Modeler A2 Lite with a ten-knob tone stack,
+  A patch for stock HX Stomp, HX Stomp XL and HX Effects firmware 3.80.0 that adds Neural Amp Modeler A2 Lite with a ten-knob tone stack,
   running up to three captures at once on the pedal's own SHARC DSP. Built in the browser from your own firmware file.
 description: >-
-  The model appears under Amp > NAM and has ten knobs: Input, Treble, Output, Polarity, Bass, Mid, Model, Mid Freq, Q and
+  The model appears under Amp > NAM (Distortion > Mono on an HX Effects) and has ten knobs: Input, Treble, Output, Polarity, Bass, Mid, Model, Mid Freq, Q and
   High Cut. Bass, Mid, Treble and a low-pass High Cut sit after the capture. NAM blocks count as effects, so the Stomp's
   two-amp limit does not apply to them and a preset can hold three. Captures go in as User IRs: a converter packs a .nam
   file's weights into a .wav that HX Edit imports, and the Model knob picks the slot. Only 3-channel A2 Lite captures fit, and
@@ -16,9 +16,10 @@ description: >-
 
   Four of the firmware's 15 parts change and the bootloader does not. A build can run from RAM first, which writes nothing
   to the pedal. The author reports the current HX Stomp build passing its on-device test suite from RAM with up to three
-  blocks. NAM has run on an XL, but this ten-knob build has not. The README also lists an HX Effects build, which puts NAM
-  under Distortion > NAM, builds on the separate hx-effects-nam-lite port and has only been checked in the simulator. The same
-  author's hx-stomp-nam is separate firmware that replaces the stock software altogether.
+  blocks. NAM has run on an XL, but this ten-knob build has not. The README also lists an HX Effects build, which has no Amp
+  category and puts NAM in Distortion > Mono, in the place of the stock Xenomorph Fuzz Mono model. It builds on the separate
+  hx-effects-nam-lite port, and an owner ran it on an HX Effects; Mid Freq and Q step aside while the capture's name shows
+  on the Model knob's pop-up. The same author's hx-stomp-nam is separate firmware that replaces the stock software altogether.
 status: active
 authors:
   - name: Derek Bui
@@ -35,7 +36,7 @@ homepage: https://nocaseguy.github.io/hx-stomp-nam-lite/web/
 distribution: patch-your-own
 requires_stock: 3.80.0 (the build checks the stock file's MD5 and refuses any other)
 install_notes: >-
-  The setup page builds the firmware in Chrome or Edge from HX_Stomp_v3.80.0_0x103966115.hxf, or from the XL's own file, and
+  The setup page builds the firmware in Chrome or Edge from HX_Stomp_v3.80.0_0x103966115.hxf, or from the XL's or HX Effects' own file, and
   can run it from RAM over WebUSB. With Python, run build.py on the stock file. To install, back up in HX Edit, close it,
   and pick the built .hxf with Choose File in Line 6 Updater, using only the file built for your unit. If the Stomp stops at
   the splash screen, hold Page Right while powering on and reinstall the stock file with Line 6 Updater; the author has done
@@ -49,7 +50,7 @@ video:
   first_party: true
   found_via: https://github.com/nocaseguy/hx-stomp-nam-lite#readme
 versions:
-  - version: main @ f88f347
+  - version: main @ 675c333
     date: 2026-11-04
-    url: https://github.com/nocaseguy/hx-stomp-nam-lite/commit/f88f3474aecd3bd84da3fa907450430e060ab0f9
-    notes: No tagged releases; this is the latest commit.
+    url: https://github.com/nocaseguy/hx-stomp-nam-lite/commit/675c33388e609ed07a633dc42519da86cf6f35a1
+    notes: No tagged releases; this is the latest commit. The HX Effects build now lists NAM under Distortion > Mono.

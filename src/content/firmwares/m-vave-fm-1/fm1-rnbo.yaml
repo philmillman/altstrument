@@ -1,0 +1,44 @@
+device: m-vave-fm-1
+name: FM1 RNBO
+summary: >-
+  Player firmware that runs compiled Max RNBO instruments on the FM-1, with three stored patch slots, eight knob
+  parameters, a patch overview screen, and a browser Studio that converts and uploads patches without reflashing.
+description: >-
+  The firmware stays installed and loads an instrument from one of three slots, so a new patch is an upload rather than a
+  firmware update. The screen shows the patch's object layout with live meters and a battery indicator, and a knob turn
+  pops up the parameter name and value. A `.rnbopat` file is converted on the author's Mac, using a local RNBO 1.4.4
+  install, Docker and the JieLi toolchain, to a native module of at most 64 KiB of code and data, with mono, two-voice or
+  four-voice builds. Gen graphs and GenExpr are supported within documented limits, and 15 test patches and 7 example
+  instruments are included. The README calls it a release candidate and says browser transfer to a real unit is not yet
+  verified. Max 9 and RNBO licences are the user's own. It builds on charlesvestal's fm1-base platform.
+status: active
+authors:
+- name: Sebastian Tomczak (little-scale)
+  url: https://github.com/little-scale
+source: https://github.com/little-scale/fm1-rnbo
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  LICENSING.md puts the original integration code and patch designs under MIT (root LICENSE), but the battery adapter is
+  GPL-3.0-or-later, so the combined player firmware is GPL-3.0-or-later. The fm1-base platform and felucca-bsp keep
+  MPL-2.0. RNBO-generated C++ keeps Cycling '74's dual terms (its export licence or GPLv3) and is not relicensed as MIT.
+  Max 9 and RNBO licences are not bundled.
+distribution: source-only
+install_notes: >-
+  Run Setup.command, then the Build-and-Install-Visual-Player.command script with the FM-1 on USB; it builds the player,
+  asks before installing and uploads a saw patch to slot 1. A Mac with RNBO 1.4.4, Docker and a Max 9 licence is needed to
+  convert new patches; the 15 precompiled instruments upload without them. Installing replaces the running firmware, so
+  keep USB connected throughout.
+brick_risk: true
+tags: [synth-engine, loader, fx, web, web-midi, usb-midi]
+image:
+  url: https://raw.githubusercontent.com/little-scale/fm1-rnbo/main/docs/visual-player.png
+  alt: "Three simulator screens of the FM1 RNBO player showing patch SAW_CUTOFF_DELAY: an object-layout overview with meters, a Cutoff popup reading 2196, and an FX-bank Sustain popup reading 0.60"
+  credit: Sebastian Tomczak (little-scale)
+  source_url: https://github.com/little-scale/fm1-rnbo
+  first_party: true
+versions:
+- version: main @ 3b46afc
+  date: 2026-10-31
+  url: https://github.com/little-scale/fm1-rnbo/commit/3b46afcd022f10a7f82be99a613bdc98b875c209
+  notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,45 @@
+device: m-vave-fm-1
+name: NSX39 Pocket Miku for FM-1
+summary: >-
+  Turns the FM-1 into a monophonic singing instrument from the vocal data in a dump of your own Gakken NSX39 Pocket Miku
+  flash chip, which a browser page converts into an installable package.
+description: >-
+  The generator checks a 2 MiB NSX39 SPI flash dump against one known image hash, decodes its vocal database and builds
+  a voice bank of 449 units and all 128 pronunciation strings, then adds the project's own pitch-synchronous grain
+  renderer and installs over USB. The 27 keys trigger syllables or step through the 16 factory lyric memories, with kana
+  and romaji labels, an ADSR on the knobs, vibrato, glide and USB or TRS MIDI. Neither the dump nor the extracted bank
+  nor a generated package is published, and the work runs in the browser. The release is described as an experimental
+  debug build: the NSX39's General MIDI tones and hardware effects, and its command sequencer and persistent slots, are
+  not implemented. It reuses Felucca's updater and recoverable loader.
+status: active
+authors:
+- name: AL-255
+  url: https://github.com/AL-255
+source: https://github.com/AL-255/nsx39-fm1-firmware
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL-3.0 text with no "or later" statement, and the release notes call the source release
+  GPL-3.0-only. The vocal data is not in the repository: the generated package contains audio derived from the user's
+  own NSX39 dump, so a built image is for personal use. The updater and loader come from Felucca (GPL), and the JieLi
+  AC79 packaging files are Apache-2.0.
+homepage: https://al-255.github.io/nsx39-fm1-firmware/
+distribution: patch-your-own
+install_notes: >-
+  Dump the SPI flash of your own NSX39 (a MX25L series chip), open the generator page, select the dump and install the
+  resulting package from the same page in Chrome or Edge with the FM-1 on USB. Unknown or modified dumps are rejected.
+  An interrupted transfer must be resumed with the same generated package, and holding both OCT buttons for 5 seconds
+  enters the recovery loader. The release notes say installation and lyric writes were verified on real hardware.
+brick_risk: true
+tags: [voice, synth-engine, emulator, fork]
+image:
+  url: https://raw.githubusercontent.com/AL-255/nsx39-fm1-firmware/main/docs/NSX39-FM1.png
+  alt: "Emulator view of the nsx39-fm1-debug firmware on an FM-1 panel: the screen shows the kana ふあ, DoReMi mode, vibrato settings and a SUSTAIN envelope drawing beside a waveform"
+  credit: AL-255
+  source_url: https://github.com/AL-255/nsx39-fm1-firmware
+  first_party: true
+versions:
+- version: 0.0.1
+  date: 2026-10-28
+  url: https://github.com/AL-255/nsx39-fm1-firmware/releases/tag/v0.0.1
+  notes: First source release, matching the FM-1_947 debug firmware.

@@ -1,0 +1,38 @@
+device: m-vave-fm-1
+name: KLASSIK
+summary: >-
+  Rack of six classic synth engines (FM6, VA, phase distortion, organ, drum kits and a 303-style acid bass) with six parts,
+  a mixer, delay and reverb, a note looper with a step sequencer and a glyph-based interface.
+description: >-
+  Each part has its own engine, sound and octave, and MIDI channels 1 to 6 play parts 1 to 6. Every sound is drawn
+  as a glyph made of its eight parameters, which reshapes as the knobs turn. FM6 is a six-operator engine ported from msfa
+  with twelve own presets and no DX7 factory sounds. VA, PD and ORGAN come from Felucca-Engines, and the drum kits, with 606, 707,
+  808 and 909 styles, use Plaits drum models ported to C and not samples. ACID is ported from Open303. The README is in German, says v0.6 is
+  experimental, and says it was tested only in the host simulator and the browser emulator. It builds on fm1-base.
+status: active
+authors:
+- name: fabiomorena
+  url: https://github.com/fabiomorena
+source: https://github.com/fabiomorena/fm1-klassik
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSE is MPL-2.0 for the project's own files. LICENSING.md lists the ported parts, msfa as Apache-2.0, and Plaits drums, the
+  Rings reverb and Open303 as MIT, with fm1-base MPL-2.0 and Felucca-Engines MIT as submodules.
+distribution: source-only
+install_notes: >-
+  Build as the README describes (macOS steps with FriBiDi and a Python environment), after tools/setup.sh fetches the submodules, then
+  install the package with the base installer tools. The README and manual describe the controls.
+brick_risk: true
+tags: [synth-engine, drums, fm, sequencer, looper, reverb, delay]
+image:
+  url: https://raw.githubusercontent.com/fabiomorena/fm1-klassik/main/docs/img/rack-va.png
+  alt: "KLASSIK rack screen: six tiles for FM6, VA, PD, ORGAN, DRUMS and ACID, each with a small glyph, VA selected with the sound SAW LEAD, and a bottom row of engine, preset, octave and master"
+  credit: fabiomorena
+  source_url: https://github.com/fabiomorena/fm1-klassik
+  first_party: true
+versions:
+- version: main @ 32a78fe
+  date: 2026-11-03
+  url: https://github.com/fabiomorena/fm1-klassik/commit/32a78fe26b22df1c51015869844c41341642b1f9
+  notes: No tagged releases; this is the latest commit.

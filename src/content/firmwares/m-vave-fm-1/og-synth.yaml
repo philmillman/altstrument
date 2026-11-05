@@ -1,0 +1,59 @@
+device: m-vave-fm-1
+name: OG Synth
+summary: >-
+  Sound-design synth with 16 engines, a 28-effect chain, a sequencer with arpeggiator, a four-track MULTI mode and
+  on-screen graphs for the parameters being edited. Free to use, with only part of its source published.
+description: >-
+  The engines include six analog-style types, six-operator FM that reads classic .syx banks, wavetable, phase
+  distortion, 8-bit, physical modelling, formant and two drum engines whose kick, snare and hi-hat models come from
+  Plaits. WAVE has 16 modulation slots with a drawable LFO. There are 128 user preset slots per engine, and a manager
+  page on the project's site loads .syx banks and your own wavetables, backs up presets and settings, and returns the
+  FM-1 to the stock firmware. A browser emulator runs the same code. The firmware is built on fm1-base and
+  felucca-bsp, and the author's site calls it free with a tip jar. The sound engines, effects and sequencer are not
+  published, so the public repository holds only the application layer and patches to the base and does not build alone.
+status: active
+authors:
+- name: Mike Johnson Beats
+  url: https://mikejohnsonbeats.com/
+source: https://github.com/mikejohnsonbeats/OG-Synth-source
+source_status: binary-only
+license: proprietary
+license_notes: >-
+  Licence note: the repository's LICENSE is MPL-2.0 and covers the application layer in app/ and the patches to
+  fm1-base and felucca-bsp. The README says the sound engines, effects and sequencer are separate files under a
+  proprietary licence that is not published, combined with the MPL files as a Larger Work, and the site says the
+  firmware is free. app/ogs_fm1_bank.h and the .syx banks are M-VAVE's factory voice bank, Apache-2.0 from M-VAVE's
+  fm1_open, with the voice order and names changed. The drum models are based on Plaits (MIT), and the fonts are SIL OFL 1.1.
+homepage: https://ogsynth.cc/
+distribution: browser-installer
+install_notes: >-
+  Use the install page on ogsynth.cc in Chrome, Edge or Opera with the FM-1 on USB, after backing up your presets from
+  the Backup page. Each release also carries the .fwsc and an offline copy of the install page that runs with Python 3.
+  The page's stock-firmware option takes a file you download from M-VAVE, or use M-UPGRADE. The README advises the
+  optional m-bootloader for a recovery menu (hold PLAY at power-on). On newer FM-1s with a UC25HQ80 flash chip, the site says
+  versions before 1.0.2 cannot save, and the way out is M-UPGRADE and a fresh install.
+brick_risk: true
+tags: [synth-engine, fm, wavetable, physical-modeling, drums, sequencer, arpeggiator, fx, midi, usb-midi, editor, emulator]
+image:
+  url: https://ogsynth.cc/img/screens/eng_fm6.png
+  alt: "OG Synth home screen in orange and white on black: FM6 and PRESET 1/10 at the top, the preset name E.PIANO over a large dim FM6, and a bottom row with OCT 0, POLY, VOL 100% and a battery icon"
+  credit: Mike Johnson Beats
+  source_url: https://ogsynth.cc/
+  first_party: true
+versions:
+- version: 1.0.2
+  date: 2026-11-04
+  url: https://github.com/mikejohnsonbeats/OG-Synth-source/releases/tag/v1.0.2
+  notes: Saves and updates on FM-1s with the UC25HQ80 flash chip, deletes user presets and changes the installer message; returning to stock now erases OG Synth data first.
+- version: 1.0.1
+  date: 2026-11-04
+  url: https://github.com/mikejohnsonbeats/OG-Synth-source/releases/tag/v1.0.1
+  notes: Adds a MIDI channel setting for each of the four tracks.
+- version: 1.0.0
+  date: 2026-11-04
+  url: https://github.com/mikejohnsonbeats/OG-Synth-source/releases/tag/v1.0.0
+  notes: First official version, after the 0.x builds.
+- version: 0.91.0
+  date: 2026-11-03
+  url: https://github.com/mikejohnsonbeats/OG-Synth-source/tree/v0.91.0
+  notes: Git tag; no GitHub release page.

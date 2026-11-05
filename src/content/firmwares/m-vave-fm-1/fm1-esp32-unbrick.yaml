@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: FM-1 ESP32 Unbrick
+kind: tool
+summary: >-
+  ESP32-S3 firmware that puts a soft-bricked FM-1 that shows no USB device into its chip's ROM boot mode, so a computer script can
+  read the flash and rewrite the damaged sectors.
+description: >-
+  A port of FM-1 Transporter from the RP2040 to the ESP32-S3. The board sends the boot key on its native USB pins, answers the
+  ROM's calibration pulses, then becomes a USB host to the FM-1 and passes JieLi UBOOT commands from a computer over a USB-to-serial
+  bridge. A Python wrapper drives MvaveFM1Unbricker's recovery script, which dumps the flash twice, analyses it and rewrites only
+  the sectors that differ, never the boot head or the user data. The README reports one recovery on 2026-11-01 of a unit whose install
+  stopped at 63 percent, with 46 sectors rewritten. It needs a dev board with two USB-C ports and ESP-IDF 5.4.1. The JieLi loader is
+  not included and is fetched by a script.
+status: active
+authors:
+- name: dagnazty
+  url: https://github.com/dagnazty
+source: https://github.com/dagnazty/fm1-esp32-unbrick
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file lists portions copyrighted by the authors of FM-1 Transporter, MvaveFM1Unbricker and jl-uboot-tool, all MIT.
+distribution: source-only
+install_notes: >-
+  Build with ESP-IDF 5.4.1 from a path without spaces, flash the board at 115200 baud, then run the recovery script with a firmware
+  package you supply. It does a read-only dry run before the write. Do not toggle DTR or RTS on the board's serial port during a
+  session. The FM-1 must be charged, since it runs on its battery.
+brick_risk: true
+tags: [flasher, loader, utility, backup]
+versions:
+- version: main @ b87e11c
+  date: 2026-11-04
+  url: https://github.com/dagnazty/fm1-esp32-unbrick/commit/b87e11c2159c7b46de2f21e72ffdec289e9d7b60
+  notes: No tagged releases; this is the latest commit.

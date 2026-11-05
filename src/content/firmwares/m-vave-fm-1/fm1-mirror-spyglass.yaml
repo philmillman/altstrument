@@ -1,0 +1,50 @@
+device: m-vave-fm-1
+name: FM-1 Mirror + Spyglass
+kind: tool
+summary: >-
+  Android app that shows the FM-1's screen on a tablet or phone over USB or Bluetooth MIDI, plays the unit from a USB
+  keyboard, shows the played notes and chords in a spyglass overlay, and installs the Big Screen firmware.
+description: >-
+  This is the Android counterpart of FM-1 Mirror and merges it with the author's Synth Spyglass note display, because
+  Android lets only one app use the FM-1 at a time. It reads the screen from the Big Screen build of M-VAVE's open-source
+  firmware, plays notes from a USB keyboard on a chosen channel, passes MIDI clock through and never forwards SysEx. The
+  spyglass names the note or chord, draws it on a grand staff and shows key velocity, and can show the FM-1's own keys and the
+  sound name when the firmware reports it. The app installs and updates the firmware by a port of M-VAVE's updater and can
+  finish an interrupted install. It needs a USB hub to connect both the FM-1 and a keyboard. The repository carries the Big Screen
+  firmware package it installs.
+status: active
+authors:
+- name: pfkellogg
+  url: https://github.com/pfkellogg
+source: https://github.com/pfkellogg/fm1-mirror-spyglass-android
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL v3 text and the README says GPL-3.0, with no "or later" statement. The committed
+  firmware/ package is a build of M-VAVE's open-source firmware plus the author's screen addition, not a stock image.
+distribution: download
+install_notes: >-
+  Download the APK from the releases page and allow installs from your browser on Android 11 or newer. A unit still on stock
+  firmware first needs M-VAVE's Official Open firmware, put on with M-VAVE's FM1 Workbench page in Chrome, then the app offers
+  Install Big Screen. The README says an interrupted install leaves the FM-1 waiting in its updater and the app can finish it.
+brick_risk: true
+tags: [usb-midi, midi, flasher, ui]
+video:
+  url: https://www.youtube.com/watch?v=XDqrabQf5uY
+  title: "FM-1 Mirror + Spyglass for Android: Big Screen, MIDI Bridge & Note Spyglass, All in One"
+  credit: AIKellogg
+  first_party: true
+  found_via: https://github.com/pfkellogg/fm1-mirror-spyglass-android#readme
+versions:
+- version: 1.4.0
+  date: 2026-11-04
+  url: https://github.com/pfkellogg/fm1-mirror-spyglass-android/releases/tag/v1.4.0
+  notes: Shows the playing sound's name from firmware that reports it, installs on units that came with V16, and finds JIANT FM, Skiff and SLOOP by their USB names.
+- version: 1.3.0
+  date: 2026-11-02
+  url: https://github.com/pfkellogg/fm1-mirror-spyglass-android/releases/tag/v1.3.0
+  notes: Adds Bluetooth MIDI without a cable, the FM-1's own keys in the spyglass and an Update FM-1 button.
+- version: 1.2.0
+  date: 2026-11-02
+  url: https://github.com/pfkellogg/fm1-mirror-spyglass-android/releases/tag/v1.2.0
+  notes: First release under this name, adding keyboard play and the spyglass to the screen mirror.

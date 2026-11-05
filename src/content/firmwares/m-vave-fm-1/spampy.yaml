@@ -2,41 +2,48 @@ device: m-vave-fm-1
 name: SPAMPY
 summary: >-
   Customised SLOOP 2.7.1 groovebox with a synthwave-style interface, extra sound engines ported from OberVave and
-  Melodee, edited factory sounds and drum kits, effects and two built-in games.
+  Melodee, edited factory sounds and drum kits, effects, NEON arpeggiator modes, a slicer and five built-in games.
 description: >-
-  Rights warning: the GitHub repository holds only a README and has no licence file; the source is a 14.7 MB archive
-  attached to the release, which carries a GPL-3.0 LICENSE and SLOOP's LICENSING.md. That file says the icon atlas
-  assets/icons.png is Hügelton Instruments' with all rights reserved and its terms unpublished, and the archive also
-  contains assets/fm1-original/FM-1_factory_128voices_packed.bin, a 16 KiB bank of the FM-1's 128 factory DX7 voices,
+  Rights warning: the repository holds a GPL-3.0 LICENSE, Felucca's LICENSING.md and the r949 source, and each release
+  attaches its own source archive. LICENSING.md says the icon atlas assets/icons.png is Hügelton Instruments' with all
+  rights reserved and its terms unpublished, and the archives also
+  contain assets/fm1-original/FM-1_factory_128voices_packed.bin, a 16 KiB bank of the FM-1's 128 factory DX7 voices,
   which a build script turns into extra FM6 patches. 126 of those voices are byte-identical to the Apache-2.0 copy of
-  the V15 factory bank that M-VAVE publishes in m-vave/fm1_open; BASS 1 and GUITAR 4 differ in a few parameters. The archive has no stock firmware
-  image. The README calls it custom firmware based on Felucca, and the archive's notes describe it as derived from
+  the V15 factory bank that M-VAVE publishes in m-vave/fm1_open; BASS 1 and GUITAR 4 differ in a few parameters. Neither archive has a stock firmware
+  image; the 1.0 archive's build folder holds the author's own earlier builds. The 1.0 archive adds a KAVINSKY drum kit of
+  16 WAV files named MMP_EP3_..., for which it gives no source or licence, unlike its CC0 sample sets. The README calls it custom firmware based on Felucca, and the archive's notes describe it as derived from
   the author's earlier r918, itself on SLOOP 2.7.1. The archive's notes say it adds native OberVave and Melodee engines
   (Prophet, SID and CZ models), a lightweight MORPH wavetable engine, synthwave and 80s presets, a SYNWAVE drum kit,
-  and the Neon Pang and Neon Bubbles games. The r949 release only centres the PAUSED and PLAY TO RESUME messages in
-  those two games. The README links a YouTube channel as a video guide.
+  and the Neon Pang and Neon Bubbles games. Release 1.0 raises the games to five, adds four NEON arpeggiator modes, nine slicer modes,
+  optional attack and release and envelope destination controls for the non-digital engines, and swaps the native acoustic drum kit for KAVINSKY.
+  The earlier r949 release only centred the PAUSED and PLAY TO RESUME messages in Neon Pang and Neon Bubbles. The README links a YouTube channel as a video guide.
 status: active
 authors:
 - name: Spampy-Droid
   url: https://github.com/Spampy-Droid
 source: https://github.com/Spampy-Droid/SPAMPY-0.0-r949
 source_status: open
-license: unspecified
+license: GPL-3.0-only
 license_notes: >-
-  Listed as unspecified because the repository itself has no licence file, and the README only says to see the source
-  archive for the upstream licence notices. The source archive itself is GPL-3.0-only: its LICENSE is GPL-3.0 and its LICENSING.md (inherited from SLOOP and Felucca) says the
-  code is GPL-3.0-only, with msfa (Apache-2.0), the uPD933 model (BSD-3-Clause), OberVave and Melodee ports (GPL-3.0),
+  The repository's LICENSE is GPL-3.0 and its LICENSING.md (inherited from SLOOP and Felucca) says the
+  code is GPL-3.0-only. The repository README only points to the source archive for upstream notices, and the 1.0
+  source archive carries neither file, only a SLOOP README that calls the firmware GPL-3.0. The bundled parts include msfa (Apache-2.0), the uPD933 model (BSD-3-Clause), OberVave and Melodee ports (GPL-3.0),
   CC0 samples and Terminus (SIL OFL 1.1) bundled. Hügelton Instruments' icon atlas is all rights reserved. The factory voice bank
   matches M-VAVE's Apache-2.0 V15 bank in m-vave/fm1_open (app/fm_factory.inc) for 126 of 128 voices.
 distribution: download
 requires_stock: V15
 install_notes: >-
-  The release page offers SPAMPY-0.0-r949.fwsc, the source archive and a cover image, with no install steps. The
-  archive includes SLOOP's browser installer page and INSTALL-SLOOP.bat, and the SLOOP guide in it says to hold OCT-
-  at power-on for USB rescue and to go back to V15 with the installer's return option or M-VAVE's M-UPGRADE.
+  The 1.0 release page offers SPAMPY-r1007-SPAMPY-1.0-ABOUT-FM1-036.fwsc and a source archive, with no install steps.
+  The repository's r949 source includes SLOOP's browser installer page and INSTALL-SLOOP.bat, and the SLOOP guide there
+  says to hold OCT- at power-on for USB rescue and to go back to V15 with the installer's return option or M-VAVE's
+  M-UPGRADE.
 brick_risk: true
 tags: [groovebox, synth-engine, sequencer, drums, fx, game, fork]
 versions:
+- version: '1.0'
+  date: 2026-11-04
+  url: https://github.com/Spampy-Droid/SPAMPY-0.0-r949/releases/tag/v1.0
+  notes: Adds four NEON arpeggiator modes, nine slicer modes, optional attack and release and envelope destination controls for the non-digital engines, a KAVINSKY drum kit in place of the native acoustic kit, and five built-in games. The package is named r1007.
 - version: r949
   date: 2026-10-28
   url: https://github.com/Spampy-Droid/SPAMPY-0.0-r949/releases/tag/r949

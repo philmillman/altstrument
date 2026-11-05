@@ -1,0 +1,44 @@
+device: m-vave-fm-1
+name: setup-fm1-toolchain
+kind: tool
+summary: >-
+  GitHub Action, Taskfile and Nix flake that install JieLi's AC79 SDK and the Linux compiler it needs, so FM-1
+  firmware can be built in CI or on a Linux machine.
+description: >-
+  Rights warning: the repository mirrors JieLi's AC79 AIoT SDK and Linux toolchain as unmodified release assets, and no
+  redistribution terms for them were found in the repository. Besides the mirrored copy, the action can fall back to
+  JieLi's own Gitee repository and download server.
+  The action restores the SDK and compiler from a cache or the mirror, checks their checksums, and exports the
+  paths as step outputs and environment variables. The Taskfile does the same into a folder in the home directory for
+  local use, and the Nix flake pins one SDK and compiler version for a development shell. A weekly workflow
+  copies new upstream SDK and toolchain versions into pre-release assets. The repository is by the author of
+  setup-fm1-emulator and holds no FM-1 firmware.
+status: active
+authors:
+- name: DimmKirr
+  url: https://github.com/DimmKirr
+source: https://github.com/DimmKirr/setup-fm1-toolchain
+source_status: open
+license: MIT
+license_notes: >-
+  MIT covers the action, Taskfile and workflows. The SDK and toolchain archives in the mirror releases are JieLi's
+  and keep whatever terms JieLi applies to them.
+distribution: source-only
+install_notes: >-
+  Add `uses: dimmkirr/setup-fm1-toolchain@v1` to a workflow on an Ubuntu runner, or import the repository's
+  Taskfile.yml into a project to install into `~/.fm1-toolchain` on Linux. The `sdk-version` and `toolchain-version`
+  inputs pick the versions. The result is a build environment only; it does not flash a device.
+brick_risk: false
+tags: [utility, sdk]
+versions:
+- version: 1.1.0
+  date: 2026-10-24
+  url: https://github.com/DimmKirr/setup-fm1-toolchain/releases/tag/v1.1.0
+  notes: Mirrors several recent SDK and toolchain versions, tries curl and wget before the GitHub CLI, and adds a Nix flake.
+- version: 1.0.1
+  date: 2026-10-22
+  url: https://github.com/DimmKirr/setup-fm1-toolchain/releases/tag/v1.0.1
+- version: 1.0.0
+  date: 2026-10-21
+  url: https://github.com/DimmKirr/setup-fm1-toolchain/releases/tag/v1.0.0
+  notes: First release.

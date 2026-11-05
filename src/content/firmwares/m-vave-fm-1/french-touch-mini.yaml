@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+name: French Touch Mini
+summary: >-
+  Edition of FMini-1 with 100 new factory patches for filter house, French disco and electro, a new boot screen and its own
+  package identity, plus a TR-style drum grid on the main branch.
+description: >-
+  The synth engine, ladder filter, effects and controls are FMini-1's, and the new patches are numbered 000 to 099, ahead
+  of FMini-1's own 100 to 199. They cover disco chords, robot and talk-box leads, electro basses, strings and brass, house
+  keys and risers, and most chords and basses start with the filter half closed so the cutoff encoder is the gesture. A
+  commit after the release adds a drum part from Felucca's drum engine, with eight lanes of 16 steps in sync with the synth
+  and seven beat presets; the drum steps are not stored. The release package is a zip with Windows, macOS and Linux
+  installer scripts. The README says it is not yet tested on hardware by many people. It was written with Claude's assistance.
+status: active
+authors:
+- name: Pedro Silva
+  url: https://github.com/PedroS36
+source: https://github.com/PedroS36/french-touch-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states GPL-3.0-only, as FMini-1 and Felucca. The ANALOG and other engines from Felucca-Engines are MIT, and
+  ported DSP, fonts and the CC0 samples keep their own licences (LICENSES/).
+homepage: https://github.com/PedroS36/french-touch-fm1
+distribution: download
+install_notes: >-
+  Unzip the release, connect the FM-1 with a USB data cable and no hub, close other MIDI apps and run instalar.bat on
+  Windows (Python 3.12) or sh instalar.sh on macOS and Linux, which sets up a Python environment and runs Felucca's
+  fm1_install.py. Installing M-VAVE's V15 FM-1.fwsc goes back to the official firmware. The README says to install at
+  your own risk.
+brick_risk: true
+tags: [synth-engine, sequencer, drums, fork, performance]
+image:
+  url: https://raw.githubusercontent.com/PedroS36/french-touch-fm1/main/assets/fmini-splash.png
+  alt: "French Touch boot screen: the words FRENCH TOUCH in red-orange dot-matrix letters, FMINI-1 EDITION, a filter curve and a row of sixteen step lights, with the credit BY RUPPERT FT PEDRO"
+  credit: Pedro Silva
+  source_url: https://github.com/PedroS36/french-touch-fm1
+  first_party: true
+versions:
+- version: '2.0.0'
+  date: 2026-11-02
+  url: https://github.com/PedroS36/french-touch-fm1/releases/tag/v1
+  notes: Release page titled v1, with the 100 French Touch patches, new splash and installer scripts; the drum grid came after it.

@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+name: Gen-FM1
+summary: >-
+  Felucca fork that adds a generative chord and melody machine: four tracks of 6-operator FM, each on its own USB MIDI
+  channel, driven by one harmony engine with progression sources, mutation and eight saved setups.
+description: >-
+  The tracks are two chord dyads, a bass that follows the chords and a melody built from chord and scale tones. Every
+  power-on can draw a fresh key, scale, tempo, progression, sounds and rhythms, or resume the last session or a saved
+  setup. Progressions come from fixed, random-walk, rule, functional, circle-of-fifths, voice-leading, pendulum or pedal
+  sources, with per-track rate multipliers, density modulation, chance, drift and swing. A control page in the browser
+  talks to the FM-1 over USB, and Felucca's own sequencer plays the notes the generator writes ahead of it. The README
+  says it has run in the browser emulator and its tests and has not yet been flashed to a real FM-1.
+status: active
+authors:
+- name: jose-no
+  url: https://github.com/jose-no
+source: https://github.com/jose-no/Gen-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  README and LICENSING.md. As Felucca, with msfa (Apache-2.0), the MIT engines and ports, and OFL fonts keeping their own
+  licences.
+homepage: https://jose-no.github.io/Gen-fm1/
+distribution: browser-installer
+install_notes: >-
+  Open the installer at /webapp/installer/ on the project page in Chrome or Edge with the FM-1 on USB. It is Felucca's
+  installer with this package and works from M-VAVE's firmware or Felucca; its Return to official V15 option needs the
+  M-VAVE file you download yourself. The README notes that installing other firmware is at your own risk.
+brick_risk: true
+tags: [generative, chords, sequencer, synth-engine, fm, midi, usb-midi, web-midi, emulator, fork]
+versions:
+- version: main @ 28acafa
+  date: 2026-10-28
+  url: https://github.com/jose-no/Gen-fm1/commit/28acafaee0974dc5979ff95dea37eaf1ecf78e50
+  notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+name: TR-707C
+summary: >-
+  Drum machine styled after a 1985 computer rhythm composer: 13 synthesised instruments, 16 step keys, a pattern of up to 64
+  bars per instrument, eight songs and MIDI control.
+description: >-
+  An app on the Dinghy platform that follows the workflow of a Roland TR-707 without bundling any Roland material: the thirteen
+  instruments (bass drum, snare, three toms, rim, clap, cowbell, two hi-hats, crash, ride and tambourine) are synthesised with
+  integer maths and the repository contains no samples. Each instrument has its own pattern of up to 64 bars with its own loop
+  length, so a short cowbell loop can run against a long kick pattern, and each step is off, on or accented. Notes, three banks of
+  control changes, clock in and out and start and stop are handled over MIDI, and eight songs save to flash. The documentation
+  says it is an unofficial fan firmware, tested only in host mode on a computer: it was not yet built with the JieLi
+  toolchain or run on an FM-1. The README is still Dinghy's.
+status: active
+authors:
+- name: JimmyKaps
+  url: https://github.com/JimmyKaps
+source: https://github.com/JimmyKaps/tr707c-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only, inherited from Dinghy, Felucca (Leo Kuroshita) and SLOOP. The Dinghy logo in assets/ is
+  copyright designburg, all rights reserved and not under the GPL, according to LICENSING.md. The Terminus font is SIL OFL 1.1.
+distribution: source-only
+install_notes: >-
+  No release. A manual GitHub workflow builds the package on a runner; locally, docs/TR-707C.md gives the build line
+  (./build.sh --app tr707c) and the install line (tools/fm1_install.py). The USB rescue and the Firmware Hub can return the unit to
+  other firmware. The project's own notes say the build has not been checked on a device yet.
+brick_risk: true
+tags: [drums, sequencer, midi, fork]
+versions:
+- version: main @ 260d07d
+  date: 2026-11-02
+  url: https://github.com/JimmyKaps/tr707c-fm1/commit/260d07d582dc62113ef4ea1a12ce1513da7aac8c
+  notes: No tagged releases; this is the latest commit.

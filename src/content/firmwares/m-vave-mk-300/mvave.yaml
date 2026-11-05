@@ -1,0 +1,41 @@
+device: m-vave-mk-300
+name: mvave
+kind: tool
+summary: >-
+  Python library and command-line tool for the MK-300 that speaks the SysEx protocol of M-VAVE's M-EFCS editor over USB:
+  lists, loads, saves and copies presets, and edits blocks, models and knobs.
+description: >-
+  Rights warning: the repository's docs/vendor folder holds a copy of M-VAVE's MK-300 effects manual as a PDF,
+  which its notes say came from a third-party manuals site, and the licence does not cover it.
+
+  The protocol layer is the editor's, reverse engineered from captured traffic, and a device profile adds
+  the MK-300's preset layout and a catalogue of 359 built-in models with their knobs and defaults. Commands
+  show the edit buffer, load or read any stored preset, store the buffer into a slot without overwriting a named
+  one unless asked, change the signal chain order, set a model or knob in a block, and read or write a few global
+  fields. It can play a DI file through the current preset over USB audio and record the result, and print the
+  preset number when a footswitch changes it. Model and IR uploads, the looper and drum pages, footswitch
+  assignments and most global fields are not covered. It needs macOS. The repository is archived and also
+  works as a Claude Code plugin with two skills, one for configuring the pedal and one for building a preset from
+  gear research.
+status: archived
+authors:
+- name: João Paulo Faria
+  url: https://github.com/jpfaria
+source: https://github.com/jpfaria/mvave
+source_status: open
+license: MIT
+license_notes: >-
+  The MIT licence covers the repository's own files. docs/vendor/mk300-effects-description-am3.pdf is M-VAVE's
+  document, not the author's.
+distribution: source-only
+install_notes: >-
+  pip install git+https://github.com/jpfaria/mvave on Python 3.11 or newer; it uses CoreMIDI through python-rtmidi
+  and expects the pedal on USB with port name USB Composite Device. The M-EFCS editor can stay open. Writes go to the edit
+  buffer until a save command stores them in flash, and a wrong checksum makes the pedal drop a command silently.
+brick_risk: false
+tags: [editor, sysex, usb-midi, presets, python, cli, research]
+versions:
+- version: main @ 52a8f26
+  date: 2026-10-28
+  url: https://github.com/jpfaria/mvave/commit/52a8f26a7b76d60031096661687e1814f2e8fb7d
+  notes: No tagged releases; this is the latest commit.

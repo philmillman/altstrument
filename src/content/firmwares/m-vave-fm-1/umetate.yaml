@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
+name: umetate
+kind: tool
+summary: >-
+  Python command-line framework for building custom FM-1 and SMK-37 firmware in a Docker build host, with a browser and plugin build of the same DSP, scaffolding, evidence reports and flash and recovery commands.
+description: >-
+  Commands check the environment, set up the JieLi toolchain in a Docker volume, build, emulate, inspect, flash and
+  debrick, scaffold nodes, macros and patches, lint, and run a browser lab that compiles the generated DSP to WebAssembly.
+  The same engine builds as a VST3 and CLAP plugin. The firmware side is RIB, a starter derived from Dinghy and
+  Felucca that runs on both cores, with optional FPU use, SMK-37 support and hardware-accelerated DSP. Skills for
+  development, safety and documentation guide an AI agent through a project, and a publish command stages a release
+  with checksums. Type P.fm1 is the worked example. The README says device acceptance is blocked until hardware is
+  available, and the author had not tested flashing on a physical FM-1.
+status: active
+authors:
+- name: P1Onken
+  url: https://github.com/AkirakoSaintJust
+source: https://github.com/AkirakoSaintJust/umetate
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md and the README say GPL-3.0-only. The LICENSE file's header says version 3 "or any later version", so the
+  two disagree. A built plugin links JUCE 8.0.9, which is AGPL-3.0-only or commercial. The JieLi toolchain is vendor
+  terms and is installed by the setup command, not stored in the repository.
+distribution: source-only
+install_notes: >-
+  Needs Python 3.11 or newer and Docker. Install with pip install -e ., run umetate quick-check, then umetate setup to
+  fetch JieLi's toolchain and SDK into the volume. The flash and debrick commands write the device, so back up first.
+brick_risk: true
+tags: [sdk, platform, emulator, web, fork, synth-engine]
+versions:
+- version: main @ 71b8040
+  date: 2026-11-05
+  url: https://github.com/AkirakoSaintJust/umetate/commit/71b804082efcc2c083c81434420a013ce643a254
+  notes: No tagged releases; this is the latest commit.

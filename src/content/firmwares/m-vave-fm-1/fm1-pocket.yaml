@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: FM-1 Pocket
+kind: tool
+summary: >-
+  Phone web app that plays an FM-1 look-alike on a touch faceplate, running M-VAVE's unmodified FM1 Open V14 firmware compiled to
+  WebAssembly. Works offline after the first load.
+description: >-
+  The page draws the FM-1's keys, knobs and screen as a faceplate and drives the official open firmware, built from the app,
+  web and synth sources of m-vave/fm1_open at a pinned commit with the flags from that repository's build script. The runtime in
+  the page is adapted from the SDK's simulator script. The README suggests adding it to the iPhone home screen from Safari so it
+  runs as an app, and the repository includes the build script, the faceplate artwork and the service worker. It is an emulator
+  only and writes nothing to a real FM-1.
+status: active
+authors:
+- name: Prado-Design
+  url: https://github.com/Prado-Design
+source: https://github.com/Prado-Design/fm1-pocket
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The repository has no LICENSE file. The README states GPL-3.0-only with the FM1 SDK linking exception, as in the FM1 Open
+  repository, and points to that repository's LICENSE.md and THIRD_PARTY.md. The firmware is stated to be unmodified.
+homepage: https://prado-design.github.io/fm1-pocket/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page; on iPhone use Share and Add to Home Screen in Safari. Nothing is flashed to a device.
+brick_risk: false
+tags: [emulator, ios, web]
+versions:
+- version: main @ 8c9bbf2
+  date: 2026-11-01
+  url: https://github.com/Prado-Design/fm1-pocket/commit/8c9bbf2b16061a81f074ca057b0ad8ff7c3ad786
+  notes: No tagged releases; this is the latest commit.

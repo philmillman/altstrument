@@ -3,7 +3,7 @@ name: Classic Tabby
 summary: >-
   Fork of M-VAVE's SMK37 Open for the SMK-37 Pro that adds song mode, MIDI file import and per-row program and control change events, with a hosted workbench. It drops the sampler and the DX7 user library to make room.
 description: >-
-  Songs hold up to 128 rows, each pointing to one 64-step block per track, with up to four notes per step, probability, retrigger, per-row length and repeat counts, per-track output channels, queued jumps and loops. 16 songs are stored in the flash that held samples. The workbench imports Standard MIDI files (type 0 or 1) into songs, edits rows and blocks, and exports a .tabby file. Rows can carry program changes, bank selects and control changes that fire when the row starts, and the workbench holds definitions for eleven external devices, including the FM-1 under Skiff, Melodee and Orange Cat, so presets can be picked by name. It was built on Linux with a reproducible toolchain, byte-identical to the Windows toolchain under Wine. The release notes say the 2.0 release has been tested on the host and in the browser simulator only, not on hardware, and warn that old sample and DX7 data is erased after confirmation. Release 1.0 is SMK37 Open V01 unmodified. Written with Claude.
+  Songs hold up to 128 rows, each pointing to one 64-step block per track, with up to four notes per step, probability, retrigger, per-row length and repeat counts, per-track output channels, queued jumps and loops. 16 songs are stored in the flash that held samples. The workbench imports Standard MIDI files (type 0 or 1) into songs, edits rows and blocks, and exports a .tabby file. Rows can carry program changes, bank selects and control changes that fire when the row starts, and the workbench holds definitions for fifteen external devices, including the FM-1 under Skiff, Melodee and Orange Cat, and a built-in rig profile, so presets can be picked by name. Version 3.0 keeps the start offset and length of each imported note in 480ths of a step, adds a track launch page that lets each of the eight tracks loop one of the song's patterns, a lead time per channel for program changes, and moves Bluetooth settings from the device to the workbench. Version 3.2 adds importer output channels taken from the file and a generated MIDI authoring guide. It was built on Linux with a reproducible toolchain, byte-identical to the Windows toolchain under Wine. The release notes for 2.0 and each later release say it has been tested on the host and in the browser simulator only and is not yet validated on hardware, and warn that old sample and DX7 data is erased after confirmation. Release 1.0 is SMK37 Open V01 unmodified. Written with Claude.
 status: active
 authors:
 - name: seattleuser0
@@ -17,10 +17,18 @@ homepage: https://seattleuser0.github.io/classic-tabby/
 distribution: browser-installer
 requires_stock: SMK-37 Pro (V16 factory firmware or an installed SMK37 Open); not the Elite
 install_notes: >-
-  Open the workbench in desktop Chrome or Edge with MIDI and SysEx permission, check the Device update tab shows build 41d72747b0f68867, and confirm the device identity reads SMK-37 Pro_016 or SMK-37 Pro_8000001 before continuing. Back up projects and DX7 voices first, because sample and DX7 data is erased once you confirm on first boot, and export songs as .tabby before using Restore factory V16, which overwrites the last part of song storage. The workbench has a Restore factory V16 option. An offline copy of the workbench is in the release.
+  Open the workbench in desktop Chrome or Edge with MIDI and SysEx permission, check the Device update tab shows the build number printed in the release notes (d842d29d324339e7 for tabby-v03.2), and confirm the device identity reads SMK-37 Pro_016 or SMK-37 Pro_8000001 before continuing. Back up projects and DX7 voices first, because sample and DX7 data is erased once you confirm on first boot, and export songs as .tabby before using Restore factory V16, which overwrites the last part of song storage. The workbench has a Restore factory V16 option. An offline copy of the workbench is in the release.
 brick_risk: true
 tags: [sequencer, tracker, midi, fork, editor]
 versions:
+- version: tabby-v03.2
+  date: 2026-11-05
+  url: https://github.com/SeattleUser0/classic-tabby/releases/tag/tabby-v03.2
+  notes: Adds a read-only Wrong Room rig profile, four more device profiles, importer output channels taken from the MIDI file, and a built-in MIDI authoring guide. The firmware is unchanged apart from the version label, and the notes say it is not yet validated on hardware. Release tabby-v03.1 only added a rewritten manual and the version on the boot screen.
+- version: tabby-v03.0
+  date: 2026-11-04
+  url: https://github.com/SeattleUser0/classic-tabby/releases/tag/tabby-v03.0
+  notes: Keeps imported notes' exact timing, adds a track launch page, a lead time per channel and Bluetooth settings in the workbench, and removes the device's BLE and NAME pages. Songs from tabby-v02.0 still play.
 - version: tabby-v02.0
   date: 2026-11-03
   url: https://github.com/SeattleUser0/classic-tabby/releases/tag/tabby-v02.0

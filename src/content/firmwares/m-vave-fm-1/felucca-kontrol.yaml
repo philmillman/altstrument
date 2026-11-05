@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: Felucca KONTROL Edition
+summary: >-
+  Patch set for Felucca 1.8.0 that lets a Native Instruments Kontrol S-Series MK3 keyboard play and edit the FM-1 over
+  MIDI, with a CH16 map for 24 parameters, the panel buttons and the seven encoders, and an importable template.
+description: >-
+  A script applies the changes to upstream Felucca v1.8.0 in GitHub Actions, runs the host tests and builds the
+  package. The Kontrol's keybed plays the selected track when ROUT is SEL, and MIDI channel 16 carries absolute
+  controls for the current engine's parameters, the effect sends and the panel. Buttons and encoders are reproduced
+  over MIDI, while the FM-1's own key matrix and master knob are not. The boot splash adds KONTROL EDITION in red. The
+  repository includes the .kmt template for the controller and an older 1.1.5.1 build path kept as legacy. Its
+  workflow is labelled experimental.
+status: active
+authors:
+- name: 1bitfromdend
+  url: https://github.com/1bitfromdend
+source: https://github.com/1bitfromdend/Felucca-KONTROL-MIDI
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and no licence statement. It patches Felucca, which is GPL-3.0-only.
+distribution: download
+install_notes: >-
+  The README sends you to the artifact of a GitHub Actions run, felucca-1.8.0-kontrol, which needs a GitHub sign-in and can expire. Install the
+  extracted .fwsc with Felucca's fm1_install.py over USB-MIDI, then import the template on the Kontrol. Return to stock
+  with M-VAVE's V15 package or Felucca's web installer.
+brick_risk: true
+tags: [midi, controller-mode, fork, patch]
+versions:
+- version: main @ 9c876a1
+  date: 2026-10-31
+  url: https://github.com/1bitfromdend/Felucca-KONTROL-MIDI/commit/9c876a18156a9f3e9587fe40bc126293b6b208e9
+  notes: No tagged releases; this is the latest commit.

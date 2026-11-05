@@ -1,0 +1,50 @@
+device: m-vave-smk-37
+name: Oscuro Viroid
+summary: >-
+  Closed-source firmware for the SMK-37 Elite and compatible keyboards: a three-oscillator virtual-analog synth that
+  loads Access Virus patches, with a modulation matrix, an arpeggiator and a rack of twenty effects.
+description: >-
+  Rights warning: the source is not published and the site serves prebuilt images. The .fwsc package in the
+  0.84 release is not M-VAVE's SMK-37 Elite V16 image, but it has the same size and its last 66 KB is byte-identical
+  to that image, so it carries M-VAVE code. The changelog describes TI builds that use tables and a wave bank of the
+  Virus TI without saying where they come from.
+
+  The engine has three oscillators with sync, FM, sub, noise and ring modulation, wavetable, grain and formant
+  modes, two filters, four envelopes, three LFOs, unison of up to six voices and a six-slot modulation matrix. It
+  reads Virus A, B, C and TI patches with their arpeggiator settings into four banks of 128 and sends banks back
+  out as files, and the site offers showcase banks in Virus SysEx and in its own format. A rack of up to six
+  effects is drawn on the keyboard's screen, and the arpeggiator has up to 32 steps. The keyboard also works as a
+  USB audio interface and sends MIDI clock, and the processor can be raised from 360 to 420 MHz. It shows up as SMK-37
+  Oscuro USB. The build has no Bluetooth and no step sequencer, and the author lists an Oscuro DAW build as in
+  development. It is tested on the SMK-37 Pro, Donner Starrykey-37PLAY and EROK MKE-P37 as well as the Elite.
+status: active
+authors:
+- name: kartun83
+  url: https://github.com/kartun83
+source_status: binary-only
+license: unspecified
+license_notes: >-
+  No licence or terms are published. The site calls the firmware free, and says the showcase banks are free to use
+  and share with Oscuro. The repository behind the site, kartun83/oscuro-firmware, holds only the generated pages.
+homepage: https://kartun83.github.io/oscuro-firmware/
+distribution: browser-installer
+requires_stock: SMK-37 Elite or a compatible model on M-VAVE firmware
+install_notes: >-
+  Open the site's installer in Chrome or Edge, or download the kit and run the installer from the computer. Only
+  the application area is written, and the keyboard's boot code, settings and calibration are left alone. M-VAVE's
+  firmware can be put back from Oscuro or from any M-VAVE version. Holding Globe at power-on skips optional extras
+  such as the faster clock. Keep power and USB connected until the keyboard restarts. The first patch upload asks for a
+  backup and clear of the keyboard's patch memory.
+brick_risk: true
+tags: [synth-engine, fx, arpeggiator, usb-audio, midi, platform, wavetable, virtual-analog]
+image:
+  url: https://kartun83.github.io/oscuro-firmware/static/oscuro-viroid-1045x522.png
+  alt: Oscuro Viroid banner with three 240 by 240 keyboard screens showing the OSC 1, FILTER 1 and OSC MOD pages, next to the text Stock hardware. Extraordinary sound.
+  credit: kartun83
+  source_url: https://kartun83.github.io/oscuro-firmware/
+  first_party: true
+versions:
+- version: '0.84'
+  date: 2026-10-30
+  url: https://kartun83.github.io/oscuro-firmware/changelog/
+  notes: First public release, the Viroid TI Rack build.

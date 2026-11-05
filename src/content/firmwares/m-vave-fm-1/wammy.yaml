@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+name: WAMMY
+summary: >-
+  JIANT FM fork that swaps the melodic engines for six electric guitar and bass guitar engines with 30 modelled
+  sounds, tuned toward heavy tones; the sequencer, DRUM-X drums and effects are JIANT's.
+description: >-
+  Every sound is synthesised from a model of a plucked string, a pickup and an amplifier, so the firmware carries no
+  recordings. Eight parameters are shared by all species: amp gain and tone, pick attack, palm mute, sustain, a
+  whammy bend, vibrato and a stack of added fifths or octaves. WAMMY.md says it was tested on a computer only, with a
+  host simulation and the repository's regression tests, and that it has not run on an FM-1; 22 of JIANT's inherited
+  tests no longer apply and have not been rewritten. Projects from JIANT load, with tracks on removed engines playing
+  the first sound of a guitar or bass species. A GitHub Actions workflow builds the package, and the author notes it
+  has not been run.
+status: active
+authors:
+- name: zshelby
+  url: https://github.com/zshelby
+source: https://github.com/zshelby/WAMMY
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md and WAMMY.md give GPL-3.0-only, as JIANT and Felucca. Three Apache-2.0 files from JieLi's AC79 SDK are
+  in the package, and bundled fonts and ported DSP keep their own licences (LICENSES/).
+distribution: source-only
+install_notes: >-
+  Run the wammy-build workflow in GitHub Actions, or build as BUILDING.md describes, then install with
+  tools/fm1_install.py. Back up the flash with JIANT's editor first. JIANT's installer can return to M-VAVE's firmware,
+  and FM-1-transporter covers a unit that no longer starts.
+brick_risk: true
+tags: [synth-engine, physical-modeling, sequencer, fork]
+versions:
+- version: main @ 11fbe0e
+  date: 2026-11-05
+  url: https://github.com/zshelby/WAMMY/commit/11fbe0eeb638bc60c77ed4edf105709f9b36def1
+  notes: No tagged releases; this is the latest commit.

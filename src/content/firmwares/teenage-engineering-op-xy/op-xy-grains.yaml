@@ -1,20 +1,22 @@
 device: teenage-engineering-op-xy
 name: OP-XY Grains
 summary: >-
-  Granular sample engine for the OP-XY on the stock sampler page, with a screen that draws each grain, six presets and
+  Granular sample engine for the OP-XY on the stock sampler page, with a screen that draws each grain over the sample's waveform, six presets and
   controls for position, scan, grain size, density, spread, chords and window shape, built on the Open-XY SDK.
 description: >-
   Grains plays one loaded sample across the keyboard like the stock sampler, but reads it as grains. Page one holds
   position, scan speed, grain size and density, and page two holds spread, a chord setting, the grain window and a mode
-  of cloud, sync to the tempo or evenly overlapped, each also with a backwards variant. The OP-XY's own envelopes, LFOs,
-  filter and effects apply on top. All notes share 64 grains at once, and a note that has to give some up fades them
-  over about 6 ms. The screen draws each grain at its read position and pitch. The six presets bring no sample, so the
-  engine stays silent until one is loaded.
+  of cloud, sync to the tempo or evenly overlapped, each also with a backwards variant. Holding Shift, the encoders edit the
+  stock sampler's start and end markers and gain. The OP-XY's own envelopes, LFOs, filter and effects apply on top, and
+  the screen follows the track's amp envelope. All notes share 64 grains at once, and a note that has to give some up fades them
+  over about 6 ms. The screen draws each grain at its read position and pitch. It opens on a six-second
+  sample of its own, rendered from the author's Wane machine, which a sample loaded over it replaces.
 
-  The README calls it experimental. It says Grains plays on an OP-XY running OS 1.2.1 and targets SDK 1.8, and gives one
-  on-device capture of its render callback at 3.067% of the stock block budget for its default settings, graphics
-  excluded, with heavier settings costing more. Its screen preview was rendered on a computer. The Open-XY machine catalog
-  lists it.
+  The README calls it experimental. It says Grains plays on an OP-XY running OS 1.2.1 and targets SDK 1.10, and gives one
+  on-device capture of v1.1.0's render callback at 3.067% of the stock block budget for its default settings, graphics
+  excluded, with heavier settings costing more; a capture for v1.2.0 is still to come. Its screen preview was rendered on
+  a computer. The Open-XY machine catalog lists it at v1.1.0, and v1.2.0 builds from source until the SDK change it
+  needs is part of the Open-XY SDK.
 status: active
 authors:
   - name: mmockett
@@ -45,6 +47,10 @@ image:
   source_url: https://github.com/mmockett/OP-XY-Grains#readme
   first_party: true
 versions:
+  - version: v1.2.0
+    date: 2026-11-05
+    url: https://github.com/mmockett/OP-XY-Grains/tree/v1.2.0
+    notes: Git tag; no GitHub release page. Opens on a built-in sample, adds a waveform strip, Shift editing of the sampler's markers and gain, and follows the track's amp envelope. Targets SDK 1.10.
   - version: v1.1.0
     date: 2026-11-01
     url: https://github.com/mmockett/OP-XY-Grains/tree/v1.1.0

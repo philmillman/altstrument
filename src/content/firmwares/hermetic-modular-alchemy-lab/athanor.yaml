@@ -1,0 +1,42 @@
+device: hermetic-modular-alchemy-lab
+name: Athanor
+summary: >-
+  Three-row performance effects firmware for the end of a signal chain, covering tape speed or tape and vinyl age,
+  analog or digital drive, and reverb, delay or modulation, each played from one knob with a bypass zone.
+description: >-
+  Each row has an amount knob that is bypassed through a wide zone around
+  noon, a second knob, a button that steps through the row's variants and a CV
+  jack that adds to the amount. The first row is a tape-speed effect that plays
+  Capicola's keyframe pitch engine with simulated reel inertia, or a tape and
+  vinyl ageing effect. The second is saturation, distortion or fuzz, analog on
+  one side of the knob and digital on the other. The third is plate reverb and
+  stereo delay that can follow a clock patched into J3, chorus and tremolo, or
+  phaser and flanger. Chosen variants are saved to flash. A crash starts a safe
+  mode that shows a fault report on the LED rings. The README states that the
+  project was written with help from an LLM and tested on hardware by its owner.
+status: active
+authors:
+  - name: pixelscript
+    url: https://github.com/pixelscript
+source: https://github.com/pixelscript/athanor
+source_status: open
+license: AGPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GNU AGPL v3 with no "or later" grant. The Capicola
+  engine files in dsp/ are AGPL-3.0, which the README gives as the reason for
+  the licence; the Alchemy SDK and libDaisy submodules are MIT.
+distribution: download
+requires_stock: Alchemy Lab V2
+install_notes: >-
+  Download athanor.bin from the GitHub release, hold B3 through the roughly
+  two-second boot window until the rings breathe, then flash it with dfu-util
+  or the Hermetic Modular web programmer. Once Athanor is running, make
+  program-live can reflash it over USB. Building needs arm-none-eabi-gcc, with
+  the Alchemy SDK and libDaisy as git submodules.
+brick_risk: false
+tags: [fx, performance, time-stretch, drive, reverb, delay, open-source]
+versions:
+  - version: v0.4.0
+    date: 2026-11-04
+    url: https://github.com/pixelscript/athanor/releases/tag/v0.4.0
+    notes: First GitHub release. Firmware .bin and .elf attached.

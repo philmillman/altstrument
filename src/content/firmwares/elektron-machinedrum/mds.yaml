@@ -1,16 +1,19 @@
 device: elektron-machinedrum
 name: MDS (Machine Dump Standard)
 kind: tool
-summary: Specification, example DSP machines and Python packing tools for writing custom machines that install into the USR slots of a Machinedrum running MDX 2.0.
+summary: Specification and example DSP machines for writing custom machines that install into the USR slots of a Machinedrum running MDX 2.0. The packing tools now live in a separate repository.
 description: >-
   Machine Dump Standard describes the SysEx package format and the dump protocol
   MDX 2.0 uses to receive new synth, drum and effect machines into its USR
-  Machine slots. The repository holds the two specification documents, example
-  machines written in DSP56300 assembly (a sine, sample players, a pluck, RAM
-  echo and recording and input taps), and two scripts: one packs an MDS file from
-  a JSON definition and an assembled binary, and one converts an MDS file to
-  SysEx. Machine code runs on the unit's DSP, so the author advises installing
-  only machines from developers you trust.
+  Machine slots. The repository holds the two specification documents, a changelog and
+  example machines written in DSP56300 assembly (a sine, sample players, a pluck,
+  RAM echo and recording and input taps), each with its JSON definition and packed
+  MDS file. Version 1.1 of the standard, dated 2026-10-23, stores separate cycle
+  counts for the MKI and MKII boards, and the firmware adds up the declared
+  cycles of every track in a kit to check it against the DSP limit. Tools for
+  building and certifying machines are in the author's separate mds-tools
+  repository. Machine code runs on the unit's DSP, so the author advises
+  installing only machines from developers you trust.
 status: active
 authors:
   - name: Justin Mammarella
@@ -22,13 +25,13 @@ license_notes: No license file or statement in the repository.
 distribution: source-only
 requires_stock: MDX 2.0 (X.20 or later)
 install_notes: >-
-  Needs a Machinedrum running the third-party MDX 2.0 preview. Pack a machine
-  with the Python scripts, convert it to SysEx and send it into a USR Machine
-  slot using the OS's Machine Manager. A DSP56300 assembler is needed to build
-  the example sources.
+  Needs a Machinedrum running the third-party MDX 2.0 preview. Build and pack a
+  machine with the author's mds-tools, or use the packed example files, and send
+  the result into a USR Machine slot using the OS's Machine Manager. A DSP56300
+  assembler is needed to build the example sources.
 tags: [machines, sysex, research, converter, sdk]
 versions:
-  - version: main @ c446179
-    date: 2026-10-09
-    url: https://github.com/jmamma/MDS/commit/c446179d6d73a82b117ee20eb2216af78734a795
-    notes: No tagged releases; this is the latest commit.
+  - version: main @ 0de4c4f
+    date: 2026-11-05
+    url: https://github.com/jmamma/MDS/commit/0de4c4f76810a0162f4b1d6243fbe6303dc8d985
+    notes: No tagged releases; this is the latest commit. Specification version 1.1 (2026-10-23) is current.

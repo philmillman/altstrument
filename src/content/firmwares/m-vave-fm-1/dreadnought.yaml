@@ -1,0 +1,96 @@
+device: m-vave-fm-1
+name: DREADNOUGHT
+summary: >-
+  Jungle and drum and bass groovebox firmware with a Reese bass engine, break chopper, sampler, DX7-style FM, wavetable and Juno-style
+  synths, an eight-track sequencer, song mode, a web editor and a plugin build.
+description: >-
+  Its own app on X0X's platform, started as a SLOOP 2.8.1 fork and rewritten from 0.3. Eight tracks hold any of the instruments:
+  REESE, SUB (an SH-101-style bass), BREAKS and SAMPLER (loop chopping and one-shot or keyed samples), FM (a six-operator engine
+  that plays DX7 voices), WAVE (a two-oscillator wavetable synth that can import Serum tables), JUNO and MIDI-out tracks. Each
+  instrument has a sequencer page with eight patterns, conditions and retriggers, and a song mode chains patterns. Effects include
+  tape and BBD echoes, springs and reverbs. A web editor and flasher run in Chrome or Edge, and an iPad build of the editor is a
+  separate pre-release. From 0.44 the same app also runs as an AU, VST3 and standalone plugin. The release notes call it a beta not
+  yet tested on a real FM-1, and the interface follows the layout of Native Instruments' Massive.
+status: active
+authors:
+- name: TwistedGenetics
+  url: https://github.com/TwistedGenetics
+source: https://github.com/TwistedGenetics/DREADNOUGHT
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states GPL-3.0-only and LICENSE is the GPL-3.0 text. It credits Felucca (Leo Kuroshita), SLOOP and Clipper (isod89),
+  X0X, FM-1-RE and M-VAVE's FM1 Open. The FM engine is a port of Dexed's msfa (Apache-2.0).
+homepage: https://twistedgenetics.github.io/DREADNOUGHT/
+distribution: browser-installer
+install_notes: >-
+  Open the web flasher in Chrome or Edge with the FM-1 on USB, back up, then pick a release from its list or a downloaded
+  DREADNOUGHT-X.Y.fwsc. Or run X0X's tools/fm1_install.py from the repository. Read docs/RECOVERY.md first. Since 0.43 the update
+  loader writes the first sector last, so an install cut off part-way leaves the unit in its loader instead of a dead black screen.
+brick_risk: true
+tags: [synth-engine, sequencer, drums, sampler, fm, wavetable, fx, lfo, editor, flasher, vst, fork]
+versions:
+- version: '0.44'
+  date: 2026-10-27
+  url: https://github.com/TwistedGenetics/DREADNOUGHT/releases/tag/v0.44
+  notes: Adds AU, VST3 and standalone plugin builds of the same app, which follow the DAW's tempo and transport.
+- version: '0.43'
+  date: 2026-10-26
+  url: https://github.com/TwistedGenetics/DREADNOUGHT/releases/tag/v0.43
+  notes: The update loader writes the firmware header last, so a cut-off install cannot leave an unbootable unit.
+- version: '0.38'
+  date: 2026-10-25
+  url: https://github.com/TwistedGenetics/DREADNOUGHT/releases/tag/v0.38
+  notes: Adds SONG, up to 64 rows that choose each track's pattern and bar count.
+- version: '0.36'
+  date: 2026-10-25
+  url: https://github.com/TwistedGenetics/DREADNOUGHT/releases/tag/v0.36
+  notes: Adds the JUNO polysynth and a second sampler.
+- version: '0.32'
+  date: 2026-10-25
+  url: https://github.com/TwistedGenetics/DREADNOUGHT/releases/tag/v0.32
+  notes: Adds WAVE, a wavetable synth with warp modes, and Serum wavetable import in the editor.
+- version: '0.25'
+  date: 2026-10-24
+  url: https://github.com/TwistedGenetics/DREADNOUGHT/releases/tag/v0.25
+  notes: Adds FM, a six-operator DX7-style synth that plays DX7 voices.
+- version: '0.23'
+  date: 2026-10-24
+  url: https://github.com/TwistedGenetics/DREADNOUGHT/releases/tag/v0.23
+  notes: Adds SAMPLER, with 16 one-shot pads or a key map with loops.
+- version: '0.16'
+  date: 2026-10-24
+  url: https://github.com/TwistedGenetics/DREADNOUGHT/releases/tag/v0.16
+  notes: Adds eleven effects for two FX slots, including tape and BBD echoes, spring and shimmer reverbs.
+- version: '0.13'
+  date: 2026-10-24
+  url: https://github.com/TwistedGenetics/DREADNOUGHT/releases/tag/v0.13
+  notes: Adds SUB, an SH-101-style bass.
+- version: '0.12'
+  date: 2026-10-24
+  url: https://github.com/TwistedGenetics/DREADNOUGHT/releases/tag/v0.12
+  notes: Any instrument can go on any track; adds the FX rack and sample loading from the editor.
+- version: '0.11'
+  date: 2026-10-24
+  url: https://github.com/TwistedGenetics/DREADNOUGHT/releases/tag/v0.11
+  notes: A sequencer page per instrument with eight patterns each, step conditions and retrigger rolls.
+- version: '0.7'
+  date: 2026-10-24
+  url: https://github.com/TwistedGenetics/DREADNOUGHT/releases/tag/v0.7
+  notes: Adds the web editor with a piano roll and slice grid.
+- version: '0.5'
+  date: 2026-10-24
+  url: https://github.com/TwistedGenetics/DREADNOUGHT/releases/tag/v0.5
+  notes: Adds BREAKS, a break chopper that cuts a loop into 16 slices a bar.
+- version: '0.4'
+  date: 2026-10-24
+  url: https://github.com/TwistedGenetics/DREADNOUGHT/releases/tag/v0.4
+  notes: Adds the eight-track sequencer with per-track lengths, accents and slides.
+- version: '0.3'
+  date: 2026-10-23
+  url: https://github.com/TwistedGenetics/DREADNOUGHT/releases/tag/v0.3
+  notes: No longer a SLOOP fork; its own app and engines on X0X's platform.
+- version: '0.1'
+  date: 2026-10-23
+  url: https://github.com/TwistedGenetics/DREADNOUGHT/releases/tag/v0.1
+  notes: First release, from the SLOOP 2.8.1 fork with the REESE bass engine.

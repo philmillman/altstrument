@@ -1,0 +1,39 @@
+device: m-vave-fm-1
+name: Microton
+summary: >-
+  Microtonal synth for the FM-1 on Dinghy: an integer-only engine with scale-table tuning, 83 built-in world scales, an
+  eight-voice analog voice, FM drums, a sequencer, delay and reverb, plus a browser lab.
+description: >-
+  The engine is portable C that uses integers only, since the FM-1 has no FPU or 64-bit division, and the same source
+  builds for a browser page and for the device. Tuning comes from scale tables, with a Scala file codec in the tools, and
+  version 0.7 puts 83 world scales into both the device and the browser. There are three parts, one per melodic track,
+  each on eight shared analog-style voices, with a sequencer that holds steps and transposes them by octave, eight FM
+  drums ported from the author's own drum model, a half-rate stereo delay and a Dattorro plate reverb. Settings can be saved
+  to flash and are loaded at power-on. The firmware directory is Dinghy with its app replaced, and the README
+  calls the device build a test firmware that plays the engine and shows battery and audio CPU load, and still says the
+  engine will reach the FM-1 later. A GitHub workflow builds the package and runs the firmware in Dinghy's host emulator.
+  The README does not say the build has been tried on a real FM-1.
+status: active
+authors:
+- name: odshech
+  url: https://github.com/odshech
+source: https://github.com/odshech/microton
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The repository has no root licence file and the README states no licence for the engine. The device/ directory is
+  Dinghy, with its GPL-3.0-only LICENSE and LICENSING.md, and the app inside it is a derivative. Treat the built
+  firmware as GPL-3.0-only; the engine and browser lab have no stated terms. The Terminus font is SIL OFL 1.1.
+distribution: source-only
+install_notes: >-
+  No release. The package is built on Linux with JieLi's toolchain and the AC79 SDK through sync_device.sh and
+  device/build.sh, or downloaded as the workflow artifact of a GitHub run. dist/microton-install.html installs it from
+  Chrome over USB using Felucca's update protocol, and M-VAVE's FM-1.fwsc goes back the same way. Identity FM-1_950.
+  Holding OCT- at power-on opens the rescue. Back up first.
+brick_risk: true
+tags: [synth-engine, microtonal, scales, sequencer, drums, fx, reverb, delay, emulator, fork]
+versions:
+- version: main @ 65f2898
+  date: 2026-11-05
+  url: https://github.com/odshech/microton/commit/65f28980ba13411e49ea379134e0e61234c25765
+  notes: No tagged releases; this is the latest commit, which the message labels version 0.7.

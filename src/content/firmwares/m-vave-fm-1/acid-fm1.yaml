@@ -1,0 +1,38 @@
+device: m-vave-fm-1
+name: ACID FM1
+summary: >-
+  Original monophonic acid bassline instrument for the FM-1 with a 64-step sequencer, a four-pole filter, modulation lanes,
+  distortion and delay, plus a browser studio and a hardware-panel emulator.
+description: >-
+  A saw and pulse voice with slide, a sine sub, and a saturated four-pole filter, with accent, resonance and envelope controls.
+  The sequencer has up to 64 steps with accents, slides, per-step probability, one to four ratchets, cutoff locks, independent
+  loop lengths for notes, accents and slides, swing, four directions, scale selection and seeded generation. Three tempo-related
+  modulators, seven distortions, a delay, chorus and a small ambience effect complete it, with eight factory patches and four
+  project slots. Two browser pages share the same C engine, a studio and a hardware-view emulator that runs the real app and
+  screen code. The README says it is inspired by Arturia's Acid V but uses none of its code or assets, and that the firmware
+  has not been run on a physical FM-1.
+status: active
+authors:
+- name: kclack
+  url: https://github.com/kclack
+source: https://github.com/kclack/acid-fm1
+source_status: open
+license: AGPL-3.0-only
+license_notes: >-
+  The README states AGPL-3.0-only for the original code and the LICENSE file is the AGPL-3.0 text. The fm1-base and
+  felucca-bsp platform is MPL-2.0 file by file, the Barlow font is SIL OFL 1.1 and three JieLi SDK packaging files are Apache-2.0
+  (THIRD_PARTY.md).
+homepage: https://kclack.github.io/acid-fm1/
+distribution: download
+install_notes: >-
+  Back up the projects of the firmware now on the FM-1 first, since the four slot pairs and settings area can overwrite its
+  data. Write the release's acid-fm1-0.1.0.fwsc with tools/fm1_install.py from fm1-base (needs mido and python-rtmidi). The
+  project does not bundle stock firmware or a bootloader; the README points to the FM-1 Transporter and M-VAVE's workbench for
+  recovery.
+brick_risk: true
+tags: [synth-engine, sequencer, fx, filter, midi, usb-midi, emulator]
+versions:
+- version: 0.1.0
+  date: 2026-10-23
+  url: https://github.com/kclack/acid-fm1/releases/tag/v0.1.0
+  notes: Pre-release; first experimental build, not tested on a physical FM-1.

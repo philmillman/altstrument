@@ -1,0 +1,38 @@
+device: m-vave-fm-1
+kind: tool
+name: FM-1 Firmware Tool
+summary: >-
+  Windows recovery app for an FM-1 stuck in a reboot loop: writes a local .fwsc through the chip's recovery mode after
+  taking and verifying a full-flash backup.
+description: >-
+  A desktop front end and command line on a pinned copy of jl-uboot-tool. It checks the package, the PC and the device,
+  sends the FM-1 into ROM mode, reads the full flash twice and compares the reads, then writes only the firmware region
+  (0x4000 to 0x92FFF), leaves the boot head alone and reads the result back. The firmware package is supplied by the user;
+  the repository holds none. The README warns that losing power or connection during a write can leave the firmware
+  region incomplete. Automatic typed confirmation of the write step is on by default and can be switched off.
+status: active
+authors:
+- name: ajsoriar
+  url: https://github.com/ajsoriar
+source: https://github.com/ajsoriar/FM-1-Firmware-Tool
+source_status: open
+license: MIT
+license_notes: >-
+  Third-party components in motor/ keep their own notices, including jl-uboot-tool's bundled JieLi loader blobs.
+distribution: source-only
+install_notes: >-
+  Needs Windows, Python 3.11 or later, administrator rights and a USB data cable. Install the dependencies, run
+  run_gui.bat or fm1.bat, and keep the FM-1 powered and connected during the write. A build script can package the app.
+brick_risk: true
+tags: [flasher, recovery, utility, python]
+image:
+  url: https://raw.githubusercontent.com/ajsoriar/FM-1-Firmware-Tool/main/docs/images/app-screen.png
+  alt: "FM-1 Firmware Tool window showing a connected FM-1, a selected .fwsc package and a list of numbered recovery steps with their status"
+  credit: "ajsoriar"
+  source_url: https://github.com/ajsoriar/FM-1-Firmware-Tool
+  first_party: true
+versions:
+- version: main @ ddbfe19
+  date: 2026-11-01
+  url: https://github.com/ajsoriar/FM-1-Firmware-Tool/commit/ddbfe1946d4e0cabd3f8d40a99600600b5955af3
+  notes: No tagged releases; this is the latest commit.

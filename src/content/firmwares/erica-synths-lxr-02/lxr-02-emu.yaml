@@ -1,0 +1,47 @@
+device: erica-synths-lxr-02
+name: LXR-02 Emu (unofficial)
+kind: tool
+summary: Browser emulator that compiles Erica Synths' open LXR-02 firmware 1.7 to WebAssembly, with a virtual panel, a step sequencer, a sound editor and an SD card kept in the browser.
+description: >-
+  Only the hardware layer is replaced; the sound engine, sequencer, menus and preset code are the firmware sources,
+  compiled with a single #ifdef added. The page shows the two-line display, knobs, faders and buttons, and above them a
+  step grid for the playing pattern and a panel for the eight pages of sound parameters. The virtual SD card is stored in
+  the browser and can be exported, so kits and patterns made on a computer can be copied to a real card. The start-up
+  screen reads Unofficial Emu, based on fw 1.7, as Erica Synths' notice requires. The author says the output has not been
+  compared with recordings of a real unit, MIDI is not there yet, and that Claude helped build it. Erica Synths' team
+  replied in an issue that the name is fine if it states that it is a community project, and that the code will not be
+  added to the official repository. The page is in English or Chinese. It is a different project from lxr02-recomp, which
+  translates the compiled ARM program instead.
+status: active
+authors:
+  - name: bg1eym
+    url: https://github.com/bg1eym
+source: https://github.com/bg1eym/lxr-desktop-app/tree/emu
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The emu branch of a fork of erica-synths/lxr-desktop-app. Its README states GPL-3.0-only, like the firmware, with the
+  additional terms in Erica Synths' NOTICE.md: trademark limits on the Erica Synths and LXR names and marking of modified
+  firmware on the start-up screen. The virtual panel is a generic layout with no Erica Synths artwork.
+homepage: https://bg1eym.github.io/lxr-desktop-app/
+distribution: source-only
+install_notes: >-
+  Open the hosted page in desktop Chrome and click Power on. Nothing is flashed to a device. To build it locally, see
+  emu/README.md on the emu branch.
+brick_risk: false
+tags: [emulator, web, drums, sequencer, editor, open-source]
+image:
+  url: https://raw.githubusercontent.com/bg1eym/lxr-desktop-app/emu/docs/images/emu-panel.png
+  alt: Dark virtual panel titled LXR-02 Emu with an UNOFFICIAL label, an amber two-line display, a data encoder, four knobs, six yellow faders and rows of grey buttons with red LEDs
+  credit: bg1eym
+  source_url: https://github.com/bg1eym/lxr-desktop-app/tree/emu/emu
+  first_party: true
+versions:
+  - version: emu-v0.2.1
+    date: 2026-10-29
+    url: https://github.com/bg1eym/lxr-desktop-app/releases/tag/emu-v0.2.1
+    notes: Fixes freezes after the screensaver wait, saves the pattern before a reboot, adds a reset sound button.
+  - version: emu-v0.2.0
+    date: 2026-10-29
+    url: https://github.com/bg1eym/lxr-desktop-app/releases/tag/emu-v0.2.0
+    notes: Adds the step sequencer and the sound panel.

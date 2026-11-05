@@ -1,0 +1,43 @@
+device: 1010music-blackbox
+name: DBLU_BBMOD
+summary: Patcher built on JOEBOX 1 that adds a per-pad EQ, a transistor-ladder filter and a velocity-scaled envelope source to your own copy of Blackbox 3.1.9.
+description: >-
+  An unofficial mod for the original Blackbox, based on the JOEBOX 1 release of
+  j3threejay's blackbox-mod, so it keeps that mod's effects, LFOs, chords, note
+  conditions, solo mode and USB audio. The additions are a four-band EQ on
+  sample, multisample, slicer and clip pads, placed before or after the pad's
+  insert effect; three ladder filter variants that differ in bass compensation,
+  next to the stock-style 24 dB filter; and ENV V, a modulation source that
+  scales the pad envelope by note velocity. The EQ is reached through the INFO
+  button on the Conf tab. The author states it has run on one unit and is not
+  affiliated with 1010music. The repository holds source, patch definitions and
+  tests, no 1010music firmware, and includes a Renode-based simulator.
+status: active
+authors:
+  - name: dblU2020
+    url: https://github.com/dblU2020
+source: https://github.com/dblU2020/DBLU_BBMOD
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file credits Justin Joe for JOEBOX and dblU2020 for the additions.
+  Munchi Delay, CHOMPI TEMPO, Mutable Instruments reverb code, DaisySP and
+  portkit's simulator scripts are MIT and listed in THIRD_PARTY.md. 1010music's
+  firmware is not included.
+homepage: https://dblu2020.github.io/DBLU_BBMOD/
+distribution: patch-your-own
+requires_stock: 3.1.9
+install_notes: >-
+  Download Blackbox 3.1.9 from 1010music and patch BLACKBOX.bin in the browser
+  patcher or with apply.py; only the unmodified 3.1.9 file is accepted. Copy both
+  output files, BLACKBOX.bin and BBEXTRA.BIN, to the root of the microSD card
+  and install as for an official update (hold BACK and INFO at power-on). The
+  unit restarts once on first boot while the second file installs. Keep the
+  stock file; installing it the same way goes back to stock.
+brick_risk: false
+tags: [fx, filter, sampler, python]
+versions:
+  - version: main @ 280af3a
+    date: 2026-11-04
+    url: https://github.com/dblU2020/DBLU_BBMOD/commit/280af3a33f506280569ce50be8e73164cc31d417
+    notes: No tagged releases; this is the latest commit, which carries the DBLU_BBMOD_01 patch.

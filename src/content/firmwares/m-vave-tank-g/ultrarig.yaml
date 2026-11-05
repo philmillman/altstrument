@@ -43,14 +43,22 @@ install_notes: >-
 brick_risk: true
 tags: [fx, amp-sim, nam, ir, editor, android]
 versions:
+- version: alpha9.1
+  date: 2026-11-04
+  url: https://github.com/manuaguirre9/ultrarig/releases/tag/alpha9.1
+  notes: >-
+    Fixes installs that alpha 9 refused or left hanging: the pedal froze after install because it changed its
+    processor speed while USB was active, the "settings area is not laid out" refusal is gone, a preset
+    without an amp block no longer crashes it, backups retry harder and the installer retries once by itself
+    after a safe-mode start. Tank-B and v1 pedals get about 6 dB more output. The sounds are alpha 9's. A
+    diagnostic test build, alpha9.1-diag, followed and is not listed.
 - version: alpha9
   date: 2026-11-03
   url: https://github.com/manuaguirre9/ultrarig/releases/tag/alpha9
   notes: >-
     Adds the Tank-B bass pedal (v1 and v2, factory firmware 100) beside the Tank-G, a 5-band bass EQ, a
     6-band graphic EQ, crossover splits, a tuner that reaches the low B of a 5-string and an installer step
-    that finds the right speed for each pedal. A pre-release test build, alpha9.1, followed the next day and
-    is not listed.
+    that finds the right speed for each pedal.
 - version: alpha8
   date: 2026-11-03
   url: https://github.com/manuaguirre9/ultrarig/releases/tag/alpha8

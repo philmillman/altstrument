@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+kind: tool
+name: FM-1 Relay Studio
+summary: >-
+  Browser control centre for up to eight FM-1s on open-source firmware: clock master, piano-roll sequencer, sound editor,
+  mixer, remote control and multitrack recorder in one static page.
+description: >-
+  A larger sibling of FM-1 Relay by the same author. With SLOOP, Felucca, Skiff or JIANT it reads and writes sounds, mix,
+  patterns, presets and projects over their SysEx editor protocol, and with other firmware it uses the documented MIDI
+  channels, CCs and Program Change. It detects the firmware on each unit and lists the menu settings that unit needs. A
+  demo mode runs a virtual SLOOP with no hardware. It needs Web MIDI with SysEx, so Chrome or Edge on a computer.
+status: active
+authors:
+- name: Philip-Bos
+  url: https://github.com/Philip-Bos
+source: https://github.com/Philip-Bos/fm1-relay-studio
+source_status: open
+license: MIT
+homepage: https://philip-bos.github.io/fm1-relay-studio/
+distribution: browser-installer
+install_notes: >-
+  Open the page in Chrome or Edge and allow MIDI with SysEx. Nothing is flashed to the device.
+brick_risk: false
+tags: [editor, sequencer, web-midi, sysex, midi-clock]
+image:
+  url: https://raw.githubusercontent.com/Philip-Bos/fm1-relay-studio/main/docs/screenshots/studio-sequencer.png
+  alt: "FM-1 Relay Studio sequencer tab for a virtual SLOOP device, with transport, sound and pattern controls above a piano roll"
+  credit: "Philip-Bos"
+  source_url: https://github.com/Philip-Bos/fm1-relay-studio
+  first_party: true
+versions:
+- version: main @ e6b4935
+  date: 2026-11-05
+  url: https://github.com/Philip-Bos/fm1-relay-studio/commit/e6b493580e8331d7cfa8be8f1c9b9c5f80c396d2
+  notes: No tagged releases; this is the latest commit.

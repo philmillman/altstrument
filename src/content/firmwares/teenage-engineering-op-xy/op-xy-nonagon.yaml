@@ -10,7 +10,7 @@ description: >-
   whose energy flows between modes, Mach plays a supersonic flyby with a sonic boom and Doppler sweep, Butterfly rings a
   chain whose spectrum is the Hofstadter butterfly, and Drop floats a liquid drop on a hot pan. Ghost and Recur are sample
   engines on the sampler page. Ghost splits breath and hum between the ears for headphones and plays without a sample, and
-  Recur cuts a loaded sample into tiles and shuffles them with a chaotic map until they return to the original. Each has
+  Recur cuts a sample into tiles, opening on a four-bar break of its own, and shuffles them with a chaotic map until they return to the original. On both, Shift edits the stock sampler's markers and gain and the screen draws the sample as a waveform. Each has
   eight controls on two pages, with the OP-XY's own envelopes, filter, LFOs and effects on top, and a screen drawing one
   object in outline. The synths run on their own time units rather than locking to the tempo, since the SDK gives synths no
   tempo, note-off or velocity.
@@ -35,7 +35,7 @@ distribution: source-only
 requires_stock: "1.2.1"
 install_notes: >-
   Check out the Open-XY SDK's staging branch beside this repository, fetch its toolchain and run its tests. The seven
-  synths build together on SDK 1.4 and Ghost and Recur, the sample engines, build in a second pass on SDK 1.8. Build
+  synths build together on SDK 1.4 and Ghost and Recur, the sample engines, build in a second pass on SDK 1.10, and Recur's own sample needs an SDK branch with a further change that was still in review. Build
   with sdk.py against your own stock 1.2.1 os.ldr, passing your last build's layout.json so machines already on the
   device keep their numbers, then install the build's candidate files as the SDK's build guide describes, which ends
   with writing the OS from the device's boot menu. The SDK's authors say a faulty image may not be recoverable, and the
@@ -50,6 +50,10 @@ image:
   source_url: https://github.com/mmockett/OP-XY-Nonagon#readme
   first_party: true
 versions:
+  - version: v0.8.0
+    date: 2026-11-05
+    url: https://github.com/mmockett/OP-XY-Nonagon/tree/v0.8.0
+    notes: Git tag; no GitHub release page. Ghost and Recur gain Shift editing of the sampler's markers and gain, waveform screens and amp envelope following, and Recur opens on its own break with the trim as its loop.
   - version: v0.7.2
     date: 2026-11-03
     url: https://github.com/mmockett/OP-XY-Nonagon/tree/v0.7.2

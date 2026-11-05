@@ -1,0 +1,39 @@
+device: m-vave-fm-1
+name: CLEANSWEEP
+summary: >-
+  Flashable repair utility that erases what other firmwares saved in the FM-1's flash and restores V15's factory voices,
+  so the next firmware starts clean. It makes no sound. Tested on a unit by its author; no release yet.
+description: >-
+  Meant for a unit that misbehaves after switching firmware, such as V15 playing one note at a time after M-VAVE's V16,
+  which writes over V15's settings record. On every start it compares the flash from 0x93000 to 0xFBFFF with V15's
+  factory data and erases and rewrites only the sectors that differ, reading each back, while the screen and lights
+  show progress. A power cut is safe because the next start repeats the comparison. It leaves the boot area, its own image
+  and Felucca's store at 0xFC000 and 0xFF000 alone, and clears Bluetooth pairing records, so devices need pairing again.
+  The factory data is taken at build time from M-VAVE's V15 package. The repository's HARDWARE_TESTING.md records runs on a
+  unit from V15, V16 and MIDIMON, through power cuts, and back to V15 and V16. On USB it presents the same IDs as V15.
+  It is a flashable image in its own right, so it is listed as firmware.
+status: active
+authors:
+- name: Drew Robinson
+  url: https://github.com/ocean
+source: https://github.com/ocean/cleansweep
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSE is the MPL-2.0 text. It builds on felucca-bsp and fm1-base (MPL-2.0). Every package carries V15's factory voice
+  and settings data from assets/m-vave/FM-1_015.fwsc, which is M-VAVE's licensed file (git blob
+  ce49cc1595b67347c68a3ac7463017f9fa8c19dd, 699,956 bytes, Apache-2.0 in m-vave/fm1_open) and matches it exactly. The
+  Cooper Hewitt font is SIL OFL 1.1.
+distribution: source-only
+install_notes: >-
+  Not released. uv sync and tools/build.py produce build/cleansweep.fwsc, which any FM-1 installer can write over USB.
+  Run it once, wait for the done screen, then install the firmware you want next. There is no undo for the erase, and
+  it removes sounds, patterns and Bluetooth pairings, so use it only when a firmware misbehaves. The development identity
+  is FM-1_257000.
+brick_risk: true
+tags: [utility, flasher, recovery, platform]
+versions:
+- version: main @ eab8e71
+  date: 2026-11-04
+  url: https://github.com/ocean/cleansweep/commit/eab8e71d146fa731be29a6fe40bc5b7559f1f51c
+  notes: No tagged releases; this is the latest commit.

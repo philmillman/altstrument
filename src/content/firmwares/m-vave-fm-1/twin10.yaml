@@ -1,0 +1,46 @@
+device: m-vave-fm-1
+name: TWIN-10
+summary: >-
+  Pocket studio after the KORG DS-10: two monophonic synths with a patch panel, four synthesized drum parts, a mixer, an X/Y
+  pad, an arpeggiator and a 6-track step sequencer.
+description: >-
+  Each synth has two oscillators with sync and ring modulation, a multimode filter with drive, an ADSR, an LFO that can follow
+  the tempo, portamento and three patch cords from sources to destinations. The four drum parts are small synths with pitch
+  drop, noise and filter. One effect at a time, chorus, flanger or tempo-synced delay, is fed by per-part sends, and the X/Y
+  pad is Kaoss-style with each axis assignable. There are 32 factory sounds and a pattern A that plays a short techno loop at
+  power-on. The screen copies the DS-10's two-screen layout, with an overview of the six parts above the touched panel. The
+  arpeggiator and sequencer come from the author's LAX-32, and the README (in French) says no data from the original software
+  is used and that the project is independent of KORG, Nintendo and M-VAVE. It is built on konsumer's foma framework.
+status: active
+authors:
+- name: pjac1810
+  url: https://github.com/pjac1810
+source: https://github.com/pjac1810/twin10
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md. The platform/mvave directory is from M-VAVE's FM1 Open kit: GPLv3 with M-VAVE's SDK linking
+  exception, plus the binary engine library platform/mvave/sdk/lib/libfm1_engine.a under M-VAVE's terms for FM-1
+  devices only. Felucca, SLOOP and Dinghy code is GPL-3.0-only, and the USB audio code ported from felucca-bsp is
+  MPL-2.0 used under GPL-3.0.
+homepage: https://pjac1810.github.io/twin10/
+distribution: browser-installer
+requires_stock: V15
+install_notes: >-
+  Open the project page in Chrome or Edge with the FM-1 on USB and use its Install tab, or run tools/fm1_install.py with
+  the .fwsc; build it with the repository's GitHub workflow or with Docker (./fm1 build). Hold OCT- at power-on for the
+  rescue mode, where the page's Rescue tab puts M-VAVE's V15 back from a file you download from M-VAVE. The README says
+  installing unofficial firmware is at your own risk.
+brick_risk: true
+tags: [synth-engine, sequencer, drums, arpeggiator, fx, filter, oscillator, midi, emulator]
+image:
+  url: https://raw.githubusercontent.com/pjac1810/twin10/main/docs/twin10-240.png
+  alt: "TWIN-10 screen: a header with pattern A and 120 BPM above six part rows SYN1 to DR4 with step grids, and below it the SYN1 VCF page with four knobs TYPE LPF, CUTOFF 45, PEAK 40 and EG INT +36"
+  credit: pjac1810
+  source_url: https://github.com/pjac1810/twin10
+  first_party: true
+versions:
+- version: main @ d2fb654
+  date: 2026-11-04
+  url: https://github.com/pjac1810/twin10/commit/d2fb65423cbbcb8778d4f707a2fa47b80420e05a
+  notes: No tagged releases; this is the latest commit.

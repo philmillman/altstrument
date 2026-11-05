@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: DUB-200
+summary: >-
+  DUB-1 v1.3.0 fork that raises the tempo ceiling to 200 BPM and adds ten user sample slots, two per layer, that retrigger
+  with the generative engine; DUB-1's factory pieces and sound engine are unchanged.
+description: >-
+  Samples are one-shot overlays over the native voices, with an Off, A, B or Alt choice per layer in each saved piece, picked by holding GLO and turning
+  PRESETS. Ten 24 KiB slots sit in an unused flash region below the panel calibration data, and each holds up to 2.2 seconds of
+  11 kHz mono 8-bit audio. A Python uploader converts a file through FFmpeg and sends it as SysEx with acknowledgements and a
+  CRC check on the device. The tempo range is 90 to 200. VALIDATION.md records host tests and package checks and says the
+  firmware has not been run on a physical FM-1, so flash timing, sample transfer and 200 BPM performance are unchecked.
+  The repository holds a prebuilt package, DUB-200-0.1.0.fwsc.
+status: active
+authors:
+- name: Mystereon
+  url: https://github.com/Mystereon
+source: https://github.com/Mystereon/FM1-DUB200
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  DUB200.md calls it a GPL-3.0-only derivative and LICENSING.md keeps the upstream notices of DUB-1, AMB-1, Felucca and
+  their sources. DUB-200-0.1.0.fwsc is the author's own build, not a stock image.
+distribution: download
+install_notes: >-
+  Install DUB-200-0.1.0.fwsc over USB-MIDI with tools/fm1_install.py, or build it with build.sh. Samples are sent with
+  tools/dub200_samples.py, which needs FFmpeg. Like DUB-1, it can go back to M-VAVE's firmware.
+brick_risk: true
+tags: [generative, drums, sampler, fx, fork]
+versions:
+- version: main @ 14e60ad
+  date: 2026-10-30
+  url: https://github.com/Mystereon/FM1-DUB200/commit/14e60ad9dd8183d0cd4e068a342b00b848fe2522
+  notes: No tagged releases; this is the latest commit.

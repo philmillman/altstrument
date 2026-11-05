@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: ARP WAV 09
+summary: >-
+  Two-voice acid synth on the Dinghy platform: a latching arpeggiated lead and a droning bass with 303-style knobs, a drum kit
+  page and a neon start-up logo.
+description: >-
+  The app's header comment describes a minimal instrument with no presets and no saving: switch on and a raw sawtooth plays. The
+  PRESETS encoder picks the lead or the bass. The lead holds a chord after release and arpeggiates it in four patterns (up, up-down,
+  bounce and offbeat); the bass is a saturated drone that rings until another key is pressed. Three pages of knobs give cutoff,
+  resonance, envelope amount and decay, then glide, FM, ring modulation and a vowel control, then drive, delay, warp and crush.
+  Turning PRESETS fully right selects a drum kit without a sequencer. The code is integer-only and lives in the platform's dinghy.c, with lookup tables in
+  acid_tables.h. The README and documentation are still Dinghy's, so the description above comes from the source's
+  header comment.
+status: active
+authors:
+- name: wav0902
+  url: https://github.com/wav0902
+source: https://github.com/wav0902/wav-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only, inherited from Dinghy, Felucca (Leo Kuroshita) and SLOOP, and the app source carries a
+  GPL-3.0-only header. The Dinghy logo in assets/ is copyright designburg, all rights reserved and not under the GPL, according to
+  LICENSING.md. The Terminus font is SIL OFL 1.1.
+distribution: source-only
+install_notes: >-
+  No release page. A manual GitHub workflow named acid builds the package on a runner and keeps it as an artifact; locally the
+  Dinghy build and install scripts apply (./build.sh, then tools/fm1_install.py). The README says the USB rescue and the
+  Firmware Hub can return the unit to other firmware.
+brick_risk: true
+tags: [synth-engine, arpeggiator, drums, fx, fork]
+versions:
+- version: main @ b218ba7
+  date: 2026-11-02
+  url: https://github.com/wav0902/wav-fm1/commit/b218ba7ca60a239b77e59b3f3b28a7104315f899
+  notes: No tagged releases; this is the latest commit.

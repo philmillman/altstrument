@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: fm1-wave
+summary: >-
+  Polyphonic wavetable synth for the FM-1 on fm1-base, with eight synth banks, a waveshaper, a mode that turns samples
+  into wavetables, slicing and a granular mode. Runs in a host simulator and browser emulator; not yet run on hardware.
+description: >-
+  Eight wavetable banks of eight frames each are generated from a table in the source, and the README documents them
+  frame by frame with measured spectra. Samples loaded into a pool can be played as wavetables, chopped into slices or
+  played as a granular cloud, and the spec describes the waveshaper that sits after the oscillators. The repository
+  holds an arpeggiator, a sample editor page, saving, a screen reader word list and large sets of simulator tests. It
+  includes fm1-base as an unmodified submodule. The spec still calls it a skeleton in places, while the README lists
+  the engine, pages and tests as built. The README says no FM-1 has run this build. Several banks are marked as
+  placeholders, and the spec says the project can be retired if the same features land in Saadet.
+status: active
+authors:
+- name: johnskiller
+  url: https://github.com/johnskiller
+source: https://github.com/johnskiller/fm1-wave
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSE is the MPL-2.0 text and each file carries an SPDX header. The fm1-base platform and felucca-bsp are MPL-2.0.
+  Building links JieLi's binary AC79 libraries, which are read from your own SDK checkout.
+distribution: source-only
+install_notes: >-
+  No release yet. After cloning with submodules, platform/tools/build.py app needs the JieLi toolchain and the AC79 SDK
+  and produces app/build/wave.fwsc, which platform/tools/fm1_install.py installs over USB. The same app builds for a
+  host simulator and a browser emulator. A tag push runs a release workflow. Back up first and keep M-VAVE's updater
+  ready.
+brick_risk: true
+tags: [synth-engine, wavetable, granular, sampler, arpeggiator, emulator, platform]
+versions:
+- version: main @ 856a1c3
+  date: 2026-11-04
+  url: https://github.com/johnskiller/fm1-wave/commit/856a1c32d4636db30cec06cf5b4c9abf87694736
+  notes: No tagged releases; this is the latest commit.

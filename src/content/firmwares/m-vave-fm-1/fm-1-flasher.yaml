@@ -2,45 +2,48 @@ device: m-vave-fm-1
 name: FM-1 Flasher
 kind: tool
 summary: >-
-  Portable CircuitPython device that keeps FM-1 firmware packages on a microSD card and installs them over USB MIDI
-  SysEx from a touchscreen, with no computer. The Metro ESP32-P4 version also downloads them from The Firmware Hub.
+  Portable CircuitPython device on an Adafruit Metro ESP32-P4 that keeps FM-1 firmware packages on a microSD card,
+  downloads more from The Firmware Hub over WiFi and installs them over USB MIDI SysEx from a touchscreen, with no
+  computer.
 description: >-
-  The README now describes a version on an Adafruit Metro ESP32-P4 with a 2.8-inch TFT touch shield, which uses the
-  board's native USB host port and downloads firmwares from thefirmwarehub.com over WiFi; the v2 plan reports spike
-  installs of V15 to SLOOP in 52 seconds with a custom CircuitPython and TinyUSB build. The Feather version is
-  deprecated, and its last tested version is the tag v1-feather-final. In that version an Adafruit Feather RP2040 USB
-  Host acts as the USB host for the FM-1, with the Feather's own PIO USB port or a MAX3421E USB Host FeatherWing, and a
-  3.5-inch TFT FeatherWing that provides the
-  touch screen and the microSD slot (its pins clash with the MAX3421E wing). A Feather RP2350 with the wing also installs, once the display's CS and DC pins are rewired; a GitHub release (firmware-20261102) offers a custom CircuitPython .uf2 for that board that drives the wing, which stock CircuitPython cannot yet do. The release reports 5 of 5 installs of DUB-1 and 4 of 5 of V15 with it, the one failure unexplained. The screen browses the card's firmwares as cards or a list,
-  keeps favourites and shows a firmware's details before installing. The update
-  protocol is ported from M-VAVE's WebUpdate.js, with each package checked the way the FM-1 checks it before writing.
-  The README reports installs from the REPL of V15 to SLOOP in 70 seconds, SLOOP back to V15 with the factory voices
-  restored in 73 seconds, and V15 to ChoralRoot in 69 seconds. It needs a patched CircuitPython build (patches are in
-  the repository). A desktop command-line flasher, a simulated FM-1 and a unit-test suite are included, and tools/make_sd.py
-  prepares an SD card from .fwsc files or from the FM-1 Firmware Hub catalog. The repository holds no firmware
-  packages; the README tells you to take the stock V15 image from a clone of m-vave/fm1_open.
+  The device is an Adafruit Metro ESP32-P4 with the 2.8-inch capacitive TFT touch shield. The FM-1 plugs into the
+  Metro's native USB host port, and packages come from thefirmwarehub.com over WiFi. The screen browses the card's
+  firmwares as picture cards or a list, filters by type or favourites, shows a firmware's details before installing,
+  and its Catalog page fetches new firmwares and versions, only ever adding or updating. The README reports V15 to
+  SLOOP in about 50 seconds and SLOOP back to V15 in about 46. The update protocol is ported from M-VAVE's
+  WebUpdate.js, with each package checked the way the FM-1 checks it before writing; packages for other loaders such
+  as Skiff are handled, and firmwares the hub sends to their own installer page are not downloaded. It needs
+  CircuitPython 11 built with two patches that are in the repository, because stock CircuitPython cannot mount the
+  FM-1. A desktop command-line flasher, a screen simulator with a faked FM-1 and a unit-test suite are included, and
+  tools/make_sd.py prepares a card from .fwsc files or from the hub catalogue. The repository holds no firmware
+  packages; M-VAVE's stock V15 is added from a clone of m-vave/fm1_open and cannot be removed from the screen.
+  The earlier version for an Adafruit Feather RP2040 or RP2350 with a TFT FeatherWing is deprecated and its code is
+  gone from the main branch; its last tested state is the tag v1-feather-final in the old repository. On 5 November 2026 the project moved from
+  jedgarpark/FM-1_Flasher, now archived, to the FM-1_Flasher folder of Adafruit's Learning System Guides repository. A
+  release in the old repository, firmware-20261102, still holds a custom CircuitPython .uf2 for the Feather RP2350.
 status: active
 authors:
 - name: jedgarpark
   url: https://github.com/jedgarpark
-source: https://github.com/jedgarpark/FM-1_Flasher
+source: https://github.com/adafruit/Adafruit_Learning_System_Guides/tree/main/FM-1_Flasher
 source_status: open
 license: GPL-3.0-only
 license_notes: >-
-  The README says GPL-3.0, because the update protocol is ported from M-VAVE's WebUpdate.js (GPL-3.0-only with the
+  The folder's LICENSE and README say GPL-3.0, because the update protocol is ported from M-VAVE's WebUpdate.js (GPL-3.0-only with the
   GPL-3.0 linking exception). Each firmware you put on the card keeps its own licence.
 distribution: source-only
 requires_stock: V15 or a firmware with a compatible USB updater
 install_notes: >-
-  Hardware build only. The current target is a Metro ESP32-P4 with the 2.8-inch TFT touch shield and a custom CircuitPython
-  build described in docs/PLAN-v2.md. The deprecated Feather build needs a Feather RP2040 USB Host running CircuitPython 11.0.0-alpha.2 (10.3.1 with the MAX3421E wing) with
-  the patches from patches/, plus the TFT FeatherWing and the long USB cable the README asks for. Prepare the card with
-  tools/make_sd.py, then pick a firmware on the touchscreen; device/fm1_install.py also runs from the REPL. Keep both devices powered during an install. PLAN.md lists recovery routes, including holding OCT- at
-  power-on and a Raspberry Pi Pico transporter rig.
+  Hardware build only: a Metro ESP32-P4 with the 2.8-inch TFT touch shield, a microSD card in the Metro's slot and
+  CircuitPython 11 built with the two patches in patches/ (see patches/README.md). Copy FM-1_Flasher_Code to the board
+  or run tools/deploy.py, set CIRCUITPY_SDCARD_USB = false in settings.toml, join WiFi from Settings, then tap Catalog
+  to fill the card and pick a firmware to install. The FM-1 goes in the Metro's USB-A host port. Keep both devices
+  powered during an install. PLAN.md, the Feather-era plan, lists recovery routes, including holding OCT- at power-on
+  and a Raspberry Pi Pico transporter rig.
 brick_risk: true
 tags: [flasher, loader, usb-midi, sysex, python, utility]
 versions:
-- version: main @ d2716ab
-  date: 2026-11-04
-  url: https://github.com/jedgarpark/FM-1_Flasher/commit/d2716ab8d2d10930d6f1e761dde3cd7383ffe6ce
-  notes: No releases of the flasher itself; this is the latest commit. The tag v1-feather-final marks the last version tested on the Feather. A separate release, firmware-20261102, holds only a CircuitPython build for the Feather RP2350.
+- version: main @ 3065539
+  date: 2026-11-05
+  url: https://github.com/adafruit/Adafruit_Learning_System_Guides/commit/3065539788b9333fdaebff1f4f910aa530b41a7c
+  notes: No releases of the flasher itself; this is the latest commit to the folder. The tag v1-feather-final in jedgarpark/FM-1_Flasher marks the last version for the Feather.

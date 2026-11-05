@@ -1,0 +1,45 @@
+device: m-vave-fm-1
+name: typhoon_fm1
+summary: >-
+  Turns the FM-1 into the sound source for a breath MIDI controller such as the Artinoise re.corder, with up to three
+  layered voices per preset, routable controls and a browser preset editor.
+description: >-
+  Breath, tilt and other controllers are set up once as sources, and each layer routes them to its level, pitch, pan and
+  engine parameters. The engines are FM, ANALOG, ERS (flute, clarinet, saxophone and bowed models), EVA and a
+  pan-flute physical model that runs on the second core. It has plate and hall reverbs, 96 preset slots, USB audio in
+  and out, Bluetooth MIDI as both a peripheral and a central, and a USB host mode for a cabled controller, plus MIDI over USB and TRS. A page
+  on the project's site edits presets over USB and runs the firmware in a simulator. The README opens by calling it early
+  alpha, with chaotic controls and messy code. It was earlier named tornado, and its preset backups restore here. Built
+  on fm1-base.
+status: active
+authors:
+- name: ignis32
+  url: https://github.com/ignis32
+source: https://github.com/ignis32/typhoon_fm1
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSING.md covers typhoon's own code as MPL-2.0 file by file. fm1-base and felucca-bsp parts are MPL-2.0, and
+  Felucca-Engines code (ANALOG engine) and the pan-flute model are MIT. The earlier tornado versions were GPL-3.0-only
+  and are not in this repository. JieLi SDK files (Apache-2.0) are read from your own checkout at build time.
+homepage: https://ignis32.github.io/typhoon_fm1/
+distribution: browser-installer
+install_notes: >-
+  Use the install page on the project's site from Chrome or Edge with the FM-1 on USB, or base/tools/fm1_install.py
+  with the release .fwsc. The README says installing stock V15 wipes the presets, so back them up first with
+  tools/presets.py or the editor. While USB HOST is on, computers cannot use the port; hold REC at power-on to enter update mode.
+brick_risk: true
+tags: [midi, usb-midi, usb-audio, synth-engine, physical-modeling, editor, controller-mode, emulator]
+versions:
+- version: '0.5'
+  date: 2026-11-01
+  url: https://github.com/ignis32/typhoon_fm1/releases/tag/v0.5
+  notes: Controllers become sources that each layer routes to its targets; saved presets from before are not read.
+- version: '0.4'
+  date: 2026-10-29
+  url: https://github.com/ignis32/typhoon_fm1/releases/tag/v0.4
+  notes: Adds the PANFLUTE physical-model engine.
+- version: '0.3'
+  date: 2026-10-29
+  url: https://github.com/ignis32/typhoon_fm1/releases/tag/v0.3
+  notes: First release on fm1-base, with 96 preset slots, the preset editor and Bluetooth MIDI.

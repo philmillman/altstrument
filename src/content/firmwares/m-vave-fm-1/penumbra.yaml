@@ -11,7 +11,7 @@ description: >-
   play its sound, and MORPH walks to the next scene by hand. Six preset journeys and eight user slots survive a power
   cut, and there is a sleep timer, MIDI clock in and out, USB audio and screen-reader support. Version 1.1 adds a
   slow TIDES swell that opens the drone filter and breathes the space, a room size and shimmer for each scene,
-  further reverb and delay controls, an A/B comparison of two sounds and a library of eight stored sounds. It carries M-VAVE's
+  further reverb and delay controls, an A/B comparison of two sounds and a library of eight stored sounds. Version 1.2 adds a stereo position and sway for each part, a tighter MIDI clock with song position, 44 controllers and notes and program changes in both directions, and a sound of its own for each preset journey. It carries M-VAVE's
   update loader so the unit can switch to another firmware. The author is credited as Lunar Eclipse Forge.
 status: active
 authors:
@@ -25,7 +25,7 @@ license_notes: >-
   files are not in the tree.
 distribution: download
 install_notes: >-
-  Write penumbra-1.1.fwsc from the release with an FM-1 firmware installer; BUILDING.md explains building and serving
+  Write penumbra-1.2.fwsc from the release with an FM-1 firmware installer; BUILDING.md explains building and serving
   a web installer, and the README says it will also be offered on The Firmware Hub. Holding OCT- and OCT+ for five
   seconds puts the FM-1 in update mode if an install does not start. Installing is at your own risk.
 brick_risk: true
@@ -37,6 +37,14 @@ image:
   source_url: https://github.com/MadMooneyham/Penumbra
   first_party: true
 versions:
+- version: '1.2'
+  date: 2026-11-04
+  url: https://github.com/MadMooneyham/Penumbra/releases/tag/v1.2
+  notes: >-
+    Adds PAN, which places drone, VOX, pulse and texture in the stereo field and lets them sway at a set rate, a tighter
+    MIDI clock with song position, 44 controllers, notes and program changes sent and received over MIDI, and a sound for
+    each preset journey. It also fixes a noise when turning the tempo. Journeys, slots and sounds from 1.0 and 1.1 carry
+    over. The package identity is FM-1_73010200.
 - version: '1.1'
   date: 2026-11-02
   url: https://github.com/MadMooneyham/Penumbra/releases/tag/v1.1

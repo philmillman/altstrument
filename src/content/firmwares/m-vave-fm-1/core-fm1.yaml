@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: core-fm1
+summary: >-
+  Early-stage framework for building one FM-1 firmware from selectable modules taken from Felucca, Melodee and
+  SLOOP; only a minimal preset that shows a boot screen builds so far.
+description: >-
+  Configuration is done with Kconfig menus, and the chosen options are turned into C definitions at build time. The
+  source tree embeds Felucca, its separate engines repository, Melodee, SLOOP and fm_lab as pinned subtrees, and
+  includes their code in one build. Only the minimal preset is buildable; the Melodee, Felucca and SLOOP presets and
+  per-engine selection are planned, and the author says audio, engine mixing and musical workflows are still being
+  integrated and that hardware testing is pending. Recent commits add a Wi-Fi station driver written from scratch for
+  the radio in the FM-1's chip and a simulated Bluetooth connection for emulator tests. Builds run the JieLi compiler
+  on x86-64 Linux, with Docker on macOS, and are checked in a browser emulator. The packaged image carries three small
+  JieLi SDK files under Apache-2.0.
+status: active
+authors:
+- name: DimmKirr
+  url: https://github.com/DimmKirr
+source: https://github.com/DimmKirr/core-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Project code is GPL-3.0-only (LICENSE). THIRD_PARTY.md lists the exceptions: the Felucca-Engines subtree is MIT, and
+  the boot loader, chip configuration and EQ files that the packager copies from JieLi's AC79 SDK are Apache-2.0.
+distribution: source-only
+install_notes: >-
+  Needs mise and uv. Load a preset with `task config:defconfig -- minimal`, then run `task build`, which downloads the
+  SDK and compiler and writes build/core-fm1.fwsc. A rolling pre-release
+  with an older build exists on the releases page. The firmware is an early build that shows only a boot screen, so
+  keep a backup and have a recovery route ready.
+brick_risk: true
+tags: [fork, platform, synth-engine, sdk]
+versions:
+- version: main @ beaaea0
+  date: 2026-10-27
+  url: https://github.com/DimmKirr/core-fm1/commit/beaaea03df540b9691e61a1d4af975bc5ad65b5f
+  notes: No tagged releases; this is the latest commit. The repository's only releases are rolling CI pre-releases.

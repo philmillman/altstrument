@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: K-GLITCH
+summary: >-
+  Glitch-instrument fork of the KAWA tracker for the FM-1, with an autonomous glitch mode on its FX page. A source
+  fork only so far: not built for the FM-1 or tested on hardware.
+description: >-
+  Imports KAWA's firmware at commit 958901e with its six-track tracker, sound engines and a 32,768-frame capture ring,
+  whose buffer effects include loops, stutters, scratch, reverse, freeze and tape-stop. Only the product name, package
+  name and a development package identity were changed, apart from one addition: AUTO GLITCH, toggled with the second
+  encoder on the FX page, which picks a buffered loop, stutter, scratch, reverse, roll, tape-stop, dive or freeze gesture
+  with a 55 % chance on each sequencer step while playing. Density and intensity controls and a performance page are
+  planned. The README says the checkout was not built or validated on an FM-1 and that the provisional package identity must
+  be confirmed before any hardware installation. Architecture and roadmap notes are in docs.
+status: active
+authors:
+- name: Omnipotard (Guizmoh)
+  url: https://github.com/Guizmoh
+source: https://github.com/Guizmoh/K-Glitch
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Keeps KAWA's licensing: the README and LICENSING.md state GPL-3.0-only, and the root LICENSE is the GPL-3.0 text. The
+  platform contributions of Leo Kuroshita (Hügelton Instruments), SLOOP and Dinghy and the font notices stay under
+  source/.
+distribution: source-only
+install_notes: >-
+  Nothing to install yet. source/BUILDING.md describes the host simulator, browser emulator and FM-1 package builds,
+  which need JieLi's pi32v2 toolchain and the AC79 SDK files. The README says the package identity needs confirming
+  first. Treat any build as untested and keep M-VAVE's updater ready.
+brick_risk: true
+tags: [synth-engine, fx, glitch, tracker, sequencer, fork, emulator]
+versions:
+- version: main @ ff46283
+  date: 2026-10-30
+  url: https://github.com/Guizmoh/K-Glitch/commit/ff46283bc5cd6f98c28757becaaeedac3ddfd503
+  notes: No tagged releases; this is the latest commit, which adds AUTO GLITCH.

@@ -1,0 +1,40 @@
+device: m-vave-fm-1
+name: genAMB
+summary: >-
+  Generative fork of AMB-1 for the FM-1 that adds a Mutable Instruments Rings port, a six-voice FM engine with 16
+  presets from Zen-1, three ported sequencers and ten reverb modes. Release candidate 2, source and package in the repo.
+description: >-
+  Starts in PIANO mode, where the keys play Rings or the FM synth and only the two pad synths run, and turning the
+  Algorithm knob switches to scale mode with the sequencers triggering notes. Pad 1 is a vintage and electric-piano
+  style sound with a chorus, and pad 2 is strings and glass with a stereo width setting that the author says maxes out
+  the CPU. Rings keeps four voices and its modal, sympathetic-string and string modes, and the FM engine comes with
+  16 mallet, plucked and bass presets taken from Zen-1. The sequencers are AMB-1's own plus ports of Hallucigenia from
+  Extratone, Proteus from Seaside Modular and UNIT-D from Animatek's VCV Rack plugins. Other additions are a burst setting
+  for strummed chords, a delay on Rings, a four-channel global mixer and ten reverb modes inspired by a Valeton pedal.
+  The repository holds a package, a source archive, a browser editor archive and the expanded source tree. The README
+  does not say whether the package was run on a real FM-1.
+status: active
+authors:
+- name: Kayman18
+  url: https://github.com/Kayman18
+source: https://github.com/Kayman18/FM1-genAMB
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  source/LICENSING.md states that the combined executable is GPL-3.0-only, with the complete corresponding source
+  supplied beside it; the repository has no separate root LICENSE file. AMB-1 and fm1-base files are MPL-2.0, Rings is MIT
+  (Emilie Gillet), the msfa core is Apache-2.0, and the Zen-1 tables, patches and FM adapter are GPL-3.0-only. The
+  Hallucigenia and UNIT-D ports are GPL-3.0-or-later and Proteus is MIT. The committed .fwsc is genAMB's own build
+  (610,108 bytes) and matches none of M-VAVE's licensed images.
+distribution: download
+install_notes: >-
+  The package is genAMB-1.0-RC2-WET2-WEB1.fwsc in the repository root, with SHA256SUMS.txt beside it. Extract the source
+  archive before building; the compiler, SDK files and fonts are not in it. Back up first and have M-VAVE's updater
+  ready.
+brick_risk: true
+tags: [synth-engine, ambient, generative, sequencer, physical-modeling, reverb, fm, fork, mutable-instruments-port]
+versions:
+- version: main @ 05ae1ec
+  date: 2026-11-02
+  url: https://github.com/Kayman18/FM1-genAMB/commit/05ae1ec41c70de69c965921fc7dd4ad760267d16
+  notes: No tagged releases; this is the latest commit, which publishes release candidate genAMB 1.0 RC2-WET2-WEB1.

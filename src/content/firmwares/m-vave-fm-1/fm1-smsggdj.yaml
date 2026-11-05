@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: FM1 SMSGGDJ
+summary: >-
+  Runs the SMSGGDJ Game Gear tracker on the FM-1 through a Game Gear emulator, with keyboard step entry and a browser
+  manager for SRAM backups, individual songs and ROM swaps.
+description: >-
+  A SMS Plus core boots the unchanged SMSGGDJ v0.48 ROM, and the FM-1's keys and buttons are mapped to the tracker's pad
+  and to step entry in the phrase screen, with LFO clearing a step. The project page connects to the unit over WebMIDI,
+  installs the published firmware, reads and writes the 32 KiB cartridge SRAM, imports and exports songs and replaces the
+  ROM with a compatible one. The README calls it a development prototype and says CPU load and overrun measurements are
+  still unverified; the author reports hardware checks of installation, playback, SRAM backup and ROM swapping. It
+  builds on fm1-base and felucca-bsp.
+status: active
+authors:
+- name: Sebastian Tomczak (little-scale)
+  url: https://github.com/little-scale
+source: https://github.com/little-scale/fm1-smsggdj
+source_status: open
+license: GPL-2.0-only
+license_notes: >-
+  THIRD_PARTY.md and the release notes say the combined firmware application is GPL-2.0, which follows from the SMS Plus
+  core taken from Retro-Go. The adapter, browser manager and the SMSGGDJ ROM are MIT (root LICENSE, rom/LICENSE), the
+  Z80 core is BSD-3-Clause with GPL-2.0 adaptations, and fm1-base and felucca-bsp keep MPL-2.0. The ROM is the author's
+  own SMSGGDJ tracker, not Sega code.
+homepage: https://little-scale.github.io/fm1-smsggdj/
+distribution: browser-installer
+install_notes: >-
+  Open the project page in Chrome or Edge, choose Connect FM1 and then Use published firmware, or pick a local .fwsc. Export
+  anything you need from the current firmware first, since app storage is not migrated, and keep USB and power connected
+  during the update. The page can take a SRAM backup beforehand and resume an interrupted update.
+brick_risk: true
+tags: [tracker, chiptune, emulator, game, sysex, web-midi, web]
+versions:
+- version: 0.1.0
+  date: 2026-10-30
+  url: https://github.com/little-scale/fm1-smsggdj/releases/tag/v0.1.0
+  notes: First release; preserves the hardware-tested FM-1_9500 package, which the device still shows as a development build.

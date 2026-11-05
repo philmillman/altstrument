@@ -1,0 +1,48 @@
+device: m-vave-smk-37
+name: SMK BASE
+summary: >-
+  Smallest firmware to build your own SMK-37 firmware on: a four-voice sine on keys and pads, a screen showing the last control touched, and a working update path, USB rescue, USB MIDI and audio, and flash storage.
+description: >-
+  A version of Dinghy for the SMK-37 only, on the Felucca and SLOOP platform and genkigenki's SMK-37 board layer. It
+  plays a sine with the key's velocity, uses the pads as notes that glow while they sound, keeps the octave in flash and
+  bends with the pitch wheel. Every key, button, pad, fader, wheel and encoder is read once in app.c as an example and
+  as a check on a unit, and the screen shows the last control touched by its hardware ID and the encoder, fader and
+  wheel values. Pad handling was retuned on a Pro for one hit per strike and a different velocity curve. Releases carry
+  Pro, Elite and MKE-P37 packages; the README says only the Pro was installed and checked, on one unit on
+  2026-11-03. A guide explains how to copy it under a new name and identity. A docs file lists changes from Dinghy.
+status: active
+authors:
+- name: Federico Ciapi (fc79)
+  url: https://github.com/fc79
+source: https://github.com/fc79/smk37-base
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README says GPL-3.0-only, as Dinghy, Felucca and SLOOP; see LICENSING.md for the parts others made.
+distribution: download
+requires_stock: The stock firmware or another firmware of the family
+install_notes: >-
+  Back up the flash first (docs/BACKUP.md), then install a release .fwsc with tools/fm1_install.py (Python with mido
+  and python-rtmidi, no other app on the MIDI port). The first start clears another firmware's stored data. After two
+  failed starts it opens a USB rescue, and holding OCTAVE- while switching on enters it by hand.
+brick_risk: true
+tags: [platform, sdk, fork, usb-audio, usb-midi]
+image:
+  url: https://raw.githubusercontent.com/fc79/smk37-base/main/docs/screen.png
+  alt: "SMK BASE screen in purple and white on black: the name, KEY 12 with velocity 90, encoder values K1 to K8 at zero, fader and wheel readings and OCT +0"
+  credit: Federico Ciapi
+  source_url: https://github.com/fc79/smk37-base
+  first_party: true
+versions:
+- version: 0.1.4
+  date: 2026-11-04
+  url: https://github.com/fc79/smk37-base/releases/tag/v0.1.4
+- version: 0.1.3
+  date: 2026-11-04
+  url: https://github.com/fc79/smk37-base/releases/tag/v0.1.3
+- version: 0.1.2
+  date: 2026-11-03
+  url: https://github.com/fc79/smk37-base/releases/tag/v0.1.2
+- version: 0.1.1
+  date: 2026-11-03
+  url: https://github.com/fc79/smk37-base/releases/tag/v0.1.1

@@ -1,0 +1,52 @@
+device: teenage-engineering-po-32
+also_devices:
+  - teenage-engineering-po-33
+  - teenage-engineering-po-35
+  - teenage-engineering-po-133
+  - teenage-engineering-po-137
+name: libpo
+kind: tool
+summary: Freestanding C99 library for Pocket Operator data transfers, covering the PO-32, PO-33, PO-133, PO-35 and PO-137, with backup decoding and encoding, sample conversion, drum and speech synthesis, command-line WAV tools and a Go module.
+description: >-
+  Formerly libpo32. The library builds and parses the patch, pattern and state
+  packets the PO-32 receives, renders them to modem audio to play into the
+  device, and decodes recorded transfer audio back into packets. Version 1.0.0
+  adds the stereo backup format of the PO-33 K.O! and PO-133 Street Fighter, with
+  pattern, settings and sample-pool editing and sample conversion, and the
+  PO-35 speak and PO-137 Rick and Morty, with speech analysis and synthesis. It
+  also renders the PO-32 drum voice locally, so sounds can be previewed without
+  the hardware. The core uses caller-owned memory and no libc runtime, file I/O
+  or audio APIs. The repository's example programs include a command-line
+  pattern editor and tools that dump or rebuild packets from a transfer
+  recording. The README says only selected rebuilt PO-33 backups and a sample
+  replacement have been accepted on hardware, and that the PO-133 hardware and
+  generated PO-35 and PO-137 speech are not established. It is not a replacement
+  for the device's firmware.
+status: active
+authors:
+  - name: Eric Lewis
+    url: https://github.com/ericlewis
+source: https://github.com/ericlewis/libpo
+source_status: open
+license: MIT
+distribution: source-only
+install_notes: >-
+  Build with CMake and a C99 compiler; the README shows configure, build, test
+  and install steps. To use a generated transfer on the device, render it to
+  audio and play it into the PO-32 while it is in its receive mode.
+tags: [sdk, drums, synth-engine, converter]
+versions:
+  - version: 1.0.0
+    date: 2026-11-05
+    url: https://github.com/ericlewis/libpo/releases/tag/1.0.0
+    notes: Adds support for the PO-33, PO-133, PO-35 and PO-137, a single Go module for all model families, and corrected drum synth parameter maps.
+  - version: 0.3.0
+    date: 2026-08-30
+    url: https://github.com/ericlewis/libpo/releases/tag/0.3.0
+    notes: Go bindings, streaming audio APIs, fuzzing and sanitizer CI, and synth speedups.
+  - version: 0.2.1
+    date: 2026-03-29
+    url: https://github.com/ericlewis/libpo/releases/tag/0.2.1
+  - version: 0.2.0
+    date: 2026-03-28
+    url: https://github.com/ericlewis/libpo/releases/tag/0.2.0

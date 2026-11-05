@@ -1,0 +1,50 @@
+device: polyend-tracker-mini
+name: bazillOS
+summary: Independent Tracker Mini firmware built on Polyend's Tracker Community Edition, adding a restyled interface, a drum and chop workspace, a Composer, eleven synth engines, two musical games, Punch recipes and Step FX.
+description: >-
+  Version 0.9 changes the menu layout and adds a four-track detail view and an eight-track overview. Drum Lab writes ready
+  percussion kits into patterns, and one Chop workspace combines slicing recipes, cutting controls and pattern variations.
+  Composer writes patterns from musical roles, scales and motif locks, and Fill adds random-memory and slope-generator
+  variations. The eleven synth engines include adaptations of Mutable Instruments Plaits, Tides, Warps and Rings code, a
+  four-operator FM engine, and the author's own voices; they are selected algorithms, not complete module ports. Pulse Pong
+  and Virus Breaker are games whose play is captured as phrases, Punch Deck has 64 performance recipes, and there are twelve
+  added Step FX and Master presets. The release also offers fifty starter projects, a 62-page handbook and an
+  installation and rollback guide. It supports the Mini only, with 48 sample slots and two Step FX columns. The author
+  reports testing on a Mini, including a return to Polyend's 2.2.1, and the film shows host-rendered screens, not a
+  capture of the unit.
+status: active
+authors:
+  - name: Kid Bunka (Christoph Link / kidbee85-beep)
+    url: https://github.com/kidbee85-beep
+source: https://github.com/kidbee85-beep/bazillOS
+source_status: open
+license: PolyForm-Noncommercial-1.0.0
+license_notes: >-
+  The root LICENSE is Polyend's Tracker Community Edition licence, PolyForm Noncommercial 1.0.0 with Polyend's additional
+  permissions: commercial music and monetised content are allowed, selling the firmware or derivatives is not. Polyend's
+  precompiled libPolySynth and libPolyDSP libraries ship unmodified under Polyend's own licence. Mutable Instruments code
+  is MIT, the QUAD FM core derives from MIT-licensed track3r code, and the Spore fonts derive from BSD-2-Clause Spleen;
+  the README says this is not a blanket MIT release. The matching source is the bazillOS-09-Source.zip archive in the
+  repository and the release.
+homepage: https://kidbee85-beep.github.io/bazillOS/
+distribution: download
+install_notes: >-
+  Back up the whole SD card first, then extract the Mini firmware pack from the release and merge its Firmware folder
+  into the card's Firmware folder, adding Themes and Fonts if wanted. Insert the card in the powered-off Mini, choose Config,
+  Firmware and select TrackerMini_bz090c.ptf; the startup screen should then show 0.9.0 bazillOS / bz090c. Projects saved
+  on Community Edition firmware are not converted back for Polyend's stock firmware. Reinstalling Polyend's official
+  firmware from Polyend's downloads page returns the software, and original projects must be restored from the backup.
+brick_risk: true
+tags: [fork, tracker, sequencer, synth-engine, sampler, generative, fx, ui, performance, game]
+video:
+  url: https://www.youtube.com/watch?v=aqErSWmCjNI
+  title: bazillOS 0.9 — A Different Culture for the Polyend Tracker Mini | Full Tour
+  credit: Kid Bunka
+  first_party: true
+  found_via: https://kidbee85-beep.github.io/bazillOS/
+  version: v0.9.0
+versions:
+  - version: v0.9.0
+    date: 2026-11-05
+    url: https://github.com/kidbee85-beep/bazillOS/releases/tag/v0.9.0
+    notes: First release, build bz090c, with the Mini firmware pack, matching source archive, handbook and demo projects.

@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+name: Chrome Boy Studio Portable
+summary: >-
+  Pattern-generating groovebox on the FM-1's DX7-style FM engine: turn ALGORITHM for new patterns on a track, pull
+  random chord progressions in SEQ, with 808 and 909 drums, an arpeggiator, an effects rack and stem export.
+description: >-
+  Pages cover the track overview, a master effects rack, scale and key, piano roll, global settings and project save. The 128 ALGORITHM
+  positions are split into four tiers of complexity, and SEQ pulls a new progression and pattern from the same tier. The drum track
+  has genre grooves. Export to DAW plays each track alone over USB audio so it can be recorded as a stem. The README calls it
+  experimental and lists known bugs. It says the repository is M-VAVE's FM1 Open kit with the project's changes on top, but the repository
+  holds only the v0.9 package (a .fwsc and a zip), the README and a card image, so no source is published. The README's licence section names
+  LICENSE.md and THIRD_PARTY.md, which are not there.
+status: active
+authors:
+- name: ColdChrome
+  url: https://github.com/ColdChrome
+source: https://github.com/ColdChrome/Chrome-Boy-Studio-Portable
+source_status: binary-only
+license: GPL-3.0-only
+license_notes: >-
+  The README says the code is GPL-3.0 with M-VAVE's FM1 SDK linking exception and that the closed FM1 engine keeps M-VAVE's terms, but the
+  repository has no LICENSE file and no source, so the statement cannot be checked. FM1_ChromeBoy_v0.9.fwsc is the project's own
+  build, not a stock image.
+homepage: https://coldchrome.la/pages/chrome-boy-studio-portable-emulator
+distribution: browser-installer
+install_notes: >-
+  Use the install page linked from the project's card on thefirmwarehub.com with Chrome or Edge. The FM-1 must run M-VAVE's open
+  firmware, an earlier Chrome Boy or stock V15. Back up first, since projects can be replaced. M-VAVE's updater puts the
+  stock firmware back.
+brick_risk: true
+tags: [groovebox, sequencer, generative, drums, chords, fx]
+image:
+  url: https://raw.githubusercontent.com/ColdChrome/Chrome-Boy-Studio-Portable/main/docs/card.png
+  alt: "Chrome Boy HOME screen: bank A at 120 BPM, a row of 16 step keys with kick hits marked BD, the algorithm HOUSE with a kick pattern, and four knobs for level, volume, accent and choke"
+  credit: ColdChrome
+  source_url: https://github.com/ColdChrome/Chrome-Boy-Studio-Portable
+  first_party: true
+versions:
+- version: main @ fe45f69
+  date: 2026-11-04
+  url: https://github.com/ColdChrome/Chrome-Boy-Studio-Portable/commit/fe45f69c39dc1153e3ac1a0a845296df9f5d0e05
+  notes: No tagged releases; this is the latest commit.

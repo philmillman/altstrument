@@ -1,0 +1,49 @@
+device: m-vave-smk-37
+name: ECHOFIELD SMK-37
+summary: >-
+  Port of the ECHOFIELD granular sampler to the SMK-37 Pro, Elite and MKE-P37: six grain modes played from the 37 keys,
+  pads, faders and wheels, with a companion web app and flasher. Written without an SMK-37 and untested on hardware.
+description: >-
+  Same grain engine as the FM-1 version: dozens of short grains at once, rendered on both cores, in six modes (CLOUD,
+  DUST, TAPE, BLOOM, PULSE and DRIFT), with RANDOM and lockable knobs, RESAMPLE, LISTEN, the DRIFT ORACLE, 15 factory
+  presets and 16 user ones. The SMK-37 board layer reads the keys' velocity through each unit's factory curve, uses the
+  pads for the performance effects and for choosing samples and presets, sets texture, cutoff, echo and reverb on the
+  faders, and maps the pitch and mod wheels to grain bend and scatter. The FM-1's controls keep their names on the
+  keyboard, so the FM-1 manual applies. Samples live in 30 flash sectors, about 115 KB, as IMA ADPCM. A flash fence in
+  the driver blocks writes at 0xC0000 and above, which holds the factory calibration and Bluetooth pairing, according to
+  the README. The author wrote the port from community hardware documentation without a unit, and the README states
+  that nobody has run it on a keyboard, so it has only been exercised in a simulator and on a computer.
+status: active
+authors:
+- name: Philip-Bos
+  url: https://github.com/Philip-Bos
+source: https://github.com/Philip-Bos/echofield-smk37
+source_status: open
+license: MIT
+license_notes: >-
+  LICENSE is MIT, with a trailing paragraph about fonts, SDL2 and ALSA that appears to be left over from the author's
+  handheld sampler, which is why GitHub reports no licence. LICENSING.md says the app, engine, companion and tools are
+  MIT, the factory sounds are CC0-1.0, and fm1-base, felucca-bsp and the SMK-37 board patches to them are MPL-2.0 file
+  by file. The repository commits three built packages under companion/firmware (Pro, Elite and MKE-P37), which are
+  this project's own builds and not M-VAVE's files; they carry the JieLi SDK files that the build fetches, under
+  Apache-2.0.
+homepage: https://philip-bos.github.io/echofield-smk37/
+distribution: browser-installer
+install_notes: >-
+  Flasher on the project site in Chrome, Edge or Opera, with the keyboard on a USB data cable; it picks the package for
+  the detected model. tools/flash.py installs from the command line. The README tells you to back up the flash first
+  (SMK37.md explains how) and says going back needs M-VAVE's package for your model, or M-VAVE's updater. Untested on
+  a real unit, so installing is at your own risk.
+brick_risk: true
+tags: [granular, sampler, fx, reverb, delay, tape, editor, flasher, emulator, performance, fork]
+image:
+  url: https://raw.githubusercontent.com/Philip-Bos/echofield-smk37/main/docs/img/banner.png
+  alt: "ECHOFIELD logo of four coloured dots above the word ECHOFIELD and the line a free granular sampler firmware for the M-VAVE SMK-37, on a black background with scattered coloured specks"
+  credit: Philip-Bos
+  source_url: https://github.com/Philip-Bos/echofield-smk37
+  first_party: true
+versions:
+- version: main @ 8d75973
+  date: 2026-11-05
+  url: https://github.com/Philip-Bos/echofield-smk37/commit/8d75973
+  notes: No tagged releases; this is the latest commit. Its message calls it 0.1.0, untested on hardware, and the packages in companion/firmware are named 0.1.0.

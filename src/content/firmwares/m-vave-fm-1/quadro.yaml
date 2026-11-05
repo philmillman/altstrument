@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+name: QUADRO
+summary: >-
+  Four-section performance synth after the ARP Quadra: a bass, string ensemble, poly synth and two-voice lead played at
+  once across a split keyboard, through a 14-stage phaser, reverb and delay.
+description: >-
+  One knob picks the section and the buttons open its pages, while the screen shows what each knob does as you turn it.
+  CHORD plays a full shape from a single key and CH BASS adds its root on the bass. A sequencer runs over the held keys in
+  several orders, with a 16-step pattern, latch and per-step accent and tie, and syncs to MIDI clock. The pressure-sensing
+  keys can bend the lead or open its filter. There are 105 programs, and the first sixteen are voices from the Quadra's
+  patch sheets. MIDI goes over USB, Bluetooth and TRS with a channel per section, and the strings and poly run on the
+  second core. The README calls it an homage with no code, samples or text from the original. The changelog lists changes
+  through 1.6, but only 1.0 has a release page. It is built on fm1-base.
+status: active
+authors:
+- name: matttallison
+  url: https://github.com/matttallison
+source: https://github.com/matttallison/quadro-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL-3.0 text and the README says GPL-3.0, with no "or later" statement. The platform is fm1-base
+  and felucca-bsp (MPL-2.0), from Felucca; the Barlow screen font is SIL OFL.
+homepage: https://matttallison.github.io/quadro-fm1/
+distribution: browser-installer
+install_notes: >-
+  Use the web installer on the project page from Chrome or Edge with the FM-1 on USB, or run fm1_install.py from fm1-base
+  with the release .fwsc. The installer can also put M-VAVE's own firmware back. The README says installing is at your
+  own risk.
+brick_risk: true
+tags: [synth-engine, sequencer, arpeggiator, chords, fx, midi, usb-midi, emulator]
+image:
+  url: https://raw.githubusercontent.com/matttallison/quadro-fm1/main/app/docs/img/hero.png
+  alt: "Four QUADRO screens side by side: output mixers with BASS, STRG, POLY and LEAD columns, the bass VCF filter curve with CUT, RES, ENV and DECAY, and the lead sequencer set to UP / DOWN"
+  credit: matttallison
+  source_url: https://github.com/matttallison/quadro-fm1
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-02
+  url: https://github.com/matttallison/quadro-fm1/releases/tag/1.0
+  notes: First release, with 68 programs.

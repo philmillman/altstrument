@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: FM1-Mods
+summary: >-
+  Fork of Felucca 1.9 that adds three analog-model engines (POLYSIX, JUNO106 and POLIVOKS), a sampler span kit with
+  looping, and an INIT shortcut, with the upstream engines and updates merged in.
+description: >-
+  Tracks upstream Felucca closely, merging its 1.8 and 1.9 releases and keeping the plugin engine system. The added
+  engines are single-precision float ports of existing plugin DSP, whose sources the headers name as a CLAP plugin, a GPL-3 Juno port and a JUCE plugin: a six-voice model of the Korg Polysix, a
+  six-voice model of the Roland Juno-106 and a two-voice model of the Formanta Polivoks, and the Juno presets are generated from the GPL port's hand-made patches. Other changes are
+  a sampler span kit with a LOOP setting, an INIT tap and hold, favourites for the new engines and a compact EDIT
+  page that fits all 17 engines. Saved engine numbers were shifted on load to keep old saves working. The README is
+  still upstream's, and none of the changes is described there. No hardware test is recorded in the commit messages.
+status: active
+authors:
+- name: ipf
+  url: https://github.com/ipf
+source: https://github.com/ipf/synth
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Inherits Felucca's licensing: the root LICENSE is the GPL-3.0 text, the new engine files carry GPL-3.0-only headers,
+  and the engines, board layer, ported DSP and fonts keep the licences listed in the upstream LICENSING.md, which has
+  not been updated for the added engines. The Hügelton Sample Pack is CC0 1.0. A 352,940-byte out.wav render is
+  committed in the root.
+distribution: source-only
+install_notes: >-
+  No release. The build follows Felucca's BUILDING.md with submodules for the engines and felucca-bsp, JieLi's
+  toolchain and the AC79 SDK. Upstream's web installer in the README installs upstream Felucca, not this fork. Back up
+  projects first, and keep M-VAVE's updater or the installer's return to official V15 ready.
+brick_risk: true
+tags: [synth-engine, virtual-analog, polyphonic, sampler, fork]
+versions:
+- version: main @ 1dfff28
+  date: 2026-11-04
+  url: https://github.com/ipf/synth/commit/1dfff283324bd03ac94ebf96bc1f983c7c0baae5
+  notes: No tagged releases; this is the latest commit, on top of upstream Felucca 1.9.0 and a later README change.

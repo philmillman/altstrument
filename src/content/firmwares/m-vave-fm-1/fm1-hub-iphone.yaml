@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: FM-1 Hub for iPhone
+kind: tool
+summary: >-
+  Native iPhone app that browses the FM-1 Firmware Hub's catalogue, installs a firmware over USB, keeps a history of installs and backs up
+  and restores the unit's firmware and music for several firmware families.
+description: >-
+  The app reads the hub's catalog.json, checks each package's size, SHA-256 and identity before writing, and speaks the same two-step USB-MIDI
+  update protocol as the hub's installer and M-VAVE's updater, including resuming an interrupted update. It fetches M-VAVE's current firmware
+  from M-VAVE's own server and keeps the V15 recovery image the hub offers, checked against a pinned file. A backup stores the package and, for
+  Felucca and SLOOP families, reads the unit's music, settings and projects in those editors' backup formats. Settings, packages and
+  history stay on the phone. The ROM-bootloader rescue is not included. The protocol code is a Swift port of Leo Kuroshita's GPL code, and
+  the README says Hügelton Instruments had no objection while it stays open source.
+status: active
+authors:
+- name: Janos Debreczi
+  url: https://github.com/debreczi
+source: https://github.com/debreczi/fm1firmwarehost
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and NOTICE.md name GPL-3.0-only. The code in FM1Hub/Protocol is a port of GPL-3.0-only code by Leo Kuroshita, Hügelton Instruments,
+  and carries those copyright notices. Firmware listed in the app keeps its own licences.
+homepage: https://thefirmwarehub.com/
+distribution: source-only
+install_notes: >-
+  Build with Xcode 16 or newer and a signing team, then run on an iPhone; the simulator has no USB MIDI. An iPhone 15 or newer connects by USB-C
+  cable, older ones through Apple's Lightning to USB camera adapter, and a powered hub helps if the FM-1 does not power up. Close other MIDI apps
+  while installing. The README says an App Store 1.0 branch exists, and an automatic backup before each install is an option.
+brick_risk: true
+tags: [flasher, librarian, backup, usb-midi]
+versions:
+- version: main @ b88012c
+  date: 2026-11-03
+  url: https://github.com/debreczi/fm1firmwarehost/commit/b88012c27c1347631f31b9e4aaf9f322110f217c
+  notes: No tagged releases; this is the latest commit.

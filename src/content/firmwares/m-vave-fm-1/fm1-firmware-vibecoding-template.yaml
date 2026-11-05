@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: FM1 Firmware VibeCoding Template
+kind: tool
+summary: >-
+  GitHub template for starting your own FM-1 firmware with Claude Code or Codex: an interview writes a spec and project
+  setup, then a generator turns the bundled Felucca-based kit into a named firmware repository.
+description: >-
+  The template holds a kit with the platform layer (boot path, update loader, USB MIDI, flash, display, panel, audio), a
+  start app, tests, a web installer and browser emulator and build tools, plus setup scripts that stay until the repository is
+  generated. Two agent skills run the interview and set the rules for later changes, and a hook stops the agent from
+  editing other files until the interview is done. After you confirm the spec, setup/new_project.py moves the kit out of
+  template/ and gives it your firmware's name, version, ID, README and licence lines. The README warns that the FM-1 has one
+  firmware bank and no recovery button, so the first install should be done with recovery hardware at hand. The kit
+  derives from the M-Vave-OP1 firmware, whose platform code comes from Felucca.
+status: active
+authors:
+- name: JanSchulten
+  url: https://github.com/JanSchulten
+source: https://github.com/JanSchulten/FM1-Firmware-VibeCoding-Template
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  template/LICENSING.md states GPL-3.0-only, with the platform code from Felucca. The repository holds M-VAVE's FM-1 V15
+  image at template/vendor/m-vave/FM-1_015.fwsc, git blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd and 699,956 bytes,
+  the file M-VAVE licenses under Apache-2.0 in m-vave/fm1_open; the hash matches.
+distribution: source-only
+install_notes: >-
+  Use the template on GitHub, open the new repository in Claude Code and answer the interview, then run
+  python3 setup/new_project.py and follow BUILDING.md. Nothing is installed on a device during setup.
+brick_risk: false
+tags: [sdk, platform, emulator, web, fork]
+versions:
+- version: main @ ac7e957
+  date: 2026-10-30
+  url: https://github.com/JanSchulten/FM1-Firmware-VibeCoding-Template/commit/ac7e957338722c92bdd7e05c4bb1d9c5955c1414
+  notes: No tagged releases; this is the latest commit.

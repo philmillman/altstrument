@@ -1,0 +1,39 @@
+device: m-vave-fm-1
+name: Type P.fm1
+summary: >-
+  Two-part, four-operator phase modulation synth with per-operator feedback, many waveforms, two filters and a
+  wavefolder, aimed at sound design, with a browser app and VST3 and CLAP plugins from the same engine.
+description: >-
+  Each of the two parts has four operators with feedback on every one, and the waveforms come from the OPL3 and OPZ
+  families, with the pulse, square and saw redone to avoid aliasing. The author says the DSP was written from scratch
+  with ymfm and Dexed as references. Two global multimode filters follow, the first with its own envelope and the second
+  without, and a wavefolder adds harmonics and noise. A performance page, per-operator envelope views, patch save, load,
+  init and copy, and a manual with MIDI and SysEx reference are included. There is no sequencer. The firmware was built
+  with the umetate framework as its test case, and the author notes that they had no physical FM-1 at hand and cannot
+  guarantee the install. The repository bundles the whole framework and fetched plugin dependencies, and its latest
+  release notes are for 1.0.2.
+status: active
+authors:
+- name: P1Onken
+  url: https://github.com/AkirakoSaintJust
+source: https://github.com/AkirakoSaintJust/type-p-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md and the README say GPL-3.0-only, while the LICENSE file's header allows "any later version". The plugin
+  archives link JUCE 8, which is AGPL-3.0-only or commercial. The committed type-p-fm1.fwsc is the author's build, 612,216
+  bytes, not M-VAVE's V15 image. M-VAVE stock firmware is not redistributed.
+homepage: https://akirakosaintjust.github.io/type-p-fm1/
+distribution: download
+requires_stock: An FM-1 that starts normally; recovery hardware recommended
+install_notes: >-
+  Download type-p-fm1.fwsc from the repository and install it with umetate flash, or with another FM-1 installer such as
+  tools/fm1_install.py. The browser app at the project page lets you hear it first. The author gives no guarantee that
+  installing works and asks testers to have a way to debrick the unit or return to another firmware.
+brick_risk: true
+tags: [synth-engine, phase-modulation, fm, filter, emulator, web, fork]
+versions:
+- version: main @ d6f5e45
+  date: 2026-11-05
+  url: https://github.com/AkirakoSaintJust/type-p-fm1/commit/d6f5e45a1bacb7fc3205d2603dee11d5eac4bd0d
+  notes: No tagged releases; this is the latest commit, and its RELEASES.md lists 1.0.2.

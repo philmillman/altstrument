@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: FM1 Tape
+summary: >-
+  Fork of M-VAVE's FM1 Open V14 that swaps the panel for a tape-deck interface: tracks as reels, splice editing,
+  scrubbing, an album of saved slots and an OP-1-style button layout.
+description: >-
+  The change is an alternative interface in app/ui_op1.c, switched on by a define in app/version.h; deleting the define
+  gives M-VAVE's own interface back. Tracks 1 to 4 show as tape reels with a length knob, a scrub knob and splice edits
+  such as lift, drop, cut, erase, undo and loop, and the SAVE button opens an album of factory and user slots. Later
+  commits add a setup page with Bluetooth, BLE MIDI host and clock options, a quicker way to start a new tape, and
+  presets for the engines. The README is still M-VAVE's FM1 Open V14 text. Four extra browser-only synth engines (wavetable,
+  pad, granular cloud and electric keys) run in the web preview but are hidden on the device, whose sound engine is the
+  sealed binary library. The repository adds a GitHub workflow that builds the package on Windows.
+status: active
+authors:
+- name: bryanf2311
+  url: https://github.com/bryanf2311
+source: https://github.com/bryanf2311/fm1-tape
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE.md is M-VAVE's FM1 Open file, byte for byte (git blob f1b1738...): GPL-3.0-only with the FM1 SDK linking
+  permission. The binary engine library keeps M-VAVE's separate terms (THIRD_PARTY.md). sdk/firmware/FM-1_015.fwsc is
+  M-VAVE's licensed V15 recovery image, Apache-2.0, git blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd, the same file as
+  in m-vave/fm1_open. Third-party parts keep their own licences.
+distribution: source-only
+install_notes: >-
+  No release or installer page. The workflow builds the package and a browser workbench on a Windows runner and keeps them
+  as a workflow artifact; building locally needs Windows, PowerShell and JieLi's PI32v2 toolchain 2.5.3, as FM1 Open does.
+  M-VAVE's recovery image is in the repository for returning to stock.
+brick_risk: true
+tags: [looper, sequencer, ui, emulator, fork]
+versions:
+- version: main @ 42246dc
+  date: 2026-10-30
+  url: https://github.com/bryanf2311/fm1-tape/commit/42246dc1adca1ead0ca481c63801e3aae823c8c3
+  notes: No tagged releases; this is the latest commit.

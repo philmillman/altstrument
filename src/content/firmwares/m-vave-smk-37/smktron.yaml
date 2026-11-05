@@ -1,0 +1,51 @@
+device: m-vave-smk-37
+name: SMKTRON
+summary: >-
+  Mellotron-style tape firmware for the SMK-37 Pro, adapted from FMEL-1: flute, choir, cello and violin tapes with
+  layers, chord pads, a sequencer, a granular mode, tape wear, vibrato, Leslie, echo and reverb.
+description: >-
+  Rights warning: the four tape banks are Mellotron recordings by Bernie Kornowicz (Taijiguy), whose own statement
+  allows use but excludes commercial software for profit, so they are not GPL and the packages must not be sold.
+
+  Derived from AntonioAltea's FMEL-1 through genkigenki's SMK-37 port, with the interface and controls reworked for
+  performance on the SMK-37 Pro. Patch and layer screens show a tape machine. A GRAIN page has four modes (free,
+  mist, pulses and fragments) with size, spread, density and mix, the modulation wheel opens vibrato, and a knob bank
+  moves between performance controls, favourites and chord pads. The chord pads can record and hold chords, and the
+  sequencer is kept while the arpeggiator is removed. The screen has light, dark and zoomed looks. The reverb is adapted
+  from OberVave. The README says ChatGPT and Codex helped write the adaptations, web pages and documentation under the
+  author's direction, and that native builds and simulator checks passed but no physical test is claimed for the
+  V016-only installer. The site, simulator and installer are in Portuguese and English.
+status: active
+authors:
+- name: Marcus Padrini
+  url: https://github.com/4t59m4f784-creator
+source: https://github.com/4t59m4f784-creator/SMKTRON
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states GPL-3.0-only for the derived code and the root LICENSE is the GPL-3.0 text. The tape samples are
+  not GPL: web/CREDITOS.md records the author's 2021 statement allowing use but excluding commercial for-profit
+  software, and claims neither public domain nor a Creative Commons licence. The Violins bank comes from Taijiguy's
+  MkII set. The committed packages are SMKTRON's own builds (651,266 bytes) and match none of M-VAVE's licensed
+  images; the installer asks for your own V016 file and the project does not redistribute it.
+homepage: https://4t59m4f784-creator.github.io/SMKTRON/
+distribution: browser-installer
+requires_stock: SMK-37 Pro official V016 (identity SMK-37 Pro_016)
+install_notes: >-
+  A first-install package for an SMK-37 Pro running M-VAVE's official V016 only; the installer checks the file you select
+  and the model, and refuses other models and firmware. Use M-UPGRADE to return to V016 first, then the browser installer
+  in Chrome or Edge on desktop over HTTPS with a USB data cable, with other MIDI software closed, and look for 0.3.0-gr3
+  at boot. Note your settings first, since new records use a format the earlier AT2 version cannot read.
+brick_risk: true
+tags: [synth-engine, sampler, tape, granular, fx, sequencer, chords, performance, emulator, fork]
+image:
+  url: https://raw.githubusercontent.com/4t59m4f784-creator/SMKTRON/main/web/images/smktron-patch.png
+  alt: "SMKTRON patch screen: a header with the name, battery and volume 90 percent, a FLUTE patch bar, two tape reels, a keyboard with three keys lit and TONE, PITCH, ATTACK and RELEASE readouts"
+  credit: Marcus Padrini
+  source_url: https://github.com/4t59m4f784-creator/SMKTRON
+  first_party: true
+versions:
+- version: main @ ba5d498
+  date: 2026-11-03
+  url: https://github.com/4t59m4f784-creator/SMKTRON/commit/ba5d498716e67a8ccb0a5c12f08df608819f2fb2
+  notes: No tagged releases; this is the latest commit. The installer offers package 0.3.0-gr3.

@@ -6,12 +6,12 @@ description: >-
   The main oscillator is either CXS, the author's own synthesis method, or a saw from bandlimited tables, each with
   four macro knobs. Two sub-oscillators offer OFF, CXS, classic, square and saw types with octave, detune and drift. The
   rest of the voice is a resonant filter with a 24 dB ladder option, an ADSR, an LFO, a four-band channel EQ, a six-note memory
-  with last, high or low priority, glide and legato. Effects are reverb, delay, chorus, MOSFET, compressor, tilt EQ, octave fuzz and
+  with last, high or low priority, glide and legato. Effects are reverb (spring, hall and room engines from V1.78), delay, chorus, MOSFET, compressor, tilt EQ, octave fuzz and
   sandpaper. The sequencer runs 4 to 128 steps with recording, and the arpeggiator has several riff modes. There are 12
   named project slots with 8 sequences each. The screen has a waveform bar that animates as a leaking dam while notes
   are held, and a screensaver of Utrecht's skyline that cracks. The LFO, ENV and SOUND SHAPE pages have animations too:
   a sinkhole, a breaking wall and a volcano that erupts while keys are held. A welcome screen at first start offers a
-  storage format, which needs a three-second SAVE hold to confirm. The release notes say a later version added recognition
+  storage format, which needs a three-second SAVE hold to confirm, and since V1.71 an optional 43-screen on-device tour follows it. The release notes say a later version added recognition
   of M-VAVE's V15 package so the unit can return to stock, and that an earlier version cannot do so.
 status: active
 authors:
@@ -40,6 +40,22 @@ image:
   source_url: https://sikkenworks.github.io/RUPTURE/
   first_party: true
 versions:
+- version: V1.84.2
+  date: 2026-11-05
+  url: https://github.com/SikkenWorks/RUPTURE/releases/tag/V1.84.2
+  notes: The release page has only the .fwsc. The changelog describes a hotfix for a pop from the speaker at start-up. It stops the twelve function-button LEDs jumping to full current in protected states, and holds the amplifier enable until the LED state has been steady for 400 ms. The changelog says hardware confirmation is still needed. The function LEDs also show the active page since V1.84.
+- version: V1.82
+  date: 2026-11-04
+  url: https://github.com/SikkenWorks/RUPTURE/releases/tag/V1.82
+  notes: The release page has only the .fwsc. The changelog says the first-run welcome and tour run again on the first boot of this version, even when an earlier version had completed them. Valid projects are not erased. Since V1.76 the changelog also adds SPRING, HALL and ROOM reverb engines (rebuilt in V1.80), SELECT opening the screen list from any ordinary page, and lighter processing for fast note bursts.
+- version: V1.76
+  date: 2026-11-04
+  url: https://github.com/SikkenWorks/RUPTURE/releases/tag/V1.76
+  notes: The release page has only the .fwsc. The changelog says recorded notes snap to the nearest step using the key-contact time, a key pressed just before step 1 can land on the first step, and the button LEDs flicker less.
+- version: V1.67
+  date: 2026-11-03
+  url: https://github.com/SikkenWorks/RUPTURE/releases/tag/V1.67
+  notes: The release page has only the .fwsc. The changelog says every knob page, including the eight effects and the sequencer, marks the knob last turned.
 - version: V1.60
   date: 2026-11-03
   url: https://github.com/SikkenWorks/RUPTURE/releases/tag/V1.60

@@ -1,0 +1,38 @@
+device: m-vave-fm-1
+name: FM-1 Mirror Bluetooth
+kind: tool
+summary: >-
+  Android app that shows the FM-1's screen on a tablet or phone over Bluetooth MIDI only, which leaves the FM-1's USB port
+  free for another app, with full-screen and high-contrast looks.
+description: >-
+  It talks only to the FM-1's Bluetooth MIDI service, so another app such as a DAW can use the USB connection at the
+  same time. The screen comes from the Big Screen build of M-VAVE's open-source firmware, which has to be installed once
+  over USB with FM-1 Mirror or FM-1 Mirror + Spyglass. Firmware without Bluetooth MIDI, such as ChoralRoot, JIANT and Skiff
+  builds, cannot be found by this app. The FM-1 accepts one Bluetooth connection at a time. The app is plain Java using
+  Android's own MIDI API and does not write firmware.
+status: active
+authors:
+- name: pfkellogg
+  url: https://github.com/pfkellogg
+source: https://github.com/pfkellogg/fm1-mirror-bluetooth
+source_status: open
+license: MIT
+distribution: download
+install_notes: >-
+  Download the APK from the releases page and allow installs from your browser on Android 11 or newer. Turn on the FM-1's
+  Bluetooth page (K1 on, K3 set to Device), then tap Find the FM-1 in the app.
+brick_risk: false
+tags: [usb-midi, midi, utility, ui]
+image:
+  url: https://raw.githubusercontent.com/pfkellogg/fm1-mirror-bluetooth/main/docs/screenshot.png
+  alt: >-
+    A tablet screen titled FM-1 Mirror Bluetooth with Color and Full screen buttons, showing the FM-1's Bluetooth settings page
+    in cyan on black with Bluetooth, BT audio, BLE role and clock values.
+  credit: pfkellogg
+  source_url: https://github.com/pfkellogg/fm1-mirror-bluetooth#readme
+  first_party: true
+versions:
+- version: 1.0.0
+  date: 2026-11-02
+  url: https://github.com/pfkellogg/fm1-mirror-bluetooth/releases/tag/v1.0.0
+  notes: First release.

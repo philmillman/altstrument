@@ -1,0 +1,33 @@
+device: shot-modules-wt-vco
+name: WT VCO firmware
+summary: >-
+  Firmware for the SHOT MODULES WT VCO wavetable oscillator, made of an RP2350 Arduino sketch that plays the wavetable and fuses two V/OCT readings, and a PIC16F18426 program that reads the knobs and CV inputs.
+description: >-
+  The RP2350 runs audio on one core through an I2S link to a PCM5102A converter, and the inputs and a USB serial console on
+  the other. V/OCT is read by an ADS1115 and by the RP2350's own converter and the readings are fused, with the first giving
+  accuracy and the second speed. The PIC samples four knobs and four control voltage inputs and sends an 18-byte frame
+  every millisecond to the RP2350 over UART. Calibration commands in the console store results in flash. Host tests,
+  table generators and a wavetable header are included. The same repository holds the schematic, parts list and an
+  EasyEDA project, and a technical specification with design notes and verification results.
+status: active
+authors:
+  - name: Shota Azuma
+    url: https://github.com/sazuma0219-sudo
+source: https://github.com/sazuma0219-sudo/wt-vco
+source_status: open
+license: MIT
+license_notes: >-
+  The firmware folder is MIT. The hardware folder is CERN-OHL-P-2.0 and the spec folder is CC-BY-4.0. The licences give
+  no right to the name or logo of SHOT MODULES.
+distribution: download
+install_notes: >-
+  Hold BOOT while plugging in USB, then copy the .uf2 to the RP2350 drive. The PIC's .hex needs a programmer such as an MPLAB
+  Snap using low-voltage programming, off the board, before the chip goes into its socket. A new board then needs calibrating
+  from the USB serial console. Both files were built from the tagged sources.
+brick_risk: false
+tags: [official, oscillator, wavetable, modular, open-hardware]
+versions:
+  - version: '1.0'
+    date: 2026-11-05
+    url: https://github.com/sazuma0219-sudo/wt-vco/releases/tag/v1.0
+    notes: First public release, with the RP2350 .uf2 and the PIC .hex.

@@ -1,0 +1,48 @@
+device: m-vave-fm-1
+name: AQUORA
+summary: >-
+  Generative ambient firmware with eight synthesized roles including drums, Solfeggio reference tones, stereo binaural
+  beats, procedural nature beds and four saved arrangement banks.
+description: >-
+  Plays itself in scenes that set scale, tempo and density, with motifs that vary at phrase boundaries. The pages are
+  PLAY, SOUND, EVOLVE and MIX, with a quick-find list of parameters and an eight-track console. Fixed tones run at
+  frequencies from 111 to 963 Hz, and the binaural mode puts a carrier and a small difference on the left and right
+  channels. The screen has several visualizers, and an experimental AIR control reads Bluetooth signal strength to
+  modulate reverb and echo. The author states that no medical benefit is claimed. It was built with AI tooling, and
+  its release notes say that the changes in each build are unverified on hardware, with the owner having confirmed
+  playback of 0.2.0 only. It builds on charlesvestal's fm1-base.
+status: active
+authors:
+- name: CodingSlapfu
+  url: https://github.com/CodingSlapfu
+source: https://github.com/CodingSlapfu/AQUORA
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The repository has no LICENSE file. The licence comes from statements in the source: device/app.c opens with an
+  SPDX MPL-2.0 identifier and device/fm1.toml sets licence = "MPL-2.0", matching fm1-base. The release notes describe
+  the AQUORA Sans font as OFL-licensed. The release assets include the full source archive with the pinned SDK inputs.
+distribution: browser-installer
+install_notes: >-
+  The release notes link a browser installer that needs Chrome or Edge with Web MIDI and SysEx access, and the
+  releases carry the .fwsc and a single-core .fwsc. The manual says an interrupted application write needs recovery
+  and that the update is not a dual-bank rollback. Earlier builds are kept for rollback, and the release notes say
+  physical flashing and rollback are unverified.
+brick_risk: true
+tags: [generative, ambient, synth-engine, fx, sequencer, drums, reverb, delay, emulator]
+versions:
+- version: 0.6.3
+  date: 2026-11-05
+  url: https://github.com/CodingSlapfu/AQUORA/releases/tag/v0.6.3
+  notes: Adds one-press SAVE on every page, CRC-protected bank commits, black and white canvases and standing-wave Polar Bloom contours.
+- version: 0.6.2
+  date: 2026-11-05
+  url: https://github.com/CodingSlapfu/AQUORA/releases/tag/v0.6.2
+  notes: Adds four panel skins, an eight-track console, direct SOUND sections, an 83-parameter quick find and AIR calibration readouts.
+- version: 0.6.1
+  date: 2026-11-05
+  url: https://github.com/CodingSlapfu/AQUORA/releases/tag/v0.6.1
+  notes: Adds role traces, FM instruments and percussion, extra nature beds, lighting modes and a passive Bluetooth AIR scan.
+- version: 0.6.0
+  date: 2026-11-05
+  url: https://github.com/CodingSlapfu/AQUORA/releases/tag/v0.6.0

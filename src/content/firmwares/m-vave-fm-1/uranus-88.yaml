@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: URANUS 88
+summary: >-
+  Eight-voice analog-style polysynth with two oscillators, a resonant four-pole filter, two envelopes, a chorus, an arpeggiator, sequences, split
+  and dual modes and an 808-style drum machine, built as a fm1-dock module.
+description: >-
+  Installable as its own firmware or as a module dropped onto fm1-dock. VCO-1 and VCO-2 have sync and cross modulation, and there are
+  64 sound slots, 32 of them factory sounds. Key assign modes are POLY1, POLY2, UNISON, SOLO and CHORD with a voice depth setting, and
+  the stereo chorus has BBD-style modes. Two sequence tracks play from the keys, and the drum machine has eight voices and eight
+  patterns on the arpeggiator's clock. MIDI in covers notes, bend, aftertouch and some controllers, and channel 10 plays the drums. The
+  README, in Swedish, says it has been tested on a computer and not yet run on an FM-1, and asks users to check the CPU load. It builds on
+  fm1-dock and Dinghy and the repository has no releases.
+status: active
+authors:
+- name: hagan66
+  url: https://github.com/hagan66
+source: https://github.com/hagan66/uranus88
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README says GPL-3.0 and the repository has no LICENSE file. It is built on fm1-dock and Dinghy, which are GPL-3.0-only.
+distribution: source-only
+install_notes: >-
+  GitHub Actions builds uranus88.fwsc and uranus88.dock with the Firmware Hub workflow and offers them as an artifact. Install the package with
+  fm1_install.py from an fm1-dock checkout, or put the .dock file on fm1-dock. Holding OCT- at power-on starts the USB rescue, and the
+  README names the FM-1 Firmware Hub for returning to the stock firmware.
+brick_risk: true
+tags: [synth-engine, drums, arpeggiator, sequencer, chorus, fork]
+versions:
+- version: main @ 0c628bf
+  date: 2026-11-01
+  url: https://github.com/hagan66/uranus88/commit/0c628bf44a80c06c246fed263b152316d264b437
+  notes: No tagged releases; this is the latest commit.

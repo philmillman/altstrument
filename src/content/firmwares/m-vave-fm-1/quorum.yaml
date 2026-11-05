@@ -1,0 +1,49 @@
+device: m-vave-fm-1
+name: Quorum
+summary: >-
+  Self-playing additive instrument in which two rows of cellular automata switch 64 sine partials on and off, with a
+  modulation matrix and a keyboard sequencer.
+description: >-
+  The two grids of 32 cells follow any of the 256 elementary rules, with mutation and rescue when a grid dies or loops,
+  and they share the partials in five ways. Strikes ring the overtone series of a partial, each partial is split over two
+  filtered paths, and four logic generators, function generators, sample-and-holds and slew sequencers feed a mod matrix
+  and a gate matrix. Other parts are 21 tunings, a phaser, two delays and the plate reverb from Arcturus S6, 16 named
+  patches and a new slow drone at every power-on. The engine runs at 22.05 kHz and 12 bit, switchable to 8 bit. The
+  README calls it a sister of Arcturus S6, says it was written by Claude with human guidance and has been tested on one
+  FM-1. It is built on Dinghy.
+status: active
+authors:
+- name: Zeptosecond DSP
+  url: https://github.com/zeptosecond-dsp
+source: https://github.com/zeptosecond-dsp/Quorum
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only, as Dinghy. The platform files are Felucca's, with changes from SLOOP and the SMK-37
+  layer. font8x8 is public domain, Terminus is SIL OFL 1.1, and three JieLi SDK files are read from your own SDK
+  checkout at build time.
+distribution: browser-installer
+install_notes: >-
+  Install from The Firmware Hub in Chrome or Edge over USB, or run tools/fm1_install.py with the .fwsc from a release
+  (on Windows, with tools/windows/install.bat). Hold OCT- while switching on for the USB rescue, which loads only the
+  updater so another firmware can be installed. The author says installing is at your own risk.
+brick_risk: true
+tags: [generative, ambient, synth-engine, fx, scales, emulator]
+image:
+  url: https://raw.githubusercontent.com/zeptosecond-dsp/Quorum/main/assets/card.png
+  alt: "Quorum boot screen in green phosphor: a round petri dish with colonies above the title QUORUM and the line Cellular Synthesis System by zeptosecond DSP 1.0"
+  credit: Zeptosecond DSP
+  source_url: https://github.com/zeptosecond-dsp/Quorum
+  first_party: true
+versions:
+- version: 1.1.1
+  date: 2026-11-03
+  url: https://github.com/zeptosecond-dsp/Quorum/releases/tag/v1.1.1
+  notes: Fixes the Q in the screen font, so the title reads QUORUM.
+- version: '1.1'
+  date: 2026-11-03
+  url: https://github.com/zeptosecond-dsp/Quorum/releases/tag/v1.1
+  notes: Keyboard sequencer changes, with step-locked triangles, a double press of SEQ to clear and SEL plus REC arming AUTO.
+- version: '1.0'
+  date: 2026-11-03
+  url: https://github.com/zeptosecond-dsp/Quorum/releases/tag/v1.0

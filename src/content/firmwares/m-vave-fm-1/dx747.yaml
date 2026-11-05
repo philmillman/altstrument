@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+name: DX747
+summary: >-
+  Multitimbral DX7 module for the FM-1 played over MIDI: up to eight parts, each with one to eight layered DX7 voices
+  with note and velocity windows, shared effects, a master filter and stored scenes; no sequencer or sampler.
+description: >-
+  Built on M-VAVE's FM1 Open SDK at commit 4c7496d and using the SDK's closed DX7 engine; everything else, including MIDI
+  routing, screens, scenes and SysEx handling, is code in the repository. A part is one MIDI channel with one sound, and a
+  layer takes its own range, shift, level, pan and effect sends. Sixteen voices are shared between the eight engines. DX747.md says the
+  routing, screens and scenes run in a simulator and host tests, that Bluetooth and USB audio were only checked by reading code, and that
+  nothing has run on a real FM-1. It reports release V01 and its own update identity, and the name and logo refer to the Yamaha DX7 and a
+  Boeing 747, with the project stating it has no connection to either company. The default branch is dx747.
+status: active
+authors:
+- name: esbenvb
+  url: https://github.com/esbenvb
+source: https://github.com/esbenvb/fm1-dx747
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE.md is M-VAVE's FM1 APP licence, GPL-3.0 only with a linking permission, covering DX747's own code. The binary SDK engine keeps M-VAVE's separate terms
+  (THIRD_PARTY.md). sdk/firmware/FM-1_015.fwsc matches M-VAVE's FM-1 V15 image licensed Apache-2.0 (git blob
+  ce49cc1595b67347c68a3ac7463017f9fa8c19dd, 699,956 bytes), as carried in the FM1 Open SDK.
+homepage: https://github.com/esbenvb/fm1-dx747/tree/dx747
+distribution: source-only
+install_notes: >-
+  Build on Windows with the JieLi 2.5.3 toolchain as docs/BUILD-WINDOWS.md describes, which also builds an install page. Read
+  docs/FLASHING-AND-RECOVERY.md before flashing, and note that DX747 replaces FM1 Open V14.
+brick_risk: true
+tags: [dx7, synth-engine, midi, fm, fork]
+versions:
+- version: dx747 @ b7b3b19
+  date: 2026-11-05
+  url: https://github.com/esbenvb/fm1-dx747/commit/b7b3b19436905c4d1862921641207a15c7253ac3
+  notes: No tagged releases; this is the latest commit.

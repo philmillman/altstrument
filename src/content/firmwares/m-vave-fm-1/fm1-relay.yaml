@@ -1,0 +1,43 @@
+device: m-vave-fm-1
+kind: tool
+name: FM-1 Relay
+summary: >-
+  MIDI clock master for up to four FM-1s on any open-source firmware: a browser web app and a native iPad app that
+  send one tempo and start every unit on the same downbeat.
+description: >-
+  It sends 24 PPQN clock with start and stop to four hot-plug slots, schedules each clock byte ahead with Web MIDI
+  timestamps from a worker thread so background tabs stay steady, and starts a unit that joins mid-song at the next
+  bar or beat. It recognises SLOOP, Felucca, Skiff, JIANT, X0X and ECHOFIELD from the port name or an INFO reply and
+  shows which menu setting each needs to follow USB clock. It also sends ECHOFIELD's start and stop as CC messages and
+  follows tempo with its delay time. Other controls are tap tempo, a ping note to identify a unit, keyboard shortcuts
+  and demo units for trying it without hardware. The web app installs as an offline app and needs Web MIDI, so Safari and
+  iOS browsers cannot run it; the iPad app is a SwiftUI and CoreMIDI build from the ipad folder with Xcode 16, and keeps
+  running in the background. The README says it is not affiliated with M-VAVE or the firmware authors and contains none
+  of their code.
+status: active
+authors:
+- name: Philip-Bos
+  url: https://github.com/Philip-Bos
+source: https://github.com/Philip-Bos/fm1-relay
+source_status: open
+license: MIT
+license_notes: LICENSE is the MIT text, copyright held by "FM-1 Relay contributors".
+homepage: https://philip-bos.github.io/fm1-relay/
+distribution: browser-installer
+install_notes: >-
+  Nothing to flash: open the web app in Chrome, Edge, Opera or Firefox on a computer or Android, allow MIDI with SysEx,
+  and plug in the FM-1s, using a powered hub for three or four. The iPad app has no store build and is built from
+  the repository's ipad folder. Each firmware needs its clock source set to USB, which the app shows per slot.
+brick_risk: false
+tags: [midi, clock, sequencer, web-midi, usb-midi, performance, utility]
+image:
+  url: https://raw.githubusercontent.com/Philip-Bos/fm1-relay/main/docs/screenshots/relay-playing.png
+  alt: "FM-1 Relay web app: a large yellow 128 BPM readout, stop and restart buttons, a beat ring, and four slot cards, SLOOP and ECHOFIELD synced and two empty"
+  credit: Philip-Bos
+  source_url: https://github.com/Philip-Bos/fm1-relay
+  first_party: true
+versions:
+- version: v2.0.0
+  date: 2026-11-04
+  url: https://github.com/Philip-Bos/fm1-relay/releases/tag/v2.0.0
+  notes: First open-source release, with the web app and the iPad app.

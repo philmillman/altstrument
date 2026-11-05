@@ -1,0 +1,49 @@
+device: m-vave-fm-1
+name: FM1 YOGA
+summary: >-
+  Relaxation firmware for the end of a yoga class: guided programs on a drone at 174, 396, 432 or 528 Hz with a slow
+  theta-to-delta pulse, breath noise, singing bowls and an ambient garden, plus a playable handpan or kalimba on the keys.
+description: >-
+  Six programs (four single tones, a journey through all four, and a manual one) run for 5 to 30 minutes or without end,
+  with transitions and a gentle wake-up phase, and each start randomizes phase lengths, rhythms and timbres. The pulse is
+  isochronic for speakers or binaural for headphones. The garden layer, taken from AMB-1, is tuned to the drone and
+  has pads, bell loops, a bass, tape echo and a plate reverb. The keys play a handpan, kalimba, tongue drum, bowls or
+  Koshi chimes with velocity, and a sequencer records four patterns. The screen speaks German, English or Sanskrit. The README, in German
+  with an English summary, says it creates relaxation sounds with no medical claim and warns people prone to seizures
+  about pulsing tones. A browser emulator runs the same firmware. It is built on fm1-base.
+status: active
+authors:
+- name: michamilz
+  url: https://github.com/michamilz
+source: https://github.com/michamilz/fm1-yoga
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The README states MPL-2.0. The garden engine is from AMB-1 by Charles Vestal (MPL-2.0), and fm1-base and felucca-bsp
+  trace back to Felucca by Leo Kuroshita. The fonts Barlow and Terminus are SIL OFL 1.1, and three JieLi AC79 SDK files
+  (Apache-2.0) are read from your own SDK checkout at build time.
+homepage: https://michamilz.github.io/fm1-yoga/
+distribution: browser-installer
+install_notes: >-
+  Use the web installer in Chrome or Edge with the FM-1 on USB, or base/tools/fm1_install.py with the release .fwsc.
+  The installer's stock-firmware option takes M-VAVE's V15 file, which you download yourself, and M-UPGRADE also works.
+  After two failed starts the FM-1 enters a safe mode that the installer can still reach, and a felucca-bsp rescue script
+  for Mac covers a black screen. The README says installing other firmware is at your own risk, and that M-VAVE's own
+  projects and samples are not read, so back them up first.
+brick_risk: true
+tags: [ambient, generative, synth-engine, sequencer, reverb, delay, emulator]
+image:
+  url: https://raw.githubusercontent.com/michamilz/fm1-yoga/main/docs/img/panel.png
+  alt: "FM-1 panel drawn with German labels under every knob and key; the screen shows YOGA, ISO, the program REISE, a ring reading 174 Hz, THETA 6.9 HZ and a 9:54 timer"
+  credit: michamilz
+  source_url: https://github.com/michamilz/fm1-yoga
+  first_party: true
+versions:
+- version: 1.0-rc2
+  date: 2026-11-03
+  url: https://github.com/michamilz/fm1-yoga/releases/tag/v1.0-rc2
+  notes: Pre-release. Adds the sequencer and announces phase changes; an overload brake and a load readout in SETUP came after rc1.
+- version: 1.0-rc1
+  date: 2026-10-29
+  url: https://github.com/michamilz/fm1-yoga/releases/tag/v1.0-rc1
+  notes: Pre-release. First release.

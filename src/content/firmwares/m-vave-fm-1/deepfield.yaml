@@ -1,0 +1,39 @@
+device: m-vave-fm-1
+name: DEEP FIELD
+summary: >-
+  Ambient drone machine for the FM-1 on fm1-base: each key strikes a long-held body, with eight models, a noise layer,
+  an ORBIT mode that moves notes on its own, a freezing hall reverb and 32 morphing scenes.
+description: >-
+  Eight bodies sound at once, drawn on the screen as beams over the keys, planets round a sun, a nebula or a radar
+  scope. Four knob groups, MASS, DRIFT, SPACE and TIDE, shape all bodies together, and eight models (solar, void,
+  glass, string, choir, bell, Shepard and fold) can be mixed with a noise layer. Effects are a tape delay, an
+  ensemble and a hall reverb with freeze and shimmer, and scenes recall everything and crossfade into each other.
+  MIDI runs over USB, TRS and Bluetooth in both directions, with MIDI clock in and out. It lives in the same
+  repository as Pocket Poly, which is listed separately. The author's handoff notes record flashing builds through the
+  playable pass of 2026-11-03 on a real FM-1, where they booted cleanly; a few later additions, including MIDI clock,
+  the CYCLE progression and the manual crossfade, were waiting to be flashed when the notes were last updated, and
+  device CPU load is unmeasured for the newer pages.
+status: active
+authors:
+- name: WisestWizard
+  url: https://github.com/WisestWizard
+source: https://github.com/WisestWizard/deepfield/tree/master/deepfield
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The repository LICENSE is the MPL-2.0 text, and the README calls the choice proposed. The fm1-base platform and
+  felucca-bsp are MPL-2.0. JieLi's SDK files used by the build are Apache-2.0 and are not committed.
+homepage: https://wisestwizard.github.io/deepfield/
+distribution: browser-installer
+install_notes: >-
+  The project site has a Chrome or Edge installer over USB and a 0.1 package, which its installer can replace with
+  M-VAVE's firmware. To build instead, build.sh deepfield needs a Linux container for JieLi's toolchain plus the AC79
+  SDK, and fm1_install.py installs the package. The package identity is FM-1_1400. Holding OCT- at power-on opens
+  update mode. Back up and keep M-VAVE's updater ready.
+brick_risk: true
+tags: [synth-engine, ambient, drone, reverb, delay, generative, ble-midi, platform, emulator]
+versions:
+- version: master @ e4fa27b
+  date: 2026-11-04
+  url: https://github.com/WisestWizard/deepfield/commit/e4fa27b5144e9fba3dfb8fc2c331f64fee092874
+  notes: No tagged releases; this is the latest commit. The project site offers 0.1, which predates it.

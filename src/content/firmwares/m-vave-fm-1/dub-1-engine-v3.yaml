@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: DUB-1 engine v3
+summary: >-
+  Fork of DUB-1 with a redesigned sound engine and longer arrangements: deeper chord filters, a skewed echo, driven bass and kick,
+  16-bar blocks with breakdowns, and four new pieces modelled on dub techno Live templates.
+description: >-
+  Starts from DUB-1 1.4.3 and keeps its pages, knobs and save format. Version 2 changes the sound engine only: the chord stab
+  moves lower and gets a 24 dB filter driven by velocity, ghost stabs and an overdrive, the echo's two channels run at different
+  times with a wandering low-pass, the sub bass gets a driven saw layer, the kick gets a body held before its decay and the master
+  gets glue compression. Version 3 arranges songs in 16-bar blocks with breakdowns, layers that come and go and a chord voicing that
+  shifts every two bars, then tunes the echo tails and pulse. A third step replaces four of the eight pieces with new ones
+  built from the tempo, key, drum loop and bassline of commercial Ableton dub techno templates, and adds two bass grooves; the
+  templates themselves are not in the repository. The notes in ENGINE-V2.md measure the result against reference mixdowns. The
+  README is still DUB-1's, the default branch is engine-v2, and the commit messages credit Claude as co-author.
+status: active
+authors:
+- name: pokidokiman
+  url: https://github.com/pokidokiman
+source: https://github.com/pokidokiman/fm1-dub
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md keeps DUB-1's terms, GPL-3.0-only, inherited from AMB-1 and Felucca; fonts are SIL OFL. The repository holds small
+  test .bin files (project saves for the simulator) but no firmware image.
+distribution: source-only
+install_notes: >-
+  No release or installer page. Build as DUB-1 is built (BUILDING.md, build.sh, JieLi toolchain) and install with
+  tools/fm1_install.py. DUB-1's own site and installer carry the original DUB-1, not this fork; that installer or M-VAVE's
+  updater can restore stock firmware.
+brick_risk: true
+tags: [generative, synth-engine, drums, fx, performance, emulator, fork]
+versions:
+- version: engine-v2 @ 0733b1e
+  date: 2026-11-02
+  url: https://github.com/pokidokiman/fm1-dub/commit/0733b1e681d4a25020a1fd630a80f396cde56a73
+  notes: No tagged releases; this is the latest commit.

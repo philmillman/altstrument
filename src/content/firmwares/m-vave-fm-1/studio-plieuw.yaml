@@ -1,0 +1,38 @@
+device: m-vave-fm-1
+name: FM-1 STUDIO (Plieuw)
+summary: >-
+  Felucca fork with three track engines, a 6-voice Alpha Juno style synth, a TB-303 style bass and a TR-909 style drum kit,
+  plus a Mackie-style gain, low-cut and EQ strip on every track. README in Dutch.
+description: >-
+  Each of the four tracks can run JUNO, ACID or TR909. JUNO has pulse, saw and sub oscillators, a high-pass and 24 dB filter
+  and a stereo chorus, ACID has the 303 filter with accent and slide, and TR909 plays eight drum parts on the grid with
+  tone controls and muting. The channel strip adds a gain stage that saturates when pushed, a 75 Hz low cut and a
+  three-band EQ with a drawn curve. Holding a key while recording and turning a knob stores a per-step parameter lock. The
+  303 and 909 code is ported from Charles Vestal's X0X, and the Juno synth was written by the fork's owner for M-VAVE's
+  FM-1 Open SDK. Felucca's web editor does not know the new engines. The Dutch README explains the browser route through
+  GitHub Actions and a Linux build.
+status: active
+authors:
+- name: Plieuw
+  url: https://github.com/Plieuw
+source: https://github.com/Plieuw/fm1-studio
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  README and LICENSING.md, as Felucca. The Rings and DaisySP code is MIT, the msfa FM core Apache-2.0, the Inter Tight font
+  SIL OFL 1.1, and the SAMPLE sets are CC0 1.0 (Versilian Studios). The 909 hi-hat, ride and crash WAV files in assets/909
+  are credited to ER-99 by Matthew Cieplak (GPL-3.0) via X0X; ER-99 does not say where those cymbal samples came from, and
+  LICENSING.md names Roland as the owner of the TR-909, TB-303 and Alpha Juno names.
+homepage: https://plieuw.github.io/fm1-studio/webapp/installer/
+distribution: browser-installer
+install_notes: >-
+  Open the installer page in Chrome or Edge with the FM-1 on USB and press Install, or build with studio-setup.sh on Linux
+  (Docker on macOS). The README says M-VAVE's Workbench restores the original V15, and that holding OCT- and OCT+ for five
+  seconds enters the update mode.
+brick_risk: true
+tags: [synth-engine, drums, fx, sequencer, fork]
+versions:
+- version: main @ 3665ff9
+  date: 2026-10-27
+  url: https://github.com/Plieuw/fm1-studio/commit/3665ff9ab803a7f8132b9a09673f95dce3169308
+  notes: No tagged releases; this is the latest commit.

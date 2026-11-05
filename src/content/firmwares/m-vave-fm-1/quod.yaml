@@ -1,0 +1,44 @@
+device: m-vave-fm-1
+name: Quod
+summary: >-
+  Drone instrument where one root note gathers a cluster of 13 sine voices between heaven and hell that glides to each new
+  root like a mass in syrup, with a 16-step root sequencer; also a macOS Audio Unit and a browser edition.
+description: >-
+  The root pulls twelve voices on a ladder of 24 just intervals, over and under it, and a Heaven and Hell knob moves the
+  sound from a choir, a ringing bell and a rising shimmer reverb toward detuned, driven voices and four screaming ones.
+  Viscosity and slosh set how slowly the cluster follows a new root, from about a fiftieth of a second to two minutes, and
+  a low-pass gate, twin voices that beat against each other and drift sit on top. Each of the sixteen steps holds a root
+  with per-knob locks, and a 95-second showcase tours the features. The same engine ships as a macOS Audio Unit app, a
+  Windows VST3 and CLAP plug-in and a browser edition whose Flash page installs the FM-1 firmware. This entry covers the
+  FM-1 firmware, which runs the engine inside the Dinghy, Felucca and SLOOP platform.
+status: active
+authors:
+- name: Kip DeCastro
+  url: https://github.com/tulpasoftworks
+source: https://github.com/tulpasoftworks/quod
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The root LICENSE is MIT for Quod's own code, but fm1/LICENSING.md says the firmware built from it is a whole under the
+  GPL, with the platform in fm1/ GPL-3.0-only (Felucca, SLOOP, Dinghy). The VST3 build links nih-plug's GPL bindings per
+  the release notes. Terminus and UnifrakturMaguntia fonts are SIL OFL 1.1.
+distribution: download
+install_notes: >-
+  Use the Flash button in the project's browser edition from Chrome or Edge, or run fm1/tools/fm1_install.py with the
+  release's quod-X.Y.fwsc, which needs mido and python-rtmidi. Before it installs, the browser edition asks for a way back,
+  such as a saved Quod state or M-VAVE's own V15 or V16 package that you supply. Hold OCT- while switching on for the USB
+  rescue. The README says whether M-VAVE's own updater accepts a Quod package has not been tried.
+brick_risk: true
+tags: [drone, ambient, synth-engine, generative, reverb, sequencer, fx, web, usb-midi]
+versions:
+- version: '0.3'
+  date: 2026-10-27
+  url: https://github.com/tulpasoftworks/quod/releases/tag/v0.3
+- version: '0.2'
+  date: 2026-10-27
+  url: https://github.com/tulpasoftworks/quod/releases/tag/v0.2
+  notes: Adds the Windows plug-in builds and the browser edition with Flash and Link pages.
+- version: '0.1'
+  date: 2026-10-26
+  url: https://github.com/tulpasoftworks/quod/releases/tag/v0.1
+  notes: First release with the FM-1 firmware and the macOS Audio Unit app.

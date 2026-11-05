@@ -34,7 +34,7 @@ description: >-
   core renders the reverb, pad and DX voices, with load shedding and a USB status log. The
   project site has the installer (with backup and restore), a browser emulator with sound,
   a parameter and DX7 voice editor, and a manual that opens with a beginner's guide, with
-  printable PDFs.
+  printable PDFs. Version 0.16.2 adds a chord type for each progression slot, the THEORY and TRIP visualizers, effects that play themselves and a MIDI map of your controller that the FM-1 keeps (experimental).
 status: active
 authors:
   - name: deamonSLINKY
@@ -50,7 +50,7 @@ homepage: https://deamonslinky.github.io/PERF-1/
 distribution: browser-installer
 install_notes: >-
   Web installer in Chrome or Edge over USB, or tools/fm1_install.py with the .fwsc.
-  The installer can write M-VAVE's own V15 back from a file you download yourself,
+  The installer can write M-VAVE's own V15 or V16 back from a file you download yourself,
   and an FM-1 that fails to start twice comes up in a safe mode the installer can
   reach. The README says installing is at your own risk.
 brick_risk: true
@@ -68,6 +68,10 @@ image:
   source_url: https://github.com/deamonSLINKY/PERF-1
   first_party: true
 versions:
+  - version: 0.16.2
+    date: 2026-11-05
+    url: https://github.com/deamonSLINKY/PERF-1/releases/tag/v0.16.2
+    notes: Makes PERF-1 answer M-UPGRADE 3.11 again so it can go back to stock, works on an FM-1 running V16, adds a chord type per progression slot including 11ths, the THEORY and TRIP visualizers, self-playing effects, an experimental MIDI map the FM-1 keeps, and a sustain pedal freeze.
   - version: 0.16.1
     date: 2026-11-02
     url: https://github.com/deamonSLINKY/PERF-1/releases/tag/v0.16.1

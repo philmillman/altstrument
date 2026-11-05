@@ -1,0 +1,43 @@
+device: m-vave-fm-1
+name: Threadboard
+summary: >-
+  Replaces the FM-1's synth firmware with a console for coding-agent threads: each white key stands for a thread, lights
+  show its state, and the upper keys answer questions and approvals, driven by a Mac bridge over USB MIDI.
+description: >-
+  This is not a music firmware. A local bridge on macOS reads threads from T3 Code, the Codex app server or Claude Code
+  sessions and sends them to the FM-1, which shows the project, thread title, status and latest message on its screen
+  and plays a short chime when a thread needs attention. Keys flash, glow or breathe to show whether a thread
+  waits for you, is running, or is snoozed. The black keys choose a question answer or an approval decision and
+  PLAY sends it, while REC stops a thread and SAVE with a key settles it. The firmware is a C app on fm1-base and
+  felucca-bsp, and the repository has a browser simulator and tests. The author installed it on a unit running M-VAVE's
+  V15 firmware, and a unit on FM1 Open must first go back to the original firmware.
+status: active
+authors:
+- name: Isaac
+  url: https://github.com/NotAKerbal
+source: https://github.com/NotAKerbal/threadboard-fm1
+source_status: open
+license: MIT
+license_notes: >-
+  The bridge, firmware app and simulator are MIT. The compiled firmware also contains fm1-base and felucca-bsp
+  (MPL-2.0), Terminus fonts (SIL OFL 1.1) and JieLi AC79 SDK boot files (Apache-2.0), described in THIRD_PARTY.md.
+distribution: source-only
+requires_stock: M-VAVE V15 firmware
+install_notes: >-
+  Build output/threadboard.fwsc with the bootstrap and build scripts, which need Python, Docker or Colima and JieLi's
+  compiler, then run scripts/install-firmware.py to identify the unit and --flash to install it. The bootstrap fetches
+  M-VAVE's V15 package from M-VAVE's own repository into output/ as a rollback file; it does not back up your sounds, so
+  export those first. The bridge needs macOS and Node 24 or newer.
+brick_risk: true
+tags: [platform, midi, usb-midi, utility, fork]
+image:
+  url: https://raw.githubusercontent.com/NotAKerbal/threadboard-fm1/main/docs/assets/select-thread.png
+  alt: "Concept illustration, not a photo, of a cream FM-1 running Threadboard: thread 03 shown as working on the screen, sixteen white keys numbered 01 to 16 and a legend of key light states"
+  credit: NotAKerbal
+  source_url: https://github.com/NotAKerbal/threadboard-fm1
+  first_party: true
+versions:
+- version: main @ a2c0977
+  date: 2026-10-27
+  url: https://github.com/NotAKerbal/threadboard-fm1/commit/a2c09774d1f1555cb3aaca28610c6b8dca26d705
+  notes: No tagged releases; this is the latest commit.

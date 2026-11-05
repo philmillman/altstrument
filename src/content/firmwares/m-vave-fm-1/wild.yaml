@@ -1,0 +1,40 @@
+device: m-vave-fm-1
+name: Wild
+summary: >-
+  Fork of n001se, a random FM drum machine with a 303-style acid line, that renders audio ahead of playback and adds
+  twelve song banks, automation, a battery readout and a reworked 303 filter.
+description: >-
+  Keeps n001se's five tracks, chance-driven patterns, Chaos and MIDI behaviour. The sound engine renders continuous PCM
+  ahead of playback in memory, and no audio files are written. The README's change log, which reaches 0.3.29, lists a
+  diode ladder filter and calibrated 303 knobs after Open303, drums whose sound wanders at high Deviance, banks selected with SEL
+  and a white key, recorded knob automation, saved songs and a clear-all gesture. The README says physical FM-1 timing, audio and
+  installation are untested, and that 0.1.0 failed hardware start-up and later versions fix it. The documentation below its first
+  section is n001se's, so some status lines in it do not describe Wild.
+status: active
+authors:
+- name: Saintpid
+  url: https://github.com/Saintpid
+source: https://github.com/Saintpid/Wild
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md gives GPL-3.0-only, inherited from n001se, FiMba-1, FoMni, X0X and Felucca. The Barlow font is SIL OFL
+  and the Terminus font has its own licence in assets/fonts.
+distribution: source-only
+install_notes: >-
+  The repository holds source only. Build with tools/build.py as BUILDING.md describes, then install with
+  tools/fm1_install.py, or with the FM-1 Switch desktop installer by the same author, which lists Wild's packages. A safe mode keeps USB
+  and the installer reachable after a failed start, and tools/fm1_rescue.py covers the chip's own update mode.
+brick_risk: true
+tags: [drums, fm, generative, sequencer, fx, fork]
+image:
+  url: https://raw.githubusercontent.com/Saintpid/Wild/main/docs/img/playing.png
+  alt: "Pattern page showing a kick, snare, hat, perc and acid track as rows of step pills, with Bars 2, Hits min 3, Hits max 5 and Evolve 10 under them"
+  credit: Saintpid
+  source_url: https://github.com/Saintpid/Wild
+  first_party: true
+versions:
+- version: main @ 89356a7
+  date: 2026-11-04
+  url: https://github.com/Saintpid/Wild/commit/89356a7836e039a08660c7b5b9b6a296070eeefe
+  notes: No tagged releases; this is the latest commit.

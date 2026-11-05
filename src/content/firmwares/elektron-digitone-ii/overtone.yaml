@@ -8,15 +8,18 @@ description: >-
   licensed them, and the project is not made or supported by Elektron. The
   SOPHIE machine is a port of Matt Estela's MIT-licensed Schwung Sophie. The
   patcher turns Elektron's original OS 1.12 file into the build on your own
-  computer, checking it by hash first, and no Elektron firmware is shared. The
+  computer, in the browser or with a Python script, checking it by hash first,
+  and no Elektron firmware is shared. The
   author says its packs hold no 16-byte run found in Elektron's file. Beyond the
   four machines, every track gets an insert (flanger, phaser, chorus or reverb)
   with p-locks, each sound gets two envelope followers, two LFOs and two
   arpeggiators that can modulate one another, and trigs get parameter slides.
   ARP 1 can lock to the keyboard scale, ARP 2 is a step modulator, and GROOVE
-  replaces swing with per-step timing weights. LOOP records eight seconds per
-  track. ENV3 and LFO3 are gone, since their storage holds ENV2 and ARP 2. The
-  patcher includes the dnfw container code from dn2_firmware_explore unchanged.
+  replaces swing with per-step timing weights. From 1.2 a setting switches
+  patterns at the next step instead of the end of the pattern. LOOP records eight
+  seconds per track. The third envelope follower is gone, since its storage holds
+  ARP 2; LFO 3, absent in 1.0, came back in 1.3. The patcher includes the dnfw
+  container code from dn2_firmware_explore unchanged.
   Every build is checked in two emulators and was played on a unit, and the
   README says the project was made with Claude Code.
 status: active
@@ -30,21 +33,21 @@ license_notes: >-
   The LICENSE file is the AGPL v3 text, and the README and the patcher's SPDX
   header state "or later". The bundled dnfw code is AGPL as well. Elektron,
   Digitone, Machinedrum, Monomachine and Overbridge are Elektron trademarks.
+homepage: https://complex-ping.github.io/overtone/
 distribution: patch-your-own
 requires_stock: "1.12"
 install_notes: >-
   Back up projects and the +Drive with Elektron Transfer first. Download
   Elektron's Digitone II OS 1.12 and keep it, since Elektron's page lists only
-  the current version. Unzip the release and run python3 patcher/patch.py on the
-  OS zip (Python 3.11 or later); it takes one to three minutes and writes
-  Overtone-1.0.1.syx only if the result matches the tested build byte for byte.
-  Send that file with Transfer. To go back, send Elektron's Digitone_II_OS1.12.syx
+  the current version. Drop the OS zip on the builder page, which runs in the
+  browser and saves the .syx only if the result matches the tested build byte for
+  byte, or unzip the release and run python3 patcher/patch.py on the OS zip
+  (Python 3.11 or later; one to three minutes). Send that file with Transfer. To go back, send Elektron's Digitone_II_OS1.12.syx
   with Transfer. If the unit does not start, hold FUNC at power-on, press TRIG 4
   and send Elektron's file over DIN MIDI in Transfer's legacy OS upgrade mode;
   Overtone never changes the bootstrap that holds that menu. Overtone 1.0 cannot
   be replaced by Transfer, so return to Elektron's OS through the STARTUP menu
-  first. Opening Overtone projects on Elektron's OS is untested, and a project
-  that used LFO 3 loses it.
+  first. Opening Overtone projects on Elektron's OS is untested.
 brick_risk: false
 tags: [fx, machines, looper, arpeggiator, lfo, patcher, synth-engine]
 image:
@@ -54,6 +57,14 @@ image:
   source_url: https://github.com/complex-ping/overtone#whats-in-it
   first_party: true
 versions:
+  - version: v1.3
+    date: 2026-11-04
+    url: https://github.com/complex-ping/overtone/releases/tag/v1.3
+    notes: Brings LFO 3 back, so MOD has three LFOs and two envelope followers again; sounds saved on earlier versions keep ARP 2 and start LFO 3 at defaults. Every LFO, follower and arp knob can be a destination for the others, with grouped DEST lists, and page changes respond faster.
+  - version: v1.2
+    date: 2026-10-30
+    url: https://github.com/complex-ping/overtone/releases/tag/v1.2
+    notes: Adds instant pattern switch (hold PTN and press YES or NO), which makes a picked pattern take over at the next step at the position it would have reached; saved with the project.
   - version: v1.1
     date: 2026-10-30
     url: https://github.com/complex-ping/overtone/releases/tag/v1.1

@@ -1,0 +1,38 @@
+device: m-vave-fm-1
+name: Mutable Dreams 1.1 Ghoul
+summary: >-
+  Unofficial build of Mutable Dreams 1.1 that adds a hurdy-gurdy engine and an analog engine, per-track drive and
+  bit-crush, a plate-style hall reverb, 48 sounds and eight Biomes ported from GHOULBOX.
+description: >-
+  Keeps the sequencer, Biomes, phrases and granular bus of Mutable Dreams 1.1 and adds the grittier sound of Jason Persinger's
+  GHOULBOX, reimplemented in Mutable Dreams' float engine. The two engines are GHOUL GURDY, with bow, drones and a buzzing
+  trompette, and GHOUL ANALOG, with saw, square, pulse-width, sync and sub waves. A GRIT / HALL page adds per-track drive
+  and crush, a switch between the room and a hall reverb with a long decay and a darker-tail control, and the 48 new
+  sounds and eight dungeon-themed Biomes are listed in the notes. The factory Biomes and sounds of 1.1 render
+  unchanged until the grit is turned on. The package keeps the 1.1 identity so the existing live editor connects,
+  and the repository's site carries that editor and an installer page. The author says it has not been run on a physical
+  FM-1. Biomes saved with this build read as invalid on official 1.1.
+status: active
+authors:
+- name: alexwlloyd
+  url: https://github.com/alexwlloyd
+source: https://github.com/alexwlloyd/mutable-dreams-ghoul-site
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  GPL-3.0-only as a whole, per the README. The repository holds the source changes against Mutable Dreams 1.1 as a patch,
+  not the full tree. The sound code follows GHOULBOX (GPL-3.0-only), and Plaits, Rings, Elements and stmlib keep their
+  MIT notices.
+distribution: download
+requires_stock: V15 or Mutable Dreams 1.1
+install_notes: >-
+  Use the installer page in the repository's site in Chrome or Edge with the FM-1 on USB, or the project's Python
+  installer with the .fwsc from the firmware folder. Save a full .mddb backup first. To go back, install the official Mutable
+  Dreams 1.1 package or stock V15; banks saved with this build do not load on 1.1.
+brick_risk: true
+tags: [fork, generative, synth-engine, fx, emulator]
+versions:
+- version: main @ 2798d31
+  date: 2026-10-27
+  url: https://github.com/alexwlloyd/mutable-dreams-ghoul-site/commit/2798d31702f71a017bbd269cd6e605814c87ce9d
+  notes: No tagged releases; this is the latest commit.

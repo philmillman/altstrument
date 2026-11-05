@@ -1,0 +1,66 @@
+device: m-vave-fm-1
+name: Tamisynth
+summary: >-
+  Tamagotchi-style pet for the FM-1 that grows by eating the drum and bass patterns you enter, built on Dinghy, with a
+  nest for raised pets and a band that plays one pet per library.
+description: >-
+  You choose a library (drums, percussion, bass or lead) and receive a random egg from it. Each bar of your pattern
+  that meets the pet's lesson feeds it and moves it from egg to baby, child, teen and adult; the teen stage decides the
+  adult form. Baby and child stages teach a training pattern, such as a clap rhythm or a public-domain bass tune, and the
+  screen blinks the steps and keys to press. Raised pets live in the nest, and the band plays one pet per library
+  together. Drums and bass are playable in 0.8 and percussion and lead are marked as to come. Pets age only while the FM-1
+  is on, since the unit has no clock running while off. The art is two-colour pixel strips kept as PNG files in the
+  repository. The code is a fork of Dinghy on the Felucca and SLOOP platform.
+status: active
+authors:
+- name: basicshift
+  url: https://github.com/basicshift
+source: https://github.com/basicshift/fm1-tamisyth
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Stated in the README and LICENSING.md, inherited from Dinghy, with platform code by Leo Kuroshita (Felucca) and the
+  SLOOP changes. The designburg logo in assets/ is all rights reserved and not under the GPL; the Terminus font is
+  SIL OFL 1.1.
+homepage: https://github.com/basicshift/fm1-tamisyth
+distribution: download
+install_notes: >-
+  Download the dinghy-X.Y.fwsc package from a release, connect the FM-1 with a data cable and run
+  tools/fm1_install.py on it from the repository (needs Pillow, mido and python-rtmidi). The README advises keeping
+  M-VAVE's V15 image at hand and notes that holding OCT- at power-on is the USB rescue. The package files keep the name
+  dinghy.
+brick_risk: true
+tags: [game, sequencer, drums, fork]
+versions:
+- version: pet-v0.8
+  date: 2026-10-25
+  url: https://github.com/basicshift/fm1-tamisyth/releases/tag/pet-v0.8
+  notes: Pre-release; redraws the Tomcat pet from the author's screen captures.
+- version: pet-v0.7
+  date: 2026-10-25
+  url: https://github.com/basicshift/fm1-tamisyth/releases/tag/pet-v0.7
+  notes: Pre-release; draws the Tomcat in the two screen inks.
+- version: pet-v0.6
+  date: 2026-10-25
+  url: https://github.com/basicshift/fm1-tamisyth/releases/tag/pet-v0.6
+  notes: Pre-release; two-ink art for the Tomcat and Lowtl pets.
+- version: pet-v0.5
+  date: 2026-10-25
+  url: https://github.com/basicshift/fm1-tamisyth/releases/tag/pet-v0.5
+  notes: Pre-release; adds the on-screen guide and the training songs.
+- version: pet-v0.4
+  date: 2026-10-25
+  url: https://github.com/basicshift/fm1-tamisyth/releases/tag/pet-v0.4
+  notes: Pre-release; adds the Tomcat pet.
+- version: pet-v0.3
+  date: 2026-10-25
+  url: https://github.com/basicshift/fm1-tamisyth/releases/tag/pet-v0.3
+  notes: Pre-release; one-bit look and reset controls.
+- version: pet-v0.2
+  date: 2026-10-25
+  url: https://github.com/basicshift/fm1-tamisyth/releases/tag/pet-v0.2
+  notes: Pre-release; adds libraries, random eggs, the nest, bass and the band.
+- version: pet-v0.1
+  date: 2026-10-25
+  url: https://github.com/basicshift/fm1-tamisyth/releases/tag/pet-v0.1
+  notes: Pre-release; the core loop.

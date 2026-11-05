@@ -1,0 +1,52 @@
+device: m-vave-pocket-amp
+name: Pendel
+summary: >-
+  Open firmware for the Pocket AMP that turns it into a three-slot effects unit with an amp stage and a 9-second tape
+  looper, on Felucca's screen and menu style. Beta.
+description: >-
+  The signal runs through three effect slots, an amp stage and a tape looper. Each effect slot takes one of drive,
+  fuzz, filter, auto-wah, crush, phaser, flanger, tremolo, wobble, pitch, delay, room, noise or gain. The amp is clean,
+  crunch or lead with bass, middle, treble and a cabinet. The looper records and overdubs on VOL+, stops on VOL- and
+  clears with a long press, and its length sets the tempo; a menu entry sets the tempo by hand from 40 to 240 BPM.
+  The screen follows Felucca's look, with nine palettes. The README calls every release a beta and lists settings
+  that are not kept over a power-off and provisional battery levels as known limits. A browser simulator is in the
+  repository. Pendel is the Pocket AMP counterpart of Felucca by the same author and builds on the pendel-bsp board
+  layer.
+status: active
+authors:
+- name: Leo Kuroshita (@kurogedelic), Hügelton Instruments
+  url: https://github.com/kurogedelic
+source: https://github.com/hugelton/Pendel
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Stated in LICENSING.md. The hardware layer is pendel-bsp (MPL-2.0) and bundled fonts keep their own licences. The
+  release package holds three JieLi AC79 SDK files, which are Apache-2.0.
+homepage: https://hugelton.github.io/Pendel/
+distribution: browser-installer
+requires_stock: The official Pocket AMP firmware or an earlier Pendel
+install_notes: >-
+  Open the web installer in Chrome or Edge with the Pocket AMP on USB and press Install, or run tools/pa_install.py
+  from a terminal. The update writes the app area only. The installer's Return to the official firmware button puts
+  back M-VAVE's unmodified file, which you download from M-VAVE yourself. Installing is at your own risk.
+brick_risk: true
+tags: [fx, looper, amp-sim, delay, reverb, fork, platform]
+image:
+  url: https://raw.githubusercontent.com/hugelton/Pendel/main/docs/screens.png
+  alt: "Twelve Pendel screens in dark, orange and cream palettes: the home page with effect tiles above a tape waveform and input meter, and editor pages for an effect, the amp and the menu"
+  credit: Leo Kuroshita
+  source_url: https://github.com/hugelton/Pendel
+  first_party: true
+versions:
+- version: 1.0.2-beta
+  date: 2026-11-02
+  url: https://github.com/hugelton/Pendel/releases/tag/v1.0.2-beta
+  notes: Adds a TEMPO menu entry for setting the tempo by hand.
+- version: 1.0.1-beta
+  date: 2026-11-02
+  url: https://github.com/hugelton/Pendel/releases/tag/v1.0.1-beta
+  notes: Adds the browser installer and tools/pa_install.py, and an update that writes only the app area.
+- version: 1.0.0-beta
+  date: 2026-11-02
+  url: https://github.com/hugelton/Pendel/releases/tag/v1.0.0-beta
+  notes: First beta, installed from the command line.

@@ -1,0 +1,49 @@
+device: m-vave-fm-1
+name: FM1 Sampler
+summary: >-
+  Android sampler and eight-track looper that uses the FM-1 as keys, knobs, second screen and USB audio output, with a flash
+  page for a control-surface build of M-VAVE's open firmware.
+description: >-
+  Rights warning: the samples folder, also packed into the APK, holds 17 WAV files (bass, drums, keys and pads) with no
+  source or licence given. The author's FM1-Lofi repository says of files of the same names that three come from LOOPA kits
+  with the origin still to be confirmed.
+
+  The phone does the sound. The sampler has six modes (melodic, one-shot, looped, kit with transient slicing, granular and
+  Paulstretch) with envelopes, an LFO, an arpeggiator, send effects, tape-style varispeed and a sidechain mixer, and a
+  looper with overdub. The FM-1 firmware is a copy of M-VAVE's open firmware that forwards its keys, buttons and encoders
+  as MIDI and draws the phone's screens over SysEx. The README says the project is only host-tested: not run on a phone or an
+  FM-1 since the deck redesign.
+status: active
+authors:
+- name: ferluht
+  url: https://github.com/ferluht
+source: https://github.com/ferluht/fm1-sampler
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The repository has no top-level licence file. firmware/LICENSE.md, from M-VAVE's FM1 Open, applies GPL-3.0-only with a
+  permission to link the binary SDK, and the Android app and engine carry no licence statement. firmware/sdk/firmware/FM-1_015.fwsc
+  matches M-VAVE's FM-1 V15 image licensed Apache-2.0 (git blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd). KissFFT is BSD.
+homepage: https://github.com/ferluht/fm1-sampler
+distribution: download
+install_notes: >-
+  Open FM1-Sampler-Workbench-vX.Y.html from the release to flash the firmware; its rollback restores V15. Then install the
+  debug-build APK on an Android phone (minSdk 23) and connect the FM-1 by USB. Flash the firmware first, since the loop length
+  page needs it. Back up first.
+brick_risk: true
+tags: [sampler, looper, arpeggiator, fx, granular, sequencer, usb-midi, usb-audio, fork]
+image:
+  url: https://raw.githubusercontent.com/ferluht/fm1-sampler/main/shots/readme_fm1_v37.png
+  alt: "Twelve FM-1 screen renders on a light background: sample waveform, FX, envelope, LFO, arpeggiator, tape, mixer, key, microphone, recording, loop playing and loop length pages"
+  credit: ferluht
+  source_url: https://github.com/ferluht/fm1-sampler#readme
+  first_party: true
+versions:
+- version: '0.37'
+  date: 2026-11-02
+  url: https://github.com/ferluht/fm1-sampler/releases/tag/v0.37
+  notes: Cassette-deck phone screen, page pictures, per-mode knobs on the sample page, global send effects and a sidechain mixer; host-tested only.
+- version: '0.10'
+  date: 2026-10-30
+  url: https://github.com/ferluht/fm1-sampler/releases/tag/v0.10
+  notes: First release; the sampler engine and the control-surface firmware, host-tested only.

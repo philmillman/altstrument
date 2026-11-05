@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: Pocket Poly
+summary: >-
+  Stereo polysynth for the FM-1 on fm1-base with a virtual analog and wavetable engine, six-operator FM with DX7
+  bank import, a 12-mode arpeggiator, seeded patch discovery and full MIDI. Still in development.
+description: >-
+  Built as a synthesizer rather than a groovebox. The voices combine virtual analog oscillators with wavetables and
+  phase distortion, plus a six-operator FM engine that imports DX7 banks. Effects are an ensemble, a tape delay, a plate
+  reverb and a limiter. Dice, mutate, morph and breed functions create patches from a seed, and the arpeggiator has
+  Euclidean and Turing generators, chance, ratchets and latch. MIDI covers USB, TRS in and Bluetooth in both roles, and
+  clock runs in both directions. The README calls the tree a scaffold in development, and the handoff notes say the
+  planned sound pass had not happened and the author found the factory sounds placeholder. The same notes record that a
+  build was flashed to the author's FM-1 on 2026-10-31, where it booted cleanly and idled at 4 % CPU, with
+  eight analog voices at 50 to 55 %. The repository also holds DEEP FIELD, listed separately.
+status: active
+authors:
+- name: WisestWizard
+  url: https://github.com/WisestWizard
+source: https://github.com/WisestWizard/deepfield/tree/master/app
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The repository LICENSE is the MPL-2.0 text, and the README calls the choice proposed. The fm1-base platform and
+  felucca-bsp are MPL-2.0. JieLi's SDK files used by the build are Apache-2.0 and are not committed.
+distribution: source-only
+install_notes: >-
+  No release. ./build.sh builds app/build/pocketpoly.fwsc with JieLi's toolchain, run in a Linux container on a Mac,
+  and the AC79 SDK; fm1_install.py installs it over USB. The package identity is FM-1_1300. Holding OCT- at power-on
+  opens update mode. Back up and keep M-VAVE's updater ready.
+brick_risk: true
+tags: [synth-engine, wavetable, fm, dx7, arpeggiator, generative, ble-midi, platform, emulator]
+versions:
+- version: master @ e4fa27b
+  date: 2026-11-04
+  url: https://github.com/WisestWizard/deepfield/commit/e4fa27b5144e9fba3dfb8fc2c331f64fee092874
+  notes: No tagged releases; this is the latest commit of the repository. The app directory last changed on 2026-11-03.

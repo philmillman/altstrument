@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: AMEN-FM1
+summary: >-
+  Jungle, drum and bass and breakcore firmware: a JUNGLE break engine with generated edits and effects, a REESE bass, and
+  its own screens, shown as Felucca with built-in engines and as AMEN OS, a separate firmware on Felucca's hardware layer.
+description: >-
+  The repository holds two firmware lines. The first is a Felucca 1.9.0 fork under fw/ with the JUNGLE and REESE engines,
+  a break map of 32 slices and an acid-green screen theme. The second, AMEN OS, replaces the interface, sequencer and
+  sound with its own code and keeps only felucca-bsp's drivers, loader and update path. In AMEN OS 0.3 the breaks play
+  drum hits cut from CC0 recordings of a real kit, with patterns the author arranged, and SEQ TOOLS on the JUNGLE track
+  write whole edits with effects. The README says AMEN OS 0.2 did not start on its first FM-1, leaving a black screen and the
+  chip's update mode, and that 0.3 adds a SAFE MODE and is a test build. The project site installs the Felucca-based line by
+  default and the OS only through a separate link. The README is in Russian. The default branch is a work branch and the repository has no releases.
+status: active
+authors:
+- name: Joolo09
+  url: https://github.com/Joolo09
+source: https://github.com/Joolo09/amen-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README gives GPL-3.0-only for the engines, host code and tools, and for the Felucca 1.9.0 fork under fw/, whose parts keep the licences
+  listed in fw/LICENSING.md. felucca-bsp is MPL-2.0 and the package holds three Apache-2.0 files from JieLi's AC79 SDK.
+  The sdk/ plugin interface is MIT. The sample recordings under fw/assets/samples-cc0 are CC0.
+homepage: https://joolo09.github.io/amen-fm1/
+distribution: browser-installer
+install_notes: >-
+  Browser installer on the project site (Chrome or Edge, FM-1 on USB); AMEN OS needs the ?fw=os address. Back up first. If
+  the unit does not start, docs/RESCUE.md describes recovery, and holding OCT- and OCT+ for five seconds reaches update mode.
+brick_risk: true
+tags: [drums, sequencer, sampler, performance, fork]
+versions:
+- version: claude/clever-keller-ekaj8l @ 7943961
+  date: 2026-11-03
+  url: https://github.com/Joolo09/amen-fm1/commit/79439616fe8f31645f0f84b59bb3b8fc058a4787
+  notes: No tagged releases; this is the latest commit.

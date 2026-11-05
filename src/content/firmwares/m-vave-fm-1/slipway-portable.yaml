@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: Slipway Portable
+kind: tool
+summary: >-
+  Work-in-progress standalone FM-1 installer for an ESP32-S3-USB-OTG board: it reads firmware files from an SD card and
+  writes them to an FM-1 plugged into the board's USB host socket, with no computer involved.
+description: >-
+  The board reports the FM-1's identity, lists the .fwsc files on the card and checks each one by size, chip marker,
+  product name, Felucca loader marker and the fingerprints of the official V15 and V16 images. The install follows the
+  steps of Felucca's installer: a check pass that writes nothing, an update loader, the write and a verify. It applies the
+  same stock-first rule as the desktop Slipway app, saving a record of the official file on the card and refusing custom
+  firmware unless that file is intact. The protocol code is a port of Felucca's installer and is compared with it in PC
+  tests. The author reports that the link test and SD browser ran on a real board and FM-1, while the install stages have
+  only run against a simulated FM-1 on a PC. Wi-Fi downloads are planned, not started.
+status: active
+authors:
+- name: Discodave-Glitch
+  url: https://github.com/Discodave-Glitch
+source: https://github.com/Discodave-Glitch/slipway-portable
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  GPL-3.0-only because the protocol code is ported from Felucca's installer. The ESP32-S3-USB-OTG support package from
+  Espressif is Apache-2.0.
+distribution: source-only
+install_notes: >-
+  Needs an Espressif ESP32-S3-USB-OTG board and an SD card. Run the repository's GitHub Actions workflow to build the
+  installer image, flash it at address 0x0 with a web serial flasher, then put your own official V15 or V16 file and any
+  custom .fwsc files on a FAT32 card. Later updates of the installer itself go on from the card. The write stages have not
+  run against a real FM-1, so the first real install is the test; the author warns it is used at your own risk.
+brick_risk: true
+tags: [flasher, loader, utility, platform]
+versions:
+- version: main @ 3d1dc54
+  date: 2026-10-27
+  url: https://github.com/Discodave-Glitch/slipway-portable/commit/3d1dc54faa50a3539cb5daffcb9ba27b6a13458a
+  notes: No tagged releases; this is the latest commit.

@@ -7,7 +7,8 @@ description: >-
   steps from the keys, transposes them live and uses the same chance. Sounds come from a 4-operator engine with analog-style
   waves, a filter and its envelope, followed by chorus, ping-pong delay and a reverb with shimmer. MIDI runs in and out with
   clock either way, and over USB it is also a sound card. It is built on fm1-base and felucca-bsp. The first commit landed on
-  2026-11-04 and the 1.0 release is still a checklist in the repository, so no package is published yet.
+  2026-11-04 and 1.0 followed the same day. It keeps its own settings and presets and does not read other firmwares' projects
+  or samples. The project site has a browser emulator, an installer and a manual.
 status: active
 authors:
 - name: NickCulbertson
@@ -16,15 +17,25 @@ source: https://github.com/NickCulbertson/FM1-Mighty-Arp
 source_status: open
 license: MPL-2.0
 license_notes: The fm1-base submodule in base/ is also MPL-2.0.
-distribution: source-only
+homepage: https://nickculbertson.github.io/FM1-Mighty-Arp/
+distribution: browser-installer
 install_notes: >-
-  No release is published yet, and the browser installer site the README mentions is not live. Clone the repository with its
-  submodule and build with build.sh; python3 base/tools/fm1_install.py then installs the package over USB and can put
-  M-VAVE's firmware back. Installing is at your own risk.
+  Use the installer page on the project site in Chrome or Edge with the FM-1 on USB, or write the .fwsc from a release with
+  python3 base/tools/fm1_install.py, which can also put M-VAVE's firmware back; an FM-1 that fails to start twice comes up in
+  a safe mode the installer can reach. Building from source needs the repository cloned with its submodule and build.sh.
+  Installing is at your own risk.
 brick_risk: true
 tags: [synth-engine, fm, arpeggiator, sequencer, generative, midi, usb-midi, fx]
 versions:
-- version: main @ 16d77e3
+- version: '1.2'
+  date: 2026-11-05
+  url: https://github.com/NickCulbertson/FM1-Mighty-Arp/releases/tag/v1.2
+  notes: The release notes only link a changelog. The commits since 1.1 update the fm1-base layer so the UC25HQ80 flash chip of newer FM-1 units saves, and add a Firmware Hub card.
+- version: '1.1'
   date: 2026-11-04
-  url: https://github.com/NickCulbertson/FM1-Mighty-Arp/commit/16d77e3f717a671c3f04f22d5a208e0308298741
-  notes: No tagged releases; this is the latest commit.
+  url: https://github.com/NickCulbertson/FM1-Mighty-Arp/releases/tag/v1.1
+  notes: The release notes only link a changelog. The commits since 1.0 give it its own package identity (FM-1_6279010100) and add a project site with an installer.
+- version: '1.0'
+  date: 2026-11-04
+  url: https://github.com/NickCulbertson/FM1-Mighty-Arp/releases/tag/v1.0
+  notes: First stable release, after a 1.0-beta1 pre-release the same day; package identity FM-1_6279010000.

@@ -1,0 +1,51 @@
+device: m-vave-blackbox
+name: Juice-Box
+summary: >-
+  Replacement firmware that turns the Blackbox into a player for Neural Amp Modeler A2-Lite captures, with eight
+  captures in six banks, A/B switching and a desktop installer for macOS and Windows.
+description: >-
+  Runs one A2-Lite capture in real time, split across the chip's two cores, and matches the reference implementation
+  closely according to the README. Captures load over USB from the desktop app. The FX to CAB buttons pick one of six
+  banks, the right footswitch toggles A and B, and the left one bypasses on a tap and mutes on a hold; each bank has
+  its own input and output level. The screen interface is in English or Portuguese. The app also installs the
+  firmware and restores the official one. Full A2 captures do not fit the chip. The firmware builds on Felucca's
+  hardware layer, USB and update code, and recent commits use the engine from the Pocket AMP's Onyx firmware. The
+  installer downloads M-VAVE's official V20 package, checks its hash and puts the official update loader into the
+  image on your computer, so built packages are not distributed. The README calls v0.17 the first public test, with
+  Windows testing just started.
+status: active
+authors:
+- name: João Viana
+  url: https://github.com/JPMViana
+source: https://github.com/JPMViana/juicebox-nam-player
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL version 3 text and the README says GPL-3.0 with no later-version wording. Inter Tight is SIL OFL.
+  The repository commits the application image of v0.18.0 (installer/assets/release); the vendor update loader is not
+  in it.
+homepage: https://github.com/JPMViana/juicebox-nam-player
+distribution: download
+requires_stock: Official ANN BlackBox firmware, which the installer fetches for the update loader
+install_notes: >-
+  Download the installer for macOS or Windows from the release; both are unsigned, so the system warns on first open.
+  Install over the pedal's USB cable, load .nam A2 captures, and use Firmware, then Restore official firmware, to go
+  back. The user guide covers the steps, and docs/04-safety.md describes the USB rescue mode. Flashing is at your own
+  risk.
+brick_risk: true
+tags: [amp-sim, nam, fork, editor, fx, usb-midi]
+image:
+  url: https://raw.githubusercontent.com/JPMViana/juicebox-nam-player/main/docs/images/installer-captures.png
+  alt: "Juice-Box installer window on a Captures tab: four of eight capture slots hold named NAM captures at 48000 Hz and four are empty, with an Add captures button"
+  credit: João Viana
+  source_url: https://github.com/JPMViana/juicebox-nam-player
+  first_party: true
+versions:
+- version: 0.18.0
+  date: 2026-11-05
+  url: https://github.com/JPMViana/juicebox-nam-player/tree/v0.18.0
+  notes: Git tag; no GitHub release page.
+- version: 0.17.0
+  date: 2026-11-04
+  url: https://github.com/JPMViana/juicebox-nam-player/releases/tag/v0.17.0
+  notes: First public test release, with the macOS and Windows installer apps.

@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+name: Album
+summary: >-
+  Series of FM-1 firmwares, one per record: Album 01 has eleven deep chord patches, each tied to a photograph that moves
+  with the sound, a chord mode, soft beats and a reverse reverb.
+description: >-
+  Every patch has one photograph and a sound drawn from it, with five knobs (glide, swell, tone, blur and fuzz) that change both
+  the sound and the picture. In chord mode every key plays a chord, black keys included, chosen from a table of chords taken from
+  My Bloody Valentine records and voiced differently by each patch, and the note names show on the photo in a colour per note.
+  Each patch has a quiet beat with fills, an auto bass and an amount sent into the reverse reverb. MIDI works over USB, Bluetooth
+  and TRS in, and two FM-1s linked by Bluetooth MIDI can play as one. The sound runs on one core with eight voices, with the
+  second core as an experiment. The repository has a manual and a project site with a browser emulator and an installer page.
+status: active
+authors:
+- name: joshbartlettband-web
+  url: https://github.com/joshbartlettband-web
+source: https://github.com/joshbartlettband-web/album-fm1
+source_status: open
+license: MIT
+license_notes: >-
+  LICENSE is MIT, copyright Hausway. One file, album/cpu1/entry.S, is MPL-2.0 from felucca-bsp. The built-in photographs in
+  album/photos belong to Hausway according to the README, with no separate licence stated. fm1-base and felucca-bsp are MPL-2.0,
+  and the Bluetooth build links JieLi SDK libraries (Apache-2.0) that are not in the repository.
+homepage: https://joshbartlettband-web.github.io/album-fm1/
+distribution: browser-installer
+install_notes: >-
+  The project site has an install page for Chrome or Edge over USB and a download of the package for the command-line
+  installer; the page says the installer can put M-VAVE's firmware back. Builds with and without Bluetooth are made by the
+  repository's workflows. No release has been tagged yet.
+brick_risk: true
+tags: [synth-engine, chords, drums, fx, reverb, midi, ble-midi, emulator]
+image:
+  url: https://joshbartlettband-web.github.io/album-fm1/img/screen-playing.png
+  alt: "Album's screen while the Red Door patch plays: a blurred fire-pit photograph in reds and violets with the label KEY C in the lower right corner"
+  credit: joshbartlettband-web
+  source_url: https://joshbartlettband-web.github.io/album-fm1/
+  first_party: true
+versions:
+- version: main @ 733a5b0
+  date: 2026-10-30
+  url: https://github.com/joshbartlettband-web/album-fm1/commit/733a5b0268accf883865c66f53a22c5fe3a5574a
+  notes: No tagged releases; this is the latest commit.

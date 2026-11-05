@@ -1,0 +1,44 @@
+device: m-vave-smk-37
+name: Velvet EP 90
+summary: >-
+  Skiff fork for the SMK-37 Pro that swaps the FM6 bank for eight original electric-piano presets aimed at 1990s ballad
+  sounds, with the sample content removed. A first alpha package; not tried on hardware.
+description: >-
+  Replaces Skiff's FM6 sound bank with eight presets, F1 to F8: Velvet 90, Glass Ballad, Midnight Soft, Silk Chorus,
+  Studio Dry, Warm Tines, Bell Touch and Slow Jam. A new project starts on Velvet 90, while saved projects can keep their
+  own patches. The FM engine is limited to six notes per track, shared with the other tracks' voices, so stacking chords
+  with the pedal can cut earlier notes. The same presets are published as SysEx files without effects, and sixteen WAV
+  demos are rendered from the firmware's own C code rather than recorded on a keyboard. The repository also holds the
+  measurement tables behind the tuning and a list of 28 research sources, which the README says are not a statistical
+  sample. The upstream recordings and AI-generated loops are removed from this build, SLICE slots are filled with silence,
+  and the SAMPLE piano and wind sets and the SLICE break and funk material are not in it. The README says no real device
+  was used to check installation, latency or output, and that listening comparisons and hardware tuning remain. The
+  README and guide are in Korean.
+status: active
+authors:
+- name: THEGREATCJPark
+  url: https://github.com/THEGREATCJPark
+source: https://github.com/THEGREATCJPark/smk37-velvet-ep90
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and docs/LICENSING.md state GPL-3.0-only for the firmware, tools, presets and demos, and LICENSE is the
+  GPL-3.0 text. Skiff by illuminus5, Felucca, msfa (Apache-2.0) and the fonts keep their notices in the pinned
+  source and the corresponding-source archive, and the SMK-37 port credits genkigenki. No commercial ROM, factory bank or
+  song recording is used. The committed .fwsc is the project's own build (651,975 bytes) and matches none of M-VAVE's
+  licensed images.
+distribution: download
+requires_stock: SMK-37 Pro official V016
+install_notes: >-
+  For the SMK-37 Pro only, not the Elite, MKE or Starrykey. The guide asks for official V016 as upstream Skiff does, a
+  double read-back of the 1 MiB flash for a backup, a check against dist/SHA256SUMS, and an explicit file path with
+  fm1_install.py rather than the upstream web page, which would install plain Skiff. It warns that the project did not
+  try recovery, and that running M-VAVE's own loader from Skiff may disturb calibration data. Reaching the sounds is
+  through the FM6 preset browser, since changing only the patch slot keeps the previous effects.
+brick_risk: true
+tags: [synth-engine, fm, piano, presets, fork]
+versions:
+- version: main @ 97a53f5
+  date: 2026-10-29
+  url: https://github.com/THEGREATCJPark/smk37-velvet-ep90/commit/97a53f513d5e4a76ad540bcf33d2c4fdd20a0e1b
+  notes: No tagged releases; this is the latest commit, which publishes the v0.1.0-alpha.1 package in dist.

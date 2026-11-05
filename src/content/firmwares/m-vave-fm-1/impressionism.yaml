@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: Impressionism
+summary: >-
+  Generative ambient firmware in which a drone and three chord voices drift on their own timers through whole-tone and
+  pentatonic scales, with no clocked sequencer.
+description: >-
+  Built to run unattended rather than to be played. The panel works as macro controls: the select encoder cycles six
+  scales, and a mood slot stores the current settings. Chords are extended and quartal,
+  and they slide in parallel over the sustained drone. The screen draws a slowly moving pond. It is a fork of
+  zvenson's Dinghy under the Felucca platform code. The repository is released on every passing commit, which gives
+  a long list of timestamped builds; the release assets also include SMK-37 Pro, Elite and MKE-P37 packages, inherited
+  from Dinghy and tested only on the host according to the roadmap. A browser page runs the latest release in an
+  emulator.
+status: active
+authors:
+- name: Darren Jaworski
+  url: https://github.com/darrenjaworski
+source: https://github.com/darrenjaworski/fm-1-impressionism
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only for the fork and credits the platform code to Leo Kuroshita (Felucca) with SLOOP's
+  changes, the SMK-37 board layer to M. Geisler, and the app base to zvenson (Dinghy). The Terminus font is SIL OFL 1.1.
+  JieLi SDK files (Apache-2.0) are read from your own SDK checkout at build time and are not in the repository.
+homepage: https://darrenjaworski.github.io/fm-1-impressionism/
+distribution: download
+install_notes: >-
+  Flash the FM-1 package from a release with tools/fm1_install.py over USB. The repository has an fmhub.json for the
+  FM-1 Firmware Hub. The FM-1 identity is FM-1_950, which the notes call provisional against the Hub's catalogue.
+brick_risk: true
+tags: [generative, ambient, synth-engine, reverb, fork]
+versions:
+- version: 0.0.1-1793572764-06d2561
+  date: 2026-11-01
+  url: https://github.com/darrenjaworski/fm-1-impressionism/releases/tag/0.0.1-1793572764-06d2561
+  notes: Latest of 51 timestamped CI builds, one per passing push; adds eight mood slots on the preset encoder and a save button.

@@ -1,0 +1,39 @@
+device: m-vave-tank-mini
+name: OpenTank Mini
+kind: tool
+summary: >-
+  Unofficial editor for the Tank Mini with a Windows installer, built in Flutter: reads and edits the 21 presets, imports amp and cabinet files, and backs up the preset bank and model flash over USB MIDI or Bluetooth LE.
+description: >-
+  Rights warning: the repository's research folder commits dumps taken from the pedal, including factory-am4-buffer.bin,
+  a 245,760 byte copy of its factory amp and cabinet model data, and a factory preset bank fixture. M-VAVE has not
+  licensed that data for redistribution.
+
+
+  The app reads all 21 presets, edits the chain order, block switches, models and parameters, and previews changes on
+  the pedal in RAM before saving to a slot or swapping two slots. It imports amp models (.am2Data) and cabinet impulse
+  responses (.wav), auditions them and writes them to any of the 20 model slots. It also toggles bypass, loopback and
+  the tuner, and exports the preset bank (.atkm) and the model flash (.otmodels). The author says the protocol layer is
+  checked against hardware, that the model flash was read back byte for byte, and that persistence across a power cycle,
+  Linux and Android are still unverified. Release 0.1.1 is a Windows installer and its notes are in Portuguese.
+status: active
+authors:
+- name: Yuri Rangel
+  url: https://github.com/xxyurirangelxx
+source: https://github.com/xxyurirangelxx/opentank-mini
+source_status: open
+license: MIT
+license_notes: >-
+  The licence file is the MIT text copyrighted to "OpenTank Mini contributors". The research/dumps and
+  research/fixtures files hold M-VAVE data that it does not cover.
+distribution: download
+install_notes: >-
+  Run the per-user Windows installer from the release, or build with Flutter 3.47 or newer. Linux over USB MIDI and
+  Bluetooth LE are in the app but not yet tested on hardware, and there is no Android build in the release. The README
+  advises keeping a backup before writing to the pedal, and writing model slots changes the pedal's flash.
+brick_risk: false
+tags: [editor, usb-midi, midi, bluetooth, presets, amp-sim, ir, research, desktop]
+versions:
+- version: 0.1.1
+  date: 2026-11-05
+  url: https://github.com/xxyurirangelxx/opentank-mini/releases/tag/v0.1.1
+  notes: First published release, a Windows installer.

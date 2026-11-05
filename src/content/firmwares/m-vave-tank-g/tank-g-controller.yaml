@@ -1,0 +1,33 @@
+device: m-vave-tank-g
+name: Tank-G Controller
+kind: tool
+summary: >-
+  Python desktop app and command-line tool that edit and store Tank-G presets over USB-MIDI SysEx, with an optional
+  Gemini-based generator that turns a text description of a tone into amp, EQ and effect settings.
+description: >-
+  Written from Wireshark captures of the M-EFCS editor's USB traffic, which the README says it decoded command
+  by command. The PySide6 window has panels for gate and cab, amp, modulation, delay and reverb, knobs that follow
+  the pedal, footswitch indicators for module bypass and a grid of the 36 presets from 1A to 9D. It switches presets,
+  bypasses modules and writes the current settings into a preset slot in the pedal's memory, and the command-line mode
+  covers the same controls. The tone generator sends the description to Google's Gemini with the user's own API key and
+  clamps every returned value to the range the pedal accepts before sending it. The repository includes the capture files,
+  a parameter guide and a reverse engineering log, all in Portuguese like the README. It has 25 offline tests.
+status: active
+authors:
+- name: Alexandre Tonin
+  url: https://github.com/AlexandreTonin
+source: https://github.com/AlexandreTonin/tank-g-controller
+source_status: open
+license: MIT
+distribution: source-only
+install_notes: >-
+  pip install -r requirements.txt on Python 3.10 or newer, then python main.py for the window or python tankg.py with
+  arguments for the command line. The Gemini panel needs a GEMINI_API_KEY. On Windows close M-EFCS and any DAW
+  first, since only one program can open the pedal's MIDI port.
+brick_risk: false
+tags: [editor, midi, usb-midi, presets, ai, python, cli, research]
+versions:
+- version: main @ 12600ac
+  date: 2026-10-29
+  url: https://github.com/AlexandreTonin/tank-g-controller/commit/12600ac2d6c71b181cde5eb529acff0db72f760b
+  notes: No tagged releases; this is the latest commit.

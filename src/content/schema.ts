@@ -72,6 +72,7 @@ export const KINDS = [
  */
 export const LICENSES = [
   'MIT',
+  'MIT-0',
   'BSD-2-Clause',
   'BSD-3-Clause',
   'ISC',

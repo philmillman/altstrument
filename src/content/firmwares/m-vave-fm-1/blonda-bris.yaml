@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: BLONDA BRIS
+summary: >-
+  Six-voice analog-style polysynth module for fm1-dock, modelled on GS Music's Bree6, with 90 sounds, a lo-fi and
+  tape wear control and a browser emulator. Built by CI as a .dock file.
+description: >-
+  A module for the dock firmware, not a firmware of its own: fm1-dock is installed once and the .dock file is dropped on
+  its web console. BRIS has an oscillator with sub, a four-pole ladder filter, two ADSRs, an LFO, an ensemble and an
+  echo, rewritten for the FM-1's single-precision chip from the author's desktop engine blonda-motor and checked
+  against it in the repository's tests. The Algorithm knob selects an ERA, with clean at zero, tape wear from 1 to 60 and
+  lo-fi with fewer bits and a lower sample rate from 61, using a tape effect shared across modules. The tests report
+  the CPU load of a six-note chord on an emulated FM-1 in fm1-dock, and the second core takes voices 3 to 5 when fm1-dock
+  lends it. The repository is laid out to hold more modules, and the README and docs are in Swedish. No hardware test is
+  mentioned.
+status: active
+authors:
+- name: victorysvensson-dev
+  url: https://github.com/victorysvensson-dev
+source: https://github.com/victorysvensson-dev/blonda-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The root LICENSE is the GPL-3.0 text, and the README and module files state GPL-3.0-only, as fm1-dock and Felucca.
+distribution: source-only
+install_notes: >-
+  Needs fm1-dock installed first, from its releases or the FM-1 Firmware Hub, and then bris.dock dropped into its
+  web console in Chrome or Edge, or deployed with fm1-dock's tools/dock.py. GitHub builds the .dock files on each push
+  and attaches them to a release when a version tag is pushed; none is tagged yet. Holding OCT- at power-on opens the
+  rescue. The README says the build runs beside blonda-motor and fm1-dock checkouts.
+brick_risk: false
+tags: [synth-engine, polyphonic, virtual-analog, lofi, tape, fx, emulator, presets]
+versions:
+- version: main @ 564290a
+  date: 2026-11-05
+  url: https://github.com/victorysvensson-dev/blonda-fm1/commit/564290a4f3cf270a9881ac1cdfacf0c3f2e371b6
+  notes: No tagged releases; this is the latest commit.

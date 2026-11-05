@@ -1,0 +1,39 @@
+device: m-vave-fm-1
+name: STRUMLINE
+summary: >-
+  Strummed guitar with a bass player: pick a key and the black keys become its chords, a pattern strums them, and a song loop
+  of 1 to 12 bars plays the progression hands free.
+description: >-
+  A fork of Guitchordi that keeps its sixteen string instruments on Clipper's string model and adds the bass of the author's
+  Bassline firmware. Chords come from a chosen major or minor key instead of guitar positions, and the screen names each one with its
+  numeral and shape. The song loop is filled live, step by step, or from nine ready progressions, and 14 strum patterns, 8 bass
+  patterns and 6 tunings are offered. A CPU guard reduces the string voices above 85 percent load. The platform is the
+  Felucca, X0X and FoMni layer. The README says it passes the simulator tests and the browser emulator and does not report a hardware test. The
+  GitHub build publishes a site with an emulator, an installer and the package.
+status: active
+authors:
+- name: Mighty-stack444
+  url: https://github.com/Mighty-stack444
+source: https://github.com/Mighty-stack444/Strumline-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md gives GPL-3.0-only, inherited from Felucca through X0X and FoMni. The string model is MIT.
+distribution: browser-installer
+install_notes: >-
+  Run the repository's GitHub build with Pages enabled, then open the published Install page in Chrome or Edge with the
+  FM-1 on USB, or use tools/fm1_install.py. The installer can restore M-VAVE's firmware, a failed start falls back to a safe mode, and OCT-
+  with OCT+ held for 5 seconds enters update mode.
+brick_risk: true
+tags: [chords, sequencer, physical-modeling, arpeggiator, fork]
+image:
+  url: https://raw.githubusercontent.com/Mighty-stack444/Strumline-fm1/main/docs/img/screen-chord.png
+  alt: "STRUMLINE chord screen: C major with Nylon Acoustic, the chord C with its shape x32010, a row of chord keys from C to II7 and Pattern Folk, Tempo 96, Strum 42 ms and Swing 50 percent"
+  credit: Mighty-stack444
+  source_url: https://github.com/Mighty-stack444/Strumline-fm1
+  first_party: true
+versions:
+- version: main @ f14537a
+  date: 2026-11-03
+  url: https://github.com/Mighty-stack444/Strumline-fm1/commit/f14537a8618d69a17bbc52e2324307517a4e5648
+  notes: No tagged releases; this is the latest commit.

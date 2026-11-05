@@ -1,0 +1,39 @@
+device: m-vave-fm-1
+name: FM1 DRUM OS
+summary: >-
+  Drum sampler and sequencer adapted from SLOOP and Felucca: eight lanes over 55 built-in samples and 16 user slots, a
+  64-step sequencer with microtiming and ratchets, lane and master effects, and a browser editor for kits and samples.
+description: >-
+  Six voices serve eight lanes, each with its own sample, level, pan and mute, and each pad has tune, start, end and decay.
+  The sequencer records live with overdub or replace, count-in and metronome, and quantization strength, swing and ratchets
+  keep timing loose or tight. There are six factory kits, four user kits, four project slots and autosave with recovery. The
+  web editor imports WAV files, converts them to mono IMA ADPCM of up to 19,968 bytes, previews them and sends them over
+  USB MIDI to the 16 user slots, and exports sample-library backups. The docs warn that projects using the newer user
+  sample IDs may not load on older firmware, and that a runtime acknowledgement does not confirm a finished flash save.
+status: active
+authors:
+- name: skufee
+  url: https://github.com/skufee
+source: https://github.com/skufee/fm1-drum-os
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and root LICENSE state GPL-3.0-only for the firmware and editor, derived from SLOOP 2.6 and Felucca with
+  their headers kept. THIRD_PARTY_NOTICES.md lists Apache-2.0 MSFA-derived tables, the Terminus and Fukiai assets, OFL
+  editor fonts and the JieLi AC79 SDK (not in the repository). The 55 built-in samples are shipped only as an ADPCM bank.
+  The project's PROVENANCE.md says the owner confirmed rights for public distribution of the sources, and it asserts no
+  CC0 or sample-pack attribution, so where the sounds came from is not stated.
+homepage: https://skufee.github.io/fm1-drum-os/
+distribution: download
+install_notes: >-
+  Download the .fwsc from the release and follow docs/FIRMWARE_UPDATE.md, which names no installer and tells you to use
+  an updater and recovery path you have verified for your own FM-1 revision. Back up projects and the user-sample library
+  with the editor first. The README and release notes say project saving, custom sample upload and playback were tested on
+  hardware, and the update guide still calls the build not release-verified.
+brick_risk: true
+tags: [drums, sampler, sequencer, fx, editor, fork]
+versions:
+- version: 1.0.0
+  date: 2026-11-05
+  url: https://github.com/skufee/fm1-drum-os/releases/tag/1.0.0
+  notes: First release.

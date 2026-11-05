@@ -8,7 +8,8 @@ description: >-
   voices and the upper row latches them; in POLY all 27 keys form a chromatic keyboard with oldest-note stealing
   across eight voices. The instrument stays silent until PLAY is pressed. Further controls are a global ROOT,
   SHARP, DETUNE and MOD, envelope editing for all voices or the newest held note, a mutation button with undo, UI
-  themes and a drone and polyphonic preset set. It is built on the Dinghy template and the Felucca platform
+  themes and a drone and polyphonic preset set. The arpeggiator can replay an order you record of up to 16 chord or
+  rest steps, and holding REC runs DISORDER, which makes bounded random parameter changes until it is released. It is built on the Dinghy template and the Felucca platform
   layer, with an SMK-37 board layer from the SLOOP SMK-37 port described in its licence file. The author says it
   was made with help from an AI coding assistant. The update loader accepts both known 1 MiB flash chips, the Puya
   P25Q80 and the UC25HQ80 found in newer units.
@@ -26,7 +27,7 @@ license_notes: >-
 distribution: download
 requires_stock: V15 or another third-party firmware
 install_notes: >-
-  Download artihive-2.0.0.fwsc from the release and install it with M Flasher. The release notes report installs
+  Download artihive-2.0.1.fwsc from the release and install it with M Flasher. The 2.0.0 release notes report installs
   on a real FM-1 from stock V15 and from another third-party firmware, and a return to another firmware. They say
   an FM-1 with the UC25HQ80 flash chip was not tested directly. Building needs the JieLi toolchain and three AC79
   SDK files, which are not in the repository. Installing is at your own risk.
@@ -39,6 +40,10 @@ image:
   source_url: https://github.com/KHAVld/ARTIHIVE
   first_party: true
 versions:
+- version: 2.0.1
+  date: 2026-11-05
+  url: https://github.com/KHAVld/ARTIHIVE/releases/tag/artihive-2.0.1
+  notes: Adds a user arpeggio of 1 to 16 chord or rest steps and DISORDER on a REC hold, smooths the HYPER LFO and the delay modulation to remove clicks, drops three factory presets with automatic migration of saved patches, and waits for silence before saving to flash.
 - version: 2.0.0
   date: 2026-11-04
   url: https://github.com/KHAVld/ARTIHIVE/releases/tag/artihive-2.0.0

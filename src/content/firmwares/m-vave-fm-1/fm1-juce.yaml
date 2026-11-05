@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+name: FM-1 (JUCE)
+kind: tool
+summary: >-
+  AU, VST3, AAX and standalone plugin, plus an iOS app with AUv3, that runs real FM-1 firmware on fm1-emu's emulator core behind a
+  photographic panel, with MPE input and an autosaving standalone.
+description: >-
+  Rights warning: the panel background is a photograph of the M-VAVE FM-1 taken from a store listing, which the README says is not
+  covered by the project's licence. fm1-emu's Rust core is compiled unchanged into a static library, and a C++ JUCE shell supplies the
+  plugin, the editor and the panel. The panel has turning knobs, keys that sink when pressed and lit key bars over that photograph, or a
+  rendered panel if the image is deleted. A package (.fwsc) or saved state loads in, and the firmware's flash writes are saved with the
+  project. The MPE button folds an MPE controller onto one channel with pitch bend and slide. The iOS build interprets the core without JIT
+  and ships with Felucca 1.7.0, which the repository carries unchanged from its release.
+status: active
+authors:
+- name: Diego Capoccitti
+  url: https://github.com/diegocapoccitti
+source: https://github.com/diegocapoccitti/fm1-juce
+source_status: open
+license: MIT
+license_notes: >-
+  MIT, as fm1-emu. The Felucca package in Resources/Firmware is GPL-3.0 and is carried unchanged as a separate program. Resources/fm1_top.png
+  is a product photograph of the M-VAVE FM-1 taken from a store listing; the README says its rights stay with its owner and that it is
+  not covered by the licence, and can be deleted to build with a rendered panel.
+distribution: source-only
+install_notes: >-
+  Build on macOS with Rust, CMake and Ninja; the AAX build needs Avid's tools and PACE signing for Pro Tools. The iOS app needs Xcode and
+  a signing team. Clone with submodules, since fm1-emu is a submodule. Load any .fwsc, including M-VAVE's own file that you supply.
+brick_risk: false
+tags: [emulator, vst, synth-engine]
+versions:
+- version: main @ 860e4f3
+  date: 2026-11-04
+  url: https://github.com/diegocapoccitti/fm1-juce/commit/860e4f36bbd9955a149faffbb2edcc6bc23aa614
+  notes: No tagged releases; this is the latest commit.

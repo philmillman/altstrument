@@ -1,0 +1,43 @@
+device: roffa-logics-algoradix
+name: Algoradix firmware
+summary: Bare-metal C firmware for the Algoradix module that loads sound engines as patch files from the SD card, with a menu, per-patch presets, MIDI over DIN and USB host, a patch SDK and a desktop simulator.
+description: >-
+  It is written from scratch for the STM32F427 on the Axoloti Core, with no Axoloti code and no RTOS. The firmware is a
+  patch host: it runs the panel, menu, two effect slots, MIDI merge and thru, master volume and the SD card, while the sound
+  engine is an .APX file loaded into RAM and swapped without a reboot, checked first and replaced by a built-in
+  engine if a patch crashes. A patch is a small C file built against a shared DSP library and each declares its own knob names,
+  effects and menu pages. A FUNC layer reaches effect amounts, resonance and a filter envelope, and the SD card can be mounted
+  as a USB drive from the module. The repository adds a patch SDK with three demo patches, a guide for writing patches, a
+  simulator that renders patches and the menu screens to files on a computer, and an SD card content zip in the release.
+  The author states that it is the build running on their own units and that their larger patch library is not part
+  of the release.
+status: active
+authors:
+  - name: Roffa Logics
+    url: https://github.com/Gianducaconte
+source: https://github.com/Gianducaconte/algoradix-firmware
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL version 3 text, and the README says GPL-3.0 with no "or later" wording. It adds that a patch built
+  with the SDK links the DSP library and so falls under the GPL when distributed. CMSIS and the ST device header are Apache-2.0,
+  FatFs is BSD-style and TinyUSB is MIT, as THIRD_PARTY.md lists. The hardware repository is CERN-OHL-S-2.0.
+distribution: download
+requires_stock: Algoradix hardware on an Axoloti Core v1.2
+install_notes: >-
+  Back up the Core's original flash first with dfu-util. Hold S1 on the Core while plugging in the mini-USB, then flash
+  algoradix-v1.0.0.bin with dfu-util at address 0x08000000. Unzip the card zip from the release onto a FAT32 micro-SD. The
+  STM32 ROM bootloader cannot be overwritten, so the module can be reflashed over DFU whatever the firmware does.
+brick_risk: false
+tags: [platform, sdk, synth-engine, sampler, fx, midi, open-source, usb-midi]
+image:
+  url: https://raw.githubusercontent.com/Gianducaconte/algoradix-firmware/main/docs/images/ui-screens.png
+  alt: "Grid of the module's screens drawn by the simulator: white pixel text in black pill-shaped windows showing menu words, option lists, knob bars and a statistics screen"
+  credit: Roffa Logics
+  source_url: https://github.com/Gianducaconte/algoradix-firmware
+  first_party: true
+versions:
+  - version: v1.0.0
+    date: 2026-11-04
+    url: https://github.com/Gianducaconte/algoradix-firmware/releases/tag/v1.0.0
+    notes: First public release, with the firmware as .bin and .hex and an SD card content zip.

@@ -1,0 +1,41 @@
+device: m-vave-fm-1
+name: FM-1 Switch
+kind: tool
+summary: >-
+  Windows and Mac desktop app that installs any FM-1 firmware package in either direction and runs a guided check and
+  rescue for an FM-1 that seems bricked; unrelated to the iOS and Mac app FM-SWITCH.
+description: >-
+  M-VAVE's own updater accepts only a higher firmware number than the installed one. This tool takes any
+  Felucca-based package for the FM-1 model, such as Wild, NB303, n001se or FiMba-1, lists the .fwsc files in its
+  firmware folders and shows what the FM-1 currently runs. Check and unbrick listens for the unit in each of its modes
+  and offers Install, Finish the install or a rescue through the chip's own update mode. The rescue reads the whole
+  flash twice, saves a backup with a SHA-256 beside it and reads it back before writing. Version 1.3.2 hears the
+  SMK-37 keyboards and installs firmware made for that model, which the author says has not been tried on a keyboard.
+  Rescue is limited to the FM-1. The repository holds Python source and build scripts, and no application binaries.
+status: active
+authors:
+- name: Saintpid
+  url: https://github.com/Saintpid
+source: https://github.com/Saintpid/FM1-Switch
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The source files carry an SPDX line of GPL-3.0-only and LICENSE is the GPL version 3 text. The installer's licence page says GPL-3.0.
+distribution: download
+install_notes: >-
+  The README says ready-made installers, a Windows setup and a Mac disk image, are distributed on Noisebud's Patreon page,
+  while GitHub hosts only the source and CI builds for verification. The Mac recovery path asks for an administrator password. The
+  README warns that installing or rescuing firmware can leave an FM-1 unusable.
+brick_risk: true
+tags: [flasher, utility, backup, midi]
+image:
+  url: https://raw.githubusercontent.com/Saintpid/FM1-Switch/main/docs/screenshot-light.png
+  alt: "FM-1 Switch window: the FM-1 state reads runs FM-1_846 above a list of firmware files from the NB303, Wild and n001se families, with Add folder, Refresh, Rescue and Install buttons"
+  credit: Saintpid
+  source_url: https://github.com/Saintpid/FM1-Switch
+  first_party: true
+versions:
+- version: main @ 4020390
+  date: 2026-11-03
+  url: https://github.com/Saintpid/FM1-Switch/commit/4020390307b1ebb2631fa0f572daec085f06d161
+  notes: No tagged releases; this is the latest commit.

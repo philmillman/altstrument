@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: Cantoral
+kind: tool
+summary: >-
+  Browser page that loads 550 phrases from a Renoise phrase library, plays them on the FM-1 and writes them into a track's
+  sequencer entries over Web MIDI on Skiff 2.0 or Felucca builds with a pattern pool.
+description: >-
+  Phrases are grouped in 28 folders as JSON and shown on a piano roll. Play sends the phrase to the unit on the destination
+  track's channel without writing, and a pass runs to the end of the bar. Push writes the phrase into the chosen track
+  entry, overwriting a pattern already there or taking a free pool pattern, and Send 16 fills a track's entries A to P from
+  the current phrase onward. A Renoise line maps to one 16th step, held notes become ties, and the volume and delay columns
+  become velocity and nudge. The write path is Skiff's and Felucca's editor protocol, and the page reads the unit's version
+  first. The unit refuses writes while its sequencer plays. The folders include Bach chorale melodies and Joplin
+  rags from public-domain sources, and the rest is the library author's own. The author notes that the writer has been
+  tested against a fake unit and that a real push is the only proof the hardware accepts it.
+status: active
+authors:
+- name: mene311
+  url: https://github.com/mene311
+source: https://github.com/mene311/cantoral
+source_status: open
+license: unspecified
+license_notes: No LICENSE file or license statement in the repository.
+homepage: https://mene311.github.io/cantoral/
+distribution: browser-installer
+requires_stock: Skiff 2.0 or a Felucca build with the pattern pool
+install_notes: >-
+  Open the hosted page, or serve the folder locally (python3 -m http.server) and open it in a Web MIDI browser with the FM-1
+  on USB. Stop the unit's sequencer before pushing. Push overwrites the pattern in the selected entry, so try one phrase
+  first. Stock and FM-1+VA firmware have no pattern pool and are not supported.
+brick_risk: false
+tags: [sequencer, editor, midi]
+versions:
+- version: master @ d31bc9e
+  date: 2026-10-30
+  url: https://github.com/mene311/cantoral/commit/d31bc9e6afdab0678a43f26bea699cc3a87e131b
+  notes: No tagged releases; this is the latest commit.

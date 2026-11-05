@@ -1,0 +1,43 @@
+device: m-vave-fm-1
+name: Windsynth
+summary: >-
+  Synth for MIDI wind controllers such as the EWI: breath, bite and glide drive Mutable Instruments Plaits voices through a
+  breath-opened filter, with effects, 64 preset slots and a browser version of the same code.
+description: >-
+  Plays notes, breath, pitch-bend bite and glide from any wind controller on USB or the FM-1's MIDI jack, listening on every
+  channel by default, with last-note-priority legato. The voices are eight Plaits engines (Classic, FM, 6-op, Formant,
+  Waveshape, VA, phase distortion and Harmonic) with a noise layer, a 12 or 24 dB filter, four modulation slots and an LFO. The
+  effects are distortion, a modulation stage (chorus, ensemble, flanger or phaser), delay and reverb. Breath defaults to CC2
+  opening the filter cutoff, and a phrase with no breath stays silent once breath has been heard. There are 18 factory
+  presets in 64 slots. The same C code also runs as a one-file browser version. The author reports testing on a real FM-1 for
+  playability, performance and stability. It is a fork of FiMba-1, which is built on FoMni.
+status: active
+authors:
+- name: Jeff Croft
+  url: https://github.com/jcroft
+source: https://github.com/jcroft/fm1-windsynth
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only for the firmware as a whole. The instrument code in firmware/src/wind/ is also offered
+  under MPL-2.0 on its own, and the platform code is Felucca's via FoMni. Plaits and stmlib are MIT, the fonts are SIL OFL 1.1 and
+  three JieLi AC79 SDK files in each package are Apache-2.0.
+homepage: https://jcroft.github.io/fm1-windsynth/
+distribution: browser-installer
+install_notes: >-
+  Install from the project page in Chrome or Edge with the FM-1 on USB, or run tools/fm1_install.py on the release's
+  windsynth-X.Y.Z.fwsc. The release notes advise keeping M-VAVE's V15 image to hand; the page can restore stock firmware, and
+  tools/fm1_rescue.py handles a unit that has dropped into the chip's own update mode.
+brick_risk: true
+tags: [synth-engine, midi, usb-midi, fx, wavetable, performance, emulator, fork]
+image:
+  url: https://raw.githubusercontent.com/jcroft/fm1-windsynth/main/docs/img/wind_voice.png
+  alt: "Windsynth voice page: the note A3 in large type with a bite indicator, bars for breath, cutoff and output, and knobs for cutoff, resonance, morph and slope"
+  credit: Jeff Croft
+  source_url: https://github.com/jcroft/fm1-windsynth
+  first_party: true
+versions:
+- version: 0.1.0
+  date: 2026-10-27
+  url: https://github.com/jcroft/fm1-windsynth/releases/tag/v0.1.0
+  notes: Pre-release; first release, marked beta.

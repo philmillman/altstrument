@@ -11,7 +11,7 @@ description: >-
   verify-only mode and an automatic backup. The synth engines, the 49-genre song generator, the TAKES reel,
   the shift deck and the Web Studio come from Pocket GammaWave. The README's later notes (v1.5 to v1.7) add a new
   power-on screen, CPU mode and visualizer-quality settings, a smooth random LFO wave, polyphonic aftertouch as a
-  modulation source and a 200-sound library. The commits after that add a two-band Punch-in FX keyboard with latched mutes, flash and loader hardening, and a rebuilt project portal, Web Studio and emulator. Many of the newer commits are authored by
+  modulation source and a 200-sound library. The commits after that add a two-band Punch-in FX keyboard with latched mutes, flash and loader hardening, and a rebuilt project portal, Web Studio and emulator. The README now names v1.8.9 as the current build: its master EQ rounds instead of truncating, which fixes a DC offset and a shallow 20 Hz cut, and the repository gains a verified flash-backup tool and a restore tool that needs an external programmer. Many of the newer commits are authored by
   google-labs-jules[bot] and merged by the owner. The status document lists host, installer and web tests and
   records no hardware result for these changes. Like the parent it keeps songs and the FM6 user bank in the user
   sample flash, so user samples are lost.
@@ -35,7 +35,7 @@ install_notes: >-
 brick_risk: true
 tags: [synth-engine, sequencer, generative, fx, filter, editor, emulator, fork]
 versions:
-- version: main @ 3502307
-  date: 2026-11-04
-  url: https://github.com/Guillel51/Quantum-GammaWave/commit/35023070fa076b457e8bcacec94bef6db994d27d
-  notes: No tagged releases; this is the latest commit. The changelog names the current package v1.7-QG-0f52f48 (FM-1_982), which includes a two-band Punch-in FX keyboard with latching, and says no entry was tested by flashing hardware.
+- version: main @ b85cf1f
+  date: 2026-11-05
+  url: https://github.com/Guillel51/Quantum-GammaWave/commit/b85cf1f227b8b4648e13b4b46e385028899ba792
+  notes: No tagged releases; this is the latest commit, which the README and changelog call v1.8.9 (package identity FM-1_982). It includes a two-band Punch-in FX keyboard with latching and master-EQ stability fixes, and the status notes say it was measured on the host and in the emulator, not on a unit.

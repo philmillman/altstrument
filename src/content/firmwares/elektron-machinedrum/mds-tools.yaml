@@ -1,0 +1,31 @@
+device: elektron-machinedrum
+name: mds-tools
+kind: tool
+summary: Python and C++ tools that build USR Machines for the Machinedrum from a JSON definition and assembled DSP code, certify their cycle costs on an emulator, and convert them to SysEx for a USR slot.
+description: >-
+  mds_pack.py builds an MDS file from a JSON definition and assembled CLD, LOD or raw binary input, and can run the
+  certifier and stamp the measured cycle costs into it. The certifier is built on the dsp56300 emulator, checks that a
+  machine executes and measures its MKI and MKII cycle costs, with the MKI also measured with the program in SRAM. A
+  quick mode gives bounded feedback while authoring but cannot certify. mds_to_syx.py turns an MDS file into SysEx for a
+  chosen USR slot, and the certifier also checks an existing SysEx file without changing it. Source assembly needs a
+  DSP56300 assembler such as Motorola's asm56300, which is not included. The repository follows the author's MDS specification.
+status: active
+authors:
+  - name: Justin Mammarella
+    url: https://github.com/jmamma
+source: https://github.com/jmamma/mds-tools
+source_status: open
+license: GPL-3.0-only
+license_notes: LICENSE.md is the standard GPL version 3 text with no later-version statement. The dsp56300 emulator is a git submodule with its own licence.
+distribution: source-only
+requires_stock: MDX 2.0 on the Machinedrum for the machines it makes
+install_notes: >-
+  Clone with --recurse-submodules and build with CMake (C++17, CMake 3.18, patch). Python 3.10 or newer is needed for the
+  scripts. Machine code runs on the unit's DSP, so send only machines you trust into a USR slot.
+brick_risk: false
+tags: [machines, sysex, sdk, converter]
+versions:
+  - version: main @ 983600a
+    date: 2026-11-03
+    url: https://github.com/jmamma/mds-tools/commit/983600afc26820015ec0d38e0a5a5a5ca38bcd27
+    notes: No tagged releases; this is the latest commit.

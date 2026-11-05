@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+name: DriftSeq (fm1-base)
+summary: >-
+  Port of the DriftSeq polymetric sequencer onto fm1-base, relicensed MPL-2.0, with USB and Bluetooth MIDI out, a
+  General MIDI synth, one-finger chords and a scale page. Flashed on the author's FM-1; no release yet.
+description: >-
+  The engine of the separately listed DriftSeq, moved onto fm1-base so the built image can include JieLi's binary
+  Bluetooth libraries, which the earlier GPL-3.0 tree could not distribute. Each track has its own loop length, with
+  Euclidean fill, probability and conditional steps, a track settings page with division and a confirmed clear. Notes go out over USB MIDI and Bluetooth MIDI. A Sonivox EAS General MIDI synth, running at 22.05
+  kHz, can also play them on the device. The progress notes record flashing a build on 2026-10-28 and say USB and
+  Bluetooth MIDI work, and that later commits had not been flashed. The README is still the fm1-base template's text, and
+  the working notes are mostly in Chinese. The earlier repository holds the specs and the browser emulator.
+status: active
+authors:
+- name: johnskiller
+  url: https://github.com/johnskiller
+source: https://github.com/johnskiller/driftseq-fm1base
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSING.md states MPL-2.0 for the app and the engine, which was relicensed from GPL-3.0-only, with an SPDX header in
+  each file. The fm1-base platform and felucca-bsp are MPL-2.0, the latter used with its author's permission. The bundled
+  Sonivox EAS code is Apache-2.0. JieLi's binary Bluetooth libraries are linked from your own SDK checkout.
+distribution: source-only
+install_notes: >-
+  No release or published package. The platform is expected as a submodule beside the app, which tools/build.py builds
+  with JieLi's toolchain and the AC79 SDK, and fm1_install.py installs the .fwsc over USB. The package identity is
+  FM-1_9200. Back up and have M-VAVE's updater ready.
+brick_risk: true
+tags: [sequencer, midi, generative, euclidean, ble-midi, platform, port]
+versions:
+- version: master @ 549ccec
+  date: 2026-10-31
+  url: https://github.com/johnskiller/driftseq-fm1base/commit/549ccec35aca506674dcd9c8062d959a782d7914
+  notes: No tagged releases; this is the latest commit on the default branch. The step-record-ofc branch is five commits ahead.

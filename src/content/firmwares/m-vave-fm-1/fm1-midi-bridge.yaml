@@ -1,0 +1,47 @@
+device: m-vave-fm-1
+name: fm1-midi-bridge
+summary: >-
+  Replaces the FM-1's synth with a MIDI bridge that routes TRS MIDI in, USB MIDI and Bluetooth LE MIDI between each other,
+  can connect to a BLE MIDI keyboard, and adds a MIDI log, composer, recorder and clock master on the panel.
+description: >-
+  The unit acts as a Bluetooth MIDI peripheral for a phone or computer, forwards BLE MIDI to USB and back, and in host mode
+  connects as a central to a BLE MIDI keyboard. The 3.5 mm jack on the FM-1 is MIDI in only, so nothing leaves it. Routes
+  can be filtered and remapped, and the panel pages cover a decoded MIDI log, a message composer, statistics, a recorder of up
+  to 2,048 events and a clock master. Settings, presets, backup and firmware install are handled by a browser editor over
+  USB-MIDI. It is not a Felucca fork: the firmware is built on JieLi's AC79 SDK so that it can use the vendor's binary
+  Bluetooth libraries, with Felucca used only as a reference for pins and the update protocol. The author reports an alpha tested on one unit, including
+  installs over V15 and over another community firmware, a return to stock, and recovery of a unit that did not enumerate.
+status: active
+authors:
+- name: ForrestPanda
+  url: https://github.com/ForrestPanda
+source: https://github.com/ForrestPanda/fm1-midi-bridge
+source_status: open
+license: MIT
+license_notes: >-
+  LICENSE maps the licences per file: MIT for the project's own code, Apache-2.0 for files derived from JieLi's AC79 SDK,
+  GPL-3.0-only for the packager fork and the Felucca update loader bundled in release packages (separate programs, not
+  linked), and the Bitstream Vera licence for the panel fonts. The firmware links JieLi's binary-only libraries
+  (Apache-2.0). Release packages are builds of this project; they do not contain M-VAVE's firmware.
+homepage: https://forrestpanda.github.io/fm1-midi-bridge/web/editor.html
+distribution: download
+install_notes: >-
+  Read docs/install.md first. Take a full flash backup, keep M-VAVE's own FM-1.fwsc to hand, install the minimal package
+  (FM-1_930) before the full one (FM-1_931), and check the files against SHA256SUMS. Installs go through Felucca's installer or
+  the web editor's update entry. Recovery steps are in docs/recovery.md. The FM-1's own M-UPGRADE updater has not been
+  tried on top of the bridge.
+brick_risk: true
+tags: [midi, usb-midi, ble-midi, platform, editor]
+image:
+  url: https://raw.githubusercontent.com/ForrestPanda/fm1-midi-bridge/main/docs/ui-examples/all-pages.png
+  alt: >-
+    Contact sheet of thirty rendered FM-1 MIDI bridge panel pages on black backgrounds, among them the main menu, routing,
+    Bluetooth, MIDI log, statistics, composer and recorder screens.
+  credit: ForrestPanda
+  source_url: https://github.com/ForrestPanda/fm1-midi-bridge#readme
+  first_party: true
+versions:
+- version: 0.2.0
+  date: 2026-10-24
+  url: https://github.com/ForrestPanda/fm1-midi-bridge/releases/tag/v0.2.0
+  notes: First public alpha, marked as a pre-release.

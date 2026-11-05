@@ -1,0 +1,48 @@
+device: m-vave-fm-1
+name: Ripple
+summary: >-
+  Firmware that runs Lua instruments, called droplets, over sound engines written in Faust or C, called currents, loaded
+  from a USB disk in the FM-1's own flash, so new instruments need no reflashing.
+description: >-
+  In disk mode the FM-1 shows up as a USB drive called RIPPLE with a 276 KB disk, where droplets and currents are copied
+  and a file with a built-in's name replaces it. Fifteen droplets are built in, including a drum machine, Euclidean tracks,
+  Game of Life, a looper, a rack that chains MIDI effects into any voice and two effects, and ports of the SPH-16 and
+  MONK-1 voices. Seventeen Mutable Instruments Plaits engines are built in as currents and three more are release files for
+  the disk. The site has an emulator with a panel for writing droplets and Faust currents, and an SDK builds C and C++
+  currents. It builds on fm1-base and felucca-bsp.
+status: active
+authors:
+- name: Charles Vestal
+  url: https://github.com/charlesvestal
+source: https://github.com/charlesvestal/fm1-ripple
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSING.md puts the firmware under MPL-2.0 and the SDK, built-in currents and droplets under MIT. Lua 5.4 is MIT, the
+  sophie and monk currents are MIT ports, and the Plaits currents are MIT (Emilie Gillet). The MIDI effects engine is MIT
+  from e16-launcher. fm1-base and felucca-bsp keep MPL-2.0.
+homepage: https://charlesvestal.github.io/fm1-ripple/
+distribution: browser-installer
+install_notes: >-
+  Open the project's install page in Chrome or Edge with the FM-1 on USB, or run tools/fm1_install.py with the release's
+  .fwsc. The release notes say the installer can put M-VAVE's own firmware back. The three larger Plaits currents are
+  separate files to copy into the currents folder on the disk.
+brick_risk: true
+tags: [scripting, sdk, synth-engine, fx, loader, usb, emulator, web]
+versions:
+- version: '0.4'
+  date: 2026-11-01
+  url: https://github.com/charlesvestal/fm1-ripple/releases/tag/v0.4
+  notes: Emulator page plays Plaits and takes droplets, Faust currents and C or C++ web modules; firmware unchanged from 0.3.
+- version: '0.3'
+  date: 2026-11-01
+  url: https://github.com/charlesvestal/fm1-ripple/releases/tag/v0.3
+  notes: Seventeen Plaits engines built in as currents, three more as disk files, and C++ currents in the SDK.
+- version: '0.2'
+  date: 2026-11-01
+  url: https://github.com/charlesvestal/fm1-ripple/releases/tag/v0.2
+  notes: Adds the rack, the sophie and monk droplets, use of both cores and more room per droplet.
+- version: '0.1'
+  date: 2026-11-01
+  url: https://github.com/charlesvestal/fm1-ripple/releases/tag/v0.1
+  notes: First release with twelve droplets, six currents and disk mode.

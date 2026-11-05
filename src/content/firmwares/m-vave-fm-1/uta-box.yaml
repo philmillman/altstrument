@@ -1,0 +1,39 @@
+device: m-vave-fm-1
+name: UTA BOX
+summary: >-
+  Japanese singing keyboard: kana lyrics are written in a browser editor and sent over USB, then each key sings the next syllable
+  at the pitch played. Two themed builds, TETO and ROSE.
+description: >-
+  Rights warning: the packages carry sampled syllables from a singing voicebank by someone else. The project page says the TETO
+  build's voice is the Kasane Teto voicebank (the page's wording: recordings from 2008) and that the ROSE build still uses that same
+  voice, with a plan to export real ROSE samples from Synthesizer V. Both builds also use character portraits. The repository shows
+  no licence or permission for the voice data or the artwork, and its LICENSING.md is Dinghy's text, not this project's.
+  Lyrics are typed as hiragana, one character per syllable, with a small tsu for a rest and a long-vowel mark to hold the
+  vowel, and the lyric editor holds up to 4,084 syllables. The site has a full-screen simulator that runs the packaged firmware,
+  a web installer, and a project description in Chinese. The repository publishes the built packages and the site but no firmware
+  source, although the build steps on the page refer to fw/ and tools/ folders that are not in it.
+status: active
+authors:
+- name: Kashiwayo-593
+  url: https://github.com/Kashiwayo-593
+source: https://github.com/Kashiwayo-593/uta-box
+source_status: binary-only
+license: GPL-3.0-only
+license_notes: >-
+  The project page says the firmware itself is GPL-3.0 and the repository's LICENSE is the GPL-3.0 text, with no later-version clause.
+  No source is published to go with it. The platform is credited to Felucca and SLOOP, and the simulator is fm1-emu (MIT). The
+  voicebank samples and portraits have no stated licence. utabox-teto.fwsc and utabox-rose.fwsc are the project's own builds
+  (612,195 bytes each), not stock M-VAVE images.
+homepage: https://kashiwayo-593.github.io/uta-box/
+distribution: browser-installer
+install_notes: >-
+  The project page has a Flash to device button and a web installer that write the package over USB in Chrome or Edge, and the
+  packages are also in the repository's firmware/ folder. The listed builds are UTA BOX-TETO 1.4 (identity FM-1_91) and UTA BOX-ROSE
+  0.2 (FM-1_90). The page does not describe a way back to stock firmware.
+brick_risk: true
+tags: [voice, synth-engine, performance, emulator, editor]
+versions:
+- version: main @ 54bf1eb
+  date: 2026-10-25
+  url: https://github.com/Kashiwayo-593/uta-box/commit/54bf1eb9e8e32d754e9dfba099ce4c9685b6ba75
+  notes: No tagged releases; this is the latest commit.

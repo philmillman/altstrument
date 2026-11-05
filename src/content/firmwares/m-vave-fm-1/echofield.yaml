@@ -9,7 +9,8 @@ description: >-
   and chords, with a DRIFT ORACLE that picks notes in a chosen key. Holding FX turns the black keys into freeze,
   reverse, octave, stutter, tape stop, delay throw and shimmer, ARP rolls new settings with lockable knobs and undo,
   and RESAMPLE records up to five seconds of the output as a new sound. After the grains come tape, filter, a
-  one-second ping-pong delay, an eight-line reverb with shimmer and output limiting.
+  one-second ping-pong delay, an eight-line reverb with shimmer and output limiting. From 0.2.9 it follows an incoming
+  MIDI clock for PULSE and the delay time.
 
   It ships 14 CC0 factory sounds and has 16 slots for your own, stored as IMA ADPCM in 368 KB of flash. The companion
   web app trims and sends samples, records from the FM-1 over USB audio, edits the sound live over SysEx and mirrors the
@@ -46,6 +47,10 @@ image:
   source_url: https://github.com/Philip-Bos/echofield-fm1
   first_party: true
 versions:
+- version: v0.2.9
+  date: 2026-11-04
+  url: https://github.com/Philip-Bos/echofield-fm1/releases/tag/v0.2.9
+  notes: The release page has only a changelog link; the commit adds MIDI clock following, where a host's start, continue and stop control the sound, PULSE steps on the incoming clock and the delay time snaps to a note value.
 - version: v0.2.8
   date: 2026-11-03
   url: https://github.com/Philip-Bos/echofield-fm1/releases/tag/v0.2.8

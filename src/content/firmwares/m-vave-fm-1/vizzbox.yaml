@@ -1,0 +1,43 @@
+device: m-vave-fm-1
+name: Vizzbox
+summary: >-
+  Skiff-based firmware that composes and plays whole tracks by itself from a chosen genre, subgenre, seed, energy and variation,
+  with intro, build, drop and break, and from 1.1 live control over the tracks it plays.
+description: >-
+  Built as a patch series on Skiff 2.0.1 by way of the Vizz fork from the same repository, which adds a sequencer MIDI output (notes per
+  track, a step-index control change, clock, start and stop, and mute state). A producer routine writes patterns into Skiff's
+  sequencer, lays out the arrangement and handles mutes and effects in the control timing, not in the audio path. Knobs choose
+  genre, subgenre, energy, variation, length, tempo and a seed, and the same settings give the same song. Version 1.1 adds
+  KLANG and MOD pages for the focus track, a hand-on mode where what is touched stays the user's, favourites that store sounds,
+  22 more subgenres (58 in all) and an Afro and Latin genre. Skiff's groovebox is still reachable with a keypress. The notes
+  and manual are in German, and the author states the firmware has not been run on a real FM-1. The branch includes demo MIDI files and MP3 renders.
+status: active
+authors:
+- name: tumult2k4
+  url: https://github.com/tumult2k4
+source: https://github.com/tumult2k4/vizz-firmware/tree/vizzbox-1.1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The branch ships Skiff's LICENSE and LICENSING.md with the build: GPL-3.0-only, inherited from Felucca (Leo Kuroshita) and Skiff
+  (illuminus5), with MIT, Apache-2.0 and SIL OFL parts listed there. The patches themselves carry no separate licence statement. The
+  CC0 instrument samples are VSCO-2 CE and VCSL, and two break loops were generated with the YuE2 model under its creator
+  permission, per out/ATTRIBUTION-BREAKS.txt. out/vizzbox-1.1.fwsc (610,445 bytes) is the project's own build, not a stock image.
+homepage: https://github.com/tumult2k4/vizz-firmware
+distribution: download
+requires_stock: Skiff 2.0.1, Vizz 2.0 or Vizzbox 1.0 for a lossless update
+install_notes: >-
+  Open out/vizzbox-installer.html from the vizzbox-1.1 branch in Chrome or Edge with the FM-1 on USB; it is one offline file. An FM-1
+  on an older Skiff or Felucca gets a full backup saved first and a conversion afterwards. The manual says Vizzbox 1.0, Vizz 2.0 and
+  Skiff 2.0.1 can be installed over it again, and M-VAVE's own updater (V15) returns the unit to stock.
+brick_risk: true
+tags: [generative, sequencer, drums, midi, usb-midi, fork]
+versions:
+- version: '1.1'
+  date: 2026-10-29
+  url: https://github.com/tumult2k4/vizz-firmware/commit/df77c8cc97d224e0c3183a5ddd32d09517b43ba4
+  notes: Branch vizzbox-1.1, no tag or release page; live control, favourites with sounds and 22 new subgenres; package identity FM-1_851.
+- version: '1.0'
+  date: 2026-10-28
+  url: https://github.com/tumult2k4/vizz-firmware/commit/84fd978f29292d8c65bf74346b43c596a06619fb
+  notes: Branch vizzbox-1.0, no tag or release page; the first Vizzbox build, package identity FM-1_850.

@@ -1,0 +1,46 @@
+device: m-vave-fm-1
+name: WAVESCAN
+summary: >-
+  8-voice wavetable synth after the PPG Wave 2.2 and 2.3, with 20 original wavetables of 64 waves, STEP and SMOOTH wave
+  modes, a 24 dB resonant filter, three envelopes, an LFO and a stereo delay.
+description: >-
+  Each voice has two oscillators reading a wavetable of 64 waves, with the second one offset in semitones and cents. The
+  wave mode is either stepped, with jumps and aliasing in the manner of the 2.2, or smooth, with blended waves in the
+  manner of the 2.3. Three envelopes drive the filter, the volume and the wave position, pitch or wave A, and the page
+  shows the table as a 3D cascade with the playing position. There are eight factory and eight user presets and 40
+  parameters on CC 20 to 59. The README (in French) says the tables are original, computed by a script in the
+  repository rather than copied from PPG ROMs, and that the project is independent of Waldorf, PPG and M-VAVE. It is
+  built on konsumer's foma framework.
+status: active
+authors:
+- name: pjac1810
+  url: https://github.com/pjac1810
+source: https://github.com/pjac1810/wavescan
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md. The platform/mvave directory is from M-VAVE's FM1 Open kit: GPLv3 with M-VAVE's SDK linking
+  exception, plus the binary engine library platform/mvave/sdk/lib/libfm1_engine.a under M-VAVE's terms for FM-1
+  devices only. Felucca, SLOOP and Dinghy code is GPL-3.0-only, and the USB audio code ported from felucca-bsp is
+  MPL-2.0 used under GPL-3.0.
+homepage: https://pjac1810.github.io/wavescan/
+distribution: browser-installer
+requires_stock: V15
+install_notes: >-
+  Open the project page in Chrome or Edge with the FM-1 on USB and use its Install tab, or run tools/fm1_install.py with
+  the .fwsc; build it with the repository's GitHub workflow or with Docker (./fm1 build). Hold OCT- at power-on for the
+  rescue mode, where the page's Rescue tab puts M-VAVE's V15 back from a file you download from M-VAVE. The README says
+  installing unofficial firmware is at your own risk.
+brick_risk: true
+tags: [wavetable, synth-engine, oscillator, filter, lfo, delay, presets, midi, emulator]
+image:
+  url: https://raw.githubusercontent.com/pjac1810/wavescan/main/docs/wavescan-240.png
+  alt: "WAVESCAN screen: a 3D cascade of wavetable lines with orange and blue traces, four knob boxes TABLE 01, WAVES A 10, CUTOFF 460Hz and EMPHAS 30, and a line T01 RESONANT with voice indicators"
+  credit: pjac1810
+  source_url: https://github.com/pjac1810/wavescan
+  first_party: true
+versions:
+- version: main @ c46c78a
+  date: 2026-10-27
+  url: https://github.com/pjac1810/wavescan/commit/c46c78a2c9b4eafc486a23c3037c88d161b8ac8b
+  notes: No tagged releases; this is the latest commit.

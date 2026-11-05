@@ -1,0 +1,32 @@
+device: m-vave-fm-1
+name: Felucca DRONE
+summary: >-
+  Felucca 1.5.1 fork with a DRONE engine of stacked oscillators and 32 presets, a 3D drone-field screen, a 24 dB ladder
+  low-pass, lofi drum kits and HOLD that latches notes.
+description: >-
+  DRONE is engine 15 and comes first in the preset list. It stacks three oscillators, or six drones at once, with a
+  detune spread, a wave knob that crosses saw, square, ring, fold and noise, a sub, drift and grit. The same fork adds an LP24
+  transistor-ladder filter type for ANALOG and DRONE with fourteen monosynth presets, four lofi drum kits, drum
+  re-hits that restart cleanly, and HOLD to latch notes for drones. DRONE.md lists the changes, and everything else
+  is Felucca. The fork reports itself as 1.5.1-dr4. The default branch is drone, and the repository has no releases.
+status: active
+authors:
+- name: osaebo
+  url: https://github.com/osaebo
+source: https://github.com/osaebo/felucca-drone
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Inherited from Felucca (LICENSING.md). Ported DSP, fonts and SDK files keep their own licences (LICENSES/).
+homepage: https://github.com/osaebo/felucca-drone/tree/drone
+distribution: source-only
+install_notes: >-
+  Build as BUILDING.md describes, then install the package over USB-MIDI with tools/fm1_install.py. It keeps
+  Felucca's installer, which can return the FM-1 to M-VAVE's V15.
+brick_risk: true
+tags: [synth-engine, drone, filter, drums, fork]
+versions:
+- version: drone @ fe7322d
+  date: 2026-10-13
+  url: https://github.com/osaebo/felucca-drone/commit/fe7322db3f5e9af32fe90e52415abf30c505d041
+  notes: No tagged releases; this is the latest commit.

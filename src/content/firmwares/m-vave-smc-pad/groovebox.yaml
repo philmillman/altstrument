@@ -1,0 +1,38 @@
+device: m-vave-smc-pad
+name: GrooveBox
+summary: >-
+  16-track MIDI step sequencer for the SMC-PAD on the open firmware, with live recording, probability and ratchets,
+  parameter locks, euclidean patterns, pattern chains, note repeat and MIDI clock.
+description: >-
+  An Arduino sketch for the open-smc-pad core. The pads play tracks or edit the steps of one track, holding a step
+  while turning a knob sets its values, and a mute mode and a pattern mode cover the rest of the pad. The sequencer
+  keeps 16 patterns with chains, tracks up to 64 steps long and note repeat whose velocity follows how hard a pad is
+  pressed. It sends and follows MIDI clock and connects over USB-MIDI or BLE-MIDI, and a companion script for
+  Ableton Live colours the pads from the current Drum Rack. The pictures in the README come from running the sketch
+  in the open-smc-pad emulator, not from the pad.
+status: active
+authors:
+- name: Federico Paglioni
+  url: https://github.com/fedepaj
+source: https://github.com/fedepaj/groovebox
+source_status: open
+license: MIT
+distribution: source-only
+requires_stock: open-smc-pad bootloader and Arduino core
+install_notes: >-
+  The README links a prebuilt GrooveBox.bin on its releases page, but the repository has no releases yet. Build
+  GrooveBox/GrooveBox.ino for the board M-Vave SMC-PAD (open firmware) in the Arduino IDE, or send a built file
+  with dfu-util while holding SHIFT and PLAY at power-on. The pad needs the open-smc-pad bootloader first.
+brick_risk: false
+tags: [sequencer, groovebox, midi, usb-midi, bluetooth, ableton]
+image:
+  url: https://raw.githubusercontent.com/fedepaj/groovebox/main/docs/img/mode-step.png
+  alt: Emulator picture of GrooveBox in step mode on the SMC-PAD, with eight knobs at left, a grid of pads with the steps of one track lit cyan and the playhead white, and ten buttons at right
+  credit: Federico Paglioni
+  source_url: https://github.com/fedepaj/groovebox
+  first_party: true
+versions:
+- version: main @ 66ef47c
+  date: 2026-10-26
+  url: https://github.com/fedepaj/groovebox/commit/66ef47cf706568f5ae7c1e19e26542b56037b7e8
+  notes: No tagged releases; this is the latest commit.

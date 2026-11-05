@@ -1,0 +1,56 @@
+device: m-vave-fm-1
+name: Terykons
+summary: >-
+  Polyphonic synth on all 24 sound engines of Mutable Instruments Plaits, with an echo and Beads' reverb, an eight-track
+  sequencer with parameter locks, arpeggiators, a mixer and USB multitrack audio.
+description: >-
+  Four synth tracks each run their own Plaits engine, and four drum tracks play kick, snare and hi-hat models. The sequencer
+  steps through up to 64 steps a track with polymeter lengths, sixteen patterns that can be chained, copied and pasted, tap
+  tempo, swing, parameter locks and live recording. Each synth track has an envelope, an LFO and an arpeggiator that are saved
+  with its sound, and 64 user preset slots. A mixer has levels, sends, mutes, solos and panning, and the effect section offers a
+  hall reverb, tape colouring and a tempo-synced echo. USB MIDI and TRS MIDI input are supported, with clock in and out, and the
+  FM-1 appears as a USB sound card that can send each track on its own input. The home screen draws each track as a
+  terrace in a landscape, and a screen show starts after the unit sits idle. The project began as GRAV CODE and was renamed in
+  0.36. It is built on fm1-base and felucca-bsp, and a browser emulator is part of the tree.
+status: active
+authors:
+- name: gravkode
+  url: https://github.com/gravkode
+source: https://github.com/gravkode/gravkode-fm1
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSE is MPL-2.0 and the README says Terykons' own code is MPL-2.0, on fm1-base (Charles Vestal) and felucca-bsp
+  (Leo Kuroshita). Plaits, Beads' reverb engine and stmlib by Emilie Gillet are MIT and vendored in terykons/vendor, with
+  their licence files. Fonts are SIL OFL 1.1. The repository's web/m-bootloader/ holds an m-bootloader 1.2 installer package
+  (MIT, Julius Vitkauskas) that the web installer can offer; it is not a stock M-VAVE image.
+distribution: source-only
+install_notes: >-
+  No release page: build the terykons-VERSION.fwsc package with tools/build.py (JieLi toolchain and AC79 SDK), generate the
+  install site with tools/make_site.py, serve it locally and install from Chrome or Edge over USB. The README says the same
+  page writes M-VAVE's stock firmware back. Installing is at your own risk.
+brick_risk: true
+tags: [synth-engine, sequencer, drums, fx, reverb, delay, arpeggiator, midi, usb-audio, emulator]
+image:
+  url: https://raw.githubusercontent.com/gravkode/gravkode-fm1/main/terykons/docs/img/readme-playing.png
+  alt: "Terykons on the FM-1's screen: the CHORDS engine page for track S1 at 120 BPM with knobs INVERSION 65, WAVE 50 and CHORD 77, preset CUSTOM and volume 50%"
+  credit: gravkode
+  source_url: https://github.com/gravkode/gravkode-fm1
+  first_party: true
+versions:
+- version: v0.44.0
+  date: 2026-10-30
+  url: https://github.com/gravkode/gravkode-fm1/tree/v0.44.0
+  notes: Git tag; no GitHub release page.
+- version: v0.42.0
+  date: 2026-10-30
+  url: https://github.com/gravkode/gravkode-fm1/tree/v0.42.0
+  notes: Git tag; no GitHub release page.
+- version: v0.36.0
+  date: 2026-10-29
+  url: https://github.com/gravkode/gravkode-fm1/tree/v0.36.0
+  notes: Git tag; no GitHub release page.
+- version: v0.35.0
+  date: 2026-10-29
+  url: https://github.com/gravkode/gravkode-fm1/tree/v0.35.0
+  notes: Git tag; no GitHub release page.

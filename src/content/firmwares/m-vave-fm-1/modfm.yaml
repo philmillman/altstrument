@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: MODFM (FM1 Rack on Felucca)
+summary: >-
+  Felucca 1.7.0 fork that drops Felucca's engines for Mutable Instruments module code: Braids, Plaits, Warps cross-modulation,
+  Clouds-style grains and Peaks and Grids modulators, under the names MACRO, MODEL, XMOD and GRAIN.
+description: >-
+  Version v1.7.0-rack2 keeps Felucca's sequencer, modulation matrix, delay, chorus, slicer, interface and storage and replaces the
+  sound sources. MACRO plays 43 Braids models, MODEL has 21 Plaits models with an optional low-pass gate, XMOD cross-modulates the
+  part with a carrier, and GRAIN is a granular effect on the third send. Each part has two modulator slots (envelope, LFO, slope,
+  cycle and three trigger lanes from a Grids-style drum map). Some module features were cut to fit flash, such as the wavetable
+  models, and the engines run at 44.1 kHz with small pitch and timing offsets from the originals. It is a separate repository from
+  the author's MODFM1 project, which is catalogued as FM1 Rack. The documentation says it is built and tested on a computer
+  but has not yet run on an FM-1.
+status: active
+authors:
+- name: JoshCowley
+  url: https://github.com/JoshCowley
+source: https://github.com/JoshCowley/MODFM
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  README and LICENSING.md state GPL-3.0-only, as Felucca. Mutable Instruments code (Emilie Gillet) is MIT, Felucca-Engines is MIT,
+  felucca-bsp is MPL-2.0, and ported DSP and fonts keep their own licences in LICENSES/. The prebuilt fm1-rack-1.7.0-rack2.fwsc
+  is the project's own build (610,286 bytes), not a stock M-VAVE image.
+distribution: download
+install_notes: >-
+  prebuilt/ holds fm1-rack-1.7.0-rack2.fwsc with MD5 and SHA-256 files, to be installed with Felucca's web installer in Chrome or
+  Edge. The README warns the build has not run on an FM-1, asks for a way back to V15 to be ready first (M-VAVE's updater, the
+  installer's Return to official V15, or the BSP's fm1_rescue), and lists bench checks to do after flashing.
+brick_risk: true
+tags: [synth-engine, oscillator, sequencer, fx, granular, modular, fork]
+versions:
+- version: main @ 0ef8310
+  date: 2026-10-28
+  url: https://github.com/JoshCowley/MODFM/commit/0ef8310bcb9239b97102eb8044b2ba987b6ae3a1
+  notes: No tagged releases; this is the latest commit.

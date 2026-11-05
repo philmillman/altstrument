@@ -1,0 +1,32 @@
+name: SMC-PAD
+manufacturer: M-VAVE
+category: controller
+added: 2026-11-05
+tagline: 16-pad Bluetooth and USB MIDI pad controller with 8 encoders
+description: >-
+  The SMC-PAD is a MIDI pad controller from M-VAVE with sixteen RGB pads that sense velocity and
+  aftertouch, eight endless encoders and ten function buttons. It connects over USB-C or Bluetooth MIDI, has a
+  3.5 mm MIDI output and runs from a built-in rechargeable battery. M-VAVE's app configures it over a SysEx
+  protocol, and the factory firmware offers note repeat, Mackie Control and a few other modes.
+platform: JieLi AC6966C (BR25)
+links:
+  manufacturer: https://www.m-vave.com/product.html?id=smc-pad
+  community:
+  - label: fedepaj/open-smc-pad
+    url: https://github.com/fedepaj/open-smc-pad
+notes: >-
+  Custom firmware exists: open-smc-pad installs a bootloader over the factory firmware through the stock
+  USB-MIDI protocol. Going back to the factory image after that needs the chip's ROM download mode and a
+  Raspberry Pi Pico on the USB data lines, so treat the install as hard to undo. The open firmware does not
+  drive the 3.5 mm MIDI output yet.
+related: [m-vave-smc-mixer, m-vave-smk-37, m-vave-fm-1]
+image:
+  src: /images/devices/m-vave-smc-pad.webp
+  style: photo
+  alt: "M-VAVE SMC-PAD top view: eight black encoders in two columns on the left, a four-by-four grid of white pads with their note repeat labels, and ten small buttons on the right"
+  width: 986
+  height: 646
+  credit: M-VAVE
+  license: manufacturer product image
+  source_url: https://www.m-vave.com/product.html?id=smc-pad
+  original_url: https://www.m-vave.com/images/products/smc-pad.webp

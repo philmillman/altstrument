@@ -1,0 +1,40 @@
+device: m-vave-fm-1
+name: AEther
+summary: >-
+  Spectral synthesizer that stretches sounds like PaulStretch: long windows with random phases turn every note into a
+  dense cloud, from samples, a virtual analogue oscillator, PADsynth, drawn harmonics or live generators.
+description: >-
+  Sources are 16 built-in samples synthesised at build time plus one user sample sent over USB-MIDI, a VA oscillator,
+  PAD, HARM and four live generators (voice, air, bow and bell). Samples sit in flash as 11 kHz ADPCM and a spectral band
+  replication envelope rebuilds the top band while playing. A modulation matrix has eight slots, three LFOs, two envelopes
+  and 36 destinations, and EVOLVE moves the whole sound over time. It is built on fm1-base and felucca-bsp. The README
+  and the NOTICE file say that an AI wrote all the code, that nobody reviewed it line by line, and that it is used at your own risk. The README
+  status says v0.5 has first runs on a real FM-1, while NOTICE says the firmware was not tested on one. The project site
+  carries a web installer, a browser version, an editor and a manual, and the README and manual also exist in Polish.
+status: active
+authors:
+- name: twaroshinto
+  url: https://github.com/twaroshinto
+source: https://github.com/twaroshinto/AEther
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSE is MPL-2.0, as fm1-base. NOTICE adds a no-warranty statement for the AI-written code that leaves the licence unchanged.
+homepage: https://twaroshinto.github.io/AEther/
+distribution: browser-installer
+install_notes: >-
+  Use the web installer in Chrome or Edge with the FM-1 on USB, or tools/fm1_install.py from the base submodule. Switch the FM-1 off
+  and on again afterwards, since the sound can drop out without a full restart. The README describes the way back to the stock firmware.
+brick_risk: true
+tags: [synth-engine, granular, ambient, sampler, editor, emulator]
+image:
+  url: https://raw.githubusercontent.com/twaroshinto/AEther/main/docs/img/manual/panel_numbered.png
+  alt: "Illustration of the FM-1 panel with numbered controls, its screen showing the SAMPLE source CHOIR as a spectrum with STRETCH 41X, POSITION 0%, SPREAD 0% and SIZE 186 MS"
+  credit: twaroshinto
+  source_url: https://github.com/twaroshinto/AEther
+  first_party: true
+versions:
+- version: main @ 1dc4fea
+  date: 2026-10-29
+  url: https://github.com/twaroshinto/AEther/commit/1dc4fea3af7da115bfe70c15431360d211048728
+  notes: No tagged releases; this is the latest commit.

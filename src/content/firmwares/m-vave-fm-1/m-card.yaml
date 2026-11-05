@@ -1,0 +1,40 @@
+device: m-vave-fm-1
+name: m-card
+kind: tool
+summary: >-
+  Open microSD add-on board for the FM-1 that plugs into the LCD's ribbon connector, with Gerbers, parts list, assembly drawing and paper template. An untested prototype.
+description: >-
+  A 30 by 25.2 mm two-layer board that sits under the audio jacks and connects between the LCD cable and the main
+  board's J12 connector, so no soldering to the FM-1 is needed. It passes all ten LCD lines through and taps four for
+  the card, which shares the LCD's SPI bus; an inverter selects the card whenever the LCD is not selected. The
+  repository has Gerbers, a bill of materials and placement file for JLCPCB, an assembly PDF, a 1:1 paper template and the
+  Python scripts that generate the board for KiCad 9. The README calls it an untested prototype: fit was checked with a
+  paper template on a real FM-1, no board has been made, and firmware support is being worked on in m-bootloader.
+status: active
+authors:
+- name: Julius Vitkauskas (jvitkauskas)
+  url: https://github.com/jvitkauskas
+source: https://github.com/jvitkauskas/m-card
+source_status: open
+license: CC0-1.0
+license_notes: >-
+  The LICENSE file is CC0 1.0 for the scripts, board and generated files. KiCad's standard footprints are CC-BY-SA 4.0
+  with an exception, and the 3D models used for the renders are downloaded, not stored.
+distribution: source-only
+install_notes: >-
+  A hardware project: order the PCB from the Gerber zip, buy the listed parts, solder, then open the FM-1, move the LCD cable
+  to the board and run a short ribbon cable back to J12. It needs FM-1 firmware that reads the card, which does not exist yet.
+  Check the board and sockets with a multimeter before installing.
+brick_risk: false
+tags: [hardware, open-hardware]
+image:
+  url: https://raw.githubusercontent.com/jvitkauskas/m-card/main/docs/render-top.png
+  alt: "Render of the m-card board from above: a green board with two ten-pin ribbon sockets on the left marked LCD cable and J12 cable, small parts at top right and a microSD socket outline at bottom right"
+  credit: Julius Vitkauskas
+  source_url: https://github.com/jvitkauskas/m-card
+  first_party: true
+versions:
+- version: main @ ec63784
+  date: 2026-11-03
+  url: https://github.com/jvitkauskas/m-card/commit/ec63784fe94006296ad25bdeb5d32bf7afa834d1
+  notes: No tagged releases; this is the latest commit.

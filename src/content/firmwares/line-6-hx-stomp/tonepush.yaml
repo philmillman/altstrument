@@ -36,7 +36,7 @@ distribution: download
 requires_stock: HX Stomp on firmware 3.80 (the verified setup)
 install_notes: >-
   Download the macOS DMG, Windows MSI, Linux archive, package or AppImage from the releases page, or
-  build with Rust and run install.sh, which also installs a udev rule on Linux. Quit HX Edit first,
+  a Flatpak bundle or the Fedora COPR, or build with Rust and run install.sh, which also installs a udev rule on Linux. Quit HX Edit first,
   because only one program can hold the vendor USB interface. On first launch the editor copies model
   data from an installed HX Edit, or takes an HX Edit installer you download from Line 6; reading a
   Windows or Linux installer needs 7-Zip. Back up the pedal before writing, and never trigger a USB
@@ -50,6 +50,14 @@ image:
   source_url: https://github.com/crmne/tonepush#readme
   first_party: true
 versions:
+  - version: 0.12.1
+    date: 2026-11-05
+    url: https://github.com/crmne/tonepush/releases/tag/v0.12.1
+    notes: Releases the HX Stomp from its "transferring data" screen after a backup reads its impulse responses, stops a computer with no StompStation PRO from reporting one that will not open, and lets the AppImage update itself.
+  - version: 0.12.0
+    date: 2026-11-04
+    url: https://github.com/crmne/tonepush/releases/tag/v0.12.0
+    notes: Adds a Skip button for the backup taken on connect, a backup at most once a day while the pedal is unchanged, backups that copy unchanged impulse responses instead of rereading them, automatic updates, and a Flatpak bundle and Fedora COPR for Linux.
   - version: 0.11.0
     date: 2026-11-01
     url: https://github.com/crmne/tonepush/releases/tag/v0.11.0

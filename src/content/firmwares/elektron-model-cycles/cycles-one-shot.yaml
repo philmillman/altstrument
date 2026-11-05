@@ -1,6 +1,6 @@
 device: elektron-model-cycles
 name: Cycles One-Shot
-summary: Adds SAMPLE as a seventh machine on Model:Cycles OS 1.13 that plays one-shot samples from the +Drive, with Start, Length and a Model:Samples-style filter, plus a browser page that uploads samples over USB.
+summary: Adds SAMPLE as a seventh machine on Model:Cycles OS 1.13 that plays one-shot samples from the +Drive, with Start, Length and a Model:Samples-style filter, and is paired with model27's browser Uploader for putting samples on the unit.
 description: >-
   SAMPLE sits on the MACHINES page next to the six stock machines and takes
   its sample from the OS's own PRESET browser, so the choice is saved with the
@@ -8,7 +8,8 @@ description: >-
   output rate followed by the Cycles' own 2:1 decimator, with short fades at
   the edges of a trig. A one-knob lowpass and highpass with resonance follows
   measured Model:Samples behaviour and is built from scratch. A waveform view
-  replaces the main screen on SAMPLE tracks. Since 0.11 the machine can loop
+  replaces the main screen on SAMPLE tracks, and the cutoff and resonance knob
+  views show Model:Samples-style pictures. Since 0.11 the machine can loop
   and play in reverse, but only in model27 builds, whose shortcut layer
   switches them with RETRIG + PUNCH and RETRIG + GATE; this entry's own image
   has no such layer and still plays one shot, forward. The author states the
@@ -16,8 +17,9 @@ description: >-
   SAMPLE machine is offered in the model27 web flasher; this entry covers the
   command-line build. The build needs a clone of Modded Cycles, and SAMPLE
   cannot yet be combined with other machine-adding tweaks or with Model-TG.
-  The included upload page puts audio files on the +Drive from Chrome or Edge
-  and works with the official OS as well.
+  The upload page that this repository once held has moved to model27's
+  Uploader, which puts audio files on the +Drive from Chrome, Edge or Opera and
+  works with the official OS as well.
 status: active
 authors:
   - name: durchgemacht
@@ -27,7 +29,7 @@ source_status: open
 license: MIT
 license_notes: >-
   No Elektron firmware is included; the build starts from your own copy of the
-  official OS file. Protocol facts for the upload page come from ModdedTransfer
+  official OS file. Protocol facts for the upload page, now in model27, come from ModdedTransfer
   (WTFPL) and Model-TG (MIT), and the machine-adding tools are Modded Cycles'
   (MIT).
 distribution: patch-your-own
@@ -40,10 +42,14 @@ install_notes: >-
   returning to stock, set every SAMPLE track to one of the six stock machines,
   since a project naming a machine the official OS lacks can freeze the
   MACHINES page. Back up projects and samples with Elektron Transfer first.
-  For new samples open uploader/index.html in Chrome or Edge and close
+  For new samples open model27's Uploader page in Chrome, Edge or Opera and close
   Elektron Transfer, which would otherwise hold the MIDI port.
 tags: [machines, sampler, filter, samples, web]
 versions:
+  - version: v0.14
+    date: 2026-11-04
+    url: https://github.com/durchgemacht/cycles-one-shot/tree/v0.14
+    notes: Git tag; no GitHub release page. The knob view for SWEEP and CONTOUR on a SAMPLE track now shows the Model:Samples' own pictures for Cutoff and Reso instead of the SNARE machine's.
   - version: v0.13
     date: 2026-11-02
     url: https://github.com/durchgemacht/cycles-one-shot/tree/v0.13

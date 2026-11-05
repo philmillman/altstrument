@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+name: Timón
+kind: tool
+summary: >-
+  Browser pattern generator and control rack for the FM-1 over Web MIDI; it writes generated sequences into the unit's
+  sequencer through the Skiff and Felucca editor protocol.
+description: >-
+  The Skiff-targeting line of the author's FM-1 Pulses. A clock, gate probability, sample and hold, LFO, distribution and
+  quantizer chain, with loop and deja-vu controls, builds a bank of 16 64-step patterns from one seed, and Play loops a slot
+  through a small browser synth and the unit. Write and Clear use only the protocol's per-step track write, so they do not
+  depend on firmware-specific project commands. A rack page offers knob control of the unit, and backup code and a
+  guide page are included. The unit refuses pattern writes while its sequencer is playing, and Bluetooth MIDI carries
+  notes but not pattern writes, so writing needs USB. Some of the repository's docs still describe the earlier Pulses
+  versions.
+status: active
+authors:
+- name: mene311
+  url: https://github.com/mene311
+source: https://github.com/mene311/timon
+source_status: open
+license: unspecified
+license_notes: No LICENSE file or license statement in the repository.
+homepage: https://mene311.github.io/timon/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page, or serve the folder locally (python3 -m http.server) and open it in a Web MIDI browser with the FM-1
+  on USB. Stop the unit's sequencer before writing. Write overwrites patterns on the unit, so keep a backup of anything
+  you want to keep.
+brick_risk: false
+tags: [generative, sequencer, editor, midi]
+versions:
+- version: master @ e279d1a
+  date: 2026-10-28
+  url: https://github.com/mene311/timon/commit/e279d1adb66d2e0a67a84890fe79e1aacebb94c6
+  notes: No tagged releases; this is the latest commit.

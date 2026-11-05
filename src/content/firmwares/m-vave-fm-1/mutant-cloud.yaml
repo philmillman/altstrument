@@ -1,0 +1,38 @@
+device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
+name: mutant.cloud
+kind: tool
+summary: >-
+  Website and JSON catalogue of firmware and tools for the FM-1 and SMK-37 that makers list themselves from GitHub, with a
+  browser installer, a way back to M-VAVE's stock firmware and an RSS feed.
+description: >-
+  A Cloudflare Worker collects entries from other firmware hubs and from makers who sign in with GitHub or publish from a
+  release workflow, and follows the releases of each listed repository. Every .fwsc in a release is downloaded once and checked for
+  size, SHA-256 and the device ID in its header, and only valid packages reach the catalogue that fm1buddy reads. Each listing can
+  install from Chrome or Edge over Web MIDI after asking the unit what it is, and can open in the FM-1 emulator. A rescue page puts M-VAVE's
+  V15 back for an FM-1, taken from m-vave/fm1_open, and M-VAVE's V16 packages for SMK-37 and MKE-P37, linked from M-VAVE's own
+  download server, and finishes an interrupted install. The update protocol code is fomajam's, copied unchanged. The repository holds the
+  Worker, the site and screenshots made with fm1-emu.
+status: active
+authors:
+- name: David Konsumer (konsumer)
+  url: https://github.com/konsumer
+source: https://github.com/konsumer/mutantcloud
+source_status: open
+license: MIT
+license_notes: >-
+  The README says the listings belong to their makers, each under its own licence. The copy of fomajam's update code in
+  public/vendor is GPL-3.0 under fomajam's licence, and the screenshots are produced by running each firmware in fm1-emu.
+homepage: https://mutant.cloud
+distribution: browser-installer
+install_notes: >-
+  Open the site in Chrome or Edge, connect the unit by USB and use Install on a listing; the page asks the device which model it is and
+  refuses a package built for another one. The rescue page can restore stock firmware or finish a cut-off install, and for a unit
+  that shows no USB device the page points to lilfm1buddy and fm1buddy. Back up first.
+brick_risk: true
+tags: [flasher, librarian, utility, web]
+versions:
+- version: main @ 5f95e4f
+  date: 2026-11-05
+  url: https://github.com/konsumer/mutantcloud/commit/5f95e4f69fd7b4aa32d818b6bb61a5911baa7861
+  notes: No tagged releases; this is the latest commit.

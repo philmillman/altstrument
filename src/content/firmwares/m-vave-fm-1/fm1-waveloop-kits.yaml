@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: FM-1 WaveLoop Kits
+kind: tool
+summary: >-
+  Source porting kits for adding SHAYPE arpeggios, persistent songs, modified 808 drums, a kit-lane drum sequencer, a
+  full-pattern sequence view and bank themes to FM-1 firmware, with maps for about twenty firmware sources.
+description: >-
+  Not an installer or a firmware. Each kit holds portable C modules, fixtures and a written recipe: a sequence-view
+  renderer with a Switch Blade adapter, a bank-to-theme mapping, the SHAYPE shape-arp core with parity fixtures, an
+  autosave and resume contract for songs, the modified 808 voice and its controls, an exact-base patch for Switch Blade's
+  kit-lane drum sequencer and a 128-step extension. Distro maps say what is present and what still needs porting for
+  Switch Blade, Melodee, SLOOP, JIANT, ChoralRoot, CoralFlower, Felucca and others. A review document tells the porter
+  to read each source as untrusted and build it in isolation before running anything, and tools/check.py verifies the
+  bundled SHAYPE core. The README also points to the author's MiniLab 3 command-line tool for mapping controller
+  knobs. The README says the repository holds no firmware binaries, device backups or SDK blobs.
+status: active
+authors:
+- name: lucian-labs
+  url: https://github.com/lucian-labs
+source: https://github.com/lucian-labs/fm1-waveloop-kits
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL version 3 text and the README says the bundled source, fixtures and patch are GPL-3.0-only with the
+  original notices kept. CREDITS.md lists the firmware it builds on and optional dependencies that are not bundled.
+distribution: source-only
+install_notes: >-
+  Pick your firmware's distro map, complete the code audit in security/REVIEW.md, then follow the feature recipe and
+  PORTING.md. Run python3 tools/check.py to check the bundled SHAYPE core. A firmware you build from the result needs
+  the usual FM-1 install steps and backup.
+brick_risk: false
+tags: [sdk, sequencer, drums, arpeggiator, performance, fork, controller-mode]
+versions:
+- version: main @ 6ac3a98
+  date: 2026-10-31
+  url: https://github.com/lucian-labs/fm1-waveloop-kits/commit/6ac3a9879205d0f6628ae36c01fce7a8c0f54c9a
+  notes: No tagged releases; this is the latest commit.

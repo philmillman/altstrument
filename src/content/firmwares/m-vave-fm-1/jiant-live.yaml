@@ -1,0 +1,38 @@
+device: m-vave-fm-1
+name: JIANT LIVE
+summary: >-
+  JIANT fork for using the FM-1 as a live multitimbral module: a receive channel per track on six tracks, MIDI LEARN
+  with 32 destinations, 12 independent DRUM-X sounds and a plainer screen.
+description: >-
+  Each track keeps its own MIDI receive channel, and tracks may share one. Routing is 1-4, 1-6 or the selected track. One
+  incoming controller can move several parameters on different tracks at once. The browser emulator can load a JIANT backup file
+  to audition saved sounds without touching a unit. The README calls this a development fork, not an official JIANT release, says
+  the host tests and firmware build pass, and says it has not run on a physical FM-1; there is no installer for it,
+  and JIANT's installer must not be used. The manual and editor it links belong to JIANT.
+status: active
+authors:
+- name: Misha Mashina (MishaMashinaMM)
+  url: https://github.com/MishaMashinaMM
+source: https://github.com/MishaMashinaMM/jiant-live
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  README and LICENSING.md give GPL-3.0-only, as JIANT and Felucca, with upstream credits kept in the file headers.
+homepage: https://mishamashinamm.github.io/jiant-live/emu/
+distribution: source-only
+install_notes: >-
+  No installer is published. Build as BUILDING.md describes and back up the FM-1 first. The README warns against
+  using JIANT's installer for this fork.
+brick_risk: true
+tags: [midi, performance, drums, synth-engine, emulator, fork]
+image:
+  url: https://raw.githubusercontent.com/MishaMashinaMM/jiant-live/main/docs/jiant-live-overview.svg
+  alt: "Illustration with the JIANT LIVE FM1 performance firmware v0.2 title, showing two tracks on the same MIDI keyboard channel and one CC 40 moving cutoff on one and resonance on the other"
+  credit: MishaMashinaMM
+  source_url: https://github.com/MishaMashinaMM/jiant-live
+  first_party: true
+versions:
+- version: main @ 46014d6
+  date: 2026-11-05
+  url: https://github.com/MishaMashinaMM/jiant-live/commit/46014d64bd60e8dcc1ab1b23a5f6fc222104d2e7
+  notes: No tagged releases; this is the latest commit.

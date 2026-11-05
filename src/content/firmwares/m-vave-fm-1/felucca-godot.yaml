@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: felucca-godot
+kind: tool
+summary: >-
+  Godot 4 native extension that runs Felucca's synth engines inside a game, loading projects exported from the FM-1 and scriptable from
+  GDScript, with audio nodes for 2D, 3D and non-spatial sources and a shared beat clock.
+description: >-
+  A conductor node sets a global tempo and emits beat signals, and each source node plays a Felucca project exported from the FM-1 through
+  Felucca's web editor, with quantised starts, per-part muting and parameter overrides. Several engines can run in step and the extension
+  limits how many are bound at once, dropping the quietest or furthest first. Felucca's code is fetched by a setup script and patched, and the
+  desktop build is for Linux only for now, while web exports work with threads and extension support. The release zip is an addon
+  folder for a Godot project. This is not firmware for the device.
+status: active
+authors:
+- name: six-school
+  url: https://github.com/six-school
+source: https://github.com/six-school/felucca-godot
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file and README name GPL-3.0-only. Felucca is GPL-3.0 with some parts under their own licences, and the release notes
+  record the Felucca and godot-cpp revisions each build used; godot-cpp is MIT.
+distribution: download
+install_notes: >-
+  Unzip the addon from the releases page into a Godot 4.7 or newer project, add addons/felucca/felucca.tscn as an autoload and restart
+  the editor. Export a project from the FM-1 with Felucca's web editor and rename the JSON file to .felucca. Building from source has only
+  been tested on Linux.
+brick_risk: false
+tags: [sdk, game, synth-engine, sequencer]
+versions:
+- version: 0.2.0
+  date: 2026-11-03
+  url: https://github.com/six-school/felucca-godot/releases/tag/v0.2.0
+- version: 0.1.0
+  date: 2026-10-29
+  url: https://github.com/six-school/felucca-godot/releases/tag/v0.1.0

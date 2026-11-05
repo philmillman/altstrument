@@ -1,0 +1,40 @@
+device: m-vave-fm-1
+name: FM-1 MIDI Processor
+summary: >-
+  Turns the FM-1 into a stand-alone MIDI processor that monitors, filters, remaps and re-channels messages from TRS
+  and USB input, sends trigger lists, and has a metronome and 16 patches.
+description: >-
+  Built on M-VAVE's FM1 Open SDK. TRS and USB input each pass their own channel and message filters, then shared
+  message and channel remaps, on the way to USB MIDI out. The monitor lists the last 100 messages, colours them by
+  what the pipeline did, and can turn a selected message into a rule or a trigger. The knobs send CCs and the keys
+  send notes and program and bank changes. Patches can be saved to and loaded from a computer over SysEx.
+status: active
+authors:
+- name: MidiHax
+  url: https://github.com/MidiHax
+source: https://github.com/MidiHax/fm1-midi-processor
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  src/LICENSE.md is M-VAVE's FM1 APP licence: GPL-3.0 only with an added permission to link the binary SDK, whose
+  engine library keeps M-VAVE's separate terms (THIRD_PARTY.md). The repository root has no licence file.
+  src/sdk/firmware/FM-1_015.fwsc matches M-VAVE's FM-1 V15 image licensed Apache-2.0 (git blob
+  ce49cc1595b67347c68a3ac7463017f9fa8c19dd).
+homepage: https://midihax.github.io/fm1-midi-processor/html/
+distribution: browser-installer
+install_notes: >-
+  Flash page in desktop Chrome or Edge over USB, a stand-alone updater page attached to the release, or the .fwsc
+  package with a flasher that supports FM1 Open firmware. tools/fm1_flash.py builds and flashes from source.
+brick_risk: true
+tags: [midi]
+image:
+  url: https://raw.githubusercontent.com/MidiHax/fm1-midi-processor/main/html/img/screens/midi-monitor.png
+  alt: "FM-1 screen showing the MIDI Monitor page, a list of messages with port, channel, type and two data columns"
+  credit: "MidiHax"
+  source_url: https://github.com/MidiHax/fm1-midi-processor
+  first_party: true
+versions:
+- version: 0.1.0
+  date: 2026-11-03
+  url: https://github.com/MidiHax/fm1-midi-processor/releases/tag/v0.1.0
+  notes: First release.

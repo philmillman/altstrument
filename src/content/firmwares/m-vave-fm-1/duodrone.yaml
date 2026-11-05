@@ -1,0 +1,45 @@
+device: m-vave-fm-1
+name: DUODRONE
+summary: >-
+  Two-voice analog-style drone synth after the Stylophone CPM DS-2, with sync and pitch link between the voices, a two-output
+  ultra LFO, a dark delay and an eight-algorithm reverb.
+description: >-
+  Each drone has a morphing X-WAVE oscillator from triangle to a narrow pulse, a sub-oscillator one or two octaves down and a
+  resonant four-pole low-pass or high-pass filter that self-oscillates. A single ultra LFO has two outputs with 13 shapes each,
+  routed per voice to wave shape, pitch or cutoff. The mixer takes USB audio from a computer as an aux input, a PT2399-style
+  delay and a reverb with eight algorithms. There are eight factory presets and eight user slots, MIDI note input and 40
+  parameters on CC 20 to 59. The README (in French) says it is a digital model rather than a copy of the circuit and is
+  independent of Dubreq and M-VAVE. It is built on konsumer's foma framework.
+status: active
+authors:
+- name: pjac1810
+  url: https://github.com/pjac1810
+source: https://github.com/pjac1810/duodrone
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md. The platform/mvave directory is from M-VAVE's FM1 Open kit: GPLv3 with M-VAVE's SDK linking
+  exception, plus the binary engine library platform/mvave/sdk/lib/libfm1_engine.a under M-VAVE's terms for FM-1
+  devices only. Felucca, SLOOP and Dinghy code is GPL-3.0-only, and the USB audio code ported from felucca-bsp is
+  MPL-2.0 used under GPL-3.0.
+homepage: https://pjac1810.github.io/duodrone/
+distribution: browser-installer
+requires_stock: V15
+install_notes: >-
+  Open the project page in Chrome or Edge with the FM-1 on USB and use its Install tab, or run tools/fm1_install.py with
+  the .fwsc; build it with the repository's GitHub workflow or with Docker (./fm1 build). Hold OCT- at power-on for the
+  rescue mode, where the page's Rescue tab puts M-VAVE's V15 back from a file you download from M-VAVE. The README says
+  installing unofficial firmware is at your own risk.
+brick_risk: true
+tags: [synth-engine, ambient, oscillator, filter, lfo, reverb, delay, midi, usb-audio, emulator]
+image:
+  url: https://raw.githubusercontent.com/pjac1810/duodrone/main/docs/duodrone-240.png
+  alt: "DUODRONE screen: title and preset F1 FIFTHS above four ringed knobs CUTOFF 773Hz, CUTOFF 679Hz, RATE 0.15Hz and MIX 37, a green waveform line, and a status row with I A1, II E2, LNK, OCT-1 and ON"
+  credit: pjac1810
+  source_url: https://github.com/pjac1810/duodrone
+  first_party: true
+versions:
+- version: main @ 1968529
+  date: 2026-10-27
+  url: https://github.com/pjac1810/duodrone/commit/1968529000cd500715d72434c27d1e7f3222330a
+  notes: No tagged releases; this is the latest commit.

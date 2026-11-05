@@ -1,0 +1,37 @@
+device: line-6-m-series
+kind: tool
+name: Line 6 M5 Arduino MidiSwitch
+summary: Arduino Nano sketch, wiring diagram and tests for a two-footswitch MIDI controller with a two-digit LED display that steps through the M5's 24 presets and bypasses the effect.
+description: >-
+  A separate DIY box, not a change to the pedal. It sends MIDI program changes 0 to 23 on channel 1 from a MIDI OUT
+  socket to the M5's MIDI IN, with an UP and a DOWN footswitch that wrap at the ends, repeat when held and bypass the
+  effect when pressed together. The display shows the last preset the controller sent, since it cannot receive from the
+  M5. The sketch needs no external libraries and builds for the classic Nano with an ATmega328P. It is a cleaned-up
+  version of a design the author built and sold in 2017 and 2018, with the original photos, an archived original sketch and
+  a simulation test of the compiled program that passes 45 checks. The README says the new sketch and wiring diagram have not
+  been checked on a physical unit.
+status: maintained
+authors:
+  - name: beepoo304
+    url: https://github.com/beepoo304
+source: https://github.com/beepoo304/line6-m5-arduino-midiswitch
+source_status: open
+license: MIT
+distribution: source-only
+install_notes: >-
+  Name the folder MIDI_SWITCH, open the sketch in Arduino IDE, select Arduino Nano with the ATmega328P (the old bootloader
+  on many clones) and upload with the MIDI cable disconnected from the M5. Set the M5 to MIDI channel 1 and wire the box
+  as in the diagram and the wiring guide.
+brick_risk: false
+tags: [arduino, midi, controller, footswitch, diy, hardware]
+image:
+  url: https://raw.githubusercontent.com/beepoo304/line6-m5-arduino-midiswitch/main/hardware/schemat.png
+  alt: Wiring diagram titled MIDI Switch, Arduino Nano to Line 6 M5, with panels for the two-digit LED display, the two footswitches, the MIDI OUT DIN socket and the Nano power supply
+  credit: beepoo304
+  source_url: https://github.com/beepoo304/line6-m5-arduino-midiswitch
+  first_party: true
+versions:
+  - version: main @ 740c5d5
+    date: 2026-10-24
+    url: https://github.com/beepoo304/line6-m5-arduino-midiswitch/commit/740c5d5531fa54fc65534e1548543bc37f30f5e6
+    notes: No tagged releases; this is the latest commit.

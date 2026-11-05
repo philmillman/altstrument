@@ -1,0 +1,45 @@
+device: m-vave-fm-1
+name: FM-1 Mac Recovery
+kind: tool
+summary: >-
+  Command-line recovery for a bricked FM-1 on macOS: it backs up the whole flash through the chip's USB download mode, then
+  writes M-VAVE's official firmware and boot area from a package you supply, and verifies every write.
+description: >-
+  The tool uses JieLi's own flash loader, fetched by its setup script from jl-uboot-tool and checked by hash, so a Mac needs
+  only a USB-C data cable. The install command reads the flash twice and compares the reads, builds the image over the
+  backup so settings and the unit's factory sector are kept, writes the differing sectors with the boot area last, and
+  checks the whole flash again. It recognises M-VAVE's V15 and V16 packages and refuses other files unless told otherwise, and
+  it accepts the two flash chips found in FM-1 units. The author reports a recovery of a UC25HQ80 unit with V16. The repository
+  has offline tests and notes on the flash layout, and holds no firmware.
+status: active
+authors:
+- name: HuskiePJN
+  url: https://github.com/HuskiePJN
+source: https://github.com/HuskiePJN/fm1-mac-recovery
+source_status: open
+license: MIT
+distribution: source-only
+install_notes: >-
+  Needs macOS 12 or newer, Python 3.8 or newer, libusb from Homebrew or MacPorts and a data cable. Download the
+  repository, run setup.sh, put your own FM-1.fwsc from M-VAVE in the folder, put the unit in download mode and run the
+  install command as root. It asks for a typed word before writing and warns that cutting power during the short boot-area
+  write can leave the chip needing hardware recovery. Keep the backups private.
+brick_risk: true
+tags: [flasher, loader, utility, backup]
+versions:
+- version: 1.2.1
+  date: 2026-11-04
+  url: https://github.com/HuskiePJN/fm1-mac-recovery/releases/tag/v1.2.1
+  notes: Review pass with clearer error messages, root-owned backups fixed and MacPorts libusb support; the data written is unchanged.
+- version: 1.2.0
+  date: 2026-11-04
+  url: https://github.com/HuskiePJN/fm1-mac-recovery/releases/tag/v1.2.0
+  notes: One install command that backs up, builds the image, writes and verifies in a single connection.
+- version: 1.1.0
+  date: 2026-11-03
+  url: https://github.com/HuskiePJN/fm1-mac-recovery/releases/tag/v1.1.0
+  notes: V16 written and tested on a UC25HQ80 unit, with notes on the two flash chips.
+- version: 1.0.0
+  date: 2026-11-03
+  url: https://github.com/HuskiePJN/fm1-mac-recovery/releases/tag/v1.0.0
+  notes: First public release.

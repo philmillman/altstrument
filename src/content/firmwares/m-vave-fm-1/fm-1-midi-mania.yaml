@@ -1,0 +1,47 @@
+device: m-vave-fm-1
+name: FM-1 Midi-Mania
+summary: >-
+  Rhythm game on a Felucca base: a MIDI song is converted to a chart, notes fall toward the keys on the screen, and each
+  press is graded PERFECT, GREAT, GOOD or MISS with a combo and score.
+description: >-
+  The FM-1 plays the backing on its own synth engines while you play your part, either keys or drums, and in AUTO mode
+  it plays that part too. Songs come from a browser page that converts MIDI files and sends them to the FM-1 over USB;
+  the firmware holds up to 16 songs in 240 KB, and two songs are built in. Settings include tempo, note speed, scroll
+  direction, a timing offset, a metronome with count-in and a range of notes or drum pads that count as yours. The
+  page also runs the same firmware in a browser simulator. The releases are labelled alpha, and guitar and bass parts
+  and saved high scores are not in yet. It keeps Felucca's engines, audio, display, storage and USB code and drops its
+  step sequencer and arpeggiator.
+status: active
+authors:
+- name: shan-sherif
+  url: https://github.com/shan-sherif
+source: https://github.com/shan-sherif/fm-1-midi-mania
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md applies Felucca's licensing to the whole: GPL-3.0-only, with MIT for the ANALOG engine and shared engine
+  code from Felucca-Engines, MPL-2.0 for the felucca-bsp copy under firmware/bsp, and MIT and Apache-2.0 ports of
+  DaisySP, Rings and msfa that keep their own terms. The bundled piano and flute samples are CC0 and the fonts are SIL OFL.
+  Song files you add are git-ignored.
+homepage: https://shan-sherif.github.io/fm-1-midi-mania/
+distribution: browser-installer
+install_notes: >-
+  Use the installer page in Chrome or Edge with the FM-1 on USB, over the stock firmware or an earlier Midi-Mania. Its
+  Return to official V15 option takes a V15 file that you download from M-VAVE and saves a backup of your settings and
+  songs first. The notes say to install at your own risk, and point to FM-1-transporter for an FM-1 that does not start
+  after an interrupted install.
+brick_risk: true
+tags: [game, sequencer, synth-engine, drums, midi, editor, emulator, fork]
+versions:
+- version: 0.3.0
+  date: 2026-11-04
+  url: https://github.com/shan-sherif/fm-1-midi-mania/releases/tag/v0.3.0
+  notes: Adds scoring in PLAY YOU mode with grades, combo, score, a result screen and a timing offset.
+- version: 0.2.0
+  date: 2026-11-04
+  url: https://github.com/shan-sherif/fm-1-midi-mania/releases/tag/v0.2.0
+  notes: Sends your own songs from the browser page to the FM-1, with smoother full-screen notes and a backup that includes songs.
+- version: 0.1.0
+  date: 2026-11-04
+  url: https://github.com/shan-sherif/fm-1-midi-mania/releases/tag/v0.1.0
+  notes: First release, with two built-in songs, free play and two playable parts.

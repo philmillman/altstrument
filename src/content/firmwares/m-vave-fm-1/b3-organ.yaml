@@ -1,0 +1,40 @@
+device: m-vave-fm-1
+name: B3 ORGAN
+summary: >-
+  Tonewheel organ with 91 wheels, nine drawbars, percussion, scanner vibrato, overdrive, reverb and a Leslie,
+  built from setBfree's data tables on the Dinghy base in integer arithmetic.
+description: >-
+  A fork of Dinghy that replaces its sine synth with an organ engine. Gear ratios, key click, the gain matrix,
+  the Leslie tables and all 110 programs of setBfree's default.pgm are generated from setBfree's own data, and
+  the README lists measurements against setBfree running on a Raspberry Pi. Drawbars, percussion and effects
+  follow setBfree's default MIDI controller numbers over USB and TRS. The repository also has a WebAssembly
+  build of the engine to play in a browser and a host mode that writes WAV files. The README says release 0.1
+  has been tested on one FM-1.
+status: active
+authors:
+- name: R-Jeb
+  url: https://github.com/R-Jeb
+source: https://github.com/R-Jeb/setBfree-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Stated in the README and LICENSING.md. The setBfree-derived tables and programs are GPL-2.0-or-later, and the
+  Terminus font is SIL OFL 1.1. The designburg logo in assets/ is all rights reserved and not under the GPL.
+distribution: browser-installer
+install_notes: >-
+  Download the .fwsc package from the release and install it through the FM-1 Firmware Hub in Chrome or Edge, or
+  with tools/fm1_install.py over USB. Hold OCT- while switching on for the USB rescue. The official firmware can
+  be put back the usual way.
+brick_risk: true
+tags: [synth-engine, fork, emulator, fx, usb-audio]
+image:
+  url: https://raw.githubusercontent.com/R-Jeb/setBfree-fm1/main/docs/screen.png
+  alt: "B3 ORGAN v0.1 screen showing nine drawbar rows, vibrato, Leslie, percussion, overdrive and reverb states, and the program 5 Standard B"
+  credit: "R-Jeb"
+  source_url: https://github.com/R-Jeb/setBfree-fm1
+  first_party: true
+versions:
+- version: '0.1'
+  date: 2026-11-05
+  url: https://github.com/R-Jeb/setBfree-fm1/releases/tag/v0.1
+  notes: First release.

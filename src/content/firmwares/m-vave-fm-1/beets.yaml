@@ -1,0 +1,40 @@
+device: m-vave-fm-1
+name: Beets for FM-1
+summary: >-
+  Two-deck loop slicer ported from the Norns app Beets, with eight slices per deck and probabilities for repeat, skip,
+  reverse, stutter and loop switching that change the sequence as it plays.
+description: >-
+  A C adaptation of Matt Biddulph's Norns script on fm1-base, written by the same author. The ten demo loops are
+  converted to mono 22.05 kHz mu-law to fit internal flash, so the firmware plays those loops rather than loading
+  samples. White keys cue slices on each deck, black keys pick loops, and a split output sends one deck to each side.
+  The repository also builds a native simulator and a browser emulator from the same engine, with USB MIDI telemetry
+  and a TouchOSC visualiser. Its verification record says 0.3.1 was flashed to an FM-1 and checked over USB, with
+  power-cycle persistence and analog output still untested. No package is published.
+status: active
+authors:
+- name: Matt Biddulph (mattb)
+  url: https://github.com/mattb
+source: https://github.com/mattb/fm1-beets
+source_status: open
+license: MIT
+license_notes: >-
+  The new code is MIT. app/app.c, app/app.h and the emulator page adapt fm1-base's MPL-2.0 template and keep those
+  headers (LICENSES/), and the fm1-base and felucca-bsp submodules keep their own notices. The demo loops are credited
+  to vcvcvc_val with no licence stated for them.
+distribution: source-only
+install_notes: >-
+  Build with tools/build-local.sh, which needs Docker, the JieLi toolchain and the AC79 SDK; the result is
+  app/build/beets.fwsc, flashed with an FM-1 flasher. Host and browser builds need neither Docker nor the toolchain.
+brick_risk: true
+tags: [sampler, port, emulator]
+image:
+  url: https://raw.githubusercontent.com/mattb/fm1-beets/main/docs/images/beets-web.jpg
+  alt: "Beets browser emulator showing knobs, a screen with decks A and B and their eight slices, and keys labelled A1 to B8"
+  credit: "Matt Biddulph"
+  source_url: https://github.com/mattb/fm1-beets
+  first_party: true
+versions:
+- version: main @ 8b5c5aa
+  date: 2026-10-28
+  url: https://github.com/mattb/fm1-beets/commit/8b5c5aacb27f227da3a3c6fae9f1ff1b22264b4d
+  notes: No tagged releases; this is the latest commit. Its verification record calls this firmware 0.3.1.

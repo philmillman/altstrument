@@ -1,0 +1,54 @@
+device: m-vave-fm-1
+name: QSEQ
+summary: >-
+  Song sequencer on FM1 Open V14 with an 8-track song mode after the Yamaha QY70, a clip grid, step entry, chord mode,
+  glitch tools and a browser workbench for songs and kits.
+description: >-
+  Songs have eight tracks of notes and automation at 480 clocks per quarter note, with tempo and time-signature
+  changes, markers, loop regions, swing and a scale that played notes snap to. Step entry offers note lengths from a
+  64th to a whole note with a zoomable piano roll, real-time recording with replace, overdub, punch and loop modes, 64
+  undo levels, and knob automation. Glitch tools repeat, drift, fade and mangle notes, and sampler tracks can pitch a
+  pad by up to 24 semitones. Songs and kits share a flash pool and a browser workbench sends them over USB. The song mode is
+  described as clean-room work from Yamaha's manuals. It was called FM1 QY until 0.6.0. The full build makes room by
+  taking the stock projects and the first stock sample sectors, resetting MIDI, clock and Bluetooth settings.
+status: active
+authors:
+- name: judahn
+  url: https://github.com/judahn
+source: https://github.com/judahn/fm1-qseq
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE.md is M-VAVE's FM1 APP licence, GPL-3.0 only with a section 7 permission to link the binary SDK; THIRD_PARTY.md
+  keeps the binary SDK and other components under their own terms. The sdk/ folder carries M-VAVE's binary libraries,
+  including libfm1_engine.a, and the V15 recovery image sdk/firmware/FM-1_015.fwsc; the git blob hashes of both match
+  m-vave/fm1_open, so the V15 file is the licensed Apache-2.0 image (blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd).
+homepage: https://github.com/judahn/fm1-qseq
+distribution: browser-installer
+requires_stock: V15 or other firmware
+install_notes: >-
+  Download the install page from a release and open it in desktop Chrome or Edge, connect the FM-1 and use Device update
+  after backing up. From stock V15, other firmware or QSEQ before 0.6.6, use Force flash; from 0.6.6 on, Start update.
+  The page's Restore original V15 option puts the stock firmware and its 128 factory voices back. Installing replaces the
+  stock projects and sample bank.
+brick_risk: true
+tags: [sequencer, sampler, drums, editor, fork, midi]
+image:
+  url: https://raw.githubusercontent.com/judahn/fm1-qseq/main/docs/phase1-song-view.png
+  alt: "QSEQ song view: position 005:1:30Z, PLAY at 120 BPM, eight colored track lanes with a selected loop region, and a strip showing TEMPO 120, QUANTIZE OFF, LOOP IN 3.1 and LENGTH 4 BARS"
+  credit: judahn
+  source_url: https://github.com/judahn/fm1-qseq
+  first_party: true
+versions:
+- version: 0.6.8
+  date: 2026-11-03
+  url: https://github.com/judahn/fm1-qseq/releases/tag/v0.6.8
+  notes: Moved notes stay selected so they pass over other notes, and a note landing on one of the same pitch replaces it.
+- version: 0.6.6
+  date: 2026-11-01
+  url: https://github.com/judahn/fm1-qseq/tree/v0.6.6
+  notes: Git tag; no GitHub release page. Adds per-note pitch on sampler tracks, a chromatic mode, kit settings and a fixed code area.
+- version: 0.6.0
+  date: 2026-10-31
+  url: https://github.com/judahn/fm1-qseq/tree/v0.6.0
+  notes: Git tag; no GitHub release page. The project is renamed from FM1 QY to QSEQ.

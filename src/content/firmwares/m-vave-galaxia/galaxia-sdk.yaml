@@ -1,0 +1,37 @@
+device: m-vave-galaxia
+name: Galaxia SDK
+kind: tool
+summary: >-
+  Unofficial SDK for writing your own firmware for the Galaxia reverb pedal: board code and runtime on felucca-bsp,
+  example effects, and tools to back up, install and restore firmware over USB.
+description: >-
+  A board port for the Galaxia's audio converter link, six knobs, footswitches, jack detection and LED, plus a runtime
+  that supplies boot, USB MIDI, two-way USB audio, a serial console, a watchdog, a fault report and a boot guard. An
+  application defines five hooks and gets about 410 KiB of RAM for buffers, running every 128 frames; a second core can
+  be switched on as an experimental option. The examples are a passthrough, a stereo reverb, a nine-effect pedal with
+  delay, tape echo, chorus, flanger, phaser, tremolo, plate and lo-fi, an audio link check and a second-core benchmark. Python tools
+  reboot the pedal into its bootloader, back up the pedal's firmware, install a build and restore the backup. The
+  README says no M-VAVE or JieLi files are shipped, and that an image needs one file from your own backup.
+status: active
+authors:
+- name: David Hilowitz
+  url: https://github.com/dhilowitz
+source: https://github.com/dhilowitz/GalaxiaSDK
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  Stated in LICENSE and NOTICE. felucca-bsp (MPL-2.0) is a submodule, and jl-uboot-tool (MIT) is another.
+distribution: source-only
+requires_stock: The stock Galaxia firmware, backed up first
+install_notes: >-
+  Needs Python 3 and JieLi's toolchain, fetched by tools/get_toolchain.sh and run in a Linux x86-64 container on macOS.
+  Put the pedal in its bootloader with tools/gx_softkey.py, back it up with tools/gx_flash.py, then install. A restore
+  command puts the stock firmware back. On macOS the flasher needs sudo and libusb. The runtime uses a pid.codes test
+  USB ID, so get your own before distributing a build. Flashing is at your own risk.
+brick_risk: true
+tags: [sdk, platform, reverb, fx, usb-audio, usb-midi]
+versions:
+- version: 0.1.0
+  date: 2026-10-31
+  url: https://github.com/dhilowitz/GalaxiaSDK/tree/v0.1.0
+  notes: Git tag; no GitHub release page.

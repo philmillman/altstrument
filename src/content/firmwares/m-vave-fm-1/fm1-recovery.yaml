@@ -1,0 +1,39 @@
+device: m-vave-fm-1
+name: FM1 Recovery for Windows
+kind: tool
+summary: >-
+  Windows application with a guided Simple Mode and an Advanced Mode that restores M-VAVE's V15 firmware to a stuck FM-1 through
+  the chip's WL82 USB recovery interface, after a verified full-flash backup.
+description: >-
+  The app wraps the MvaveFM1Unbricker recovery engine and the jl-uboot-tool loader in a Windows Forms front end. Simple Mode
+  checks for administrator rights, tells you to hold OCT- while switching on, finds the unit, asks for a typed word, then
+  backs up, writes and verifies. Advanced Mode adds device selection, connection diagnostics, an activity log and a
+  report export. The release is a single executable that embeds a Python runtime, the loader and the V15 package. Backups and
+  logs go to a folder under the user profile. The README says a recovery with the earlier command-line workflow worked on the author's
+  unit and that this GUI release has not been tested on a physical Windows and FM-1 setup.
+status: active
+authors:
+- name: SikkenWorks
+  url: https://github.com/SikkenWorks
+source: https://github.com/SikkenWorks/FM1recovery
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The repository's LICENSE file is the GPL v3 text with no "or later" statement, but the README says it does not assign a
+  licence to the author's own interface code and that this must be specified separately. The payload keeps the MIT notices of
+  MvaveFM1Unbricker and jl-uboot-tool and the licences of the bundled Python runtime and libraries. The README says the
+  embedded V15 package is M-VAVE's work and is not covered by those licences. FM-1.fwsc inside payload.zip matches M-VAVE's FM-1 V15 image licensed Apache-2.0 (699,956 bytes, git blob
+  ce49cc1595b67347c68a3ac7463017f9fa8c19dd).
+distribution: download
+install_notes: >-
+  Run the executable from the release as administrator on 64-bit Windows 10 or 11, use a direct USB data cable, switch the FM-1
+  off, hold OCT- while switching it on and connect USB, then type RESTORE when the unit is found. Do not format the recovery
+  disk Windows offers. The README says custom firmware settings may be affected and that you must keep the unit powered until
+  verification finishes. The executable is unsigned.
+brick_risk: true
+tags: [flasher, loader, utility, backup]
+versions:
+- version: 1.0k
+  date: 2026-11-05
+  url: https://github.com/SikkenWorks/FM1recovery/releases/tag/V1.0k
+  notes: The About and credits window opens from the startup chooser and every Simple Mode step without resetting the recovery step.

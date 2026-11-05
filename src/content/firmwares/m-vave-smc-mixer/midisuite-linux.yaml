@@ -1,0 +1,47 @@
+device: m-vave-smc-mixer
+name: Midi Suite for Linux
+kind: tool
+summary: >-
+  Linux editor for the SMC-Mixer, also sold as SINCO, that reads and writes its whole configuration over USB MIDI
+  or Bluetooth LE: two presets, 43 buttons, eight encoders and eight faders, with MIDI modes, SysEx and LED feedback.
+description: >-
+  A Python and PySide6 application written without code or assets from M-VAVE's own editor; the repository
+  documents the protocol it measured and the clean-room method. A drawing of the panel selects a control, and
+  the editor sets its message mode, channel, controller or note, values, a SysEx buffer of up to 64 bytes, LED
+  behaviour, range and response curve. It reads the 6282-byte user block, shows which preset slot is active, copies
+  presets between slots, exports JSON or the raw block, and sends the flash-commit command so changes survive a
+  power cycle. A command-line mode dumps, restores and copies presets or sends raw blocks, and the app has a
+  test output port, an LED feedback test and a traffic monitor. The meaning of most bytes in the 128-byte global block
+  is not known, so it is shown as hex. Firmware updates are not implemented.
+status: active
+authors:
+- name: Davilka
+  url: https://github.com/Davilka
+source: https://github.com/Davilka/midisuite-linux
+source_status: open
+license: MIT
+license_notes: THIRD_PARTY_NOTICES.md lists the licences of the bundled third-party components.
+distribution: download
+install_notes: >-
+  Unpack the midisuite-gui bundle from a release, which needs no Python, and run it, or pip install the wheel or a
+  source checkout on Python 3.10 or newer. It needs ALSA. Pick the USB port ending in Private, or a paired
+  Bluetooth entry, press Read from device and then Save to device. The LED indicators under the knobs work only
+  while preset 1 is active, so keeping custom CC mappings together with them means copying the mapping into slot 1,
+  which replaces the factory DAW preset; export a backup first.
+brick_risk: false
+tags: [editor, midi, usb-midi, bluetooth, presets, python, cli, linux]
+image:
+  url: https://raw.githubusercontent.com/Davilka/midisuite-linux/main/docs/screenshot.png
+  alt: "Midi Suite window connected to an SMC-Mixer: eight strips of knob, fader and buttons, a transport row, and an inspector at right editing the Play button as a CC momentary message"
+  credit: Davilka
+  source_url: https://github.com/Davilka/midisuite-linux
+  first_party: true
+versions:
+- version: v1.0.1
+  date: 2026-10-30
+  url: https://github.com/Davilka/midisuite-linux/releases/tag/v1.0.1
+  notes: Saving now also sends the flash-commit command, so changes are kept after the mixer is switched off.
+- version: v1.0.0
+  date: 2026-10-25
+  url: https://github.com/Davilka/midisuite-linux/releases/tag/v1.0.0
+  notes: First release.

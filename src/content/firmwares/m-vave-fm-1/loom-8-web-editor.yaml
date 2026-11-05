@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: LOOM-8 Web Editor
+kind: tool
+summary: >-
+  Browser editor, mixer and screen mirror for Charles Vestal's Loom 8 firmware on the FM-1, working over Web MIDI with
+  a built-in preview synth for use without the unit.
+description: >-
+  Controls the eight tracks of Loom 8 (level, pan, sends, mute, solo, filters), the parameters of its nine sound engines
+  with envelope, filter and character-stage curves, the eleven-voice drum kit, both send effects and the master bus, and
+  launches its 32 scenes from a pad grid. A drawn copy of the front panel and a live view of the unit's 240 by 240 screen
+  are shown from the firmware's mirror messages, and a MIDI monitor logs traffic. State can be exported and imported
+  as JSON. Without a unit connected, a demo mode plays patches on a Web Audio synth. The code is a plain HTML, CSS and
+  JavaScript page with no build step.
+status: active
+authors:
+- name: moocowblue
+  url: https://github.com/moocowblue
+source: https://github.com/moocowblue/fm1-loom-editor
+source_status: open
+license: AGPL-3.0-only
+license_notes: >-
+  The LICENSE file is the AGPL-3.0 text with no later-version statement. The header of app.js says
+  "SPDX-License-Identifier: MIT / GPL-3.0", which does not match it.
+homepage: https://moocowblue.github.io/fm1-loom-editor/
+distribution: browser-installer
+requires_stock: Loom 8
+install_notes: >-
+  Open the hosted page in a Web MIDI browser such as Chrome or Edge with the FM-1 on USB, pick the FM-1 as input and
+  output and press Connect. The README also describes a local launcher script that the repository does not contain; any
+  local web server on localhost works. Turn CC OUT on in the firmware for the mixer to follow the unit's knobs.
+brick_risk: false
+tags: [editor, midi, emulator]
+versions:
+- version: main @ f5501d7
+  date: 2026-10-23
+  url: https://github.com/moocowblue/fm1-loom-editor/commit/f5501d77562fb5219724f47fcff952fff05efc96
+  notes: No tagged releases; this is the latest commit.

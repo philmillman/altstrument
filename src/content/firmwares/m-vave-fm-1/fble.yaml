@@ -1,0 +1,39 @@
+device: m-vave-fm-1
+name: fble
+summary: >-
+  Bluetooth MIDI plugin for FM-1 firmwares that have a plugin socket, plus work on a patcher that adds that socket to
+  finished SLOOP and Felucca packages.
+description: >-
+  The first module, fble 1, is installed into spare flash over USB and loaded by the firmware at boot. It makes the
+  FM-1 a Bluetooth MIDI device for a computer or phone and a central that connects to Bluetooth MIDI keyboards, and it can
+  send the firmware's MIDI output to either link. Its pages sit under the firmware's global settings. It needs a firmware
+  built with the socket, which the author provides as branches of forks of SLOOP and Felucca. Most of its code is JieLi's
+  binary Bluetooth libraries, so it can only sit beside a GPL firmware, and installing it overwrites the radio
+  calibration that stock firmware stores in the same flash area. A second module, fble2, uses Optimist's open Bluetooth
+  stack and has been compiled but not run on hardware. The patcher, fwpatch, can read and write packages and has routed
+  one call in SLOOP 2.8.3 through appended code on a unit. Nothing has been released.
+status: active
+authors:
+- name: Jacek Mariański
+  url: https://github.com/jmarianski
+source: https://github.com/jmarianski/fble
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  MPL-2.0 for the repository's own files, as in NOTICE. A built fble 1 module also contains JieLi's binary-only Bluetooth
+  libraries (Apache-2.0), so it cannot be part of a GPL firmware. Parts come from fm1-base and MIDIMON (MPL-2.0), from
+  Optimist and felucca-bsp (GPL-3.0-only or MPL-2.0, used under MPL-2.0), and from SLOOP (two installer scripts, GPL-3.0).
+  Radio start-up values captured from M-VAVE's V15 firmware are included as a header under its Apache-2.0 licence.
+distribution: source-only
+install_notes: >-
+  Build with JieLi's compiler and AC79 SDK, then run tools/fext_push.py push with the FM-1 connected over USB and running
+  a firmware that has the socket. The module goes into spare flash that stock firmware uses for settings, including the
+  radio calibration and Bluetooth address, so take a backup of your own unit first and restore that area if the radio stops
+  starting. The second module and the patcher are not ready to install.
+brick_risk: true
+tags: [ble-midi, midi, platform, utility]
+versions:
+- version: main @ a055288
+  date: 2026-10-29
+  url: https://github.com/jmarianski/fble/commit/a0552884ab74ebc79b2384b0f653a607e4aef4bc
+  notes: No tagged releases; this is the latest commit.

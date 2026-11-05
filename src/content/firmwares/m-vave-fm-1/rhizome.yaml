@@ -1,21 +1,26 @@
 device: m-vave-fm-1
 name: Rhizome
 summary: >-
-  Ambient firmware derived from Monades and Mutable Dreams, built around a Kepler-style orbital sequencer, Beads
-  granular synthesis, a hall reverb and a tape delay. Simulator and source only; not yet run on an FM-1.
+  Ambient firmware derived from Monades and Mutable Dreams, built around a Kepler-style orbital sequencer, fourteen
+  synth voices, Beads granular synthesis, a hall reverb and a tape delay. The README reports it measured on an FM-1;
+  there is no release package yet.
 description: >-
   Written as the companion to Monades, which handles the notes, so that Rhizome handles space and time. Up to four
   bodies orbit a star, and each time one crosses a gate on its orbit it triggers a note, a grain cloud, a chord or a
   sound change. The orbits are ellipses, so the beats speed up and slow down as a rubato, conjunctions work as
   accents, and moons add ornaments. Real planetary systems can be loaded. Around the sequencer are the Beads granular
   processor from Mutable Instruments, a large 1980s-style hall reverb and a tape delay with reels drawn on the
-  screen, plus 18 scenes called Mondes, a blank nineteenth and the Monades scales. Eight Plaits-based engines (string machine, wavetable, wave terrain, six-operator FM, swarm, phase distortion, chords and formant) replace the voices inherited from Monades. The manual and the roadmap are in French.
+  screen, plus 30 scenes called Mondes in nine families, and an empty thirty-first, along with the Monades scales.
+  Fourteen synth voices replace the set inherited from Monades, most of them from Mutable Instruments' published code;
+  two are added for pads, a six-operator FM voice that plays 96 DX7-style patches from Plaits and a string machine.
+  The 0.1.0 commits add a MORPH that travels between two stored orbital systems, a DERIVE mode that lets the playing
+  system drift away from a pale home system, and a start screen of a star and six bodies. The manual and the roadmap are
+  in French.
 
-  The README dates its state to 2 November 2026 and says the orbital sequencer, tape delay, HALL and Beads run in the
-  browser simulator, that Rhizome has not been compiled or measured on an FM-1 and that it should not be installed
-  yet. The commit log records five compilations for the FM-1, the last with a message calling it the version to install, but no package
-  is committed and there are no releases. It is derived from Monades by the same author, which is in turn a fork of
-  Mutable Dreams.
+  The README says the firmware was measured on an FM-1 at 61 to 78 percent of the processor at the busiest point for each
+  Monde, with no dropouts and an 85 percent limit, and gives the build for version 0.1.0 (package identity
+  FM-1_968000100) and a USB install command. No package is committed and there are no releases or tags. It is derived
+  from Monades by the same author, which is in turn a fork of Mutable Dreams.
 status: active
 authors:
 - name: Dr-John-8bits
@@ -31,9 +36,9 @@ license_notes: >-
 homepage: https://dr-john-8bits.github.io/rhizome/
 distribution: source-only
 install_notes: >-
-  Nothing is released. The README says not to install it for now, and BUILDING.md covers only the inherited Mutable
-  Dreams build. The inherited fm1-base installer page links M-VAVE's V15 file for returning to stock. Back up the
-  FM-1 first if you build it yourself.
+  Nothing is released. The README gives the build steps: tools/build_device.sh with the JieLi toolchain produces
+  rhizome-0.1.0.fwsc, and base/tools/fm1_install.py installs it over USB. The inherited fm1-base installer page links
+  M-VAVE's V15 file for returning to stock. Back up the FM-1 first if you build it yourself.
 brick_risk: true
 tags: [generative, ambient, granular, reverb, delay, sequencer, synth-engine, scales, emulator, fork]
 image:
@@ -43,7 +48,7 @@ image:
   source_url: https://dr-john-8bits.github.io/rhizome/
   first_party: true
 versions:
-- version: main @ 465c55f
-  date: 2026-11-03
-  url: https://github.com/Dr-John-8bits/rhizome/commit/465c55f1d13dc1020ba726aa8d65ad3758b80c4a
-  notes: No tagged releases; this is the latest commit, whose message calls it the fifth compilation. Since 0db6575 the commits replace Monades' voices with eight Plaits-based engines and add tape rewind, free periods in seconds, a comet that opens the filter and a wandering comet.
+- version: main @ 22963ba
+  date: 2026-11-05
+  url: https://github.com/Dr-John-8bits/rhizome/commit/22963ba3414bfce340436005219bbd58fb520d48
+  notes: No tagged releases; this is the latest commit, which only edits the roadmap. Since 465c55f the commits add a 0.1.0 version label with MORPH and DERIVE, 30 Mondes, a lighter load for five of them, a full manual, measurements on the FM-1 and an overload guard that now counts a block as too long above 95 percent of its time.

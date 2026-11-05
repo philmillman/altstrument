@@ -1,0 +1,56 @@
+device: m-vave-fm-1
+name: Big Beat Studio BB-BOB
+summary: >-
+  Western swing band instrument from the BB1 author with 50 classic arrangements, generated new tunes, live band cues and
+  a Then to Now control that brings in electric guitar, acid bass and electronic drums.
+description: >-
+  Rights warning: the FM-1 application compiles in 103 short spoken calls cut from a commercial Bob Wills box set (the
+  source archive's call index names the discs, tracks and timings) and a two-bar steel guitar clip that the browser
+  player describes as an estimate from Steel Guitar Rag. The 50 classics are written melody heads of published songs
+  such as San Antonio Rose and Faded Love, and the steel solos are transcriptions. The archive's README says the
+  character art, historical recordings, font and music editions carry separate rights and leaves the private collection
+  and media masters out; nothing in the archive or on the site shows a licence from the rights holders.
+
+  BB-BOB is built on the BB1 base. A band of fiddle, steel guitar, archtop rhythm guitar, piano, upright bass and light
+  drums plays one of the classics or a New Tune, for which it generates the melody, changes and form. HOME opens Conduct,
+  with pads for fills, stop-time breaks, a steel feature, a return to the theme and the ending; SEQ plays an instrument
+  from the keys, EDIT opens the Song Book and GLO puts the calls on pads. Turning from Then towards Now swaps in electric
+  guitar, sliding acid bass, synth chords and harder drums. The acid phrases come from the same Acid-Tabs set as BB1's
+  Dillo. The project site also runs the same C engine in a browser player.
+
+status: active
+authors:
+- name: TexasRADIO
+  url: https://github.com/TexasRADIO
+source: https://thebigbeat.app/bb-bob/downloads/BB-BOB-50-Source.zip
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The archive's README states GPL-3.0-only for the original instrument code, and firmware/LICENSE and the browser
+  player's LICENSE.txt are the GPL v3 text. The FM-1 platform layer is imported from Felucca under GPL-3.0-only, with
+  Apache-2.0 files alongside. The fiddle timbre is adapted from the CC0 VSCO2 CE solo violin, and the acid phrases are
+  credited to J. McConaghy / Acid-Tabs.com under CC BY-SA 4.0. The record calls, steel clip, character art, font and
+  music editions are outside the GPL; see the rights warning above. The archive holds the code and build inputs and
+  needs the JieLi PI32r3 toolchain and AC79 SDK to build.
+homepage: https://thebigbeat.app/bb-bob/about/
+distribution: download
+requires_stock: BB1 2.0 with BB1 sound library 1.4
+install_notes: >-
+  The Mac installer on the about page needs macOS and Python 3.12. It checks the package hashes, then checks that the
+  FM-1 runs the exact BB1 2.0 application and sound library 1.4 before writing, so an FM-1 on BB1 2.1 must go back to 2.0
+  first. It reads the starting firmware, user data, library and art back twice into a local folder, installs the BB-BOB
+  application with its timbre and artwork banks and verifies them. Keep USB and Terminal open for the whole session;
+  pressing Return in Terminal restores the saved banks and BB1 2.0 and checks them against the backup. The identity
+  file in the source archive still marks the build as not hardware accepted.
+brick_risk: true
+tags: [synth-engine, sequencer, generative, performance, sampler, emulator]
+image:
+  url: https://thebigbeat.app/bb-bob/about/screens/classics.png
+  alt: "Pixel-art Classics screen: a bandleader with a cigar, a steel player and a guitarist on stage under a San Antonio Rose banner, a key and bar readout and a checkered dance floor"
+  credit: Ole Big Beat Ltd
+  source_url: https://thebigbeat.app/bb-bob/about/
+  first_party: true
+versions:
+- version: 50-song edition (R34)
+  url: https://thebigbeat.app/bb-bob/about/
+  notes: First public edition, with 50 classics, New Tune and Play Bob; the source archive and the Mac installer are on the about page, which has no release date.

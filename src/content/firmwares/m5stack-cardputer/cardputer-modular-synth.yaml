@@ -12,8 +12,9 @@ description: >-
   author uses it to sample into a Teenage Engineering PO-33 K.O!. It installs as
   an app through the bmorcelli Launcher or as a full image. The README says the
   code and docs were written almost entirely by Claude under the owner's direction
-  and calls the project a proof of concept with rough edges. There are no tagged
-  releases.
+  and calls the project a proof of concept with rough edges. Version 1.5, the
+  first release, ships both files and added a global transport, a 32-step piano
+  roll and a seeded evolving line.
 status: active
 authors:
   - name: Tianyu Qi
@@ -24,17 +25,19 @@ license: MIT
 license_notes: >-
   The LICENSE covers the project's own code. Vendored DaisySP and Plaits and
   stmlib keep their MIT notices, as THIRD_PARTY_NOTICES.md lists.
-distribution: source-only
+distribution: download
 requires_stock: Cardputer-Adv with the bmorcelli Launcher installed
 install_notes: >-
-  Build firmware.bin with PlatformIO (pio run -e cardputer), copy it to the SD
-  card and install it from the Launcher, which supplies the partition table; the
-  overview says tools/release.sh also makes a full image for M5Burner at 0x0.
-  Patches are saved under /modsynth/patches/ on the card.
+  Download modsynth-v1.5-launcher.bin from the release, copy it to the SD card
+  and install it from the Launcher, which supplies the partition table. The
+  release's other file is a full image written at 0x0 with M5Burner or esptool;
+  it replaces everything on the flash, including the Launcher. To build it
+  yourself, run pio run -e cardputer with PlatformIO. Patches are saved under
+  /modsynth/patches/ on the card.
 brick_risk: false
 tags: [synth-engine, modular, sequencer, fx, drums, esp32-s3, performance]
 versions:
-  - version: main @ 1dc9e33
+  - version: v1.5
     date: 2026-11-01
-    url: https://github.com/2540825244/CardputerModularSynth/commit/1dc9e33
-    notes: No tagged releases; this is the latest commit. The overview names v1.5 as the current build.
+    url: https://github.com/2540825244/CardputerModularSynth/releases/tag/v1.5
+    notes: First release. Adds a global transport, a 32-step piano roll, an evolving random-walk line, manual gates and three new presets; ships a Launcher app and a full flash image.

@@ -11,7 +11,8 @@ description: >-
   six-note gapped scales, in D, G, A, E and B. Chords swing between two tonics, the harps run in jig-style groups
   of 12 and 9 steps with every third step accented, and eight pieces are named for places in the west of Ireland
   and for the harper Turlough O'Carolan. Three of the black-key effects are renamed Ceo, Macalla and Fras, and
-  there is a green triskele launch screen. From 0.4, notes received over USB or TRS MIDI play the Lead. A separate one-file browser visualiser reads the FM-1's MIDI out and
+  there is a green triskele launch screen. From 0.4, notes received over USB or TRS MIDI play the Lead. From 0.5, a web editor shows every setting of a piece
+  and works the FM-1 over USB, and holding HOME with OCT- or OCT+ undoes and redoes the last 16 changes. A separate one-file browser visualiser reads the FM-1's MIDI out and
   paints it as a landscape. AISLING saves its eight pieces in the same flash location as NACHTFAHRT, DUB-1 and
   AMB-1, so installing one of them can overwrite another's saves.
 status: active
@@ -30,7 +31,7 @@ distribution: browser-installer
 requires_stock: V15, V16 or NACHTFAHRT
 install_notes: >-
   Web installer in Chrome or Edge over USB (also Chrome on Android or a Chromebook), or tools/fm1_install.py with
-  aisling-0.1.fwsc from the release. The release notes report installs on a real FM-1 from V15, V16 and NACHTFAHRT
+  the .fwsc from the release (aisling-0.5.fwsc). The release notes report installs on a real FM-1 from V15, V16 and NACHTFAHRT
   0.9.5, and a return to stock with M-VAVE's M-UPGRADE, which shows AISLING as v14. They also say an install
   interrupted by pulling the cable carries on when it is reconnected. Installing is at your own risk.
 brick_risk: true
@@ -42,6 +43,10 @@ image:
   source_url: https://github.com/stephencummins/fm1-aisling
   first_party: true
 versions:
+- version: "0.5"
+  date: 2026-11-05
+  url: https://github.com/stephencummins/fm1-aisling/releases/tag/v0.5
+  notes: Adds a web editor that works the FM-1 over USB, 16-step undo and redo on HOME plus OCT- or OCT+, hold SAVE to save, a gentler MASTER curve, and USB audio ahead of MASTER so recordings do not depend on the knob. The release notes record audio dropouts on some pieces, not yet fixed, and that this package was installed on a real FM-1.
 - version: "0.4"
   date: 2026-11-03
   url: https://github.com/stephencummins/fm1-aisling/releases/tag/v0.4

@@ -13,8 +13,7 @@ description: >-
   silences everything. The sound is a Juno-style voice taken from Clipper, with saw, pulse, sub and noise sources and a
   chorus. It grew from the author's earlier MORPHEUS groovebox, itself built on the X0X DSP suite, and uses Felucca's
   hardware layer and update loader with SLOOP's changes. A browser workbench runs the firmware as WebAssembly on a virtual
-  FM-1 and edits sounds, chord sets and patterns. The README calls version 0.1 a preview and says patterns kept on the
-  FM-1 can be overwritten when another firmware is installed.
+  FM-1 and edits sounds, chord sets and patterns. The README says patterns kept on the FM-1 can be overwritten when another firmware is installed. Version 1.1 adds a new boot screen and a settings group that clears the current pattern or erases all patterns and settings.
 status: active
 authors:
 - name: Ben Badio
@@ -31,7 +30,7 @@ license_notes: >-
 homepage: https://benbadio.github.io/hera-fm1/
 distribution: browser-installer
 install_notes: >-
-  Web MIDI installer in Chrome or Edge over USB, or tools/fm1_install.py with the .fwsc from the repository. The
+  Web MIDI installer in Chrome or Edge over USB, or tools/fm1_install.py with the .fwsc from a release. The
   installer page also writes M-VAVE's V15 back from a file you download and choose yourself. Holding OCT- while switching on
   opens a USB rescue, and HERA carries Felucca's update loader, so another firmware installs over it in the usual way.
   Patterns and settings live in HERA's own flash area and can be lost when another firmware is installed.
@@ -44,7 +43,11 @@ image:
   source_url: https://github.com/benbadio/hera-fm1
   first_party: true
 versions:
-- version: main @ 76b7ee8
+- version: '1.1'
   date: 2026-10-21
-  url: https://github.com/benbadio/hera-fm1/commit/76b7ee8484d24163587cfbca759f7b19f7457105
-  notes: No tagged releases; this is the latest commit. The README names this version 0.1, a preview before 1.0.
+  url: https://github.com/benbadio/hera-fm1/releases/tag/v1.1
+  notes: Adds a serif HERA boot screen and a Settings group to clear the current pattern or factory reset, each needing SAVE held. The workbench gains matching buttons.
+- version: '1.0'
+  date: 2026-10-21
+  url: https://github.com/benbadio/hera-fm1/releases/tag/v1.0
+  notes: First release, with 100 chord sets, nine phrase styles, a 64-pattern sequencer, a four-voice Juno-style synth and the browser workbench.

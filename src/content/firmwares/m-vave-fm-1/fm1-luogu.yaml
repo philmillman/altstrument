@@ -30,9 +30,9 @@ license_notes: >-
 homepage: https://github.com/Reytian/fm1-luogu
 distribution: download
 install_notes: >-
-  Download luogu-1.0.1.fwsc from the releases page and run base/tools/fm1_install.py on it from a recursive clone of
+  Download luogu-1.0.2.fwsc from the releases page and run base/tools/fm1_install.py on it from a recursive clone of
   the repository, with mido and python-rtmidi installed. The release notes say M-VAVE's own firmware can be put back
-  the same way. The README says installing is at your own risk.
+  the same way. Versions up to 1.0.1 know only the Puya flash chip and cannot save or accept updates on FM-1s sold since autumn 2026 that carry the UC25HQ80; 1.0.2 handles both. The README says installing is at your own risk.
 brick_risk: true
 tags: [percussion, sampler, sequencer, synth-engine, ui]
 image:
@@ -44,6 +44,10 @@ image:
   source_url: https://github.com/Reytian/fm1-luogu
   first_party: true
 versions:
+- version: 1.0.2
+  date: 2026-11-05
+  url: https://github.com/Reytian/fm1-luogu/releases/tag/v1.0.2
+  notes: Adds support for the UC25HQ80 flash chip in newer FM-1s, on which earlier versions kept saves only in RAM and refused updates. Playing is unchanged. Tested on a unit with the old chip, not yet on one with the new chip.
 - version: 1.0.1
   date: 2026-10-23
   url: https://github.com/Reytian/fm1-luogu/releases/tag/v1.0.1

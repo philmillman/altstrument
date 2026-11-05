@@ -13,7 +13,9 @@ description: >-
   The E12 and DPRO engines need samples and waves captured from the user's own Elektron ROMs, and build silent
   without them. Putting the engines on a device means building a firmware with the project's fork of Open-XY and
   installing the result from the device's boot menu. The README calls it experimental and says CPU use has not yet
-  been profiled on the device. Seven of the synth engines are in the Open-XY machine catalog.
+  been profiled on the device. MD KIT and ten of the synth engines are in the Open-XY machine catalog, whose
+  open-xy.com builder links them into a copy of the user's own OS 1.2.1; the project's own build tools take 1.2.0
+  only.
 status: active
 authors:
   - name: mmockett
@@ -29,12 +31,13 @@ license_notes: >-
   into a modified copy of the user's own OP-XY OS.
 homepage: https://github.com/mmockett/OP-XY-MNMD#readme
 distribution: source-only
-requires_stock: "1.2.0"
+requires_stock: "1.2.0 for the project's build tools; 1.2.1 for the open-xy.com builder"
 install_notes: >-
   Needs macOS, Python 3.12, Node 22, Homebrew's llvm and lld, the Open-XY fork branch two-page-synths checked out
   next to this repository, and the Open-XY Blackfin toolchain. Copy os.ldr off your own OP-XY once over the boot menu's
   MTP mode, run tools/build_firmware.py, then tools/install_firmware.py --copy, and write the OS from the boot menu.
-  The README tested it on OS 1.2.0 only, and the SDK's checks cannot guarantee that a faulty image can be recovered.
+  The project's build tools accept OS 1.2.0 only; the README says MD KIT and the published synths have been played on
+  OS 1.2.1, which the open-xy.com builder uses. The SDK's checks cannot guarantee that a faulty image can be recovered.
   To return to stock, reinstall the official OS update. The engines can be tried on the computer in the browser bench
   before flashing.
 brick_risk: true
@@ -46,6 +49,18 @@ image:
   source_url: https://github.com/mmockett/OP-XY-MNMD#readme
   first_party: true
 versions:
+  - version: v1.2.3
+    date: 2026-11-01
+    url: https://github.com/mmockett/OP-XY-MNMD/tree/v1.2.3
+    notes: Git tag; no GitHub release page. Since v1.1.9 the MD KIT voices and several synth engines cost less CPU with unchanged output, and TRX-SD pitch reaches five semitones either way.
+  - version: v1.2.0
+    date: 2026-11-01
+    url: https://github.com/mmockett/OP-XY-MNMD/tree/v1.2.0
+    notes: Git tag; no GitHub release page. MD KIT and MD E12 target SDK 1.8, where drum kits gate, and the docs gain MD KIT CPU figures.
+  - version: v1.1.9
+    date: 2026-10-31
+    url: https://github.com/mmockett/OP-XY-MNMD/releases/tag/v1.1.9
+    notes: GitHub release with no notes. The merged work lightens the SWAVE-SAW, VO-6 and FM PAR engines with unchanged output and fixes VO-6 overflow and screen drawing.
   - version: v1.1.8
     date: 2026-10-31
     url: https://github.com/mmockett/OP-XY-MNMD/releases/tag/v1.1.8

@@ -3,13 +3,16 @@ name: Tracker+ Conditional Trigs
 summary: Browser patcher that adds conditional trigs (ratios 1:2 through 8:8, first-pass, previous and neighbour conditions) to your own Tracker+ 1.2.0 firmware file.
 description: >-
   A static web page that patches a Tracker+ 1.2.0 .ptf in the browser and saves
-  TrackerPlus_H12.ptf, after checking the output against a published SHA-256.
+  TrackerPlus_CT2.ptf, after checking the output against a published SHA-256.
   A conditional trig plays a step only on the stated pass of a repeating cycle.
-  The current H12 build offers every ratio from 1:2 to 8:8, first-pass
+  The current CT2 build offers every ratio from 1:2 to 8:8, first-pass
   conditions, previous-event conditions and neighbour-track conditions in
-  the Constant, From-To and Random Fill FX modes of both columns. The first
-  release, CT6, had six conditions, and its stored condition IDs differ, so
-  CT6 projects need manual conversion. The repository holds the patcher and the
+  the Constant, From-To and Random Fill FX modes of both columns. It is the
+  H12 build with a fix that makes a neighbour condition feed the previous-event
+  condition that follows it. The patcher page also offers an optional
+  weighted-random option for Beat Slice groups, which is not part of a tagged
+  release. The first release, CT6, had six conditions, and its stored condition
+  IDs differ, so CT6 projects need manual conversion. The repository holds the patcher and the
   fixed patch program as generated code, while the author's development
   repository stays private. It reuses the PTF tools and research from the
   Modular-Trackular project, which made its own condtrig mod from this one's
@@ -39,6 +42,10 @@ install_notes: >-
 brick_risk: true
 tags: [patch, sequencer, web, midi]
 versions:
+  - version: v0.2.1-CT2
+    date: 2026-10-23
+    url: https://github.com/Psygoo/TrackerPlus-CT-Web/releases/tag/v0.2.1-CT2
+    notes: Replaces h12; fixes the previous-event condition after neighbour conditions and relabels the firmware 1.2.0-CT2. Saved condition IDs are unchanged from h12.
   - version: v0.2.0-h12
     date: 2026-10-23
     url: https://github.com/Psygoo/TrackerPlus-CT-Web/releases/tag/v0.2.0-h12

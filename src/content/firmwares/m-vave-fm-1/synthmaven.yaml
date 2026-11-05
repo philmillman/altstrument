@@ -40,8 +40,9 @@ license_notes: >-
 homepage: https://kingxeryus.github.io/SynthMaven/
 distribution: browser-installer
 install_notes: >-
-  Web installer in Chrome or Edge over USB, with USB ROLE set to COMPUTER. Every flash resets user settings and
-  programs, so export a full backup first. Releases also carry recovery archives for Windows, macOS and Linux. The
+  Web installer in Chrome or Edge over USB, with USB ROLE set to COMPUTER. Installing 4.1.4 or later over SynthMaven 3.5
+  or later keeps programs and settings, while installing over stock or other firmware clears them; export a full backup first. Releases also carry recovery archives for
+  Windows, macOS and Linux. The
   installer can put M-VAVE's V15 back from a file you download yourself. M-VAVE's own updater may no longer find a
   unit running SynthMaven. Bluetooth is not part of the current build.
 brick_risk: true
@@ -53,6 +54,10 @@ image:
   source_url: https://github.com/KingXeryus/SynthMaven
   first_party: true
 versions:
+- version: 4.1.4
+  date: 2026-11-03
+  url: https://github.com/KingXeryus/SynthMaven/releases/tag/v4.1.4
+  notes: Installing over SynthMaven 3.5 or later now keeps saved programs, USER sounds, projects, scales, MIDI mappings and settings; before, every install reset them. Over stock firmware or anything else, the installer still clears musical storage. The 4.1.2 and 4.1.3 releases the same day were editor fixes with the 4.1.1 firmware.
 - version: 4.1.1
   date: 2026-11-03
   url: https://github.com/KingXeryus/SynthMaven/releases/tag/v4.1.1

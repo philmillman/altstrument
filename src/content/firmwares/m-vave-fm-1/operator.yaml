@@ -43,6 +43,14 @@ image:
   source_url: https://github.com/npi3pak/fm1-operator
   first_party: true
 versions:
+- version: '0.7'
+  date: 2026-10-28
+  url: https://github.com/npi3pak/fm1-operator/releases/tag/v0.7
+  notes: Gives each oscillator envelope its own attack, decay, sustain and release on MIDI CC 102 to 117, so CC 72, 73 and 75 no longer set all four at once. EDIT gains an Envelope group with a graph, and ENV shows tabs for envelopes A to D, filter, pitch and LFO.
+- version: '0.6'
+  date: 2026-10-28
+  url: https://github.com/npi3pak/fm1-operator/releases/tag/v0.6
+  notes: Lowers CPU use by skipping oscillators that are silent for a whole block, and maps 36 MIDI CCs to preset parameters, with CC 74 as filter cutoff; the manual lists the mapping.
 - version: '0.5'
   date: 2026-10-28
   url: https://github.com/npi3pak/fm1-operator/releases/tag/v0.5

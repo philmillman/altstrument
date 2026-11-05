@@ -1,0 +1,52 @@
+device: m-vave-fm-1
+name: TRIO
+summary: >-
+  Jazz trio for the FM-1: you play the chords on the keys or a MIDI keyboard, and small neural networks on the chip
+  name them, learn the form, and play a walking bass and swung drums, with a bass that can learn your line.
+description: >-
+  Four small networks of about 110,000 8-bit weights run in the main loop. One names the chord from the notes held,
+  one guesses the next chord until the form is known, one picks the bass note for each beat and its pickups, and one
+  plays the drum kit on swung triplets. After the chords come round, the screen shows the form length and the next
+  chord, and the band keeps going round it when you stop playing. EDIT lets you play the bass yourself for a chorus or
+  two, after which the FM-1 retrains the bass network's last layer on your line in about a second. The sound is an FM
+  electric piano, an additive upright bass built from partials measured in recordings, a drum kit and a room. It takes
+  USB, TRS and Bluetooth MIDI keyboards and has a browser emulator. It is built on fm1-base and felucca-bsp. The README
+  says it was developed and tested in the host simulator and emulator and installs and runs on the FM-1, and that the
+  networks' timing on the chip is estimated, not measured.
+status: active
+authors:
+- name: Reytian
+  url: https://github.com/Reytian
+source: https://github.com/Reytian/fm1-trio
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSE is the MPL-2.0 text; the fm1-base submodule in base/ is MPL-2.0 too. The weights were trained on FiloBass
+  (CC BY 4.0) and JazzSAMBA (an MIT-style licence) and the bass's partials were measured in FiloBass's audio; neither
+  dataset is in the repository, and CREDITS.md carries the attributions. A build links JieLi's Bluetooth libraries
+  (Apache-2.0) copied from the AC79 SDK, which are not in the repository.
+homepage: https://reytian.github.io/fm1-trio/
+distribution: browser-installer
+install_notes: >-
+  Installer page in Chrome or Edge with the FM-1 connected by USB, or base/tools/fm1_install.py with the .fwsc from the
+  releases page, run from a clone with its submodule. The installer page has a section for going back to M-VAVE's own
+  firmware. Units sold since autumn 2026 carry a different flash chip that 0.1.1 supports and 0.1 does not; the release
+  notes say 0.1.1 has not been tried on such a unit and point to the Firmware Hub's rescue page for a unit stuck on 0.1.
+  Installing is at your own risk.
+brick_risk: true
+tags: [neural-network, generative, chords, drums, synth-engine, emulator, bluetooth, midi]
+image:
+  url: https://raw.githubusercontent.com/Reytian/fm1-trio/HEAD/app/docs/img/screen-playing.png
+  alt: "TRIO's playing screen on the FM-1: bar 26.2, a large F7 chord, NEXT Bbmaj7 IN 3, FORM 8 BARS, BASS F2, feel AUTO in four, knobs for tempo, freedom, drums and swing"
+  credit: Reytian
+  source_url: https://github.com/Reytian/fm1-trio
+  first_party: true
+versions:
+- version: 0.1.1
+  date: 2026-11-05
+  url: https://github.com/Reytian/fm1-trio/releases/tag/v0.1.1
+  notes: Adds support for the UC25HQ80 flash chip of newer FM-1 units, on which 0.1 kept saves in RAM only and refused updates, and moves to the current fm1-base so M-UPGRADE 3.11 finds it. The band is unchanged. Tested on a unit with the old chip, not yet on one with the new chip.
+- version: '0.1'
+  date: 2026-10-19
+  url: https://github.com/Reytian/fm1-trio/releases/tag/v0.1
+  notes: First release. Two demo videos recorded in the host simulator are attached to the release.

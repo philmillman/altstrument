@@ -714,6 +714,9 @@ interface SearchOutcome {
   queriesOk: number;
 }
 
+/** Results read per search; GitHub's GraphQL search returns at most 100 at a time. */
+const SEARCH_PAGE = 100;
+
 const SEARCH_FIELDS =
   'repositoryCount nodes { ... on Repository { nameWithOwner url description stargazerCount pushedAt licenseInfo { spdxId } repositoryTopics(first: 20) { nodes { topic { name } } } } }';
 
@@ -792,10 +795,19 @@ async function searchBatch(qs: string[]): Promise<SearchBatch> {
     qs.map((_, i) => ({
       alias: `s${i}`,
       vars: { q: qs[i] },
-      field: (v) => `search(query: ${v('q')}, type: REPOSITORY, first: 30) { ${SEARCH_FIELDS} }`,
+      field: (v) => `search(query: ${v('q')}, type: REPOSITORY, first: ${SEARCH_PAGE}) { ${SEARCH_FIELDS} }`,
     })),
   );
-  if (res.ok === false) return res;
+  if (res.ok === false) {
+    if (res.limited || qs.length === 1) return res;
+    // A batch of large searches can come back as a 502 from GitHub, so ask for it in two halves.
+    const mid = Math.ceil(qs.length / 2);
+    const left = await searchBatch(qs.slice(0, mid));
+    if (left.ok === false) return left;
+    const right = await searchBatch(qs.slice(mid));
+    if (right.ok === false) return right;
+    return { ok: true, results: new Map([...left.results, ...right.results]) };
+  }
   const results = new Map<string, unknown>();
   qs.forEach((q, i) => {
     const r = res.data[`s${i}`];
@@ -808,7 +820,7 @@ async function searchBatch(qs: string[]): Promise<SearchBatch> {
 function searchIncomplete(r: unknown): boolean {
   const o = asObj(r);
   const count = typeof o?.repositoryCount === 'number' ? o.repositoryCount : 0;
-  return arr(o?.nodes).filter((n) => asObj(n)?.nameWithOwner).length < Math.min(count, 30);
+  return arr(o?.nodes).filter((n) => asObj(n)?.nameWithOwner).length < Math.min(count, SEARCH_PAGE);
 }
 
 async function runSearches(queries: string[], since: Date, problems: string[]): Promise<SearchOutcome> {
@@ -850,6 +862,10 @@ async function runSearches(queries: string[], since: Date, problems: string[]): 
       const r = done.get(base);
       if (r === undefined) continue;
       ok++;
+      const matched = asObj(r)?.repositoryCount;
+      if (typeof matched === 'number' && matched > SEARCH_PAGE) {
+        problems.push(`GitHub search "${base}" matched ${matched} repos; only the ${SEARCH_PAGE} most recently updated were read, so narrow it or shorten --since-days`);
+      }
       for (const item of arr(asObj(r)?.nodes)) {
         const o = asObj(item);
         const fullName = o && str(o.nameWithOwner);

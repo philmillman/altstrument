@@ -69,6 +69,16 @@ github_queries:
   - 'topic:eurorack firmware'
   - 'topic:synthesizer firmware'
   - 'topic:synth firmware'
+  # Unquoted on purpose: most FM-1 and SMK-37 projects say "fm1" or "felucca" and
+  # never match the quoted device search below. "fm1" alone also finds some
+  # unrelated repos; those go on the ignore list.
+  - 'fm1'
+  - 'fm1 firmware'
+  - 'fm-1 firmware'
+  - 'smk37'
+  - 'smk-37'
+  - 'felucca'
+  - 'm-vave'
 
 # One search per device in src/content/devices. {name} is the device display
 # name, {manufacturer} the manufacturer. Requiring the manufacturer keeps
@@ -513,9 +523,6 @@ ignore:
     date: 2026-10-20
   - url: https://github.com/Kenneth-Rakentine/Ravel-FM1
     reason: backup copy of De-Pattern/Ravel_FM1, which is catalogued as ravel
-    date: 2026-10-20
-  - url: https://github.com/numbpill3d/cardputer-adv-diviner
-    reason: general Cardputer ADV gadget firmware; 3 of 16 modes are music, the rest are visuals, network recon and IR remote
     date: 2026-10-20
   - url: https://github.com/MeguminBOT/md-synth-daw
     reason: desktop DAW that exports Mega Drive-style VGM/XGM and audio; nothing runs on the console
@@ -1084,3 +1091,81 @@ ignore:
   - url: https://github.com/knirch/liven-texture-lab
     reason: README-less backup of Sonicware's Texture Lab presets, manuals and converter page; no code of its own
     date: 2026-11-04
+  - url: https://github.com/sbsmnt/disting-mk4-guide
+    reason: static cheat sheet for Disting Mk4 algorithms; reads and writes no device format, no README or licence
+    date: 2026-11-05
+  - url: https://github.com/slowphase/sloop-gently
+    reason: PDF beginner's guide to SLOOP; no tool or firmware
+    date: 2026-11-05
+  - url: https://github.com/Oukbok/FM1975
+    reason: football manager browser game, a name collision with FM-1
+    date: 2026-11-05
+  - url: https://github.com/DominicJamesWhite/fm15-labour-rights-mod
+    reason: Football Manager 2015 mod, a name collision with FM-1
+    date: 2026-11-05
+  - url: https://github.com/mamon1992/fm1company-dashboard
+    reason: unrelated company dashboard
+    date: 2026-11-05
+  - url: https://github.com/chhatrolasmit/vavetra-mandi-data
+    reason: unrelated market data
+    date: 2026-11-05
+  - url: https://github.com/arthur-fm123/arthur-fm123
+    reason: personal profile README, unrelated
+    date: 2026-11-05
+  - url: https://github.com/fm1randa/fm1randa
+    reason: personal profile README, unrelated
+    date: 2026-11-05
+  - url: https://github.com/little-scale/esp32s3-rnbo
+    reason: RNBO runtime for an ESP32-S3 board with an FM-1 style UI; general MCU project, not the device
+    date: 2026-11-05
+  - url: https://github.com/CamilloGF/Voice-from-Jiant-for-Vcv
+    reason: VCV Rack module of JIANT's voice; desktop plugin that runs no device firmware
+    date: 2026-11-05
+  - url: https://github.com/jedgarpark/FM-1_Flasher
+    reason: archived; the project moved to adafruit/Adafruit_Learning_System_Guides/FM-1_Flasher, which is catalogued
+    date: 2026-11-05
+  - url: https://github.com/Dsimpson-man/keylab
+    reason: music and MIDI learning website; reads and writes no device format
+    date: 2026-11-05
+  - url: https://github.com/GoodPerson42/FM1-Unbricking-For-Dummies
+    reason: written guide that only links Quixotic7's tool
+    date: 2026-11-05
+  - url: https://github.com/lleevveell66/FM-1-Unbricking
+    reason: README-only guide linking V15 and V16 stock copies on its author's own site
+    date: 2026-11-05
+  - url: https://github.com/web255078-lab/fm1-lab
+    reason: teaching site, no tool or firmware
+    date: 2026-11-05
+  - url: https://github.com/pkronstrom/paddington
+    reason: SMC-PAD as a Mac control surface for coding agents; no music purpose, no firmware change
+    date: 2026-11-05
+  - url: https://github.com/DeSynkro/pipeweaver-smc-mixer
+    reason: desktop audio-routing surface for Pipeweaver on the SMC-Mixer, not a music tool
+    date: 2026-11-05
+  - url: https://github.com/ttpa3dhuk/SMCSampler
+    reason: macOS soundboard using the SMC-Mixer as plain MIDI; reads and writes no device format
+    date: 2026-11-05
+  - url: https://github.com/tfabien/smc-pad-sensitivity-mod
+    reason: physical teardown guide with spacer files; no firmware or tool
+    date: 2026-11-05
+  - url: https://github.com/DaoDang/FM1921_LedMatrix
+    reason: unrelated LED matrix driver, a name collision with FM-1
+    date: 2026-11-05
+  - url: https://github.com/Cocoblood9527/fm1stNDS-zh-patch
+    reason: Football Manager translation patch, a name collision with FM-1
+    date: 2026-11-05
+  - url: https://github.com/FluidMechanics101/fm101-website
+    reason: unrelated website, a name collision with FM-1
+    date: 2026-11-05
+  - url: https://github.com/libdriver/fm11rfxx
+    reason: RFID driver library, a name collision with FM-1
+    date: 2026-11-05
+  - url: https://github.com/denny90131/ICP_FM1_Wind_TPC_Report
+    reason: unrelated report, a name collision with FM-1
+    date: 2026-11-05
+  - url: https://github.com/aestra-research/ea-4fm-fm1
+    reason: meditation audio, a name collision with FM-1
+    date: 2026-11-05
+  - url: https://github.com/fm1320/fm1320
+    reason: personal profile README, unrelated
+    date: 2026-11-05

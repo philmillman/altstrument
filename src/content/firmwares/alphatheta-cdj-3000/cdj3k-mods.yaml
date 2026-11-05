@@ -28,9 +28,11 @@ install_notes: >-
   Copy the release's .UPD file to an MBR-formatted FAT32 or exFAT USB stick as the only .UPD on it, and run the
   deck's normal firmware update from the top USB port; the deck restarts twice. To remove the mods, power on
   while holding CUE/LOOP CALL left and TEMPO range to enter service mode, or flash the removal .UPD from the
-  uninstall folder. The README notes that a crashing shim can leave the deck in a reboot loop that only
-  reflashing the .UPD fixes, and the project asks users not to install it on a deck they rely on.
-brick_risk: true
+  uninstall folder. The project says the .UPD is a patch that does not replace the stock application or
+  reflash the system. Its developer notes say a shim that crashes the player application leaves the deck in
+  a reboot loop that flashing the .UPD fixes, and the project asks users not to install it on a deck they
+  rely on.
+brick_risk: false
 tags: [dj, qol, stems, sampler, themes]
 versions:
   - version: v0.1.1

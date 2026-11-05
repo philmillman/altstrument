@@ -24,13 +24,13 @@ license_notes: >-
 homepage: https://pichenettes.github.io/mutable-instruments-documentation/modules/grids/
 distribution: source-only
 install_notes: >-
-  Build with the makefile in the grids folder and an AVR toolchain. The
-  makefile has a bootstrap rule that programs the application and bootloader
-  with avrdude over ISP and sets the fuses and lock bits, and a rule that
-  encodes an audio update file. The documentation site gives no update
-  procedure and only offers the original image and a 5 ms trigger build, so
-  keep a backup of the stock image before flashing.
-brick_risk: true
+  Build with the makefile in the grids folder and an AVR toolchain. The makefile
+  has a bootstrap rule that programs the application and bootloader with avrdude
+  over ISP and sets the fuses and lock bits, and a rule that encodes an audio
+  update file. The documentation site gives no update procedure and only offers
+  the original image, which it says reverts the module to stock, and a 5 ms
+  trigger build. Keep a backup of the stock image before flashing.
+brick_risk: false
 tags: [official, drums, sequencer, open-source]
 versions:
   - version: master @ 61d7146

@@ -36,7 +36,10 @@ install_notes: >-
   MIDI interface chokes. The manual suggests Elektron's C6 tool or Snoize SysEx
   Librarian. Presets saved under a custom firmware do not load on stock
   firmware and vice versa.
-brick_risk: true
+  In the pichenettes/eurorack source the bootloader is a separate program below the application, and the SysEx
+  update writes only the application, so a failed transfer is retried by powering on with the encoder pressed
+  and sending the file again.
+brick_risk: false
 tags: [official, midi, sequencer, open-source]
 versions:
   - version: master @ c5f910f

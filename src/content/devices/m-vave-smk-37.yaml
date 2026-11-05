@@ -26,9 +26,10 @@ notes: >-
   the board layer. Ports and mods are unofficial and install at your own risk. The fm1-to-smk37 flash-safety
   guide warns that the unit holds per-device data in SPI flash (factory key and pad calibration at 0xC1000,
   Bluetooth pairing data at 0xC0000, chip key and MAC at 0xFF000) that must never be overwritten. Baud
-  Girl's SMK-37+VA also lists the Donner Starrykey-37 Play and EROK MKE-P37 as supported. The FM-1 recovery
-  caveats (single-bank flash, no established recovery path per AL-255/FM-1-RE) should be assumed to apply
-  here too.
+  Girl's SMK-37+VA also lists the Donner Starrykey-37 Play and EROK MKE-P37 as supported. The chip's mask-ROM boot mode is
+  the same as the FM-1's, so a failed install comes back the same way (the USB rescue reached by holding
+  OCTAVE- at power-on, M-VAVE's updater, or jl-uboot-tool from ROM boot). Entries that write the
+  calibration, pairing or key areas carry the brick-risk flag, since only a full flash backup restores them.
 related: [m-vave-fm-1, m-vave-chocolate]
 image:
   src: /images/devices/m-vave-smk-37.webp

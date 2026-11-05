@@ -35,7 +35,10 @@ install_notes: >-
   with the Deja Vu button of the t section pressed. The RATE LED works as a
   level meter, the LEDs blink red if the level is wrong, and the module
   restarts at the end of the file.
-brick_risk: true
+  In the pichenettes/eurorack source the bootloader is a separate program that the update file does not
+  contain; the update writes only the application above it, so a failed or interrupted install is retried by
+  powering on in bootloader mode and sending the file again.
+brick_risk: false
 tags: [official, random, quantizer, open-source]
 versions:
   - version: master @ db1566f

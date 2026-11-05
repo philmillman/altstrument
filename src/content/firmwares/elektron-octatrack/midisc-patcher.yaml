@@ -26,9 +26,10 @@ install_notes: >-
   Serve the repository files with any static web server, drop your stock
   OCTATRACK_OS1.40C.syx onto the page and build. Copy the resulting 1.40MIDISC8.1.bin
   to the root of the CompactFlash card and choose OS UPGRADE. Keep stock 1.40C
-  for recovery. The page warns that modified firmware can brick or soft-brick the
+  for recovery: the bootloader is untouched, so the startup menu (hold FUNC at
+  power-on, then TRIG 3) can reinstall the official OS. The page warns that modified firmware can brick or soft-brick the
   unit and that the generated files must not be shared.
-brick_risk: true
+brick_risk: false
 tags: [midi, sequencer, web, patcher]
 versions:
   - version: main @ 1ce2245

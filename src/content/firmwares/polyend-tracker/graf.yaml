@@ -38,7 +38,9 @@ install_notes: >-
   Firmware page, and OpenTracker's ot_restore.txt escape hatch works too. Keep only one lab image plus stock in /Firmware,
   since the rear reset button installs a random .ptf from the folder. The README says the set has not been tested on a real
   unit.
-brick_risk: true
+  Polyend's tracker-ce README documents the recessed reset button as an emergency bootloader that flashes a
+  known-good .ptf from /Firmware, so a build that does not boot can be replaced from the SD card.
+brick_risk: false
 tags: [modular, synth-engine, sequencer, generative, plaits, acid, fork, ui]
 image:
   url: https://raw.githubusercontent.com/semierendonmez-commits/polyend-tracker-lab/main/firmwares/graf/docs/screenshots/graph-resonators.png

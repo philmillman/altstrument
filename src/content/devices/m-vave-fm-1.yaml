@@ -27,11 +27,15 @@ links:
   - label: M-VAVE forum (official)
     url: https://forum.m-vave.com/
 notes: >-
-  Flash is single-bank. AL-255/FM-1-RE states that the update protocol is not a demonstrated recovery
-  mechanism and that ROM recovery, rollback and safe interrupted-write behaviour are not established,
-  so there is no established recovery path if a write is interrupted. The aroum hub documents community
-  recovery attempts (plain-USB mask-ROM mode with jl-uboot-tool, RP2040 USB_KEY dongles) that FM-1-RE
-  has not verified; treat them as unconfirmed. Do not unplug during a write, and take a backup first where
+  Flash is single-bank, so an interrupted write can leave the unit dark or stuck, but the chip's boot mode
+  sits in mask ROM and no firmware can overwrite it. From that mode the community rescue tools (the
+  Firmware Hub's Rescue, MvaveFM1Unbricker, M-Flasher, FM-1 Recovery) back up the whole flash and write
+  only the firmware area, and an RP2040 or ESP32 dongle on the USB lines (FM-1 Transporter) forces the mode
+  when the unit shows no USB device at all; MvaveFM1Unbricker's author recovered their own unit after an
+  interrupted update this way. Those tools do not cover damage to the boot head (0x0000 to 0x3FFF) or to
+  the unit's own data (radio calibration, Bluetooth address, chip key), so only entries that write those
+  areas or the whole flash carry the brick-risk flag. AL-255/FM-1-RE's own safety status still says its
+  analysis has not established ROM recovery. Do not unplug during a write, and take a backup first where
   the installer offers one. Community advice is to return to stock V15 before flashing a different custom
   firmware rather than flashing one over another. Installs are done from browser WebMIDI installers (Chrome
   or Edge, USB) or a Python script; most return to V15 through M-VAVE's M-UPGRADE or the installer's own

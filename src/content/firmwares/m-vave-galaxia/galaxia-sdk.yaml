@@ -27,8 +27,10 @@ install_notes: >-
   Needs Python 3 and JieLi's toolchain, fetched by tools/get_toolchain.sh and run in a Linux x86-64 container on macOS.
   Put the pedal in its bootloader with tools/gx_softkey.py, back it up with tools/gx_flash.py, then install. A restore
   command puts the stock firmware back. On macOS the flasher needs sudo and libusb. The runtime uses a pid.codes test
-  USB ID, so get your own before distributing a build. Flashing is at your own risk.
-brick_risk: true
+  USB ID, so get your own before distributing a build. Flashing is at your own risk. The README says the boot loader and
+  its settings stay on the pedal, and INSTALL.md says the recovery steps have worked every time so far but are not
+  guaranteed.
+brick_risk: false
 tags: [sdk, platform, reverb, fx, usb-audio, usb-midi]
 versions:
 - version: 0.1.0

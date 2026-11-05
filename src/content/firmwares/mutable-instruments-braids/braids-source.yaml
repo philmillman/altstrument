@@ -32,12 +32,13 @@ install_notes: >-
   Build with the makefile in the braids folder and the ARM toolchain; the wav
   target encodes the binary as an audio update file. Official updates install
   through the module's bootloader: power on with the encoder pressed, send the
-  audio file into the FM input with the FINE knob centred and the FM attenuverter
-  near 5 o'clock, and the module reboots after the last packet. The display shows
-  @SYN for a signal that is too weak and @CRC for a corrupted packet, and the
-  manual says to retry. The manual's calibration procedure is the way to restore
-  tuning if calibration data is lost.
-brick_risk: true
+  audio file into the FM input with the FINE knob centred and the FM
+  attenuverter near 5 o'clock, and the module reboots after the last packet. The
+  display shows @SYN for a signal that is too weak and @CRC for a corrupted
+  packet, and the manual says to retry. The manual's calibration procedure is
+  the way to restore tuning if calibration data is lost. A failed transfer needs
+  no programmer: the manual answers @SYN and @CRC by repeating the update.
+brick_risk: false
 tags: [official, oscillator, synth-engine, open-source]
 versions:
   - version: master @ ab1e7e0

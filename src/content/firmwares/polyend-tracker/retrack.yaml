@@ -28,7 +28,9 @@ install_notes: >-
   from Config and pick the file. Each release also has an SD card zip with an ot_restore.txt that flashes the image at
   the next power-on. Keep Polyend's stock .ptf on the card as the way back, which the Config firmware page can also
   flash.
-brick_risk: true
+  Polyend's Community Edition README says the Tracker's bootloader is separate from the application firmware and that
+  the recessed reset button reflashes a .ptf from /Firmware, so a build that will not boot can be recovered.
+brick_risk: false
 tags: [looper, fx, granular, reverb, delay, performance, midi]
 image:
   url: https://raw.githubusercontent.com/math0ne/retrack-tracker/main/docs/img/home.png

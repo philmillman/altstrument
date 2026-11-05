@@ -34,7 +34,10 @@ install_notes: >-
   pressed, play the file into the TRIG1 input, and the module reboots after
   the last packet. The LEDs blink alternately if the level is wrong or too
   high, and the manual says to press TRIG1 and retry from the start of the file.
-brick_risk: true
+  In the pichenettes/eurorack source the bootloader is a separate program that the update file does not
+  contain; the update writes only the application above it, so a failed or interrupted install is retried by
+  powering on in bootloader mode and sending the file again.
+brick_risk: false
 tags: [official, envelopes, lfo, drums, open-source]
 versions:
   - version: master @ 61d7146

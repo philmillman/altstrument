@@ -34,10 +34,17 @@ install_notes: >-
   the values in the README, copy it to a USB drive under that exact name and
   install it as described in Sequential's update guide. The project asks you to
   read RECOVERY.md and make a full image of the SSD before flashing, and to keep
-  the generated image private. Going back to stock is possible by installing
-  the official file again, and a MIDI recovery path exists for the controller.
-  The author reports no affiliation with Sequential.
-brick_risk: true
+  the generated image private. The author reports that everything in the
+  repository has been tested on hardware and that the synth has no version
+  check, so the official file can always be installed again. RECOVERY.md covers
+  both halves: if the controller fails, hold SAMPLE STRETCH at power-on to
+  enter its bootloader and send Sequential's PX_Main_2.2.2.0.0.syx over DIN
+  MIDI; if the SSD's QNX system will not boot, restore the full SSD image or
+  replace the ProphetX application with the QEMU procedure, which the author
+  used on hardware to repair an unbootable SSD. The author notes that only a
+  further modification that damaged the controller's bootloader would be
+  outside these paths. The author reports no affiliation with Sequential.
+brick_risk: false
 tags: [research, sampler, os, utility]
 versions:
   - version: 2.2.2.2.2

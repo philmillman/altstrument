@@ -27,7 +27,10 @@ install_notes: >-
   with channel 1's function button held, feed the update file into channel 1's
   EXCITE input with channel 1's SHAPE knob at its middle position, and the
   module restarts when the file ends.
-brick_risk: true
+  In the pichenettes/eurorack source the bootloader is a separate program that the update file does not
+  contain; the update writes only the application above it, so a failed or interrupted install is retried by
+  powering on in bootloader mode and sending the file again.
+brick_risk: false
 tags: [official, envelopes, dynamics, open-source]
 versions:
   - version: master @ c5f910f

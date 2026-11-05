@@ -38,7 +38,9 @@ install_notes: >-
   card too, and keep only one other image there, because the rear reset button
   installs a random .ptf from the folder. To go back, install the stock file the
   same way or write its name into /Firmware/ot_restore.txt and power-cycle.
-brick_risk: true
+  Polyend's Community Edition README says the Tracker's bootloader is separate from the application firmware and that
+  the recessed reset button reflashes a .ptf from /Firmware, so a build that will not boot can be recovered.
+brick_risk: false
 tags: [sequencer, sampler, synth-engine, fm, fx, fork]
 image:
   url: https://raw.githubusercontent.com/syamajala/polyend-tracker-re/main/screenshots/fork/performance.png

@@ -27,7 +27,9 @@ install_notes: >-
   Use the wav with the normal Plaits audio update procedure, or flash the hex
   with a programmer. The item points to Plaits Palette for making changes. Back
   to stock by installing the official Plaits firmware wav.
-brick_risk: true
+  The WAV goes through the stock audio bootloader, which an update does not replace, so a failed install is
+  retried or reverted by powering on in bootloader mode and playing a WAV again.
+brick_risk: false
 tags: [synth-engine, fm, wavetable, presets, fork]
 image:
   url: https://archive.org/download/i-nit-crioxica-plaits-firmware/THis.png

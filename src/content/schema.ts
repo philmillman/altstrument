@@ -287,7 +287,11 @@ export const firmwareBaseSchema = z.object({
   /** Which stock firmware version(s) this targets, if specific. */
   requires_stock: z.string().optional(),
   install_notes: z.string().optional(),
-  /** Set when flashing carries a known, documented risk of bricking. */
+  /**
+   * Set when installing can leave the device unrecoverable without a
+   * programmer, opening the case or a factory repair. A failed boot that a
+   * documented recovery fixes does not count. See CONTRIBUTING "Setting brick_risk".
+   */
   brick_risk: z.boolean().default(false),
   tags: z.array(z.string().regex(/^[a-z0-9-]+$/)).default([]),
   versions: z.array(versionSchema).default([]),

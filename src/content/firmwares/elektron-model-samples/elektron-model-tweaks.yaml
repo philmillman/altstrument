@@ -18,8 +18,12 @@ license_notes: The vendored ms-multi-output code keeps its own MIT notice by Sco
 homepage: https://drumkilla.github.io/elektron-model-tweaks/flasher/
 distribution: browser-installer
 requires_stock: "1.13"
-install_notes: Use the web flasher with your own .syx, then send it with Elektron Transfer or straight over USB MIDI.
-brick_risk: true
+install_notes: >-
+  Use the web flasher with your own .syx, then send it with Elektron Transfer or straight over USB MIDI.
+  The README says only the main OS section is changed and the bootloader and updater are carried over
+  byte for byte, so the startup menu (power off, hold FUNC, power on, then OS UPGRADE) stays available to
+  reinstall stock.
+brick_risk: false
 tags: [usb-audio, sampler, ui, flasher]
 image:
   url: https://raw.githubusercontent.com/drumkilla/elektron-model-tweaks/main/docs/mods/media/smpl-edit-length.png

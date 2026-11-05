@@ -39,7 +39,11 @@ install_notes: >-
   stock .ptf in /Firmware, because the emergency flash picks a file at random.
   The README says the project is unofficial, not every playback mode has been
   validated on hardware and recovery is not guaranteed.
-brick_risk: true
+  Its RECOVERY.md points to the pinhole recovery button in section 13.3 of the Tracker+ manual, and the line
+  that recovery is not guaranteed reads as a disclaimer. Polyend's tracker-ce README documents the recessed
+  reset button as an emergency bootloader that flashes a known-good .ptf from /Firmware, so a build that does
+  not boot can be replaced from the SD card.
+brick_risk: false
 tags: [patch, sequencer, web, midi]
 versions:
   - version: v0.2.1-CT2

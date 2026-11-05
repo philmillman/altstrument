@@ -22,9 +22,11 @@ license_notes: >-
 homepage: https://github.com/hugelton/pendel-bsp
 distribution: source-only
 install_notes: >-
-  A base to build on, not an end-user firmware. Building needs JieLi's pi32v2 toolchain on Linux. Flashing is at
-  your own risk.
-brick_risk: true
+  A base to build on, not an end-user firmware. Building needs JieLi's pi32v2 toolchain on Linux. Flashing is at your
+  own risk. Its loader writes the app area only, and the pa-hwtest README says two boots in a row that fail drop the
+  unit into UBOOT and tells you to back up the whole flash first. Pendel, which uses it, can return the unit to the
+  official file.
+brick_risk: false
 tags: [platform, sdk]
 versions:
 - version: main @ 6a85709

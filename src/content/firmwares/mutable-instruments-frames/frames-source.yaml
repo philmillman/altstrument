@@ -22,12 +22,14 @@ homepage: https://pichenettes.github.io/mutable-instruments-documentation/module
 distribution: source-only
 requires_stock: "1.2"
 install_notes: >-
-  Build with the makefile in the frames folder and the ARM toolchain. The
-  module takes firmware updates as audio through its own bootloader: power on
-  with ADD held, feed the update file into the FRAME modulation input with the
-  modulation attenuverter at maximum, and the unit reboots after the last
-  packet. Unplug other CV connections first.
-brick_risk: true
+  Build with the makefile in the frames folder and the ARM toolchain. The module
+  takes firmware updates as audio through its own bootloader: power on with ADD
+  held, feed the update file into the FRAME modulation input with the modulation
+  attenuverter at maximum, and the unit reboots after the last packet. Unplug
+  other CV connections first. The manual says that if the level is wrong the
+  LEDs blink and the knob turns red, and that you adjust the level, press ADD
+  and restart the file.
+brick_risk: false
 tags: [official, mixer, lfo, open-source]
 versions:
   - version: master @ 1ea2d1e

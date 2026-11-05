@@ -36,7 +36,10 @@ install_notes: >-
   meter, the LEDs blink red if the level is wrong, and the manual says to press
   the button and retry. The manual's calibration procedure is the way to
   restore tuning if calibration data is lost.
-brick_risk: true
+  In the pichenettes/eurorack source the bootloader is a separate program that the update file does not
+  contain; the update writes only the application above it, so a failed or interrupted install is retried by
+  powering on in bootloader mode and sending the file again.
+brick_risk: false
 tags: [official, synth-engine, oscillator, open-source]
 versions:
   - version: master @ 08460a6

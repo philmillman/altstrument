@@ -162,8 +162,9 @@ requires_stock: 1.2.0
 install_notes: >-
   Example install note.
 
-# OPTIONAL. Defaults to false. Set to true when flashing has a known,
-# documented risk of bricking the device.
+# OPTIONAL. Defaults to false. Set to true when installing can leave the
+# device unrecoverable without a programmer, opening the case or a factory
+# repair. See "Setting brick_risk" below.
 brick_risk: false
 
 # OPTIONAL. Defaults to []. Lowercase letters, digits and hyphens only.
@@ -283,6 +284,25 @@ When an existing copy is merged away, delete its file and add a `301` line to `p
 The validator warns when `source_status` is `open` and `license` is `unspecified`.
 
 Accepted values: `MIT`, `MIT-0`, `BSD-2-Clause`, `BSD-3-Clause`, `ISC`, `Apache-2.0`, `GPL-2.0-only`, `GPL-2.0-or-later`, `GPL-3.0-only`, `GPL-3.0-or-later`, `LGPL-2.1-only`, `LGPL-2.1-or-later`, `LGPL-3.0-or-later`, `AGPL-3.0-only`, `AGPL-3.0-or-later`, `MPL-2.0`, `Unlicense`, `WTFPL`, `CC0-1.0`, `CC-BY-4.0`, `CC-BY-SA-4.0`, `CC-BY-NC-4.0`, `CC-BY-NC-SA-4.0`, `CC-BY-SA-3.0`, `CC-BY-NC-SA-3.0`, `PolyForm-Noncommercial-1.0.0`, `Elastic-2.0`, `proprietary`, `unspecified`.
+
+## Setting brick_risk
+
+`brick_risk` means installing the entry can leave the device unable to start in a way that no documented recovery fixes without a hardware programmer, opening the case or a factory repair. A device that fails to boot but comes back through a documented recovery path is not bricked.
+
+Set `brick_risk: true` when any of these holds:
+
+1. The project, the manufacturer or a linked user report documents a unit that installing it left unrecoverable, or warns that it can.
+2. The install writes or replaces the bootloader, recovery partition or another region the documented recovery depends on, or per-device data (calibration, keys, serial) that cannot be restored without a backup.
+3. The install needs an SWD/JTAG programmer, soldering or opening the case.
+4. There is no documented way back for an interrupted or failed write, and the project, the manufacturer or the device's own documentation warns about bricking.
+
+Leave it `false` when:
+
+- the entry writes nothing to the device's firmware: editors, librarians, SysEx, pattern and sample tools, emulators, research notes, apps and plugins that run on the stock OS, and content loaded from a card or USB drive;
+- the project or manufacturer documents a recovery that survives a bad install, such as a bootloader the update does not touch, a ROM boot mode, a SysEx or audio recovery mode, reinstalling stock firmware from the normal update menu, or restoring a backup image the install guide tells you to make first, and nothing documents a unit that recovery could not bring back;
+- the only warning is a generic "at your own risk" or "may void your warranty" disclaimer.
+
+Say which recovery applies in `install_notes` either way, or in the device's `notes` when it is the same for every entry on that device. A fork or derivative of an entry on the same device inherits that entry's `brick_risk` unless it documents otherwise. When the author documents a recovery that the flag ignores, the documented recovery wins.
 
 ## Rules of evidence
 

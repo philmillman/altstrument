@@ -21,7 +21,9 @@ distribution: download
 install_notes: >-
   Follow the official Rings firmware update procedure from the manual. The
   author warns that any firmware update can leave a module unusable.
-brick_risk: true
+  The update goes through the stock audio bootloader, which the update file does not replace, so a failed
+  install is retried or reverted by powering on in bootloader mode and playing a WAV again.
+brick_risk: false
 tags: [physical-modeling, modes, performance]
 versions:
   - version: "1.0"

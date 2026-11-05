@@ -30,7 +30,10 @@ install_notes: >-
   MODEL at about 80 percent volume (2 minutes 39 seconds), or use the flasher on the project page. A raw .bin for SWD
   is also provided. To go back, flash the official Plaits WAV or DUB STAB PLAITS the same way. Your saved engine and
   settings start fresh once, and the page warns that this is unofficial firmware used at your own risk.
-brick_risk: true
+  The project page puts the application at 0x08008000, above the stock audio bootloader, and its recovery notes
+  say to replay the WAV from the start if all LEDs blink red, so a failed install is retried or reverted the
+  same way.
+brick_risk: false
 tags: [ai-assisted, sequencer, generative, chords, synth-engine]
 image:
   url: https://raw.githubusercontent.com/Narti-Live/dub-base-Plaits/main/assets/seq-plaits-functions.jpg

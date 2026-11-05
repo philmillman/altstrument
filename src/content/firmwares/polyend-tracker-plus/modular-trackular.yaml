@@ -46,7 +46,10 @@ install_notes: >-
   card and install it from Config, Firmware. Install the stock file the same way
   to return, and read the repository's notes on the emergency reflash before
   flashing. Do not share patched files.
-brick_risk: true
+  Polyend's tracker-ce README documents the recessed reset button as an emergency bootloader that flashes a
+  known-good .ptf from /Firmware, so a build that does not boot can be replaced from the SD card. The README
+  describes switching back through Config and an emergency reflash.
+brick_risk: false
 tags: [patch, fx, sequencer, emulator, research, web, ui]
 versions:
   - version: master @ 7d364d3

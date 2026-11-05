@@ -28,9 +28,12 @@ install_notes: >-
   Unplug all cables, hold FREEZE while powering on until the bootloader LEDs show,
   and play the firmware WAV into the left input, or use the flasher on the project
   page; the WAV takes about six minutes. A restore file for Parasites 2.01 is on
-  the same page. The page warns that this is unofficial firmware and used at your
-  own risk. Checksums are listed there.
-brick_risk: true
+  the same page. If a flash fails, the page says to power off and on with FREEZE
+  held and play the file again from the start; the firmware loads through the
+  module's audio bootloader, which a firmware flash does not rewrite. The page
+  warns that this is unofficial firmware and used at your own risk. Checksums are
+  listed there.
+brick_risk: false
 tags: [ai-assisted, synth-engine, fx, phaser, mutable-instruments-port]
 versions:
   - version: v1.8

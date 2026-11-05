@@ -28,7 +28,10 @@ install_notes: >-
   Build the Tracker+ target, copy the resulting .ptf to /Firmware/ on the microSD card and run Config > Firmware > Firmware
   update. Back up first: saving a project on Community Edition firmware moves its patterns to a format older firmware cannot
   read. Recovery follows Polyend's route, with a known-good .ptf and the recessed reset button.
-brick_risk: true
+  The repository README says the bootloader sits in a protected region below the application, apart from the
+  .ptf. Polyend's tracker-ce README documents the recessed reset button as an emergency bootloader that flashes
+  a known-good .ptf from /Firmware, so a build that does not boot can be replaced from the SD card.
+brick_risk: false
 tags: [fork, platform, midi, sequencer, tracker]
 versions:
   - version: modular @ 5412d50

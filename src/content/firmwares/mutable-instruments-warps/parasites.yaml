@@ -29,7 +29,9 @@ install_notes: >-
   firmware update procedure in the official Warps manual. The project page
   gives no module-specific bootloader warning; the Clouds build's caution
   about faulty bootloaders applies to a different module.
-brick_risk: true
+  The update goes through the stock audio bootloader, which the update file does not replace, so a failed
+  install is retried or reverted by powering on in bootloader mode and sending a firmware file again.
+brick_risk: false
 tags: [modulation, delay, vocoder, wavefolder, bitcrusher, mutable-instruments]
 video:
   url: https://www.youtube.com/watch?v=NxtyG2rTTRQ

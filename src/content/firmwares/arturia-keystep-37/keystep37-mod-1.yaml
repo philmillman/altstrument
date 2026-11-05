@@ -22,9 +22,11 @@ requires_stock: 1.1.6.579
 install_notes: >-
   Needs Python with Capstone and Unicorn for the analysis scripts, and your own copy of the official
   1.1.6.579 update file. The repository's safety rules say never to touch the bootloader region or the
-  USB update path, to keep a stock backup, and to stage tests. The flasher is a Windows-oriented
+  USB update path, to keep a stock backup, and to stage tests. They add that a bad application flash can
+  usually be corrected by reflashing the stock .led through the bootloader, which the project never
+  writes. The flasher is a Windows-oriented
   workflow described in the repository's scripts and docs.
-brick_risk: true
+brick_risk: false
 tags: [research, patch, flasher, python]
 versions:
   - version: master @ a18d34b

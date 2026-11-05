@@ -27,7 +27,10 @@ install_notes: >-
   INT. OSC button held, feed the update file into the carrier audio input, and
   the ALGORITHM knob color shows the signal level. Unplug other CV connections
   first.
-brick_risk: true
+  In the pichenettes/eurorack source the bootloader is a separate program that the update file does not
+  contain; the update writes only the application above it, so a failed or interrupted install is retried by
+  powering on in bootloader mode and sending the file again.
+brick_risk: false
 tags: [official, modulation, vocoder, open-source]
 versions:
   - version: master @ 3c23d03

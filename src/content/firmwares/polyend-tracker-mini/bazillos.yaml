@@ -34,7 +34,9 @@ install_notes: >-
   Firmware and select TrackerMini_bz090c.ptf; the startup screen should then show 0.9.0 bazillOS / bz090c. Projects saved
   on Community Edition firmware are not converted back for Polyend's stock firmware. Reinstalling Polyend's official
   firmware from Polyend's downloads page returns the software, and original projects must be restored from the backup.
-brick_risk: true
+  Polyend's tracker-ce README documents the recessed reset button as an emergency bootloader that flashes a
+  known-good .ptf from /Firmware, so a build that does not boot can be replaced from the SD card.
+brick_risk: false
 tags: [fork, tracker, sequencer, synth-engine, sampler, generative, fx, ui, performance, game]
 video:
   url: https://www.youtube.com/watch?v=aqErSWmCjNI

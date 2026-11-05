@@ -36,7 +36,10 @@ install_notes: >-
   percent volume, or use the flasher on the project site. A raw .bin is provided for
   SWD flashing. To go back, install the official Plaits firmware WAV the same way.
   The README warns that this is unofficial firmware and used at your own risk.
-brick_risk: true
+  The README puts the application at 0x08008000, above the stock audio bootloader that the WAV does not
+  replace, so a failed or interrupted install is retried by powering on in bootloader mode and playing a WAV
+  again.
+brick_risk: false
 tags: [ai-assisted, chords, sequencer, generative, midi, fork]
 video:
   url: https://www.youtube.com/watch?v=KDar2ZEt_Ak

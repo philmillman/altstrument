@@ -33,14 +33,15 @@ homepage: https://ultrarig.app/
 distribution: download
 requires_stock: Tank-G factory firmware 97 or 98; 96 and older need M-UPGRADE first. Tank-B factory firmware 100
 install_notes: >-
-  Windows 10 or 11 only, with a USB data cable straight to the computer and M-EFCS closed. Run the
-  read-only UltraRig Check from the check1 release first. Download the package for your board (v1 or
-  v2), run UltraRig-Installer.exe (as administrator on the v1) and click Cancel if Windows offers to
-  format a disk. The installer reads the full 1 MiB flash twice as a backup, leaves the bootloader alone
-  and writes only the application area. Keep the backup_<date> folder in Documents\tankg_installer and
-  never share it: restoring it is the only way back to the factory firmware. Alpha 6 and later accept factory firmware 98; to move a pedal already on UltraRig to 98, go
-  back to the factory firmware first, update with M-UPGRADE and install again, and keep both backups.
-brick_risk: true
+  Windows 10 or 11 only, with a USB data cable straight to the computer and M-EFCS closed. Run the read-only UltraRig
+  Check from the check1 release first. Download the package for your board (v1 or v2), run UltraRig-Installer.exe (as
+  administrator on the v1) and click Cancel if Windows offers to format a disk. The installer reads the full 1 MiB flash
+  twice as a backup, leaves the bootloader alone and writes only the application area. Keep the backup_<date> folder in
+  Documents\tankg_installer and never share it: restoring it, with the installer's "Go back to the factory firmware"
+  option, is the way back to the factory firmware. Alpha 6 and later accept factory firmware 98; to move a pedal already
+  on UltraRig to 98, go back to the factory firmware first, update with M-UPGRADE and install again, and keep both
+  backups.
+brick_risk: false
 tags: [fx, amp-sim, nam, ir, editor, android]
 versions:
 - version: alpha9.1

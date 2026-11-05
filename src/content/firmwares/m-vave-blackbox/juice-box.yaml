@@ -30,9 +30,11 @@ requires_stock: Official ANN BlackBox firmware, which the installer fetches for 
 install_notes: >-
   Download the installer for macOS or Windows from the release; both are unsigned, so the system warns on first open.
   Install over the pedal's USB cable, load .nam A2 captures, and use Firmware, then Restore official firmware, to go
-  back. The user guide covers the steps, and docs/04-safety.md describes the USB rescue mode. Flashing is at your own
-  risk.
-brick_risk: true
+  back. The user guide covers the steps, and docs/04-safety.md says the install writes the app area and leaves the
+  bootloader, key and calibration data alone, and that a boot counter and watchdog hand control back to the update
+  loader if the app keeps restarting. The user guide says an interrupted install leaves the pedal in update mode,
+  waiting for a package. Flashing is at your own risk.
+brick_risk: false
 tags: [amp-sim, nam, fork, editor, fx, usb-midi]
 image:
   url: https://raw.githubusercontent.com/JPMViana/juicebox-nam-player/main/docs/images/installer-captures.png

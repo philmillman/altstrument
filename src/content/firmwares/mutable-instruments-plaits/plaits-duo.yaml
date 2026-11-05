@@ -32,7 +32,9 @@ install_notes: >-
   toolchain. Hold the left button while powering the module on and play the WAV file into the
   MODEL CV input, as for an official update. Calibrating LEVEL against V/OCT is recommended
   after installing. The README says the original firmware can be reinstalled at any time.
-brick_risk: true
+  The update goes through the stock audio bootloader, which the update file does not replace, so a failed
+  install is retried or reverted by powering on in bootloader mode and playing a WAV again.
+brick_risk: false
 tags: [ai-assisted, synth-engine, oscillator, stereo, open-source]
 versions:
   - version: main @ 301657f

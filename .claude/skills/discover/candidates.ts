@@ -111,6 +111,8 @@ interface ReleaseHit {
   prerelease?: boolean;
   /** Tag prefix (e.g. "smk") that none of the entry's versions use: maybe another component's release. */
   otherComponent?: string;
+  /** The file names this version outside versions[], often a note that it was left out on purpose. */
+  mentioned?: boolean;
 }
 
 interface StaleEntry {
@@ -932,8 +934,8 @@ interface SweepTarget {
   /** Branch and subfolder of a `/tree/<branch>/<path>` source URL. */
   branch?: string;
   path?: string;
-  versions: { version: string; date?: string }[];
-  /** Lowercased file text, to tell whether a tag is already mentioned. */
+  versions: { version: string; date?: string; url?: string }[];
+  /** Lowercased file text, to tell whether a tag is named outside versions[]. */
   text: string;
 }
 
@@ -951,6 +953,21 @@ function versionPrefix(v: string): string | undefined {
 function mentions(text: string, tag: string): boolean {
   const forms = new Set([tag.toLowerCase(), tag.toLowerCase().replace(/^v(?=\d)/, '')]);
   return [...forms].some((f) => new RegExp(`(?<![\\w.-])${escapeRe(f)}(?![\\w-]|\\.\\d)`).test(text));
+}
+
+/** True when a row of versions[] is this tag: by its version string, or by a URL that ends in the tag. */
+function listed(versions: SweepTarget['versions'], tag: string): boolean {
+  const bare = (v: string) => v.toLowerCase().replace(/^v(?=\d)/, '');
+  const inUrl = (url: string) => {
+    let path = url;
+    try {
+      path = decodeURIComponent(url);
+    } catch {
+      // Keep the raw URL.
+    }
+    return path.endsWith(`/tag/${tag}`) || path.endsWith(`/tree/${tag}`);
+  };
+  return versions.some((v) => bare(v.version) === bare(tag) || (v.url !== undefined && inUrl(v.url)));
 }
 
 /** Every firmware entry whose `source` is a GitHub repo, except archived ones and SWEEP_SKIP_REPOS. */
@@ -974,7 +991,7 @@ function buildSweepTargets(): SweepTarget[] {
       const versions = arr(fw.versions)
         .map(asObj)
         .filter((v): v is Obj => !!v)
-        .map((v) => ({ version: str(v.version), date: str(v.date) || undefined }))
+        .map((v) => ({ version: str(v.version), date: str(v.date) || undefined, url: str(v.url) || undefined }))
         .filter((v) => v.version);
       targets.push({
         file: relative(ROOT, file),
@@ -1014,9 +1031,10 @@ interface SweepData {
 const headKey = (repo: string, branch: string, path?: string) => `${repo.toLowerCase()}\n${branch}\n${path ?? ''}`;
 
 /**
- * Releases newer than the entry's top version and not mentioned in the file; for
- * `<branch> @ <sha>` entries also a moved branch head; for repos without releases,
- * tags the file does not mention.
+ * Releases newer than the last one in the entry's versions[]; for `<branch> @ <sha>`
+ * entries also a moved branch head; for repos without releases, tags newer than the
+ * last one listed. Prose never hides a release, it only flags it. An entry with no
+ * dated version has nothing to compare against, so there prose still counts as listed.
  */
 function sweepEntry(t: SweepTarget, data: SweepData, report: (msg: string) => void): StaleEntry | undefined {
   const top = t.versions[0];
@@ -1028,11 +1046,15 @@ function sweepEntry(t: SweepTarget, data: SweepData, report: (msg: string) => vo
     return prefix && !known.has(prefix) && !ownName.includes(prefix) ? prefix : undefined;
   };
   const hits: ReleaseHit[] = [];
+  const lastDate = t.versions.reduce<string | undefined>((max, v) => (v.date && (!max || v.date > max) ? v.date : max), undefined);
 
   const info = data.repos.get(t.repo.toLowerCase());
   if (!info) return undefined; // runReleaseSweep reported why
   for (const r of info.releases) {
-    if (!r.tag || (top?.date && r.date <= top.date) || mentions(t.text, r.tag)) continue;
+    if (!r.tag) continue;
+    // Newest first, so everything after a listed release is older than the catalog's.
+    if (listed(t.versions, r.tag)) break;
+    if (lastDate ? r.date < lastDate : mentions(t.text, r.tag)) continue;
     hits.push({
       kind: 'release',
       ref: r.tag,
@@ -1040,6 +1062,7 @@ function sweepEntry(t: SweepTarget, data: SweepData, report: (msg: string) => vo
       url: r.url || `https://github.com/${t.repo}/releases/tag/${encodeURIComponent(r.tag)}`,
       prerelease: r.prerelease || undefined,
       otherComponent: otherComponent(r.tag),
+      mentioned: mentions(t.text, r.tag) || undefined,
     });
   }
 
@@ -1073,12 +1096,13 @@ function sweepEntry(t: SweepTarget, data: SweepData, report: (msg: string) => vo
     }
   } else if (info.releases.length === 0) {
     for (const name of info.tags) {
-      if (mentions(t.text, name)) break;
+      if (listed(t.versions, name)) break;
       hits.push({
         kind: 'tag',
         ref: name,
         url: `https://github.com/${t.repo}/tree/${encodeURIComponent(name)}`,
         otherComponent: otherComponent(name),
+        mentioned: mentions(t.text, name) || undefined,
       });
     }
   }
@@ -1274,7 +1298,7 @@ function renderMarkdown(r: Report, outPath: string): string {
     L.push('| Entry | Repo | Current top | Newer |', '| --- | --- | --- | --- |');
     for (const s of r.stale) {
       const hits = s.hits.map((h) => {
-        const flags = [h.kind === 'tag' && 'tag', h.prerelease && 'pre', h.otherComponent && `other component? "${h.otherComponent}"`]
+        const flags = [h.kind === 'tag' && 'tag', h.prerelease && 'pre', h.otherComponent && `other component? "${h.otherComponent}"`, h.mentioned && 'named in prose']
           .filter(Boolean)
           .join(', ');
         return `[${linkText(h.ref)}](${h.url})${h.date ? ` ${h.date}` : ''}${flags ? ` (${flags})` : ''}`;

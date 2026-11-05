@@ -28,9 +28,9 @@ pnpm discover:candidates --since-days 14
 The script prints a markdown report and writes `discover-candidates.json`. It already drops repositories that the catalog links to and anything under `ignore` in `.claude/skills/discover/config.yaml`. News items are not dropped when they mention a catalog entry; the "Mentions catalog" column tells you which one.
 
 The report also has a "Catalogued entries with newer releases" section, the release sweep. For every entry whose `source` is a GitHub repo, except archived ones, it lists:
-- releases published after the entry's top version that the file does not mention yet;
+- releases newer than the last one in the entry's `versions[]`, marked `named in prose` when the file names that version elsewhere, which may mean it was left out on purpose;
 - a newer head commit, for entries that track `<branch> @ <sha>`;
-- tags the file does not mention, for repos without releases.
+- tags newer than the last one listed, for repos without releases.
 
 Its "Problems" lines also name entries whose `<branch> @` label is not a branch the repo has, and repos that have gone (404). Fix those too.
 

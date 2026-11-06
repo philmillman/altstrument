@@ -17,8 +17,13 @@
  *   - Set ALTSTRUMENT_SKIP_REMOTE=1 to skip the remote fetch entirely
  *     (offline development). Cached entries from a previous run are reused if
  *     the data store has them; otherwise the device simply lists no cards.
- *   - A network failure with no cache fails the build, so a broken upstream is
- *     never silently published as an empty device page.
+ *   - A network failure on the directory listing with no cache fails the build,
+ *     so a broken upstream is never silently published as an empty device page.
+ *   - A single card's info.yaml fetch that fails (network error after retries,
+ *     or an HTTP status other than 200/404 such as 403) does not fail the build:
+ *     the cached entry for that card is kept if there is one, otherwise the card
+ *     is skipped with a warning. The listing ETag is then not saved, so the next
+ *     build refetches instead of getting a 304 that would freeze the fallbacks.
  *   - A card's `demo-link`, when it is a YouTube URL, is checked against
  *     YouTube's oEmbed endpoint: a removed or non-embeddable video is dropped,
  *     a live one supplies the title and channel. A network failure keeps the
@@ -261,6 +266,7 @@ interface Card {
   url: string;
   info: Record<string, unknown> | null; // null: info.yaml missing
   parseError?: string;
+  fetchError?: string; // info.yaml could not be fetched (network error or unexpected HTTP status)
   demo?: Demo;
 }
 
@@ -453,9 +459,16 @@ export async function loadWorkshopComputerCards(ctx: LoaderContext, cached: Data
   const cards: Card[] = await pool(listing.dirs, CONCURRENCY, async (dir) => {
     const url = rawUrl(dir);
     const base = { dir, slug: slugify(dir), url };
-    const { status, body } = await fetchRaw(url);
+    let status: number;
+    let body: string;
+    try {
+      ({ status, body } = await fetchRaw(url));
+    } catch (e) {
+      if (!(e instanceof NetworkError)) throw e;
+      return { ...base, info: null, fetchError: e.message };
+    }
     if (status === 404) return { ...base, info: null };
-    if (status !== 200) throw new NetworkError(`${url}: HTTP ${status}`);
+    if (status !== 200) return { ...base, info: null, fetchError: `${url}: HTTP ${status}` };
     try {
       const doc = parse(body);
       if (!doc || typeof doc !== 'object' || Array.isArray(doc)) {
@@ -469,9 +482,24 @@ export async function loadWorkshopComputerCards(ctx: LoaderContext, cached: Data
   });
 
   let written = 0;
+  let kept = 0;
+  let fetchErrors = 0;
   const skipped: string[] = [];
   const unmapped = new Map<string, string[]>();
+  const byId = new Map(cached.map((e) => [e.id, e]));
   for (const card of cards) {
+    if (card.fetchError) {
+      fetchErrors++;
+      const old = byId.get(ID_PREFIX + card.slug);
+      if (old) {
+        store.set(old);
+        kept++;
+        logger.warn(`Workshop Computer cards: ${card.dir}: ${card.fetchError}; kept cached entry`);
+      } else {
+        skipped.push(`${card.dir}: ${card.fetchError}`);
+      }
+      continue;
+    }
     if (card.info === null) {
       skipped.push(`${card.dir}: ${card.parseError ?? 'no info.yaml'}`);
       continue;
@@ -498,9 +526,15 @@ export async function loadWorkshopComputerCards(ctx: LoaderContext, cached: Data
       skipped.push(`${card.dir}: ${(e as Error).message.split('\n')[0]}`);
     }
   }
-  if (listing.etag) meta.set(META_ETAG, listing.etag);
+  if (listing.etag && !fetchErrors) meta.set(META_ETAG, listing.etag);
+  else if (fetchErrors) {
+    logger.warn(`Workshop Computer cards: ${fetchErrors} fetch error(s); listing ETag not saved so the next build refetches`);
+  }
 
-  logger.info(`Workshop Computer cards: ${written} loaded from ${listing.dirs.length} upstream directories`);
+  logger.info(
+    `Workshop Computer cards: ${written} loaded from ${listing.dirs.length} upstream directories` +
+      (kept ? ` (${kept} kept from cache after fetch errors)` : ''),
+  );
   for (const s of skipped) logger.warn(`Workshop Computer cards: skipped ${s}`);
   for (const [lic, dirs] of unmapped) {
     logger.warn(`Workshop Computer cards: unmapped license "${lic}" (${dirs.length}): ${dirs.join(', ')}`);

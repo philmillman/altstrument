@@ -102,7 +102,13 @@ Dedupe once more by hand: grep `src/content` for the repository owner, the proje
 ALTSTRUMENT_SKIP_REMOTE=1 pnpm validate
 ```
 
-Once every file is written, run it once more without `ALTSTRUMENT_SKIP_REMOTE` if you added a `video`, `videos` entry or `image`, so the remote media checks run.
+Once every file is written, run it once more without `ALTSTRUMENT_SKIP_REMOTE`, so the remote media checks run over the whole catalog. A plain `pnpm validate` is strict on purpose: deploy builds and the daily CI run only warn about broken links, so this run is where they get fixed.
+
+Link rot: an error, or a "host refused the checker" warning, on a `video`, `videos` entry or `image` in a file this run did not write means the link has rotted upstream. Fix it in the same run:
+- Open the URL yourself first. A 401 or 403 from a small image host is often a block on automated checkers; if the image loads, leave it.
+- Look for a replacement under the rules in section 3: a first-party video linked from the project's README, homepage or release notes, or an image the README or homepage displays. Update `alt` to match what the new image shows.
+- With no replacement, remove the dead `video`, `videos` entry or `image`. When the old `video` goes and `videos` is not empty, move the newest of `videos` up into `video`.
+- Read the repo's recent commits and releases too. Dead media is often the first sign of a release, rename or move that the sweep missed.
 
 ## 5. Record rejections
 
@@ -122,6 +128,7 @@ End with a short report:
 
 - Files written, each as a clickable path, one line each saying what the entry is and the evidence link for its version.
 - Updates to existing entries, with the file path and the version added (from news items and the release sweep), plus sweep rows skipped and why.
+- Link rot fixed: each file path with the dead URL and what replaced it (or that it was removed), plus refused links you checked by hand and left in place.
 - For each new device, the image source used (and which tier from section 4), or why it has no image.
 - Rejected candidates with their one-line reasons.
 - Open questions the maintainer must settle, for example an unclear license, a device that might belong to an existing family, or a video whose first-party status is uncertain.

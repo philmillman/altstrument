@@ -20,9 +20,17 @@
  *   - every hotlinked `video` / `videos` / `image` still resolves (network; see below),
  *     or only those in the files a pull request changes (ALTSTRUMENT_CHANGED_FILES)
  *
+ * Hotlinked-media mode: `--media=strict|soft|off` (env ALTSTRUMENT_MEDIA_CHECK
+ * overrides; ALTSTRUMENT_SKIP_REMOTE forces off; default strict; unknown values
+ * are an error). strict fails on definitive problems, soft turns every media
+ * problem into a warning (for deploys), off skips the network. An image host
+ * answering 401/403 is always just a warning. With GITHUB_STEP_SUMMARY set the
+ * media results are appended there as markdown; with GITHUB_ACTIONS set each
+ * problem is also printed as a workflow annotation.
+ *
  * Exit code 1 on any error. Warnings are printed but do not fail the run.
  */
-import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
+import { appendFileSync, existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, basename, relative } from 'node:path';
 import { parse, type ParseOptions, type SchemaOptions } from 'yaml';
 import { deviceSchema, firmwareBaseSchema, manufacturerSchema, refineFirmware } from '../src/content/schema';
@@ -324,9 +332,25 @@ for (const slug of deviceSlugs) {
 //
 // Videos are checked with YouTube's oEmbed endpoint (200 only for a public,
 // embeddable video); images must answer 2xx with an image/* content type.
-// A definitive answer (404, 401, 403, 410, wrong type) is an error; timeouts,
-// 5xx and DNS trouble are warnings so a flaky network doesn't block a build.
-// ALTSTRUMENT_SKIP_REMOTE=1 skips the pass (offline development).
+//
+// How hard a broken link hits is set by the media-check mode, from `--media=<mode>`
+// or ALTSTRUMENT_MEDIA_CHECK (the env var wins). An unknown value is an error:
+// a typo must never loosen the run. Default is strict.
+//   strict  definitive answers (404, 410, wrong type, and for videos 401/403) are
+//           errors; timeouts, 5xx and DNS trouble are warnings. PR checks use this.
+//   soft    every media problem is a warning, so broken links never fail the run.
+//           For deploys: links rot without any commit.
+//   off     no network pass. ALTSTRUMENT_SKIP_REMOTE=1 (any value) forces this
+//           (offline development).
+// An image host answering 401/403 is only a warning in every mode: many hosts
+// refuse bots and CI addresses, so the checker can't tell a dead image from a
+// blocked checker. Check those in a browser.
+//
+// Every media problem is recorded. With GITHUB_STEP_SUMMARY set, a "Hotlinked
+// media" section (mode, then OK count or a table of problems) is appended to
+// that file; with GITHUB_ACTIONS set, each problem is also printed as a
+// ::error / ::warning annotation on its file. Paths and messages come from
+// untrusted PRs, so annotation text is escaped.
 //
 // Links rot without any commit, so a pull request should not fail on media it
 // didn't touch. CI sets ALTSTRUMENT_CHANGED_FILES to a file of NUL-separated
@@ -335,7 +359,41 @@ for (const slug of deviceSlugs) {
 // ignored outside a pull_request run, and an unreadable or empty list means
 // everything is checked: a broken list must never loosen the run.
 
-const DEFINITIVE = new Set([401, 403, 404, 410]);
+type MediaMode = 'strict' | 'soft' | 'off';
+const MEDIA_MODES: readonly string[] = ['strict', 'soft', 'off'];
+
+/** Mode from the env var, else `--media=`, else strict; ALTSTRUMENT_SKIP_REMOTE forces off. */
+function mediaMode(): { mode: MediaMode; skipped: boolean } {
+  const flag = process.argv.slice(2).find((a) => a.startsWith('--media='));
+  const raw = process.env.ALTSTRUMENT_MEDIA_CHECK || (flag ? flag.slice('--media='.length) : 'strict');
+  if (!MEDIA_MODES.includes(raw)) {
+    const from = process.env.ALTSTRUMENT_MEDIA_CHECK ? 'ALTSTRUMENT_MEDIA_CHECK' : '--media';
+    console.error(`${from}: unknown media check mode "${raw}" (use ${MEDIA_MODES.join(', ')})`);
+    process.exit(1);
+  }
+  if (process.env.ALTSTRUMENT_SKIP_REMOTE) return { mode: 'off', skipped: true };
+  return { mode: raw as MediaMode, skipped: false };
+}
+
+/** Escaping for GitHub workflow commands (`::error file=..::message`). */
+function escapeData(s: string): string {
+  return s.replace(/%/g, '%25').replace(/\r/g, '%0D').replace(/\n/g, '%0A');
+}
+function escapeProperty(s: string): string {
+  return escapeData(s).replace(/:/g, '%3A').replace(/,/g, '%2C');
+}
+
+/** A hotlinked-media problem, as reported (file is repo-relative). */
+type MediaProblem = { file: string; kind: 'video' | 'image'; url: string; message: string; level: 'error' | 'warning' };
+const mediaProblems: MediaProblem[] = [];
+
+function reportMedia(c: { file: string; kind: 'video' | 'image'; url: string }, message: string, level: 'error' | 'warning') {
+  mediaProblems.push({ file: rel(c.file), kind: c.kind, url: c.url, message, level });
+  (level === 'error' ? fail : warn)(c.file, message);
+}
+
+const VIDEO_DEFINITIVE = new Set([401, 403, 404, 410]);
+const IMAGE_DEFINITIVE = new Set([404, 410]);
 
 /** Repo-relative paths the PR changes, or undefined to check every file. */
 function changedFiles(): Set<string> | undefined {
@@ -387,14 +445,17 @@ async function checkRemote(kind: 'video' | 'image', url: string): Promise<[boole
       const res = await request(youtubeOembedUrl(url), 'GET');
       await res.body?.cancel();
       if (res.ok) return undefined;
-      return [DEFINITIVE.has(res.status), `video ${url} is unavailable or not embeddable (oEmbed HTTP ${res.status})`];
+      return [VIDEO_DEFINITIVE.has(res.status), `video ${url} is unavailable or not embeddable (oEmbed HTTP ${res.status})`];
     }
     let res = await request(url, 'HEAD');
     // Some hosts refuse HEAD; ask again with GET before calling it broken.
     if (!res.ok) res = await request(url, 'GET');
     const type = res.headers.get('content-type') ?? '';
     await res.body?.cancel();
-    if (!res.ok) return [DEFINITIVE.has(res.status), `image ${url} returned HTTP ${res.status}`];
+    if (res.status === 401 || res.status === 403) {
+      return [false, `image ${url}: host refused the checker (HTTP ${res.status}); check it in a browser`];
+    }
+    if (!res.ok) return [IMAGE_DEFINITIVE.has(res.status), `image ${url} returned HTTP ${res.status}`];
     if (!type.startsWith('image/')) return [true, `image ${url} is served as "${type || 'no content-type'}", not an image`];
     return undefined;
   } catch (e) {
@@ -402,19 +463,25 @@ async function checkRemote(kind: 'video' | 'image', url: string): Promise<[boole
   }
 }
 
+const { mode: mediaCheckMode, skipped: mediaSkipped } = mediaMode();
 let remoteNote = '';
 let unchangedNote = '';
-const changed = process.env.ALTSTRUMENT_SKIP_REMOTE ? undefined : changedFiles();
+let mediaOkLine = '';
+let mediaChecked = 0;
+const changed = mediaCheckMode === 'off' ? undefined : changedFiles();
 if (changed) {
   const total = remoteChecks.length;
   remoteChecks.splice(0, total, ...remoteChecks.filter((c) => changed.has(rel(c.file))));
   unchangedNote = ` (${total - remoteChecks.length} in unchanged files not checked)`;
 }
-if (process.env.ALTSTRUMENT_SKIP_REMOTE) {
-  remoteNote = `, ${remoteChecks.length} hotlinked media not checked (ALTSTRUMENT_SKIP_REMOTE)`;
+if (mediaCheckMode === 'off') {
+  const why = mediaSkipped ? 'ALTSTRUMENT_SKIP_REMOTE' : 'media check off';
+  remoteNote = `, ${remoteChecks.length} hotlinked media not checked (${why})`;
+  mediaOkLine = `${remoteChecks.length} hotlinked media not checked (${why}).`;
 } else if (remoteChecks.length) {
   let next = 0;
   let broken = 0;
+  mediaChecked = remoteChecks.length;
   // One request per URL, however many entries or `videos` lists share it.
   const pending = new Map<string, Promise<[boolean, string] | undefined>>();
   await Promise.all(
@@ -426,17 +493,61 @@ if (process.env.ALTSTRUMENT_SKIP_REMOTE) {
         const problem = await pending.get(key);
         if (!problem) continue;
         broken++;
-        (problem[0] ? fail : warn)(c.file, problem[1]);
+        reportMedia(c, problem[1], problem[0] && mediaCheckMode === 'strict' ? 'error' : 'warning');
       }
     }),
   );
-  remoteNote = `, ${remoteChecks.length - broken}/${remoteChecks.length} hotlinked media OK${unchangedNote}`;
+  remoteNote =
+    mediaCheckMode === 'soft' && broken
+      ? `, ${remoteChecks.length - broken}/${remoteChecks.length} hotlinked media OK (${broken} broken, see warnings)${unchangedNote}`
+      : `, ${remoteChecks.length - broken}/${remoteChecks.length} hotlinked media OK${unchangedNote}`;
+  mediaOkLine = `All ${remoteChecks.length} hotlinked media OK.`;
 } else if (changed) {
   remoteNote = `, no hotlinked media in changed files${unchangedNote}`;
+  mediaOkLine = `No hotlinked media in changed files${unchangedNote}.`;
+} else {
+  mediaOkLine = 'No hotlinked media to check.';
+}
+
+/** Markdown table cell: no pipes, no line breaks, no raw HTML. */
+function mdCell(s: string): string {
+  return s.replace(/\|/g, '\\|').replace(/\r?\n|\r/g, ' ').replace(/</g, '&lt;');
+}
+function mdCode(s: string): string {
+  return `\`${s.replace(/`/g, '%60').replace(/\r?\n|\r/g, ' ').replace(/\|/g, '%7C')}\``;
+}
+
+/** Append the media results to the job summary; a failure to write only warns. */
+function writeStepSummary() {
+  const path = process.env.GITHUB_STEP_SUMMARY;
+  // Off means another step reports media (CI's build step re-runs validate after the validate step).
+  if (!path || mediaCheckMode === 'off') return;
+  let md = `### Hotlinked media\n\nMode: \`${mediaCheckMode}\`${mediaSkipped ? ' (ALTSTRUMENT_SKIP_REMOTE)' : ''}\n\n`;
+  if (mediaProblems.length) {
+    md += `${mediaProblems.length} of ${mediaChecked} hotlinked media have problems.\n\n`;
+    md += '| File | Kind | URL | Problem | Level |\n| --- | --- | --- | --- | --- |\n';
+    for (const p of mediaProblems) {
+      md += `| ${mdCode(p.file)} | ${p.kind} | ${mdCode(p.url)} | ${mdCell(p.message)} | ${p.level} |\n`;
+    }
+  } else {
+    md += `${mediaOkLine}\n`;
+  }
+  try {
+    appendFileSync(path, `${md}\n`);
+  } catch (e) {
+    warnings.push(`GITHUB_STEP_SUMMARY: could not write ${path} (${(e as Error).message})`);
+  }
 }
 
 // ---- report ----------------------------------------------------------------
 
+writeStepSummary();
+if (process.env.GITHUB_ACTIONS) {
+  for (const p of mediaProblems) {
+    const cmd = p.level === 'error' ? 'error' : 'warning';
+    console.log(`::${cmd} file=${escapeProperty(p.file)}::${escapeData(p.message)}`);
+  }
+}
 if (warnings.length) {
   console.log(`\n${warnings.length} warning(s):`);
   for (const w of warnings) console.log(`  ! ${w}`);

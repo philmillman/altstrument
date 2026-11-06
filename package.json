@@ -6,8 +6,8 @@
   "description": "A directory of custom firmware and tools for music hardware.",
   "scripts": {
     "dev": "astro dev",
-    "build": "pnpm validate && astro build",
-    "build:timings": "pnpm validate && astro build --timings",
+    "build": "tsx scripts/validate.ts --media=soft && astro build",
+    "build:timings": "tsx scripts/validate.ts --media=soft && astro build --timings",
     "preview": "astro preview",
     "check": "astro check",
     "validate": "tsx scripts/validate.ts",

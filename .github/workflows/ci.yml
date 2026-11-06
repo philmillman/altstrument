@@ -7,7 +7,8 @@ on:
   push:
     branches: [main]
   # Hotlinked media rot without a commit; PRs only check their own files, so a
-  # daily run on main checks every link.
+  # daily run on main checks every link. Outside PRs broken links are warnings
+  # listed in the job summary, never a failure (cleaned up during /discover).
   schedule:
     - cron: '17 6 * * *'
   workflow_dispatch:
@@ -60,7 +61,11 @@ jobs:
           key: astro-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.sha }}
           restore-keys: astro-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-
 
+      # strict on PRs (their own files' media must resolve); soft on main and
+      # the daily run, where a link that rotted upstream is reported, not fatal.
       - run: pnpm validate
+        env:
+          ALTSTRUMENT_MEDIA_CHECK: ${{ github.event_name == 'pull_request' && 'strict' || 'soft' }}
       - run: pnpm check
         env:
           GITHUB_TOKEN: ${{ github.token }}
@@ -69,3 +74,5 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           # CI builds are not deployed; any absolute URL will do.
           SITE_URL: https://example.com
+          # The validate step above already checked hotlinked media.
+          ALTSTRUMENT_MEDIA_CHECK: 'off'

@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+kind: tool
+name: Lupe
+summary: >-
+  iPad and iPhone companion app for an FM-1 running SLOOP or Skiff: it shows and edits all four tracks, shapes sounds,
+  records samples and arranges songs over USB MIDI, and can install the firmware it speaks.
+description: >-
+  The FM-1 keeps making the sound and storing the patterns, and the app is a larger window onto it. It is written in
+  SwiftUI and CoreMIDI, from SLOOP's published editor protocol instead of SLOOP's code, and it only talks to SLOOP 2.8.4
+  and checks the version on connect. Pages cover a four-track sequencer view with a piano roll, drums, sound shaping,
+  a library, a mixer, projects, and arranging sections into songs, with a compact layout for a landscape iPhone. A demo
+  mode runs without a unit. The repository also holds a screen-link patch for SLOOP 2.8.4 and for Skiff 2.2 with
+  the built packages, so the tabs follow the unit's own buttons, and the app can install those packages and M-VAVE's V15
+  from the phone or tablet. The firmware notes say that install path has not been run on a real FM-1, and the testing
+  guide tells the reader to use SLOOP's Chrome installer until it has.
+status: active
+authors:
+- name: sgerstl
+  url: https://github.com/sgerstl
+source: https://github.com/sgerstl/fm1-ipad
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL v3 text and the README says GPL-3.0, with no "or later" statement. The files under vendor/ are
+  SLOOP's own under its licence. The committed FM-1_015.fwsc matches M-VAVE's licensed V15 image
+  (blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd, Apache-2.0), and the other .fwsc files are builds of SLOOP and Skiff,
+  not stock images. FIRMWARE.md says Lupe itself is private and for testers, although the repository is public.
+distribution: source-only
+requires_stock: SLOOP 2.8.4
+install_notes: >-
+  There is no store build: the app is built with Xcode 16 and XcodeGen and run on an iPad or iPhone, or on a Mac as a
+  Designed for iPad app, with a free Apple developer account. TESTING.md says to back up the unit from SLOOP's web
+  editor first, install SLOOP 2.8.4 with the screen-link package through a locally generated copy of SLOOP's installer,
+  and, if anything goes wrong, hold OCT- while powering on for USB rescue mode. The in-app firmware install ported from
+  Skiff's installer is marked as not yet tried on a unit.
+brick_risk: false
+tags: [ios, editor, sequencer, flasher, midi, usb-midi]
+versions:
+- version: main @ 9bb8f6f
+  date: 2026-11-06
+  url: https://github.com/sgerstl/fm1-ipad/commit/9bb8f6f104d60a0e25bc8262d3baee600847cea6
+  notes: No tagged releases; this is the latest commit.

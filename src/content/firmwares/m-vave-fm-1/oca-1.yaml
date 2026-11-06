@@ -1,0 +1,39 @@
+device: m-vave-fm-1
+name: OCA-1
+summary: >-
+  Ocarina firmware for the FM-1 that plays one near-pure note at a time so the console's microphone can hear the song
+  notes of the Switch 2 Ocarina of Time, with a twelve-song songbook.
+description: >-
+  The game's five note buttons are white keys in the middle of the keyboard (D5, F5, A5, B5 and D6) and light up, and
+  the other keys play every other note. The songbook shows each of the game's twelve songs as its button sequence, the
+  next key to play blinks, PLAY plays the song, and a finished song is named whichever page is open. Four knobs set
+  breath, vibrato, glide and tuning up to 50 cents either way. It has MIDI in and out and USB audio both ways, and sends
+  its screen for mirroring and the FM-1 Screen Reader. A browser emulator runs the same code. It is built on fm1-base and
+  felucca-bsp.
+status: active
+authors:
+- name: Charles Vestal
+  url: https://github.com/charlesvestal
+source: https://github.com/charlesvestal/fm1-ocarina
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSE is the MPL-2.0 text, as fm1-base. The README says the firmware is not affiliated with Nintendo or M-VAVE.
+homepage: https://charlesvestal.github.io/fm1-ocarina/
+distribution: browser-installer
+install_notes: >-
+  Web installer in Chrome or Edge with the FM-1 on USB, or base/tools/fm1_install.py with oca-0.9.fwsc from the
+  release. The release's .fwsc is built and signed by the GitHub workflow, and a SHA256SUMS file comes with it.
+brick_risk: false
+tags: [synth-engine, game, emulator, midi, usb-midi, usb-audio]
+image:
+  url: https://raw.githubusercontent.com/charlesvestal/fm1-ocarina/main/app/docs/img/screen-playing.png
+  alt: OCA-1 screen showing Zelda's Lullaby, song 1 of 12, as five round arrow buttons, above the five note keys D5, F5, A5, B5 and D6 and knobs for breath, vibrato, glide and tune
+  credit: Charles Vestal
+  source_url: https://github.com/charlesvestal/fm1-ocarina#readme
+  first_party: true
+versions:
+- version: v0.9
+  date: 2026-11-05
+  url: https://github.com/charlesvestal/fm1-ocarina/releases/tag/v0.9
+  notes: First release, with the twelve-song songbook, the lit note keys, PLAY, song naming and four knobs.

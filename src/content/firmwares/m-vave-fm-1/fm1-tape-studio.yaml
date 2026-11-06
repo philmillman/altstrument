@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: FM-1 Tape Studio
+kind: tool
+summary: >-
+  iPhone and iPad four-track tape recorder that uses the FM-1 as its keys and control surface, with a C++ engine and an FM-1
+  simulator that run on a computer.
+description: >-
+  The app records four stereo tracks on a six-minute timeline with punch and overdub, varispeed and looping, region editing
+  with undo, WAV import, and 24-bit mix and stem export. A small polyphonic synth is played from on-screen keys or from the FM-1's
+  keys over USB MIDI. The FM-1 sends its keys, buttons and encoders as MIDI, and the app sends LED and screen data back as
+  SysEx. The project's own docs report that nothing has been tested on a real FM-1 or a physical iPhone or iPad; it has only been
+  run in its simulator and unit tests. Showing the app on the FM-1 screen and playing audio through the FM-1 need
+  a firmware with that SysEx and a USB audio sink, which the docs take from the fm1-sampler firmware (catalogued as FM1 Sampler, m-vave-fm-1/fm1-sampler.yaml).
+  The repository is separate from the AveyCole FM1-Field radio firmware.
+status: active
+authors:
+- name: glamcoder
+  url: https://github.com/glamcoder
+source: https://github.com/glamcoder/fm1-field
+source_status: open
+license: MIT
+homepage: https://github.com/glamcoder/fm1-field#readme
+distribution: source-only
+install_notes: >-
+  Build the iOS project in Xcode, or the host engine with CMake. The docs report no testing on a real FM-1, and the screen
+  and audio features need the fm1-sampler firmware on the FM-1. The app does not write to the FM-1; it only exchanges MIDI
+  and SysEx, so stock firmware keeps working as a plain MIDI keyboard.
+brick_risk: false
+tags: [midi, usb-midi, sampler, utility]
+versions:
+- version: main @ 89aab97
+  date: 2026-11-04
+  url: https://github.com/glamcoder/fm1-field/commit/89aab9725788e69a0aa87e50bfd17b229249c28e
+  notes: No tagged releases; this is the latest commit.

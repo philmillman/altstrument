@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+name: ReplicantFM1
+summary: >-
+  Acid and techno groovebox on the X0X platform: a TR-909 drum kit, a modelled SH-101 mono synth, two TB-303 basslines
+  with a generator, a slicing break player, song mode, parameter locks and a master pump compressor.
+description: >-
+  Each part has its own step length of up to 64 steps, clock rate and drift, and every step can carry a probability
+  or condition. Knob movements can be recorded or locked to steps, patterns chain into songs, and the mix runs through
+  a shared reverb, a tape-style delay and a master drive, filter and sidechain pump keyed from the kick. The SH-101
+  engine is the project's own, while the 909, 303, generator and break engines are ports of other open projects. The
+  work is split across the FM-1's two cores, and the screens use a green virus-themed look with a boot splash. Its
+  LICENSING.md still describes the tree as X0X, a fork of Felucca.
+status: active
+authors:
+- name: DanimanX
+  url: https://github.com/DanimanX
+source: https://github.com/DanimanX/ReplicantFM1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  README and LICENSING.md give GPL-3.0-only, inherited from X0X and Felucca. Ported parts keep their own licences:
+  9W9 and ER-99 (GPL-3.0), Open303 (MIT), TB-3PO (GPL-3.0), BB Gen, used with the author's permission, and MPL-2.0
+  files from fm1-base. The fonts are SIL OFL 1.1. The committed ReplicantFM1-2.0.0.fwsc is the project's own build.
+homepage: https://danimanx.github.io/ReplicantFM1/
+distribution: browser-installer
+install_notes: >-
+  Open the installer page in Chrome or Edge with the FM-1 on USB, or run tools/fm1_install.py with the .fwsc from the
+  repository. A backup and restore page and a break loop uploader are on the same site. The README does not describe
+  a recovery path.
+brick_risk: false
+tags: [groovebox, drums, synth-engine, sequencer, sampler, fx, usb-midi, usb-audio, fork]
+image:
+  url: https://raw.githubusercontent.com/DanimanX/ReplicantFM1/main/docs/img/screen-home.png
+  alt: "ReplicantFM1 HOME page on black: green title HOME, pattern P1, tempo 125, five coloured step rows labelled 909, 101, 303A, 303B and BRK, and TEMPO, SWING, FILTER and PUMP knobs at the bottom"
+  credit: DanimanX
+  source_url: https://github.com/DanimanX/ReplicantFM1
+  first_party: true
+versions:
+- version: main @ e8143d6
+  date: 2026-11-06
+  url: https://github.com/DanimanX/ReplicantFM1/commit/e8143d60e3abfce29f5f1cb9d2b4b5043fdf432b
+  notes: No tagged releases; this is the latest commit.

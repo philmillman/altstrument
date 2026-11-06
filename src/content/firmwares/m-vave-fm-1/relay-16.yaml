@@ -1,0 +1,63 @@
+device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
+name: RELAY-16
+summary: >-
+  Sequencer-first firmware for the FM-1 and SMK-37 that makes no sound of its own: sixteen tracks play other instruments
+  over USB, Bluetooth MIDI and, on the SMK-37, the TRS jack.
+description: >-
+  Each track has eight patterns of up to 64 steps with its own length, direction and swing. A step holds up to four
+  notes with velocity, length, micro-timing, chance, conditions, ratchets, glide and four CC locks. Tracks carry a
+  destination and a device profile that names lanes and drum notes, with profiles for LOOM-8, JIANT FM, Clipper, GM
+  drums and the stock FM-1. It also has sixteen scenes and a 32-slot song, Euclid and random generators, live and step
+  record, a global key and scale, four project slots, per-port timing offsets and Bluetooth reconnect. It can send or
+  follow MIDI clock and act as a USB host. On the SMK-37 the keybed plays the selected track and the pads are the steps.
+  It is built on fm1-base and felucca-bsp. The README and every release say it has passed the host simulator's tests
+  only and has not been tried on a unit.
+status: active
+authors:
+- name: David Ryan (davidpryan)
+  url: https://github.com/davidpryan
+source: https://github.com/davidpryan/fm1-relay
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSE is the MPL-2.0 text, as fm1-base. The base/ copy of fm1-base and felucca-bsp keeps its own files' licences
+  (base/LICENSING.md). The only .fwsc in the tree is the M-Bootloader package used by the web tools, not a stock M-VAVE
+  image. Not to be confused with Philip-Bos's FM-1 Relay, a MIDI clock tool.
+homepage: https://davidpryan.github.io/fm1-relay/
+distribution: browser-installer
+install_notes: >-
+  Web installers in Chrome or Edge for the FM-1, SMK-37 Pro (also the Starrykey 37 Play), SMK-37 Elite and MKE-P37, or
+  base/tools/fm1_install.py with the matching .fwsc from a release; each installer refuses the wrong model's package.
+  The README says to keep M-VAVE's stock firmware and M-UPGRADE at hand, that M-UPGRADE puts stock back, and that
+  holding OCT- (SMK-37: OCTAVE-) while switching on gives the update mode if a unit does not start. The SMK-37 layer
+  does not write the calibration, Bluetooth pairing or key areas.
+brick_risk: false
+tags: [sequencer, midi, usb-midi, ble-midi, performance, scales, generative, emulator]
+image:
+  url: https://raw.githubusercontent.com/davidpryan/fm1-relay/main/app/docs/img/screen-playing.png
+  alt: RELAY-16 Steps page on the FM-1 while playing, a grid of 16 steps with C4 and a 1:2 condition on step 1, above knobs for length 16, div 1/16, direction FWD and swing 50%
+  credit: David Ryan
+  source_url: https://davidpryan.github.io/fm1-relay/
+  first_party: true
+versions:
+- version: v0.5
+  date: 2026-11-06
+  url: https://github.com/davidpryan/fm1-relay/releases/tag/v0.5
+  notes: Adds device profiles for JIANT FM and Clipper, with channel hints on the TRACK page.
+- version: v0.4
+  date: 2026-11-06
+  url: https://github.com/davidpryan/fm1-relay/releases/tag/v0.4
+  notes: Adds per-port timing offsets and clock routing, Bluetooth auto-reconnect, and a device list on the Ports page.
+- version: v0.3
+  date: 2026-11-06
+  url: https://github.com/davidpryan/fm1-relay/releases/tag/v0.3
+  notes: Adds help cards that appear when a button is held for a second.
+- version: v0.2
+  date: 2026-11-06
+  url: https://github.com/davidpryan/fm1-relay/releases/tag/v0.2
+  notes: Adds four project slots, save at the stop while playing, the web installers and the manual. Projects from 0.1 are not read.
+- version: v0.1
+  date: 2026-11-06
+  url: https://github.com/davidpryan/fm1-relay/releases/tag/v0.1
+  notes: First build for the FM-1 and the SMK-37 Pro, Elite and MKE-P37.

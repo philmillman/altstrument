@@ -1,0 +1,40 @@
+device: m-vave-fm-1
+name: FM1 V-Station
+summary: >-
+  Port of a Novation V-Station-style synth to the FM-1 with eight voices in one shared pool, unison to 4x, 175 factory
+  presets, a V-Station-styled screen and a USB Web MIDI editor.
+description: >-
+  Rights warning: the 175 retained factory presets are described as taken from the original instrument's data, the splash
+  carries Novation branding, and the release includes a complete 1 MiB flash image whose non-application regions come
+  from another project's full device image, which probably holds M-VAVE's boot and system code. The README says no Novation
+  source is included and that the work is a reconstruction from supplied executable and data behaviour. Eight voices are
+  allocated from one pool with whole-group voice stealing, a POOL setting from one to eight, and two cores rendering four
+  voices each at full load. There are 170 synth parameters, a preset browser, live CPU and underrun counters, and a Web
+  MIDI editor with JSON preset import and export. The release notes say a first physical eight-voice test seemed good.
+status: active
+authors:
+- name: Kayman18
+  url: https://github.com/Kayman18
+source: https://github.com/Kayman18/FM1-VStation
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The repository has no root LICENSE. source/LICENSE is the GPL v3 text and no file states "or later", so this is
+  GPL-3.0-only, but the README does not say that it covers the application; the app source carries no licence header, and
+  the fm1-base copy under source/base is MPL-2.0. Novation's presets and branding are not covered by it. The committed
+  release/FM1-VStation-RC1.fwsc (610,108 bytes) is the project's own build and matches none of M-VAVE's licensed images, but
+  the complete flash image release/FM1-VStation-RC1-M-Flasher.bin should be treated as containing vendor code.
+homepage: https://github.com/Kayman18/FM1-VStation
+distribution: download
+install_notes: >-
+  The README prefers release/FM1-VStation-RC1.fwsc for the update and offers the complete M-Flasher image, with a warning to
+  keep a full-device backup first. The complete image replaces the whole flash, including regions taken from a reference
+  image, so it is the install that can leave a unit needing a programmer or M-VAVE's repair. The README gives no step-by-step
+  steps.
+brick_risk: true
+tags: [synth-engine, editor, usb-midi, midi, performance]
+versions:
+- version: main @ 974df83
+  date: 2026-11-03
+  url: https://github.com/Kayman18/FM1-VStation/commit/974df83a275ee0ed6238fc8664a12cd50f04b32d
+  notes: No tagged releases; this is the latest commit.

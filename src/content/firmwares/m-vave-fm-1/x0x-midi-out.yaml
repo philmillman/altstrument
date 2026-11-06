@@ -1,0 +1,40 @@
+device: m-vave-fm-1
+name: X0X MIDI Out
+summary: >-
+  Fork of Charles Vestal's X0X that sends serial MIDI out on the FM-1's MCU pin 39 (PB5), for a unit modified with a 3.5 mm
+  MIDI jack.
+description: >-
+  Adds a bit-banged serial MIDI output to X0X 1.2.0, enabled by default and selected at build time with
+  X0X_MIDI_OUT=1, with a test for its timing and a changed firmware ID so it is not mistaken for upstream. The output
+  needs a hardware change: the author's photo shows removing resistor R97, which links that pin to the amplifier disable
+  line, and wiring the pin through 10 ohms and the 3.3 V rail through 33 ohms to a jack glued to the board, with a hole
+  drilled in the case. The README recommends a 74LVC1G07 buffer between the pin and the resistor and calls the fork
+  experimental and rough. The rest is X0X, with eight commits on top.
+status: active
+authors:
+- name: Harvie
+  url: https://github.com/Harvie
+source: https://github.com/Harvie/fm1-x0x
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Inherited from X0X (LICENSE is the GPL v3 text and the README says GPL-3.0-only). The README also says recorded breaks are
+  not covered, and Open303 is MIT.
+distribution: download
+install_notes: >-
+  The pre-release carries x0x-midi.fwsc, which installs as X0X does. The MIDI output needs the case opened and soldering,
+  described only in the README's photo; the firmware itself needs none. The author warns the output has little protection
+  against a short and that a modified unit running firmware without MIDI out support can be harmed without the buffer chip.
+brick_risk: false
+tags: [fork, midi, drums, synth-engine, sequencer, performance]
+image:
+  url: https://raw.githubusercontent.com/Harvie/fm1-x0x/main/docs/img/m-vave-fm-1-harvie-midi-out-mod.jpg
+  alt: Annotated photo of the FM-1 circuit board for the MIDI output mod, showing resistor R97 removed, a 3.5 mm jack glued on the board, and 10 and 33 ohm resistors wired to MCU pin 39 and the 3.3 V pad
+  credit: Tomas Mudrunka (Harvie)
+  source_url: https://github.com/Harvie/fm1-x0x#readme
+  first_party: true
+versions:
+- version: v1.2.0-midi1
+  date: 2026-11-03
+  url: https://github.com/Harvie/fm1-x0x/releases/tag/v1.2.0-midi1
+  notes: Pre-release, the first with support for the hardware MIDI out mod; the release says it is far from perfect.

@@ -1,0 +1,39 @@
+device: m-vave-fm-1
+name: RoboSeq
+summary: >-
+  Board-game sequencer: two robots follow programs of moves across a 5 x 5 board of belts and rails, and where they go
+  becomes melody, bass and percussion, with a SID-style lead you can play over them.
+description: >-
+  The robots are Scout-7, which plays the melody, and Echo-3, which plays the bass. You type their programs on the
+  keys, steer them while they run, build the board tile by tile and choose from six preset boards. Harmony and board
+  changes follow four-step cycles, and drums, a mixer and tempo pages are included. It is a port of the author's browser
+  instrument and sits on Dinghy 0.4. The README says it runs in the fm1-emu emulator and has not been tried on an FM-1,
+  and that boards and programs are not yet saved to flash.
+status: active
+authors:
+- name: joakimskurk
+  url: https://github.com/joakimskurk
+source: https://github.com/joakimskurk/fm1roboseq
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md gives GPL-3.0-only, as Dinghy, with Felucca, SLOOP and OberVave platform code under their own notices.
+  The Terminus font is SIL OFL 1.1, and the designburg logo in assets/ is all rights reserved and not under the GPL.
+distribution: source-only
+install_notes: >-
+  Build with the Makefile, then install build/roboseq.fwsc over USB-MIDI with tools/fm1_install.py on an FM-1 running
+  M-VAVE's V15 or another firmware with the update loader. The README warns that any flash can brick a unit and says
+  holding OCT- while switching on reaches the updater.
+brick_risk: false
+tags: [sequencer, generative, synth-engine, drums, game, fork]
+image:
+  url: https://raw.githubusercontent.com/joakimskurk/fm1roboseq/main/docs/screens/home.png
+  alt: "RoboSeq HOME page: a 5 x 5 board of conveyor arrows, zap rails, rotators, pulse pads and a crate, a red robot bottom left, an orange one top right, program icons down both sides"
+  credit: joakimskurk
+  source_url: https://github.com/joakimskurk/fm1roboseq
+  first_party: true
+versions:
+- version: main @ a456c66
+  date: 2026-11-06
+  url: https://github.com/joakimskurk/fm1roboseq/commit/a456c668f45b13893dcc769e373a764f19e96859
+  notes: No tagged releases; this is the latest commit.

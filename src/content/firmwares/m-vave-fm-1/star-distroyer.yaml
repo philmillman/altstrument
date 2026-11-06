@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: Star Distroyer
+summary: >-
+  Vector FM synth with four banks of four oscillators, a morphing six-stage resonator and a four-band distortion
+  section, plus an arpeggiator, two step sequencers and a TURING sequencer page.
+description: >-
+  Each bank has harmonics 1 to 32 and a vector X/Y control, with mono, duo and four-voice poly modes. A resonator stage
+  offers filter models from band-pass to comb and allpass, and a four-band destroyer adds shapers, dynamics and a
+  feedback loop. The README lists 33 factory patches and says the project is at its voice stage, playing from the keys,
+  MIDI and a fixed 16-step loop, with the sequencer plan still being built. It is based on Dinghy 0.4 and the repository
+  carries design plans for the sound and the sequencer.
+status: active
+authors:
+- name: joakimskurk
+  url: https://github.com/joakimskurk
+source: https://github.com/joakimskurk/fm1stardistroyer
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md gives GPL-3.0-only, as Dinghy, with Felucca, SLOOP and OberVave platform code under their own notices.
+  The Terminus font is SIL OFL 1.1, and the designburg logo in assets/ is all rights reserved and not under the GPL.
+distribution: source-only
+install_notes: >-
+  Build with build.sh and install the package with tools/fm1_install.py over USB, on an FM-1 running M-VAVE's V15 or
+  another firmware with the update loader. The Dinghy README documents a USB rescue, reached by holding OCT- while
+  switching on, and an automatic fall back to it after two failed boots.
+brick_risk: false
+tags: [synth-engine, oscillator, filter, fx, arpeggiator, sequencer, generative, fork]
+versions:
+- version: main @ df37a30
+  date: 2026-11-06
+  url: https://github.com/joakimskurk/fm1stardistroyer/commit/df37a30cc291145f4e3d12f61bfbfea870122c21
+  notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: FM-23
+summary: >-
+  Tekno and tribal groovebox: a 303-style acid bass, a two-voice lead and drone synth, synthesized percussion and a
+  pattern generator that follows a fixed musical grammar.
+description: >-
+  The generator builds patterns from small note cells in Phrygian-family and other scales, leaves rests where the kick
+  sits, adds accent and slide flags and runs 3-, 5- and 7-step percussion cycles against the 16-step grid. A five-part
+  arc runs from a drone intro to a peak and an outro. It is a ground-up app on a platform kit derived from Felucca, as
+  used in M-Vave-OP1, with a browser emulator, a web installer and a package checker. The README calls it version 0.1,
+  in development.
+status: active
+authors:
+- name: MarcoCasanova00
+  url: https://github.com/MarcoCasanova00
+source: https://github.com/MarcoCasanova00/FM-23
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md gives GPL-3.0-only, with Felucca and M-Vave-OP1 platform code under their notices. The Inter Tight font
+  is SIL OFL 1.1. The repository commits M-VAVE's FM-1 V15 image as vendor/m-vave/FM-1_015.fwsc, which matches the file
+  M-VAVE licenses under Apache-2.0 (git blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd).
+homepage: https://marcocasanova00.github.io/FM-23/webapp/installer/
+distribution: browser-installer
+install_notes: >-
+  Use the web installer in Chrome or Edge after reading docs/SAFETY.md, which advises a flash backup and, until the
+  firmware has run on a real unit, recovery hardware at hand. The installer can return the unit to official V15, and the
+  platform's boot guard drops to the chip's boot mode after two failed boots or when OCT- and OCT+ are held for five
+  seconds.
+brick_risk: false
+tags: [groovebox, drums, synth-engine, sequencer, generative, scales, editor, emulator, fork]
+versions:
+- version: main @ 83032a9
+  date: 2026-11-06
+  url: https://github.com/MarcoCasanova00/FM-23/commit/83032a9d109d7f8b4fa8c3348dda814a8ef33505
+  notes: No tagged releases; this is the latest commit.

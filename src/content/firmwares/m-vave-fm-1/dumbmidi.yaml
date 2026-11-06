@@ -1,0 +1,48 @@
+device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
+name: DUMBMIDI
+summary: >-
+  MIDI controller firmware for the FM-1 and SMK-37 with a large chord and note display, on-screen mapping of every control,
+  USB and Bluetooth MIDI out, an arpeggiator, chord memory, scale lock and a keyboard split.
+description: >-
+  The main page shows the name of the chord the held notes form in large type, with the note names, octave and active modes
+  around it. Each knob, fader, button, wheel and pedal can be mapped on the screen to a CC, note, program change or pitch bend
+  on its own channel, with two banks of knobs and faders. The arpeggiator has four patterns, five rates, one to four octaves
+  and a tempo of 40 to 240 BPM with tap tempo. Chord memory stores a held shape and plays it from one key, and scale lock snaps
+  notes to a chosen root and scale. A split sends keys below a chosen note on one channel and the rest on another. Everything
+  goes out over USB MIDI and Bluetooth MIDI at once, and MIDI in on channel 16 colours the SMK-37 pads or the FM-1 key lights.
+  The release has separate packages for the FM-1 and for the SMK-37 Pro, Elite and MKE-P37. The README says the Bluetooth stack
+  has not been tested on an SMK-37. It is built with the author's foma framework on Felucca's platform and the fm1-to-smk37
+  kit's SMK-37 layer.
+status: active
+authors:
+- name: David Konsumer (konsumer)
+  url: https://github.com/konsumer
+source: https://github.com/konsumer/dumbmidi
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md lists the parts it builds on: Felucca, SLOOP, Dinghy and X0X platform code (GPL-3.0-only), the Bluetooth stack
+  (GPL-3.0-only OR MPL-2.0, used under GPL-3.0-only), felucca-bsp parts under MPL-2.0 and Apache-2.0, Inter Tight and Terminus
+  fonts under SIL OFL 1.1, and JieLi SDK files under Apache-2.0. No stock M-VAVE image is committed.
+homepage: https://mutant.cloud/#/p/dumbmidi
+distribution: browser-installer
+install_notes: >-
+  Install from the mutant.cloud page or use the .fwsc package from the release that matches the model on the label, because
+  the stock updater accepts only a unit's own package; building needs Docker (./fm1 build). Going back is done by installing
+  the matching stock package from the Firmware Hub. For the SMK-37 the README advises backing up the unit's flash first,
+  since it holds the factory key and pad calibration, which this firmware does not write. The README says installing
+  unofficial firmware is at your own risk.
+brick_risk: false
+tags: [midi, usb-midi, ble-midi, chords, arpeggiator, display]
+image:
+  url: https://raw.githubusercontent.com/konsumer/dumbmidi/main/docs/screen.png
+  alt: "DUMBMIDI main page on a dark screen: OCT 0 at top left, the chord name CMAJ7 in large white type, the notes C4 E4 G4 B4 beneath a thin rule, and a teal velocity line along the bottom"
+  credit: konsumer
+  source_url: https://github.com/konsumer/dumbmidi
+  first_party: true
+versions:
+- version: 1.0.0
+  date: 2026-11-05
+  url: https://github.com/konsumer/dumbmidi/releases/tag/v1.0.0
+  notes: First release, with packages for the FM-1 and the SMK-37 Pro, Elite and MKE-P37.

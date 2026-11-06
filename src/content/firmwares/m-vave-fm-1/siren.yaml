@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+name: SIREN
+summary: >-
+  Generative rave firmware built on Clipper: it writes whole tracks in eight dance styles across seven layers, then
+  starts the next, while the keys drop, build and take over layers like a DJ deck.
+description: >-
+  The styles are techno, trance, psy, acid, rave, hard, drum and bass and house, each with its own tempos, scales,
+  grooves, drum kits and sound bank, and 201 sounds in total. The black keys trigger breaks, builds, drops, fills and
+  new melodies, the white keys play any layer, and pages hold DJ effects, a mixer and 16 saved seeds that replay a track.
+  Risers, a port of the OberVave synth voice and a split across both cores are included. The README credits the
+  arrangement brain, screen and controls to 3dSam and the engines to Clipper and SLOOP, and calls this release
+  experimental.
+status: active
+authors:
+- name: isod89
+  url: https://github.com/isod89
+source: https://github.com/isod89/siren-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md gives GPL-3.0-only for the code, with msfa (Apache-2.0), DaisySP and Rings (MIT), CrispyZebra (GPL-3.0)
+  and OberVave ports under their notices. Bundled samples are CC0, apart from one electric piano set under CC BY 3.0
+  that needs credit to Greg Sullivan.
+homepage: https://isod89.github.io/siren-fm1/webapp/installer/
+distribution: browser-installer
+install_notes: >-
+  Use the installer page in Chrome or Edge with the FM-1 on USB without a hub; the install takes about a minute. The
+  page also returns the unit to official V16 or V15, and Clipper or SLOOP can be reinstalled with their own installers.
+  The .fwsc package is attached to the release.
+brick_risk: false
+tags: [generative, groovebox, drums, synth-engine, arpeggiator, sequencer, fx, performance, fork]
+image:
+  url: https://raw.githubusercontent.com/isod89/siren-fm1/main/assets/logo/siren-deck.png
+  alt: "SIREN deck screen: style PSY, key F# PHRYG, tempo 146, a track-plan bar, BUILD with PEAK IN 6, seven layers from DRUMS to FX with sound names and level bars, and four knobs at the bottom"
+  credit: isod89
+  source_url: https://github.com/isod89/siren-fm1
+  first_party: true
+versions:
+- version: 0.9.1
+  date: 2026-11-05
+  url: https://github.com/isod89/siren-fm1/releases/tag/v0.9.1
+  notes: Pre-release; raises the sound count from 107 to 201 and adds a port of the OberVave synth voice.

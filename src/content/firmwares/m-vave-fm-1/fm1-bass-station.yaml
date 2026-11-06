@@ -1,0 +1,41 @@
+device: m-vave-fm-1
+name: FM1 Bass Station
+summary: >-
+  Port of a Novation Bass Station-style monosynth to the FM-1 with an integrated 303-style pattern sequencer, a 100-program
+  factory bank, a 128-slot user bank and a USB Web MIDI editor.
+description: >-
+  Rights warning: the firmware embeds patch data recovered from Novation's Bass Station plug-in, its 100-program factory
+  bank, and 38 patches from two Rekkerd community banks, and the repository keeps the plug-in preset file it was recovered
+  from. Novation's executable and source are not included, and the notes say the engine and sequencer are clean-room code.
+  The synth has two oscillators with modulation, a mixer and filter, with cutoff and resonance on the SELECT and ALGO
+  knobs and four-control pages. The sequencer has a piano roll with gate, octave, accent and slide views, generate and
+  mutate pages, and live octave transpose. Notes are declicked, the first boot fills empty user slots once, and the editor
+  runs in Chrome over USB-C.
+status: active
+authors:
+- name: Kayman18
+  url: https://github.com/Kayman18
+source: https://github.com/Kayman18/FM1-NovationBassStation
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The repository has no root LICENSE file and no licence statement. The project's own source files carry an
+  SPDX-License-Identifier: MPL-2.0 header, which is what this value rests on; fm1-base, felucca-bsp and the SDK keep their
+  licences in their directories. The factory programs, derived from Novation's plug-in presets, and the community patches
+  (Rekkerd, said to be shared with author permission) are not covered by that header. The committed
+  FM1-BassStation-RC1.fwsc (610,108 bytes) is the project's own build and matches none of M-VAVE's licensed images.
+  source/reference/FM1-PolyWavetable-TEST81-M-Flasher.bin (1 MiB, blob d89dbdbe) is a full-flash M-Flasher image of the
+  author's own PolyWavetable test build, not a stock image.
+homepage: https://github.com/Kayman18/FM1-NovationBassStation/releases/tag/RC1
+distribution: download
+install_notes: >-
+  The release has FM1-BassStation-RC1.fwsc, the package for normal updates, which updates the application region and keeps
+  the per-device user bank. The README gives no step-by-step install. A full M-Flasher image is not built by default,
+  because it would erase the user bank, and none is released. Back up and keep M-VAVE's updater at hand.
+brick_risk: false
+tags: [synth-engine, sequencer, generative, editor, usb-midi, midi]
+versions:
+- version: RC1
+  date: 2026-11-06
+  url: https://github.com/Kayman18/FM1-NovationBassStation/releases/tag/RC1
+  notes: Makes SELECT the filter cutoff and ALGO the resonance on every page except the preset browser, uses a four-control layout on all parameter pages and lengthens the splash.

@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+kind: tool
+name: FM-1 Mirror for iPhone and iPad
+summary: >-
+  Native iOS app that shows the FM-1's screen live over USB-C MIDI from firmware built on fm1-base, with a chord and
+  scale guide beside it.
+description: >-
+  The app asks the FM-1 for its 240 by 240 screen as SysEx over class-compliant USB MIDI through Core MIDI, decodes the
+  rectangles and fills, and draws it as large as the display allows. Safari and other iOS browsers have no Web MIDI,
+  which is why the browser mirror page cannot run there. It needs a firmware that carries the fm1-base mirror protocol,
+  and LOOM-8 is the example named. A chord guide lists a key's scale and the seven chords in it with inversions and
+  sevenths, and shows the keys to hold on a 27-key strip. A demo button plays a recorded session. The decoder is a
+  Swift package with tests that compare its output with fm1-base's Python decoder. Showing the panel's buttons and
+  lights and playing the unit from the phone are listed as not done.
+status: active
+authors:
+- name: David Ryan (davidpryan)
+  url: https://github.com/davidpryan
+source: https://github.com/davidpryan/FM1Mirror
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The README states MPL-2.0 with a 2026 copyright line for David Ryan; the repository has no LICENSE file. The
+  committed .syx files are a recorded screen stream from a LOOM-8 simulator, not firmware.
+distribution: source-only
+install_notes: >-
+  Open FM1Mirror.xcodeproj in Xcode 26 or later, set a signing team and run on an iPhone or iPad. Connect the FM-1 by
+  USB-C, with its USB port set to computer, not MIDI host. The app writes nothing to the unit.
+brick_risk: false
+tags: [ios, emulator, usb-midi, midi, chords, scales, ui]
+versions:
+- version: main @ 33b3a29
+  date: 2026-11-06
+  url: https://github.com/davidpryan/FM1Mirror/commit/33b3a2912a5ac1daa3c23d1115f618ed5c5928c7
+  notes: No tagged releases; this is the latest commit.

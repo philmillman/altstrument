@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+name: MRC Synth
+summary: >-
+  Felucca fork with its own brand colours, boot screen and a drawing per engine and effect, one autosaved project with
+  24 saved patterns, and a reworked page layout.
+description: >-
+  Keeps Felucca's sound engines and sequencer and changes the interface and project model. The boot screen is animated,
+  each engine and effect page draws its knobs in place of the scope, the header and footer are rearranged, and the
+  sequencer fills the panel. Projects are replaced by one autosave that writes after three seconds idle, plus 24 saved
+  patterns. Some pages and menu items are removed or reordered, such as the automation page and chord entry, which gives
+  way to a quantize setting. A browser emulator build path is in dev/. CHANGES.md lists every change against Felucca, and
+  the README says the work was made with AI coding agents and is not an official Felucca release.
+status: active
+authors:
+- name: Jules Marécaille
+  url: https://github.com/JulesMarecaille
+source: https://github.com/JulesMarecaille/mrc-synth
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and LICENSE state GPL-3.0-only, as Felucca. The engines are MIT (Felucca-Engines), the hardware layer is
+  MPL-2.0 (felucca-bsp), the Hügelton sample pack is CC0, and fonts and ported DSP keep their own licences
+  (LICENSING.md). No firmware image is committed.
+distribution: source-only
+install_notes: >-
+  No release package: build it with the JieLi toolchain and AC79 SDK as BUILDING.md describes, from a clone with
+  submodules, and install the resulting .fwsc as for Felucca. The README says M-VAVE's own updater takes the unit back
+  to factory firmware.
+brick_risk: false
+tags: [fork, synth-engine, sequencer, fx, ui, emulator]
+versions:
+- version: main @ fcf7e18
+  date: 2026-11-05
+  url: https://github.com/JulesMarecaille/mrc-synth/commit/fcf7e1827df8b5430808e226bc61cb3fc7f4b701
+  notes: No tagged releases; this is the latest commit.

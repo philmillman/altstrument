@@ -1,0 +1,41 @@
+device: m-vave-fm-1
+name: Beetroot Tempura
+summary: >-
+  Granular canvas firmware for the FM-1 after the workflow of Beetlecrab Tempera: eight sample tracks of eight cells,
+  four emitters, up to 48 grains, effects and BLE MIDI, built on M-VAVE's FM1 Open.
+description: >-
+  The screen shows eight tracks by eight cells with live waveforms and grains, and four emitters can be placed on any
+  cells. Each emitter has grain rate, size, window shape, spray, position, scan, pitch and reverse settings, an envelope,
+  a filter and an LFO, with chorus, tempo-synced delay and reverb sends. It has sixteen voices in poly, mono and latch
+  modes, eight canvases saved to flash, USB, DIN and Bluetooth MIDI in, and a track that records Bluetooth or USB audio
+  live. The flasher page loads any eight of 28 built-in synthesized sounds as the sample bank. It is a fork of
+  m-vave/fm1_open and keeps its SDK; the author says no Tempera code is used. A canvas is stored in the flash sector of
+  the matching FM1 Open project slot. The notes say it has run in the browser simulator and has not been tried on hardware.
+status: active
+authors:
+- name: CallieSchmallie
+  url: https://github.com/CallieSchmallie
+source: https://github.com/CallieSchmallie/Beetroot-tempura
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE.md is M-VAVE's FM1 app licence: GPL-3.0-only with an additional section 7 permission to link the binary SDK,
+  as in m-vave/fm1_open. The SDK's engine library is proprietary, redistributable in binary form for M-VAVE FM1 devices
+  only (THIRD_PARTY.md). The committed sdk/firmware/FM-1_015.fwsc matches M-VAVE's licensed V15 image
+  (blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd, Apache-2.0), and every other sdk/ file is identical to the
+  upstream repository's. The GitHub API reports NOASSERTION because the licence file has a different name and text.
+homepage: https://callieschmallie.github.io/Beetroot-tempura/
+distribution: browser-installer
+requires_stock: FM1 Open V14
+install_notes: >-
+  The project's GitHub Pages site is a flasher with the firmware built in, for Chrome or Edge, or Chrome on Android with
+  a USB-OTG cable; /simulator.html runs it in the browser first. Back up projects, the voice library and the sample bank
+  with M-VAVE's workbench before flashing. Saving canvas N replaces FM1 Open project N. Flash FM1 Open or stock V15
+  from the M-VAVE workbench to go back.
+brick_risk: false
+tags: [fork, granular, sampler, sdk, fx, ble-midi, emulator, flasher]
+versions:
+- version: main @ 1b3dfc5
+  date: 2026-11-04
+  url: https://github.com/CallieSchmallie/Beetroot-tempura/commit/1b3dfc513b82461b9bf34d3aaab67b7f5927e8fd
+  notes: No tagged releases; this is the latest commit.

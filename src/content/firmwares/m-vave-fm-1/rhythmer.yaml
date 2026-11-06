@@ -1,0 +1,51 @@
+device: m-vave-fm-1
+name: Rhythmer
+summary: >-
+  Six-track groovebox on a JIANT base: synthesized drums, nine synth models, 303-style acid lines and a playable
+  breakbeat machine with a sequencer, a browser emulator, an editor and an installer.
+description: >-
+  Rights warning: the firmware image and the release package carry two-bar drum loops made from "Amen, Brother" by The
+  Winstons and "Think (About It)" by Lyn Collins, the second a drum edit from files the author supplied. The README says
+  these recordings are separate from the code licence and that permission from their rights holders has not been
+  documented. The loops can be replaced from the web editor.
+
+  Each of six tracks can be a drum kit, one of nine synth models (Serum, Phase, LoFi, Analog, FM6, Wheel, FM+STAT,
+  SWAV-SAW and SID-6581), an acid line generator or the break machine, which slices a loop into 16 chops with repeat
+  and mutate commands. There are four projects with A to D sections, two LFOs per track, modulation slots and shared
+  distortion, phaser, delay and reverb. The project is built on JIANT, which is a fork of Felucca, and takes drum and
+  synth models from several community projects. The README says the beta has not yet had its exact-package check on a
+  real unit.
+status: active
+authors:
+- name: Jazzy Rhythmer
+  url: https://github.com/JazzyRhythmer
+source: https://github.com/JazzyRhythmer/Rhythmer
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  README states GPL-3.0-only with original component licences and notices kept (jiant/LICENSING.md, THIRD_PARTY.md).
+  The Amen and Think loops are excluded from that licence and have no documented permission. The repository also
+  commits M-VAVE's FM-1 V15 image (site/vendor/m-vave-v15/FM-1_015.fwsc and www/downloads/official-v15/FM-1_015.fwsc),
+  which matches the file M-VAVE licenses under Apache-2.0 (git blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd). The
+  FM-1_015.fwsc inside www/downloads/FM-1-V15-recovery.zip is the same file (699,956 bytes, same blob), packed with
+  M-VAVE's Apache-2.0 licence and notices.
+homepage: https://jazzyrhythmer.github.io/Rhythmer/
+distribution: browser-installer
+install_notes: >-
+  Use the installer page in desktop Chrome or Edge, with a backup made first and USB power kept on until the checks
+  finish. The README recommends official V15 as the starting point and offers a return to V15 from the same page. The
+  install overwrites the factory audio in the two sample banks that hold the break loops; the update loader leaves
+  project and settings sectors alone. UC25HQ80 flash support is written but untested on that chip.
+brick_risk: false
+tags: [groovebox, drums, synth-engine, sequencer, sampler, fx, editor, emulator, fork]
+image:
+  url: https://raw.githubusercontent.com/JazzyRhythmer/Rhythmer/main/docs/launch/card.png
+  alt: "Rhythmer workspace screen: a GRID page with cutoff, reso, env and decay values, an ACID 303 X0X ACID track card, and six track tiles labelled DRUM, SYNTH, SYNTH, SYNTH, ACID and BREAK"
+  credit: Jazzy Rhythmer
+  source_url: https://github.com/JazzyRhythmer/Rhythmer
+  first_party: true
+versions:
+- version: 0.1.0-beta.1
+  date: 2026-11-06
+  url: https://github.com/JazzyRhythmer/Rhythmer/releases/tag/v0.1.0-beta.1
+  notes: Pre-release; first public beta, with the track filter, ADSR and both LFOs applied to the break machine.

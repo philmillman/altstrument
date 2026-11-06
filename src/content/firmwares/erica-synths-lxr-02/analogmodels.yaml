@@ -1,0 +1,46 @@
+device: erica-synths-lxr-02
+name: AnalogModels
+summary: Fork of Erica Synths' open LXR-02 firmware 1.7 that adds 25 TR-808 and TR-909 instrument models, a tube saturator, up to eight parameter locks per step and more than 30 stock bug fixes.
+description: >-
+  The 25 instruments appear in every Waveform list after the stock waveforms, so
+  any of the six voices can play an 808 or 909 kick, snare, tom, clap, hat,
+  cymbal or other percussion; choosing one sets up the voice to play like the
+  original. The PWM control becomes a tube-style saturator on those instruments.
+  A step can hold up to eight locked parameters instead of two, including the
+  waveform, so a step can play another instrument. Version 0.4 fixes more than 30
+  problems found in firmware 1.7, many from a public review of the source. Kits
+  and patterns that use only the original waveforms render identically, and
+  pattern files keep the extra locks after the original data so the stock
+  firmware still loads them. The author's tests run the real code on a PC and in
+  an emulator. It is not an Erica Synths release.
+status: active
+authors:
+  - name: G3nzalo
+    url: https://github.com/G3nzalo
+source: https://github.com/G3nzalo/analogmodels-firmware
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Inherits the stock firmware's NOTICE.md, which states GPL-3.0-only with
+  permission to combine with STMicroelectronics libraries and no rights to the
+  Erica Synths, LXR and LXR-02 names or logos.
+distribution: download
+requires_stock: LXR-02 with the stock bootloader
+install_notes: >-
+  Copy LXR_AnalogModels_V0.4.img from the release to the top folder of the SD
+  card, delete any other LXR*.img files, then hold the encoder button while
+  switching the unit on until LXR Updater appears. The update does not touch the
+  bootloader, so an interrupted update can be repeated, and installing an
+  official update the same way returns to stock. Kits saved with version 0.2 that
+  use its models need the instruments chosen again.
+brick_risk: false
+tags: [drums, fork, open-source, sequencer, synth-engine]
+versions:
+  - version: v0.4
+    date: 2026-11-05
+    url: https://github.com/G3nzalo/analogmodels-firmware/releases/tag/v0.4
+    notes: Bug fix release with more than 30 fixes to firmware 1.7 on top of the 0.3 features.
+  - version: v0.3
+    date: 2026-11-04
+    url: https://github.com/G3nzalo/analogmodels-firmware/releases/tag/v0.3
+    notes: Adds the 808 and 909 instruments, the tube saturator and up to eight locks per step.

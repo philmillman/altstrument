@@ -1,0 +1,40 @@
+device: elektron-machinedrum
+name: DBX-K2
+summary: User machine for the Machinedrum on MDX X.20 that models a resonator kick with pitch sweep, hold, saturation and tone controls, on all 16 tracks of MKI and MKII.
+description: >-
+  A single DSP56300 machine, sent as SysEx into a USR slot, in which each trigger
+  strikes a tuned resonator whose pitch falls from a higher start. Eight knobs
+  set base pitch, sweep depth and time, decay, attack pulse strength, a hold time
+  during which the resonator rings at full level, saturation and a low-pass tone
+  control. The release page lists cycle counts for the MKII and for the MKI with
+  DRAM or SRAM and says it was tested on a MKII with the +Drive option. Source
+  files, models and build tools are in the repository, which uses the MDS
+  tooling as submodules. The author credits Claude, an AI assistant, with the
+  DSP code and tooling.
+status: active
+authors:
+  - name: MonCalamari
+    url: https://github.com/MonCalamari
+source: https://github.com/MonCalamari/DBX-K2
+source_status: open
+license: GPL-3.0-only
+license_notes: LICENSE is the GPL version 3 text with no statement about later versions.
+distribution: download
+requires_stock: MDX X.20
+install_notes: >-
+  Needs a Machinedrum already running the third-party MDX X.20 firmware. Send
+  the slot-1 .syx file from the release, leaving about 300 ms between SysEx
+  messages; it replaces whatever machine is in USR slot 01. The .mds package can
+  be turned into a file for another slot with the MDS tools. The README warns to
+  install machines only from developers you trust, since they run as machine code
+  on the DSP.
+tags: [machines, synth-engine, drums, open-source]
+versions:
+  - version: kick2-v0.9
+    date: 2026-11-06
+    url: https://github.com/MonCalamari/DBX-K2/releases/tag/kick2-v0.9
+    notes: Replaces the colour control with HOLD, widens the pitch range to 38 to 160 Hz, sets a new default sound and keeps the saturation always on.
+  - version: kick2-v0.7
+    date: 2026-11-06
+    url: https://github.com/MonCalamari/DBX-K2/releases/tag/kick2-v0.7
+    notes: First public release.

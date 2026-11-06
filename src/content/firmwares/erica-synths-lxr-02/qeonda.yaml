@@ -1,0 +1,45 @@
+device: erica-synths-lxr-02
+name: LXR QEONDA
+summary: Fork of Erica Synths' open LXR-02 firmware that adds performance-page loops and pattern mute, track rotation, a master filter and compressor on the main output, and change-all knob edits.
+description: >-
+  On the PERF page, holding step button 8 mutes the programmed hits while the
+  manual rolls stay available, and buttons 9 to 12 loop the last 2, 4, 6 or 8
+  steps while the playhead keeps moving, so the pattern comes back in time on
+  release. The PERF page gains a third knob bank for the compressor. In Voice
+  mode, Shift and the data encoder rotate the selected track's steps together
+  with their locks. Pattern selection keeps the current voice, FX or PERF
+  controls under the knobs. The main stereo output gets separate high-pass and
+  low-pass filters and a compressor with automatic makeup gain, saved with the
+  project. Shift and a knob change the same control on all seven tracks, and the
+  fork fixes a number of synthesis, MIDI and save problems. Older firmware
+  ignores the extra compressor data in a project. The author calls version 0.1
+  feature-frozen and notes that USB MIDI clock can drop during project saves and
+  loads. It credits OpenElixir-02 for work on audio scheduling and save-time
+  stability. It is not an Erica Synths release.
+status: active
+authors:
+  - name: MalgAmoe
+    url: https://github.com/MalgAmoe
+source: https://github.com/MalgAmoe/LXR02-QEONDA
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Inherits the stock firmware's NOTICE.md terms: permission to combine with
+  STMicroelectronics libraries, and no rights to the Erica Synths, LXR and
+  LXR-02 names or logos.
+distribution: download
+requires_stock: LXR-02 with the stock bootloader
+install_notes: >-
+  Copy LXR_QEONDA_V0.1.img from the release to the top folder of a FAT32 SD
+  card, keep no other LXR*.img files there, then hold the encoder button while
+  switching the unit on until LXR Updater appears and reports Update OK. The
+  update does not replace the bootloader. The README says recovery from an
+  interrupted update is not guaranteed; the same updater installs an official
+  image to return to stock.
+brick_risk: false
+tags: [drums, fork, open-source, sequencer, performance]
+versions:
+  - version: v0.1-build.5
+    date: 2026-11-02
+    url: https://github.com/MalgAmoe/LXR02-QEONDA/releases/tag/v0.1-build.5
+    notes: First release of the 0.1 feature set; tested on the host and as an ARM build.

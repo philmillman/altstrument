@@ -1,0 +1,43 @@
+device: m-vave-chocolate
+name: Chocolate Plus custom firmware (dtnprt)
+summary: Patch tool that turns your copy of the stock Chocolate Plus firmware 012 into a build with quicker footswitch response, no lost short taps, a boot greeting, a bank-number fix and a dimmed status LED.
+description: >-
+  The repository holds no firmware files. The build script accepts
+  only the original M-VAVE 012 package from M-VAVE's site, which it checks by
+  SHA-256, applies binary patches to both flash copies, rebuilds the checksums
+  and writes a .fwsc file for you to flash. The patches cut debounce from 4 to 3
+  checks and the two-switch window from 15 to 6, so a press registers in about 45
+  ms instead of 95, and stop taps under about 95 ms from being dropped. They also
+  show a greeting on the three-digit display at power-on with the version, battery
+  level and mode, change the Advanced Custom screen to bank, dash and switch, fix
+  the bank number that started at zero after boot, and dim the status LED. The
+  pedal then reports itself as a dtnprt build and keeps its Bluetooth name so the
+  stock updater still finds it. The author credits Claude, an AI assistant, with
+  parts of the work, and keeps the website, flasher and Android app in a private
+  repository.
+status: active
+authors:
+  - name: dtnprt
+    url: https://github.com/dtnprt
+source: https://github.com/dtnprt/chocolate-plus-re
+source_status: patcher-only
+license: unspecified
+license_notes: No license file or statement in the repository.
+homepage: https://dtnprt.github.io/chocolate/
+distribution: patch-your-own
+requires_stock: "012"
+install_notes: >-
+  Download the original FootCtrlPlus 012 package from M-VAVE's Chocolate Plus
+  page, run build.py on it with Python and the JieLi toolchain notes in the
+  firmware README, and flash the result with SincoOTA from an Android phone with
+  the pedal not paired. The changelog says flash space is nearly full and that one
+  early build crashed when a Bluetooth pairing was stored, which was fixed. To
+  return to stock, flash the original 012 package the same way; if the pedal is
+  stuck in update mode, use SincoOTA's Mandatory upgrade.
+brick_risk: false
+tags: [patch, ui, midi, research]
+versions:
+  - version: main @ 16a405f
+    date: 2026-11-05
+    url: https://github.com/dtnprt/chocolate-plus-re/commit/16a405f
+    notes: No tagged releases; this is the latest commit. The changelog names the current build 141.

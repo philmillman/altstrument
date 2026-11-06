@@ -1,0 +1,39 @@
+device: bela
+name: bela.pd
+kind: tool
+summary: Pure Data library that links a patch running on Bela with the same patch on a computer, sending values both ways and exposing the Bela oscilloscope.
+description: >-
+  bela.pd is a set of Pure Data externals and a render.cpp for Pd projects on
+  Bela. The comms, send, receive and name objects exchange data between a patch
+  on the board and a copy of the patch on the computer, and the scope object
+  gives access to the IDE oscilloscope. The repository has an example with
+  sliders and a short demo video. The author lists a non-static IP address
+  and a data logger as open to-dos.
+status: dormant
+authors:
+  - name: Jack Armitage
+    url: https://github.com/jarmitage
+source: https://github.com/jarmitage/bela.pd
+source_status: open
+license: MIT
+license_notes: Copyright line in the LICENSE file is 2018, Jack Armitage.
+distribution: source-only
+install_notes: >-
+  Create a Bela Pure Data project named pd-externals, copy the files from the
+  repository's pd-externals folder into it with the IDE or scp, and add that
+  folder to Pure Data's search path on the computer. Add the repository's
+  render.cpp to each Pd project. A broken setup is fixed by deleting the
+  project or writing a fresh image to the card.
+brick_risk: false
+tags: [pure-data, utility]
+video:
+  url: https://www.youtube.com/watch?v=n1fM8_vGO88
+  title: Remote controlling Bela Platform from PureData
+  credit: Jack Armitage (jarm)
+  first_party: true
+  found_via: https://github.com/jarmitage/bela.pd#readme
+versions:
+  - version: master @ 1f9ead5
+    date: 2022-09-29
+    url: https://github.com/jarmitage/bela.pd/commit/1f9ead5
+    notes: No tagged releases; this is the latest commit.

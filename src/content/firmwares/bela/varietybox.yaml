@@ -1,0 +1,39 @@
+device: bela
+name: VarietyBox
+summary: Desktop effects unit built around a Bela Mini in a small box, with knobs, an OLED display and a Pure Data switchboard patch that gives every effect patch the same controls.
+description: >-
+  Targets Bela Mini. The repository holds the author's modified OLED example
+  code, a Pure Data switchboard patch that maps the knobs and display text,
+  a Fritzing wiring diagram and example effect patches. The author describes
+  it as a demonstration and not a finished product. Each effect patch then only
+  needs its parameters connected to the knob values. The video shows patches
+  made with Pure Data and some Faust, and one patch needs a compiled external.
+  Extra hardware is a box, potentiometers and an I2C OLED display, wired as in
+  the Fritzing diagram.
+status: dormant
+authors:
+  - name: donnerbono
+    url: https://github.com/donnerbono
+source: https://github.com/donnerbono/varietybox
+source_status: open
+license: unspecified
+license_notes: No LICENSE file.
+distribution: source-only
+install_notes: >-
+  Wire the knobs and display as in the Fritzing diagram, set up the OLED screen
+  following Bela's OLED guide, then copy the project files from belastuff and
+  patches into projects on the board. The Bela system runs from a microSD
+  card, so a bad install is undone by writing a fresh image to the card.
+brick_risk: false
+tags: [fx, pure-data, faust, desktop, hardware, diy]
+video:
+  url: https://youtu.be/E0tX76f69c4
+  title: VarietyBox mk2 - Bela Mini in a mini cereal box. With Pure Data and a bit of Faust.
+  credit: Donnerbono
+  first_party: true
+  found_via: https://github.com/donnerbono/varietybox#readme
+versions:
+  - version: main @ 884f181
+    date: 2022-12-21
+    url: https://github.com/donnerbono/varietybox/commit/884f1813d0dcda32f1fa72ba81c25936d0158766
+    notes: No tagged releases; this is the latest commit.

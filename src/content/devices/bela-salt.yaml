@@ -1,0 +1,44 @@
+name: Salt / Salt+
+manufacturer: Bela
+category: eurorack
+added: 2026-11-06
+tagline: Discontinued 12HP programmable Eurorack module made by Bela and Rebel Technology, with a 10HP expander
+description: >-
+  Salt is a programmable Eurorack module designed by Bela with Rebel
+  Technology and launched in 2018. It is a 12HP panel with a BeagleBone Green
+  and a Bela cape mounted behind it, and has stereo audio in and out, four CV
+  inputs and outputs with offset pots, two trigger inputs and outputs with
+  bi-colour LED buttons and a USB device port. The 10HP Salt+ expander adds
+  four more CV inputs and outputs, two more triggers and a USB host port for
+  MIDI devices, and connects to Salt over a ribbon cable. Programs are written
+  in C++, Pure Data, SuperCollider or Csound in the Bela IDE.
+platform: BeagleBone Green with a Bela cape (TI AM335x, Arm Cortex-A8, 1 GHz, 512 MB RAM)
+stock_firmware: Bela image v0.3.8h
+links:
+  manufacturer: https://learn.bela.io/products/modular/salt/
+  community:
+    - label: Working with Salt (learn.bela.io)
+      url: https://learn.bela.io/using-bela/technical-explainers/working-with-salt/
+    - label: salt-hardware (schematics)
+      url: https://github.com/BelaPlatform/salt-hardware
+    - label: Bela forum (forum.bela.io)
+      url: https://forum.bela.io/
+notes: >-
+  Salt is discontinued and no longer sold. It runs the standard Bela image
+  from a microSD card, so programs can be swapped in the IDE and a broken
+  system is fixed by writing a fresh image. The Salt+ expander does nothing
+  without Salt. Pepper is the DIY successor and uses most of the same
+  programming model, but its panel layout and I/O differ, so programs need
+  their pin assignments changed to move between the two.
+related: [bela, bela-pepper]
+image:
+  src: /images/devices/bela-salt.webp
+  style: photo
+  alt: Black and white photo of the white Salt module with four knobs, two light buttons and jacks, a BeagleBone behind it, next to the narrower Salt+ expander with a USB cable
+  width: 800
+  height: 533
+  credit: Bela
+  license: manufacturer product image
+  source_url: https://bela.io/products/pepper
+  original_url: https://bela.io/assets/images/products/pepper/images/salt-and-salt-plus.png
+pinned: [bela-core, bela-image]

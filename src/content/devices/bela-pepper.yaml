@@ -1,0 +1,44 @@
+name: Pepper
+manufacturer: Bela
+category: eurorack
+added: 2026-11-06
+tagline: DIY 18HP Eurorack kit that turns a BeagleBone Black and Bela cape into a programmable module
+description: >-
+  Pepper is an open-source DIY Eurorack module from Bela, sold as a kit of
+  panel, circuit boards and parts. It is a passive breakout for a BeagleBone
+  Black with a Bela cape mounted behind it, and gives the module stereo audio
+  in and out, eight CV inputs, eight DC-coupled CV outputs, eight pots, four
+  buttons and a ten-LED bar graph. Programs are loaded and edited over USB in
+  the Bela IDE and can be written in C++, Pure Data, SuperCollider or Csound.
+platform: BeagleBone Black with a Bela cape (TI AM335x, Arm Cortex-A8)
+stock_firmware: Bela image v0.3.8h
+links:
+  manufacturer: https://bela.io/products/pepper
+  community:
+    - label: Pepper knowledge base (learn.bela.io)
+      url: https://learn.bela.io/products/modular/pepper/
+    - label: bela-pepper (design files and wiki)
+      url: https://github.com/BelaPlatform/bela-pepper
+    - label: Pepper community projects (bela-pepper wiki)
+      url: https://github.com/BelaPlatform/bela-pepper/wiki/Projects
+    - label: Bela forum (forum.bela.io)
+      url: https://forum.bela.io/
+notes: >-
+  Pepper runs the standard Bela image from a microSD card in the BeagleBone,
+  so any program can be swapped out from the IDE and a broken system is fixed
+  by writing a fresh image to the card. It is not compatible with Bela Mini,
+  Bela Gem or the CTAG capes. Jumpers on the board set whether some inputs
+  are read as CV or as gates, and some community programs ask for a specific
+  setting. Bela lists Pepper with its legacy hardware but still sells the kit.
+related: [bela, bela-salt]
+image:
+  src: /images/devices/bela-pepper.webp
+  style: photo
+  alt: Black Pepper Eurorack panel with eight input and eight output jacks, stereo jacks at each end, eight black knobs, four round buttons and a ten-segment LED bar
+  width: 1200
+  height: 908
+  credit: Bela
+  license: manufacturer product image
+  source_url: https://bela.io/products/pepper
+  original_url: https://bela.io/assets/images/products/pepper/hero.png
+pinned: [pepper-examples, bela-core, bela-image]

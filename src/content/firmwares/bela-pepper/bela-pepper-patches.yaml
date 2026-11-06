@@ -1,0 +1,32 @@
+device: bela-pepper
+name: bela_pepper_patches
+summary: Collection of eight Csound patches for Pepper, including wavetable and VOSIM oscillators, a feedback FM voice, a Karplus-Strong string, a drum kit and a chord machine.
+description: >-
+  Each folder holds a Csound project for the Bela IDE with its own readme,
+  a panel diagram and a list of what the CV inputs, pots and buttons do. The
+  set contains a morphing wavefolder, a wavetable bank synth, a feedback
+  multi-carrier FM oscillator, a unison oscillator, a plucked string, a VOSIM
+  oscillator, a kick, snare and hat kit, and a chord machine. A shared udos
+  folder holds helper code for pages, buttons and parameters. A phase
+  distortion oscillator folder also exists.
+status: dormant
+authors:
+  - name: Jared Anderson
+    url: https://github.com/jazamatronic
+source: https://github.com/jazamatronic/bela_pepper_patches
+source_status: open
+license: MIT
+license_notes: LICENSE.md at the root and in most project folders is the MIT text. The drumkit project is adapted from Iain McCurdy's TR-808.csd and its LICENSE.md says CC BY-NC-SA 4.0, so that folder is non-commercial and share-alike. The phase distortion folder has no licence file of its own.
+distribution: source-only
+install_notes: >-
+  Copy the folder of the patch you want into ~/Bela/projects on the board,
+  for example with scp, and build it from the Bela IDE. Each readme lists the
+  CV and button assignments. A fresh image on the microSD card recovers a
+  broken system.
+brick_risk: false
+tags: [csound, synth-engine, oscillator, wavetable, fm, karplus-strong, drum-machine, eurorack]
+versions:
+  - version: main @ 88ac9e9
+    date: 2023-12-09
+    url: https://github.com/jazamatronic/bela_pepper_patches/commit/88ac9e9
+    notes: No tagged releases; this is the latest commit.

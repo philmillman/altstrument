@@ -1,0 +1,55 @@
+device: bela
+also_devices: [bela-pepper, bela-salt]
+name: SuperCollider for Bela
+kind: firmware
+summary: Fork of SuperCollider with the Bela audio driver for scsynth and UGens for Bela's analog and digital channels, released as builds for the Bela image.
+description: >-
+  BelaPlatform's fork of SuperCollider adds a Bela audio driver, so scsynth
+  runs on Bela's low-latency audio thread instead of JACK or PortAudio, and
+  UGens that read and write the cape's analog and digital pins, plus a
+  BelaScope class for the IDE oscilloscope. The repository includes a
+  README_BELA.md with build instructions and a set of example scripts.
+
+  Bela support was also merged into upstream SuperCollider, which has its own
+  Bela driver and README_BELA.md, so the fork is where the Bela-specific
+  changes are developed and released for the Bela image. The latest release is
+  v3.12.1-Bela from January 2022, a .deb package; the default branch,
+  develop-bela, last changed in October 2025.
+status: maintained
+authors:
+  - name: Giulio Moro
+    url: https://github.com/giuliomoro
+  - name: Dan Stowell
+    url: https://github.com/danstowell
+  - name: Marije Baalman
+source: https://github.com/BelaPlatform/supercollider
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The COPYING file and the README give version 3 of the GPL with no later
+  clause. The headers of the Bela driver source say version 2 or any later
+  version, so individual files may allow more than the project statement.
+homepage: https://learn.bela.io/using-bela/languages/supercollider/
+distribution: download
+install_notes: >-
+  The Bela image already includes a SuperCollider build and the IDE runs
+  SuperCollider projects. The release page carries a .deb package for the
+  Bela image, and README_BELA.md in the repository describes building and
+  cross-compiling it. A broken install is fixed by writing a fresh image to
+  the card.
+brick_risk: false
+tags: [official, supercollider, synth-engine, fork]
+versions:
+  - version: v3.12.1-Bela
+    date: 2022-01-18
+    url: https://github.com/BelaPlatform/supercollider/releases/tag/v3.12.1-Bela
+    notes: Latest release; a .deb package for the Bela image.
+  - version: v3.11.2-bela-fix-digitalIn
+    date: 2021-03-06
+    url: https://github.com/BelaPlatform/supercollider/releases/tag/v3.11.2-bela-fix-digitalIn
+  - version: v3.11.2-bela
+    date: 2021-02-11
+    url: https://github.com/BelaPlatform/supercollider/releases/tag/v3.11.2-bela
+  - version: v3.11-bela4
+    date: 2021-01-28
+    url: https://github.com/BelaPlatform/supercollider/releases/tag/v3.11-bela4

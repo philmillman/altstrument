@@ -1,0 +1,30 @@
+device: bela-pepper
+name: bela-sdelaylfo8
+summary: Pure Data patch for Pepper that emulates a stereo tape delay and adds eight synchronised LFOs, built on Bela's own tape delay example.
+description: >-
+  The patch reuses code from the Bela tape delay example written by Robert
+  Thomas and others, which ships with the Pepper examples. It needs the zexy
+  and cyclone external libraries. The project settings enable eight analog
+  channels and the LED output.
+status: dormant
+authors:
+  - name: Daniel Villegas
+    url: https://github.com/dvvii
+  - name: Robert Thomas and others (original Bela tape delay)
+    url: https://github.com/BelaPlatform/Bela/tree/master/examples/Pepper/tape-delay
+source: https://github.com/dvvii/bela-sdelaylfo8
+source_status: open
+license: unspecified
+license_notes: No LICENSE file and no licence statement. The reused tape delay code comes from the Bela repository, which is LGPL 3.0.
+distribution: source-only
+install_notes: >-
+  Copy the repository into ~/Bela/projects on the board and open it in the
+  Bela IDE. The README names zexy and cyclone as requirements. A fresh image
+  on the microSD card recovers a broken system.
+brick_risk: false
+tags: [pure-data, delay, lfo, fx, eurorack]
+versions:
+  - version: main @ 3057b75
+    date: 2024-10-24
+    url: https://github.com/dvvii/bela-sdelaylfo8/commit/3057b75
+    notes: No tagged releases; this is the latest commit.

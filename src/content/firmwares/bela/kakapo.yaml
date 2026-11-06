@@ -1,0 +1,38 @@
+device: bela
+name: Kakapo
+summary: Eight-step CV sequencer in Pure Data for Bela that drives a Korg MS-20 through analog outputs, with adjustable tempo and gate length and optional C major or C minor pitch quantization.
+description: >-
+  Targets the Bela cape, since it sends control voltage and trigger from two
+  analog outputs: analog out 1 goes to the MS-20 oscillator CV input and analog
+  out 2 to its trigger input. A host patch generates the step values and the
+  main patch turns them into voltages. Values are converted for the MS-20's
+  Hz-per-volt pitch scale and its negative trigger, so other synths would need
+  the conversion changed. The author's own demo video shows it with the
+  MS-20. Extra hardware is a Korg MS-20 or another CV synth and cables.
+status: dormant
+authors:
+  - name: Anton Miselaytes
+    url: https://github.com/miselaytes-anton
+source: https://github.com/miselaytes-anton/kakapo
+source_status: open
+license: unspecified
+license_notes: No LICENSE file.
+distribution: source-only
+install_notes: >-
+  Copy the src folder into a Pure Data project on the board (via the Bela IDE
+  or ~/Bela/projects) and run it; the scripts folder holds a helper
+  script for the MS-20 pitch scale. The Bela system runs from a microSD card, so a bad install is undone by
+  writing a fresh image to the card.
+brick_risk: false
+tags: [sequencer, pure-data, cv, scales]
+video:
+  url: https://www.youtube.com/watch?v=HdxeNhHdwMs
+  title: MS-20 + Pure data on Bela + Necklace app beats
+  credit: Anton Miselaytes
+  first_party: true
+  found_via: https://github.com/miselaytes-anton/kakapo#readme
+versions:
+  - version: master @ ffa43dc
+    date: 2018-11-27
+    url: https://github.com/miselaytes-anton/kakapo/commit/ffa43dc86704227f0fd45c6f9024ff071fe9f55b
+    notes: No tagged releases; this is the latest commit.

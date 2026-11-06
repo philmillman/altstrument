@@ -1,0 +1,34 @@
+device: bela
+name: ansible-role-bela-gem-xc
+kind: tool
+summary: Ansible role that cross-compiles Bela Gem projects in an arm64 Debian 12 podman container on a workstation and uploads the binary to the board.
+description: >-
+  The role copies the Bela tree and a few libraries from the board into a local
+  sysroot, builds a Debian 12 compiler container, compiles each listed
+  project against the chosen Bela libraries and uploads the result over SSH.
+  Options cover uploading project resources, running Faust code with a
+  libfaust runtime on the board and a systemd unit that starts a project at
+  boot. The readme says it was tested with Bela Gem image v1.0.0 and that it
+  builds on TheTechnobear's xcBela cross-compilation scripts.
+status: active
+authors:
+  - name: Martin Minovski
+    url: https://github.com/martin-minovski
+source: https://github.com/martin-minovski/ansible-role-bela-gem-xc
+source_status: open
+license: GPL-3.0-only
+license_notes: LICENSE file is the GPL version 3; no later-version clause found in it or the readme.
+distribution: source-only
+requires_stock: Bela Gem image v1.0.0 or later
+install_notes: >-
+  Add the role to an Ansible playbook on a workstation with ansible-core,
+  podman and SSH access to the board. It installs only compiled binaries,
+  libraries and an optional systemd unit on the board. A broken setup is
+  fixed by removing those files or writing a fresh image to the card.
+brick_risk: false
+tags: [sdk, utility]
+versions:
+  - version: main @ c4746bd
+    date: 2026-08-08
+    url: https://github.com/martin-minovski/ansible-role-bela-gem-xc/commit/c4746bd
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,48 @@
+device: bela
+also_devices: [bela-pepper, bela-salt]
+name: Bela core and IDE
+kind: firmware
+summary: The Bela C++ core, real-time audio and sensor engine, and browser IDE that ship inside the Bela images for the Bela cape, Bela Mini, Pepper and Salt.
+description: >-
+  The Bela repository holds the C++ core API, the PRU firmware that reads and
+  writes analog and digital I/O on the AM335x boards, the browser IDE served
+  from the board, example projects and the libraries that connect Pure Data
+  (through libpd) and other languages to the core. Projects are written in
+  C++, Pure Data, SuperCollider or Csound, with Faust and Pyo listed as
+  experimental on learn.bela.io, and are compiled on the board from the IDE.
+  On the original boards the core runs on a Xenomai real-time kernel.
+
+  The repository has no tags or releases. The default branch, master, last
+  changed in March 2025, while the dev branch has commits to October 2026.
+  The core is not installed on its own: it comes inside the Bela images, and
+  the IDE's Settings tab has a "Check for Updates" function that updates the
+  system and IDE on the board. The Bela Gem guide on learn.bela.io describes
+  that function.
+status: active
+authors:
+  - name: Augmented Instruments Laboratory
+    url: https://github.com/BelaPlatform/Bela/graphs/contributors
+source: https://github.com/BelaPlatform/Bela
+source_status: open
+license: LGPL-3.0-only
+license_notes: >-
+  The LICENSE file says the software is distributed under the "LGPL 3.0" and
+  links the license text, with no later-version clause. The hardware designs
+  are CC BY-SA 3.0, and libraries bundled as dependencies keep their own
+  licenses, which the file lists.
+homepage: https://bela.io
+distribution: download
+install_notes: >-
+  The core and IDE are already on the microSD card (or eMMC on a Bela cape)
+  flashed with a Bela image, so a first install means flashing the image.
+  After that, open the IDE at http://bela.local, go to Settings, and use
+  Check for Updates under Other System Functions. Editing the core code
+  directly is described on learn.bela.io. A broken system is fixed by
+  writing a fresh image to the card.
+brick_risk: false
+tags: [official, platform, pure-data, supercollider, csound, sdk, editor]
+versions:
+  - version: master @ fb362a5
+    date: 2025-03-29
+    url: https://github.com/BelaPlatform/Bela/commit/fb362a543281f579b44f71af797e9422d7401163
+    notes: No tagged releases; this is the latest commit.

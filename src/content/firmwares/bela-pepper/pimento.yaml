@@ -1,0 +1,35 @@
+device: bela-pepper
+name: Pimento
+summary: Work-in-progress Euclidean rhythm gate sequencer for Pepper, written in C++. It has a master clock and one Euclidean gate output of up to eight steps, with more outputs planned.
+description: >-
+  The README says the project is not finished. Its checklist marks the single
+  Euclidean gate output and the clock as done and lists rotation, a second
+  sequence, tap tempo, clock division, gating of the audio inputs and fills
+  from the digital inputs as open. The code splits the Euclidean pattern,
+  button and LED handling into separate classes.
+status: dormant
+authors:
+  - name: Cyrus Vahidi
+    url: https://github.com/cyrusasfa
+source: https://github.com/cyrusasfa/pimento
+source_status: open
+license: unspecified
+license_notes: No LICENSE file and no licence statement.
+distribution: source-only
+install_notes: >-
+  Copy the repository into ~/Bela/projects on the board as a C++ project and
+  build it from the Bela IDE. A fresh image on the microSD card recovers a
+  broken system.
+brick_risk: false
+tags: [sequencer, euclidean, generative, eurorack]
+image:
+  url: https://raw.githubusercontent.com/cyrusasfa/pimento/master/bela_eucli.png
+  alt: Photo of a black Pepper panel with red leader lines labelling the clock input, two Euclidean outputs, a combined output, two logic or random outputs, a clock output and the gated audio outputs
+  credit: Cyrus Vahidi
+  source_url: https://github.com/cyrusasfa/pimento
+  first_party: true
+versions:
+  - version: master @ e21ed09
+    date: 2020-05-22
+    url: https://github.com/cyrusasfa/pimento/commit/e21ed09
+    notes: No tagged releases; this is the latest commit.

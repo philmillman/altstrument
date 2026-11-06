@@ -1,0 +1,50 @@
+device: bela
+name: REBUS
+summary: Code for REBUS, an interactive instrument that senses hand and body movement in an electromagnetic field, played through Bela with C++ and Pure Data projects, a composition library and a Theremin-to-CV example.
+description: >-
+  Targets the Bela cape. REBUS is a gesture-controlled instrument and
+  compositional tool developed by Eleonora Oreggia (xname) from a PhD at Queen
+  Mary University of London and continued at Goldsmiths. Bela reads the field
+  sensor on its analog inputs and the software turns the readings into sound.
+  The repository holds a REBUS composition library for Bela, example and
+  project folders (boids, dub terrain, loopera, spectrifier, stringthing,
+  wobble and others), Pure Data patches and a Theremin-to-CV program that
+  maps phase to pitch and gain to amplitude and sends a control voltage from
+  analog output 0.
+
+
+  Needs REBUS hardware. The USAGE file says a Bela with two loose wires on
+  analog inputs 0 and 4 can stand in for a demo, and the library has a pin
+  mode for a regular Bela. A lamp on analog output 1 is needed for the bulb
+  controller. The author presents it as an instrument and as a controller,
+  and a paper on it is cited in the README.
+status: active
+authors:
+  - name: Eleonora Maria Irene Oreggia (xname)
+    url: https://xname.cc
+source: https://github.com/xname/REBUS
+source_status: open
+license: GPL-3.0-only
+license_notes: LICENSE is GPLv3; no "or later" statement in the README, USAGE file or the headers that were checked.
+homepage: https://xname.cc/rebus
+distribution: source-only
+install_notes: >-
+  Install the REBUS library with make install in the libraries folder, which
+  replaces ~/Bela/libraries/REBUS on the board, and reboot once so the IDE
+  sees it. Examples install the same way, and the projects folder makes zips
+  that are dragged into the Bela IDE as new projects. The README suggests
+  backing up the SD card first. The Bela system runs from a microSD card, so a
+  bad install is undone by writing a fresh image to the card.
+brick_risk: false
+tags: [performance, controller, theremin, cv, synth]
+video:
+  url: https://youtu.be/1g8Qm6fLwLI
+  title: Rebus is not just a Theremin
+  credit: NIME2020
+  first_party: true
+  found_via: https://github.com/xname/REBUS#readme
+versions:
+  - version: master @ b9499dd
+    date: 2026-03-27
+    url: https://github.com/xname/REBUS/commit/b9499dd3909bf25862d79c97dc640a38bade01e6
+    notes: No tagged releases; this is the latest commit.

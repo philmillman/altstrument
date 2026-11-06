@@ -1,0 +1,47 @@
+device: bela
+name: Cloud Instrument
+summary: SuperCollider synthesizer and effects chain driven by a MIDI controller and API.Cultor sound retrieval, with a Bela configuration for low-latency use; it also runs on a Raspberry Pi 3.
+description: >-
+  Targets Bela (the repository does not name a model) and also Raspberry Pi 3.
+  No catalog device exists for the Raspberry Pi, so only the Bela side is
+  described here. The instrument searches a sound
+  database (Freesound by default) with music information retrieval
+  descriptors through the API.Cultor service, then plays the results through a
+  SuperCollider synth with granular playback, freeze, vibrato, pan, pitch
+  shift, filters, delay and reverb. It is played from a custom MIDI controller
+  made by Yaeltex, with an Open Stage Control interface for visual feedback.
+  A python program runs the search side and needs a Freesound API key.
+
+
+  The bela folder holds a SuperCollider server configuration that sets a
+  small block size for low latency, a synth file and a script that connects
+  MIDI. Extra hardware is the MIDI controller and, on the Raspberry Pi, a USB
+  sound card. The Bela notes are short and the main code and install steps
+  are written for desktop and Raspberry Pi systems, so expect to adapt them.
+status: dormant
+authors:
+  - name: Hernán Ordiales
+    url: https://github.com/hordiales
+source: https://github.com/hordiales/cloudpicultor_instrument
+source_status: open
+license: GPL-3.0-only
+license_notes: LICENSE is GPLv3 and the README says GPL v3; no "or later" statement found.
+distribution: source-only
+install_notes: >-
+  Follow INSTALL.md for dependencies and the README for the Freesound
+  configuration; the Bela-specific SuperCollider settings are in the bela
+  folder. The Bela system runs from a microSD card, so a bad install is undone
+  by writing a fresh image to the card.
+brick_risk: false
+tags: [supercollider, granular, midi, performance, fx]
+video:
+  url: https://www.youtube.com/watch?v=pFosDJJtylk
+  title: "Mención Premio ArCiTec: Instrumento basado en Sonidos de la Nube (2018)"
+  credit: Hernán Ordiales
+  first_party: true
+  found_via: https://github.com/hordiales/cloudpicultor_instrument#readme
+versions:
+  - version: master @ 4d4843e
+    date: 2023-01-30
+    url: https://github.com/hordiales/cloudpicultor_instrument/commit/4d4843e90c843ef1d6cc077fa933b0e2abb7b7db
+    notes: No tagged releases; this is the latest commit.

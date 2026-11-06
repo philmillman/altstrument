@@ -1,0 +1,61 @@
+name: Bela / Bela Mini / Bela Gem
+manufacturer: Bela
+category: diy-platform
+added: 2026-11-06
+tagline: Low-latency audio and sensor boards for BeagleBone computers, programmed from a browser IDE
+description: >-
+  Bela is a family of audio and sensor boards that sit on BeagleBoard
+  computers and run a real-time Linux image with the Bela core and a
+  browser-based IDE served from the board. Projects are written in C++, Pure
+  Data, SuperCollider, Csound or other languages, and audio and sensor I/O are
+  processed together with round-trip latency of around 1 ms.
+
+  The original Bela cape (2016) fits a BeagleBone Black and has stereo audio
+  in and out, eight 16-bit analog inputs and outputs, 16 digital I/O pins and
+  two speaker amplifiers. Bela Mini fits a PocketBeagle and drops the analog
+  outputs. Bela Gem Stereo and Gem Multi (2025) fit a PocketBeagle 2, with 2 or
+  10 channels of 24-bit, 96 kHz audio I/O, eight 16-bit analog inputs, 16
+  digital pins, USB host and device ports and a Qwiic connector.
+platform: >-
+  Bela and Bela Mini: TI AM335x (Arm Cortex-A8, 1 GHz) on a BeagleBone Black or
+  PocketBeagle, Xenomai real-time kernel. Bela Gem: TI AM62 (4 × Arm
+  Cortex-A53, 1.4 GHz) on a PocketBeagle 2, arm64 Debian 12.
+stock_firmware: Bela image v0.3.8h (Bela, Bela Mini, CTAG); Bela Gem image v1.0.2
+links:
+  manufacturer: https://bela.io/products/bela-gem-stereo-and-multi/
+  community:
+    - label: Bela forum (forum.bela.io)
+      url: https://forum.bela.io/
+    - label: Bela knowledge base (learn.bela.io)
+      url: https://learn.bela.io/
+    - label: Bela legacy hardware (Bela cape, Bela Mini, CTAG)
+      url: https://bela.io/products/legacy-hardware
+    - label: BelaPlatform on GitHub
+      url: https://github.com/BelaPlatform
+    - label: bela-hardware (design files, CC-BY-SA-3.0)
+      url: https://github.com/BelaPlatform/bela-hardware
+notes: >-
+  The system lives on a microSD card, so a bad install or update is undone by
+  writing a fresh image to the card; Bela and Bela Mini can also be flashed to
+  the BeagleBone's eMMC. The cape and Mini share one image line, built by
+  bela-image-builder, while Bela Gem uses its own arm64 image from
+  gem-image-builder, and projects for the older boards need porting to run on
+  Gem. Bela Mini and its Multichannel Expander, and the Audio and Multiplexer
+  capelets, are end of life but still supported. The CTAG FACE and BEAST
+  multichannel sound-card capes (4 in and 8 out, or 8 in and 16 out), made with
+  CTAG at FH Kiel, run the same Bela image on a BeagleBone Black and are
+  covered here. Projects that run on the stock image are catalogued when they
+  turn the board into a specific instrument or effect, or when they are
+  host-side tools for the platform. The Trill touch sensors are not listed.
+related: [bela-pepper, bela-salt, zynthian, monome-norns, critter-and-guitari-organelle-1]
+image:
+  src: /images/devices/bela.webp
+  style: photo
+  alt: Bela Gem Stereo and Bela Gem Multi boards side by side, black PCBs with the bela GEM logo, header rows, a USB-A port and 3.5 mm jacks, the Multi with jacks along both edges
+  width: 1200
+  height: 675
+  credit: Bela
+  license: manufacturer product image
+  source_url: https://bela.io/products/bela-gem-stereo-and-multi/
+  original_url: https://bela.io/assets/images/products/bela-gem-stereo-and-multi/images/bela-gem.jpg
+pinned: [bela-core, bela-image, bela-gem-image, supercollider-bela]

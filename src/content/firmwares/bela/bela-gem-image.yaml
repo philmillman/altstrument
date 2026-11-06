@@ -1,0 +1,45 @@
+device: bela
+name: Bela Gem image
+kind: firmware
+summary: Debian 12 arm64 SD card image with the Bela software for Bela Gem Stereo and Multi boards on a PocketBeagle 2, built with a fork of BeagleBoard's image-builder.
+description: >-
+  gem-image-builder is BelaPlatform's fork of the BeagleBoard.org
+  image-builder scripts, used to build the image for Bela Gem boards. The
+  release files are named pocketbeagle2-debian-12.13-bela-v6.12-arm64, which
+  is a Debian 12.13 root filesystem with a 6.12 kernel for the PocketBeagle 2,
+  and each release comes as a compressed .img.xz with a .bmap file and a
+  checksum. The image starts the Bela IDE on the board, reachable at
+  http://bela.local over USB.
+
+  This is a different image line from the Bela image used by the Bela cape and
+  Bela Mini, and projects for those boards have to be ported to run on Gem.
+status: active
+authors:
+  - name: Bela
+    url: https://github.com/BelaPlatform
+  - name: Robert Nelson
+    url: https://github.com/RobertCNelson
+source: https://github.com/BelaPlatform/gem-image-builder
+source_status: open
+license: MIT
+license_notes: The LICENSE file carries Robert Nelson's copyright from the upstream image-builder.
+homepage: https://learn.bela.io/get-started-guide/bela-gem-get-started/
+distribution: download
+requires_stock: PocketBeagle 2 with a Bela Gem Stereo or Multi board
+install_notes: >-
+  The Bela Gem guide recommends the BeagleBoard Imaging Utility, which lists
+  "Bela Gem PocketBeagle 2" as an image for the PocketBeagle 2 and writes it
+  to a microSD card. The .img.xz from the release can instead be written with
+  dd, bmap or Balena Etcher. Boards sold with a pre-flashed card need no
+  flashing. Writing the card erases it. The system runs from the card, so a
+  failed install is fixed by writing the image again.
+brick_risk: false
+tags: [official, os, platform]
+versions:
+  - version: v1.0.2
+    date: 2026-03-25
+    url: https://github.com/BelaPlatform/gem-image-builder/releases/tag/v1.0.2
+    notes: Latest release.
+  - version: v1.0.0
+    date: 2026-02-04
+    url: https://github.com/BelaPlatform/gem-image-builder/releases/tag/v1.0.0

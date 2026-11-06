@@ -1,0 +1,33 @@
+device: bela-pepper
+name: Mist
+summary: C++ granular processor for Pepper, inspired by Clouds, with 16 or 32 grains, a four-second stereo buffer, feedback, reverb, freeze and randomise, and eight CV outputs.
+description: >-
+  Eight pots set position, size, density, texture, pitch, feedback, reverb
+  and dry/wet, and each can also be modulated from the matching CV input with
+  the pot acting as an attenuator. Buttons randomise the parameters, switch
+  the grain count, freeze the buffer and switch the buffer length. The CV
+  outputs carry grain triggers, an envelope follower, random values, the
+  freeze gate, two parameter values and an LFO. The README credits Clouds by
+  Mutable Instruments as the inspiration and says the code was written with
+  Claude Code.
+status: active
+authors:
+  - name: Franky Redente
+    url: https://github.com/fr4nky8oy
+source: https://github.com/fr4nky8oy/Mist
+source_status: open
+license: unspecified
+license_notes: 'No LICENSE file. The README says "Open source - feel free to modify and use as you wish, as long as it''s for other open source projects", which is not a standard licence.'
+distribution: source-only
+install_notes: >-
+  Create a C++ project in the Bela IDE, upload render.cpp and the six header
+  files, then set 8 analog channels at 22050 Hz and 16 digital channels in
+  the project settings and build. A fresh image on the microSD card recovers
+  a broken system.
+brick_risk: false
+tags: [granular, fx, cv, eurorack]
+versions:
+  - version: main @ da43408
+    date: 2025-10-19
+    url: https://github.com/fr4nky8oy/Mist/commit/da43408
+    notes: No tagged releases; this is the latest commit.

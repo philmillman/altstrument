@@ -1,0 +1,31 @@
+device: bela
+name: bela-rs (andrewcsmith)
+kind: tool
+summary: Older safe Rust wrapper for the Bela API for the armv7 boards, where render, setup and cleanup are closures, built on a separate bela-sys crate.
+description: >-
+  This Rust crate wraps the Bela core API for the original Bela and Bela Mini.
+  Its lifecycle functions and auxiliary tasks are closures, and it links
+  against one of two bela-sys crates, either padenot's or the author's own.
+  It is cross-compiled with an arm-linux-gnueabihf toolchain. The code dates
+  from 2018 to 2021 and has no tags or releases. Bela Gem users should look at
+  the separate bela-rs by akiomik.
+status: dormant
+authors:
+  - name: Andrew C. Smith
+    url: https://github.com/andrewcsmith
+source: https://github.com/andrewcsmith/bela-rs
+source_status: open
+license: unspecified
+license_notes: No LICENSE file.
+distribution: source-only
+install_notes: >-
+  Cross-compile with a Rust toolchain for arm-linux-gnueabihf and a copy of
+  the Bela filesystem for libbela.so, then copy the binary to the board. The
+  readme describes the setup. Nothing is written to the system image.
+brick_risk: false
+tags: [rust, sdk]
+versions:
+  - version: master @ 4ed8ad8
+    date: 2021-07-05
+    url: https://github.com/andrewcsmith/bela-rs/commit/4ed8ad8
+    notes: No tagged releases; this is the latest commit.

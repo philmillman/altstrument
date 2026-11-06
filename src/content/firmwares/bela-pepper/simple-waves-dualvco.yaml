@@ -1,0 +1,30 @@
+device: bela-pepper
+name: Simple Waves Dual VCO
+summary: C++ dual oscillator for Pepper with sine, triangle, saw and square waves, per-oscillator octave buttons, a sub oscillator and a split LED level meter.
+description: >-
+  Two oscillators each cover 20 Hz to 20 kHz with an exponential frequency
+  pot, a level pot and a waveform pot. Buttons shift each oscillator by up to
+  four octaves, a sine sub oscillator sits one octave below the first
+  oscillator, and a master level pot sets the output. The README says the
+  code was written with Claude Code.
+status: active
+authors:
+  - name: Franky Redente
+    url: https://github.com/fr4nky8oy
+source: https://github.com/fr4nky8oy/Simple_Waves_DualVCO
+source_status: open
+license: unspecified
+license_notes: 'No LICENSE file. The README says "Open source - feel free to modify and use as you wish, as long as it''s for other open source projects", which is not a standard licence.'
+distribution: source-only
+install_notes: >-
+  Create a C++ project in the Bela IDE, paste in render.cpp and add
+  synth_core.h, then set 8 analog channels at 22050 Hz and 16 digital
+  channels in the project settings and build. A fresh image on the microSD
+  card recovers a broken system.
+brick_risk: false
+tags: [oscillator, synth-engine, eurorack]
+versions:
+  - version: main @ da7b210
+    date: 2025-10-20
+    url: https://github.com/fr4nky8oy/Simple_Waves_DualVCO/commit/da7b210
+    notes: No tagged releases; this is the latest commit.

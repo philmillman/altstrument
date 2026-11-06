@@ -1,0 +1,63 @@
+device: bela
+also_devices: [bela-pepper, bela-salt]
+name: Bela image
+kind: firmware
+summary: SD card images for the Bela cape, Bela Mini and CTAG boards, with a Xenomai real-time kernel, a Debian Stretch root filesystem and the Bela software, plus the scripts that build them.
+description: >-
+  bela-image-builder builds the microSD image that Bela, Bela Mini and CTAG
+  boards boot from. It follows Robert Nelson's BeagleBoard image-builder
+  scripts and adds a Xenomai kernel, a Debian Stretch root filesystem and a
+  bootloader, with the packages listed in the repository installed on top.
+  Releases are compressed .img.xz files that are written to a card.
+
+  The latest stable release is v0.3.8h from January 2023, which adds support
+  for Bela cape revision C. Its notes say that installing packages with
+  apt-get needs the Debian archive source set by hand, since Stretch has moved
+  there. An experimental Bullseye line exists as v0.5.0alpha and v0.5.0alpha2
+  pre-releases, which are not listed below. Bela Gem uses a separate image.
+  The older BelaPlatform/bela-image repository, with images from 2016 and
+  2017, is discontinued.
+status: maintained
+authors:
+  - name: Liam Donovan
+  - name: Bela
+    url: https://github.com/BelaPlatform
+source: https://github.com/BelaPlatform/bela-image-builder
+source_status: open
+license: MIT
+license_notes: Copyright line in the LICENSE file names Liam Donovan.
+homepage: https://learn.bela.io/using-bela/bela-techniques/managing-your-sd-card/
+distribution: download
+requires_stock: BeagleBone Black, PocketBeagle or CTAG cape
+install_notes: >-
+  Download the .img.xz file from the release, uncompress it and write the
+  image to a microSD card with Balena Etcher or the command line, as described
+  in the Managing your SD card page on learn.bela.io. Put the card in the
+  board and boot. On a Bela cape the image can also be copied to the
+  BeagleBone's eMMC from a card boot. The system is on the card, so a failed
+  or unwanted install is fixed by writing the image again.
+brick_risk: false
+tags: [official, os, platform]
+versions:
+  - version: v0.3.8h
+    date: 2023-01-05
+    url: https://github.com/BelaPlatform/bela-image-builder/releases/tag/v0.3.8h
+    notes: Latest stable release; supports Bela cape revision C.
+  - version: v0.3.8g
+    date: 2022-06-28
+    url: https://github.com/BelaPlatform/bela-image-builder/releases/tag/v0.3.8g
+  - version: v0.3.8f
+    date: 2022-01-04
+    url: https://github.com/BelaPlatform/bela-image-builder/releases/tag/v0.3.8f
+  - version: v0.3.8e
+    date: 2021-11-09
+    url: https://github.com/BelaPlatform/bela-image-builder/releases/tag/v0.3.8e
+  - version: v0.3.8b
+    date: 2020-11-28
+    url: https://github.com/BelaPlatform/bela-image-builder/releases/tag/v0.3.8b
+  - version: v0.3.8a
+    date: 2020-06-20
+    url: https://github.com/BelaPlatform/bela-image-builder/releases/tag/v0.3.8a
+  - version: v0.3.8
+    date: 2020-06-04
+    url: https://github.com/BelaPlatform/bela-image-builder/releases/tag/v0.3.8

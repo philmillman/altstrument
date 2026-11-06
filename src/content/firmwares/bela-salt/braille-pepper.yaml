@@ -1,0 +1,31 @@
+device: bela-salt
+name: Pepper (Braille display module)
+summary: A Bela project that turns Salt into a multi-function module operated from a USB Braille display, with a trigger and CV sequencer, a level meter and two oscillators.
+description: >-
+  Mario Lang's project, named Pepper, is not related to Bela's Pepper module
+  and is listed under Salt because its README targets Salt. A USB Braille
+  display, read through BRLTTY, is the only user interface. Each mode is a tab:
+  scrolling to the top line and then sideways changes mode, and the cursor
+  routing keys edit values. The sequencer has four trigger channels, shown as
+  a grid of cells, and four CV and gate channels shown like a piano roll.
+  Songs are saved to disk with Boost serialization. The two oscillator modes
+  host LV2 plugins and the level meter shows the audio input. It is C++ built
+  with the Bela makefile, last updated in 2018.
+status: dormant
+authors:
+  - name: Mario Lang (mlang)
+    url: https://github.com/mlang
+source: https://github.com/mlang/pepper
+source_status: open
+license: BSL-1.0
+license_notes: Boost Software License 1.0, from the LICENSE file.
+distribution: source-only
+requires_stock: Bela image of 2018 (BRLTTY, LV2 and Boost installed from apt)
+install_notes: On the board, install brltty, libbrlapi-dev, libboost-dev, libboost-serialization-dev and lv2-dev with apt, clone the repository into /root/Bela/projects and build it with make. Plug the Braille display into Salt before powering it on. A broken setup is fixed by choosing another project or by writing a fresh Bela image to the microSD card.
+brick_risk: false
+tags: [sequencer, synth-engine, accessibility, eurorack]
+versions:
+  - version: master @ 63bd4d4
+    date: 2018-08-10
+    url: https://github.com/mlang/pepper/commit/63bd4d4
+    notes: No tagged releases; this is the latest commit.

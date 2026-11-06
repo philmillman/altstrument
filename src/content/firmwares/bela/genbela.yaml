@@ -1,0 +1,33 @@
+device: bela
+name: genBela
+kind: tool
+summary: Project template for running C++ code exported from Max's gen~ on Bela, with a render.cpp that connects the exported patch to Bela's audio buffers.
+description: >-
+  genBela holds the genlib runtime files that gen~ writes when it exports C++
+  code, an example exported patch and a render.cpp that passes Bela's audio
+  inputs and outputs through it. It has no readme and five commits, all from
+  October 2016, and targets the original BeagleBone Black with a Bela cape.
+status: dormant
+authors:
+  - name: Cycling '74
+    url: https://github.com/Cycling74
+source: https://github.com/Cycling74/genBela
+source_status: open
+license: proprietary
+license_notes: >-
+  genlib.h carries the Cycling '74 License for Max-Generated Code for Export,
+  which allows use, copying and modification for non-commercial use only and
+  requires contact with Cycling '74 for commercial use. The repository has no
+  LICENSE file.
+distribution: source-only
+install_notes: >-
+  Copy the repository into a project folder on the board, replacing the
+  exported gen_exported files with the output of your own gen~ patch, and
+  build it in the Bela IDE. A broken project is fixed by deleting it.
+brick_risk: false
+tags: [sdk]
+versions:
+  - version: master @ 3dd9fa4
+    date: 2016-10-14
+    url: https://github.com/Cycling74/genBela/commit/3dd9fa4
+    notes: No tagged releases; this is the latest commit.

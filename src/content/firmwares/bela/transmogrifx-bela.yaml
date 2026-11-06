@@ -1,0 +1,41 @@
+device: bela
+name: transmogriFX
+summary: Guitar-oriented multi-effects processor for Bela written in C++, with overdrive, compressor, wah, modulation, equalizer, delay and reverb, split into two mono stages that act as an effects-loop send and return.
+description: >-
+  Targets the Bela cape on a BeagleBone Black and uses its audio inputs and
+  outputs. The code is a Bela C++ project, so it builds and runs from the Bela
+  IDE. It treats the board as a mono processor in two stages: the first channel
+  holds wah, compressor, sustainer and an equalizer, and the second holds the
+  modulation and delay effects. The first channel's output can serve as an
+  effects-loop send, and the second channel's input as the return, which suits
+  an external distortion pedal in between.
+
+
+  The effects include an overdrive and a Klingon-style overdrive, a dynamic
+  range compressor, a sustainer, an envelope filter, chorus, flanger, phaser,
+  tremolo, wah, a state-variable filter, a six-band graphic equalizer, a delay
+  and the Zita Rev1 reverb. The author gives a latency of about 1.2 ms per
+  channel. The effect files are mostly self-contained, so they can be reused in
+  other projects. No extra hardware is needed beyond the board and an audio
+  source.
+status: dormant
+authors:
+  - name: transmogrifox
+    url: https://github.com/transmogrifox
+source: https://github.com/transmogrifox/transmogriFX_bela
+source_status: open
+license: Unlicense
+license_notes: LICENSE file is the Unlicense; the README says the code is released to the public domain.
+distribution: source-only
+install_notes: >-
+  Copy the src folder into a new project in the Bela IDE (or into
+  ~/Bela/projects on the board), then build and run it there. The code is not
+  meant to build outside the Bela core. The Bela system runs from a microSD
+  card, so a bad install is undone by writing a fresh image to the card.
+brick_risk: false
+tags: [fx, guitar, reverb, delay, distortion]
+versions:
+  - version: master @ 1b8fae8
+    date: 2019-05-16
+    url: https://github.com/transmogrifox/transmogriFX_bela/commit/1b8fae86d1253fcd062053c44032001421609f04
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,34 @@
+device: bela
+name: Bela Sampler
+summary: Early-stage multichannel WAV sampler for Bela Gem in C++, loading samples from a folder, playing them on MIDI input over ten output channels with mix buses, with a JUCE control app in the repository.
+description: >-
+  Targets Bela Gem. The README calls it an early-stage sampler that loads WAV
+  files from a samplesfolder directory and plays them in a loop. The
+  repository describes it as a 10-channel sampler, which matches the outputs
+  of Bela Gem Multi. The code has a sampler engine with a bank of programs, 32
+  players, mix buses with panning, MIDI input and a simple LFO modulation. A
+  JUCE project and a headless build are included for controlling it from a
+  computer. Extra hardware is a MIDI source. The
+  repository's notes are in French and read as the author's own task list, so
+  features are still changing.
+status: active
+authors:
+  - name: Alexis Zbik
+    url: https://github.com/alexiszbik
+source: https://github.com/alexiszbik/bela-sampler
+source_status: open
+license: unspecified
+license_notes: No LICENSE file.
+distribution: source-only
+install_notes: >-
+  Run scripts/deploy.sh to copy the project to the board over SSH (root@bela.local
+  by default), with Bela Gem reachable on the network. The Bela system runs from
+  a microSD card, so a bad install is undone by writing a fresh image to the
+  card.
+brick_risk: false
+tags: [sampler, midi, juce]
+versions:
+  - version: main @ 85e4ef1
+    date: 2026-09-16
+    url: https://github.com/alexiszbik/bela-sampler/commit/85e4ef1fbd84a89b4f72c4849d6a10239a3ab8e4
+    notes: No tagged releases; this is the latest commit.

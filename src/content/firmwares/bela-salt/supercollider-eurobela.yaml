@@ -1,0 +1,29 @@
+device: bela-salt
+name: supercollider-eurobela
+summary: SuperCollider scripts for running Salt from the Bela IDE, including a start-up configuration, hardware tests, a sample recorder and a granular processor for live input.
+description: >-
+  Alejandro Olarte's repository collects a handful of .scd files written for
+  Salt in 2019. One sets the server options for Bela's analog and digital
+  channels, one is a hardware test for the knobs, jacks and LEDs, one records
+  audio into a buffer, and one is a granular processor that reads the live
+  input with the four knobs and a button as controls. The granular script was
+  later copied into TheTechnobear's BelaPatches collection. The scripts target
+  the Bela image of the time, so server options may need adjusting on current
+  releases.
+status: dormant
+authors:
+  - name: Alejandro Olarte (Hyppasus)
+    url: https://github.com/Hyppasus
+source: https://github.com/Hyppasus/supercollider-eurobela
+source_status: open
+license: unspecified
+license_notes: No LICENSE file and no licence statement in the README.
+distribution: source-only
+install_notes: Copy the .scd files into a new SuperCollider project in the Bela IDE on Salt, or clone the repository into ~/Bela/projects on the board, and run the project from the IDE. A broken setup is fixed by choosing another project or by writing a fresh Bela image to the microSD card.
+brick_risk: false
+tags: [supercollider, granular, patches]
+versions:
+  - version: master @ 2ebed13
+    date: 2019-02-22
+    url: https://github.com/Hyppasus/supercollider-eurobela/commit/2ebed13
+    notes: No tagged releases; this is the latest commit.

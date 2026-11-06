@@ -1,0 +1,46 @@
+device: bela
+name: bela-rs
+kind: tool
+summary: Rust crates (bela-sys and bela) that wrap the Bela core API, MIDI and FFT for writing real-time Rust programs for Bela Gem.
+description: >-
+  bela-rs is a Rust workspace with two crates. bela-sys has the raw bindings
+  to libbela, and bela has a safe API with a settings builder, a real-time
+  render trait, MIDI and an FFT. Programs are cross-compiled on a computer
+  for aarch64 and copied to the board. The readme says the API may change in
+  any 0.x release, that the other Bela C++ libraries such as the browser scope
+  and Trill are not wrapped, and that it targets Bela Gem only, not the older
+  armv7 boards.
+status: active
+authors:
+  - name: Akiomi Kamakura
+    url: https://github.com/akiomik
+source: https://github.com/akiomik/bela-rs
+source_status: open
+license: Apache-2.0
+license_notes: >-
+  Dual-licensed under Apache-2.0 or MIT at the user's option; the repository
+  has both LICENSE-APACHE and LICENSE-MIT.
+homepage: https://crates.io/crates/bela
+distribution: source-only
+requires_stock: Bela Gem image
+install_notes: >-
+  Add the bela crate with cargo add bela in a Rust project, cross-compile it
+  for aarch64-unknown-linux-gnu and copy the binary to the Bela Gem. Nothing is
+  written to the system image. A broken setup is fixed by removing the binary
+  or writing a fresh image to the card.
+brick_risk: false
+tags: [rust, sdk]
+versions:
+  - version: v0.9.0
+    date: 2026-09-11
+    url: https://github.com/akiomik/bela-rs/releases/tag/v0.9.0
+    notes: Latest release; also on crates.io.
+  - version: v0.8.1
+    date: 2026-09-07
+    url: https://github.com/akiomik/bela-rs/releases/tag/v0.8.1
+  - version: v0.8.0
+    date: 2026-09-07
+    url: https://github.com/akiomik/bela-rs/releases/tag/v0.8.0
+  - version: v0.7.0
+    date: 2026-08-17
+    url: https://github.com/akiomik/bela-rs/releases/tag/v0.7.0

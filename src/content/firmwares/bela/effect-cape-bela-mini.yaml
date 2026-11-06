@@ -1,0 +1,49 @@
+device: bela
+name: Effect Cape for Bela Mini
+summary: Guitar effects pedal for Bela Mini made of a custom cape (four rotary encoders, two footswitches, OLED, expression input) and a Pure Data framework, with a delay-chain example of scanner vibrato, tape delay, reverb and looper.
+description: >-
+  Targets Bela Mini. The repository holds KiCad files, a bill of materials and
+  an assembly guide for a stompbox cape with four rotary encoders with
+  switches, two footswitches, a bicolor LED, an OLED display, a mono audio
+  input, two outputs, a headphone output, an expression pedal input and a DC
+  power socket. The author says the PCB is not sold, so it has to be ordered
+  from the board files. A laser-cut acrylic case design is included.
+
+
+  The software side is a Pure Data framework with a custom render.cpp that
+  reads the encoders, plus patches for the interface, LED, OLED and a
+  phone or tablet GUI. The Delay_Chain project uses it for a Hammond scanner
+  vibrato simulator, a tape delay, a Freeverb reverb and an overdubbing looper.
+  Other effects can be built on the same framework.
+status: dormant
+authors:
+  - name: Lehel Török
+    url: https://github.com/leheltorok
+source: https://github.com/leheltorok/effect_cape_for_bela_mini
+source_status: open
+license: CC-BY-NC-SA-4.0
+license_notes: >-
+  No LICENSE file. The README licence section names Attribution-NonCommercial-ShareAlike 4.0
+  International but links to the CC BY-SA page, so the intended terms are
+  ambiguous; the licence name was used. The licence is a Creative Commons one
+  rather than a software licence.
+distribution: source-only
+install_notes: >-
+  Needs the effect cape built from the KiCad files and parts list in the
+  repository. Copy the Projects/Delay_Chain folder into a project on the Bela
+  Mini (via the Bela IDE or ~/Bela/projects) and run it. The Bela system runs
+  from a microSD card, so a bad install is undone by writing a fresh image to
+  the card.
+brick_risk: false
+tags: [fx, pure-data, pedal, guitar, hardware, diy, looper, delay, reverb]
+video:
+  url: https://www.youtube.com/watch?v=Ah0W3sH00xs
+  title: Effect Cape for Bela Mini (Demo)
+  credit: Lehel Torok
+  first_party: true
+  found_via: https://github.com/leheltorok/effect_cape_for_bela_mini#readme
+versions:
+  - version: main @ 1f18526
+    date: 2023-08-01
+    url: https://github.com/leheltorok/effect_cape_for_bela_mini/commit/1f18526c4527919a01eb369fbcbfdc378f7f3e16
+    notes: No tagged releases; this is the latest commit.

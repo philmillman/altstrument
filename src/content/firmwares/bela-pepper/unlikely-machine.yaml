@@ -1,0 +1,32 @@
+device: bela-pepper
+name: Unlikely Machine
+summary: C++ eight-voice granular looper for Pepper that records into a tempo-synced circular buffer and fires randomised grains with reverse, pitch, glide and stutter probabilities.
+description: >-
+  The project is one render.cpp in the pepper-projects folder of a repository
+  that otherwise holds firmware for the Daisy Patch.Init. Eight knobs, each
+  also usable from the matching CV input, set chorus depth, buffer length in
+  bars, grain probability, release time, and the probabilities of reversed
+  grains, octave shifts, glide and stutter. Tempo comes from a tap-tempo
+  button or an external clock on the last CV input. The folder has no
+  readme, so the control list comes from the comment at the top of the code.
+status: active
+authors:
+  - name: Alexander Kemp
+    url: https://github.com/alexanderhkemp
+source: https://github.com/alexanderhkemp/bela-pepper/tree/main/pepper-projects/unlikely-machine
+source_status: open
+license: unspecified
+license_notes: 'No LICENSE file. The repository README says the projects are for fun and experimentation and that everyone is welcome to use and modify them, with no guarantees; that is not a standard licence.'
+homepage: https://github.com/alexanderhkemp/bela-pepper
+distribution: source-only
+install_notes: >-
+  Create a C++ project in the Bela IDE and use the render.cpp from the
+  folder. The code expects the CV 7 jack to be set to digital if an external
+  clock is used. A fresh image on the microSD card recovers a broken system.
+brick_risk: false
+tags: [granular, looper, generative, eurorack]
+versions:
+  - version: main @ 21b88fc
+    date: 2026-06-04
+    url: https://github.com/alexanderhkemp/bela-pepper/commit/21b88fc
+    notes: No tagged releases; this is the latest commit.

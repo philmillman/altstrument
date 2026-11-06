@@ -1,0 +1,44 @@
+device: bela
+also_devices: [bela-pepper, bela-salt]
+name: pybela
+kind: tool
+summary: Python package for streaming data between a Bela board and a computer in both directions, with data logging and variable monitoring and control.
+description: >-
+  pybela connects to a Bela over the network and exchanges data with a running
+  program: sensor and audio buffers go to Python for logging, plotting or
+  machine learning, and values go back to the board. It works with a watcher
+  library that is added to the Bela project, and the project's readme says
+  this currently needs the Bela core on its dev branch. The documentation
+  site has tutorials, and the repository has Jupyter notebooks and tests.
+status: dormant
+authors:
+  - name: Teresa Pelinski
+    url: https://github.com/pelinski
+source: https://github.com/BelaPlatform/pybela
+source_status: open
+license: LGPL-3.0-only
+license_notes: >-
+  The LICENSE file is the LGPL version 3, and the readme and pyproject.toml say
+  "LGPL 3.0" with no later-version clause.
+homepage: https://belaplatform.github.io/pybela/
+distribution: download
+install_notes: >-
+  Install the package on the computer with pip install pybela. On the Bela,
+  switch the Bela core to its dev branch, which needs a rebuild of the core
+  and libraries, then add the watcher library to the Bela project. The
+  readme gives steps for a board with and without an internet connection.
+tags: [official, python, sdk, research]
+versions:
+  - version: v2.0.3
+    date: 2025-04-16
+    url: https://github.com/BelaPlatform/pybela/releases/tag/v2.0.3
+    notes: Latest release; also v2.0.3 on PyPI.
+  - version: v2.0.2
+    date: 2025-02-02
+    url: https://github.com/BelaPlatform/pybela/releases/tag/v2.0.2
+  - version: v2.0.1
+    date: 2025-01-15
+    url: https://github.com/BelaPlatform/pybela/releases/tag/v2.0.1
+  - version: v2.0.0
+    date: 2024-12-16
+    url: https://github.com/BelaPlatform/pybela/releases/tag/v2.0.0

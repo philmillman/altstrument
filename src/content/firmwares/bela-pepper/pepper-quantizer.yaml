@@ -1,0 +1,32 @@
+device: bela-pepper
+name: pepper-quantizer
+summary: Single-channel CV quantizer for Pepper written in C++, with six selectable scales, an automatic or input-triggered mode, an arpeggiator-style mapping and a trigger output.
+description: >-
+  The input is attenuated by a pot and snapped to the chosen scale: chromatic,
+  diminished, major, natural minor, minor seventh or major seventh. In auto
+  mode the output follows the input; in input mode it only changes on a
+  trigger or button press. A mode that spreads the scale notes evenly across
+  the input range suits arpeggio patches. The audio jacks are not used.
+status: dormant
+authors:
+  - name: smnhbrt
+    url: https://github.com/smnhbrt
+source: https://github.com/smnhbrt/pepper-quantizer
+source_status: open
+license: unspecified
+license_notes: No LICENSE file and no licence statement.
+distribution: source-only
+requires_stock: Pepper jumpers set for IN0-3 analog and IN4-7 digital
+install_notes: >-
+  Needs the board jumpers set so that inputs 0 to 3 are analog and inputs 4
+  to 7 are digital trigger inputs; the README links the Pepper wiki page on
+  configuring inputs. Copy the project into ~/Bela/projects with scp, open it
+  in the Bela IDE and run it, or set it to run at boot in the IDE settings. A
+  fresh image on the microSD card recovers a broken system.
+brick_risk: false
+tags: [quantizer, cv, scales, eurorack]
+versions:
+  - version: v0.0
+    date: 2025-06-30
+    url: https://github.com/smnhbrt/pepper-quantizer/tree/v0.0
+    notes: Git tag; no GitHub release page.

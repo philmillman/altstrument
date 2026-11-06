@@ -1,0 +1,33 @@
+device: bela-salt
+also_devices: [bela, bela-pepper]
+name: BelaPatches
+summary: Mark Harris's collection of Bela projects with separate folders for Salt, Pepper and the plain Bela board, covering Pure Data, SuperCollider, Csound and C++ patches that talk to controllers such as the Soundplane and Eigenharp.
+description: >-
+  TheTechnobear's repository holds patches the author made for personal use
+  or adapted from other projects, and warns that some may not be current. The
+  salt folder has the most content: a Pure Data MIDI-to-CV patch, SuperCollider
+  patches (four LFOs and envelopes, a remote-control example, the granular
+  live-input script from supercollider-eurobela, tests), Csound tests and C++
+  projects including an OSC-to-CV bridge, a MIDI test and interfaces to a
+  Madrona Labs Soundplane and an Eigenharp. The pepper folder has a
+  calibration project and a SuperCollider drum, and the bela folder has the
+  C++ controller interfaces for the plain board. An rnbo folder holds example
+  projects that run a Max RNBO export on Salt. The C++ projects build against
+  external libraries, which the README clones and builds on the board.
+status: dormant
+authors:
+  - name: Mark Harris (TheTechnobear)
+    url: https://github.com/TheTechnobear
+source: https://github.com/TheTechnobear/BelaPatches
+source_status: open
+license: GPL-3.0-only
+license_notes: LICENSE is GPLv3; no "or later" grant was checked in the source files. Bundled external libraries (oscpack, moodycamel queues, cJSON) keep their own licences.
+distribution: source-only
+install_notes: Clone the repository on the board, run the submodule update, build the external libraries with cmake, then link the folder of the patch you want into ~/Bela/projects and run it from the IDE. Pepper patches assume the standard board with the LED segment bar and eight analog inputs and outputs. A broken setup is fixed by choosing another project or by writing a fresh Bela image to the microSD card.
+brick_risk: false
+tags: [patches, supercollider, pure-data, midi]
+versions:
+  - version: master @ 49c3dbf
+    date: 2022-12-16
+    url: https://github.com/TheTechnobear/BelaPatches/commit/49c3dbf
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,36 @@
+device: bela-pepper
+name: Pepper example projects
+summary: The eight Pure Data example projects Bela ships for Pepper, covering a getting-started template, an LFO playground, a looper, drum machines, a granulator, a tape delay and an inharmonic oscillator bank.
+description: >-
+  The examples live in the examples/Pepper folder of the Bela repository and
+  are included in the Bela image, where the IDE lists them under Examples,
+  Pepper. All eight are Pure Data patches that use Pepper's knobs, buttons,
+  CV jacks and LED bar. The folders are getting-started, lfo-playground,
+  looper, drum-machine, granulator (a four-voice sample granulator),
+  tape-delay, inharmonic-oscillator and wavetable-drums. The Pepper wiki
+  points to this folder as the set of projects that work without any setup.
+status: maintained
+authors:
+  - name: Augmented Instruments Laboratory
+    url: https://github.com/BelaPlatform
+  - name: Contributors
+    url: https://github.com/BelaPlatform/Bela/graphs/contributors
+source: https://github.com/BelaPlatform/Bela/tree/master/examples/Pepper
+source_status: open
+license: LGPL-3.0-only
+license_notes: The LICENSE file of the Bela repository says the software is distributed under the LGPL 3.0, with no "or later" wording, so it is read as -only. No file in examples/Pepper carries its own licence or copyright notice.
+homepage: https://github.com/BelaPlatform/bela-pepper/wiki/Projects
+distribution: download
+requires_stock: Bela image that includes the Pepper examples
+install_notes: >-
+  Nothing to install on a current image: open the Bela IDE and pick a project
+  from Examples, Pepper. If the folder is missing, update the board to a newer
+  Bela image. A broken system is fixed by writing a fresh image to the
+  microSD card.
+brick_risk: false
+tags: [official, examples, pure-data, eurorack, looper, drum-machine, granular, delay, lfo]
+versions:
+  - version: master @ 103bd22
+    date: 2020-09-12
+    url: https://github.com/BelaPlatform/Bela/commit/103bd22552c6363d181dae62a4674c0755bcd189
+    notes: Latest commit touching examples/Pepper; the Bela repository has no tagged releases.

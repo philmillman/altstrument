@@ -1,0 +1,41 @@
+device: bela
+name: Resonators
+summary: Resonant filter-bank synthesis for Bela in C++, based on the resonators~ Max/Pd object, with about 100 percussion resonance models, example projects, a p5.js editor and Python bindings.
+description: >-
+  Targets the Bela cape and Bela Mini; it needs no extra hardware beyond an
+  audio source to excite the filters. A bank of resonators is described by a
+  JSON model of frequency, gain and decay per resonator, and an input signal
+  excites the bank. The repository includes five Bela example projects (one
+  resonator, a bank from a model file, models reloaded over scp, banks
+  transposed up a scale, and a combination with the Bela scope). It also holds
+  about 100 models of mostly percussion instruments derived from the aLib
+  resonance models, a work-in-progress p5.js interface that edits the model
+  in real time over a WebSocket, and Jupyter and Python helpers with Swig
+  bindings for offline use.
+status: dormant
+authors:
+  - name: Jack Armitage
+    url: https://github.com/jarmitage
+source: https://github.com/jarmitage/resonators
+source_status: open
+license: CC0-1.0
+license_notes: No LICENSE file. The README says CC0 unless otherwise stated; the resonance models come from aLib and may carry their own terms.
+distribution: source-only
+install_notes: >-
+  Copy the bela folder projects and the include and cpp files into a project in
+  the Bela IDE (or ~/Bela/projects) and run it. Models can also be copied to the
+  board with scp for live updates. The Bela system runs from a microSD card, so
+  a bad install is undone by writing a fresh image to the card.
+brick_risk: false
+tags: [fx, resonator, physical-modeling, drums, python, web]
+image:
+  url: https://raw.githubusercontent.com/jarmitage/resonators/master/img/p5_gui.png
+  alt: Chart with log frequency on the horizontal axis, gain as pink peaks and decay as blue points above a light blue area, with vertical lines marking each resonator
+  credit: Jack Armitage
+  source_url: https://github.com/jarmitage/resonators
+  first_party: true
+versions:
+  - version: master @ a060c9f
+    date: 2022-03-31
+    url: https://github.com/jarmitage/resonators/commit/a060c9fa9266389da08c24fea426c9d0b2fd6d31
+    notes: No tagged releases; this is the latest commit.

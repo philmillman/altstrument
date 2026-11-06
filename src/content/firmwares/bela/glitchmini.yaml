@@ -1,0 +1,39 @@
+device: bela
+name: GlitchMini
+summary: Clock-driven glitch effect for Bela Mini with the Multichannel Expander in C++, giving stereo glitch outputs at 16th, 32nd, 64th and 128th note lengths from a PPQN 48 clock, for Eurorack use.
+description: >-
+  Targets Bela Mini together with the Multichannel Expander. A stereo input is
+  captured and repeated in rhythm to an external clock at 48 pulses per quarter
+  note on analog input 0, with a reset trigger on analog input 1. Each pair of
+  outputs carries one subdivision, from the 16th to the 128th note. One button
+  switches between frozen glitch patterns and another shuts the board down
+  cleanly. Extra hardware is two mono mini jack inputs, two push buttons and an
+  LED with a resistor; a wiring PDF is in the repository. The author warns to
+  check input voltages, since excess voltage can damage the board.
+status: dormant
+authors:
+  - name: stephaneworkspace
+    url: https://github.com/stephaneworkspace
+source: https://github.com/stephaneworkspace/GlitchMini
+source_status: open
+license: unspecified
+license_notes: No LICENSE file. The README only says the project is open source.
+distribution: source-only
+install_notes: >-
+  Copy the repository files (render.cpp and headers) into a C++ project on the
+  Bela Mini and run it from the Bela IDE, with the expander and buttons wired as
+  in the PDF. The Bela system runs from a microSD card, so a bad install is
+  undone by writing a fresh image to the card.
+brick_risk: false
+tags: [glitch, fx, eurorack, hardware, diy]
+image:
+  url: https://raw.githubusercontent.com/stephaneworkspace/GlitchMini/main/bela.Glitch.png
+  alt: Bela Glitch title over a photo of a Bela board wired on a breadboard in a plastic box beside a small front panel, next to a modular synthesizer, in a swirling blue and orange frame
+  credit: stephaneworkspace
+  source_url: https://github.com/stephaneworkspace/GlitchMini
+  first_party: true
+versions:
+  - version: main @ 0bc1277
+    date: 2024-10-20
+    url: https://github.com/stephaneworkspace/GlitchMini/commit/0bc127723eceddf62ac6505feded8ab3e20c65b5
+    notes: No tagged releases; this is the latest commit.

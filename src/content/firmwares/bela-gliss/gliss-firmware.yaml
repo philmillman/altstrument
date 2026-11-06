@@ -1,0 +1,47 @@
+device: bela-gliss
+name: Gliss firmware
+summary: Bela's own microcontroller firmware for the Gliss touch controller, published as source. Version 2 added the 1U orientation, a Slider + Touch input and custom slew rates.
+description: >-
+  This repository holds the C source for the STM32G491 microcontroller inside
+  Gliss. The touch and mode code is in the TrillRackApplication submodule, and
+  the flash is split into a small bootloader, a flasher and the application.
+  Version 2.0 (September 2024, then 2.0.1 in October) added support for the
+  horizontal Gliss 1U, a fourth input type that combines a slider and a
+  touchpad, attack and release slew in Control Mode, longer gesture recording,
+  trimming of gesture start and end points, and a -1V to +1V voltage preset.
+  Settings are erased when the firmware is flashed, so the module asks for a
+  new calibration afterwards.
+status: maintained
+authors:
+  - name: Augmented Instruments Laboratory (Bela)
+    url: https://github.com/BelaPlatform
+source: https://github.com/BelaPlatform/gliss-firmware
+source_status: open
+license: unspecified
+license_notes: No LICENSE file. The README says only "This project is open source and under GPL license", with no version, and learn.bela.io says the same about the firmware. Without a version or "or later" grant it is not mapped to a specific GPL id.
+homepage: https://bela.io/upgrade-gliss
+distribution: browser-installer
+install_notes: Connect Gliss to a computer over micro USB and open the Gliss Upgrade page in a Chrome-based browser (it needs WebMIDI). The page sends the firmware as SysEx. Settings are cleared by the update and the module enters Calibration Mode on the next start. The bootloader and flasher regions sit below the application in flash and the update writes the application. The flasher mode takes SysEx again, and the STM32 ROM bootloader is a further fallback, so a failed update can be retried; Bela does not document either path as a recovery procedure.
+brick_risk: false
+tags: [official, controller, eurorack]
+versions:
+  - version: v2.0.1
+    date: 2024-10-01
+    url: https://github.com/BelaPlatform/gliss-firmware/tree/v2.0.1
+    notes: Git tag; no GitHub release page.
+  - version: v2.0
+    date: 2024-09-19
+    url: https://github.com/BelaPlatform/gliss-firmware/tree/v2.0
+    notes: Git tag; no GitHub release page.
+  - version: v1.2
+    date: 2023-11-09
+    url: https://github.com/BelaPlatform/gliss-firmware/tree/v1.2
+    notes: Git tag; no GitHub release page.
+  - version: v1.1
+    date: 2023-09-25
+    url: https://github.com/BelaPlatform/gliss-firmware/tree/v1.1
+    notes: Git tag; no GitHub release page.
+  - version: v1
+    date: 2023-07-11
+    url: https://github.com/BelaPlatform/gliss-firmware/tree/v1
+    notes: Git tag; no GitHub release page.

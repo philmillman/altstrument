@@ -1,0 +1,39 @@
+device: bela-pepper
+name: Bela_Pepper_GUI
+kind: tool
+summary: Browser panel for Pepper that runs as a Bela IDE GUI page, drawing the knobs, buttons, jacks and LEDs and sending knob and button changes to a Pure Data patch.
+description: >-
+  The repository holds a modified copy of the IDE's gui folder with a p5.js
+  script, pepper.js, that draws a virtual Pepper panel, and a changed
+  libpd render file. It sends knob and button values to the running patch
+  through Bela's control messages and reads the scope buffers to show input,
+  output and LED activity. A tape-delay style Pure Data project is included as
+  a demo. The README is a one-line description with a screenshot.
+status: dormant
+authors:
+  - name: CADragon51
+    url: https://github.com/CADragon51
+source: https://github.com/CADragon51/Bela_Pepper_GUI
+source_status: open
+license: GPL-3.0-only
+license_notes: LICENSE is the GPL 3 text; no "or later" statement found in the README or the files.
+distribution: source-only
+install_notes: >-
+  The README gives no steps. The folder layout mirrors the Bela source tree
+  (IDE/public/gui, core and projects), so the files are meant to be copied
+  over the matching folders on the board; this is an inference from the
+  layout, not documented. Reflashing the microSD card with a stock image
+  restores the original IDE files.
+brick_risk: false
+tags: [gui, pure-data, eurorack]
+image:
+  url: https://user-images.githubusercontent.com/96871789/193555570-f0d0ceac-c880-4388-ac72-b9fc0eabd202.png
+  alt: Browser drawing of a Pepper panel with input and output jacks with level bars, eight labelled knobs and four buttons
+  credit: CADragon51
+  source_url: https://github.com/CADragon51/Bela_Pepper_GUI
+  first_party: true
+versions:
+  - version: main @ 365012f
+    date: 2022-10-03
+    url: https://github.com/CADragon51/Bela_Pepper_GUI/commit/365012f
+    notes: No tagged releases; this is the latest commit.

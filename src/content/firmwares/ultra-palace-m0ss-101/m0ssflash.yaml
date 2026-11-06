@@ -1,0 +1,45 @@
+device: ultra-palace-m0ss-101
+also_devices: [ultra-palace-m0ss-201]
+name: M0SSFlash
+kind: tool
+summary: >-
+  Browser flasher for M0SS-101 and M0SS-201 firmware images. It writes a .bin to the BL616 over Web
+  Serial through the chip's ROM bootloader and checks the result with a SHA verify, with no install
+  or build step.
+description: >-
+  A static HTML and JavaScript page that reimplements the BL616 flashing protocol used by Bouffalo
+  Lab's bflb-mcu-tool: boot handshake, boot info, flash parameters, JEDEC ID read, erase, chunked
+  writes with write checks, and a SHA verify of the written image. Flashing over USB CDC can stall
+  intermittently, so the writer shrinks its chunk size, adds delays and re-runs the handshake to
+  resume from the same offset, within a capped number of recovery attempts. An option erases the
+  whole 4 MB flash before programming, which also clears stored presets. Ultra Palace's
+  firmware update guides for both synths use the hosted page.
+status: active
+authors:
+  - name: Phil Miller
+    url: https://github.com/philmillman
+source: https://github.com/philmillman/M0SSFlash
+source_status: open
+license: MIT
+homepage: https://philmillman.github.io/M0SSFlash/
+distribution: browser-installer
+install_notes: >-
+  Open the page in a Chromium-based browser, load the .bin, put the synth into bootloader mode,
+  click Connect Serial and pick the BL616 device ("Bouffalo CDC Demo"), then click Flash Firmware
+  and wait for the verify and completion messages. Ultra Palace's guides enter bootloader mode by
+  holding BOOT and pressing RST with the board out of its enclosure. The page writes only the
+  flash through the ROM bootloader, which lives in mask ROM and is not touched, so if a flash fails or runs out of recovery
+  attempts, re-enter bootloader mode and flash again.
+brick_risk: false
+tags: [flasher, web-serial, web, utility, open-source]
+image:
+  url: https://raw.githubusercontent.com/philmillman/M0SSFlash/main/screenshot.png
+  alt: M0SS-101/201 Web Flasher page after a successful flash, with the loaded .bin, Connect Serial and Flash Firmware buttons, a full-erase option and a write log
+  credit: Phil Miller
+  source_url: https://github.com/philmillman/M0SSFlash
+  first_party: true
+versions:
+  - version: main @ 5b3fce1
+    date: 2026-05-09
+    url: https://github.com/philmillman/M0SSFlash/commit/5b3fce1a5f6db605ceabebbb893217c7af38dfa7
+    notes: No tagged releases; this is the latest commit, which adds boot mode tips.

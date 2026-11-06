@@ -1,0 +1,45 @@
+device: ultra-palace-m0ss-201
+name: M0SS-201 firmware
+summary: >-
+  Ultra Palace's own M0SS-201 firmware, published as source in November 2026: the west-coast mono
+  synth voice written directly in C, plus the button, LED, preset and MIDI code for the BL616, with
+  prebuilt images of each release.
+description: >-
+  Nearly all of the audio path is in dsp/synth.c, which renders one mono sample at a time from the
+  current parameters. dsp/interface.c assigns each parameter to a button, a control type and an LED
+  display mode, gpio.c reads the buttons and holds most of the interface state, and main.c starts
+  the FreeRTOS tasks. It builds with the Bouffalo SDK at a pinned commit plus a patch in the
+  repository. Besides main, the repository has dsp_overhaul and lucas_experimental branches. Prebuilt
+  images are in the firmware folder of the documentation repository, and the README points to the
+  M0SS Discord for help modifying the code.
+status: active
+authors:
+  - name: Andrew March
+    url: https://github.com/marchingband
+  - name: Ultra Palace
+    url: https://www.ultrapalace.com/
+source: https://github.com/marchingband/M0SS-201
+source_status: open
+license: GPL-3.0-only
+homepage: https://github.com/ultrapalace/M0SS-201
+distribution: download
+install_notes: >-
+  Same procedure as the M0SS-101: take the board out of the enclosure, connect the internal USB-B
+  port and the 9 V supply, hold BOOT and tap RST to enter the BL616 ROM bootloader, and flash the
+  .bin with the M0SS web flasher in Chrome. Updating usually erases presets. The ROM bootloader is
+  not touched by the update, so an interrupted flash can be retried.
+brick_risk: false
+tags: [official, open-source, synth-engine, monophonic, west-coast, fm]
+versions:
+  - version: V1.2
+    date: 2026-09-30
+    url: https://github.com/ultrapalace/M0SS-201/blob/main/version-notes.md
+    notes: Polyphonic aftertouch is translated to channel aftertouch; adds a MIDI-mappable OS1 detune on WAV + OCT.
+  - version: V1.1
+    date: 2026-09-25
+    url: https://github.com/ultrapalace/M0SS-201/blob/main/version-notes.md
+    notes: Oscillator DSP change for cleaner OS2 square and saw, OS2 retrigger toggle, CC0 and LED fixes.
+  - version: V1.0
+    date: 2026-07-30
+    url: https://github.com/ultrapalace/M0SS-201/blob/main/version-notes.md
+    notes: Initial release.

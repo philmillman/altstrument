@@ -1,0 +1,47 @@
+device: ultra-palace-m0ss-309
+name: M0SS-309 firmware
+summary: >-
+  Ultra Palace's own M0SS-309 firmware, published as source in November 2026: a bare-metal Circle
+  application with Faust-generated voices and master effects, voice allocation, mono mode, presets
+  and USB MIDI for the nine-voice polysynth.
+description: >-
+  The firmware is C++ on Circle, built for 32-bit Arm against Circle release 48 at a pinned commit,
+  with a patch in the repository that changes Circle's audio, USB MIDI, encoder and FatFs code. The
+  voice (M0SS-309.dsp) and the chorus, delay and reverb (masterFX.dsp) are written in Faust; the
+  generated headers are checked in, so Faust is not needed to build. Other sources cover the voice
+  manager, mono mode, MIDI configuration and JSON preset storage on the SD card. The repository's
+  sdcard folder holds the files for a fresh card, and prebuilt kernel images are in the firmware
+  folder of the documentation repository.
+status: active
+authors:
+  - name: Andrew March
+    url: https://github.com/marchingband
+  - name: Ultra Palace
+    url: https://www.ultrapalace.com/
+source: https://github.com/marchingband/M0SS-309
+source_status: open
+license: unspecified
+license_notes: >-
+  The source repository has no license file or license statement. Its sdcard folder includes
+  Raspberry Pi boot files under Broadcom's redistribution licence (LICENCE.broadcom).
+homepage: https://github.com/ultrapalace/M0SS-309
+distribution: download
+install_notes: >-
+  Copy the release's kernel8-32.img onto the M0SS-309's SD card, replacing the existing file. For a
+  fresh FAT-formatted card, first copy the contents of the sdcard folder (or the documentation
+  repository's sdcard.zip), including config.txt. v1.1 needs force_turbo=1 added to config.txt to
+  avoid glitching after about a minute; v1.2 fixes this in the firmware. Keeping a copy of the
+  previous image on the computer is enough to roll back.
+brick_risk: false
+tags: [official, open-source, synth-engine, virtual-analog, polyphonic, faust, raspberry-pi]
+versions:
+  - version: v1.2
+    date: 2026-10-23
+    url: https://github.com/ultrapalace/M0SS-309/tree/main/firmware/v1.2
+    notes: Optimised Faust code to stop glitching when the CPU throttles; 512-sample audio chunks for lower latency and faster LED updates.
+  - version: v1.1
+    date: 2026-08-18
+    url: https://github.com/ultrapalace/M0SS-309/tree/main/firmware/v1.1
+    notes: Voice stealing gains a kill phase to remove pops; needs force_turbo=1 in config.txt.
+  - version: v1.0
+    url: https://github.com/ultrapalace/M0SS-309/tree/main/firmware/v1.0

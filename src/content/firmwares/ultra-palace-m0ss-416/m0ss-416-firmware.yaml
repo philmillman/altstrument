@@ -1,0 +1,51 @@
+device: ultra-palace-m0ss-416
+name: M0SS-416 firmware
+summary: >-
+  Ultra Palace's own M0SS-416 firmware, published as source in November 2026: a MiniDexed fork that
+  runs the Dexed DX7 engine bare metal and replaces MiniDexed's display menus with the M0SS
+  button-and-LED interface, user voices and a CC map file.
+description: >-
+  The firmware is forked from soyersoyer's MiniDexed at a fixed commit and builds for 64-bit Arm with
+  circle-stdlib and Synth_Dexed as submodules. A patch in the repository changes Circle and adds
+  microtuning support to Synth_Dexed. On top of MiniDexed it adds the M0SS front panel, 100 user
+  voices stored as 156-byte .uvx files, the m0ss-config.txt and m0ss-cc-map.txt files on the SD
+  card, and single-voice SysEx dumps. MiniDexed's hardware override files are still in hwconfig.
+  Prebuilt kernel images are in the firmware folder of the documentation repository.
+status: active
+authors:
+  - name: Andrew March
+    url: https://github.com/marchingband
+  - name: Ultra Palace
+    url: https://www.ultrapalace.com/
+source: https://github.com/marchingband/M0SS-416
+source_status: open
+license: GPL-3.0-only
+license_notes: Inherited from MiniDexed. Synth_Dexed, Circle and the bundled Raspberry Pi boot files keep their own licenses.
+homepage: https://github.com/ultrapalace/M0SS-416
+distribution: download
+install_notes: >-
+  Copy the release's kernel8.img onto the M0SS-416's SD card, replacing the existing file; the
+  documentation repository's sdcard.zip has the full card contents. Units with v1.1 hardware need
+  HardwareRevision=1 in m0ss-config.txt from firmware v1.2 on. Keeping a copy of the previous image
+  on the computer is enough to roll back.
+brick_risk: false
+tags: [official, open-source, synth-engine, fm, dx7, polyphonic, microtuning, raspberry-pi]
+image:
+  url: https://raw.githubusercontent.com/ultrapalace/M0SS-416/main/images/M0SS-416-FACE-DIAGRAM-2.png
+  alt: M0SS-416 front panel diagram labelling its buttons, encoder and LEDs
+  credit: Ultra Palace
+  source_url: https://github.com/ultrapalace/M0SS-416/tree/main/images
+  first_party: true
+versions:
+  - version: v1.2
+    date: 2026-09-14
+    url: https://github.com/ultrapalace/M0SS-416/tree/main/firmware/v1.2
+    notes: Single-voice dump from ALT + F-MODE or a DX7 SysEx request; support for v1.1 hardware with the corrected KEY_SYNC aperture.
+  - version: v1.1
+    date: 2026-08-21
+    url: https://github.com/ultrapalace/M0SS-416/tree/main/firmware/v1.1
+    notes: Adds reverb and compressor parameters to m0ss-cc-map.txt.
+  - version: v1.0
+    date: 2026-08-06
+    url: https://github.com/ultrapalace/M0SS-416/tree/main/firmware/v1.0
+    notes: First release, shipped with Kickstarter rewards.

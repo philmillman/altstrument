@@ -1,0 +1,31 @@
+name: M0SS-201
+manufacturer: Ultra Palace
+category: synth
+added: 2026-11-06
+tagline: West-coast style mono synth in a pedal enclosure
+description: >-
+  The M0SS-201 is the second M0SS synthesizer, a monophonic west-coast style
+  synth modelled on ideas from the Buchla Easel and the Make Noise 0-Coast.
+  A complex oscillator with through-zero FM feeds a mixer, wavefolder,
+  amplifier and delay, with a looping envelope, a stochastic generator and a
+  modulation matrix as modulation sources.
+
+  It has 22 buttons, one encoder and an LED display, stores 30 presets, and
+  has MIDI learn with USB-A host and 1/8" TRS MIDI input. Unlike the
+  M0SS-101, its DSP is written directly in C.
+platform: Bouffalo Lab BL616 (32-bit RISC-V), FreeRTOS
+stock_firmware: V1.2
+links:
+  manufacturer: https://www.ultrapalace.com/product-page/m0ss-201
+  community:
+    - label: M0SS-201 documentation and firmware images
+      url: https://github.com/ultrapalace/M0SS-201
+    - label: M0SS Discord
+      url: https://discord.gg/w7DQAhY46v
+notes: >-
+  Updates use the same procedure as the M0SS-101: the board comes out of the
+  enclosure, connects over its internal USB-B port, and enters the BL616's
+  mask-ROM bootloader with the BOOT and RST buttons, so a failed flash can be
+  repeated. Updating usually erases presets.
+related: [ultra-palace-m0ss-101, ultra-palace-m0ss-309, ultra-palace-m0ss-416]
+pinned: [m0ss-201-firmware]

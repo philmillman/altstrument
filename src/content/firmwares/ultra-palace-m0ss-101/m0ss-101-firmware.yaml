@@ -1,0 +1,76 @@
+device: ultra-palace-m0ss-101
+name: M0SS-101 firmware
+summary: >-
+  Ultra Palace's own M0SS-101 firmware, published as source in November 2026: the Faust-generated
+  mono synth voice, preset storage, MIDI handling and LED interface for the BL616, with prebuilt
+  images of every release including the dual-envelope variant.
+description: >-
+  The firmware is C on FreeRTOS, built with the Bouffalo SDK at a pinned commit plus a patch in the
+  repository that adds the board definition, macOS tool selection and CherryUSB changes. The voice
+  is written in Faust (m0ss.dsp), and the generated header m0s.h is checked in, so Faust is not
+  needed to build. The dual_env branch holds the Dual Envelope variant, which adds a second
+  envelope toggled with ALT + A and drops the adjustable ADSR curves. Prebuilt images of both
+  variants, back to V1.0, are in the firmware folder of the documentation repository, with release
+  notes in version-notes.md.
+status: active
+authors:
+  - name: Andrew March
+    url: https://github.com/marchingband
+  - name: Ultra Palace
+    url: https://www.ultrapalace.com/
+source: https://github.com/marchingband/M0SS-101
+source_status: open
+license: GPL-3.0-only
+homepage: https://github.com/ultrapalace/M0SS-101
+distribution: download
+install_notes: >-
+  Remove the jacks, the four screws and the audio jack nut, lift the board out, connect the small
+  internal USB-B port to a computer and power the unit from its 9 V supply. Hold BOOT, press and
+  release RST, then release BOOT to enter the BL616 ROM bootloader, and flash the .bin with the
+  M0SS web flasher in Chrome (the device shows up as "Bouffalo CDC Demo"). A source build can be
+  flashed with make flash instead. Updating usually erases presets. The ROM bootloader is not
+  touched by the update, so an interrupted flash can be retried.
+brick_risk: false
+tags: [official, open-source, synth-engine, virtual-analog, monophonic, faust]
+image:
+  url: https://raw.githubusercontent.com/ultrapalace/M0SS-101/main/images/face_diagram_sq.jpg
+  alt: M0SS-101 front panel diagram labelling its buttons, encoder and LEDs
+  credit: Ultra Palace
+  source_url: https://github.com/ultrapalace/M0SS-101/blob/main/manual.md
+  first_party: true
+versions:
+  - version: 1.4.1_dualenv
+    url: https://github.com/ultrapalace/M0SS-101/tree/main/firmware
+    notes: Dual-envelope image in the firmware folder; not described in the version notes.
+  - version: "1.4"
+    date: 2026-09-03
+    url: https://github.com/ultrapalace/M0SS-101/blob/main/version-notes.md
+    notes: Parses complex USB MIDI descriptors such as the Minichord's; presets survive switching between the standard and dual-envelope builds.
+  - version: 1.4_dualenv
+    date: 2026-09-03
+    url: https://github.com/ultrapalace/M0SS-101/blob/main/version-notes.md
+    notes: Dual-envelope build of 1.4.
+  - version: "1.3"
+    date: 2026-08-21
+    url: https://github.com/ultrapalace/M0SS-101/blob/main/version-notes.md
+    notes: Global, persistent MIDI channel; envelope and LFO add together on the VCA.
+  - version: 1.3_dualenv
+    date: 2026-08-21
+    url: https://github.com/ultrapalace/M0SS-101/blob/main/version-notes.md
+    notes: Dual-envelope build of 1.3; ENV II patches in inversion mode now hold the VCA open.
+  - version: "1.2"
+    date: 2026-04-18
+    url: https://github.com/ultrapalace/M0SS-101/blob/main/version-notes.md
+    notes: Note-off clears every matching note in the stack.
+  - version: 1.2_dualenv
+    date: 2026-04-18
+    url: https://github.com/ultrapalace/M0SS-101/blob/main/version-notes.md
+    notes: First dual-envelope build, with ENV II toggled by ALT + A and linear envelopes only.
+  - version: "1.1"
+    date: 2026-03-25
+    url: https://github.com/ultrapalace/M0SS-101/blob/main/version-notes.md
+    notes: Fixes program changes above 17, USB MIDI program change and pressure, and multi-cable USB MIDI; adds a combo to clear learned CC mappings.
+  - version: "1.0"
+    date: 2025-10-01
+    url: https://github.com/ultrapalace/M0SS-101/blob/main/version-notes.md
+    notes: Initial release.

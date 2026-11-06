@@ -1,0 +1,32 @@
+name: M0SS-101
+manufacturer: Ultra Palace
+category: synth
+added: 2026-11-06
+tagline: Monophonic virtual analog synth in a pedal enclosure
+description: >-
+  The M0SS-101 is the first of Ultra Palace's M0SS synthesizers, a
+  monophonic east-coast style virtual analog synth in a guitar pedal sized
+  aluminum enclosure, also sold as a kit. Two oscillators with stacked square
+  and saw waves, an XOR module, noise, a multimode filter, an ADSR envelope,
+  an LFO, delay and glide are edited with 26 buttons, one clickable encoder
+  and a row of LEDs, with no screen.
+
+  It stores 17 presets, has MIDI learn, and takes MIDI from a USB-A host
+  port and a 1/8" TRS input with a MIDI thru output. The DSP is written in
+  Faust and compiled to C.
+platform: Bouffalo Lab BL616 (32-bit RISC-V), FreeRTOS
+stock_firmware: "1.4"
+links:
+  manufacturer: https://www.ultrapalace.com/product-page/m0ss-101
+  community:
+    - label: M0SS-101 documentation and firmware images
+      url: https://github.com/ultrapalace/M0SS-101
+    - label: M0SS Discord
+      url: https://discord.gg/w7DQAhY46v
+notes: >-
+  Updating means taking the board out of the enclosure, connecting the
+  internal USB-B port, and holding BOOT while pressing RST to enter the
+  BL616's ROM bootloader. That bootloader is in mask ROM, so a failed flash
+  can be repeated. Updating usually erases presets.
+related: [ultra-palace-m0ss-201, ultra-palace-m0ss-309, ultra-palace-m0ss-416]
+pinned: [m0ss-101-firmware]

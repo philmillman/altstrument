@@ -1,0 +1,31 @@
+name: M0SS-309
+manufacturer: Ultra Palace
+category: synth
+added: 2026-11-06
+tagline: Nine-voice virtual analog polysynth in a pedal enclosure
+description: >-
+  The M0SS-309 is the third M0SS synthesizer, a dual-oscillator, nine-voice
+  subtractive polysynth that takes cues from the Prophet-5 and Juno-6. Each
+  voice has two oscillators, a low-pass filter, separate amp and modulation
+  envelopes and an LFO, with a poly-mod matrix, a mono mode and chorus,
+  delay and reverb.
+
+  It has 29 buttons, one encoder and 31 RGB LEDs, and stores 198 presets in
+  11 banks on its SD card, alongside a config file and the firmware image.
+  It runs bare metal on a Raspberry Pi Compute Module 0 using the Circle
+  library, with DSP written in Faust.
+platform: Raspberry Pi Compute Module 0 (RP3A0, quad-core Arm Cortex-A53), bare metal on Circle
+stock_firmware: v1.2
+links:
+  manufacturer: https://www.ultrapalace.com/product-page/m0ss-309
+  community:
+    - label: M0SS-309 documentation and firmware images
+      url: https://github.com/ultrapalace/M0SS-309
+    - label: M0SS Discord
+      url: https://discord.gg/w7DQAhY46v
+notes: >-
+  The firmware is a kernel image on the side-mounted SD card, so updating
+  means replacing one file on the card and nothing is written to the
+  device's own flash.
+related: [ultra-palace-m0ss-416, ultra-palace-m0ss-101, ultra-palace-m0ss-201]
+pinned: [m0ss-309-firmware]

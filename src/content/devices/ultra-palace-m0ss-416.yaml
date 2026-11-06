@@ -1,0 +1,30 @@
+name: M0SS-416
+manufacturer: Ultra Palace
+category: synth
+added: 2026-11-06
+tagline: Six-operator FM synth and DX7 emulator in a pedal enclosure
+description: >-
+  The M0SS-416 is the fourth M0SS synthesizer, a 16-voice, six-operator FM
+  synth that emulates the Yamaha DX7, built on Dexed and MiniDexed. Every
+  one of the DX7's voice parameters is reached from 26 buttons and one
+  encoder, with LEDs in place of a screen.
+
+  It loads up to six 32-voice DX7 SysEx banks and stores 100 user voices on
+  its SD card, supports microtuning and MIDI learn, and sends and receives
+  voices over MIDI SysEx. It runs bare metal on a Raspberry Pi RP3A0-class
+  processor using the Circle library.
+platform: Raspberry Pi RP3A0 (quad-core Arm Cortex-A53), bare metal on Circle
+stock_firmware: v1.2
+links:
+  manufacturer: https://www.ultrapalace.com/product-page/m0ss-416
+  community:
+    - label: M0SS-416 documentation and firmware images
+      url: https://github.com/ultrapalace/M0SS-416
+    - label: M0SS Discord
+      url: https://discord.gg/w7DQAhY46v
+notes: >-
+  The firmware is a kernel image on the side-mounted SD card, so updating
+  means replacing one file on the card and nothing is written to the
+  device's own flash.
+related: [ultra-palace-m0ss-309, ultra-palace-m0ss-101, ultra-palace-m0ss-201]
+pinned: [m0ss-416-firmware]

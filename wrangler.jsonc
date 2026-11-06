@@ -10,5 +10,8 @@
     // Astro's trailingSlash: 'never' and the canonical URLs it emits.
     "html_handling": "drop-trailing-slash"
   },
-  "routes": [{ "pattern": "altstrument.org", "custom_domain": true }]
+  "routes": [{ "pattern": "altstrument.org", "custom_domain": true }],
+  // Workers Builds runs `wrangler preview` for non-production branches, which
+  // needs this block. Empty: the site has no bindings for previews to override.
+  "previews": {}
 }

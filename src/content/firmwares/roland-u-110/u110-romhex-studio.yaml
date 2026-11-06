@@ -1,0 +1,45 @@
+device: roland-u-110
+name: U110 RomHex Studio
+kind: tool
+summary: Windows app that builds PCM sample card images for the U-110 from WAV files, with key zones, loops and a preview of the card's 8-bit coding, and can send them to an ESP32 chip programmer.
+description: >-
+  The app takes WAV files, root notes, key ranges and loops and writes a 512 KB
+  card image to burn onto a flash chip in a card-slot adapter. A tone can be
+  multisampled, a single sample, or a wavetable made from single-cycle waves,
+  with five encoding characters from clean to lo-fi, and the on-screen keyboard
+  plays a note the way the U-110's coding and playback rate would. It can open
+  existing card images, extract their samples and import programs from Akai
+  S1000 and Roland S-760 and S-770 sampler CDs. Card names start with SN-U110-,
+  which the D-70 requires, and the same format is read by other Roland modules
+  that take these cards. The repository includes adapter wiring notes, a format
+  description and the firmware for an ESP32-S3 programmer. The README says cards
+  were tested on a real U-110, D-70 and Rhodes 660. The author credits Claude, an
+  AI assistant, with the code and format analysis.
+status: active
+authors:
+  - name: JunkSmithWizard (yuyoi)
+    url: https://github.com/yuyoi
+source: https://github.com/yuyoi/u110-romhex-studio
+source_status: open
+license: MIT
+license_notes: Covers the repository. The bundled wavetable library is CC0, and the demo sounds were made for the project; the README says no Roland data is included.
+distribution: download
+install_notes: >-
+  Download the Windows exe from the release and check it against the SHA256SUMS
+  file in the repository, or run the Python source. The exe is unsigned. Build a
+  card image, burn it to a chip such as an SST39SF040 and fit the chip in a
+  card-slot adapter; the app writes nothing to the U-110 itself. Insert and
+  remove cards with the power off, and unplug the chip from an ESP32 programmer
+  before putting it in the adapter.
+tags: [editor, sampler, samples, converter, utility, eprom]
+image:
+  url: https://raw.githubusercontent.com/yuyoi/u110-romhex-studio/main/docs/screenshot.png
+  alt: U110 RomHex Studio window with a green LCD readout, a tone list, a zone table with three sawtooth samples, a green waveform with start, loop and end markers, and a colour-coded on-screen keyboard
+  credit: JunkSmithWizard
+  source_url: https://github.com/yuyoi/u110-romhex-studio#readme
+  first_party: true
+versions:
+  - version: v1.2
+    date: 2026-10-31
+    url: https://github.com/yuyoi/u110-romhex-studio/releases/tag/v1.2
+    notes: Adds D-70 card naming, sampler CD import, wavetable tones and an ESP32 programmer option.

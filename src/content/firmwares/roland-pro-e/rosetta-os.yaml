@@ -1,0 +1,51 @@
+device: roland-pro-e
+name: PRO-E Rosetta OS and E-Style Studio
+summary: Work-in-progress mod kit for the PRO-E that builds new ROM images from your own dumps, adding styles made from MIDI files, hidden style banks, panel synth editing, a Juno mode and new effect programs on the reverb chip.
+description: >-
+  A Windows app builds images for replacement chips from dumps of your own PRO-E
+  ROMs and burns them with a T48 programmer. It puts styles from TN-SC1 card
+  dumps or converted MIDI files into the internal style slots, makes eight style
+  banks the stock ROM held but had no button for selectable, and changes the boot
+  banner and version text. A modified voice board ROM adds a SYNTH EDIT mode on
+  the front panel, opened with CURSOR, that edits the tone on 19 pages while you
+  play, a Juno mode that builds a saw, pulse and sub oscillator tone with detune,
+  and a live filter. New programs for the Boss reverb chip give a Juno-style
+  chorus, delay, bit crush, drive and flanger. Some of this needs a one-wire
+  address mod so the style ROM can be replaced by a 512 KB chip. Only the PRO-E
+  has been tested; the author expects the style output to suit other E-series
+  models through a card adapter that does not exist yet. The author credits
+  Claude, an AI assistant, with the code and reverse engineering, and the
+  reverse engineering notes are marked as partly unverified.
+status: active
+authors:
+  - name: JunkSmithWizard (yuyoi)
+    url: https://github.com/yuyoi
+source: https://github.com/yuyoi/Rosetta-E-Style-studio-and-Pro-E-mods
+source_status: open
+license: MIT
+license_notes: >-
+  The README states MIT, with re/boss_reverb.py excepted as a port of the MT-32
+  reverb interpreter that stays LGPL-2.1 or later. It also says the repository
+  holds no Roland ROM data, dumps, card images or song MIDI files.
+homepage: https://yuyoi.github.io/Rosetta-E-Style-studio-and-Pro-E-mods/
+distribution: patch-your-own
+requires_stock: "2.00"
+install_notes: >-
+  Dump your own chips first: IC7 (style ROM) and IC4 (OS EPROM) are needed, and
+  the voice board chips IC28 and IC13 for the synth and effect changes. IC7 is
+  soldered and has to be socketed. Build in the app, burn W27C040 or W27C512
+  chips and fit them with the notch the same way round; the SYNTH EDIT build also
+  needs the pin-31 wire mod. Keep your original chips, since putting them back
+  returns the unit to stock.
+tags: [eprom, styles, ui, sysex, fx, editor, research]
+image:
+  url: https://raw.githubusercontent.com/yuyoi/Rosetta-E-Style-studio-and-Pro-E-mods/main/docs/screenshot.png
+  alt: Rosetta ROM Studio window for the PRO-E with a grid of 32 music style buttons in four banks, a style library list on the right, a ROM space bar and build and burn buttons
+  credit: JunkSmithWizard
+  source_url: https://github.com/yuyoi/Rosetta-E-Style-studio-and-Pro-E-mods#readme
+  first_party: true
+versions:
+  - version: main @ 6744a8f
+    date: 2026-11-06
+    url: https://github.com/yuyoi/Rosetta-E-Style-studio-and-Pro-E-mods/commit/6744a8f
+    notes: No tagged releases; this is the latest commit.

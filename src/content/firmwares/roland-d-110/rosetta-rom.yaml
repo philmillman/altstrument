@@ -1,0 +1,35 @@
+device: roland-d-110
+name: Rosetta ROM
+summary: Studio app and tools that decode the D-110's PCM wave ROMs, swap waves for your own WAV files and build images for flash chips that replace the mask ROMs.
+description: >-
+  The D-110 reads its waves from two mask ROMs and its wave table from a control
+  ROM. The tools decode the 16-bit log samples in your own dumps, let you replace
+  a wave with a WAV file of the same slot length, rename waves and write patched
+  images, which are burned to SST39SF040 flash chips in IC7, IC8 and IC15. A GUI
+  lists the waves with a waveform view, and a recorder and bank generator can
+  fill every slot with takes recorded on a microphone. The README reports custom
+  samples playing on a real unit and lists open questions, such as tuning of
+  swapped pitched waves. The author credits Claude, an AI assistant, with the code.
+  It pairs with the D-110 Rosetta OS project.
+status: active
+authors:
+  - name: JunkSmithWizard (yuyoi)
+    url: https://github.com/yuyoi
+source: https://github.com/yuyoi/Rompler-RosettaRom
+source_status: open
+license: MIT
+license_notes: Covers the repository only. The README says no ROM data or decoded audio is included. Sample format knowledge follows the LGPL munt emulator, and no munt code is included.
+distribution: patch-your-own
+install_notes: >-
+  Dump IC7, IC8 and the control ROM from your own unit and keep them. Build
+  patched images in the app, then burn them to SST39SF040 chips, read back and
+  compare the MD5 sums before fitting. The README advises lifting the chip's
+  OE pin clear of its pad and grounding it separately, and checking every net
+  with a continuity tester. Reset the unit's RAM so new wave names load.
+  Putting the original chips back returns the unit to stock.
+tags: [eprom, samples, sampler, editor, converter, research]
+versions:
+  - version: main @ ebcdad9
+    date: 2026-11-06
+    url: https://github.com/yuyoi/Rompler-RosettaRom/commit/ebcdad9
+    notes: No tagged releases; this is the latest commit.

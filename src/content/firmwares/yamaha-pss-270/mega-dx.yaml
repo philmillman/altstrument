@@ -1,0 +1,35 @@
+device: yamaha-pss-270
+name: PSS-270 Mega DX
+summary: Hardware mod that replaces the PSS-270's CPU with an Arduino Mega and ESP8266 board driving the YM2413 and the keys, adding MIDI in and out, an arpeggiator, a menu and a web FM tone editor.
+description: >-
+  A WiFi Mega board (ATmega2560 with an ESP8266) holds the stock CPU in reset and takes over the YM2413 sound chip and the 49-key matrix, with a MIDI shield and a small OLED added.
+  The firmware plays the 100 PSS voices and the chip's 15 ROM instruments with nine-note polyphony, and adds MIDI in and out, an arpeggiator with Euclidean rhythms, software vibrato, glide, detune,
+  tunings, chord memory and a filter simulated from the FM operator levels. Settings are saved and edited from a key-driven menu. The ESP serves a web page with a live editor for the chip's user tone
+  that has draggable envelopes, and both chips can be updated over WiFi. The README says 68 of the 100 voices are complete and 32 are simplified, and that rhythms, auto accompaniment and
+  the panel buttons are not yet supported. The Yamaha voice data is not included; the voice table is a placeholder to fill from your own keyboard. The author credits Claude, an AI assistant, with most of the code.
+status: active
+authors:
+  - name: JunkSmithWizard (yuyoi)
+    url: https://github.com/yuyoi
+source: https://github.com/yuyoi/Pss-270-MegaDX
+source_status: open
+license: MIT
+license_notes: Covers the repository only. The README says the Yamaha voice data is not included.
+homepage: https://yuyoi.github.io/Pss-270-MegaDX/
+distribution: source-only
+install_notes: >-
+  Needs a WiFi Mega board, a MIDI shield, an SSD1306 OLED and a 5 V supply, wired to the YM2413 pins and the 15 key leads, with one CPU-to-chip jumper cut and a wire added to the CPU reset
+  transistor. Flash both chips over USB with the Arduino CLI, then learn the key matrix from the web page and update over WiFi afterwards. Nothing is written to the keyboard's own
+  chips; undoing the wiring and the cut jumper returns it to stock.
+tags: [midi, fm, synth-engine, arpeggiator, editor, web, ui, research]
+image:
+  url: https://raw.githubusercontent.com/yuyoi/Pss-270-MegaDX/main/docs/tone_editor_envelopes.jpg
+  alt: Phone screenshot of the PSS-270 tone editor with a voice loader, note, hold and play buttons, an FM byte field and modulator and carrier envelope graphs with draggable gold points
+  credit: JunkSmithWizard
+  source_url: https://github.com/yuyoi/Pss-270-MegaDX#readme
+  first_party: true
+versions:
+  - version: main @ 3ad4e33
+    date: 2026-11-06
+    url: https://github.com/yuyoi/Pss-270-MegaDX/commit/3ad4e33
+    notes: No tagged releases; this is the latest commit.

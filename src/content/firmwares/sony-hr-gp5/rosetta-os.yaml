@@ -1,0 +1,51 @@
+device: sony-hr-gp5
+name: HR-GP5 Rosetta OS
+summary: Patch kit that adds a Hex girl boot animation, a ROSETTA menu and a 15-voice polyphonic synth and sampler on the TMS57002 DSP to the HR-GP5 and HR-MP5, built from a dump of your own EPROM.
+description: >-
+  The tools take a dump of the unit's firmware EPROM, patch it on a PC and write
+  an image for a new chip. The boot patch plays a 45-frame animation of the
+  project's mascot on the LCD before the stock screen. The fuller Rosetta OS strips
+  the factory presets to free page 0, adds a ROSETTA menu with settings kept in
+  battery RAM, an LFO that can drive any parameter of any block, and input
+  meters, and replaces Sony's DSP program while its sampler page is open. That
+  page plays 8 interpolated or 15 nearest-sample voices from a synthesised
+  oscillator or a 1.5 second recording, with bit depth, sample rate and glitch
+  controls, and can be driven over MIDI. A separate HR-MP5 build is made from the
+  same source. A boot animation of your own can be made from any 228 by 40 GIF.
+  The README says the project has no Sony code, includes an H8/500 emulator that
+  boots the real firmware for tests, and credits Claude, an AI assistant, with
+  the reverse engineering and tool code. Some items are marked as tested only in
+  the emulator or still being researched.
+status: active
+authors:
+  - name: JunkSmithWizard (yuyoi)
+    url: https://github.com/yuyoi
+source: https://github.com/yuyoi/Sony-HR-GP5-Rosetta-OS
+source_status: open
+license: MIT
+license_notes: >-
+  The GitHub licence field shows NOASSERTION because the LICENSE file is MIT plus
+  a note that tools/h8500dis.py, a port of MAME's H8/500 disassembler, stays under
+  BSD-3-Clause. The README says the repository holds no Sony code or ROM data.
+homepage: https://yuyoi.github.io/Sony-HR-GP5-Rosetta-OS/
+distribution: patch-your-own
+requires_stock: Ver1.03E
+install_notes: >-
+  Dump the 128 KB EPROM of your own unit; the tools accept only Ver1.03E and
+  check the MD5. Run the build script, burn the resulting image to a 27C1001
+  or an SST39SF040 (the four-times image), and swap the chip in the stock
+  socket with the notch the same way round. Keep your original EPROM, since
+  putting it back returns the unit to stock. A second audio input on the HR-GP5
+  needs extra wiring changes.
+tags: [eprom, fx, sampler, ui, boot-splash, synth-engine, research]
+image:
+  url: https://raw.githubusercontent.com/yuyoi/Sony-HR-GP5-Rosetta-OS/main/docs/hexgirl_boot.gif
+  alt: Animation of the Hex girl boot sequence on the HR-GP5's pale blue LCD, drawn in dark pixels
+  credit: JunkSmithWizard
+  source_url: https://github.com/yuyoi/Sony-HR-GP5-Rosetta-OS#readme
+  first_party: true
+versions:
+  - version: main @ e518528
+    date: 2026-11-06
+    url: https://github.com/yuyoi/Sony-HR-GP5-Rosetta-OS/commit/e518528
+    notes: No tagged releases; this is the latest commit.

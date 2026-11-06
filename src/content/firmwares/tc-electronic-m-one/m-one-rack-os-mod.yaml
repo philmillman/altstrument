@@ -1,0 +1,45 @@
+device: tc-electronic-m-one
+name: M-One Rack Screen and OS Mod
+summary: An ESP32-S3 wired to the M-One's DSP debug port loads its own effects into DSP RAM and drives a colour screen as the front panel, with distortion, reverse delay, vocal effects, amp and pedal models and a synth.
+description: >-
+  The ESP32-S3 connects to the DSP56362's JTAG and OnCE header, halts the core,
+  reads and writes its memory and starts new programs placed in internal P RAM.
+  The programs are Python scripts that generate DSP machine code, and a reload
+  takes about ten seconds without flashing anything. A kernel holds each effect as
+  a subroutine and routes one or two of them in single, double or series mode.
+  The ESP32 draws a 240 by 240 screen with a 3D mode ring, FX, tuner and system
+  pages, takes the panel's buttons, pots and encoder, and supports WiFi serial and
+  OTA updates. The README marks passthrough, distortion, heavy distortion, reverse
+  delay and the pedal board as heard on hardware, most vocal effects, presets and
+  the amp as run with the outputs muted, and the synth as simulated only. If a
+  program crashes, a power cycle returns the unit to TC's firmware. The author
+  credits Claude, an AI assistant, with the code and reverse engineering.
+status: active
+authors:
+  - name: JunkSmithWizard (yuyoi)
+    url: https://github.com/yuyoi
+source: https://github.com/yuyoi/M-one-rack-screen-and-os-mod-
+source_status: open
+license: MIT
+license_notes: Covers the repository only. The README says no TC Electronic code or ROM data is included; the DSP opcode table is fetched at build time from a separate GPL-3.0 project.
+distribution: source-only
+install_notes: >-
+  Needs opening the unit and wiring six wires from an ESP32-S3 to the DSP's J8
+  header, plus the display and panel wiring in the user guide. Flash the
+  repository's sketch, fetch the opcode table, power the M-One on normally and load
+  an effect from a PC or the ring menu. The tools write nothing to the unit's own
+  flash, and TC's firmware still does the clock setup. Power-cycling returns the
+  unit to stock. The README asks that dumps and listings of your unit's flash are not shared.
+brick_risk: false
+tags: [fx, esp32, ui, synth-engine, research]
+image:
+  url: https://raw.githubusercontent.com/yuyoi/M-one-rack-screen-and-os-mod-/main/docs/screen/mode_ring.gif
+  alt: Animation of the 240 by 240 pixel ESP32 screen showing a Vocal FX title, a pixel-art singing cat with a crown above a bible and a vinyl record, a moon, and a selected 05 Hard Tune line at the bottom
+  credit: JunkSmithWizard
+  source_url: https://github.com/yuyoi/M-one-rack-screen-and-os-mod-#readme
+  first_party: true
+versions:
+  - version: main @ 3a6e538
+    date: 2026-10-21
+    url: https://github.com/yuyoi/M-one-rack-screen-and-os-mod-/commit/3a6e538
+    notes: No tagged releases; this is the latest commit.

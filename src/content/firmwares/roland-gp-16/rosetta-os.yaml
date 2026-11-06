@@ -1,0 +1,49 @@
+device: roland-gp-16
+name: GP-16 Rosetta OS
+summary: Replacement OS for the GP-16, patched from a dump of your own IC11 ROM, that turns the rack into a single pedal, a pedal and amp rig or a 12-slot board, with 60 pedal voicings, 12 amps and a DSP-level cab sim and extra drive stage.
+description: >-
+  Build scripts check your IC11 dump against the Super GP Ver 1.0 ROM and write a
+  128 KB image, plus a version repeated four times for a 512 KB flash chip that
+  fits the IC11 socket. The new OS boots with an animated banner into a PEDAL,
+  RIG or BOARD mode. PEDAL turns the unit into one pedal with knobs that move
+  several settings at once, RIG pairs a pedal with one of twelve amps, and BOARD
+  fills each effect block with its own pedal, with chain order presets, an A/B/Y
+  output box and eight board memories. Voicings are written in Hz, dB and Q from
+  the firmware's own EQ tables. From v2.4 the OS also writes into the DSPs: cab
+  simulations from custom EQ coefficients and a hidden extra drive stage that
+  takes distortion knobs past 10. v2.7 removes the stock edit menu and the
+  factory, test and demo menus to free 24 KB. A SysEx debug port allows DSP
+  writes from a PC. The repository also holds a PC app that fits NAM captures and
+  cab impulse responses to GP-16 settings, a disassembler and emulation tests. The
+  README says v2.7 runs on a real unit and v2.8, with a reverse delay done by the
+  CPU, is unstable testing. The author credits Claude, an AI assistant, with
+  much of the work.
+status: active
+authors:
+  - name: JunkSmithWizard (yuyoi)
+    url: https://github.com/yuyoi
+source: https://github.com/yuyoi/super-Gp-16-Rosetta-OS
+source_status: open
+license: MIT
+license_notes: Covers the repository only. The README says no ROM data is included and asks that patched images are not shared.
+distribution: patch-your-own
+requires_stock: Super GP Ver 1.0
+install_notes: >-
+  Read IC11 (a 128 KB mask ROM in a 32-pin DIP) from your own unit and keep it.
+  Run the build script with Python and NASM, burn the 512 KB image to an
+  SST39SF040 or A29040, read it back to compare, then fit the chip in the IC11
+  socket. The board already ties the needed pin high, so no wires are
+  needed. Putting the original chip back returns the unit to stock. If the unit
+  hangs on a test build, power-cycle it; a hang can corrupt battery RAM, and the
+  repository has a script to restore it from a clean dump.
+brick_risk: false
+tags: [eprom, fx, ui, synth-engine, research]
+versions:
+  - version: main @ 5e4d91e
+    date: 2026-11-06
+    url: https://github.com/yuyoi/super-Gp-16-Rosetta-OS/commit/5e4d91e
+    notes: Latest commit; the README describes v2.8 as unstable testing on hardware.
+  - version: v2.3-beta
+    date: 2026-10-13
+    url: https://github.com/yuyoi/super-Gp-16-Rosetta-OS/releases/tag/v2.3-beta
+    notes: Pre-release. 59 pedals, 12 amps, signature tones and the GP Tone Zone PC app; no ROM data attached.

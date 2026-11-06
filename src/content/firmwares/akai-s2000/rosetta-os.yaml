@@ -1,0 +1,38 @@
+device: akai-s2000
+name: S2000 Rosetta OS
+summary: Patch kit for the S2000's OS 2.0 that adds reverb, echo and reverse delay without the EB16 board, live input effects, a small synth rompler and redesigned menus, booted from a Gotek.
+description: >-
+  Build scripts patch your own copy of the OS 2.0 floppy into a boot image for a Gotek floppy emulator running FlashFloppy. The patched OS uses the voice chip's
+  built-in delay line and taps for an EFFECTS page with room, hall, plate, echo, ping-pong, chorus and flanger types, plus tape, dub and resonator variants, and reverse delays
+  on played notes. The sampling screen can send the live input through the same effects, including a reverse delay tied to a set tempo. Other additions are a home screen, grouped menus for
+  program, sample and global editing, hold or tap recording, a synth page for tweaking the nine bundled synth programs, and drift, detune and filter LFO controls on MIDI CCs 20 to 25.
+  The stock boot ROM loads only 256 KB, so extra code is read from the boot floppy into spare RAM after boot. The README reports most features running on a real S2000 and says the
+  moving effects (chorus, flanger, juno, tape) crackle on held chords. The author credits Claude, an AI assistant, with the code and reverse engineering. A homemade V53 disassembler and
+  emulator are in the repository.
+status: active
+authors:
+  - name: JunkSmithWizard (yuyoi)
+    url: https://github.com/yuyoi
+source: https://github.com/yuyoi/Akai-S2000-Rosetta-OS
+source_status: open
+license: MIT
+license_notes: Covers the repository only. The README says no Akai code or data is included, and the test sounds are synthesized.
+homepage: https://yuyoi.github.io/Akai-S2000-Rosetta-OS/
+distribution: patch-your-own
+requires_stock: "2.0"
+install_notes: >-
+  Needs your own OS 2.0 floppy as a Teledisk or raw image, Python with numpy, NASM, a Gotek with FlashFloppy and an HFE template of an Akai HD floppy. Run the two
+  build scripts, copy the resulting HFE file to the USB stick as DSKA0000.hfe and boot the S2000 from the Gotek. Nothing is written to ROM or flash; booting your stock disk gives back the
+  stock OS. Built images contain Akai's code and should not be shared.
+tags: [sampler, fx, reverb, delay, ui, synth-engine, research]
+image:
+  url: https://raw.githubusercontent.com/yuyoi/Akai-S2000-Rosetta-OS/main/docs/mascot/roland_chan_boot.gif
+  alt: Animation of the Rosetta OS boot sequence, a pixel-art mascot drawn on an LCD
+  credit: JunkSmithWizard
+  source_url: https://github.com/yuyoi/Akai-S2000-Rosetta-OS#readme
+  first_party: true
+versions:
+  - version: main @ 6e08d40
+    date: 2026-11-06
+    url: https://github.com/yuyoi/Akai-S2000-Rosetta-OS/commit/6e08d40
+    notes: No tagged releases; this is the latest commit.

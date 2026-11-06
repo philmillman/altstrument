@@ -1,0 +1,46 @@
+device: roland-vs-840ex
+name: VS-840EX Rosetta OS
+summary: Early patch of the VS-840EX operating system, built from Roland's update file, that adds a boot animation and a Rosetta home menu, with a looper, sampler and synth planned. Menu entries for those are placeholders so far.
+description: >-
+  Build scripts decode Roland's VS-840EX 2.05 update, patch your copy of the OS
+  image and write a $SYSPRO2.VS1 file for a disk update or a set of MIDI SysEx
+  files. The patched OS shows a picture and a 45-frame boot animation, then a
+  home menu with folder tabs, controlled by the keys and dial, and RECORDER
+  returns to the stock recorder. The code runs after the OS's own update-file
+  check, so a disk update stays reachable. Version 0.07 is reported as running on
+  hardware; a sound test and a MIDI remote are built but only emulator-tested or
+  being debugged. The repository also holds a decoder and encoder for Roland's
+  update files that reproduces them byte for byte, tools to check and write VS
+  cards without Windows damaging them, and an H8S assembler, disassembler and
+  emulator. The README says the goal is a looper, sampler and synth, ported from
+  the SP-808 project. The author credits Claude, an AI assistant, with the code.
+status: active
+authors:
+  - name: JunkSmithWizard (yuyoi)
+    url: https://github.com/yuyoi
+source: https://github.com/yuyoi/vs-840ex-sampler-conversion-Rosetta-OS
+source_status: open
+license: MIT
+license_notes: Covers the repository only. The README says no Roland code is included and asks that built images and SMF files are not shared.
+distribution: patch-your-own
+requires_stock: "2.05"
+install_notes: >-
+  Needs Roland's VS840EXv205.zip, which you supply. Run the decode and build
+  scripts, then put $SYSPRO2.VS1 on a VS-formatted Zip or CF card with the
+  repository's card tool rather than Windows Explorer, and power on and answer
+  YES to Version up. The MIDI route holds MODE, INPUT and ENTER at power-on.
+  Rosetta code starts after the OS's update-file check, so a disk update with
+  Roland's own files returns the unit to stock.
+brick_risk: false
+tags: [looper, sampler, ui, research, synth-engine]
+image:
+  url: https://raw.githubusercontent.com/yuyoi/vs-840ex-sampler-conversion-Rosetta-OS/main/assets/rosetta_vs840_boot.gif
+  alt: Animation of the Rosetta boot sequence and home menu drawn in the green monochrome LCD style of the VS-840EX, rendered in an emulator
+  credit: JunkSmithWizard
+  source_url: https://github.com/yuyoi/vs-840ex-sampler-conversion-Rosetta-OS#readme
+  first_party: true
+versions:
+  - version: main @ b81450e
+    date: 2026-10-22
+    url: https://github.com/yuyoi/vs-840ex-sampler-conversion-Rosetta-OS/commit/b81450e
+    notes: No tagged releases; this is the latest commit.

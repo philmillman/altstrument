@@ -1,0 +1,44 @@
+device: roland-d-110
+name: D-110 Rosetta OS
+summary: Patch kit for the D-110's OS v1.10 that adds an arpeggiator, step sequencer, MIDI out of arp notes, chords, unison, a mod matrix and wave sequencing, built from dumps of your own ROM chips.
+description: >-
+  A baking script takes your dumps of the OS EPROM (IC19) and the control ROM
+  (IC15), runs simulator tests and writes burn files. A menu on the front panel
+  holds the settings, which are kept in battery RAM. The arpeggiator has several
+  directions, ratchets, accents and Euclidean patterns and can follow MIDI clock;
+  the step sequencer holds up to 32 steps. Other additions are chord and scale
+  playing, unison with detune, mono and glide, a four-slot modulation matrix,
+  wave sequencing that steps each note through PCM waves, slow pitch and cutoff
+  drift, and a Lab page that pushes the sound chip beyond the stock limits. A
+  smaller IC19-only build adds a Quick screen with MIDI CC knobs, plain parameter
+  names and a boot banner. The author credits Claude, an AI assistant, with the
+  code and reverse engineering, including an assembler, disassembler and
+  simulator for the CPU. A companion project replaces the wave ROMs with flash.
+status: active
+authors:
+  - name: JunkSmithWizard (yuyoi)
+    url: https://github.com/yuyoi
+source: https://github.com/yuyoi/D110-rosetta-OS-v11
+source_status: open
+license: MIT
+license_notes: Covers the repository only. The README says no Roland code or ROM data is included and asks that patched or baked files are not shared.
+distribution: patch-your-own
+requires_stock: "1.10"
+install_notes: >-
+  Read IC19 (a 27C256-type EPROM) and IC15 (an LH5310 mask ROM) from your own
+  unit and keep them. Run the baking script, burn IC19 to a 27C256 or 27C512 and
+  IC15 to an SST39SF040 on an adapter, compare the MD5 sums and fit the chips.
+  With a stock IC15 only the Quick-screen changes apply. Putting the original
+  chips back returns the unit to stock.
+tags: [eprom, arpeggiator, sequencer, midi, synth-engine, ui, research]
+image:
+  url: https://raw.githubusercontent.com/yuyoi/D110-rosetta-OS-v11/main/assets/screens/studio_patch_os.png
+  alt: Rosetta ROM Studio Patch OS window on a dark background, with a mode selector, a field for the IC19 dump marked v1.10 SHA-1 matches, a list of ticked patches and a count of 28 patches
+  credit: JunkSmithWizard
+  source_url: https://github.com/yuyoi/D110-rosetta-OS-v11#readme
+  first_party: true
+versions:
+  - version: main @ d5bd4a0
+    date: 2026-11-06
+    url: https://github.com/yuyoi/D110-rosetta-OS-v11/commit/d5bd4a0
+    notes: No tagged releases; this is the latest commit.

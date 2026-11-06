@@ -1,7 +1,7 @@
 device: m-vave-fm-1
 name: BBL JAM BOX
 summary: >-
-  Live-jamming groovebox in the style of Digitone and Model:Cycles: six tracks of 16 steps with parameter locks, an FM
+  Live-jamming groovebox in the style of Digitone and Model:Cycles: six tracks of up to 64 steps with parameter locks, an FM
   engine, 808-style drums and a sampler for your own sounds, built by stripping down Felucca.
 description: >-
   A beta fork of Felucca 1.6.1 in which most of the parent was removed. Each track runs an FM machine (a four-operator
@@ -9,7 +9,7 @@ description: >-
   uploaded sounds, about 11 seconds in total. The sequencer has per-step chance, parameter locks and trigless locks,
   Elektron-style trig conditions (A:B up to 8:8, FILL, PRE, NEI and 1ST), an FX lane, an arpeggiator and beat repeats.
   Holding LFO, ENV or FILTER and turning a knob makes that knob the modulation destination. The master section has a DJ filter, comb
-  filter, delay and a plate reverb with freeze. Sounds and kits are saved in 16 slots per track; patterns are never saved. A browser page uploads the
+  filter, delay and a plate reverb with freeze. Sounds and kits are saved in 16 slots per pool, and the last jam is kept over power-off. From 0.3 a Metropolis-style ACID stage sequencer and a MONO voice with a filter modelled on the MS-20 are added, and 0.6 adds SCRUB for the sampler and a crossfader between two macros driven by MIDI CCs. From 0.5 the saves are meant to work on FM-1s with the newer flash chip, which the author had not seen tested on one. A browser page uploads the
   samples and a browser emulator is included. The repository says it was written with AI coding agents.
 status: active
 authors:
@@ -33,6 +33,10 @@ install_notes: >-
 brick_risk: false
 tags: [groovebox, sequencer, parameter-locks, fm, drum-machine, sampler, fx, editor, emulator]
 versions:
+- version: v0.6.1-beta
+  date: 2026-11-06
+  url: https://github.com/UnkleBlairy/BBL-JAM-BOX/releases/tag/v0.6.1-beta
+  notes: Release page has no text; the changelog says it cleans up the sound, removing a faint bit-crush from the mix and stepped noise from FM SYN, and cleaning MONO's saw and square waves. Since 0.2 the changelog adds 64-step patterns, ACID mode, the MONO voice, SCRUB, a crossfader and saving on newer flash chips.
 - version: v0.2-beta
   date: 2026-10-30
   url: https://github.com/UnkleBlairy/BBL-JAM-BOX/tree/v0.2-beta

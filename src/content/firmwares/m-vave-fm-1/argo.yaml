@@ -1,0 +1,51 @@
+device: m-vave-fm-1
+name: Argo
+summary: >-
+  Felucca fork, renamed Argo, with eight selectable sequences per track, sequence chaining, a generative arp, chord
+  strum and play modes, and swapped engines: the sample engines are gone, and three Mini-Tone engines, DRUM-X and an SH-DRUM engine are in.
+description: >-
+  The sample, grain, slice and drum engines and all bundled samples are removed. Added in their place are the FM-TONE, SWARM
+  and WAVETONE engines from Mini-Tone, the DRUM-X engine from Jiant and SH-DRUM, a drum and synth engine the author
+  models on the SH-4d, and a track can change preset on a step. Each track plays one of eight sequences, chosen on a SEQ page
+  or with keys while SEQ is held, switching at once or at the end of the current pass. Chained sequences play in order,
+  and a song cell can name which sequence it plays. The arp gains a generative option with density, chord, evolve and
+  algorithm knobs, and the chord page gains strum modes and a play mode whose black keys are set from saved packs.
+  The sequences use the flash that Felucca's user sample slots occupy. The repository was first named Felucca_8_patterns,
+  then Felucca_seq_per_track, and became argo_fm1 with 1.7.0. The README is Felucca's own with the added features at
+  the end, and the author says the changes were written with a free LLM; the README also says the author plans further
+  changes to keep the project apart from Felucca.
+status: active
+authors:
+- name: echoe
+  url: https://github.com/echoe
+source: https://github.com/echoe/argo_fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Inherited from Felucca; LICENSING.md covers the bundled assets and ported DSP. The README notes the CC0 Hügelton
+  sample pack is meant to be removed, and lists the Mini-Tone and Jiant engines as sources.
+homepage: https://echoe.github.io/argo_fm1/
+distribution: browser-installer
+install_notes: >-
+  The project page is a web installer for Chrome or Edge over USB, and the 1.7.0 release carries a .fwsc package. The README
+  says installing is at your own risk and that M-VAVE's updater or the installer's Return to official V15 goes back.
+  Projects saved with sequences may not open on firmware without them, and projects that use the removed sample
+  engines will not play.
+brick_risk: false
+tags: [sequencer, performance, synth-engine, fork]
+versions:
+- version: 1.7.0
+  date: 2026-11-06
+  url: https://github.com/echoe/argo_fm1/releases/tag/1.7.0
+  notes: Renamed Argo. Removes the sample, grain, slice and drum engines and all samples, adds the FM-TONE, SWARM, WAVETONE, DRUM-X and SH-DRUM engines, and adds a preset change per step.
+- version: 1.6.1_and_sequences_2
+  date: 2026-10-29
+  url: https://github.com/echoe/argo_fm1/releases/tag/1.6.1_and_sequences_2
+  notes: The generative option gets an ALGO knob in place of the scale knob, chord mode moves to the third SCL page and strum steps run in 20 ms increments up to 2 seconds.
+- version: 1.6.1_and_sequences
+  date: 2026-10-19
+  url: https://github.com/echoe/argo_fm1/releases/tag/1.6.1_and_sequences
+  notes: Rebased on Felucca 1.6.1; adds a generative arp option and a saved chord mode with strum.
+- version: 1.5.1_and_sequences
+  date: 2026-10-12
+  url: https://github.com/echoe/argo_fm1/releases/tag/1.5.1_and_sequences

@@ -4,13 +4,13 @@ summary: >-
   MIDI controller firmware for the FM-1 with an animated pixel-world screen and DAW control for FL Studio and Ableton
   Live, plus pages for chords, a phrase generator, rhythm, an arpeggiator and clock sync, with DAW scripts for both.
 description: >-
-  Modifies CTL-1. It is one permanent MIDI preset (the changelog's newest entry is 0.9.2, which the README's build command also names). The HOME page
+  Modifies CTL-1. It is one permanent MIDI preset (the changelog's newest entry is 0.9.4, which the README's build command also names). The HOME page
   sends fixed CCs 20 to 23 on MIDI channel 16 for volume, pan and two further DAW controls, with transport, record, panic,
   sustain and modulation, and notes go out on channel 1 from a chromatic keyboard. The PRESETS knob steps through pages
   for chords, a four-bar melody and chord generator, a rhythm generator, an arpeggiator and clock sync (automatic,
   internal or external). The generator has melody, chords, both, bass and full modes, eight scales and thirteen melody
   characters plus an automatic one, and the ALGORITHM knob steps through 1000 phrase variations; the arpeggiator is always off after power-on. Feedback from the DAW updates knob values and tempo on screen, and the animated scenes react
-  to the notes sent. The synth, USB audio and Bluetooth are off in this build. The repository holds an FL Studio MIDI
+  to the notes sent. The synth and USB audio are off in this build. Since 0.9.3 it also sends and receives Bluetooth LE MIDI alongside USB, has a LINK page for Bluetooth, host mode for apps such as Koala Sampler and MIDI clock out, and a USB-only image is built as a fallback; 0.9.4 adds Bluetooth diagnosis on the screen and on the installer site. The repository holds an FL Studio MIDI
   script and an Ableton Live remote script, a browser installer that checks the package size, SHA-256 and identity before
   writing, and an emulator that runs the firmware's C code in a browser page served from a local Python script. The README
   is in English with a Russian copy and a separate changelog. It calls the build experimental: the USB package builds in
@@ -45,7 +45,7 @@ image:
   source_url: https://github.com/Joolo09/noct-fm
   first_party: true
 versions:
-- version: main @ a04fb2e
-  date: 2026-11-03
-  url: https://github.com/Joolo09/noct-fm/commit/a04fb2e04e7912d263c7f9ff2235d225b98794b9
-  notes: No tagged releases; this is the latest commit, a merge of the README rewrite after the 0.9.2 work. The changelog's newest entry is 0.9.2.
+- version: main @ 75ea10f
+  date: 2026-11-05
+  url: https://github.com/Joolo09/noct-fm/commit/75ea10f7ad92730c3f64ed8cf0b17b6a627207bd
+  notes: No tagged releases; this is the latest commit, a merge of the 0.9.4 work. The changelog's newest entries add Bluetooth LE MIDI with a LINK page, an apps host mode, clock out and Bluetooth diagnostics, and the README describes a USB and Bluetooth image plus a USB-only one.

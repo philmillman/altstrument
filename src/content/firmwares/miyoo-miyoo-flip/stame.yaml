@@ -7,9 +7,9 @@ description: >-
   Stame is a native aarch64 app for the Flip that renders its own sound. Holding a chord button and pressing a key sounds a
   voiced chord with its bass. Voicing windows, strum, arpeggio, pattern and harp performances, a Beat section and a
   four-bar event looper with overdub and undo work from the MPK mini IV's pads, knobs and transport buttons and from the
-  macro pad. The sound engine has sixteen voices at 48 kHz with virtual-analog, FM, physical-model and sampler voices, 232
-  sounds, 38 basses, 43 drum kits and two effect slots per engine; the sampled sounds use a bank of CC0 samples built by a
-  script. A 640 by 480 panel has Day and Night themes, and the app plays a demo after twenty seconds without input.
+  macro pad. The sound engine has sixteen voices at 48 kHz with virtual-analog, FM, physical-model and sampler voices, 240
+  sounds, 38 basses, 43 drum kits and two effect slots per engine; the sampled sounds and 30 of the drum kits use a bank of CC0 samples built by a
+  script. An Ambient mode on the macro pad plays chords and sparse notes without input. A 640 by 480 panel has Day and Night themes, and the app plays a demo after twenty seconds without input.
   The README describes this as phase 1 of the project, with a port to dedicated hardware planned, and lists MIDI out on the
   DIN port, clock and loop slots as specified but not built. The repository states that it holds no presets or firmware of
   other instruments. The documentation is mainly in Italian. The MPK mini IV is used only as an input device and its firmware
@@ -23,7 +23,7 @@ source_status: open
 license: MIT
 license_notes: >-
   MIT, with the Spleen bitmap font (BSD-2-Clause) in third_party. The sample bank uses only CC0 samples from the Versilian
-  Community Sample Library and the Sonic Pi sample set, listed in assets/campioni/FONTI.md; the release archive of about 69 MB
+  Community Sample Library and the Sonic Pi sample set, listed in assets/campioni/FONTI.md; the release archive of about 114 MB
   carries the built bank. The repository also commits case design output (STL, OBJ, SVG and PDF files) next to the code.
 homepage: https://luigismith.github.io/stame/
 distribution: download
@@ -42,6 +42,10 @@ image:
   source_url: https://github.com/luigismith/stame#readme
   first_party: true
 versions:
+  - version: v0.4.1
+    date: 2026-11-05
+    url: https://github.com/luigismith/stame/releases/tag/v0.4.1
+    notes: Takes the sounds to 240, with eight synthesized human voices and 32 ambient, trance and psytrance sounds, and 14 more basses. 30 of the 43 drum kits now play CC0 recordings. Adds an Ambient mode on the macro pad's T14 key that plays by itself and a rolling bass under the drums. The sample bank grows from 94 to 180 MB.
   - version: v0.3.0
     date: 2026-10-19
     url: https://github.com/luigismith/stame/releases/tag/v0.3.0

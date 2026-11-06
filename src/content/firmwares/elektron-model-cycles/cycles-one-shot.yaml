@@ -10,7 +10,7 @@ description: >-
   measured Model:Samples behaviour and is built from scratch. A waveform view
   replaces the main screen on SAMPLE tracks, and the cutoff and resonance knob
   views show Model:Samples-style pictures. Since 0.11 the machine can loop
-  and play in reverse, but only in model27 builds, whose shortcut layer
+  and play in reverse, and since 0.15 each step can lock either, but only in model27 builds, whose shortcut layer
   switches them with RETRIG + PUNCH and RETRIG + GATE; this entry's own image
   has no such layer and still plays one shot, forward. The author states the
   build was tested on a Model:Cycles and in the digiemu emulator. The same
@@ -46,6 +46,10 @@ install_notes: >-
   Elektron Transfer, which would otherwise hold the MIDI port.
 tags: [machines, sampler, filter, samples, web]
 versions:
+  - version: v0.15
+    date: 2026-11-06
+    url: https://github.com/durchgemacht/cycles-one-shot/tree/v0.15
+    notes: Git tag; no GitHub release page. Adds Loop and Reverse locks per step on SAMPLE tracks in model27 builds, a step panel that shows a held trig's LOOP and REV, and the track's pan in the column.
   - version: v0.14
     date: 2026-11-04
     url: https://github.com/durchgemacht/cycles-one-shot/tree/v0.14

@@ -1,8 +1,8 @@
 device: m-vave-fm-1
 name: Felucca DCO and 303
 summary: >-
-  Felucca 1.6.1 fork that adds a Juno-106-style DCO engine with a BBD chorus, and a TB-303 engine with the TB-3PO
-  pattern generator. Source only; the version string still reads 1.6.1.
+  Felucca 1.8.1 fork that adds a Juno-106-style DCO engine with a BBD chorus, and a TB-303 engine with the TB-3PO
+  pattern generator. Source only; the version string still reads 1.8.1.
 description: >-
   The DCO engine (14) plays up to four voices a track with wave, pulse width, sub, noise, filter and range
   controls, a high-pass filter and 20 presets taken from the Juno-106 factory patches, after the KR-106 emulation
@@ -12,8 +12,8 @@ description: >-
   and can mutate it every few passes while playing. A MODEL page sets the generator to AICD, which draws lines from an
   n-gram model of acid patterns instead of TB-3PO's rules. The repository also holds the generator as a standalone C
   library under packages/acidgen. Engine numbers are appended after Felucca's, so existing
-  projects load unchanged, but 1.6.1 and older firmware show projects that use the DCO engine as empty. The
-  README marks the changes as not yet released.
+  projects load unchanged, but firmware up to 1.6.1 shows projects that use the DCO engine as empty. Upstream's ADPCM
+  engine is not available in this fork. The README says to build it from the branch; there are no releases.
 status: active
 authors:
 - name: mediaworkbench
@@ -29,12 +29,12 @@ license_notes: >-
   packages/acidgen library is GPL-3.0-only code with that MIT model data.
 distribution: source-only
 install_notes: >-
-  Build it from the repository as Felucca is built (BUILDING.md) and install with Felucca's tools. The README
-  says installing is at your own risk and that Felucca's installer or M-VAVE's updater returns to V15.
+  Build it from the repository as Felucca is built (BUILDING.md) and install with Felucca's tools. Felucca's
+  installer or M-VAVE's updater returns to V15.
 brick_risk: false
 tags: [synth-engine, oscillator, fx, sequencer, generative, fork]
 versions:
-- version: main @ 0f20fc7
-  date: 2026-11-04
-  url: https://github.com/mediaworkbench/felucca/commit/0f20fc72a1c4ff4cd85c3641c874bfc6ab4fff37
+- version: main @ 54e4dab
+  date: 2026-11-05
+  url: https://github.com/mediaworkbench/Felucca/commit/54e4dab4c865686d923747a00cc31bbfa3084dcf
   notes: No tagged releases; this is the latest commit.

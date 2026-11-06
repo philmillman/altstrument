@@ -9,7 +9,7 @@ description: >-
   ota.c, USB with MIDI, serial and audio classes, an optional USB MIDI host (direct or through one powered hub, ported from Melodee), and
   the FM-1 wiring: LCD pins, key scan with optional velocity, ADC channels, audio codec lines and the headphone jack switch. A separate
   board folder covers the M-VAVE Galaxia guitar pedal (board PD49 V03). Tools build update packages, install over USB-MIDI
-  and rescue a unit that cannot start. A hwtest example firmware exercises the screen, knobs, buttons, LEDs and USB serial. The
+  and rescue a unit that cannot start. The update loader has a fast install that writes only the sectors that changed, tools/fm1_rescue.py accepts the newer UC25HQ80 flash chip, and the USB audio input can be built with 4 to 10 channels. A hwtest example firmware exercises the screen, knobs, buttons, LEDs and USB serial. The
   README labels the second core, expanded flash and USB host as beta or experimental, a higher clock as a concept, and lists the SMK-37 Elite and
   Pro as planned without board support. Its chip/ folder also holds Bluetooth LE and BR/EDR radio drivers from Optimist, the radio's start-up tables and a
   calibration routine; fm1-base's own Bluetooth stack uses them. fm1-base, CTL-1 and a WiFi radio firmware build on it. Some macros still carry the FELUCCA name.
@@ -34,7 +34,7 @@ install_notes: >-
 brick_risk: false
 tags: [platform, sdk, usb-midi]
 versions:
-- version: main @ 41a6e86
-  date: 2026-11-05
-  url: https://github.com/hugelton/felucca-bsp/commit/41a6e86d921f842243bd01a48111832f7e55b4e2
+- version: main @ 78cf51b
+  date: 2026-11-06
+  url: https://github.com/hugelton/felucca-bsp/commit/78cf51b2719f69bfcd6fb8200315d5493b08c473
   notes: No tagged releases; this is the latest commit.

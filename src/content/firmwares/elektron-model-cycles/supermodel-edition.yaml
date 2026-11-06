@@ -2,7 +2,7 @@ device: elektron-model-cycles
 name: Supermodel Edition
 summary: Fork of Modded Cycles for Model:Cycles OS 1.13 with a separate Supermodel 909 flasher that replaces the six stock machines with a 909-style kit, plus the ACID machine, Sequence Genie, a second LFO and MIDI Bank.
 description: >-
-  Rights warning: the repository commits 75 prebuilt Supermodel upgrade files under docs/flasher/, each about 2 MB with Elektron's SysEx header, although its README says no Elektron firmware, original or modified, is included. See license_notes.
+  Rights warning: the repository commits 83 prebuilt Supermodel upgrade files under docs/flasher/, each about 2 MB with Elektron's SysEx header, although its README says no Elektron firmware, original or modified, is included. See license_notes.
 
   Built on Modded Cycles by A.V. and published as a fork of it. The Supermodel
   909 flasher page asks for the official OS file and four of your own WAV files
@@ -11,10 +11,12 @@ description: >-
   voices come from Model909 by DMDaudio. The fork's main flasher also carries
   extra machines such as RETROSYN, Sample Wizard integration, ChordKeys and
   other options in its own selection. MIDI Bank data is held in RAM only and is
-  lost at power-off. The README's current documentation is for release 3.05,
+  lost at power-off. The README's current documentation was for release 3.05,
   which it says covers song mode, direct pattern jump, trig selection, per-track
   ACID glide and legato, arp envelope retriggering and Wizard lock priority.
-  Release 3.05 adds a Track Swap page under Mod Setup that exchanges two tracks
+  Release 3.06 adds an INV option to the overload governor, keeps master FX with
+  each pattern and fixes FX restoration when patterns change during playback;
+  3.05 added a Track Swap page under Mod Setup that exchanges two tracks
   while the sequencer is stopped, and 3.04 added a double-tap PATTERN latch and a
   choice of voice-stealing policy. The author reports hardware tests of the 909 edition on
   2026-10-14.
@@ -31,9 +33,9 @@ license_notes: >-
   The fork has no LICENSE file at its root (the upstream Modded Cycles repository
   has an MIT one). Bundled components carry their own MIT notices, such as
   LICENSE-Punch.txt, which is the file GitHub reports as the repository's
-  licence. The repository also commits 75 prebuilt Supermodel upgrade files in
-  docs/flasher/ (Full, Lite and Optional builds from 2.53 to 3.05, eight of them added
-  with 3.04 and 3.05). They are about 2 MB each and start with Elektron's SysEx manufacturer
+  licence. The repository also commits 83 prebuilt Supermodel upgrade files in
+  docs/flasher/ (Full, Lite and Optional builds from 2.53 to 3.06, sixteen of them added
+  with 3.04 to 3.06). They are about 2 MB each and start with Elektron's SysEx manufacturer
   header, so they are complete modified OS images that probably contain Elektron's
   code. The README says no Elektron firmware, original or modified, is included, and
   the repository states no permission from Elektron; the stock file was not available
@@ -49,7 +51,7 @@ install_notes: >-
   returns to stock.
 tags: [machines, drums, sampler, sequencer, lfo, midi, fx]
 versions:
-  - version: main @ a6f3c06
-    date: 2026-11-04
-    url: https://github.com/AveyCole/Supermodel/commit/a6f3c067b261ecd9aefb53f539dec50ccfba7667
-    notes: No tagged releases; this is the latest commit, which releases Supermodel 3.05 across the editions. It adds Track Swap on top of 3.04's pattern latch and voice policy setting. The only GitHub release is a wavetable archive.
+  - version: main @ ada11e9
+    date: 2026-11-05
+    url: https://github.com/AveyCole/Supermodel/commit/ada11e9144c36621f78a9cd9021275252b466521
+    notes: No tagged releases; this is the latest commit, which releases Supermodel 3.06 across the editions. It adds an INV voice-steal order, master FX kept per pattern, a fix for FX restoration during live pattern changes and a hardened Track Swap, on top of 3.05's Track Swap page. The only GitHub release is a wavetable archive.

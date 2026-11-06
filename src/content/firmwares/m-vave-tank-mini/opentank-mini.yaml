@@ -14,7 +14,7 @@ description: >-
   responses (.wav), auditions them and writes them to any of the 20 model slots. It also toggles bypass, loopback and
   the tuner, and exports the preset bank (.atkm) and the model flash (.otmodels). The author says the protocol layer is
   checked against hardware, that the model flash was read back byte for byte, and that persistence across a power cycle,
-  Linux and Android are still unverified. Release 0.1.1 is a Windows installer and its notes are in Portuguese.
+  Linux and Android are still unverified. Release 0.1.1 was a Windows installer; from 0.1.4 the releases also carry a Linux archive and an Android APK. The release notes are in Portuguese.
 status: active
 authors:
 - name: Yuri Rangel
@@ -27,12 +27,20 @@ license_notes: >-
   research/fixtures files hold M-VAVE data that it does not cover.
 distribution: download
 install_notes: >-
-  Run the per-user Windows installer from the release, or build with Flutter 3.47 or newer. Linux over USB MIDI and
-  Bluetooth LE are in the app but not yet tested on hardware, and there is no Android build in the release. The README
+  Run the per-user Windows installer from the release, or build with Flutter 3.47 or newer. Release 0.1.4 also has a Linux archive and an Android APK (Bluetooth LE only); Linux and Android
+  are not yet tested on hardware. The README
   advises keeping a backup before writing to the pedal, and writing model slots changes the pedal's flash.
 brick_risk: false
 tags: [editor, usb-midi, midi, bluetooth, presets, amp-sim, ir, research, desktop]
 versions:
+- version: 0.1.4
+  date: 2026-11-05
+  url: https://github.com/xxyurirangelxx/opentank-mini/releases/tag/v0.1.4
+  notes: The release notes name no changes. The release adds a Linux archive and an Android APK beside the Windows installer.
+- version: 0.1.2
+  date: 2026-11-05
+  url: https://github.com/xxyurirangelxx/opentank-mini/releases/tag/v0.1.2
+  notes: AMP import accepts .am2Data, .am3Data and .am4Data files and later versions of the format, and uses the name stored inside the file when writing.
 - version: 0.1.1
   date: 2026-11-05
   url: https://github.com/xxyurirangelxx/opentank-mini/releases/tag/v0.1.1

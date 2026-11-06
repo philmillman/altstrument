@@ -25,7 +25,7 @@ license_notes: >-
 homepage: https://charlesvestal.github.io/fm1-boardwalk/
 distribution: browser-installer
 install_notes: >-
-  Web installer in Chrome or Edge with the FM-1 on USB, or boardwalk-0.9.fwsc from the releases page with
+  Web installer in Chrome or Edge with the FM-1 on USB, or boardwalk-0.9.2.fwsc from the releases page with
   base/tools/fm1_install.py. The README says installing is at your own risk, the installer can put M-VAVE's firmware
   back, and a firmware that fails to start twice comes up in a safe mode. To build it, clone with --recursive and run
   build.sh (BUILDING.md).
@@ -38,6 +38,14 @@ image:
   source_url: https://github.com/charlesvestal/fm1-boardwalk#readme
   first_party: true
 versions:
+- version: 0.9.2
+  date: 2026-11-06
+  url: https://github.com/charlesvestal/fm1-boardwalk/releases/tag/v0.9.2
+  notes: Fixes 0.9.1 being reported as "No FM-1 found" by the Firmware Hub; nothing else changes.
+- version: 0.9.1
+  date: 2026-11-05
+  url: https://github.com/charlesvestal/fm1-boardwalk/releases/tag/v0.9.1
+  notes: Works on newer FM-1s with the UC25HQ80 flash chip, answers M-UPGRADE 3.11, installs only changed parts and fixes the emulator pitch at 48 kHz.
 - version: '0.9'
   date: 2026-10-28
   url: https://github.com/charlesvestal/fm1-boardwalk/releases/tag/v0.9

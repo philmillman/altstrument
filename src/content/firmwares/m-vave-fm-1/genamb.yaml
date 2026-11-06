@@ -2,7 +2,7 @@ device: m-vave-fm-1
 name: genAMB
 summary: >-
   Generative fork of AMB-1 for the FM-1 that adds a Mutable Instruments Rings port, a six-voice FM engine with 16
-  presets from Zen-1, three ported sequencers and ten reverb modes. Release candidate 2, source and package in the repo.
+  presets from Zen-1, three ported sequencers, independent pad filters and a stereo reverb. The repo's current package is a test build, 17.99.31.
 description: >-
   Starts in PIANO mode, where the keys play Rings or the FM synth and only the two pad synths run, and turning the
   Algorithm knob switches to scale mode with the sequencers triggering notes. Pad 1 is a vintage and electric-piano
@@ -10,9 +10,10 @@ description: >-
   the CPU. Rings keeps four voices and its modal, sympathetic-string and string modes, and the FM engine comes with
   16 mallet, plucked and bass presets taken from Zen-1. The sequencers are AMB-1's own plus ports of Hallucigenia from
   Extratone, Proteus from Seaside Modular and UNIT-D from Animatek's VCV Rack plugins. Other additions are a burst setting
-  for strummed chords, a delay on Rings, a four-channel global mixer and ten reverb modes inspired by a Valeton pedal.
-  The repository holds a package, a source archive, a browser editor archive and the expanded source tree. The README
-  does not say whether the package was run on a real FM-1.
+  for strummed chords, a delay on Rings, a four-channel mixer, a redrawn 240 by 240 interface and, in the latest
+  package, a filter for each pad and a stereo reverb with decay, tone, motion and dry/wet controls that took over from
+  the earlier ten reverb modes. The repository holds the package, a browser editor archive and the expanded source tree.
+  The README says worst-case CPU load, dropouts and listening with both pad filters on still need a run on a real FM-1.
 status: active
 authors:
 - name: Kayman18
@@ -25,16 +26,18 @@ license_notes: >-
   supplied beside it; the repository has no separate root LICENSE file. AMB-1 and fm1-base files are MPL-2.0, Rings is MIT
   (Emilie Gillet), the msfa core is Apache-2.0, and the Zen-1 tables, patches and FM adapter are GPL-3.0-only. The
   Hallucigenia and UNIT-D ports are GPL-3.0-or-later and Proteus is MIT. The committed .fwsc is genAMB's own build
-  (610,108 bytes) and matches none of M-VAVE's licensed images.
+  (610,108 bytes) and matches none of M-VAVE's licensed images. The reverb code under source/app/monumatic has no
+  licence header and LICENSING.md does not mention it; the README says only that the reverb comes from Knobula Monumatic.
 distribution: download
 install_notes: >-
-  The package is genAMB-1.0-RC2-WET2-WEB1.fwsc in the repository root, with SHA256SUMS.txt beside it. Extract the source
-  archive before building; the compiler, SDK files and fonts are not in it. Back up first and have M-VAVE's updater
+  The package is genAMB-DUSK-Monumatic-Reverb-TEST2.fwsc in the repository root, with SHA256SUMS.txt beside it. The
+  README calls it a test build. Build from source/ with build-test.sh; the repo carries the boot assets and fonts but
+  the JieLi compiler toolchain comes separately. Back up first and have M-VAVE's updater
   ready.
 brick_risk: false
 tags: [synth-engine, ambient, generative, sequencer, physical-modeling, reverb, fm, fork, mutable-instruments-port]
 versions:
-- version: main @ 05ae1ec
-  date: 2026-11-02
-  url: https://github.com/Kayman18/FM1-genAMB/commit/05ae1ec41c70de69c965921fc7dd4ad760267d16
-  notes: No tagged releases; this is the latest commit, which publishes release candidate genAMB 1.0 RC2-WET2-WEB1.
+- version: main @ a1277c5
+  date: 2026-11-06
+  url: https://github.com/Kayman18/FM1-genAMB/commit/a1277c5bc90588e644b009211a06e514647bd4a6
+  notes: No tagged releases; this is the latest commit, which publishes the test build DUSK Monumatic Reverb TEST2 (17.99.31) in place of release candidate RC2-WET2-WEB1.

@@ -11,8 +11,11 @@ description: >-
   published with the page and applied in the browser to the firmware file you supply; the
   author states the official file is neither included nor uploaded, and that the result is
   installed with MIDI Control Center. Presets that use a replaced engine will sound different.
-  The latest commit adds Raster, which replaces the Sample engine with rhythmic slicing and repeats that follow
+  Raster replaces the Sample engine with rhythmic slicing and repeats that follow
   the transport clock; its README calls it an independent implementation, not a port of the MiniFreak's Raster.
+  A checkbox, on by default, adds an optional performance control to the generated firmware: double-tapping Shift
+  holds it, and Shift with Hold then locks the arpeggio and frees the keyboard. Unchecking it produces the same
+  engine firmware as before the option existed; the README says engine combinations still need testing on an instrument.
   The notice file says the engines are adapted from Mutable Instruments Plaits and stmlib code
   under the MIT licence, and that a GPL-2.0 Unicorn emulator, used only for checks in the
   browser, is not inserted into the firmware. The module data is published but no source for the
@@ -40,7 +43,7 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, patch, web, plaits]
 versions:
-  - version: main @ 85a6554
-    date: 2026-10-27
-    url: https://github.com/doriamxyz/FreakSwap/commit/85a65547972efd8ccdaa297a927c8c6d6ba59e0b
+  - version: main @ c813c6e
+    date: 2026-11-05
+    url: https://github.com/doriamxyz/FreakSwap/commit/c813c6e1f3836cfb5f3760267e405448d6bdbcfc
     notes: No tagged releases; this is the latest commit.

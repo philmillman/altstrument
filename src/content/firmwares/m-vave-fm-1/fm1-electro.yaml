@@ -7,10 +7,12 @@ description: >-
   Four sections run on one clock, each with four pattern slots A to D. BEAT is the drum machine, built from the
   808's circuit with resonators and a trigger-height accent, and a 16-sound PO-12 kit that is synthesised, not sampled.
   RHYTHM, STRINGS and BASS use the MKS-50 or JP-6 engine with a note or chord sequencer. The mix chain has a drum bus
-  compressor, kick ducking, gated reverb and a master limiter. The README is in German. The firmware is inserted into a copy of
-  M-VAVE's FM1 Open, which the build script patches, and the repository has a prebuilt test package in firmware/. Its
-  notes say the first build restarted in a loop on a real FM-1 because of a divide by zero, and that the current build
-  is the first with the fix and has not been tried on a device.
+  compressor, kick ducking, gated reverb and a master limiter. The README is in German. Two packages are in firmware/. The older one is
+  inserted into a copy of M-VAVE's FM1 Open, which the build script patches; its notes say the first build restarted in a
+  loop on a real FM-1 because of a divide by zero, and that the fix and later measuring builds ran too slowly with the
+  groove playing. The newer FM1_ELECTRO_PLATTFORM.fwsc is built on the project's own platform, based on the Dinghy template,
+  needs no M-VAVE SDK, uses both cores and has the drum voices rewritten in fixed point. Its notes say it has not been
+  run on a device.
 status: active
 authors:
 - name: robtron-byte
@@ -19,18 +21,19 @@ source: https://github.com/robtron-byte/FM1-Electro-one
 source_status: open
 license: GPL-3.0-only
 license_notes: >-
-  LICENSE.md is GPL-3.0 only with M-VAVE's FM1 SDK linking permission. The device build links M-VAVE's closed
-  binary SDK library, which is not in the repository (THIRD_PARTY.md). The DSP helpers under third_party/daisy808 are MIT.
-  firmware/FM1_ELECTRO.fwsc is the author's own build, not a stock image.
+  LICENSE.md is GPL-3.0 only with M-VAVE's FM1 SDK linking permission. The older SDK build links M-VAVE's closed
+  binary SDK library, which is not in the repository (THIRD_PARTY.md). The platform folder has its own GPL-3.0 LICENSE,
+  and third_party/felucca carries an MIT licence. The DSP helpers under third_party/daisy808 are MIT. Both
+  .fwsc files in firmware/ are the author's own builds, not stock images.
 distribution: download
 install_notes: >-
-  Back up projects and samples first, since they are lost on the switch. Send firmware/FM1_ELECTRO.fwsc with a flasher
+  Back up projects and samples first, since they are lost on the switch. Send firmware/FM1_ELECTRO_PLATTFORM.fwsc (or the older FM1_ELECTRO.fwsc) with a flasher
   that accepts custom packages (fm-static, M-Flasher or tools/fm1_install.py). The original firmware can be put back
   with M-VAVE's tools, and the bootloader's download mode or FM-1 Transporter covers a unit that will not start.
 brick_risk: false
 tags: [groovebox, drums, sequencer, synth-engine, arpeggiator, fx]
 versions:
-- version: main @ 5f274e7
-  date: 2026-11-04
-  url: https://github.com/robtron-byte/FM1-Electro-one/commit/5f274e7048118b86b1126e8ee791f92e7cc3aaaa
-  notes: No tagged releases; this is the latest commit.
+- version: main @ 432897f
+  date: 2026-11-06
+  url: https://github.com/robtron-byte/FM1-Electro-one/commit/432897f5573edc8ff887b499c96c2a0f89a9fc8d
+  notes: No tagged releases; this is the latest commit. Since the previous row the repository adds the platform-based package, whose drum voices and PO-12 kit use less processing time, and the automatic save waits for STOP while the groove plays.

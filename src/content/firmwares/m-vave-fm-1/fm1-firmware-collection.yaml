@@ -6,7 +6,7 @@ summary: >-
   and GitHub Actions builds of the permissively licensed ones that publish no package of their own.
 description: >-
   A nightly workflow refreshes a catalog from the FM-1 Firmware Hub, the aroum/fm1-custom-fw list and GitHub searches,
-  probing each repository's license, releases and build entry point, and moves the 302 submodules in firmwares/ to their
+  probing each repository's license, releases and build entry point, and moves the 314 submodules in firmwares/ to their
   upstream heads. A firmware is built only when it has no package upstream, its license allows redistribution and it has a
   known build entry point (the Felucca family's build.sh, a firmware/build.sh or a Makefile). Repositories without a license
   file are listed and pinned but never built. Each run publishes unofficial .fwsc packages, an index.json and SHA256SUMS as a
@@ -34,7 +34,7 @@ install_notes: >-
 brick_risk: false
 tags: [flasher, utility, research]
 versions:
-- version: builds-20261105-28
-  date: 2026-11-05
-  url: https://github.com/2bbb/fm1-firmware-collection/releases/tag/builds-20261105-28
+- version: builds-20261106-29
+  date: 2026-11-06
+  url: https://github.com/2bbb/fm1-firmware-collection/releases/tag/builds-20261106-29
   notes: Latest build run; the release holds the packages built in that run. Earlier daily build runs are not listed.

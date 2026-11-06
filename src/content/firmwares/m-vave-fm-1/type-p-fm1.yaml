@@ -11,7 +11,7 @@ description: >-
   init and copy, and a manual with MIDI and SysEx reference are included. There is no sequencer. The firmware was built
   with the umetate framework as its test case, and the author notes that they had no physical FM-1 at hand and cannot
   guarantee the install. The repository bundles the whole framework and fetched plugin dependencies, and its latest
-  release notes are for 1.0.2.
+  release is 1.0.3.
 status: active
 authors:
 - name: P1Onken
@@ -27,13 +27,17 @@ homepage: https://akirakosaintjust.github.io/type-p-fm1/
 distribution: download
 requires_stock: An FM-1 that starts normally; recovery hardware recommended
 install_notes: >-
-  Download type-p-fm1.fwsc from the repository and install it with umetate flash, or with another FM-1 installer such as
+  Download type-p-fm1.fwsc from the latest release and install it with umetate flash, or with another FM-1 installer such as
   tools/fm1_install.py. The browser app at the project page lets you hear it first. The author gives no guarantee that
   installing works and asks testers to have a way to debrick the unit or return to another firmware.
 brick_risk: false
 tags: [synth-engine, phase-modulation, fm, filter, emulator, web, fork]
 versions:
-- version: main @ d6f5e45
+- version: 1.0.3
+  date: 2026-11-06
+  url: https://github.com/AkirakoSaintJust/type-p-fm1/releases/tag/v1.0.3
+  notes: Reworks the operator level to the Yamaha total-level scale of 0.75 dB per step, rescales the modulators to the OPM's four-cycle full-scale deviation, makes feedback follow the operator level and changes the ratio knob steps. The filters and wavefolder now start bypassed at power-on, and the plugin archives carry licence notices.
+- version: 1.0.2
   date: 2026-11-05
-  url: https://github.com/AkirakoSaintJust/type-p-fm1/commit/d6f5e45a1bacb7fc3205d2603dee11d5eac4bd0d
-  notes: No tagged releases; this is the latest commit, and its RELEASES.md lists 1.0.2.
+  url: https://github.com/AkirakoSaintJust/type-p-fm1/releases/tag/v1.0.2
+  notes: Adds a live PERFORMANCE page on HOME with cutoff, resonance, wavefolder amount and operator 1 feedback, one amplitude envelope drawn for each operator, and a confirmation before INIT PATCH.

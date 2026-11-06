@@ -6,10 +6,9 @@ description: >-
   Keeps Hortator's eight drum tracks, 64-step sequencer, parameter locks, Motion recording, Grids, compressor, resonators and
   effects, and builds on its ACID bass voice. ORB Remix selects among 256 mappings that reorder playback without changing
   stored steps, with one shared drum selection and separate selections for each ACID track. TB-3PO is the melody core from
-  the author's X0X-RMX, seeded and mutating. ACID gains a variable pulse width and a MORPH waveform, LFOs can be routed
-  as bipolar, positive-only or negative-only, and Grids rhythms can be written into editable steps. It also adds twelve colour
-  schemes and its own USB identity, Nauclerus, separate from Hortator's. The README says the owner confirmed an install of
-  0.25.0 over a release candidate on a real FM-1 but has not tested a physical rollback, and that the remaining acid
+  the author's X0X-RMX, seeded and mutating. ACID gains a variable pulse width, a MORPH waveform and a TRIANGLE waveform, LFOs can be routed
+  as bipolar, positive-only or negative-only, and Grids rhythms can be written into editable steps. It also adds fourteen colour
+  themes and its own USB identity, shown as Nauclerus FM-1 since 1.0.0, separate from Hortator's. It accepts both the Puya and the UC25HQ80 flash chips found in FM-1s. The 1.0.0 release notes record the owner's confirmation of installs on a real FM-1 from 0.25.0, to AMB-1 through the Firmware Hub and back, and that the remaining acid
   resonance character is a known limitation. The project site has a simulator running the release firmware, a manual and
   an installer that checks the package's SHA-256 first.
 status: active
@@ -39,6 +38,10 @@ image:
   source_url: https://github.com/Mr-Roboto/nauclerus
   first_party: true
 versions:
+- version: 1.0.0
+  date: 2026-11-05
+  url: https://github.com/Mr-Roboto/nauclerus/releases/tag/v1.0.0
+  notes: First stable release. Adds the ACID triangle waveform, fourteen colour themes and a Grids WRITE track-length fix, supports both FM-1 flash chips (Puya P25Q80 and UC25HQ80), renames the USB product to Nauclerus FM-1 so installers find it, and teaches the Python and Web MIDI installers the FM-Tangram name.
 - version: 0.25.0
   date: 2026-10-28
   url: https://github.com/Mr-Roboto/nauclerus/releases/tag/v0.25.0

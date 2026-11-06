@@ -14,7 +14,7 @@ description: >-
   aftertouch and pitch bend as modulation sources), lets CCs move the knobs, with MIDI learn, and records steps from the keys. Earlier releases had tape tracks that played back a shared capture tape; version 0.9.0
   removed them. Version 1.7.0 adds a GLITCH LOOPER, a kind that any one track can take: it records the main mix or a
   single track into four lanes with their own level, pitch and speed, overdubs, and plays lanes from trigs on the steps. It borrows
-  the effects' memory, so the buses rest while it runs, and recordings are not saved with a project. Version 1.9.0 adds WEFT, a kind that any track can take: its voice is patched from up to twelve blocks (oscillators, envelopes, filters, logic, delays, resonators and more), each with two inputs, on the FM-1's pages or in the emulator's patcher, with a patch library kept in the sound banks. Version 1.14.0 renames the FM engine HYBRID FM, adding an envelope on the modulators and moving formants after the Yamaha FS1R. The same C sources build the FM-1 firmware, a desktop simulator and a one-file WebAssembly emulator. The
+  the effects' memory, so the buses rest while it runs, and recordings are not saved with a project. Version 1.9.0 adds WEFT, a kind that any track can take: its voice is patched from up to twelve blocks (oscillators, envelopes, filters, logic, delays, resonators and more), each with two inputs, on the FM-1's pages or in the emulator's patcher, with a patch library kept in the sound banks. Version 1.20.0 adds a BUFFER SAFE setting. Version 1.14.0 renames the FM engine HYBRID FM, adding an envelope on the modulators and moving formants after the Yamaha FS1R. The same C sources build the FM-1 firmware, a desktop simulator and a one-file WebAssembly emulator. The
   fuller engine and effect set, including the vocoder, is kept as a browser-only Ravel Software edition. The FM-1 side takes
   its platform layer from Felucca by way of X0X. The README status line says it runs on the FM-1 and the v0.9.0 release notes
   say it was tested on hardware, though the README's architecture section still lists everything as not checked on hardware.
@@ -46,6 +46,22 @@ image:
   source_url: https://github.com/De-Pattern/Ravel_FM1
   first_party: true
 versions:
+- version: 1.20.0
+  date: 2026-11-06
+  url: https://github.com/De-Pattern/Ravel_FM1/releases/tag/v1.20.0
+  notes: Adds a BUFFER SAFE setting that renders one audio block ahead so a busy block does not drop out, at the cost of about 11.6 ms of delay, and a GLO CPU 2 page with tests for finding what slows the FM-1. WEFT and the SPACE reverb do less work; the reverb differs by a small amount under the signal.
+- version: 1.19.0
+  date: 2026-11-05
+  url: https://github.com/De-Pattern/Ravel_FM1/releases/tag/v1.19.0
+  notes: Shares the effect buses between both cores and lets the BED fade out and stop computing when nothing has played for four seconds. The sound is the same.
+- version: 1.18.0
+  date: 2026-11-05
+  url: https://github.com/De-Pattern/Ravel_FM1/releases/tag/v1.18.0
+  notes: WEFT runs its blocks sixteen samples at a time and the second core takes whole tracks with their effects, for less work with the same sound. Adds a WEFT RATE page (full or half rate). WEFT's random blocks now draw their own dice.
+- version: 1.17.1
+  date: 2026-11-05
+  url: https://github.com/De-Pattern/Ravel_FM1/releases/tag/v1.17.1
+  notes: Fixes an install leaving the second core off on the first boot, and redraws the start screen as TV static that runs smoothly.
 - version: 1.17.0
   date: 2026-11-05
   url: https://github.com/De-Pattern/Ravel_FM1/releases/tag/v1.17.0

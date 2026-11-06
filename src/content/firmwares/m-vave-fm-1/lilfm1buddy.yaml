@@ -10,7 +10,8 @@ description: >-
   into the FM-1's RAM, shows the list of .fwsc packages and flash backups kept on the board and writes the chosen one, changing
   only the sectors that differ above the boot head. The board's flash appears as a USB drive named LILBUDDY for adding packages, a
   loader file and a theme, and a web page installs the board's own program. It also handles the SMK-37, which uses the same chip,
-  keeps each image to its own device kind and never writes an SMK-37's calibration data. Optional MIDI routing and Bluetooth MIDI
+  keeps each image to its own device kind and never writes an SMK-37's calibration data. Its own flash loader, taken from m-bootloader,
+  writes and reads the flash and draws it on the FM-1's screen as 16 by 16 sectors while it works, and the INFO button shows the chip. Optional MIDI routing and Bluetooth MIDI
   follow the rules of fm1buddy. The README reports fomajam and Baud Girl installed from the FM-1's menu on 2026-10-30. No firmware
   is bundled.
 status: active
@@ -22,7 +23,7 @@ source_status: open
 license: GPL-3.0-only
 license_notes: >-
   The README says the rest is GPL-3.0, like fm1buddy, whose LICENSING.md names GPL-3.0-only. Files taken from felucca-bsp stay
-  MPL-2.0. The JieLi wl82loader.bin is not included; the web page fetches it from jl-uboot-tool.
+  MPL-2.0. The flash loader in loader/ is m-bootloader's code under MIT, with that licence file beside it; the board no longer uses JieLi's wl82loader.bin.
 homepage: https://konsumer.js.org/lilfm1buddy/
 distribution: browser-installer
 install_notes: >-
@@ -33,7 +34,7 @@ install_notes: >-
 brick_risk: false
 tags: [flasher, loader, usb-midi, midi]
 versions:
-- version: main @ 543098e
-  date: 2026-11-05
-  url: https://github.com/konsumer/lilfm1buddy/commit/543098e09715a9435433785a13a9ca1621428506
+- version: main @ 6dc3fa1
+  date: 2026-11-06
+  url: https://github.com/konsumer/lilfm1buddy/commit/6dc3fa1d10920ea4026c344de02e996227900d25
   notes: No tagged releases; this is the latest commit.

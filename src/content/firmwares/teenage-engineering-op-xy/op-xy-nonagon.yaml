@@ -34,8 +34,8 @@ homepage: https://github.com/mmockett/OP-XY-Nonagon#readme
 distribution: source-only
 requires_stock: "1.2.1"
 install_notes: >-
-  Check out the Open-XY SDK's staging branch beside this repository, fetch its toolchain and run its tests. The seven
-  synths build together on SDK 1.4 and Ghost and Recur, the sample engines, build in a second pass on SDK 1.10, and Recur's own sample needs an SDK branch with a further change that was still in review. Build
+  Check out the Open-XY SDK's staging branch beside this repository, fetch its toolchain and run its tests. All nine
+  machines build together on the SDK's staging branch (SDK 1.10), which Recur's own sample also needs. Build
   with sdk.py against your own stock 1.2.1 os.ldr, passing your last build's layout.json so machines already on the
   device keep their numbers, then install the build's candidate files as the SDK's build guide describes, which ends
   with writing the OS from the device's boot menu. The SDK's authors say a faulty image may not be recoverable, and the
@@ -50,6 +50,10 @@ image:
   source_url: https://github.com/mmockett/OP-XY-Nonagon#readme
   first_party: true
 versions:
+  - version: v0.9.0
+    date: 2026-11-06
+    url: https://github.com/mmockett/OP-XY-Nonagon/tree/v0.9.0
+    notes: Git tag; no GitHub release page. The seven synths' screens follow the track's amp envelope (SDK 1.10), Mach's flyby is fixed, and Mach, Butterfly and Ghost cost less.
   - version: v0.8.0
     date: 2026-11-05
     url: https://github.com/mmockett/OP-XY-Nonagon/tree/v0.8.0

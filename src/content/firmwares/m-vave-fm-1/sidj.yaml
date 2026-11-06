@@ -9,8 +9,8 @@ description: >-
   transposed, muted, soloed, played from the keys or a MIDI keyboard, given another waveform, sync or ring modulation,
   routed around the filter, reshaped by envelope, filter and LFO pages, and slowed or sped up with tempo and a vinyl
   fader. Sound leaves the audio jack, a driverless USB audio interface (the mix, or the mix and three voice stems) or
-  ASID to a SidStation, TherapSID, TeensyROM, USBSID-Pico or other ASID receiver. The FM-1 holds a few dozen tunes
-  (240 KB) that you add from the project's web page or a command-line tool (the page can also save the song list as a
+  ASID to a SidStation, TherapSID, TeensyROM, USBSID-Pico or other ASID receiver. The FM-1 holds over a hundred compressed
+  tunes that you add from the project's web page or a command-line tool (the page can also save the song list as a
   setlist .zip and load it back), and tunes for two or three SIDs and BASIC
   tunes are not played. It can send a MIDI clock over USB, with the beat found in the tune, and a clock coming in over
   USB or MIDI IN starts, stops and continues the song. The repository bundles two tunes by the author, which its LICENSING.md excludes from the GPL.
@@ -33,7 +33,7 @@ distribution: browser-installer
 requires_stock: M-VAVE stock firmware (V15 or V16), Felucca or X0X
 install_notes: >-
   Web installer in Chrome or Edge with the FM-1 on USB, or the .fwsc from the releases page with tools/fm1_install.py;
-  songs are added on the same page or with tools/fm1_sid.py. The README says installing is at your own risk and that two
+  songs are added on the same page or with tools/fm1_sid.py. From 1.4 the song store also uses the flash where M-VAVE's firmware keeps its patches, so back those up first. The README says installing is at your own risk and that two
   failed starts give a safe mode and four the chip's own update mode, from which tools/fm1_rescue.sh puts M-VAVE's
   firmware back with the stock .fwsc (V15 or V16) you download from M-VAVE. To build it, use Docker with the JieLi toolchain and AC79 SDK.
 brick_risk: false
@@ -45,6 +45,14 @@ video:
   first_party: true
   found_via: https://github.com/thomasj/fm1-sidj#readme
 versions:
+- version: 1.5.0
+  date: 2026-11-06
+  url: https://github.com/thomasj/fm1-sidj/releases/tag/v1.5.0
+  notes: Works with the FM-1 Screen Reader, which speaks the songs, pages, knobs and messages, and stays quiet while ASID plays to real SID hardware. The PW value on the OSC page shows AUTO until turned.
+- version: 1.4.0
+  date: 2026-11-06
+  url: https://github.com/thomasj/fm1-sidj/releases/tag/v1.4.0
+  notes: Room for over a hundred compressed songs, a restart that keeps the remix, an incoming MIDI clock that starts a song on its first beat, and scrolling long titles. The song store now also uses the flash where M-VAVE's firmware keeps its patches, so patches saved on the official firmware can be lost.
 - version: 1.3.0
   date: 2026-11-01
   url: https://github.com/thomasj/fm1-sidj/releases/tag/v1.3.0

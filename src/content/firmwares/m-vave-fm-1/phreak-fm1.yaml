@@ -6,10 +6,10 @@ summary: >-
 description: >-
   A six-track groovebox, three synth tracks and three drum tracks, built on SLOOP 2.8.4 and so on Felucca. Holding
   OCT+ at power-on opens a browser for a FAT32 USB stick plugged in through a powered OTG adapter, and a folder of WAV
-  files, or one file, can be loaded into one of four user sample slots. Drum tracks D1 to D3 each have their own kit,
+  files, or one file, can be loaded into one of six user sample slots, USR1 to USR6. Drum tracks D1 to D3 each have their own kit,
   pattern, length, swing and level, and a user kit gets ENV, LFO and EDIT pages with an ADSR gate, a resonant
   filter, tune, bit crush, drive and loop. Songs have sections A to H instead of A to D, and the build adds a few
-  808 basses and trap kits, a new boot screen and an ABOUT page. Sample slots shrink from 80 KB to 68 KB. The
+  808 basses and trap kits, a new boot screen and an ABOUT page. Sample slots shrink from 80 KB to 68 KB. Later versions add a sample editor on the FM-1, resampling into a slot, the slots listed as sounds in PRESETS and live recording in the web editor. The
   author calls it a personal fork tested on one FM-1. Its history shares SLOOP's commits but not BoopBox's, so it is
   a separate fork of SLOOP.
 status: active
@@ -27,11 +27,10 @@ license_notes: >-
   checkout at build time (Apache-2.0). The repository commits SLOOP 2.8.4's own build under docs/firmware, not
   M-VAVE's stock firmware.
 homepage: https://github.com/dagnazty/phreak-fm1
-distribution: source-only
+distribution: download
 requires_stock: SLOOP, Felucca or stock FM-1 firmware
 install_notes: >-
-  Build phreak-1.2.fwsc (the JieLi toolchain and AC79 SDK are needed), then install it over USB with
-  tools/fm1_install.py, or serve the local installer page from your own build and use Chrome or Edge. Take a backup in
+  Install phreak-1.9.fwsc from the release over USB with tools/fm1_install.py, or serve the installer page from the release's site zip (or your own build) on localhost and use Chrome or Edge. Building needs the JieLi toolchain and AC79 SDK. Take a backup in
   the editor first; projects, presets, samples and settings are kept on update. Holding OCT- alone while switching
   on enters USB rescue, SLOOP 2.8.4 can be reinstalled the same way, and M-VAVE's M-UPGRADE with the official V16
   firmware restores the stock firmware, according to the README. Installing is at your own risk.
@@ -44,7 +43,7 @@ image:
   source_url: https://github.com/dagnazty/phreak-fm1
   first_party: true
 versions:
-- version: main @ 30b4c0d
-  date: 2026-11-04
-  url: https://github.com/dagnazty/phreak-fm1/commit/30b4c0d
-  notes: No tagged releases of its own; the tags in the repository are SLOOP's. The README names this state PHREAK 1.2, which lets LOAD FROM USB list a folder's files and load one alone.
+- version: '1.9'
+  date: 2026-11-06
+  url: https://github.com/dagnazty/phreak-fm1/releases/tag/v1.9
+  notes: First GitHub release, package identity FM-1_919; versions 1.3 to 1.8 were not released separately. The README credits the line since 1.2 with six sample slots, a sample editor on the FM-1, resampling into a slot, the six slots listed as sounds in PRESETS and live recording from a mic, interface or the FM-1 in the web editor. Projects, presets, samples and settings are kept on update.

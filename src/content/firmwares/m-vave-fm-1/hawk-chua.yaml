@@ -9,7 +9,7 @@ description: >-
   Plethora and a BIG BANG oscillator built from the harmonic series. Sound passes through an ADSR and a low pass gate into resonators based on Mutable Instruments
   Rings and a set of waveguide models, then a shimmer reverb. Also included are four banks of 128 presets
   in General MIDI order (GM, GM variations, synth sounds and experimental sounds), chosen from a BANK menu or by MIDI bank select, a General MIDI and XG style CC map, an arpeggiator, a phrase generator (KARMA page), a free envelope recorder, a four-track tape page,
-  stereo pan controls, USB MIDI and USB audio input. It is a stripped-down fork of Felucca, so the hardware
+  stereo pan controls, USB MIDI and USB audio input. Later builds add a MULTI mode with two parts on two MIDI channels, tempo-synced delays, a piano oscillator and a browser version of the firmware. It is a stripped-down fork of Felucca, so the hardware
   layer, update loader and installer come from there. The README and installer are written in Dutch, with an
   English installer text. The author's repository names the FM-1 Firmware Hub entry hawk-chua and the identity
   FM-1_007.
@@ -35,6 +35,18 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, oscillator, physical-modeling, reverb, arpeggiator, generative, usb-midi, usb-audio, looper, fork]
 versions:
+  - version: 1.9.1
+    date: 2026-11-06
+    url: https://github.com/Plieuw/hawk-chua/releases/tag/v1.9.1
+    notes: Release page has no notes beyond install steps. Commits since 1.9 add a piano oscillator with several piano presets, a rebuilt kalimba model, twelve more chord patterns for KARMA, shaded 3D pictures for the FX models, 4-bit ADPCM on the tape page for twice the recording time, and support for the newer FM-1 units' flash chip, which could not save before.
+  - version: '1.9'
+    date: 2026-11-05
+    url: https://github.com/Plieuw/hawk-chua/releases/tag/v1.9
+    notes: Release page has no notes beyond install steps. Commits since 1.8 add delay models synced to the tempo (ping pong, pattern and bounce) and a reworked piano and kalimba.
+  - version: '1.8'
+    date: 2026-11-05
+    url: https://github.com/Plieuw/hawk-chua/releases/tag/v1.8
+    notes: Release page has no notes beyond install steps. Commits since 1.7 add the MULTI mode, didgeridoo and shakuhachi FX models, 16 arpeggiator patterns and 10 KARMA generators modelled on the MC-303, bounce on the tape page, and a browser version of the firmware.
   - version: '1.7'
     date: 2026-10-31
     url: https://github.com/Plieuw/hawk-chua/releases/tag/v1.7

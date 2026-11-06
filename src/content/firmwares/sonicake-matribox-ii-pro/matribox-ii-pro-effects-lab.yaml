@@ -1,7 +1,7 @@
 device: sonicake-matribox-ii-pro
 name: Matribox II Pro Effects Lab
 summary: >-
-  Experimental full firmware for the Matribox II Pro, built from Sonicake's V1.2.2, adding 29 effects, amps and 9 cabinets ported from the Valeton GP-200, integrated cabinet mic filters, a DSP meter and looper state reporting over SysEx.
+  Experimental full firmware for the Matribox II Pro, built from Sonicake's V1.2.2, adding 29 effects, amps and 9 cabinets ported from the Valeton GP-200, integrated cabinet mic filters, a DSP meter, looper state reporting over SysEx and A/B/C scenes.
 description: >-
   Rights warning: the release is a complete firmware image that contains Sonicake's V1.2.2 code modified by the author,
   plus effect and cabinet data taken from Valeton's GP-200 V1.8.2 firmware and the microphone filter layer taken from
@@ -9,7 +9,10 @@ description: >-
   README states, and none of the three manufacturers has licensed the image for redistribution. The git repository
   itself holds no firmware.
 
-  Lab 5 (2026-10-20) adds 29 GP-200 models, including overdrives, a pitch shifter, delays, reverbs and amps, nine ported
+  Lab 6 (2026-11-06) adds A/B/C scenes that store bypass, parameters and preset volume in each preset, export and import
+  of presets with their scenes over SysEx in a .labprst format that only this firmware reads, and assignable CTRL 5 and
+  CTRL 6 footswitches with tap and hold actions, so Stomp and Scene screens show six blocks. The author says the release
+  was validated on the pedal. Lab 5 (2026-10-20) added 29 GP-200 models, including overdrives, a pitch shifter, delays, reverbs and amps, nine ported
   cabinets next to the 61 factory ones, a Cab Match entry for some of the new amps, a DSP load meter on screen, and
   a microphone type and X/Y/Z position control on every cabinet and user IR slot. It keeps the looper state reporting
   over SysEx from Lab 4, including undo and redo events, which the author's monitor tool reads. Four models from
@@ -32,15 +35,19 @@ license_notes: >-
 distribution: download
 requires_stock: Matribox II Pro V1.2.2
 install_notes: >-
-  Download the Lab 5 ZIP from the release and check SHA256SUMS.txt. Back up presets, IR and NAM files and your
+  Download the BIN from the Lab 6 release and check its SHA-256 in the release notes. Back up presets, IR and NAM files and your
   confirmed previous firmware, put the pedal into firmware mode, and flash the BIN with Sonicake's official updater.
-  On Windows 11 the author documents a driver change for both normal and firmware mode. The author calls it an
-  experimental pre-release for the Matribox II Pro only, not for the Matribox II or other models.
+  On Windows 11 the author documents a driver change for both normal and firmware mode. The author calls it
+  experimental and for the Matribox II Pro only, not for the Matribox II or other models.
   The author's notes say to return by flashing the full original firmware with the official updater in firmware mode,
   and the repository documents no bricked unit.
 brick_risk: false
 tags: [fx, amp-models, cabinets, looper, sysex, research, experimental]
 versions:
+  - version: v1.2.2-lab.6
+    date: 2026-11-06
+    url: https://github.com/hurricaneabel/matribox-ii-pro-effects-lab/releases/tag/v1.2.2-lab.6
+    notes: Adds A/B/C scenes, preset export and import over SysEx, assignable CTRL 5 and CTRL 6 footswitches with tap and hold actions, and six blocks on the Stomp and Scene screens. Fixes swapped Stomp and Preset mode labels. Not marked as a pre-release.
   - version: v1.2.2-lab.5
     date: 2026-10-20
     url: https://github.com/hurricaneabel/matribox-ii-pro-effects-lab/releases/tag/v1.2.2-lab.5

@@ -1,14 +1,18 @@
 device: arturia-beatstep-pro
 name: beatstep-pro-handler
 kind: tool
-summary: Python library and command-line tool that reads and writes the BeatStep Pro's global settings and per-control assignments over USB SysEx, without MIDI Control Center. Changes apply live.
+summary: Python library and command-line tool that reads and writes the BeatStep Pro's settings and per-control assignments over USB SysEx without MIDI Control Center, sets step-button colours, and includes firmware update and patch scripts.
 description: >-
   A single SysEx frame format reads or writes any parameter, and the package wraps it in a Python API
   and a bsp command. It covers the global settings (95 are writable) and the mode, channel and range
   fields of the knobs, pads and step buttons, and the author reports that per-pad note and channel
   changes in drum mode also take effect immediately. Sequencer pattern data is out of scope. A name table
   is bundled, and a script can regenerate it from your own MIDI Control Center install. The author
-  states it was checked against real hardware.
+  states it was checked against real hardware. The commands also set the colour of the step buttons. On stock
+  firmware the unit repaints them at once, so the repository has a firmware folder with a small patch for
+  firmware 2.0.1.6 that keeps host-set colours. A build script applies it to your own copy of Arturia's
+  official update file, checking its SHA-256 first, and a flasher script sends the result over USB MIDI;
+  the folder also documents the update file format and protocol. No Arturia firmware is included.
 status: active
 authors:
   - name: Jamison
@@ -16,15 +20,15 @@ authors:
 source: https://github.com/jamisonx-dev/beatstep-pro-handler
 source_status: open
 license: MIT
-license_notes: Covers the repository only; Arturia's MIDI Control Center device dictionary, templates and firmware are not included.
+license_notes: Covers the repository only; Arturia's MIDI Control Center device dictionary, templates and firmware are not included. The patch is built from the user's own official update file.
 distribution: source-only
 install_notes: >-
   Needs Python and python-rtmidi; install with pip or from the repository. The configuration SysEx is
-  accepted over USB only, not DIN. The tool changes settings in the stock firmware and does not flash anything.
+  accepted over USB only, not DIN. The library and command line change settings in the stock firmware and flash nothing. The optional firmware scripts (pip install python-rtmidi unicorn) patch your own official 2.0.1.6 update file and flash it; the README says flashing is at your own risk, and a unit that will not start can be forced into update mode by holding Play, Stop and Record while powering on, then flashed with the official file.
 brick_risk: false
-tags: [sysex, midi, python, editor]
+tags: [sysex, midi, python, editor, flasher]
 versions:
-  - version: master @ 1928ebd
-    date: 2026-09-16
-    url: https://github.com/jamisonx-dev/beatstep-pro-handler/commit/1928ebdfd4de31598002ff2034f9688092b8ccd9
-    notes: No tagged releases; this is the latest commit. pyproject.toml declares version 0.1.0.
+  - version: master @ 6fdb4d6
+    date: 2026-11-05
+    url: https://github.com/jamisonx-dev/beatstep-pro-handler/commit/6fdb4d6f39746a8048f8654331cfc1eb69f34086
+    notes: No tagged releases; this is the latest commit. pyproject.toml declares version 0.1.0. Adds step-button colour control and the firmware folder; the commit message says it is not on PyPI yet.

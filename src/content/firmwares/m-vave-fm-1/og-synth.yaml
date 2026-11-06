@@ -30,7 +30,7 @@ install_notes: >-
   Use the install page on ogsynth.cc in Chrome, Edge or Opera with the FM-1 on USB, after backing up your presets from
   the Backup page. Each release also carries the .fwsc and an offline copy of the install page that runs with Python 3.
   The page's stock-firmware option takes a file you download from M-VAVE, or use M-UPGRADE. The README advises the
-  optional m-bootloader for a recovery menu (hold PLAY at power-on). On newer FM-1s with a UC25HQ80 flash chip, the site says
+  optional m-bootloader for a recovery menu (hold PLAY at power-on). From 1.1, GLO > SYSTEM > UPDATE MODE reaches M-UPGRADE's update mode without the REC hold. On newer FM-1s with a UC25HQ80 flash chip, the site says
   versions before 1.0.2 cannot save, and the way out is M-UPGRADE and a fresh install.
 brick_risk: false
 tags: [synth-engine, fm, wavetable, physical-modeling, drums, sequencer, arpeggiator, fx, midi, usb-midi, editor, emulator]
@@ -41,6 +41,18 @@ image:
   source_url: https://ogsynth.cc/
   first_party: true
 versions:
+- version: 1.1.2
+  date: 2026-11-05
+  url: https://github.com/mikejohnsonbeats/OG-Synth-source/releases/tag/v1.1.2
+  notes: Deleting a scene in MULTI mode (hold SEL on the scene list) and clearing the tracks of an empty scene; HOME shows the preset number out of the factory presets, with effects.
+- version: 1.1.1
+  date: 2026-11-05
+  url: https://github.com/mikejohnsonbeats/OG-Synth-source/releases/tag/v1.1.1
+  notes: Adds fine tuning of A4 from 427.0 to 453.0 Hz in 0.1 Hz steps and widens unison detune to 100 cents.
+- version: 1.1.0
+  date: 2026-11-05
+  url: https://github.com/mikejohnsonbeats/OG-Synth-source/releases/tag/v1.1.0
+  notes: Adds a key for the pattern, chords with KEY and VOICING settings and a chord name, recording with BPM and tap tempo, new GLO settings and an UPDATE MODE entry.
 - version: 1.0.2
   date: 2026-11-04
   url: https://github.com/mikejohnsonbeats/OG-Synth-source/releases/tag/v1.0.2

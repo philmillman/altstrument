@@ -11,7 +11,7 @@ description: >-
   and Felucca's store at 0xFC000 and 0xFF000 alone, and clears Bluetooth pairing records, so devices need pairing again.
   The factory data is taken at build time from M-VAVE's V15 package. The repository's HARDWARE_TESTING.md records runs on a
   unit from V15, V16 and MIDIMON, through power cuts, and back to V15 and V16. On USB it presents the same IDs as V15.
-  It is a flashable image in its own right, so it is listed as firmware.
+  Units with the newer UC25HQ80 flash chip are accepted as well as the first chip. It is a flashable image in its own right, so it is listed as firmware.
 status: active
 authors:
 - name: Drew Robinson
@@ -33,7 +33,7 @@ install_notes: >-
 brick_risk: false
 tags: [utility, flasher, recovery, platform]
 versions:
-- version: main @ eab8e71
-  date: 2026-11-04
-  url: https://github.com/ocean/cleansweep/commit/eab8e71d146fa731be29a6fe40bc5b7559f1f51c
-  notes: No tagged releases; this is the latest commit.
+- version: main @ e2abd87
+  date: 2026-11-05
+  url: https://github.com/ocean/cleansweep/commit/e2abd87ef3b80c6302c1aed9378660cf0edc865e
+  notes: No tagged releases; this is the latest commit, which also resets FM-1s with the newer UC25HQ80 flash chip.

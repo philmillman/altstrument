@@ -1,0 +1,27 @@
+device: alesis-mmt-8
+name: JAM-8
+summary: Second replacement ROM for the MMT-8 that turns it into a loop player and pattern generator instead of a sequencer, from the OpenMMT-8 repository. Burned to a 27C256 or run in the CLAP plugin.
+description: >-
+  JAM-8 runs on the same 8031 hardware as OpenMMT-8 and fits the same 32 KB EPROM. It plays loops and writes patterns while it
+  plays, with scenes, mute, solo, fill, a pattern generator and clock sync. The build includes host tests and scenario probes
+  run on an emulator. The ROM is built into the CLAP plugin from the same repository, next to OpenMMT-8.
+status: active
+authors:
+  - name: uAdvanced
+    url: https://github.com/uAdvanced
+source: https://github.com/uAdvanced/openmmt-8
+source_status: open
+license: MIT
+license_notes: Covers the OpenMMT-8 and JAM-8 code. The plugin bundles third-party components under their own licences, listed in THIRD_PARTY_NOTICES.md and LICENSES/.
+homepage: https://openmmt8.outand.in
+distribution: source-only
+install_notes: >-
+  Build with SDCC (the jam8 folder has its own Makefile), burn the 32 KB image to a 27C256 EPROM and fit it in place of the
+  original chip. Keeping the original chip lets you refit it to return to stock.
+brick_risk: false
+tags: [eprom, sequencer, midi, rewrite, generative]
+versions:
+  - version: main @ f2b8fc9
+    date: 2026-11-05
+    url: https://github.com/uAdvanced/openmmt-8/commit/f2b8fc919dac389c35c1b8b078e339d9aa6fd227
+    notes: No tagged releases; this is the latest commit.

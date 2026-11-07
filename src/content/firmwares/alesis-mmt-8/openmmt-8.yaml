@@ -1,0 +1,36 @@
+device: alesis-mmt-8
+name: OpenMMT-8
+summary: Replacement operating system for the MMT-8 sequencer, written in C from scratch, with extra part-edit functions and a stock-style profile with tape save, load and verify. Burned to a 27C256 or run in a CLAP plugin.
+description: >-
+  The repository builds 32 KB ROM images for the MMT-8's 8031 with SDCC. The default image adds part-edit functions: note and
+  step entry over MIDI, a data knob that sends a MIDI controller, note audition, fast-forward and rewind by the quantize grid,
+  bar:beat:tick times and one-step undo. A second profile keeps the tape functions of the original and leaves out those
+  additions. Memory can be sent as a MIDI dump, which only OpenMMT-8 reads back. The same repository holds the JAM-8 ROM and a
+  CLAP plugin that runs the ROMs on an emulated MMT-8 panel with display and MIDI. The README says it contains no original
+  ROM or manual.
+status: active
+authors:
+  - name: uAdvanced
+    url: https://github.com/uAdvanced
+source: https://github.com/uAdvanced/openmmt-8
+source_status: open
+license: MIT
+license_notes: Covers the OpenMMT-8 and JAM-8 code. The plugin bundles third-party components under their own licences, listed in THIRD_PARTY_NOTICES.md and LICENSES/.
+homepage: https://openmmt8.outand.in
+distribution: source-only
+install_notes: >-
+  Build the ROM with SDCC and Python, burn the image to a 27C256 EPROM and fit it in the unit's socket in place of the original
+  chip. The project site has a guide to building and burning. Keeping the original chip lets you refit it to return to stock.
+brick_risk: false
+tags: [eprom, sequencer, midi, rewrite, emulator]
+image:
+  url: https://raw.githubusercontent.com/uAdvanced/openmmt-8/main/docs/screenshots/openmmt8_stock.png
+  alt: The OpenMMT-8 plugin window showing an MMT-8 style panel with a green character display reading PLAYING PART 00 BEAT 005, rows of grey keys and eight track keys with lit red LEDs
+  credit: uAdvanced
+  source_url: https://github.com/uAdvanced/openmmt-8#readme
+  first_party: true
+versions:
+  - version: main @ f2b8fc9
+    date: 2026-11-05
+    url: https://github.com/uAdvanced/openmmt-8/commit/f2b8fc919dac389c35c1b8b078e339d9aa6fd227
+    notes: No tagged releases; this is the latest commit.

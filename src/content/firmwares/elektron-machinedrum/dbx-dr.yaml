@@ -1,0 +1,42 @@
+device: elektron-machinedrum
+name: DBX-DR
+summary: User machine for the Machinedrum on MDX X.20 that plays a single-voice drone of detuned saws and a sub through saturation and a ladder filter, with a self-oscillating feedback loop and slow pitch drift, on all 16 tracks of MKI and MKII.
+description: >-
+  A single DSP56300 machine, sent as SysEx into a USR slot. Three saw oscillators
+  and a square sub feed a saturation stage and a four-pole ladder low-pass. A
+  phase-inverted feedback delay sits in front of the filter and can oscillate on
+  its own when its gain goes above one. Eight knobs set pitch, detune and drift,
+  drive, a slow wandering of two oscillators and the delay, cutoff, resonance,
+  feedback amount and feedback delay time. One trigger starts the drone and it
+  then runs until the track is muted, with later notes only changing pitch. The
+  release page lists cycle counts for the MKII and for the MKI with DRAM or SRAM
+  and says it was tested on a MKII with the +Drive option. Source, a Python model
+  and build tools are in the repository, which uses the MDS tooling as
+  submodules. The author credits Claude, an AI assistant, with the DSP code and
+  tooling, and describes the sound as ported in principle from a drone in their
+  own Teensy groovebox.
+status: active
+authors:
+  - name: MonCalamari
+    url: https://github.com/MonCalamari
+source: https://github.com/MonCalamari/DBX-DR
+source_status: open
+license: GPL-3.0-only
+license_notes: LICENSE is the GPL version 3 text with no statement about later versions.
+distribution: download
+requires_stock: MDX X.20
+install_notes: >-
+  Needs a Machinedrum already running the third-party MDX X.20 firmware. Send
+  the .syx file from the release into a free USR slot from the Machine Manager,
+  leaving about 300 ms between SysEx messages, or use the repository's
+  mds_send.py, which waits for each acknowledgement. The .mds package can be
+  turned into a file for another slot with the MDS tools. The output is loud by
+  design, so raise feedback, resonance and drive gradually. The README warns to
+  install machines only from developers you trust, since they run as machine
+  code on the DSP.
+tags: [machines, synth-engine, drone, open-source]
+versions:
+  - version: drone-v0.5
+    date: 2026-11-06
+    url: https://github.com/MonCalamari/DBX-DR/releases/tag/drone-v0.5
+    notes: First public release.

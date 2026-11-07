@@ -1,0 +1,52 @@
+device: roland-octa-capture
+name: OCTA-CAPTURE Rosetta OS
+summary: Reverse-engineered patches for the OCTA-CAPTURE system program that add a custom boot screen so far, with update-file tools and a SysEx test backend; a per-channel strip with EQ and compressor is planned.
+description: >-
+  Build scripts read your own copy of Roland's 1.51 update, unpack its compressed
+  program, patch it and pack it back into an UpdOcta.dat with the checksums
+  fixed. The one finished patch replaces the boot picture with a pixel-art
+  Rosetta screen and moves the boot bar; the README reports it running on two
+  units. The repository also holds notes on the Blackfin DSP code, the audio
+  path, the update format and which flash areas each update mode writes, and a
+  Rosetta Lab backend that lets a computer read, write and run code on a live
+  unit over the control USB-MIDI port. Planned work is a CPU-load meter, a
+  channel strip for the eight mic inputs, a solo mode and a clip guard. The
+  author credits Claude, an AI assistant, with the reverse engineering and
+  tools.
+status: active
+authors:
+  - name: JunkSmithWizard (yuyoi)
+    url: https://github.com/yuyoi
+source: https://github.com/yuyoi/octa-capture-rosetta-OS
+source_status: open
+license: MIT
+license_notes: >-
+  Covers the repository only. The README says no Roland code is included and
+  the build starts from Roland's own update file; the built UpdOcta.dat
+  contains Roland's code and should not be shared.
+homepage: https://yuyoi.github.io/octa-capture-rosetta-OS/
+distribution: patch-your-own
+requires_stock: "1.51"
+install_notes: >-
+  Needs Roland's OCTA-CAPTURE System Program 1.51 zip, which you supply. Run
+  tools/build_rosetta.py on it, then use Roland's update procedure: hold the
+  pre-amp [>] button and push the cursor/value knob while powering on, check
+  that the header shows no [ALL], and copy UpdOcta.dat to the disk that
+  appears. Flash Roland's original UpdOcta.dat the same way to go back. The
+  author warns that a patched main program that freezes before the button scan
+  cannot be recovered with buttons and would need JTAG or a flash programmer;
+  the boot screen patch was checked offline and boots on hardware. Never hold
+  any other power-on combination, since one writes the boot sector too.
+brick_risk: true
+tags: [ui, boot-splash, research, sysex]
+image:
+  url: https://raw.githubusercontent.com/yuyoi/octa-capture-rosetta-OS/main/docs/img/rosetta_splash_v4_preview.png
+  alt: Enlarged pixel-art boot screen in dark navy on light blue showing the top of a girl's face with her eyes and hair over the word ROSETTA
+  credit: JunkSmithWizard
+  source_url: https://github.com/yuyoi/octa-capture-rosetta-OS#readme
+  first_party: true
+versions:
+  - version: main @ 436f41d
+    date: 2026-11-07
+    url: https://github.com/yuyoi/octa-capture-rosetta-OS/commit/436f41d
+    notes: No tagged releases; this is the latest commit.

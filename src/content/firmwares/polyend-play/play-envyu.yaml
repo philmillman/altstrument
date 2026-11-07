@@ -1,0 +1,44 @@
+device: polyend-play
+name: play-envyu
+summary: Patch for Polyend's Play 1.6.0 update file (Rev A, Kinetis K66) that adds USB audio in and out with recording to the SD card, per-track MIDI effects including an arpeggiator and echo, a note-in-scale randomizer and USB file transfer.
+description: >-
+  A Python script, or a patcher page in the browser, takes your own copy of
+  Polyend's 1.6.0 update file, refuses anything but that exact file, appends the
+  mod's compiled code behind the stock image, redirects 66 places in the stock
+  code to it and writes a .ppf only if the result matches the tested build byte
+  for byte. The mod adds stereo and multitrack USB audio output and computer audio
+  input, which can be recorded to the SD card by holding Live Rec, MIDI effects
+  with an arpeggiator and echo, a randomize option that keeps notes in a scale,
+  and file transfer and firmware upload over USB. The README says it has been
+  tested on one Rev A unit and that testing is in progress; the Rev B part of the
+  image is left stock and untested, and the Play+ is not supported. The
+  repository holds host-side tests that run the mod code in an emulator. The
+  author credits heavy use of AI assistance, and code comments are mostly in
+  German.
+status: active
+authors:
+  - name: envyuu
+    url: https://github.com/envyuu
+source: https://github.com/envyuu/play-envyu
+source_status: open
+license: MIT
+license_notes: >-
+  Covers the project's own code only. The README says it contains no Polyend firmware; the stock file is supplied by you and
+  stock/ is git-ignored. manifests/latest.json holds the mod's compiled code and replacement bytes, and the finished .ppf
+  contains Polyend's code and should not be shared.
+homepage: https://envyuu.github.io/play-envyu/
+distribution: patch-your-own
+requires_stock: "1.6.0"
+install_notes: >-
+  Download PolyendPlay_v1.6.0.ppf from Polyend and run patcher/play_patch.py on it, or use the browser patcher on the
+  project page. Back up the SD card, copy the patched .ppf into its Firmware folder and keep few files there, since a card
+  with 31 .ppf files stopped at Preparing. Install from the firmware update menu and power-cycle once to check a cold
+  start. To go back, leave only the official 1.6.0 .ppf in the folder and install it the same way; on the test unit a short
+  press of the reset button during a hang started the emergency flash. The README calls the build beta and at your own risk.
+brick_risk: false
+tags: [groovebox, usb-audio, midi, arpeggiator, fx, recording]
+versions:
+  - version: main @ a77328b
+    date: 2026-11-06
+    url: https://github.com/envyuu/play-envyu/commit/a77328b
+    notes: No tagged releases; this is the latest commit. The manifest names the mod 0.1.1-beta.

@@ -1,0 +1,44 @@
+device: polyend-tracker
+also_devices: [polyend-tracker-plus, polyend-tracker-mini]
+name: Polyend Tracker firmware project
+summary: Fork of Polyend's Tracker Community Edition source that adds 512-step patterns on the Tracker Mini, note-length recording and pass-based Chance conditions such as pass A of B, first pass and not first pass, with a prebuilt Tracker Mini image on a branch.
+description: >-
+  The repository starts from an unmodified import of polyend/tracker-ce and
+  adds changes on top. The Tracker Mini can hold patterns of up to 512 steps
+  instead of 128, which moves the pattern files to a new format version that
+  stock and Community Edition firmware cannot read once a project is saved,
+  and takes about 2 MB of the sample pool. A Config option makes live
+  recording and note entry in edit mode store how long each note was held,
+  using a Gate length effect or an OFF step with Micro-move. The Chance effect
+  gains pass A of B, first pass and not first pass values. The other two models
+  keep 128 steps and share the other changes. The changelog lists these under
+  Unreleased and the commit history shows the work was done with Claude, an AI
+  assistant. A workflow copies each built Tracker Mini .ptf to a firmware-builds
+  branch; no builds for the other two models are published and there is no README
+  of its own.
+status: active
+authors:
+  - name: AndrisK-hub
+    url: https://github.com/AndrisK-hub
+source: https://github.com/AndrisK-hub/Polyend-tracker-firmware-project
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is Polyend's Community Edition licence, titled MIT License with Wholesale Commercial Clone Restriction.
+  It puts the source and SDKs under MIT, bars selling .ptf builds, commercial clone hardware and a port or substantially
+  unmodified derivative of the whole application, and allows commercial music and reuse of single components. The
+  precompiled libPolySynth.a and libPolyDSP.a under synth/lib stay Polyend's proprietary code, licensed for free builds for the
+  Tracker+ and Tracker Mini and for non-commercial DIY use. The README is Polyend's own, unchanged.
+distribution: download
+install_notes: >-
+  Download the Tracker Mini .ptf from the firmware-builds branch, copy it to /Firmware/ on the microSD card and choose
+  Config, Firmware, Firmware update. Other models need a build from source. Back up the Projects folder first, since saving
+  a project in 512-step mode writes pattern files older firmware cannot open. Polyend's README for the upstream project
+  describes an isolated bootloader and a recessed reset button that reflashes a known-good .ptf from the card.
+brick_risk: false
+tags: [fork, sequencer, tracker, midi, fx]
+versions:
+  - version: main @ 83ef8cb
+    date: 2026-11-07
+    url: https://github.com/AndrisK-hub/Polyend-tracker-firmware-project/commit/83ef8cb
+    notes: No tagged releases; this is the latest commit.

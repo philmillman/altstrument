@@ -1,0 +1,52 @@
+device: polyend-play-plus
+also_devices: [polyend-play]
+name: FreePlay
+summary: Patch for Polyend's Play+ 1.3.0 and Play 1.6.0 (RT) update files that adds a sample slicer, two LFOs with a modulation matrix, sustain and release on samples, a moving playhead, MIDI CC presets and a start and end editor.
+description: >-
+  A browser page or Python script takes your own copy of Polyend's update file,
+  checks that it is the exact expected version, adds the compiled mod and checks
+  the result against the tested build byte for byte, giving a .ppf for the
+  device's firmware menu. The slicer cuts a track's sample into 2 to 64 slices
+  and writes trigs in time, on every step or onto existing trigs. Two LFOs with
+  seven shapes have separate amounts per track and parameter, shown in a matrix.
+  Other additions are a moving playhead, sustain and release on sample tracks, a
+  sample start and end editor with a waveform, eight user slots and 43 synth
+  presets for MIDI CC numbers, extra knob-page displays, folder colours, tap
+  tempo, brightness settings, project deletion and a synth randomizer on the
+  Play+. The README says it has run on a real Play+ and only on a virtual
+  original Play. It targets the Play with the RT processor, and a build for
+  K66 units is in progress. The author credits Claude, an AI assistant, with
+  much of the work, and the repository includes an emulator for testing.
+status: active
+authors:
+  - name: sloppyjoo
+    url: https://github.com/sloppyjoo
+source: https://github.com/sloppyjoo/freeplay
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is MIT, with an exception for cfw/presets/cc_presets.csv and cfw/src/ccpresets.h, which hold CC numbers
+  from the MIDI Guide project and are shared under CC BY-SA 4.0. The file says Polyend's firmware is not part of the
+  project, and the repository contains no .ppf files.
+homepage: https://sloppyjoo.github.io/freeplay/
+distribution: patch-your-own
+requires_stock: Play+ 1.3.0 or Play 1.6.0 (RT)
+install_notes: >-
+  Download PlayPlus_v1.3.0.ppf or PolyendPlay_v1.6.0.ppf from Polyend, drop it on the installer page or run
+  patcher/freeplay_patch.py, and copy the result and the official file into the Firmware folder of the SD card. Start the
+  update from Settings, Firmware. Back up the card first. The README says only the main application changes and the
+  bootloader stays, so pressing the reset button with only the official file in the Firmware folder reinstalls it. K66
+  Plays are not supported yet; the README says to flash the official file if the Slice row is missing.
+brick_risk: false
+tags: [sampler, lfo, ui, midi, fx]
+image:
+  url: https://raw.githubusercontent.com/sloppyjoo/freeplay/main/screens/slicer_main.png
+  alt: Samples, Slice screen on a black background showing a drum break waveform cut into 16 slices by vertical lines, a row of blue squares below, the label 16 slices and the layout In time
+  credit: sloppyjoo
+  source_url: https://github.com/sloppyjoo/freeplay#readme
+  first_party: true
+versions:
+  - version: main @ 5835b33
+    date: 2026-11-06
+    url: https://github.com/sloppyjoo/freeplay/commit/5835b33
+    notes: No tagged releases; this is the latest commit. The README and changelog call it version 0.1 beta.

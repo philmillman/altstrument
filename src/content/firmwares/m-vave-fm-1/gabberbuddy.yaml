@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: GabberBuddy
+summary: >-
+  Hack of X0X for noise and gabber: a distorted 909 kit style, a master section with hard clip, bit crusher and EQ, a super-saw and an 8-bit noise oscillator for the 303s, and a neon screen theme.
+description: >-
+  Starts from the X0X groovebox and leaves its sequencer, five parts and manual as they were. The 909 KIT page gets a Style
+  knob with the original sound, a saturated kick, snare, clap and hats with the 303s driven hard, and a version with
+  a wavefolded kick and snare and the 303s through a fuzz. The master section adds a hard-clip distortion, an independent
+  bit crusher with bits and rate, and a three-band EQ. The 303 gains a detuned super-saw of 3, 5 or 7 saws and an 8-bit noise
+  oscillator with three shift-register lengths. The default theme is black with neon green seven-segment digits. The
+  README calls it early: it has run in a simulator and in CI builds and has had little time on a real FM-1. It is
+  distributed through a web installer and a prebuilt file named 0.0.1-beta, with a browser emulator and a manual.
+status: active
+authors:
+- name: ODeath
+  url: https://github.com/gybe808-dotcom
+source: https://github.com/gybe808-dotcom/GabberBuddy
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md puts GabberBuddy's changes under GPL-3.0-only, with X0X's table of third-party parts: ports of 909, 808 and
+  303 engines, a break generator used with its author's permission although that repository has no licence file, and
+  ER-99 hi-hat, ride and crash samples under GPL-3.0. No M-VAVE stock image is in the repository.
+homepage: https://gybe808-dotcom.github.io/GabberBuddy/install/
+distribution: browser-installer
+install_notes: >-
+  Web installer in Chrome or Edge over USB, or tools/fm1_install.py with the .fwsc from the site. The installer page has
+  a button that returns the FM-1 to M-VAVE's stock firmware, and a safe mode after repeated crashes lets the installer
+  put a working firmware back. Installing replaces the stored patterns and sounds of another firmware, so back
+  them up first.
+brick_risk: false
+tags: [drums, synth-engine, sequencer, fx, distortion, fork, emulator, web]
+versions:
+- version: main @ 562a84b
+  date: 2026-11-07
+  url: https://github.com/gybe808-dotcom/GabberBuddy/commit/562a84b
+  notes: No tagged releases; this is the latest commit. The README names the prebuilt file gabberbuddy-0.0.1-beta.fwsc.

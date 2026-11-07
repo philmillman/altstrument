@@ -1,0 +1,40 @@
+device: m-vave-fm-1
+name: ANATOMIX VOXINATOR
+summary: >-
+  Vocal processor for the FM-1 that takes a USB microphone and returns a pitch-corrected, harmonised and formant-shifted
+  voice through four effect slots, with a screen that draws a head and throat reacting to each setting.
+description: >-
+  Built on fm1-base and Felucca's board support code. The firmware has two modes: MULTIVOICE, which adds harmony voices
+  to the singer's pitch, and GLIDE, which pulls the pitch toward a scale. A formant shifter changes the vocal tract
+  length, and a four-slot effect chain follows, with 16 factory presets and 16 user presets. The eight screens show a
+  cross-section of a head whose vocal folds, airflow and ghost outlines follow the pitch, formant, distortion, delay and
+  reverb settings. The capture of the microphone is a change to fm1-base that lives in a separate pull request in
+  profikid's fm1-base repository, not in this one. The README says the FM-1's USB port supplies no power, so a bus-powered
+  microphone needs a powered hub. It also says the firmware has never been flashed because the author had no JieLi
+  toolchain or SDK on the machine used: the DSP, the screens and a host simulator were run on a computer, and the
+  microphone path was tested only against a model of the USB controller. No release package exists yet.
+status: active
+authors:
+- name: Laurens Profittlich (profikid)
+  url: https://github.com/profikid
+source: https://github.com/profikid/fm1-anatomix-voxinator
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  MPL-2.0 (LICENSE); the README says the app's files carry the same licence as the fm1-base platform it builds on, which
+  contains Felucca's board support code by Leo Kuroshita, and that it uses the JieLi AC79 SDK.
+homepage: https://github.com/profikid/fm1-anatomix-voxinator
+distribution: source-only
+requires_stock: not stated; build and install it with the fm1-base tools
+install_notes: >-
+  Build with ./build.sh, which needs the platform submodules, the JieLi toolchain and SDK, then ./build.sh flash. A
+  host simulator and the DSP tests build without the SDK. The author has not yet flashed the firmware or run the
+  microphone path on a unit. Recovery follows the fm1-base and Felucca update loader's documentation and M-VAVE's
+  official package; a stuck unit can be rescued through the chip's ROM download mode.
+brick_risk: false
+tags: [fx, voice, synth-engine, presets, ui, emulator, usb-audio]
+versions:
+- version: main @ 9c6fc0a
+  date: 2026-11-07
+  url: https://github.com/profikid/fm1-anatomix-voxinator/commit/9c6fc0a
+  notes: No tagged releases; this is the latest commit.

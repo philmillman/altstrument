@@ -1,0 +1,46 @@
+device: m-vave-fm-1
+name: KORX-M1 Hub UI
+summary: Work in progress that runs the PicoFaceM1 Korg M1 engine as a WebAssembly firmware for the Firmware Hub player with a touch-style program and combination editor, plus an unflashed FM-1 build with a compressed sample bank.
+description: >-
+  Rights warning: the repository holds only source and no Korg data, but the .wasm and .fwsc builds it produces embed Korg's M1
+  sample ROM, which you must supply yourself, so built images should not be shared.
+
+  The engine is Michi71's float re-implementation of the M1 voices, filters, envelopes and effects. The repository adds a
+  Firmware Hub adapter with resampling to the host rate and a limiter, a 480 by 320 interface with page tabs, arc knobs,
+  soft keys and meters for editing programs and combinations, and tools that render the screen to images and measure output
+  levels. A second part ports the engine to the FM-1 with integer voices, effects and resampler and a three-bit ADPCM bank
+  of 51 programs and 19 combinations; the status notes say it passes the build tool's checks but has never been flashed and
+  has no interface. The README calls the project unfinished. A resampler bug that doubled playback speed was fixed on
+  2026-11-07 and a tester reports the Lite build sounds much better, while the full build has not been auditioned. The
+  code was written by a local language model from briefs and reviewed by an AI orchestrator, with a human tester.
+status: active
+authors:
+  - name: fizzy2562
+    url: https://github.com/fizzy2562
+source: https://github.com/fizzy2562/korx-m1-hub-ui
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The README says the repository is GPL-3.0-or-later because src/ui/m1_params.* are copied unmodified from PicoFaceM1; the
+  LICENSE file is the GPL version 3 text. The baked font is under the Ubuntu Font Licence. No Korg ROM data, firmware or
+  sounds are included, and .gitignore blocks the wasm and fwsc builds, ROM archives and sample banks. THIRD_PARTY.md lists
+  the engine itself as not copied.
+distribution: source-only
+requires_stock: Firmware Hub player or M-VAVE open firmware (FM-1 build)
+install_notes: >-
+  Not buildable from the repository alone. You need your own legally obtained M1 ROM set, PicoFaceM1's m1_extract tool to
+  make the ROM tables and PCM, and Zig to build the engine and link the Hub .wasm. The FM-1 .fwsc has not been flashed by
+  anyone; the status notes give holding OCT- while powering on as the rescue mode.
+brick_risk: false
+tags: [synth-engine, korg, ui, web, research]
+image:
+  url: https://raw.githubusercontent.com/fizzy2562/korx-m1-hub-ui/main/docs/images/ui_osc1_page.png
+  alt: Program screen on a dark blue background titled PROGRAM 01 Piano16' with page tabs, three knobs for multisound, octave and level showing Piano, 16' and 80, and six soft keys along the bottom
+  credit: fizzy2562
+  source_url: https://github.com/fizzy2562/korx-m1-hub-ui#readme
+  first_party: true
+versions:
+  - version: main @ 1941902
+    date: 2026-11-07
+    url: https://github.com/fizzy2562/korx-m1-hub-ui/commit/1941902
+    notes: No tagged releases; this is the latest commit.

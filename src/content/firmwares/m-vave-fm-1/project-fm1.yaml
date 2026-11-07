@@ -1,0 +1,39 @@
+device: m-vave-fm-1
+kind: tool
+name: Project FM1
+summary: >-
+  Local web app for the FM-1 with a USB MIDI studio, sound backups and restores, a firmware catalogue that saves and installs reviewed packages, and Blacksmith, which compiles a small starter instrument.
+description: >-
+  A Python server and browser interface that run on your own computer. The Studio records live USB MIDI notes
+  into an editable piano roll with MIDI export, records audio from the FM-1's USB input, and can read instrument and preset
+  state from SLOOP. Backups save all 128 sounds of stock V14 or V15 firmware as verified JSON and DX7 SysEx
+  and can send the banks back; it does not copy the firmware or sequences. The firmware tab lists 30 projects with preview images and
+  fetches their latest releases from GitHub, and four reviewed builds (ORBIT 1.0.0, SLOOP 2.8.5 and 2.8.4, Clipper 1.3.1)
+  can be installed through an adapted M-UPGRADE flow after a review dialog. Blacksmith turns a screen design, labels, a pixel
+  image and up to eight of 288 synth recipes into C code and compiles it in a local Docker builder. The README says
+  none of the native firmware writes has yet been tested on a physical FM-1 and that the version is 0.7.0, a development preview.
+status: active
+authors:
+- name: Peeeweee
+  url: https://github.com/Peeeweee
+source: https://github.com/Peeeweee/Project_FM1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  README: GPL-3.0-only, because the updater includes attributed SLOOP and Felucca code; the original MIT parts keep
+  their notices in LICENSE-MIT and THIRD_PARTY.md. Preview images keep their source repositories' licences in
+  docs/licenses. No firmware package is committed; they are fetched from GitHub when asked.
+homepage: https://github.com/Peeeweee/Project_FM1
+distribution: source-only
+install_notes: >-
+  Needs Python 3.10 or newer and desktop Chrome or Edge; start it with Start.cmd and open the local address it prints.
+  Blacksmith also needs Docker Desktop and a one-time tools/blacksmith/setup.py. Firmware installs go through the
+  two-stage update flow with a typed confirmation, and the app saves the matching package to a local vault first. Writing
+  the FM-1's firmware is at your own risk; nothing in the app touches the chip's boot area.
+brick_risk: false
+tags: [editor, flasher, backup, librarian, sysex, python, web, sdk]
+versions:
+- version: main @ 0a5a218
+  date: 2026-11-07
+  url: https://github.com/Peeeweee/Project_FM1/commit/0a5a218
+  notes: No tagged releases; this is the latest commit. The README gives the version as 0.7.0.

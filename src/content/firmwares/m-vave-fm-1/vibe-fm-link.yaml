@@ -1,0 +1,38 @@
+device: m-vave-fm-1
+name: VIBE FM Link
+summary: >-
+  Turns the FM-1 into a USB MIDI controller for the VIBE FM synth, its web player and VST plugin: keys, seven encoders and every button send plain MIDI notes and relative CCs. The FM-1 makes no sound itself.
+description: >-
+  Built on Dinghy. The keys play notes, knobs 1 to 4, SELECT, ALGORITHM and PRESETS act as relative encoders on CC 20
+  to 26, and MASTER sends CC 7. The panel buttons map to the VIBE's keys, with SAVE held as SHIFT and GLO held as
+  the F1 to F6 soft keys. Since 0.2 an encoder detent counts one when turned slowly and two, three or six when
+  turned faster. The firmware reports the USB name "VIBE FM Link", which the VIBE products map with a controller
+  profile in the VIBE FM SDK, and any other DAW or synth can learn the CCs. The 0.2 release gives it its own package
+  identity after 0.1 shared one with another firmware. The release also carries untested SMK-37 packages.
+status: active
+authors:
+- name: Sven Trogus (zvenson)
+  url: https://github.com/zvenson
+source: https://github.com/zvenson/vibe-link
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only. The platform is Leo Kuroshita's Felucca code as SLOOP and Dinghy carry it, with the
+  SMK-37 layer by M. Geisler. The Terminus font is SIL OFL 1.1 and JieLi AC79 SDK files are read from the user's
+  checkout at build time. The logo in assets/ is copyrighted by designburg and is not under the GPL.
+homepage: https://thefirmwarehub.com/#fw-vibe-link
+distribution: browser-installer
+install_notes: >-
+  Installs from the FM-1 Firmware Hub in Chrome or Edge, or with tools/fm1_install.py from the release package over
+  USB. Dinghy's update path and USB rescue apply, and the hub restores any other firmware.
+brick_risk: false
+tags: [controller-mode, midi, usb-midi, fork]
+versions:
+- version: v0.2
+  date: 2026-11-07
+  url: https://github.com/zvenson/vibe-link/releases/tag/v0.2
+  notes: Gives the firmware its own package identity, adds encoder acceleration and lets the hub recognise it by its port name.
+- version: v0.1
+  date: 2026-11-07
+  url: https://github.com/zvenson/vibe-link/releases/tag/v0.1
+  notes: First release; the SMK-37 packages attached to it are untested on hardware.

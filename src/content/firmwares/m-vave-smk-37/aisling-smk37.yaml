@@ -1,0 +1,42 @@
+device: m-vave-smk-37
+name: AISLING SMK-37 Elite
+summary: >-
+  Source port of the AISLING generative Irish ambient instrument to the SMK-37 Elite, with a board layer for its 37 keys
+  and extra controls. It builds and passes tests on a computer and has not yet run on an Elite.
+description: >-
+  Same engine, eight pieces and screens as the FM-1 version, with the FM-1 build left byte for byte unchanged and one
+  compile switch selecting the Elite. A board layer covers the Elite's pins, key and button matrix, lights, display and
+  flash map, which the author read from M-VAVE's V016 update package and from the makkuro and genkigenki SMK-37 ports.
+  The middle 27 of the 37 keys play as the FM-1's keys do, the first knob is the master level, and the pads, faders and
+  wheels are planned but unused. The Elite's USB MIDI works; TRS MIDI is off. The firmware never writes the first
+  16 KiB, the Bluetooth pairings, the per-unit key calibration or the stock resources. The README and the SMK37 document
+  say nothing is offered to install until it has been installed, played and removed on an Elite with the way back
+  to M-VAVE's firmware proven, and list seven open hardware questions such as the shift register bit order and the
+  Elite's flash chip ID. It is for the Elite only, not the Pro or MKE-P37. No package or release exists.
+status: active
+authors:
+- name: Stephen Cummins
+  url: https://github.com/stephencummins
+source: https://github.com/stephencummins/smk37-aisling
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md puts the work under GPL-3.0-only, as AISLING, NACHTFAHRT, DUB-1, AMB-1 and Felucca. The Karplus-Strong
+  pluck follows M-VAVE's MIT-licensed fm1_open code, the fonts are SIL OFL 1.1, and the board layer is written again after
+  genkigenki's GPL-3.0 SMK-37 ports and a CC BY-NC 4.0 guide by makkuro whose facts, not text, are cited. No M-VAVE
+  package is in the repository.
+homepage: https://stephencummins.github.io/smk37-aisling/
+distribution: source-only
+requires_stock: SMK-37 Elite on M-VAVE V016
+install_notes: >-
+  Nothing to install yet. The repository's tools check the Elite by its USB name and refuse an FM-1 package. They also
+  include a rescue tool that writes only the app area from your own M-VAVE SMK-37 Elite V016 package after
+  checking the flash chip and that your backup holds the key calibration. The author warns that building and installing
+  it now is not wise because the way back is untried on an Elite. Take a full flash backup first.
+brick_risk: false
+tags: [generative, ambient, sequencer, synth-engine, fx, fork, emulator]
+versions:
+- version: main @ b09ea91
+  date: 2026-11-07
+  url: https://github.com/stephencummins/smk37-aisling/commit/b09ea91
+  notes: No tagged releases; this is the latest commit.

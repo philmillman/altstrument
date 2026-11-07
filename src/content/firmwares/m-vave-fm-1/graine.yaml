@@ -1,0 +1,46 @@
+device: m-vave-fm-1
+name: GRAINE
+summary: >-
+  Sample-based granular synth for the FM-1: up to 128 grains on 6 voices across both cores, thirteen synthesized sources
+  plus a live capture and four user sample slots, 24 knob pages, modulation recording, 16 presets and a pad mode.
+description: >-
+  Interface and docs are in French, with an English option for the screen. A cloud page shows the grains over the
+  source waveform, and knobs keep one colour per position on every page. Holding LFO or ENV while turning a knob
+  assigns that modulation, and holding REC records the knob gesture as a loop. The thirteen sources are synthesized by
+  a script, so no recordings are used, and five of them evolve on their own as an arpeggio, bass, chords, pad or
+  sequence. REC captures the output into a RAM source, and four flash slots hold samples that the project's browser
+  importer or a Python tool loads over USB-MIDI. SEQ turns the keys into 16 positions in the sample plus 11
+  performance pads. The README lists effects, a chaos control, MIDI CCs and clock sync. A browser emulator is built from
+  the same code. The code builds on fm1-base and felucca-bsp; the README does not say it was tried on a real FM-1.
+status: active
+authors:
+- name: Omnipotard (Guizmoh)
+  url: https://github.com/Guizmoh
+source: https://github.com/Omnipotard/Granular-FM1
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is MIT, with a line saying that fm1-base and felucca-bsp, a git submodule in base/, keep their own
+  MPL-2.0 licences. The GitHub API reports the licence as unrecognised because of that extra line.
+homepage: https://omnipotard.github.io/Granular-FM1/
+distribution: browser-installer
+install_notes: >-
+  The project site has a page that installs over Web MIDI in Chrome or Edge, and tools/fm1_install.py from the base
+  submodule does the same without a browser. Going back to M-VAVE's firmware uses M-VAVE's own updater. The package the
+  site serves is graine-0.2.fwsc, a later build than the only Git tag.
+brick_risk: false
+tags: [granular, sampler, synth-engine, fx, emulator, editor, fork]
+image:
+  url: https://raw.githubusercontent.com/Omnipotard/Granular-FM1/main/app/docs/img/page-cloud.png
+  alt: "GRAINE cloud page: a waveform with coloured grain dots over it, a counter reading 57 grains, and four coloured dials labelled POS, TAILLE, DENSITE and FLOU"
+  credit: Omnipotard (Guizmoh)
+  source_url: https://github.com/Omnipotard/Granular-FM1
+  first_party: true
+versions:
+- version: '0.2'
+  url: https://omnipotard.github.io/Granular-FM1/
+  notes: Package offered on the project site; no tag or release page matches it.
+- version: v0.1
+  date: 2026-11-06
+  url: https://github.com/Omnipotard/Granular-FM1/tree/v0.1
+  notes: Git tag; no GitHub release page.

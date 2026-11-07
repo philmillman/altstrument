@@ -1,0 +1,44 @@
+device: m-vave-fm-1
+name: ATEK303
+summary: >-
+  TB-303 style acid synth for the FM-1 with a 64-step pattern generator, step editor, 12 factory presets and an effects section of drive, chorus or flanger, delay and reverb, built from the ATEK303 VCV Rack module.
+description: >-
+  Ports the voice of Animatek's ATEK303 VCV Rack module, which is based on Open303 with a diode ladder filter and an
+  oscillator modelled on the schematic, to the FM-1 on fm1-base. Pressing PLAY starts a generated acid line. The pattern
+  generator is the VCV UZZ sequencer's version 5, and a seed gives the same pattern as in VCV Rack. It makes 64 steps over four pages,
+  mutates time, notes, slides and accents, and has a lock mode and undo. A piano-roll style editor sets gate, octave, pitch,
+  accent and slide per step. The effects are drive (overdrive, RAT, fuzz), chorus or flanger, a synced ping-pong
+  delay and a plate reverb. Since 1.1 there are 12 factory presets, an OPTIONS menu for colour themes, MIDI channels
+  and fine tuning of the VCV module's parameters, a battery gauge and an output limiter. MIDI in covers notes, CC and clock. The
+  release notes report installs on a real FM-1 from the stock V15 and from AMB-1, and back again. Presets saved with 1.0
+  do not load in 1.1.
+status: active
+authors:
+- name: Animatek
+  url: https://github.com/animatek
+source: https://github.com/animatek/FM1-Animatek
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The README states GPL-3.0-or-later and the repository's LICENSE file is the GPL v3 text. The voice carries Open303 by
+  Robin Schmidt (MIT, licence file in the repository), and the project builds on fm1-base (MPL-2.0) and Felucca's board
+  support code, which is cloned separately. The repository also holds a research folder with notes and an emulator guide,
+  but no M-VAVE firmware.
+homepage: https://animatek.github.io/FM1-Animatek/atek303/play/
+distribution: download
+requires_stock: V15 or another Felucca-family firmware
+install_notes: >-
+  Install the .fwsc from the release with The Firmware Hub or fm1-base's tools/fm1_install.py (use --classic on Linux).
+  The firmware carries the Felucca update loader, so any firmware or M-VAVE's official one can be installed over it.
+  The project's own notes say to copy the whole flash before flashing a unit.
+brick_risk: false
+tags: [synth-engine, sequencer, fx, generative, oscillator, filter, emulator, midi]
+versions:
+- version: '1.1'
+  date: 2026-11-07
+  url: https://github.com/animatek/FM1-Animatek/releases/tag/atek303-v1.1
+  notes: Adds 64 steps with the version 5 generator, a paged step editor, 12 factory presets, an OPTIONS menu, a battery gauge and an output limiter, and steadier MIDI clock. Presets from 1.0 do not load.
+- version: '1.0'
+  date: 2026-11-06
+  url: https://github.com/animatek/FM1-Animatek/releases/tag/atek303-v1.0
+  notes: First release, with 16-step patterns, a step editor, 32 presets, effects and MIDI in.

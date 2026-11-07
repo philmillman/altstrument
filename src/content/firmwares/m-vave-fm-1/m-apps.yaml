@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
+name: m-apps
+summary: >-
+  Build kit and first programs for apps that load into RAM on the FM-1 and SMK-37 without touching the flash: a hello
+  screen, an SD card program picker and a mode that shows the unit's SD card to a computer as a USB disk.
+description: >-
+  An app is one file that M-Flasher's run-ram command, a USB MIDI load or the bootloader's SD card item starts from RAM,
+  so the firmware in flash is left alone and the unit goes back to download mode or to what started the app when the
+  app ends. The repository holds the kit that builds apps for both boards (entry code, linker script, a card driver and a
+  logging ring in RAM that survives crashes), a guard that arms the watchdog and installs a crash handler, and the
+  apps. hello shows a screen for ten seconds. picker lists apps on the card and starts one. usbdisk exposes the card to a
+  computer over USB, and needs a card modification. The author says hello and usbdisk have run on an FM-1 and an SMK-37
+  and picker on an SMK-37 only. Building needs the author's pi32v2 LLVM toolchain. The format is defined in
+  m-bootloader's specification, section 11.8, and the repository says no releases exist yet.
+status: active
+authors:
+- name: Julius Vitkauskas (jvitkauskas)
+  url: https://github.com/jvitkauskas
+source: https://github.com/jvitkauskas/m-apps
+source_status: open
+license: MIT
+distribution: source-only
+install_notes: >-
+  Build with make and the pi32v2 toolchain, then start an app with make run, which uses M-Flasher 0.9.2 or newer to load
+  it into RAM from download mode. The SD card route needs m-bootloader's SD CARD item and an unreleased bootloader change
+  (pull request 22); it has run on an SMK-37 only. Nothing is written to flash, so switching the unit off returns it to
+  its installed firmware.
+brick_risk: false
+tags: [loader, sdk, utility, usb, platform]
+versions:
+- version: main @ ac157fa
+  date: 2026-11-07
+  url: https://github.com/jvitkauskas/m-apps/commit/ac157fa
+  notes: No tagged releases; this is the latest commit.

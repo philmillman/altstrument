@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: KIRA-9
+summary: >-
+  In-development English singing instrument for the FM-1: a source-filter vocal engine, an animated face on the 240 by 240 screen, factory demo songs, MIDI and a shared-code browser studio. No release yet.
+description: >-
+  The README still describes a planning package, but the repository now holds native firmware, a host app, a vocal
+  core with an English phoneme inventory, a face renderer, factory song data and a web studio compiled from the same
+  code. Lyrics become timed syllables and visemes, and the FM-1 plays precompiled streams on its own or follows MIDI
+  clock over USB or Bluetooth. A pilot experiment uses a recorded voice from the CMU ARCTIC SLT set. Its notes list
+  intelligibility, the character art and end-to-end editor tests as unfinished, say a requirements gate keeps any
+  release closed, and say no installer or public studio exists. The firmware builds on fm1-base.
+status: active
+authors:
+- name: CodingSlapfu
+  url: https://github.com/CodingSlapfu
+source: https://github.com/CodingSlapfu/KIRA-9
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is MIT, with a line saying the platform submodule (fm1-base, MPL-2.0) and its dependencies keep their
+  own licences. The CMU ARCTIC SLT voice data under experiments/residual_pilot/data carries its own COPYING-SLT notice,
+  and the dictionary comes from CMUdict under its own licence.
+distribution: source-only
+install_notes: >-
+  Nothing to install yet. CHECKPOINT.md describes a setup script and a verification script that need the JieLi
+  compiler, three AC79 SDK files and Emscripten. The project says physical FM-1 testing has not been done and that no
+  accepted release or live installer exists.
+brick_risk: false
+tags: [voice, synth-engine, midi, ble-midi, editor, emulator, fork]
+versions:
+- version: main @ 8d83be2
+  date: 2026-11-07
+  url: https://github.com/CodingSlapfu/KIRA-9/commit/8d83be275384dd4bfe3ec686b3483371f6f1bb7b
+  notes: No tagged releases; this is the latest commit.

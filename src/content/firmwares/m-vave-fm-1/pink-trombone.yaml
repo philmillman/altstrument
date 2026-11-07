@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: Pink Trombone
+summary: >-
+  Singing voice synth for the FM-1 built on fm1-dock: a port of Neil Thapen's Pink Trombone vocal tract with vowel presets, consonant buttons, a nose, chorus, delay and reverb, and a screen that draws the throat.
+description: >-
+  A solo build of fm1-dock with the voice as its only module, so fm1-dock's USB update path and rescue stay in place.
+  The voice is monophonic. Keys or MIDI set pitch, and the four knobs move tongue position, tongue height, lips and
+  tenseness. PRESETS picks one of nine vowels, held buttons close the tract for fricatives and stops such as S, T, K
+  and P, and another opens the nose for M and N. An effects page adds a two-tap chorus, a ping-pong delay and a small
+  reverb. The vocal tract model runs at half the original's segment count to fit the chip. The README says it has
+  been run only in the fm1-emu emulator, at about 38 percent load, and never on a real FM-1.
+status: active
+authors:
+- name: Stefan Olofsson
+  url: https://github.com/stefanolofsson
+source: https://github.com/stefanolofsson/pinktrombone-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md puts the module code under GPL-3.0-only to match fm1-dock. pt_engine.h is a port of Pink Trombone by
+  Neil Thapen, MIT, and its notice stays with the file. The package also carries fm1-dock (GPL-3.0-only) and JieLi AC79
+  SDK files (Apache-2.0).
+distribution: download
+install_notes: >-
+  The v0.1 release has pinktrombone-0.1.fwsc, which installs like other fm1-dock packages through its USB installer.
+  Holding OCT- at power-on opens the USB rescue, and fm1-dock gives the way back to other firmware. Building needs an
+  fm1-dock checkout, JieLi's toolchain and three AC79 SDK files.
+brick_risk: false
+tags: [voice, synth-engine, physical-modeling, fx, reverb, delay, chorus, fork]
+versions:
+- version: v0.1
+  date: 2026-11-06
+  url: https://github.com/stefanolofsson/pinktrombone-fm1/releases/tag/v0.1
+  notes: First release; the release notes say it has been tried only in the emulator.

@@ -7,7 +7,7 @@ description: >-
   Replaces the bootloader M-VAVE ships. A key held at power-on resets the chip into its ROM USB download mode, so
   a damaged flash can be rewritten over a normal cable, and a second key opens a recovery menu that shows the
   firmware's state, boots a firmware that fails its checksum once, wipes the settings areas the firmware declares
-  or enters download mode. Since 2.1 the menu also has a MIDI mode, in which a browser installer sent over USB MIDI can reinstall firmware on a unit with none running, and the bootloader can load a second stage from an SD card. Every firmware file's checksum is checked before it starts, the SMK-37 build keeps a
+  or enters download mode. Since 2.1 the menu also has a MIDI mode, in which a browser installer sent over USB MIDI can reinstall firmware on a unit with none running, and the bootloader can load a second stage from an SD card. Since 2.2 MIDI mode can also read and back up the whole flash and run small programs in RAM, and a RAM helper offers the same on a unit that does not have the bootloader. Every firmware file's checksum is checked before it starts, the SMK-37 build keeps a
   copy of the factory calibration, and M-VAVE's stock firmware, Snoop37, SLOOP and Baud Girl run with it. It also
   carries the flash loader M-Flasher runs on the chip. The author wrote it from a specification, without code
   from JieLi's SDK or from the earlier fm1-bootloader, which is no longer online. Official M-VAVE updates and
@@ -29,6 +29,10 @@ install_notes: >-
 brick_risk: true
 tags: [loader, flasher, utility]
 versions:
+- version: '2.2'
+  date: 2026-11-06
+  url: https://github.com/jvitkauskas/m-bootloader/releases/tag/v2.2
+  notes: MIDI mode can now read raw flash and back up the whole 1 MiB over USB MIDI (about 16 seconds), and load and run a small program in RAM. Adds a RAM helper package with the same abilities that runs on a unit without m-bootloader and returns to its firmware afterwards; the release says it does not start on every firmware. The SMK-37 can restore presets up to 0xFF000 while its pairing and calibration area stays unwritten. Use M-Flasher 0.9.1 or newer.
 - version: '2.1'
   date: 2026-11-05
   url: https://github.com/jvitkauskas/m-bootloader/releases/tag/v2.1

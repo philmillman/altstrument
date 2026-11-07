@@ -10,7 +10,7 @@ description: >-
   modes, eight canvases saved to flash, USB, DIN and Bluetooth MIDI in, and a track that records Bluetooth or USB audio
   live. The flasher page loads any eight of 28 built-in synthesized sounds as the sample bank. It is a fork of
   m-vave/fm1_open and keeps its SDK; the author says no Tempera code is used. A canvas is stored in the flash sector of
-  the matching FM1 Open project slot. The notes say it has run in the browser simulator and has not been tried on hardware.
+  the matching FM1 Open project slot. The notes say 1.2 was started and played on a real FM-1 and that 1.1 was withdrawn after restarting endlessly on one.
 status: active
 authors:
 - name: CallieSchmallie
@@ -29,13 +29,13 @@ distribution: browser-installer
 requires_stock: FM1 Open V14
 install_notes: >-
   The project's GitHub Pages site is a flasher with the firmware built in, for Chrome or Edge, or Chrome on Android with
-  a USB-OTG cable; /simulator.html runs it in the browser first. Back up projects, the voice library and the sample bank
+  a USB-OTG cable; /simulator.html runs it in the browser first. The main flasher page installs 1.2 and 1.0 stays at /1.0.html. Back up projects, the voice library and the sample bank
   with M-VAVE's workbench before flashing. Saving canvas N replaces FM1 Open project N. Flash FM1 Open or stock V15
   from the M-VAVE workbench to go back.
 brick_risk: false
 tags: [fork, granular, sampler, sdk, fx, ble-midi, emulator, flasher]
 versions:
-- version: main @ 1b3dfc5
-  date: 2026-11-04
-  url: https://github.com/CallieSchmallie/Beetroot-tempura/commit/1b3dfc513b82461b9bf34d3aaab67b7f5927e8fd
-  notes: No tagged releases; this is the latest commit.
+- version: main @ af8aa54
+  date: 2026-11-07
+  url: https://github.com/CallieSchmallie/Beetroot-tempura/commit/af8aa547e828f4923cfa4ecff25222e45128e9b1
+  notes: No tagged releases; this is the latest commit. The flasher now installs build 1.2, which fixes the endless restart on startup that 1.1 caused on a real FM-1, and 1.1 is withdrawn. 1.0 stays on a page of its own.

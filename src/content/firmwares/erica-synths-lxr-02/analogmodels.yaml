@@ -1,6 +1,6 @@
 device: erica-synths-lxr-02
 name: AnalogModels
-summary: Fork of Erica Synths' open LXR-02 firmware 1.7 that adds 25 TR-808 and TR-909 instrument models, a tube saturator, up to eight parameter locks per step and more than 30 stock bug fixes.
+summary: Fork of Erica Synths' open LXR-02 firmware 1.7 that adds 25 TR-808 and TR-909 models, 13 acoustic instruments, a per-voice effect, a tube saturator, eight parameter locks per step and over 30 bug fixes.
 description: >-
   The 25 instruments appear in every Waveform list after the stock waveforms, so
   any of the six voices can play an 808 or 909 kick, snare, tom, clap, hat,
@@ -11,7 +11,11 @@ description: >-
   problems found in firmware 1.7, many from a public review of the source. Kits
   and patterns that use only the original waveforms render identically, and
   pattern files keep the extra locks after the original data so the stock
-  firmware still loads them. The author's tests run the real code on a PC and in
+  firmware still loads them. Version 0.5 adds 13 modal acoustic instruments
+  (gamelan, djembe, conga and taiko), a slendro and pelog scale setting for
+  each voice and a per-voice effect of compressor, tube, wavefolder, clipper or
+  ring modulator, which can also send the voice to the shared effects. The
+  author's tests run the real code on a PC and in
   an emulator. It is not an Erica Synths release.
 status: active
 authors:
@@ -27,7 +31,7 @@ license_notes: >-
 distribution: download
 requires_stock: LXR-02 with the stock bootloader
 install_notes: >-
-  Copy LXR_AnalogModels_V0.4.img from the release to the top folder of the SD
+  Copy LXR_AnalogModels_V0.5.img from the release to the top folder of the SD
   card, delete any other LXR*.img files, then hold the encoder button while
   switching the unit on until LXR Updater appears. The update does not touch the
   bootloader, so an interrupted update can be repeated, and installing an
@@ -36,6 +40,10 @@ install_notes: >-
 brick_risk: false
 tags: [drums, fork, open-source, sequencer, synth-engine]
 versions:
+  - version: v0.5
+    date: 2026-11-06
+    url: https://github.com/G3nzalo/analogmodels-firmware/releases/tag/v0.5
+    notes: Adds 13 acoustic instruments, slendro and pelog scales, a per-voice effect with a send to the shared effects, and three example kits. Kits from 0.4 load unchanged.
   - version: v0.4
     date: 2026-11-05
     url: https://github.com/G3nzalo/analogmodels-firmware/releases/tag/v0.4

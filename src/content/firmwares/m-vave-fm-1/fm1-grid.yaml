@@ -13,7 +13,7 @@ description: >-
   connected units, and a metronome sends 24 PPQN clock with start and stop to every pane. The other four packages are SLOOP, Felucca and
   ChoralRoot from The FM-1 Firmware Hub and M-VAVE's open firmware V14, and
   a Library tab lists them and downloads more from the Hub and, as the README now lists, fm1-editor.com, Reverbose's FM-1 and SMK-37 lists and mutant.cloud, and a settings tab picks a colour theme, a light or dark mode and, for three of the themes, an accent colour. A pane can be pinned so its flash contents survive power-off.
-  For live units, the app probes FM-1-named MIDI ports with the M-UPGRADE handshake, shows which firmware is running,
+  For live units, the app probes FM-1-named MIDI ports, and now SMK-37 and Starrykey port names too, with the M-UPGRADE handshake, shows which firmware is running,
   switches their clock and flashes a chosen package. The repository also builds fm1-tty, a terminal version of the
   library, flashing, keyboard, metronome and MIDI routing. The emulated panes accept MIDI in only. The author calls it a local tool,
   not a distributed binary.
@@ -44,7 +44,7 @@ image:
   source_url: https://github.com/jasonbot/fm1-grid
   first_party: true
 versions:
-- version: main @ d658c04
-  date: 2026-11-06
-  url: https://github.com/jasonbot/fm1-grid/commit/d658c049accf671b6d96f1b22391c9d7855a4fe6
-  notes: No tagged releases; this is the latest commit. Since the previous row the library list drops duplicate firmwares by author and name, and the terminal version gets two-line rows and a script for deploying to a DevTerm.
+- version: main @ 6e1bf2a
+  date: 2026-11-07
+  url: https://github.com/jasonbot/fm1-grid/commit/6e1bf2a38303b24e725559d5a9e57e2a1469c807
+  notes: No tagged releases; this is the latest commit. Since the previous row the graphical and terminal apps share one saved record for tempo, Download All and the library device checkboxes, flashing treats Donner Starrykey 37 Play and SMK-37 packages as interchangeable, and Esc clears the terminal filter.

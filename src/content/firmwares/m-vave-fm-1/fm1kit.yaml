@@ -12,7 +12,7 @@ description: >-
   mode (needs root) to back up, restore and write the whole flash. It includes a simulated FM-1 for tests and
   the iOS Simulator and an fm1probe command-line tool. The author's FM-SWITCH app is built on it. The README
   says it has been tried on one FM-1 from a Mac. M-VAVE's firmware is not bundled; the package recognises V15, V16
-  and the open firmware V12 by size and checksum or identity.
+  and the open firmware V12 by size and checksum or identity. From 0.6.0 it also identifies the flash chip, including the newer UC25HQ80, and warns before putting m-bootloader on it.
 status: active
 authors:
 - name: Drew Robinson (ocean)
@@ -29,6 +29,10 @@ install_notes: >-
 brick_risk: true
 tags: [sdk, flasher, utility, usb-midi]
 versions:
+- version: 0.6.0
+  date: 2026-11-07
+  url: https://github.com/ocean/FM1Kit/releases/tag/0.6.0
+  notes: Recognises the newer UC25HQ80 flash chip of FM-1s sold since autumn 2026 and asks newer Felucca-based firmwares for their full identity. An install now finishes when the new firmware answers even if the loader never asks to finish, writes run from the top of the flash down, and the separate checking stage is gone from the progress API. Tried on an FM-1 with the first chip; not yet on one with the newer chip.
 - version: 0.5.1
   date: 2026-11-03
   url: https://github.com/ocean/FM1Kit/releases/tag/0.5.1

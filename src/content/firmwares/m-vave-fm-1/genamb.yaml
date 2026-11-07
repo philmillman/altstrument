@@ -2,7 +2,7 @@ device: m-vave-fm-1
 name: genAMB
 summary: >-
   Generative fork of AMB-1 for the FM-1 that adds a Mutable Instruments Rings port, a six-voice FM engine with 16
-  presets from Zen-1, three ported sequencers, independent pad filters and a stereo reverb. The repo's current package is a test build, 17.99.31.
+  presets from Zen-1, three ported sequencers, independent pad filters and a stereo reverb. The repo's current package is a release candidate, 17.99.32.
 description: >-
   Starts in PIANO mode, where the keys play Rings or the FM synth and only the two pad synths run, and turning the
   Algorithm knob switches to scale mode with the sequencers triggering notes. Pad 1 is a vintage and electric-piano
@@ -30,14 +30,14 @@ license_notes: >-
   licence header and LICENSING.md does not mention it; the README says only that the reverb comes from Knobula Monumatic.
 distribution: download
 install_notes: >-
-  The package is genAMB-DUSK-Monumatic-Reverb-TEST2.fwsc in the repository root, with SHA256SUMS.txt beside it. The
-  README calls it a test build. Build from source/ with build-test.sh; the repo carries the boot assets and fonts but
+  The package is genAMB-RC.fwsc in the repository root, with SHA256SUMS.txt beside it; the earlier genAMB-DUSK-Monumatic-Reverb-TEST2.fwsc is kept for rollback. The README says
+  the RC has not been timed on a real FM-1. Build from source/ with build-rc.sh; the repo carries the boot assets and fonts but
   the JieLi compiler toolchain comes separately. Back up first and have M-VAVE's updater
   ready.
 brick_risk: false
 tags: [synth-engine, ambient, generative, sequencer, physical-modeling, reverb, fm, fork, mutable-instruments-port]
 versions:
-- version: main @ a1277c5
-  date: 2026-11-06
-  url: https://github.com/Kayman18/FM1-genAMB/commit/a1277c5bc90588e644b009211a06e514647bd4a6
-  notes: No tagged releases; this is the latest commit, which publishes the test build DUSK Monumatic Reverb TEST2 (17.99.31) in place of release candidate RC2-WET2-WEB1.
+- version: main @ 67fb340
+  date: 2026-11-07
+  url: https://github.com/Kayman18/FM1-genAMB/commit/67fb3407951d1258aa9de31ea7922b5fff207d07
+  notes: No tagged releases; this is the latest commit, which publishes genAMB-RC (17.99.32), built from the TEST3b source with less reverb CPU work, in place of the TEST2 test build (17.99.31) that stays in the repository for rollback.

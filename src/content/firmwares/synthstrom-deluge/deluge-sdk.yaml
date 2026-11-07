@@ -8,7 +8,8 @@ description: >-
   official or community firmware again. Apps load from /APPS/ on the card or
   are pushed over USB in development. The repository also has Wren scripting,
   USB audio and Overbridge classes, and a controller firmware. 7-segment
-  units are not supported. There are no releases yet. An earlier experiment
+  units are not supported. The first developer preview, v0.1.0, ships a
+  prebuilt app loader; the API may change in minor releases before 1.0. An earlier experiment
   by another developer, m-m-adams/deluge-rs, stopped at hello-world stage.
 status: active
 authors:
@@ -20,10 +21,10 @@ license: MIT
 license_notes: >-
   SDK and core crates are MIT OR Apache-2.0. The OLED UI toolkit, fonts and
   pad-grid crates are GPL-3.0-or-later.
-distribution: source-only
+distribution: download
 tags: [sdk, rust, alternative-os, simulator]
 versions:
-  - version: main @ 35cd329
+  - version: v0.1.0
     date: 2026-11-06
-    url: https://github.com/FirestormAudio/deluge-sdk/commit/35cd3299b4a874dd89d5471fa85356528b921fd8
-    notes: No tagged releases; this is the latest commit. Recent commits fix cargo-deluge builds on Linux and an overflow in the SD card layer.
+    url: https://github.com/FirestormAudio/deluge-sdk/releases/tag/v0.1.0
+    notes: First developer preview. Covers the async SDK, cargo deluge tooling, the app loader with an optional bootloader write protection, board support, USB classes, the RZ/A1 chip crates and the desktop simulator; the API is not stable before 1.0.

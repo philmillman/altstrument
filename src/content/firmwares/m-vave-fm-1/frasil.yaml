@@ -9,7 +9,7 @@ description: >-
   by hand, through an arpeggiator that follows MIDI clock or through a 32-step sequencer, and a BASS voice holds a
   deep note under the drones. Since 3.0 the three tracks (DRONE, GLINT and BASS) each have their own keys, sound,
   arpeggiator and sequence, picked with SEL, so the drone's chords and the bass's notes can be sequenced in steps of
-  up to 32, and there are sixteen saved sounds per track. There are twelve scales, chords built in the scale, three LFOs, a master filter, lofi tape and master EQ (from 2.5), sixteen scene slots
+  up to 32, and there are sixteen saved sounds per track. There are twelve scales, chords built in the scale, three LFOs, a master filter, lofi tape and master EQ (from 2.5), from 3.1 a tape speed control, an ANCHOR snapshot that morphs back to a held sound, an amount for each LFO target and a tuning setting, sixteen scene slots
   with eight factory scenes, and MIDI over USB and TRS that sends incoming notes through the harmony. Three web
   tools go with it: the FRASIL River for backing up the unit and sharing scenes, an Editor and a Perform second screen
   over Web MIDI. It is built on fm1-base and felucca-bsp.
@@ -38,6 +38,10 @@ image:
   source_url: https://github.com/styvesgoupil/frasil
   first_party: true
 versions:
+- version: '3.1'
+  date: 2026-11-07
+  url: https://github.com/styvesgoupil/frasil/releases/tag/v3.1
+  notes: Adds ANCHOR, which holds a sound and glides back to it in an 8-second morph, a TAPE SPEED control from x0.25 to x2.00 on a new LOFI TAPE II page, an amount control for every LFO target, 32-character scene names, an A4 tuning setting from 415 to 466 Hz and a choice of header looks. Earlier scenes keep their sound.
 - version: '3.0'
   date: 2026-11-03
   url: https://github.com/styvesgoupil/frasil/releases/tag/v3.0

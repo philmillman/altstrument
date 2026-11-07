@@ -1,6 +1,6 @@
 device: elektron-machinedrum
 name: murdenihcam USR machines
-summary: Four user-machine families for the Machinedrum running the MDX X.20 B firmware, covering a slicer, a time stretcher, a granulator and a multi-mode modulation effect.
+summary: Seven user-machine families for the Machinedrum running the MDX X.20 B firmware, with a slicer, a time stretcher, a granulator, a modulation effect and RAM granulator, pitch shifter and stretcher machines.
 description: >-
   Each machine is a small DSP program sent to the unit as SysEx and stored in a
   Machine Manager slot, so the OS itself is not replaced. SMP-SL slices samples
@@ -8,7 +8,9 @@ description: >-
   jitter, SMP-GR is a granulator, and NFX-MO is a modulation effect with flanger,
   chorus, doubler, pitch-shifting and frequency-shifting modes. The sample machines
   come in versions for the UW ROM plus the internal E12 samples, ROM only, or E12
-  only, and only the E12-only versions suit non-UW units. Source files and build
+  only, and only the E12-only versions suit non-UW units. Three RAM machines, RAM-GR, RAM-PS and RAM-ST, work on
+  live audio held in memory as a granular delay, a two-voice pitch shifter and a time stretcher, and are for the UW only.
+  A project site lists the machines with parameter notes, demos and downloads. Source files and build
   scripts are in the repository next to the prebuilt .syx files. The author states
   that the code was written with LLM assistance and that the machines are
   unaffiliated with the MDX developers.
@@ -18,8 +20,11 @@ authors:
     url: https://github.com/murdenihcam
 source: https://github.com/murdenihcam/murdenihcam-usr-machines
 source_status: open
-license: unspecified
-license_notes: No license file or statement in the repository.
+license: GPL-3.0-or-later
+license_notes: >-
+  The LICENSE file is GPL-3.0 and NOTICE.md says the machines (source, .mds packages, .syx files and logos) are licensed
+  under version 3 or any later version. The demo recordings (.wav files) are not licensed for reuse.
+homepage: https://murdenihcam.github.io/murdenihcam-usr-machines/
 distribution: download
 requires_stock: MDX X.20 B
 install_notes: >-
@@ -30,7 +35,7 @@ install_notes: >-
   user machines right after an install.
 tags: [machines, synth-engine, sampler, granular, fx]
 versions:
-  - version: main @ ab92ccf
-    date: 2026-10-15
-    url: https://github.com/murdenihcam/murdenihcam-usr-machines/commit/ab92ccf
+  - version: main @ 1965212
+    date: 2026-11-07
+    url: https://github.com/murdenihcam/murdenihcam-usr-machines/commit/1965212a0f01daeb78df9e62f09561847008edf3
     notes: No tagged releases; this is the latest commit.

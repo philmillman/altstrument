@@ -13,7 +13,9 @@ description: >-
   knob automation on steps with snapshots, and stereo link with per-knob offsets. Alpha 0.11 adds a modulation matrix of
   eight sources to 32 destinations per track, lanes with their own destination, automation ramps, arpeggio modifiers and
   a proof-of-concept loader for Arrhythmia .mod modules, which are third-party and not included; alpha 0.10 is the same
-  without the module code. Each version has an "S" variant without the features that create, change or delete SD
+  without the module code. Alpha 0.12 is built on alpha 0.10, without the module code, and adds engines selectable in
+  Sample mode, the CIRCUIT-HACKS virtual-analog synth and eight-operator FM, voice modes and polyphony of up to four
+  synth voices. Each version has an "S" variant without the features that create, change or delete SD
   card files by themselves. The repository holds the builders, an assembler, manuals in Spanish and English and
   per-version manifests, and no Novation code. The README says the features were checked mostly in emulation and
   partly on the device, and that the project was developed with Claude.
@@ -40,6 +42,10 @@ install_notes: >-
 brick_risk: false
 tags: [sampler, sequencer, drums, fx, midi, arpeggiator, performance]
 versions:
+  - version: alpha-0.12
+    date: 2026-11-07
+    url: https://github.com/Ghillermo/CIRCUIT-REMIX/releases/tag/alpha-0.12
+    notes: Pre-release, built on alpha-0.10 without the Arrhythmia loader. Adds engines in Sample mode (sample, line input, virtual-analog, granular and FM), the CIRCUIT-HACKS virtual-analog and eight-operator FM synths, voice modes with up to four-voice polyphony, latch in the Note view and per-project sound storage on the card. Checked only in emulation; the release notes name alpha-0.10 as the fallback.
   - version: alpha-0.11
     date: 2026-11-03
     url: https://github.com/Ghillermo/CIRCUIT-REMIX/releases/tag/alpha-0.11

@@ -8,8 +8,8 @@ description: >-
   kit, tuning, decay and a HUMAN control that makes each hit late, soft and slightly off pitch at random. GROOVE lets a
   PERC track play a whole style, among them salsa, bomba, plena, merengue, cumbia, bachata, dembow and perreo, split
   over parts with fills and swing. The arpeggiator can play tumbao, montuno and guajeo lines over a held chord. The rest
-  is GR!MM: four tracks, a 64-step sequencer, song mode, effects, MIDI and a web editor and emulator. The README calls
-  it version 0.1, in development, and says it has not been tried on a real FM-1.
+  is GR!MM: four tracks, a 64-step sequencer, song mode, effects, MIDI and a web editor and emulator. The release notes
+  report 1.0 tested on a real FM-1, with a peak CPU load of 47 percent.
 status: active
 authors:
 - name: saulofilho
@@ -21,10 +21,10 @@ license_notes: >-
   README and LICENSING.md give GPL-3.0-only, kept from GR!MM, Dinghy, Felucca and SLOOP. msfa is Apache-2.0, DaisySP
   and Rings parts are MIT and the fonts are SIL OFL 1.1. GR!MM's voice source and choir wavetables are not included.
 homepage: https://saulofilho.github.io/coqui-fm1/
-distribution: source-only
+distribution: download
 install_notes: >-
-  Build with docs/BUILDING.md, then install build/coqui.fwsc with tools/fm1_install.py or any FM-1 web installer that
-  takes a .fwsc. Saves are separate from GR!MM's. The README points to the Firmware Hub's Rescue page, reached by
+  Download coqui-1.0.fwsc from the release and install it with tools/fm1_install.py or any FM-1 web installer that
+  takes a .fwsc; docs/BUILDING.md covers building it instead. Saves are separate from GR!MM's. The README points to the Firmware Hub's Rescue page, reached by
   holding OCT- while switching on, for a stuck unit.
 brick_risk: false
 tags: [groovebox, drums, synth-engine, sequencer, arpeggiator, fx, editor, emulator, midi, fork]
@@ -35,7 +35,7 @@ image:
   source_url: https://github.com/saulofilho/coqui-fm1
   first_party: true
 versions:
-- version: main @ 728f277
+- version: '1.0'
   date: 2026-11-06
-  url: https://github.com/saulofilho/coqui-fm1/commit/728f27738e1c4d2202cd41381b9bb09466245e32
-  notes: No tagged releases; this is the latest commit.
+  url: https://github.com/saulofilho/coqui-fm1/releases/tag/v1.0
+  notes: First release, built on GR!MM 2.0.2. Drops GR!MM's VOICE source and choirs and its factory sounds, and keeps its own identity and saves. Supports the newer UC25HQ80 flash chip. The release notes report installs on a real FM-1 from V15 and from another firmware, and an interrupted update that resumed.

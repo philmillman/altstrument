@@ -9,10 +9,9 @@ description: >-
   glass, string, choir, bell, Shepard and fold) can be mixed with a noise layer. Effects are a tape delay, an
   ensemble and a hall reverb with freeze and shimmer, and scenes recall everything and crossfade into each other.
   MIDI runs over USB, TRS and Bluetooth in both directions, with MIDI clock in and out. It lives in the same
-  repository as Pocket Poly, which is listed separately. The author's handoff notes record flashing builds through the
-  playable pass of 2026-11-03 on a real FM-1, where they booted cleanly; a few later additions, including MIDI clock,
-  the CYCLE progression and the manual crossfade, were waiting to be flashed when the notes were last updated, and
-  device CPU load is unmeasured for the newer pages.
+  repository as Pocket Poly, which is listed separately. The author's handoff notes record flashing builds on a real FM-1 through 2026-11-07, where the newest booted
+  cleanly at about 5 percent CPU; the notes say the new SCAN and DX voices and the delay types have not yet been
+  heard on the unit, and device CPU load with them is unmeasured.
 status: active
 authors:
 - name: WisestWizard
@@ -26,14 +25,14 @@ license_notes: >-
 homepage: https://wisestwizard.github.io/deepfield/
 distribution: browser-installer
 install_notes: >-
-  The project site has a Chrome or Edge installer over USB and a 0.1 package, which its installer can replace with
+  The project site has a Chrome or Edge installer over USB and a package (the handoff notes call the latest 0.4), which its installer can replace with
   M-VAVE's firmware. To build instead, build.sh deepfield needs a Linux container for JieLi's toolchain plus the AC79
   SDK, and fm1_install.py installs the package. The package identity is FM-1_1400. Holding OCT- at power-on opens
   update mode. Back up and keep M-VAVE's updater ready.
 brick_risk: false
 tags: [synth-engine, ambient, drone, reverb, delay, generative, ble-midi, platform, emulator]
 versions:
-- version: master @ e4fa27b
-  date: 2026-11-04
-  url: https://github.com/WisestWizard/deepfield/commit/e4fa27b5144e9fba3dfb8fc2c331f64fee092874
-  notes: No tagged releases; this is the latest commit. The project site offers 0.1, which predates it.
+- version: master @ db00f71
+  date: 2026-11-07
+  url: https://github.com/WisestWizard/deepfield/commit/db00f71688b01885e3b649a3655682f4ee8392c7
+  notes: No tagged releases; this is the latest commit. Since the previous row it adds seven delay types, per-body level, tone, tuning and pin from a held key, Euclidean arpeggiator rhythms and SCAN and DX voices. The handoff notes say the project site went up as 0.4 and that the newer build booted cleanly on a real FM-1.

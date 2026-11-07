@@ -10,7 +10,7 @@ description: >-
   four envelopes per voice, a mod matrix with 27 sources and 46 destinations, a
   step sequencer and arpeggiator in every patch, patch morphing, 128 named
   patches with the stock factory bank importable, per-oscillator autotune and
-  the 5-pin MIDI input. A browser editor talks to the synth over WebMIDI, and
+  the 5-pin MIDI input, MIDI out with a mappable CC set and NRPN for every parameter. A browser editor talks to the synth over WebMIDI, and
   guides and a manual are published on the project site. The README calls it
   wildly experimental, built and tested on a single synth, and says it is not
   affiliated with Behringer or Music Tribe. A macOS command-line tool handles
@@ -42,6 +42,10 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, lfo, sequencer, arpeggiator, midi, usb-midi, editor, web-midi, open-source]
 versions:
+  - version: v0.10.0
+    date: 2026-11-06
+    url: https://github.com/klaine/pro-8000/releases/tag/v0.10.0
+    notes: Adds MIDI out, with the rear THRU socket as an out or a merger, notes, clock and knob moves sent, NRPN for every parameter and a user CC map. Also adds chord memory, release velocity as a mod source, a system menu and a user init patch. The bootloader is not touched.
   - version: v0.9.5
     date: 2026-11-03
     url: https://github.com/klaine/pro-8000/releases/tag/v0.9.5

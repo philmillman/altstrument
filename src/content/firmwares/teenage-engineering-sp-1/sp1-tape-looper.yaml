@@ -5,11 +5,13 @@ description: >-
   Audio is fed in over USB-C, recorded to the four tracks with the track
   buttons and played back layered, with the rocker changing speed and pitch
   together like tape. Version 3 records in stereo and adds eight effect pages,
-  per-track reverse and isolate, a beat grid and a speed range of 0.25x to
-  1.5x. Loops and settings are stored per song on the SP-1's internal storage.
-  A browser page connects over USB serial to download or upload tracks as WAV
-  or MP3. The 3.0 update changes the storage format, so existing songs must be
-  backed up first.
+  per-track reverse and isolate and a beat grid. Version 4 adds several takes
+  per track, recording of Bluetooth audio mixed with USB input, eight rocker
+  modes, playback up to 2x, 3, 4, 5 or 7 beats per bar and more effects. Loops
+  and settings are stored per song on the SP-1's internal storage. A browser
+  page connects over USB serial to download or upload tracks, and a browser
+  library handles batch imports. The 3.0 update changed the storage format, so
+  existing songs must be backed up first; the 4.0 image keeps existing storage.
 status: active
 authors:
   - name: chattock
@@ -22,13 +24,20 @@ license: MIT
 homepage: https://sp1-tape-looper.vercel.app/
 distribution: download
 install_notes: >-
-  Flash sp1_looper.bin from the release page with the Solderless utility; hold
-  Track 1 and Track 4 for 3 seconds while the looper runs, or while plugging in
-  USB, to reach the bootloader. Updating from 2.x to 3.x reformats loop storage
-  on first boot, so use the transfer page's Download all first.
+  Flash the .bin from the release page (TAPE-LOOPER-V4.bin for version 4;
+  earlier releases used sp1_looper.bin) with the Solderless utility; hold Track
+  1 and Track 4 for 3 seconds while the looper runs, or while plugging in USB,
+  to reach the bootloader. Version 4 then asks you to run its setup page, which
+  checks the filesystem and Bluetooth. Updating from 2.x to 3.x reformats loop
+  storage on first boot, so use the transfer page's Download all first, and the
+  4.0 setup's Start empty option erases existing storage.
 brick_risk: false
 tags: [looper, fx, usb-audio, performance]
 versions:
+  - version: v4.0.0-official
+    date: 2026-11-06
+    url: https://github.com/chattock/sp1-tape-looper/releases/tag/v4.0.0-official
+    notes: Adds multiple takes per track, Bluetooth audio recording, a browser library for loops, eight rocker modes, playback up to 2x and more effects. The image keeps existing storage unless you choose Start empty.
   - version: v3.1.1-official
     date: 2026-09-13
     url: https://github.com/chattock/sp1-tape-looper/releases/tag/v3.1.1-official

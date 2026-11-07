@@ -1,17 +1,17 @@
 device: m-vave-fm-1
 name: Maestro
 summary: >-
-  Music-teaching firmware for the FM-1 that plays a sampled piano on the keys and draws what you play as scrolling
+  Music-teaching firmware for the FM-1 that plays a piano sound on the keys and draws what you play as scrolling
   sheet music, with a tape-recorder style record, rewind and playback. An early test build; no tagged releases.
 description: >-
-  The screen shows a staff with a clef that scrolls as notes are played, the keys sound a piano built from nine
-  looped samples, and the later builds add recording, rewind, punch-in, erasing and playback of what was played, shown as
-  notation, with an end bar and loop from 0.11. From 0.12 the sheet has a fixed playhead and a tempo knob, notes layer on top of earlier ones, OCT+ and OCT- shift the octave and the piano sound is resampled with corrected rates. The README still describes lesson files with timing and pitch grading, seeded sight-reading drills and
+  The screen shows a staff with a clef that scrolls as notes are played, the keys sound a piano (nine
+  looped samples up to 0.16, DX7-style FM piano voices from 0.17), and the later builds add recording, rewind, punch-in, erasing and playback of what was played, shown as
+  notation, with an end bar and loop from 0.11. From 0.12 the sheet has a fixed playhead and a tempo knob, notes layer on top of earlier ones, OCT+ and OCT- shift the octave and the piano sound is resampled with corrected rates. Builds 0.17 to 0.19 swap in the FM piano voices, add presets, decouple the transport, and add overdub, scrub and jump. The README still describes lesson files with timing and pitch grading, seeded sight-reading drills and
   stored progress, and the repository holds five plain-text lessons and a converter that turns them into C data.
   Commit messages from 4 November say scoring was dropped in favour of the sheet-music and tape-recorder design, so
   the README is ahead of or behind the code in places. It is built on Dinghy with its platform files kept out of the
   tree, so a build starts from the Dinghy template. The repository holds a browser simulator, a web installer on
-  GitHub Pages and a .fwsc package for every build from 0.1 to 0.16 under docs/fw. The page calls the package a
+  GitHub Pages and a .fwsc package for every build from 0.1 to 0.19 under docs/fw. The page calls the package a
   test build, and nothing says it was checked on a real FM-1. An SMK-37 build is described in a design note.
 status: active
 authors:
@@ -21,7 +21,7 @@ source: https://github.com/node56/fm1-maestro
 source_status: open
 license: GPL-3.0-only
 license_notes: >-
-  LICENSE is the GPL-3.0 text and the README and LICENSING.md state GPL-3.0-only. The piano samples are nine notes from
+  LICENSE is the GPL-3.0 text and the README and LICENSING.md state GPL-3.0-only. The piano samples (used up to 0.16) are nine notes from
   the Salamander Grand Piano V3 (CC-BY 3.0), the clef and accidentals are bitmaps from the Bravura font (SIL OFL 1.1),
   and the lessons are original or public domain. The update protocol files in docs/vendor are Leo Kuroshita's, GPL-3.0.
   The committed packages are Maestro's own builds (612,222 bytes) and match none of M-VAVE's licensed images.
@@ -34,7 +34,7 @@ install_notes: >-
 brick_risk: false
 tags: [lessons, ear-training, piano, sampler, emulator, fork]
 versions:
-- version: main @ 81c8a5b
-  date: 2026-11-06
-  url: https://github.com/node56/fm1-maestro/commit/81c8a5b65dc3a05ffb9f3c70f7ed224208bcee5c
-  notes: No tagged releases; this is the latest commit, which adds firmware v0.16 to docs/fw. Builds 0.12 to 0.16 move to a groovebox-style playhead with a tempo knob, layering, an octave shift and a corrected piano engine.
+- version: main @ be447dc
+  date: 2026-11-07
+  url: https://github.com/node56/fm1-maestro/commit/be447dc50ee284428251f81c07189d8ccbef47c4
+  notes: No tagged releases; this is the latest commit, which adds firmware v0.19 to docs/fw. Builds 0.12 to 0.16 move to a groovebox-style playhead with a tempo knob, layering, an octave shift and a corrected piano engine; 0.17 and 0.18 replace the sampled piano with DX7-style FM piano voices, and 0.19 adds presets, overdub, scrub, jump and a backlight setting.

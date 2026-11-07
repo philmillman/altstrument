@@ -1,9 +1,10 @@
 device: synthstrom-deluge
 name: BRIBELUGE
-summary: Fork of the community firmware 1.3 beta that adds alternative swing styles, kit pattern mode, autofill, a mono sequencer, Endless Record and drum synth engines (LXR-02, Model:Cycles-style, GIN and a 303 voice), plus delay feedback and tone, saturation and sample start offset.
+summary: Fork of the community firmware 1.3.0 that adds alternative swing styles, kit pattern mode, autofill, a mono sequencer, Endless Record and drum synth engines (LXR-02, Model:Cycles-style, GIN and a 303 voice), plus delay feedback and tone, saturation and sample start offset.
 description: >-
-  Built on the Deluge Community Firmware's beta branch at a stated base commit,
-  with the changes shipped as one patch in the repository and a prebuilt .bin.
+  Built on the Deluge Community Firmware, moved from its 1.3 beta to the final
+  1.3.0 in v1.23, with the changes shipped as one patch in the repository and a
+  prebuilt .bin.
   Besides the sequencing additions, it adds drum synth engines selectable per
   kit row, taken from the LXR-02 firmware, an open-source Model:Cycles engine
   set, GIN and Open303, with preset kits for the LXR and Cycles voices. The
@@ -16,7 +17,9 @@ description: >-
   synth's setting pads, a synth picker offering Deluge, DLFM or DX7, a
   setting for the kit and synth that new tracks start as, ULTRAKIK, a kick
   engine with sixteen presets, a DIRT filter for the 303 voice, and Gate out,
-  which plays a kit's bottom four rows from the Deluge's gate outputs.
+  which plays a kit's bottom four rows from the Deluge's gate outputs. v1.23
+  adds MIDI kits, a CV 2 lock per step, an Elektron-style parameter lock
+  setting and track-type animations in song view.
 status: active
 authors:
   - name: thisisbribery
@@ -37,7 +40,7 @@ install_notes: >-
 brick_risk: false
 tags: [fork, drums, synth-engine, sequencer, fx, sampler, swing]
 versions:
-  - version: main @ aceb83f
-    date: 2026-11-01
-    url: https://github.com/thisisbribery/deluge-bribes-v1/commit/aceb83f4faab8822ae434a9f9501dbdf125c3aad
-    notes: No tagged releases; this is the latest commit, which the README and commit message call v1.22.2.
+  - version: main @ 783167f
+    date: 2026-11-07
+    url: https://github.com/thisisbribery/deluge-bribes-v1/commit/783167f33fccc151f6fc3afbdba1a5ccea5fe5af
+    notes: No tagged releases; this is the latest commit, which the README and commit message call v1.23. It rebases onto community 1.3.0 and fixes mono sequencer clips that lost data on loading.

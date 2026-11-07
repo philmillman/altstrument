@@ -1,20 +1,23 @@
 device: m-vave-fm-1
 name: Saadet
 summary: >-
-  Single-part synth firmware forked from Melodee: Prophet, FM6, CZ-1 and JUNO-106 engines (one at a time), 384
-  shared user sound slots, arpeggiator, Bluetooth MIDI and native 24-bit audio.
+  Two-part synth firmware forked from Melodee: Prophet, FM6, CZ-1, JUNO-106, PPG and HYDRA engines, 384 shared user
+  sound slots, performances, arpeggiator, Bluetooth MIDI, native 24-bit audio and the Saadet Studio editor.
 description: >-
   Rights warning: the repository bundles Roland's 128 Juno-106 factory patches, Casio's 64 CZ-1 factory tones and
   Sequential's 200 Prophet-5/10 factory programs (v1.03) as SysEx sound data used for the factory presets, and its
-  licensing file says the rights stay with those vendors and that no licence is granted.
-  A dedicated one-part instrument: sequencing, multitrack recording and shared insert effects were left out.
-  It adds HOLD, chords, strum, scales, microtonal tuning, favourites, automatic recall of the last sound and SysEx
-  import and export, plus a web editor with full backups. Input is USB MIDI, TRS MIDI and Bluetooth MIDI, and the
-  firmware remembers and retries the last outgoing Bluetooth device. USB audio is stereo at 44.1 kHz in 16 or 24
-  bit with a synth-master capture. The author labels 0.1.0 experimental and lists final audio, timing and
-  Bluetooth acceptance on hardware as still to be recorded; the 0.1.1 notes say physical validation of that
-  package is still pending. Installing it over Melodee can replace Melodee's
-  project A data, and Melodee backups cannot be restored as Saadet backups.
+  licensing file says the rights stay with those vendors and that no licence is granted. The release package also
+  compiles in the PPG Wave 2.2 wavetables, envelope tables and 100 factory programs, which the source archive leaves
+  out.
+  Version 1.0 plays two parts, split or layered by MIDI channel, with 12 saved performances, and adds the PPG engine
+  and HYDRA, a three-oscillator engine with eight macros per sound and a converter for Hydrasynth patches. Sequencing,
+  multitrack recording and shared insert effects are left out. It adds HOLD, chords, strum, scales, microtonal tuning,
+  favourites, automatic recall of the last sound and SysEx import and export, plus the Saadet Studio web editor with
+  full backups. Input is USB MIDI, TRS MIDI and Bluetooth MIDI, now on an open Bluetooth stack with one link at a
+  time. USB audio is stereo at 44.1 kHz in 16 or 24 bit with a synth-master capture. The notes call the SMK-37 builds
+  (Saadet Pro, Elite and MKE) a beta, with only the Elite run so far. The 0.1.1 notes said physical validation was
+  still pending, and the 1.0 notes name no hardware validation of the FM-1 package. Installing it over Melodee can
+  replace Melodee's project A data, and Melodee backups cannot be restored as Saadet backups.
 status: active
 authors:
 - name: keremimo
@@ -26,7 +29,8 @@ license_notes: >-
   The firmware files in the fm1-base build are MPL-2.0 file by file (FM6 files with msfa portions are MPL-2.0 AND
   Apache-2.0); the web editor, build tools and tests, and the retained source of the retired platform, are
   GPL-3.0-only. Fonts, DaisySP, Rings and the uPD933 model keep their own licences (LICENSING.md, LICENSES/). The
-  bundled Casio, Sequential and Roland factory sound data is under the vendors' rights, with no licence granted.
+  bundled Casio, Sequential and Roland factory sound data is under the vendors' rights, with no licence granted, and
+  the PPG Wave 2.2 data compiled into the package is the owners' with no licence granted.
   The repository also holds JieLi's unmodified wl82loader.bin RAM recovery helper (Apache-2.0) and no M-VAVE
   firmware.
 homepage: https://keremimo.github.io/saadet/
@@ -45,6 +49,10 @@ image:
   source_url: https://github.com/keremimo/saadet
   first_party: true
 versions:
+- version: 1.0.0
+  date: 2026-11-07
+  url: https://github.com/keremimo/saadet/releases/tag/v1.0.0
+  notes: Adds the PPG and HYDRA engines, two parts with performances, the Saadet Studio editor, an open Bluetooth stack that frees flash, and SMK-37 beta builds. The notes say 0.2.0 was never released and that everything planned for it is in 1.0.
 - version: 0.1.1
   date: 2026-10-27
   url: https://github.com/keremimo/saadet/releases/tag/v0.1.1

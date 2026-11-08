@@ -1,0 +1,54 @@
+device: m-vave-fm-1
+name: Compás
+summary: >-
+  Felucca-family rhythm section firmware for cumbia, salsa, merengue and bolero from the BB1 author, with cued song
+  parts, ensemble or acid bass, hand percussion, a TR-727 pad mode and English or Spanish screens.
+description: >-
+  Compás plays drums, bass and hand percussion as a band. Six song parts sit on the centre white keys; a cued part
+  waits for the phrase, counts down the beats and comes in on the boundary, and ALGORITHM sets the next phrase to base,
+  lift or break. The bass plays ensemble lines for each style or switches to an acid voice, and conga, maraca, timbal
+  and bell parts are switched in and out by hand. A 727 mode puts fifteen TR-727 percussion recordings on the pads, with
+  29 preset rhythms, 22 percussion parts in a step editor, live recording and roll.
+
+  Version 1.0 has 29 groove studies covering Colombian, Mexican, Peruvian, Argentine and Chilean cumbia, salsa and son,
+  merengue, bolero, tejano and conjunto, and 28 written songs such as La Paloma, Cielito Lindo and Siboney arranged from
+  printed editions, with a melody guide and transpose. Rebajada slows the whole band to 60 % with the pitch. A
+  sixteen-song set list cues the next song at the boundary; in 1.0 the set list and user 727 rhythms are lost at power
+  off. The screens switch between English and Spanish live from the GLO page. A browser player on the project site runs
+  the same firmware code.
+
+status: active
+authors:
+- name: TexasRADIO
+  url: https://github.com/TexasRADIO
+source: https://github.com/TexasRADIO/compas-firmware
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL v3 text and LICENSING.md states GPL-3.0-only. The Felucca board support is pinned from upstream
+  under GPL-3.0-only, and the USB MIDI driver, updater and browser installer modules come from BB1 BAND r85 under the
+  same licence. LICENSING.md says the fifteen TR-727 recordings are owned by the Compás author and released under the
+  same terms. Most written songs are arranged from U.S. public-domain printed editions; Juana Quilina (CC BY-SA 3.0),
+  La Adelita (CC BY 4.0) and La Valentina (CC BY-SA 4.0) keep their editions' licences. The JieLi SDK SPL, configuration
+  and EQ data in the release package are Apache-2.0.
+homepage: https://thebigbeat.app/compas/install/
+distribution: browser-installer
+install_notes: >-
+  The author's installer page needs desktop Chrome or Edge and a USB data cable plugged straight into the computer, with
+  playback stopped, MASTER fully down and other music apps closed. Choose English or Español there; the release also
+  carries a separate .fwsc package for each language. To return to stock, the release notes say to use the matching
+  original M-VAVE package; stock-loader staging passed the offline release checks, but the emulator did not complete the
+  vendor-loader return, so end-to-end stock restoration is unverified. The FM-1's mask-ROM rescue is the fallback.
+brick_risk: false
+tags: [drums, sequencer, performance, synth-engine, emulator]
+image:
+  url: https://raw.githubusercontent.com/TexasRADIO/compas-firmware/compas-v1.0/docs/media/compas-social.png
+  alt: "Compás banner beside the band screen: CDMX Sonidera at 100 BPM on the verse with the bridge cued, conga, maraca, timbal and bass layers, and six song parts"
+  credit: TexasRADIO
+  source_url: https://github.com/TexasRADIO/compas-firmware
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-08
+  url: https://github.com/TexasRADIO/compas-firmware/releases/tag/compas-v1.0
+  notes: First release, with 29 groove studies, 28 written-song arrangements, the 727 percussion mode and English and Spanish packages.

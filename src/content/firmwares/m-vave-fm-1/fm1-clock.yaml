@@ -1,0 +1,38 @@
+device: m-vave-fm-1
+name: FM1 Clock
+kind: firmware
+summary: >-
+  Clock for the FM-1: a pendulum wall clock and a cuckoo clock that strike the hours with bells rebuilt as FM synthesis of about four hundred operators.
+description: >-
+  Turning ALGORITHM switches between the two clocks, which keep one time from the crystal. The wall clock ticks every half second and strikes the hours
+  on a gong modelled from a recording taken apart into 742 modes, and the cuckoo clock opens a door, shows a bird and calls on two FM pipes. All sound is synthesised and no
+  recording is included. SELECT and PRESETS set minutes and hours, the key lights follow the pendulum or flash the hour, and MIDI CC 20 to 22 set the time from a computer.
+  The unit has no battery-backed clock, so it starts at 10:10 each time. It is a Dinghy 0.5 app from the same author as RoboSeq, SkurkyMello and Star Distroyer. The README
+  calls it 0.1, tested in the emulator and on a computer and now being tried on a real FM-1.
+status: active
+authors:
+- name: joakimskurk
+  url: https://github.com/joakimskurk
+source: https://github.com/joakimskurk/fm1clock
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md gives GPL-3.0-only, as Dinghy, with Felucca, SLOOP and OberVave platform code under their own notices. The Terminus font is SIL OFL 1.1.
+  Only measurements of the clock recordings are in the repository.
+distribution: source-only
+install_notes: >-
+  Build with the Makefile and JieLi's toolchain, then install build/fm1clock.fwsc over USB-MIDI with tools/fm1_install.py or through the Firmware Hub.
+  A package from a CI run can be tried in the fm1-emu browser emulator. Holding OCT- while switching on reaches the USB rescue.
+brick_risk: false
+tags: [synth-engine, fm, ui, utility]
+image:
+  url: https://raw.githubusercontent.com/joakimskurk/fm1clock/ccr-8fc2946b-9il8uc/docs/screens/overlays.png
+  alt: "FM1 Clock screen: a pixel-art wooden pendulum wall clock with Roman numerals showing ten past ten, 10:10 in digits on the left, TICK 125% on the right and SILENT at the bottom right"
+  credit: joakimskurk
+  source_url: https://github.com/joakimskurk/fm1clock
+  first_party: true
+versions:
+- version: ccr-8fc2946b-9il8uc @ 91b9b3d
+  date: 2026-11-08
+  url: https://github.com/joakimskurk/fm1clock/commit/91b9b3d60f934e2578a38fd839073746fb51eec2
+  notes: No tagged releases; this is the latest commit on the default branch, which shortens the README and moves details into docs.

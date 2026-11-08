@@ -28,10 +28,10 @@ license_notes: >-
   Copyright is held by Artificial Music. The firmware screen captures in web/img/fw belong to their projects and
   are credited in firmware/catalog.json.
 homepage: https://amacias.github.io/octo-vave/
-distribution: source-only
+distribution: download
 install_notes: >-
   Clone or unzip the repository and run python server.py (or start.cmd on Windows), then open
-  http://127.0.0.1:8765. It never flashes firmware. Its downloads come only from GitHub release assets and an
+  http://127.0.0.1:8765. On Windows 10 or 11 the release also has an MSI installer that needs no Python; it is not code-signed, so Windows may warn. It never flashes firmware. Its downloads come only from GitHub release assets and an
   allowed host list that includes M-VAVE's own file servers, which serve the stock FM-1.fwsc and M-UPGRADE.zip
   when you ask for the Official card. The repository itself contains no firmware images. The voice editor and
   effects controls target the stock firmware only. Developed and tested on Windows 11 with Chrome.
@@ -44,7 +44,7 @@ image:
   source_url: https://github.com/amacias/octo-vave
   first_party: true
 versions:
-- version: main @ 8d558c1
-  date: 2026-11-06
-  url: https://github.com/amacias/octo-vave/commit/8d558c1c2f3db1038cbd8375b0419873be518dc2
-  notes: No tagged releases; this is the latest commit.
+- version: 1.0.92
+  date: 2026-11-08
+  url: https://github.com/amacias/octo-vave/releases/tag/v1.0.92
+  notes: First tagged release; a Windows 10 and 11 installer (Octo-Vave-win64.msi, not code-signed) that needs no Python and keeps settings and downloaded firmware in the user's profile.

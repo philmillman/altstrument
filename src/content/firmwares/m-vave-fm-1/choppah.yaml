@@ -13,7 +13,8 @@ description: >-
   a slice loops it and the four knobs set its length, pitch, start and mode. The black-key pads cover rolls, reverse,
   freeze, tape stop, gate, random, a filter throw and a dub delay. The generator rearranges the break as it plays, the
   ARP key turns the white keys into sixteen overlay effects (dive, rise, radio, wah, crush, wobble, jet and others) that
-  sound while held, and the FX page holds a master chain of four slots in any order (filter, crunch, drive, punch,
+  sound while held up to 1.1, and from 1.2 leaves the white keys playing slices and makes each black key a held effect slot
+  from the FX library, four sounding at once, and the FX page holds a master chain of four slots in any order (filter, crunch, drive, punch,
   flanger, ring modulator, tremolo, reverb, delay, EQ, tape saturation, multiband compressor and clipper), with further
   effects per slice. From 0.60 each effect has MAIN, MORE and MOD parts, with extra knobs and a modulator, and a live
   view, and MB COMP has a page of its own. Since 0.32 the firmware has 16 patterns with a step sequencer and recording: 32 break steps, plus
@@ -56,6 +57,10 @@ image:
   source_url: https://github.com/profikid/fm1-break-choppah
   first_party: true
 versions:
+- version: '1.2'
+  date: 2026-11-08
+  url: https://github.com/profikid/fm1-break-choppah/releases/tag/v1.2
+  notes: Rebuilds ARP. The sixteen white-key overlay effects are removed; the white keys play slices as on HOME, and each black key is an effect slot (filter, crunch, drive, delay, reverb and the rest of the FX library) that sounds while held, or stays on with SEL. Up to four sound at once. Settings saved on 1.1 load as before.
 - version: '1.0'
   date: 2026-11-07
   url: https://github.com/profikid/fm1-break-choppah/releases/tag/v1.0

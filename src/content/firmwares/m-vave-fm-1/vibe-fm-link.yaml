@@ -8,7 +8,7 @@ description: >-
   the F1 to F6 soft keys. Since 0.2 an encoder detent counts one when turned slowly and two, three or six when
   turned faster. The firmware reports the USB name "VIBE FM Link", which the VIBE products map with a controller
   profile in the VIBE FM SDK, and any other DAW or synth can learn the CCs. The 0.2 release gives it its own package
-  identity after 0.1 shared one with another firmware. The release also carries untested SMK-37 packages.
+  identity after 0.1 shared one with another firmware. The release also carries untested SMK-37 packages. From 0.3 the screen shows the host's page and knob values, and from 0.4 a converted firmware's own screen.
 status: active
 authors:
 - name: Sven Trogus (zvenson)
@@ -28,6 +28,14 @@ install_notes: >-
 brick_risk: false
 tags: [controller-mode, midi, usb-midi, fork]
 versions:
+- version: v0.4
+  date: 2026-11-07
+  url: https://github.com/zvenson/vibe-link/releases/tag/v0.4
+  notes: When the VIBE, its web player or the VST runs a converted FM-1 firmware, the FM-1 shows that firmware's own 240 x 240 screen, sent as run-length-coded changes.
+- version: v0.3
+  date: 2026-11-07
+  url: https://github.com/zvenson/vibe-link/releases/tag/v0.3
+  notes: The FM-1 screen shows the host's current page and the name and value of each knob, with the turned knob lit; the installer tool finds an FM-1 running it.
 - version: v0.2
   date: 2026-11-07
   url: https://github.com/zvenson/vibe-link/releases/tag/v0.2

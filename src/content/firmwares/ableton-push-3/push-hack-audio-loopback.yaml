@@ -8,16 +8,16 @@ description: >-
   gives Live a selectable device named Push Hack Virtual Audio without touching the exclusively locked hardware
   audio device. The repository ships a prebuilt snd-aloop kernel module for the stock Push kernel, and
   declines to load anything if the running kernel does not match. For other kernels the README explains how to build
-  a module from the GPL sources that Ableton publishes. Since v0.2.0-alpha a mixer inside the service adds up the audio of several hacks that play through the card at once. Push Hack Braids and puXenia depend on it.
+  a module from the GPL sources that Ableton publishes. Since v0.2.0-alpha a mixer inside the service adds up the audio of several hacks that play through the card at once. Since v0.3.0-alpha it can instead join Ableton Link as a peer, giving each audio hack its own Link Audio channel for Live, and a matrix on its web page routes Link channels into hacks as inputs. Push Hack Braids and puXenia depend on it.
 status: active
 authors:
   - name: Federico P.
     url: https://github.com/federico-pepe
 source: https://github.com/federico-pepe/push-hack-audio-loopback
 source_status: open
-license: unspecified
+license: GPL-2.0-or-later
 license_notes: >-
-  The repository has no license file. The bundled snd-aloop module comes from the Linux kernel, which is GPL-2.0.
+  The README states GPL version 2 or later for the repository, and its LICENSE file holds the GPL version 2 text. Releases before v0.3.0-alpha had no licence file. The Link SDK it links is GPL v2 or later (or proprietary from Ableton). The bundled snd-aloop module comes from the Linux kernel, which is GPL-2.0.
 homepage: https://github.com/federico-pepe/ableton-push-hack#readme
 distribution: download
 requires_stock: Push Hack installed; bundled module matches kernel 5.15.48-intel-pk-preempt-rt
@@ -28,6 +28,10 @@ install_notes: >-
 brick_risk: false
 tags: [usb-audio, platform, utility]
 versions:
+  - version: v0.3.0-alpha
+    date: 2026-11-07
+    url: https://github.com/federico-pepe/push-hack-audio-loopback/releases/tag/v0.3.0-alpha
+    notes: Adds a Link Audio output mode, now the default, with a switch on the web page, and a matrix that routes Link channels into hacks as inputs. The repository now states GPL v2 or later.
   - version: v0.2.0-alpha
     date: 2026-11-02
     url: https://github.com/federico-pepe/push-hack-audio-loopback/releases/tag/v0.2.0-alpha

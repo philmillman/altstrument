@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: ENJAMBRE
+summary: >-
+  Swarm engine for the FM-1 in which insects act as agents moving in an orbital, quantum or atomic field, added to
+  Felucca and installed from a browser page the repository builds. The text is in Spanish.
+description: >-
+  The repository holds only an overlay of files that change or add to Felucca at a pinned commit, and a GitHub Actions
+  workflow that applies it, builds the firmware, tests the engine on Felucca's host harness and publishes a site with the
+  installer, a browser simulator and an editor. The new ENJAMB engine gives each note a group of stridulating insects.
+  Three fields move them: ORBITA, with one to three masses and a slight Doppler shift; CUANTO, a particle in a box where
+  the insects follow the probability density and playing a note collapses it; and ATOMO, electrons in Bohr shells with
+  hydrogen line ratios. Cricket chirps synchronise as coupled oscillators and keep a temperature-dependent rate. The
+  engine reads the real processor load and adds or drops insects as it changes. Six presets ship (GRILLOS, KEPLER,
+  LUCIERNAG, NUBE PSI, ATOMO H, CIGARRAS). The author is a university researcher, and the README says the software is experimental.
+status: active
+authors:
+- name: Mauricio Vásquez Arias
+  url: https://github.com/capitanplaneta80-create
+source: https://github.com/capitanplaneta80-create/enjambre-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL version 3 text, the README says GPL-3.0 like Felucca, and the overlay's source files carry an
+  SPDX GPL-3.0-only header. The built firmware also contains Felucca, which the workflow fetches at a fixed commit.
+homepage: https://capitanplaneta80-create.github.io/enjambre-fm1/
+distribution: browser-installer
+install_notes: >-
+  Open the site's installer in Chrome or Edge with the FM-1 on USB, allow MIDI with SysEx and press install, without
+  unplugging during the write; the package is also linked as a .fwsc. The engine is the last entry of the ENG list in
+  PRESETS. The site names the build 1.8.1-enjambre and shows its SHA-256.
+brick_risk: false
+tags: [synth-engine, generative, physical-modeling, emulator, editor, web, fork]
+versions:
+- version: main @ bf97f13
+  date: 2026-11-07
+  url: https://github.com/capitanplaneta80-create/enjambre-fm1/commit/bf97f1373458ca3a39ac7ae4da91a2080d2a513c
+  notes: No tagged releases; this is the latest commit.

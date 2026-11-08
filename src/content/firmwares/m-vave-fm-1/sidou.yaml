@@ -10,7 +10,7 @@ description: >-
   The SID core is the author's own C code and the repository carries reference tests against libresidfp. Since 0.5.0
   it also plays PSID .sid tunes from the FM-1's store, and 1.0.0 adds a LAB view for shaping and keeping sounds, which 1.1.0 extends. Version 1.5.0 sends LAB sounds to the song
   as GoatTracker instruments, lifts a sound from a playing .sid tune, and adds a browser Live Link that shows the FM-1's
-  screen and a library and song editor on the project site. Version 1.6.0 adds layers of up to three oscillators and a filter envelope to LAB, and an import tool for SidStation and MIDIbox SID banks. Version 1.7.0 adds step tables, two free LFOs, and slide and accent on song steps. It is built on Felucca's hardware layer, USB stack and update loader, and is also checked
+  screen and a library and song editor on the project site. Version 1.6.0 adds layers of up to three oscillators and a filter envelope to LAB, and an import tool for SidStation and MIDIbox SID banks. Version 1.7.0 adds step tables, two free LFOs, and slide and accent on song steps. Version 1.8.0 adds live filter and voice tweaks on a playing .sid tune, an ACID lane role for the dice and a site page that checks language-model-written LAB patches. It is built on Felucca's hardware layer, USB stack and update loader, and is also checked
   in the fm1-emu emulator. The 0.2.0 release notes say that version had run on one real FM-1 and that the earlier
   0.2.0-m2-preview could not be updated over USB. It is a separate project from FM-1 SID.
 status: active
@@ -34,6 +34,14 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, fx, midi, emulator, research]
 versions:
+- version: 1.8.0
+  date: 2026-11-07
+  url: https://github.com/dsablic/sidou/releases/tag/v1.8.0
+  notes: Live filter cutoff, resonance and voice-waveform tweaks on a playing .sid tune, an ACID lane role for DICE with slide and accent, and a site page that validates LAB sounds written from a prompt. USB audio now records at 44.1 kHz only.
+- version: 1.7.1
+  date: 2026-11-07
+  url: https://github.com/dsablic/sidou/releases/tag/v1.7.1
+  notes: Accepts the UC25HQ80 flash chip in FM-1s sold from late 2026; on those units 1.7.0 and earlier saved nothing and refused updates from SIDOU. Nothing else changed.
 - version: 1.7.0
   date: 2026-11-05
   url: https://github.com/dsablic/sidou/releases/tag/v1.7.0

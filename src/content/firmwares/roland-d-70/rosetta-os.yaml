@@ -1,6 +1,6 @@
 device: roland-d-70
 name: D-70 Rosetta OS
-summary: Work-in-progress replacement OS for the D-70, built by patching a dump of your own v1.11 EPROMs. It adds a boot animation, a ROSETTA OS menu with live synth edit pages, an arpeggiator, a MIDI OUT page, common sliders and a SysEx battery-RAM dump.
+summary: Work-in-progress replacement OS for the D-70, built by patching a dump of your own v1.11 EPROMs. It adds a boot animation, a ROSETTA OS menu with live synth edit pages, an arpeggiator, new effects on the effects chip, a MIDI OUT page, common sliders and a SysEx battery-RAM dump.
 description: >-
   The build tools read the two EPROM dumps from your unit and write two new
   images for blank chips; releases include a Windows patcher for this. The
@@ -10,7 +10,9 @@ description: >-
   Edits go through the stock SysEx parameter code. Four sliders can be made
   common sliders that move one parameter on all four layers, a built-in
   arpeggiator plays notes through all layers, a MIDI OUT page sets key mode,
-  split and channels, and a tools page sends the battery RAM out as SysEx. The
+  split and channels, and a tools page sends the battery RAM out as SysEx. Version 0.12 adds drive, bit crush, decimator,
+  rectifier, resonant filter and lo-fi effects on the D-70's own effects chip, with large effect pages and a DSP lab script that
+  reads and writes that chip over SysEx, and custom U-110 cards with a bank row on the layer page. The
   ROM PLAY demo and the stock tone, rhythm, effects, MIDI and data-transfer
   screens are removed to free space. The README says the build runs on a real D-70 but not every page has
   had a long session on hardware. The stated goal is a full replacement of the
@@ -45,6 +47,10 @@ image:
   source_url: https://github.com/yuyoi/D70-Rosetta-Os#readme
   first_party: true
 versions:
+  - version: v0.12
+    date: 2026-11-07
+    url: https://github.com/yuyoi/D70-Rosetta-Os/releases/tag/v0.12
+    notes: Adds effects on the D-70's effects chip (drive, bit crush, decimator, rectifier, resonant filters, lo-fi) with large effect pages, custom U-110 cards with a bank row, a sound select page that stacks up to four layers, and boot straight into Rosetta. Fixes dropouts after effect edits and keys dying while editing. The Windows patcher no longer needs an effects chip dump.
   - version: v0.6
     date: 2026-10-22
     url: https://github.com/yuyoi/D70-Rosetta-Os/releases/tag/v0.6

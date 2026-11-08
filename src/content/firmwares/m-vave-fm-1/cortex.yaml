@@ -1,0 +1,48 @@
+device: m-vave-fm-1
+name: CORTEX
+summary: >-
+  Generative FM firmware with three six-operator DX7-bank voices that play self-growing chords, a tape reel, songs
+  loaded from MIDI files and a video synth on the screen, with a browser simulator. Fork of AMB-1.
+description: >-
+  Rights warning: app/bank_rom.h compiles sixteen DX7 banks into the firmware, including the ROM 1A to 4B cartridges,
+  which are Yamaha's voices; LICENSING.md says they are not under the project's licence.
+
+  Three FM voices (pad, bells and bass), each with five modulators, play chords that develop by themselves from power-on,
+  and every knob can be played or randomised. A reel of tape records the output and plays it back, with its source
+  switchable to USB audio from the computer. Songs come in from MIDI files into slots, DX7 banks are sent over USB, and
+  a video synth on the screen moves with the music and colours the other pages. The engine is the six-operator core
+  of Dexed as carried by JIANT FM, on top of AMB-1's generative code, and the project has a browser simulator, an install
+  page, an English manual and a Portuguese one. The installer offers m-bootloader as an option.
+status: active
+authors:
+- name: guiatihe333
+  url: https://github.com/guiatihe333
+source: https://github.com/guiatihe333/cortex
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSING.md puts CORTEX's own files and AMB-1's under MPL-2.0, on fm1-base and felucca-bsp, also MPL-2.0 (AMB-1 0.9 and
+  earlier stay GPL-3.0-only). It also says app/bank_rom.h holds sixteen DX7 banks from Dave Benson's archive,
+  including the DX7's ROM 1A to 4B cartridges, which are Yamaha's voices and not under the MPL. The tree also commits
+  m-bootloader 1.2's package with its MIT licence text.
+homepage: https://guiatihe333.github.io/cortex/
+distribution: browser-installer
+install_notes: >-
+  Use the install page, The Firmware Hub, M-UPGRADE or base/tools/fm1_install.py with firmware/cortex-1.5.15.fwsc from the
+  repository; there are no release pages. The install page can also write Julius Vitkauskas's m-bootloader after the
+  firmware, which replaces M-VAVE's bootloader and adds a menu whose wipe option erases saved data. The README says
+  firmware is installed at your own risk, holding OCT- and OCT+ for five seconds gives update mode, and
+  base/bsp/tools/fm1_rescue.sh restores stock firmware from a Mac for a unit that only reaches the chip's update mode.
+brick_risk: true
+tags: [generative, fm, dx7, looper, reel, emulator, ui, fork]
+image:
+  url: https://raw.githubusercontent.com/guiatihe333/cortex/main/docs/img/cortex-card.png
+  alt: "CORTEX screen: a blurred pink and green video-synth field under the preset name Hypnagogia and the Lydian scale, above knobs VISUAL Bloom, COLOUR Theme, TRAILS 60 and REACT 50"
+  credit: guiatihe333
+  source_url: https://github.com/guiatihe333/cortex
+  first_party: true
+versions:
+- version: main @ 5e8dc75
+  date: 2026-11-08
+  url: https://github.com/guiatihe333/cortex/commit/5e8dc753ef0fdbffcf97933eaec52be864bb4782
+  notes: No tagged releases; this is the latest commit, which commits the 1.5.15 package.

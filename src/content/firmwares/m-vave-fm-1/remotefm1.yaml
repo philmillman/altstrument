@@ -9,6 +9,8 @@ description: >-
   Without a host, 0.3 plays on its own: an eight-voice DX7 engine (saadet's FM6) with the ROM cartridges and your own
   cartridges sent over SysEx (16 user slots in 0.3.1), velocity keys, scales, latch, an arpeggiator, a 16-loop looper,
   and a MIDI controller that sends notes and CCs over USB and Bluetooth, with MIDI in from USB, Bluetooth and the TRS jack.
+  From 0.3.5 the settings page can turn the USB-C port into a USB MIDI host for a keyboard or synth, and the standalone sends
+  MIDI clock and start/stop.
   A host session still takes the unit over as its panel. In that mode the device sends its input as plain MIDI and draws
   the screen from tiles sent back over USB SysEx, a vendor bulk interface or Bluetooth MIDI. A host program on macOS runs
   a firmware core such as ChoralRoot, Felucca or Melodee, using FM1VST's engine, and the sound plays on the computer. The
@@ -40,6 +42,14 @@ install_notes: >-
 brick_risk: false
 tags: [platform, emulator, usb-midi, research, synth-engine, looper, arpeggiator, midi]
 versions:
+- version: 0.3.5
+  date: 2026-11-08
+  url: https://github.com/Quixotic7/RemoteFM1/releases/tag/v0.3.5
+  notes: Adds a USB HOST setting that makes the USB-C port the host of a USB MIDI keyboard or synth (no power is supplied to it), sends MIDI clock and start/stop from the standalone, and releases held notes when a computer sleeps or the cable is pulled.
+- version: 0.3.4
+  date: 2026-11-08
+  url: https://github.com/Quixotic7/RemoteFM1/releases/tag/v0.3.4
+  notes: Rebuilt on newer fm1-base and felucca-bsp with a flash driver that waits longer for slow erases, so the newer flash chip is handled by the base itself, and updates write only the changed parts of the flash.
 - version: 0.3.3
   date: 2026-11-04
   url: https://github.com/Quixotic7/RemoteFM1/releases/tag/v0.3.3

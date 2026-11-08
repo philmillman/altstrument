@@ -1,0 +1,34 @@
+device: m-vave-chocolate
+kind: tool
+name: ChocoEdit
+summary: Mac editor for the Chocolate Plus that reads all of the pedal's settings over USB MIDI, edits per-switch messages, stomp modes and keyboard keys, and writes back only changed bytes after a backup.
+description: >-
+  A macOS app in the style of Morningstar's editor. It handles the Custom MIDI, Mix Key and Custom keyboard modes with
+  eight or six groups of four switches, a stomp mode for each switch and up to 16 program change, control change, note
+  or raw SysEx messages per bank. The keyboard modes have a Learn from Keyboard button. Writing backs up the pedal to
+  the user's Documents folder, sends only the changed bytes and reads them back to check. Settings can be saved as
+  .chocoplus files, a live monitor shows what the pedal sends, and an Advanced view lists every settings byte,
+  including ones not yet decoded, which are kept as read. PROTOCOL.md documents the SysEx format shared with the
+  CubeSuite app, and a command-line companion called chocoprobe checks it against a real pedal. The app updates itself
+  from the repository. It does not flash firmware.
+status: active
+authors:
+- name: Jon Pike
+  url: https://github.com/jonpikereally
+source: https://github.com/jonpikereally/ChocoEdit
+source_status: open
+license: MIT
+license_notes: The LICENSE file is the MIT text, copyright 2026 Jon Pike.
+homepage: https://github.com/jonpikereally/ChocoEdit
+distribution: download
+install_notes: >-
+  Run install.sh to build the app and copy it to the Applications folder in your home directory, or take the zip in the
+  repository's updates folder. Quit CubeSuite and connect the pedal over USB-C; its MIDI port is named SINCO. Writes
+  back up the pedal's settings first.
+brick_risk: false
+tags: [editor, librarian, presets, midi, sysex, usb-midi, macos, cli]
+versions:
+- version: 0.1.2
+  date: 2026-11-07
+  url: https://github.com/jonpikereally/ChocoEdit/commit/1ee9f0bfa52caab1afbdea4b043af071f4152f0f
+  notes: No GitHub release page; the version is from the VERSION file at the latest commit. Reports that no pedal is connected instead of querying another MIDI device.

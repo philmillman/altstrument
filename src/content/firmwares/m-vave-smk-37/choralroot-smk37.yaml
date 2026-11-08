@@ -30,7 +30,7 @@ license_notes: >-
 homepage: https://github.com/Quixotic7/ChoralRootFM1/blob/main/SMK37.md
 distribution: download
 install_notes: >-
-  Download the package for your model from the SMK-37 release (pre-release) and install it with
+  Download the package for your model from the latest SMK-37 release and install it with
   tools/fm1_install.py over USB, or use the SMK-37 web installer at genkigenki.github.io/smk37. Have M-VAVE's
   package for your model and its M-UPGRADE updater ready first; installing M-VAVE's package afterwards
   restores stock firmware because the build keeps the model name. Keep the cable connected until the
@@ -45,6 +45,18 @@ image:
   source_url: https://genkigenki.github.io/smk37/
   first_party: true
 versions:
+- version: 0.32-smk37
+  date: 2026-11-08
+  url: https://github.com/Quixotic7/ChoralRootFM1/releases/tag/v0.32-smk37
+  notes: The SMK-37 packages of 0.32, whose flash driver waits longer for a slow erase or page write instead of giving up, which matters for units with the newer flash chip. Community port by genkigenki, tested by SMK-37 owners rather than the maintainer.
+- version: 0.31-smk37
+  date: 2026-11-08
+  url: https://github.com/Quixotic7/ChoralRootFM1/releases/tag/v0.31-smk37
+  notes: The SMK-37 packages of 0.31 without the FM-1's USB Host. When USB goes away with notes held, the keyboard releases them.
+- version: 0.30-smk37
+  date: 2026-11-08
+  url: https://github.com/Quixotic7/ChoralRootFM1/releases/tag/v0.30-smk37
+  notes: The SMK-37 packages of 0.30 without the FM-1's Bluetooth MIDI. Incoming MIDI start, continue and stop act like the PLAY button, and a start takes the arpeggiator back to its first step.
 - version: 0.29.2-smk37
   date: 2026-11-07
   url: https://github.com/Quixotic7/ChoralRootFM1/releases/tag/v0.29.2-smk37

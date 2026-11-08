@@ -1,0 +1,50 @@
+device: m-vave-pocket-amp
+name: Onyx
+summary: >-
+  Open firmware for the Pocket AMP with eight reorderable effect slots, a Neural Amp Modeler A2-Lite amp stage,
+  cabinet impulse responses, a tuner, a drum machine and a browser editor and installer.
+description: >-
+  The chain defaults to dynamics, drive, amp, cabinet, EQ, modulation, delay and reverb, and the eight slots can be
+  reordered and bypassed from the front panel. The amp slot runs Neural Amp Modeler A2-Lite captures, the cabinet slot
+  convolves impulse responses of up to 2048 taps, and the other blocks offer several models each. The firmware also has
+  a chromatic tuner, 80 preset slots, a performance bank mode and a drum machine with 49 rhythm patterns on a
+  synthesized kit. Stock amp and cabinet content is not shipped; the firmware reads it at run time from the unit's own
+  flash partition and falls back to synthetic placeholders without it. A single HTML page installs the firmware, backs
+  up and restores presets and verifies the flash over Web MIDI, and a desktop emulator and a WebAssembly workbench run
+  the same audio engine. The release builds have Bluetooth LE switched off; a BLE-MIDI build needs a source build with
+  a flag. This repository replaces the earlier 28spawn/m-vave-pocket-amp-onyx, whose pre-v1.0.5 releases the project
+  says were removed. The README states that the code was written with AI assistance.
+status: active
+authors:
+- name: 28spawn
+  url: https://github.com/28spawn
+source: https://github.com/28spawn/Pocket-Onyx
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and LICENSING.md state GPL-3.0-only and LICENSE is the GPL version 3 text. The Bluetooth stack from
+  Optimist is GPL-3.0-only OR MPL-2.0 with marked changes, the update loader and OTA session code are MPL-2.0 from
+  Pendel's pendel-bsp, and the JieLi SDK configuration headers are Apache-2.0. NOTICE.md says the release package is
+  built from scratch and holds no M-VAVE firmware, and that the vendor files are fetched at build time and not stored.
+homepage: https://github.com/28spawn/Pocket-Onyx
+distribution: browser-installer
+requires_stock: The official Pocket AMP firmware
+install_notes: >-
+  Open custom-fw/web/Onyx_Web_Editor.html in Chrome or Edge with the unit on USB, back up with Backup Device, choose the
+  release .fwsc or .bin in the Firmware tab and press Install Firmware. The same page restores the official firmware from
+  your own M-VAVE file. The README says the boot sectors and the hardware partition at 0x0BF000 are write-protected.
+  Holding HOME and PARA for two seconds enters the mask-ROM download mode, and RECOVERY.md describes rescue with an
+  RP2040 dongle if the unit will not boot. Installing is at your own risk.
+brick_risk: false
+tags: [fx, amp-sim, nam, ir, drums, emulator, editor, midi]
+image:
+  url: https://raw.githubusercontent.com/28spawn/Pocket-Onyx/main/docs/images/03_moving_block.png
+  alt: "Onyx screen showing preset P16 with the name MOVING AMP, input and output meters, and eight tiles for DYN, DRIVE, AMP, CAB, EQ, MOD, DLY and REV with the AMP tile selected"
+  credit: 28spawn
+  source_url: https://github.com/28spawn/Pocket-Onyx
+  first_party: true
+versions:
+- version: '1.18'
+  date: 2026-11-08
+  url: https://github.com/28spawn/Pocket-Onyx/releases/tag/v1.18
+  notes: Adds crossfades when effect models are swapped, a 40-preset bank, a chunked upload handshake over SysEx, runtime USB mode switching and performance meters in the emulator. The release builds have Bluetooth off.

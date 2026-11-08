@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: Atelier Sloop
+kind: tool
+summary: >-
+  French-language browser site that runs SLOOP 2.8.5 in the fm1-emu emulator with a clickable panel, a manipulation log and a beginner tutorial.
+description: >-
+  The page powers on an emulated FM-1 running the unmodified SLOOP 2.8.5 package, with its menus, screen, key lights and audio, and
+  needs no device or server. It adds a coaching panel, a computer-keyboard map, a processor speed setting and a log of the gestures made that
+  can be exported. Memories stay in the browser, with import and export as local files. A written tutorial for beginners sits beside it.
+  The emulator core, worklet and wasm module come from Joakim Eriksson's fm1-emu. The repository ships a 16 MB archive of the pinned
+  sources and build recipes of SLOOP and fm1-emu.
+status: active
+authors:
+- name: vv7r
+  url: https://github.com/vv7r
+source: https://github.com/vv7r/sloop-fm1-emulator
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL version 3 text, and THIRD_PARTY.md says SLOOP is GPL-3.0-only and fm1-emu is MIT. The bundled SLOOP 2.8.5 package
+  is the author's release, said to be unmodified. SLOOP's Felucca-derived graphics keep the terms in its LICENSING.md, which says the code licence
+  does not cover every asset.
+homepage: https://vv7r.github.io/sloop-fm1-emulator/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page and press the power button. Nothing is written to an FM-1. The page and tutorial are in French.
+brick_risk: false
+tags: [emulator, web, sequencer, groovebox]
+versions:
+- version: main @ c37f301
+  date: 2026-11-07
+  url: https://github.com/vv7r/sloop-fm1-emulator/commit/c37f30107ba7085b59068c8e47ce4a895e167d1a
+  notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,46 @@
+device: m-vave-fm-1
+name: VIRGO
+summary: >-
+  Gravitational-wave synth in which every note is a black-hole merger, with inspiral chirp, ringdown, an interferometer
+  model, detector noise, a long reverb with shimmer and a catalogue of real detections. Interface in Italian. Sister of GRANA.
+description: >-
+  Up to four merger events sound at once. Each has an inspiral chirp that rises as the two bodies close in, the merger
+  and a ringdown set by the remnant's spin, in two polarisations that move across the stereo field. The mass ratio picks
+  the interval and the spin can pick the scale. Six engines (ONDA, FM, NEBULOSA, PIEGA, CORDA, VOCE) voice the events,
+  a two-arm interferometer and detector noise sit in the signal path, and a radio page tunes events like stations by
+  chirp mass. A random loop varies notes, masses and distances, and the reverb tails reach minutes with a shimmer that
+  can shift by an octave, a fifth, the Kerr ratio or a spiral. Output has a soft compressor, limiter, width and autopan.
+  There are 48 presets and a catalogue of detections such as GW150914 and GW170817. A browser editor holds
+  a simulator and the installer, and a second package adds Bluetooth for BLE-MIDI controllers such as the SMC-Mixer. The
+  screen and editor are in Italian, and the README says it was written with Claude's help.
+status: active
+authors:
+- name: Mario Texture
+  url: https://github.com/mongio
+source: https://github.com/mongio/virgo-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md and the README state GPL-3.0-only for VIRGO's own files and for the Dinghy and Felucca code it builds on.
+  Inter and Terminus fonts are SIL OFL 1.1, and three JieLi SDK files (Apache-2.0) are read from the builder's SDK
+  checkout and are not in the repository.
+homepage: https://github.com/mongio/virgo-fm1
+distribution: browser-installer
+install_notes: >-
+  Download virgo-editor.html from the release and open it in Chrome or Edge, which need Web MIDI and WebUSB, then press
+  Installa VIRGO with the FM-1 on USB; a checkbox picks the Bluetooth build. The .fwsc packages are attached for other
+  installers. VIRGO keeps its presets apart from GRANA's. Holding OCT- at power-on starts only the USB updater, and the
+  README points to GRANA's rescue folder for worse cases and to the official updater or the Firmware Hub to go back.
+brick_risk: false
+tags: [synth-engine, fm, reverb, fx, midi, ble-midi, emulator, editor, fork]
+image:
+  url: https://raw.githubusercontent.com/mongio/virgo-fm1/main/docs/screens.png
+  alt: "Eight VIRGO pages: source, mergers with a chirp waveform, ringdown mode peaks, interferometer arms, reverb decay, shimmer steps, radio tuning and deja vu, each above four knob values"
+  credit: Mario Texture
+  source_url: https://github.com/mongio/virgo-fm1
+  first_party: true
+versions:
+- version: '0.5'
+  date: 2026-11-07
+  url: https://github.com/mongio/virgo-fm1/releases/tag/v.0.5
+  notes: Moves all effects under FX with a new SHIMMER, adds an AUDIO page with compressor, limiter and stereo autopan, pedal HOLD and an infinite hold, SMC-Mixer mute buttons and more reverb headroom.

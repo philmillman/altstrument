@@ -4,9 +4,10 @@ kind: tool
 summary: Web app that reads a Deluge SD card folder through the browser's File System Access API. Browse songs, synths, kits and samples, see where each sample is used, find unused or missing samples, preview audio and delete files.
 description: >-
   Needs a Chromium-based desktop browser; Firefox, Safari and mobile browsers
-  lack the API. Parsing was updated for community firmware XML in December
-  2024, and later commits are build and deploy changes only. Deleting acts on
-  the real card folder.
+  lack the API. Song parsing covers community firmware 1.3 files, sample usage
+  is counted from every reference in songs including recordings, and card
+  parsing was reworked in November 2026 to read faster. Deleting acts on the
+  real card folder.
 status: active
 authors:
   - name: Teemu Haila
@@ -17,7 +18,7 @@ license: MIT
 homepage: https://delugr.haila.fi/
 tags: [file-manager, librarian, samples, web]
 versions:
-  - version: main @ 3389c07
-    date: 2026-10-04
-    url: https://github.com/MrHaila/delugr/commit/3389c07
-    notes: No tagged releases; this is the latest commit.
+  - version: main @ 8b02108
+    date: 2026-11-08
+    url: https://github.com/MrHaila/delugr/commit/8b021086da8fc1ff911d66e95c7e4faaf558da67
+    notes: No tagged releases; this is the latest commit. Since the previous entry it parses community firmware 1.3 songs, counts sample usage from every reference including recordings, and reads cards about four times faster.

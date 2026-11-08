@@ -1,17 +1,19 @@
 device: donner-pocket-x
 name: OpenPocket
 summary: >-
-  Guitar multi-effects firmware written from scratch for the Pocket X's JieLi chip, with a 12-block chain of 129 models, 29 amps, 15 cabs and 52 rewritable presets, installed from a browser page. The M-VAVE BlackBox build does not run yet.
+  Guitar multi-effects firmware written from scratch for the Pocket X's JieLi chip, with a 12-block chain of 78 models, 8 fitted amps plus neural amp models, 7 cabs and 52 preset slots, installed from a browser page. A BlackBox build ships too and is still being tested.
 description: >-
   The signal chain has twelve blocks that can be reordered and saved with the preset: gate, compressor, pitch, special FX,
-  synth, drive, amp, cab, EQ, modulation, delay and reverb. The models include amps and cabinets named after classic gear,
+  synth, drive, amp, cab, EQ, modulation, delay and reverb. The models include amps and cabinets named after classic gear, with the amps fitted to captures of the real ones,
   drives, modulations, delays and reverbs, and a group of synth, organ and string voices played from a normal guitar. The
   audio path is 24-bit and reads the left input only, as the official firmware does. There are 52 factory presets and 52
   slots that survive updates, saved with a power-cut-safe store, a chromatic tuner and a web page for editing the presets. The pedal appears as a USB MIDI device
   and takes updates from the project's web installer page, which can also return it to the official firmware from a file you
-  download from the maker. The engine is portable C tested on a computer with a simulated pedal and flash. The project
-  builds a package for the M-VAVE BlackBox too, but on a BlackBox the firmware restarts in a loop shortly after starting
-  (issue 1, open), so the installer page does not offer it there. The Pocket X install is reported as tested by the author and by
+  download from the maker. Since v37 the AMP block can also run Neural Amp Modeler A2 networks, with 12 factory models and
+  16 user slots loaded from the web editor, and the pedal takes MIDI program and control changes over USB. The engine is
+  portable C tested on a computer with a simulated pedal and flash. The project builds a package for the M-VAVE BlackBox
+  too. Early builds restarted in a loop on a BlackBox (issue 1, now closed); the README says v31 fixes it and that it is
+  being tested, and an owner reported v31 working there. The Pocket X install is reported as tested by the author and by
   other owners.
 status: active
 authors:
@@ -31,7 +33,7 @@ requires_stock: Donner Pocket X official firmware (the page also takes your own 
 install_notes: >-
   Open the installer page in Chrome or Edge on a computer, connect the pedal over USB, press Connect and then Install. To go
   back, pick the official .fwsc from the maker in the same page, which checks it in the browser. Keep the SD-card recovery
-  described in the flash folder (fm1buddy on an ESP32-S3) at hand. The M-VAVE BlackBox is not supported yet.
+  described in the flash folder (fm1buddy on an ESP32-S3) at hand. The BlackBox package is still marked as being tested.
 brick_risk: false
 tags: [fx, amp-sim, ir, synth-engine, presets, tuner, flasher, web, usb-midi, open-source]
 image:
@@ -41,6 +43,14 @@ image:
   source_url: https://github.com/isod89/openpocket#readme
   first_party: true
 versions:
+  - version: v37
+    date: 2026-11-08
+    url: https://github.com/isod89/openpocket/releases/tag/v37
+    notes: Adds an AMP type that plays Neural Amp Modeler A2 networks on the pedal, with 12 factory models, 16 user slots loaded from the web editor and rebuilt factory presets. Also adds MIDI over USB, a working battery gauge, a soft output limiter and BlackBox button lights.
+  - version: v36
+    date: 2026-11-06
+    url: https://github.com/isod89/openpocket/tree/v36
+    notes: Git tag; no GitHub release page. Adds the new PLAY and EDIT screens and matches loudness across amps and presets.
   - version: v33
     date: 2026-11-04
     url: https://github.com/isod89/openpocket/releases/tag/v33

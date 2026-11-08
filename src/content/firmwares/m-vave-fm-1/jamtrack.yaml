@@ -1,0 +1,57 @@
+device: m-vave-fm-1
+name: JAMTRACK
+summary: >-
+  Backing band for the FM-1: drums, bass, chords and a synth line follow a chord progression in any key and time
+  signature and sync to a loop pedal, with 160 factory jams, a browser emulator and a companion app.
+description: >-
+  You write a progression as numbers and chord names, pick a key and a groove and press PLAY. Changing the key moves
+  the whole song, and changing the scale from major to minor converts each chord to the new scale's chord. There are
+  two parts for verse and chorus with fills and a last hit, 28 grooves, 24 bass lines with approach notes, 24 comping
+  styles and 15 synth lines, 37 sounds and ten drum kits made from scratch plus a user kit from your own samples, and
+  seven time signatures. MY LINE is a 16-step piano roll for the synth line that follows the chords. A ring around the
+  current chord fills as it plays and the keys light the chord and the scale to solo over, with three lead sounds meant
+  for the keys. MIDI clock in, tap tempo and footswitch controllers cover loop pedals. The factory has 160 jams across 16
+  genres and a generator, and 32 places hold your own. The companion app in Chrome or Edge edits jams, fills the
+  user kit, mirrors the screen and hosts the installer. The base is fm1-base and felucca-bsp, and the author also made
+  ECHOFIELD.
+status: active
+authors:
+- name: Philip-Bos
+  url: https://github.com/Philip-Bos
+source: https://github.com/Philip-Bos/jamtrack-fm1
+source_status: open
+license: MIT
+license_notes: >-
+  LICENSE is the MIT text with an extra paragraph about fonts, SDL2 and ALSA, which is why GitHub reports no licence.
+  LICENSING.md says the app, engine and tools are MIT, the factory drum samples are CC0-1.0 and synthesised, fm1-base
+  and felucca-bsp are MPL-2.0 file by file, fonts are SIL OFL 1.1 and JieLi SDK files are fetched at build time.
+homepage: https://philip-bos.github.io/jamtrack-fm1/
+distribution: browser-installer
+install_notes: >-
+  The flasher page in Chrome, Edge or Opera on a computer, with the FM-1 on a USB data cable; updating keeps your jams,
+  settings and user kit. The 0.1 release notes say the boot area is never written, an interrupted install resumes and
+  the stock firmware goes back on from the same page. The README says custom firmware is installed at your own risk.
+brick_risk: false
+tags: [sequencer, drums, chords, midi, emulator, editor, web, performance, looper]
+image:
+  url: https://raw.githubusercontent.com/Philip-Bos/jamtrack-fm1/main/docs/card.png
+  alt: "JAMTRACK PLAY screen: a ring around the chord Bm7 with the key D major and next chord Gmaj7, a four-chord progression row, and TEMPO 104, KEY D, ENERGY 2 and TAPE 30 knobs"
+  credit: Philip-Bos
+  source_url: https://github.com/Philip-Bos/jamtrack-fm1
+  first_party: true
+versions:
+- version: 0.2.1
+  date: 2026-11-08
+  url: https://github.com/Philip-Bos/jamtrack-fm1/releases/tag/v0.2.1
+  notes: The ring around the chord fills smoothly and the companion's guide becomes a full manual.
+- version: '0.2'
+  date: 2026-11-08
+  url: https://github.com/Philip-Bos/jamtrack-fm1/releases/tag/v0.2
+  notes: Grows to 28 grooves, 24 bass lines, 24 comping styles, 15 synth lines and 160 factory jams, adds MY LINE, and makes a scale change convert the chords.
+- version: 0.1.1
+  date: 2026-11-07
+  url: https://github.com/Philip-Bos/jamtrack-fm1/releases/tag/v0.1.1
+  notes: Adds the browser emulator and a single genre-filed list of jams, and fixes lists that could close the moment they opened.
+- version: '0.1'
+  date: 2026-11-07
+  url: https://github.com/Philip-Bos/jamtrack-fm1/releases/tag/v0.1

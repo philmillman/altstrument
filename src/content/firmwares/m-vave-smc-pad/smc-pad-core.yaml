@@ -1,0 +1,37 @@
+device: m-vave-smc-pad
+name: SMC-Pad Core
+summary: Clean-slate MIDI controller firmware for the SMC-PAD with USB and BLE MIDI, baseline drift tracking, velocity curves, banks and presets, a note repeat engine and a WebMIDI configurator.
+description: >-
+  A rewrite that turns the pad into a plain MIDI controller with no sequencer or scale layer on the chip. The 16 pads
+  send velocity and aftertouch notes with continuous baseline tracking meant to stop phantom stuck notes, the eight
+  encoders send MIDI CC through a Gray-code decoder, and two pad banks and two knob banks, four presets, transpose,
+  four velocity curves and a channel setting sit behind a Shift layer. A note repeat engine offers eight rates,
+  swing up to 66 percent, latch, tap tempo and a tempo from 30 to 300 BPM. The unit also appears as BLE-MIDI. A single
+  HTML page edits note maps, encoder assignments, velocity curves and thresholds over an open SysEx protocol and saves
+  them to flash. The README credits the open-smc-pad and groovebox projects for the hardware notes and says it is not
+  a fork of either. The repository has an agent workflow file, and the commit history was written with AI assistance.
+status: active
+authors:
+- name: Carlos Morán
+  url: https://github.com/cmoran
+source: https://github.com/cmoran/smc-pad-core
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text, copyright 2026 Carlos Morán. The bsp folder holds precompiled objects
+  (smcpad_native.a and smcpad_core.o); the README does not say where they come from.
+homepage: https://github.com/cmoran/smc-pad-core
+distribution: source-only
+install_notes: >-
+  Build with make firmware and the JieLi pi32v2 toolchain, hold the PAD BANK button while powering on to enter DFU
+  mode and flash build/app.bin with dfu-util for USB ID 1209:0002. That ID and the DFU mode match the bootloader that
+  open-smc-pad installs over the factory firmware, which the README does not mention, and returning to stock from that
+  bootloader needs the chip's ROM download mode. The README itself says the factory bootloader is untouched and the
+  stock firmware can be flashed back through DFU. Nothing is released as a prebuilt file.
+brick_risk: true
+tags: [controller, midi, usb-midi, bluetooth, note-repeat, editor, web-midi, velocity]
+versions:
+- version: main @ 60c5c9e
+  date: 2026-11-08
+  url: https://github.com/cmoran/smc-pad-core/commit/60c5c9e
+  notes: No tagged releases; this is the latest commit, which adds the BLE-MIDI stack.

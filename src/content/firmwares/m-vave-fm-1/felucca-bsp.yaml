@@ -7,8 +7,8 @@ summary: >-
 description: >-
   Split out of Felucca. It holds the chip layer shared across the family, a loader that builds as a RAM image, the update session in
   ota.c, USB with MIDI, serial and audio classes, an optional USB MIDI host (direct or through one powered hub, ported from Melodee), and
-  the FM-1 wiring: LCD pins, key scan with optional velocity, ADC channels, audio codec lines and the headphone jack switch. A separate
-  board folder covers the M-VAVE Galaxia guitar pedal (board PD49 V03). Tools build update packages, install over USB-MIDI
+  the FM-1 wiring: LCD pins, key scan with optional velocity, ADC channels, audio codec lines and the headphone jack switch. Separate
+  board folders cover the M-VAVE Galaxia guitar pedal (board PD49 V03) and, with audio, input and LCD headers, the Pocket Amp. Tools build update packages, install over USB-MIDI
   and rescue a unit that cannot start. The update loader has a fast install that writes only the sectors that changed, tools/fm1_rescue.py accepts the newer UC25HQ80 flash chip, and the USB audio input can be built with 4 to 10 channels. A hwtest example firmware exercises the screen, knobs, buttons, LEDs and USB serial. The
   README labels the second core, expanded flash and USB host as beta or experimental, a higher clock as a concept, and lists the SMK-37 Elite and
   Pro as planned without board support. Its chip/ folder also holds Bluetooth LE and BR/EDR radio drivers from Optimist, the radio's start-up tables and a
@@ -34,7 +34,7 @@ install_notes: >-
 brick_risk: false
 tags: [platform, sdk, usb-midi]
 versions:
-- version: main @ 5b0879b
-  date: 2026-11-06
-  url: https://github.com/hugelton/felucca-bsp/commit/5b0879bfadc69a17dbebb917fb6b86d516f19c44
-  notes: No tagged releases; this is the latest commit.
+- version: main @ e79a1f8
+  date: 2026-11-08
+  url: https://github.com/hugelton/felucca-bsp/commit/e79a1f842ba3e153f8aba31e36e56b3e8acb59a2
+  notes: No tagged releases; this is the latest commit. Since the previous row it adds a Pocket Amp board folder with audio, input and LCD headers, and the rescue tool now explains how to reach update mode on a unit that still boots.

@@ -12,7 +12,8 @@ description: >-
   effects ported from Airwindows plugins. The 2.3.10-mod release adds a jungle
   toolkit for Clip pads, with loops locked to the clock, 24 Live Flip modes and
   turntable-style hold buttons, plus three Airwindows compressors and screen
-  themes. The author states it is unofficial and that 1010music neither wrote nor endorses
+  themes. The 2.3.11-mod release adds a browser patcher and makes the module
+  tolerate microSD cards that answer slowly. The author states it is unofficial and that 1010music neither wrote nor endorses
   it, and asks that support requests not go to 1010music.
 status: active
 authors:
@@ -29,13 +30,18 @@ homepage: https://modularpatcher.github.io/bitbox-micro-fw-patch/
 distribution: patch-your-own
 requires_stock: 2.3.4
 install_notes: >-
-  Download the stock 2.3.4 image (MICRO234.zip) from 1010music yourself, run
-  patch_micro.py on its MICRO.BIN, and copy the result to the microSD card.
+  Download the stock 2.3.4 image (MICRO234.zip) from 1010music yourself, drop it
+  on the web patcher page or run patch_micro.py on its MICRO.BIN, and copy the
+  result to the microSD card.
   Never share a patched image. The README says the bootloader is not touched, so
   the module cannot be bricked, and flashing stock back before service is
   advised.
 tags: [midi, fx, lfo, ui, performance]
 versions:
+  - version: 2.3.11-mod
+    date: 2026-11-07
+    url: https://github.com/modularpatcher/bitbox-micro-fw-patch/commit/f7579bebd21b3ce50294641968306a8f04dae9c8
+    notes: Adds a browser patcher that builds the patched image from your own MICRO234.zip and keeps slow microSD cards awake and waits for them, so a stalled read no longer restarts the module. Date is the commit date.
   - version: 2.3.10-mod
     date: 2026-10-25
     url: https://github.com/modularpatcher/bitbox-micro-fw-patch/commit/f82b857

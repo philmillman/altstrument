@@ -3,7 +3,9 @@ name: op1-sdk
 kind: tool
 summary: SDK for adding synth engines, effects and sequencer features to the original OP-1 firmware R246, written in C or assembly, with simulator tests and a composer that patches your own official image.
 description: >-
-  Features are self-contained folders with a manifest, sources and tests, hooked
+  Rights warning: the v0.2.0 release page carries a prebuilt op1plus image, which is built from Teenage Engineering's
+  R246 firmware and so probably contains their code, although the README tells users not to redistribute built
+  images and the repository itself holds none. Features are self-contained folders with a manifest, sources and tests, hooked
   into the stock firmware at declared addresses. The build tools check the SHA-256
   of your R246 file and the original instructions at every hook, and refuse to
   build otherwise. A bundled library of eleven features is composed by the
@@ -11,7 +13,7 @@ description: >-
   RESO, SHIMMER and FX MIX effects, a drum step sequencer, a take requantizer,
   a chord keyboard and extra parameters for the stock engines. Features can be
   packed as zip files and shared. The README reports that the features were played
-  on a real OP-1. The bootloader is not modified, and no TE firmware is included.
+  on a real OP-1. The bootloader is not modified, and no TE firmware is committed to the repository.
 status: active
 authors:
   - name: BertBrandstifter
@@ -19,17 +21,21 @@ authors:
 source: https://github.com/BertBrandstifter/op1-sdk
 source_status: open
 license: MIT
-distribution: patch-your-own
+distribution: download
 requires_stock: R246
 install_notes: >-
-  Build the bfin-elf toolchain described in the docs, compose an image from
+  Either flash the prebuilt image attached to the release (see the rights warning), or build the bfin-elf toolchain described in the docs, compose an image from
   your own official op1_246.op1, then flash it with the included script through
   the Firmware Upload option (hold COM at power-on). Built images contain TE
   firmware and should not be shared. Flashing the original file restores stock.
 brick_risk: false
 tags: [sdk, synth-engine, fx, sequencer, patch]
 versions:
+  - version: v0.2.0
+    date: 2026-11-07
+    url: https://github.com/BertBrandstifter/op1-sdk/releases/tag/v0.2.0
+    notes: Adds the ACID 3 and PALETTE synth engines, shared dot-matrix display helpers and updated screens for the M1, MONO, MALLET, PARTY and WHEEL engines. The release page lists a prebuilt op1plus image as an asset. The page shows 2026-10-15 as its publication date; the tagged commit is dated 2026-11-07.
   - version: v0.1.0
     date: 2026-10-15
-    url: https://github.com/BertBrandstifter/op1-sdk/releases/tag/v0.1.0
-    notes: First public release; no firmware binaries.
+    url: https://github.com/BertBrandstifter/op1-sdk/tree/v0.1.0
+    notes: Git tag; the release page for it is gone. First public release; no firmware binaries.

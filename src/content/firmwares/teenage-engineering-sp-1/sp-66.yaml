@@ -1,0 +1,35 @@
+device: teenage-engineering-sp-1
+name: SP-66
+summary: Recreation of the Roland TR-66 Rhythm Arranger for the SP-1, with synthesized drum voices, 27 factory rhythms, A/Auto/B arrange phrases and USB MIDI clock sync.
+description: >-
+  A C engine synthesizes the drum voices at 48 kHz without samples and plays the TR-66's 27 rhythms. The faders set
+  tempo, the bass drum against hi-hat balance, the rhythm and a preset within the variation bank. The track buttons
+  pick Rock, 2 Beat or 4 Beat and toggle the variation. An arrange rocker moves between the A, Auto and B phrases, and
+  rhythms can be pinned to play together. The Function button adds one fill, which is not on the original, and the
+  SP-1 follows MIDI clock and transport over USB. The author fitted the voices and patterns against recordings of a
+  real TR-66, and the same engine renders WAV files on a computer. The README says hardware testing is still under
+  way and lists startup diagnostics for the unit.
+status: active
+authors:
+- name: Jordan Sitkin
+  url: https://github.com/dustMason
+source: https://github.com/dustMason/sp-66
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text, copyright 2026 Jordan Sitkin. firmware/NOTICE credits the board, codec and USB MIDI
+  code taken from Wakes, sp1-tape-looper, SP-1-dev, sp1-midi and feldd-sp1-firmware, with their MIT notices in
+  firmware/licenses.
+homepage: https://github.com/dustMason/sp-66
+distribution: source-only
+install_notes: >-
+  Build firmware/ with Zephyr 4.3.1 and the SDK 0.17.4 ARM toolchain for the stem_player board, then flash the
+  resulting tr66-sp1.bin with the Solderless utility: with the SP-1 off, hold Track 1 and Track 4 while connecting
+  USB-C in Chrome or Edge. The README calls replacing the factory firmware one-way.
+brick_risk: false
+tags: [drum-machine, rhythm, sequencer, midi, performance]
+versions:
+- version: main @ 8f92fb9
+  date: 2026-11-08
+  url: https://github.com/dustMason/sp-66/commit/8f92fb966051907b75b1935db6c5ca81768b7c0f
+  notes: No tagged releases; this is the latest commit.

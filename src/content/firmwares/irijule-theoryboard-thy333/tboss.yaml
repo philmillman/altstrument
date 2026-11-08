@@ -6,7 +6,7 @@ description: >-
   scale, with per-pad chord edits such as added sevenths or suspended chords, 86 built-in scales and up to 12 custom scales drawn on
   a piano keyboard in a web editor, and separate MIDI channels for chords and melody. Pad pressure can be sent as
   aftertouch or as a controller such as mod wheel or filter. The editor also backs up settings and makes a
-  verified copy of the board's 16 MB memory chip. Later versions add recordable chord progressions, user-typed chord sets,
+  verified copy of the board's 16 MB memory chip. Later versions add recordable chord progressions, user-typed chord sets, a Modes chord set, external MIDI control,
   a chord grid, a four-lane step sequencer, four MIDI effects, a bass layout, Program Change in both directions, MPE, a Turing-pattern arpeggiator
   and chained progressions. From 2.0 the web editor has its own USB port, so a DAW can keep playing while it is connected. TRS MIDI out and the
   sustain pedal are confirmed on a board; the pedal's other modes, scale lock and progressions started from a DAW are not yet, and the
@@ -34,6 +34,10 @@ install_notes: >-
 brick_risk: false
 tags: [controller-mode, chords, scales, arpeggiator, midi, editor]
 versions:
+  - version: "2.3"
+    date: 2026-11-07
+    url: https://github.com/armandhammer/TBOSS/releases/tag/v2.3
+    notes: Includes 2.1 and 2.2, which were not released on their own. Adds a Modes chord set that borrows chords from other modes on the same root, external MIDI control learned on the board, a 4 by 4 step grid, firmer default pad thresholds and a fix for sessions ending when 16 MIDI messages went out at once.
   - version: "2.0"
     date: 2026-10-31
     url: https://github.com/armandhammer/TBOSS/releases/tag/v2.0

@@ -1,0 +1,40 @@
+device: m-vave-fm-1
+name: FIENDBOX
+summary: >-
+  Dark, occult synth firmware for the FM-1 aimed at old JRPG dungeons and dungeon synth, with five power-on scenes,
+  drawn creatures on the sound pages, a coven on HOME and bytebeat and floatbeat waves. Fork of GHOULBOX.
+description: >-
+  Keeps what GHOULBOX and Felucca provide, such as four tracks, a 64-step sequencer, songs, the arpeggiator, chord keys,
+  effects, the hall reverb, the drone latch, the hurdy-gurdy engine and the DREAM pattern composer, and adds a theme
+  on top. Five power-on scenes (Labyrinth, Ruins, Shrine, Gothic and Blank) set sounds and tempo, with four new
+  patterns. The screen uses a near-black palette with a crimson active colour, a new boot screen and about page, and
+  on the EDIT pages of most engines a drawn creature whose horns, outline and eyes follow the filter, resonance
+  and detune. The coven HOME view shows four creatures that swell with their tracks' levels. Two new waves for the LOFI
+  engine play bytebeat and floatbeat formulas, 32 of each with fourteen presets. The SLICE engine is left out of the
+  device build to make room. The ideas and line drawing for the creatures are adapted from JIANT FM. The README calls it
+  a hobby project tested on one FM-1.
+status: active
+authors:
+- name: emilystgeist
+  url: https://github.com/emilystgeist
+source: https://github.com/emilystgeist/fiendbox
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md, inherited from Felucca, states GPL-3.0-only, and JIANT FM code adapted for the creatures is also
+  GPL-3.0-only with its copyright lines kept. The fonts (Inter Tight, VT323, Pirata One, UnifrakturMaguntia) are SIL OFL
+  1.1, and JieLi SDK files are read at build time.
+homepage: https://emilystgeist.github.io/fiendbox/webapp/installer/
+distribution: browser-installer
+install_notes: >-
+  Hosted installer in Chrome or Edge, with the FM-1 on a USB data cable; it does not make a backup, so save one from
+  the web editor first. To go back, install Felucca from its installer and restore the backup, or use its Return to
+  official V15. Holding OCT- at power-on gives the USB rescue, and a unit that shows as WL80UBOOT is in the chip's
+  boot mode. The README says to install at your own risk.
+brick_risk: false
+tags: [synth-engine, sequencer, fx, performance, drone, ui, editor, fork]
+versions:
+- version: '0.4'
+  date: 2026-11-08
+  url: https://github.com/emilystgeist/fiendbox/releases/tag/fiendbox-0.4
+  notes: Adds bytebeat and floatbeat waves to the LOFI engine; the release is marked as a pre-release.

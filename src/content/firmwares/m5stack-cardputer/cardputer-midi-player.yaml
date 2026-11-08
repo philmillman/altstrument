@@ -1,0 +1,39 @@
+device: m5stack-cardputer
+name: Cardputer MIDI Piano
+summary: Standard MIDI file player for the Cardputer-Adv that plays .mid files from the SD card through a 24-voice synthesized piano, with seek, speed control, a piano roll and an experimental USB host output to the FM-1.
+description: >-
+  The firmware reads Format 0 and 1 files from the SD card's midi folder and plays them on a built-in piano synthesizer
+  with 24 voices and two overtones, sending 44.1 kHz audio straight to the I2S codec. Controls cover play and pause,
+  seeking by one or five seconds, speed from 0.1 to 3 times, looping, volume, track browsing and a switchable animated
+  piano roll, with sustain pedal handled. The README says version 0.2.1 was checked on a real unit for start-up,
+  playback and CPU load, which sits at about a fifth of one core at normal speed. Limits are about 7000 notes per file
+  and synthesized sound only; a sampled piano in flash is planned. A separate experimental build drives an FM-1 Sloop
+  over a USB-C cable as a USB MIDI host and mutes the local speaker while connected. The repository also holds a
+  design write-up and interface mockups, mostly in Chinese.
+status: active
+authors:
+- name: Saxon267
+  url: https://github.com/saxon267
+source: https://github.com/saxon267/Cardputer_MidiPlayer
+source_status: open
+license: MIT
+license_notes: The LICENSE file is the MIT text, copyright 2026 Saxon267.
+homepage: https://github.com/saxon267/Cardputer_MidiPlayer
+distribution: download
+install_notes: >-
+  Flash dist/CardputerMidiPlayer-8MB.bin from address 0x0, or build with PlatformIO and run pio run -t upload from the
+  firmware folder. The USB host build is separate, has no USB serial port, and the firmware README describes its flash
+  and recovery order. Put .mid files in /midi on the SD card.
+brick_risk: false
+tags: [midi, player, piano, synth-engine, usb-midi, sd-card, esp32-s3]
+image:
+  url: https://raw.githubusercontent.com/saxon267/Cardputer_MidiPlayer/main/design/out/03-player.png
+  alt: "Rendered mockup of the player screen with the title Clair de Lune, a progress bar at 1:12 of 3:47, a pedal indicator, a two-octave keyboard with three keys lit, transport buttons and a volume of 78"
+  credit: Saxon267
+  source_url: https://github.com/saxon267/Cardputer_MidiPlayer
+  first_party: true
+versions:
+- version: main @ a0522c3
+  date: 2026-11-08
+  url: https://github.com/saxon267/Cardputer_MidiPlayer/commit/a0522c3a7d6197aeb7867d96eed4db72c3547820
+  notes: No tagged releases; this is the latest commit. The README names firmware 0.2.1, and recent commits add the experimental USB host output to the FM-1.

@@ -1,0 +1,31 @@
+device: m-vave-fm-1
+name: FM1-Lab
+kind: firmware
+summary: >-
+  Work in progress four-patch Instrument design environment: each Instrument holds four six-operator FM patches with macro knobs, on fm1-base and the Felucca FM6 engine.
+description: >-
+  An Instrument is four DX7-style voices with per-patch levels, held in 32 slots. Four macros named Brightness, Body, Motion and Edge change the saved patch non-destructively,
+  using the algorithm's routing to tell carriers from modulators. The native app has operator, envelope and LFO editors, a two-lane sequencer, an arpeggiator, four effect buses, EQ,
+  master compression and a limiter, with settings kept in flash. A browser workshop built on M-VAVE's open simulator is used to audition patches. The docs say physical playback,
+  flash migration and CPU load on a real FM-1 are still outstanding, and that final pages for macros and an Instrument bank are unfinished. No release exists.
+status: active
+authors:
+- name: albinoIguana
+  url: https://github.com/albinoIguana
+source: https://github.com/albinoIguana/FM1-Lab
+source_status: open
+license: unspecified
+license_notes: >-
+  No LICENSE file. The README's licensing section only says M-VAVE's application is GPL-3.0 with its SDK linking exception, that the engine is a binary under an FM-1-only linking
+  and redistribution grant, and that M-VAVE's licences must be kept with any build. It makes no statement about the project's own code. The M-VAVE source is a submodule and no firmware image is committed.
+distribution: source-only
+install_notes: >-
+  Initialise the submodules, run the engine test, and build with build.sh or fm1-base's build script and the JieLi toolchain. The device package is app/build/fm1lab.fwsc, and
+  the CI run keeps it as an artifact. The docs say it has not been checked on hardware, so keep a rescue route ready.
+brick_risk: false
+tags: [synth-engine, fm, editor, sequencer, fx, arpeggiator]
+versions:
+- version: main @ 798842e
+  date: 2026-11-08
+  url: https://github.com/albinoIguana/FM1-Lab/commit/798842e03202bf8a94eacb3c67565ed040ce9d83
+  notes: No tagged releases; this is the latest commit, which republishes the native emulator build. The commit before it adds a choice of eight or sixteen step arpeggiator views and a random arpeggiator order.

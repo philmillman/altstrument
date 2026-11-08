@@ -1,14 +1,15 @@
 device: m-vave-fm-1
 name: Ripple
 summary: >-
-  Firmware that runs Lua instruments, called droplets, over sound engines written in Faust or C, called currents, loaded
+  Firmware that runs Lua instruments, called droplets, over sound engines written in Faust, C or Pure Data, called currents, loaded
   from a USB disk in the FM-1's own flash, so new instruments need no reflashing.
 description: >-
   In disk mode the FM-1 shows up as a USB drive called RIPPLE with a 276 KB disk, where droplets and currents are copied
   and a file with a built-in's name replaces it. Fifteen droplets are built in, including a drum machine, Euclidean tracks,
   Game of Life, a looper, a rack that chains MIDI effects into any voice and two effects, and ports of the SPH-16 and
-  MONK-1 voices. Seventeen Mutable Instruments Plaits engines are built in as currents and three more are release files for
-  the disk. The site has an emulator with a panel for writing droplets and Faust currents, and an SDK builds C and C++
+  MONK-1 voices. Seventeen engines from Mutable Instruments' Plaits code are built in as currents, named macro-* since 0.6.1, and three more
+  are release files for the disk. From 0.6 currents can also be written as Pd patches compiled through Heavy, and release files
+  include four example droplets on Pd patches by boochow. The site has an emulator with a panel for writing droplets and Faust currents, and an SDK builds C and C++
   currents. It builds on fm1-base and felucca-bsp.
 status: active
 authors:
@@ -30,6 +31,18 @@ install_notes: >-
 brick_risk: false
 tags: [scripting, sdk, synth-engine, fx, loader, usb, emulator, web]
 versions:
+- version: 0.6.1
+  date: 2026-11-08
+  url: https://github.com/charlesvestal/fm1-ripple/releases/tag/v0.6.1
+  notes: Renames the Plaits-derived currents to macro-* and the Pd currents to plain names; sounds are unchanged, but a saved rack using an old name must be re-picked.
+- version: '0.6'
+  date: 2026-11-08
+  url: https://github.com/charlesvestal/fm1-ripple/releases/tag/v0.6
+  notes: Currents can be written in Pd and compiled through Heavy, and four example droplets on Pd patches are attached as release files.
+- version: '0.5'
+  date: 2026-11-07
+  url: https://github.com/charlesvestal/fm1-ripple/releases/tag/v0.5
+  notes: Accepts the flash chip of FM-1s sold from autumn 2026, which 0.4 could not use for its disk, saving or updating. Installer writes only changed parts, USB audio to an iPhone is steadier, and the emulator panel is reworked.
 - version: '0.4'
   date: 2026-11-01
   url: https://github.com/charlesvestal/fm1-ripple/releases/tag/v0.4

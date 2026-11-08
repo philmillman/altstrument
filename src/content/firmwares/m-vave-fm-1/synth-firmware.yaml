@@ -1,0 +1,31 @@
+device: m-vave-fm-1
+name: synth-firmware
+kind: tool
+summary: >-
+  Claude Code plugin that guides building an FM-1 firmware on the Felucca, SLOOP and GR!MM platform, from identity to a Firmware Hub release, with chip-rule checks.
+description: >-
+  A bundle of one skill, one subagent, four slash commands and an advisory hook. The skill holds a phase model, the AC791N chip rules, the
+  toolchain, build and test steps and the release and hub submission flow, taken from the author's COQUI firmware as the worked example.
+  The commands scaffold a firmware from a theme, work a phase, lint the source and walk toward a release, stopping before anything outward-facing. The hook flags
+  floating point, 64-bit division and ROM-range constants after edits to firmware C files. The README says it does not generate new DSP.
+  It holds no firmware itself.
+status: active
+authors:
+- name: saulofilho
+  url: https://github.com/saulofilho
+source: https://github.com/saulofilho/synth-firmware
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and plugin.json state GPL-3.0-only. The repository has no LICENSE file.
+homepage: https://saulofilho.github.io/synth-firmware/
+distribution: source-only
+install_notes: >-
+  Add the repository as a Claude Code plugin marketplace and install synth-firmware from it. The plugin writes nothing to a device.
+brick_risk: false
+tags: [sdk, utility, research]
+versions:
+- version: main @ 7495c87
+  date: 2026-11-07
+  url: https://github.com/saulofilho/synth-firmware/commit/7495c87f5f518ee76c321735fcb6468154e9d368
+  notes: No tagged releases; this is the latest commit, which adds a landing site. The plugin manifest reads 0.1.0.

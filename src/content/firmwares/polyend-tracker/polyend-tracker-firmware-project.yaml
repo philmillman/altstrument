@@ -1,7 +1,7 @@
 device: polyend-tracker
 also_devices: [polyend-tracker-plus, polyend-tracker-mini]
 name: Polyend Tracker firmware project
-summary: Fork of Polyend's Tracker Community Edition source that adds 512-step patterns on the Tracker Mini, note-length recording and pass-based Chance conditions such as pass A of B, first pass and not first pass, with a prebuilt Tracker Mini image on a branch.
+summary: Fork of Polyend's Tracker Community Edition source that adds 512-step patterns on the Tracker Mini, note-length recording, pass-based Chance conditions, a generative pattern fill and an NES player, with a prebuilt Tracker Mini image on a branch.
 description: >-
   The repository starts from an unmodified import of polyend/tracker-ce and
   adds changes on top. The Tracker Mini can hold patterns of up to 512 steps
@@ -10,7 +10,10 @@ description: >-
   and takes about 2 MB of the sample pool. A Config option makes live
   recording and note entry in edit mode store how long each note was held,
   using a Gate length effect or an OFF step with Micro-move. The Chance effect
-  gains pass A of B, first pass and not first pass values. The other two models
+  gains pass A of B, first pass and not first pass values. Later commits add a Note fill
+  for the Tracker Mini that writes whole drum, ambient, bass and lead parts in 13 styles, an NES
+  emulator with sound under Config > Games, a hold-Undo gesture that clears the pattern and Shift
+  with the middle button to select a track or all tracks. The other two models
   keep 128 steps and share the other changes. The changelog lists these under
   Unreleased and the commit history shows the work was done with Claude, an AI
   assistant. A workflow copies each built Tracker Mini .ptf to a firmware-builds
@@ -38,7 +41,7 @@ install_notes: >-
 brick_risk: false
 tags: [fork, sequencer, tracker, midi, fx]
 versions:
-  - version: main @ 83ef8cb
-    date: 2026-11-07
-    url: https://github.com/AndrisK-hub/Polyend-tracker-firmware-project/commit/83ef8cb
-    notes: No tagged releases; this is the latest commit.
+  - version: main @ 31d3661
+    date: 2026-11-08
+    url: https://github.com/AndrisK-hub/Polyend-tracker-firmware-project/commit/31d36613c0888ee2c8d0cb5cb5ac51b7cd727626
+    notes: No tagged releases; this is the latest commit. Recent commits add generative drum, ambient, bass and lead fills, an NES player with sound on the Tracker Mini, hold Undo to clear a pattern and Shift plus middle button track selection.

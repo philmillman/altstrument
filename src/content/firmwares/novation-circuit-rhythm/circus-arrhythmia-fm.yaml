@@ -1,12 +1,12 @@
 device: novation-circuit-rhythm
 name: Circus Arrhythmia FM
-summary: Browser-installed patch of Novation's Circuit Rhythm 5706 firmware that fixes parameter-lock carry-over and a sound-processor hang, and adds a four-voice, four-operator FM synth on track 8 that plays chords, eight scales on tracks 1 to 7 and an SD card module loader.
+summary: Browser-installed patch of Novation's Circuit Rhythm 5706 firmware that fixes parameter-lock carry-over and a sound-processor hang, and adds an SD-card FM synth engine for track 8 with chords and an arpeggiator, scales, and a module loader.
 description: >-
   Arrhythmia, renamed Circus Arrhythmia FM in 0.2.2, does not ship Novation's firmware. The installer page reads the
   5706 update file you supply, checks its SHA-256, patches it in the browser and
   sends it to the unit over USB MIDI, and the user confirms on the unit. Two
-  builds are offered. The firmware build turns track 8 into a four-voice FM synth that
-  plays one to four notes per pad or step, also from MIDI on track 8's channel.
+  builds are offered. With the FM engine file fm.dse selected for a card pack, the firmware build turns track 8 into a four-voice FM synth that
+  plays one to four notes per pad or step, also from MIDI on track 8's channel; without it track 8 plays the pack's samples.
   Sixteen sounds are chosen in the Sample view or per step, and eight macros set
   feedback, the envelope, FM depth, cutoff and resonance, with tune on the synth page, and a step can
   hold a chord of up to four notes. Earlier 0.1.x releases had
@@ -14,7 +14,10 @@ description: >-
   loader for small programs on the microSD card. Ten example modules, among them
   Euclidean rhythms, Game of Life, snake and a puzzle, are published on the
   project site, and a module page writes them to the card over USB. Version 0.2.2
-  moves the chord and scale settings to a synth page opened with Shift and Track 8.
+  moves the chord and scale settings to a synth page opened with Shift and Track 8. Version 0.3.0 moves the FM synth out of the firmware
+  into an engine file on the microSD card that each pack selects, adds an arpeggiator on the synth page, a 32-step four-row Euclid
+  module, FM feedback up to 8x on macro 1, and a combined loader page for engines and modules. Its notes say the final Euclid revision
+  was tested only in an emulator and the hardware run was waived.
   The devkit build adds a DSP load meter and module tools and has no synth. Both
   fix parameter locks so that a step without a lock returns to the knob's value,
   and limit how long the unit waits for the sound processor before flagging a
@@ -38,7 +41,8 @@ homepage: https://llcoolkm.github.io/arrhythmia/web/
 distribution: browser-installer
 requires_stock: "5706"
 install_notes: >-
-  Back up the microSD card first. Download Novation's 5706 update file yourself,
+  Back up the microSD card first. From 0.3.0 the FM synth is a separate file: add fm.dse with the loader page, choose it for a pack
+  and load that pack, or track 8 plays samples. Download Novation's 5706 update file yourself,
   close Novation Components and other MIDI software, open the installer page in
   Chrome, connect the unit, choose the file and press Install, then press Play
   on the unit when it flashes. The unit needs bootloader 4799. To go back, use
@@ -51,6 +55,10 @@ install_notes: >-
 brick_risk: false
 tags: [synth, chords, scales, sequencer, parameter-locks, modules]
 versions:
+  - version: v0.3.0
+    date: 2026-11-07
+    url: https://github.com/llcoolkm/arrhythmia/releases/tag/v0.3.0
+    notes: Moves the FM synth into an engine file, fm.dse, on the microSD card, chosen per pack, so updating the firmware alone leaves track 8 on samples. Adds an arpeggiator, FM feedback up to 8x, a scale switch for track 8, a four-row 32-step Euclid module that can write patterns, and a loader page for engines and modules. Hardware testing of the final Euclid revision was waived.
   - version: v0.2.2
     date: 2026-11-01
     url: https://github.com/llcoolkm/arrhythmia/releases/tag/v0.2.2

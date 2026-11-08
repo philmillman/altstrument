@@ -1,0 +1,41 @@
+device: m-vave-fm-1
+name: FM-1 Audio Router
+summary: >-
+  Turns the FM-1 into a 2-in 2-out USB audio interface and a Bluetooth audio receiver with AAC, with a five-band
+  parametric EQ, a peak limiter, a mixer and three visualizers.
+description: >-
+  The FM-1 shows up on the computer as a class-compliant 16-bit 44.1 kHz audio interface, and also receives Bluetooth
+  audio with AAC or SBC. Incoming audio plays through the speaker or headphones, and a USB out can send it back to
+  the computer, raw or after effects. The effects are a five-band parametric EQ with selectable filter types and a peak
+  limiter, each with eight presets, switched on by holding FX. A mixer trims the inputs and USB output with mute and solo on
+  the keys, and the visualizers are meters, waveforms and a 40-band spectrum, the last two limited during AAC playback because
+  of memory. It builds on fm1-base and felucca-bsp with Optimist's Bluetooth stack, and the firmware container embeds m-bootloader.
+status: active
+authors:
+- name: maxravedj
+  url: https://github.com/maxravedj
+source: https://github.com/maxravedj/fm1-audio-router
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSE is the MPL-2.0 text, and LICENSING.md says the fm1-base files are MPL-2.0 file by file. The Bluetooth stack from
+  Optimist is offered as GPL-3.0-only or MPL-2.0 and used under MPL-2.0. The tree and releases carry an unmodified
+  m-bootloader binary under MIT, with its licence text.
+homepage: https://github.com/maxravedj/fm1-audio-router
+distribution: download
+install_notes: >-
+  Flash m-bootloader with M-Flasher first, power on holding REC, then flash the release's fm1-audio-router-v0.1.1.fwsc
+  with M-Flasher. docs/INSTALL.md says to keep bootloader replacement off for updates, to keep a verified full-flash
+  backup, never to write below 0x4000, and that a unit that no longer enumerates on USB may need hardware recovery.
+brick_risk: true
+tags: [usb-audio, ble-midi, mixer, fx, ui, utility]
+image:
+  url: https://raw.githubusercontent.com/maxravedj/fm1-audio-router/master/assets/github/mixer.png
+  alt: "Audio Router mixer screen: source badges USB IN, BT IN AAC, FX and USB OUT above level meters and faders for USB IN, BT IN, USB OUT and MASTER, with mute and solo buttons below"
+  credit: maxravedj
+  source_url: https://github.com/maxravedj/fm1-audio-router
+  first_party: true
+versions:
+- version: 0.1.1
+  date: 2026-11-07
+  url: https://github.com/maxravedj/fm1-audio-router/releases/tag/v0.1.1

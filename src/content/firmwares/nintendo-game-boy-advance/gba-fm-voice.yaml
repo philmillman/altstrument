@@ -10,12 +10,12 @@ description: >-
   algorithms, plus a drum mode in which two audio inputs act as drum triggers. The Workshop's CV, gates and knobs play
   it, and the GBA sends its notes, gates and button states back to the rack. The editor on the GBA screen has eight
   pages, including 16 patch slots, envelopes, a mixer, a modulation matrix, button actions, scale quantising and
-  calibration. The 4-operator voice has 32 presets converted from TX81Z and DX11 voice data. The author calls it a beta
-  that runs on hardware with testing still under way.
+  calibration. The 4-operator voice has 32 presets converted from TX81Z and DX11 voice data. The 1.0.0 commit marks the
+  project as out of beta.
 
-  The repository's info.yaml is marked as a draft program card for the Workshop Computer library. It is not in the
-  upstream releases folder yet, so no synced card entry exists; the sibling PSG project is catalogued there as card
-  108_GBA.
+  The repository's info.yaml is a program card for the Workshop Computer library, now marked Released with the draft flag
+  off. It is not in the upstream releases folder yet, so no synced card entry exists; the sibling PSG project is
+  catalogued there as card 108_GBA.
 status: active
 authors:
   - name: Andy Jenkinson
@@ -40,7 +40,7 @@ image:
   source_url: https://github.com/uglifruit/GBA_FM#readme
   first_party: true
 versions:
-  - version: main @ 4a0d4fb
-    date: 2026-11-06
-    url: https://github.com/uglifruit/GBA_FM/commit/4a0d4fbb7e602910badb9ff4c759f807453f1a2b
-    notes: No tagged releases; this is the latest commit. The info.yaml names it version 0.4.1, which moves the patch storage to its own flash sector, and the commit fixes a notch in the editor's list highlight.
+  - version: main @ d13949c
+    date: 2026-11-07
+    url: https://github.com/uglifruit/GBA_FM/commit/d13949ca0421f85d6106a13b6880cab4c384c969
+    notes: No tagged releases; this is the latest commit. The info.yaml names it version 1.0.0 and drops the beta note. Since 0.4.1 the patches have their own flash sector, no longer shared with GBA PSG Voice.

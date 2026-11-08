@@ -1,6 +1,6 @@
 device: 1010music-bitbox-mk2
-name: Bitbox MkII patcher (2.3.4+c5)
-summary: Browser patcher that turns your own official 2.3.4 image into 2.3.4+c5, adding a per-pad pattern generator, pitch-preserving sample speed, vertical waveform zoom, extra modulation sources and a screen saver with MIDI or CV wake.
+name: Bitbox MkII patcher (2.3.4+c7)
+summary: Browser patcher that turns your own official 2.3.4 image into 2.3.4+c7, adding a per-pad pattern generator, pitch-preserving sample speed, vertical waveform zoom, extra modulation sources and a screen saver with MIDI or CV wake.
 description: >-
   Licence note: the repository has no licence file or licence statement, only an
   "as is" disclaimer from the author, so the terms for reuse are not stated. A
@@ -9,7 +9,7 @@ description: >-
 
   The page checks your 2.3.4 image by SHA-256, applies a binary delta held in the
   repository, checks the result again and offers it as BITBOXMK2.bin to copy to
-  the card; the module identifies itself as 2.3.4+c5. Changes include vertical
+  the card; the module identifies itself as 2.3.4+c7. Changes include vertical
   waveform zoom, an optional screen saver with a MIDI or CV trigger wake, Sample
   Speed from 50 to 200 percent that keeps pitch and can combine with native
   Pitch, double-tap dial defaults, a clocked pattern generator for each of the 16
@@ -48,6 +48,14 @@ video:
   first_party: true
   found_via: https://github.com/vwal/bitbox-mkii-patcher#readme
 versions:
+  - version: 2.3.4+c7
+    date: 2026-11-08
+    url: https://github.com/vwal/bitbox-mkii-patcher/releases/tag/2.3.4%2Bc7
+    notes: Bugfix release. Recording works with a stopped clock, holding Play stops Trigger playback, Trigger Stop needs a two-second hold instead of three, and the Clock navigation, Rec tab caption and SD-card free-space readout are corrected.
+  - version: 2.3.4+c6
+    date: 2026-11-07
+    url: https://github.com/vwal/bitbox-mkii-patcher/releases/tag/2.3.4%2Bc6
+    notes: Adds an internal tempo setting on Main, Clock run, stop and reset controls, optional CV and MIDI transport assignments, saved pad mutes and a reorganised display menu. A same-day r2 revision fixed UI details and is folded into +c7.
   - version: 2.3.4+c5
     date: 2026-11-07
     url: https://github.com/vwal/bitbox-mkii-patcher/releases/tag/2.3.4%2Bc5

@@ -19,7 +19,9 @@ description: >-
   engine with sixteen presets, a DIRT filter for the 303 voice, and Gate out,
   which plays a kit's bottom four rows from the Deluge's gate outputs. v1.23
   adds MIDI kits, a CV 2 lock per step, an Elektron-style parameter lock
-  setting and track-type animations in song view.
+  setting and track-type animations in song view. v1.24 adds a LOOP track type
+  for using the Deluge as a MIDI looper, and an ECHO setting on MIDI tracks that
+  stops received notes being sent straight back out.
 status: active
 authors:
   - name: thisisbribery
@@ -40,7 +42,7 @@ install_notes: >-
 brick_risk: false
 tags: [fork, drums, synth-engine, sequencer, fx, sampler, swing]
 versions:
-  - version: main @ 783167f
-    date: 2026-11-07
-    url: https://github.com/thisisbribery/deluge-bribes-v1/commit/783167f33fccc151f6fc3afbdba1a5ccea5fe5af
-    notes: No tagged releases; this is the latest commit, which the README and commit message call v1.23. It rebases onto community 1.3.0 and fixes mono sequencer clips that lost data on loading.
+  - version: main @ 49994fe
+    date: 2026-11-08
+    url: https://github.com/thisisbribery/deluge-bribes-v1/commit/49994fe3456d1888d725194193b8b14a6f2c00fe
+    notes: No tagged releases; this is the latest commit, which the README and commit message call v1.24. It adds MIDI loop tracks, a LOOP track type that takes its channel from the first note played, and an ECHO setting on MIDI tracks.

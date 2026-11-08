@@ -6,7 +6,7 @@ summary: >-
 description: >-
   The sequence is split into segments A to D and held in 16 pattern slots, one per white key. A randomizer rolls the
   lead or the whole band in one of several styles, keeps three levels of undo and can lock single parts. The firmware is a
-  fork of Dinghy 0.3 with Dinghy 0.4's TRS MIDI input, on the Felucca and SLOOP platform. The README says every
+  fork of Dinghy 0.3 that now carries the FM-1 platform parts of Dinghy 0.5 (installer, update loader, USB buffers and flash map) and Dinghy 0.4's TRS MIDI input, on the Felucca and SLOOP platform. The README says every
   package has run in the fm1-emu emulator and not on a real FM-1, and the first hardware flash is described in
   docs/mello/FIRST_FLASH.md. The firmware is GPL-3.0-only, while the original browser instrument and the design notes
   in the repository are not free software.
@@ -34,7 +34,7 @@ image:
   source_url: https://github.com/joakimskurk/fm1mello
   first_party: true
 versions:
-- version: main @ b0672a0
-  date: 2026-11-06
-  url: https://github.com/joakimskurk/fm1mello/commit/b0672a03f625fc4cadce8aba4e57cc743617a6b5
-  notes: No tagged releases; this is the latest commit, labelled build 0.5-f97, which accepts the UC25HQ80 flash chip of newer FM-1s, makes the BASS page say what plays it and the chord it follows, and rolls a new style on each tap of GROOVE with ANY. The build before it, 0.5-f94, added more punch and air to the sound, opens the styles' leads and raises the hats, and animates the start screen with a playhead over the sixteen steps.
+- version: main @ e2e2863
+  date: 2026-11-08
+  url: https://github.com/joakimskurk/fm1mello/commit/e2e28634349404357e566d5e802cad41717390b9
+  notes: No tagged releases; this is the latest commit, labelled build 0.5-f99. Since 0.5-f97 it syncs Dinghy 0.5's update loader, installer, USB buffer alignment and flash map, and the README has a new front page. Build 0.5-f97 accepts the UC25HQ80 flash chip of newer FM-1s, makes the BASS page say what plays it and the chord it follows, and rolls a new style on each tap of GROOVE with ANY. The build before it, 0.5-f94, added more punch and air to the sound, opens the styles' leads and raises the hats, and animates the start screen with a playhead over the sixteen steps.

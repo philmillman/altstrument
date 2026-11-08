@@ -1,6 +1,6 @@
 device: roland-octa-capture
 name: OCTA-CAPTURE Rosetta OS
-summary: Reverse-engineered patches for the OCTA-CAPTURE system program that add a custom boot screen so far, with update-file tools and a SysEx test backend; a per-channel strip with EQ and compressor is planned.
+summary: Reverse-engineered patches for the OCTA-CAPTURE system program. The build adds a custom boot screen; test builds add a per-channel strip (EQ, tube, compressor) and a PC editor app, with update-file tools and a SysEx lab backend.
 description: >-
   Build scripts read your own copy of Roland's 1.51 update, unpack its compressed
   program, patch it and pack it back into an UpdOcta.dat with the checksums
@@ -9,8 +9,13 @@ description: >-
   units. The repository also holds notes on the Blackfin DSP code, the audio
   path, the update format and which flash areas each update mode writes, and a
   Rosetta Lab backend that lets a computer read, write and run code on a live
-  unit over the control USB-MIDI port. Planned work is a CPU-load meter, a
-  channel strip for the eight mic inputs, a solo mode and a clip guard. The
+  unit over the control USB-MIDI port. Newer commits add a CPU-load meter and a
+  per-input channel strip (gain, high-pass, tube, three-band EQ, compressor and
+  limiter) on the unit's DSP, a STRIP page and a new Channel page on the LCD,
+  and Rosetta Octa Control, a Python PC editor that sets the strip, preamp gain
+  and 48 V and shows meters. The README says the strip runs on lab test builds
+  only; the one-command build still produces the boot-screen file. A gate,
+  presets, a solo mode and a clip guard are planned. The
   author credits Claude, an AI assistant, with the reverse engineering and
   tools.
 status: active
@@ -46,7 +51,7 @@ image:
   source_url: https://github.com/yuyoi/octa-capture-rosetta-OS#readme
   first_party: true
 versions:
-  - version: main @ 436f41d
-    date: 2026-11-07
-    url: https://github.com/yuyoi/octa-capture-rosetta-OS/commit/436f41d
-    notes: No tagged releases; this is the latest commit.
+  - version: main @ 87ac68e
+    date: 2026-11-08
+    url: https://github.com/yuyoi/octa-capture-rosetta-OS/commit/87ac68e3a87bb2538d25132573d7b6df960be7f2
+    notes: No tagged releases; this is the latest commit. Recent commits add the channel strip DSP, the STRIP and Channel LCD pages and the Rosetta Octa Control PC app, which the README says run on lab test builds.

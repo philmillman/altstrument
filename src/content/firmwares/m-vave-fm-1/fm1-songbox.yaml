@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: FM-1 Song Box
+kind: tool
+summary: >-
+  ESP32-S3 touchscreen box that plays MIDI files and an endless lo-fi generator on an FM-1 over Bluetooth LE MIDI, with the FM-1 running CTL-1 as the sound source.
+description: >-
+  A host-side hardware project: the box finds the FM-1, remembers it, reconnects after a drop and sends every event of a
+  Standard MIDI File on its original channel. A touch screen offers a song list, play and stop, tempo from 50 to 150 percent
+  and transposition of 12 steps either way, with drums left alone. A first list entry runs a rule-based composer on the ESP32
+  that builds about three-minute pieces from tables in the code, each with a number from 0 to 9999 that always gives the same
+  piece. It needs CTL-1's Bluetooth build, since that firmware passes incoming MIDI to a General MIDI engine on all 16 channels.
+  The board is an ES3C28P or the same hardware sold as Freenove FNK0104. The README lists a Wi-Fi upload page for songs as
+  planned and not written.
+status: active
+authors:
+- name: Arnon
+  url: https://github.com/raspberrypi66
+source: https://github.com/raspberrypi66/fm1-songbox
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text. The skin background art was made with an image generator, and the prompt is in the repository.
+distribution: source-only
+install_notes: >-
+  Build with ESP-IDF 5.5.2 for the esp32s3 target and flash the board with idf.py. The FM-1 needs the Bluetooth build of
+  CTL-1, with Sound On and MIDI in set to Plays, Bluetooth switched on in Setup and no phone or computer connected, since it
+  accepts one Bluetooth central at a time. Nothing is written to the FM-1 by the box.
+brick_risk: false
+tags: [midi, ble-midi, sequencer, generative, utility]
+versions:
+- version: main @ d97e107
+  date: 2026-11-08
+  url: https://github.com/raspberrypi66/fm1-songbox/commit/d97e107f3c060cf6cf0c06cba1897badb4291263
+  notes: No tagged releases; this is the latest commit.

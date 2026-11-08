@@ -1,0 +1,44 @@
+device: m-vave-fm-1
+name: FM1 Pocket Guitar
+summary: >-
+  Fork of M-VAVE's FM1 Open that turns the 27-key panel into a guitar surface: black keys pick chords, white keys pluck
+  single strings, strum with alternating direction or loop a folk, pop, punk or reggae bar.
+description: >-
+  Eleven black keys select a chord without sounding it, and white keys 1 to 6 pluck the strings from low to high with
+  guitar voicings. Key 7 strums and alternates down and up on repeated taps, keys 8 to 10 play a chuck, an upstroke and a
+  palm mute, keys 11 to 14 play one bar of a folk, pop, punk or reggae pattern that loops while held, and keys 15 and 16
+  play a heavy down stroke and a strong up stroke. The strumming model gives each string its own voice, spreads the onsets
+  along the stroke and lowers velocity across it. The layer is two C files, gtr_sem and gtr_part, added to the unchanged
+  FM1 Open application and build. Both releases fix bugs found in a long looping session. The readme and release notes
+  are partly in Chinese.
+status: dormant
+authors:
+- name: xMagElonx
+  url: https://github.com/xMagElonx
+source: https://github.com/xMagElonx/fm1-guitar
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE.md is M-VAVE's FM1 Open licence, GPL version 3 only with an additional section 7 permission to link the binary
+  SDK, and the README says the guitar layer is GPL-3.0. The repository keeps the proprietary engine library
+  sdk/lib/libfm1_engine.a, which THIRD_PARTY.md allows for FM1 devices only. It also commits M-VAVE's stock V15 recovery
+  image sdk/firmware/FM-1_015.fwsc, which matches the licensed file (git blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd,
+  699,956 bytes, Apache-2.0 in m-vave/fm1_open).
+homepage: https://fm1-tone-engine.app.workbuddy.host/
+distribution: download
+requires_stock: The official FM-1 firmware
+install_notes: >-
+  Download the .fwsc from the release and install it over USB-C with a Web MIDI installer. The README points to the
+  project's demo page for the flashing guide and risk notes. Installing the official firmware again with M-UPGRADE returns
+  the unit to stock.
+brick_risk: false
+tags: [guitar, chords, sequencer, fork, usb-midi]
+versions:
+- version: b1.6.2
+  date: 2026-10-17
+  url: https://github.com/xMagElonx/fm1-guitar/releases/tag/b1.6.2
+  notes: Fixes looping strums, where a repeated note-on for a pitch still sounding was ignored and most strums in a held punk or folk bar went silent.
+- version: b1.6.1
+  date: 2026-10-17
+  url: https://github.com/xMagElonx/fm1-guitar/releases/tag/b1.6.1
+  notes: Fixes a crash in long looping sessions caused by an unbounded write to a diagnostic buffer.

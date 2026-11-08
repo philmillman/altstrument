@@ -1,11 +1,11 @@
 device: m-vave-fm-1
 name: GabberBuddy
 summary: >-
-  Hack of X0X for noise and gabber: a distorted 909 kit style, a master section with hard clip, bit crusher and EQ, a super-saw and an 8-bit noise oscillator for the 303s, and a neon screen theme.
+  Hack of X0X for noise and gabber: a distorted 909 kit style, a master section with drive, bit crusher and EQ, a super-saw and an 8-bit noise oscillator for the 303s, and a neon screen theme.
 description: >-
   Starts from the X0X groovebox and leaves its sequencer, five parts and manual as they were. The 909 KIT page gets a Style
   knob with the original sound, a saturated kick, snare, clap and hats with the 303s driven hard, and a version with
-  a wavefolded kick and snare and the 303s through a fuzz. The master section adds a hard-clip distortion, an independent
+  a wavefolded kick and snare and the 303s through a fuzz. The master section adds a drive control with a 0-127 amount whose distortion type follows the Style setting, an independent
   bit crusher with bits and rate, and a three-band EQ. The 303 gains a detuned super-saw of 3, 5 or 7 saws and an 8-bit noise
   oscillator with three shift-register lengths. The default theme is black with neon green seven-segment digits. The
   README calls it early: it has run in a simulator and in CI builds and has had little time on a real FM-1. It is
@@ -31,7 +31,7 @@ install_notes: >-
 brick_risk: false
 tags: [drums, synth-engine, sequencer, fx, distortion, fork, emulator, web]
 versions:
-- version: main @ 562a84b
+- version: main @ 74dcd79
   date: 2026-11-07
-  url: https://github.com/gybe808-dotcom/GabberBuddy/commit/562a84b
-  notes: No tagged releases; this is the latest commit. The README names the prebuilt file gabberbuddy-0.0.1-beta.fwsc.
+  url: https://github.com/gybe808-dotcom/GabberBuddy/commit/74dcd7933c2c123ab9edba2c9662e071a61aa2db
+  notes: No tagged releases; this is the latest commit. The master drive now has a 0-127 amount, and its distortion type follows the Style setting. The README names the prebuilt file gabberbuddy-0.0.1-beta.fwsc.

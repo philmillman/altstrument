@@ -1,14 +1,14 @@
 device: m-vave-fm-1
 name: Star Distroyer
 summary: >-
-  Vector FM synth with four banks of four oscillators, a morphing six-stage resonator and a four-band distortion
-  section, plus an arpeggiator, two step sequencers and a TURING sequencer page.
+  Vector FM synth with four banks of four oscillators, a morphing resonator, a four-band distortion section and a
+  delay into a room, plus a modulation matrix, an arpeggiator and two step sequencer tracks with a TURING page.
 description: >-
   Each bank has harmonics 1 to 32 and a vector X/Y control, with mono, duo and four-voice poly modes. A resonator stage
   offers filter models from band-pass to comb and allpass, and a four-band destroyer adds shapers, dynamics and a
-  feedback loop. The README lists 33 factory patches and says the project is at its voice stage, playing from the keys,
-  MIDI and a fixed 16-step loop, with the sequencer plan still being built. It is based on Dinghy 0.4 and the repository
-  carries design plans for the sound and the sequencer.
+  feedback loop, and a delay and room sit after it. The README lists 33 factory patches and 32 user places, with two LFOs
+  and four macros, and says the project is in development and not yet tested on a real FM-1. It is based on Dinghy 0.5
+  and the repository carries engine and update-path tests and a Firmware Hub card.
 status: active
 authors:
 - name: joakimskurk
@@ -27,7 +27,7 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, oscillator, filter, fx, arpeggiator, sequencer, generative, fork]
 versions:
-- version: main @ 32f0a7f
-  date: 2026-11-06
-  url: https://github.com/joakimskurk/fm1stardistroyer/commit/32f0a7f4fccce886927eb4bf7adff0850703dc00
-  notes: No tagged releases; this is the latest commit. It adds range and song rules for one patch at a time on the single FM-1, a Hub readiness file and a fix that returns MONO keys to the held note.
+- version: main @ 670cc0c
+  date: 2026-11-08
+  url: https://github.com/joakimskurk/fm1stardistroyer/commit/670cc0cd3d379fae0a3409a9d13cdfd2d5ed0254
+  notes: No tagged releases; this is the latest commit, a single commit that replaces the earlier history. It moves the base from Dinghy 0.4 to 0.5 and adds the delay and room, a modulation matrix with two LFOs and four macros, two sequencer tracks with chords and TURING, and host mode.

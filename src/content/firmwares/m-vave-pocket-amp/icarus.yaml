@@ -1,0 +1,50 @@
+device: m-vave-pocket-amp
+name: Icarus
+summary: >-
+  Open firmware for the Pocket AMP with a monophonic pitch-tracking guitar synthesizer, a Neural Amp Modeler A2 amp stage, cabinet impulse responses,
+  a tuner and a browser editor and installer.
+description: >-
+  The signal chain has reorderable blocks for dynamics, a synthesizer, an amp, a cabinet and EQ. The synthesizer
+  follows the pitch of a single played note and drives two band-limited oscillators, a sub oscillator, a resonant
+  ladder filter, an envelope follower, an LFO with glide and a three-channel mixer, with 12 factory presets and
+  several edit pages that draw the waveforms on the unit's screen. The amp block runs Neural Amp Modeler A2 captures,
+  and the cabinet block convolves impulse responses of up to 2048 taps. There is also a chromatic tuner, 80 preset
+  slots and a performance bank mode. The older drive, modulation, delay and reverb blocks were dropped from the active
+  chain to free memory and processing time. A single HTML page installs the firmware, backs up and verifies the flash
+  over Web MIDI and edits presets, and a desktop emulator and a WebAssembly workbench run the same audio code. The
+  release is a developer preview with Bluetooth LE switched off, and the README says the project builds on Pendel and
+  Optimist.
+status: active
+authors:
+- name: 28spawn
+  url: https://github.com/28spawn
+source: https://github.com/28spawn/Icarus
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only and LICENSE is the GPL version 3 text. The Bluetooth stack from Optimist is
+  GPL-3.0-only OR MPL-2.0, the update loader and OTA code are MPL-2.0, and three JieLi SDK files (Apache-2.0) are
+  fetched at build time and not stored. The notices say the repository holds no M-VAVE firmware, amp captures or
+  cabinet impulse responses and that the release files are built from scratch.
+homepage: https://github.com/28spawn/Icarus
+distribution: browser-installer
+requires_stock: The official Pocket AMP firmware
+install_notes: >-
+  Open custom-fw/web/Icarus_Web_Editor.html in Chrome or Edge with the unit on USB, choose Backup Flash, select the
+  release .fwsc or .bin in the Firmware tab and press the install button. The same page can restore the stock firmware.
+  The README says holding HOME and PARA for two seconds enters the mask-ROM download mode if an update was interrupted,
+  and RECOVERY.md describes the rescue. Installing is at your own risk and the project calls the release a developer
+  preview.
+brick_risk: false
+tags: [fx, amp-sim, nam, ir, synth, tuner, emulator, editor, midi]
+image:
+  url: https://raw.githubusercontent.com/28spawn/Icarus/main/docs/images/07_icarus_synth.png
+  alt: "Icarus synthesizer oscillator page with two sawtooth oscillator tiles, a 24 dB low-pass filter graph, an output waveform, the note A2 and the preset P01 METHENY LEAD"
+  credit: 28spawn
+  source_url: https://github.com/28spawn/Icarus
+  first_party: true
+versions:
+- version: 0.1.0
+  date: 2026-11-08
+  url: https://github.com/28spawn/Icarus/releases/tag/v0.1.0
+  notes: First developer-preview release with the guitar synthesizer, NAM amp stage, cabinet convolution, tuner and web editor. Bluetooth LE is off by default.

@@ -11,7 +11,7 @@ description: >-
   and offers Install, Finish the install or a rescue through the chip's own update mode. The rescue reads the whole
   flash twice, saves a backup with a SHA-256 beside it and reads it back before writing. Version 1.3.2 hears the
   SMK-37 keyboards and installs firmware made for that model, which the author says has not been tried on a keyboard.
-  Rescue is limited to the FM-1. The repository holds Python source and build scripts, and no application binaries.
+  Rescue is limited to the FM-1; from 1.3.3 it also accepts the UC25HQ80 flash chip of newer units. The repository holds Python source and build scripts, and no application binaries.
 status: active
 authors:
 - name: Saintpid
@@ -35,7 +35,7 @@ image:
   source_url: https://github.com/Saintpid/FM1-Switch
   first_party: true
 versions:
-- version: main @ 4020390
-  date: 2026-11-03
-  url: https://github.com/Saintpid/FM1-Switch/commit/4020390307b1ebb2631fa0f572daec085f06d161
-  notes: No tagged releases; this is the latest commit.
+- version: main @ 7985880
+  date: 2026-11-08
+  url: https://github.com/Saintpid/FM1-Switch/commit/79858806464c79ebd0c95363bb4b78fdda72205b
+  notes: No tagged releases; this is the latest commit, labelled version 1.3.3. Rescue now accepts the UC25HQ80 flash chip of newer FM-1 units as well as the earlier Puya part; the author has not tried it on a unit.

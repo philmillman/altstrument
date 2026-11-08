@@ -1,0 +1,39 @@
+device: m-vave-tank-g
+kind: tool
+name: MultiFX Editor
+summary: Linux desktop editor for the Tank G that reads and writes its 36 presets and edits the amp, mod, delay, reverb, IR cab and noise gate modules, with a tuner, LED colour and JSON import and export.
+description: >-
+  An Electron app that talks to the pedal through amidi over USB and keeps the editor and the pedal in sync both ways.
+  It shows the 36 presets in nine banks of four slots and edits each module, with a model list for the amp and a
+  cabinet list for the IR block, plus bypass, tuner and LED colour controls. Presets can be exported and imported as
+  JSON, the interface is in English and Brazilian Portuguese, and a diagnostic command-line script is included. The
+  README says the protocol is not documented by M-VAVE and advises backing up presets with the official app first. The
+  repository includes a CLAUDE.md file for AI coding assistants. It does not flash firmware.
+status: active
+authors:
+- name: rmsramos
+  url: https://github.com/rmsramos
+source: https://github.com/rmsramos/multifx-editor
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL version 3 text and the README states GPL-3.0 with no later-version clause.
+homepage: https://github.com/rmsramos/multifx-editor
+distribution: download
+install_notes: >-
+  Download the AppImage from the release page, make it executable and run it with the pedal connected over USB. It needs
+  alsa-utils for amidi and either membership of the audio group or the udev rules from scripts/setup-udev.sh. Back up
+  presets with the official app first, because the editor writes to the pedal's memory.
+brick_risk: false
+tags: [editor, librarian, presets, amp-sim, ir, tuner, linux, midi]
+image:
+  url: https://raw.githubusercontent.com/rmsramos/multifx-editor/main/docs/images/screenshot-en.png
+  alt: "MultiFX Editor window showing a preset grid of nine banks, with preset 9B open and panels for noise gate, amp with gain, treble, middle, bass and volume knobs, mod, delay, reverb and IR cab"
+  credit: rmsramos
+  source_url: https://github.com/rmsramos/multifx-editor
+  first_party: true
+versions:
+- version: 0.2.0
+  date: 2026-11-07
+  url: https://github.com/rmsramos/multifx-editor/releases/tag/v0.2.0
+  notes: First release, an AppImage.

@@ -27,7 +27,8 @@ requires_stock: "1.13"
 install_notes: >-
   This repository builds nothing that can be installed. To try the machine, use the Cycles Engines web flasher with your own
   official model-cycles_OS1.13.syx. To port it, run scripts/setup-model27.sh to get a model27 checkout with the package, then
-  gen_bias.py and the emulator test against your own OS file; the object build and the test need m68k-elf-gcc.
+  gen_bias.py and the emulator test against your own OS file; the object build and the test need m68k-elf-gcc. The script
+  still clones the original model27 repository, which is gone; its pinned commit 3b4e972 is in nicolai-creates/model27.
 brick_risk: false
 tags: [machines, synth-engine, drums, oscillator, emulator, open-source]
 versions:

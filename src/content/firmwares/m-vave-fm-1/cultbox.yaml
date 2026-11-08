@@ -1,0 +1,43 @@
+device: m-vave-fm-1
+name: CULTBOX
+summary: >-
+  Three-channel groovebox for the FM-1 with an Elka Drummer One sample drum machine, a Polivoks-style duophonic synth and
+  a dub siren, each with its own sequencer, effects and place in a mixer. Fork of Dinghy.
+description: >-
+  Channel 1 plays ten drum samples with a sine sub under the kick and a step sequencer from 16 to 64 steps with swing,
+  chance, slide and per-step edits, plus seven factory patterns. Channel 2 is a two-oscillator voice with filter, looping
+  envelopes and LFO, an arpeggiator, scales and a recordable note sequencer. Channel 3 is a pitch-swept dub siren with
+  glide on the keys. A mix page sets levels, echo sends and pan for each channel, and there are two echoes that can follow
+  the tempo and a per-channel low-pass, five saturation models and a tape stage. The update path, USB rescue, MIDI,
+  USB audio, panel and storage come from Dinghy; the instruments, effects and mixer are the author's own. A browser
+  build of the firmware and a manual are linked from the README.
+status: active
+authors:
+- name: beatcult
+  url: https://github.com/beatcult
+source: https://github.com/beatcult/CULTBOX
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md and the README state GPL-3.0-only, and LICENSE is the GPL version 3 text. The platform keeps the
+  licences of Dinghy and its ancestors, Terminus font is SIL OFL, and the JieLi SDK files are read at build time. The
+  drum samples were recorded from an Elka Drummer One by the author, and the logo is artwork, not GPL code.
+homepage: https://cult-box.netlify.app/
+distribution: browser-installer
+install_notes: >-
+  Download cultbox.fwsc from the release and install it with M-UPGRADE, the FM-1 Firmware Hub or another web installer,
+  or run tools/fm1_install.py. Installing any other firmware the same way leaves CULTBOX. If it crashes at boot, hold
+  OCT- while switching on for the USB rescue.
+brick_risk: false
+tags: [groovebox, drums, synth-engine, sequencer, fx, arpeggiator, scales, usb-midi, emulator, fork]
+image:
+  url: https://raw.githubusercontent.com/beatcult/CULTBOX/main/docs/img/mix.png
+  alt: "CULTBOX mix page on the FM-1 screen: a black and white face in a round pattern above the word LEVELS and four level meters for CH 1 DRUMS, CH 2 PLVKS, CH 3 DUB and MIX MASTER"
+  credit: beatcult
+  source_url: https://github.com/beatcult/CULTBOX
+  first_party: true
+versions:
+- version: '1.2'
+  date: 2026-11-05
+  url: https://github.com/beatcult/CULTBOX/releases/tag/v1.2
+  notes: Changes the package identity to FM-1_333 because M-UPGRADE refused the earlier one, and accepts both flash chips found in FM-1 units.

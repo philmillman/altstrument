@@ -1,0 +1,37 @@
+device: arturia-microfreak
+kind: tool
+name: microfreak-dfu
+summary: Linux-friendly firmware updater for the MicroFreak, as a WebUSB page and a Python command-line tool that flash Arturia's own update package over USB DFU without MIDI Control Center.
+description: >-
+  Arturia's MIDI Control Center does not run under Wine, so this tool reproduces its update protocol: plain USB DFU 1.1
+  plus three Arturia class requests, which the author reverse-engineered from the MIDI Control Center binary and wrote
+  up in docs/protocol.md. The web page takes a .mff package dropped on it, compares its SHA-256 with the release it
+  knows and writes it to the synth in a Chromium-family browser. The command-line tool lists the device, prints a plan
+  for a package, flashes it in the same order as MIDI Control Center and can enter or leave DFU mode on its own. It
+  writes only Arturia's package, which the user downloads from Arturia or takes from the macOS installer; the
+  repository holds no firmware. The README says a full 5.0.0.2084 update succeeded from both the page and the command
+  line on a real unit, and that Windows is out of scope.
+status: active
+authors:
+- name: TaraTheStar
+  url: https://github.com/TaraTheStar
+source: https://github.com/TaraTheStar/microfreak-dfu
+source_status: open
+license: AGPL-3.0-only
+license_notes: >-
+  LICENSE is the AGPL version 3 text and the README says AGPL-3.0 with no later-version clause. The MicroFreak firmware
+  itself is Arturia's and is not included.
+homepage: https://tarathestar.github.io/microfreak-dfu/
+distribution: browser-installer
+install_notes: >-
+  Download the .mff update package from Arturia, open the hosted page in Chrome, Edge, Brave or Chromium, drop the file
+  on it and connect the synth, or run mf_dfu.py flash with pyusb and libusb. On Linux a udev rule for USB ID 1c75:0601
+  is needed so the browser may open the device. The README says the bootloader stays in DFU mode if an update is
+  interrupted, so the flash can be run again.
+brick_risk: false
+tags: [flasher, firmware-update, dfu, webusb, linux, python]
+versions:
+- version: main @ af56b80
+  date: 2026-11-08
+  url: https://github.com/TaraTheStar/microfreak-dfu/commit/af56b80a519a877664cb94e3ed57f6117f5d7a29
+  notes: No tagged releases; this is the latest commit.

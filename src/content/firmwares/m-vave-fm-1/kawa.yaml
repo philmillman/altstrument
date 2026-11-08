@@ -2,13 +2,13 @@ device: m-vave-fm-1
 name: KAWA
 summary: >-
   Six-track tracker for the FM-1 aimed at chiptune and IDM: pulse, 4-bit wave, noise, FM, drum and sample engines, tables,
-  groove, 32 live effects, a song chain and a screen in English, French or Spanish. Beta 0.7, tried on a real FM-1.
+  groove, 32 live effects, a song chain and a screen in English, French or Spanish. Beta 0.8, tried on a real FM-1.
 description: >-
   Patterns of 16, 32 or 64 steps are written with the keys and chained into a song. Each track chooses an engine, and
   every sound has an envelope, an effect, an LFO and a modulation page, with a drive on every track. Eight synthesized drum
   kits and six generated breaks that can be cut into 16 slices are included, along with four user sample slots filled
   through a browser importer. The FM track uses the msfa engine as ported in Felucca. The firmware is built on Dinghy,
-  Felucca and SLOOP, and a web emulator and a manual in three languages are published. The README says beta 0.7 was tried on a real FM-1 and
+  Felucca and SLOOP, and a web emulator and a manual in three languages are published. The README says beta 0.8 was tried on a real FM-1 and
   passes its automatic checks, which include fuzzing with sanitizers.
 status: active
 authors:
@@ -36,7 +36,7 @@ image:
   source_url: https://github.com/Guizmoh/Kawa-Tracker-Fm1
   first_party: true
 versions:
-- version: main @ b57f8c5
-  date: 2026-11-06
-  url: https://github.com/Guizmoh/Kawa-Tracker-Fm1/commit/b57f8c52a79170bdb904e124251d7f6015ea0625
-  notes: No tagged releases; this is the latest commit. The repository holds the 0.7 beta package, which fixes bugs found by random-input and SysEx fuzzing; the README now says it was tried on a real FM-1.
+- version: main @ f1942a0
+  date: 2026-11-08
+  url: https://github.com/Guizmoh/Kawa-Tracker-Fm1/commit/f1942a0abc18b55f739bce5fcc065e8bb53a704d
+  notes: No tagged releases; this is the latest commit. The repository holds the 0.8 beta package, which recognises the flash chip fitted to newer FM-1 units so that saving and updating work there; 0.7 fixed bugs found by random-input and SysEx fuzzing. The README says 0.8 was tried on a real FM-1.

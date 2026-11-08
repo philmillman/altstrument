@@ -1,0 +1,48 @@
+device: m-vave-fm-1
+name: MF-1
+kind: tool
+summary: >-
+  Native macOS emulator of the FM-1 with its panel, screens, DX7 engine and effects, a virtual MIDI port that answers like the hardware, and a Songs menu; a second mode turns it into the iScream synth.
+description: >-
+  The app is a SwiftUI panel laid out from a photo of the unit around a C++ engine that is Google's msfa DX7 core, which the
+  README says is what the FM-1 firmware runs. By default it applies deviations measured on real V15 units, such as detune, feedback
+  strength, tremolo depths and the output filters, and these can be turned off for a plain DX7. It publishes a MIDI port named
+  like the FM-1, so web librarians and editors find it, and it accepts DX7 banks and voices as SysEx and M-VAVE's vendor
+  protocol for identify and voice writes. Extended mode adds effects after the signal path and a fifth bank of voices.
+  The Songs menu plays built-in songs and adds Standard MIDI Files. The six effects are generic designs fitted to published ranges,
+  and Bluetooth, battery, USB audio and firmware updates are not emulated. Mode two, iScream, has its own entry.
+  Ian Butterworth's repository holds the app, the research notes and the firmware port.
+status: active
+authors:
+- name: Ian Butterworth
+  url: https://github.com/IanButterworth
+source: https://github.com/IanButterworth/mf-1
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is MIT. The DSP under Sources/MF1Core/dsp derives from msfa, Apache-2.0, and the fonts are SIL OFL. The
+  factory banks are four .syx files holding M-VAVE's V15 voice bank, unmodified, which the README says M-VAVE distributes under
+  Apache-2.0; many of its voices derive from Yamaha DX7 cartridges. No firmware image is committed.
+distribution: download
+install_notes: >-
+  Download the DMG from the releases page, open it and drag MF-1 to Applications. It is a universal app for macOS 14 or later,
+  ad-hoc signed and not notarised, so on first launch use right-click and Open, or clear the quarantine attribute with xattr.
+  Nothing is installed on an FM-1.
+brick_risk: false
+tags: [emulator, fm, synth-engine, midi, presets]
+versions:
+- version: 1.2.2
+  date: 2026-11-07
+  url: https://github.com/IanButterworth/mf-1/releases/tag/v1.2.2
+  notes: Gives the iScream mode a battery icon, as on the hardware. The MF-1 mode is unchanged.
+- version: 1.2.0
+  date: 2026-11-07
+  url: https://github.com/IanButterworth/mf-1/releases/tag/v1.2.0
+  notes: Adds the iScream mode, with twelve flavors and its own settings folder and MIDI port.
+- version: 1.1.0
+  date: 2026-10-14
+  url: https://github.com/IanButterworth/mf-1/releases/tag/v1.1.0
+  notes: Adds the Songs menu with MIDI-file songs and a switch between faithful and extended mode.
+- version: 1.0.0
+  date: 2026-10-14
+  url: https://github.com/IanButterworth/mf-1/releases/tag/v1.0.0

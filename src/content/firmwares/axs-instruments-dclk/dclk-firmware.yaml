@@ -5,7 +5,7 @@ summary: >-
   The maker's open source firmware for the DCLK dual MIDI clock, an Arduino sketch for the STM32F411 Black Pill. It sends clock to two TRS outputs, USB and two analogue sync outputs, with quantised start and stop, per-output dividers, saved settings and USB clock input.
 description: >-
   Tempo runs from 30 to 300 BPM at 24 PPQN. Start waits for the next bar boundary of a set wait length of 1 to 16 bars, stop can be quantised the same way, and each output divides the clock by 1, 2, 3, 4, 6 or 8. The menus cover LEDs, MIDI and screen settings, a monitor and an about page.
-  Version 1.4 reads the CH1, CH2 and Settings touch pads from a CAP1206 controller and reverses the encoder direction, and version 1.5 adds Settings > UPDATE, which restarts the unit into the STM32 ROM DFU bootloader, and a SysEx command that does the same for the web flasher. Version 1.6 adds two analogue sync outputs with a clock pulse on the tip and a run gate on the ring, 1.6.1 adds a SYNC menu that sets pulses per quarter note for each output, and 1.6.2 shows a tab on the main screen for each channel while it plays.
+  Version 1.4 reads the CH1, CH2 and Settings touch pads from a CAP1206 controller and reverses the encoder direction, and version 1.5 adds Settings > UPDATE, which restarts the unit into the STM32 ROM DFU bootloader, and a SysEx command that does the same for the web flasher. Version 1.6 adds two analogue sync outputs with a clock pulse on the tip and a run gate on the ring, 1.6.1 adds a SYNC menu that sets pulses per quarter note for each output, 1.6.2 shows a tab on the main screen for each channel while it plays, and 1.6.3 makes the beat bars and the BEAT LED follow the host clock.
   The README lists the build options, which need a custom board entry and an upload method without a bootloader offset, and the pin map.
 status: active
 authors:
@@ -22,7 +22,7 @@ install_notes: >-
 brick_risk: false
 tags: [official, open-source, midi, usb-midi, platform]
 versions:
-  - version: main @ 0d30499
-    date: 2026-11-05
-    url: https://github.com/joebmz98/DCLK/commit/0d30499daa5b8f2877dc14249d363f11b6f4fb54
-    notes: No tagged releases; this is the latest commit, a build of firmware 1.6.2. The repository also commits compiled .hex, .bin and .elf files of the maker's own build.
+  - version: main @ f74952f
+    date: 2026-11-07
+    url: https://github.com/joebmz98/DCLK/commit/f74952f2844054215576b9025ce536b1959a6818
+    notes: No tagged releases; this is the latest commit, the source of firmware 1.6.3. The compiled files in the repository are still the 1.6.2 build, and a legacy folder keeps earlier builds. The repository also commits compiled .hex, .bin and .elf files of the maker's own build.

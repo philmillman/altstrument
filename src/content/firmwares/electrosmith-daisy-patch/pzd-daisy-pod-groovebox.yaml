@@ -2,14 +2,14 @@ device: electrosmith-daisy-patch
 name: PZD Daisy Pod Groovebox
 summary: >-
   Multitimbral groovebox firmware for the Daisy Pod with a four-layer looper, DX7-style FM, granular, string
-  ensemble and sampler engines, an I2C OLED menu and SD card storage.
+  ensemble, organ and sampler engines, an I2C OLED menu and SD card storage.
 description: >-
   Needs a Daisy Pod with an added 128x64 I2C OLED and a hand-wired micro SD socket. The looper has four
   tempo-locked stereo layers with undo, per-layer filter, effects and reverb send, vari-speed, and WAV export of
   the performance. Alongside it run an FM engine built on the msfa DX7 core with a few thousand DX7 SysEx
   presets, of up to 16 voices and, since v3.6.0, a second Dexed engine with up to 24 voices across both, a granular
-  instrument, an 8-voice string ensemble, and one sampler that works as a chromatic sound
-  player or a sliced drum kit and can import OP-1 drum and instrument packs you supply. All engines play at the
+  instrument, a string ensemble with up to 16 voices, a drawbar organ added in v3.6.5, and, since v3.6.6, two separate samplers, a chromatic sound
+  player and a sliced drum kit that start on their own MIDI channels and can import OP-1 drum and instrument packs you supply. All engines play at the
   same time, each on its own MIDI channel, and share a plate reverb and delay. Presets, performances and samples
   live on the SD card. From v1.6.0 the app runs from QSPI flash behind a separate Daisy bootloader, which each Pod
   needs flashed once. v3.0.0 renamed the SD card folders, so cards from v2.x need their folders renamed.
@@ -41,6 +41,18 @@ image:
   source_url: https://github.com/Peteranthony1st/PZD-Daisy-Pod-Groovebox
   first_party: true
 versions:
+  - version: v3.6.7
+    date: 2026-11-07
+    url: https://github.com/Peteranthony1st/PZD-Daisy-Pod-Groovebox/releases/tag/v3.6.7
+    notes: Every engine starts on MIDI channel 1 (the drum sampler on channel 10), Global:MIDI can save the channels for the next power-on, and the sustain pedal can be reversed.
+  - version: v3.6.6
+    date: 2026-11-07
+    url: https://github.com/Peteranthony1st/PZD-Daisy-Pod-Groovebox/releases/tag/v3.6.6
+    notes: Splits the sampler into separate drum and voice engines that play together, each with its own mixer channel and MIDI channel, and redraws the Global pages.
+  - version: v3.6.5
+    date: 2026-11-07
+    url: https://github.com/Peteranthony1st/PZD-Daisy-Pod-Groovebox/releases/tag/v3.6.5
+    notes: Adds a drawbar organ engine with percussion, key click and eight factory sounds. The string ensemble gets a Voices control, up to 16, and uses less CPU.
   - version: v3.6.0
     date: 2026-11-03
     url: https://github.com/Peteranthony1st/PZD-Daisy-Pod-Groovebox/releases/tag/v3.6.0

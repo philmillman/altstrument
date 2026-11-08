@@ -1,5 +1,5 @@
 device: m-vave-fm-1
-name: core-fm1
+name: modd
 summary: >-
   Early-stage framework for building one FM-1 firmware from selectable modules taken from Felucca, Melodee and
   SLOOP; only a minimal preset that shows a boot screen builds so far.
@@ -24,14 +24,14 @@ license_notes: >-
   the boot loader, chip configuration and EQ files that the packager copies from JieLi's AC79 SDK are Apache-2.0.
 distribution: source-only
 install_notes: >-
-  Needs mise and uv. Load a preset with `task config:defconfig -- minimal`, then run `task build`, which downloads the
-  SDK and compiler and writes build/core-fm1.fwsc. A rolling pre-release
+  Needs mise and uv. Load a preset with `task config:generate:defconfig -- minimal`, then run `task build`, which downloads the
+  SDK and compiler and writes build/modd.fwsc. A rolling pre-release
   with an older build exists on the releases page. The firmware is an early build that shows only a boot screen, so
   keep a backup and have a recovery route ready.
 brick_risk: false
 tags: [fork, platform, synth-engine, sdk]
 versions:
-- version: main @ beaaea0
-  date: 2026-10-27
-  url: https://github.com/DimmKirr/modd/commit/beaaea03df540b9691e61a1d4af975bc5ad65b5f
-  notes: No tagged releases; this is the latest commit. The repository's only releases are rolling CI pre-releases.
+- version: main @ 4712fb5
+  date: 2026-11-07
+  url: https://github.com/DimmKirr/modd/commit/4712fb5bab68035b3caa8344b9d4782688ab1f0b
+  notes: No tagged releases; this is the latest commit. The repository's only releases are rolling CI pre-releases. The project is now called modd, and its history was rewritten for a public release, so earlier commit links no longer resolve.

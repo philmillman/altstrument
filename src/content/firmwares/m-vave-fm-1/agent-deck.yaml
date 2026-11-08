@@ -1,0 +1,46 @@
+device: m-vave-fm-1
+name: Agent Deck
+summary: >-
+  Turns the FM-1 into a desk controller for command-line coding agents: key LEDs and the screen show each agent's state
+  and the buttons approve, deny or interrupt, driven by a host daemon over USB MIDI. Fork of Dinghy.
+description: >-
+  There is no synth engine. Each of the 27 keys is one agent slot, with its LED showing idle, working, blocked, error
+  or done, and blocked agents blink until dealt with. The screen has a grid of agents, a detail page with the selected
+  agent's last output lines and a page listing only agents waiting on you. Buttons start, approve, deny or interrupt the
+  selected agent, and the encoders move the selection. A Python daemon on the computer reads agent state from tmux
+  by pattern matching on pane content, or from the Herdr terminal multiplexer through its socket, and talks to the FM-1
+  over USB MIDI using a framed protocol on two controller numbers, documented in PROTOCOL.md. The firmware is a single
+  app file dropped into a Dinghy tree. The README says it was built and tested without an FM-1, with the daemon run
+  against real tmux and Herdr sessions and the firmware in Dinghy's host emulator, and that the first flash on
+  hardware had not happened yet.
+status: active
+authors:
+- name: Kevin Elliott
+  url: https://github.com/kevinelliott
+source: https://github.com/kevinelliott/fm-1-agent-deck
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README says GPL-3.0, inherited from Dinghy and Felucca, and the Dinghy tree under firmware-build/ carries the
+  GPL version 3 text and a LICENSING.md that states GPL-3.0-only. There is no licence file at the repository root. The
+  Dinghy logo in that tree is the Dinghy author's all-rights-reserved artwork, not GPL.
+homepage: https://github.com/kevinelliott/fm-1-agent-deck
+distribution: download
+install_notes: >-
+  Install dist/agentdeck-0.1.fwsc from the repository with firmware-build/tools/fm1_install.py or the FM-1 Firmware Hub,
+  then run host/agentdeck.py on the computer. The README asks you to return a V16 unit to V15 first, says a cut-off write
+  can leave the unit dark until the chip's mask-ROM mode rescues it, and notes that holding OCT- at power-on gives the
+  USB rescue. It has not been flashed on a real unit yet.
+brick_risk: false
+tags: [controller-mode, usb-midi, midi, ui, fork]
+image:
+  url: https://raw.githubusercontent.com/kevinelliott/fm-1-agent-deck/main/firmware/screen-grid.png
+  alt: "Agent Deck GRID page from the emulator: the title AGTDECK, a header reading AGENTS 02 BLOCKED 1 HOST OK, and a list of slots with CLAUDE-1 selected, CODEX-2 marked blocked in orange and the rest empty"
+  credit: Kevin Elliott
+  source_url: https://github.com/kevinelliott/fm-1-agent-deck
+  first_party: true
+versions:
+- version: main @ 50c539d
+  date: 2026-11-08
+  url: https://github.com/kevinelliott/fm-1-agent-deck/commit/50c539d20d9a0da791572f84211f54c6e43dcd85
+  notes: No tagged releases; this is the latest commit.

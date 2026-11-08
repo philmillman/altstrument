@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: VaveHero
+kind: firmware
+summary: >-
+  Rhythm game for the FM-1 in the Guitar Hero style: notes fall down a highway, the white keys play the lanes and the key LEDs show what is coming, with four synthwave songs.
+description: >-
+  A Dinghy 0.5 app with a browser reference that fixes the rules and the sound. Songs are ordinary MIDI files with one channel per instrument, and a converter
+  makes new ones. Choosing levels, voices, speed, mix and a grit setting is on the knobs, and best results are saved in flash. MIDI MODE LIVE makes the FM-1 a sound module for a
+  DAW. A two-player link over MIDI is built in and works through a computer, while a cable between two units is still to be studied. The README says the firmware is tested on the
+  host and measured in fm1-emu, using about 31 percent of the chip for audio at the heaviest spot, and not yet tried on a real FM-1.
+status: active
+authors:
+- name: joakimskurk
+  url: https://github.com/joakimskurk
+source: https://github.com/joakimskurk/fm1vavehero
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md gives GPL-3.0-only, as Dinghy, with Felucca, SLOOP and OberVave platform code under their own notices. The Terminus font is SIL OFL 1.1.
+distribution: source-only
+install_notes: >-
+  Build with the Makefile and JieLi's toolchain, then install build/vavehero.fwsc over USB-MIDI with tools/fm1_install.py. The browser reference runs without a device, and a
+  CI package opens in the fm1-emu emulator.
+brick_risk: false
+tags: [game, sequencer, synth-engine, midi]
+image:
+  url: https://raw.githubusercontent.com/joakimskurk/fm1vavehero/ccr-c6bd2f5b-v9xbts/docs/screens/fw-play.png
+  alt: "VaveHero play screen: song 03 ENGINE TOUR in DEMO mode, score 001347, combo 11, PERFECT, with notes falling down a neon highway above a row of lane keys"
+  credit: joakimskurk
+  source_url: https://github.com/joakimskurk/fm1vavehero
+  first_party: true
+versions:
+- version: ccr-c6bd2f5b-v9xbts @ 8d93c4b
+  date: 2026-11-08
+  url: https://github.com/joakimskurk/fm1vavehero/commit/8d93c4bbcf98da71ba971c23f486e2ddc97338d3
+  notes: No tagged releases; this is the latest commit on the default branch, which draws the play screen ahead by the screen's own delay.

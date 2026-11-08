@@ -1,0 +1,44 @@
+device: ableton-move
+name: Time Stretch
+summary: >-
+  Schwung tool module that changes the tempo of a WAV file on the Move without changing its pitch, with real-
+  time preview, using the Bungee library.
+description: >-
+  You choose a WAV file, set how many bars it spans and the target BPM, and preview the stretched audio from any
+  pad before saving. Source BPM can be edited directly, and the result can overwrite the original or be saved as
+  a new file in a folder you pick. The stretching uses the Bungee library. A prebuilt dsp.so is also committed
+  in the source tree.
+status: active
+authors:
+  - name: Charles Vestal
+    url: https://github.com/charlesvestal
+source: https://github.com/charlesvestal/schwung-stretch
+source_status: open
+license: MIT
+license_notes: >-
+  The module code is MIT. The README lists Bungee (MPL-2.0), Eigen (MPL-2.0), PFFFT and cxxopts as third-party
+  code. A compiled src/dsp.so is committed in the repository.
+distribution: download
+requires_stock: Schwung installed on the Move, with SSH access enabled
+install_notes: >-
+  Needs Schwung with SSH access enabled. Install Time Stretch from the Tools section of Schwung's module store.
+brick_risk: false
+tags: [utility, time-stretch]
+versions:
+  - version: v0.3.4
+    date: 2026-10-03
+    url: https://github.com/charlesvestal/schwung-stretch/releases/tag/v0.3.4
+    notes: The module now unloads fully, so an update takes effect without restarting the Move.
+  - version: v0.3.3
+    date: 2026-08-31
+    url: https://github.com/charlesvestal/schwung-stretch/releases/tag/v0.3.3
+  - version: v0.3.2
+    date: 2026-03-29
+    url: https://github.com/charlesvestal/schwung-stretch/releases/tag/v0.3.2
+  - version: v0.3.1
+    date: 2026-03-10
+    url: https://github.com/charlesvestal/schwung-stretch/releases/tag/v0.3.1
+  - version: v0.3.0
+    date: 2026-03-06
+    url: https://github.com/charlesvestal/schwung-stretch/releases/tag/v0.3.0
+    notes: Source BPM becomes editable, and bars and BPM stay in sync.

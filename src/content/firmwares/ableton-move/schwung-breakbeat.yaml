@@ -1,0 +1,50 @@
+device: ableton-move
+name: Breakbeat
+summary: >-
+  Schwung sound generator that slices a break into eight parts and rearranges them on Move's grid, with complexity, position anchors, manual slice markers, a second phrase-fill break and retriggers.
+description: >-
+  Rights warning: the repository commits 23 WAV break loops under samples/, with names such as amen, apache and funkydrummer that point to drum breaks
+  from commercial records. It gives no source or licence for them, and the module offers them as its built-in samples.
+
+  Breakbeat cuts a loaded WAV into eight slices and rebuilds the pattern on the Move grid. Complexity sets how often
+  a grid position proposes a different slice, eight anchors keep chosen slices in place, and each of two breaks (A, with B as an
+  optional phrase fill) can use grid slicing or eight manually placed starts shown on a fullscreen waveform. It also does retriggers and stretched slices, with
+  sample-rate follow of Move's tempo. It needs Move's MIDI sync set to Out to get timing.
+status: active
+authors:
+  - name: Matt Estela (mestela)
+    url: https://github.com/mestela
+source: https://github.com/mestela/schwung-breakbeat
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and the README gives no licence statement. The bundled break samples have no stated source or terms.
+homepage: https://github.com/mestela/schwung-breakbeat#readme
+distribution: download
+requires_stock: Schwung installed on the Move, with Move's MIDI Sync set to Out
+install_notes: >-
+  Needs Schwung. Install Breakbeat from Schwung's module store or Schwung Manager, or use the tarball from the latest release.
+  The README says to set Move's MIDI Sync to Out in Settings so the module receives timing, and to restart Schwung after installing.
+brick_risk: false
+tags: [sampler, sequencer, performance]
+video:
+  url: https://www.youtube.com/watch?v=vYf1vPt3pMc
+  title: Breakbeat (BB gen) for Ableton Move and Schwung
+  credit: matt estela
+  first_party: true
+  found_via: https://github.com/mestela/schwung-breakbeat#readme
+versions:
+  - version: v0.4.47
+    date: 2026-10-03
+    url: https://github.com/mestela/schwung-breakbeat/releases/tag/v0.4.47
+    notes: Adds eight position anchors and manual slice placement for A and B with a zoomable waveform editor.
+  - version: v0.4.34
+    date: 2026-10-02
+    url: https://github.com/mestela/schwung-breakbeat/releases/tag/v0.4.34
+    notes: Restores saved A and B samples when a Set loads during playback.
+  - version: v0.4.0
+    date: 2026-05-31
+    url: https://github.com/mestela/schwung-breakbeat/releases/tag/v0.4.0
+  - version: v0.1.2
+    date: 2026-05-05
+    url: https://github.com/mestela/schwung-breakbeat/releases/tag/v0.1.2

@@ -1,0 +1,46 @@
+device: ableton-move
+name: Machinemodule
+summary: >-
+  Schwung sound generator that runs the Elektron Machinedrum UW sound engine in an emulator on the Move, with
+  16 tracks on the drum pads; you upload your own Machinedrum OS file.
+description: >-
+  The Machinedrum's DSP code and OS run in an emulated DSP56300 with a model of the main processor, with the
+  track effects, mixer and master effects. The 16 tracks sit on the 16 drum pads and the knob pages follow the
+  pad last hit: Kit, Track, Synth, Amp/Filter, Mix, LFO, Echo, Reverb, EQ, Dynamix and Master. All machines
+  except MIDI, RAM and INP are included, so there is no sampling or audio input. The README says no Elektron
+  firmware is included; the user uploads the Machinedrum UW OS 1.63 file, and optionally a flash image and kit
+  files, through Schwung Manager. The first start after the upload takes about six minutes. A busy kit is
+  close to the Move's CPU limit.
+status: active
+authors:
+  - name: sd88me
+    url: https://github.com/sd88me
+source: https://github.com/sd88me/schwung-machinemodule
+source_status: open
+license: AGPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GNU AGPL version 3 text and the README says AGPL-3.0, as the engine, with no or-later
+  grant. The engine is a submodule of sd88me/mpc-vst-machinedrum and uses the dsp56300 emulator. The Schwung
+  plug-in header is MIT.
+homepage: https://github.com/sd88me/schwung-machinemodule#readme
+distribution: download
+requires_stock: Schwung installed on the Move, plus the Machinedrum UW OS 1.63 file from Elektron
+install_notes: >-
+  Needs Schwung. Install from the release tarball with Install from File in Schwung Manager, then upload the
+  Machinedrum UW OS 1.63 .syx file, a free download from Elektron, on the module's page. A flash image from
+  your own unit adds the ROM machines and factory kits. The first start after an upload takes about six
+  minutes.
+brick_risk: false
+tags: [emulator, synth-engine, drums, machines]
+versions:
+  - version: v0.1.2
+    date: 2026-10-22
+    url: https://github.com/sd88me/schwung-machinemodule/releases/tag/v0.1.2
+    notes: The package now creates the upload folders for the OS, flash image and kits.
+  - version: v0.1.1
+    date: 2026-10-22
+    url: https://github.com/sd88me/schwung-machinemodule/releases/tag/v0.1.1
+    notes: A stuck or failed flash image import no longer leaves the module silent.
+  - version: v0.1.0
+    date: 2026-10-21
+    url: https://github.com/sd88me/schwung-machinemodule/releases/tag/v0.1.0

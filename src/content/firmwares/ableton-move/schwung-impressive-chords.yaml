@@ -1,0 +1,46 @@
+device: ableton-move
+name: Impressive Chords
+summary: >-
+  Schwung MIDI effect that plays a chord from each pad with strum, tilt, articulation order, length and clock-synced retrigger, using bundled chord sets and ones loaded from files.
+description: >-
+  Rights warning: the chord presets were extracted from Ableton's Expressive Chords device data (a file named expressive-chords.tar.gz is committed to the repository), and
+  the bundled J-6 presets are all 100 of Roland's J-6 factory chord sets transcribed from Roland's manual.
+
+  Impressive Chords is a native C recreation of the Expressive Chords Max for Live device, not a port, renamed to avoid implying it is Ableton's. A base note triggers the chord, with
+  controls for invert, strum time, velocity tilt, seven strum orders, note length, retrigger with straight, dotted and triplet timing, choke, a note limit and gate. It can scan JSON, Ableton
+  .adv, .als and .alc files, or its own .chords format, from the module's sources folder.
+status: active
+authors:
+  - name: Matt Estela (mestela)
+    url: https://github.com/mestela
+source: https://github.com/mestela/schwung-impressive-chords
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and the README gives no licence statement. The README says the chord data was extracted from the Expressive Chords source data and from Roland's published J-6 chord set list; neither carries a stated redistribution licence.
+homepage: https://github.com/mestela/schwung-impressive-chords#readme
+distribution: download
+requires_stock: Schwung installed on the Move
+install_notes: >-
+  Needs Schwung. Install Impressive Chords from Schwung's module store or Schwung Manager, or from the repository with the
+  installer script's install-module-github command. Extra chord files go in the module's sources folder and are read when the Scan Presets knob is set to 1.
+brick_risk: false
+tags: [chords, midi, performance]
+video:
+  url: https://www.youtube.com/watch?v=seM7PpPqsQk
+  title: Impressive chords v0.1.9
+  credit: matt estela
+  first_party: true
+  found_via: https://github.com/mestela/schwung-impressive-chords#readme
+versions:
+  - version: v0.1.25
+    date: 2026-09-09
+    url: https://github.com/mestela/schwung-impressive-chords/releases/tag/v0.1.25
+    notes: Adds the 100 Roland J-6 chord sets as presets, with an importer script.
+  - version: v0.1.24
+    date: 2026-05-04
+    url: https://github.com/mestela/schwung-impressive-chords/releases/tag/v0.1.24
+    notes: Adds a fullscreen preset browser and dynamic parameters.
+  - version: v0.1.17
+    date: 2026-04-23
+    url: https://github.com/mestela/schwung-impressive-chords/releases/tag/v0.1.17

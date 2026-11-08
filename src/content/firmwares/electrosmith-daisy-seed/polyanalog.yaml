@@ -1,0 +1,35 @@
+device: electrosmith-daisy-seed
+name: PolyAnalog
+summary: Four-voice polyphonic virtual analog synth for a Daisy Seed wired to 19 pots, a MIDI input and an SSD1306 OLED, with two oscillators, filter, two LFOs and 16 presets.
+description: >-
+  The firmware targets a hand-built Seed instrument whose parts list and schematic are in the README: a multiplexer
+  feeding 19 potentiometers, a DIN MIDI input through an optocoupler, four buttons, a mono audio output and a 128x64
+  OLED. Each voice has two oscillators with saw, supersaw and pulse-width square waves, noise, glide, an ASR envelope
+  and a resonant low-pass filter with envelope, followed by a global high-pass. Two LFOs have selectable
+  destinations, the mod wheel and pitch bend are handled, and 16 presets can be stored and recalled with Program Change.
+  After a preset loads, the knobs use soft takeover. The synth listens on MIDI channel 5 only, and the README lists the
+  CC map.
+status: active
+authors:
+  - name: alexiszbik
+    url: https://github.com/alexiszbik
+source: https://github.com/alexiszbik/polyanalog
+source_status: open
+license: unspecified
+license_notes: No license file or statement in the repository.
+homepage: https://github.com/alexiszbik/polyanalog
+distribution: source-only
+install_notes: >-
+  Clone with submodules and build with make using the Daisy toolchain, then flash over USB DFU. A bad image is replaced
+  by putting the Seed back into DFU mode. The TestApp folder holds a JUCE test build for desktop.
+brick_risk: false
+tags: [synth-engine, polyphonic, oscillator, midi, open-source]
+versions:
+  - version: main @ dc0d539
+    date: 2026-06-08
+    url: https://github.com/alexiszbik/polyanalog/commit/dc0d539
+    notes: Optimisation pass and a smaller audio block size of 64.
+  - version: 1.0.0
+    date: 2026-04-08
+    url: https://github.com/alexiszbik/polyanalog/tree/1.0.0
+    notes: Git tag; no GitHub release page.

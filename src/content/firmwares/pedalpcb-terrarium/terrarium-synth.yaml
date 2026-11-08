@@ -1,0 +1,32 @@
+device: pedalpcb-terrarium
+name: Terrarium Synth
+summary: Monophonic pitch-tracking synth pedal for the Terrarium that plays a pulse-to-saw oscillator or noise from the guitar's pitch, with a filter, saved preset and tap-tempo modulation between settings.
+description: >-
+  Knobs set the dry level, synth level, trigger threshold, wave shape, filter and resonance. Toggles switch the oscillator to noise, choose whether the synth copies the dry envelope, and set how the preset footswitch behaves. Holding that footswitch saves the current settings to the pedal, and in modulate mode each played note blends over time between the saved preset and the knob settings at a tap-tempo rate. The README links a demo video.
+status: dormant
+authors:
+  - name: Steven Schulteis
+    url: https://github.com/schult
+source: https://github.com/schult/terrarium-synth
+source_status: open
+license: MIT
+distribution: source-only
+install_notes: >-
+  Build with CMake and the Daisy ARM toolchain, then flash with DFU. The release page lists v1.0.0. The Daisy Seed's ROM DFU mode stays available if a flash goes wrong.
+brick_risk: false
+tags: [synth-engine, fx, lfo]
+video:
+  url: https://www.youtube.com/watch?v=G-bg_g9ufXI
+  title: Terrarium Synth Pedal Demo
+  credit: Steven Schulteis
+  first_party: true
+  found_via: https://github.com/schult/terrarium-synth#readme
+  version: v1.0.0
+versions:
+  - version: main @ aeaf157
+    date: 2024-06-25
+    url: https://github.com/schult/terrarium-synth/commit/aeaf157
+    notes: Latest commit, after the v1.0.0 release; adjusts the trigger knob range.
+  - version: v1.0.0
+    date: 2024-06-17
+    url: https://github.com/schult/terrarium-synth/releases/tag/v1.0.0

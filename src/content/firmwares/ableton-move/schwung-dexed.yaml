@@ -1,0 +1,37 @@
+device: ableton-move
+name: Dexed
+summary: >-
+  Schwung sound generator that runs the Dexed six-operator FM engine, with all 32 DX7 algorithms, 16-voice polyphony and loading of DX7-format 32-voice sysex banks.
+description: >-
+  The module uses the MSFA engine from Dexed, Pascal Gauthier's DX7-style plug-in. It reads standard 4104-byte DX7 bank files from a banks folder in the module directory, so patches are chosen with the jog wheel or arrow buttons; single-voice dumps are not supported. Velocity, aftertouch, pitch bend, mod wheel, sustain and octave transpose are handled. The repository also commits several DX7 bank files. It works in a signal chain.
+status: active
+authors:
+  - name: Charles Vestal
+    url: https://github.com/charlesvestal
+  - name: Pascal Gauthier
+    url: https://github.com/asb2m10
+source: https://github.com/charlesvestal/schwung-dx7
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL version 3 text with no "or later" statement, and THIRD_PARTY_LICENSES.md says the whole module is GPL-3. It lists Dexed as GPL-3.0 and the MSFA engine from Google as Apache-2.0. The committed banks/*.syx files are Dexed_01 and the SynprezFM banks that ship with Dexed itself, not Yamaha factory ROMs.
+homepage: https://github.com/charlesvestal/schwung-dx7#readme
+distribution: download
+requires_stock: Schwung installed on the Move, with SSH access enabled
+install_notes: >-
+  Needs Schwung. Install Dexed from the Sound Generators section of Schwung's module store or Schwung Manager. Extra DX7 sysex banks are copied into the module's banks folder over SSH.
+brick_risk: false
+tags: [synth-engine, synth, fm, emulator]
+versions:
+  - version: v0.5.15
+    date: 2026-11-05
+    url: https://github.com/charlesvestal/schwung-dx7/releases/tag/v0.5.15
+    notes: Voice stealing prefers released voices over held ones, as in upstream Dexed.
+  - version: v0.5.14
+    date: 2026-10-03
+    url: https://github.com/charlesvestal/schwung-dx7/releases/tag/v0.5.14
+    notes: The module now unloads completely, so an update takes effect without restarting.
+  - version: v0.5.13
+    date: 2026-08-31
+    url: https://github.com/charlesvestal/schwung-dx7/releases/tag/v0.5.13
+    notes: Help corrections, including the LFO waveform order.

@@ -1,0 +1,27 @@
+device: electrosmith-daisy-seed
+name: Sampler (v4nz666)
+summary: Looping sampler for a bare Daisy Seed with gated recording, overdubbing, loop decay and a non-linear playback speed curve, read from a record switch and analog controls.
+description: >-
+  A single C++ sampler program that records into SDRAM. The commit history adds recording that is gated by a switch,
+  a non-linear response curve for playback speed, then overdubbing and a loop decay setting. An LED flashes to
+  confirm actions. The code reads one switch and several analog inputs, but the README is the unedited example
+  template, so the wiring and control assignments are only visible in the source.
+status: dormant
+authors:
+  - name: v4nz666
+    url: https://github.com/v4nz666
+source: https://github.com/v4nz666/Sampler
+source_status: open
+license: unspecified
+license_notes: No license file or statement in the repository.
+distribution: source-only
+install_notes: >-
+  Build with make using the Daisy toolchain and flash over USB DFU. The ROM DFU mode stays available if a flash goes
+  wrong.
+brick_risk: false
+tags: [sampler, looper, open-source]
+versions:
+  - version: main @ 03609ef
+    date: 2023-07-07
+    url: https://github.com/v4nz666/Sampler/commit/03609ef
+    notes: No tagged releases; this is the latest commit.

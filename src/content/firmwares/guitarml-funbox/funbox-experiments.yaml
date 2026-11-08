@@ -1,0 +1,28 @@
+device: guitarml-funbox
+name: FunBox Experiments
+summary: Personal effect experiments for a custom FunBox build, with a polyphonic base synth, an effect template, a patch to the FunBox libDaisy files and a Nix flake for building.
+description: >-
+  The repository holds a basesynth project with a voice-based synth engine, a template folder for new effects, an expression handler and a patch for libDaisy's FunBox mapping. The author builds with a Nix flake and notes that flashing from inside the Nix shell did not work for them without dfu-util on the host. The effect READMEs are mostly empty control tables.
+status: active
+authors:
+  - name: Bruno Croci
+    url: https://github.com/crocidb
+source: https://github.com/crocidb/funbox-experiments
+source_status: open
+license: MIT
+distribution: source-only
+install_notes: >-
+  Run nix develop --command make to build, then make program-dfu in an experiment's folder, which needs udev rules for DFU on the host. The Daisy Seed's ROM DFU mode stays available if a flash goes wrong.
+brick_risk: false
+tags: [fx, synth-engine]
+image:
+  url: https://raw.githubusercontent.com/crocidb/funbox-experiments/main/img/funbox-build.jpg
+  alt: Top view of an unboxed FunBox pedal board with six knobs, three switches and two lit LEDs on a workbench among soldering tools
+  credit: Bruno Croci
+  source_url: https://github.com/crocidb/funbox-experiments
+  first_party: true
+versions:
+  - version: main @ 9d1031e
+    date: 2026-07-08
+    url: https://github.com/crocidb/funbox-experiments/commit/9d1031e
+    notes: No tagged releases; this is the latest commit.

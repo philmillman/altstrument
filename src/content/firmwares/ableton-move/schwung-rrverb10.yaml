@@ -1,0 +1,40 @@
+device: ableton-move
+name: RRVerb-10
+summary: >-
+  Schwung audio effect that emulates a mid-80s Micro Rack digital reverb at chip level, running its program ROM for nine room, hall, plate, delay, reverse and gate modes; you supply the ROM dump.
+description: >-
+  RRVerb-10 uses MUNT's cycle-accurate emulation of the BOSS reverb gate array and executes a 16 KB program ROM that the
+  user supplies, placed at roms/rrv10.bin or uploaded through Schwung Manager, which checks size and CRC. Without the ROM it loads and passes audio
+  through. Controls are Mode, Decay/Gate, Pre-EQ and Mix. The module resamples to the chip's native 31.25 kHz clock so
+  decay times match the hardware. The program ROM is not in the repository.
+status: active
+authors:
+  - name: legsmechanical
+    url: https://github.com/legsmechanical
+source: https://github.com/legsmechanical/schwung-rrverb10
+source_status: open
+license: LGPL-2.1-or-later
+license_notes: >-
+  The LICENSE file says LGPL version 2.1 or any later version and gives the provenance. BossEmu is by Sergey V. Mikayev
+  from MUNT, LGPL-2.1-or-later, carried with one memory-release fix. The reference plug-in smol-rack by giulioz is GPL-3.0 but only its
+  emulation file was taken. The program ROM remains its rights holder's property and is not distributed.
+homepage: https://github.com/legsmechanical/schwung-rrverb10#readme
+distribution: download
+requires_stock: Schwung installed on the Move; a 16384-byte program ROM dump (CRC32 4B1D6D75) that you supply
+install_notes: >-
+  Needs Schwung and your own ROM dump. Install RRVerb-10 from Schwung's module store or Schwung Manager, then upload
+  the ROM through the manager's asset slot or copy it to roms/rrv10.bin in the module folder.
+brick_risk: false
+tags: [fx, reverb, emulator]
+versions:
+  - version: v0.3.2
+    date: 2026-09-28
+    url: https://github.com/legsmechanical/schwung-rrverb10/releases/tag/v0.3.2
+    notes: No longer asks the host to keep it running through silence, which cuts idle CPU use; the sound is unchanged.
+  - version: v0.3.1
+    date: 2026-09-04
+    url: https://github.com/legsmechanical/schwung-rrverb10/releases/tag/v0.3.1
+    notes: Fixes the M-Tap 1 and M-Tap 2 modes drawing as the same square on the knob grid.
+  - version: v0.3.0
+    date: 2026-08-04
+    url: https://github.com/legsmechanical/schwung-rrverb10/releases/tag/v0.3.0

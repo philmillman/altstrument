@@ -1,0 +1,37 @@
+device: ableton-move
+name: Fork
+summary: >-
+  Schwung MIDI effect that splits incoming notes by pitch into up to four channel ranges and sends them to other tracks through named pipes or to external MIDI hardware.
+description: >-
+  Fork splits one MIDI stream at up to three configurable octave boundaries. Notes below the first split stay on
+  the track, and notes in each higher range get their own MIDI channel and either go out through a named Unix
+  pipe under the Schwung data folder or continue on the current track for external gear. Controllers, pitch
+  bend, program change and channel pressure are copied to every active split, and active notes are tracked so
+  none stick when a parameter changes. A receiver mode on another track reads a pipe and replays the stream
+  with a transpose. The README suggests using it to turn the Move into several synth tracks or up to 16 MIDI
+  tracks.
+status: active
+authors:
+  - name: andree182
+    url: https://github.com/andree182
+source: https://github.com/andree182/schwung-fork
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL version 3 text and the README does not add an or-later grant.
+homepage: https://github.com/andree182/schwung-fork#readme
+distribution: download
+requires_stock: Schwung installed on the Move
+install_notes: >-
+  Needs Schwung. Install Fork from Schwung's module store or Schwung Manager, or give Schwung Manager the
+  tarball from the latest release.
+brick_risk: false
+tags: [midi, performance, utility]
+versions:
+  - version: v1.1
+    date: 2026-06-11
+    url: https://github.com/andree182/schwung-fork/releases/tag/v1.1
+    notes: Release fix with no code change.
+  - version: v1.0
+    date: 2026-06-07
+    url: https://github.com/andree182/schwung-fork/releases/tag/v1.0

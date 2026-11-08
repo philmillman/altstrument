@@ -1,0 +1,29 @@
+device: electrosmith-daisy-field
+also_devices: [electrosmith-daisy-patch]
+name: DaisyX7
+summary: DX7-style FM drone synth for the Daisy Field and Patch.Init() that simulates six operators of the Yamaha DX7 sound chip, with algorithm selection and per-operator ratio and level controls.
+description: >-
+  An exploration of the DX7 synthesis engine written to learn how the chip works. It models six operators of the
+  OPS sound generator but not the EGS envelope chip, so it makes a continuous drone and not played notes. On the
+  Field, the two switches step through algorithms, buttons A1 to A6 select an operator, B8 toggles ratio or fixed
+  frequency mode, and knobs set the current operator's level, coarse and fine frequency, feedback and overall pitch.
+  The repository has a field build and a Patch SM build in separate folders.
+status: dormant
+authors:
+  - name: Jacob Vosmaer
+    url: https://github.com/jacobvosmaer
+source: https://github.com/jacobvosmaer/DaisyX7
+source_status: open
+license: MIT
+license_notes: LICENSE is the MIT license with copyright lines for andrewikenberry (2020) and Jacob Vosmaer (2023).
+distribution: source-only
+install_notes: >-
+  Build in the field or patch_sm folder with make against libDaisy and DaisySP and flash over USB DFU. No prebuilt
+  binary is published.
+brick_risk: false
+tags: [synth-engine, fm, emulation, open-source]
+versions:
+  - version: master @ 2254101
+    date: 2025-08-07
+    url: https://github.com/jacobvosmaer/DaisyX7/commit/2254101
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,33 @@
+device: electrosmith-daisy-patch
+name: DaisySeed DSP Playground
+summary: Fork of DaisyExamples with the author's own Daisy Pod programs added, including a DJFX effect suite, granular looper and time-stretch engines, and a performance looper modelled on a sampler's DJ effects.
+description: >-
+  The repository is a copy of Electrosmith's DaisyExamples with new Pod folders. DJFX_Looper and DJFX_Advanced are
+  loopers over a 30-second SDRAM buffer. DJFX_Advanced has classic, ping-pong and tape-stop modes, two parameter banks
+  selected by the encoder button, linear interpolation and Hanning or rectangular windows. DJFX_Suite is a chain of
+  effects including a bitcrusher, a formant filter, a bi-directional filter sweep, an Euclidean tremolo, a spectral
+  isolator and a transient gater, with tempo sync. GranularTimestretch adds MIDI sync.
+
+  The top-level README is still the upstream examples text. The folders also contain Cursor rule files that guide the
+  author's use of an AI coding editor.
+status: active
+authors:
+  - name: mokafari
+    url: https://github.com/mokafari
+source: https://github.com/mokafari/DaisySeed-DSP-Playground
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT license, copyright 2020 andrewikenberry, inherited from DaisyExamples, and covers the
+  new folders too. The repository is about 600 MB because it carries the libraries and a full copy of the examples.
+distribution: source-only
+install_notes: >-
+  Build a program folder under pod/ with make after building libDaisy and DaisySP, then flash over USB DFU. The repository
+  includes a Pod flashing guide. The ROM DFU mode stays available if a flash goes wrong.
+brick_risk: false
+tags: [pod, fx, looper, granular, open-source]
+versions:
+  - version: main @ 1bf91b1
+    date: 2026-02-01
+    url: https://github.com/mokafari/DaisySeed-DSP-Playground/commit/1bf91b1
+    notes: No tagged releases; this is the latest commit.

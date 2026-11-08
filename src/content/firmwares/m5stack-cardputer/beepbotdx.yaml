@@ -1,0 +1,32 @@
+device: m5stack-cardputer
+name: beepBot DX
+summary: >-
+  Small sampler and sequencer for the Cardputer ADV with eight sound slots, per-slot effects, a 16-step pattern grid, song mode and WAV export to the SD card.
+description: >-
+  beepBot DX records sounds with the built-in microphone or imports 16 kHz mono WAV files from the SD card into eight
+  slots, trims them and adds pitch shift, bitcrush and filters. Sounds are played on a 16-step grid of eight tracks with
+  16 patterns, chained into songs of up to 16 patterns at 60 to 240 BPM, and a finished song can be rendered to a WAV file.
+  Memory limits the slots to roughly four seconds in total on the ADV. The README lists swing and an 8-bit sample mode as planned
+  and mentions support for a Cardputer Zero with longer samples.
+status: active
+authors:
+  - name: Brad McNally
+    url: https://github.com/bradmcnally
+source: https://github.com/bradmcnally/beepbotdx
+source_status: open
+license: MIT
+distribution: download
+install_notes: >-
+  The release page carries a beepbotdx .bin for the Cardputer ADV; the README's own route is building with PlatformIO
+  (pio run -e m5stack-cardputer -t upload). It also describes a desktop SDL simulator built with CMake. Put WAV files for
+  import in /beepbotdx/samples/ on the SD card, 16 kHz mono.
+brick_risk: false
+tags: [sampler, sequencer, recording, fx, sd-card, esp32-s3, open-source]
+versions:
+  - version: v0.6.0
+    date: 2026-07-16
+    url: https://github.com/bradmcnally/beepbotdx/releases/tag/v0.6.0
+    notes: Adds per-sound effects, an experimental shake-to-generate pattern on the ADV, a project settings screen with memory tracking and resampling of captured audio.
+  - version: v0.5.0
+    date: 2026-07-11
+    url: https://github.com/bradmcnally/beepbotdx/releases/tag/v0.5.0

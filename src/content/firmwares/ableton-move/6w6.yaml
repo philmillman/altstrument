@@ -1,0 +1,41 @@
+device: ableton-move
+name: 6W6
+summary: >-
+  Schwung drum module that synthesizes a TR-606-style kit plus a clap, with per-voice drive, seven distortion types, hat choke, send reverb and delay, and a browser editor.
+description: >-
+  Every voice is synthesized with no samples: kick, snare, two toms, closed and open hat, cymbal and hand clap.
+  The metal sounds use banks of partials fitted to hardware recordings. Each voice has tune, decay, drive, a
+  choice of seven distortion types, level and sends to a reverb and a delay, and the master bus has its own
+  distortion. Level follows velocity, hat choke is a switch, and the module has no sequencer, so it plays from
+  Move's sequencer or pads. The voices start from analogcode's 606-Inspired-Synth-Drums, vendored unmodified;
+  the cymbal, second hat bank, drive stages, choke and accent are additions. The README says it was built with
+  AI assistance and is not affiliated with Roland.
+status: active
+authors:
+  - name: Gustavo Lima
+    url: https://github.com/athousanddetails
+  - name: Matthew Fecher (AudioKit Pro)
+    url: https://github.com/analogcode/606-Inspired-Synth-Drums
+source: https://github.com/athousanddetails/schwung-6W6
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL version 3 text. The README and NOTICE add section 7 terms: any work containing the
+  code must keep the credit "6W6 by A Thousand Details" with a link in its documentation and credits screens,
+  and modified versions must be marked as changed. The vendored voices in src/vendor/606 stay MIT.
+homepage: https://github.com/athousanddetails/schwung-6W6#readme
+distribution: download
+requires_stock: Schwung 0.12.1 or later installed on the Move
+install_notes: >-
+  Needs Schwung 0.12.1 or later. Install 6W6 from Schwung's module store or Schwung Manager, or build it with
+  Docker and copy dist/6w6 to the sound_generators modules folder on the Move.
+brick_risk: false
+tags: [synth-engine, drums, fx, emulator]
+versions:
+  - version: v1.8.2
+    date: 2026-10-27
+    url: https://github.com/athousanddetails/schwung-6W6/releases/tag/v1.8.2
+    notes: Adds the copyright notice and the section 7 attribution terms.
+  - version: v1.8.1
+    date: 2026-10-27
+    url: https://github.com/athousanddetails/schwung-6W6/releases/tag/v1.8.1

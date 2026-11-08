@@ -1,0 +1,38 @@
+device: zoom-multistomp
+kind: tool
+name: nam2zoom
+summary: >-
+  Desktop app for Windows and macOS that retrains Neural Amp Modeler captures into 44.1 kHz A2 Lite files for Zoom Plus pedals and can build and install them as effects on the MS-50G+, MS-60B+ and MS-70CDR+.
+description: >-
+  nam2zoom retrains NAM captures locally, with optional NVIDIA GPU use on Windows, and exports A2 Lite models at 44.1 kHz with
+  quality checks and an A/B preview. A Build effect page packs one to five retrained models into each of three named effect
+  slots, with a Full mode and a Compact mode that runs the network at a lower rate to save DSP time, and installs or removes
+  a slot on the pedal over USB. Installation is limited to the MS-50G+ on firmware 1.40, the MS-70CDR+ and the MS-60B+ on
+  firmware 1.20, takes a full backup by default and verifies by reading back. The README also points to a web loader at sym.bios.is.
+  The repository holds the C# desktop apps, a Python backend and the pedal DSP code. No NAM captures or trained weights are distributed.
+status: active
+authors:
+  - name: Aleksandar Vukasinovic
+    url: https://github.com/freelender
+source: https://github.com/freelender/nam-to-zoom
+source_status: open
+license: MIT
+license_notes: >-
+  Copyright holder is Aleksandar Vukasinovic. The README says third-party dependencies keep their own licences. The
+  repository commits a roughly 16 MB training signal, TRAINING_DI.wav, whose origin was not checked.
+distribution: download
+install_notes: >-
+  Extract the whole portable package from the release into a writable folder and run nam2zoom.exe or open nam2zoom.app.
+  Retraining needs no pedal. Before installing or removing a bank, remove that NAM slot from saved patches and select a
+  stock-only patch; the guide says to keep the pedal powered and connected and to follow its recovery steps if a transfer fails.
+brick_risk: false
+tags: [fx, nam, amp-modeler, loader, editor, zd2]
+versions:
+  - version: v1.2.3
+    date: 2026-10-14
+    url: https://github.com/freelender/nam-to-zoom/releases/tag/v1.2.3
+    notes: Windows x64 and macOS arm64 packages; the default branch has since moved on with a new interface, 44.1 kHz retraining and a direct upload path.
+  - version: v1.1.1
+    date: 2026-10-08
+    url: https://github.com/freelender/nam-to-zoom/releases/tag/v1.1.1
+    notes: Windows preview package.

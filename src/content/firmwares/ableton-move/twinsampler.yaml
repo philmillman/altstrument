@@ -1,0 +1,40 @@
+device: ableton-move
+name: TwinSampler
+summary: >-
+  Schwung overtake sampler that splits the Move's pads into two independent 4x4 grids with eight banks each, with per-pad controls, transient slicing, a chop editor, recording, MIDI loopers, effects, sessions with undo and autosave.
+description: >-
+  The left grid defaults to Source mode, where one sample is chopped into 16 pads in a choke group, and the right grid defaults to Pad mode for finger drumming. Version 0.4.0 adds waveform editors for trimming and chopping, live cue marking by tapping pads while a chop plays, and independent bank modes. Banks can be copied and erased, samples reversed, and sessions saved and restored. The repository commits the compiled DSP libraries beside the source, and releases attach a checksum file. The README links two demo videos.
+status: active
+authors:
+  - name: jrucho
+    url: https://github.com/jrucho
+source: https://github.com/jrucho/schwung-twinsampler
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and no licence statement in the README or src/module.json.
+homepage: https://github.com/jrucho/schwung-twinsampler#readme
+distribution: download
+install_notes: >-
+  Needs Schwung. Install TwinSampler from Schwung's module store, or unpack twinsampler-module.tar.gz from the latest release into the Move's overtake module folder. Open it from the Overtake Modules list.
+brick_risk: false
+tags: [sampler, performance, looper]
+video:
+  url: https://www.youtube.com/watch?v=dNPo0ITg-AQ
+  title: TwinSampler for Schwung - Ableton Move
+  credit: owaega
+  first_party: true
+  found_via: https://github.com/jrucho/schwung-twinsampler#readme
+versions:
+  - version: v0.4.1
+    date: 2026-10-21
+    url: https://github.com/jrucho/schwung-twinsampler/releases/tag/v0.4.1
+    notes: Adds editor shortcuts for bank pitch, attack and release, and rebuilds the DSP against Move's glibc.
+  - version: v0.4.0
+    date: 2026-10-21
+    url: https://github.com/jrucho/schwung-twinsampler/releases/tag/v0.4.0
+    notes: Adds the Trim and CHOP waveform editors and live cue marking.
+  - version: v0.3.7
+    date: 2026-08-24
+    url: https://github.com/jrucho/schwung-twinsampler/releases/tag/v0.3.7
+    notes: Lowers pad trigger latency.

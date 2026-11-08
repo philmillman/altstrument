@@ -1,0 +1,29 @@
+device: electrosmith-daisy-seed
+name: Daisy Looper (willemOH)
+summary: Looper for a Daisy Seed that records a loop to an SD card, reloads it into SDRAM at start-up and plays it back; the author built it on their own PCB because a breadboard did not work.
+description: >-
+  Samples live input, writes the loop to the SD card as a WAV file and reads it
+  back into memory after a reboot. The README says it needs a wavwriter.h
+  change from an open libDaisy pull request, that SD card wiring must be short,
+  and that it failed on a breadboard but worked on a PCB with under 50 mm
+  between the Seed and the card reader. It credits a forum post for the
+  card-to-SDRAM read code.
+status: dormant
+authors:
+  - name: willemOH
+    url: https://github.com/willemOH
+source: https://github.com/willemOH/daisy_looper
+source_status: open
+license: unspecified
+license_notes: No LICENSE file and no licence statement.
+distribution: source-only
+install_notes: >-
+  Clone with submodules and build as in the Daisy C++ environment tutorial, then
+  flash over USB DFU. A Seed recovers through DFU mode after a bad image.
+brick_risk: false
+tags: [looper, sampler, open-source]
+versions:
+  - version: main @ 8a2fb63
+    date: 2025-04-02
+    url: https://github.com/willemOH/daisy_looper/commit/8a2fb63f343a37be5807299e25e6391d45c19045
+    notes: No tagged releases; this is the latest commit.

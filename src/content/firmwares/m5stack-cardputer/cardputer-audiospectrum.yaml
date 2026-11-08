@@ -1,0 +1,29 @@
+device: m5stack-cardputer
+name: m5Cardputer_audiospectrum
+summary: >-
+  Port of an M5StickC audio spectrum analyser, oscilloscope and tuner to the Cardputer, with a prebuilt binary for the Launcher firmware.
+description: >-
+  Aurélio Monteiro Avanzi ported KIRA Ryouta's M5StickC Audio Spectrum Display, Oscilloscope and Tuner to the Cardputer. The
+  sketch draws a spectrum from the microphone using an integer FFT, an oscilloscope view and a pitch tuner based on the
+  dywapitchtrack library. The last commit adds a binary for use with the M5Stick-Launcher.
+status: dormant
+authors:
+  - name: Aurélio Monteiro Avanzi
+    url: https://github.com/cyberwisk
+source: https://github.com/cyberwisk/m5Cardputer_audiospectrum
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL version 3 text with no "or later" statement. The source header also reproduces the MIT
+  permission notice of the original M5StickC program, copyright 2020 KIRA Ryouta.
+distribution: download
+install_notes: >-
+  The repository commits a prebuilt m5Cardputer_audiospectrum.ino.bin for the M5Stick-Launcher. Otherwise open the sketch
+  in the Arduino IDE.
+brick_risk: false
+tags: [tuner, spectrum, oscilloscope, utility, esp32-s3, open-source]
+versions:
+  - version: main @ 7c36f35
+    date: 2024-03-16
+    url: https://github.com/cyberwisk/m5Cardputer_audiospectrum/commit/7c36f3537cdbcc41d1e7598f4d877c05a54fce28
+    notes: No tagged releases; this is the latest commit.

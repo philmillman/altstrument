@@ -1,0 +1,30 @@
+device: electrosmith-daisy-seed
+name: MiniVerb
+summary: Through-hole Eurorack reverb module built around a Daisy Seed, with KiCad hardware files for several board revisions and Arduino sketches for the Seed.
+description: >-
+  MiniVerb is a Eurorack module design that carries a Daisy Seed. The repository holds KiCad schematics, boards,
+  fabrication files, panel artwork and bills of materials for four revisions. The README says versions 1.0 and 2.0
+  do not work and that 2.1 is the working surface-mount version, with 1.1 as the corrected through-hole one.
+
+  Firmware is written as Arduino sketches. The v1.x folder has a MiniVerb sketch, and the v2.x folder has Delay,
+  Jitter and Octave sketches. The README does not describe what the sketches do or how to load them.
+status: dormant
+authors:
+  - name: Benjamin Joseph Jiao
+    url: https://github.com/benjiaomodular
+source: https://github.com/benjiaomodular/MiniVerb
+source_status: open
+license: MIT
+license_notes: The LICENSE.md file is the MIT license, copyright 2023 Benjamin Joseph Jiao. It covers the hardware files and sketches alike.
+distribution: source-only
+install_notes: >-
+  The sketches are built with the Arduino setup for the Daisy Seed and uploaded over USB; the repository gives no
+  steps of its own. The ROM DFU mode stays available if an upload goes wrong. Build only the working board
+  revisions the README names.
+brick_risk: false
+tags: [reverb, eurorack, hardware, open-source]
+versions:
+  - version: main @ 4628405
+    date: 2023-08-24
+    url: https://github.com/benjiaomodular/MiniVerb/commit/4628405
+    notes: No tagged releases; this is the latest commit.

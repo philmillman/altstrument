@@ -1,0 +1,27 @@
+device: electrosmith-daisy-patch
+name: Droplets
+summary: Modular firmware for Daisy Patch built from small modules called droplets, each usable full-width or split into left and right halves, with a menu to switch between them.
+description: >-
+  The source holds droplets for VCO, VCA, ladder filter, LFO, AD envelope, noise,
+  mixer and a sequencer, and a script that creates a new droplet from a template.
+  Each droplet has an animated title bar and runs in full, left or right mode,
+  which decides which of the Patch's controls, gates and audio channels it
+  uses.
+status: active
+authors:
+  - name: Christian Colglazier
+    url: https://github.com/AquaMorph
+source: https://github.com/AquaMorph/Droplets
+source_status: open
+license: MIT
+distribution: source-only
+install_notes: >-
+  Clone with submodules, run make lib and make, put the Daisy in bootloader mode
+  and run make deploy. The ROM DFU bootloader stays available if a flash fails.
+brick_risk: false
+tags: [modular, synth-engine, sequencer, fx, open-source]
+versions:
+  - version: master @ 098cbdd
+    date: 2026-07-14
+    url: https://github.com/AquaMorph/Droplets/commit/098cbdd
+    notes: No tagged releases; this is the latest commit, which adds an agents file.

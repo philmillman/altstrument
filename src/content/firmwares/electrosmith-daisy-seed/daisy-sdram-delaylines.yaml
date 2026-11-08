@@ -1,0 +1,29 @@
+device: electrosmith-daisy-seed
+name: Daisy SDRAM delay lines
+kind: tool
+summary: Two C++ delay line classes and a bump allocator that place long delay buffers in the Daisy Seed's external SDRAM, for long delays and reverbs.
+description: >-
+  A small library for DaisySP-based programs. DelayLineExt works on a buffer you supply, and DelayLineSDRAM
+  allocates its own buffer in SDRAM. A lightweight bump allocator hands out float buffers from the SDRAM region.
+  Both delay classes are derived from the DaisySP DelayLine, and the external-buffer design follows ideas from Keith
+  Shepherd. Four example programs show internal and external buffers, an object placed in SDRAM and a run with no
+  SDRAM. The author labels it experimental and a foundation to build on.
+status: active
+authors:
+  - name: Farmer2K5
+    url: https://github.com/Farmer2K5
+source: https://github.com/Farmer2K5/daisy-sdram-delaylines
+source_status: open
+license: MIT
+license_notes: LICENSE is the MIT license with copyright lines for Electrosmith (2019) and Keith Shepherd (2023).
+distribution: source-only
+install_notes: >-
+  Copy the include and src folders into a Daisy project, call hw.Init() before allocating, and call sdram_reset()
+  when using the allocator. The repository's Makefile builds the examples against libDaisy and DaisySP.
+brick_risk: false
+tags: [sdk, delay, reverb, dsp, cpp, open-source]
+versions:
+  - version: main @ f3f7b2a
+    date: 2025-11-03
+    url: https://github.com/Farmer2K5/daisy-sdram-delaylines/commit/f3f7b2a
+    notes: No tagged releases; this is the latest commit.

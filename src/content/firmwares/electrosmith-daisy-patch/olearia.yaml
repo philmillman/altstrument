@@ -1,0 +1,33 @@
+device: electrosmith-daisy-patch
+name: Olearia
+summary: Collection of small applets for Daisy Patch, including an FM VCO, a VCA, a noise source and waveshaping, each using a pair of CV and audio inputs and outputs.
+description: >-
+  Each applet maps its two CV inputs and audio channels to a left and right
+  half, and all results leave through the audio outputs. The first release had
+  the VCO FM, VCA and noise applets; the 2020.08.17 release added the FM VCO and
+  waveshaping applets. Later commits are build fixes.
+status: dormant
+authors:
+  - name: Carl Colglazier
+    url: https://github.com/CarlColglazier
+source: https://github.com/CarlColglazier/Olearia
+source_status: open
+license: ISC
+distribution: download
+install_notes: >-
+  Each release carries an olearia.bin to flash over the Daisy bootloader, or
+  build from source with the submodules or the included Dockerfile. The ROM DFU
+  bootloader stays available if a flash fails.
+brick_risk: false
+tags: [oscillator, fm, vca, noise, modular]
+versions:
+  - version: 2020.08.17
+    date: 2020-08-17
+    url: https://github.com/CarlColglazier/Olearia/releases/tag/2020.08.17
+    notes: Adds FM VCO and waveshaping applets; applets use two inputs and outputs each.
+  - version: 2020.07.05
+    date: 2020-07-05
+    url: https://github.com/CarlColglazier/Olearia/releases/tag/2020.07.05
+  - version: 2020.07.02
+    date: 2020-07-02
+    url: https://github.com/CarlColglazier/Olearia/releases/tag/2020.07.02

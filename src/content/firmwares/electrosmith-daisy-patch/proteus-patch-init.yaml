@@ -1,0 +1,31 @@
+device: electrosmith-daisy-patch
+name: Proteus for Patch.Init
+summary: Generative sequencer for the Patch.Init() with 1 to 32 steps, six scales, density and gate-length controls and CV over length, density and gate.
+description: >-
+  Proteus builds a melody, loops it until it tires of it, then makes a new one, sometimes transposing an octave or
+  mutating notes along the way. Knobs set length, density, scale (major, natural and harmonic minor, major and minor
+  pentatonic, mixolydian) and gate length, and CV inputs can steer length, density and gate. A clock input steps the
+  sequence, a second gate or the centre button asks for a new melody, and outputs are v/oct and gate. A switch freezes
+  the chance of a new melody. The changelog lists v1.1 from October 2022. The repository holds the C++ source and a
+  build folder with the compiled .bin.
+status: dormant
+authors:
+  - name: Blue Nautilus
+    url: https://github.com/abluenautilus
+source: https://github.com/abluenautilus/ProteusDaisyPatchInit
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no licence file and its README states no terms.
+homepage: https://github.com/abluenautilus/ProteusDaisyPatchInit
+distribution: download
+install_notes: >-
+  The compiled build/ProteusDaisy.bin is committed. Flash it over USB with the Daisy web programmer or dfu-util, or
+  build from source with the libDaisy Makefile. The README gives no install steps.
+brick_risk: false
+tags: [sequencer, generative]
+versions:
+  - version: main @ 946723d
+    date: 2022-10-11
+    url: https://github.com/abluenautilus/ProteusDaisyPatchInit/commit/946723d
+    notes: No tagged releases; this is the latest commit.

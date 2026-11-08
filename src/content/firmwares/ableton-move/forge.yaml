@@ -1,0 +1,32 @@
+device: ableton-move
+name: Forge
+summary: >-
+  Schwung eight-voice FM and subtractive drum synth with Kit A to Kit B morphing across the 16 pads, five voice algorithms, a self-oscillating ladder filter, per-voice resonator, three effect buses and 137 factory kits.
+description: >-
+  Forge plays two kits of eight voices on the 16 pads and morphs between them with one control. Voices have curved envelopes with repeat, enveloped FM, a noise oscillator, a per-voice resonator and a dual-filter chain, and Ctrl-All macros change many voices at once. The 137 factory kits include 64 ports of 1010music Razzmatazz presets and nine TR-808, 909 and 707 patches by Bjorn Fogelberg that were decoded from the Sonic Potions LXR sound format. Per-voice parameters can be addressed by MIDI CC.
+status: active
+authors:
+  - name: Vincent Fillion (filliformes)
+    url: https://github.com/filliformes
+source: https://github.com/filliformes/forge-move
+source_status: open
+license: MIT
+license_notes: >-
+  The README says the DSP is original, with MIT-licensed code from Mutable Instruments Plaits and Peaks, DaisySP and KrautDrums ported with attribution. The Razzmatazz kits are parameter data converted from 1010music preset files, and the LXR kits come from a patch set the README calls freely shareable. No samples or firmware images are in the repository.
+distribution: download
+requires_stock: Schwung 1.3.0 or later
+install_notes: >-
+  Needs Schwung. Install Forge from Schwung's module store or Schwung Manager, or give Schwung Manager the repository URL or the tarball from the latest release. Power-cycle the Move afterwards so Schwung reads the module manifest.
+brick_risk: false
+tags: [synth-engine, drums, fm, performance]
+versions:
+  - version: v0.2.7
+    date: 2026-09-15
+    url: https://github.com/filliformes/forge-move/releases/tag/v0.2.7
+  - version: v0.2.6
+    date: 2026-09-15
+    url: https://github.com/filliformes/forge-move/releases/tag/v0.2.6
+  - version: v0.2.5
+    date: 2026-09-08
+    url: https://github.com/filliformes/forge-move/releases/tag/v0.2.5
+    notes: Reorganises the interface for Schwung 1.3, with per-voice pages that follow the pressed pad.

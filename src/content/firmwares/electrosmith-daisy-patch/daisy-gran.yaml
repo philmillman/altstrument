@@ -1,0 +1,30 @@
+device: electrosmith-daisy-patch
+name: Daisy_Gran
+summary: Granular synthesizer for the Daisy Pod that plays audio from an SD card or the line input, with a chord mode, Moog ladder filter, compressor and reverb.
+description: >-
+  A granular instrument written in C++ for the Daisy Pod. The source covers a grain engine, an SD card audio file
+  manager, a chord mode, a Moog ladder filter, a compressor and a reverb. The README says full usage documentation
+  and a standalone binary are still to come, and describes only the build and flashing steps. The repository also
+  contains a committed build folder and a copy of libDaisy and DaisySP.
+status: dormant
+authors:
+  - name: holographica
+    url: https://github.com/holographica
+source: https://github.com/holographica/Daisy_Gran
+source_status: open
+license: MIT
+license_notes: >-
+  LICENSE is MIT with a 2020 copyright line naming C Hannon, which appears to be inherited from a template. The
+  Moog ladder, compressor and reverb come from DaisySP-LGPL (LGPL-2.1) and are included in src/DaisySP-LGPL-FX.
+distribution: source-only
+install_notes: >-
+  Clone the repository, run make to build libDaisy and the app, connect the Pod and run make program-dfu. Insert an
+  SD card or feed audio into the line input. A compiled Daisy_Gran.bin is committed under src/build, but the README
+  does not point to it.
+brick_risk: false
+tags: [granular, synth-engine, sampler, fx, reverb, open-source]
+versions:
+  - version: main @ 780fbbd
+    date: 2024-09-17
+    url: https://github.com/holographica/Daisy_Gran/commit/780fbbd
+    notes: No tagged releases; this is the latest commit.

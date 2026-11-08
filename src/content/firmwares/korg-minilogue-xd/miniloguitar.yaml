@@ -1,0 +1,33 @@
+device: korg-minilogue-xd
+name: Miniloguitar
+summary: Karplus-Strong plucked string oscillator unit for the minilogue xd, built with the logue SDK.
+description: >-
+  Miniloguitar is a user oscillator that implements the Karplus-Strong plucked
+  string algorithm. The README notes that the code should also run on other
+  logue SDK instruments and that it needed the minilogue xd on a current
+  firmware with the MIDI channel set to 1 for the logue-cli loader. The
+  repository builds against the SDK as a submodule and a GitHub Actions
+  workflow produces the unit file attached to each release.
+status: dormant
+authors:
+  - name: Wint3rmute
+    url: https://github.com/Wint3rmute
+source: https://github.com/Wint3rmute/minilogue-xd-karplus-strong
+source_status: open
+license: unspecified
+homepage: https://github.com/Wint3rmute/minilogue-xd-karplus-strong
+distribution: download
+install_notes: >-
+  Download miniloguitar.mnlgxdunit from a release and load it with the Sound
+  Librarian, or with logue-cli as described in the README. A user oscillator
+  can be removed again from the Librarian.
+brick_risk: false
+tags: [oscillator, karplus-strong, physical-modelling, open-source, minilogue-xd]
+versions:
+  - version: v1.0.1
+    date: 2025-08-09
+    url: https://github.com/Wint3rmute/minilogue-xd-karplus-strong/releases/tag/v1.0.1
+  - version: v1.0.0
+    date: 2025-08-09
+    url: https://github.com/Wint3rmute/minilogue-xd-karplus-strong/releases/tag/v1.0.0
+    notes: Release built by the GitHub Actions workflow added in this version.

@@ -1,0 +1,27 @@
+device: electrosmith-daisy-patch
+name: Daisy gen~ patches
+summary: Two Max gen~ patchers for Daisy Patch, a probability gate skipper with CV control and a four-output clock divider.
+description: >-
+  Skipmin takes four gate inputs, a probability knob and CV for each channel and
+  passes or drops gates. The clock modulator divides one clock input into four
+  outputs, with a knob and a CV for each division. Both are .maxpat files to
+  export for the Daisy with Oopsy.
+status: dormant
+authors:
+  - name: nnirror
+    url: https://github.com/nnirror
+source: https://github.com/nnirror/daisy_patches
+source_status: open
+license: unspecified
+license_notes: No LICENSE file and no licence statement in the repository.
+distribution: source-only
+install_notes: >-
+  Open the patch in Max, export it with Oopsy and flash the result. The ROM DFU
+  bootloader stays available if a flash fails.
+brick_risk: false
+tags: [max, gen, clock, gate, cv]
+versions:
+  - version: main @ 09d27b5
+    date: 2022-09-26
+    url: https://github.com/nnirror/daisy_patches/commit/09d27b5
+    notes: No tagged releases; this is the latest commit.

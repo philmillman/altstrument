@@ -1,0 +1,33 @@
+device: electrosmith-daisy-seed
+name: Ouroboros Loop Station
+summary: Five-track stereo looper built on a Daisy Seed with its own through-hole PCB, front panel and 3D-printed case, controlled by buttons and knobs with per-track speed, pan and volume.
+description: >-
+  Ouroboros records five stereo layers of about 33 seconds each at 48 kHz. Holding a layer button and turning a knob
+  sets that layer's speed from 0.3 to 2 times and its pan, each layer has a volume knob, and there is a master volume
+  and tempo control. Inputs are a Hi-Z guitar input, a microphone input with a preamp, and stereo line in.
+
+  The repository holds the firmware source, a prebuilt main.bin built by the author, schematics, Gerber files for two
+  PCB revisions, a bill of materials, a front panel design and enclosure models. PCB 1.1 is marked as tested and 1.2
+  as beta. A single-board version is planned.
+status: active
+authors:
+  - name: kooliha
+    url: https://github.com/kooliha
+source: https://github.com/kooliha/Ouroboros_Loop_Station
+source_status: open
+license: unspecified
+license_notes: >-
+  No license file. The README says under its hardware heading that the project is free to use and asks for a
+  donation if you build one.
+distribution: download
+install_notes: >-
+  Put the Seed into USB mass-storage mode by holding BOOT, pressing RESET and releasing BOOT, then copy main.bin from
+  the Firmware Master folder to the drive. Alternatively build with make and use make program-dfu. The ROM DFU mode
+  stays available if a flash goes wrong. The repository is over 160 MB because of a video file.
+brick_risk: false
+tags: [looper, sampler, hardware, open-source]
+versions:
+  - version: master @ d22e542
+    date: 2026-08-17
+    url: https://github.com/kooliha/Ouroboros_Loop_Station/commit/d22e542
+    notes: No tagged releases; this is the latest commit.

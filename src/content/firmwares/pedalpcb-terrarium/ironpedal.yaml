@@ -1,0 +1,34 @@
+device: pedalpcb-terrarium
+name: Ironpedal
+summary: Multi-effect firmware for a Daisy Seed in a Terrarium pedal with an added OLED display, 16 effects, 20 saved profiles in external flash, a five-minute looper and a Moog ladder input filter.
+description: >-
+  Effects are selected with the toggle switches, which also act as a four-bit effect number, and the knobs change meaning per effect. The list includes overdrive, chorus, compressor, reverb, resonator, autowah, tremolo, looper, decimator, phaser, delay, flanger and pitch. Settings are saved and loaded through the Seed's QSPI flash, and the screen can be turned off to reduce interference. The README gives build and wiring notes for the display and a case.
+status: dormant
+authors:
+  - name: Snail
+    url: https://github.com/snail23
+source: https://github.com/snail23/ironpedal
+source_status: open
+license: MIT
+distribution: download
+install_notes: >-
+  Erase the QSPI flash once, then copy ironpedal.bin to the drive the Daisy Seed presents, which flashes it. The Daisy Seed's ROM DFU mode stays available if a flash goes wrong.
+brick_risk: false
+tags: [fx, reverb, delay, looper, lfo, platform]
+image:
+  url: https://raw.githubusercontent.com/snail23/ironpedal/main/images/finished.jpg
+  alt: Pink Terrarium-style pedal enclosure with six knobs, four toggle switches, two footswitches and a small display on the end
+  credit: Snail
+  source_url: https://github.com/snail23/ironpedal
+  first_party: true
+versions:
+  - version: v1.1.2
+    date: 2023-08-31
+    url: https://github.com/snail23/ironpedal/releases/tag/v1.1.2
+    notes: Fixes several memory problems and crashes.
+  - version: v1.1.1
+    date: 2023-08-29
+    url: https://github.com/snail23/ironpedal/releases/tag/v1.1.1
+  - version: v1.0.1
+    date: 2023-04-24
+    url: https://github.com/snail23/ironpedal/releases/tag/v1.0.1

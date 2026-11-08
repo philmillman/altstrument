@@ -1,0 +1,29 @@
+device: electrosmith-daisy-seed
+name: DaisySeedCubeTemplate
+kind: tool
+summary: STM32CubeIDE project that sets up the Daisy Seed's audio codec, SDRAM and QSPI flash for programming the board without libDaisy, covering the Rev 5 WM8731 and Rev 7 PCM3060 boards.
+description: >-
+  A starting project for people who prefer STM32CubeIDE and the ST HAL to the Daisy toolchain. It contains the CubeMX
+  configuration for the STM32H750, linker scripts for flash and RAM builds, code for the WM8731 codec and the IS25LP
+  QSPI flash (erase, write and read), SDRAM setup, MPU settings and an audio callback. It has no synth or effect of
+  its own.
+status: active
+authors:
+  - name: DAD Design
+    url: https://github.com/DADDesign-Projects
+source: https://github.com/DADDesign-Projects/DaisySeedCubeTemplate
+source_status: open
+license: MIT
+license_notes: The LICENSE file is MIT, copyright 2025 DADDesign-Projects.
+homepage: https://github.com/DADDesign-Projects/DaisySeedCubeTemplate
+distribution: source-only
+install_notes: >-
+  Open the project in STM32CubeIDE, build and flash with an ST-Link or over the STM32 ROM DFU mode. A bad image is
+  replaced by putting the Seed back into DFU mode.
+brick_risk: false
+tags: [sdk, platform, stm32cubeide, open-source]
+versions:
+  - version: main @ 78a29c3
+    date: 2026-02-25
+    url: https://github.com/DADDesign-Projects/DaisySeedCubeTemplate/commit/78a29c3
+    notes: No tagged releases; this is the latest commit.

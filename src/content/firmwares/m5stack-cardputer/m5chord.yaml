@@ -1,0 +1,36 @@
+device: m5stack-cardputer
+name: M5Chord
+summary: >-
+  Harmonic MIDI controller for the Cardputer 1.0, 1.1 and ADV. It turns incoming notes into chords, arpeggios and strums over USB, Bluetooth LE or DIN and plays MIDI files from the SD card.
+description: >-
+  M5Chord reads notes from a MIDI keyboard, pad controller or sequencer and sends back chords with extensions, arpeggios
+  and strums, using the Cardputer keyboard to pick scales, playstyles, loops and presets. Input can be USB MIDI host, BLE-MIDI
+  or a DIN input on an M5Stack MIDI unit, with a nine-pad learn mode and controller profiles. Version 1.1.0 adds a player
+  for .mid files on the SD card. It generates MIDI only and has no sound engine. One universal image selects the keyboard
+  driver for the three Cardputer revisions. The README says the BLE repair is still a candidate and that not every
+  revision has been tested.
+status: active
+authors:
+  - name: jrdntnnr
+    url: https://github.com/jrdntnnr
+source: https://github.com/jrdntnnr/M5Chord
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file names "Cardputer MIDI Brain contributors". Dependencies keep their own licences, listed in
+  THIRD_PARTY_NOTICES.md.
+distribution: download
+install_notes: >-
+  Download the release zip. The universal image goes to address 0x0000 and resets the internal settings but not the SD
+  card; the app-only image must never be flashed at zero. For an update that keeps settings, flash the separate bootloader,
+  partitions, boot_app0 and app images with the command in the README. The README says M5Burner publication has not been done.
+brick_risk: false
+tags: [midi, chords, arpeggiator, controller, ble-midi, usb-midi, sd-card, esp32-s3, open-source]
+versions:
+  - version: v1.1.0
+    date: 2026-09-13
+    url: https://github.com/jrdntnnr/M5Chord/releases/tag/v1.1.0
+    notes: Adds BLE-MIDI discovery, DIN input on the MIDI unit, input selection, a configurable layer channel count, shortcut help pages and an SD MIDI-file player.
+  - version: v1.0
+    date: 2026-09-13
+    url: https://github.com/jrdntnnr/M5Chord/releases/tag/v1.0

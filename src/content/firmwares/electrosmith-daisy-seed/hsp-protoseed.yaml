@@ -1,0 +1,32 @@
+device: electrosmith-daisy-seed
+name: HSP Protoseed
+kind: tool
+summary: Arduino library and example pedal sketches for guitar-pedal prototyping on a Daisy Seed, with prebuilt example binaries and DFU flashing steps.
+description: >-
+  Wraps audio, pots, toggles, footswitches and LEDs for a Daisy Seed in
+  Harold Street Pedals' Protoseed board, using 48 kHz audio and blocks of eight
+  samples. The examples start with passthrough, boost and tremolo and add
+  clipping stages modelled on LED, BJT, op-amp, JFET and CMOS circuits, each
+  with a long explanatory page. The README has Windows setup steps and
+  an off-board wiring diagram.
+status: dormant
+authors:
+  - name: Harold Street Pedals
+    url: https://github.com/Harold-Street-Pedal-Company
+source: https://github.com/Harold-Street-Pedal-Company/HSP_Protoseed
+source_status: open
+license: GPL-3.0-or-later
+license_notes: LICENSE.txt carries the GPL version 3 notice with the "or any later version" wording; GitHub reports it as unrecognised.
+distribution: download
+install_notes: >-
+  Prebuilt .bin files of the basic examples are in the binaries folder. Put the
+  Seed into DFU mode (hold BOOT, tap RESET) and run make program-dfu or flash a
+  binary with dfu-util. The examples do not open a serial port, so DFU mode
+  stays available for reflashing.
+brick_risk: false
+tags: [sdk, fx, pedal, arduino, open-source]
+versions:
+  - version: main @ f299ca9
+    date: 2025-09-29
+    url: https://github.com/Harold-Street-Pedal-Company/HSP_Protoseed/commit/f299ca97da8f1f0f470e8b8795db4cc07887902b
+    notes: No tagged releases; this is the latest commit.

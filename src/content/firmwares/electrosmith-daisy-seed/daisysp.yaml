@@ -1,0 +1,49 @@
+device: electrosmith-daisy-seed
+also_devices: [electrosmith-daisy-patch, electrosmith-daisy-field]
+name: DaisySP
+kind: tool
+summary: Electrosmith's C++ DSP library of oscillators, filters, envelopes, effects, drum and physical-model voices, used with libDaisy and also in plug-ins and VCV Rack modules.
+description: >-
+  DaisySP collects audio building blocks written in C++: envelopes and
+  phasors, drum voices, dynamics, effects such as phaser, wavefolder and
+  overdrive, filters, noise sources, physical models, a granular player and
+  utility functions. It does not depend on Daisy hardware, so the same code
+  runs in plug-ins and in desktop or mobile apps.
+
+  The modules that were under the LGPL were moved in version 1.0.0 to a
+  separate library, DaisySP-LGPL, which a Makefile can add with
+  USE_DAISYSP_LGPL=1. The repository now lives in the daisyaudio GitHub
+  organisation, and the electro-smith address redirects to it.
+status: active
+authors:
+  - name: Electrosmith
+    url: https://github.com/daisyaudio
+source: https://github.com/daisyaudio/DaisySP
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file states that DaisySP is published under the MIT license,
+  copyright 2020 Electrosmith; GitHub's license detector reports it as
+  unrecognised because the file opens with a short sentence rather than the
+  standard heading. The LGPL modules live in the separate DaisySP-LGPL
+  repository.
+homepage: https://daisy.audio/
+distribution: source-only
+install_notes: >-
+  Clone the repository and run make to build the library, then build it
+  together with libDaisy and your program as in the DaisyExamples repository.
+  There is nothing to flash from this library alone.
+brick_risk: false
+tags: [official, sdk, platform, cpp, dsp]
+versions:
+  - version: V1.0.0
+    date: 2024-01-08
+    url: https://github.com/daisyaudio/DaisySP/releases/tag/V1.0.0
+    notes: Splits the LGPL modules into DaisySP-LGPL and adds a OnePole filter.
+  - version: v0.0.2
+    date: 2023-12-15
+    url: https://github.com/daisyaudio/DaisySP/releases/tag/v0.0.2
+    notes: Last release before the MIT and LGPL split.
+  - version: v0.0.1
+    date: 2021-02-04
+    url: https://github.com/daisyaudio/DaisySP/releases/tag/v0.0.1

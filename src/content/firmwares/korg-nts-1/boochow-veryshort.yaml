@@ -1,0 +1,35 @@
+device: korg-nts-1
+also_devices: [korg-minilogue-xd, korg-prologue, korg-nts-1-mkii, korg-drumlogue]
+name: Very Short Delay (boochow)
+summary: Delay for 0.5 to 50 ms with feedback from -0.98 to +0.98, which acts as a comb filter; runs on NTS-1, minilogue xd, prologue, NTS-1 mkII and drumlogue.
+description: >-
+  The delay time is short enough that the unit adds metallic, comb-filter
+  colouring instead of echoes. Feedback may be negative. The main branch
+  builds for the NTS-1, minilogue xd and prologue; the NTS-1 mkII and
+  drumlogue versions are on their own branches, and the 1.1 release carries
+  units for all five. Release 1.1 smoothed delay time changes, lengthened the
+  maximum delay and allowed negative feedback.
+status: dormant
+authors:
+  - name: boochow
+    url: https://github.com/boochow
+source: https://github.com/boochow/veryshort
+source_status: open
+license: MIT
+license_notes: LICENSE file is MIT, Copyright 2020 boochow.
+homepage: https://github.com/boochow/veryshort
+distribution: download
+install_notes: >-
+  Download the unit for your synth from the release (.ntkdigunit,
+  .mnlgxdunit, .prlgunit, .nts1mkiiunit or .drmlgunit). Load it with Korg's
+  Librarian, KORG KONTROL Editor (NTS-1 mkII) or by copying the file to the
+  drumlogue's Units folder.
+tags: [delfx, comb-filter, open-source, nts-1, minilogue-xd, prologue, nts-1-mkii, drumlogue]
+versions:
+  - version: "1.1"
+    date: 2021-10-17
+    url: https://github.com/boochow/veryshort/releases/tag/1.1
+    notes: Smoother delay time changes, longer maximum delay and negative feedback gain.
+  - version: "1.0"
+    date: 2021-10-10
+    url: https://github.com/boochow/veryshort/releases/tag/1.0

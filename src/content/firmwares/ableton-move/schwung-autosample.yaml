@@ -1,0 +1,30 @@
+device: ableton-move
+name: AutoSample
+summary: >-
+  Schwung tool that plays an external synth over USB MIDI, records its line-in audio note by note and velocity layer by velocity layer, and writes a playable SFZ instrument.
+description: >-
+  AutoSample sets the note range, key zones, velocity layers and hold time, then sends each note to the connected instrument and captures the audio. It finds loop points by spectral analysis with zero-crossing refinement, trims silent release tails, adds velocity crossfades to the generated SFZ file and takes the instrument name from an on-screen keyboard. The result appears in SFZ Player. The README says it was developed with AI assistance and the module's internal files still use the name samplerobot.
+status: active
+authors:
+  - name: Charles Vestal
+    url: https://github.com/charlesvestal
+source: https://github.com/charlesvestal/schwung-autosample
+source_status: open
+license: MIT
+license_notes: >-
+  The README lists KissFFT (BSD-3-Clause) as a third-party library used for loop detection.
+homepage: https://github.com/charlesvestal/schwung-autosample#readme
+distribution: download
+requires_stock: Schwung installed on the Move, with SSH access enabled and the audio input set to line-in
+install_notes: >-
+  Needs Schwung and an external synth connected by USB MIDI out and line-in audio. Install AutoSample from the Tools section of Schwung's module store or Schwung Manager, or build it and copy it over SSH.
+brick_risk: false
+tags: [sampling, sfz, tool]
+versions:
+  - version: v0.1.1
+    date: 2026-08-31
+    url: https://github.com/charlesvestal/schwung-autosample/releases/tag/v0.1.1
+    notes: Corrects two help lines about the Back and Rec buttons.
+  - version: v0.1.0
+    date: 2026-03-11
+    url: https://github.com/charlesvestal/schwung-autosample/releases/tag/v0.1.0

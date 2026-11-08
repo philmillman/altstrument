@@ -1,0 +1,33 @@
+device: korg-minilogue-xd
+name: SawWiden
+summary: Free minilogue xd user mod effect that widens a supersaw into stereo and cancels when summed to mono.
+description: >-
+  SawWiden is a user mod FX. Two delay taps of up to about 42 ms are moved by
+  three-phase LFOs, high-passed so the bass stays centred, and the result is
+  added to the left channel and subtracted from the right. The dry centre is
+  untouched and the effect cancels in mono. TIME sets the movement speed and
+  DEPTH sets the width. The repository has source and a built .mnlgxdunit
+  file, and the README pairs it with HyperSaw.
+status: active
+authors:
+  - name: SpeakingColors
+    url: https://github.com/SpeakingColors
+source: https://github.com/SpeakingColors/sawwiden-xd
+source_status: open
+license: MIT
+license_notes: >-
+  LICENSE is MIT (the GitHub API reports NOASSERTION). The README says the
+  KORG SDK template files keep their BSD-3-Clause licence.
+homepage: https://github.com/SpeakingColors/sawwiden-xd
+distribution: download
+install_notes: >-
+  Drag the .mnlgxdunit file into a free User Mod FX slot in the minilogue xd
+  Sound Librarian, or load it with logue-cli. User units can be removed again
+  from the Librarian.
+brick_risk: false
+tags: [modfx, stereo, open-source, minilogue-xd]
+versions:
+  - version: v1.0.0
+    date: 2026-10-19
+    url: https://github.com/SpeakingColors/sawwiden-xd/releases/tag/v1.0.0
+    notes: Marked as a pre-release on GitHub.

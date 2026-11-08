@@ -1,0 +1,35 @@
+device: noise-engineering-versio
+name: Proteus Versio
+summary: Generative melody sequencer for Versio that plays its own voice, switchable between a formant oscillator and a Karplus-Strong string.
+description: >-
+  Proteus writes a melody, loops it for a while, then replaces it with a new one. During the loop it can shift notes
+  by an octave or change single notes, steered by the knobs and CV. Versio has no CV or gate output, so this build
+  plays the melody through its own voice, chosen with the bottom switch. The repository holds the C++ source and a
+  prebuilt ProteusVersio.bin in its build folder. The author's video manual is linked from the README.
+status: dormant
+authors:
+  - name: Blue Nautilus
+    url: https://github.com/abluenautilus
+source: https://github.com/abluenautilus/ProteusVersio
+source_status: open
+license: MIT
+license_notes: >-
+  Per the repository LICENSE file.
+homepage: https://github.com/abluenautilus/ProteusVersio
+distribution: download
+install_notes: >-
+  Take build/ProteusVersio.bin from the repository and select it as a custom file on Noise Engineering's firmware
+  portal (https://noiseengineering.us/portal/firmware/).
+brick_risk: false
+tags: [sequencer, generative, synth-engine]
+video:
+  url: https://www.youtube.com/watch?v=87xa5PGlesA
+  title: Proteus Versio Demo
+  credit: Blue Nautilus
+  first_party: true
+  found_via: https://github.com/abluenautilus/ProteusVersio
+versions:
+  - version: main @ 4a3efe6
+    date: 2022-09-12
+    url: https://github.com/abluenautilus/ProteusVersio/commit/4a3efe6
+    notes: No tagged releases; this is the latest commit.

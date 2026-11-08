@@ -1,0 +1,22 @@
+device: pedalpcb-terrarium
+name: DaisyEffects (GuitarML)
+summary: Collection of single-effect Terrarium programs built to try out individual DaisySP effects, including autowah, chorus, delay, looper, phaser, pitch shift, resonator, reverb and tremolo.
+description: >-
+  Each folder under src builds one effect for a Daisy Seed on the Terrarium, with its own Makefile and a short README that describes the controls. Folders include autowah, chords, chorus, decimator, delay, karplusstring, looper, phaser, pitchshift, resonator, reverb, samplereducer and tremolo. The author says the repository exists for testing individual DaisySP effects. No releases are published.
+status: dormant
+authors:
+  - name: Keith Bloemer (GuitarML)
+    url: https://github.com/GuitarML
+source: https://github.com/GuitarML/DaisyEffects
+source_status: open
+license: MIT
+distribution: source-only
+install_notes: >-
+  Build the libDaisy and DaisySP submodules, then run make in an effect's folder. Flash with the Electrosmith web programmer or make program-dfu. The Daisy Seed's ROM DFU mode stays available if a flash goes wrong.
+brick_risk: false
+tags: [fx, reverb, delay, looper, lfo]
+versions:
+  - version: main @ ab5663b
+    date: 2023-05-17
+    url: https://github.com/GuitarML/DaisyEffects/commit/ab5663b
+    notes: No tagged releases; this is the latest commit.

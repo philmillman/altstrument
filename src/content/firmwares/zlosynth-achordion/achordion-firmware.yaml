@@ -1,0 +1,49 @@
+device: zlosynth-achordion
+name: Achordion firmware
+summary: Zlosynth's own Rust firmware for the Achordion module, with 37 wavetables, up to 18 voices and chord, arpeggio and interval playing styles.
+description: >-
+  This is the firmware that runs on the Achordion, written by the module's
+  maker for the Daisy Patch SM. It plays wavetables with sub-octaves and
+  duplicated tones, quantized to a chosen scale, on two lines with separate
+  1V/oct inputs. Each release also ships a build that maps the white keys of a
+  keyboard to the scale. The repository holds the Rust source along with the
+  schematics, PCB layout and manual.
+status: active
+authors:
+  - name: Petr Horacek
+    url: https://github.com/zlosynth
+source: https://github.com/zlosynth/achordion
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE-SOFTWARE is GPL version 3 and the README states no "or later" grant.
+  Hardware files are CC-BY-SA and the manual is CC-BY-SA. The README notes
+  that parts of the schematics follow Mutable Instruments designs.
+homepage: https://zlosynth.com/achordion
+distribution: download
+install_notes: >-
+  Download achordion-firmware-x.y.z.bin from the release, open Electrosmith's
+  web programmer and upload it through the File Upload tab. The release also
+  has a white-key quantization build and experimental builds. The Daisy
+  bootloader stays in place, so a failed upload can be repeated.
+brick_risk: false
+tags: [official, oscillator, wavetable, synth-engine, quantizer, eurorack, rust, open-source]
+video:
+  url: https://www.youtube.com/watch?v=jz61Etya7vc
+  title: Achordion Overview
+  credit: Zlosynth Instruments
+  first_party: true
+  found_via: https://zlosynth.com/achordion
+versions:
+  - version: v2.5.0
+    date: 2026-08-04
+    url: https://github.com/zlosynth/achordion/releases/tag/v2.5.0
+    notes: Fixes a freeze when the TONE input falls below the lowest tonic of the scale.
+  - version: v2.4.0
+    date: 2025-10-16
+    url: https://github.com/zlosynth/achordion/releases/tag/v2.4.0
+    notes: Quantizes the TONE 1V/oct input to the nearest note; the original white-key quantization is a separate build.
+  - version: v2.3.0
+    date: 2024-11-25
+    url: https://github.com/zlosynth/achordion/releases/tag/v2.3.0
+    notes: Adds detune in the first detune section, tunes A to 440 Hz and fixes 1V/oct alignment of the solo voice output.

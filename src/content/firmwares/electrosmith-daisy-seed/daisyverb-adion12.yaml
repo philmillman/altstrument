@@ -1,0 +1,30 @@
+device: electrosmith-daisy-seed
+name: DaisyVerb (adion12)
+summary: Reverb algorithms for a bare Daisy Seed in mono and stereo versions, covering a feedback delay network, Freeverb, Dattorro and Zita designs, with rendered audio samples and a small dev board design.
+description: >-
+  The repository holds separate source files for a feedback delay network reverb and a Freeverb in mono and stereo
+  forms, plus Dattorro and Zita reverbs that the author wrote while developing for the Noise Engineering Versio.
+  The code reads four potentiometers on the Seed's analog pins A0 to A3, wired between 3.3 V and ground.
+
+  Recorded examples show the dry/wet and feedback gain controls on two pieces of source music. The author also
+  published EAGLE schematic and board files for a small carrier board they built to avoid working on a breadboard.
+  The repository carries no build files, so each file is compiled inside a libDaisy project of your own.
+status: active
+authors:
+  - name: Andrew Ionascu
+    url: https://github.com/adion12
+source: https://github.com/adion12/DaisyVerb
+source_status: open
+license: MIT
+license_notes: The LICENSE file is the MIT license, copyright 2024 Andrew Ionascu.
+distribution: source-only
+install_notes: >-
+  Copy one of the reverb files into a libDaisy and DaisySP project and build it with the Daisy toolchain, then flash
+  over USB DFU. Wire four pots to A0 to A3 first. The ROM DFU mode stays available if a flash goes wrong.
+brick_risk: false
+tags: [reverb, fx, open-source]
+versions:
+  - version: main @ 7a43db1
+    date: 2025-12-11
+    url: https://github.com/adion12/DaisyVerb/commit/7a43db1
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,31 @@
+device: electrosmith-daisy-patch
+name: Sammy
+summary: Speech synthesizer for the Daisy Patch that runs the Commodore 64 SAM (Software Automatic Mouth) engine, with word slots edited on the encoder, six voice profiles and gate-triggered playback.
+description: >-
+  Rights warning: the repository carries the SAM speech engine source and a prebuilt Sammy.bin that contains it.
+  SAM was commercial C64 software from 1982 and the C code is an adaptation of it, with no licence in this repository.
+  Sammy wraps that engine for the Daisy Patch. Words and sentences are stored in slots that are edited with the
+  encoder, each with a trigger mode of always, never or random, and the voice can be switched between six speech
+  profiles. Controls set playback speed, volume, filter and fragment size, a first gate input triggers the current
+  word and a second re-triggers from the current position.
+status: dormant
+authors:
+  - name: Jacob Ulmert
+    url: https://github.com/ulmert
+source: https://github.com/ulmert/sammy
+source_status: open
+license: unspecified
+license_notes: >-
+  No licence file and no licence statement. The sam folder is a C adaptation of the commercial 1982 SAM software
+  (vidarh/SAM, linked from the README), whose original commercial rights are not cleared by anything in this repository.
+distribution: download
+install_notes: >-
+  A prebuilt Sammy.bin is in the repository root; flash it to the Patch over USB DFU, or build with make using
+  libDaisy and DaisySP.
+brick_risk: false
+tags: [speech, synth-engine, sequencer]
+versions:
+  - version: main @ fc4932a
+    date: 2023-06-14
+    url: https://github.com/ulmert/sammy/commit/fc4932a
+    notes: No tagged releases; this is the latest commit.

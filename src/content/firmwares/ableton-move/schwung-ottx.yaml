@@ -1,0 +1,39 @@
+device: ableton-move
+name: OTTx
+summary: >-
+  Schwung audio effect, a three-band upward and downward compressor ported from vitOTTx and Vital's OTT, with macro controls and a noise-floor guard for Move's 16-bit audio.
+description: >-
+  OTTx splits the signal with Linkwitz-Riley crossovers and runs an upward and a downward RMS compressor on each band.
+  Root controls cover mix, depth, upward and downward scaling, a time macro, input and output gain, a Tame control and
+  the two crossover frequencies, and an Advanced page holds per-band detail. The one change from vitOTTx is that upward gain fades out
+  near the 16-bit noise floor so idle reverb tails are not lifted into hiss, and Tame at minus 12 dB switches that off. The
+  README carries an AI-assistance disclaimer.
+status: active
+authors:
+  - name: legsmechanical
+    url: https://github.com/legsmechanical
+source: https://github.com/legsmechanical/schwung-ottx
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README says GPLv3 and the LICENSE file is the GPL-3.0 text, with no later-version statement. The DSP derives from Matt
+  Tytel's Vital and from vitOTT by Yegor Suslin and vitOTTx by Sakhnovkrg, all GPLv3.
+homepage: https://github.com/legsmechanical/schwung-ottx#readme
+distribution: download
+requires_stock: Schwung 0.3.0 or later installed on the Move
+install_notes: >-
+  Needs Schwung. Install OTTx from Schwung's module store or Schwung Manager, or build it with the repository's Docker build
+  script and install it over SSH.
+brick_risk: false
+tags: [fx, emulator]
+versions:
+  - version: v0.2.1
+    date: 2026-09-24
+    url: https://github.com/legsmechanical/schwung-ottx/releases/tag/v0.2.1
+    notes: Fades upward gain out near the 16-bit noise floor so idle residue is no longer boosted into hiss.
+  - version: v0.2.0
+    date: 2026-07-29
+    url: https://github.com/legsmechanical/schwung-ottx/releases/tag/v0.2.0
+  - version: v0.1.0
+    date: 2026-06-09
+    url: https://github.com/legsmechanical/schwung-ottx/releases/tag/v0.1.0

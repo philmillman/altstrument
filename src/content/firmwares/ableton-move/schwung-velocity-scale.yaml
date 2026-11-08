@@ -1,0 +1,33 @@
+device: ableton-move
+name: Velocity Scale
+summary: >-
+  Schwung MIDI effect that rescales and curves incoming note velocity, with a monitor page for finding the range
+  a keyboard really sends.
+description: >-
+  Velocity goes through an input range, a curve and an output stage. Input Min and Max stretch the velocities a
+  keyboard actually sends over the whole output range, and values outside it clamp. The curve runs from -100 to
+  +100 around linear. Version 0.4.0 added a monitor page that shows the last, lowest and highest velocity in and
+  out, with a reset, for measuring the input range. It is aimed at sound generators whose layers or brightness
+  follow velocity.
+status: active
+authors:
+  - name: Charles Vestal
+    url: https://github.com/charlesvestal
+source: https://github.com/charlesvestal/schwung-velocity-scale
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no licence file, and neither the README nor the module metadata states a licence.
+distribution: download
+install_notes: >-
+  Needs Schwung. Install Velocity Scale from Schwung's module store or Schwung Manager.
+brick_risk: false
+tags: [midi, utility]
+versions:
+  - version: v0.4.0
+    date: 2026-11-05
+    url: https://github.com/charlesvestal/schwung-velocity-scale/releases/tag/v0.4.0
+    notes: Adds input range scaling and a monitor page for incoming velocities.
+  - version: v0.3.0
+    date: 2026-09-07
+    url: https://github.com/charlesvestal/schwung-velocity-scale/releases/tag/v0.3.0

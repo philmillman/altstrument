@@ -1,0 +1,60 @@
+device: ableton-move
+name: s3g Thru
+summary: >-
+  Schwung takeover module that turns the Move into a four-lane stereo sampler with fifteen playback engines,
+  eight voices, effects and a performance-data looper.
+description: >-
+  Thru records audio into four lanes and plays it back through fifteen engines on eight polyphonic voices. It
+  has five instrument layouts: Single, Split, Shared Dual, Quad and Bank, which pairs a four-lane instrument
+  with sixteen saved stereo sample pads. Releases add stochastic and pulsar playback, a tape stage, stereo
+  reverb with configurable effect order, scale layouts and performance loops. The repository also holds
+  controller setups for the OXI E16, a Monolit and a KORG nanoKONTROL2, and an illustrated manual is
+  published online. Version numbers are pre-1.0 and releases arrive every few days.
+status: active
+authors:
+  - name: Shawn Greenlee (s3g)
+    url: https://github.com/s3g
+source: https://github.com/s3g/s3g-thru
+source_status: open
+license: BSD-3-Clause
+license_notes: >-
+  The third-party notices list an MIT-licensed Schwung ABI declaration and a vendored miniz library with its
+  own licence file.
+homepage: https://s3g.github.io/s3g-thru/
+distribution: download
+requires_stock: Schwung 1.7.3 or newer on the Move
+install_notes: >-
+  Needs Schwung 1.7.3 or newer. In Schwung Manager choose Modules, Install Custom Module, GitHub URL and enter
+  the repository URL; the installer fetches the matching package from the releases. Restart the Move when
+  asked, then open Overtake and select s3g Thru.
+brick_risk: false
+tags: [sampler, performance, looper, fx, synth-engine]
+versions:
+  - version: v0.30.1
+    date: 2026-11-07
+    url: https://github.com/s3g/s3g-thru/releases/tag/v0.30.1
+    notes: Pulsar pulses can last up to one second, with a duration readout and fine encoder control.
+  - version: v0.30.0
+    date: 2026-11-07
+    url: https://github.com/s3g/s3g-thru/releases/tag/v0.30.0
+    notes: Adds Stochastic and Pulsar playback, new recording and control options and five instrument layouts.
+  - version: v0.29.1
+    date: 2026-10-31
+    url: https://github.com/s3g/s3g-thru/releases/tag/v0.29.1
+    notes: Fixes Linux source builds; the instrument DSP matches v0.29.0.
+  - version: v0.29.0
+    date: 2026-10-31
+    url: https://github.com/s3g/s3g-thru/releases/tag/v0.29.0
+    notes: Adds four playback engines and editable stack paths. Superseded by v0.29.1 for new installs.
+  - version: v0.28.0
+    date: 2026-10-29
+    url: https://github.com/s3g/s3g-thru/releases/tag/v0.28.0
+    notes: Adds two- and four-instrument layouts, stereo reverb and configurable effect order.
+  - version: v0.27.0
+    date: 2026-10-25
+    url: https://github.com/s3g/s3g-thru/releases/tag/v0.27.0
+    notes: Adds Wavesets and a tape stage; saving and sample analysis move to the background.
+  - version: v0.26.0
+    date: 2026-10-22
+    url: https://github.com/s3g/s3g-thru/releases/tag/v0.26.0
+    notes: Adds scale layouts, shaped note envelopes, grouped stutter rolls and a stereo rotary effect.

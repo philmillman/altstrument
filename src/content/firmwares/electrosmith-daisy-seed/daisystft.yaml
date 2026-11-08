@@ -1,0 +1,28 @@
+device: electrosmith-daisy-seed
+name: DaisySTFT
+summary: Short-time Fourier transform example for the bare Daisy Seed that buffers, windows and transforms the audio input, applies a frequency-domain process and plays the result back.
+description: >-
+  A small C++ program that passes the Seed's audio input through a templated Fourier class which handles buffering,
+  windowing, the forward FFT, a frequency-domain step and the inverse FFT. The sample process in the code is a
+  spectral denoise. The README suggests a 4096-point transform with four overlaps for finer frequency detail, or a
+  2048-point transform with eight overlaps for lower latency. It targets a Seed with no extra hardware and is meant
+  as a starting point for spectral effects.
+status: dormant
+authors:
+  - name: amcerbu
+    url: https://github.com/amcerbu
+source: https://github.com/amcerbu/DaisySTFT
+source_status: open
+license: unspecified
+license_notes: No licence file and no licence statement in the repository. The bundled shy_fft.h is a third-party header and is not covered by this entry.
+distribution: source-only
+install_notes: >-
+  Edit the Makefile so DAISYSP_DIR and LIBDAISY_DIR point at local copies of DaisySP and libDaisy, then run make
+  clean, make and make program-dfu with the Seed in DFU mode.
+brick_risk: false
+tags: [fx, spectral, dsp, open-source]
+versions:
+  - version: main @ b6f3cfb
+    date: 2024-04-19
+    url: https://github.com/amcerbu/DaisySTFT/commit/b6f3cfb
+    notes: No tagged releases; this is the latest commit.

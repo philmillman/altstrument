@@ -1,0 +1,37 @@
+device: electrosmith-daisy-seed
+name: DaisyDrone (Cutlasses)
+summary: Drone synth for a Daisy Seed on its own PCB with six sliders, an encoder and a seven-segment note display; each slider mixes three detuned sines, summed or wavefolded.
+description: >-
+  Each of the six sliders sets the gain of three sine waves at slightly offset
+  pitches around a frequency in the selected key, and the frequencies rise from
+  left to right. A three-way switch chooses between averaging the 18 sines and
+  wavefolding them with a sine or a triangle, and an encoder sets the base note
+  shown on the display. The repository has Gerbers and a schematic for the
+  board, the C++ source and precompiled binaries made by the author.
+status: dormant
+authors:
+  - name: Cutlasses
+    url: https://github.com/cutlasses
+source: https://github.com/cutlasses/DaisyDrone
+source_status: open
+license: unspecified
+license_notes: No LICENSE file and no licence statement.
+distribution: download
+install_notes: >-
+  Build next to a DaisyExamples checkout or use the precompiled .bin in the
+  precompiled_binaries folder. Because the board uses the USB pins, the README
+  says to program the Seed over USB while it is off the PCB, or over JTAG while
+  it is on the board. DFU mode recovers a Seed after a bad write.
+brick_risk: false
+tags: [synth-engine, oscillator, open-source]
+video:
+  url: https://www.youtube.com/watch?v=_0Ykc3huzv0
+  title: DaisyDrone - Daisy Seed based drone synth
+  credit: Cutlasses
+  first_party: true
+  found_via: https://github.com/cutlasses/DaisyDrone#readme
+versions:
+  - version: main @ 0ab23fc
+    date: 2022-12-14
+    url: https://github.com/cutlasses/DaisyDrone/commit/0ab23fc9c9dd353133e50238fee1de0b629b2555
+    notes: No tagged releases; this is the latest commit.

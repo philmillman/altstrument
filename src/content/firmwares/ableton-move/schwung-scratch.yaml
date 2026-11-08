@@ -1,0 +1,32 @@
+device: ableton-move
+name: Scratch
+summary: >-
+  Schwung sound generator for scratching a sample with Serato control vinyl on Move's line input, or with an encoder or the jog wheel, with pads as crossfader cuts.
+description: >-
+  Scratch decodes Serato 2nd Edition side A control vinyl from Move's stereo line input and follows its position and speed, and it has Knob and Jog modes
+  for use without a turntable. It plays a 44.1 kHz 16-bit stereo WAV, with a DVS monitor page showing lock, direction, speed and signal quality, a Scratch
+  View with feel, smoothing and inertia, a loop control and a low-cut filter. Pads act as momentary crossfader cuts, and a hardware fader can be CC-learned on Schwung 1.6. The timecode decoder derives from xwax.
+status: active
+authors:
+  - name: Matt Estela (mestela)
+    url: https://github.com/mestela
+source: https://github.com/mestela/schwung-scratch
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The README says GPL-3.0-or-later; the COPYING file is the GPL-3.0 text. The timecode decoder is derived from xwax by Mark Hills and keeps its upstream notices, listed in THIRD_PARTY_LICENSES.md. The bundled ahh-fresh.wav sample is by the module's author under the same licence.
+homepage: https://github.com/mestela/schwung-scratch#readme
+distribution: download
+requires_stock: Schwung 1.5.0 or later installed on the Move
+install_notes: >-
+  Needs Schwung. Install Scratch from Schwung's module store or Schwung Manager, or build it with the repository's script. Control vinyl use needs a stereo line-level turntable output on Move's 3.5 mm input.
+brick_risk: false
+tags: [sampler, performance, synth-engine]
+versions:
+  - version: v1.0.3
+    date: 2026-10-01
+    url: https://github.com/mestela/schwung-scratch/releases/tag/v1.0.3
+    notes: Fixes a startup crash when a set holds several Scratch instances and exposes the crossfader for Schwung 1.6 CC learning.
+  - version: v1.0.0
+    date: 2026-09-28
+    url: https://github.com/mestela/schwung-scratch/releases/tag/v1.0.0

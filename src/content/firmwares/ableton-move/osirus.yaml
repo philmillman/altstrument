@@ -1,0 +1,45 @@
+device: ableton-move
+name: Osirus
+summary: >-
+  Schwung sound generator that runs an Access Virus A emulation from the Gearmulator project on the Move,
+  using a Virus ROM file you supply, with a browser editor and user presets.
+description: >-
+  Osirus runs the Gearmulator DSP56300 emulator inside a separate child process, with a JIT that translates the
+  Virus signal processor's code to ARM64, so the original Virus firmware plays on the Move. It needs a Virus
+  ROM in .mid or .bin form, which the repository does not include, placed in the module's roms folder. Only the
+  Virus A ROM is supported, because the B and C models need more processing power than the Move has. The module
+  exposes filter, envelope and oscillator parameters to the signal chain, browses 8 banks of 128 presets, saves
+  user presets, and opens a browser editor with a mod matrix, envelope graphs and a filter response plot. The
+  README still calls the host Move Everything.
+status: active
+authors:
+  - name: Charles Vestal
+    url: https://github.com/charlesvestal
+  - name: dsp56300 (Gearmulator)
+    url: https://github.com/dsp56300/gearmulator
+source: https://github.com/charlesvestal/schwung-virus
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL version 3 text and the README says GPL-3.0, following Gearmulator, with no
+  or-later grant. The Virus ROM is not part of the repository and has to come from the user.
+homepage: https://github.com/charlesvestal/schwung-virus#readme
+distribution: download
+requires_stock: Schwung installed on the Move, plus a Virus A ROM file
+install_notes: >-
+  Needs Schwung and a Virus A ROM in .mid format, for example the OS file and the preset bank file. Install
+  Osirus from Schwung's module store, then copy the ROM into the roms folder of the module on the Move, or
+  build it with the repository's build and install scripts.
+brick_risk: false
+tags: [synth-engine, emulator, synth]
+versions:
+  - version: v0.6.6
+    date: 2026-11-05
+    url: https://github.com/charlesvestal/schwung-virus/releases/tag/v0.6.6
+    notes: Worker threads drop from realtime priority and stay off the core Schwung uses for SPI.
+  - version: v0.6.5
+    date: 2026-10-10
+    url: https://github.com/charlesvestal/schwung-virus/releases/tag/v0.6.5
+  - version: v0.6.4
+    date: 2026-10-03
+    url: https://github.com/charlesvestal/schwung-virus/releases/tag/v0.6.4

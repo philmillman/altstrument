@@ -1,0 +1,41 @@
+device: electrosmith-daisy-seed
+name: daisylab
+summary: Carl's breadboard experiments on a Daisy Seed, including op6daisy, a six-operator FM synth that reads DX7 bulk dumps, a LatelyBass-style four-operator voice, and a Python patch editor.
+description: >-
+  A collection of small projects. op6daisy plays six-operator FM voices and converts Yamaha DX7 SysEx bulk dumps; its
+  op6-ui companion is a Python and tkinter program that loads dumps, sends program changes and edits voices, and
+  runs on a Raspberry Pi. latebloomer reduces the engine to four operators with a half-sine waveform and a
+  resonant low-pass filter, 16 voices and USB MIDI. Smaller folders hold a test tone, a Daisy Pod synth and an
+  I2S daisy-chain test with a delay. The author says op6daisy does not match the real DX7 exactly.
+status: dormant
+authors:
+  - name: carlvp
+    url: https://github.com/carlvp
+source: https://github.com/carlvp/daisylab
+source_status: open
+license: MIT
+license_notes: The LICENSE file is MIT, copyright 2024 carlvp.
+homepage: https://github.com/carlvp/daisylab
+distribution: source-only
+install_notes: >-
+  Build each folder with make using libDaisy and DaisySP, and flash over USB DFU. The latebloomer README gives the
+  breadboard pins for audio output. A bad image is replaced by putting the Seed back into DFU mode.
+brick_risk: false
+tags: [synth-engine, fm, dx7, midi, sysex, editor, open-source]
+video:
+  url: https://www.youtube.com/watch?v=WLHoCTW1DcI
+  title: Op6 Daisy
+  credit: stellarinnovation
+  first_party: true
+  found_via: https://github.com/carlvp/daisylab#readme
+videos:
+  - url: https://www.youtube.com/watch?v=ICCkKMRtbZw
+    title: Op6 Voice Editor Demo
+    credit: stellarinnovation
+    first_party: true
+    found_via: https://github.com/carlvp/daisylab#readme
+versions:
+  - version: main @ 96bf02c
+    date: 2025-06-17
+    url: https://github.com/carlvp/daisylab/commit/96bf02c
+    notes: No tagged releases; this is the latest commit.

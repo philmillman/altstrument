@@ -1,0 +1,32 @@
+device: ableton-move
+name: Ambiotica
+summary: >-
+  Schwung audio effect chaining a tempo-locked rolling looper, a granular shimmer, a freeze layer and a modulated reverb, with four mode presets and an eight-knob layout.
+description: >-
+  Ambiotica runs the signal through a looper whose length follows the host tempo, an octave-and-fifth granular shimmer, an automatic freeze layer and an eight-comb modulated reverb with an optional half-rate lo-fi tail. The four presets are called Mismember, Loona, NAPS and Flow. The eight knobs cover mix, loop layer, grain size, scatter, micro hold, decay and modulation depth and rate, and a settings menu sets loop length, modulation shape and tempo sync.
+status: active
+authors:
+  - name: Charles Vestal
+    url: https://github.com/charlesvestal
+source: https://github.com/charlesvestal/schwung-ambiotica
+source_status: open
+license: MIT
+homepage: https://github.com/charlesvestal/schwung-ambiotica#readme
+distribution: download
+requires_stock: Schwung installed on the Move, with SSH access enabled
+install_notes: >-
+  Needs Schwung. Install Ambiotica from Schwung's module store or Schwung Manager, or build it with the repository's Docker script and copy it over SSH.
+brick_risk: false
+tags: [fx, reverb, looper, granular]
+versions:
+  - version: v0.2.4
+    date: 2026-08-29
+    url: https://github.com/charlesvestal/schwung-ambiotica/releases/tag/v0.2.4
+    notes: Adds short parameter names for Schwung's knob grid and a normalised looper feedback formula.
+  - version: v0.2.3
+    date: 2026-05-26
+    url: https://github.com/charlesvestal/schwung-ambiotica/releases/tag/v0.2.3
+    notes: Fixes loop build-up and clipping with Loop Layer at 100%.
+  - version: v0.2.2
+    date: 2026-05-22
+    url: https://github.com/charlesvestal/schwung-ambiotica/releases/tag/v0.2.2

@@ -1,0 +1,47 @@
+device: ableton-move
+name: NAM
+summary: >-
+  Schwung audio effect that runs Neural Amp Modeler captures for guitar amps and pedals, with cabinet impulse
+  responses and 30 bundled models.
+description: >-
+  The module loads .nam model files through NeuralAudio and applies an optional cabinet impulse response, up to
+  8192 samples, by FFT convolution; a None choice skips the cabinet for full-rig captures. It has input and
+  output level controls and a file browser for models and cabinets, which are copied to the module folders on
+  the Move. The release tarball carries 30 community captures of amps and pedals. The code builds on Mike
+  Oliphant's NeuralAudio and Steven Atkinson's NeuralAmpModelerCore.
+status: active
+authors:
+  - name: Charles Vestal
+    url: https://github.com/charlesvestal
+source: https://github.com/charlesvestal/schwung-nam
+source_status: open
+license: MIT
+license_notes: >-
+  The module code is MIT. THIRD_PARTY_LICENSES.md says the 30 bundled .nam captures come from the
+  pelennor2170/NAM_models repository under GPL-3.0, shipped as data beside the MIT plug-in. NeuralAudio and
+  NeuralAmpModelerCore are MIT, RTNeural is BSD-3-Clause, Eigen is MPL-2.0 and PFFFT is FFTPACK-style.
+distribution: download
+requires_stock: Schwung installed on the Move, with SSH access enabled
+install_notes: >-
+  Needs Schwung with SSH access enabled. Install NAM from Schwung's module store or Schwung Manager; add your
+  own .nam and cabinet .wav files through Schwung Manager or the module folders.
+brick_risk: false
+tags: [fx, emulator]
+versions:
+  - version: v0.2.0
+    date: 2026-11-05
+    url: https://github.com/charlesvestal/schwung-nam/releases/tag/v0.2.0
+    notes: Cabinet impulse responses use FFT convolution, and a None cabinet choice is added.
+  - version: v0.1.8
+    date: 2026-10-03
+    url: https://github.com/charlesvestal/schwung-nam/releases/tag/v0.1.8
+    notes: The module now unloads fully, so an update takes effect without restarting the Move.
+  - version: v0.1.7
+    date: 2026-08-31
+    url: https://github.com/charlesvestal/schwung-nam/releases/tag/v0.1.7
+  - version: v0.1.6
+    date: 2026-08-29
+    url: https://github.com/charlesvestal/schwung-nam/releases/tag/v0.1.6
+  - version: v0.1.5
+    date: 2026-05-29
+    url: https://github.com/charlesvestal/schwung-nam/releases/tag/v0.1.5

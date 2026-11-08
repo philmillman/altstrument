@@ -1,0 +1,29 @@
+device: korg-logue-tools
+name: logue-dsp-c
+kind: tool
+summary: C reimplementation of some of the DSP routines from Korg's logue SDK (a biquad filter and a delay line header), for use in custom logue units written in C.
+description: >-
+  The repository holds two headers, biquad.h and delay_line.h, ported from the
+  C++ DSP code that ships with Korg's logue SDK so that units can be written
+  in plain C. The author's fbos and lpf units pull it in as a submodule.
+  There are no releases or build steps; it is a header library.
+status: dormant
+authors:
+  - name: Beat Vontobel
+    url: https://github.com/bvontob
+source: https://github.com/bvontob/logue-dsp-c
+source_status: open
+license: BSD-3-Clause
+license_notes: >-
+  LICENSE file is BSD 3-Clause, Copyright 2023 Beat Vontobel, based on
+  original C++ code Copyright 2018 KORG INC. (also BSD 3-Clause). The API
+  reports NOASSERTION only because of the extra copyright line.
+homepage: https://github.com/bvontob/logue-dsp-c
+distribution: source-only
+install_notes: Copy or add the headers as a submodule to a logue SDK unit project.
+tags: [sdk, dsp, library, c, open-source, nts-1]
+versions:
+  - version: main @ 0860d50
+    date: 2023-04-26
+    url: https://github.com/bvontob/logue-dsp-c/commit/0860d50
+    notes: No tagged releases; this is the latest commit.

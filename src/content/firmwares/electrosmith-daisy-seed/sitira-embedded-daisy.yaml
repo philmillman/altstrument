@@ -1,0 +1,29 @@
+device: electrosmith-daisy-seed
+name: Sitira Embedded Daisy
+summary: Rust firmware for the Sitira granular eurorack module, with a Daisy Seed, a 2.2 inch screen, live-input, SD-streamed and delay modes, and knob or CV control of grain parameters.
+description: >-
+  Sitira is a 34 HP module built around a Daisy Seed; this repository holds its firmware, while the PCB design is in a
+  separate repository. It is written in Rust on the stm32h7xx HAL and a libdaisy-rust copy, and uses the author's
+  granulator crate. The modes are live recording from the input, streaming WAV files from a micro SD card and a
+  real-time delay. Offset, grain size, pitch, delay and velocity can each be spread randomly, and the grain
+  envelope has an extra parameter. The last commit on the default branch is from 2023.
+status: dormant
+authors:
+  - name: backtail
+    url: https://github.com/backtail
+source: https://github.com/backtail/sitira-embedded-daisy
+source_status: open
+license: unspecified
+license_notes: No license file or statement in the repository.
+homepage: https://github.com/backtail/sitira-embedded-daisy
+distribution: source-only
+install_notes: >-
+  Build with cargo for the thumbv7em target and flash with the Embed.toml probe settings or over DFU. The README
+  gives no step-by-step guide. A bad image is replaced by putting the Seed back into DFU mode.
+brick_risk: false
+tags: [granular, synth-engine, sampler, fx, rust, cv, open-source]
+versions:
+  - version: master @ 626de34
+    date: 2023-03-27
+    url: https://github.com/backtail/sitira-embedded-daisy/commit/626de34
+    notes: No tagged releases; this is the latest commit.

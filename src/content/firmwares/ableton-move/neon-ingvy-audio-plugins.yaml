@@ -1,0 +1,32 @@
+device: ableton-move
+name: Neon Ingvy audio plugins
+summary: >-
+  Rust-based audio effects from one repository. Trance Gate, Side-Chain and Bit-Crusher are released as Schwung audio effect modules for the Move, alongside macOS VST3 builds. Filter and vocal modules are in the tree without a release yet.
+description: >-
+  The repository holds a set of plug-ins, each built from its own Rust engine with one wrapper for a macOS VST3 and another for Schwung's audio effect interface. Trance Gate is a tempo-locked step gate with per-step envelopes, ties and a fade-in. Side-Chain and Bit-Crusher are the other two with Move releases. The tree also has Schwung module folders for Vocalize, Filter Designer and nine single-filter modules, but no release page for them, so only the first three can be installed from releases. Each product is versioned and tagged separately by date, and the Move module is attached to the product's release. The README says Linux and Windows plug-in builds are not yet released.
+status: active
+authors:
+  - name: Torben Gräber (Neon Ingvy)
+    url: https://github.com/graebe
+source: https://github.com/graebe/neon-ingvy-audio-plugins
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The README states GPL-3.0-or-later and THIRD_PARTY_LICENSES.md repeats it for the repository. That file lists the permissively licensed dependencies whose notices travel with each module.
+homepage: https://graebe.github.io/neon-ingvy-audio-plugins/
+distribution: download
+requires_stock: Schwung 1.5.0 or newer on the Move
+install_notes: >-
+  Needs Schwung. Install a module from Schwung's module store or Schwung Manager where listed, or use the module tarball attached to the product's release (trance-gate-module.tar.gz, ni-side-chain-module.tar.gz or ni-bit-crusher-module.tar.gz).
+brick_risk: false
+tags: [fx, performance, utility]
+versions:
+  - version: bit-crusher-v2026.10.11.1
+    date: 2026-10-11
+    url: https://github.com/graebe/neon-ingvy-audio-plugins/releases/tag/bit-crusher-v2026.10.11.1
+  - version: trance-gate-v2026.10.10.1
+    date: 2026-10-11
+    url: https://github.com/graebe/neon-ingvy-audio-plugins/releases/tag/trance-gate-v2026.10.10.1
+  - version: side-chain-v2026.10.10.2
+    date: 2026-10-11
+    url: https://github.com/graebe/neon-ingvy-audio-plugins/releases/tag/side-chain-v2026.10.10.2

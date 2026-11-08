@@ -1,0 +1,38 @@
+device: ableton-move
+name: MVerb
+summary: >-
+  Schwung audio effect that wraps Martin Eastwood's MVerb algorithmic reverb with nine parameters.
+description: >-
+  The module exposes MVerb's damping, density, bandwidth, decay, predelay, size, gain and mix as eight knobs,
+  with an early-mix setting on a menu page. Version 0.1.1 added a soft clip on the output to stop square-wave
+  clipping when the reverb tank goes above unity. Schwung integration is credited to Andre Louis in the README
+  and module metadata, and the DSP to Martin Eastwood.
+status: active
+authors:
+  - name: Andre Louis
+  - name: Charles Vestal
+    url: https://github.com/charlesvestal
+source: https://github.com/charlesvestal/schwung-mverb
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The LICENSE file is the GPL version 3 text and the NOTICE file states GPL-3.0-or-later. The MVerb engine is by
+  Martin Eastwood and is included as source.
+distribution: download
+install_notes: >-
+  Needs Schwung. Install MVerb from Schwung's module store or Schwung Manager, or build it with the Docker
+  script.
+brick_risk: false
+tags: [fx, reverb]
+versions:
+  - version: v0.1.3
+    date: 2026-08-31
+    url: https://github.com/charlesvestal/schwung-mverb/releases/tag/v0.1.3
+    notes: On-device help correction for the Early Mix parameter.
+  - version: v0.1.2
+    date: 2026-08-29
+    url: https://github.com/charlesvestal/schwung-mverb/releases/tag/v0.1.2
+  - version: v0.1.1
+    date: 2026-05-16
+    url: https://github.com/charlesvestal/schwung-mverb/releases/tag/v0.1.1
+    notes: Adds a soft clip on the output stage.

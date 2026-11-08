@@ -1,0 +1,36 @@
+device: electrosmith-daisy-seed
+name: PolyFM
+summary: Four-voice, four-operator FM synthesizer for a Daisy Seed on a breadboard or custom board, with 11 algorithms, MIDI input, an OLED, sixteen knobs and 16 saved presets.
+description: >-
+  PolyFM runs on a bare Daisy Seed wired to 19 potentiometers read through a
+  CD74HC4067 multiplexer, five push buttons, an SSD1306 128x64 OLED and an
+  optocoupler MIDI input. The repository's README lists a bill of materials and
+  includes a schematic. Each of the four voices uses four operators arranged
+  in one of 11 algorithms, and a preset can be saved and loaded from 16 slots.
+  The LFO has selectable destinations.
+status: active
+authors:
+  - name: Alexis Zbik
+    url: https://github.com/alexiszbik
+source: https://github.com/alexiszbik/polyfm
+source_status: open
+license: unspecified
+license_notes: No LICENSE file and no licence statement in the README.
+distribution: source-only
+install_notes: >-
+  Clone the repository with its submodules, build with the Daisy C++ toolchain
+  and flash the Seed over USB as in Electrosmith's C++ tutorials. A bad image
+  is replaced by putting the Seed into DFU mode.
+brick_risk: false
+tags: [synth-engine, fm, polyphonic, midi, open-source]
+image:
+  url: https://raw.githubusercontent.com/alexiszbik/polyfm/main/schematic.png
+  alt: PolyFM schematic with a Daisy Seed in the upper left wired to a jack, five switches, an OLED, three extra pots, a 16-knob multiplexer and an optocoupler MIDI input
+  credit: Alexis Zbik
+  source_url: https://github.com/alexiszbik/polyfm#readme
+  first_party: true
+versions:
+  - version: main @ 98a467b
+    date: 2025-12-26
+    url: https://github.com/alexiszbik/polyfm/commit/98a467b543f6e412673b8301a258f48bd2c3b4c9
+    notes: No tagged releases; this is the latest commit.

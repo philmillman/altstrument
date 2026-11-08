@@ -1,0 +1,32 @@
+device: electrosmith-daisy-patch
+name: Musubi
+summary: Oscillator processor for Daisy Patch with a two-output envelope generator, VCA, filter and multi-effect section holding reverb, delay, distortion and a DJ filter, controlled from an on-screen menu.
+description: >-
+  Up to four oscillator inputs go through a mixer, panning, a VCA envelope,
+  distortion placed before or after the filter, a filter with its own envelope, a
+  DJ filter, delay and reverb. The four controls change the options of the menu
+  page shown on the display, and settings can be saved and loaded from the
+  encoder. Version 1.1.0 removed clicks on fast attacks and added a volume meter.
+  It lives in a folder of a fork of DaisyExamples.
+status: dormant
+authors:
+  - name: Evan Pernu
+    url: https://github.com/EvansUniverse
+source: https://github.com/EvansUniverse/daisy-projects/tree/main/_evan/Musubi
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The _evan folder is GNU GPL 3.0 under the author's licence file; the rest of
+  the repository is the Electrosmith examples under MIT.
+homepage: https://github.com/EvansUniverse/daisy-projects
+distribution: download
+install_notes: >-
+  Program build/Musubi.bin with the Daisy web programmer after putting the Daisy
+  in bootloader mode. The ROM DFU bootloader stays available if a flash fails.
+brick_risk: false
+tags: [fx, reverb, delay, filter, envelope, open-source]
+versions:
+  - version: main @ e3e4629
+    date: 2023-08-31
+    url: https://github.com/EvansUniverse/daisy-projects/commit/e3e4629
+    notes: No tagged releases; this is the latest commit that touches the Musubi folder, which the author labels 1.1.0.

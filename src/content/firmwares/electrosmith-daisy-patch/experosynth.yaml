@@ -1,0 +1,27 @@
+device: electrosmith-daisy-patch
+name: Experosynth
+summary: Experimental Patch.init() oscillator patch with a triple and a single VCO, an envelope output and two gate outputs that run in a reverse or an independent mode.
+description: >-
+  Experosynth outputs a three-voice detunable oscillator on the left output and a single oscillator on the right. A button
+  steps the waveform through saw, square, triangle and sine. A gate input triggers a decay and release envelope sent to the
+  CV output and the LED. Two gate outputs run in reverse mode, where the second is the inverse of the first, or in individual
+  mode with their own length and frequency knobs. The README lists the controls, patching ideas and planned sync.
+status: dormant
+authors:
+  - name: remixed123
+    url: https://github.com/remixed123
+source: https://github.com/remixed123/Experosynth
+source_status: open
+license: unspecified
+license_notes: The repository has no licence file and no licence statement.
+distribution: download
+install_notes: >-
+  Flash build/Experosynth.bin, which the author committed, to the Patch.init() with the Daisy web programmer, or build it
+  with the Daisy toolchain and make. The Daisy's built-in DFU mode stays available if a flash goes wrong.
+brick_risk: false
+tags: [synth, oscillator, gate, envelope, experimental]
+versions:
+  - version: main @ 9a46d51
+    date: 2024-08-22
+    url: https://github.com/remixed123/Experosynth/commit/9a46d51
+    notes: No tagged releases; this is the latest commit.

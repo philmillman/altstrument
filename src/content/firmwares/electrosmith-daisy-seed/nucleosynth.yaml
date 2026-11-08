@@ -1,0 +1,30 @@
+device: electrosmith-daisy-seed
+name: STM32 Daisy Seed NucleoSynth
+summary: Six-voice virtual analog synth for a bare Daisy Seed played over USB MIDI, with two oscillators, a four-pole filter and ADSRs per voice, several LFOs and MIDI-editable parameters.
+description: >-
+  A port of the author's 2006 NucleoSynth to the Seed, using libDaisy for USB MIDI and audio and the HAL for the
+  engine. Each voice has two oscillators (saw or pulse-width square, mix, detune and scale), a VCA and a resonant
+  filter with separate envelopes, keyboard follow and velocity routing. LFOs act on pitch, both pulse widths and the
+  filter. The README names a Miditech keyboard as the controller and says the project was forked from an earlier
+  Seed polysynth. The repository description mentions a Karlsen low-pass filter, and the last commit fixes an audio output offset.
+status: dormant
+authors:
+  - name: Nettech15
+    url: https://github.com/Nettech15
+source: https://github.com/Nettech15/STM32-Daisy-Seed-NucleoSynth
+source_status: open
+license: unspecified
+license_notes: >-
+  No license file. The README text says to feel free to copy, modify and improve the code.
+homepage: https://github.com/Nettech15/STM32-Daisy-Seed-NucleoSynth
+distribution: source-only
+install_notes: >-
+  Build with make in VS Code using libDaisy and DaisySP and flash over USB DFU, following the instructions text file. A
+  bad image is replaced by putting the Seed back into DFU mode.
+brick_risk: false
+tags: [synth-engine, polyphonic, oscillator, filter, midi, open-source]
+versions:
+  - version: main @ c7cbc72
+    date: 2024-01-07
+    url: https://github.com/Nettech15/STM32-Daisy-Seed-NucleoSynth/commit/c7cbc72
+    notes: No tagged releases; this is the latest commit.

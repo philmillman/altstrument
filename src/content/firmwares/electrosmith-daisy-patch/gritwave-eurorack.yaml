@@ -1,0 +1,39 @@
+device: electrosmith-daisy-patch
+name: Gritwave Eurorack
+summary: Five Patch.init() firmwares by Gritwave, an amp simulator, a multi-effect, a dynamics processor, a wavetable oscillator and a noise and distortion unit, built from one C++20 repository.
+description: >-
+  The repository holds the DSP library and the firmware for each Gritwave module. Ares is a multi-mono amp simulation,
+  Astra a mono-to-stereo multi-effect with tape and ping-pong delays, reverbs, chorus, flanger, phaser and Airwindows
+  effects, Hermas a multi-mono dynamics processor with a transient shaper, Kyma a wavetable oscillator with a sub output, FM
+  input and ADSR, and Poseidon a noise, convolution and distortion unit with a compressor. Each module has its own README
+  with a panel mapping. Releases carry one .bin per module, flashed to the Patch.init().
+status: maintained
+authors:
+  - name: Tobias Hienzsch
+    url: https://github.com/tobiashienzsch
+source: https://github.com/gritwave/eurorack
+source_status: open
+license: MIT
+license_notes: Third-party code under 3rd_party and the Airwindows effects keep their own licences; the repository's LICENSE.txt covers Gritwave's code.
+distribution: download
+install_notes: >-
+  Download the .bin for the module from the latest release and flash it to the Patch.init() in bootloader mode with the
+  Daisy web programmer. The Daisy's built-in DFU mode stays available if a flash goes wrong.
+brick_risk: false
+tags: [fx, amp-sim, dynamics, wavetable, oscillator, delay, reverb, open-source]
+versions:
+  - version: v0.53.0
+    date: 2025-08-25
+    url: https://github.com/gritwave/eurorack/releases/tag/v0.53.0
+  - version: v0.52.0
+    date: 2025-08-25
+    url: https://github.com/gritwave/eurorack/releases/tag/v0.52.0
+  - version: v0.51.0
+    date: 2025-08-25
+    url: https://github.com/gritwave/eurorack/releases/tag/v0.51.0
+  - version: v0.50.0
+    date: 2025-08-25
+    url: https://github.com/gritwave/eurorack/releases/tag/v0.50.0
+  - version: v0.47.0
+    date: 2024-02-20
+    url: https://github.com/gritwave/eurorack/releases/tag/v0.47.0

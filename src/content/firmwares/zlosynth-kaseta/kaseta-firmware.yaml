@@ -1,0 +1,49 @@
+device: zlosynth-kaseta
+name: Kaseta firmware
+summary: Zlosynth's own Rust firmware for the Kaseta module, a tape delay with four heads, up to five minutes of audio, saturation, wow and flutter and a trigger sequencer.
+description: >-
+  This is the firmware that runs on the Kaseta, written by the module's maker
+  for the Daisy Patch SM. It provides a delay with four reading heads and up
+  to five minutes of recording, tape saturation, wow and flutter, tone
+  control, a voltage-controlled oscillator, a trigger sequencer and stereo
+  output. The repository changelog lists 1.3.4 and 1.3.5 as hardware changes
+  (footprints and slider pinout), and neither has a release page.
+status: active
+authors:
+  - name: Petr Horacek
+    url: https://github.com/zlosynth
+source: https://github.com/zlosynth/kaseta
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE-SOFTWARE is GPL version 3 and the README states no "or later" grant.
+  Hardware files and the manual are CC-BY-SA. The manual includes the tikz-dsp
+  library under CC-BY 2.5.
+homepage: https://zlosynth.com/kaseta
+distribution: download
+install_notes: >-
+  Download kaseta-firmware-x.y.z.bin from the release, open Electrosmith's web
+  programmer and upload it through the File Upload tab. The latest release
+  also lists an experimental smooth-position-modulation build. The Daisy
+  bootloader stays in place, so a failed upload can be repeated.
+brick_risk: false
+tags: [official, delay, tape, fx, saturation, eurorack, rust, open-source]
+video:
+  url: https://www.youtube.com/watch?v=lDis3lSRSSI
+  title: Kaseta Overview
+  credit: Zlosynth Instruments
+  first_party: true
+  found_via: https://zlosynth.com/kaseta
+versions:
+  - version: v1.3.3
+    date: 2025-10-11
+    url: https://github.com/zlosynth/kaseta/releases/tag/v1.3.3
+    notes: Stops accidental control mapping from noisy pots and adds power filtering and protection.
+  - version: v1.3.2
+    date: 2024-02-19
+    url: https://github.com/zlosynth/kaseta/releases/tag/v1.3.2
+    notes: Position sliders snap to the edges.
+  - version: v1.3.0
+    date: 2023-11-17
+    url: https://github.com/zlosynth/kaseta/releases/tag/v1.3.0
+    notes: Shows the position in the loop, adds loop reset and pause/resume control inputs and a configurable tap-to-length ratio.

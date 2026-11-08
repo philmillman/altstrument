@@ -1,0 +1,42 @@
+device: korg-minilogue-xd
+name: deiosc
+summary: Pad-oriented user oscillator for the minilogue xd that mixes a saturated sine with golden-ratio inharmonic partials, drifting on its own over about 51 seconds, with a beating control and optional sub oscillator.
+description: >-
+  The oscillator blends a saturated sine base with a brighter inharmonic part
+  built from partials at powers of the golden ratio. The blend moves by itself
+  over a cycle of about 51 seconds, driven by an internal clock instead of the
+  synth's LFO, and the user only sets how much of the inharmonic part is
+  present. Shape sets that presence, shift-shape sets the amount of beating
+  and Edit 1 the sub oscillator level. The README is bilingual (Spanish and
+  English) and links two demo videos and a blog post on how it was built.
+status: active
+authors:
+  - name: deibit-dev
+    url: https://github.com/deibit-dev
+source: https://github.com/deibit-dev/deiosc
+source_status: open
+license: unspecified
+license_notes: The repository has no license file and no license statement.
+homepage: https://dei-bit.tech
+distribution: download
+install_notes: >-
+  Download deiosc.mnlgxdunit from the release, or from the builds folder, and
+  load it into a user oscillator slot with Korg's Librarian or logue-cli.
+tags: [oscillator, pad, ambient, inharmonic, open-source, minilogue-xd]
+video:
+  url: https://www.youtube.com/watch?v=hEEluVHcMvQ
+  title: Deiosc demo
+  credit: DEI-BEAT
+  first_party: true
+  found_via: https://github.com/deibit-dev/deiosc#readme
+videos:
+  - url: https://www.youtube.com/watch?v=hwX-FXrKZW0
+    title: DEIOSC based preset demo
+    credit: DEI-BEAT
+    first_party: true
+    found_via: https://github.com/deibit-dev/deiosc#readme
+versions:
+  - version: v1.1
+    date: 2026-09-11
+    url: https://github.com/deibit-dev/deiosc/releases/tag/v1.1
+    notes: Fixes the continuity of the inharmonic blend by timing it with the hardware cycle counter.

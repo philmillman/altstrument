@@ -1,0 +1,30 @@
+device: electrosmith-daisy-seed
+name: Daisy 1073 EQ
+summary: Three-band parametric EQ with input and output gain and soft saturation for a Daisy Seed, modelled on a Neve 1073 style channel strip and meant for a guitar pedal build.
+description: >-
+  The firmware ports a plugin-style 1073 equaliser to the Seed. It has a low shelf, a mid peak and a high shelf with
+  adjustable frequency, gain and Q, a tanh soft clipper after the input gain, a DC-blocking filter and an output trim.
+  Parameters are smoothed to avoid zipper noise.
+
+  The README expects eight pots on the Seed's ADC pins and an audio path from a Daisy Pod, a Patch or an external
+  WM8731 codec. The docs folder has wiring and pedal build guides. The repository also contains an issue tracker
+  folder and agent instruction files used by the author's tooling.
+status: active
+authors:
+  - name: JackieAlacrity2373
+    url: https://github.com/JackieAlacrity2373
+source: https://github.com/JackieAlacrity2373/1073_Daisy
+source_status: open
+license: unspecified
+license_notes: No license file or statement in the repository.
+distribution: source-only
+install_notes: >-
+  Build with CMake and the Arm toolchain against libDaisy and DaisySP, then flash the .bin with the Daisy web
+  programmer or dfu-util. The ROM DFU mode stays available if a flash goes wrong.
+brick_risk: false
+tags: [fx, eq, pedal, open-source]
+versions:
+  - version: master @ 28740df
+    date: 2026-02-13
+    url: https://github.com/JackieAlacrity2373/1073_Daisy/commit/28740df
+    notes: No tagged releases; this is the latest commit.

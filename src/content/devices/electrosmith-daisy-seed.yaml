@@ -1,0 +1,41 @@
+name: Daisy Seed
+manufacturer: Electrosmith
+category: diy-platform
+added: 2026-11-08
+tagline: Bare STM32H750 audio module that is programmed in C++, Arduino, Pure Data or Max gen~
+description: >-
+  Daisy Seed is Electrosmith's small audio module, a 40-pin board with an
+  STM32H750 processor, 64 MB of SDRAM, 8 MB of flash, a stereo audio codec and
+  a USB port for power, programming and serial. It carries no controls of its
+  own and is meant to be wired into a breadboard or a custom PCB.
+
+  The Seed is also the core of many finished products, among them the Terrarium,
+  FunBox, Hothouse and Versio, and of the Daisy Patch, Pod and Field. Those have
+  their own pages here; this page is for projects that target the bare module.
+platform: STM32H750 (Arm Cortex-M7, 480 MHz), 64 MB SDRAM, 8 MB QSPI flash
+stock_firmware: Daisy bootloader; no application firmware
+links:
+  manufacturer: https://daisy.audio/
+  community:
+    - label: Daisy community forum
+      url: https://community.daisy.audio/
+    - label: DaisyExamples on GitHub
+      url: https://github.com/electro-smith/DaisyExamples
+notes: >-
+  Firmware is flashed over USB DFU using the STM32 ROM bootloader, or through
+  the Daisy bootloader, so a bad image is replaced by putting the board into
+  DFU mode with the BOOT button. Electrosmith's newer Seed3 (32-bit, 192 kHz
+  codec, USB-C) and Seed2 DFM keep the same pin layout, and the same libraries
+  support them. Projects that target one finished Daisy product are listed
+  under that product.
+related: [electrosmith-daisy-patch, electrosmith-daisy-field, cleveland-hothouse, guitarml-funbox, pedalpcb-terrarium, noise-engineering-versio]
+image:
+  src: /images/devices/electrosmith-daisy-seed.webp
+  style: photo
+  alt: Top view of the Daisy Seed, an orange board with through-holes along both edges, a memory chip and the STM32H750 in the middle, reset and boot buttons and a micro USB port at the bottom
+  width: 700
+  height: 1600
+  credit: Electrosmith
+  license: manufacturer archive image
+  source_url: https://web.archive.org/web/20201118140753/https://www.electro-smith.com/daisy/daisy
+  original_url: https://web.archive.org/web/20220911044959im_/https://images.squarespace-cdn.com/content/v1/58d03fdc1b10e3bf442567b8/1585761650581-5ULPVWODELKT63X2XYNW/ES_Daisy_Seed_Blurred_Codec.jpg

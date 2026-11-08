@@ -1,0 +1,32 @@
+device: ableton-move
+name: CHONK
+summary: >-
+  Schwung sound generator that plays a physically modelled electric bass string, ported from Punk Labs' OneTrick CHONK, with pad-selected articulations, glide and factory presets.
+description: >-
+  CHONK models one string with bridge and nut terminations, a pickup tapped along its length, a finger pluck and a
+  noise transient, so strike force changes the tone. It is monophonic over C3 to G6, with pads below that range
+  for mute, finger, pick, slap, slides, legato, ring and alternate-pick articulations. Pages cover the string,
+  attack, fretting, output with a five-band EQ, and MIDI. It ships nine presets from Punk Labs. The DSP is Punk
+  Labs' Faust code regenerated to C++, and the repository includes a copy of the upstream source. The README asks players to buy the original plug-in from Punk Labs.
+status: active
+authors:
+  - name: legsmechanical
+    url: https://github.com/legsmechanical
+source: https://github.com/legsmechanical/schwung-chonk
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The README says GPL-3.0 or later, inherited from OneTrick CHONK, and gives the standard notice; the LICENSE file is
+  upstream's copy of the GPL-3.0 text. The DSP and presets are Copyright 2024 Punk Labs LLC.
+homepage: https://punklabs.com/ot-chonk
+distribution: download
+requires_stock: Schwung installed on the Move
+install_notes: >-
+  Needs Schwung. Install CHONK from Schwung's module store or Schwung Manager, or build it with the repository's Docker
+  build script and install it over SSH.
+brick_risk: false
+tags: [synth-engine, synth, physical-modeling]
+versions:
+  - version: v0.1.0
+    date: 2026-09-21
+    url: https://github.com/legsmechanical/schwung-chonk/releases/tag/v0.1.0

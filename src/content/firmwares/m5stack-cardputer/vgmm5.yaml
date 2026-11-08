@@ -1,0 +1,32 @@
+device: m5stack-cardputer
+name: vgmM5
+summary: >-
+  VGM/VGZ and MDX file player for M5Stack devices. The Cardputer build lists the SD card, plays Mega Drive, arcade and X68000 music files through its own sound-chip cores and takes keyboard controls.
+description: >-
+  vgmM5 is a player for VGM and VGZ chip-music logs and MDX (MXDRV) files from the X68000. One shared sound-chip library
+  covers FM chips such as the YM2612, YM2151 and YM2608, PSG and SSG chips, and PCM chips such as the C140 and C352. The
+  repository also holds builds for the CoreS3, with or without Module Audio, the Tab5 and the AtomS3R Echo. The Cardputer R67
+  build boots straight into a file list of the microSD card, shows title, chip, volume and elapsed time while playing, and
+  offers a standard and a Classic output level. Its README says the earlier Cardputer release is kept on a separate branch.
+status: active
+authors:
+  - name: Layer812
+    url: https://github.com/Layer812
+source: https://github.com/Layer812/vgmM5
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file. The README shows an MIT badge and nothing else about licensing, and the bundled
+  sound-chip code was not checked for upstream terms.
+distribution: download
+install_notes: >-
+  The README links M5Burner share codes and Web Burner pages for the Cardputer and the other boards, and says the Cardputer
+  release on M5Burner is the older R6 version; the R67 build is built from the cardputer folder with PlatformIO or the
+  included Windows scripts. Put VGM, VGZ or MDX files on the microSD card.
+brick_risk: false
+tags: [player, vgm, chiptune, sd-card, esp32-s3, open-source]
+versions:
+  - version: main @ 007621c
+    date: 2026-11-07
+    url: https://github.com/Layer812/vgmM5/commit/007621c537645e79d69e5f72dadf3c2370c5934e
+    notes: No tagged releases; this is the latest commit.

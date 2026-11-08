@@ -1,0 +1,40 @@
+device: electrosmith-daisy-seed
+name: VasVas Noisebox
+summary: Noisebox with two piezo pickups and a Daisy Seed effects processor that runs a Dattorro reverb with a freeze mode and a shimmer effect, with KiCad board files and source.
+description: >-
+  VasVas is a plywood noisebox that uses two piezo pickups as the left and right inputs, which gives a stereo signal
+  at the output. Firmware 1.0 contains a reverb based on the Dattorro design, with delay lines and all-pass filters
+  whose sizes change proportionally and a long decay that can be frozen, and a shimmer effect that extracts the second
+  harmonic. The case has four pots, a button and two LEDs, and the README leaves the vibrating parts, such as springs
+  and plates, up to the builder.
+
+  The repository holds the schematic, KiCad board, bill of materials and the source with its libraries. The author
+  says later versions may change the effects without changing the hardware.
+status: active
+authors:
+  - name: stone-voices
+    url: https://github.com/stone-voices
+source: https://github.com/stone-voices/vasvas
+source_status: open
+license: CC0-1.0
+license_notes: >-
+  COPYING.txt is a short public-domain dedication that points to the Creative Commons CC0 text; GitHub reports it as
+  unrecognised.
+distribution: source-only
+install_notes: >-
+  Build software/vasvas_v1 with make and the Daisy toolchain, then flash over USB DFU. The ROM DFU mode stays
+  available if a flash goes wrong.
+brick_risk: false
+tags: [fx, reverb, noisebox, hardware, open-source]
+video:
+  url: https://www.youtube.com/watch?v=F5kSkdeNpbo
+  title: VasVas DIY Noisebox. No talking. #noisebox #audiofx #daisyseed
+  credit: Stone Voices
+  first_party: true
+  found_via: https://github.com/stone-voices/vasvas#readme
+  version: main @ 2041419
+versions:
+  - version: main @ 2041419
+    date: 2026-03-29
+    url: https://github.com/stone-voices/vasvas/commit/2041419
+    notes: No tagged releases; this is the latest commit.

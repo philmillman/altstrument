@@ -1,0 +1,51 @@
+device: ableton-move
+name: Acid
+summary: >-
+  Schwung MIDI effect with two generative acid-bassline sequencers that run off the Move's transport and are
+  blended into one output.
+description: >-
+  Each of the two sequencers has 2 to 32 steps, its own density, accent, slide, octave, length and gate
+  settings and a per-step state of rest, note, accent or slide. An Algo knob per sequencer picks between a
+  model that matches Charles Vestal's tb3po module and later settings that mix in a second generator inspired
+  by the Sting Max for Live patch. Playing a note transposes both sequencers relative to C4, and a shared
+  Root knob sets the key. A MIDI effect slot can feed only the one synth in that slot. The README credits
+  tb3po (GPL-3.0) as the source of the primary generator model.
+status: active
+authors:
+  - name: sd88me
+    url: https://github.com/sd88me
+source: https://github.com/sd88me/schwung-acid
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and no statement for the module itself. The README credits schwung-tb3po
+  (GPL-3.0) for the primary generator model and states that the Sting patch's mechanisms are reimplemented,
+  not copied.
+homepage: https://github.com/sd88me/schwung-acid#readme
+distribution: download
+requires_stock: Schwung installed on the Move
+install_notes: >-
+  Needs Schwung. Install Acid from Schwung's module store or Schwung Manager as a custom module, or unpack
+  acid-module.tar.gz from a release into the Move's midi_fx module folder and reboot.
+brick_risk: false
+tags: [sequencer, midi, performance, acid]
+versions:
+  - version: v1.3.0
+    date: 2026-10-14
+    url: https://github.com/sd88me/schwung-acid/releases/tag/v1.3.0
+  - version: v1.2.0
+    date: 2026-09-26
+    url: https://github.com/sd88me/schwung-acid/releases/tag/v1.2.0
+  - version: v1.1.1
+    date: 2026-09-10
+    url: https://github.com/sd88me/schwung-acid/releases/tag/v1.1.1
+  - version: v1.1.0
+    date: 2026-09-10
+    url: https://github.com/sd88me/schwung-acid/releases/tag/v1.1.0
+  - version: v1.0.1
+    date: 2026-09-09
+    url: https://github.com/sd88me/schwung-acid/releases/tag/v1.0.1
+    notes: Packaging only; adds a minimum host version.
+  - version: v1.0.0
+    date: 2026-09-09
+    url: https://github.com/sd88me/schwung-acid/releases/tag/v1.0.0

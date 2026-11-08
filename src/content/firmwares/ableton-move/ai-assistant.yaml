@@ -1,0 +1,35 @@
+device: ableton-move
+name: AI Assistant
+summary: >-
+  Schwung tool module that records a spoken question from a held pad, sends it to Gemini or OpenAI with your own API key, and shows a long reply on the Move, optionally read aloud by the screen reader.
+description: >-
+  Hold a bottom-row pad, speak and release. The audio goes to the chosen provider for transcription and an
+  answer, and is deleted from the Move when the reply arrives. The reply scrolls on the display and can be spoken
+  through Schwung's screen reader. The system prompt can be edited in the web configuration page, and the
+  provider and key are entered there and shared with AI Manual. It needs a network connection and a Gemini or
+  OpenAI key, and the module sends the audio to that provider.
+status: active
+authors:
+  - name: eightfour-dev
+    url: https://github.com/eightfour-dev
+source: https://github.com/eightfour-dev/schwung-ai-assistant
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and the README gives no licence.
+homepage: https://github.com/eightfour-dev/schwung-ai-assistant#readme
+distribution: download
+requires_stock: Schwung with the voice-tool host bindings, a network connection and a Gemini or OpenAI API key
+install_notes: >-
+  Needs Schwung. Install AI Assistant from the Tools list of Schwung's module store, then choose a provider and
+  enter a key on the Move's web configuration page at move.local:7700/config.
+brick_risk: false
+tags: [voice, utility, speech]
+versions:
+  - version: v0.2.0
+    date: 2026-04-25
+    url: https://github.com/eightfour-dev/schwung-ai-assistant/releases/tag/v0.2.0
+    notes: Moves settings to the host's per-module configuration system.
+  - version: v0.1.0
+    date: 2026-04-18
+    url: https://github.com/eightfour-dev/schwung-ai-assistant/releases/tag/v0.1.0

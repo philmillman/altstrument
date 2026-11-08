@@ -1,0 +1,33 @@
+device: ableton-move
+name: Bus Driver
+summary: >-
+  Schwung audio effect that models Ableton Live 12's Drum Buss, with drive, crunch, damp, transient shaping and a tuned boom stage, fitted to measurements of the original.
+description: >-
+  Bus Driver has a Shape page (Drive with Soft, Medium and Hard characters, Crunch, Damp, Transients, Boom with
+  frequency and decay) and a Mix page (compressor switch, trim, output and dry/wet). The signal order and curves were
+  taken from measurements of the Live device, and the repository keeps the measurement data, test rigs and a scoring tool
+  that compares the model with Live's 22 stock presets. The README warns that the effect is not transparent at
+  its defaults and says it is an independent model, not affiliated with Ableton. The commit history shows AI co-authorship.
+status: active
+authors:
+  - name: legsmechanical
+    url: https://github.com/legsmechanical
+source: https://github.com/legsmechanical/schwung-busdriver
+source_status: open
+license: MIT
+homepage: https://github.com/legsmechanical/schwung-busdriver#readme
+distribution: download
+requires_stock: Schwung installed on the Move
+install_notes: >-
+  Needs Schwung. Install Bus Driver from Schwung's module store or Schwung Manager, or build it with the repository's
+  Docker build script and copy it to the Move over SSH. Add it as an audio effect in a signal chain or the master slot.
+brick_risk: false
+tags: [fx, emulator, drums]
+versions:
+  - version: v0.3.0
+    date: 2026-09-11
+    url: https://github.com/legsmechanical/schwung-busdriver/releases/tag/v0.3.0
+    notes: Fixes the Boom Decay knob, whose resonant filter had a feedback wiring error that left the control nearly inert.
+  - version: v0.2.0
+    date: 2026-09-10
+    url: https://github.com/legsmechanical/schwung-busdriver/releases/tag/v0.2.0

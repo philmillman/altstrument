@@ -1,0 +1,40 @@
+device: ableton-move
+name: setBfree Tonewheel Organ
+summary: >-
+  Schwung sound generator that ports the setBfree Hammond B3 emulation, with drawbars, scanner vibrato,
+  percussion, overdrive, reverb and a Leslie cabinet, to the Move.
+description: >-
+  The module plays a 91-tonewheel organ model with nine drawbars, percussion, scanner vibrato, tube
+  overdrive, reverb and a rotating-speaker simulation with slow, stop and fast settings. Controls are spread
+  over five knob pages: Drawbars, Output, Percussion, Vibrato and Overdrive. The tone generator is setBfree's
+  own source by Robin Gareus and Fredrik Kilander, which THIRD_PARTY_LICENSES.md says is included unchanged;
+  the Schwung wrapper is by Pascal Dubucq. The engine builds in the background after the module loads, and
+  an RDY readout shows when the organ can sound.
+status: active
+authors:
+  - name: Pascal Dubucq
+    url: https://github.com/pdubucq
+  - name: Robin Gareus
+    url: https://github.com/x42
+  - name: Fredrik Kilander
+source: https://github.com/pdubucq/schwung-setbfree
+source_status: open
+license: GPL-2.0-or-later
+license_notes: >-
+  The LICENSE file is the GPL version 2 text. THIRD_PARTY_LICENSES.md states that the port is
+  GPL-2.0-or-later because it is a derivative of setBfree, which is GPL-2.0-or-later.
+homepage: https://github.com/pdubucq/schwung-setbfree#readme
+distribution: download
+requires_stock: Schwung installed on the Move
+install_notes: >-
+  Needs Schwung. Install setBfree from Schwung's module store or Schwung Manager, or build it from source
+  with the repository's Docker script and copy it to the Move with the install script.
+brick_risk: false
+tags: [synth-engine, synth, organ, emulator]
+versions:
+  - version: v0.1.2
+    date: 2026-10-03
+    url: https://github.com/pdubucq/schwung-setbfree/releases/tag/v0.1.2
+  - version: v0.1.1
+    date: 2026-10-03
+    url: https://github.com/pdubucq/schwung-setbfree/releases/tag/v0.1.1

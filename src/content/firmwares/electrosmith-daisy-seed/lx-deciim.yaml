@@ -1,0 +1,32 @@
+device: electrosmith-daisy-seed
+name: lx-deciim
+summary: Two-channel bit-selecting bitcrusher Eurorack module on a Daisy Seed, where each of 12 bits can be switched off and replaced by a gate input, with KiCad hardware files and firmware.
+description: >-
+  Instead of reducing resolution from the lowest bit up, lx-deciim lets you disable any of the 12 bits of a 48 kHz
+  signal. A disabled bit can be replaced by a trigger input that compares a CV against a reference of 0 V or 2.5 V,
+  chosen with a jumper. The input can also be downsampled from 48 kHz to 1 kHz. The module is 12 HP and takes
+  Eurorack-level signals.
+
+  The repository has the KiCad main board and front panel, a Python script that generates the panel pattern, and the
+  libDaisy firmware.
+status: dormant
+authors:
+  - name: lucblender
+    url: https://github.com/lucblender
+source: https://github.com/lucblender/lx-deciim
+source_status: open
+license: CC-BY-NC-4.0
+license_notes: >-
+  The LICENSE file is Creative Commons Attribution-NonCommercial 4.0, and the README says the whole project, hardware
+  and software, is under it. This licence forbids commercial use.
+distribution: source-only
+install_notes: >-
+  Build Software/lx-deciim-libdaisy with make and the Daisy toolchain, then flash over USB DFU. The ROM DFU mode
+  stays available if a flash goes wrong.
+brick_risk: false
+tags: [fx, bitcrusher, eurorack, hardware]
+versions:
+  - version: main @ 66a877a
+    date: 2025-09-02
+    url: https://github.com/lucblender/lx-deciim/commit/66a877a
+    notes: No tagged releases; this is the latest commit.

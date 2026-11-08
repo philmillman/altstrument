@@ -1,0 +1,30 @@
+device: electrosmith-daisy-seed
+name: daisy-fast-stft
+kind: tool
+summary: Header-only C++ framework for real-time FFT, STFT and inverse STFT spectral processing on a Daisy Seed, built on CMSIS-DSP, with windowing, spectral operations and feature extraction.
+description: >-
+  The library wraps a CMSIS-DSP real FFT with a streaming STFT and an overlap-add inverse, window generation, magnitude
+  and phase conversion, frequency-domain arithmetic and morphing, and spectral features such as centroid, flux,
+  rolloff and flatness. It does not allocate heap memory. Three example programs show a mono and a stereo STFT and an
+  inverse-only path, and the docs cover parameters, processing modes and measured performance. The author calls it
+  experimental and offers no guarantee of accuracy or sound quality.
+status: maintained
+authors:
+  - name: Farmer2K5
+    url: https://github.com/Farmer2K5
+source: https://github.com/Farmer2K5/daisy-fast-stft
+source_status: open
+license: unspecified
+license_notes: No license file or statement in the repository.
+homepage: https://github.com/Farmer2K5/daisy-fast-stft
+distribution: source-only
+install_notes: >-
+  Clone with submodules, include fast_dsp.h in a libDaisy project and build with make. The example programs are flashed
+  over USB DFU. A bad image is replaced by putting the Seed back into DFU mode.
+brick_risk: false
+tags: [sdk, dsp, fft, spectral, cpp, open-source]
+versions:
+  - version: main @ 6eda9c4
+    date: 2025-10-31
+    url: https://github.com/Farmer2K5/daisy-fast-stft/commit/6eda9c4
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,28 @@
+device: electrosmith-daisy-patch
+name: hvcc
+kind: tool
+summary: Python compiler that turns Pure Data patches into C/C++ and framework wrappers, with a Daisy generator for Patch, Patch.init(), Pod, Petal, Field and three devkit layouts.
+description: >-
+  hvcc, the Heavy compiler collection, was started at Enzien Audio and has been maintained by Wasted Audio since 2021. Its
+  generators cover plugins, game audio engines, JavaScript and several embedded platforms. The Daisy generator takes a board
+  name in a metadata JSON file, or a custom board layout file, and produces a project for libDaisy. The documentation
+  describes MIDI handling and the knob, switch and CV mapping per board.
+status: active
+authors:
+  - name: Wasted Audio
+    url: https://github.com/Wasted-Audio
+source: https://github.com/Wasted-Audio/hvcc
+source_status: open
+license: GPL-3.0-only
+license_notes: The licence file is GPL 3 with no later-version statement. The README and docs discuss licensing of generated code.
+homepage: https://github.com/Wasted-Audio/hvcc/blob/develop/docs/generators/daisy.md
+distribution: source-only
+install_notes: >-
+  Install with pip (Python 3.10 or newer), then run hvcc with the daisy generator and a board in the metadata file; building
+  the output needs the Daisy toolchain. plugdata offers the same compiler from a GUI.
+brick_risk: false
+tags: [pure-data, hvcc, codegen, converter, patch, pod, petal, field]
+versions:
+  - version: v0.17.3
+    date: 2026-10-24
+    url: https://github.com/Wasted-Audio/hvcc/releases/tag/v0.17.3

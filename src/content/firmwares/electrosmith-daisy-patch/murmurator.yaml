@@ -1,0 +1,30 @@
+device: electrosmith-daisy-patch
+name: Murmur Boids
+summary: Flocking-simulation synth for Daisy Patch where up to 16 oscillator voices follow 3D boids, with position mapped to pan, frequency and amplitude, scale quantization and a reverb bus.
+description: >-
+  Each boid is an always-on oscillator. Controls set flock density, alignment,
+  speed and a sine-to-square waveform morph, the encoder sets the voice count
+  from 4 to 16, and a gate scatters the flock. The display shows the flock, the
+  parameters and the scale page, where root, scale type, octave and a chord
+  progression are chosen. A 4x4 LED grid shows density. The README recommends
+  flashing with an ST-Link probe and treats DFU as an alternative.
+status: active
+authors:
+  - name: lewis1286
+    url: https://github.com/lewis1286
+source: https://github.com/lewis1286/murmurator
+source_status: open
+license: unspecified
+license_notes: No LICENSE file and no licence statement in the repository.
+distribution: source-only
+install_notes: >-
+  Build with libDaisy and DaisySP and flash with make program through an ST-Link
+  probe, or make program-dfu if the Daisy bootloader is installed. The ROM DFU
+  bootloader stays available if a flash fails.
+brick_risk: false
+tags: [synth-engine, generative, oscillator, reverb, ui]
+versions:
+  - version: master @ 9314bf0
+    date: 2026-05-16
+    url: https://github.com/lewis1286/murmurator/commit/9314bf0
+    notes: No tagged releases; this is the latest commit.

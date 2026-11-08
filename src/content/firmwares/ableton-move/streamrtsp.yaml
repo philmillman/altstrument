@@ -1,0 +1,31 @@
+device: ableton-move
+name: StreamRTSP
+summary: >-
+  Schwung sound generator that receives audio from an RTSP stream on the local network, such as the Android app ScreenStream, and plays it through the Move. A minimal ffmpeg build is bundled to decode the stream.
+description: >-
+  StreamRTSP connects to an RTSP server by an endpoint typed in as the last part of the IP address, the port and the stream path. The README recommends ScreenStream on Android with the RTSP protocol and device audio enabled, and links a Python script for streaming Windows audio. It favours stable audio over low latency and works on the local network only. The build downloads and bundles an ARM64 ffmpeg binary into the module.
+status: active
+authors:
+  - name: Handcrafted Media
+    url: https://github.com/handcraftedcc
+source: https://github.com/handcraftedcc/schwung-StreamRTSP
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file names Charles Vestal as the copyright holder, and src/module.json gives the author as dom. THIRD-PARTY-LICENSES.md says the bundled ffmpeg comes from BtbN's LGPL ARM64 builds and defers to the licence text in that archive.
+homepage: https://github.com/handcraftedcc/schwung-StreamRTSP#readme
+distribution: download
+install_notes: >-
+  Needs Schwung. Install StreamRTSP from Schwung's module store or from the streamrtsp-module.tar.gz in the latest release, then enter the stream's IP suffix, port and path and press Connect.
+brick_risk: false
+tags: [utility, synth-engine]
+versions:
+  - version: v0.1.7
+    date: 2026-03-28
+    url: https://github.com/handcraftedcc/schwung-StreamRTSP/releases/tag/v0.1.7
+  - version: v0.1.6
+    date: 2026-03-27
+    url: https://github.com/handcraftedcc/schwung-StreamRTSP/releases/tag/v0.1.6
+  - version: v0.1.5
+    date: 2026-03-27
+    url: https://github.com/handcraftedcc/schwung-StreamRTSP/releases/tag/v0.1.5

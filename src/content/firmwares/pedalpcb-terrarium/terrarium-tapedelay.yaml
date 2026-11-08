@@ -1,0 +1,23 @@
+device: pedalpcb-terrarium
+name: terrarium-tapedelay
+summary: Tape delay for the Terrarium using a hysteresis model from CHOWTape, with delay time, feedback, tape age, wow and flutter and a switch between Studio, Space Echo and Echorec models.
+description: >-
+  The knobs set delay time, feedback, level, tape age, wow and flutter and the tape model. Footswitch 1 bypasses, and holding it clears the delay line, while footswitch 2 taps tempo. The README credits Jatin Chowdhury's CHOWTape for the hysteresis model and gives GPLv3 as the license. The repository has a GitHub Actions build and no releases.
+status: dormant
+authors:
+  - name: Michael Donovan
+    url: https://github.com/michaeldonovan
+source: https://github.com/michaeldonovan/terrarium-tapedelay
+source_status: open
+license: GPL-3.0-only
+license_notes: LICENSE is the standard GPL version 3 text with no "or later" statement.
+distribution: source-only
+install_notes: >-
+  Build with the Daisy toolchain (a CMake project) and flash with the Electrosmith web programmer or DFU. The Daisy Seed's ROM DFU mode stays available if a flash goes wrong.
+brick_risk: false
+tags: [fx, delay, tape]
+versions:
+  - version: main @ 7521c10
+    date: 2022-12-21
+    url: https://github.com/michaeldonovan/terrarium-tapedelay/commit/7521c10
+    notes: No tagged releases; this is the latest commit.

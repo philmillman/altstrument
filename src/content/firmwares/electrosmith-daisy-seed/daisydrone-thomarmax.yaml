@@ -1,0 +1,34 @@
+device: electrosmith-daisy-seed
+name: DaisyDrone (ThomArmax)
+summary: Basic two-oscillator drone synth for a Daisy Seed built on a breadboard, with pots and a switch for the oscillator waveform; the repository includes a breadboard schematic.
+description: >-
+  A small STM32 project that generates a drone from two oscillators on a Daisy
+  Seed. The README shows a legend for the pots and the switch, a breadboard
+  schematic and a demo video, and gives two scripts that build the Daisy
+  libraries and the application.
+status: dormant
+authors:
+  - name: ThomArmax
+    url: https://github.com/ThomArmax
+source: https://github.com/ThomArmax/DaisyDrone
+source_status: open
+license: unspecified
+license_notes: No LICENSE file and no licence statement.
+distribution: source-only
+install_notes: >-
+  Run build_deps.sh to build the Daisy libraries and build.sh to build the
+  application; the output is written to src/build. Flash it over USB DFU. A Seed
+  recovers through DFU mode after a bad image.
+brick_risk: false
+tags: [synth-engine, oscillator, open-source]
+video:
+  url: https://www.youtube.com/watch?v=0pCuyUAaQdU
+  title: Basic 2 oscillators drone synth using Daisy Seed from Electro Smith
+  credit: Thomas COIN
+  first_party: true
+  found_via: https://github.com/ThomArmax/DaisyDrone#readme
+versions:
+  - version: master @ 98feea9
+    date: 2020-12-23
+    url: https://github.com/ThomArmax/DaisyDrone/commit/98feea9d9f57973584b711c818b09c7c493c84ef
+    notes: No tagged releases; this is the latest commit.

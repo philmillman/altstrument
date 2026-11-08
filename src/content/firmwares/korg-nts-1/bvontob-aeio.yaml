@@ -1,0 +1,28 @@
+device: korg-nts-1
+name: aeio
+summary: Formant oscillator for the NTS-1 with a single random parameter; source only, with no README and no prebuilt unit.
+description: >-
+  aeio is a user oscillator that produces vowel-like formant sounds, as the
+  repository description says. Its manifest has one parameter, named rand.
+  The repository has a main.c, a biquad header and the logue SDK makefile
+  layout, no README and no releases, so it has to be built inside an SDK
+  checkout.
+status: dormant
+authors:
+  - name: Beat Vontobel
+    url: https://github.com/bvontob
+source: https://github.com/bvontob/aeio
+source_status: open
+license: BSD-3-Clause
+license_notes: LICENSE file is BSD 3-Clause, Copyright 2023 Beat Vontobel.
+homepage: https://github.com/bvontob/aeio
+distribution: source-only
+install_notes: >-
+  No prebuilt unit is published. Build it with the logue SDK for the NTS-1 and
+  load the result with Korg's Librarian or logue-cli.
+tags: [oscillator, formant, open-source, nts-1]
+versions:
+  - version: main @ 2592069
+    date: 2023-05-01
+    url: https://github.com/bvontob/aeio/commit/2592069
+    notes: No tagged releases; this is the latest commit.

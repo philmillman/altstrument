@@ -1,0 +1,27 @@
+device: electrosmith-daisy-patch
+name: GranularDaisyPod
+summary: Real-time granular synth for the Daisy Pod that plays WAV files from SD using only the Pod's two knobs and two buttons, with five colour-coded control pages.
+description: >-
+  A granular engine built from grain voices, windowing functions, a playback phasor and sample playback code. The
+  Pod's LED colour shows which of five pages is active: pitch and scan rate, grain duration and density, jitter and
+  freeze, random pitch, and WAV file selection with start and end points. The README marks the file-selection
+  controls and one LED as faulty or buggy. It says the design was inspired by Jared Anderson's grnltr.
+status: dormant
+authors:
+  - name: matildarosevin
+    url: https://github.com/matildarosevin
+source: https://github.com/matildarosevin/GranularDaisyPod
+source_status: open
+license: MIT
+license_notes: LICENSE is MIT with a 2023 copyright line naming Jared Anderson, whose grnltr the README credits as inspiration.
+distribution: source-only
+install_notes: >-
+  Build from source with make using libDaisy and DaisySP. WAV files are read from an SD card. No prebuilt binary is
+  published.
+brick_risk: false
+tags: [granular, synth-engine, sampler, open-source]
+versions:
+  - version: main @ df25e52
+    date: 2025-09-12
+    url: https://github.com/matildarosevin/GranularDaisyPod/commit/df25e52
+    notes: No tagged releases; this is the latest commit.

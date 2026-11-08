@@ -1,0 +1,31 @@
+device: electrosmith-daisy-seed
+name: DaisyPlatform (Perspective pedal)
+summary: Firmware for a stereo digital effects pedal built around a Daisy Seed, with an effect framework, a pot and switch hardware layer and many effects including drive, delay, chorus and a neural amp model.
+description: >-
+  The Software folder is titled Perspective Audio Pedal. It has a hardware
+  abstraction layer for pots, switches, encoders and LEDs, a queue-based UI event
+  system and a base effect class with pot curves. The effects folder includes
+  auto-wah, cabinet simulation, chorus, compressor, delay, drive, flanger and
+  noise gate, and the dependencies include a neural amp modeller core. The
+  hardware folder holds the author's PCB design backups for the pedal.
+status: active
+authors:
+  - name: olivergardiner
+    url: https://github.com/olivergardiner
+source: https://github.com/olivergardiner/DaisyPlatform
+source_status: open
+license: MIT
+license_notes: The licence file is Software/LICENSE; the repository root has none.
+distribution: source-only
+install_notes: >-
+  The program does not fit in internal flash, so it boots from the external QSPI
+  flash through the Daisy bootloader. Flash the bootloader with make
+  program-boot, then flash the program. The ROM DFU mode stays available to
+  reflash the Seed.
+brick_risk: false
+tags: [fx, pedal, drive, delay, open-source]
+versions:
+  - version: main @ f790174
+    date: 2026-09-20
+    url: https://github.com/olivergardiner/DaisyPlatform/commit/f790174d480c97634e6fd32d20c3b1ad52e58534
+    notes: No tagged releases; this is the latest commit.

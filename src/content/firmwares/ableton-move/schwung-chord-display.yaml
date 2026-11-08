@@ -1,0 +1,37 @@
+device: ableton-move
+name: Chord Display
+summary: >-
+  Schwung audio effect that shows the chord being played, from pads or a clip on any track, with its name and a roman numeral in the Set's key, leaving audio and MIDI untouched.
+description: >-
+  Chord Display reads the notes that reach it on every channel and names the chord on its first page, with inversions shown as slash chords such as C/E and I/3. Its one setting is
+  Channel (Auto, 1 to 16 or Omni); each Move track's MIDI Out must be set to a channel for it to see the notes. The numeral uses the Set's root note and scale as read from Move, and a
+  single note clears the display. It is an audio effect because those receive every channel. The page appears in the Schwung editor, not on Move's own screen.
+status: active
+authors:
+  - name: Nipheon
+    url: https://github.com/Nipheon
+source: https://github.com/Nipheon/schwung-chord-display
+source_status: open
+license: MIT
+license_notes: >-
+  Host headers copied from Schwung (MIT) and parts adapted from schwung-ducker (MIT) are listed with their licences in THIRD_PARTY_LICENSES.md.
+homepage: https://github.com/Nipheon/schwung-chord-display#readme
+distribution: download
+requires_stock: Schwung 1.6.2 or later installed on the Move (tested on 1.7.3)
+install_notes: >-
+  Needs Schwung. Install Chord Display from Schwung's module store or Schwung Manager, or build it with the repository's Docker script. Load it as an audio effect on any slot.
+brick_risk: false
+tags: [chords, scales, utility]
+image:
+  url: https://raw.githubusercontent.com/Nipheon/schwung-chord-display/main/docs/screenshot.png
+  alt: Chord Display page showing CH 3 and C Major along the top, with C/E in large type and the roman numeral I/3 below it
+  credit: Nipheon
+  source_url: https://github.com/Nipheon/schwung-chord-display#readme
+  first_party: true
+versions:
+  - version: v0.1.5
+    date: 2026-10-31
+    url: https://github.com/Nipheon/schwung-chord-display/releases/tag/v0.1.5
+  - version: v0.1.0
+    date: 2026-10-24
+    url: https://github.com/Nipheon/schwung-chord-display/releases/tag/v0.1.0

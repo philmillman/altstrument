@@ -1,0 +1,35 @@
+device: electrosmith-daisy-patch
+name: Dahlia
+summary: Waveshaping polyphonic synth written in Pure Data for the Heavy compiler, with eight voices, six waveshaping algorithms and a simplified control scheme for the Daisy Pod; also builds as a plug-in and for the web.
+description: >-
+  Dahlia reworks the author's Waveshape-Synth patches so they pass through
+  Heavy. Each voice has seven oscillators, one ADSR and two ADS envelopes, a
+  sine, saw or PWM shape, six waveshapers that are all active at once, unison
+  detune and bit-depth reduction. Monophonic, eight-voice and lightweight
+  monophonic versions exist. Targets are the Daisy Pod through pd2dsy, the
+  DISTRHO Plugin Framework and JavaScript. The Daisy setup page says the
+  Pod build has a memory limit that leaves audio unavailable for now.
+status: dormant
+authors:
+  - name: vulcu
+    url: https://github.com/vulcu
+source: https://github.com/vulcu/dahlia
+source_status: open
+license: GPL-3.0-only
+license_notes: LICENSE is the unmodified GPL version 3 text with no "or later" grant.
+distribution: source-only
+install_notes: >-
+  Set up hvcc and the Daisy toolchain as the docs describe, then run dahlia.sh
+  daisy or dahlia.sh pd2dsy, which tries to upload to the device. Per the docs
+  the Pod UI works but audio does not yet. The Daisy ROM DFU mode recovers a
+  board after a bad image.
+brick_risk: false
+tags: [synth-engine, pure-data, polyphonic, codegen, pod, open-source]
+versions:
+  - version: main @ 04d2d0a
+    date: 2025-08-23
+    url: https://github.com/vulcu/dahlia/commit/04d2d0a5f402653153c5b534dd43f292b891c154
+    notes: Fixes the unison and waveform buttons and adds an interface from the author's waveshape-synth project.
+  - version: v1.0.0
+    date: 2024-06-06
+    url: https://github.com/vulcu/dahlia/releases/tag/v1.0.0

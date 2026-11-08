@@ -1,0 +1,32 @@
+device: electrosmith-daisy-patch
+name: Plaits for Patch.Init()
+summary: Work-in-progress port of Mutable Instruments Plaits to Patch.Init() with all 24 engines of the final v1.2 firmware, including the chord engine, run from SRAM by the Daisy bootloader.
+description: >-
+  Four knobs set coarse tuning, harmonics, timbre and morph, and CV 5 takes
+  1V/oct. A toggle says whether the trigger input is patched so the Plaits low
+  pass gate can be used, and a button or the second gate input advances the
+  engine. The application is stored in QSPI and copied to SRAM at start, which
+  lets the chord engine fit despite the module's small internal flash.
+status: active
+authors:
+  - name: Ewan Hemingway
+    url: https://github.com/hemmer
+source: https://github.com/hemmer/PlaitsPatchInit
+source_status: open
+license: MIT
+license_notes: >-
+  Per the MIT notice for Emilie Gillet's code reproduced in the README; the
+  repository has no LICENSE file.
+distribution: source-only
+install_notes: >-
+  Needs the Daisy bootloader installed once with make program-boot or the Daisy
+  web programmer, then make program-dfu during the bootloader's grace period.
+  Installing the bootloader overwrites internal flash, and the STM32 ROM DFU
+  mode can restore it.
+brick_risk: false
+tags: [synth-engine, wavetable, fm, chord, open-source]
+versions:
+  - version: master @ 11b97ab
+    date: 2026-07-29
+    url: https://github.com/hemmer/PlaitsPatchInit/commit/11b97ab
+    notes: No tagged releases; this is the latest commit, labelled v1.2 firmware.

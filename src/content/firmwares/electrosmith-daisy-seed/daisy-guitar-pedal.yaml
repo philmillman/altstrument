@@ -1,0 +1,29 @@
+device: electrosmith-daisy-seed
+name: Daisy Guitar Pedal
+summary: Hybrid guitar multi-effect pedal with a Daisy Seed as DSP, an analog overdrive and tube-boost module switched by relays, ten presets and ten effect slots per preset, written for the Arduino IDE.
+description: >-
+  A pedal built around a Daisy Seed with an optional analog module for overdrive, distortion and a tube boost that
+  the firmware switches in and out through relays. It has a 128 by 64 monochrome LCD and an 8 by 8 LED matrix, four
+  footswitches, five pushbuttons and a rotary encoder. There are ten presets, each with ten slots that take any
+  effect in any order, and settings are kept in an external EEPROM. Effects include reverb, pitch shifter, digital
+  overdrive and fuzz, compressor, gain, delay, chorus, flanger, equaliser and an impulse-response amp and cabinet
+  model. The sketch depends on the author's fork of DaisyDuino and several Arduino libraries.
+status: dormant
+authors:
+  - name: jerry20091103
+    url: https://github.com/jerry20091103
+source: https://github.com/jerry20091103/Daisy_Guitar_Pedal
+source_status: open
+license: MIT
+license_notes: LICENSE is the MIT license, copyright 2021 jerry20091103.
+distribution: source-only
+install_notes: >-
+  Install the author's DaisyDuino fork and the other libraries named in the README, open Daisy_Guitar_Pedal.ino in
+  the Arduino IDE and upload it to the Seed. Needs the author's pedal hardware or an equivalent build.
+brick_risk: false
+tags: [fx, pedal, reverb, delay, amp-sim, arduino, hardware, open-source]
+versions:
+  - version: master @ 9d6afe1
+    date: 2023-05-24
+    url: https://github.com/jerry20091103/Daisy_Guitar_Pedal/commit/9d6afe1
+    notes: No tagged releases; this is the latest commit.

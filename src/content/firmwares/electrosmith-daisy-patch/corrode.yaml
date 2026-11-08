@@ -1,0 +1,33 @@
+device: electrosmith-daisy-patch
+name: Corrode
+summary: TB-303 style acid voice for Patch.Init() built on the Open303 DSP engine, driven by CV and gate or USB MIDI, with saw and square waves, accent, slide and a drive stage.
+description: >-
+  Four knobs on two pages set cutoff, resonance, envelope mod and decay, then
+  accent, slide, drive and tuning. CV inputs take pitch, cutoff, envelope mod and
+  accent, a gate input triggers accents, and USB MIDI covers notes and
+  parameters. External audio can pass through the filter, and a CV output
+  follows the filter envelope. There is no sequencer. The Open303 code was
+  converted to single precision, with a Butterworth anti-aliasing filter and
+  faster tanh and exp approximations. The changelog still lists its phases as
+  unticked.
+status: active
+authors:
+  - name: house-of-houses
+    url: https://github.com/house-of-houses
+source: https://github.com/house-of-houses/corrode
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the standard GPLv3 text and the README says GPL v3, with no
+  "or later" statement. Open303 is by Robin Schmidt.
+distribution: source-only
+install_notes: >-
+  Build libDaisy and DaisySP, run make, then hold BOOT and press RESET and run
+  make program-dfu. The ROM DFU bootloader stays available if a flash fails.
+brick_risk: false
+tags: [synth-engine, tb-303, acid, emulation, midi, cv]
+versions:
+  - version: master @ 71077a4
+    date: 2026-02-06
+    url: https://github.com/house-of-houses/corrode/commit/71077a4
+    notes: No tagged releases; this is the latest commit.

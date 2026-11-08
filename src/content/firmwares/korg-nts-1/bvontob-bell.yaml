@@ -1,0 +1,27 @@
+device: korg-nts-1
+name: bell
+summary: Oscillator for the NTS-1 that models Risset's bell with hold, compression and attack parameters; source only, with no README and no prebuilt unit.
+description: >-
+  bell is a user oscillator that follows Jean-Claude Risset's additive bell
+  tone. The manifest lists three parameters: hold, comp and att. The
+  repository has a main.c and the logue SDK makefile layout, no README and no
+  releases, so it has to be built inside an SDK checkout.
+status: dormant
+authors:
+  - name: Beat Vontobel
+    url: https://github.com/bvontob
+source: https://github.com/bvontob/bell
+source_status: open
+license: BSD-3-Clause
+license_notes: LICENSE file is BSD 3-Clause, Copyright 2023 Beat Vontobel.
+homepage: https://github.com/bvontob/bell
+distribution: source-only
+install_notes: >-
+  No prebuilt unit is published. Build it with the logue SDK for the NTS-1 and
+  load the result with Korg's Librarian or logue-cli.
+tags: [oscillator, bell, additive, open-source, nts-1]
+versions:
+  - version: main @ 4662555
+    date: 2023-05-01
+    url: https://github.com/bvontob/bell/commit/4662555
+    notes: No tagged releases; this is the latest commit.

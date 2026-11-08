@@ -1,0 +1,22 @@
+device: guitarml-funbox
+name: Earth (FunBox Planet series)
+summary: Plate reverb and octave pedal program for the FunBox using a Dattorro reverb, with predelay, modulation, a filter, size and octave switches and a footswitch that freezes, overdrives or adds octaves.
+description: >-
+  Earth was split out of the FunBox repository into its own repository and is used there as a submodule. The reverb is adapted from the Plateau module for VCV Rack and the octave effect from schult's Terrarium poly-octave. The README documents expression pedal setup and MIDI control numbers. It runs from the Daisy Seed's SRAM, so it loads through the Daisy bootloader. Version v1 has a prebuilt binary.
+status: dormant
+authors:
+  - name: Keith Bloemer (GuitarML)
+    url: https://github.com/GuitarML
+source: https://github.com/GuitarML/Earth
+source_status: open
+license: GPL-3.0-only
+license_notes: LICENSE-GPLv3.txt is the standard GPL version 3 text with no "or later" statement. The reverb derives from Plateau and the octave effect from Terrarium-Poly-Octave, per the README.
+distribution: download
+install_notes: >-
+  Flash the .bin from the v1 release through the Daisy bootloader. The Daisy Seed's ROM DFU mode stays available if a flash goes wrong.
+brick_risk: false
+tags: [fx, reverb]
+versions:
+  - version: v1
+    date: 2025-01-10
+    url: https://github.com/GuitarML/Earth/releases/tag/v1

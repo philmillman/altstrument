@@ -1,0 +1,36 @@
+device: ableton-move
+name: CHOWTape
+summary: >-
+  Schwung audio effect that models analogue tape with Jiles-Atherton magnetic hysteresis, head loss, wow and flutter, dropouts and tone control, ported to C from Jatin Chowdhury's AnalogTapeModel.
+description: >-
+  The hysteresis stage solves the Jiles-Atherton model with a fourth-order Runge-Kutta integrator to produce tape saturation and level-dependent compression. Around it are a speed-dependent loss filter with head bump, wow and flutter from an Ornstein-Uhlenbeck process, a chew control for damage and dropouts, degradation noise and a pre-tape tilt equaliser. Eight knobs cover drive, saturation, bias, tone, speed, flutter, chew and mix, with degrade and output reached from the chain editor.
+status: active
+authors:
+  - name: Charles Vestal
+    url: https://github.com/charlesvestal
+  - name: Jatin Chowdhury
+    url: https://github.com/jatinchowdhury18
+source: https://github.com/charlesvestal/schwung-chowtape
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The README states GPL-3.0-or-later and calls the module a derivative of AnalogTapeModel, which is GPL-3.0. The LICENSE file is the GPL version 3 text and the module metadata reads GPL-3.0.
+homepage: https://github.com/charlesvestal/schwung-chowtape#readme
+distribution: download
+requires_stock: Schwung installed on the Move, with SSH access enabled
+install_notes: >-
+  Needs Schwung. Install CHOWTape from Schwung's module store or Schwung Manager, or build it with the repository's Docker script and copy it over SSH.
+brick_risk: false
+tags: [fx, tape, emulator]
+versions:
+  - version: v0.1.2
+    date: 2026-08-31
+    url: https://github.com/charlesvestal/schwung-chowtape/releases/tag/v0.1.2
+    notes: Help text correction; Degrade and Output are not on the first knob page.
+  - version: v0.1.1
+    date: 2026-08-31
+    url: https://github.com/charlesvestal/schwung-chowtape/releases/tag/v0.1.1
+    notes: On-device help now displays.
+  - version: v0.1.0
+    date: 2026-03-31
+    url: https://github.com/charlesvestal/schwung-chowtape/releases/tag/v0.1.0

@@ -1,0 +1,41 @@
+device: electrosmith-daisy-patch
+name: Jellybeans
+summary: Diatonic quantizing arpeggiator for Daisy Patch that turns a V/oct root input into an arpeggio of the chord on that scale degree, with chord voicings, inversions and clock divisions.
+description: >-
+  The user sets a scale root and quality, and the module quantizes the incoming
+  pitch and arpeggiates the diatonic chord built on it, sending the root out as a
+  bass note on CV out 2. Later versions added BPM detection, an internal clock,
+  fractional clock values and menu trims for the CV and output levels. The
+  author's README says the project was being overhauled and recommends the
+  1.4.2 build. It lives in a folder of a fork of DaisyExamples, next to the
+  author's other projects.
+status: dormant
+authors:
+  - name: Evan Pernu
+    url: https://github.com/EvansUniverse
+source: https://github.com/EvansUniverse/daisy-projects/tree/main/_evan/Jellybeans
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The _evan folder is GNU GPL 3.0 under the author's licence file; the rest of
+  the repository is the Electrosmith examples under MIT.
+homepage: https://forum.electro-smith.com/t/jellybeans-diatonic-quantizing-arpeggiator-for-daisy-patch/2178
+distribution: download
+install_notes: >-
+  Download build/Jellybeans.bin, put the Daisy in bootloader mode and program it
+  with the Daisy web programmer. The README tells you to use the 1.4.2 build,
+  which is under old_builds. The ROM DFU bootloader stays available if a flash
+  fails.
+brick_risk: false
+tags: [sequencer, arpeggiator, quantizer, music-theory, open-source]
+video:
+  url: https://www.youtube.com/watch?v=7cRScZM9cCY
+  title: Jelllybeans - Diatonic Quantizing Arpeggiator for Daisy Patch
+  credit: Evan's Universe
+  first_party: true
+  found_via: https://github.com/EvansUniverse/daisy-projects/blob/main/_evan/Jellybeans/README.md
+versions:
+  - version: main @ 7a8e04d
+    date: 2023-08-28
+    url: https://github.com/EvansUniverse/daisy-projects/commit/7a8e04d
+    notes: No tagged releases; this is the latest commit that touches the Jellybeans folder.

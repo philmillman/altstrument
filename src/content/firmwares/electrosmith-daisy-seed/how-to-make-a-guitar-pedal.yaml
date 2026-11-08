@@ -1,0 +1,29 @@
+device: electrosmith-daisy-seed
+name: How to Make a Digital Guitar Pedal
+summary: Code, bill of materials and PCB files for a ten-episode YouTube course on building a Daisy Seed guitar pedal, with distortion and chorus programs for a breadboard Seed and a Pod.
+description: >-
+  Supporting material for a course on designing and assembling a digital pedal around a Daisy Seed. The code folder
+  has a chorus pedal for the Seed, an Arduino IDE version of it, and chorus and distortion programs for the Daisy
+  Pod. The episodes cover breadboarding the Seed, hard and soft clipping, the DaisySP library, an enclosure drill
+  template, a KiCad schematic and board, ordering parts, UV-printed artwork and final assembly. The hardware folder
+  includes Gerber files for the author's chorus pedal board. The course teaches the workflow and does not aim to
+  reproduce one fixed pedal.
+status: active
+authors:
+  - name: skngh
+    url: https://github.com/skngh
+source: https://github.com/skngh/How-to-Make-a-Guitar-Pedal
+source_status: open
+license: GPL-3.0-only
+license_notes: LICENSE is the unmodified GPL version 3 text with no per-project "or later" grant.
+distribution: source-only
+install_notes: >-
+  Build a program in the code folder with make against libDaisy and DaisySP, or open the .ino in the Arduino IDE,
+  and flash it to the Seed over USB DFU. The bill of materials in docs lists the parts for the full pedal.
+brick_risk: false
+tags: [fx, pedal, chorus, distortion, educational, hardware, open-source]
+versions:
+  - version: main @ b4302ef
+    date: 2026-04-21
+    url: https://github.com/skngh/How-to-Make-a-Guitar-Pedal/commit/b4302ef
+    notes: No tagged releases; this is the latest commit.

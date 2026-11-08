@@ -1,0 +1,26 @@
+device: electrosmith-daisy-seed
+name: Daisy Looper (mtthw-meyer)
+summary: Small looper written in Rust on libdaisy-rust for a Daisy Seed; the README is a single line and the last commit fixes undo.
+description: >-
+  A Rust program using libdaisy-rust, with a Cargo project and a memory layout
+  file. The README says only that it is a looper for the Daisy Seed, so
+  controls and wiring are not documented.
+status: dormant
+authors:
+  - name: Matthew Meyer
+    url: https://github.com/mtthw-meyer
+source: https://github.com/mtthw-meyer/daisy-looper
+source_status: open
+license: MIT
+distribution: source-only
+install_notes: >-
+  Build with cargo for the Cortex-M target using the .cargo config in the
+  repository. No flashing steps are given; a Seed recovers through DFU mode
+  after a bad image.
+brick_risk: false
+tags: [looper, rust, open-source]
+versions:
+  - version: main @ f8a5662
+    date: 2021-04-10
+    url: https://github.com/mtthw-meyer/daisy-looper/commit/f8a566251883371cb6078aaf023706a270413d80
+    notes: No tagged releases; this is the latest commit.

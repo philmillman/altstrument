@@ -1,0 +1,25 @@
+device: pedalpcb-terrarium
+name: daisy-reverb (CloudSeed for Terrarium)
+summary: >-
+  Mono CloudSeed reverb for the Terrarium with expanded controls, based on GuitarML's Terrarium port of DaisyCloudSeed. Up to five delay lines are chosen with the toggle switches and a footswitch cycles presets.
+description: >-
+  The repository is a personal fork of GuitarML's DaisyCloudSeed that targets the Terrarium. Its README, copied from that port, maps the six knobs to dry level, early and late reverb levels, late feedback, early tap decay and late decay, and the four toggles to the number of active delay lines. The commits changed the memory placement of the delay lines and the program's startup. A lighter CloudyReverb variant is also included. No release or prebuilt binary is published here, and there is no license file.
+status: dormant
+authors:
+  - name: baylessj
+    url: https://github.com/baylessj
+source: https://github.com/baylessj/daisy-reverb
+source_status: open
+license: unspecified
+license_notes: >-
+  No license file in this repository. The README says the upstream Cloud Seed algorithm by ValdemarOrn is MIT-licensed.
+distribution: source-only
+install_notes: >-
+  Build the Daisy libraries with rebuild_libs.sh, then make in the Terrarium folder. Flash with the Electrosmith web programmer or make program-dfu. The Daisy Seed's ROM DFU mode stays available if a flash goes wrong.
+brick_risk: false
+tags: [fx, reverb]
+versions:
+  - version: main @ bb659a9
+    date: 2023-10-14
+    url: https://github.com/baylessj/daisy-reverb/commit/bb659a9
+    notes: No tagged releases; this is the latest commit.

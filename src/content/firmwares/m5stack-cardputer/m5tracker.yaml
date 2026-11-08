@@ -1,0 +1,30 @@
+device: m5stack-cardputer
+name: M5Tracker
+summary: >-
+  Tracker module player for the Cardputer that plays MOD, XM, S3M and IT files from the SD card, with pattern view, channel meters, playlist and an optional second display.
+description: >-
+  M5Tracker uses a vendored copy of libxmp-lite to play MOD, XM, S3M and IT files from a /music folder on the SD card. It has
+  a recursive file browser, a now-playing screen, a pattern view with note, instrument, volume and effect columns, live
+  channel volume bars, a playlist with repeat modes and saved settings including a colour theme. A 160x128 ST7735 display
+  can be wired to the Cardputer GPIO pins as a second screen. The README warns that large songs may not fit in the memory
+  of the StampS3. The build uses forks of M5GFX and M5Unified by the same author.
+status: active
+authors:
+  - name: Devsur11
+    url: https://github.com/Devsur11
+source: https://github.com/Devsur11/M5Tracker
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file for its own code. The vendored libxmp-lite in lib/xmp-lite carries its own terms.
+distribution: download
+install_notes: >-
+  The release carries a target.bin to flash to the Cardputer. To build it yourself, use PlatformIO with pio run and
+  pio run --target upload. Put module files in /music on the SD card.
+brick_risk: false
+tags: [tracker, player, mod, sd-card, esp32-s3]
+versions:
+  - version: v1.0
+    date: 2026-06-20
+    url: https://github.com/Devsur11/M5Tracker/releases/tag/v1.0
+    notes: The repository's default branch has two later commits, from 2026-06-22.

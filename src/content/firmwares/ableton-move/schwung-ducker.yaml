@@ -1,0 +1,33 @@
+device: ableton-move
+name: Ducker
+summary: >-
+  Schwung audio effect that ducks volume, opens an inverted volume or sweeps a filter when a chosen MIDI note arrives, giving sidechain-style pumping without an audio sidechain.
+description: >-
+  A MIDI note on a set channel, usually the kick, fires an envelope with attack, hold and release stages and a depth control. The Target knob picks what the envelope moves: plain volume, an inverted volume that opens on each trigger, or a low- or high-pass filter swept between two cutoffs. Trigger mode can fire on one note or on any note on the channel, and Gate mode holds the duck while the note is held. The README shows the main page and describes uses such as pumping chords or ducking reverb tails.
+status: active
+authors:
+  - name: Charles Vestal
+    url: https://github.com/charlesvestal
+source: https://github.com/charlesvestal/schwung-ducker
+source_status: open
+license: MIT
+homepage: https://github.com/charlesvestal/schwung-ducker#readme
+distribution: download
+requires_stock: Schwung installed on the Move
+install_notes: >-
+  Needs Schwung. Install Ducker from the Audio FX section of Schwung's module store or Schwung Manager, then set its channel and trigger note to the kick's MIDI output.
+brick_risk: false
+tags: [fx, dynamics, midi-trigger]
+versions:
+  - version: v0.3.0
+    date: 2026-11-05
+    url: https://github.com/charlesvestal/schwung-ducker/releases/tag/v0.3.0
+    notes: Adds a Target selector with Volume Inv and Filter modes, and a softer default retrigger.
+  - version: v0.2.0
+    date: 2026-11-05
+    url: https://github.com/charlesvestal/schwung-ducker/releases/tag/v0.2.0
+    notes: Adds a trigger setting that responds to any note on the channel.
+  - version: v0.1.5
+    date: 2026-08-31
+    url: https://github.com/charlesvestal/schwung-ducker/releases/tag/v0.1.5
+    notes: Help correction about velocity direction.

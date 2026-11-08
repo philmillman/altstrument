@@ -1,0 +1,30 @@
+device: ableton-move
+name: Boris Granular
+summary: >-
+  Schwung audio effect that records live input into a 10-second buffer and plays overlapping grains with random position, pitch, direction, volume and pan, with MIDI clock sync. A port of Boris Granular Station.
+description: >-
+  The module captures incoming audio into a circular buffer and starts up to 24 grains at a density set by the user. Each grain can be randomised in size, delay, pitch shift, direction, level and pan, and a freeze control holds the buffer. Grain triggers can follow MIDI clock. It is a rewrite in plain C of Alessandro Gaiba's Boris Granular Station, which was written in C++, JUCE and RNBO, and is released under the same licence.
+status: active
+authors:
+  - name: Vincent Fillion (filliformes)
+    url: https://github.com/filliformes
+source: https://github.com/filliformes/boris-move
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the plain GPL version 3 text with no "or later" notice. The README says the module derives from Boris Granular Station by Alessandro Gaiba, which is GPL-3.0, so this port uses the same licence.
+distribution: download
+install_notes: >-
+  Needs Schwung. Install Boris Granular from Schwung's module store or Schwung Manager, or give Schwung Manager the repository URL or the tarball from the latest release.
+brick_risk: false
+tags: [fx, granular, synth-engine]
+versions:
+  - version: v0.3.2
+    date: 2026-09-15
+    url: https://github.com/filliformes/boris-move/releases/tag/v0.3.2
+  - version: v0.3.1
+    date: 2026-03-31
+    url: https://github.com/filliformes/boris-move/releases/tag/v0.3.1
+  - version: v0.3.0
+    date: 2026-03-24
+    url: https://github.com/filliformes/boris-move/releases/tag/v0.3.0

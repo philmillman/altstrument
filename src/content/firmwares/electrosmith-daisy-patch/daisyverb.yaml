@@ -1,0 +1,29 @@
+device: electrosmith-daisy-patch
+name: daisyverb
+summary: Port of the ReverbSC stereo reverb to an early Daisy Patch prototype, built without the libDaisy library from its own startup, linker and hardware files.
+description: >-
+  Runs Sean Costello's ReverbSC algorithm on the STM32H750 of a prototype Daisy Patch. The repository carries its own
+  startup code, linker script, STM32 HAL configuration and Patch and Seed hardware files, so it predates libDaisy's
+  current layout. It was last changed in January 2020 and is mainly of interest as a reference for porting DSP code
+  to the first Patch hardware.
+status: dormant
+authors:
+  - name: PaulBatchelor
+    url: https://github.com/PaulBatchelor
+source: https://github.com/PaulBatchelor/daisyverb
+source_status: open
+license: MIT
+license_notes: >-
+  LICENSE is MIT with copyright to Electrosmith, 2019. The reverb algorithm is ReverbSC, which is also LGPL-licensed
+  in DaisySP-LGPL and Csound; the repository does not state which version its reverbsc.c derives from.
+distribution: source-only
+install_notes: >-
+  Build from source with the included Makefile; the repository has no prebuilt binary and no flashing instructions.
+  It targets the original prototype Patch hardware, so expect to adapt it for current libDaisy.
+brick_risk: false
+tags: [reverb, fx, open-source]
+versions:
+  - version: master @ 0da8238
+    date: 2020-01-02
+    url: https://github.com/PaulBatchelor/daisyverb/commit/0da8238
+    notes: No tagged releases; this is the latest commit.

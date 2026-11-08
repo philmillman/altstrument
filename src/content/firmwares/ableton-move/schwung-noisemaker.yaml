@@ -1,0 +1,40 @@
+device: ableton-move
+name: Noisemaker
+summary: >-
+  Schwung sound generator that ports the TAL NoiseMaker virtual-analog synth, with six voices, 12 filter types, 256 factory presets and import of NoiseMaker preset banks.
+description: >-
+  Noisemaker runs the TAL NoiseMaker engine from DISTRHO-Ports unmodified: dual oscillators with a sub, ring mod, FM,
+  sync and bitcrush, two LFOs, a spline envelope editor used as a tempo-synced modulation source, chorus, reverb and
+  delay. It has four macros and 256 factory presets decoded from the engine's program data. Loose .noisemakerpreset
+  files copied into the module's presets folder appear as banks, and uninstalling the module deletes them. Since v0.3.0 the
+  host draws the knob pages.
+status: active
+authors:
+  - name: legsmechanical
+    url: https://github.com/legsmechanical
+source: https://github.com/legsmechanical/schwung-noisemaker
+source_status: open
+license: GPL-2.0-only
+license_notes: >-
+  The LICENSE file is the GPL version 2 text and the README says GPL-2.0, with no later-version statement of its own. The
+  engine is Copyright 2005 to 2010 Patrick Kunz, TAL / Togu Audio Line, vendored byte for byte.
+homepage: https://github.com/legsmechanical/schwung-noisemaker#readme
+distribution: download
+requires_stock: Schwung installed on the Move
+install_notes: >-
+  Needs Schwung. Install Noisemaker from Schwung's module catalog through Schwung Manager, or unpack the release tarball
+  into the sound generators module folder.
+brick_risk: false
+tags: [synth-engine, synth, emulator]
+versions:
+  - version: v0.3.1
+    date: 2026-09-04
+    url: https://github.com/legsmechanical/schwung-noisemaker/releases/tag/v0.3.1
+    notes: Fixes imported presets not always restoring as saved, including transpose that was never stored.
+  - version: v0.3.0
+    date: 2026-09-04
+    url: https://github.com/legsmechanical/schwung-noisemaker/releases/tag/v0.3.0
+    notes: Replaces the custom canvas editor with the host's generated knob grid, regrouped by section.
+  - version: v0.1.0
+    date: 2026-07-21
+    url: https://github.com/legsmechanical/schwung-noisemaker/releases/tag/v0.1.0

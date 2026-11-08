@@ -1,0 +1,35 @@
+device: ableton-move
+name: Wayward
+summary: >-
+  Schwung audio effect that records six audio fragments and plays each as a loop at its own tempo, so the loops start together and drift apart and back over minutes.
+description: >-
+  Wayward records six fragments of the incoming audio and assigns each loop a separate tempo, for example 100
+  to 105 BPM. The loops start in step and slide out of alignment. Nothing is time-stretched: a fragment shorter
+  than its beat is padded with silence and a longer one is cut off. The module has five pages of controls, and the
+  project site has a manual with reconstructions of Move's display. The README names Forgetful, a sibling effect by the
+  same author, and says Schwung 1.0.0 or newer is required for the child-level loop page.
+status: active
+authors:
+  - name: kliegsablaze
+    url: https://github.com/kliegsablaze
+source: https://github.com/kliegsablaze/wayward
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and the README gives no licence statement.
+homepage: https://kliegsablaze.github.io/wayward/
+distribution: download
+requires_stock: Schwung 1.0.0 or later installed on the Move
+install_notes: >-
+  Needs Schwung. Install Wayward from Schwung's module store or Schwung Manager, or unpack the tarball from the
+  latest release into the audio_fx module folder over SSH. The README says to move the files into place rather than
+  extract over a module that is loaded in a slot.
+brick_risk: false
+tags: [fx, looper, performance]
+versions:
+  - version: v0.9.0
+    date: 2026-09-03
+    url: https://github.com/kliegsablaze/wayward/releases/tag/v0.9.0
+  - version: v0.8.1
+    date: 2026-08-30
+    url: https://github.com/kliegsablaze/wayward/releases/tag/v0.8.1

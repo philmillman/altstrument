@@ -1,0 +1,29 @@
+device: electrosmith-daisy-patch
+name: Resonate
+summary: Fork of the Daisy Patch port of Mutable Instruments Rings that adds a drone generator driven by the same string synthesis.
+description: >-
+  Starts from the Daisy Patch Rings port in the Daisy examples, itself a port of Émilie Gillet's Rings code, and adds
+  a slewing drone generator that uses Rings' string model to produce sustained textures under other playing. The
+  Rings resonator, string synth and FM voice code are carried over, so the Rings manual applies to the rest of the
+  controls. The repository holds a single commit with a prebuilt resonate.bin in the root.
+status: dormant
+authors:
+  - name: Tyler Reckart
+    url: https://github.com/tylerreckart
+source: https://github.com/tylerreckart/resonate
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no licence file. The inherited Rings source files carry Émilie Gillet's MIT notice, and the
+  README credits the Daisy port to Ben Sergentanis. The drone code added by this fork has no stated licence.
+distribution: download
+install_notes: >-
+  A prebuilt resonate.bin is in the repository root; flash it to the Patch over USB DFU, or build with make using
+  libDaisy and DaisySP. The README gives no install steps.
+brick_risk: false
+tags: [mutable-instruments-port, synth-engine, resonator, open-source]
+versions:
+  - version: main @ 523ca20
+    date: 2025-02-15
+    url: https://github.com/tylerreckart/resonate/commit/523ca20
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,40 @@
+device: zoom-multistomp
+kind: tool
+name: MS-100BT Manager
+summary: >-
+  Universal macOS app and command-line tool that installs and removes effects on a Zoom MS-100BT over Bluetooth, with backups and read-back checks, built from a reverse-engineered protocol.
+description: >-
+  The repository holds MS-100BT Manager, a native macOS 13 or later app for Apple Silicon and Intel, and ms100bt, the
+  command-line engine behind it. A library pane of effect files sits beside the pedal's effect menu; effects are dragged in,
+  reordered or removed and written with Apply. It lists files, backs up all stock files with CRC checks and reads each
+  written file back. The README lists as verified on a pedal on firmware 1.30 effects from the MS-60B and MS-50G and several community
+  custom effects, and notes that Bass categories installed but did not show and one listing froze the pedal. It also has the
+  protocol documentation and a few of its own custom effect sources in effects/. The pedal holds at most 200 files.
+status: active
+authors:
+  - name: lopezchau
+    url: https://github.com/lopezchau
+source: https://github.com/lopezchau/zoom-ms100bt-bluetooth
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file adds that it covers this repository's code and documentation only, not Zoom firmware or effect files
+  or the third-party effects the app can download from their authors' repositories. The README says no Zoom firmware or effect
+  files are in the repository.
+distribution: download
+install_notes: >-
+  Download the zip from the release page and move the app to Applications. It is not notarized, so the first launch needs
+  right-click and Open, or a command to remove the quarantine attribute. Use the AC adapter during writes because the pedal
+  refuses to write on low batteries, and after an All Initialize remove the pedal in the Bluetooth settings and pair again.
+brick_risk: false
+tags: [fx, loader, bluetooth, backup, macos, zdl, sdk]
+versions:
+  - version: v0.2.2
+    date: 2026-10-11
+    url: https://github.com/lopezchau/zoom-ms100bt-bluetooth/releases/tag/v0.2.2
+  - version: v0.2.1
+    date: 2026-10-08
+    url: https://github.com/lopezchau/zoom-ms100bt-bluetooth/releases/tag/v0.2.1
+  - version: v0.2.0
+    date: 2026-10-08
+    url: https://github.com/lopezchau/zoom-ms100bt-bluetooth/releases/tag/v0.2.0

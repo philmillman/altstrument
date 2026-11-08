@@ -1,0 +1,37 @@
+device: zoom-multistomp
+name: Zoom MultiStomp ZDL
+summary: >-
+  Custom .ZDL effects for ZDL-based Zoom MultiStomp pedals, mostly Airwindows ports, with a reverse-engineered Python and TI C6000 build toolchain and docs on the effect format.
+description: >-
+  The repository ships nine ready-made effects in dist/ (Gain, Galactic, OTT, PurestDrive, StChorus, TEcho4, TapeHack,
+  ToTape9 and VerbTiny), loaded with Zoom Effect Manager by reading effects from a folder. Most are ports of Airwindows
+  plug-ins and a few are original. The build scripts need the TI C6000 compiler, and the docs map the ZDL wrapper, runtime
+  ABI, safe DSP rules and an effect-ID registry. This is the repository that themanro/ZoomMultistompZDL, already listed,
+  forks. Testing is narrow: the primary target is the MS-70CDR on firmware 2.10, other ZDL pedals are unconfirmed and
+  ZD2-based pedals are unsupported. The README warns that two effects with the same effect ID can leave a pedal
+  unable to boot.
+status: active
+authors:
+  - name: Jannik Assfalg
+    url: https://github.com/repeat98
+source: https://github.com/repeat98/ZoomMultistompZDL
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is MIT, copyright 2024 Jannik Assfalg, and adds that the effect sources in src/airwindows are derived
+  from Airwindows by Chris Johnson, also MIT. The built ZDLs embed small pieces of Zoom runtime code that the licence does not
+  cover. The repository commits ofd_zdl.txt, an object-file listing of a stock Zoom effect, and Texas Instruments PDF manuals
+  under docs/; it says the stock ZDL corpus and firmware images are left out.
+distribution: download
+install_notes: >-
+  Back up your effect list, then read effects from the dist folder in Zoom Effect Manager 2.3.3 or newer and write them to
+  the pedal. Never install two effects with the same effect ID. The README says a swap of TEcho4 with the same ID as
+  themanro's Spool.ZDL left one MS-70CDR unbootable, and that a pedal that stops booting may need its ROM reflashed with a
+  programmer such as a CH341A.
+brick_risk: true
+tags: [fx, zdl, sdk, tape, reverb, research, python]
+versions:
+  - version: main @ 5bb102d
+    date: 2026-10-29
+    url: https://github.com/repeat98/ZoomMultistompZDL/commit/5bb102d5f597a3183c6afaf9271ccd4d4face2b0
+    notes: No tagged releases; this is the latest commit. It gives TapeEcho4 its own effect ID after a clash with Spool.

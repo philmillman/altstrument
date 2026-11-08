@@ -1,0 +1,32 @@
+device: electrosmith-daisy-patch
+name: Oopsy
+kind: tool
+summary: Exports Max gen~ patchers as C++ for Daisy hardware (Patch, Pod, Petal, Field and Seed), builds them and uploads the result, with several gen~ apps selectable on one device.
+description: >-
+  Oopsy maps named in, out and param objects in a gen~ patcher onto the board's audio, CV, gate, knob, key, encoder and MIDI
+  connections, and auto-assigns unnamed params to free knobs. It runs as a Max bpatcher that regenerates and uploads on every
+  save, or from Node.js with a target name and exported .cpp files. Up to eight patchers can share one binary and are
+  switched from the encoder menu. A JSON file describes custom hardware. The README says the generated code is MIT, with
+  Cycling '74's gen~ export terms applying to the exported code.
+status: maintained
+authors:
+  - name: Graham Wakefield
+    url: https://github.com/grrrwaaa
+  - name: Electrosmith
+    url: https://github.com/daisyaudio
+source: https://github.com/daisyaudio/oopsy
+source_status: open
+license: MIT
+license_notes: Code exported from gen~ is subject to Cycling '74's gen~ code export licensing terms, which the README links.
+homepage: https://daisy.audio/tutorials/oopsy-dev-env/
+distribution: source-only
+install_notes: >-
+  Needs Max with gen~ or Node.js, the Daisy toolchain and make; the Electrosmith support site covers setting up the
+  environment. The tool flashes over USB when the Daisy is in bootloader mode.
+brick_risk: false
+tags: [max, gen, codegen, converter, patch, pod, petal, field]
+versions:
+  - version: v0.5.1-beta
+    date: 2021-12-17
+    url: https://github.com/daisyaudio/oopsy/releases/tag/v0.5.1-beta
+    notes: Latest release; the default branch has later documentation commits up to 2025-03-26.

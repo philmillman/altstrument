@@ -1,0 +1,30 @@
+device: electrosmith-daisy-seed
+name: Daisy Polysynth
+summary: Polyphonic plucked-voice synth with a Costello reverb for a Daisy Seed, built from DaisyExamples code as the companion to a blog series on bare-metal synths.
+description: >-
+  Combines several Electrosmith example programs into one polyphonic synth
+  called pluck, with a single shared filter and a reverb. The repository is the
+  accompaniment to the author's blog series on building a simple synth on the
+  Daisy, includes DaisySP and libDaisy as submodules and builds on macOS and
+  Linux.
+status: dormant
+authors:
+  - name: jcampbellcodes
+    url: https://github.com/jcampbellcodes
+source: https://github.com/jcampbellcodes/daisy_polysynth
+source_status: open
+license: unspecified
+license_notes: No LICENSE file and no licence statement.
+homepage: http://www.jackcampbellsounds.com/2022/04/30/anatomyofabaremetalsynth_part1.html
+distribution: source-only
+install_notes: >-
+  Run make all to build the Daisy libraries and the synth, then make program-dfu
+  over USB or make program with an ST-Link. A Seed recovers through DFU mode
+  after a bad image.
+brick_risk: false
+tags: [synth-engine, polyphonic, reverb, open-source]
+versions:
+  - version: main @ 0d8a0cf
+    date: 2023-02-20
+    url: https://github.com/jcampbellcodes/daisy_polysynth/commit/0d8a0cf1f5764ed76df2203875ca002b2404794a
+    notes: No tagged releases; this is the latest commit.

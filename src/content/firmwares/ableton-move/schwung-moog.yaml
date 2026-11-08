@@ -1,0 +1,43 @@
+device: ableton-move
+name: RaffoSynth
+summary: >-
+  Schwung sound generator that ports RaffoSynth, a monophonic synth with four oscillators, a Moog-style ladder
+  filter and dual ADSR envelopes.
+description: >-
+  The module is a monophonic synthesizer with last-note priority, four oscillators each with four waveforms,
+  per-oscillator volume, octave range and detune, and a four-pole ladder filter with resonance. It has separate
+  amplitude and filter envelopes, glide, an LFO routed to pitch and filter, a noise source, mod wheel and pitch
+  bend, and 14 factory presets. It works on its own or as a sound generator in a signal chain. It is a port of
+  Nicolas Roulet and Julian Palladino's RaffoSynth, and the README still uses the host's earlier name, Move
+  Everything.
+status: maintained
+authors:
+  - name: Charles Vestal
+    url: https://github.com/charlesvestal
+source: https://github.com/charlesvestal/schwung-moog
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file carries Nicolas Roulet's 2014 copyright. The DSP comes from the upstream RaffoSynth project
+  by Nicolas Roulet and Julian Palladino; its licence is not restated in this repository beyond that file.
+distribution: download
+requires_stock: Schwung installed on the Move, with SSH access enabled
+install_notes: >-
+  Needs Schwung with SSH access enabled. Install RaffoSynth from the Sound Generators section of Schwung's
+  module store, or build it with Docker or an ARM64 cross-compiler and install it over SSH.
+brick_risk: false
+tags: [synth-engine, synth, emulator]
+versions:
+  - version: v0.2.5
+    date: 2026-08-31
+    url: https://github.com/charlesvestal/schwung-moog/releases/tag/v0.2.5
+    notes: "Corrects the on-device help: knob 8 is Octave, not Glide."
+  - version: v0.2.4
+    date: 2026-08-29
+    url: https://github.com/charlesvestal/schwung-moog/releases/tag/v0.2.4
+  - version: v0.2.3
+    date: 2026-03-02
+    url: https://github.com/charlesvestal/schwung-moog/releases/tag/v0.2.3
+  - version: v0.2.2
+    date: 2026-02-18
+    url: https://github.com/charlesvestal/schwung-moog/releases/tag/v0.2.2

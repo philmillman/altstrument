@@ -1,0 +1,36 @@
+device: electrosmith-daisy-seed
+name: Daisy Seed 7-Voice VA Synthesizer
+summary: Seven-voice virtual analog synth for a bare Daisy Seed with dual oscillators, a four-pole ladder low-pass filter per voice and USB MIDI control, derived from Staffan Melin's OscPocketD VASynth.
+description: >-
+  A further change to the VASynth code that the OscPocket Daisy Pod port also builds on, here adapted to run on the
+  Seed with no Pod board. Each of seven voices has two oscillators (triangle, saw, square with pulse width, polyblep
+  saw), its own amplifier and a four-pole resonant low-pass filter, with separate ADSR envelopes for amplitude and
+  filter. Other features are several LFOs, keyboard follow and velocity routing, a stereo effect and a one-track
+  scratchpad sequencer.
+
+  Parameters are set from a MIDI keyboard over USB, and ten patches are stored in QSPI flash. A short text file
+  explains the setup and another lists the parameters. A late commit message says the project was made compatible
+  with the LGPL.
+status: dormant
+authors:
+  - name: Nettech15
+    url: https://github.com/Nettech15
+  - name: Staffan Melin
+license: unspecified
+license_notes: >-
+  No license file. The README says to feel free to copy, modify and improve the code, and names Staffan Melin as the
+  author of the original VASynth. The OscPocket port in this catalogue records GPL-3.0 headers on that original code.
+source: https://github.com/Nettech15/Daisy-Seed-7-Voice-VA-Synthesizer
+source_status: open
+homepage: http://www.oscillator.se/opensource
+distribution: source-only
+install_notes: >-
+  Build and flash with the build_and_program or build_and_program_dfu task in VS Code, connect a USB MIDI keyboard,
+  and select the Seed as the MIDI output. The ROM DFU mode stays available if a flash goes wrong.
+brick_risk: false
+tags: [synth-engine, virtual-analog, midi, polyphonic, open-source]
+versions:
+  - version: main @ e92a8d2
+    date: 2024-04-15
+    url: https://github.com/Nettech15/Daisy-Seed-7-Voice-VA-Synthesizer/commit/e92a8d2
+    notes: No tagged releases; this is the latest commit.

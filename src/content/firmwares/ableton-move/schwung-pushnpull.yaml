@@ -1,0 +1,47 @@
+device: ableton-move
+name: PushNPull
+summary: >-
+  Schwung audio effect with a tempo-synced curve shaper that ducks or boosts volume and a multimode filter in time with the project, for sidechain-style pumping without routing.
+description: >-
+  A beat-locked curve produces a bipolar signal that can duck or boost the output volume, drive a filter, or do both. There
+  are 12 curves, including sidechain, punch, gate, reverse, pulse, swell and stutter shapes, with rate, slope, shift and attack
+  controls and three pages on the knob grid. It works in an instrument slot's chain and in Master FX, where it follows the host
+  transport because no MIDI clock arrives, which needs Schwung 0.11.5 or newer. It is bypassed while the transport is stopped.
+status: active
+authors:
+  - name: legsmechanical
+    url: https://github.com/legsmechanical
+source: https://github.com/legsmechanical/schwung-pushnpull
+source_status: open
+license: MIT
+license_notes: >-
+  The repository has no LICENSE file; the README ends with the line "License: MIT." The README says the DSP foundation is
+  schwung-filter, which is MIT.
+homepage: https://github.com/legsmechanical/schwung-pushnpull#readme
+distribution: download
+requires_stock: Schwung installed on the Move
+install_notes: >-
+  Needs Schwung. Install PushNPull from Schwung's module store or Schwung Manager, or build it with the repository's script
+  and copy it to the Move over SSH.
+brick_risk: false
+tags: [fx, performance]
+image:
+  url: https://raw.githubusercontent.com/legsmechanical/schwung-pushnpull/main/docs/curve-view.png
+  alt: PushNPull curve page on Move's display, showing rate, volume and filter knobs above a drawn curve with curve, slope, shift and attack labels
+  credit: legsmechanical
+  source_url: https://github.com/legsmechanical/schwung-pushnpull#readme
+  first_party: true
+versions:
+  - version: v0.3.1
+    date: 2026-10-12
+    url: https://github.com/legsmechanical/schwung-pushnpull/releases/tag/v0.3.1
+    notes: In Master FX, follows the host transport when no MIDI clock arrives.
+  - version: v0.3.0
+    date: 2026-10-12
+    url: https://github.com/legsmechanical/schwung-pushnpull/releases/tag/v0.3.0
+  - version: v0.2.0
+    date: 2026-06-29
+    url: https://github.com/legsmechanical/schwung-pushnpull/releases/tag/v0.2.0
+  - version: v0.1.0
+    date: 2026-06-26
+    url: https://github.com/legsmechanical/schwung-pushnpull/releases/tag/v0.1.0

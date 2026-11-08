@@ -1,0 +1,40 @@
+device: ableton-move
+name: Plaits
+summary: >-
+  Schwung sound generator that ports the Mutable Instruments Plaits macro oscillator to the Move, with 24 synthesis engines, per-engine defaults, three banks of 6-op FM presets and a note stack with return-to-held.
+description: >-
+  This is a port of Emilie Gillet's Plaits DSP and stmlib, built on the Move Anything port by Charles Vestal that the LICENSE credits. It exposes the engine choice, harmonics, timbre, morph, decay, low-pass gate colour, FM amount and aux mix, and resets the voice and applies per-engine defaults when the engine changes. The 6-op FM engines select from three factory preset banks of 96 presets with one knob. The repository has no README.
+status: active
+authors:
+  - name: Justin Joe
+    url: https://github.com/j3threejay
+  - name: Emilie Gillet
+    url: https://github.com/pichenettes
+source: https://github.com/j3threejay/move-anything-plaits
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file lists Emilie Gillet for the original Plaits DSP (2014-2015) and charlesvestal for the Move Anything port. THIRD_PARTY_LICENSES names Plaits and stmlib as MIT, from pichenettes/eurorack.
+homepage: https://github.com/j3threejay/move-anything-plaits
+distribution: download
+install_notes: >-
+  Needs Schwung. Install Plaits from Schwung's module store, or install plaits-module.tar.gz from the latest release.
+brick_risk: false
+tags: [synth-engine, synth, wavetable, emulator]
+versions:
+  - version: v0.5.1
+    date: 2026-04-09
+    url: https://github.com/j3threejay/move-anything-plaits/releases/tag/v0.5.1
+    notes: Corrects the port attribution in the module metadata.
+  - version: v0.5.0
+    date: 2026-03-16
+    url: https://github.com/j3threejay/move-anything-plaits/releases/tag/v0.5.0
+    notes: Adds 1% parameter steps, a shorter minimum decay and an attack setting.
+  - version: v0.4.0
+    date: 2026-03-08
+    url: https://github.com/j3threejay/move-anything-plaits/releases/tag/v0.4.0
+    notes: Adds saving of module state with the patch.
+  - version: v0.3.0
+    date: 2026-03-03
+    url: https://github.com/j3threejay/move-anything-plaits/releases/tag/v0.3.0
+    notes: Adds three banks of 6-op FM presets.

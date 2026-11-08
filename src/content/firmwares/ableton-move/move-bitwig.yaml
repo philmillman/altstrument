@@ -1,0 +1,38 @@
+device: ableton-move
+name: Move Bitwig
+summary: >-
+  Schwung takeover module that makes the Move a Bitwig Studio controller for clip launching, pad playing, a
+  16-step sequencer and mixing, with controller scripts for Bitwig.
+description: >-
+  Move Bitwig has three views: Session for launching clips and selecting tracks, Note for playing melodic or
+  drum pads and editing a 16-step sequence that follows the selected track, and Mixer for tracks, FX returns
+  and the Main channel. Drum mode adds sixteen expression modifiers for velocity, chance, repeats and pan.
+  It needs two parts from one release: a module installed on the Move through Schwung Manager and a set of
+  controller scripts copied into Bitwig's Controller Scripts folder. It targets Bitwig Studio 6 and talks to
+  Bitwig over the Move's USB-C connection.
+status: active
+authors:
+  - name: pi43r
+    url: https://github.com/pi43r
+source: https://github.com/pi43r/move-bitwig
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and the README makes no licence statement.
+homepage: https://github.com/pi43r/move-bitwig#readme
+distribution: download
+requires_stock: Schwung 1.0.0 or newer on the Move, Bitwig Studio 6 on the computer
+install_notes: >-
+  Needs Schwung and Bitwig Studio 6. Download both assets from the same release: install
+  move-bitwig-module.tar.gz with Schwung Manager and extract move-bitwig-controller-scripts.zip into a Move
+  folder inside Bitwig's Controller Scripts folder. In Bitwig add the Ableton Move controller and choose the
+  Standalone Port for input and output.
+brick_risk: false
+tags: [controller-mode, midi, performance, daw]
+versions:
+  - version: v1.0.0
+    date: 2026-10-01
+    url: https://github.com/pi43r/move-bitwig/releases/tag/v1.0.0
+    notes: First 1.0 release with session launching, pads, sequencer and mixer access.
+  - version: v0.6.0
+    date: 2026-07-14
+    url: https://github.com/pi43r/move-bitwig/releases/tag/v0.6.0

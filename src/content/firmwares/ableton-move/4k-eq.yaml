@@ -1,0 +1,45 @@
+device: ableton-move
+name: 4K EQ
+summary: >-
+  Schwung audio effect that ports Dusk Audio's 4K EQ 2, a four-band British console EQ with Brown and Black voicings, stepped filters and oversampling, for the master bus.
+description: >-
+  The module has four bands (low and high shelf or bell, two bell mids) with plus or minus 15 dB of gain, stepped
+  high-pass and low-pass filters that drop out at their end positions, and a switch between the Brown (E-series)
+  and Black (G-series) circuit revisions. Oversampling can be 1x, 2x or 4x, there are fourteen factory programs,
+  and a browser panel shows the console strip and a clip badge. The DSP is Dusk Audio's 4K EQ 2, vendored
+  unmodified. The README says it was made with AI assistance and is not affiliated with any hardware maker, and
+  that it needs Schwung 0.12.1 or later for its knob graphics.
+status: active
+authors:
+  - name: Gustavo Lima
+    url: https://github.com/athousanddetails
+  - name: Dusk Audio
+    url: https://github.com/dusk-audio
+source: https://github.com/athousanddetails/schwung-4keq
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL version 3 text and the README says GPL-3.0 with no or-later grant. The DSP in
+  src/ported is 4K EQ 2 from Dusk Audio's plug-in collection, also GPL-3.0.
+homepage: https://github.com/athousanddetails/schwung-4keq#readme
+distribution: download
+requires_stock: Schwung 0.12.1 or later installed on the Move
+install_notes: >-
+  Needs Schwung 0.12.1 or later; on older hosts the effect loads but shows no knobs. Install 4K EQ from
+  Schwung's module store, or build it with Docker and copy dist/4k-eq to the audio_fx modules folder on the
+  Move.
+brick_risk: false
+tags: [fx, emulator, eq]
+versions:
+  - version: v1.0.3
+    date: 2026-09-03
+    url: https://github.com/athousanddetails/schwung-4keq/releases/tag/v1.0.3
+  - version: v1.0.2
+    date: 2026-08-31
+    url: https://github.com/athousanddetails/schwung-4keq/releases/tag/v1.0.2
+  - version: v1.0.1
+    date: 2026-08-27
+    url: https://github.com/athousanddetails/schwung-4keq/releases/tag/v1.0.1
+  - version: v1.0.0
+    date: 2026-08-23
+    url: https://github.com/athousanddetails/schwung-4keq/releases/tag/v1.0.0

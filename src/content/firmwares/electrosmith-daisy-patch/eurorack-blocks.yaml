@@ -1,0 +1,33 @@
+device: electrosmith-daisy-patch
+name: eurorack-blocks
+kind: tool
+summary: Toolchain for designing a custom Eurorack module in C++, Faust or Max gen~ around a Daisy Patch Submodule, with a VCV Rack simulator and generated panel, PCB and firmware files.
+description: >-
+  A module is described in an .erbui file listing its controls and panel layout, plus a C++, Faust or Max gen~
+  processing class. The erbb command line tool generates IDE projects, a VCV Rack plug-in for testing, the firmware,
+  and the files needed to manufacture the panel and boards. The README names the Daisy Patch Submodule as the
+  target. The repository holds ready-made hardware blocks such as audio in and out boards, along with samples, docs
+  on Read the Docs and a Discord server.
+status: active
+authors:
+  - name: Ohm Force
+    url: https://github.com/ohmtech-rdi
+source: https://github.com/ohmtech-rdi/eurorack-blocks
+source_status: open
+license: MIT
+license_notes: >-
+  The README says the software is MIT and the hardware files are CC BY-SA 4.0, with exceptions for bundled fonts (SIL
+  OFL), derived VCV Rack files (GPLv3), a few third-party parts and one proprietary Ohm Force font. The LICENSE file holds the
+  CC BY-SA 4.0 text followed by the MIT text.
+homepage: https://eurorack-blocks.readthedocs.io/en/latest/
+distribution: source-only
+install_notes: >-
+  Follow the Getting Started guide on Read the Docs; it installs the toolchain and the erbb tool. Firmware is flashed to
+  the Daisy over USB DFU, which can be redone after a failed image.
+brick_risk: false
+tags: [sdk, eurorack, codegen, faust, max, vcv-rack, open-source]
+versions:
+  - version: main @ 97c61a5
+    date: 2026-10-21
+    url: https://github.com/ohmtech-rdi/eurorack-blocks/commit/97c61a5
+    notes: No tagged releases; this is the latest commit.

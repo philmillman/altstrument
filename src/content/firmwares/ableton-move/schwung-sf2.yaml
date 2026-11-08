@@ -1,0 +1,47 @@
+device: ableton-move
+name: SF2 Synth
+summary: >-
+  Schwung sound generator that plays SoundFont .sf2 files with preset selection, octave transpose and switching
+  between several soundfonts.
+description: >-
+  The module loads the first .sf2 file in its soundfonts folder, or instrument.sf2 in the module root, and plays
+  its presets polyphonically with velocity and pitch bend. Shift with left or right switches between soundfonts,
+  which resets to the first preset. The metadata names FluidLite as the synthesis library, while the README
+  credits TinySoundFont; both are vendored, and no soundfonts are supplied apart from a test font in FluidLite's
+  example folder.
+status: active
+authors:
+  - name: Charles Vestal
+    url: https://github.com/charlesvestal
+  - name: Robin Lobel (FluidLite)
+    url: https://github.com/AuburnSounds/fluidlite
+source: https://github.com/charlesvestal/schwung-sf2
+source_status: open
+license: LGPL-2.1-only
+license_notes: >-
+  The LICENSE file is the LGPL version 2.1 text with no module-specific statement, so only-2.1 is recorded.
+  THIRD_PARTY_LICENSES.md lists FluidLite by Robin Lobel (LGPL-2.1) and TinySoundFont by Bernhard Schelling
+  (MIT). The vendored FluidLite tree includes an upstream example file, Boomwhacker.sf2.
+distribution: download
+requires_stock: Schwung installed on the Move, with SSH access enabled
+install_notes: >-
+  Needs Schwung with SSH access enabled. Install SF2 Synth from the Sound Generators section of Schwung's module
+  store, then copy .sf2 files to the module's soundfonts folder.
+brick_risk: false
+tags: [synth-engine, sampler]
+versions:
+  - version: v0.3.17
+    date: 2026-08-31
+    url: https://github.com/charlesvestal/schwung-sf2/releases/tag/v0.3.17
+  - version: v0.3.16
+    date: 2026-08-29
+    url: https://github.com/charlesvestal/schwung-sf2/releases/tag/v0.3.16
+  - version: v0.3.15
+    date: 2026-03-12
+    url: https://github.com/charlesvestal/schwung-sf2/releases/tag/v0.3.15
+  - version: v0.3.14
+    date: 2026-03-02
+    url: https://github.com/charlesvestal/schwung-sf2/releases/tag/v0.3.14
+  - version: v0.3.13
+    date: 2026-02-18
+    url: https://github.com/charlesvestal/schwung-sf2/releases/tag/v0.3.13

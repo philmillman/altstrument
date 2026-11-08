@@ -1,0 +1,22 @@
+device: guitarml-funbox
+name: Mercury (FunBox Planet series)
+summary: Neural Amp Modeler amp simulator for the FunBox with nine small built-in amp models in three gain groups and a four-band EQ. It is mono and has no cabinet model.
+description: >-
+  Mercury runs NAM models through RTNeural and RTNeural-NAM and selects them with two three-way switches. Gain, level, presence, bass, mid and treble are on the knobs. The README says the code was split from FunBox to keep the license of reused code and that the program runs from SRAM through the Daisy bootloader. A prebuilt binary is on the v1 release.
+status: dormant
+authors:
+  - name: Keith Bloemer (GuitarML)
+    url: https://github.com/GuitarML
+source: https://github.com/GuitarML/Mercury
+source_status: open
+license: BSD-3-Clause
+license_notes: LICENSE carries a 2024 copyright for jatinchowdhury18, the author of the RTNeural-NAM code it reuses.
+distribution: download
+install_notes: >-
+  Flash the .bin from the v1 release through the Daisy bootloader. The Daisy Seed's ROM DFU mode stays available if a flash goes wrong.
+brick_risk: false
+tags: [amp-sim, fx]
+versions:
+  - version: v1
+    date: 2025-01-10
+    url: https://github.com/GuitarML/Mercury/releases/tag/v1

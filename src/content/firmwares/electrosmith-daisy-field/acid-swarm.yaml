@@ -1,0 +1,29 @@
+device: electrosmith-daisy-field
+name: Acid Swarm
+summary: Monophonic stereo synth for the Daisy Field with seven detuned saw oscillators, an acid filter based on open303, amplitude and filter envelopes, pitch slide and MIDI control of the filter envelope.
+description: >-
+  Seven saw waves with a detune control feed a resonant filter taken from the open303 project. The eight knobs set
+  transpose, amplitude attack and decay, filter frequency and resonance, and the filter envelope's attack, decay and
+  scale. Holding switch 1 gives access to swarm detune, the two envelope curves and pitch slide time. MIDI CC 14 and
+  15 control the filter envelope's attack and decay. The display shows the control values.
+status: active
+authors:
+  - name: Fyde0
+    url: https://github.com/Fyde0
+source: https://github.com/Fyde0/acid-swarm
+source_status: open
+license: unspecified
+license_notes: No licence file and no licence statement in the repository. The filter is based on open303, which is a separate project.
+distribution: source-only
+install_notes: >-
+  Clone the repository, clone libDaisy with its submodules next to it and build that, then run make and
+  make program-dfu. No prebuilt binary is published.
+brick_risk: false
+tags: [synth-engine, oscillator, filter, acid, midi, open-source]
+versions:
+  - version: v1.1.0
+    date: 2025-12-22
+    url: https://github.com/Fyde0/acid-swarm/releases/tag/v1.1.0
+  - version: v1.0.0
+    date: 2025-12-22
+    url: https://github.com/Fyde0/acid-swarm/releases/tag/v1.0.0

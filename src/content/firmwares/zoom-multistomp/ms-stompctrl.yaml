@@ -1,0 +1,33 @@
+device: zoom-multistomp
+kind: tool
+name: MS StompCtrl
+summary: >-
+  Browser editor and backup tool for the Zoom MS-100BT over Bluetooth, replacing the abandoned StompShare app. It edits patches, backs up and restores them and installs .ZDL effects.
+description: >-
+  MS StompCtrl is a static web page that talks to the pedal through Web Serial over Bluetooth RFCOMM in Chrome, with no
+  server or account. It reads all 50 patches with checksums, edits and reorders effect chains, swaps in any effect on the
+  pedal or in a local library, imports and exports patch files, backs up and restores to JSON or to a bundle with the
+  effect binaries, and installs effects from .ZDL files. The repository also holds macOS and iOS apps for the Bluetooth
+  connection problems on macOS, protocol notes taken from the original iOS app, and a script that fetches Zoom's public
+  effect archive. Its NOTICE says no Zoom firmware or effect binaries are included. The README calls it a work in progress
+  that writes to the pedal's flash memory.
+status: active
+authors:
+  - name: 1njected
+    url: https://github.com/1njected
+source: https://github.com/1njected/ms-stompctrl
+source_status: open
+license: MIT
+homepage: https://1njected.github.io/ms-stompctrl/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome, pair the pedal in the operating system's Bluetooth settings, press Connect pedal and pick
+  the entry with the service UUID given in the README. Back up your patches first. A macOS app is on the releases page, marked
+  as pre-release, for macOS machines where the browser cannot connect.
+brick_risk: false
+tags: [editor, web, bluetooth, backup, loader, fx, presets]
+versions:
+  - version: main @ d983b95
+    date: 2026-10-16
+    url: https://github.com/1njected/ms-stompctrl/commit/d983b95d50516f5c35e2cdb4b20125c8fa116954
+    notes: No releases for the web app; this is the latest commit. The releases page lists only macOS app builds, all marked pre-release.

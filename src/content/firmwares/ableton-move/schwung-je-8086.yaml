@@ -1,0 +1,36 @@
+device: ableton-move
+name: JE-8086
+summary: >-
+  Schwung sound generator that emulates the Roland JP-8000 through the Gearmulator project, running the synth's own firmware from user-supplied ROM files, with patch and performance modes.
+description: >-
+  The module runs a JP-8000 emulator as three pipelined stages on separate CPU cores, kept off the audio core, and only one instance can run at a time. It has eight-voice polyphony, Patch, Performance and System modes, and sub-pages for oscillator, filter, amplifier, LFO and effects. It needs the eight .mid files of a JP-8000 v1.5 firmware bulk dump, which the user uploads through Schwung Manager; none are included. Bank files in .syx, .mid, .j8k, .pat and .pfm formats can be loaded. The repository has no README; the notes here come from the module metadata, help text and licence notices.
+status: active
+authors:
+  - name: Charles Vestal
+    url: https://github.com/charlesvestal
+  - name: dsp56300 (Gearmulator)
+    url: https://github.com/dsp56300
+source: https://github.com/charlesvestal/schwung-je8086
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The licenses/NOTICE.txt file says the module is GPL-3.0-only because the statically linked Gearmulator code, built from a fork by the author, is GPL-3.0 without an "or later" grant. Zlib, BSD and MIT components inside it are listed with their texts. No Roland firmware is committed; the user supplies the ROM dump.
+homepage: https://github.com/charlesvestal/schwung-je8086
+distribution: download
+requires_stock: Schwung installed on the Move and a JP-8000 v1.5 firmware dump supplied by the user
+install_notes: >-
+  Needs Schwung and the user's own JP-8000 v1.5 firmware dump (eight .mid files, 79,372 bytes each). Install JE-8086 from Schwung's module store or Schwung Manager, then upload the files under the module's Assets in Schwung Manager.
+brick_risk: false
+tags: [synth-engine, synth, emulator]
+versions:
+  - version: v0.5.6
+    date: 2026-10-03
+    url: https://github.com/charlesvestal/schwung-je8086/releases/tag/v0.5.6
+    notes: Removes a short audio dropout when switching sets.
+  - version: v0.5.5
+    date: 2026-10-03
+    url: https://github.com/charlesvestal/schwung-je8086/releases/tag/v0.5.5
+    notes: Fixes an 8 MB memory leak on each load.
+  - version: v0.5.4
+    date: 2026-10-03
+    url: https://github.com/charlesvestal/schwung-je8086/releases/tag/v0.5.4

@@ -1,0 +1,29 @@
+device: ableton-move
+name: Midiverb
+summary: >-
+  Schwung audio effect that emulates the Alesis Midiverb, Midifex and Midiverb II rack units by running each unit's own program ROM on a cycle-accurate DASP interpreter, with ROM files supplied by the user.
+description: >-
+  The DSP is thement's midiverb_emulator, which interprets the 13-bit DASP processor of the 1986 and 1987 units. The Midiverb and Midifex have 64 programs each and the Midiverb II has 100. Eight knobs set mix, feedback, input and output gain, pre-delay, low and high cut and width. Any subset of the ROMs works, and a unit without its ROM passes audio through. The ROMs are uploaded in Schwung Manager and none are included.
+status: active
+authors:
+  - name: Charles Vestal
+    url: https://github.com/charlesvestal
+  - name: thement
+    url: https://github.com/thement
+source: https://github.com/charlesvestal/schwung-midiverb
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The README and NOTICE state GPL-3.0-or-later for the module and for the vendored midiverb_emulator code, with per-file details in src/dsp/THIRD_PARTY_LICENSES.md. Releases before v0.3.0 bundled decompiled copies of the Alesis effect programs; v0.3.0 removed them and now requires the user's own ROM dumps. No ROM is committed.
+homepage: https://github.com/charlesvestal/schwung-midiverb#readme
+distribution: download
+requires_stock: Schwung installed on the Move, with ROM dumps of the Midiverb, Midifex or Midiverb II supplied by the user
+install_notes: >-
+  Needs Schwung and the user's own ROM dumps (midiverb.rom and midifex.rom at 16384 bytes, midiverb2.rom at 32768 bytes). Install Midiverb from Schwung's module store or Schwung Manager and upload the ROMs on the module's page.
+brick_risk: false
+tags: [fx, reverb, emulator]
+versions:
+  - version: v0.3.0
+    date: 2026-11-05
+    url: https://github.com/charlesvestal/schwung-midiverb/releases/tag/v0.3.0
+    notes: Removes the bundled effect programs; each unit now needs its own ROM file.

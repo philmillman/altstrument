@@ -1,0 +1,27 @@
+device: electrosmith-daisy-seed
+name: vocodr
+summary: Channel vocoder for a Daisy Seed that turns a microphone signal into a robot voice, with a blog post that covers the preamp, schematics and sound samples.
+description: >-
+  A short C++ program that implements a channel vocoder. The author describes it as semi-functional, says they were
+  new to vocoders and DSP, and suspects logic errors in the signal processing. The linked blog post walks through
+  the build, starting with a microphone preamp, because the Seed needs line-level input.
+status: dormant
+authors:
+  - name: dbusteed
+    url: https://github.com/dbusteed
+source: https://github.com/dbusteed/vocodr
+source_status: open
+license: unspecified
+license_notes: No license file or statement in the repository.
+homepage: https://dbusteed.github.io/daisy-seed-vocoder/
+distribution: source-only
+install_notes: >-
+  Build with make using the Daisy toolchain and flash over USB DFU. A microphone needs an external preamp in front of
+  the Seed's line input. The ROM DFU mode stays available if a flash goes wrong.
+brick_risk: false
+tags: [vocoder, fx, open-source]
+versions:
+  - version: master @ 967fb75
+    date: 2024-10-18
+    url: https://github.com/dbusteed/vocodr/commit/967fb75
+    notes: No tagged releases; this is the latest commit.

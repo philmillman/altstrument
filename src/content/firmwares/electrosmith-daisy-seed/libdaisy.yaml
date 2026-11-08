@@ -1,0 +1,50 @@
+device: electrosmith-daisy-seed
+also_devices: [electrosmith-daisy-patch, electrosmith-daisy-field]
+name: libDaisy
+kind: tool
+summary: Electrosmith's C++ hardware library for the Daisy platform, covering audio, ADC, MIDI, USB, SD cards, displays and board support classes for the Seed, Patch, Pod, Field and others.
+description: >-
+  libDaisy is the base library that Daisy firmware is built on. It provides
+  the audio callback, GPIO and ADC access, I2C, SPI and SAI drivers, MIDI,
+  USB device and host, SD card and QSPI flash support, display and sensor
+  drivers, and board classes for the Seed, Patch,
+  Patch SM, Pod, Petal, Field, Legio and Versio. Projects are compiled
+  with the Arm GCC toolchain and a Makefile or CMake, usually together with
+  DaisySP.
+
+  The library is not flashed by itself: it is linked into each program. The
+  repository has moved to the daisyaudio GitHub organisation, and the
+  electro-smith address redirects to it.
+status: active
+authors:
+  - name: Electrosmith
+    url: https://github.com/daisyaudio
+source: https://github.com/daisyaudio/libDaisy
+source_status: open
+license: MIT
+license_notes: The LICENSE file is the MIT license, copyright 2019 Electrosmith.
+homepage: https://daisy.audio/
+distribution: source-only
+install_notes: >-
+  Clone the repository with its submodules, build it with make, then build
+  an application that points at it, as in the DaisyExamples repository.
+  Programs are flashed to the Daisy over USB DFU. The wiki on the repository
+  and the Daisy documentation describe the toolchain setup.
+brick_risk: false
+tags: [official, sdk, platform, cpp, dsp]
+versions:
+  - version: v9.0.0
+    date: 2026-09-29
+    url: https://github.com/daisyaudio/libDaisy/releases/tag/v9.0.0
+    notes: Adds Seed3 detection, 192 kHz SAI, a UART logger, a TCA9534 GPIO expander driver and board classes for the three Seed3 dev kits.
+  - version: v8.1.0
+    date: 2026-02-23
+    url: https://github.com/daisyaudio/libDaisy/releases/tag/v8.1.0
+    notes: Reworks the WAV player and adds WAV parsing utilities, and handles SD card errors that used to stall.
+  - version: v8.0.0
+    date: 2025-06-16
+    url: https://github.com/daisyaudio/libDaisy/releases/tag/v8.0.0
+    notes: Adds SSD1307, SSD1327 and SSD1351 display drivers, DMA for SPI OLEDs and hardware PWM.
+  - version: v7.1.0
+    date: 2024-09-20
+    url: https://github.com/daisyaudio/libDaisy/releases/tag/v7.1.0

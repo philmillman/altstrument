@@ -1,0 +1,28 @@
+device: electrosmith-daisy-seed
+name: Takshaka
+summary: Four-voice supersaw desktop synthesizer for a Daisy Seed on the Synthux Simple platform, with sub oscillator, overdrive, low-pass and comb filters, an ADSR, an LFO and USB MIDI control.
+description: >-
+  A synthesizer from Song Naga built on the Synthux Academy Simple synthesizer design board with a Daisy Seed. The
+  supersaw oscillator follows Adam Szabo's thesis on emulating the Roland JP-8000 sound. Knobs set supersaw drift and
+  shift, sub level, drive, low-pass cutoff and resonance, comb delay and feedback, and the envelopes and LFO. The
+  synth has four-note polyphony, and USB MIDI input controls every parameter. The repository holds the C++ source
+  and the author's own build output, including a compiled takshaka.bin.
+status: dormant
+authors:
+  - name: wendallsan
+    url: https://github.com/wendallsan
+source: https://github.com/wendallsan/song-naga-takshaka
+source_status: open
+license: unspecified
+license_notes: No licence file and no licence statement in the repository.
+distribution: source-only
+install_notes: >-
+  Build with make against libDaisy and DaisySP and flash over USB DFU. A compiled build/takshaka.bin is committed
+  but is not a published release. Needs the Synthux Simple board or matching wiring.
+brick_risk: false
+tags: [synth-engine, oscillator, polyphonic, midi, hardware, open-source]
+versions:
+  - version: main @ 2f36ee6
+    date: 2025-05-31
+    url: https://github.com/wendallsan/song-naga-takshaka/commit/2f36ee6
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,29 @@
+device: korg-nts-1
+name: lpf
+summary: Second-order low-pass filter with controllable resonance as a modulation effect for the NTS-1; only an alpha release exists.
+description: >-
+  lpf puts a two-pole low-pass filter in the modulation effect slot. The
+  manifest declares no parameters of its own, and the README does not say how
+  the cutoff and resonance are mapped. The release is tagged as
+  an alpha and its notes say usage and sound may change before a 1.0
+  release, which has not appeared. The filter code comes from the author's
+  logue-dsp-c submodule.
+status: dormant
+authors:
+  - name: Beat Vontobel
+    url: https://github.com/bvontob
+source: https://github.com/bvontob/lpf
+source_status: open
+license: BSD-3-Clause
+license_notes: LICENSE file is BSD 3-Clause, Copyright 2023 Beat Vontobel.
+homepage: https://github.com/bvontob/lpf
+distribution: download
+install_notes: >-
+  Download lpf.ntkdigunit from the release and load it into a modulation
+  effect slot with Korg's Librarian or logue-cli.
+tags: [modfx, filter, low-pass, open-source, nts-1]
+versions:
+  - version: v0.9.0-alpha
+    date: 2023-08-02
+    url: https://github.com/bvontob/lpf/releases/tag/v0.9.0-alpha
+    notes: Alpha release; sound and usage may change before 1.0.

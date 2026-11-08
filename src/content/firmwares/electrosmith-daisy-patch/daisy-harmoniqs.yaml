@@ -1,0 +1,29 @@
+device: electrosmith-daisy-patch
+name: Daisy Harmoniqs
+summary: Ten-voice additive synth for the Daisy Pod, each voice made of eight harmonics with harmonic balance, bitcrusher, envelope, shared filter, distortion and LFO, controlled mostly by MIDI.
+description: >-
+  Every voice sums sine waves at one to eight times the fundamental. Controls set the harmonic level, the even-to-odd
+  mix and the low-to-high balance, and each voice has its own bitcrusher and envelope. The mix passes through a
+  tanh-style distortion, a filter and a triangle LFO of 0.1 to 10 Hz, with the Pod's two knobs on LFO speed and amount.
+  The README says version 0.6.0 works on the Pod and that it needs a patched DaisySP Decimator and a repaired Moog
+  filter, and was written against libDaisy 4. The project also lists a Seed schematic and PCB as future work.
+status: dormant
+authors:
+  - name: Krakenpine
+    url: https://github.com/Krakenpine
+source: https://github.com/Krakenpine/Daisy-Harmoniqs
+source_status: open
+license: unspecified
+license_notes: No license file or statement in the repository.
+homepage: https://github.com/Krakenpine/Daisy-Harmoniqs
+distribution: source-only
+install_notes: >-
+  Point the Makefile at local libDaisy and DaisySP copies, apply the DaisySP changes the README describes, build with make
+  and flash over USB DFU. A bad image is replaced by putting the Pod's Seed back into DFU mode.
+brick_risk: false
+tags: [synth-engine, additive, polyphonic, bitcrusher, pod, midi, open-source]
+versions:
+  - version: main @ a95ae7d
+    date: 2023-02-12
+    url: https://github.com/Krakenpine/Daisy-Harmoniqs/commit/a95ae7d
+    notes: No tagged releases; this is the latest commit.

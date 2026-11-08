@@ -1,0 +1,31 @@
+device: ableton-move
+name: SIMIAN
+summary: >-
+  Schwung drum synth, a port of Punk Labs' OneTrick SIMIAN 2, with ten synthesised drums on sixteen pads, 35 factory kits and tone, noise, mix and master pages.
+description: >-
+  Each drum is a tuned oscillator that morphs from triangle to a sampled cymbal, noise behind a resonant filter and
+  a click, swept by one envelope; the kits are parameter sets rather than audio files. Six pads are second pads on a drum
+  that another pad owns, sharing everything except Tune, and hats and cymbals choke each other. The pad layout follows Move's drum
+  racks, not General MIDI. The DSP and kits are Punk Labs' and the repository keeps a copy of the upstream source. The README asks players to buy the original.
+status: active
+authors:
+  - name: legsmechanical
+    url: https://github.com/legsmechanical
+source: https://github.com/legsmechanical/schwung-simian
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The README says GPL-3.0 or later. The DSP, factory kits and the original source folder are Copyright 2024 Punk Labs LLC; the
+  wrapper, widget and tooling are by Josh Gaines (legsmechanical) under the same licence. The cymbal wavetable sample by Kevin Hall is CC0.
+homepage: https://punklabs.com/ot-simian
+distribution: download
+requires_stock: Schwung installed on the Move
+install_notes: >-
+  Needs Schwung. Install SIMIAN from Schwung's module store or Schwung Manager, or build it with the repository's Docker
+  build script and install it over SSH.
+brick_risk: false
+tags: [synth-engine, drums, synth]
+versions:
+  - version: v0.1.0
+    date: 2026-09-21
+    url: https://github.com/legsmechanical/schwung-simian/releases/tag/v0.1.0

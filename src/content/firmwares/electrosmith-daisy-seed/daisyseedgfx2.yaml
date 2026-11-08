@@ -1,0 +1,30 @@
+device: electrosmith-daisy-seed
+name: DaisySeedGFX MK2
+kind: tool
+summary: C++ graphics library for a Daisy Seed driving ST7735 or ST7789 TFT screens over DMA SPI, with layered frame buffers, text, shapes, bitmaps and fonts held in flash.
+description: >-
+  Offers text, lines, rectangles, circles, arcs and bitmaps drawn into a frame
+  buffer split into layers with transparency between them. Only the changed
+  blocks of the buffer are sent to the display by SPI under DMA. The second
+  version also supports fonts and bitmaps stored in flash, multi-frame images,
+  colour inversion and a screen offset set in UserConfig.h. The DaisyPlatform pedal
+  project uses it.
+status: dormant
+authors:
+  - name: DAD Design
+    url: https://github.com/DADDesign-Projects
+source: https://github.com/DADDesign-Projects/DaisySeedGFX2
+source_status: open
+license: MIT
+homepage: https://github.com/DADDesign-Projects/DaisySeedGFX2
+distribution: source-only
+install_notes: >-
+  Add the source files to a libDaisy project and set the pins and screen type in
+  UserConfig.h. The library writes nothing to the device by itself.
+brick_risk: false
+tags: [sdk, ui, cpp, open-source]
+versions:
+  - version: main @ 5bf5213
+    date: 2025-08-12
+    url: https://github.com/DADDesign-Projects/DaisySeedGFX2/commit/5bf52132ca6fc22baa34c7defadd7f32ecfea509
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,38 @@
+device: korg-nts-1
+name: Picture oscillator (boochow)
+summary: Wavetable oscillator whose waveforms encode line drawings that appear on an XY oscilloscope when paired with the Lissa delay; the polygon data is edited in a header file.
+description: >-
+  Picture places the X and Y coordinates of a polygon in different quarters of
+  one waveform, and the Lissa delay's quarter-cycle delay lines them up so an
+  oscilloscope in XY mode shows the figure. The shape knob squashes the picture
+  and the shift-shape knob chooses among the stored figures; the manifest
+  also exposes a phase and an interpolation setting. To keep the figure stable
+  the delay time has to follow the played pitch, which the author does by
+  converting note numbers to a control change with a MIDI plugin on a
+  computer. The release includes a second figure build and the Lissa delay.
+status: dormant
+authors:
+  - name: boochow
+    url: https://github.com/boochow
+source: https://github.com/boochow/picture
+source_status: open
+license: MIT
+license_notes: LICENSE file is MIT, Copyright 2020 boochow.
+homepage: https://github.com/boochow/picture
+distribution: download
+install_notes: >-
+  Download picture.ntkdigunit and lissa.ntkdigunit from the release and load
+  them with Korg's Librarian or logue-cli. The release also holds a
+  pacman.ntkdigunit build from another branch.
+tags: [oscillator, delfx, oscilloscope, wavetable, open-source, nts-1]
+video:
+  url: https://www.youtube.com/watch?v=RcrHFz_dZ6o
+  title: picture oscillator for logue SDK demo
+  credit: boochow
+  first_party: true
+  found_via: https://github.com/boochow/picture#readme
+  version: v1.0
+versions:
+  - version: v1.0
+    date: 2020-06-14
+    url: https://github.com/boochow/picture/releases/tag/v1.0

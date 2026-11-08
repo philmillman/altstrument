@@ -1,0 +1,30 @@
+device: electrosmith-daisy-seed
+name: SynthMachine
+summary: Prototype modular synth modules built around SSI2130 oscillator and SSI2140 filter chips with a Daisy Seed, with KiCad boards and a Seed firmware project.
+description: >-
+  The repository collects KiCad designs for a VCO Machine and a controller board, plus a Seed firmware project named
+  SYNTHMACHINE. The boards use DAB2130 and DAB2140 breakout boards for the analog chips, so they carry DIP footprints
+  instead of QFN ones. The author calls it very much a prototype and credits TimMJN's Polymorph VCO for reference on
+  audio and CV levels.
+
+  The firmware folder also contains the author's own build output, including an ELF, hex and bin file. The README
+  asks you to build with a current libDaisy and DaisySP rather than use it.
+status: active
+authors:
+  - name: ConnorGiles00101
+    url: https://github.com/ConnorGiles00101
+source: https://github.com/ConnorGiles00101/SynthMachine
+source_status: open
+license: unspecified
+license_notes: No license file or statement in the repository.
+distribution: source-only
+install_notes: >-
+  Set up the Daisy toolchain, clone current libDaisy and DaisySP, and build the project in Firmware/SYNTHMACHINE with
+  make. The ROM DFU mode stays available if a flash goes wrong.
+brick_risk: false
+tags: [synth-engine, oscillator, filter, eurorack, hardware]
+versions:
+  - version: main @ 5546f61
+    date: 2026-03-13
+    url: https://github.com/ConnorGiles00101/SynthMachine/commit/5546f61
+    notes: No tagged releases; this is the latest commit.

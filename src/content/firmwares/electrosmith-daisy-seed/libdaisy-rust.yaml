@@ -1,0 +1,32 @@
+device: electrosmith-daisy-seed
+also_devices: [electrosmith-daisy-patch, electrosmith-daisy-field]
+name: libdaisy-rust
+kind: tool
+summary: Rust hardware abstraction layer for Daisy boards with audio, GPIO, ADC, SD card, SDRAM, flash and USB MIDI support, plus examples such as passthrough, delay and blinky.
+description: >-
+  A Rust crate (published as libdaisy) that wraps the STM32H750 peripherals of the Daisy Seed for bare-metal Rust
+  programs. Its source covers the audio interface, GPIO and HID inputs, the SDMMC card, SDRAM, QSPI flash, a logger
+  and memory protection. The examples folder has blinky, passthru, delay, knob, volume, switch, toggle, sdram,
+  sdmmc, flash and USB MIDI programs. Binaries can be flashed with the Daisy web programmer, dfu-util or a debug
+  probe through probe.rs. The README points to a separate one-button looper built on the crate. The last commit
+  removed aliasing mutable references to the DMA buffers.
+status: dormant
+authors:
+  - name: Matthew Meyer
+    url: https://github.com/mtthw-meyer
+source: https://github.com/mtthw-meyer/libdaisy-rust
+source_status: open
+license: MIT
+license_notes: LICENSE is the MIT license, copyright 2021 Matthew Meyer.
+homepage: https://docs.rs/libdaisy
+distribution: source-only
+install_notes: >-
+  Add the thumbv7em-none-eabihf target and cargo-binutils, build an example with cargo objcopy --release -O binary,
+  and flash the .bin with the Daisy web programmer or dfu-util. The README states a minimum Rust version of 1.82.
+brick_risk: false
+tags: [sdk, rust, platform, dsp, open-source]
+versions:
+  - version: v0.1.0
+    date: 2021-04-11
+    url: https://github.com/mtthw-meyer/libdaisy-rust/releases/tag/v0.1.0
+    notes: Initial release. The main branch has later commits, the newest from January 2025.

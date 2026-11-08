@@ -1,0 +1,39 @@
+device: electrosmith-daisy-seed
+name: GyroBass
+summary: Effects unit built into a bass guitar body, where a Daisy Seed reads an LSM6DS3 motion sensor and maps neck tilt to a filter sweep with overdrive and low-pass, notch, band-pass and bypass modes.
+description: >-
+  A Seed on a breadboard inside the instrument reads the IMU over I2C at 100 Hz and turns the tilt angle into the cutoff
+  of a state variable filter, sweeping from about 160 Hz to 3.5 kHz, so the filter acts like a wah without a pedal. The
+  signal path is a DC blocker, input gain, soft-clip overdrive, the filter and a blend with the clean signal; a button
+  cycles the modes. Audio runs in the interrupt at 48 kHz while FreeRTOS tasks handle the sensor and the button. The build needs
+  a one-line change to libDaisy's SysTick handler, flashing uses an ST-Link, and the README lists a custom filter,
+  display and MIDI output as unfinished.
+status: active
+authors:
+  - name: vitonol
+    url: https://github.com/vitonol
+source: https://github.com/vitonol/GyroBass
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT license with a 2019 Electrosmith copyright line, apparently carried over from libDaisy,
+  and no line naming the project's author. FreeRTOS sources are bundled in src.
+homepage: https://github.com/vitonol/GyroBass
+distribution: source-only
+install_notes: >-
+  Clone with submodules, comment out SysTick_Handler in libs/libDaisy/Core/system.cpp as the README says, build libDaisy
+  and DaisySP, then run make and make program with OpenOCD and an ST-Link. A bad image can be replaced through the
+  ST-Link or DFU mode.
+brick_risk: false
+tags: [fx, filter, overdrive, guitar, bass, sensor, freertos, open-source]
+image:
+  url: https://raw.githubusercontent.com/vitonol/GyroBass/main/media/LRM_20260112_220412.jpg
+  alt: A Daisy Seed and a small purple sensor board on a red breadboard lying on the white pickguard of a red bass guitar, with a USB cable plugged in and wires running off the right edge
+  credit: vitonol
+  source_url: https://github.com/vitonol/GyroBass#readme
+  first_party: true
+versions:
+  - version: main @ 23c0f76
+    date: 2026-03-17
+    url: https://github.com/vitonol/GyroBass/commit/23c0f76
+    notes: No tagged releases; this is the latest commit.

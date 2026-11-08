@@ -1,0 +1,33 @@
+device: ableton-move
+name: Sample Slicer
+summary: >-
+  Schwung sound generator that loads a WAV, AIFF, MP3 or FLAC file, detects transients or slices at random, and plays the slices from the pads with per-pad envelopes, pitch and gain. It detects the sample's tempo and time-stretches it to the Move's tempo.
+description: >-
+  Slicing runs from a sensitivity setting, with up to 128 slices, mapped across the pads. Edit scopes switch between per-pad, global and sync controls. Pads have attack, decay, start and end trims, reverse and loop modes, and there is a mono mode. Version 0.3.0 adds automatic tempo detection with time-stretching through the Bungee library, which is a git submodule, and independent speed and pitch control. A user manual and on-device help are in the repository.
+status: active
+authors:
+  - name: Justin Joe
+    url: https://github.com/j3threejay
+source: https://github.com/j3threejay/move-anything-slicer
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and src/module.json lists no licence. It includes the dr_flac and minimp3 single-file decoders and builds against the Bungee time-stretch library as a submodule, each under its own licence.
+homepage: https://github.com/j3threejay/move-anything-slicer
+distribution: download
+install_notes: >-
+  Needs Schwung. Install Sample Slicer from Schwung's module store, or install slicer-module.tar.gz from the latest release.
+brick_risk: false
+tags: [sampler, synth-engine, performance]
+versions:
+  - version: v0.3.0
+    date: 2026-08-16
+    url: https://github.com/j3threejay/move-anything-slicer/releases/tag/v0.3.0
+    notes: Adds automatic tempo sync and random slicing.
+  - version: v0.2.0
+    date: 2026-03-10
+    url: https://github.com/j3threejay/move-anything-slicer/releases/tag/v0.2.0
+    notes: Adds per-pad and global edit scopes and a user manual.
+  - version: v0.1.0
+    date: 2026-03-09
+    url: https://github.com/j3threejay/move-anything-slicer/releases/tag/v0.1.0

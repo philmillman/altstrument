@@ -1,0 +1,33 @@
+device: korg-nts-1
+also_devices: [korg-minilogue-xd, korg-prologue, korg-nts-1-mkii, korg-microkorg-2]
+name: GLITCHY
+summary: Glitch modulation effect that cuts, reverses, bit-crushes, freezes and gates the last few milliseconds of audio, with builds for the NTS-1, minilogue xd, prologue, NTS-1 mkII and microKORG2.
+description: >-
+  GLITCHY is a mod FX unit with two controls. A sets the length of the captured
+  slice, roughly 12 to 85 ms. B sets how often and how hard the effect
+  triggers, mixing stutter, reverse, micro-loop, half-speed, bit-crush,
+  sample-and-hold and random gate behaviour; at zero the signal passes dry.
+  Switches between modes use short crossfades. The repository builds one unit
+  per instrument from a shared DSP core and carries the v1.0.0 build outputs
+  with SHA-256 sums. Minimum firmware listed in the README is 1.02 for the
+  NTS-1, 2.00 for the minilogue xd and prologue, 1.0.0 for the NTS-1 mkII and
+  2.0.0 for the microKORG2.
+status: active
+authors:
+  - name: ksd6700
+    url: https://github.com/ksd6700
+source: https://github.com/ksd6700/glitchy_mki-NTS-1-digital-kit
+source_status: open
+license: MIT
+homepage: https://github.com/ksd6700/glitchy_mki-NTS-1-digital-kit
+distribution: download
+install_notes: >-
+  Download the file for your instrument from the release and load it as a user
+  mod FX with the matching Korg Librarian or Editor; the microKORG2 build loads
+  through its USB mass-storage mode. Units can be removed again the same way.
+brick_risk: false
+tags: [modfx, glitch, bitcrusher, open-source, nts-1, minilogue-xd, prologue, nts-1-mkii, microkorg2]
+versions:
+  - version: v1.0.0
+    date: 2026-07-14
+    url: https://github.com/ksd6700/glitchy_mki-NTS-1-digital-kit/releases/tag/v1.0.0

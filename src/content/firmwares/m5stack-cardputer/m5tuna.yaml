@@ -1,0 +1,33 @@
+device: m5stack-cardputer
+name: M5Tuna
+summary: >-
+  Instrument tuner for the Cardputer and Cardputer ADV covering guitar, ukulele and violin with auto-detection, built on ESP-IDF with its own display and microphone drivers.
+description: >-
+  M5Tuna detects pitch from the microphone with an autocorrelation method, filters the result to reject spikes and jitter,
+  and shows an indicator that moves from red through yellow to green with a waveform view and an LED that lights when in
+  tune. It supports guitar, ukulele and violin tunings, plus an automatic mode. Instead of the M5 libraries it uses a
+  small hardware layer on LovyanGFX with its own drivers for the display, microphone, speaker, keyboard and the ES8311 codec.
+  It is built with ESP-IDF 5.5.
+status: active
+authors:
+  - name: d4rkmen
+    url: https://github.com/d4rkmen
+source: https://github.com/d4rkmen/M5Tuna
+source_status: open
+license: unspecified
+license_notes: >-
+  No LICENSE file for the project's own code; the vendored LovyanGFX component carries its own terms.
+distribution: download
+install_notes: >-
+  The release carries an M5Tuna_1.1.bin to flash. The README's own route is building with the ESP-IDF 5.5 extension for
+  Visual Studio Code.
+brick_risk: false
+tags: [tuner, utility, esp32-s3, esp-idf]
+versions:
+  - version: main @ 1b7930e
+    date: 2026-04-10
+    url: https://github.com/d4rkmen/M5Tuna/commit/1b7930ea93dcc63a12a40ac6f418fbea87f8c065
+    notes: The latest commit sets version.txt to 1.3; no release page exists for it.
+  - version: v1.1
+    date: 2025-03-29
+    url: https://github.com/d4rkmen/M5Tuna/releases/tag/v1.1

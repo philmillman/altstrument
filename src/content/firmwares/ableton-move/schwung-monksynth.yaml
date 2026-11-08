@@ -1,0 +1,36 @@
+device: ableton-move
+name: MonkSynth
+summary: >-
+  Schwung sound generator that is a monophonic formant vocal synthesizer with twelve singing characters, each
+  with its own face on the display.
+description: >-
+  MonkSynth is a monophonic FOF vocal synth with twelve characters, from Monk to Cat, each loading its own voice
+  and drawing its own face on the 128x64 screen. Polyphonic pad pressure sweeps the vowel, or the pitch, or
+  both, through four routings with adjustable depth. It has a 16-note stack, unison of up to ten voices with
+  detune and vocal-tract spread, and a stereo delay. The DSP is vendored unmodified from Jonathan Taylor's
+  MonkSynth, through the iOS port by the same repository owner, and the README calls it an homage to the Delay
+  Lama plug-in. The faces and the Move interface are original to this repository.
+status: active
+authors:
+  - name: Charles Vestal
+    url: https://github.com/charlesvestal
+  - name: Jonathan Taylor
+    url: https://github.com/JonET
+source: https://github.com/charlesvestal/schwung-monksynth
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file credits Jonathan Taylor. The NOTICE file says the DSP files are vendored verbatim from Jonathan Taylor's
+  MonkSynth (MIT) by way of the iOS port, and that the twelve faces are not ported art. The README asks for
+  donations to savetibet.org.
+distribution: download
+install_notes: >-
+  Needs Schwung 1.2.1 or newer; older hosts load it but lose the Vowel display and Face page. Install MonkSynth
+  from Schwung's module store, or build with the Docker script and install over SSH.
+brick_risk: false
+tags: [synth-engine, synth, voice]
+versions:
+  - version: v0.1.1
+    date: 2026-09-09
+    url: https://github.com/charlesvestal/schwung-monksynth/releases/tag/v0.1.1
+    notes: Fixes pitch bend staying sharp after the pressure routing was switched away from Pitch.

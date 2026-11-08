@@ -1,0 +1,31 @@
+device: ableton-move
+name: Wurl
+summary: >-
+  Schwung sound generator that models a Wurlitzer 200A electric piano from its reed, pickup, preamp, power amp and speaker stages, with tremolo, spring reverb and ten presets. A C port of the Rust plug-in OpenWurli.
+description: >-
+  Wurl is a port of OpenWurli by hal0zer0 to single-file C. Each voice is a seven-mode reed model feeding a capacitive pickup model, with a short attack-noise burst on the hammer strike. The summed voices pass through a simplified two-stage preamp, a class AB power amp model and a speaker cabinet model, with a light-dependent-resistor tremolo, a darkening filter and a spring reverb. A small neural network corrects partial frequencies and decay rates at note-on. It plays 16 voices, has eight knobs and three menu parameters, and ships ten presets and matching chain patches. The README lists what was left out of the port, including the circuit-solver preamp and the Twin-T tremolo oscillator.
+status: active
+authors:
+  - name: Vincent Fillion (filliformes)
+    url: https://github.com/filliformes
+  - name: hal0zer0
+    url: https://github.com/hal0zer0
+source: https://github.com/filliformes/wurl-move
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file holds an abbreviated GPL-3.0 text with a link to the full text and no "or later" statement. The README says the licence is inherited from OpenWurli, the GPL-3.0 Rust original by hal0zer0. The neural-network weights were trained on Wurlitzer 200A recordings by OldBassMan on Freesound, credited in the README.
+homepage: https://github.com/filliformes/wurl-move#readme
+distribution: download
+install_notes: >-
+  Needs Schwung. Install Wurl from Schwung's module store or Schwung Manager, or download wurl-module.tar.gz from the latest release and use Install custom module in the Schwung Installer.
+brick_risk: false
+tags: [synth-engine, synth, emulator, physical-modeling]
+versions:
+  - version: v0.1.1
+    date: 2026-05-13
+    url: https://github.com/filliformes/wurl-move/releases/tag/v0.1.1
+    notes: Adds an on-device help file.
+  - version: v0.1.0
+    date: 2026-03-26
+    url: https://github.com/filliformes/wurl-move/releases/tag/v0.1.0

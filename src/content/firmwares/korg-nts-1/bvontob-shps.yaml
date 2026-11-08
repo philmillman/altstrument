@@ -1,0 +1,27 @@
+device: korg-nts-1
+name: shps
+summary: Oscillator for the NTS-1 combining waveshaping, ring modulation and sync; source only, with no README and no prebuilt unit.
+description: >-
+  shps is a user oscillator that, according to the repository description,
+  uses waveshaping, ring modulation and sync. Its manifest declares no named
+  parameters. The repository has a main.c and the logue SDK makefile layout,
+  no README and no releases, so it has to be built inside an SDK checkout.
+status: dormant
+authors:
+  - name: Beat Vontobel
+    url: https://github.com/bvontob
+source: https://github.com/bvontob/shps
+source_status: open
+license: BSD-3-Clause
+license_notes: LICENSE file is BSD 3-Clause, Copyright 2023 Beat Vontobel.
+homepage: https://github.com/bvontob/shps
+distribution: source-only
+install_notes: >-
+  No prebuilt unit is published. Build it with the logue SDK for the NTS-1 and
+  load the result with Korg's Librarian or logue-cli.
+tags: [oscillator, waveshaping, ring-modulation, sync, open-source, nts-1]
+versions:
+  - version: main @ 979283a
+    date: 2023-05-01
+    url: https://github.com/bvontob/shps/commit/979283a
+    notes: No tagged releases; this is the latest commit.

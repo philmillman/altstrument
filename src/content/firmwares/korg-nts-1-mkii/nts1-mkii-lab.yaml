@@ -1,0 +1,51 @@
+device: korg-nts-1-mkii
+name: nts1-mkii-lab
+summary: Twenty-two free oscillator and effect units for the NTS-1 mkII, including polyphonic instruments that handle their own voices on the mkII's monophonic oscillator runtime.
+description: >-
+  A collection of units built on logue SDK v2. The oscillators include an
+  8-voice subtractive synth (poly8), electric pianos, drawbar organs, struck
+  and plucked strings, flutes, six-operator FM, phase distortion, wavetable
+  scanning and seven separate oscillators modelled on the Casio PT-20 presets.
+  Because the runtime delivers note events even though the oscillator is
+  monophonic, the units run their own voices, envelopes and filters. The
+  effects are an ensemble chorus, a micro pitch shifter, a distortion, a
+  bucket-brigade delay, a string resonator and a pitch-shifted reverb. The
+  README says poly8 needs EG Legato off and the amp EG type set to Open on the
+  device. The repository includes a host-side test harness that renders
+  the DSP code to audio.
+status: active
+authors:
+  - name: iliakole1
+    url: https://github.com/iliakole1
+source: https://github.com/iliakole1/nts1-mkii-lab
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The licence file is the GPL version 3 text and the README says GPLv3, with no
+  "or later" statement. The logue SDK submodule keeps Korg's BSD-3-Clause
+  licence.
+homepage: https://github.com/iliakole1/nts1-mkii-lab
+distribution: download
+install_notes: >-
+  Download units from the latest release and drag each .nts1mkiiunit onto the
+  matching user-unit list in KORG KONTROL Editor (osc, modfx, delfx or revfx).
+  Units are ordinary user units and can be deleted again in the editor.
+brick_risk: false
+tags: [oscillator, modfx, delfx, revfx, polyphonic, fm, wavetable, karplus-strong, open-source, nts-1-mkii]
+versions:
+  - version: v1.3.0
+    date: 2026-09-08
+    url: https://github.com/iliakole1/nts1-mkii-lab/releases/tag/v1.3.0
+    notes: Adds the cz, wt, bbd, reso and micro units, for 22 units in total.
+  - version: v1.2.0
+    date: 2026-09-08
+    url: https://github.com/iliakole1/nts1-mkii-lab/releases/tag/v1.2.0
+    notes: Adds the dx six-operator FM oscillator, for 17 units.
+  - version: v1.1.0
+    date: 2026-09-08
+    url: https://github.com/iliakole1/nts1-mkii-lab/releases/tag/v1.1.0
+    notes: Adds the seven Casio PT-20 tone oscillators, for 16 units.
+  - version: v1.0.0
+    date: 2026-09-08
+    url: https://github.com/iliakole1/nts1-mkii-lab/releases/tag/v1.0.0
+    notes: First release with nine units.

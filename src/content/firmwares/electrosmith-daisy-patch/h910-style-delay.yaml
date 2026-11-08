@@ -1,0 +1,32 @@
+device: electrosmith-daisy-patch
+name: H910 Style Delay
+summary: Arduino sketch for Daisy Patch that models an Eventide H910 Harmonizer and delay, with a pitch-shifted left channel, a plain delay on the right and a mode switch on the encoder.
+description: >-
+  Four controls set delay time, feedback and dry and wet levels. In pitch shift
+  mode the left channel is delayed and shifted while the right channel is delay
+  only, and the encoder changes the shift ratio in steps of ten cents. In delay
+  only mode the encoder offsets the right delay line from the left, and pressing
+  it switches between the two modes. An OLED page shows the settings. Version
+  1.3 needs a SetCents function added by hand to the pitch shifter header of the
+  DaisyDuino library before it will build.
+status: dormant
+authors:
+  - name: 1202-comstock-miles
+    url: https://github.com/1202-comstock-miles
+source: https://github.com/1202-comstock-miles/Daisy-Patch-H910
+source_status: open
+license: unspecified
+license_notes: No LICENSE file and no licence statement in the repository.
+distribution: source-only
+install_notes: >-
+  Build the .ino sketch with the Arduino IDE and DaisyDuino, then flash it over
+  the Daisy bootloader. A build folder in the repository holds compiled files
+  named for version 1.2. The Daisy ROM bootloader stays available if a flash
+  goes wrong.
+brick_risk: false
+tags: [delay, pitch-shift, fx, arduino]
+versions:
+  - version: main @ 3a3df44
+    date: 2026-01-29
+    url: https://github.com/1202-comstock-miles/Daisy-Patch-H910/commit/3a3df44
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,29 @@
+device: electrosmith-daisy-seed
+name: Heavy MIDI Sequencer
+summary: Pure Data patch for the Heavy compiler that plays a MIDI file as a polyphonic sequence on a Daisy Seed, with a Python script that turns a .mid file into table messages.
+description: >-
+  The repository holds a Pure Data patch made for export through Heavy to a
+  Daisy Seed, a hvcc board definition for the Seed, and a Python script that
+  reads a .mid file and writes the note data as messages for the patch's
+  tables. Two example MIDI files are included. The documentation is a two-line
+  text file, so the controls and the exact export steps are not described.
+status: active
+authors:
+  - name: bbparasite
+    url: https://github.com/bbparasite
+source: https://github.com/bbparasite/Heavy-Midi-Sequencer
+source_status: open
+license: unspecified
+license_notes: No LICENSE file and no licence statement.
+distribution: source-only
+install_notes: >-
+  The Python script needs the mido library. Export the patch with the Heavy
+  Compiler Collection for the Daisy Seed and flash the result over USB; the
+  Seed is recovered through DFU mode if an image fails.
+brick_risk: false
+tags: [pure-data, sequencer, midi, codegen, open-source]
+versions:
+  - version: main @ eac533e
+    date: 2026-04-09
+    url: https://github.com/bbparasite/Heavy-Midi-Sequencer/commit/eac533ef71351ea4df42c4c32c1659635fdde095
+    notes: No tagged releases; this is the latest commit.

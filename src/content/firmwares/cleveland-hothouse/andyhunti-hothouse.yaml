@@ -1,0 +1,24 @@
+device: cleveland-hothouse
+name: Hothouse Projects (andyhunti)
+summary: >-
+  Three effect programs for the Hothouse pedal platform with a shared hardware layer, namely a 60-second mono looper, a three-oscillator triangle drone with ping-pong delay, and a tremolo, reverb and delay effect.
+description: >-
+  The looper has overdub, replace and decaying modes, reverse and half or double speed, and its latest commits replace the DaisySP looper with a custom engine. Triurn plays three triangle oscillators with rhythmic gating and a stereo delay. Tremdelrevolo combines tremolo, a delay with clean, shimmer and tape modes, and a Dattorro reverb. A FLASHING.md explains why make program does not work over ST-Link on this hardware.
+status: active
+authors:
+  - name: Andy Huntington
+    url: https://github.com/andyhunti
+source: https://github.com/andyhunti/hothouse
+source_status: open
+license: GPL-3.0-or-later
+license_notes: The root LICENSE is GPL version 3 with a 2024 copyright for Andy Huntington and the "or any later version" grant. The README says each project folder may carry its own license and lists all three as GPL v3.
+distribution: source-only
+install_notes: >-
+  Build libDaisy and DaisySP, run make in a project's folder, then flash with make program-dfu after holding BOOT and tapping RESET. The Daisy Seed's ROM DFU mode stays available if a flash goes wrong.
+brick_risk: false
+tags: [fx, looper, reverb, delay, lfo]
+versions:
+  - version: main @ b468b25
+    date: 2026-09-05
+    url: https://github.com/andyhunti/hothouse/commit/b468b25
+    notes: No tagged releases; this is the latest commit.

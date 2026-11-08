@@ -1,0 +1,27 @@
+device: electrosmith-daisy-seed
+name: Dualie
+summary: Twelve-voice polyphonic synth for a Daisy Seed with dual oscillators, a digital Moog-style ladder filter, an LFO and selectable reverb, distortion, echo and chorus.
+description: >-
+  Each voice has two oscillators with selectable waveforms, pulse width and
+  frequency modulation, coarse and fine tuning and sync, plus its own filter
+  and amplitude envelope. A digital ladder filter has a modulatable cutoff, and
+  the LFO can be routed to the modulation targets. The repository includes a
+  change to libDaisy and builds with the standard Daisy toolchain.
+status: dormant
+authors:
+  - name: Daniel Kinahan
+    url: https://github.com/danielkinahan
+source: https://github.com/danielkinahan/dualie
+source_status: open
+license: MIT
+distribution: source-only
+install_notes: >-
+  Clone with submodules, build libDaisy and DaisySP, then run the build and
+  program task over USB DFU. A Seed recovers through DFU mode after a bad image.
+brick_risk: false
+tags: [synth-engine, polyphonic, oscillator, filter, open-source]
+versions:
+  - version: main @ a95ec21
+    date: 2023-04-18
+    url: https://github.com/danielkinahan/dualie/commit/a95ec216978a155526b35b1a29286e2fd2ead9f4
+    notes: No tagged releases; this is the latest commit.

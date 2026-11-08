@@ -1,0 +1,31 @@
+device: m5stack-cardputer
+name: Cardputer Drum Machine
+summary: >-
+  TR-808 style drum machine for the Cardputer ADV with a 16-pad play mode, a 16-step by 16-track sequencer and per-pad synthesis with ADSR, filters and delay.
+description: >-
+  Rights warning: the repository bundles a zip of 16 TR-808 style drum samples and the README does not say where they come
+  from. The firmware has three modes: a PAD mode that plays 16 sampled drum sounds from the keyboard, a SEQ mode with a
+  16-step, 16-track sequencer at 30 to 300 BPM, and a SYN mode that shapes each pad with pitch, ADSR, low-pass and high-pass
+  filters and delay. Patterns are saved to and loaded from the SD card. It needs a Cardputer ADV with PSRAM and a FAT32 card
+  holding the sample kit in /samples/kit1.
+status: active
+authors:
+  - name: dukeko369
+    url: https://github.com/dukeko369
+source: https://github.com/dukeko369/cardputer-drum-machine
+source_status: open
+license: unspecified
+license_notes: >-
+  No LICENSE file. The sample zip's origin and terms are not stated; 808-style kits are often recordings or derivatives
+  of Roland sounds. The repository also commits a prebuilt DrumMachine.ino.bin.
+distribution: download
+install_notes: >-
+  The Chinese-language README tells you to find Cardputer Drum Machine in M5Burner and burn it to a Cardputer-Adv, then
+  unzip Cardputer-DrumMachine-Samples.zip to the root of a FAT32 SD card so the kit sits in /samples/kit1.
+brick_risk: false
+tags: [drum-machine, sequencer, drums, sampler, synth-engine, sd-card, esp32-s3]
+versions:
+  - version: main @ 4d1334f
+    date: 2026-06-05
+    url: https://github.com/dukeko369/cardputer-drum-machine/commit/4d1334f14ca17d849a1d403c31a01be86e93dc6f
+    notes: No tagged releases; this is the latest commit.

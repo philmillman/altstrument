@@ -1,0 +1,35 @@
+device: korg-minilogue-xd
+name: HyperSaw
+summary: Free minilogue xd user oscillator that stacks three layers of seven detuned voices in the JP-8000 supersaw style, each layer with its own waveform.
+description: >-
+  HyperSaw is a user oscillator with three layers of seven detuned voices.
+  Each layer picks a waveform (saw, square, pulses, triangle, sine, two glass
+  tables or a vocal "Ah"), layers B and C can be offset by up to two octaves,
+  and a layer balance control sets the mix. Shape sets detune and
+  Shift+Shape mixes the centre voice against the side voices. The README
+  suggests turning layer C and then B off if a four-note chord causes
+  dropouts. The repository has source, a built .mnlgxdunit file and audio
+  demos.
+status: active
+authors:
+  - name: SpeakingColors
+    url: https://github.com/SpeakingColors
+source: https://github.com/SpeakingColors/hypersaw-xd
+source_status: open
+license: MIT
+license_notes: >-
+  LICENSE is MIT (the GitHub API reports NOASSERTION). The README says the
+  KORG SDK template files keep their BSD-3-Clause licence.
+homepage: https://github.com/SpeakingColors/hypersaw-xd
+distribution: download
+install_notes: >-
+  Drag the .mnlgxdunit file into a free User Oscillator slot in the minilogue
+  xd Sound Librarian, or load it with logue-cli. User units can be removed
+  again from the Librarian.
+brick_risk: false
+tags: [oscillator, supersaw, open-source, minilogue-xd]
+versions:
+  - version: v1.3.0
+    date: 2026-10-19
+    url: https://github.com/SpeakingColors/hypersaw-xd/releases/tag/v1.3.0
+    notes: Marked as a pre-release on GitHub.

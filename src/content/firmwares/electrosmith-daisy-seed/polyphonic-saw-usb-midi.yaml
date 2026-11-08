@@ -1,0 +1,28 @@
+device: electrosmith-daisy-seed
+name: Polyphonic Saw via USB MIDI
+summary: Test firmware that plays USB MIDI notes from a computer on a bare Daisy Seed as a 24-voice saw organ, with a Python virtual keyboard and a prebuilt binary.
+description: >-
+  The program merges code from the DaisyExamples USB MIDI and Field polysynth examples into a basic polyphonic organ
+  with a sawtooth per note. It needs only a USB cable and an audio lead on output pin 18 and analog ground. A PyGame
+  script sends MIDI from the computer, and the README suggests Neothesia to play MIDI files. The README says the
+  prebuilt binary can be flashed with the Daisy web programmer and notes that Windows needs the WinUSB driver set with Zadig.
+status: dormant
+authors:
+  - name: zvodd
+    url: https://github.com/zvodd
+source: https://github.com/zvodd/DaisySeed--polyphonic_saw_via_USB_MIDI
+source_status: open
+license: unspecified
+license_notes: No license file or statement in the repository; it builds on code from the Electrosmith examples.
+homepage: https://github.com/zvodd/DaisySeed--polyphonic_saw_via_USB_MIDI
+distribution: download
+install_notes: >-
+  Flash precompiled/DAISY_SEED_USB_MIDI_FIRMWARE.bin with the Daisy web programmer, or build with make. A bad image is
+  replaced by putting the Seed back into DFU mode.
+brick_risk: false
+tags: [synth-engine, polyphonic, oscillator, midi, usb-midi, test, open-source]
+versions:
+  - version: main @ c575777
+    date: 2025-02-06
+    url: https://github.com/zvodd/DaisySeed--polyphonic_saw_via_USB_MIDI/commit/c575777
+    notes: No tagged releases; this is the latest commit.

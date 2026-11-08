@@ -1,0 +1,36 @@
+device: ableton-move
+name: Hera
+summary: >-
+  Schwung sound generator that ports jpcima's Hera, a Juno-60 emulation with DCO, resonant filter, envelopes, LFO and BBD chorus, with six voices and 56 presets.
+description: >-
+  The Faust-generated DSP covers the oscillator mix (saw, pulse, sub and noise), pulse-width modulation, a resonant low-pass filter with envelope, LFO and key tracking, a high-pass filter and chorus modes I and II. It exposes 26 parameters in categories, with eight knobs per category, and works alone or in a signal chain. Polyphony is limited to six voices for the Move's CPU. The README is titled Hera for Move Everything.
+status: active
+authors:
+  - name: Charles Vestal
+    url: https://github.com/charlesvestal
+  - name: Jean Pierre Cimalando
+    url: https://github.com/jpcima
+source: https://github.com/charlesvestal/schwung-hera
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The NOTICE file says the module includes Hera by Jean Pierre Cimalando and is distributed under GPL-3.0-or-later, and the LICENSE file is the full GPL version 3 text. The Faust DSP, presets and chorus model derive from upstream Hera. The NOTICE adds that Roland and Juno-60 are trademarks of Roland Corporation.
+homepage: https://github.com/charlesvestal/schwung-hera#readme
+distribution: download
+requires_stock: Schwung installed on the Move, with SSH access enabled
+install_notes: >-
+  Needs Schwung. Install Hera from the Sound Generators section of Schwung's module store or Schwung Manager, or build it with Docker and copy it over SSH.
+brick_risk: false
+tags: [synth-engine, synth, emulator]
+versions:
+  - version: v0.1.7
+    date: 2026-08-31
+    url: https://github.com/charlesvestal/schwung-hera/releases/tag/v0.1.7
+    notes: Help corrections, including the inverted pitch range footage.
+  - version: v0.1.6
+    date: 2026-08-29
+    url: https://github.com/charlesvestal/schwung-hera/releases/tag/v0.1.6
+    notes: Ships the full GPL-3 text and a NOTICE file, and adds short parameter names for Schwung's knob grid.
+  - version: v0.1.5
+    date: 2026-03-02
+    url: https://github.com/charlesvestal/schwung-hera/releases/tag/v0.1.5

@@ -1,0 +1,28 @@
+device: electrosmith-daisy-seed
+name: DaisyMultiLooper
+summary: Multi-channel synchronised looper for a Daisy Seed with an OLED and a button interface, written as an Arduino sketch.
+description: >-
+  A looper in which every loop is locked to the length of the first one. Each loop can be switched on and off on
+  its own, and when all are off playback returns to the start. The first recording waits for the first sound after it
+  is armed. The latest commit adds a second audio input, a start and stop control for all loops and a loop position
+  indicator. The sketch includes a copy of DaisyDuino and a Petal header, so it is built for a Seed wired to its
+  own buttons and display rather than for a finished Daisy product.
+status: dormant
+authors:
+  - name: Colin Love
+    url: https://github.com/colinlove
+source: https://github.com/colinlove/DaisyMultiLooper
+source_status: open
+license: MIT
+license_notes: LICENSE is the MIT license, copyright 2024 Colin Love. The bundled DaisyDuino files keep their own origin and are not covered by this entry.
+distribution: source-only
+install_notes: >-
+  Open DaisyMultiLooper.ino in the Arduino IDE with Daisy board support installed, build it and upload it to the
+  Seed. The pin layout for the buttons and display is set in the UI files.
+brick_risk: false
+tags: [looper, fx, arduino, open-source]
+versions:
+  - version: main @ 0ad2fc6
+    date: 2024-08-30
+    url: https://github.com/colinlove/DaisyMultiLooper/commit/0ad2fc6
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,52 @@
+device: electrosmith-daisy-patch
+name: DaisyCloudSeed
+summary: Early Daisy Patch ports by Erwin Coumans, including the CloudSeed reverb, a WAV granular player, a sample player and a Rings and Clouds reverb, collected as DaisyBouquet.
+description: >-
+  The first releases port the CloudSeed algorithmic reverb with a parameter page
+  and a screen that can be turned off. Later releases add a granular synth that
+  plays a WAV file from an SD card, a sample player with up to 64 samples in
+  64 MB, and a reverb taken from Mutable Instruments' Rings and Clouds. The
+  DaisyBouquet release bundles several of these as a small app framework. The
+  repository has no README, and its last commit drops the bouquet app because it
+  no longer fits in flash.
+status: dormant
+authors:
+  - name: Erwin Coumans
+    url: https://github.com/erwincoumans
+source: https://github.com/erwincoumans/DaisyCloudSeed
+source_status: open
+license: unspecified
+license_notes: >-
+  No LICENSE file in the repository. The release notes say the reverb from Rings
+  and Clouds is Emilie Gillet's MIT-licensed code. The CloudSeed reverb is
+  Valdemar Erlingsson's.
+distribution: download
+install_notes: >-
+  Each release carries .bin files to flash over the Daisy bootloader. The ROM DFU
+  bootloader stays available if a flash fails.
+brick_risk: false
+tags: [reverb, granular, sampler, fx, synth-engine]
+versions:
+  - version: daisybouquet
+    date: 2020-12-29
+    url: https://github.com/erwincoumans/DaisyCloudSeed/releases/tag/daisybouquet
+    notes: Collection of apps with a mini framework, including granular, sample player and Cloudy reverb.
+  - version: daisygranular
+    date: 2020-10-06
+    url: https://github.com/erwincoumans/DaisyCloudSeed/releases/tag/daisygranular
+    notes: Granular synth that plays WAV files from an SD card.
+  - version: "0.44"
+    date: 2020-09-29
+    url: https://github.com/erwincoumans/DaisyCloudSeed/releases/tag/0.44
+    notes: Sample player supporting up to 64 samples.
+  - version: "0.3"
+    date: 2020-08-30
+    url: https://github.com/erwincoumans/DaisyCloudSeed/releases/tag/0.3
+    notes: Encoder press toggles the UI to reduce noise.
+  - version: "0.2"
+    date: 2020-08-23
+    url: https://github.com/erwincoumans/DaisyCloudSeed/releases/tag/0.2
+    notes: Adds parameters and a UI.
+  - version: "0.1"
+    date: 2020-08-23
+    url: https://github.com/erwincoumans/DaisyCloudSeed/releases/tag/0.1

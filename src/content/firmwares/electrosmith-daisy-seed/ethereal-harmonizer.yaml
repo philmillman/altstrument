@@ -1,0 +1,29 @@
+device: electrosmith-daisy-seed
+name: Ethereal Harmonizer
+summary: Guitar pitch tracker and interval harmonizer for a breadboarded Daisy Seed, adding a scale-quantized third or fifth over four octaves with a noise gate and dry mix.
+description: >-
+  The pedal tracks the pitch of the guitar input and adds a harmony note, a major or minor third in diatonic
+  scales and a fifth for pentatonic and blues scales, quantized to the chosen scale across four octaves. The README and
+  docs describe the hysteresis noise gate, transient rejection for pick attacks, a dry signal path, floating-point
+  denormal flushing and DC blocking, plus a hardware setup page with a pin table, breadboard wiring and AC coupling
+  for the Seed. The whole engine is a single source file.
+status: active
+authors:
+  - name: Robert Jones
+    url: https://github.com/rljonesiii
+source: https://github.com/rljonesiii/ethereal
+source_status: open
+license: MIT
+license_notes: The LICENSE file is MIT, copyright 2026 Robert Jones.
+homepage: https://github.com/rljonesiii/ethereal
+distribution: source-only
+install_notes: >-
+  Build with make using the Daisy toolchain and flash with make program-dfu. A bad image is replaced by putting the
+  Seed back into DFU mode.
+brick_risk: false
+tags: [fx, pitch-shift, harmonizer, guitar, open-source]
+versions:
+  - version: main @ 95a3fbd
+    date: 2026-04-16
+    url: https://github.com/rljonesiii/ethereal/commit/95a3fbd
+    notes: No tagged releases; this is the latest commit.

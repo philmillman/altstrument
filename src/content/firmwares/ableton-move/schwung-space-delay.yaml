@@ -1,0 +1,48 @@
+device: ableton-move
+name: TapeDelay
+summary: >-
+  Schwung audio effect that is a light tape-style delay with flutter, a tone control, soft saturation in the
+  feedback path, and free or tempo-synced time.
+description: >-
+  TapeDelay is a circular delay line with a flutter LFO, a one-pole tone filter and soft saturation on the
+  feedback path. Time runs from 20 ms to 2 s or follows a division from 1/1 to 1/16 triplet, and feedback, mix,
+  tone and stereo width are adjustable, with width at full giving ping-pong. The README says it uses about 1.4
+  percent of the Move's DSP budget, so it fits in every slot. Versions 1.3.3 to 1.3.5 shipped a different,
+  heavier engine, Tape Echo 2, under the same id; version 2.0.0 returned to this one, and that engine now lives
+  in its own module.
+status: maintained
+authors:
+  - name: Charles Vestal
+    url: https://github.com/charlesvestal
+  - name: cyrusasfa
+source: https://github.com/charlesvestal/schwung-space-delay
+source_status: open
+license: MIT
+license_notes: >-
+  The README credits the original spacecho engine to cyrusasfa. The heavier Tape Echo 2 engine, ported from Dusk
+  Audio's work and GPL-3.0, stays in the history at tags v1.3.3 to v1.3.5 and is not in the current tree.
+distribution: download
+install_notes: >-
+  Needs Schwung. Install TapeDelay from Schwung's module store or Schwung Manager; its module id is tapedelay.
+brick_risk: false
+tags: [fx, tape]
+versions:
+  - version: v2.0.1
+    date: 2026-08-29
+    url: https://github.com/charlesvestal/schwung-space-delay/releases/tag/v2.0.1
+  - version: v2.0.0
+    date: 2026-08-23
+    url: https://github.com/charlesvestal/schwung-space-delay/releases/tag/v2.0.0
+    notes: Returns to the original light delay engine; the heavier Tape Echo 2 engine of 1.3.x became its own module.
+  - version: v1.3.5
+    date: 2026-08-22
+    url: https://github.com/charlesvestal/schwung-space-delay/releases/tag/v1.3.5
+  - version: v1.3.4
+    date: 2026-08-22
+    url: https://github.com/charlesvestal/schwung-space-delay/releases/tag/v1.3.4
+  - version: v1.3.3
+    date: 2026-08-22
+    url: https://github.com/charlesvestal/schwung-space-delay/releases/tag/v1.3.3
+  - version: v0.4.3
+    date: 2026-03-12
+    url: https://github.com/charlesvestal/schwung-space-delay/releases/tag/v0.4.3

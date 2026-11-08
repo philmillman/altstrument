@@ -1,0 +1,48 @@
+device: ableton-move
+name: Clementine-XT
+summary: >-
+  Schwung sound generator that plays a Waldorf Microwave XT style wavetable synth engine, with its own
+  sound-bank files and a browser panel for every parameter.
+description: >-
+  Clementine-XT has two wavetable oscillators with FM, sync and ring modulation, thirteen filter types, a
+  16-slot modulation matrix, an arpeggiator, effects and ten voices. The Move's knobs and screen reach a
+  playable subset on 14 pages, and Schwung Manager's browser panel exposes all 202 parameters. It loads
+  Microwave II and XT .syx sound banks. With the user's own Microwave II ROM dump uploaded it reads the 506
+  original waves and decodes the 256 factory sounds; without it, a built-in bank of 12 sounds plays on open
+  wave tables. The README says the engine is original C code and that no ROM, wave, sound bank or artwork
+  of the original is in the repository or releases. The same engine ships as an MPC plug-in.
+status: active
+authors:
+  - name: sd88me
+    url: https://github.com/sd88me
+source: https://github.com/sd88me/schwung-clementineXT
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states GPL-3.0-only. VENDORED.md lists the MIT-licensed Schwung plug-in header and a GPL-3.0
+  header and engine copied from the author's own MPC plug-in repositories.
+homepage: https://github.com/sd88me/schwung-clementineXT#readme
+distribution: download
+requires_stock: Schwung installed on the Move; optional Microwave II ROM dump supplied by the user
+install_notes: >-
+  Needs Schwung. Install Clementine-XT from Schwung's module store or Schwung Manager. To use the original
+  waves and factory sounds, copy your own Microwave II ROM images and any .syx banks into the module's ROMS
+  folder under the Schwung user data folder. The project does not supply the ROM.
+brick_risk: false
+tags: [synth-engine, synth, wavetable, emulator]
+versions:
+  - version: v0.1.3
+    date: 2026-10-12
+    url: https://github.com/sd88me/schwung-clementineXT/releases/tag/v0.1.3
+    notes: Unloading the module now waits for its loader thread, which could otherwise take the Move down.
+  - version: v0.1.2
+    date: 2026-10-06
+    url: https://github.com/sd88me/schwung-clementineXT/releases/tag/v0.1.2
+    notes: Adds on-device help.
+  - version: v0.1.1
+    date: 2026-10-06
+    url: https://github.com/sd88me/schwung-clementineXT/releases/tag/v0.1.1
+    notes: Reads the 256 factory sounds from a user-supplied ROM as the XT Factory bank.
+  - version: v0.1.0
+    date: 2026-10-03
+    url: https://github.com/sd88me/schwung-clementineXT/releases/tag/v0.1.0

@@ -1,0 +1,29 @@
+device: electrosmith-daisy-patch
+name: Ubersaw
+summary: Supersaw oscillator for Patch.Init() that follows the reverse-engineered Roland JP-8000 algorithm with seven detuned saws, 24-bit fixed-point arithmetic and a pitch-tracked high-pass filter.
+description: >-
+  The oscillator runs at 96 kHz with the detune table from the reverse-engineering
+  talk the README cites. Knobs set pitch, detune, centre-to-side mix and filter
+  tone, CV inputs add to each, and a gate randomises the oscillator phases. A
+  toggle chooses between the 24-bit integer mode and a floating-point mode, and
+  the button works as a trigger when nothing is patched. The README marks the
+  second gate input as reserved. The repository has a roadmap and unit tests.
+status: active
+authors:
+  - name: house-of-houses
+    url: https://github.com/house-of-houses
+source: https://github.com/house-of-houses/ubersaw
+source_status: open
+license: MIT
+license_notes: Copyright line reads "ÜBERSAW Contributors".
+distribution: source-only
+install_notes: >-
+  Clone with submodules, build with the Daisy toolchain and flash over USB DFU.
+  The ROM DFU bootloader stays available if a flash fails.
+brick_risk: false
+tags: [oscillator, supersaw, synth-engine, emulation, open-source]
+versions:
+  - version: master @ 89c557a
+    date: 2026-02-08
+    url: https://github.com/house-of-houses/ubersaw/commit/89c557a
+    notes: No tagged releases; this is the latest commit.

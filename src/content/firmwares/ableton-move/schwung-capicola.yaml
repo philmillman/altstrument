@@ -1,0 +1,33 @@
+device: ableton-move
+name: Capicola
+summary: >-
+  Schwung audio effect that stretches time and shifts pitch live by keeping band-limited signal extrema as keyframes, with transients snapping the read head back to the present.
+description: >-
+  The effect reduces incoming stereo audio to keyframes and replays them from a lagging read head under separate time and pitch controls. A transient detector re-anchors the read head with a crossfade, so stretched tails ring under an output that stays on the input's rhythm. It is a port of Heavylight Industries' capicola Eurorack module, which runs on the Alchemy Lab V2, and the upstream DSP core is vendored unmodified. Each instance uses about 6 MB for its keyframe rings, against about 50 MB upstream. The README lists a known real-time violation in instance creation.
+status: active
+authors:
+  - name: Charles Vestal
+    url: https://github.com/charlesvestal
+  - name: Heavylight Industries
+    url: https://github.com/heavylight-industries
+source: https://github.com/charlesvestal/schwung-capicola
+source_status: open
+license: AGPL-3.0-only
+license_notes: >-
+  The LICENSE file is the AGPL version 3 text, and the README says the licence matches upstream. The upstream DSP core is vendored under src/dsp/lib, as VENDOR.md records.
+homepage: https://github.com/charlesvestal/schwung-capicola#readme
+distribution: download
+requires_stock: Schwung installed on the Move
+install_notes: >-
+  Needs Schwung. Install Capicola from Schwung's module store or Schwung Manager.
+brick_risk: false
+tags: [fx, time-stretch, eurorack-port]
+versions:
+  - version: v0.1.2
+    date: 2026-08-29
+    url: https://github.com/charlesvestal/schwung-capicola/releases/tag/v0.1.2
+    notes: Adds short parameter names for Schwung's knob grid.
+  - version: v0.1.1
+    date: 2026-08-22
+    url: https://github.com/charlesvestal/schwung-capicola/releases/tag/v0.1.1
+    notes: First release of the port.

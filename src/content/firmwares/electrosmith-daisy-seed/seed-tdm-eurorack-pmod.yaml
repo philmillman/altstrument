@@ -1,0 +1,28 @@
+device: electrosmith-daisy-seed
+name: Daisy Seed TDM for Eurorack PMOD
+summary: Example program that drives the apfelaudio Eurorack-PMOD multichannel codec board from a Daisy Seed using a libDaisy fork with TDM support for the AK4619 codec.
+description: >-
+  Shows how to feed a Daisy Seed from a TDM codec. It uses a libDaisy fork on a feature branch that adds TDM
+  SAI support and an AK4619 driver, and a small driver for the Eurorack-PMOD board that sets up the codec and its LED
+  VU meter. The README lists the wiring between the Seed's pins and the PMOD header. The code is a demonstration of
+  multichannel audio rather than a finished instrument, and it is tied to the fork rather than to Electrosmith's
+  mainline libDaisy.
+status: dormant
+authors:
+  - name: heartwerktech
+    url: https://github.com/heartwerktech
+source: https://github.com/heartwerktech/daisy_seed_tdm_eurorack_pmod
+source_status: open
+license: unspecified
+license_notes: No licence file and no licence statement in the repository.
+distribution: source-only
+install_notes: >-
+  Clone with --recursive so the libDaisy fork submodule is fetched, wire the Seed to the PMOD as listed in the
+  README, then build with make and flash over USB DFU.
+brick_risk: false
+tags: [codec, eurorack, hardware, dsp, open-source]
+versions:
+  - version: main @ f6ef5b8
+    date: 2024-02-23
+    url: https://github.com/heartwerktech/daisy_seed_tdm_eurorack_pmod/commit/f6ef5b8
+    notes: No tagged releases; this is the latest commit.

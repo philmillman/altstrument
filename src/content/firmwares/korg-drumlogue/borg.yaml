@@ -1,0 +1,37 @@
+device: korg-drumlogue
+name: Borg
+kind: firmware
+summary: Synth unit that makes the drumlogue's daemon re-run itself in place with a loadable extension, adding a status menu, a MIDI transform and a module loader.
+description: >-
+  Borg is a drumlogue synth unit. Loading it on a part and firing GateOn makes
+  the instrument's daemon re-execute itself under an embedded preload object,
+  with the same process id. The README says nothing is written to the root
+  filesystem and that a power cycle restores everything. The loaded object adds a
+  status menu opened with MUTE and MASTER, a writable MIDI transform and a loader
+  for .borgmodule files kept in the instrument's user storage. Modules can add
+  audio, see channel MIDI messages and receive SysEx; the repository includes
+  example modules, one of which runs shell commands sent over SysEx. The README
+  says the work relies on public logue SDK files and states no reverse
+  engineering was used.
+status: active
+authors:
+  - name: Regroove | RGRV
+    url: https://rgrv.nl/
+source: https://github.com/rgrvmusic/borg
+source_status: open
+license: MIT
+license_notes: The README says Borg is not affiliated with or endorsed by Korg.
+homepage: http://borg.rgrv.nl
+distribution: source-only
+install_notes: >-
+  Build the unit with podman and a logue SDK checkout, copy borg.drmlgunit to
+  Units/Synths over USB mass-storage mode, load it on a part, save the program
+  and fire GateOn. The README says the daemon is unchanged if the switch is
+  refused and that a power cycle undoes the switch.
+brick_risk: false
+tags: [extension, scripting, midi, open-source, drumlogue]
+versions:
+  - version: main @ 8dee0fd
+    date: 2026-11-07
+    url: https://github.com/rgrvmusic/borg/commit/8dee0fd
+    notes: No tagged releases; this is the latest commit.

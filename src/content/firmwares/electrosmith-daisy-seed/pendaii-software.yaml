@@ -1,0 +1,30 @@
+device: electrosmith-daisy-seed
+name: PENDAII Software
+summary: Framework and delay effect for the author's PENDAII stereo pedal hardware, which pairs a Daisy Seed with a TFT display and a WM8731 codec; the author has deprecated it in favour of OSCAR.
+description: >-
+  The project is a C++ framework for building effect pedals on the PENDAII board, so that effect code deals only with
+  signal processing. It handles the audio codec, SDRAM and QSPI flash storage with per-effect preset saving, an
+  ST7789 TFT user interface, and a CPU load monitor. The one bundled effect is a delay with a main line of 0.1 to 1.5
+  seconds, a second line with rhythmic subdivisions, modulation and bass and treble control on the echoes.
+
+  The project is built in STM32CubeIDE. A notice at the top of the README, added in July 2026, says the author has
+  abandoned it in favour of a project called OSCAR. The board design is in a separate PENDAII-Hardware repository.
+status: archived
+authors:
+  - name: DADDesign-Projects
+    url: https://github.com/DADDesign-Projects
+source: https://github.com/DADDesign-Projects/PENDAII-Software
+source_status: open
+license: MIT
+license_notes: The LICENSE file is the MIT license, copyright 2025 DADDesign-Projects.
+distribution: source-only
+install_notes: >-
+  Open the project in STM32CubeIDE, build it and flash it to the Seed over USB DFU or an ST-Link. It expects the
+  PENDAII hardware. The ROM DFU mode stays available if a flash goes wrong.
+brick_risk: false
+tags: [fx, delay, framework, hardware, open-source]
+versions:
+  - version: main @ 60365a3
+    date: 2026-07-12
+    url: https://github.com/DADDesign-Projects/PENDAII-Software/commit/60365a3
+    notes: No tagged releases; this is the latest commit, which adds the deprecation notice.

@@ -1,0 +1,26 @@
+device: electrosmith-daisy-patch
+name: CZengine
+summary: Casio CZ style phase distortion drone for the Daisy Pod, with six distortion profiles on a switch and distortion amount and pitch on the knobs.
+description: >-
+  An experiment in phase distortion synthesis as used by the Casio CZ series, written from the patent text and by
+  ear against a real CZ. It emits a continuous tone. Switch 1 cycles through sawtooth, square, impulse, null, sine
+  impulse and sawsquare profiles, knob 1 sets the distortion amount from a plain sine at full clockwise to maximum
+  distortion, and knob 2 sets the pitch. The other Pod controls are ignored. The engine code has a separate test.
+status: dormant
+authors:
+  - name: Jacob Vosmaer
+    url: https://github.com/jacobvosmaer
+source: https://github.com/jacobvosmaer/CZengine
+source_status: open
+license: unspecified
+license_notes: No licence file and no licence statement in the repository.
+distribution: source-only
+install_notes: >-
+  Build with make and upload with make program or make program-dfu. No prebuilt binary is published.
+brick_risk: false
+tags: [synth-engine, oscillator, phase-distortion, open-source]
+versions:
+  - version: master @ c0ac652
+    date: 2025-09-07
+    url: https://github.com/jacobvosmaer/CZengine/commit/c0ac652
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,32 @@
+device: ableton-move
+name: Eucalypso
+summary: >-
+  Schwung MIDI effect that generates up to four parallel Euclidean rhythm lanes from held notes, with per-lane steps, pulses, rotation, dropouts and seeded note variation, on the internal clock or incoming MIDI clock.
+description: >-
+  Each of the four lanes has its own step count, pulse count, rotation, drop amount, register note index, octave offset and seeded randomisation of note, octave, velocity and gate. Timing advances from the transport, so the rhythm does not depend on when notes arrive. Notes come from the held or latched keys, from a chosen scale, or from fixed drum pad notes 36 to 51, where pads 1 to 4 gate lanes 1 to 4. A policy decides what happens when a lane asks for a note outside the register. The README says it was developed with AI assistance.
+status: active
+authors:
+  - name: Handcrafted Media
+    url: https://github.com/handcraftedcc
+source: https://github.com/handcraftedcc/schwung-eucalypso
+source_status: open
+license: MIT
+homepage: https://github.com/handcraftedcc/schwung-eucalypso#readme
+distribution: download
+install_notes: >-
+  Needs Schwung. Install Eucalypso from the MIDI FX section of Schwung's module store, or build it with the repository's scripts and install it over SSH.
+brick_risk: false
+tags: [sequencer, midi, performance]
+versions:
+  - version: v0.1.5
+    date: 2026-03-05
+    url: https://github.com/handcraftedcc/schwung-eucalypso/releases/tag/v0.1.5
+    notes: Adds a drum pad register mode.
+  - version: v0.1.4
+    date: 2026-03-02
+    url: https://github.com/handcraftedcc/schwung-eucalypso/releases/tag/v0.1.4
+    notes: Adds on-device help and clock status warnings.
+  - version: v0.0.3
+    date: 2026-02-27
+    url: https://github.com/handcraftedcc/schwung-eucalypso/releases/tag/v0.0.3
+    notes: Full rewrite with transport-anchored timing.

@@ -1,0 +1,38 @@
+device: ableton-move
+name: Model-72
+summary: >-
+  Schwung sound generator that ports Idle Foundry's CA-72 circuit model of the 1970s Minimoog Model D to the
+  Move, as a mono, poly or unison synth.
+description: >-
+  Model-72 carries CA-72's three oscillators, mixer, ladder filter and two contours onto eight knob pages,
+  with CA-72's 19 factory sounds and an Init converted to the Move panel. A full circuit voice is too heavy
+  for the Move's CPU, so the module uses CA-72's lighter voice model, which the README says stays within
+  0.2 to 0.6 dB of the full model on most patches. It plays in mono, poly (2 to 10 voices) or unison, with
+  entropy, stereo, double and drive controls. Some CA-72 features are not ported, including MIDI learn and
+  audio into the external input. The README states it is unofficial and not affiliated with Idle Foundry,
+  Moog Music or Ableton.
+status: active
+authors:
+  - name: sd88me
+    url: https://github.com/sd88me
+  - name: Idle Foundry
+    url: https://github.com/idlefoundry
+source: https://github.com/sd88me/schwung-model72
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  THIRD-PARTY-NOTICES.txt states GPL version 3 or later, as the upstream CA-72 (GPL-3.0-or-later) and its
+  plugin-kit code, which are vendored with changes listed in engine/VENDORED.md. The Schwung plug-in header
+  is MIT.
+homepage: https://github.com/sd88me/schwung-model72#readme
+distribution: download
+requires_stock: Schwung installed on the Move
+install_notes: >-
+  Needs Schwung. Install Model-72 from Schwung's module store or Schwung Manager, or download
+  model-72-module.tar.gz from the release, then add Model-72 to a signal chain slot.
+brick_risk: false
+tags: [synth-engine, synth, emulator, monosynth]
+versions:
+  - version: v1.0.0
+    date: 2026-10-15
+    url: https://github.com/sd88me/schwung-model72/releases/tag/v1.0.0

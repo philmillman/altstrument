@@ -1,0 +1,37 @@
+device: ableton-move
+name: Braids
+summary: >-
+  Schwung sound generator that ports the Mutable Instruments Braids macro oscillator, with 47 synthesis engines, four-voice polyphony, an envelope and a filter per voice, and a preset browser.
+description: >-
+  The port runs Emilie Gillet's Braids engines (analogue waveforms, FM, plucked and bell models, drums, noise and others) on the Move. Eight knobs cover engine, timbre, color, attack, decay, cutoff, resonance and octave, with FM amount on the mod wheel, and the knob pages draw envelope and filter graphics. It works alone or as a sound generator in a signal chain. The README is titled Braids for Move Everything and says the module was developed with AI assistance.
+status: active
+authors:
+  - name: Charles Vestal
+    url: https://github.com/charlesvestal
+  - name: Emilie Gillet
+    url: https://github.com/pichenettes
+source: https://github.com/charlesvestal/schwung-braids
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file lists Emilie Gillet's copyright for the original DSP code beside the port's copyright, and THIRD_PARTY_LICENSES covers the Braids and stmlib sources from Mutable Instruments, both MIT.
+homepage: https://github.com/charlesvestal/schwung-braids#readme
+distribution: download
+requires_stock: Schwung installed on the Move, with SSH access enabled
+install_notes: >-
+  Needs Schwung. Install Braids from the Sound Generators section of Schwung's module store or Schwung Manager, or build it with Docker and copy it over SSH.
+brick_risk: false
+tags: [synth-engine, synth, eurorack-port]
+versions:
+  - version: v0.2.8
+    date: 2026-08-29
+    url: https://github.com/charlesvestal/schwung-braids/releases/tag/v0.2.8
+    notes: Adds short parameter names for Schwung's knob grid.
+  - version: v0.2.7
+    date: 2026-08-26
+    url: https://github.com/charlesvestal/schwung-braids/releases/tag/v0.2.7
+    notes: Restores the missing Release knob on the main page.
+  - version: v0.2.6
+    date: 2026-08-19
+    url: https://github.com/charlesvestal/schwung-braids/releases/tag/v0.2.6
+    notes: Knob pages draw envelope and filter graphics.

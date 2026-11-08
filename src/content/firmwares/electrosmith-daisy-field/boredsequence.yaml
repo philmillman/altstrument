@@ -1,0 +1,27 @@
+device: electrosmith-daisy-field
+name: BoredSequence
+summary: Minimal fixed-tempo 8-step CV sequencer for the Daisy Field, where each of the eight knobs sets one step's voltage and the pattern is output on CV Out 1.
+description: >-
+  A single-file program. Knobs 1 to 8 set the level of steps 1 to 8 across a 0 to 5 V range, the sequence advances
+  at a fixed 120 BPM, and the sequence is output on CV Out 1. The knob LEDs show the active step and the current
+  step is brightest while the gate is high. There is no tempo control or MIDI sync in the code. The Makefile expects
+  libDaisy and DaisySP checked out next to a DaisyExamples copy.
+status: active
+authors:
+  - name: bakerbass
+    url: https://github.com/bakerbass
+source: https://github.com/bakerbass/BoredSequence
+source_status: open
+license: unspecified
+license_notes: No licence file and no licence statement in the repository.
+distribution: source-only
+install_notes: >-
+  Build with the provided VS Code tasks or make, then program over DFU or SWD. Needs the ARM GCC toolchain and
+  libDaisy and DaisySP at ../DaisyExamples.
+brick_risk: false
+tags: [sequencer, cv, gate, open-source]
+versions:
+  - version: main @ 8c98478
+    date: 2025-11-04
+    url: https://github.com/bakerbass/BoredSequence/commit/8c98478
+    notes: No tagged releases; this is the latest commit.

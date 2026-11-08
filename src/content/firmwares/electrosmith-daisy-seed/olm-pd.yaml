@@ -1,0 +1,31 @@
+device: electrosmith-daisy-seed
+name: Olm (Pure Data patches)
+summary: Pure Data patches for the Olm, a battery-powered generative sculpture and ambient synthesizer built on a Daisy Seed, with Plugdata and Heavy-compiled C++ exports for the Seed.
+description: >-
+  The sound generation for Olm, an interactive object that randomly generates ambient soundscapes and music, housed
+  in a handmade plywood, plaster and aluminium case. The repository has the Pd patches, a desktop version that runs
+  in Pure Data or Plugdata, a component list for the author's own Olm PCB, and the C++ files that Plugdata's Heavy
+  export produced for the Seed. On the device, three dials push the randomisation further instead of shaping
+  specific parameters, and two buttons store and recall states. The README describes raising the audio block size to
+  256, using -O3 and a larger message pool to cut CPU load. The author calls the project nearly complete.
+status: dormant
+authors:
+  - name: MaxKablaam
+    url: https://github.com/MaxKablaam
+source: https://github.com/MaxKablaam/olm-pd
+source_status: open
+license: GPL-3.0-only
+license_notes: LICENSE is the unmodified GPL version 3 text and the README says the project is available under the GPL-3 License unless otherwise specified in specific files, with no "or later" grant.
+homepage: https://ericmaxkaplin.com/content/projects/olm/
+distribution: source-only
+install_notes: >-
+  Load the patch onto the Seed with Plugdata or pd2dsy, or build the exported code in export/daisy with make
+  against libDaisy. A component configuration file matches the Olm PCB; other interfaces need their own
+  configuration.
+brick_risk: false
+tags: [pure-data, generative, ambient, synth-engine, hardware, open-source]
+versions:
+  - version: main @ f8e1e50
+    date: 2024-01-02
+    url: https://github.com/MaxKablaam/olm-pd/commit/f8e1e50
+    notes: No tagged releases; this is the latest commit.

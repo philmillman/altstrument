@@ -1,0 +1,48 @@
+device: ableton-move
+name: Libpo32
+summary: >-
+  Schwung sound generator with 16 synthesised drum voices on the General MIDI drum map, Microtonic-style kits, a role-aware randomizer and kit saving, built on the libpo32 engine.
+description: >-
+  Libpo32 maps 16 voices to notes 36 to 51. Each voice has wave, pitch, decay, pitch-mod mode, bend, noise, distortion, level, a noise filter and a
+  noise envelope with a Clap burst shape. Three kits, tonic, tape and acid, are bundled as .mtdrum text files, and user kits can be saved to the device. The randomizer works
+  per pad or per kit within limits suited to each drum role. Project state is saved with the set. The README credits the engine to Teenage Engineering and Sonic Charge.
+status: active
+authors:
+  - name: Matt Estela (mestela)
+    url: https://github.com/mestela
+source: https://github.com/mestela/schwung-libpo32
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and no licence statement. The README says the synthesis engine is based on the libpo32 engine by Teenage Engineering and Sonic Charge.
+homepage: https://github.com/mestela/schwung-libpo32#readme
+distribution: download
+requires_stock: Schwung installed on the Move
+install_notes: >-
+  Needs Schwung. Install Libpo32 from Schwung's module store or Schwung Manager, or download the tarball from the latest release and
+  copy it into the sound generators folder over SSH, then restart Schwung.
+brick_risk: false
+tags: [synth-engine, drums, emulator]
+video:
+  url: https://www.youtube.com/watch?v=blKvmuEcvjQ
+  title: libpo32 v1.0.5
+  credit: matt estela
+  first_party: true
+  found_via: https://github.com/mestela/schwung-libpo32#readme
+  version: v1.0.5
+versions:
+  - version: v1.1.0
+    date: 2026-08-19
+    url: https://github.com/mestela/schwung-libpo32/releases/tag/v1.1.0
+    notes: Adds per-voice parameter addressing for MIDI CC mapping and automation, contributed through a pull request, and a Movy layout.
+  - version: v1.0.6
+    date: 2026-06-15
+    url: https://github.com/mestela/schwung-libpo32/releases/tag/v1.0.6
+    notes: Renders voices off the audio thread, fixing tempo drag and dropouts on dense patterns.
+  - version: v1.0.5
+    date: 2026-05-30
+    url: https://github.com/mestela/schwung-libpo32/releases/tag/v1.0.5
+    notes: Adds named pads, a noise filter mode, a noise envelope shape and an improved randomizer.
+  - version: v1.0.0
+    date: 2026-05-15
+    url: https://github.com/mestela/schwung-libpo32/releases/tag/v1.0.0

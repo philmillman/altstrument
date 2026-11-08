@@ -1,0 +1,30 @@
+device: electrosmith-daisy-patch
+name: Delay of Game
+summary: Rust and Embassy stereo delay utility for the Daisy Pod that delays a radio feed by 0 to 170 seconds to line it up with a TV picture, with encoder control, a 14-segment display and a saved setting.
+description: >-
+  A single-purpose delay written in Rust with the Embassy framework. The encoder sets the delay from 0 to 170
+  seconds in coarse or fine steps, two buttons jump it by 10 seconds, and the knobs set volume and display
+  brightness. The delay is saved to QSPI flash a few seconds after the last change and restored at power-up, and the
+  buffer starts empty so the output is silent for the length of the delay. The author calls it the first generation
+  of the project and keeps notes for a second hardware generation in the repository.
+status: active
+authors:
+  - name: graphex
+    url: https://github.com/graphex
+source: https://github.com/graphex/DelayOfGame
+source_status: open
+license: unspecified
+license_notes: No licence file and no licence statement in the repository.
+distribution: source-only
+requires_stock: Daisy Seed 1.1 (WM8731 codec); a Seed 1.2 build uses the seed_1_2 feature
+install_notes: >-
+  Build with cargo and flash with probe-rs over an ST-Link, or flash over USB DFU without a probe as described in
+  HARDWARE_SETUP.md. The Seed's built-in USB DFU mode stays available, so a failed write can be redone. An Adafruit
+  HT16K33 14-segment display on I2C is optional.
+brick_risk: false
+tags: [delay, fx, utility, rust, open-source]
+versions:
+  - version: main @ 4f8f885
+    date: 2026-10-27
+    url: https://github.com/graphex/DelayOfGame/commit/4f8f885
+    notes: No tagged releases; this is the latest commit.

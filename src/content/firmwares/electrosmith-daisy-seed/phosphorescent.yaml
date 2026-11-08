@@ -1,0 +1,27 @@
+device: electrosmith-daisy-seed
+name: Phosphorescent
+summary: Arpeggiator written in C++ for the Daisy Seed, built from a single source folder on top of libDaisy and DaisySP.
+description: >-
+  A small project whose code is one arp.cpp program with a Makefile; a build script compiles the libraries and the
+  source. The README gives setup steps and no description of controls or wiring. The last commit is a README
+  edit from late 2023.
+status: dormant
+authors:
+  - name: sunchimes
+    url: https://github.com/sunchimes
+source: https://github.com/sunchimes/phosphorescent
+source_status: open
+license: MIT
+license_notes: The LICENSE file is MIT, copyright 2023 sunchimes.
+homepage: https://github.com/sunchimes/phosphorescent
+distribution: source-only
+install_notes: >-
+  Clone with submodules, run build.sh, then flash from src/arp with the Daisy Makefile over USB DFU. A bad image is
+  replaced by putting the Seed back into DFU mode.
+brick_risk: false
+tags: [arpeggiator, sequencer, midi, open-source]
+versions:
+  - version: main @ 991664a
+    date: 2023-11-01
+    url: https://github.com/sunchimes/phosphorescent/commit/991664a
+    notes: No tagged releases; this is the latest commit.

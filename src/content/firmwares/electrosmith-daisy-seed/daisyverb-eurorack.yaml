@@ -1,0 +1,28 @@
+device: electrosmith-daisy-seed
+name: DaisyVerb (Eurorack module)
+summary: Eurorack reverb module built around a Daisy Seed, with an Arduino sketch, KiCad schematic and board, and a panel design.
+description: >-
+  A reverb module for Eurorack that carries a Daisy Seed on its own board. The repository holds the KiCad project
+  with a PDF and SVG of the circuit, the front panel artwork and a single Arduino sketch (DaisyVerb.ino) that runs the
+  reverb on the Seed. The last commit swapped the knob assignments. The README is two lines long, so the controls
+  are only documented by the sketch itself. Not the same project as the earlier Daisy Patch reverb listed
+  under the Patch.
+status: dormant
+authors:
+  - name: Benjamin Joseph Jiao
+    url: https://github.com/benjiaomodular
+source: https://github.com/benjiaomodular/DaisyVerb
+source_status: open
+license: MIT
+license_notes: LICENSE.md is the MIT license, copyright 2022 Benjamin Joseph Jiao.
+distribution: source-only
+install_notes: >-
+  Build the board from the KiCad files, then compile the sketch in Software/DaisyVerb with the Arduino IDE and a
+  Daisy-capable board package and upload it to the Seed over USB.
+brick_risk: false
+tags: [reverb, fx, eurorack, hardware, open-source]
+versions:
+  - version: main @ 6c8d213
+    date: 2022-10-11
+    url: https://github.com/benjiaomodular/DaisyVerb/commit/6c8d213
+    notes: No tagged releases; this is the latest commit.

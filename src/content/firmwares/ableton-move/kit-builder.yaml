@@ -1,0 +1,43 @@
+device: ableton-move
+name: Kit Builder
+summary: >-
+  Schwung overtake module that builds 16-pad drum kits by drawing random samples from the Move library by
+  role, then saves them as native Move drum presets.
+description: >-
+  Kit Builder fills each pad from one or more of 22 sample categories, classified from folder names with a
+  filename fallback. Pads can be auditioned, locked, re-rolled one at a time or matched in loudness, and a
+  transient 16-step sequencer plays the kit as a pattern. Samples come from the user library, the core
+  library or both, and rejected or favourite samples are remembered. Saving writes a kit file and an
+  .ablpreset drum preset into the Move's track presets, which the README says also loads in MrDrums. An
+  optional exporter writes Akai MPC .xpm files.
+status: active
+authors:
+  - name: sd88me
+    url: https://github.com/sd88me
+source: https://github.com/sd88me/schwung-kit-builder
+source_status: open
+license: MIT
+license_notes: A vendored Dropbear build under src/vendor has its own licence file.
+homepage: https://github.com/sd88me/schwung-kit-builder#readme
+distribution: download
+requires_stock: Schwung installed on the Move
+install_notes: >-
+  Needs Schwung. Install Kit Builder from Schwung's module store or Schwung Manager, or build it from source
+  and copy it to the Move with the install script.
+brick_risk: false
+tags: [sampler, drums, utility, performance]
+versions:
+  - version: v1.1.0
+    date: 2026-09-12
+    url: https://github.com/sd88me/schwung-kit-builder/releases/tag/v1.1.0
+  - version: v1.0.1
+    date: 2026-09-11
+    url: https://github.com/sd88me/schwung-kit-builder/releases/tag/v1.0.1
+    notes: Stops a parked Kit Builder from triggering pads while another track plays.
+  - version: v1.0.0
+    date: 2026-09-11
+    url: https://github.com/sd88me/schwung-kit-builder/releases/tag/v1.0.0
+    notes: First stable release.
+  - version: v0.3.1
+    date: 2026-09-10
+    url: https://github.com/sd88me/schwung-kit-builder/releases/tag/v0.3.1

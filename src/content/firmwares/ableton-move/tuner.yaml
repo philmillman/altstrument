@@ -1,0 +1,36 @@
+device: ableton-move
+name: Tuner
+summary: >-
+  Schwung tool module that tunes instruments from the Move microphone or line input with YIN pitch detection, 22 tuning presets and spoken or tone feedback, designed for blind and low-vision players.
+description: >-
+  The tuner detects pitch from the built-in microphone or line input and shows a chromatic mode or one of 22
+  presets in eight categories, including guitar tunings, 12-string, bass, ukulele, lap steel and bowed strings.
+  Feedback can be a step-guide interval figure, a reference tone in sine, pluck or soft pluck style, or off, and
+  the screen reader announces controls, detected notes and tuning state. A4 can be set from 410 to 480 Hz, with a
+  noise gate, tune threshold and a passthrough mode for headphones. Some tuning definitions come from bashtuner
+  (WTFPL). The README says it was built with AI assistance.
+status: active
+authors:
+  - name: Jeremiah Ticket
+    url: https://github.com/CatsAreCool710
+source: https://github.com/CatsAreCool710/Schwung-Tuner
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The LICENSE file opens with a notice granting GPL version 3 or any later version. Tuning definitions adapted
+  from bashtuner by Storm Dragon and Jeremiah Ticket are WTFPL.
+homepage: https://github.com/CatsAreCool710/Schwung-Tuner#readme
+distribution: download
+requires_stock: Schwung installed on the Move
+install_notes: >-
+  Needs Schwung. Install Tuner from Schwung's module store or Schwung Installer, or build it with Docker and
+  deploy it over SSH.
+brick_risk: false
+tags: [utility, accessibility, voice]
+versions:
+  - version: v1.0.0
+    date: 2026-03-17
+    url: https://github.com/CatsAreCool710/Schwung-Tuner/releases/tag/v1.0.0
+  - version: v0.1.0
+    date: 2026-03-14
+    url: https://github.com/CatsAreCool710/Schwung-Tuner/releases/tag/v0.1.0

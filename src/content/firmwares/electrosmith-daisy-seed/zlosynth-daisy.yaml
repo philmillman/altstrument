@@ -1,0 +1,41 @@
+device: electrosmith-daisy-seed
+also_devices: [electrosmith-daisy-patch]
+name: daisy (Rust board support crate)
+kind: tool
+summary: Rust no_std embedded-hal board support package for the Daisy Seed in three codec revisions and the Daisy Patch SM, with audio, ADC, flash, SDRAM, SD card and OLED examples and a bootloader guide.
+description: >-
+  The crate wraps the STM32H7 hardware abstraction layer for Electrosmith boards, selected by feature flag. It
+  supports the original Seed with an AK4556 codec, Seed 1.1 with a WM8731, Seed 1.2 with a PCM3060, and the Patch SM.
+  Audio runs at 48 kHz by default and 96 kHz by feature flag, with a 32-frame block that can be raised to 64.
+
+  The examples cover blinking, audio with and without RTIC, ADC, flash, SDRAM, SD card and an OLED. They can be
+  flashed over DFU or with probe-rs, or through the Daisy bootloader, which has its own example with a README. The
+  author warns that the API may change. It is published on crates.io, and a hosted reference is linked from the README.
+status: maintained
+authors:
+  - name: Petr Horacek
+    url: https://github.com/zlosynth
+source: https://github.com/zlosynth/daisy
+source_status: open
+license: MIT
+license_notes: The LICENSE file is the MIT license, copyright 2022 Petr Horacek.
+homepage: https://zlosynth.com/daisy
+distribution: source-only
+install_notes: >-
+  Add the daisy crate with the feature for your board, build with cargo for thumbv7em-none-eabihf and flash with make
+  flash-dfu after pressing BOOT and RESET, with probe-rs and an ST-Link, or through the Daisy bootloader. The ROM DFU
+  mode stays available if a flash goes wrong.
+brick_risk: false
+tags: [sdk, rust, platform, open-source]
+versions:
+  - version: v0.11.0
+    date: 2025-06-10
+    url: https://github.com/zlosynth/daisy/releases/tag/v0.11.0
+    notes: Raises the accuracy of the audio PLL clock, adds a longer audio block option and documents the Daisy bootloader.
+  - version: v0.10.0
+    date: 2024-06-10
+    url: https://github.com/zlosynth/daisy/releases/tag/v0.10.0
+    notes: Updates to version 0.16 of the STM32H7 HAL.
+  - version: v0.9.0
+    date: 2024-01-16
+    url: https://github.com/zlosynth/daisy/releases/tag/v0.9.0

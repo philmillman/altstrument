@@ -1,0 +1,38 @@
+device: korg-nts-1
+name: Lissa delay (boochow)
+summary: Delay unit that passes the input to the right channel and writes a sweep signal to the left, so an XY oscilloscope shows the input as a Lissajous figure.
+description: >-
+  The unit leaves the right output channel carrying the input unchanged and
+  uses the left for a sweep signal that can be a sine wave, a sawtooth or the
+  input delayed by a quarter of a cycle. Time (a MIDI note number) tunes the
+  sweep to the played pitch, depth sets its level and shift-depth picks the
+  waveform and offset. It is meant for watching waveforms on an oscilloscope,
+  not for music production, and is the delay half of the Picture oscillator
+  setup. The manifest targets the NTS-1 platform and the repository lists
+  other logue SDK synths as compatible.
+status: dormant
+authors:
+  - name: boochow
+    url: https://github.com/boochow
+source: https://github.com/boochow/lissa
+source_status: open
+license: MIT
+license_notes: LICENSE file is MIT, Copyright 2020 boochow.
+homepage: https://github.com/boochow/lissa
+distribution: download
+install_notes: >-
+  The repository commits a built lissa.ntkdigunit; load it with Korg's
+  Librarian or logue-cli, then pick it in the delay slot. Connect the NTS-1
+  output to an audio input and use an oscilloscope program in XY mode.
+tags: [delfx, oscilloscope, lissajous, open-source, nts-1]
+video:
+  url: https://www.youtube.com/watch?v=_FJFkW42QLE
+  title: Lissajeous figure of Korg VPM oscillator
+  credit: boochow
+  first_party: true
+  found_via: https://github.com/boochow/lissa#readme
+versions:
+  - version: master @ a2bd8ea
+    date: 2020-09-10
+    url: https://github.com/boochow/lissa/commit/a2bd8ea
+    notes: No tagged releases; this is the latest commit.

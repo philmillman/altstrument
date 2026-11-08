@@ -1,0 +1,39 @@
+device: ableton-move
+name: ChordDex
+summary: >-
+  Schwung tool module that names the chord you play on the Move pads, on incoming USB MIDI or in Move's own sequencer clips, with chord names on the screen and scale-coloured pads.
+description: >-
+  ChordDex recognizes triads, sixths, sevenths, extended chords, sus and add chords, power chords, slash chords
+  and shell voicings, using the bass note to settle ambiguous voicings. Pads play through a Move track and light
+  by root, in-scale and out-of-scale notes. An external mode names chords arriving on the Move's USB-A port, and
+  a sequencer monitor mode names chords Move itself plays, using a small companion DSP that taps the notes on
+  MIDI out cable 2.
+status: active
+authors:
+  - name: dony01001
+    url: https://github.com/dony01001
+source: https://github.com/dony01001/ChordDex
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file names its copyright holder as "ChordDex contributors".
+homepage: https://github.com/dony01001/ChordDex#readme
+distribution: download
+requires_stock: Schwung installed on the Move
+install_notes: >-
+  Needs Schwung. Install ChordDex with Schwung's GitHub installer script using the repository name, or clone the
+  repository and run install.sh, which copies it over SSH. Open it from the tools menu. The sequencer monitor
+  mode needs the track's MIDI out set to a channel.
+brick_risk: false
+tags: [chords, scales, utility, midi]
+versions:
+  - version: v1.6.0
+    date: 2026-07-03
+    url: https://github.com/dony01001/ChordDex/releases/tag/v1.6.0
+    notes: Adds the sequencer monitor mode.
+  - version: v1.5.3
+    date: 2026-05-28
+    url: https://github.com/dony01001/ChordDex/releases/tag/v1.5.3
+  - version: v1.5.2
+    date: 2026-05-27
+    url: https://github.com/dony01001/ChordDex/releases/tag/v1.5.2

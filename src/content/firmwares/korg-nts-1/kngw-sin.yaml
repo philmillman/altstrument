@@ -1,0 +1,32 @@
+device: korg-nts-1
+name: KNGWSIN
+summary: Sine oscillator unit for the NTS-1 digital kit with a continuous harmonic multiplier, a sub-oscillator mode and a self-feedback phase modulation mode.
+description: >-
+  KNGWSIN is a user oscillator unit built with the logue SDK. Control A
+  sweeps the oscillator's frequency multiplier from the fundamental up to the
+  sixteenth harmonic, passing through inharmonic ratios, and the panel LFO can
+  modulate it. Control B depends on a MODE menu setting. In mode 0 it blends
+  in a sine sub-oscillator one octave down. In mode 1 it sets the depth of
+  self-feedback phase modulation, which adds upper harmonics. The output goes
+  through a soft clipper. The repository holds the source and a built unit
+  file, and the release carries the same unit.
+status: active
+authors:
+  - name: ryuji kanagawa
+    url: https://github.com/IanP06
+source: https://github.com/IanP06/kngw_sin
+source_status: open
+license: BSD-3-Clause
+license_notes: Copyright line in the licence file names ryuji kanagawa.
+homepage: https://github.com/IanP06/kngw_sin
+distribution: download
+install_notes: >-
+  Load the .ntkdigunit file into a User Oscillator slot with the NTS-1 digital
+  Librarian. A unit loads like any user oscillator and can be removed again from
+  the Librarian.
+brick_risk: false
+tags: [oscillator, open-source, nts-1]
+versions:
+  - version: v1.0.0
+    date: 2026-09-04
+    url: https://github.com/IanP06/kngw_sin/releases/tag/v1.0.0

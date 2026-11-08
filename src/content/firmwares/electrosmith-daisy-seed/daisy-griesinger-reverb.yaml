@@ -1,0 +1,27 @@
+device: electrosmith-daisy-seed
+name: Daisy Griesinger Reverb
+summary: Small stereo reverb for a bare Daisy Seed that follows a Griesinger-style comb and all-pass layout with damping, width and mix controls; the README is in German.
+description: >-
+  The project is a single reverb header and a short main file that sets up the Seed's audio callback. The reverb
+  combines comb filters and all-pass filters with damping, stereo width and a dry/wet mix. The README lists decay
+  and damping values to try for a longer or darker tail, and says to change individual comb delays by a few samples
+  if the sound turns metallic. Nothing in it describes knobs or other hardware, so parameters are set in the code.
+status: active
+authors:
+  - name: AMslHub
+    url: https://github.com/AMslHub
+source: https://github.com/AMslHub/Daisy_Griesinger_Reverb
+source_status: open
+license: unspecified
+license_notes: No license file or statement in the repository.
+distribution: source-only
+install_notes: >-
+  Check out libDaisy and DaisySP next to the project, run make, then make program-dfu with the Seed in DFU mode.
+  The ROM DFU mode stays available if a flash goes wrong.
+brick_risk: false
+tags: [reverb, fx, open-source]
+versions:
+  - version: main @ 0c2525c
+    date: 2026-02-18
+    url: https://github.com/AMslHub/Daisy_Griesinger_Reverb/commit/0c2525c
+    notes: No tagged releases; this is the latest commit.

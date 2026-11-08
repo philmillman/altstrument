@@ -1,0 +1,29 @@
+device: pedalpcb-terrarium
+name: NeuralSeed
+summary: Neural-network amp and overdrive emulation for a Daisy Seed in a Terrarium pedal, with built-in GRU models, level and mix knobs and three parameter knobs. Prebuilt neuralseed.bin on the release page.
+description: >-
+  Runs a small recurrent network through the RTNeural engine. The release notes list input and output level, wet/dry mix, up to three parameterised knobs, EQ boost switches, bypass on the left stomp and model cycling on the right stomp. The README says it suits amps and distortion pedals and not time-based effects, and points to a Colab script for training models.
+status: dormant
+authors:
+  - name: Keith Bloemer (GuitarML)
+    url: https://github.com/GuitarML
+source: https://github.com/GuitarML/NeuralSeed
+source_status: open
+license: MIT
+homepage: https://guitarml.com/
+distribution: download
+install_notes: >-
+  Flash neuralseed.bin from the v0.1 release with the Electrosmith web programmer or DFU. The Daisy Seed's ROM DFU mode stays available if a flash goes wrong.
+brick_risk: false
+tags: [amp-sim, fx]
+video:
+  url: https://www.youtube.com/watch?v=c3zJRMWr_Ls
+  title: Neural Seed - A Daisy Seed Powered Neural Guitar Pedal
+  credit: GuitarML
+  first_party: true
+  found_via: https://github.com/GuitarML/NeuralSeed#readme
+versions:
+  - version: v0.1
+    date: 2023-04-05
+    url: https://github.com/GuitarML/NeuralSeed/releases/tag/v0.1
+    notes: Initial release with built-in GRU amp and pedal models.

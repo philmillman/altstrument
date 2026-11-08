@@ -1,0 +1,30 @@
+device: ableton-move
+name: Structor
+summary: >-
+  Schwung audio effect for musique concrete: it cuts input into grains by envelope and spectrum and rebuilds them in eight modes, with per-grain randomising, a timed random sequencer, reverb, a DJ filter and 20 presets.
+description: >-
+  Structor follows the input with an envelope follower and FFT analysis, then reconstructs grains in modes such as random, pitch up, pitch down, density up, time warp and tape cut. Each mode has a special control. Grain envelope, density, size, playback speed and feedback can be randomised per grain, and a sequencer changes them at timed intervals. A Schroeder reverb and a master DJ filter follow. The README describes the DSP as original, with PFFFT for the FFT and a filter based on Airwindows Isolator3.
+status: active
+authors:
+  - name: Vincent Fillion (filliformes)
+    url: https://github.com/filliformes
+source: https://github.com/filliformes/structor-move
+source_status: open
+license: MIT
+license_notes: >-
+  The bundled PFFFT FFT library is described as BSD-like, and the Isolator3-based filter adapts Airwindows code, which the README lists as MIT.
+distribution: download
+install_notes: >-
+  Needs Schwung. Install Structor from Schwung's module store or Schwung Manager, or give Schwung Manager the repository URL or the tarball from the latest release.
+brick_risk: false
+tags: [fx, granular, performance]
+versions:
+  - version: v0.3.2
+    date: 2026-09-15
+    url: https://github.com/filliformes/structor-move/releases/tag/v0.3.2
+  - version: v0.3.1
+    date: 2026-04-06
+    url: https://github.com/filliformes/structor-move/releases/tag/v0.3.1
+  - version: v0.3.0
+    date: 2026-04-06
+    url: https://github.com/filliformes/structor-move/releases/tag/v0.3.0

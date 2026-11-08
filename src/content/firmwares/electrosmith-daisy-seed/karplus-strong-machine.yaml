@@ -1,0 +1,39 @@
+device: electrosmith-daisy-seed
+name: KarplusStrongMachine
+summary: Digital kalimba for a Daisy Seed with seven buttons and six pots, giving seven-voice Karplus-Strong plucks, five scales, octave shift and stereo reverb, flashed from a browser page.
+description: >-
+  The hardware is a Seed wired to seven note buttons, six pots for tone, decay, octave, scale and the two reverb
+  parameters, and an optional I2C OLED; the wiring guide lists the pins. The scales are pentatonic, Dorian,
+  chromatic, kalimba and just intonation. The string model is a class ported from Mutable Instruments Rings. The
+  project is used in the author's workshops and ships a WebUSB flasher page that writes the release binary to the
+  Seed. Older sketches, diagnostics and troubleshooting notes sit in archive and diagnostics folders.
+status: active
+authors:
+  - name: glitches
+    url: https://github.com/willbearfruits
+source: https://github.com/willbearfruits/KarplusStrongMachine
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is MIT, copyright 2024 glitches, and says the project uses libDaisy and DaisySP (MIT) and a
+  Karplus-Strong implementation ported from Mutable Instruments Rings.
+homepage: https://willbearfruits.github.io/KarplusStrongMachine/web-flasher/
+distribution: browser-installer
+install_notes: >-
+  Hold BOOT, press RESET, then open the web flasher and connect to the Seed, or build with make and run make program-dfu.
+  A bad image is replaced by putting the Seed back into DFU mode.
+brick_risk: false
+tags: [synth-engine, physical-modeling, reverb, kalimba, web-usb, open-source]
+versions:
+  - version: v1.0.9
+    date: 2025-11-28
+    url: https://github.com/willbearfruits/KarplusStrongMachine/releases/tag/v1.0.9
+    notes: Updates the web flasher's transfer handling and corrects the wiring diagrams.
+  - version: v1.0.1
+    date: 2025-11-28
+    url: https://github.com/willbearfruits/KarplusStrongMachine/releases/tag/v1.0.1
+    notes: Finalises the seven-button controls with five scales, octave shift and reverb.
+  - version: v1.0.0
+    date: 2025-11-27
+    url: https://github.com/willbearfruits/KarplusStrongMachine/releases/tag/v1.0.0
+    notes: First release, a seven-button multi-scale synth.

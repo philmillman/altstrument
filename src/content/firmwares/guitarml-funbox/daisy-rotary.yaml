@@ -1,0 +1,27 @@
+device: guitarml-funbox
+name: DaisyRotary
+summary: Leslie rotary speaker emulation with a preamp and overdrive for a Daisy Seed, with fast and slow rotor switches and acceleration, deceleration, gain and drive knobs, tidied to fit the FunBox PCB.
+description: >-
+  The program models a rotating speaker with separate fast and slow speeds, a rotor mode read from two switch pins,
+  and acceleration and deceleration controls for the speed change. A preamp stage adds gain and drive. Six pots are
+  read from the Seed's analog pins. The last commit is titled as tidying the pin use to work with the FunBox PCB, and
+  earlier ones work on the overdrive. The README is still the unedited example template.
+status: active
+authors:
+  - name: pianomanfrazier
+    url: https://github.com/pianomanfrazier
+source: https://github.com/pianomanfrazier/DaisyRotary
+source_status: open
+license: unspecified
+license_notes: No license file or statement in the repository.
+distribution: source-only
+install_notes: >-
+  Build with make using the Daisy toolchain and flash over USB DFU. The Seed's ROM DFU mode stays available if a flash
+  goes wrong.
+brick_risk: false
+tags: [fx, emulation, pedal]
+versions:
+  - version: master @ 8e46a72
+    date: 2026-01-03
+    url: https://github.com/pianomanfrazier/DaisyRotary/commit/8e46a72
+    notes: No tagged releases; this is the latest commit.

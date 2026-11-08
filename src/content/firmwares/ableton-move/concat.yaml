@@ -1,0 +1,31 @@
+device: ableton-move
+name: Concat
+summary: >-
+  Schwung sound generator for corpus-based concatenative synthesis: it slices a sample library, measures each slice and plays grains from the slices nearest a position on a timbre map. Includes a browser-based Corpus Builder.
+description: >-
+  Concat cuts samples into slices and measures each one, including brightness, noisiness, loudness and pitch, 36 values in all. The slices are laid out on a map that is played from the pads, in Map, Notes or Mosaic mode, where live input is rebuilt from the corpus. Corpus files with the extension .concat can list several folders and samples with start and end points and slicing settings, and reload while playing. A web page served by schwung-manager builds, trims and auditions a corpus. The README lists rough edges, including a global filter, a growing analysis cache and a power-cycle needed after installing.
+status: active
+authors:
+  - name: Vincent Fillion (filliformes)
+    url: https://github.com/filliformes
+source: https://github.com/filliformes/concat-move
+source_status: open
+license: MIT
+license_notes: >-
+  src/dsp/vendor holds the dr_wav, dr_flac and dr_mp3 single-header decoders, which carry their own licences.
+homepage: https://filliformes.github.io/concat-move/
+distribution: download
+requires_stock: Schwung 1.3.0 or later
+install_notes: >-
+  Needs Schwung. Install Concat from Schwung's module store or Schwung Manager, or upload the tarball from the latest release in schwung-manager, then power-cycle the Move so Schwung reads the module manifest.
+brick_risk: false
+tags: [synth-engine, sampler, granular, performance]
+versions:
+  - version: v0.2.0
+    date: 2026-10-20
+    url: https://github.com/filliformes/concat-move/releases/tag/v0.2.0
+    notes: Adds .concat corpus files with live reload, the Corpus Builder web page and a View page with recipes.
+  - version: v0.1.0
+    date: 2026-09-03
+    url: https://github.com/filliformes/concat-move/releases/tag/v0.1.0
+    notes: First release, with Map, Notes and Mosaic play modes.

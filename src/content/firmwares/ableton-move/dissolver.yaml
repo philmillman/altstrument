@@ -1,0 +1,30 @@
+device: ableton-move
+name: Dissolver
+summary: >-
+  Schwung audio effect that turns any input into an evolving pad: it keeps the FFT magnitudes, discards phase and rebuilds the sound with random phases, with spectral gate, spread, freeze and a decay tail.
+description: >-
+  Dissolver analyses the input with a 4096-point FFT, keeps only the magnitudes and resynthesises them with phases that range from a phase vocoder to fully random, in the manner of PaulStretch. Controls cover a spectral gate, temporal smoothing, frequency smearing, freeze, a decaying tail of up to about eight seconds, tilt EQ, stereo width and a spectral compressor. Transients and timing in the source are not preserved by design.
+status: active
+authors:
+  - name: Vincent Fillion (filliformes)
+    url: https://github.com/filliformes
+source: https://github.com/filliformes/dissolver-move
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The LICENSE file adds a notice allowing version 3 or any later version. It credits the spectral algorithms to PaulXStretch by Nasca, Xenakios and Chappell, and the FFT to PFFFT by Julien Pommier.
+distribution: download
+install_notes: >-
+  Needs Schwung. Install Dissolver from Schwung's module store or Schwung Manager, or give Schwung Manager the repository URL or the tarball from the latest release.
+brick_risk: false
+tags: [fx, time-stretch, synth-engine]
+versions:
+  - version: v0.2.3
+    date: 2026-05-13
+    url: https://github.com/filliformes/dissolver-move/releases/tag/v0.2.3
+  - version: v0.2.2
+    date: 2026-03-31
+    url: https://github.com/filliformes/dissolver-move/releases/tag/v0.2.2
+  - version: v0.2.1
+    date: 2026-03-27
+    url: https://github.com/filliformes/dissolver-move/releases/tag/v0.2.1

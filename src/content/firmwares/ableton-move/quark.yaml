@@ -1,0 +1,30 @@
+device: ableton-move
+name: Quark
+summary: >-
+  Schwung sound generator with two layers: Atmos, a polyphonic string-machine and wavetable pad engine with chord stacks and a sampled layer, and Melody, a monophonic synth with a chord-following arpeggiator, plus multi-effects and a shimmer reverb.
+description: >-
+  Atmos has divide-down string registers, 89 wavetables including chord stacks, six FM voices, eleven filter types, drift, an ensemble and two LFOs with a per-voice mode. Wavetables of 2048 samples per frame can be added from the Move's sample folder. Since v0.5.0 a Layer plays one or two of 32 sampled sets, such as choirs, flutes, organ, sitar and koto, under the synth. Melody offers saw, pulse, sync or wavetable shapes through a four-pole ladder filter with a synced delay. Its arpeggiator can follow the notes Atmos is holding, with 40 patterns and 40 rhythms. There are 86 factory presets. The repository also publishes a browser build. Its history is large, about 200 MB, because it commits the sample data and release builds.
+status: active
+authors:
+  - name: James Fish
+    url: https://github.com/james-fish
+source: https://github.com/james-fish/schwung-quark
+source_status: open
+license: MIT
+license_notes: >-
+  The 74 Amino wavetables, MIT, were extracted from the released Amino module (klaine/amino), and some code and the contract layout are adapted from Amino and Crest. Their notice is in THIRD_PARTY_NOTICES.md. Amino's own tables 32 to 47 and 68 to 73 come from AKWF-FREE (CC0). The Atmos Layer sample sets are built from CC0 recordings from the Versilian Community Sample Library, VSCO 2 Community Edition and Freesound, listed with checksums in tools/data/rom/SOURCES.json. The arpeggiator's patterns follow Super Arp (MIT).
+homepage: https://github.com/james-fish/schwung-quark#readme
+distribution: download
+install_notes: >-
+  Needs Schwung. Install Quark from Schwung Manager or Schwung's module store, or upload quark-module.tar.gz from the latest release to Schwung Manager, or run scripts/deploy.sh to install over SSH.
+brick_risk: false
+tags: [synth-engine, synth, wavetable, sampler, fx, arpeggiator]
+versions:
+  - version: v0.5.0
+    date: 2026-11-05
+    url: https://github.com/james-fish/schwung-quark/releases/tag/v0.5.0
+    notes: Adds the sampled Atmos Layer with 32 sets and an 86-preset bank.
+  - version: v0.4.5
+    date: 2026-11-03
+    url: https://github.com/james-fish/schwung-quark/releases/tag/v0.4.5
+    notes: Adds per-voice LFOs and Melody as a second pad layer, with fixes from 0.4.2 to 0.4.5.

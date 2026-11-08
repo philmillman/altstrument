@@ -1,0 +1,33 @@
+device: electrosmith-daisy-seed
+name: Daisy QSPI Flasher
+kind: tool
+summary: Utility that loads files such as samples and images into the Daisy Seed's QSPI flash over USB serial, with a client program for the Seed, a Windows server and a C++ class that finds the files again.
+description: >-
+  The utility has two halves. A client program runs on the Seed and receives files over the USB serial port, and a
+  Windows program called FlasherServer lets you add files, pick the COM port and send them. Later commits add
+  multiple file selection, 4-byte alignment of file starts, and animated GIF support with an overlay of flash
+  information.
+
+  Your own firmware includes Flasher.h and declares a cQSPI object, then looks up a stored file's address by name.
+  The README text is in English and French.
+status: dormant
+authors:
+  - name: DADDesign-Projects
+    url: https://github.com/DADDesign-Projects
+source: https://github.com/DADDesign-Projects/Daisy_QSPI_Flasher
+source_status: open
+license: MIT
+license_notes: The LICENSE file is the MIT license, copyright 2024 DADDesign-Projects. The client and server code live in separate repositories that this one pulls in as submodules.
+distribution: source-only
+install_notes: >-
+  Clone with --recurse-submodules, point the client Makefile at your libDaisy and DaisySP, and load the client on the
+  Seed. Then run FlasherServer on the PC, add files, choose the Seed's COM port and press Flash. The tool writes
+  data files to QSPI flash and does not touch the ROM DFU mode, which stays available. Keep your own program out of
+  the address range you store files in.
+brick_risk: false
+tags: [qspi, sampler, utility, open-source]
+versions:
+  - version: main @ 2f44f93
+    date: 2025-08-09
+    url: https://github.com/DADDesign-Projects/Daisy_QSPI_Flasher/commit/2f44f93
+    notes: No tagged releases; this is the latest commit.

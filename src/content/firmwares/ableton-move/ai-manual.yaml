@@ -1,0 +1,35 @@
+device: ableton-move
+name: AI Manual
+summary: >-
+  Schwung tool module that answers spoken questions about the Move and Schwung from their manuals, using Gemini or OpenAI with your own API key, with a short headline and a scrollable explanation.
+description: >-
+  Hold a bottom-row pad, speak and release. The audio is sent to the chosen provider for transcription and an
+  answer grounded in Ableton's Move manual and the Schwung user manual, both shipped with the Schwung host. The
+  display shows a short headline with a scrollable detailed reply. The audio file is deleted when the reply
+  arrives. It needs a network connection and a Gemini or OpenAI key, which is entered on the web configuration
+  page and shared with AI Assistant.
+status: active
+authors:
+  - name: eightfour-dev
+    url: https://github.com/eightfour-dev
+source: https://github.com/eightfour-dev/schwung-ai-manual
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and the README gives no licence.
+homepage: https://github.com/eightfour-dev/schwung-ai-manual#readme
+distribution: download
+requires_stock: Schwung with the voice-tool host bindings, a network connection and a Gemini or OpenAI API key
+install_notes: >-
+  Needs Schwung. Install AI Manual from the Tools list of Schwung's module store, then choose a provider and
+  enter a key on the Move's web configuration page at move.local:7700/config.
+brick_risk: false
+tags: [voice, utility, speech]
+versions:
+  - version: v0.3.0
+    date: 2026-04-25
+    url: https://github.com/eightfour-dev/schwung-ai-manual/releases/tag/v0.3.0
+    notes: Moves settings to the host's per-module configuration system.
+  - version: v0.2.0
+    date: 2026-04-18
+    url: https://github.com/eightfour-dev/schwung-ai-manual/releases/tag/v0.2.0

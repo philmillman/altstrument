@@ -1,0 +1,27 @@
+device: electrosmith-daisy-patch
+name: WavPlayer
+summary: Multitrack WAV sample player for the Daisy Pod that streams files from an SD card, takes MIDI over USB and preloads a set of samples into RAM.
+description: >-
+  A sample player for the Daisy Pod that mounts an SD card, preloads the first few samples into memory and streams
+  files from the card, with a small state machine and MIDI input over USB. A python folder holds time-stretch
+  experiments (a WSOLA script and test audio). The README is a single line and the source describes it as a fairly
+  simple player.
+status: dormant
+authors:
+  - name: sedurCode
+    url: https://github.com/sedurCode
+source: https://github.com/sedurCode/WavPlayer
+source_status: open
+license: unspecified
+license_notes: No licence file and no licence statement in the repository.
+distribution: source-only
+install_notes: >-
+  Build from source with make; libDaisy and DaisySP are git submodules. WAV files are read from an SD card. No
+  prebuilt binary is published.
+brick_risk: false
+tags: [sampler, midi, sd-card, open-source]
+versions:
+  - version: Main @ 0e18a2d
+    date: 2024-03-02
+    url: https://github.com/sedurCode/WavPlayer/commit/0e18a2d
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,45 @@
+device: ableton-move
+name: Helm
+summary: >-
+  Schwung sound generator that ports Matt Tytel's Helm synthesizer to the Move, with 32 voices, dual oscillators, a filter, LFOs, a step sequencer, an arpeggiator and effects.
+description: >-
+  The module builds the Helm DSP from a submodule and maps its parameters onto Schwung's knob pages and preset
+  browser. Helm has two oscillators with cross modulation and up to 15 unison voices each, a sub oscillator,
+  oscillator feedback, a 12 or 24 dB multimode filter, two monophonic LFOs and one polyphonic LFO, a step
+  sequencer, an arpeggiator and formant, stutter, delay, distortion and reverb effects. Almost every parameter
+  can be modulated, including by the pads' polyphonic aftertouch. The visual panel of the original synth is not
+  reproduced; the repository includes one preset file, Move Organ.
+status: active
+authors:
+  - name: andree182
+    url: https://github.com/andree182
+  - name: Matt Tytel
+    url: https://github.com/mtytel
+source: https://github.com/andree182/schwung-helm
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL version 3 text and the README says the port is GPL-3.0 like Helm, with no or-later
+  grant. The DSP comes from Helm by Matt Tytel, pulled in as a submodule of andree182's fork.
+homepage: https://github.com/andree182/schwung-helm#readme
+distribution: download
+requires_stock: Schwung installed on the Move, with SSH access enabled
+install_notes: >-
+  Needs Schwung. Install Helm from the Sound Generators list of Schwung's module store, or clone the repository
+  with its submodules and use the build and install scripts.
+brick_risk: false
+tags: [synth-engine, synth, emulator]
+versions:
+  - version: v1.5
+    date: 2026-06-11
+    url: https://github.com/andree182/schwung-helm/releases/tag/v1.5
+    notes: Adds an automatic BPM setting, reduces modulation slots to 8 and changes the default preset to alter only oscillator volume.
+  - version: v1.4
+    date: 2026-06-08
+    url: https://github.com/andree182/schwung-helm/releases/tag/v1.4
+  - version: v1.3
+    date: 2026-05-31
+    url: https://github.com/andree182/schwung-helm/releases/tag/v1.3
+  - version: v1.0
+    date: 2026-05-26
+    url: https://github.com/andree182/schwung-helm/releases/tag/v1.0

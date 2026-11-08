@@ -1,0 +1,34 @@
+device: electrosmith-daisy-patch
+name: DuoPulse
+summary: Two-voice algorithmic drum sequencer for Patch.Init() with energy, shape and axis controls, a config mode for clock division, swing, drift and accent, and CV on the four performance parameters.
+description: >-
+  Version 5 of the firmware has no shift layers: eight knobs are split across a
+  performance mode and a config mode chosen by the switch. Shape blends euclidean
+  patterns, syncopated patterns and weighted random ones, and the second voice
+  fills gaps left by the first. Accent weights hits by metric position, and the
+  aux output sends a fill gate. Settings reset at power-up and nothing is
+  stored. The repository holds a specification, unit tests and an evaluation
+  dashboard.
+status: active
+authors:
+  - name: Nick Donohue
+    url: https://github.com/algonormative
+source: https://github.com/algonormative/duopulse
+source_status: open
+license: MIT
+homepage: https://github.com/algonormative/duopulse
+distribution: source-only
+install_notes: >-
+  Run setup.sh, build with the ARM GCC toolchain and flash with dfu-util. The ROM
+  DFU bootloader stays available if a flash fails.
+brick_risk: false
+tags: [drum-machine, sequencer, generative, euclidean, open-source]
+versions:
+  - version: v0.4.0
+    date: 2026-01-04
+    url: https://github.com/algonormative/duopulse/tree/v0.4.0
+    notes: Git tag; no GitHub release page.
+  - version: v0.3.0
+    date: 2025-12-20
+    url: https://github.com/algonormative/duopulse/tree/v0.3.0
+    notes: Git tag; no GitHub release page.

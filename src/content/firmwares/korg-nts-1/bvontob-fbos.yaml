@@ -1,0 +1,26 @@
+device: korg-nts-1
+name: fbos
+summary: Custom oscillator for the NTS-1 built on a resonant feedback delay network, with resonance, overtone and noise parameters; a prebuilt unit is on the releases page.
+description: >-
+  fbos is a user oscillator whose tone comes from a feedback delay network.
+  The manifest lists five parameters: resonance, overtone mix, overtone Q,
+  overtone type and noise. The DSP code is pulled in as a git submodule from
+  the author's logue-dsp-c library.
+status: dormant
+authors:
+  - name: Beat Vontobel
+    url: https://github.com/bvontob
+source: https://github.com/bvontob/fbos
+source_status: open
+license: BSD-3-Clause
+license_notes: LICENSE file is BSD 3-Clause, Copyright 2023 Beat Vontobel.
+homepage: https://github.com/bvontob/fbos
+distribution: download
+install_notes: >-
+  Download fbos.ntkdigunit from the latest release and load it into a user
+  oscillator slot with Korg's Librarian or logue-cli.
+tags: [oscillator, delay-network, resonator, open-source, nts-1]
+versions:
+  - version: v1.0.0
+    date: 2023-05-01
+    url: https://github.com/bvontob/fbos/releases/tag/v1.0.0

@@ -1,0 +1,28 @@
+device: m5stack-cardputer
+name: CardputerMidiMonitor
+summary: >-
+  Basic MIDI monitor for the Cardputer that shows the last six incoming messages from a SAM2695 MIDI module or a DIN input wired to the Cardputer.
+description: >-
+  The sketch reads MIDI on a serial port and lists Note On, Note Off, Control Change, Program Change, polyphonic and channel
+  aftertouch, and pitch bend, keeping the last six messages on screen with pitch bend values coloured by sign. The README
+  says it works with the SAM2695 MIDI module and should work with any standard DIN input built with an optocoupler.
+  It is a single Arduino sketch with no other features.
+status: dormant
+authors:
+  - name: Zaratton
+    url: https://github.com/Zaratton
+source: https://github.com/Zaratton/CardputerMidiMonitor
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL version 3 text and the README makes no "or later" statement.
+distribution: source-only
+install_notes: >-
+  Open MidiMonitor.ino in the Arduino IDE with the M5Cardputer and MIDI libraries and upload it. No binary is published.
+brick_risk: false
+tags: [midi, monitor, utility, esp32-s3, open-source]
+versions:
+  - version: main @ 0106d80
+    date: 2025-04-09
+    url: https://github.com/Zaratton/CardputerMidiMonitor/commit/0106d80f2bccac15ac0bb2b343ff2cb2cf9d3706
+    notes: No tagged releases; this is the latest commit.

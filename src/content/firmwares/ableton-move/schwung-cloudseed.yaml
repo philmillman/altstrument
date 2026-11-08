@@ -1,0 +1,36 @@
+device: ableton-move
+name: CloudSeed
+summary: >-
+  Schwung audio effect that ports the CloudSeedCore algorithmic reverb, with pre-delay, input diffusion, a modulated delay network, damping and filters on the input.
+description: >-
+  The reverb passes the input through a pre-delay and four cascaded allpass diffusers into four modulated delay lines joined by a Hadamard feedback matrix, with a one-pole damping filter on each line. Eight knobs set mix, decay up to 60 seconds, size, pre-delay, diffusion, low cut, high cut and modulation amount, and rate and stereo width are reached through the chain parameters. It is an audio effect for signal-chain slots.
+status: active
+authors:
+  - name: Charles Vestal
+    url: https://github.com/charlesvestal
+  - name: Ghost Note Audio
+    url: https://github.com/GhostNoteAudio
+source: https://github.com/charlesvestal/schwung-cloudseed
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file lists copyright for the CloudSeedCore algorithm (Ghost Note Audio) and for the Schwung port. The repository also carries a v1.0.0 tag with no release page, on a commit dated 2026-01-13.
+homepage: https://github.com/charlesvestal/schwung-cloudseed#readme
+distribution: download
+requires_stock: Schwung installed on the Move
+install_notes: >-
+  Needs Schwung. Install CloudSeed from the Audio FX section of Schwung's module store or Schwung Manager.
+brick_risk: false
+tags: [fx, reverb, emulator]
+versions:
+  - version: v0.3.9
+    date: 2026-08-31
+    url: https://github.com/charlesvestal/schwung-cloudseed/releases/tag/v0.3.9
+    notes: Help text correction only.
+  - version: v0.3.8
+    date: 2026-08-29
+    url: https://github.com/charlesvestal/schwung-cloudseed/releases/tag/v0.3.8
+    notes: Adds short parameter names for Schwung's knob grid and renames the module paths for Schwung.
+  - version: v0.3.7
+    date: 2026-03-21
+    url: https://github.com/charlesvestal/schwung-cloudseed/releases/tag/v0.3.7

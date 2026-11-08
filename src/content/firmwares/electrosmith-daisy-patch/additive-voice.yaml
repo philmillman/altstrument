@@ -1,0 +1,28 @@
+device: electrosmith-daisy-patch
+name: AdditiveVoice
+summary: Additive synthesis voice for the Daisy Patch with 1V/oct fundamental and stretch controls, comb-style partial amplitude schemes, FM and sync inputs and separate outputs for fundamental and partials.
+description: >-
+  Builds a tone from many sine or polyblep partials. The first control sets a 1V/oct fundamental and the second sets
+  a stretch factor that moves the partials away from or onto the harmonic series. The partial amplitudes follow
+  filter-like or comb-like schemes, and the display plots the first 30 partials. Audio input 1 modulates all partial
+  frequencies, gate input 1 resets their phases, and the four outputs carry all partials, the fundamental, the last
+  partial and everything except the fundamental. Version 0.76 is the final release.
+status: dormant
+authors:
+  - name: Francesco Stablum
+    url: https://github.com/stablum
+source: https://github.com/stablum/AdditiveVoice
+source_status: open
+license: GPL-3.0-only
+license_notes: LICENSE.txt is the unmodified GPL version 3 text with no per-project "or later" grant.
+distribution: download
+install_notes: >-
+  Compiled .bin files for several versions are in the build folder and the 0.76 release carries one; flash it to
+  the Patch over USB DFU. To build, run make with libDaisy and DaisySP available.
+brick_risk: false
+tags: [oscillator, synth-engine, cv, open-source]
+versions:
+  - version: "0.76"
+    date: 2020-12-15
+    url: https://github.com/stablum/AdditiveVoice/releases/tag/0.76
+    notes: Audio input 1 becomes a frequency modulation input, gate input 1 resets partial phases, and the fundamental moves down an octave.

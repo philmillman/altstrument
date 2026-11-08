@@ -1,0 +1,32 @@
+device: electrosmith-daisy-patch
+name: OscPocket VA Synth (Daisy Pod port)
+summary: Port of Staffan Melin's OscPocketD polyphonic MIDI virtual analog synth to the Daisy Pod, with oscillator, filter and effect pages on the knobs and 16 save slots.
+description: >-
+  A port of the OscPocketD VASynth, a polyphonic MIDI virtual analog synth written for the OscPocketD/Base2 Daisy
+  Seed board, to the Daisy Pod. The two buttons step through categories and parameter sets, shown by LED colour,
+  and the knobs adjust them. The encoder picks one of 16 save slots, with a turn left to save and right to load.
+  The port needs an external MIDI source. The author lists open issues including detune scaling, voice stealing and
+  delay glitches, and says voice count is limited to 1, 5 or 8.
+status: dormant
+authors:
+  - name: moonfriendsynth
+    url: https://github.com/moonfriendsynth
+  - name: Staffan Melin
+license: GPL-3.0-only
+license_notes: >-
+  The repository has no licence file. The source headers, by Staffan Melin for the original OscPocketD VASynth,
+  state GNU General Public License v3.0, and the port's author edited those files.
+source: https://github.com/moonfriendsynth/OscPocket-VA-Daisy-Pod
+source_status: open
+homepage: http://www.oscillator.se/opensource
+distribution: download
+install_notes: >-
+  Download oscvasynthpod.bin from the v1.0 release and flash it with Electrosmith's web programmer. A MIDI keyboard
+  or other MIDI source is required.
+brick_risk: false
+tags: [synth-engine, virtual-analog, midi, polyphonic, open-source]
+versions:
+  - version: v1.0
+    date: 2022-04-22
+    url: https://github.com/moonfriendsynth/OscPocket-VA-Daisy-Pod/releases/tag/v1.0
+    notes: First port, with rudimentary save and load.

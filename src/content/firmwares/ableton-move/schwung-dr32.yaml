@@ -1,0 +1,42 @@
+device: ableton-move
+name: DrumRack32
+summary: >-
+  Schwung sound generator that reimplements Move's Drum Rack with 32 pads, loads Move's own .ablpreset kits, and lets any pad play a sample or one of several synthesised drum engines.
+description: >-
+  DrumRack32 reads the .ablpreset drum kits that Move makes and plays them through a reconstruction of the Drum
+  Sampler voice, on notes 36 to 67. It offers a kit browser limited to real drum racks, per-pad region, tuning,
+  choke groups, two envelope modes, filters and sends. Each pad can instead use a synth engine: Simian, Urchin,
+  9W9, 6W6, 8W8, CW-78, ChowKick or its own FM drums, and other installed modules can add engines. Synth pads
+  are saved in the Schwung set, not in the kit file, and per-pad playback effects are read and written back but not played.
+status: active
+authors:
+  - name: legsmechanical
+    url: https://github.com/legsmechanical
+source: https://github.com/legsmechanical/schwung-dr32
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The README gives GPL-3.0-or-later (it was MIT before the synth engines were added). NOTICES.md lists each bundled component
+  and its licence, including OneTrick SIMIAN 2 and URCHIN by Punk Labs (GPL-3.0-or-later), the 9W9, 6W6, 8W8 and CW-78
+  ports by athousanddetails (GPL-3.0) and ChowKick by Chowdhury DSP. The 9W9 hi-hat, ride and crash samples come from ER-99.
+homepage: https://legsmechanical.github.io/schwung-dr32/manual.html
+distribution: download
+requires_stock: Schwung 1.5.0 or later installed on the Move
+install_notes: >-
+  Needs Schwung. Install DrumRack32 from Schwung Manager, where it is listed in the catalog, or use the tarball from the
+  releases page. The README lists known limits, among them that browsing kits has no undo.
+brick_risk: false
+tags: [synth-engine, drums, sampler]
+versions:
+  - version: v0.5.2
+    date: 2026-10-08
+    url: https://github.com/legsmechanical/schwung-dr32/releases/tag/v0.5.2
+    notes: Fixes the engine picker throwing an error on stock Schwung.
+  - version: v0.5.1
+    date: 2026-10-04
+    url: https://github.com/legsmechanical/schwung-dr32/releases/tag/v0.5.1
+    notes: Removes the limit on how many different engines a kit can hold.
+  - version: v0.5.0
+    date: 2026-10-04
+    url: https://github.com/legsmechanical/schwung-dr32/releases/tag/v0.5.0
+    notes: Lets other installed modules add engines to the engine picker.

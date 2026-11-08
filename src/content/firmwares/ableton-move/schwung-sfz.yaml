@@ -1,0 +1,52 @@
+device: ableton-move
+name: Multisampler
+summary: >-
+  Schwung sound generator that plays SFZ and DecentSampler multisample libraries, streaming large libraries from
+  disk.
+description: >-
+  Multisampler loads SFZ v2 and ARIA opcodes, including regions, key and velocity layers, round robin, key
+  switches, loops with crossfade, release samples, filters, envelopes and LFOs, and converts DecentSampler
+  .dspreset files to SFZ on load. Libraries larger than memory, such as a multi-gigabyte piano, play from the SD
+  card, and an optional pre-decoded cache can be built off the device. It is built on a fork of the xsynth
+  engine with Move-specific changes, and the repository holds the fork as a submodule.
+status: active
+authors:
+  - name: Charles Vestal
+    url: https://github.com/charlesvestal
+  - name: Arduano (xsynth)
+    url: https://github.com/arduano
+source: https://github.com/charlesvestal/schwung-sfz
+source_status: open
+license: LGPL-3.0-only
+license_notes: >-
+  The LICENSE file is the LGPL version 3 text and NOTICE says LGPL v3.0, inherited from xsynth-core, which is
+  statically linked from the author's fork. NOTICE lists the Rust crates (MIT, Apache-2.0, MPL-2.0, Zlib, BSD)
+  and says sample libraries keep their own licences. A few small test WAV files sit under tools/parity.
+distribution: download
+install_notes: >-
+  Needs Schwung. Install Multisampler from Schwung's module store or Schwung Manager, then add SFZ or
+  DecentSampler libraries to the module's sample folder.
+brick_risk: false
+tags: [synth-engine, sampler, sfz]
+versions:
+  - version: v0.6.6
+    date: 2026-10-03
+    url: https://github.com/charlesvestal/schwung-sfz/releases/tag/v0.6.6
+  - version: v0.6.5
+    date: 2026-09-12
+    url: https://github.com/charlesvestal/schwung-sfz/releases/tag/v0.6.5
+  - version: v0.6.4
+    date: 2026-08-31
+    url: https://github.com/charlesvestal/schwung-sfz/releases/tag/v0.6.4
+  - version: v0.6.3
+    date: 2026-08-31
+    url: https://github.com/charlesvestal/schwung-sfz/releases/tag/v0.6.3
+  - version: v0.6.2
+    date: 2026-08-29
+    url: https://github.com/charlesvestal/schwung-sfz/releases/tag/v0.6.2
+  - version: v0.6.1
+    date: 2026-08-23
+    url: https://github.com/charlesvestal/schwung-sfz/releases/tag/v0.6.1
+  - version: v0.6.0
+    date: 2026-05-19
+    url: https://github.com/charlesvestal/schwung-sfz/releases/tag/v0.6.0

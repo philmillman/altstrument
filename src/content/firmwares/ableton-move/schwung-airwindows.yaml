@@ -1,0 +1,36 @@
+device: ableton-move
+name: Airwindows
+summary: >-
+  Schwung audio effect that hosts 528 Airwindows effects, grouped into 22 categories, for Move signal-chain slots and the master slot.
+description: >-
+  The module wraps Chris Johnson's Airwindows collection as a CLAP plug-in built through the airwin2rack project, and ships it inside the module so the effects are present on first load. A browser lists the effects by category (consoles, tape, reverbs, amp simulations, saturation and others) and the encoders adjust the chosen effect's parameters. Extra CLAP files can be uploaded as an option. The effect count and some upstream DSP changed between releases.
+status: active
+authors:
+  - name: Charles Vestal
+    url: https://github.com/charlesvestal
+  - name: Chris Johnson
+    url: https://github.com/airwindows
+source: https://github.com/charlesvestal/schwung-airwindows
+source_status: open
+license: MIT
+license_notes: >-
+  The repository LICENSE is MIT, credited to Move Anything contributors. LICENSES/AIRWINDOWS.txt carries the MIT licence of Chris Johnson's Airwindows plug-ins. The repository also commits a built plugins/Airwindows.clap.
+homepage: https://github.com/charlesvestal/schwung-airwindows#readme
+distribution: download
+requires_stock: Schwung installed on the Move, with SSH access enabled
+install_notes: >-
+  Needs Schwung. Install Airwindows from Schwung's module store or Schwung Manager, or run the repository's install script over SSH.
+brick_risk: false
+tags: [fx, synth-engine, emulator]
+versions:
+  - version: v0.4.6
+    date: 2026-10-31
+    url: https://github.com/charlesvestal/schwung-airwindows/releases/tag/v0.4.6
+    notes: Updates to 528 effects from 519 and files the new effects in the category browser.
+  - version: v0.4.5
+    date: 2026-10-29
+    url: https://github.com/charlesvestal/schwung-airwindows/releases/tag/v0.4.5
+  - version: v0.4.4
+    date: 2026-08-31
+    url: https://github.com/charlesvestal/schwung-airwindows/releases/tag/v0.4.4
+    notes: Help text corrections; the module is not an empty CLAP host.

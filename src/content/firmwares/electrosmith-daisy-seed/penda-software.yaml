@@ -1,0 +1,33 @@
+device: electrosmith-daisy-seed
+name: PENDA Software
+summary: Board support package and ready-made delay, reverb and modulation effect builds for the PENDA guitar-pedal platform, a Daisy Seed on a custom carrier board, using the FORGE framework.
+description: >-
+  Software for the PENDA digital pedal, which puts a Daisy Seed on a carrier board with a display, potentiometers,
+  rotary encoders and audio conditioning stages. The code initialises the STM32 peripherals for that board and
+  creates the FORGE framework objects, so the effect modules can be reused on other hardware. Build configurations
+  cover reverb, delay and modulation effects such as chorus, flanger, tremolo, vibrato and phaser. Programs run from
+  internal RAM: a resident bootloader copies the application from the Seed's QSPI flash at power-up. Version
+  V_3426_1 adds an impulse response loader effect that handles WAV files up to 170 ms at 48 kHz.
+status: active
+authors:
+  - name: DADDesign-Projects
+    url: https://github.com/DADDesign-Projects
+source: https://github.com/DADDesign-Projects/PENDA-Software
+source_status: open
+license: Apache-2.0
+license_notes: LICENSE is the Apache License 2.0. Bundled STM32 and CMSIS drivers carry their own licence files.
+distribution: source-only
+install_notes: >-
+  Clone with submodules, copy the FORGE resources into the external flash with the OSCAR flasher server and the
+  PENDA flasher loader utilities, then build in STM32CubeIDE and debug with an ST-Link. Needs the PENDA hardware.
+brick_risk: false
+tags: [fx, reverb, delay, modulation, ir-loader, hardware, open-source]
+versions:
+  - version: V_3426_1
+    date: 2026-08-18
+    url: https://github.com/DADDesign-Projects/PENDA-Software/releases/tag/V_3426_1
+    notes: Updates the code for FORGE version V_3426_1 and adds an impulse response loader effect.
+  - version: V1.0
+    date: 2026-07-12
+    url: https://github.com/DADDesign-Projects/PENDA-Software/releases/tag/V1.0
+    notes: First release, before the FORGE framework was integrated.

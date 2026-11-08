@@ -1,0 +1,31 @@
+device: electrosmith-daisy-seed
+name: GlitchPedal
+summary: Eight-effect guitar pedal firmware for a Daisy Seed with overdrive, reverb, chorus, delay and FFT-based pitch shift, spectral freeze and drone, run from three pots, a footswitch and an optional OLED.
+description: >-
+  The effects are bypass, overdrive, ReverbSc reverb, chorus, a stereo delay up to two seconds, a pitch shifter of one
+  octave either way built on a phase vocoder, a spectral freeze and a drone that accumulates harmonics. A footswitch
+  steps through them, and three pots set mix and two parameters. An SSD1306 OLED on I2C is optional. FFT work runs in
+  the main loop with a 1024-point window to keep the audio callback light.
+
+  The program is built to run from the Seed's QSPI flash through the Daisy bootloader. The repository also holds
+  agent instruction and status files from the author's tooling, and its README claims the pedal is working on hardware.
+status: active
+authors:
+  - name: willbearfruits
+    url: https://github.com/willbearfruits
+source: https://github.com/willbearfruits/GlitchPedal
+source_status: open
+license: unspecified
+license_notes: No license file or statement in the repository.
+distribution: source-only
+install_notes: >-
+  Build libDaisy and DaisySP-LGPL, create the arm_bitreversal2.s symlink the README describes, run make, then use make
+  program-boot once to install the Daisy bootloader and make program-dfu for the program. The ROM DFU mode stays
+  available if a flash goes wrong.
+brick_risk: false
+tags: [fx, pedal, delay, reverb, granular, open-source]
+versions:
+  - version: master @ b4e67f4
+    date: 2025-12-06
+    url: https://github.com/willbearfruits/GlitchPedal/commit/b4e67f4
+    notes: No tagged releases; this is the latest commit.

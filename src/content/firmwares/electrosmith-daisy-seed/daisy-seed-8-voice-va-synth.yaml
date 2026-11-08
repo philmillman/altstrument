@@ -1,0 +1,32 @@
+device: electrosmith-daisy-seed
+name: Daisy Seed 8-Voice VA Synthesizer
+summary: Eight-voice virtual analog synth for a bare Daisy Seed played over USB MIDI, with dual oscillators, a four-pole filter per voice, ADSRs, a loop recorder and parameters mapped to CC 2 to 25.
+description: >-
+  A descendant of the VASynth example from OscPocketD by Staffan Melin, which a Pod version and then the NucleoSynth
+  author moved to the Seed without a Pod. This fork reworks the MIDI map so that generic controllers with eight pots and nine
+  sliders can reach the parameters, trims the exposed list, widens the envelope ranges and adds a Moog ladder filter
+  as a DaisySP upgrade folder. The text files list the parameters and the loading steps. Saving and loading
+  patches is not implemented, and the author lists DIN MIDI, effects and extra filters as to-do items. The
+  repository includes the author's own build output.
+status: dormant
+authors:
+  - name: funkbungus
+    url: https://github.com/funkbungus
+source: https://github.com/funkbungus/Daisy-Seed-8-Voice-VA-Synthesizer
+source_status: open
+license: unspecified
+license_notes: >-
+  No license file. The README text says to feel free to copy, modify and improve the code, and credits Staffan Melin
+  for the original VASynth.
+homepage: https://github.com/funkbungus/Daisy-Seed-8-Voice-VA-Synthesizer
+distribution: source-only
+install_notes: >-
+  Copy the files from the DaisySP Filter Upgrade folder into DaisySP, rebuild DaisySP, then build and flash the synth
+  over USB DFU with the VS Code tasks. A bad image is replaced by putting the Seed back into DFU mode.
+brick_risk: false
+tags: [synth-engine, polyphonic, oscillator, filter, looper, midi, open-source]
+versions:
+  - version: OK @ cfaf5b8
+    date: 2023-12-02
+    url: https://github.com/funkbungus/Daisy-Seed-8-Voice-VA-Synthesizer/commit/cfaf5b8
+    notes: No tagged releases; this is the latest commit on the branch named OK.

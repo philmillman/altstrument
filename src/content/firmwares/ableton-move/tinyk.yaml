@@ -1,0 +1,38 @@
+device: ableton-move
+name: TinyK
+summary: >-
+  Schwung sound generator in the style of the microKORG: four-voice dual-oscillator virtual analog engine with 64 DWGS waveforms, arpeggiator, step sequencer, modulation effects and loading of microKORG or MS2000 SysEx banks.
+description: >-
+  Rights warning: the 64 DWGS waveforms and the Vox wave are sampled from the output of KORG's microKORG plug-in and compiled into the module as data tables. The README states that no KORG code or firmware is included and that the DSP engine is independent. The engine is a four-voice synth with Single and Layer modes, unison, a state-variable filter with four types, two LFOs per layer, a patch matrix, chorus, ensemble and phaser effects, a six-type arpeggiator and an eight-step sequence page. It has a built-in factory bank sorted into categories, and reads 128-program microKORG or MS2000 bank dumps from a banks folder on the device, none of which are shipped. Version 1.0.0 credits legsmechanical for measuring the engine against the plug-in.
+status: active
+authors:
+  - name: Mathew Taylor
+    url: https://github.com/fleshinachair
+source: https://github.com/fleshinachair/TinyK
+source_status: open
+license: MIT
+license_notes: >-
+  The repository has no LICENSE file. The README says MIT and src/module.json lists MIT. The README also says users are responsible for the rights to any third-party SysEx banks they load.
+homepage: https://github.com/fleshinachair/TinyK#readme
+distribution: download
+install_notes: >-
+  Needs Schwung. Install TinyK from Schwung's module store or Schwung Manager, or copy TinyK.tar.gz from the latest release into the Move's sound_generators module folder over SSH and unpack it.
+brick_risk: false
+tags: [synth-engine, synth, emulator, wavetable, sequencer]
+versions:
+  - version: v1.0.2
+    date: 2026-10-16
+    url: https://github.com/fleshinachair/TinyK/releases/tag/v1.0.2
+    notes: Renames and retunes the 128 built-in programs.
+  - version: v1.0.1
+    date: 2026-10-12
+    url: https://github.com/fleshinachair/TinyK/releases/tag/v1.0.1
+    notes: Adds an Init category with one neutral Init program.
+  - version: v1.0.0
+    date: 2026-10-10
+    url: https://github.com/fleshinachair/TinyK/releases/tag/v1.0.0
+    notes: First full release, with the sound engine rebuilt against the microKORG plug-in and its DWGS waves.
+  - version: v0.9.0
+    date: 2026-10-08
+    url: https://github.com/fleshinachair/TinyK/releases/tag/v0.9.0
+    notes: Beta release.

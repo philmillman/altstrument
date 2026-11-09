@@ -10,13 +10,13 @@ name: Metrics weekly refresh
 # conditional contributor requests, so a weekly run fits the GITHUB_TOKEN
 # budget (1,000 REST requests an hour); the fetch waits for the reset if not.
 #
-# The token: METRICS_TOKEN (a fine-grained PAT with contents and pull requests
-# write on this repo) when set, else GITHUB_TOKEN. It is handed only to the
-# steps that call GitHub (fetch/publish, push, PR and asset calls), never to
-# install or build steps, and checkout does not store it in .git/config.
-# Actions are pinned to commit SHAs. Give the PAT a short expiry. A PR
-# opened with GITHUB_TOKEN gets no CI run until someone pushes to it; with
-# METRICS_TOKEN it does.
+# The token: a one-hour token from the metrics GitHub App when vars.METRICS_APP_ID
+# and secrets.METRICS_APP_PRIVATE_KEY are set, else GITHUB_TOKEN. It is handed only
+# to the steps that call GitHub (fetch/publish, push, PR and asset calls), never to
+# install or build steps, and checkout does not store it in .git/config. Actions
+# are pinned to commit SHAs. A PR opened with
+# GITHUB_TOKEN gets no CI run until someone pushes to it; with the app token it
+# does, and it waits for your approval like any other PR.
 
 on:
   schedule:
@@ -41,6 +41,19 @@ jobs:
       BRANCH: metrics-refresh
       BASE: ${{ github.event.repository.default_branch }}
     steps:
+      # A one-hour token from the altstrument metrics GitHub App (vars.METRICS_APP_ID,
+      # secrets.METRICS_APP_PRIVATE_KEY), limited to this repo's contents and PRs. The
+      # app is not on main's bypass list, so it can't push to main or merge without
+      # approval. Without the app, steps fall back to GITHUB_TOKEN.
+      - id: app-token
+        if: vars.METRICS_APP_ID != ''
+        uses: actions/create-github-app-token@fee1f7d63c2ff003460e3d139729b119787bc349 # v2.2.2
+        with:
+          app-id: ${{ vars.METRICS_APP_ID }}
+          private-key: ${{ secrets.METRICS_APP_PRIVATE_KEY }}
+          permission-contents: write
+          permission-pull-requests: write
+
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
           ref: ${{ github.event.repository.default_branch }}
@@ -60,7 +73,7 @@ jobs:
 
       - run: pnpm metrics:fetch --full --prune --publish
         env:
-          GH_TOKEN: ${{ secrets.METRICS_TOKEN || github.token }}
+          GH_TOKEN: ${{ steps.app-token.outputs.token || github.token }}
 
       - name: Ratings that change
         run: |
@@ -73,7 +86,8 @@ jobs:
 
       - name: Open or update the PR
         env:
-          GH_TOKEN: ${{ secrets.METRICS_TOKEN || github.token }}
+          GH_TOKEN: ${{ steps.app-token.outputs.token || github.token }}
+          APP_SLUG: ${{ steps.app-token.outputs.app-slug }}
         run: |
           lock=src/data/repo-metrics.lock.json
           if git diff --quiet -- "$lock"; then
@@ -81,8 +95,15 @@ jobs:
             exit 0
           fi
           title="Refresh quality metrics ($(date -u +%Y-%m-%d))"
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Commit as the app's bot user when the app token is in use.
+          if [ -n "$APP_SLUG" ]; then
+            bot="${APP_SLUG}[bot]"
+            git config user.name "$bot"
+            git config user.email "$(gh api "users/$bot" --jq .id)+$bot@users.noreply.github.com"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          fi
           git switch -C "$BRANCH"
           git add "$lock"
           git commit -m "$title"
@@ -99,5 +120,5 @@ jobs:
       # After the PR, so a failure here never holds up the refresh.
       - name: Prune old release assets
         env:
-          GH_TOKEN: ${{ secrets.METRICS_TOKEN || github.token }}
+          GH_TOKEN: ${{ steps.app-token.outputs.token || github.token }}
         run: pnpm metrics:prune-assets --ref "origin/$BASE"

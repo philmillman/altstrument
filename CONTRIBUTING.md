@@ -383,7 +383,7 @@ Automation, in `.github/workflows/`:
 
 - `metrics-topup.yml`: on a PR from a branch in this repo that changes entries, it runs `--missing --publish` and commits the lock to the PR branch as "Update metrics lock". On a PR from a fork it only comments which entries are unrated, without running the fork's code. On pushes to `main` it tops up anything still missing.
 - `metrics-weekly.yml`: every Monday at 06:00 UTC, and on demand, it runs `--full --prune --publish` and opens the "Refresh quality metrics (date)" PR, listing the entries whose public rating changes (`pnpm metrics:report --diff origin/main`). It then deletes release assets older than 60 days that no lock on `main` named in the last 60 days (`pnpm metrics:prune-assets`).
-- Both use the `METRICS_TOKEN` secret when it is set (a fine-grained token with contents and pull requests write), else `GITHUB_TOKEN`. Commits and PRs made with `GITHUB_TOKEN` don't start CI, so set `METRICS_TOKEN` if `main` requires checks.
+- Both use a one-hour token from the metrics GitHub App when the `METRICS_APP_ID` repository variable and `METRICS_APP_PRIVATE_KEY` secret are set, else `GITHUB_TOKEN`. The app has contents and pull requests write on this repo only and is not on `main`'s bypass list, so its lock updates and refresh PRs run CI and wait for your approval. Commits and PRs made with `GITHUB_TOKEN` don't start CI. If the key leaks, revoke it on the app's settings page and generate a new one.
 
 `pnpm metrics:report` prints threshold percentiles. `pnpm metrics:report --device <slug>` prints a device's top and bottom entries. `pnpm metrics:report --entry <device>/<slug>` explains one entry.
 

@@ -10,13 +10,14 @@ name: Metrics top-up
 #     only reads its YAML files as data and comments which entries are unrated.
 #   - Pushes to main: top up anything still missing (fork PRs after merge).
 #
-# The token: METRICS_TOKEN (a fine-grained PAT with contents and pull requests
-# write on this repo) when set, else GITHUB_TOKEN. It is handed only to the
-# steps that call GitHub (fetch/publish, push, PR and asset calls), never to
-# install or build steps, and checkout does not store it in .git/config.
-# Actions are pinned to commit SHAs. Give the PAT a short expiry. Commits
-# pushed with GITHUB_TOKEN do not start other workflows, so CI does not rerun
-# on the lock commit; with METRICS_TOKEN it does.
+# The token: a one-hour token from the metrics GitHub App when vars.METRICS_APP_ID
+# and secrets.METRICS_APP_PRIVATE_KEY are set, else GITHUB_TOKEN. It is handed only
+# to the steps that call GitHub (fetch/publish, push, PR and asset calls), never to
+# install or build steps, and checkout does not store it in .git/config. Actions
+# are pinned to commit SHAs. Commits
+# pushed with GITHUB_TOKEN do not start other workflows, so CI does not rerun on
+# the lock commit; with the app token it does. On main the app's push is refused
+# by the ruleset, so it opens a PR instead.
 
 on:
   pull_request:
@@ -51,6 +52,19 @@ jobs:
     env:
       BASE_REF: ${{ github.event.pull_request.base.ref || github.event.repository.default_branch }}
     steps:
+      # A one-hour token from the altstrument metrics GitHub App (vars.METRICS_APP_ID,
+      # secrets.METRICS_APP_PRIVATE_KEY), limited to this repo's contents and PRs. The
+      # app is not on main's bypass list, so it can't push to main or merge without
+      # approval. Without the app, steps fall back to GITHUB_TOKEN.
+      - id: app-token
+        if: vars.METRICS_APP_ID != ''
+        uses: actions/create-github-app-token@fee1f7d63c2ff003460e3d139729b119787bc349 # v2.2.2
+        with:
+          app-id: ${{ vars.METRICS_APP_ID }}
+          private-key: ${{ secrets.METRICS_APP_PRIVATE_KEY }}
+          permission-contents: write
+          permission-pull-requests: write
+
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
           # The PR branch itself (not the merge commit), so the lock can be committed to it.
@@ -88,11 +102,12 @@ jobs:
 
       - run: pnpm metrics:fetch --missing --publish
         env:
-          GH_TOKEN: ${{ secrets.METRICS_TOKEN || github.token }}
+          GH_TOKEN: ${{ steps.app-token.outputs.token || github.token }}
 
       - name: Commit the lock
         env:
-          GH_TOKEN: ${{ secrets.METRICS_TOKEN || github.token }}
+          GH_TOKEN: ${{ steps.app-token.outputs.token || github.token }}
+          APP_SLUG: ${{ steps.app-token.outputs.app-slug }}
         run: |
           # Authenticate this push only (checkout kept no credentials).
           push() {
@@ -106,8 +121,15 @@ jobs:
             echo "Lock unchanged."
             exit 0
           fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Commit as the app's bot user when the app token is in use.
+          if [ -n "$APP_SLUG" ]; then
+            bot="${APP_SLUG}[bot]"
+            git config user.name "$bot"
+            git config user.email "$(gh api "users/$bot" --jq .id)+$bot@users.noreply.github.com"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          fi
           git add src/data/repo-metrics.lock.json
           git commit -m "Update metrics lock"
           if push origin "HEAD:${GITHUB_HEAD_REF:-$GITHUB_REF_NAME}"; then

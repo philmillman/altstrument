@@ -27,13 +27,25 @@
  * Exit code 0 on success even with problems; 1 on a config error or when every
  * network source failed; 2 on bad command-line usage.
  */
-import { execFile, execFileSync } from 'node:child_process';
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { basename, join, relative, resolve } from 'node:path';
-import { parseArgs, promisify } from 'node:util';
+import { parseArgs } from 'node:util';
 import { XMLParser } from 'fast-xml-parser';
 import { parse } from 'yaml';
 import { z } from 'astro/zod';
+import {
+  arr,
+  asObj,
+  gh,
+  graphql,
+  progress,
+  sleep,
+  str,
+  SEARCH_RATE_RETRIES,
+  type GqlItem,
+  type GqlResult,
+  type Obj,
+} from '../../../scripts/lib/github.ts';
 
 const ROOT = new URL('../../../', import.meta.url).pathname;
 const DEFAULT_CONFIG = new URL('./config.yaml', import.meta.url).pathname;
@@ -51,8 +63,6 @@ const SEARCH_DELAY_MS = 1000;
 const SEARCH_BATCH = 10;
 // Searches go out SEARCH_BATCH at a time in one GraphQL request. If GitHub still answers
 // with a rate limit (it lasts about a minute and gh does not expose retry-after), wait and retry.
-const SEARCH_RATE_WAIT_MS = 70_000;
-const SEARCH_RATE_RETRIES = 4;
 const SEARCH_INCOMPLETE_RETRIES = 3;
 const SWEEP_BATCH = 20;
 const SUMMARY_MAX = 400;
@@ -203,22 +213,6 @@ function loadConfig(path: string): Config {
 
 // ---- small helpers ------------------------------------------------------------
 
-type Obj = Record<string, unknown>;
-
-const asObj = (v: unknown): Obj | undefined =>
-  v && typeof v === 'object' && !Array.isArray(v) ? (v as Obj) : undefined;
-const arr = (v: unknown): unknown[] => (v === undefined || v === null ? [] : Array.isArray(v) ? v : [v]);
-
-/** Text of a parsed XML node: plain string/number, or the `#text` of a node with attributes. */
-function str(v: unknown): string {
-  if (typeof v === 'string') return v.trim();
-  if (typeof v === 'number') return String(v);
-  if (Array.isArray(v)) return str(v[0]);
-  const o = asObj(v);
-  return o ? str(o['#text']) : '';
-}
-
-const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 
 async function pool<T, R>(items: T[], limit: number, fn: (item: T) => Promise<R>): Promise<R[]> {
   const results = new Array<R>(items.length);
@@ -239,10 +233,6 @@ const wordRe = (s: string) => new RegExp(`(?<![\\p{L}\\p{N}])${escapeRe(s)}(?![\
 
 const truncate = (s: string, n: number) => (s.length > n ? s.slice(0, n - 1).trimEnd() + '…' : s);
 const isoDay = (d: Date | string) => (typeof d === 'string' ? d : d.toISOString()).slice(0, 10);
-
-function progress(msg: string) {
-  console.error(msg);
-}
 
 // ---- repo keys -------------------------------------------------------------------
 
@@ -686,30 +676,6 @@ async function gatherNews(
 
 // ---- GitHub (via gh) ---------------------------------------------------------------------
 
-type GhResult = { ok: true; json: unknown } | { ok: false; status?: number; message: string };
-
-const GH_OPTIONS = { encoding: 'utf8', maxBuffer: 32 * 1024 * 1024, timeout: 60_000 } as const;
-
-function ghError(e: unknown): GhResult {
-  const err = e as NodeJS.ErrnoException & { stderr?: string; stdout?: string };
-  if (err.code === 'ENOENT') return { ok: false, message: 'gh CLI not found; install it and run `gh auth login`' };
-  const detail = `${err.stderr ?? ''}\n${err.stdout ?? ''}`;
-  const status = /HTTP (\d{3})/.exec(detail)?.[1];
-  const message = (err.stderr || err.message).split('\n').find((l) => l.trim()) ?? 'gh api failed';
-  return { ok: false, status: status ? Number(status) : undefined, message: message.trim() };
-}
-
-function gh(args: string[]): GhResult {
-  try {
-    const out = execFileSync('gh', ['api', ...args], { ...GH_OPTIONS, stdio: ['ignore', 'pipe', 'pipe'] });
-    return { ok: true, json: JSON.parse(out) as unknown };
-  } catch (e) {
-    return ghError(e);
-  }
-}
-
-const execFileAsync = promisify(execFile);
-
 interface SearchOutcome {
   repos: Map<string, RepoCandidate>;
   queriesRun: number;
@@ -721,68 +687,6 @@ const SEARCH_PAGE = 100;
 
 const SEARCH_FIELDS =
   'repositoryCount nodes { ... on Repository { nameWithOwner url description stargazerCount pushedAt licenseInfo { spdxId } repositoryTopics(first: 20) { nodes { topic { name } } } } }';
-
-interface GqlItem {
-  alias: string;
-  /** Becomes GraphQL variables named `<alias>_<key>`; `field` receives a function that names them. */
-  vars: Record<string, string>;
-  field: (v: (key: string) => string) => string;
-}
-
-type GqlResult =
-  | { ok: true; data: Obj; errors: Map<string, string> }
-  | { ok: false; limited: boolean; message: string };
-
-/** One `gh api graphql` request carrying every item as an aliased root field. */
-async function graphqlOnce(items: GqlItem[]): Promise<GqlResult> {
-  const decl: string[] = [];
-  const args: string[] = [];
-  const body = items.map((it) => {
-    for (const [k, val] of Object.entries(it.vars)) {
-      decl.push(`$${it.alias}_${k}: String!`);
-      args.push('-f', `${it.alias}_${k}=${val}`);
-    }
-    return `${it.alias}: ${it.field((k) => `$${it.alias}_${k}`)}`;
-  });
-  args.unshift('graphql', '-f', `query=query(${decl.join(', ')}) {\n${body.join('\n')}\n}`);
-  let out: string;
-  let err = '';
-  try {
-    ({ stdout: out } = await execFileAsync('gh', ['api', ...args], GH_OPTIONS));
-  } catch (e) {
-    // gh exits non-zero for GraphQL errors too, with the response body on stdout.
-    out = (e as { stdout?: string }).stdout ?? '';
-    err = (e as { stderr?: string }).stderr ?? '';
-    if (!out.trim().startsWith('{')) {
-      const r = ghError(e);
-      return { ok: false, limited: r.ok === false && (r.status === 403 || r.status === 429), message: r.ok === false ? r.message : 'gh api failed' };
-    }
-  }
-  const json = asObj(JSON.parse(out));
-  const data = asObj(json?.data);
-  const errors = arr(json?.errors).map((x) => asObj(x));
-  const limited = errors.some((x) => /RATE_LIMITED|rate limit/i.test(`${str(x?.type)} ${str(x?.message)}`)) || /rate limit|HTTP 40[39]/i.test(err);
-  if (!data) {
-    return { ok: false, limited, message: str(errors[0]?.message) || err.split('\n').find((l) => l.trim()) || 'GraphQL request failed' };
-  }
-  // An error whose path starts at an alias (a repository that does not exist) belongs to that alias.
-  const byAlias = new Map<string, string>();
-  for (const x of errors) {
-    const alias = str(arr(x?.path)[0]);
-    if (alias && !byAlias.has(alias)) byAlias.set(alias, str(x?.message) || 'error');
-  }
-  return { ok: true, data, errors: byAlias };
-}
-
-/** graphqlOnce, waiting out GitHub's rate limit (about a minute) between retries. */
-async function graphql(items: GqlItem[]): Promise<GqlResult> {
-  for (let attempt = 0; ; attempt++) {
-    const res = await graphqlOnce(items);
-    if (res.ok || !res.limited || attempt >= SEARCH_RATE_RETRIES) return res;
-    progress(`  GitHub rate limit; waiting ${SEARCH_RATE_WAIT_MS / 1000} s, then retrying (${attempt + 1}/${SEARCH_RATE_RETRIES})`);
-    await sleep(SEARCH_RATE_WAIT_MS);
-  }
-}
 
 type SearchBatch = { ok: true; results: Map<string, unknown> } | { ok: false; limited: boolean; message: string };
 

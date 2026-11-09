@@ -1,0 +1,90 @@
+name: Metrics weekly refresh
+
+# Refreshes the GitHub metrics snapshot for every entry (see src/lib/repo-metrics.ts),
+# uploads it to the `metrics` release and opens (or updates) a PR with the new
+# lock, listing the entries whose public rating changes. Also deletes release
+# assets that no lock on main has referenced in the last 60 days.
+#
+# `--full` checks every repo with a light GraphQL query and only refetches
+# history, forks and contributors for repos pushed since their last fetch, with
+# conditional contributor requests, so a weekly run fits the GITHUB_TOKEN
+# budget (1,000 REST requests an hour); the fetch waits for the reset if not.
+#
+# The token: METRICS_TOKEN (a fine-grained PAT with contents and pull requests
+# write on this repo) when set, else GITHUB_TOKEN. A PR opened with GITHUB_TOKEN
+# gets no CI run until someone pushes to it; with METRICS_TOKEN it does.
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: metrics-weekly
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ secrets.METRICS_TOKEN || github.token }}
+      BRANCH: metrics-refresh
+      BASE: ${{ github.event.repository.default_branch }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          token: ${{ secrets.METRICS_TOKEN || github.token }}
+          # Asset pruning reads the lock's history on main.
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          check-latest: true
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm metrics:fetch --full --prune --publish
+
+      - name: Ratings that change
+        run: |
+          {
+            echo "Weekly refresh of the GitHub metrics snapshot (\`pnpm metrics:fetch --full --prune\`)."
+            echo
+            pnpm -s metrics:report --diff "origin/$BASE"
+          } > "$RUNNER_TEMP/body.md"
+          cat "$RUNNER_TEMP/body.md" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Open or update the PR
+        run: |
+          lock=src/data/repo-metrics.lock.json
+          if git diff --quiet -- "$lock"; then
+            echo "Lock unchanged; no PR."
+            exit 0
+          fi
+          title="Refresh quality metrics ($(date -u +%Y-%m-%d))"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -C "$BRANCH"
+          git add "$lock"
+          git commit -m "$title"
+          git push --force origin "HEAD:refs/heads/$BRANCH"
+          pr=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')
+          if [ -n "$pr" ]; then
+            gh pr edit "$pr" --title "$title" --body-file "$RUNNER_TEMP/body.md"
+          else
+            gh pr create --base "$BASE" --head "$BRANCH" --title "$title" --body-file "$RUNNER_TEMP/body.md"
+          fi
+
+      # After the PR, so a failure here never holds up the refresh.
+      - name: Prune old release assets
+        run: pnpm metrics:prune-assets --ref "origin/$BASE"

@@ -17,6 +17,12 @@
  *   - file names must be kebab-case slugs
  *   - a video's `version` is in `versions`, and `video` + `videos` follow
  *     the versions order, newest first (warnings)
+ *   - `based_on` entry refs exist, are not the entry itself, and form no cycle
+ *   - GitHub sources missing from the metrics snapshot, and a snapshot older
+ *     than 30 days (warnings; `pnpm metrics:fetch --missing` / `--full` fix them)
+ *   - the metrics lock names an asset that loads and matches its sha256; in CI
+ *     (CI set) it must also be on the `metrics` release, locally that is a
+ *     warning (`pnpm metrics:publish`)
  *   - every hotlinked `video` / `videos` / `image` still resolves (network; see below),
  *     or only those in the files a pull request changes (ALTSTRUMENT_CHANGED_FILES)
  *
@@ -37,6 +43,7 @@ import { deviceSchema, firmwareBaseSchema, manufacturerSchema, refineFirmware } 
 import { slugify } from '../src/lib/slug';
 import { youtubeOembedUrl } from '../src/lib/media';
 import { isStale, newestDate } from '../src/lib/stale';
+import { assetPublished, LOCK_FILE, loadSnapshotForLock, parseGithubSource, readLock, METRICS_TAG, type MetricsSnapshot } from '../src/lib/repo-metrics';
 import { z } from 'astro/zod';
 
 const ROOT = new URL('..', import.meta.url).pathname;
@@ -195,6 +202,9 @@ let sharedTotal = 0;
 const remoteChecks: { file: string; kind: 'video' | 'image'; url: string }[] = [];
 let firmwareTotal = 0;
 
+const basedOn = new Map<string, { file: string; ref: string }>();
+const githubSources: { file: string; key: string }[] = [];
+
 let deviceDirs: string[] = [];
 try {
   deviceDirs = readdirSync(FIRMWARES_DIR)
@@ -244,6 +254,9 @@ for (const dir of deviceDirs) {
       }
     }
     if (fw.also_devices.length) sharedTotal++;
+    if (fw.based_on) basedOn.set(`${dirSlug}/${fwSlug}`, { file, ref: fw.based_on });
+    const gh = parseGithubSource(fw.source);
+    if (gh) githubSources.push({ file, key: gh.key });
     if (fw.source) {
       const list = filesBySource.get(fw.source) ?? [];
       list.push({ file, summary: fw.summary });
@@ -286,6 +299,63 @@ for (const dir of deviceDirs) {
     firmwareCountByDevice.set(fw.device, (firmwareCountByDevice.get(fw.device) ?? 0) + 1);
     if (!firmwareSlugsByDevice.has(fw.device)) firmwareSlugsByDevice.set(fw.device, new Set());
     firmwareSlugsByDevice.get(fw.device)!.add(fwSlug);
+  }
+}
+
+// based_on: entry refs must exist and must not loop. Repo URLs are not checked here.
+for (const [id, { file, ref }] of basedOn) {
+  if (ref.startsWith('http')) continue;
+  const [device, slug] = ref.split('/');
+  if (ref === id) fail(file, 'based_on points at the entry itself');
+  else if (!firmwareSlugsByDevice.get(device)?.has(slug)) fail(file, `based_on "${ref}" has no file src/content/firmwares/${ref}.yaml`);
+  else {
+    const seen = new Set([id]);
+    for (let next: string | undefined = ref; next && !next.startsWith('http'); next = basedOn.get(next)?.ref) {
+      if (seen.has(next)) {
+        fail(file, `based_on forms a cycle: ${[...seen, next].join(' → ')}`);
+        break;
+      }
+      seen.add(next);
+    }
+  }
+}
+
+// Quality metrics: the lock's asset loads and is published; snapshot coverage and age.
+{
+  const lockFile = join(ROOT, LOCK_FILE);
+  let metrics: MetricsSnapshot | null = null;
+  try {
+    const lock = readLock(ROOT);
+    if (!lock) warn(lockFile, 'no metrics lock; quality scores use catalog data only. Run pnpm metrics:fetch --missing');
+    else {
+      const loaded = await loadSnapshotForLock(lock, ROOT, { warn: (m) => warn(lockFile, m) });
+      metrics = loaded?.snapshot ?? null;
+      // A downloaded asset is on the release; a cached one may be a local fetch that was never published.
+      if (loaded?.from === 'cache' && !process.env.ALTSTRUMENT_SKIP_REMOTE) {
+        const published = await assetPublished(lock.asset).catch(() => undefined);
+        const msg = `${lock.asset} is not on the "${METRICS_TAG}" release yet; run pnpm metrics:publish`;
+        if (published === false) (process.env.CI ? fail : warn)(lockFile, msg);
+        else if (published === undefined && process.env.CI) fail(lockFile, `could not check that ${lock.asset} is on the "${METRICS_TAG}" release`);
+      } else if (loaded?.from === 'stale-cache' && process.env.CI) fail(lockFile, `${lock.asset} could not be loaded`);
+    }
+  } catch (e) {
+    fail(lockFile, (e as Error).message);
+  }
+  const snapshotFile = lockFile;
+  const snap = metrics;
+  if (snap) {
+    const ageDays = (Date.now() - new Date(snap.fetchedAt).getTime()) / 86_400_000;
+    if (ageDays > 30) warn(snapshotFile, `metrics snapshot is ${Math.floor(ageDays)} days old; run pnpm metrics:fetch --full`);
+    const absent = githubSources.filter((g) => !snap.repos[g.key] && !(g.key in snap.missing));
+    if (absent.length) {
+      warn(
+        snapshotFile,
+        `${absent.length} entries have a GitHub source missing from the snapshot, e.g. ${absent
+          .slice(0, 3)
+          .map((a) => rel(a.file))
+          .join(', ')}; run pnpm metrics:fetch --missing`,
+      );
+    }
   }
 }
 

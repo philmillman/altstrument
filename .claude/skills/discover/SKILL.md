@@ -93,6 +93,7 @@ Dedupe once more by hand: grep `src/content` for the repository owner, the proje
 
   Never use a retailer, a review, a forum post or another catalog. Do not use a pre-production or concept render (a manufacturer's own product render is fine), a bare circuit board or a photo of a different model or revision. Download into a fresh empty directory under the scratchpad and open the file to confirm it shows the exact device, then write the alt text from what is visible. Save it as `public/images/devices/<slug>.webp`, no wider than 1200 px, with `cwebp -q 82` (adding `-resize 1200 0` when the source is wider). Read `width` and `height` from the final file with `sips -g pixelWidth -g pixelHeight`. Append the `image:` block at the end of the device file. If nothing acceptable exists, leave `image` out and say why in the report.
 - Then `src/content/firmwares/<device-slug>/<firmware-slug>.yaml` from the firmware template. Keep the field order of the template and of neighbouring files in the same directory.
+- Fork, port or derivative: when the summary says the entry derives from another catalog entry and the repo is not a GitHub fork of it, set `based_on` to that entry (`<device>/<slug>`) or the parent's repo URL. Set `community` when the project has its own Discord, subreddit or forum.
 - One project for several devices: when the build and text are the same, write one file under the primary device and list the others in `also_devices`, with no copy per device. Write separate files only for real per-device ports (a different build, `requires_stock`, install steps or summary). See CONTRIBUTING.md, "One project, several devices".
 - Prose is yours. Never paste text from the README, release notes, forum posts or other catalogs. Plain factual sentences, no marketing language.
 - Tags: lowercase kebab-case words that neighbouring entries already use where possible (`grep -rh '^tags:' src/content/firmwares | sort | uniq -c | sort -rn | head -40`).
@@ -123,6 +124,8 @@ Append each rejected candidate to `ignore` in `.claude/skills/discover/config.ya
 Use the repository URL for GitHub candidates and the article or project URL otherwise. When most of a GitHub owner's repositories are noise (plugin forks, data, site code), ignore the owner as `https://github.com/<owner>` and list the repositories worth seeing again under `except:`. Do not record news items that were merely uninteresting this week; only things that should never come back. Keep `ignore: []` syntax valid when adding the first item (replace `[]` with a list).
 
 ## 6. Report and stop
+
+Before the report, run `pnpm metrics:fetch --missing --publish` once, so the new entries get quality scores. It fetches only the repos the snapshot lacks, uploads the new snapshot to the `metrics` release and changes `src/data/repo-metrics.lock.json`. The lock change belongs with the new entries: leave it in the working tree for the maintainer, or in headless mode commit it with them.
 
 End with a short report:
 

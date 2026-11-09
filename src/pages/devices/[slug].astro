@@ -2,13 +2,16 @@
 import Base from '@/layouts/Base.astro';
 import FirmwareCard from '@/components/FirmwareCard.astro';
 import FirmwareFilter from '@/components/FirmwareFilter.astro';
+import QualityBreakdown from '@/components/QualityBreakdown.astro';
 import Breadcrumb from '@/components/Breadcrumb.astro';
 import Prose from '@/components/Prose.astro';
 import DevicePhoto from '@/components/DevicePhoto.astro';
 import { CATEGORY_LABELS } from '@/content/schema';
-import { compareFirmwaresByUpdated, firmwareUpdated, getDevicesWithFirmwares, hostOf, isoDate, plural, type DeviceItem, type FirmwareItem } from '@/lib/catalog';
+import { compareFirmwaresByQuality, compareText, firmwareUpdated, statusRank, getDevicesWithFirmwares, hostOf, isoDate, plural, type DeviceItem, type FirmwareItem } from '@/lib/catalog';
 import { cacheKeyOf } from '@/lib/cache-key';
 import { logoCreditLabel, looksLikeSpdx, spdxUrl } from '@/lib/labels';
+import { loadMetrics } from '@/lib/repo-metrics';
+import { RATINGS, RATING_DESCRIPTIONS, RATING_LABELS, type Rating } from '@/lib/quality';
 
 export async function getStaticPaths() {
   const devices = await getDevicesWithFirmwares();
@@ -21,12 +24,31 @@ export async function getStaticPaths() {
 interface Props { device: DeviceItem; related: DeviceItem[] }
 const { device, related } = Astro.props;
 const { data } = device;
-// Rendered in "Recently updated" order (the default sort); FirmwareFilter re-sorts on the client.
-const byUpdated = [...device.firmwares].sort(compareFirmwaresByUpdated);
-const firmwares = byUpdated.filter((f) => f.data.kind === 'firmware');
-const tools = byUpdated.filter((f) => f.data.kind === 'tool');
-// device.firmwares is in Status order (compareFirmwares); kept as data-order for that sort.
-const statusOrder = new Map(device.firmwares.map((f, i) => [f.id, i]));
+// Quality is the default order everywhere; FirmwareFilter re-sorts on the client.
+const ordered = [...device.firmwares].sort(compareFirmwaresByQuality);
+const firmwares = ordered.filter((f) => f.data.kind === 'firmware');
+const tools = ordered.filter((f) => f.data.kind === 'tool');
+// Status order, kept as data-order for FirmwareFilter's Status sort.
+const statusOrder = new Map(
+  [...device.firmwares]
+    .sort((a, b) => statusRank(a.data.status) - statusRank(b.data.status) || compareText(a.data.name, b.data.name))
+    .map((f, i) => [f.id, i]),
+);
+// A device-level score (device `quality.shared_repo` or `quality.score`), shown once in a collapsible block.
+const dq = device.quality?.rating ? device.quality : undefined;
+// Otherwise a summary of the entries' public ratings (numeric scores stay internal).
+const agg = device.quality ? undefined : device.aggregate;
+const rated = agg ? RATINGS.filter((r) => agg.ratings[r] > 0) : [];
+const ratedCount = rated.reduce((n, r) => n + agg!.ratings[r], 0);
+// Rated entries per rating, best first (ordered is already in quality order).
+const byRating = Object.fromEntries(
+  RATINGS.map((r) => [r, ordered.filter((f) => f.quality.rating === r && !f.quality.hidden)]),
+) as Record<Rating, FirmwareItem[]>;
+const LIST_MAX = 8;
+const showBlock = !!dq || ratedCount > 0;
+const fetchedAt = (await loadMetrics())?.fetchedAt;
+// Quality sort key: position in the server's quality order, higher first. The score itself stays internal.
+const qualityKey = new Map(ordered.map((f, i) => [f.id, ordered.length - i]));
 const none = device.firmwares.length === 0;
 // Entries hidden by hide_stale_after_years; only their number is shown here.
 const hidden = device.hiddenFirmwares.length;
@@ -52,6 +74,7 @@ const itemAttrs = (f: FirmwareItem) => ({
   'data-q': filterText(f),
   'data-name': f.data.name,
   'data-updated': isoDate(firmwareUpdated(f)) ?? '',
+  'data-quality': qualityKey.get(f.id),
   'data-order': statusOrder.get(f.id),
   'data-pin': f.pin,
 });
@@ -130,13 +153,58 @@ const itemAttrs = (f: FirmwareItem) => ({
   )}
   </div>
 
-  {data.notes && (
-    <details class:list={['notes-details mt-6 rounded border border-line-strong bg-surface', none && 'border-l-4']}>
-      <summary class="flex cursor-pointer items-center gap-2 rounded p-3 sm:p-4">
+  {/* Device notes stay in the data but are not shown; the device's quality rating takes their place. */}
+  {showBlock && (
+    <details class="notes-details mt-6 rounded border border-line-strong bg-surface" data-device-quality>
+      <summary class="flex cursor-pointer flex-wrap items-center gap-x-2 gap-y-1 rounded p-3 sm:p-4">
         <span class="notes-chevron" aria-hidden="true"></span>
-        <h2 class:list={[none ? 'text-lg' : 'text-base']}>Notes</h2>
+        <h2 class="text-base">Quality</h2>
+        {dq?.rating && <span class="font-semibold" style="color: var(--violet-fg)">{RATING_LABELS[dq.rating]}</span>}
+        {!dq && (
+          <span class="text-sm">
+            {rated.map((r, i) => (
+              <>{i > 0 && <span class="text-muted" aria-hidden="true"> · </span>}<span style="color: var(--violet-fg)">{agg!.ratings[r]} {RATING_LABELS[r]}</span></>
+            ))}
+          </span>
+        )}
       </summary>
-      <Prose text={data.notes} class={`px-3 pb-3 sm:px-4 sm:pb-4 ${none ? 'text-base' : 'text-sm'}`} />
+      <div class="px-3 pb-3 text-sm sm:px-4 sm:pb-4">
+        {dq?.rating && <p class="max-w-[68ch] text-muted">{RATING_DESCRIPTIONS[dq.rating]}</p>}
+        {dq?.shared && (
+          <p class="mt-2 max-w-[68ch]">
+            One rating for {dq.shared.members === 1 ? 'the entry' : `the ${dq.shared.members} entries`} in{' '}
+            <a href={`https://github.com/${dq.shared.repo}`} rel="noopener">{dq.shared.repo}</a>, rated once for the repo and
+            this device's community, because they share both.
+          </p>
+        )}
+        {dq?.override && <p class="mt-2 max-w-[68ch]">Adjusted by hand: {dq.override.reason}</p>}
+        {dq?.shared && (
+          <div class="mt-3">
+            <QualityBreakdown variant="device" quality={dq.shared.quality} links={data.links.community} fetchedAt={fetchedAt} deviceName={data.name} manufacturer={data.manufacturer} />
+          </div>
+        )}
+        {agg && (
+          <>
+            <p class="max-w-[68ch] text-muted">
+              {ratedCount === agg.count
+                ? `All ${agg.count} entries have a quality rating.`
+                : `${ratedCount} of ${agg.count} entries have a quality rating; the rest have too little data so far.`}
+            </p>
+            <dl class="mt-3 flex flex-col gap-3">
+              {rated.map((r) => (
+                <div>
+                  <dt><span class="font-medium" style="color: var(--violet-fg)">{RATING_LABELS[r]}</span> <span class="text-muted">{RATING_DESCRIPTIONS[r]}</span></dt>
+                  <dd class="mt-1">
+                    {byRating[r].slice(0, LIST_MAX).map((f, i) => <>{i > 0 && ', '}<a href={f.url}>{f.data.name}</a></>)}
+                    {byRating[r].length > LIST_MAX && <span class="text-muted"> and {byRating[r].length - LIST_MAX} more</span>}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </>
+        )}
+        {!dq?.shared && <p class="mt-3 text-xs text-muted"><a href="/about/quality#ratings">How ratings work</a>.</p>}
+      </div>
     </details>
   )}
 
@@ -148,7 +216,7 @@ const itemAttrs = (f: FirmwareItem) => ({
   )}
 
   {device.firmwares.length >= 3 && (
-    <div class="mt-8"><FirmwareFilter firmwares={device.firmwares} search={device.firmwares.length >= 8} /></div>
+    <div class="mt-8"><FirmwareFilter firmwares={device.firmwares} search={device.firmwares.length >= 8} defaultSort="quality" /></div>
   )}
 
   {firmwares.length > 0 && (

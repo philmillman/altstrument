@@ -32,6 +32,9 @@ export const GET: APIRoute = async ({ site }) => {
         url: abs(f.url),
         ...rest,
         versions: f.versions.map((v) => ({ ...v, date: isoDate(v.date) })),
+        // Methodology: /about/quality. Only the public rating; the numeric score is internal.
+        // Replaces the entry's own `quality` settings from `rest`. null: not enough data.
+        quality: f.quality.hidden ? undefined : { rating: f.quality.rating ?? null },
       };
     }),
   }));

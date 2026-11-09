@@ -4,6 +4,7 @@ import { KIND_LABELS, DISTRIBUTION_LABELS } from '@/lib/labels';
 import StatusBadge from './StatusBadge.astro';
 import SourceBadge from './SourceBadge.astro';
 import LicenseBadge from './LicenseBadge.astro';
+import QualityBadge from './QualityBadge.astro';
 import BrickWarning from './BrickWarning.astro';
 import TagList from './TagList.astro';
 import AuthorList from './AuthorList.astro';
@@ -43,6 +44,7 @@ const thumb = vid ? { src: youtubeThumb(vid), cover: true } : d.image ? { src: d
     <StatusBadge status={d.status} />
     <SourceBadge status={d.source_status} />
     <LicenseBadge license={d.license} />
+    <QualityBadge firmware={fw} />
   </div>
   {(d.distribution || d.requires_stock) && (
     <dl class="mt-2 grid grid-cols-[auto_minmax(0,1fr)] gap-x-3 gap-y-0.5 text-sm">

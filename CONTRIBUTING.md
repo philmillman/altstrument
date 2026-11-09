@@ -363,13 +363,31 @@ Say which recovery applies in `install_notes` either way, or in the device's `no
 
 ## Quality ratings
 
-Entries get a public quality rating (Foundational, Established, Rising or Notable) worked out from an internal 0 to 100 score. The score is computed at build time from `src/data/repo-metrics.json` and the catalog, sorts lists, and is never shown. Entries under `MIN_RATED_SCORE`, or without GitHub data, get no rating. The device maker's own open-source firmware, and its SDKs and libraries (tools tagged `sdk` or `library`), are always Foundational; tag them `official` or list the manufacturer as an author. The weights and rating rules are in `src/lib/quality.ts`. The method is explained at `/about/quality`.
+Entries get a public quality rating (Foundational, Established, Rising or Notable) worked out from an internal 0 to 100 score. The score is computed at build time from the GitHub metrics snapshot and the catalog, sorts lists, and is never shown. Entries under `MIN_RATED_SCORE`, or without GitHub data, get no rating. The device maker's own open-source firmware, and its SDKs and libraries (tools tagged `sdk` or `library`), are always Foundational; tag them `official` or list the manufacturer as an author. The weights and rating rules are in `src/lib/quality.ts`. The method is explained at `/about/quality`.
 
-Refresh the snapshot with `pnpm metrics:fetch`. Use `--only <device-slug>` for one device, and `--prune` to drop repos no entry uses. Review the diff of `src/data/repo-metrics.json`, then commit it.
+### The metrics snapshot
+
+The snapshot (about 2 MB of JSON) is not in the repository. Each version is an asset named `repo-metrics-<sha12>.json` on the `metrics` GitHub release, and assets are never overwritten. The committed `src/data/repo-metrics.lock.json` names the asset a commit builds with, with its sha256, its date and its repo count. The build downloads that asset (no token needed), checks the sha256 and caches it in `node_modules/.cache/metrics/`. A file already in the cache is used without a download, and with `ALTSTRUMENT_SKIP_REMOTE=1` or no network the build falls back to the newest cached snapshot.
+
+`pnpm metrics:fetch` always starts from the asset the lock names, merges in what it fetches, writes the result to the cache and points the lock at it. Pick one mode:
+
+- `--missing`: only repos and paths that entries use but the snapshot lacks. On an unchanged catalog it fetches nothing.
+- `--only <device-slug>`: everything for one device (repeatable).
+- `--full`: every repo. A light query checks each one first, and only repos pushed since their last fetch get their commit history, forks and contributors again. Contributor requests send the stored ETag, so unchanged ones answer 304, which is free. Add `--prune` to drop repos no entry uses.
+
+Add `--publish` to upload the new asset to the release, or run `pnpm metrics:publish` later. Commit the lock change with the entries it is for. A lock that names an unpublished asset builds locally from the cache, but `pnpm validate` fails in CI until it is published. If two branches change the lock and conflict, take main's lock and run `pnpm metrics:fetch --missing --publish` again.
+
+Each repo record has its own `fetchedAt`, and time-based signals (age, recency) are measured from it, falling back to the snapshot's `fetchedAt` (the last full refresh).
+
+Automation, in `.github/workflows/`:
+
+- `metrics-topup.yml`: on a PR from a branch in this repo that changes entries, it runs `--missing --publish` and commits the lock to the PR branch as "Update metrics lock". On a PR from a fork it only comments which entries are unrated, without running the fork's code. On pushes to `main` it tops up anything still missing.
+- `metrics-weekly.yml`: every Monday at 06:00 UTC, and on demand, it runs `--full --prune --publish` and opens the "Refresh quality metrics (date)" PR, listing the entries whose public rating changes (`pnpm metrics:report --diff origin/main`). It then deletes release assets older than 60 days that no lock on `main` named in the last 60 days (`pnpm metrics:prune-assets`).
+- Both use the `METRICS_TOKEN` secret when it is set (a fine-grained token with contents and pull requests write), else `GITHUB_TOKEN`. Commits and PRs made with `GITHUB_TOKEN` don't start CI, so set `METRICS_TOKEN` if `main` requires checks.
 
 `pnpm metrics:report` prints threshold percentiles. `pnpm metrics:report --device <slug>` prints a device's top and bottom entries. `pnpm metrics:report --entry <device>/<slug>` explains one entry.
 
-`pnpm validate` warns when the snapshot is over 30 days old or is missing a GitHub source.
+`pnpm validate` warns when the snapshot is over 30 days old or is missing a GitHub source, and fails when the lock's asset cannot be loaded (or, in CI, is not on the release).
 
 First-party entries get a bonus: tag the entry `official`, or list the manufacturer as an author. Lists sort by quality, and ties fall back to recently updated.
 

@@ -9,8 +9,8 @@
  * above T → 1. The thresholds are set near the 95th percentile of this catalog
  * (`pnpm metrics:report` prints them); recalibrate when the catalog grows a lot.
  *
- * All "now"-relative signals use the snapshot's fetchedAt, not the build date,
- * so a score only changes when the data does.
+ * All "now"-relative signals use the record's own fetchedAt (falling back to the
+ * snapshot's), not the build date, so a score only changes when the data does.
  */
 import type { Status } from '@/content/schema';
 import { parseGithubSource, type MetricsSnapshot, type RepoMetrics, type PathMetrics } from './repo-metrics';
@@ -594,7 +594,9 @@ export function computeQuality(
     };
   });
 
-  const own = new Map(resolved.map((e) => [e.input.id, scoreOwn(e, now)]));
+  // Each record is measured from its own fetch time; older records have none and use the snapshot's.
+  const at = (e: Resolved) => e.path?.fetchedAt ?? e.repo?.fetchedAt;
+  const own = new Map(resolved.map((e) => [e.input.id, scoreOwn(e, at(e) ? new Date(at(e)!) : now)]));
 
   // Missing pillars take the median of entries that have them.
   const fallback = Object.fromEntries(

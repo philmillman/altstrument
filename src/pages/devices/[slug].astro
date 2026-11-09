@@ -46,7 +46,7 @@ const byRating = Object.fromEntries(
 ) as Record<Rating, FirmwareItem[]>;
 const LIST_MAX = 8;
 const showBlock = !!dq || ratedCount > 0;
-const fetchedAt = loadMetrics()?.fetchedAt;
+const fetchedAt = (await loadMetrics())?.fetchedAt;
 // Quality sort key: position in the server's quality order, higher first. The score itself stays internal.
 const qualityKey = new Map(ordered.map((f, i) => [f.id, ordered.length - i]));
 const none = device.firmwares.length === 0;

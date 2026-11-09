@@ -125,7 +125,7 @@ Use the repository URL for GitHub candidates and the article or project URL othe
 
 ## 6. Report and stop
 
-Before the report, run `pnpm metrics:fetch --only <device-slug>` once for each device that got new entries, so those entries get quality scores.
+Before the report, run `pnpm metrics:fetch --missing --publish` once, so the new entries get quality scores. It fetches only the repos the snapshot lacks, uploads the new snapshot to the `metrics` release and changes `src/data/repo-metrics.lock.json`. The lock change belongs with the new entries: leave it in the working tree for the maintainer, or in headless mode commit it with them.
 
 End with a short report:
 

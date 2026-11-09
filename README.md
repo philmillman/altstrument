@@ -62,17 +62,18 @@ src/
         <firmware-slug>.yaml  one YAML file per firmware
     schema.ts                 Zod schemas and allowed values (the field reference)
   content.config.ts           Astro content collections
-  data/                       GitHub metrics snapshot for quality scores
+  data/repo-metrics.lock.json which GitHub metrics snapshot (a `metrics` release asset) the quality scores use
   loaders/                    content loaders for entries fetched at build time
   pages/                      Astro pages and endpoints (/api/*.json, /feed.xml, /robots.txt, /.well-known/api-catalog)
 public/                       favicons, device images, and Cloudflare _headers (Link headers) and _redirects
 scripts/
   validate.ts                 catalog validator (runs before build and in CI)
   build-icons.ts              rasterizes the favicon (`pnpm icons`)
-  metrics/                    GitHub metrics fetch, report and based_on proposals
+  metrics/                    GitHub metrics fetch, publish, report and based_on proposals
 .github/
   ISSUE_TEMPLATE/             issue forms: bug report, new entry, entry update
   workflows/ci.yml            validate, type check and build on every push and PR
+  workflows/metrics-*.yml     metrics top-up for new entries, and the weekly metrics refresh PR
 .claude/skills/discover/      /discover skill: gather script, config and prompt
 ```
 
@@ -89,7 +90,7 @@ pnpm build      # validates, then builds the static site
 pnpm preview    # serve the built site
 ```
 
-Building fetches the Music Thing Workshop Computer card entries from the upstream repository (see CONTRIBUTING.md, "Entries fetched at build time"). Set `ALTSTRUMENT_SKIP_REMOTE=1` to build offline from the cached data store.
+Building fetches the Music Thing Workshop Computer card entries from the upstream repository (see CONTRIBUTING.md, "Entries fetched at build time"). It also downloads the GitHub metrics snapshot that `src/data/repo-metrics.lock.json` names from the `metrics` release (see CONTRIBUTING.md, "Quality ratings") into `node_modules/.cache/metrics/`. Set `ALTSTRUMENT_SKIP_REMOTE=1` to build offline from the cached data store and metrics.
 
 Builds need `SITE_URL` set to the public base URL the site is deployed to (for example `SITE_URL=https://altstrument.org pnpm build`). It makes canonical, social-image and RSS feed links absolute; the RSS feed refuses to build without it. `pnpm dev` doesn't need it and uses the local server's address.
 

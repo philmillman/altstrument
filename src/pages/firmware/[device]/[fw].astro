@@ -20,7 +20,7 @@ import { getDevicesWithFirmwares, githubEditUrl, hostOf, listNames, plural, type
 export async function getStaticPaths() {
   const devices = await getDevicesWithFirmwares();
   const byId = new Map(devices.map((d) => [d.id, d]));
-  const fetchedAt = loadMetrics()?.fetchedAt;
+  const fetchedAt = (await loadMetrics())?.fetchedAt;
   // Every entry once, for naming the parent and children in the quality block.
   const entries = new Map<string, FirmwareItem>();
   for (const d of devices) for (const f of [...d.firmwares, ...d.hiddenFirmwares]) if (!entries.has(f.id)) entries.set(f.id, f);

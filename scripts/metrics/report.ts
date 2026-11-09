@@ -6,14 +6,17 @@
  *   pnpm metrics:report --device m-vave-fm-1  top and bottom entries for a device (repeatable)
  *   pnpm metrics:report --device x --top 25   longer lists
  *   pnpm metrics:report --entry m-vave-fm-1/dirge   one entry's pillars and facts
+ *   pnpm metrics:report --diff origin/main    entries whose public rating differs from the
+ *                                             snapshot locked at that git ref (Markdown)
  */
+import { execFileSync } from 'node:child_process';
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { parse } from 'yaml';
 import { z } from 'astro/zod';
 import { deviceSchema, firmwareBaseSchema, refineFirmware } from '../../src/content/schema';
 import { computeQuality, PILLARS, THRESHOLDS, type QualityDevice, type QualityInput, type QualityFacts } from '../../src/lib/quality';
-import { loadMetrics } from '../../src/lib/repo-metrics';
+import { LOCK_FILE, loadMetrics, loadSnapshotForLock, parseLock } from '../../src/lib/repo-metrics';
 
 const ROOT = new URL('../..', import.meta.url).pathname;
 const FIRMWARES_DIR = join(ROOT, 'src/content/firmwares');
@@ -24,10 +27,12 @@ const args = process.argv.slice(2);
 const devices: string[] = [];
 const entries: string[] = [];
 let top = 10;
+let diffRef: string | undefined;
 for (let i = 0; i < args.length; i++) {
   if (args[i] === '--device') devices.push(args[++i]);
   else if (args[i] === '--entry') entries.push(args[++i]);
   else if (args[i] === '--top') top = Number(args[++i]);
+  else if (args[i] === '--diff') diffRef = args[++i];
   else throw new Error(`unknown argument ${args[i]}`);
 }
 
@@ -56,10 +61,36 @@ for (const file of readdirSync(DEVICES_DIR)) {
   devicesById[file.replace(/\.yaml$/, '')] = { manufacturer: d.manufacturer, community: d.links.community, quality: d.quality };
 }
 
-const snapshot = loadMetrics(ROOT);
-if (!snapshot) console.warn('No snapshot at src/data/repo-metrics.json; every entry is limited data.');
+const snapshot = await loadMetrics(ROOT);
+if (!snapshot) console.warn(`No ${LOCK_FILE}; every entry is limited data.`);
 const quality = computeQuality(inputs, snapshot, devicesById).entries;
 const nameOf = new Map(inputs.map((i) => [i.id, i.name]));
+
+if (diffRef) {
+  // Public ratings now versus with the snapshot locked at diffRef (same catalog).
+  let baseLockText: string | undefined;
+  try {
+    baseLockText = execFileSync('git', ['show', `${diffRef}:${LOCK_FILE}`], { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
+  } catch {
+    /* no lock at that ref */
+  }
+  const base = baseLockText ? (await loadSnapshotForLock(parseLock(baseLockText), ROOT, { skipRemote: false }))?.snapshot ?? null : null;
+  const before = computeQuality(inputs, base, devicesById).entries;
+  const label = (r: string | undefined) => (r ? r[0].toUpperCase() + r.slice(1) : 'unrated');
+  const pub = (q: { rating?: string; hidden: boolean } | undefined) => (q && !q.hidden ? q.rating : undefined);
+  const changes = inputs
+    .map((i) => ({ id: i.id, name: i.name, from: pub(before.get(i.id)), to: pub(quality.get(i.id)) }))
+    .filter((c) => c.from !== c.to)
+    .sort((a, b) => a.id.localeCompare(b.id));
+  const site = 'https://altstrument.org';
+  console.log(`Snapshot ${base?.fetchedAt.slice(0, 10) ?? 'none'} (${diffRef}) → ${snapshot?.fetchedAt.slice(0, 10) ?? 'none'}.`);
+  console.log(`\n${changes.length} ${changes.length === 1 ? 'entry changes' : 'entries change'} public rating.\n`);
+  if (changes.length) {
+    console.log('| Entry | Before | After |\n| --- | --- | --- |');
+    for (const c of changes) console.log(`| [${c.name.replace(/\|/g, '\\|')}](${site}/firmware/${c.id}) | ${label(c.from)} | ${label(c.to)} |`);
+  }
+  process.exit(0);
+}
 
 const pct = (xs: number[], p: number) => {
   const s = [...xs].sort((a, b) => a - b);

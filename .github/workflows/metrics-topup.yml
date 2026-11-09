@@ -1,0 +1,166 @@
+name: Metrics top-up
+
+# Adds GitHub metrics for entries that are not in the snapshot yet (see
+# src/lib/repo-metrics.ts), so new entries get a quality rating.
+#
+#   - PRs from branches in this repo: fetch what is missing, upload the new
+#     snapshot to the `metrics` release and commit the lock to the PR branch.
+#   - PRs from forks: their code never runs with a write token. A separate
+#     pull_request_target job, which never checks out or runs the PR's code,
+#     only reads its YAML files as data and comments which entries are unrated.
+#   - Pushes to main: top up anything still missing (fork PRs after merge).
+#
+# The token: METRICS_TOKEN (a fine-grained PAT with contents and pull requests
+# write on this repo) when set, else GITHUB_TOKEN. Commits pushed with
+# GITHUB_TOKEN do not start other workflows, so CI does not rerun on the lock
+# commit; with METRICS_TOKEN it does.
+
+on:
+  pull_request:
+    paths: ['src/content/firmwares/**']
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+    paths: ['src/content/firmwares/**']
+  push:
+    branches: [main]
+    paths: ['src/content/firmwares/**']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  # One top-up per branch at a time; a newer push waits rather than racing on the lock.
+  group: metrics-topup-${{ github.event.pull_request.head.ref || github.ref }}-${{ github.event_name == 'pull_request_target' && 'notice' || 'topup' }}
+  cancel-in-progress: false
+
+jobs:
+  topup:
+    # Same-repo PRs (pull_request), pushes to main and manual runs.
+    if: >-
+      (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository) ||
+      github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ secrets.METRICS_TOKEN || github.token }}
+      BASE_REF: ${{ github.event.pull_request.base.ref || github.event.repository.default_branch }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # The PR branch itself (not the merge commit), so the lock can be committed to it.
+          ref: ${{ github.event.pull_request.head.ref || github.ref }}
+          token: ${{ secrets.METRICS_TOKEN || github.token }}
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          check-latest: true
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+      # While the PR has not changed the lock, start from the base branch's
+      # current lock, so the PR carries the newest snapshot plus its own entries
+      # and never reverts a refresh. Once it has (an earlier top-up), keep it:
+      # the rerun that the lock commit triggers then finds nothing missing.
+      - name: Start from the base branch's lock
+        if: github.event_name == 'pull_request'
+        run: |
+          lock=src/data/repo-metrics.lock.json
+          git fetch --no-tags origin "refs/heads/$BASE_REF:refs/remotes/origin/$BASE_REF"
+          base="origin/$BASE_REF"
+          mb=$(git merge-base HEAD "$base")
+          if [ "$(git rev-parse "HEAD:$lock" 2>/dev/null)" = "$(git rev-parse "$mb:$lock" 2>/dev/null)" ] &&
+             git cat-file -e "$base:$lock" 2>/dev/null; then
+            git show "$base:$lock" > "$lock"
+            echo "Starting from the lock on $BASE_REF"
+          fi
+          cp "$lock" "$RUNNER_TEMP/start-lock.json"
+
+      - run: pnpm metrics:fetch --missing --publish
+
+      - name: Commit the lock
+        run: |
+          # Nothing fetched: leave the branch's own lock alone.
+          if [ -f "$RUNNER_TEMP/start-lock.json" ] && cmp -s src/data/repo-metrics.lock.json "$RUNNER_TEMP/start-lock.json"; then
+            git checkout -- src/data/repo-metrics.lock.json
+          fi
+          if git diff --quiet -- src/data/repo-metrics.lock.json; then
+            echo "Lock unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/repo-metrics.lock.json
+          git commit -m "Update metrics lock"
+          if git push origin "HEAD:${GITHUB_HEAD_REF:-$GITHUB_REF_NAME}"; then
+            exit 0
+          fi
+          # A protected main refuses the push: open a PR instead.
+          if [ "$GITHUB_EVENT_NAME" != "pull_request" ]; then
+            branch="metrics-topup-$(date -u +%Y%m%d-%H%M%S)"
+            git push origin "HEAD:refs/heads/$branch"
+            gh pr create --base "$GITHUB_REF_NAME" --head "$branch" \
+              --title "Update metrics lock" \
+              --body "Metrics for entries that were missing from the snapshot (\`pnpm metrics:fetch --missing\`)."
+          else
+            echo "::error::Could not push the lock to the PR branch; pull and rerun this workflow"
+            exit 1
+          fi
+
+  fork-notice:
+    # PRs from forks. Runs with the base branch's code and never executes the PR's:
+    # its files are fetched as git objects and read with `git show`.
+    if: >-
+      github.event_name == 'pull_request_target' &&
+      github.event.pull_request.head.repo.full_name != github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      PR: ${{ github.event.pull_request.number }}
+      BASE_SHA: ${{ github.event.pull_request.base.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          persist-credentials: false
+          # base...head needs the merge base.
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          check-latest: true
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+      - name: List unrated entries
+        run: |
+          git fetch --no-tags origin "+refs/pull/$PR/head:refs/remotes/pr/head"
+          pnpm exec tsx scripts/metrics/unrated.ts --base "$BASE_SHA" --head refs/remotes/pr/head > "$RUNNER_TEMP/unrated.md"
+
+      - name: Comment
+        run: |
+          marker='<!-- metrics-topup -->'
+          existing=$(gh api "repos/$GITHUB_REPOSITORY/issues/$PR/comments" --paginate \
+            --jq ".[] | select(.user.login == \"github-actions[bot]\" and (.body | startswith(\"$marker\"))) | .id" | head -n1)
+          if [ ! -s "$RUNNER_TEMP/unrated.md" ]; then
+            if [ -n "$existing" ]; then gh api -X DELETE "repos/$GITHUB_REPOSITORY/issues/comments/$existing"; fi
+            exit 0
+          fi
+          { echo "$marker"; cat "$RUNNER_TEMP/unrated.md"; } > "$RUNNER_TEMP/body.md"
+          if [ -n "$existing" ]; then
+            gh api -X PATCH "repos/$GITHUB_REPOSITORY/issues/comments/$existing" -F "body=@$RUNNER_TEMP/body.md"
+          else
+            gh pr comment "$PR" --repo "$GITHUB_REPOSITORY" --body-file "$RUNNER_TEMP/body.md"
+          fi

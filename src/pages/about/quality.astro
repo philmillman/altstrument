@@ -9,7 +9,7 @@ import {
 } from '@/lib/quality';
 import { loadMetrics } from '@/lib/repo-metrics';
 
-const fetchedAt = loadMetrics()?.fetchedAt.slice(0, 10);
+const fetchedAt = (await loadMetrics())?.fetchedAt.slice(0, 10);
 const pct = (x: number) => `${Math.round(x * 100)}%`;
 // How each rating is decided, in order; the first that matches wins.
 const RATING_RULE_TEXT: Record<(typeof RATINGS)[number], string> = {
@@ -227,9 +227,9 @@ const PRIOR_ART = [
     <section aria-labelledby="snapshot">
       <h2 id="snapshot">Where the numbers come from</h2>
       <p>
-        Ratings come from a snapshot of GitHub data that the maintainer refreshes by hand, not live
-        {fetchedAt ? <> (the current snapshot is from {fetchedAt})</> : <> (there is no snapshot in this build yet)</>}. Time-based signals
-        are measured from the snapshot date, so a rating only changes when the data does.
+        Ratings come from a snapshot of GitHub data, not live data. It is refreshed once a week, and new entries
+        are added to it when they are merged{fetchedAt ? <> (the last full refresh was on {fetchedAt})</> : <> (there is no snapshot in this build yet)</>}.
+        Time-based signals are measured from the date each project was last fetched, so a rating only changes when the data does.
       </p>
     </section>
 

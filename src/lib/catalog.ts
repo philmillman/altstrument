@@ -186,7 +186,7 @@ export async function getDevicesWithFirmwares(): Promise<DeviceItem[]> {
   for (const fw of firmwares) fw.data.tags ??= [];
   const quality = computeQuality(
     firmwares.map((fw) => ({ ...fw.data, id: fw.id, deviceIds: [fw.data.device.id, ...fw.data.also_devices] })),
-    loadMetrics(),
+    await loadMetrics(),
     Object.fromEntries(
       devices.map((d) => [d.id, { manufacturer: d.data.manufacturer, community: d.data.links.community, quality: d.data.quality }]),
     ),

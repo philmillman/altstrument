@@ -45,7 +45,16 @@ for (const file of files) {
 }
 
 if (unrated.length) {
-  const esc = (s: string) => s.replace(/[|`<>[\]]/g, (c) => `\\${c}`);
+  // Names come from the PR's YAML and end up in a comment posted by the bot. Keep each
+  // on one line, escape markdown, and put a zero-width space after @ and # so a name
+  // can't @-mention people or cross-reference other repos' issues (owner/repo#1).
+  const esc = (s: string) =>
+    s
+      .replace(/\s+/g, ' ')
+      .trim()
+      .slice(0, 120)
+      .replace(/[|`<>[\]*_~\\]/g, (c) => `\\${c}`)
+      .replace(/[@#]/g, (c) => `${c}​`);
   console.log(
     `${unrated.length === 1 ? 'This entry has' : `These ${unrated.length} entries have`} no GitHub metrics yet, so ${unrated.length === 1 ? 'it shows' : 'they show'} no quality rating. ` +
       'PRs from forks cannot update the metrics snapshot; it is topped up automatically after merge.\n',

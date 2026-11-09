@@ -16,25 +16,33 @@ import type { Status } from '@/content/schema';
 import { parseGithubSource, type MetricsSnapshot, type RepoMetrics, type PathMetrics } from './repo-metrics';
 import { slugify } from './slug';
 
-export const PILLARS = ['maturity', 'popularity', 'vitality', 'issues', 'derivatives', 'community'] as const;
+export const PILLARS = ['maturity', 'popularity', 'vitality', 'issues', 'influence', 'community'] as const;
 export type Pillar = (typeof PILLARS)[number];
 
-/** Composite weights, out of 100. */
-export const WEIGHTS: Record<Pillar, number> = {
-  maturity: 20,
-  popularity: 20,
-  vitality: 15,
+/** The pillars averaged into the score; Influence is a bonus on top (INFLUENCE_BONUS). */
+export type WeightedPillar = Exclude<Pillar, 'influence'>;
+
+/** Composite weights of the weighted pillars, out of 100. */
+export const WEIGHTS: Record<WeightedPillar, number> = {
+  maturity: 25,
+  popularity: 25,
+  vitality: 20,
   issues: 10,
-  derivatives: 20,
-  community: 15,
+  community: 20,
 };
+
+/**
+ * Influence is rare (most entries have no catalog entries built on them), so it
+ * adds up to this many points instead of weighing on everyone's average.
+ */
+export const INFLUENCE_BONUS = 15;
 
 export const PILLAR_LABELS: Record<Pillar, string> = {
   maturity: 'Maturity',
   popularity: 'Popularity',
   vitality: 'Vitality',
   issues: 'Issue health',
-  derivatives: 'Derivatives',
+  influence: 'Influence',
   community: 'Community',
 };
 
@@ -48,11 +56,11 @@ export const THRESHOLDS = {
   releases: 20,
   commits: 600,
   stars: 500,
+  /** Forks plus active forks (an active fork counts twice). */
   forks: 100,
   watchers: 30,
   commitsLastYear: 300,
-  usefulForks: 25,
-  /** Sum of catalog children's base scores (each 0–1). */
+  /** Influence: sum of catalog children's base scores (each 0–1). */
   childScore: 3,
   contributors: 15,
   busFactor: 3,
@@ -65,7 +73,6 @@ export const SIGNAL_WEIGHTS = {
   popularity: { stars: 2, forks: 1, watchers: 1 },
   vitality: { commitsLastYear: 1, recency: 1 },
   issues: { issues: 0.75, prs: 0.25 },
-  derivatives: { catalog: 1, forks: 1 },
   community: { contributors: 2, busFactor: 1 },
 } as const;
 /** Community = min(1, CORE·(contributors and bus factor) + BONUS·max(Discussions, community link)). */
@@ -98,13 +105,13 @@ export const RATING_DESCRIPTIONS: Record<Rating, string> = {
 };
 
 /** Entries scoring below this, or without GitHub data, get no public rating: not enough data. */
-export const MIN_RATED_SCORE = 40;
+export const MIN_RATED_SCORE = 48;
 
 export const RATING_RULES = {
   /** Foundational: at least this many catalog entries derive from it… */
   foundationalChildren: 3,
-  /** …or a derivatives pillar at least this high (active GitHub forks count too). */
-  foundationalDerivatives: 0.6,
+  /** …or an influence pillar at least this high. */
+  foundationalInfluence: 0.6,
   /** Established: maturity and popularity pillars at least these. */
   establishedMaturity: 0.5,
   establishedPopularity: 0.4,
@@ -129,7 +136,7 @@ export function rate(q: Pick<Quality, 'score' | 'pillars' | 'limited' | 'facts'>
   if (q.limited || q.score < MIN_RATED_SCORE) return undefined;
   const R = RATING_RULES;
   const p = q.pillars;
-  if (q.facts.childIds.length >= R.foundationalChildren || (p.derivatives ?? 0) >= R.foundationalDerivatives) return 'foundational';
+  if (q.facts.childIds.length >= R.foundationalChildren || (p.influence ?? 0) >= R.foundationalInfluence) return 'foundational';
   if ((p.maturity ?? 0) >= R.establishedMaturity && (p.popularity ?? 0) >= R.establishedPopularity) return 'established';
   if ((q.facts.ageYears ?? Infinity) < R.risingMaxYears) return 'rising';
   return 'notable';
@@ -150,7 +157,7 @@ export const RATIO_K = 10;
 /**
  * Finished-project rule: a quiet project that is not archived, at least
  * FINISHED_MIN_YEARS old, and either mature or adopted (maturity, or the larger
- * of popularity and derivatives, at least FINISHED_MIN) gets vitality of at
+ * of popularity and influence, at least FINISHED_MIN) gets vitality of at
  * least FINISHED_SHARE × the larger of the two.
  */
 export const FINISHED_MIN = 0.5;
@@ -256,7 +263,8 @@ export interface QualityFacts {
   stars?: number;
   forks?: number;
   watchers?: number;
-  usefulForks?: number;
+  /** Forks with real work (stars, or pushed to after forking), among the top 100 by stars. */
+  activeForks?: number;
   issuesOpen?: number;
   issuesClosed?: number;
   prsMerged?: number;
@@ -281,7 +289,7 @@ export interface QualityFacts {
 export interface Quality {
   /** 0–100: the computed score, plus the first-party bonus, unless an override replaces it. */
   score: number;
-  /** The pillar-weighted score alone, 0–100, before any bonus or override. */
+  /** The weighted pillars plus the influence bonus, 0–100, before the first-party bonus or any override. */
   computed: number;
   /** Earned the first-party bonus. */
   firstParty: boolean;
@@ -377,7 +385,7 @@ function maxDate(...ds: (Date | string | undefined)[]): Date | undefined {
   return best;
 }
 
-/** Everything but derivatives, which needs the other entries' scores first. */
+/** Everything but influence, which needs the other entries' scores first. */
 function scoreOwn(e: Resolved, now: Date): { pillars: Record<Pillar, number | null>; facts: QualityFacts } {
   const { input, repo, path } = e;
   const dated = input.versions.filter((v) => v.date && !Number.isNaN(v.date.getTime()));
@@ -408,7 +416,7 @@ function scoreOwn(e: Resolved, now: Date): { pillars: Record<Pillar, number | nu
         popularity: null,
         vitality,
         issues: null,
-        derivatives: 0,
+        influence: 0,
         community: links ? 0.3 : null,
       },
       facts: {
@@ -439,9 +447,14 @@ function scoreOwn(e: Resolved, now: Date): { pillars: Record<Pillar, number | nu
     [repo.stableRelease ? 1 : 0, SW.maturity.stable],
   ]);
 
+  // Active forks (stars, or pushed to more than a day after forking; the useful-forks rule)
+  // count twice: once in the fork total and once more here.
+  const activeForks = repo.topForks.filter(
+    (f) => f.stars > 0 || new Date(f.pushedAt).getTime() - new Date(f.createdAt).getTime() > DAY_MS,
+  ).length;
   const popularity = weightedMean([
     [norm(repo.stars, THRESHOLDS.stars), SW.popularity.stars],
-    [norm(repo.forks, THRESHOLDS.forks), SW.popularity.forks],
+    [norm(repo.forks + activeForks, THRESHOLDS.forks), SW.popularity.forks],
     [norm(repo.watchers, THRESHOLDS.watchers), SW.popularity.watchers],
   ]);
 
@@ -469,12 +482,8 @@ function scoreOwn(e: Resolved, now: Date): { pillars: Record<Pillar, number | nu
   ]);
   const community = Math.min(1, COMMUNITY_CORE * core + COMMUNITY_BONUS * Math.max(discussions, links));
 
-  const usefulForks = repo.topForks.filter(
-    (f) => f.stars > 0 || new Date(f.pushedAt).getTime() - new Date(f.createdAt).getTime() > DAY_MS,
-  ).length;
-
   return {
-    pillars: { maturity, popularity, vitality, issues, derivatives: norm(usefulForks, THRESHOLDS.usefulForks), community },
+    pillars: { maturity, popularity, vitality, issues, influence: 0, community },
     facts: {
       ageYears,
       releases,
@@ -484,7 +493,7 @@ function scoreOwn(e: Resolved, now: Date): { pillars: Record<Pillar, number | nu
       stars: repo.stars,
       forks: repo.forks,
       watchers: repo.watchers,
-      usefulForks,
+      activeForks,
       issuesOpen: repo.hasIssues ? repo.issuesOpen : undefined,
       issuesClosed: repo.hasIssues ? repo.issuesClosed : undefined,
       prsMerged: repo.prsMerged,
@@ -503,11 +512,11 @@ function scoreOwn(e: Resolved, now: Date): { pillars: Record<Pillar, number | nu
 }
 
 /** Weighted composite over the given pillars, imputing `fallback` for null ones. */
-function composite(pillars: Record<Pillar, number | null>, fallback: Record<Pillar, number>, skip?: Pillar): number {
+/** Weighted average of the weighted pillars (0–1), imputing `fallback` for null ones. Influence is not part of it. */
+function composite(pillars: Record<Pillar, number | null>, fallback: Record<Pillar, number>): number {
   let sum = 0;
   let w = 0;
-  for (const p of PILLARS) {
-    if (p === skip) continue;
+  for (const p of Object.keys(WEIGHTS) as WeightedPillar[]) {
     sum += (pillars[p] ?? fallback[p]) * WEIGHTS[p];
     w += WEIGHTS[p];
   }
@@ -522,7 +531,7 @@ function median(xs: number[]): number {
 }
 
 /**
- * Scores every entry. Pass the whole catalog: derivatives and ranks
+ * Scores every entry. Pass the whole catalog: influence and ranks
  * depend on the other entries.
  */
 /** A score that belongs to a whole device: a shared-repo score and/or a hand-set device score. */
@@ -592,13 +601,13 @@ export function computeQuality(
     PILLARS.map((p) => [p, median([...own.values()].map((o) => o.pillars[p]).filter((v): v is number => v !== null))]),
   ) as Record<Pillar, number>;
 
-  // Derivatives: GitHub's useful forks (already in pillars.derivatives) plus catalog
-  // children, each weighted by the child's score without its own derivatives (one level deep).
+  // Influence: catalog entries built on this one (GitHub fork parent or `based_on`), each
+  // weighted by the child's score without its own influence (one level deep).
   const parents = resolveParents(resolved, snapshot);
   const childScore = new Map<string, number>();
   for (const [child, parent] of parents) {
     const c = own.get(child)!;
-    childScore.set(parent, (childScore.get(parent) ?? 0) + composite(c.pillars, fallback, 'derivatives'));
+    childScore.set(parent, (childScore.get(parent) ?? 0) + composite(c.pillars, fallback));
     own.get(parent)?.facts.childIds.push(child);
     c.facts.parentId = parent;
   }
@@ -606,19 +615,17 @@ export function computeQuality(
   const out = new Map<string, Quality>();
   for (const e of resolved) {
     const o = own.get(e.input.id)!;
-    const forks = o.pillars.derivatives ?? 0;
-    const catalog = norm(childScore.get(e.input.id) ?? 0, THRESHOLDS.childScore);
-    const derivatives = e.repo ? weightedMean([[catalog, SW.derivatives.catalog], [forks, SW.derivatives.forks]]) : catalog;
-    // Re-apply the finished-project rule now that derivatives are known.
+    const influence = norm(childScore.get(e.input.id) ?? 0, THRESHOLDS.childScore);
+    // Re-apply the finished-project rule now that influence is known.
     const f = finishedRule(o.facts.rawVitality, {
       archived: o.facts.archived,
       ageYears: o.facts.ageYears,
       maturity: o.pillars.maturity ?? 0,
-      adoption: Math.max(o.pillars.popularity ?? 0, derivatives),
+      adoption: Math.max(o.pillars.popularity ?? 0, influence),
     });
     o.facts.finished = f.finished;
-    const pillars = { ...o.pillars, vitality: f.vitality, derivatives };
-    const computed = Math.round(composite(pillars, fallback) * 100);
+    const pillars = { ...o.pillars, vitality: f.vitality, influence };
+    const computed = Math.round(Math.min(100, composite(pillars, fallback) * 100 + INFLUENCE_BONUS * influence));
     const primary = e.input.deviceIds[0];
     const firstParty = isFirstParty(e.input, primary ? devices[primary]?.manufacturer : undefined);
     out.set(e.input.id, {

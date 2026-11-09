@@ -1,7 +1,7 @@
 ---
 import Base from '@/layouts/Base.astro';
 import {
-  PILLARS, PILLAR_LABELS, WEIGHTS, THRESHOLDS as T,
+  PILLARS, PILLAR_LABELS, WEIGHTS, INFLUENCE_BONUS, THRESHOLDS as T,
   SIGNAL_WEIGHTS as W, COMMUNITY_CORE, COMMUNITY_BONUS,
   RECENCY_MONTHS, RATIO_PRIOR, RATIO_K, FINISHED_MIN, FINISHED_MIN_YEARS, FINISHED_SHARE, FIRST_PARTY_BONUS,
   RATINGS, RATING_LABELS, RATING_DESCRIPTIONS, RATING_RULES as RR, MIN_RATED_SCORE, SDK_TAGS,
@@ -13,7 +13,7 @@ const fetchedAt = loadMetrics()?.fetchedAt.slice(0, 10);
 const pct = (x: number) => `${Math.round(x * 100)}%`;
 // How each rating is decided, in order; the first that matches wins.
 const RATING_RULE_TEXT: Record<(typeof RATINGS)[number], string> = {
-  foundational: `At least ${RR.foundationalChildren} catalog entries derive from it, or its derivatives pillar is at least ${pct(RR.foundationalDerivatives)} (active GitHub forks count too). The device maker's own open-source firmware, and its SDKs and libraries (tagged ${SDK_TAGS.map((t) => `"${t}"`).join(' or ')}), are always Foundational, even without enough data for a score.`,
+  foundational: `At least ${RR.foundationalChildren} catalog entries derive from it, or its influence pillar is at least ${pct(RR.foundationalInfluence)}. The device maker's own open-source firmware, and its SDKs and libraries (tagged ${SDK_TAGS.map((t) => `"${t}"`).join(' or ')}), are always Foundational, even without enough data for a score.`,
   established: `Maturity of at least ${pct(RR.establishedMaturity)} and popularity of at least ${pct(RR.establishedPopularity)}. Quiet, finished projects qualify.`,
   rising: `Less than ${RR.risingMaxYears === 1 ? 'a year' : `${RR.risingMaxYears} years`} old, and above the bar.`,
   notable: 'Above the bar, but none of the above.',
@@ -28,7 +28,7 @@ const SIGNALS: Record<Pillar, string[]> = {
   ],
   popularity: [
     `Stars, capped at ${T.stars.toLocaleString('en-US')} (${W.popularity.stars})`,
-    `Forks, capped at ${T.forks} (${W.popularity.forks})`,
+    `Forks, with active forks (starred, or worked on after forking) counted twice, capped at ${T.forks} (${W.popularity.forks})`,
     `Watchers, capped at ${T.watchers} (${W.popularity.watchers})`,
   ],
   vitality: [
@@ -39,9 +39,8 @@ const SIGNALS: Record<Pillar, string[]> = {
     `Share of issues closed, smoothed (${W.issues.issues})`,
     `Share of pull requests merged, smoothed (${W.issues.prs})`,
   ],
-  derivatives: [
-    `Catalog entries built on this one, by the sum of their own scores, capped at ${T.childScore} (${W.derivatives.catalog})`,
-    `Active GitHub forks, capped at ${T.usefulForks} (${W.derivatives.forks})`,
+  influence: [
+    `Catalog entries built on this one, by the sum of their own scores, capped at ${T.childScore}`,
   ],
   community: [
     `Contributors, capped at ${T.contributors} (${W.community.contributors})`,
@@ -54,7 +53,7 @@ const WHY: Record<Pillar, string> = {
   popularity: 'How many people have noticed it.',
   vitality: 'Whether it is still being worked on, unless it is finished.',
   issues: 'Whether reports and contributions get handled.',
-  derivatives: 'Whether other projects build on it.',
+  influence: 'Whether other projects in the catalog build on it.',
   community: 'How many people could keep it going.',
 };
 const PRIOR_ART = [
@@ -116,13 +115,14 @@ const PRIOR_ART = [
     <section aria-labelledby="pillars">
       <h2 id="pillars">The six pillars</h2>
       <p class="mb-3">
-        Each pillar is a number from 0 to 1, shown on entry pages as Strong, Moderate or Low. The internal score is their
-        weighted average, times 100.
+        Each pillar is a number from 0 to 1, shown on entry pages as Strong, Moderate or Low. The internal score is the
+        weighted average of five of them, times 100. Influence is added on top as a bonus of up to {INFLUENCE_BONUS}
+        points, because most projects have nothing built on them yet and should not be marked down for it.
       </p>
       <ul class="flex flex-col gap-4">
         {PILLARS.map((p) => (
           <li>
-            <p><strong>{PILLAR_LABELS[p]}</strong> <span class="mono text-sm text-muted">weight {WEIGHTS[p]} of 100</span></p>
+            <p><strong>{PILLAR_LABELS[p]}</strong> <span class="mono text-sm text-muted">{p === 'influence' ? `bonus, up to ${INFLUENCE_BONUS} points` : `weight ${WEIGHTS[p]} of 100`}</span></p>
             <p class="text-muted">{WHY[p]}</p>
             <ul class="mt-1 list-disc pl-5 text-sm">
               {SIGNALS[p].map((s) => <li>{s}</li>)}
@@ -152,7 +152,7 @@ const PRIOR_ART = [
         Quiet is not the same as dead. Many firmware projects are done: the code works, people still use it and build
         on it, and nobody needs to commit. A project gets the finished-project rule when it is not archived, is at least
         {FINISHED_MIN_YEARS} years old, and either its maturity or its adoption (the larger of popularity and
-        derivatives) is at least {pct(FINISHED_MIN)}. Its vitality is then raised to {pct(FINISHED_SHARE)} of the larger of
+        influence) is at least {pct(FINISHED_MIN)}. Its vitality is then raised to {pct(FINISHED_SHARE)} of the larger of
         those two, if that is higher than its real activity. Entry pages mark these as "Finished: quiet but
         established". Archived projects always get 0 vitality.
       </p>
@@ -171,13 +171,13 @@ const PRIOR_ART = [
       </p>
     </section>
 
-    <section aria-labelledby="derivatives">
-      <h2 id="derivatives">Derivatives</h2>
+    <section aria-labelledby="influence">
+      <h2 id="influence">Influence</h2>
       <p>
-        Being built on is a strong signal. This pillar blends two halves. One counts catalog entries that derive from
-        this one, either as a GitHub fork or through the entry's <code>based_on</code> field. Each child counts by its
-        own score (without its own derivatives), so one level deep only, and the sum is capped. The other counts
-        active GitHub forks: forks with stars, or whose owners kept working for more than a day after forking.
+        Being built on is a strong signal. Influence counts only other projects in the catalog that build on this one,
+        either as a GitHub fork or through the entry's <code>based_on</code> field. Each counts by its own score (without
+        its own influence), so one level deep only, and the sum is capped. Plain GitHub forks are not influence; they
+        count toward popularity, where forks with stars or real work after forking count twice.
       </p>
     </section>
 

@@ -45,7 +45,9 @@ const facts: Record<Pillar, string[]> = {
     count(f.releases, 'release'),
     f.commits !== undefined && count(f.commits, 'commit'),
   ]),
-  popularity: f.stars !== undefined ? known([`★ ${n(f.stars)}`, `${n(f.forks ?? 0)} forks`, f.watchers ? `${n(f.watchers)} watching` : undefined]) : [],
+  popularity: f.stars !== undefined
+    ? known([`★ ${n(f.stars)}`, `${n(f.forks ?? 0)} forks${f.activeForks ? ` (${n(f.activeForks)} active)` : ''}`, f.watchers ? `${n(f.watchers)} watching` : undefined])
+    : [],
   vitality: f.archived
     ? ['Archived']
     : f.finished
@@ -55,10 +57,7 @@ const facts: Record<Pillar, string[]> = {
     f.issuesClosed !== undefined && `${int(f.issuesClosed)} closed / ${int(f.issuesOpen ?? 0)} open`,
     f.prsTotal !== undefined && f.prsTotal > 0 && `${int(f.prsMerged ?? 0)} of ${int(f.prsTotal)} PRs merged`,
   ]),
-  derivatives: known([
-    `${count(children.length, 'catalog entry', 'catalog entries')} ${children.length === 1 ? 'builds' : 'build'} on this`,
-    f.usefulForks !== undefined && `${int(f.usefulForks)} active forks`,
-  ]),
+  influence: [`${count(children.length, 'catalog entry', 'catalog entries')} ${children.length === 1 ? 'builds' : 'build'} on this`],
   community: known([
     f.contributors !== undefined && count(f.contributors, 'contributor'),
     f.busFactor !== undefined && `bus factor ${f.busFactor}`,
@@ -111,7 +110,7 @@ const links = Astro.props.links ?? fw?.data.community ?? [];
           </div>
           <p class="mt-1 text-muted">
             {facts[p].length > 0 && facts[p].join(' · ')}
-            {p === 'derivatives' && (parent || children.length > 0) && (
+            {p === 'influence' && (parent || children.length > 0) && (
               <>
                 {facts[p].length > 0 && <br />}
                 {parent && <>Builds on <a href={parent.url}>{parent.name}</a>.</>}
@@ -126,7 +125,7 @@ const links = Astro.props.links ?? fw?.data.community ?? [];
                 {links.map((l, i) => <>{i > 0 && ', '}<a href={l.url} rel="noopener">{l.label}</a></>)}
               </>
             )}
-            {facts[p].length === 0 && !(p === 'derivatives' && (parent || children.length)) && !(p === 'community' && links.length) && <>No data.</>}
+            {facts[p].length === 0 && !(p === 'influence' && (parent || children.length)) && !(p === 'community' && links.length) && <>No data.</>}
           </p>
         </li>
       );

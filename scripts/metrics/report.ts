@@ -79,7 +79,7 @@ if (!devices.length && !entries.length) {
     ['stars', 'stars'],
     ['forks', 'forks'],
     ['watchers', 'watchers'],
-    ['usefulForks', 'usefulForks'],
+    ['activeForks', undefined],
     ['contributors', 'contributors'],
     ['busFactor', 'busFactor'],
     ['discussions', 'discussions'],
@@ -99,6 +99,13 @@ if (!devices.length && !entries.length) {
   const ratings: Record<string, number> = {};
   for (const q of quality.values()) ratings[q.rating ?? 'unrated'] = (ratings[q.rating ?? 'unrated'] ?? 0) + 1;
   console.log('ratings', ratings);
+  // How many entries with GitHub data clear each candidate bar (for setting MIN_RATED_SCORE).
+  const withRepo = [...quality.values()].filter((q) => !q.limited);
+  console.log(
+    'rated at bar',
+    Object.fromEntries([40, 45, 48, 50, 52, 55].map((b) => [b, withRepo.filter((q) => q.score >= b).length])),
+    `of ${withRepo.length}`,
+  );
   const finished = [...quality.entries()].filter(([, q]) => q.facts.finished);
   console.log(`finished-project rule applied to ${finished.length} entries`);
 }

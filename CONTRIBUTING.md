@@ -177,7 +177,7 @@ community:
 # hide: true shows no rating (the entry still sorts by its score).
 quality:
   rating: foundational
-  reason: The library every Daisy project builds on; dependents are not tracked as derivatives.
+  reason: The library every Daisy project builds on; projects using it as a library are not tracked as building on it.
 
 # OPTIONAL. One of: download | browser-installer | patch-your-own | commercial | source-only
 distribution: source-only

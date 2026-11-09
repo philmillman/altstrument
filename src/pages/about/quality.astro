@@ -1,0 +1,252 @@
+---
+import Base from '@/layouts/Base.astro';
+import {
+  PILLARS, PILLAR_LABELS, WEIGHTS, THRESHOLDS as T,
+  SIGNAL_WEIGHTS as W, COMMUNITY_CORE, COMMUNITY_BONUS,
+  RECENCY_MONTHS, RATIO_PRIOR, RATIO_K, FINISHED_MIN, FINISHED_MIN_YEARS, FINISHED_SHARE, FIRST_PARTY_BONUS,
+  RATINGS, RATING_LABELS, RATING_DESCRIPTIONS, RATING_RULES as RR, MIN_RATED_SCORE, SDK_TAGS,
+  type Pillar,
+} from '@/lib/quality';
+import { loadMetrics } from '@/lib/repo-metrics';
+
+const fetchedAt = loadMetrics()?.fetchedAt.slice(0, 10);
+const pct = (x: number) => `${Math.round(x * 100)}%`;
+// How each rating is decided, in order; the first that matches wins.
+const RATING_RULE_TEXT: Record<(typeof RATINGS)[number], string> = {
+  foundational: `At least ${RR.foundationalChildren} catalog entries derive from it, or its derivatives pillar is at least ${pct(RR.foundationalDerivatives)} (active GitHub forks count too). The device maker's own open-source firmware, and its SDKs and libraries (tagged ${SDK_TAGS.map((t) => `"${t}"`).join(' or ')}), are always Foundational, even without enough data for a score.`,
+  established: `Maturity of at least ${pct(RR.establishedMaturity)} and popularity of at least ${pct(RR.establishedPopularity)}. Quiet, finished projects qualify.`,
+  rising: `Less than ${RR.risingMaxYears === 1 ? 'a year' : `${RR.risingMaxYears} years`} old, and above the bar.`,
+  notable: 'Above the bar, but none of the above.',
+};
+// Signals per pillar. Weights and caps come from quality.ts, so this page never drifts from the code.
+const SIGNALS: Record<Pillar, string[]> = {
+  maturity: [
+    `Age, capped at ${T.ageYears} years (weight ${W.maturity.age})`,
+    `Releases, capped at ${T.releases} (${W.maturity.releases})`,
+    `Commits, capped at ${T.commits.toLocaleString('en-US')} (${W.maturity.commits})`,
+    `Newest release looks stable, 1.0 or later (${W.maturity.stable})`,
+  ],
+  popularity: [
+    `Stars, capped at ${T.stars.toLocaleString('en-US')} (${W.popularity.stars})`,
+    `Forks, capped at ${T.forks} (${W.popularity.forks})`,
+    `Watchers, capped at ${T.watchers} (${W.popularity.watchers})`,
+  ],
+  vitality: [
+    `Commits in the last year, capped at ${T.commitsLastYear} (${W.vitality.commitsLastYear})`,
+    `Recency of the newest commit or release, falling to 0 over ${RECENCY_MONTHS} months (${W.vitality.recency})`,
+  ],
+  issues: [
+    `Share of issues closed, smoothed (${W.issues.issues})`,
+    `Share of pull requests merged, smoothed (${W.issues.prs})`,
+  ],
+  derivatives: [
+    `Catalog entries built on this one, by the sum of their own scores, capped at ${T.childScore} (${W.derivatives.catalog})`,
+    `Active GitHub forks, capped at ${T.usefulForks} (${W.derivatives.forks})`,
+  ],
+  community: [
+    `Contributors, capped at ${T.contributors} (${W.community.contributors})`,
+    `Bus factor, capped at ${T.busFactor} (${W.community.busFactor})`,
+    `Contributors and bus factor count ${pct(COMMUNITY_CORE)}; a bonus of up to ${pct(COMMUNITY_BONUS)} for GitHub Discussions (capped at ${T.discussions} threads) or a community link on the entry`,
+  ],
+};
+const WHY: Record<Pillar, string> = {
+  maturity: 'How long and how much the project has been built.',
+  popularity: 'How many people have noticed it.',
+  vitality: 'Whether it is still being worked on, unless it is finished.',
+  issues: 'Whether reports and contributions get handled.',
+  derivatives: 'Whether other projects build on it.',
+  community: 'How many people could keep it going.',
+};
+const PRIOR_ART = [
+  { href: 'https://github.com/ossf/criticality_score', label: 'OpenSSF Criticality Score', note: 'the log-cap normalisation' },
+  { href: 'https://github.com/librariesio/libraries.io/blob/main/app/models/concerns/source_rank.rb', label: 'Libraries.io SourceRank', note: 'weighted composite of repo signals' },
+  { href: 'https://github.com/npms-io/npms-analyzer/blob/master/docs/architecture.md', label: 'npms.io', note: 'quality, popularity and maintenance as separate scores' },
+  { href: 'https://chaoss.community/kb/metric-bus-factor/', label: 'CHAOSS Contributor Absence Factor', note: 'bus factor' },
+  { href: 'https://github.com/useful-forks/useful-forks.github.io', label: 'useful-forks', note: 'telling active forks from dead ones' },
+  { href: 'https://arxiv.org/abs/2003.04755', label: 'Coelho et al., "Is this GitHub project maintained?"', note: 'activity signals for maintenance' },
+  { href: 'https://nesbitt.io/2026/05/14/centrality-is-not-vitality', label: 'Andrew Nesbitt, "Centrality is not vitality"', note: 'why popularity alone misleads' },
+];
+---
+<Base
+  title="How quality ratings work"
+  description="What the quality ratings on entries mean, how they are decided, and what they leave out."
+  editPath="src/pages/about/quality.astro"
+  image={{ src: '/og/about.png', alt: 'altstrument: how quality ratings work' }}
+>
+  <p class="text-sm text-muted"><a href="/about">About</a> / Quality</p>
+  <h1 class="mt-1 text-2xl">How quality ratings work</h1>
+
+  <div class="mt-4 flex max-w-[68ch] flex-col gap-8 [&_h2]:mb-2 [&_h2]:text-lg [&_p+p]:mt-3 [&_code]:mono">
+    <section aria-labelledby="purpose">
+      <h2 id="purpose">What ratings are for</h2>
+      <p>
+        Some devices have hundreds of entries, and a flat list does not say which ones are worth trying first. A quality
+        rating is a short hint about a project's standing: whether others build on it, whether it is mature and widely
+        used, or whether it is new and picking up. It is a hint, not a verdict.
+      </p>
+      <p>
+        Ratings are built not to punish old, stable foundations: a project that was finished years ago and still works
+        keeps its standing (see <a href="#finished">the finished-project rule</a>).
+      </p>
+    </section>
+
+    <section aria-labelledby="ratings">
+      <h2 id="ratings">The ratings</h2>
+      <p class="mb-3">
+        Behind every rating is an internal score from 0 to 100, built from six pillars (below). The score is never shown.
+        It orders lists when you sort by Quality, and it sets the bar: entries scoring under {MIN_RATED_SCORE}, or without
+        GitHub data, get no rating, because there is not enough to go on yet. The one exception is the device maker's own
+        open firmware and SDKs, which are Foundational regardless. Above the bar, an entry gets the first rating
+        whose rule it meets:
+      </p>
+      <dl class="flex flex-col gap-3">
+        {RATINGS.map((r) => (
+          <div>
+            <dt><strong>{RATING_LABELS[r]}</strong>: {RATING_DESCRIPTIONS[r]}</dt>
+            <dd class="text-sm text-muted">{RATING_RULE_TEXT[r]}</dd>
+          </div>
+        ))}
+      </dl>
+      <p class="mt-3">
+        Ratings sit beside an entry's status (Active, Maintained, Dormant), which says how recently it changed. A rating says
+        how it stands.
+      </p>
+    </section>
+
+    <section aria-labelledby="pillars">
+      <h2 id="pillars">The six pillars</h2>
+      <p class="mb-3">
+        Each pillar is a number from 0 to 1, shown on entry pages as Strong, Moderate or Low. The internal score is their
+        weighted average, times 100.
+      </p>
+      <ul class="flex flex-col gap-4">
+        {PILLARS.map((p) => (
+          <li>
+            <p><strong>{PILLAR_LABELS[p]}</strong> <span class="mono text-sm text-muted">weight {WEIGHTS[p]} of 100</span></p>
+            <p class="text-muted">{WHY[p]}</p>
+            <ul class="mt-1 list-disc pl-5 text-sm">
+              {SIGNALS[p].map((s) => <li>{s}</li>)}
+            </ul>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section aria-labelledby="normalisation">
+      <h2 id="normalisation">Log-cap normalisation</h2>
+      <p>
+        Raw counts are squashed so that the first stars, commits or contributors matter more than the thousandth. For a
+        signal <code>S</code> with a cap <code>T</code>:
+      </p>
+      <p class="my-2 overflow-x-auto rounded border border-line bg-surface p-3 mono text-sm">norm(S, T) = log(1 + S) / log(1 + max(S, T))</p>
+      <p>
+        Zero scores 0, and anything at or above the cap scores 1. The caps sit near the 95th percentile of this catalog,
+        so a project does not need to be a giant to score well. They are listed with each pillar above. This is the same
+        idea as the OpenSSF Criticality Score.
+      </p>
+    </section>
+
+    <section aria-labelledby="finished">
+      <h2 id="finished">The finished-project rule</h2>
+      <p>
+        Quiet is not the same as dead. Many firmware projects are done: the code works, people still use it and build
+        on it, and nobody needs to commit. A project gets the finished-project rule when it is not archived, is at least
+        {FINISHED_MIN_YEARS} years old, and either its maturity or its adoption (the larger of popularity and
+        derivatives) is at least {pct(FINISHED_MIN)}. Its vitality is then raised to {pct(FINISHED_SHARE)} of the larger of
+        those two, if that is higher than its real activity. Entry pages mark these as "Finished: quiet but
+        established". Archived projects always get 0 vitality.
+      </p>
+    </section>
+
+    <section aria-labelledby="smoothing">
+      <h2 id="smoothing">Smoothing of issue and PR ratios</h2>
+      <p>
+        A repository with one closed issue should not outrank one with 200 closed and 20 open. Ratios are smoothed
+        toward a neutral prior of {RATIO_PRIOR}:
+      </p>
+      <p class="my-2 overflow-x-auto rounded border border-line bg-surface p-3 mono text-sm">ratio = (n·x + {RATIO_K}·{RATIO_PRIOR}) / (n + {RATIO_K})</p>
+      <p>
+        Here <code>x</code> is the closed (or merged) share and <code>n</code> the number of issues (or PRs). With none at
+        all, the neutral {RATIO_PRIOR} is used.
+      </p>
+    </section>
+
+    <section aria-labelledby="derivatives">
+      <h2 id="derivatives">Derivatives</h2>
+      <p>
+        Being built on is a strong signal. This pillar blends two halves. One counts catalog entries that derive from
+        this one, either as a GitHub fork or through the entry's <code>based_on</code> field. Each child counts by its
+        own score (without its own derivatives), so one level deep only, and the sum is capped. The other counts
+        active GitHub forks: forks with stars, or whose owners kept working for more than a day after forking.
+      </p>
+    </section>
+
+    <section aria-labelledby="first-party">
+      <h2 id="first-party">First-party bonus</h2>
+      <p>
+        Projects from the people who make the device get {FIRST_PARTY_BONUS} extra points on the internal score, capped at 100. An entry counts
+        as first-party when it is tagged <code>official</code> or one of its authors is the device's manufacturer. Official
+        source and SDKs are what most other projects build on, and they often live in quiet repos that understate them.
+      </p>
+    </section>
+
+    <section aria-labelledby="device-aggregate">
+      <h2 id="device-aggregate">Device ratings</h2>
+      <p>
+        A device page sums up its entries in a collapsible Quality block: how many have each rating, and which ones. A
+        device whose entries are all unrated shows no block. Entries whose rating is hidden are left out.
+      </p>
+    </section>
+
+    <section aria-labelledby="device-level">
+      <h2 id="device-level">Device-level ratings and overrides</h2>
+      <p>
+        Some devices keep all their programs in one repository, with one community around it. GitHub numbers for that repo
+        say nothing about one folder inside it, so such a device can name its <code>shared_repo</code>: every entry whose
+        source is in it shares one rating, worked out for the repo itself plus the device's community links. The device
+        page shows that rating once, in its Quality block, instead of on every card, and those entries keep their
+        recently-updated order.
+      </p>
+      <p>
+        When the numbers mislead, a rating can be set by hand with <code>quality.rating</code>, or the internal score with
+        <code>quality.score</code> and a reason, on an entry or for a whole device. The entry page shows the reason. Where a
+        rating would say nothing useful, <code>quality.hide</code> on an entry or a device shows none; those entries still
+        sort by their score.
+      </p>
+    </section>
+
+    <section aria-labelledby="limited">
+      <h2 id="limited">Entries without GitHub data</h2>
+      <p>
+        Entries without a GitHub repository, or not yet in the snapshot, have no popularity, issue or contributor data.
+        They get no rating. For sorting, each missing pillar takes the median of the entries that do have it, so their score
+        sits near the middle on those pillars instead of at zero.
+      </p>
+    </section>
+
+    <section aria-labelledby="snapshot">
+      <h2 id="snapshot">Where the numbers come from</h2>
+      <p>
+        Ratings come from a snapshot of GitHub data that the maintainer refreshes by hand, not live
+        {fetchedAt ? <> (the current snapshot is from {fetchedAt})</> : <> (there is no snapshot in this build yet)</>}. Time-based signals
+        are measured from the snapshot date, so a rating only changes when the data does.
+      </p>
+    </section>
+
+    <section aria-labelledby="limits">
+      <h2 id="limits">What it does not measure</h2>
+      <ul class="list-disc pl-5">
+        <li>Sound, features or how good the firmware is to use.</li>
+        <li>Safety. A rating says nothing about brick risk; read the entry's warnings.</li>
+        <li>Projects hosted outside GitHub (GitLab, forums, personal sites), which get no rating.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="prior">
+      <h2 id="prior">Prior art</h2>
+      <ul class="list-disc pl-5">
+        {PRIOR_ART.map((a) => <li><a href={a.href} rel="noopener">{a.label}</a>, {a.note}.</li>)}
+      </ul>
+    </section>
+  </div>
+</Base>

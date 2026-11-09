@@ -9,20 +9,32 @@ import AuthorList from '@/components/AuthorList.astro';
 import VersionTable from '@/components/VersionTable.astro';
 import Breadcrumb from '@/components/Breadcrumb.astro';
 import Prose from '@/components/Prose.astro';
+import QualityBreakdown from '@/components/QualityBreakdown.astro';
 import FirmwareMedia from '@/components/FirmwareMedia.astro';
 import DevicePhoto from '@/components/DevicePhoto.astro';
 import { KIND_LABELS, DISTRIBUTION_LABELS } from '@/lib/labels';
 import { cacheKeyOf } from '@/lib/cache-key';
+import { loadMetrics } from '@/lib/repo-metrics';
 import { getDevicesWithFirmwares, githubEditUrl, hostOf, listNames, plural, type DeviceItem, type FirmwareItem } from '@/lib/catalog';
 
 export async function getStaticPaths() {
   const devices = await getDevicesWithFirmwares();
   const byId = new Map(devices.map((d) => [d.id, d]));
+  const fetchedAt = loadMetrics()?.fetchedAt;
+  // Every entry once, for naming the parent and children in the quality block.
+  const entries = new Map<string, FirmwareItem>();
+  for (const d of devices) for (const f of [...d.firmwares, ...d.hiddenFirmwares]) if (!entries.has(f.id)) entries.set(f.id, f);
+  const rel = (id: string) => {
+    const e = entries.get(id);
+    return e && { id, name: e.data.name, url: e.url };
+  };
   // One page per entry, under its primary device; devices that list it through
   // also_devices link here. Entries hidden as stale still get a page so
   // existing links keep working.
   const page = (device: DeviceItem, hidden: boolean) => (firmware: FirmwareItem) => {
-    const props = { device, firmware, hidden, targets: firmware.deviceIds.map((id) => byId.get(id)!) };
+    const parent = firmware.quality.facts.parentId ? rel(firmware.quality.facts.parentId) : undefined;
+    const children = firmware.quality.facts.childIds.map(rel).filter((r) => r !== undefined);
+    const props = { device, firmware, hidden, targets: firmware.deviceIds.map((id) => byId.get(id)!), parent, children, fetchedAt };
     // Keyed on the fields the page renders, not the whole device: hashing every sibling
     // firmware once per page cost more than re-rendering. Reading another device or
     // target field below means adding it here.
@@ -30,6 +42,7 @@ export async function getStaticPaths() {
       { url: device.url, data: device.data },
       firmware,
       hidden,
+      { parent, children, fetchedAt },
       props.targets.map((t) => ({ url: t.url, manufacturerSlug: t.manufacturerSlug, data: t.data })),
     );
     return { params: { device: device.id, fw: firmware.slug }, props, cacheKey };
@@ -40,13 +53,15 @@ export async function getStaticPaths() {
   ]);
 }
 
-interface Props { device: DeviceItem; firmware: FirmwareItem; hidden: boolean; targets: DeviceItem[] }
-const { device, firmware: fw, hidden, targets } = Astro.props;
+interface Rel { id: string; name: string; url: string }
+interface Props { device: DeviceItem; firmware: FirmwareItem; hidden: boolean; targets: DeviceItem[]; parent?: Rel; children: Rel[]; fetchedAt?: string }
+const { device, firmware: fw, hidden, targets, parent, children, fetchedAt } = Astro.props;
 const d = fw.data;
 const links = [
   d.source && { label: 'Source', url: d.source },
   d.homepage && { label: 'Homepage', url: d.homepage },
 ].filter(Boolean) as { label: string; url: string }[];
+const communityLinks = d.community;
 const hasMedia = Boolean(d.video || d.image);
 // Without its own media, the firmware page borrows the device photo.
 const devicePhoto = hasMedia ? undefined : device.data.image;
@@ -101,10 +116,22 @@ const edit = d.generated_from
     {links.map((l) => (
       <><dt class="text-muted">{l.label}</dt><dd><a href={l.url} rel="noopener">{hostOf(l.url)}</a> <span class="mono break-all text-xs text-muted">{l.url}</span></dd></>
     ))}
+    {communityLinks.length > 0 && (
+      <>
+        <dt class="text-muted">Community</dt>
+        <dd>
+          <ul class="flex flex-wrap gap-x-3">
+            {communityLinks.map((l) => <li><a href={l.url} rel="noopener">{l.label}</a></li>)}
+          </ul>
+        </dd>
+      </>
+    )}
     {d.generated_from && (
       <><dt class="text-muted">Synced from</dt><dd>upstream metadata, <a href={d.generated_from} rel="noopener">{hostOf(d.generated_from)}</a> <span class="mono break-all text-xs text-muted">{d.generated_from}</span>. Corrections belong upstream.</dd></>
     )}
   </dl>
+
+  {!fw.quality.hidden && fw.quality.rating && <QualityBreakdown firmware={fw} parent={parent} children={children} fetchedAt={fetchedAt} deviceName={device.data.name} manufacturer={device.data.manufacturer} />}
 
   {d.tags.length > 0 && <div class="mt-4"><TagList tags={d.tags} /></div>}
 

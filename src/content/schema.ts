@@ -175,6 +175,22 @@ export const manufacturerSchema = z.object({
   notes: z.string().optional(),
 });
 
+/** Public quality ratings; keep in step with RATINGS in src/lib/quality.ts. */
+export const QUALITY_RATINGS = ['foundational', 'established', 'rising', 'notable'] as const;
+
+/** Quality settings on an entry: a hand-set score (with a reason) that replaces the computed one, and/or `hide`. */
+export const entryQualitySchema = z
+  .object({
+    score: z.number().int().min(0).max(100).optional(),
+    reason: z.string().min(1).optional(),
+    /** Show no quality score for this entry (it still sorts by its score). */
+    hide: z.boolean().optional(),
+    /** Hand-set public rating, replacing the computed one. */
+    rating: z.enum(QUALITY_RATINGS).optional(),
+  })
+  .refine((q) => q.score !== undefined || q.hide || q.rating, { message: 'set score, rating or hide' })
+  .refine((q) => q.score === undefined || q.reason, { message: 'a hand-set score needs a reason', path: ['reason'] });
+
 export const deviceSchema = z.object({
   name: z.string().min(1),
   manufacturer: z.string().min(1),
@@ -213,6 +229,26 @@ export const deviceSchema = z.object({
    * hidden by hide_stale_after_years.
    */
   pinned: z.array(slug).default([]),
+  /**
+   * Device-level quality scoring (see src/lib/quality.ts and /about/quality).
+   * `shared_repo`: entries whose source is inside this monorepo share one score,
+   * computed for the repo itself plus this device's community links, because
+   * the repo and community exist at the device level. `score` + `reason`: a
+   * hand-set device score; it replaces the shared score, or without
+   * `shared_repo` applies to every entry whose primary device this is.
+   * `hide`: show no quality score for any entry whose primary device this is.
+   */
+  quality: z
+    .object({
+      shared_repo: url.optional(),
+      score: z.number().int().min(0).max(100).optional(),
+      reason: z.string().min(1).optional(),
+      hide: z.boolean().optional(),
+      rating: z.enum(QUALITY_RATINGS).optional(),
+    })
+    .refine((q) => q.shared_repo || q.score !== undefined || q.hide || q.rating, { message: 'set shared_repo, score, rating or hide' })
+    .refine((q) => q.score === undefined || q.reason, { message: 'a hand-set score needs a reason', path: ['reason'] })
+    .optional(),
 });
 
 export const authorSchema = z.object({
@@ -285,6 +321,20 @@ export const firmwareBaseSchema = z.object({
   license_notes: z.string().optional(),
   /** Primary non-repo link: project site, forum thread, installer page. */
   homepage: url.optional(),
+  /**
+   * The entry this one derives from when that is not visible as a GitHub fork
+   * (copied code, a port, a hard fork re-uploaded as a new repo). Either a
+   * catalog entry `<device>/<slug>` or the parent's repo URL. GitHub forks are
+   * detected from the metrics snapshot and need no `based_on`.
+   */
+  based_on: z.union([url, z.string().regex(/^[a-z0-9-]+\/[a-z0-9-]+$/)]).optional(),
+  /** The project's own Discord, subreddit or forum, not the device's (that goes on the device). */
+  community: z.array(linkSchema).default([]),
+  /**
+   * Quality settings: `score` + `reason` replace the computed score (e.g. for a
+   * mirror repo whose GitHub numbers mislead); `hide` shows no score.
+   */
+  quality: entryQualitySchema.optional(),
   distribution: z.enum(DISTRIBUTIONS).optional(),
   /** Which stock firmware version(s) this targets, if specific. */
   requires_stock: z.string().optional(),

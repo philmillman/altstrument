@@ -30,6 +30,8 @@ export interface FirmwareItem {
   versions: Version[];
   /** Position in the listing device's `pinned` list; pinned entries sort first. */
   pin?: number;
+  /** Quality index (src/lib/quality.ts). */
+  quality: Quality;
 }
 
 export interface DeviceItem {
@@ -50,6 +52,10 @@ export interface DeviceItem {
    * `deviceId` is not this device's id); site-wide totals dedupe them by `id`.
    */
   firmwares: FirmwareItem[];
+  /** A device-level quality score (shared repo or hand-set), unless the device hides quality. */
+  quality?: DeviceQuality;
+  /** Without a device-level score: an aggregate of the listed entries' shown scores. */
+  aggregate?: DeviceAggregate;
   /** Entries hidden as stale (same sort). They still get their own page. */
   hiddenFirmwares: FirmwareItem[];
 }
@@ -84,6 +90,8 @@ export interface RecentVersion {
 }
 
 import { isStale } from './stale';
+import { aggregateQuality, computeQuality, type DeviceAggregate, type DeviceQuality, type Quality } from './quality';
+import { loadMetrics } from './repo-metrics';
 
 /** kebab-case of a name; used for manufacturer slugs everywhere. */
 import { slugify } from './slug';
@@ -107,14 +115,10 @@ function comparePins(a: FirmwareItem, b: FirmwareItem): number {
   return (a.pin ?? Infinity) - (b.pin ?? Infinity) || 0;
 }
 
+/** The catalog's base order: kind firmware before tool, then pinned, then by quality (see compareFirmwaresByQuality). */
 export function compareFirmwares(a: FirmwareItem, b: FirmwareItem): number {
   const kind = Number(a.data.kind === 'tool') - Number(b.data.kind === 'tool');
-  if (kind) return kind;
-  const pin = comparePins(a, b);
-  if (pin) return pin;
-  const status = statusRank(a.data.status) - statusRank(b.data.status);
-  if (status) return status;
-  return compareText(a.data.name, b.data.name);
+  return kind || compareFirmwaresByQuality(a, b);
 }
 
 /** Pinned first, then newest dated version, undated last, then name. Matches "Recently updated" in FirmwareFilter. */
@@ -125,6 +129,14 @@ export function compareFirmwaresByUpdated(a: FirmwareItem, b: FirmwareItem): num
   const bu = isoDate(firmwareUpdated(b)) ?? '';
   if (au !== bu) return !au ? 1 : !bu ? -1 : au < bu ? 1 : -1;
   return compareText(a.data.name, b.data.name);
+}
+
+/**
+ * Pinned first, then higher quality score; ties (entries sharing a device-level
+ * score) by newest dated version, then name. Matches "Quality" in FirmwareFilter.
+ */
+export function compareFirmwaresByQuality(a: FirmwareItem, b: FirmwareItem): number {
+  return comparePins(a, b) || b.quality.score - a.quality.score || compareFirmwaresByUpdated(a, b);
 }
 
 export function compareDevices(a: DeviceItem, b: DeviceItem): number {
@@ -169,6 +181,16 @@ export async function getDevicesWithFirmwares(): Promise<DeviceItem[]> {
   ]);
 
   const pinnedBy = new Map(devices.map((d) => [d.id, d.data.pinned]));
+  // Loader-generated entries skip schema defaults; fill the ones read below.
+  for (const fw of firmwares) fw.data.community ??= [];
+  for (const fw of firmwares) fw.data.tags ??= [];
+  const quality = computeQuality(
+    firmwares.map((fw) => ({ ...fw.data, id: fw.id, deviceIds: [fw.data.device.id, ...fw.data.also_devices] })),
+    loadMetrics(),
+    Object.fromEntries(
+      devices.map((d) => [d.id, { manufacturer: d.data.manufacturer, community: d.data.links.community, quality: d.data.quality }]),
+    ),
+  );
   const byDevice = new Map<string, FirmwareItem[]>();
   for (const fw of firmwares) {
     const deviceId = fw.data.device.id;
@@ -182,6 +204,7 @@ export async function getDevicesWithFirmwares(): Promise<DeviceItem[]> {
       url: `/firmware/${deviceId}/${slug}`,
       data: fw.data,
       versions: sortVersions(fw.data.versions),
+      quality: quality.entries.get(fw.id)!,
     };
     // One copy per targeted device, each with that device's pin.
     for (const id of deviceIds) {
@@ -206,6 +229,13 @@ export async function getDevicesWithFirmwares(): Promise<DeviceItem[]> {
         data: d.data,
         manufacturerSlug,
         ...(logo ? { logo } : {}),
+        ...(quality.devices.has(d.id) ? { quality: quality.devices.get(d.id) } : {}),
+        ...(() => {
+          if (quality.devices.has(d.id) || d.data.quality?.hide) return {};
+          const shown = all.filter((f) => !stale(f) && !f.quality.hidden).map((f) => ({ id: f.id, score: f.quality.score, rating: f.quality.rating }));
+          const aggregate = aggregateQuality(shown);
+          return aggregate ? { aggregate } : {};
+        })(),
         firmwares: all.filter((f) => !stale(f)),
         hiddenFirmwares: all.filter(stale),
       };

@@ -1,0 +1,131 @@
+/**
+ * Quality index report: threshold calibration and per-device rankings, from the
+ * committed snapshot and the catalog YAML (no network).
+ *
+ *   pnpm metrics:report                       percentiles of every raw signal (to set THRESHOLDS)
+ *   pnpm metrics:report --device m-vave-fm-1  top and bottom entries for a device (repeatable)
+ *   pnpm metrics:report --device x --top 25   longer lists
+ *   pnpm metrics:report --entry m-vave-fm-1/dirge   one entry's pillars and facts
+ */
+import { readdirSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { parse } from 'yaml';
+import { z } from 'astro/zod';
+import { deviceSchema, firmwareBaseSchema, refineFirmware } from '../../src/content/schema';
+import { computeQuality, PILLARS, THRESHOLDS, type QualityDevice, type QualityInput, type QualityFacts } from '../../src/lib/quality';
+import { loadMetrics } from '../../src/lib/repo-metrics';
+
+const ROOT = new URL('../..', import.meta.url).pathname;
+const FIRMWARES_DIR = join(ROOT, 'src/content/firmwares');
+const DEVICES_DIR = join(ROOT, 'src/content/devices');
+const schema = refineFirmware(firmwareBaseSchema.extend({ device: z.string() }));
+
+const args = process.argv.slice(2);
+const devices: string[] = [];
+const entries: string[] = [];
+let top = 10;
+for (let i = 0; i < args.length; i++) {
+  if (args[i] === '--device') devices.push(args[++i]);
+  else if (args[i] === '--entry') entries.push(args[++i]);
+  else if (args[i] === '--top') top = Number(args[++i]);
+  else throw new Error(`unknown argument ${args[i]}`);
+}
+
+const inputs: (QualityInput & { name: string })[] = [];
+for (const dir of readdirSync(FIRMWARES_DIR)) {
+  for (const file of readdirSync(join(FIRMWARES_DIR, dir))) {
+    if (!file.endsWith('.yaml')) continue;
+    const parsed = schema.safeParse(parse(readFileSync(join(FIRMWARES_DIR, dir, file), 'utf8')));
+    if (!parsed.success) continue; // validate.ts reports these
+    const fw = parsed.data;
+    inputs.push({
+      ...fw,
+      name: fw.name,
+      id: `${dir}/${file.replace(/\.yaml$/, '')}`,
+      deviceIds: [dir, ...fw.also_devices],
+    });
+  }
+}
+
+const devicesById: Record<string, QualityDevice> = {};
+for (const file of readdirSync(DEVICES_DIR)) {
+  if (!file.endsWith('.yaml')) continue;
+  const parsed = deviceSchema.safeParse(parse(readFileSync(join(DEVICES_DIR, file), 'utf8')));
+  if (!parsed.success) continue;
+  const d = parsed.data;
+  devicesById[file.replace(/\.yaml$/, '')] = { manufacturer: d.manufacturer, community: d.links.community, quality: d.quality };
+}
+
+const snapshot = loadMetrics(ROOT);
+if (!snapshot) console.warn('No snapshot at src/data/repo-metrics.json; every entry is limited data.');
+const quality = computeQuality(inputs, snapshot, devicesById).entries;
+const nameOf = new Map(inputs.map((i) => [i.id, i.name]));
+
+const pct = (xs: number[], p: number) => {
+  const s = [...xs].sort((a, b) => a - b);
+  return s.length ? s[Math.min(s.length - 1, Math.floor((p / 100) * s.length))] : NaN;
+};
+const fmt = (x: number | null | undefined) => (x === null || x === undefined ? '  –' : x.toFixed(2).padStart(4));
+
+if (!devices.length && !entries.length) {
+  const withData = [...quality.values()].filter((q) => !q.limited);
+  console.log(`${quality.size} entries, ${withData.length} with GitHub data, snapshot ${snapshot?.fetchedAt ?? 'none'}\n`);
+  console.log('signal             p50     p75     p90     p95     p99   threshold');
+  const facts: [keyof QualityFacts, keyof typeof THRESHOLDS | undefined][] = [
+    ['ageYears', 'ageYears'],
+    ['releases', 'releases'],
+    ['commits', 'commits'],
+    ['commitsLastYear', 'commitsLastYear'],
+    ['stars', 'stars'],
+    ['forks', 'forks'],
+    ['watchers', 'watchers'],
+    ['usefulForks', 'usefulForks'],
+    ['contributors', 'contributors'],
+    ['busFactor', 'busFactor'],
+    ['discussions', 'discussions'],
+  ];
+  for (const [f, t] of facts) {
+    const xs = withData.map((q) => q.facts[f]).filter((v): v is number => typeof v === 'number');
+    const row = [50, 75, 90, 95, 99].map((p) => pct(xs, p).toFixed(1).padStart(7)).join(' ');
+    console.log(`${f.padEnd(16)} ${row}   ${t ? THRESHOLDS[t] : ''}`);
+  }
+  console.log('\npillar           p50   p90   mean');
+  for (const p of PILLARS) {
+    const xs = [...quality.values()].map((q) => q.pillars[p]).filter((v): v is number => v !== null);
+    console.log(`${p.padEnd(14)} ${fmt(pct(xs, 50))}  ${fmt(pct(xs, 90))}  ${fmt(xs.reduce((a, b) => a + b, 0) / xs.length)}`);
+  }
+  const scores = [...quality.values()].map((q) => q.score);
+  console.log(`\nscore p10 ${pct(scores, 10)}  p50 ${pct(scores, 50)}  p90 ${pct(scores, 90)}  p99 ${pct(scores, 99)}`);
+  const ratings: Record<string, number> = {};
+  for (const q of quality.values()) ratings[q.rating ?? 'unrated'] = (ratings[q.rating ?? 'unrated'] ?? 0) + 1;
+  console.log('ratings', ratings);
+  const finished = [...quality.entries()].filter(([, q]) => q.facts.finished);
+  console.log(`finished-project rule applied to ${finished.length} entries`);
+}
+
+const header = `score  ${PILLARS.map((p) => p.slice(0, 4).padStart(4)).join(' ')}  entry`;
+const line = (id: string) => {
+  const q = quality.get(id)!;
+  const flags = [q.rating ?? 'unrated', q.hidden && 'hidden', q.override && `override ${q.override.level}`, q.shared && 'shared', q.firstParty && 'first-party', q.limited && 'limited', q.facts.finished && 'finished', q.facts.archived && 'archived', q.facts.parentId && `← ${q.facts.parentId}`, q.facts.childIds.length && `${q.facts.childIds.length} children`]
+    .filter(Boolean)
+    .join(', ');
+  return `${String(q.score).padStart(5)}  ${PILLARS.map((p) => fmt(q.pillars[p])).join(' ')}  ${nameOf.get(id)} (${id})${flags ? `  [${flags}]` : ''}`;
+};
+
+for (const d of devices) {
+  const ids = inputs.filter((i) => i.deviceIds.includes(d)).map((i) => i.id);
+  ids.sort((a, b) => quality.get(b)!.score - quality.get(a)!.score);
+  console.log(`\n== ${d}: ${ids.length} entries ==\n${header}`);
+  for (const id of ids.slice(0, top)) console.log(line(id));
+  if (ids.length > top * 2) console.log('  …');
+  for (const id of ids.slice(Math.max(top, ids.length - top))) console.log(line(id));
+}
+
+for (const id of entries) {
+  const q = quality.get(id);
+  if (!q) {
+    console.log(`\n${id}: not found`);
+    continue;
+  }
+  console.log(`\n${header}\n${line(id)}\n${JSON.stringify({ rank: q.rank, facts: q.facts }, null, 2)}`);
+}

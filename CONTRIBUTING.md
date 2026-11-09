@@ -92,6 +92,14 @@ notes: >-
 # OPTIONAL. Defaults to []. Slugs of other devices that share firmware or
 # hardware. Each slug must have a device file.
 related: []
+
+# OPTIONAL. Device-level quality. shared_repo: entries whose source is in this
+# monorepo share one rating for the repo and the device's community (see
+# "Quality ratings"). rating: a hand-set rating (foundational | established |
+# rising | notable). score + reason: a hand-set internal score. hide: true
+# shows no rating for any of the device's entries.
+quality:
+  shared_repo: https://github.com/example-co/example-programs
 ```
 
 ## Firmware template
@@ -151,6 +159,25 @@ license_notes: Example qualifier.
 # REQUIRED when source is absent. Otherwise optional. Primary non-repo link:
 # project site, forum thread or installer page.
 homepage: https://example.com/examplefw
+
+# OPTIONAL. The catalog entry this one derives from, as <device>/<slug>, or the
+# parent's repo URL. Set it only when this entry is NOT a GitHub fork of that
+# parent. GitHub forks are detected automatically.
+based_on: example-co-other-synth/otherfw
+
+# OPTIONAL. Defaults to []. The project's own Discord, subreddit or forum, not
+# the device's. Each item needs a label and a url.
+community:
+  - label: Example forum
+    url: https://forum.example.com/
+
+# OPTIONAL. Only when the GitHub numbers mislead. rating: a hand-set rating
+# (foundational | established | rising | notable). score + reason: a hand-set
+# internal score (0 to 100), which also decides whether the entry is rated.
+# hide: true shows no rating (the entry still sorts by its score).
+quality:
+  rating: foundational
+  reason: The library every Daisy project builds on; dependents are not tracked as derivatives.
 
 # OPTIONAL. One of: download | browser-installer | patch-your-own | commercial | source-only
 distribution: source-only
@@ -333,6 +360,22 @@ Say which recovery applies in `install_notes` either way, or in the device's `no
 - [ ] No binary files are added
 - [ ] A project that targets several devices with the same build is one entry with `also_devices`, not a copy per device
 - [ ] One device or one firmware per PR when possible
+
+## Quality ratings
+
+Entries get a public quality rating (Foundational, Established, Rising or Notable) worked out from an internal 0 to 100 score. The score is computed at build time from `src/data/repo-metrics.json` and the catalog, sorts lists, and is never shown. Entries under `MIN_RATED_SCORE`, or without GitHub data, get no rating. The device maker's own open-source firmware, and its SDKs and libraries (tools tagged `sdk` or `library`), are always Foundational; tag them `official` or list the manufacturer as an author. The weights and rating rules are in `src/lib/quality.ts`. The method is explained at `/about/quality`.
+
+Refresh the snapshot with `pnpm metrics:fetch`. Use `--only <device-slug>` for one device, and `--prune` to drop repos no entry uses. Review the diff of `src/data/repo-metrics.json`, then commit it.
+
+`pnpm metrics:report` prints threshold percentiles. `pnpm metrics:report --device <slug>` prints a device's top and bottom entries. `pnpm metrics:report --entry <device>/<slug>` explains one entry.
+
+`pnpm validate` warns when the snapshot is over 30 days old or is missing a GitHub source.
+
+First-party entries get a bonus: tag the entry `official`, or list the manufacturer as an author. Lists sort by quality, and ties fall back to recently updated.
+
+When one repository holds a device's whole program library, as with the Workshop Computer, set `quality.shared_repo` on the device. Those entries then share one rating, shown once on the device page. To correct a misleading rating, set `quality.rating` (or `quality.score` with a `reason`), on the entry or on the device. An entry's own setting wins over the device's. To show no rating at all, set `quality.hide: true` on the entry, or on the device for all its entries; they still sort by their score. Device `notes` are no longer shown on device pages.
+
+`scripts/metrics/propose-based-on.ts` proposes `based_on` values from prose. With `--apply`, it writes only the rows classed confident.
 
 ## Licensing of contributions
 

@@ -1,0 +1,39 @@
+name: Quality ratings feedback
+description: Thoughts on the quality ratings for devices and their projects.
+title: "[Quality]: "
+labels: [quality-ratings]
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Quality ratings (Foundational, Established, Rising, Notable) are new. How they are worked out is
+        explained at https://altstrument.org/about/quality. Tell us what looks wrong, what is missing, or
+        what would make them more useful.
+
+  - type: input
+    id: url
+    attributes:
+      label: Page URL
+      description: The device or entry page you are talking about, if any.
+      placeholder: https://altstrument.org/devices/m-vave-fm-1
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind of feedback
+      options:
+        - A rating looks wrong
+        - A project has no rating but should
+        - The ratings are confusing
+        - An idea for the ratings
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: feedback
+    attributes:
+      label: Feedback
+      description: What you noticed and what you expected instead.
+    validations:
+      required: true

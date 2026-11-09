@@ -62,12 +62,14 @@ src/
         <firmware-slug>.yaml  one YAML file per firmware
     schema.ts                 Zod schemas and allowed values (the field reference)
   content.config.ts           Astro content collections
+  data/                       GitHub metrics snapshot for quality scores
   loaders/                    content loaders for entries fetched at build time
   pages/                      Astro pages and endpoints (/api/*.json, /feed.xml, /robots.txt, /.well-known/api-catalog)
 public/                       favicons, device images, and Cloudflare _headers (Link headers) and _redirects
 scripts/
   validate.ts                 catalog validator (runs before build and in CI)
   build-icons.ts              rasterizes the favicon (`pnpm icons`)
+  metrics/                    GitHub metrics fetch, report and based_on proposals
 .github/
   ISSUE_TEMPLATE/             issue forms: bug report, new entry, entry update
   workflows/ci.yml            validate, type check and build on every push and PR

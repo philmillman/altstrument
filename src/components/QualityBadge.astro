@@ -1,0 +1,13 @@
+---
+import Badge from './Badge.astro';
+import { RATING_DESCRIPTIONS, RATING_LABELS } from '@/lib/quality';
+import type { FirmwareItem } from '@/lib/catalog';
+interface Props { firmware: FirmwareItem }
+const { firmware: fw } = Astro.props;
+const q = fw.quality;
+// The public rating only; the numeric score stays internal. Entries without enough data,
+// hidden ones, and ones sharing a device-level rating (shown once on the device page) show none.
+const rating = !q.shared && !q.hidden ? q.rating : undefined;
+const title = rating && `${RATING_LABELS[rating]}: ${RATING_DESCRIPTIONS[rating]}`;
+---
+{rating && <Badge tone="violet" title={title}><span class="sr-only">Quality rating: </span>{RATING_LABELS[rating]}</Badge>}

@@ -6,8 +6,10 @@ interface Props {
   firmwares: FirmwareItem[];
   /** Search box and status/source/license filters. Off leaves Type (when both kinds exist) and Sort by. */
   search?: boolean;
+  /** Initial sort; the page must render the server order to match. */
+  defaultSort?: 'updated' | 'quality';
 }
-const { firmwares, search = true } = Astro.props;
+const { firmwares, search = true, defaultSort = 'quality' } = Astro.props;
 
 function tally(values: string[]): Map<string, number> {
   const m = new Map<string, number>();
@@ -63,11 +65,12 @@ const filters: Select[] = [
   },
   // A select with a single value filters nothing, so leave it out.
 ].filter((s) => s.options.length >= 2);
-// Server order is Recently updated (compareFirmwaresByUpdated); the script re-sorts within each section.
+// Server order is the default sort (compareFirmwaresByUpdated or compareFirmwaresByQuality); the script re-sorts within each section.
 const sortSelect: Select = {
   id: 'fwf-sort',
   label: 'Sort by',
   options: [
+    { value: 'quality', label: 'Quality' },
     { value: 'updated', label: 'Recently updated' },
     { value: 'status', label: 'Status' },
     { value: 'name', label: 'Name' },
@@ -94,7 +97,7 @@ const selects = [...(hasBothKinds ? [kindFilter] : []), ...(search ? filters : [
         <label for={s.id} class="block text-sm font-medium">{s.label}</label>
         <select id={s.id} class="mt-1 w-full rounded border border-line-strong bg-surface px-2 py-2 text-base text-fg sm:px-3">
           {s.all && <option value="">{s.all}</option>}
-          {s.options.map((o) => <option value={o.value}>{o.label}</option>)}
+          {s.options.map((o) => <option value={o.value} selected={s.id === 'fwf-sort' && o.value === defaultSort}>{o.label}</option>)}
         </select>
       </div>
     ))}
@@ -123,8 +126,11 @@ const selects = [...(hasBothKinds ? [kindFilter] : []), ...(search ? filters : [
       var sections = Array.prototype.slice.call(document.querySelectorAll('[data-fw-section]'));
       var total = items.length;
       var coll = new Intl.Collator('en', { sensitivity: 'base', numeric: true });
+      // The server-rendered default (a browser may restore a different value on back/forward).
+      var defaultSort = 'quality';
+      Array.prototype.forEach.call(sort.options, function (o) { if (o.defaultSelected) defaultSort = o.value; });
 
-      // Reorders cards within each section using data-name / data-updated / data-order.
+      // Reorders cards within each section using data-name / data-updated / data-quality / data-order.
       // Pinned cards (data-pin, the device's pinned-list position) stay first in every mode.
       function sortItems() {
         var mode = sort.value;
@@ -135,7 +141,12 @@ const selects = [...(hasBothKinds ? [kindFilter] : []), ...(search ? filters : [
           if (pa !== pb) return pa - pb;
           if (mode === 'status') return Number(attr(a, 'data-order')) - Number(attr(b, 'data-order'));
           var byName = coll.compare(attr(a, 'data-name'), attr(b, 'data-name'));
-          if (mode === 'updated') {
+          if (mode === 'quality') {
+            var aq = Number(attr(a, 'data-quality')), bq = Number(attr(b, 'data-quality'));
+            if (aq !== bq) return bq - aq;
+          }
+          // Quality ties (entries sharing a device-level score) fall back to recently updated.
+          if (mode === 'updated' || mode === 'quality') {
             var au = attr(a, 'data-updated'), bu = attr(b, 'data-updated');
             if (au !== bu) return !au ? 1 : !bu ? -1 : au < bu ? 1 : -1;
           }
@@ -186,7 +197,7 @@ const selects = [...(hasBothKinds ? [kindFilter] : []), ...(search ? filters : [
           function put(k, v) { if (v) u.searchParams.set(k, v); else u.searchParams.delete(k); }
           put('q', q ? q.value.trim() : '');
           sels.forEach(function (s) { put(s.param, s.el ? s.el.value : ''); });
-          put('sort', sort.value === 'updated' ? '' : sort.value);
+          put('sort', sort.value === defaultSort ? '' : sort.value);
           history.replaceState(history.state, '', u.pathname + u.search + u.hash);
         } catch (e) {}
       }
@@ -197,6 +208,7 @@ const selects = [...(hasBothKinds ? [kindFilter] : []), ...(search ? filters : [
         if (q) q.value = p.get('q') || '';
         sels.concat({ param: 'sort', el: sort }).forEach(function (s) {
           var v = p.get(s.param);
+          if (s.param === 'sort' && !v) v = defaultSort;
           if (!s.el || !v) return;
           var ok = Array.prototype.some.call(s.el.options, function (o) { return o.value === v; });
           if (ok) s.el.value = v;

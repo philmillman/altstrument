@@ -10,10 +10,14 @@ name: Metrics top-up
 #     only reads its YAML files as data and comments which entries are unrated.
 #   - Pushes to main: top up anything still missing (fork PRs after merge).
 #
-# The token: METRICS_TOKEN (a fine-grained PAT with contents and pull requests
-# write on this repo) when set, else GITHUB_TOKEN. Commits pushed with
-# GITHUB_TOKEN do not start other workflows, so CI does not rerun on the lock
-# commit; with METRICS_TOKEN it does.
+# The token: a one-hour token from the metrics GitHub App when vars.METRICS_APP_ID
+# and secrets.METRICS_APP_PRIVATE_KEY are set, else GITHUB_TOKEN. It is handed only
+# to the steps that call GitHub (fetch/publish, push, PR and asset calls), never to
+# install or build steps, and checkout does not store it in .git/config. Actions
+# are pinned to commit SHAs. Commits
+# pushed with GITHUB_TOKEN do not start other workflows, so CI does not rerun on
+# the lock commit; with the app token it does. On main the app's push is refused
+# by the ruleset, so it opens a PR instead.
 
 on:
   pull_request:
@@ -46,18 +50,32 @@ jobs:
       contents: write
       pull-requests: write
     env:
-      GH_TOKEN: ${{ secrets.METRICS_TOKEN || github.token }}
       BASE_REF: ${{ github.event.pull_request.base.ref || github.event.repository.default_branch }}
     steps:
-      - uses: actions/checkout@v4
+      # A one-hour token from the altstrument metrics GitHub App (vars.METRICS_APP_ID,
+      # secrets.METRICS_APP_PRIVATE_KEY), limited to this repo's contents and PRs. The
+      # app is not on main's bypass list, so it can't push to main or merge without
+      # approval. Without the app, steps fall back to GITHUB_TOKEN.
+      - id: app-token
+        if: vars.METRICS_APP_ID != ''
+        uses: actions/create-github-app-token@fee1f7d63c2ff003460e3d139729b119787bc349 # v2.2.2
+        with:
+          app-id: ${{ vars.METRICS_APP_ID }}
+          private-key: ${{ secrets.METRICS_APP_PRIVATE_KEY }}
+          permission-contents: write
+          permission-pull-requests: write
+
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
           # The PR branch itself (not the merge commit), so the lock can be committed to it.
           ref: ${{ github.event.pull_request.head.ref || github.ref }}
-          token: ${{ secrets.METRICS_TOKEN || github.token }}
+          # The repo is public: clone without credentials and keep the token out of
+          # .git/config, where install and build steps could read it.
+          persist-credentials: false
           fetch-depth: 0
 
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
+      - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4.3.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: 22
           check-latest: true
@@ -83,9 +101,18 @@ jobs:
           cp "$lock" "$RUNNER_TEMP/start-lock.json"
 
       - run: pnpm metrics:fetch --missing --publish
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token || github.token }}
 
       - name: Commit the lock
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token || github.token }}
+          APP_SLUG: ${{ steps.app-token.outputs.app-slug }}
         run: |
+          # Authenticate this push only (checkout kept no credentials).
+          push() {
+            git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 | tr -d '\n')" push "$@"
+          }
           # Nothing fetched: leave the branch's own lock alone.
           if [ -f "$RUNNER_TEMP/start-lock.json" ] && cmp -s src/data/repo-metrics.lock.json "$RUNNER_TEMP/start-lock.json"; then
             git checkout -- src/data/repo-metrics.lock.json
@@ -94,17 +121,24 @@ jobs:
             echo "Lock unchanged."
             exit 0
           fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Commit as the app's bot user when the app token is in use.
+          if [ -n "$APP_SLUG" ]; then
+            bot="${APP_SLUG}[bot]"
+            git config user.name "$bot"
+            git config user.email "$(gh api "users/$bot" --jq .id)+$bot@users.noreply.github.com"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          fi
           git add src/data/repo-metrics.lock.json
           git commit -m "Update metrics lock"
-          if git push origin "HEAD:${GITHUB_HEAD_REF:-$GITHUB_REF_NAME}"; then
+          if push origin "HEAD:${GITHUB_HEAD_REF:-$GITHUB_REF_NAME}"; then
             exit 0
           fi
           # A protected main refuses the push: open a PR instead.
           if [ "$GITHUB_EVENT_NAME" != "pull_request" ]; then
             branch="metrics-topup-$(date -u +%Y%m%d-%H%M%S)"
-            git push origin "HEAD:refs/heads/$branch"
+            push origin "HEAD:refs/heads/$branch"
             gh pr create --base "$GITHUB_REF_NAME" --head "$branch" \
               --title "Update metrics lock" \
               --body "Metrics for entries that were missing from the snapshot (\`pnpm metrics:fetch --missing\`)."
@@ -125,19 +159,18 @@ jobs:
       contents: read
       pull-requests: write
     env:
-      GH_TOKEN: ${{ github.token }}
       PR: ${{ github.event.pull_request.number }}
       BASE_SHA: ${{ github.event.pull_request.base.sha }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
           ref: ${{ github.event.pull_request.base.sha }}
           persist-credentials: false
           # base...head needs the merge base.
           fetch-depth: 0
 
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
+      - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4.3.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: 22
           check-latest: true
@@ -150,6 +183,8 @@ jobs:
           pnpm exec tsx scripts/metrics/unrated.ts --base "$BASE_SHA" --head refs/remotes/pr/head > "$RUNNER_TEMP/unrated.md"
 
       - name: Comment
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           marker='<!-- metrics-topup -->'
           existing=$(gh api "repos/$GITHUB_REPOSITORY/issues/$PR/comments" --paginate \

@@ -14,7 +14,7 @@ description: >-
   A host session still takes the unit over as its panel. In that mode the device sends its input as plain MIDI and draws
   the screen from tiles sent back over USB SysEx, a vendor bulk interface or Bluetooth MIDI. A host program on macOS runs
   a firmware core such as ChoralRoot, Felucca or Melodee, using FM1VST's engine, and the sound plays on the computer. The
-  stock firmware cannot run this way. Since 0.2 it is built on fm1-base and felucca-bsp and plays the computer's audio
+  stock firmware cannot run this way. From 0.3.6 a Bluetooth session can instead play the sound on the FM-1 itself, at lower quality. Since 0.2 it is built on fm1-base and felucca-bsp and plays the computer's audio
   through the FM-1's speaker or headphones over USB. It answers installers as itself (FM-1_52XXYYZZ); 0.1 and 0.1.1 were
   built on TransitFM1, which comes from Dinghy, and answered as V15. Any Felucca-family installer can write the next
   firmware over it.
@@ -42,6 +42,10 @@ install_notes: >-
 brick_risk: false
 tags: [platform, emulator, usb-midi, research, synth-engine, looper, arpeggiator, midi]
 versions:
+- version: 0.3.6
+  date: 2026-11-09
+  url: https://github.com/Quixotic7/RemoteFM1/releases/tag/v0.3.6
+  notes: Adds an optional mode, off by default, in which a session over Bluetooth plays the firmware's sound through the FM-1's own speaker and headphones and stops sending the screen. The release describes it as mono with a cut treble and about 150 to 200 ms of delay, tried only with a Mac. Saved cartridges, loops and settings stay.
 - version: 0.3.5
   date: 2026-11-08
   url: https://github.com/Quixotic7/RemoteFM1/releases/tag/v0.3.5

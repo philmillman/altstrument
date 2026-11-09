@@ -11,8 +11,9 @@ description: >-
   further pages cover the lead, bass, drums, layers, colour (clean, vinyl, tape, grit), delay and space. REC holds an
   eight-bar passage, SAVE keeps one favourite with its edits, and GLO opens a built-in guide. The release also ships a
   single-file browser preview. The base is PERF-1, with its engine and installer tooling; the Satie data, moods and
-  pages are the author's. The release is a public beta whose notes say it still needed on-device listening and install
-  checks.
+  pages are the author's. The releases are public betas. The 0.1.1 notes say a fix for clicking in Ibiza Chill was confirmed on one FM-1, and the
+  0.1.2 notes add that resuming an interrupted install led to clicking and a reboot on the first boot, so recovery is not
+  verified.
 status: active
 authors:
 - name: OCKM Studio
@@ -28,10 +29,10 @@ license_notes: >-
 homepage: https://github.com/OCKM-STUDIO/SATIE-1
 distribution: download
 install_notes: >-
-  Download satie-1-0.1.0-beta.fwsc from the release and install it with tools/fm1_install.py or a compatible FM-1 web
+  Download satie-1-0.1.2-beta.fwsc from the release and install it with tools/fm1_install.py or a compatible FM-1 web
   installer, keeping USB connected until it finishes. The README says it does not import other firmwares' projects or
-  samples and that switching firmware may overwrite shared flash storage, so back up first. The release notes say a
-  Firmware Hub install check was still pending.
+  samples and that switching firmware may overwrite shared flash storage, so back up first. The 0.1.2 notes say it is not ready
+  for Firmware Hub submission.
 brick_risk: false
 tags: [generative, groovebox, drums, fx, performance, emulator, fork]
 image:
@@ -41,6 +42,14 @@ image:
   source_url: https://github.com/OCKM-STUDIO/SATIE-1
   first_party: true
 versions:
+- version: 0.1.2-beta
+  date: 2026-11-08
+  url: https://github.com/OCKM-STUDIO/SATIE-1/releases/tag/v0.1.2-beta
+  notes: Pre-release; only the on-screen wording changes, as a mood change now says it applies on the next bar. The notes report a severe-clicking first boot and a reboot after resuming an interrupted install, and say recovery is not hardware-verified. The original Puya flash was tested and the UC25HQ80 chip is untested.
+- version: 0.1.1-beta
+  date: 2026-11-08
+  url: https://github.com/OCKM-STUDIO/SATIE-1/releases/tag/v0.1.1-beta
+  notes: Pre-release; fixes repeated clicking in the Ibiza Chill pad by keeping each voice's state between audio blocks, which the maker confirmed on a real FM-1. The Python installer now reads the full USB identity. A round trip through stock V15 passed on one unit.
 - version: 0.1.0-beta
   date: 2026-11-08
   url: https://github.com/OCKM-STUDIO/SATIE-1/releases/tag/v0.1.0-beta

@@ -1,0 +1,42 @@
+device: m-vave-pocket-amp
+name: Pocket AMP Upgrader
+kind: tool
+summary: >-
+  Desktop app for Windows, macOS and Linux that installs M-VAVE's official Pocket AMP firmware over USB MIDI, with a
+  preset backup before each update and a resume step for an interrupted one.
+description: >-
+  M-VAVE's own updater runs on Windows only. This Flutter app does the same job on all three desktop systems with no
+  drivers: it downloads the official .fwsc from M-VAVE's server, or opens one you already have, checks the package
+  header, directory, CRCs and target chip, and accepts only the update loader whose hash matches the one in M-VAVE's
+  V1.05 package. Before writing it saves all 80 presets and their EQ, because an update can overwrite some of them, and
+  afterwards it writes back only the presets that changed and reads them back to check. A pedal left in update mode is
+  detected and the update can be resumed from there. The README says detection and preset backup were tried on a real
+  pedal under Linux, and that Windows and macOS have not been tried on hardware yet.
+status: active
+authors:
+- name: vitoramaral10
+  url: https://github.com/vitoramaral10
+source: https://github.com/vitoramaral10/pocket-amp-upgrader
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL v3 text and the README says GPL-3.0-only. The update protocol follows M-VAVE's GPL-3.0
+  FM1 Open browser updater. No firmware is committed or bundled: the app fetches M-VAVE's own file from M-VAVE's server.
+homepage: https://github.com/vitoramaral10/pocket-amp-upgrader
+distribution: download
+install_notes: >-
+  Download the build for your system from the latest release: a zip for Windows or macOS (the macOS app is unsigned),
+  or an AppImage or tarball for Linux. Close other MIDI apps, connect the charged pedal with a USB data cable, then
+  download or open the firmware and start the update; it takes about two minutes and the pedal restarts twice. If it
+  stops halfway, reconnect the pedal and use Resume update.
+brick_risk: false
+tags: [flasher, updater, desktop, backup]
+versions:
+- version: v0.1.0-beta.2
+  date: 2026-10-20
+  url: https://github.com/vitoramaral10/pocket-amp-upgrader/releases/tag/v0.1.0-beta.2
+  notes: Pre-release. Adds the automatic preset backup and restore around updates, saving and loading backups to a file, a check that refuses to reinstall the version the pedal already runs, and a Linux AppImage.
+- version: v0.1.0-beta.1
+  date: 2026-10-20
+  url: https://github.com/vitoramaral10/pocket-amp-upgrader/releases/tag/v0.1.0-beta.1
+  notes: Pre-release. First public beta, with builds for Windows, macOS and Linux.

@@ -1,0 +1,37 @@
+device: polyend-tracker-plus
+also_devices: [polyend-tracker-mini]
+name: Tracker Enhanced
+summary: Fork of Polyend's Tracker Community Edition for the Tracker+ and Tracker Mini that adds a per-project lines-per-beat setting from 1 to 16 and patterns of up to 1024 rows; extended MIDI CC control and new effects are planned.
+description: >-
+  Lines per beat is the one change implemented so far. It is set for each project, with a global default for new
+  projects, and step effects, envelope and LFO sync and MIDI clock follow it. Patterns grow from 128 to 1024 rows, pattern
+  lengths scale when the setting changes, and the sample memory shrinks from 60 MB to 55 MB to pay for the larger
+  buffers. The README says the lines-per-beat work has not been tried on hardware yet. Its roadmap lists more CC
+  assignments per MIDI instrument, more than two CCs per row, parametric EQ, saturation, exciter and extra compressor
+  effects, legato rolls, effects on rows without a note and an Original Tracker build; each item has a spec under
+  openspec/. The Original Tracker build was removed from this fork. Projects saved with it do not open on stock or
+  Community Edition firmware.
+status: active
+authors:
+  - name: llozd
+    url: https://github.com/llozd
+source: https://github.com/llozd/tracker-enhanced
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE is Polyend's "MIT License with Wholesale Commercial Clone Restriction", so the complete firmware and .ptf
+  builds cannot be sold. The precompiled synth libraries stay Polyend's proprietary code under their own licence file.
+distribution: source-only
+install_notes: >-
+  No prebuilt firmware is published and no release exists yet. Build the Tracker+ or Tracker Mini target, copy the
+  resulting .ptf to /Firmware/ on the microSD card and run the firmware update from Config. Back up the card first:
+  projects saved with this firmware cannot be opened by older firmware. The README says the bootloader sits in a
+  protected region below the application, and Polyend's recessed reset button flashes a known-good .ptf from /Firmware if
+  a build does not boot.
+brick_risk: false
+tags: [fork, sequencer, tracker, midi, platform]
+versions:
+  - version: main @ 4363cca
+    date: 2026-11-08
+    url: https://github.com/llozd/tracker-enhanced/commit/4363ccad7632845d0448e1eedc16ec605f53a262
+    notes: No tagged releases; this is the latest commit.

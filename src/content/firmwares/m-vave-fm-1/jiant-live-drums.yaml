@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+name: JIANT LIVE DRUMS
+summary: >-
+  JIANT fork that turns the FM-1 into a multitimbral drum sound module: two 12-pad engines, a MIDI receive channel per track, 32-destination MIDI LEARN and the sequencer switched off.
+description: >-
+  DRUM-X is extended to 12 independent sounds and a new DRUM-LAB engine adds 12 synthesized pads with ten editable parameters each and eight kit-wide controls. The SEQ and PLAY buttons open an
+  editable drum MIDI map and a performance page for velocity response, choke and retrigger instead of starting a transport. Six tracks each take their own receive channel,
+  one controller can move several parameters at once, and eight voices are shared across everything. The repository has a dedicated browser emulator, installer and editor. The README says a physical FM-1 installed it through
+  that installer and that the drum editing, SEQ and PLAY pages were checked on the unit, calling this limited device testing, and warns against JIANT's own installer. It is a separate repository from the catalogued JIANT LIVE.
+status: active
+authors:
+- name: Misha Mashina (MishaMashinaMM)
+  url: https://github.com/MishaMashinaMM
+source: https://github.com/MishaMashinaMM/jiant-live-drums
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  README and LICENSING.md give GPL-3.0-only, as JIANT and Felucca, with upstream credits kept in the file headers.
+homepage: https://mishamashinamm.github.io/jiant-live-drums/
+distribution: browser-installer
+install_notes: >-
+  Use the dedicated Drums installer on the project site, not JIANT's, or build as BUILDING.md describes. Back up the FM-1 and prepare a recovery method first, as the README advises.
+brick_risk: false
+tags: [drums, midi, performance, synth-engine, emulator, fork]
+image:
+  url: https://raw.githubusercontent.com/MishaMashinaMM/jiant-live-drums/main/docs/jiant-live-drums-overview.svg
+  alt: "Illustration titled JIANT LIVE DRUMS v0.2 showing two independent twelve-pad drum engines, DRUM-X and DRUM-LAB, the SEQ button as a MIDI map and the PLAY button as performance, and eight shared voices"
+  credit: Misha Mashina
+  source_url: https://github.com/MishaMashinaMM/jiant-live-drums
+  first_party: true
+versions:
+- version: main @ 006f3e4
+  date: 2026-11-09
+  url: https://github.com/MishaMashinaMM/jiant-live-drums/commit/006f3e4
+  notes: No tagged releases; this is the latest commit, which records the physical FM-1 check of the screen updates.

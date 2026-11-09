@@ -5,7 +5,7 @@ summary: >-
   Work in progress four-patch Instrument design environment: each Instrument holds four six-operator FM patches with macro knobs, on fm1-base and the Felucca FM6 engine.
 description: >-
   An Instrument is four DX7-style voices with per-patch levels, held in 32 slots. Four macros named Brightness, Body, Motion and Edge change the saved patch non-destructively,
-  using the algorithm's routing to tell carriers from modulators. The native app has operator, envelope and LFO editors, a two-lane sequencer, an arpeggiator, four effect buses, EQ,
+  using the algorithm's routing to tell carriers from modulators. The native app has operator, envelope and LFO editors, a two-lane polyphonic event sequencer with a piano roll, an arpeggiator with latch, four effect buses, EQ,
   master compression and a limiter, with settings kept in flash. A browser workshop built on M-VAVE's open simulator is used to audition patches. The docs say physical playback,
   flash migration and CPU load on a real FM-1 are still outstanding, and that final pages for macros and an Instrument bank are unfinished. No release exists.
 status: active
@@ -25,7 +25,7 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, fm, editor, sequencer, fx, arpeggiator]
 versions:
-- version: main @ 798842e
-  date: 2026-11-08
-  url: https://github.com/albinoIguana/FM1-Lab/commit/798842e03202bf8a94eacb3c67565ed040ce9d83
-  notes: No tagged releases; this is the latest commit, which republishes the native emulator build. The commit before it adds a choice of eight or sixteen step arpeggiator views and a random arpeggiator order.
+- version: main @ 88e2b8f
+  date: 2026-11-09
+  url: https://github.com/albinoIguana/FM1-Lab/commit/88e2b8f1156f3db5ad43691ac8e62925d1dc227c
+  notes: No tagged releases; this is the latest commit, which republishes the native emulator build. Since the previous row the sequencer becomes event based, with polyphonic notes, ties and a piano-roll editor over loops of 2 to 64 steps, the two sequencer lanes each select their own Instrument bank, an arpeggiator latch and a carrier ADSR editor are added, and a Digitone SysEx inspector and converter produces FM sounds for the library.

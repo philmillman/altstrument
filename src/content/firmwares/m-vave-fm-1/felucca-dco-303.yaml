@@ -1,16 +1,17 @@
 device: m-vave-fm-1
 name: Felucca DCO and 303
 summary: >-
-  Felucca 1.8.1 fork that adds a Juno-106-style DCO engine with a BBD chorus, and a TB-303 engine with the TB-3PO
-  pattern generator. Source only; the version string still reads 1.8.1.
+  Felucca 1.8.1 fork that adds a Juno-106-style DCO engine with a BBD chorus, a TB-303 engine with the TB-3PO
+  pattern generator, and a drum pattern generator. Source only; the version string still reads 1.8.1.
 description: >-
   The DCO engine (14) plays up to four voices a track with wave, pulse width, sub, noise, filter and range
-  controls, a high-pass filter and 20 presets taken from the Juno-106 factory patches, after the KR-106 emulation
+  controls, a high-pass filter, a choice of VCA behaviour and 70 presets taken from the Juno-106 factory patches, after the KR-106 emulation
   as ported in fm-106. The chorus effect gains a stereo BBD type with the Juno's I, II and I+II modes. The 303 engine
   (15) is a single bass voice from Open303 as X0X ported it, with accent, slide and drive options. On a 303 track
   the ARP key opens TB-3PO, which writes a new 64-step line from density, accent, slide, octave and scale settings
   and can mutate it every few passes while playing. A MODEL page sets the generator to AICD, which draws lines from an
-  n-gram model of acid patterns instead of TB-3PO's rules. The repository also holds the generator as a standalone C
+  n-gram model of acid patterns instead of TB-3PO's rules. On drum tracks the ARP key opens two BRAIN pages that
+  write a new pattern from a model of 808 and 909 patterns, in house, breaks or mixed styles. The repository also holds the 303 generator as a standalone C
   library under packages/acidgen. Engine numbers are appended after Felucca's, so existing
   projects load unchanged, but firmware up to 1.6.1 shows projects that use the DCO engine as empty. Upstream's ADPCM
   engine is not available in this fork. The README says to build it from the branch; there are no releases.
@@ -26,7 +27,7 @@ license_notes: >-
   MIT (LICENSING.md, LICENSES/); the TB-3PO generator is a port of X0X's, itself after the Phazerville Hemisphere
   TB_3PO applet. The AICD mode uses the acid line model of Michael Ganss's Aicd (MIT, LICENSES/MIT-Aicd.txt), unchanged
   and turned into flash tables at build time; the patterns it was trained on are not in the repository. The standalone
-  packages/acidgen library is GPL-3.0-only code with that MIT model data.
+  packages/acidgen library is GPL-3.0-only code with that MIT model data. The drum pattern generator uses Michael Ganss's DrumBrain model (MIT, LICENSES/MIT-DrumBrain.txt), turned into flash tables at build time.
 distribution: source-only
 install_notes: >-
   Build it from the repository as Felucca is built (BUILDING.md) and install with Felucca's tools. Felucca's
@@ -34,7 +35,7 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, oscillator, fx, sequencer, generative, fork]
 versions:
-- version: main @ 67f3cd9
-  date: 2026-11-07
-  url: https://github.com/mediaworkbench/Felucca/commit/67f3cd9dffe581cad93193b93248b1aac368c362
-  notes: No tagged releases; this is the latest commit. Since the previous row, TB-3PO settings act on the playing line at the next bar, the sample, slice, lo-fi and voice engines are off by default in the build, and the second core runs at M-VAVE's own supply settings.
+- version: main @ 7e0813c
+  date: 2026-11-09
+  url: https://github.com/mediaworkbench/Felucca/commit/7e0813cb2ac194a9e15f54cc8b3076a2d377b32a
+  notes: No tagged releases; this is the latest commit. Since the previous row, the DCO engine has 70 Juno presets and a VCA switch (envelope, gate or its own ADSR), drum tracks get the DrumBrain pattern generator, and its pages are covered by autosave and undo. TB-3PO settings act on the playing line at the next bar, the sample, slice, lo-fi and voice engines are off by default in the build, and the second core runs at M-VAVE's own supply settings.

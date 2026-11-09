@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: FM1-Hero
+kind: firmware
+summary: >-
+  Falling-note piano trainer and rhythm game with a six-voice two-operator FM synth: key LEDs show the next notes, with wait, game and auto modes and MIDI file import.
+description: >-
+  Green right-hand and blue left-hand note bars fall on the screen while the key LEDs light the keys to press next. Wait mode pauses until the notes are played, game mode scores PERFECT, GREAT, GOOD and MISS with combo multipliers and an end grade, and auto mode plays the song while the player improvises. Hands can be practised separately, an A-B loop repeats a section, and a metronome is available. There are 16 built-in songs and a custom slot filled from a MIDI file or by recording the keys, six FM patches with brightness and a ping-pong echo. The browser tools hold a larger song library and a drag-and-drop uploader. It is built with foma. It is a different project from VaveHero.
+status: active
+authors:
+- name: mlwilki
+  url: https://github.com/mlwilki
+source: https://github.com/mlwilki/FM1-Hero
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md gives GPL-3.0-only, as Felucca, SLOOP and Dinghy, with foma's files and the radio tables from felucca-bsp credited under their own terms (Apache-2.0 for the JieLi-derived tables; GPL-3.0-only OR MPL-2.0 for the BLE parts, used under the GPL).
+homepage: https://github.com/mlwilki/FM1-Hero
+distribution: source-only
+install_notes: >-
+  ./fm1 build makes build/fm1-hero-0.1.fwsc and ./fm1 dev serves an emulator, a WebMIDI installer and a Rescue tab on localhost. Scores, settings and the custom song are saved at flash 0xFB000 and may be overwritten by another firmware using that area. The README says to hold OCT- while powering on for USB rescue, which also offers the official firmware.
+brick_risk: false
+tags: [game, synth-engine, midi, emulator, trainer]
+image:
+  url: https://raw.githubusercontent.com/mlwilki/FM1-Hero/main/docs/card.png
+  alt: "FM1-Hero game mode: song MEGALOVANIA, 6250 points, x45 combo, GOOD, green and blue note bars falling over a keyboard, with speed, sound, FM and echo values below"
+  credit: mlwilki
+  source_url: https://github.com/mlwilki/FM1-Hero#readme
+  first_party: true
+versions:
+- version: v0.1
+  date: 2026-11-08
+  url: https://github.com/mlwilki/FM1-Hero/tree/v0.1
+  notes: Git tag; no GitHub release page.

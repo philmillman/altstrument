@@ -1,0 +1,85 @@
+device: m-vave-fm-1
+name: CORD
+summary: >-
+  Chord instrument, groovebox and songwriting companion for the FM-1, a fork of CoralFlower first released as ChaseFlower: 130 progression ideas, Auto Harmony, contextual variations, a phrase editor, Chord Lab, saved songs, USB recording and a browser player.
+description: >-
+  Fork of CoralFlower, which is a fork of ChoralRoot and Felucca. The author released it as ChaseFlower in versions
+  named 0.6-chaseN, which shared CoralFlower's package identity and were installed through CoralFlower's installer, and
+  renamed it CORD with 1.0. It keeps CoralFlower's chord instrument, with a lower row of roots and an upper row of
+  chord types, and adds a catalogue of 130 progression ideas that HOME browses and that set key, scale and metre. Nine
+  HOME pages cover the core controls, sound, texture, groove, performance, looping, mixing, variations and keyboard
+  and harmony. Auto Harmony stacks chords from the scale, and variations change harmony, arpeggio, drums, effects, sound or
+  scale by a chosen amount with a way back. Other parts are thirteen arpeggiator modes, thirteen FX preset chains, a
+  phrase editor of up to sixteen chord slots, Chord Lab for comparing chords, six saved songs, the latest three manual
+  takes and USB capture of stereo audio and stems. The sound banks include 32 CC0 Aquanode DX7 voices. The screens show a small
+  mascot, and a browser version runs the firmware compiled to WebAssembly. The progression catalogue includes chord
+  excerpts based on commercial songs; the README says they are practice starting points and do not reproduce a recording.
+status: active
+authors:
+- name: Chase DeAnda
+  url: https://github.com/chasedeanda
+source: https://github.com/chasedeanda/cord-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md puts CORD's own work under GPL-3.0-only, on CoralFlower, ChoralRoot and Felucca. The CC0 Aquanode
+  DX7 voices keep their bytes unchanged, a few drum recipes adapt Melodee's GPL-3.0-only tables, the Departure Mono
+  font is SIL OFL 1.1, and the packages carry three unmodified JieLi SDK files under Apache-2.0. The 0.6-chase1 to
+  chase3 packages are also committed under releases/ in the repository, and none is an M-VAVE stock image.
+homepage: https://chasedeanda.github.io/cord-fm1/
+distribution: browser-installer
+requires_stock: M-VAVE stock firmware, CoralFlower, ChoralRoot or Felucca
+install_notes: >-
+  The CORD installer page, in Chrome or Edge over USB, picks the latest release, checks its checksum and also
+  takes your own .fwsc. The README and releases say to save a backup first and that the official M-VAVE firmware can be
+  reinstalled. The 0.6-chaseN packages go through CoralFlower's installer under its custom build option. The 1.0.2 release
+  notes say that hardware acceptance, including install from V15, switching away and recovery from an interrupted
+  update, has not been recorded on a physical FM-1.
+brick_risk: false
+tags: [chords, synth-engine, performance, sequencer, fx, drums, fork, usb-audio, midi, emulator]
+image:
+  url: https://raw.githubusercontent.com/chasedeanda/cord-fm1/main/docs/images/house-style/devil-core.png
+  alt: "CORD HOME screen: title Open Road, C Ionian 4/4, a pink-orange devil mascot beside a large letter C, four chord cells C, G, Am, F, and Rhythm, Key, Scale, Tempo labels"
+  credit: Chase DeAnda
+  source_url: https://github.com/chasedeanda/cord-fm1
+  first_party: true
+versions:
+- version: 1.0.2
+  date: 2026-11-08
+  url: https://github.com/chasedeanda/cord-fm1/releases/tag/v1.0.2
+  notes: CORD gets its own package identity, FM-1_936, in place of CoralFlower's FM-1_930. The app and update loader accept both the Puya P25Q80 and the newer UC25HQ80 flash chips and refuse unknown ones; flash layout and saved data formats are unchanged. The release notes say hardware acceptance of this package is pending.
+- version: 1.0.1
+  date: 2026-11-08
+  url: https://github.com/chasedeanda/cord-fm1/releases/tag/v1.0.1
+  notes: Public renaming. USB MIDI now shows as CORD FM-1 and USB audio as CORD In, so the device has to be selected again in a DAW, and backups download as cord-backup files; old CoralFlower backups still load.
+- version: '1.0'
+  date: 2026-11-08
+  url: https://github.com/chasedeanda/cord-fm1/releases/tag/v1.0
+  notes: First 1.0 build. PLAY is green while running and orange while stopped, there are nine HOME pages, progression cues show only chord roots, harmony and drum variations go through the next-bar queue with undo, Auto Harmony defaults to on, and melodic and percussion voices get separate budgets.
+- version: 0.6-chase13
+  date: 2026-11-07
+  url: https://github.com/chasedeanda/cord-fm1/releases/tag/v0.6-chase13
+  notes: HOME now cycles eight toolbars (Core, Sound, Texture, Groove, Perform, Loop, Mix, Harmony and Keyboard), the boot animation plays once, the boot chime is a longer rising strum, and the key lights show only chord roots. The release notes say the final chime and toolbar order still need review on a physical unit.
+- version: 0.6-chase10
+  date: 2026-11-07
+  url: https://github.com/chasedeanda/cord-fm1/releases/tag/v0.6-chase10
+  notes: Adds an optional startup chime, switched under GLO, Display, BOOT SND, that a first played note cancels. The preceding 0.6-chase9 added a piano-key CORD boot screen, live matching of progression cards and round beat pulses.
+- version: 0.6-chase8
+  date: 2026-11-07
+  url: https://github.com/chasedeanda/cord-fm1/releases/tag/v0.6-chase8
+  notes: Chord-first update with new native screens, a shared-clock accompaniment page, a sixteen-slot phrase editor, six saved song ideas, a Chord Lab for comparing chords, and the latest three manual recordings. The older bass and bonfire scenes are dropped from the default build.
+- version: 0.6-chase7
+  date: 2026-11-07
+  url: https://github.com/chasedeanda/cord-fm1/releases/tag/v0.6-chase7
+  notes: Adds the HOME progression explorer with 100 ideas, contextual variations with undo, live auditioning of FX presets and a 3/4 Waltz groove.
+- version: 0.6-chase6
+  date: 2026-11-07
+  url: https://github.com/chasedeanda/cord-fm1/releases/tag/v0.6-chase6
+- version: 0.6-chase5
+  date: 2026-11-07
+  url: https://github.com/chasedeanda/cord-fm1/releases/tag/v0.6-chase5
+  notes: Adds Auto Harmony under GLO, with smart chord modifiers on the upper keys.
+- version: 0.6-chase4
+  date: 2026-11-07
+  url: https://github.com/chasedeanda/cord-fm1/releases/tag/v0.6-chase4
+  notes: First combined release, with the bass and bonfire scenes, startup animation, diagnostics, sound banks, 6/8 grooves and six-channel USB recording.

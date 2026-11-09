@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: ReVo
+kind: firmware
+summary: >-
+  Generative soundscape instrument with two machines: Bioma, a synthesized ecosystem of birds, insects and water, and Atolls, two independent sample loops; includes a browser sample editor.
+description: >-
+  Bioma lets birds, insects and water answer each other while wind, drift, beam and resonance shape the scene. Atolls plays two sample loops with movable windows, played Fragments, Landing destinations and Flock and V Format moves between them. Both machines use a dual-core engine and effects pipeline. MIDI notes and CCs are mapped for Bioma on channels 1 to 7 and separately for Atolls; MIDI control starts off and clock is chosen apart from it. The sample editor crops a WAV to 7.384 seconds, previews the ADPCM result and writes it to one of four slots. The site has a field guide and a manual. Built on Felucca and SLOOP.
+status: active
+authors:
+- name: gggguto
+  url: https://gggguto.com
+source: https://github.com/gggguto/ReVo
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  CREDITS.md lists Felucca and SLOOP as GPL-3.0-only foundations. The firmware source is a zip in the repository and the release (ReVo-development-source.zip), not a source tree. Terminus is SIL OFL 1.1.
+homepage: https://gggguto.github.io/ReVo/
+distribution: browser-installer
+install_notes: >-
+  Open the Firmware page in Chrome or Edge with the FM-1 on USB; it checks the package identity and SHA-256 before updating. The release also has the .fwsc, release.json and the source zip. Samples are written from the sample editor page, with Atolls chosen first. The README says recovery instructions are on the install page.
+brick_risk: false
+tags: [generative, ambient, sampler, synth-engine, editor, midi]
+image:
+  url: https://raw.githubusercontent.com/gggguto/ReVo/main/site/assets/homes/bioma-00.png
+  alt: "Bioma home screen: a small white island with four palm trees on a black sea of white wave lines, with a few red birds flying above"
+  credit: gggguto
+  source_url: https://gggguto.github.io/ReVo/
+  first_party: true
+versions:
+- version: v1.0.0
+  date: 2026-11-08
+  url: https://github.com/gggguto/ReVo/releases/tag/v1.0.0
+  notes: First release, package build 2026110608; the author reports MIDI tests on a physical FM-1 for both machines.

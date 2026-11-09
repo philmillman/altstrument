@@ -1,0 +1,52 @@
+device: elektron-analog-rytm
+name: Sidecar | Expander
+summary: Raspberry Pi 4B or Pi 5 voice and effects expander for the Analog Rytm MKII, driven from the Rytm through a patched OS 1.74 or 1.73 that you build from your own stock file; the Analog Four MKII has a separate mod.
+description: >-
+  The Pi sits on the Rytm's USB port and plays extra machines on the Rytm's tracks, among them Plaits, DaisySP, JUNO,
+  6-operator FM, multisample, wavetable, granular and a sample chopper, along with send and insert effects, master FX, LFOs, a
+  recorder, the Pi's own poly-capable sequencer and a MIDI machine. The Rytm's firmware is changed with a set of OS mods
+  that add pages on the unit to drive the Pi, which you apply to your own official OS file with elekloader or the browser
+  patcher; there is one build per OS version. The Pi runs from an SD card image and is configured from a web page, a
+  touchscreen or the Rytm. Overbridge can pass through the Pi to a computer. A Teensy 4.1 version, Sidecar Mini, is frozen
+  at 0.1.0. The project calls itself unofficial and experimental, lists what is tested on hardware and what only in an
+  emulator, and keeps no Elektron firmware in its repositories.
+status: active
+authors:
+  - name: trigcondition
+    url: https://github.com/trigcondition
+source: https://github.com/trigcondition/sidecar-firmware
+source_status: open
+license: GPL-2.0-or-later
+license_notes: >-
+  The README says the project's own code is GPL version 2 or, at your option, any later version. The Raspberry Pi engine
+  links the Circle library (GPLv3), so the Pi binary as a whole is distributed under GPL version 3. Third-party components
+  and their licences are listed in THIRD_PARTY_LICENSES. The Rytm mods live in a separate sidecar-mods repository, also
+  under the GPL. No Elektron firmware is included.
+homepage: https://trigcondition.github.io/sidecar-expander/
+distribution: patch-your-own
+requires_stock: Analog Rytm MKII OS 1.74 or 1.73
+install_notes: >-
+  Build the Rytm firmware from your own stock Analog-Rytm_MKII_OS1.74.syx or OS1.73 file with elekloader or the browser
+  patcher, send it with Transfer, then set up the Pi from the release's SD card image and set the Rytm's USB CONFIG to
+  Overbridge. Back up projects first. To go back, send the stock file of the OS you want the same way. A Rytm that does not
+  boot recovers from the startup menu: hold FUNC at power on, press TRIG 4 (OS UPGRADE) and send the stock file over DIN MIDI,
+  which takes about 16 minutes or more.
+brick_risk: false
+tags: [expander, synth-engine, effects, sequencer, mutable-instruments-port, raspberry-pi, patcher, overbridge]
+versions:
+  - version: v0.4.2
+    date: 2026-11-08
+    url: https://github.com/trigcondition/sidecar-firmware/releases/tag/v0.4.2
+    notes: Overbridge passthrough on the Pi 5. New card files only; the Rytm keeps its 0.4.0 firmware.
+  - version: v0.4.1
+    date: 2026-11-06
+    url: https://github.com/trigcondition/sidecar-firmware/releases/tag/v0.4.1
+    notes: Fixes for USB dropouts and for the Rytm returning after its cable is pulled, and opt-in Overbridge passthrough on the Pi 4.
+  - version: v0.4.0
+    date: 2026-11-04
+    url: https://github.com/trigcondition/sidecar-firmware/releases/tag/v0.4.0
+    notes: Master FX, a SAT saturator, the MIDI machine, an arpeggiator, a USER SLOTS page and Analog Four MKII support; the Rytm firmware 0.4.0 is released with it for OS 1.74 and 1.73.
+  - version: v0.3.0
+    date: 2026-10-30
+    url: https://github.com/trigcondition/sidecar-firmware/releases/tag/v0.3.0
+    notes: Poly tracks played by the Sidecar's sequencer, new machines (multisample, wavetable, granular, chop, live in), an amp insert that loads NAM captures and a recorder.

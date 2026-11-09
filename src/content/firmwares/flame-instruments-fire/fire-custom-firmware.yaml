@@ -1,0 +1,40 @@
+device: flame-instruments-fire
+name: FIRE custom firmware
+summary: Unofficial modified build of Flame's FIRE v1.07 that adds velocity and CV together, a CV matrix, randomize, four extra hihat sample slots, MODAL and STRING algorithms from Plaits, and main plus direct outputs at once.
+description: >-
+  Rights warning: the repository's .syx file is a modified build of Flame's stock FIRE v1.07 firmware, and no source is
+  published. Flame has not licensed redistribution of its firmware, and the repository's licence covers only the
+  author's modifications.
+
+  Every parameter gets separate velocity and CV amounts that both stay active, and instruments can take several CV
+  inputs through a matrix. Other changes are a randomize gesture, a bit-reduction modulation target, two extra hihat
+  knobs (ring and swing), the MODAL and STRING voices taken from Plaits and Rings, output settings that play on the
+  main mix and a direct out together, and four extra hihat sample slots filled by uploading the repository's sample
+  files. The author says the twelve stock algorithms sound as before with the new amounts centred, and that the build
+  was tested on hardware. Kits saved with it do not load correctly on stock.
+status: active
+authors:
+  - name: Daniel Gorgan
+    url: https://github.com/danut007ro
+source_status: binary-only
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text, copyright 2026 Daniel Gorgan, and says it covers only the modifications made in the
+  repository, not Flame's original firmware, which it says belongs to Flame. It lists Plaits and Rings (Emilie Gillet,
+  MIT) and Lyle Mills' Plaits changes (MIT) as included code. The firmware file is a modified vendor image and its
+  redistribution has no stated permission from Flame.
+homepage: https://github.com/danut007ro/flame-takt-fire
+distribution: download
+requires_stock: "1.07"
+install_notes: >-
+  Back up kits with a MIDI dump, power on with SETUP and MASTER held to enter update mode, then send
+  FlameFireV1_07_custom.syx with 150 ms between messages. Upload the four sample files afterwards with the module
+  running normally, pausing after each one. To go back, send Flame's original FlameFireV1_07.syx the same way; it is
+  on Flame's downloads page and not in the repository.
+brick_risk: false
+tags: [drums, synth-engine, cv, modulation, sysex, mutable-instruments-port]
+versions:
+  - version: main @ 23941c5
+    date: 2026-11-09
+    url: https://github.com/danut007ro/flame-takt-fire/commit/23941c5de66d9a0ecf808ae0663738fdb0ab5aaf
+    notes: No tagged releases; this is the latest commit.

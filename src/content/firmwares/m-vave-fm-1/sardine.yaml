@@ -1,0 +1,58 @@
+device: m-vave-fm-1
+name: Sardine
+summary: >-
+  Club-mixing firmware built on Felucca's engines with four always-on layers (lead, chord, bass, drums), twenty styles that start as fresh grooves, held DJ moves, a style-to-style blend and MIDI out per layer.
+description: >-
+  Sardine plays four layers together. Sounds act at once, while patterns and modifiers wait until SEQ drops them in on
+  the bar line. Each start builds a new groove in one of twenty styles, from slow and dark to gabber. Phrases run over
+  four bars with a second part that evolves on its own, and a LIVE mode builds a mix from a single kick or pad. Held
+  buttons give fills, breaks, filter sweeps, wash, throw, tape stop and wobble, and STYLE MIX blends into another style
+  while the bass or kick plays on. It has 145 synth sounds, 24 synthesised drum kits and no samples, a pattern editor,
+  eight save sets with a song mode, 3D panning, MIDI clock in and out, and USB MIDI out with each layer on its own
+  channel. The project site has a browser emulator and a web installer, and a dev-branch test build. It descends from
+  Sill, Daurade, Flyfish and Tuna.
+status: active
+authors:
+- name: delirioux
+  url: https://github.com/delirioux
+source: https://github.com/delirioux/sardine
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL version 3 text, and LICENSING.md says GPL-3.0-only as for Felucca and the earlier forks. The
+  bundled piano samples are CC0 1.0, and other bundled parts keep their own licences.
+homepage: https://delirioux.github.io/sardine/
+distribution: browser-installer
+install_notes: >-
+  Web installer on the project site in Chrome or Edge over USB. The README says installing is at your own risk and
+  that Felucca's installer puts Felucca back; the build reports itself as FM-1_47727346. The README notes it is
+  patched for FM-1 units with the newer chipset.
+brick_risk: false
+tags: [groovebox, sequencer, synth-engine, drums, chords, performance, midi, usb-midi, emulator, fork]
+image:
+  url: https://raw.githubusercontent.com/delirioux/sardine/main/docs/screens/home.png
+  alt: Sardine home screen at 126 BPM in A minor with four knobs (filter open, feel 18, pump 35, space 70) above the LEAD, CHORD, BASS and DRUMS layers and their step patterns
+  credit: delirioux
+  source_url: https://github.com/delirioux/sardine
+  first_party: true
+versions:
+- version: v1.0.6
+  date: 2026-11-08
+  url: https://github.com/delirioux/sardine/releases/tag/v1.0.6
+  notes: Holding WASH and THROW together while playing no longer drops the unit into the update mode.
+- version: v1.0.2
+  date: 2026-11-08
+  url: https://github.com/delirioux/sardine/releases/tag/v1.0.2
+  notes: Adds MIDI clock in and out, and STYLE MIX from a stopped unit starts the new style with a fade in.
+- version: v1.0
+  date: 2026-11-08
+  url: https://github.com/delirioux/sardine/releases/tag/v1.0
+  notes: Adds the MANUAL page per layer, the HOME VIEW scope, a power-on LED test, sixteen lead melodies and the pattern editor.
+- version: v0.8
+  date: 2026-11-05
+  url: https://github.com/delirioux/sardine/releases/tag/v0.8
+  notes: Changes the design to four fixed layers with an editor, held fills, breaks and sweeps.
+- version: v0.6
+  date: 2026-11-04
+  url: https://github.com/delirioux/sardine/releases/tag/v0.6
+  notes: First release, a stack of up to twelve code-like layers with arpeggiator, gate and pan.

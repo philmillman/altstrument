@@ -8,8 +8,9 @@ description: >-
   official or community firmware again. Apps load from /APPS/ on the card or
   are pushed over USB in development. The repository also has Wren scripting,
   USB audio and Overbridge classes, and a controller firmware. 7-segment
-  units are not supported. The first developer preview, v0.1.0, ships a
-  prebuilt app loader; the API may change in minor releases before 1.0. An earlier experiment
+  units are not supported. The first developer preview, v0.1.0, shipped a
+  prebuilt app loader that does not boot on a Deluge with the stock bootloader; v0.1.1 fixes this.
+  The API may change in minor releases before 1.0. An earlier experiment
   by another developer, m-m-adams/deluge-rs, stopped at hello-world stage.
 status: active
 authors:
@@ -24,7 +25,11 @@ license_notes: >-
 distribution: download
 tags: [sdk, rust, alternative-os, simulator]
 versions:
+  - version: v0.1.1
+    date: 2026-11-08
+    url: https://github.com/FirestormAudio/deluge-sdk/releases/tag/v0.1.1
+    notes: Fixes the app loader, which crashed at every power-on with the stock bootloader in v0.1.0. Also fixes MIDI 2.0 on Linux and black encoder counting, and adds clock output control, support for more than one USB-MIDI device and a flash-protection crate.
   - version: v0.1.0
     date: 2026-11-06
     url: https://github.com/FirestormAudio/deluge-sdk/releases/tag/v0.1.0
-    notes: First developer preview. Covers the async SDK, cargo deluge tooling, the app loader with an optional bootloader write protection, board support, USB classes, the RZ/A1 chip crates and the desktop simulator; the API is not stable before 1.0.
+    notes: First developer preview; its app-loader.bin does not boot with the stock bootloader, so use v0.1.1. Covers the async SDK, cargo deluge tooling, the app loader with an optional bootloader write protection, board support, USB classes, the RZ/A1 chip crates and the desktop simulator; the API is not stable before 1.0.

@@ -1,0 +1,28 @@
+device: cleveland-hothouse
+name: Computer Room (HotHouse build)
+summary: >-
+  CloudSeed algorithmic reverb for the HotHouse pedal, forked from GuitarML's DaisyCloudSeed. It has ten presets in a presets_hothouse.toml file, assignable knobs and toggles with a secondary layer, a reverse-delay feed and a Web MIDI preset editor.
+description: >-
+  This is the HotHouse build from the same repository as the Terrarium release; the Terrarium build has its own entry. The signal path is mono in and mono out, with the right output a copy of the left. Presets are defined in
+  presets_hothouse.toml, which is validated and embedded in the firmware at build time. Every knob and each of the three three-position toggles can be assigned per preset, with a second function while the right
+  footswitch is held. Edits can be stored on the pedal by holding the bypass footswitch, and holding both footswitches reverts to factory. The reverb can be fed up to two seconds of reversed audio, a bloom mode reverses the gain envelope of the multitap delays, and a scatter mode with its own rate and depth controls makes the tap levels wander. On the HotHouse a delay line count of one is also available. The pedal is a USB MIDI device, and a single-file browser editor from the same release reads and writes the preset bank over SysEx without reflashing. The build uses the Daisy bootloader in boot-SRAM mode, so the bootloader has to be flashed once.
+status: active
+authors:
+  - name: Jim Battin
+    url: https://github.com/jimbattin
+source: https://github.com/jimbattin/ComputerRoom
+source_status: open
+license: MIT
+license_notes: >-
+  Builds on GuitarML's DaisyCloudSeed and Valdemar Erlingsson's CloudSeed, both MIT.
+homepage: https://github.com/jimbattin/ComputerRoom
+distribution: download
+install_notes: >-
+  Flash cloudseed-hothouse.bin from the release with the Electrosmith web programmer, or build from source with make BOARD=hothouse and flash with make BOARD=hothouse program-dfu. The README says this fork uses BOOT_SRAM, so flash the Daisy bootloader once first with make program-boot. Download editor.html from the same release as the firmware and open it in Chrome or Firefox. Use presets_hothouse.toml, not presets.toml, as the preset file.
+brick_risk: false
+tags: [fx, reverb, editor, presets, web-midi, sysex]
+versions:
+  - version: v1.1.0
+    date: 2026-11-09
+    url: https://github.com/jimbattin/ComputerRoom/releases/tag/v1.1.0
+    notes: First release with a HotHouse build (cloudseed-hothouse.bin) and its own presets_hothouse.toml. Also adds the scatter mode with rate and depth controls, a CPU meter in the editor, and DFU flashing without putting the Seed into DFU mode by hand.

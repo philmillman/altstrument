@@ -1,0 +1,39 @@
+device: m-vave-fm-1
+name: ORBITRIX
+summary: >-
+  Orbital groove engine in which four rings of steps circle a sun at small ratios, so a polyrhythm is also a chord, with a Kepler-orbit voice, just-intonation tunings and 13 systems.
+description: >-
+  The voice is a planet on an elliptical orbit, solved from Kepler's equation by table, with moons, precession, noise and a
+  pitch fall. Four rings carry steps at ratios such as 1:1, 5:4, 3:2 and 7:4, and the same ratios set the pitches above a
+  movable root, in just, otonal, utonal, pentatonic or equal tunings. Further stages cover mutual phase modulation
+  between voices, a merger-style chirp, a pulsar beam and a black-hole effect that redshifts and freezes the sound, plus
+  macros, an orbit pad, a filter map, delay and a power-on story scored by the engine. It is built on Dinghy 0.5 and also
+  builds for the SMK-37 with BOARD=smk37. The README says it is in development, not yet tested on a real FM-1, and has no
+  release; a project page runs the same C in the browser and carries a web installer.
+status: active
+authors:
+- name: joakimskurk
+  url: https://github.com/joakimskurk
+source: https://github.com/joakimskurk/fm1orbitrix
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md gives GPL-3.0-only, as Dinghy, with Felucca, SLOOP, OberVave and genkigenki's SMK-37 platform code under their own notices. The Terminus font is SIL OFL 1.1.
+homepage: https://joakimskurk.github.io/fm1orbitrix/
+distribution: source-only
+install_notes: >-
+  Build with build.sh and JieLi's toolchain, then install build/orbitrix.fwsc over USB-MIDI with tools/fm1_install.py, or use the installer on the project page in
+  Chrome or Edge. The README documents a USB rescue reached by holding OCT- while switching on, and any firmware from The Firmware Hub can be installed over it.
+brick_risk: false
+tags: [synth-engine, sequencer, generative, oscillator, tuning, fx, midi, emulator]
+image:
+  url: https://raw.githubusercontent.com/joakimskurk/fm1orbitrix/main/docs/readme/screen_orrery.png
+  alt: "ORBITRIX ORRERY page: four rings of steps around a yellow sun marked C with coloured planets on them, ratio boxes 1:1, 5:4, 3:2 and 7:4 on the right, and HITS A to D counters reading 4, 5, 6 and 7"
+  credit: joakimskurk
+  source_url: https://github.com/joakimskurk/fm1orbitrix
+  first_party: true
+versions:
+- version: main @ 81497a7
+  date: 2026-11-09
+  url: https://github.com/joakimskurk/fm1orbitrix/commit/81497a7
+  notes: No tagged releases; this is the latest commit, which restyles the project page.

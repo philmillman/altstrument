@@ -11,7 +11,7 @@ description: >-
   builds beside its FM-1 releases (the fork's own smk37 branch stopped at 0.21). The upstream maintainer has
   no SMK-37, so the builds are described as community-tested. Each release has one package per model (Pro,
   Elite, MKE-P37), with a "1core" twin for units that freeze with the standard one. The faders set the
-  sends into the effects, and the TRS jack is not used.
+  sends into the effects, and the TRS jack is a MIDI output that repeats what goes out over USB.
 status: active
 authors:
 - name: Quixotic7 (ChoralRoot)
@@ -45,6 +45,10 @@ image:
   source_url: https://genkigenki.github.io/smk37/
   first_party: true
 versions:
+- version: 0.33-smk37
+  date: 2026-11-09
+  url: https://github.com/Quixotic7/ChoralRootFM1/releases/tag/v0.33-smk37
+  notes: The SMK-37 packages of 0.33, which starts the audio clocks right after power-on to remove the pop some FM-1s gave, adds MIDI CC in and out for the sounds' parameters (Options > MIDI CC, with the out side also on the TRS jack and the faders) and lets the master filter act on the chords or the bass alone. No SMK-37 owner has reported the pop. Community port by genkigenki, tested by SMK-37 owners rather than the maintainer.
 - version: 0.32-smk37
   date: 2026-11-08
   url: https://github.com/Quixotic7/ChoralRootFM1/releases/tag/v0.32-smk37

@@ -2,7 +2,7 @@ device: m-vave-fm-1
 name: MF-1
 kind: tool
 summary: >-
-  Native macOS emulator of the FM-1 with its panel, screens, DX7 engine and effects, a virtual MIDI port that answers like the hardware, and a Songs menu; a second mode turns it into the iScream synth.
+  Native macOS emulator of the FM-1 with its panel, screens, DX7 engine and effects, a virtual MIDI port that answers like the hardware, and a Songs menu; extra modes turn it into the iScream, Almanac and Woof synths.
 description: >-
   The app is a SwiftUI panel laid out from a photo of the unit around a C++ engine that is Google's msfa DX7 core, which the
   README says is what the FM-1 firmware runs. By default it applies deviations measured on real V15 units, such as detune, feedback
@@ -10,7 +10,7 @@ description: >-
   like the FM-1, so web librarians and editors find it, and it accepts DX7 banks and voices as SysEx and M-VAVE's vendor
   protocol for identify and voice writes. Extended mode adds effects after the signal path and a fifth bank of voices.
   The Songs menu plays built-in songs and adds Standard MIDI Files. The six effects are generic designs fitted to published ranges,
-  and Bluetooth, battery, USB audio and firmware updates are not emulated. Mode two, iScream, has its own entry.
+  and Bluetooth, battery, USB audio and firmware updates are not emulated. The iScream, Almanac and Woof modes also run on the FM-1 as one firmware, which has its own entry (MF-1 Modes).
   Ian Butterworth's repository holds the app, the research notes and the firmware port.
 status: active
 authors:
@@ -31,6 +31,22 @@ install_notes: >-
 brick_risk: false
 tags: [emulator, fm, synth-engine, midi, presets]
 versions:
+- version: 1.5.0
+  date: 2026-11-08
+  url: https://github.com/IanButterworth/mf-1/releases/tag/v1.5.0
+  notes: The app is unchanged from 1.4.0. The release describes a single FM-1 firmware that bundles the iScream, Almanac and Woof modes; no firmware package is attached.
+- version: 1.4.0
+  date: 2026-11-08
+  url: https://github.com/IanButterworth/mf-1/releases/tag/v1.4.0
+  notes: Adds the Woof mode, with thirteen dogs whose barks are FM voices played from the keys, in its own window with a pixel-art dog.
+- version: 1.3.1
+  date: 2026-11-08
+  url: https://github.com/IanButterworth/mf-1/releases/tag/v1.3.1
+  notes: Each Almanac month opens in its own playing style, such as chords, a split with a drone or a pattern.
+- version: 1.3.0
+  date: 2026-11-08
+  url: https://github.com/IanButterworth/mf-1/releases/tag/v1.3.0
+  notes: Adds the Almanac mode, with one sound for each month, a weather setting, places and moods, and a pixel-art landscape.
 - version: 1.2.2
   date: 2026-11-07
   url: https://github.com/IanButterworth/mf-1/releases/tag/v1.2.2

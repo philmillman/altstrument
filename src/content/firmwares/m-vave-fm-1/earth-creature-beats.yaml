@@ -5,11 +5,11 @@ summary: >-
   Five-part groovebox: a four-voice polysynth, a sample drum machine with eight kits, 808 and synth basses, a slicer and a four-track sequencer with patterns, scenes and a song chain.
 description: >-
   Each part is called a creature and has its own button: OTTER the synth with 64 presets, CAT the drum kit, FOX the bass and 808 bank, HOPPER
-  the slicer that can use the user's own samples, and BEAVER the sequencer of four tracks with 32 steps, probability, ratchets, eight patterns and a 16-slot
-  chain. A home screen shows all five, a mixer holds levels, pans, effects and a master section, and eight scenes store pattern, preset, kit and mix.
+  the slicer that can use the user's own samples, and BEAVER the sequencer of four tracks with 32 steps, probability, ratchets, parameter locks, polymeter, eight patterns, a 16-slot
+  chain and a song builder. A home screen shows all five, a mixer holds levels, pans, effects and a master section, and eight scenes store pattern, preset, kit and mix, with a reverb bus and per-creature sends. USB audio goes out at full level whatever MASTER is set to.
   Generators write a groove on all tracks in one press. The factory samples are synthesised by scripts in the repository and released as CC0.
   The build is on fm1-base. The author flashes one of two units and the other stays stock, and the README has no hardware test report beyond the simulator audit.
-  The repository is a personal project that writes a static site and installer for the firmware.
+  The repository belongs to Sin Fetish Audio and also holds a second firmware, Alien Stack, and a console for simulating, measuring and flashing.
 status: active
 authors:
 - name: SoulandCode69
@@ -18,8 +18,8 @@ source: https://github.com/SoulandCode69/sfa-fm1
 source_status: open
 license: GPL-3.0-only
 license_notes: >-
-  The README says GPL-3.0-only for the firmware and MPL-2.0 for the fm1-base platform, and the repository has no LICENSE file. docs/SAMPLES.md
-  says the factory samples are original and released as CC0 1.0.
+  The README says GPL-3.0-only for the firmware and MPL-2.0 for the fm1-base platform, and the repository now has a LICENSE file with the GPL v3 text and a NOTICE stating GPL-3.0-only for the source. The NOTICE and docs/SAMPLES.md
+  say the factory samples are original and released as CC0 1.0.
 distribution: source-only
 install_notes: >-
   Clone with submodules and build with fm1-base's build script and the JieLi toolchain, then install the package with its installer or from the
@@ -28,7 +28,7 @@ install_notes: >-
 brick_risk: false
 tags: [groovebox, sequencer, drums, sampler, synth-engine, generative]
 versions:
-- version: main @ 74087e1
-  date: 2026-11-08
-  url: https://github.com/SoulandCode69/sfa-fm1/commit/74087e1179de3eed1099285e87982dbaa694f16c
-  notes: No tagged releases; this is the latest commit, labelled ECB build 9, which adds headroom with a transparent output clip, unity gain staging and a gentler master compressor and limiter. Earlier builds the same day added eight patterns, scenes, a song chain and eight kits.
+- version: main @ 873b5a0
+  date: 2026-11-09
+  url: https://github.com/SoulandCode69/sfa-fm1/commit/873b5a0f832d2cccd9ed4b30e009f33f3f170f76
+  notes: No tagged releases; this is the latest commit. Since the previous row, ECB build 10 adds a reverb bus with sends, a deeper Beaver and USB audio at full level, and build 11 adds a declick pass, ramped mixer gains and a song builder. The other commits add the second firmware and the console.

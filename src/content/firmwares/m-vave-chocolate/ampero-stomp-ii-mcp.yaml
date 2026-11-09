@@ -1,0 +1,36 @@
+device: m-vave-chocolate
+name: AmperoStompII-MCP
+kind: tool
+summary: Two Python MCP servers; one reads and writes a Chocolate Plus's button and pedal configuration over USB MIDI SysEx and backs up its memory, the other controls a Hotone Ampero II Stomp.
+description: >-
+  The chocolate server speaks the same SysEx protocol as M-VAVE's CubeSuite editor. It reads and sets the advanced
+  custom mode (press mode and up to 16 messages per bank, on firmware 012 but not 010) and the custom mode with one CC
+  per pedal, listens to presses, and saves or restores the whole memory as an .fcp file like the editor's Export. The
+  Chocolate's switch must be on U. The second server, for a Hotone Ampero II Stomp, sends the documented CC commands and
+  SysEx to read patches and change scenes, models and knobs; its model name table is not in the repository and is built
+  from the user's own copy of Hotone's editor. The author describes both protocols as decoded from the official
+  editors' traffic and tested with Ampero firmware 2.4.0. Nothing is written to either device's firmware. README text
+  is in English and Portuguese.
+status: active
+authors:
+  - name: JuliaNazka
+    url: https://github.com/JuliaNazka
+source: https://github.com/JuliaNazka/AmperoStompII-MCP
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GNU GPL version 3 text with no statement that later versions apply. The README adds that the
+  LZO1X decompressor follows the GPL miniLZO reference code.
+distribution: source-only
+requires_stock: Chocolate Plus firmware 012 for the advanced custom mode
+install_notes: >-
+  Needs Python 3.11 or newer with mido, python-rtmidi and mcp installed. Register ampero/ampero_mcp.py and
+  chocolate/chocolate_mcp.py as stdio servers in an MCP client. Run the backup command before changing a Chocolate; it
+  writes an .fcp file outside the repository. Only configuration data is written, so the stock firmware is untouched.
+brick_risk: false
+tags: [mcp, sysex, usb-midi, editor, python, backup]
+versions:
+  - version: main @ 34ab013
+    date: 2026-11-09
+    url: https://github.com/JuliaNazka/AmperoStompII-MCP/commit/34ab013818af85526a1c94549f66cbd264aefda8
+    notes: No tagged releases; this is the latest commit.

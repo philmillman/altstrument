@@ -13,7 +13,7 @@ description: >-
   and for the harper Turlough O'Carolan. Three of the black-key effects are renamed Ceo, Macalla and Fras, and
   there is a green triskele launch screen. From 0.4, notes received over USB or TRS MIDI play the Lead. From 0.5, a web editor shows every setting of a piece
   and works the FM-1 over USB, and holding HOME with OCT- or OCT+ undoes and redoes the last 16 changes. A separate one-file browser visualiser reads the FM-1's MIDI out and
-  paints it as a landscape. From 0.5.1, units with the newer UC25HQ80 flash chip can save and update. From 1.0, the audio is computed one block ahead to remove crackle. From 1.1, a sleep timer fades the sound out and blanks the screen, and MIDI program changes 0 to 7 pick the piece. AISLING saves its eight pieces in the same flash location as NACHTFAHRT, DUB-1 and
+  paints it as a landscape. From 0.5.1, units with the newer UC25HQ80 flash chip can save and update. From 1.0, the audio is computed one block ahead to remove crackle. From 1.1, a sleep timer fades the sound out and blanks the screen, and MIDI program changes 0 to 7 pick the piece. From 1.2, MIDI controllers turn the knobs and Evolve can be set to land on the bar line. AISLING saves its eight pieces in the same flash location as NACHTFAHRT, DUB-1 and
   AMB-1, so installing one of them can overwrite another's saves.
 status: active
 authors:
@@ -31,7 +31,7 @@ distribution: browser-installer
 requires_stock: V15, V16 or NACHTFAHRT
 install_notes: >-
   Web installer in Chrome or Edge over USB (also Chrome on Android or a Chromebook), or tools/fm1_install.py with
-  the .fwsc from the release (aisling-1.1.fwsc). The release notes report installs on a real FM-1 from V15, V16 and NACHTFAHRT
+  the .fwsc from the release (aisling-1.2.fwsc). The release notes report installs on a real FM-1 from V15, V16 and NACHTFAHRT
   0.9.5, and a return to stock with M-VAVE's M-UPGRADE, which shows AISLING as v14. They also say an install
   interrupted by pulling the cable carries on when it is reconnected. Installing is at your own risk.
 brick_risk: false
@@ -43,6 +43,10 @@ image:
   source_url: https://github.com/stephencummins/fm1-aisling
   first_party: true
 versions:
+- version: "1.2"
+  date: 2026-11-08
+  url: https://github.com/stephencummins/fm1-aisling/releases/tag/v1.2
+  notes: MIDI controllers on any channel turn the knobs (CC 16 to 19 for the four knobs of the current page, CC 74 to 79 for Filter, Evolve, Motion, Drift, Wet and Energy). On the Aisling page ALGORITHM sets whether Evolve nudges now and then at a phrase start or every 4, 8, 16 or 32 bars. Saves from 1.1 open as before. The release notes say it was tried on one FM-1 with the first flash chip, over 1.1 and over V16, and that the two new controls were checked only in the computer test build.
 - version: "1.1"
   date: 2026-11-07
   url: https://github.com/stephencummins/fm1-aisling/releases/tag/v1.1

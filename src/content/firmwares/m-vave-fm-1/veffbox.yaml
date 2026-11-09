@@ -9,7 +9,7 @@ description: >-
   notes, a step sequence or strummed chord sequences of 16 chords with up to eight notes each. Six LFOs and three
   envelopes, each with four destinations, modulate it, and up to eight effects can be stacked before RESAMPLE
   records the result as the next source. Each of the 64 bank sounds keeps a generation tree and can be branched
-  from or rebuilt bit for bit. Since 0.5.0 four tracks sound at once, with a player and a mute per track; the README
+  from or rebuilt bit for bit. Since 0.5.0 four tracks sound at once, with a player and a mute per track; version 0.6.0 adds a CHORDS setting that makes every track follow one chord progression; the README
   lists pitch as a modulation target and resamples longer than 1.67 seconds as not done yet. The site has a browser emulator that runs the firmware as
   WebAssembly, with a step-by-step tutorial.
 status: active
@@ -38,6 +38,10 @@ image:
   source_url: https://github.com/galfaroth/veffbox
   first_party: true
 versions:
+- version: 0.6.0
+  date: 2026-11-08
+  url: https://github.com/galfaroth/veffbox/releases/tag/v0.6.0
+  notes: Adds a CHORDS setting on GLO. Tracks set to CHORD play track 1 to 4's progression in step, each with its own sound, strum and voices, and RESAMPLE copies the chords in.
 - version: 0.5.0
   date: 2026-11-07
   url: https://github.com/galfaroth/veffbox/releases/tag/v0.5.0

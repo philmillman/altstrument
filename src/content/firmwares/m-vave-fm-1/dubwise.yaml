@@ -1,0 +1,27 @@
+device: m-vave-fm-1
+name: DUBWISE
+kind: firmware
+summary: >-
+  Dub sound system for playing with a band: a riddim with bass and skank that follows MIDI clock, tape-echo throws, a spring crash and an auto-dub mode that makes the moves itself.
+description: >-
+  Drums, bass and skank run over four riddims (one drop, rockers, steppers, and a MIDI one with no internal drums). It follows incoming MIDI clock and transport from USB or the TRS input and carries on at its own tempo if the clock stops; the channels are set for an Arturia BeatStep Pro, and CC messages work the echo, filter, throw, freeze, siren and spring. The echo repeats can be shifted in pitch, the tape can be warped or frozen into a loop, and a phaser runs through the wet signal. Auto dub drops, throws and bends things at a settable rate. The keys play sub bass and chord stabs. It is an app on fm1-base. The README calls it a draft that has not been run on an FM-1; only the sound engine and the controls against a stub panel were checked.
+status: active
+authors:
+- name: hatch-blip
+  url: https://github.com/hatch-blip
+source: https://github.com/hatch-blip/Fm1
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The LICENSE file is the MPL-2.0 text and build.sh carries an MPL-2.0 SPDX header. The README says it builds on fm1-base (MPL-2.0) and felucca-bsp.
+homepage: https://github.com/hatch-blip/Fm1
+distribution: source-only
+install_notes: >-
+  No package is published. build.sh expects fm1-base in base/ as a git submodule (it is not committed here; the script prints the commands), the JieLi toolchain and the AC79 SDK, then builds with fm1-base's build tool. fm1-base installs over USB-MIDI, and holding OCT- while powering on starts the USB rescue.
+brick_risk: false
+tags: [dub, sequencer, synth-engine, fx, delay, reverb, midi, performance]
+versions:
+- version: claude/nice-shannon-p4ikxb @ 962fa9b
+  date: 2026-11-08
+  url: https://github.com/hatch-blip/Fm1/commit/962fa9bc136034650e9813d84f00aa931cc826e0
+  notes: No tagged releases; this is the latest commit on the default branch, which adds MIDI by channel for a BeatStep Pro and a CC desk.

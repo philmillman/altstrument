@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: Kris Jangle
+kind: firmware
+summary: >-
+  Christmas carol memory game: the FM-1 plays the opening of a carol and you replay it on the keys, with three more notes each level up to the whole 32-note song.
+description: >-
+  Four carols (Jingle Bells, Deck the Halls, Ding Dong Merrily on High and O Christmas Tree) are chosen with SONG on the home screen. Level 1 asks for three notes and each level adds three, so level 11 is the whole song. Notes score points, a clean level adds a bonus and three misses start Grump Mode, where a recorded jeer plays before a retry. Keys sound as a sampled piano by default or as the voice picked with EDIT, ENV and LFO, and each key also goes out over MIDI. Best scores, mode and sound are saved. It is an app on the fm1-base platform with a browser emulator, an install page and a manual.
+status: active
+authors:
+- name: doohinkus
+  url: https://github.com/doohinkus
+source: https://github.com/doohinkus/kris-jangle
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSING.md puts the fm1-base platform and the app files under MPL-2.0 file by file. Parts keep their own licences: Apache-2.0 for the JieLi SDK material, BSD-2-Clause for micro-ecc, SIL OFL 1.1 for the Terminus font. The tree commits m-bootloader 1.2's installer package (web/m-bootloader/fm1-uboot-1.2.fwsc, MIT).
+homepage: https://doohinkus.github.io/kris-jangle/
+distribution: browser-installer
+install_notes: >-
+  Use the install page in Chrome or Edge with the FM-1 on USB, or download kris-jangle-0.3.fwsc from the release. The README says to back up first because firmwares share the settings sectors. The install page can also write Julius Vitkauskas's m-bootloader, which replaces M-VAVE's bootloader; that step is optional.
+brick_risk: true
+tags: [game, sampler, synth-engine, midi, emulator]
+image:
+  url: https://raw.githubusercontent.com/doohinkus/kris-jangle/main/kris-jangle/docs/img/screen-title.png
+  alt: "Kris Jangle title screen: the name, the level mode MEDIUM, LISTEN, SONG: JINGLE BELLS, three hint lines for the knob and buttons, a green battery bar and a pixel-art snowman in a top hat and red scarf"
+  credit: doohinkus
+  source_url: https://github.com/doohinkus/kris-jangle#readme
+  first_party: true
+versions:
+- version: v0.3
+  date: 2026-11-09
+  url: https://github.com/doohinkus/kris-jangle/releases/tag/v0.3
+  notes: First release; ships the signed package for the FM-1 Firmware Hub.

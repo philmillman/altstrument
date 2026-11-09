@@ -1,0 +1,27 @@
+device: m-vave-fm-1
+name: FM-1 PIANO
+kind: firmware
+summary: >-
+  Work-in-progress grand piano that mixes sampled hammer and string onsets with a modelled tail, in about 500 kB, with 12 presets, reverb, delay and scale lock.
+description: >-
+  Licence note: only a compiled package is published, with no source and no licence for the firmware itself. A Kawai grand from the Versilian Community Sample Library gives the hammer, the start of the strings and the soundboard, and a model carries the note on, so notes ring and decay without seconds of samples per key. One velocity layer is shaped by a velocity colour filter, dampers and the sustain pedal (MIDI CC 64 or REC) work, and there are up to 16 voices. Controls cover touch, strings, prepared-piano partials and body, with 12 factory sounds and 8 user slots. A reverb has five types and there is a ping-pong delay. Keys can light a scale, mute notes outside it or snap to it across 15 scales, and PLAY runs a Chopin etude as a demo. The README says it is unfinished and a new build may reset saved settings. Only a nightly package is published.
+status: active
+authors:
+- name: FartyPants
+  url: https://github.com/FartyPants
+source_status: binary-only
+license: unspecified
+license_notes: >-
+  No licence file and no statement for the firmware. The README says the piano recordings are CC0 (VCSL) and the compression is QOA, MIT. The repository holds only the gh-pages site and a nightly .fwsc, with no source.
+homepage: https://github.com/FartyPants/fm1-piano
+distribution: browser-installer
+install_notes: >-
+  The nightly install page works in Chrome or Edge with the FM-1 on USB. The README says installing replaces what is on the FM-1, and the installer's Back to the stock firmware option, or M-UPGRADE, restores M-VAVE's firmware. A browser emulator and a manual are linked from the README. The repository description says not to install it yet.
+brick_risk: false
+tags: [piano, sampler, physical-modeling, fx, reverb, delay, emulator]
+video:
+  url: https://www.youtube.com/watch?v=nmWNWhp-ocg
+  title: "The BEST sounding GRAND PIANO on m-vave FM-1"
+  credit: "The Cranky Man's Show"
+  first_party: true
+  found_via: https://github.com/FartyPants/fm1-piano#readme

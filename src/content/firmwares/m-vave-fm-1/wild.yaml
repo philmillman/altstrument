@@ -2,12 +2,13 @@ device: m-vave-fm-1
 name: Wild
 summary: >-
   Fork of n001se, a random FM drum machine with a 303-style acid line, that renders audio ahead of playback and adds
-  twelve song banks, automation, a battery readout and a reworked 303 filter.
+  eight banks with copy and undo, automation, a song list, a Rumble drum sound and a reworked 303 filter.
 description: >-
   Keeps n001se's five tracks, chance-driven patterns, Chaos and MIDI behaviour. The sound engine renders continuous PCM
-  ahead of playback in memory, and no audio files are written. The README's change log, which reaches 0.3.30, lists a
+  ahead of playback in memory, and no audio files are written. The README's change log, which reaches 0.3.34, lists a
   diode ladder filter and calibrated 303 knobs after Open303, drums whose sound wanders at high Deviance, banks selected with SEL
-  and a white key, recorded knob automation, saved songs and a clear-all gesture. The README says physical FM-1 timing, audio and
+  and a white key and copied with an undo journal, recorded knob automation, saved songs that can be copied, deleted or erased, a Rumble
+  kind for the drum tracks and a clear-all gesture. The README says physical FM-1 timing, audio and
   installation are untested, and that 0.1.0 failed hardware start-up and later versions fix it. The documentation below its first
   section is n001se's, so some status lines in it do not describe Wild.
 status: active
@@ -34,7 +35,7 @@ image:
   source_url: https://github.com/Saintpid/Wild
   first_party: true
 versions:
-- version: main @ ccdec9a
-  date: 2026-11-08
-  url: https://github.com/Saintpid/Wild/commit/ccdec9afc6ff66006396e40bbeff8b337701505e
-  notes: No tagged releases; this is the latest commit, version 0.3.30, which accepts the UC25HQ80 flash chip of newer FM-1s alongside the Puya part.
+- version: main @ d491845
+  date: 2026-11-09
+  url: https://github.com/Saintpid/Wild/commit/d4918457725366e5d5bc30b71aee7a35cee2a1ba
+  notes: No tagged releases; this is the latest commit, version 0.3.34. Since 0.3.30, which accepts the UC25HQ80 flash chip of newer FM-1s alongside the Puya part, it removes a click on the 303 line with any drive, limits the workspace to eight banks with explicit copy and a bounded undo journal (songs using banks 9 to 12 are refused until reorganised in 0.3.29), adds copy, delete and erase-all on the song list, and adds a Rumble drum sound.

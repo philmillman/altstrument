@@ -1,0 +1,39 @@
+device: m-vave-fm-1
+name: Roland
+summary: >-
+  Drum-only Felucca build with a four-track, eight-lane drum grid and synthesized, TR-606, acoustic, Drumulator and HR-16B sample kits, plus INSERT effects with compressor and tape-rot models.
+description: >-
+  Everything except Felucca's DRUM engine and sequencer is cut out to make room for kits. The kits are Felucca's own and
+  its model kits, SLOOP's synthesized TR-606 and CC0 acoustic drum recordings in five treatments, and sample kits built
+  at build time from E-mu Drumulator sounds and the Cluster Sound HR-16B WAV pack, which the author does not include in
+  the repository. Each track has its own pattern, with lane mutes, ratchets, chance, conditions, parameter locks, song
+  chaining and MIDI. Newer work adds a fixed-point compressor and a tape-rot effect on an INSERT page and a tape-style delay.
+  The README says the sources build on the host only, that no .fwsc has been built because the toolchain could not be
+  fetched, and that nothing has been tried on an FM-1. The README says all new code and text was written by an AI model.
+status: active
+authors:
+- name: andiogenes
+  url: https://github.com/andiogenes
+source: https://github.com/andiogenes/roland
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  README and LICENSE give GPL-3.0-only, as Felucca; Felucca's engines and hardware layer keep their own licences. The acoustic kit is Versilian Studios' CC0 recordings via SLOOP, and the
+  Drumulator and HR-16B sounds are not in the repository.
+distribution: source-only
+install_notes: >-
+  Apply the patch to Felucca and build as the README and Felucca's BUILDING.md describe, then install with tools/fm1_install.py. The README says Felucca's installer offers a way back to the
+  official firmware and that recovery from a failed install needs FM-1-transporter.
+brick_risk: false
+tags: [drums, sequencer, sampler, fx, fork]
+image:
+  url: https://raw.githubusercontent.com/andiogenes/roland/ccr-6e70ba7d-sinu2i/docs/host-render/screen_grid_big.png
+  alt: "Roland drum grid on a TR606 kit, rendered on the host: step, lane, hit and accent boxes above eight lanes BD SD CP CH OH TM RS CB with filled steps, tempo 124"
+  credit: andiogenes
+  source_url: https://github.com/andiogenes/roland
+  first_party: true
+versions:
+- version: ccr-6e70ba7d-sinu2i @ d5b4167
+  date: 2026-11-09
+  url: https://github.com/andiogenes/roland/commit/d5b4167
+  notes: No tagged releases; this is the latest commit on the default branch, which adds the tape-rot effect to the INSERT page.

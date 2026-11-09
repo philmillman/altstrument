@@ -1,0 +1,27 @@
+device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
+name: m-store
+kind: tool
+summary: >-
+  File mirror and Ed25519-signed catalogues for the on-device store used by m-apps: open-source FM-1 and SMK-37 firmware copied from its authors' releases with the source it was built from.
+description: >-
+  The repository holds the scripts, workflows and lists behind a bucket that FM-1 and SMK-37 units read over plain HTTP. It publishes a signed firmware list and a signed apps list for each model, with every file's size and SHA-256, so a unit can check what it downloads without a TLS stack. Firmware is mirrored from the authors' tagged GitHub releases next to a source archive made from the same tag. SOURCES.TXT lists what is mirrored and the README sets the rules: open-source licence, tagged release, nothing with non-open terms. The README allows mirrored packages to carry vendor binary libraries, such as M-VAVE's FM-1 engine or JieLi's radio libraries, when their terms allow redistribution, with notices kept in the source archive. EXCLUDED.TXT lists the firmware left out and why, for example Mellotron samples licensed for non-commercial use, no tagged release, or a separate installer. No firmware file is committed to the repository itself. The store app that reads the catalogues is part of the author's m-apps work.
+status: active
+authors:
+- name: Julius Vitkauskas (jvitkauskas)
+  url: https://github.com/jvitkauskas
+source: https://github.com/jvitkauskas/m-store
+source_status: open
+license: MIT
+license_notes: >-
+  MIT covers the scripts, workflows and lists in the repository (LICENSE). Each mirrored firmware keeps its own licence, given in its catalogue record, and its source is mirrored beside it. Mirrored packages may include vendor binary libraries whose terms allow redistribution, according to the README, so check the entry for the firmware itself.
+distribution: download
+install_notes: >-
+  Nothing is installed from the repository. Units fetch the signed catalogues and packages from http://m-store.pp.ua/ through the store app, and the catalogue's KEY.PUB is the key to check them against. To add a firmware, open an issue or a pull request that adds a block to SOURCES.TXT.
+brick_risk: false
+tags: [utility, platform, loader]
+versions:
+- version: main @ 15f0f81
+  date: 2026-11-09
+  url: https://github.com/jvitkauskas/m-store/commit/15f0f819bfc2fbf0595d74e6fdf70a2e728bd626
+  notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,32 @@
+device: m-vave-fm-1
+name: NAIWAN 91
+summary: >-
+  Generative groovebox for the FM-1, a PERF-1 fork with nineteen city pop and coastal genres of ten pieces each, an auto-DJ, a drum sequencer, DX7 voice loading and a honu-themed screen.
+description: >-
+  Each piece is a set of rules for key, mode, tempo, sounds and drum patterns, so chords move and the acid line mutates while it plays. Ten urban genres (city pop, AOR, boogie, shibuya-kei, yacht rock and others) and nine coastal ones (surf, balearic, calypso and others) share one library of donor recipes, with a row of tempo, root and mode data and five pluck sounds for each genre. Controls break the music down, build it back and drop it, and an auto-DJ can run that arc. The sequencer has six drum lanes with Euclidean fills, polymeter, ratchets and chains. A jam page turns the keys into a scale instrument, and up to 16 DX7 voices load from a .syx file. A browser emulator and editor run on the project site. It inherits PERF-1's lineage through HYP-1, AMB-1 and Felucca, and takes its FM engine from Melodee.
+status: active
+authors:
+- name: superposition
+  url: https://github.com/superposition
+source: https://github.com/superposition/91
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL-3.0 text and LICENSING.md states GPL-3.0-only. The FM engine is Melodee's (after Dexed and MSFA, Apache-2.0 parts), the DY voices are public-domain DX7 banks with no Yamaha ROM voices, fonts are SIL OFL 1.1 and the JieLi SDK files are read from your checkout at build time and not committed.
+homepage: https://superposition.github.io/91/
+distribution: browser-installer
+install_notes: >-
+  Web installer in Chrome or Edge with the FM-1 on USB. The README says it checks the package against the unit, can put M-VAVE's firmware back, and that a unit failing to start twice enters a safe mode the installer can reach. Switching firmware can lose stored pieces and settings, so keep copies.
+brick_risk: false
+tags: [generative, groovebox, sequencer, drums, fm, performance, fork, emulator, editor]
+image:
+  url: https://raw.githubusercontent.com/superposition/91/master/docs/img/readme-hero.png
+  alt: "Three NAIWAN 91 screens side by side: the global page with a turtle-shaped chord figure and level meters, the master bus page with a compressor curve and meters, and a green and yellow visualizer"
+  credit: superposition
+  source_url: https://github.com/superposition/91
+  first_party: true
+versions:
+- version: 0.1.0
+  date: 2026-11-09
+  url: https://github.com/superposition/91/releases/tag/v0.1.0
+  notes: First release of the city pop and coastal genre set.

@@ -2,7 +2,7 @@ device: synthux-touch-2
 name: Simple Touch labels
 kind: tool
 summary: >-
-  Browser library of control maps and manuals for Simple Touch firmwares, with a designer that makes labelled panel diagrams as PNG, PDF or a manual page, and a Play mode that runs an approved browser build of a firmware. It does not talk to the hardware.
+  Browser library of control maps and manuals for Simple Touch firmwares, with a designer that makes labelled panel diagrams as PNG, PDF or a manual page, and a Play mode that either runs an approved browser build of a firmware or connects to a real Simple Touch over Web MIDI.
 description: >-
   Rights warning: the LICENSE says the original Simple Touch panel artwork stays with Synthux Academy and is outside the MIT terms. The shipped
   panel_blank.svg is described as the Synthux panel drawing with a blank faceplate.
@@ -11,8 +11,11 @@ description: >-
   Audrey II Touch, and the Simple Touch entries of the Synthux community directory, whose labels are read from each firmware's
   repository README. The designer sets labels, modifier layers, switch modes, notes, MIDI assignments and a theme,
   saves a JSON label file, and exports a repository kit, a standalone manual page or a Pages site. Play runs a firmware built for the simple-touch-web runtime
-  inside the page, with Web MIDI input and output attached to the emulated device. The hosted page is the only part
-  needed; no Simple Touch has to be connected.
+  inside the page, with Web MIDI input and output attached to the emulated device. The Connect to Simple Touch mode reads and
+  writes a real board over Web MIDI instead, with no firmware in the page: a label file with a device block gets settings
+  and presets, and a live section draws the board's pads, knobs, OLED and mode labels on the panel diagram, with the
+  drawing's knobs and pads moving the board. Newer commits also add held-together modifiers such as P10 and P11, all-caps and
+  OLED placement per layout, and a desktop faceplate. No Simple Touch has to be connected to use the library and designer.
 status: active
 authors:
   - name: Jon Waterschoot
@@ -26,7 +29,7 @@ license_notes: >-
 homepage: https://jonwaterschoot.github.io/simple-touch-labels/
 distribution: browser-installer
 install_notes: >-
-  Nothing is flashed. Open the hosted library or designer page in a browser. The pages need to be served over HTTP, so use a local server when running a copy.
+  Nothing is flashed. Open the hosted library or designer page in a browser; the Connect mode needs a browser with Web MIDI and a Simple Touch plugged in. The pages need to be served over HTTP, so use a local server when running a copy.
 brick_risk: false
 tags: [editor, reference, web, web-midi, emulator]
 image:
@@ -36,7 +39,7 @@ image:
   source_url: https://github.com/jonwaterschoot/simple-touch-labels#readme
   first_party: true
 versions:
-  - version: main @ da4be48
-    date: 2026-10-29
-    url: https://github.com/jonwaterschoot/simple-touch-labels/commit/da4be4808de97f2197978eb6f9c976ec4156c38a
-    notes: No tagged releases; this is the latest commit.
+  - version: main @ 2dd3bea
+    date: 2026-11-09
+    url: https://github.com/jonwaterschoot/simple-touch-labels/commit/2dd3bea078857a95d2773372cdf39ebcd77328c6
+    notes: No tagged releases; this is the latest commit. Recent commits add the settings and presets panel, the Connect to Simple Touch mode with live drawing over Web MIDI, and per-layout label options.

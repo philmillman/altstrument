@@ -1,0 +1,38 @@
+device: m-vave-fm-1
+name: PRO-FM-78
+summary: >-
+  Vintage polysynth firmware with Melodee's Prophet-5-style engine and its 200 factory programs, a chord generator, an arpeggiator and a real-time loop recorder.
+description: >-
+  Rights warning: the 200 Sequential Prophet-5 factory programs (v1.03, unmodified from Sequential's archive) are committed in the repository and compiled in as the default
+  banks. The repository's FACTORY.md and LICENSING.md say the software licence does not relicense this data.
+
+  The engine is taken unchanged from Melodee by a script and gives eight voices across both cores, with each program setting poly or unison, filter type, Poly-Mod, glide and drift. The
+  module adds a chord generator that plays an inverted, voiced chord per key, an arpeggiator with five modes, swing and latch, and a loop recorder for one to eight bars with overdub and transpose that
+  follows a DAW's MIDI clock. It runs as its own firmware or as an fm1-dock module, and the README says both were tested on a real FM-1, including one with the UC25HQ80 flash chip.
+status: active
+authors:
+- name: James Hampshire (hamperj)
+  url: https://github.com/hamperj
+source: https://github.com/hamperj/pro-fm-78
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md gives GPL-3.0-only. The engine in profm78/p5 is Melodee 1.6.1 by Kerem Kilic, GPL-3.0-only, and the platform is fm1-dock's. The Prophet-5 factory data stays Sequential's and is not relicensed.
+homepage: https://github.com/hamperj/pro-fm-78/releases/tag/v0.1
+distribution: download
+install_notes: >-
+  Download the .fwsc from the release and install it with fm1-dock's installer page or tools/fm1_install.py; it replaces the firmware on the FM-1 and identifies itself as FM-1_986. The same synth is also published as a .dock module for fm1-dock.
+  Newer FM-1s with the UC25HQ80 flash are covered by a patch.
+brick_risk: false
+tags: [synth-engine, arpeggiator, sequencer, midi, fork]
+image:
+  url: https://raw.githubusercontent.com/hamperj/pro-fm-78/main/docs/profm78-home.png
+  alt: "PRO-FM-78 home screen: a red seven-segment program number beside 1978, 1 of 40 and the name BRASS, with four knobs for cutoff, resonance, LFO and release and a row of page names"
+  credit: James Hampshire
+  source_url: https://github.com/hamperj/pro-fm-78
+  first_party: true
+versions:
+- version: "0.1"
+  date: 2026-11-09
+  url: https://github.com/hamperj/pro-fm-78/releases/tag/v0.1
+  notes: First release; a standalone firmware and an fm1-dock module, built on fm1-dock with the UC25HQ80 flash patch.

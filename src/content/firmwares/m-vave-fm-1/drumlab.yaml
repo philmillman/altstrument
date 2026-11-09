@@ -1,0 +1,48 @@
+device: m-vave-fm-1
+name: Drumlab
+summary: >-
+  Drum machine with 16 sounds, 16 patterns and four lanes that imports Microtonic kits and sends kits, patterns and chains to a Pocket Operator PO-32.
+description: >-
+  Drumlab has three views. PATTERN holds the four lanes with accent, mute, solo, chain and punch-in effects, LAB edits
+  each of the 16 sounds on pages of four settings with two patch sides (A and B), and SEND transfers the project to a
+  PO-32 as audio. The project page reads Microtonic .mtpreset and .mtdrum files and Microtonic patterns dragged in as MIDI, and
+  exports kits as Microtonic presets and drum patches, or as small .drumlab files. It also links several FM-1s over
+  Bluetooth with Brothers Link, shared with Chipbox and Smileyface, where one unit leads tempo, sidechain, patterns and
+  punch-in effects. A browser version runs the same code, and the site has a manual, tutorials and a cheat sheet. It
+  builds on Chipbox, Dinghy and Felucca.
+status: active
+authors:
+- name: Pasquale Barilla (pbarilla)
+  url: https://github.com/pbarilla
+source: https://github.com/pbarilla/drumlab
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Stated in the README, LICENSE and LICENSING.md. The platform code is Felucca by Leo Kuroshita with SLOOP's changes,
+  with wiring from Dinghy by zvenson and a Bluetooth stack from fm1-base and felucca-bsp. Fonts keep their own licences,
+  and no JieLi SDK files are in the tree. PO-32 and Microtonic belong to their makers.
+homepage: https://ihavenocluewhatimdoing.com/drumlab/
+distribution: browser-installer
+install_notes: >-
+  Installer page on the project site in Chrome or Edge over USB, using Felucca's installer code; each release also
+  attaches a .fwsc with a SHA256SUMS file. The README says to set Brothers Link SYNC to OFF before installing a firmware.
+  It gives no notes on returning to stock.
+brick_risk: false
+tags: [drums, sequencer, groovebox, fx, sampler, ble-midi, emulator, fork]
+image:
+  url: https://raw.githubusercontent.com/pbarilla/drumlab/main/site/img/playing.png
+  alt: "Drumlab PATTERN view: four step lanes, the first and third with dots, a tempo of 144 BPM, and dials for tempo, swing, pitch and morph above a PTN, LAB, SEND tab bar"
+  credit: pbarilla
+  source_url: https://github.com/pbarilla/drumlab
+  first_party: true
+versions:
+- version: v0.1.2-beta
+  date: 2026-11-09
+  url: https://github.com/pbarilla/drumlab/releases/tag/v0.1.2-beta
+- version: v0.1.1-beta
+  date: 2026-11-08
+  url: https://github.com/pbarilla/drumlab/releases/tag/v0.1.1-beta
+- version: v0.1.0-beta
+  date: 2026-11-07
+  url: https://github.com/pbarilla/drumlab/releases/tag/v0.1.0-beta
+  notes: First release.

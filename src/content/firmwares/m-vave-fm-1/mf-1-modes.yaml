@@ -1,0 +1,41 @@
+device: m-vave-fm-1
+name: MF-1 Modes
+kind: firmware
+summary: >-
+  One FM-1 firmware that runs the MF-1 emulator's three synth modes, iScream, Almanac and Woof, on fm1-base, each keeping its own settings and chosen by holding a piano key at power-on.
+description: >-
+  The firmware ports the MF-1 emulator's extra modes to the FM-1 as a real app. Until 1.5.0 the repository built iScream on its own;
+  it now builds one firmware, fm1-modes, that starts the last mode used and shows a chooser when a piano key is held at
+  power-on. A shared core handles keys, the arpeggiator, MIDI, saving and the screen, and each mode keeps its own settings
+  store. In iScream, flavors are the sounds, with scoops, a cone
+  filter and five toppings acting as effects, and it uses only what the FM-1 has, so the flavors export as a standard DX7 bank.
+  The engine is a C port of the MF-1 engine, and a parity test checks that it renders the same samples. The README says it has run on one unit, where it boots, plays and has logged no crash, and that CPU
+  load, dropouts and output level have not been measured. No firmware package is attached to a release.
+status: active
+authors:
+- name: Ian Butterworth
+  url: https://github.com/IanButterworth
+source: https://github.com/IanButterworth/mf-1/tree/main/firmware/fm1-modes
+source_status: open
+license: MIT
+license_notes: >-
+  The repository LICENSE is MIT. It builds on fm1-base and felucca-bsp, which are MPL-2.0 and linked as a submodule, and the
+  README says a built .fwsc contains JieLi SDK files under Apache-2.0 whose licence texts must go with any package shared.
+distribution: source-only
+install_notes: >-
+  Build with fm1-base's build script, the JieLi toolchain and the AC79 SDK, which need Docker. The project's install notes say to back
+  up the flash first, keep a rescue route ready, and go through official V15 and then TransitFM1 before this firmware, since TransitFM1 writes
+  the next firmware so that a cut-off install comes back in update mode. To go back, install M-VAVE's V15.
+brick_risk: false
+tags: [synth-engine, fm, fx, presets]
+image:
+  url: https://raw.githubusercontent.com/IanButterworth/mf-1/main/docs/images/iscream.jpg
+  alt: "iScream panel in pink with a strawberry flavor and a three-scoop cone drawn on the screen, labelled knobs for master, topping, flavor and scoops, and topping buttons such as CREAM and FUDGE"
+  credit: Ian Butterworth
+  source_url: https://github.com/IanButterworth/mf-1
+  first_party: true
+versions:
+- version: main @ 88118e4
+  date: 2026-11-08
+  url: https://github.com/IanButterworth/mf-1/commit/88118e4219bb81b02c4f110d0540e54a2f6d30e6
+  notes: No firmware package is attached to any release; this is the latest commit that changed the firmware. It replaces the separate iScream, Almanac and Woof firmwares with the one modes firmware, which keeps a settings store for each mode and shares the engine between them.

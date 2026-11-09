@@ -1,0 +1,48 @@
+device: m-vave-fm-1
+name: RHYTM-SEC-1
+summary: >-
+  Generative drum machine and bass synth built on PERF-1's drums and bass: 19 styles that draw patterns from hit probabilities, sections and fills, USB stems and MIDI clock sync.
+description: >-
+  Patterns are drawn from each style's hit probabilities instead of stored presets and keep evolving unless locked, with density, complexity and
+  evolve controls. The bass follows a root and scale with chord moves, drums have their own level, tune, decay and kit, and breakdown, build, drop and fill buttons work on
+  the next bar. USB audio carries a stereo master plus mono bass, kick, snare with clap, and hats with percussion stems, and MIDI clock sync follows a DAW's song position. It is built on fm1-dock's platform
+  as a single app, and each release also ships an fm1-dock module. Bluetooth MIDI is left out of the standalone build. The release notes say the 1.1 build was tried on a real FM-1 with the UC25HQ80 flash chip.
+status: active
+authors:
+- name: James Hampshire (hamperj)
+  url: https://github.com/hamperj
+source: https://github.com/hamperj/rhytm-sec-1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md gives GPL-3.0-only. The drum and bass engine comes from deamonSLINKY's PERF-1 (itself from HYP-1 and AMB-1), the platform from fm1-dock on Felucca and Dinghy, under their own notices.
+homepage: https://hamperj.github.io/rhytm-sec-1/cheatsheet.html
+distribution: download
+install_notes: >-
+  Download the .fwsc from a release and install it with an FM-1 flash tool; the standalone firmware identifies itself as FM-1_947. Holding OCT+ at power-on starts a safe mode, and any other firmware can be flashed
+  the same way to go back. The .dock file is for fm1-dock users.
+brick_risk: false
+tags: [drums, generative, sequencer, synth-engine, usb-audio, midi, fork]
+image:
+  url: https://raw.githubusercontent.com/hamperj/rhytm-sec-1/main/docs/screens/02-house-playing.png
+  alt: "RHYTM-SEC-1 screen playing HOUSE in A Minor at 122 with a step grid of eight rows K S C H O P E, the DRUMS page and knob values for tempo, swing, density and complexity"
+  credit: James Hampshire
+  source_url: https://github.com/hamperj/rhytm-sec-1
+  first_party: true
+versions:
+- version: 1.2.1
+  date: 2026-11-09
+  url: https://github.com/hamperj/rhytm-sec-1/releases/tag/v1.2.1
+  notes: Draws the knob strip off screen so it no longer flickers when a knob turns.
+- version: 1.2.0
+  date: 2026-11-09
+  url: https://github.com/hamperj/rhytm-sec-1/releases/tag/v1.2.0
+  notes: Revoices the bass with less buzz and a lower octave per style, replaces Resonance with Drive and shows the cutoff in Hz.
+- version: 1.1.0
+  date: 2026-11-09
+  url: https://github.com/hamperj/rhytm-sec-1/releases/tag/v1.1.0
+  notes: First standalone firmware, with USB stems, MIDI clock sync with song position and UC25HQ80 flash chip support.
+- version: 1.0.0
+  date: 2026-11-09
+  url: https://github.com/hamperj/rhytm-sec-1/releases/tag/v1.0.0
+  notes: First release, an fm1-dock build with the module added from fm1-dock's module page.

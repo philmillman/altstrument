@@ -1,12 +1,12 @@
 device: polyend-tracker-plus
 name: Modular-Trackular Plus
-summary: Fork of Polyend's Tracker Community Edition for the Tracker+ that adds a framework of mods switched on per project, with mods for note humanizing, a project-wide swing amount, colour-coded song blocks and a length for each track.
+summary: Fork of Polyend's Tracker Community Edition for the Tracker+ that adds a framework of mods switched on per project, such as note humanizing, project-wide swing, colour-coded song blocks, per-track length, other master reverbs and delays and Copy to New.
 description: >-
   The successor to Modular-Trackular, which stays on stock firmware 1.2.0. The mods here are compiled into the firmware
   rather than patched into a stock file. Which mods are on is saved with each project, Config > Mods holds the defaults for
   new projects, and a project with no mod data opens with every mod off. Humanize adds small random changes to the
   micro-move and volume of the selected notes, Global Swing makes every take and pattern start use the project's swing
-  amount, Color Song colours song blocks by their content, and Variable Track Length gives each track of a pattern its own length, looping a short track until the pattern ends. The earlier Chords mod was retired because Community Edition
+  amount, Color Song colours song blocks by their content, and Variable Track Length gives each track of a pattern its own length, looping a short track until the pattern ends. Master FX replaces CE's reverb and delay with other types (Freeverb, plate, spring, shimmer, gated or reverse reverb; tape or BBD delay) chosen on the Master screen, and Copy to New on page 3 of the Pattern screen copies the current pattern into the next empty one. The earlier Chords mod was retired because Community Edition
   now has those chord inversions itself. The mods get 1 MiB of sample memory, so the longest stereo recording is slightly
   shorter. A script copies a project saved on Community Edition into a form 1.2.0 can open. Commits report each step
   tested on hardware. Builds name themselves 1.0.0 MT in Config, Original Tracker and Tracker Mini builds stay plain
@@ -34,7 +34,7 @@ install_notes: >-
 brick_risk: false
 tags: [fork, platform, midi, sequencer, tracker]
 versions:
-  - version: modular @ 1191209
-    date: 2026-11-07
-    url: https://github.com/FatRodzianko/Modular-Trackular-Plus/commit/119120915013dc33255658e8ee3efe73c49de08b
-    notes: No tagged releases; this is the latest commit, with the Humanize, Global Swing, Color Song and Variable Track Length mods on top of Polyend's main. It merges newer Tracker CE changes, among them Add to Empty Slot, a transient shaper effect, a Haas sample effect, a CHIP synth speed fix and safer USB storage mode, and a fix so the first note after Stop no longer leaks the last send into the right delay and reverb channel, which now applies to every build. The README still lists Master FX as not yet ported.
+  - version: modular @ 286ff05
+    date: 2026-11-08
+    url: https://github.com/FatRodzianko/Modular-Trackular-Plus/commit/286ff0512a56c7012ad5f5077f2de0c8b42d69e5
+    notes: No tagged releases; this is the latest commit, with the Humanize, Global Swing, Color Song, Variable Track Length, Master FX and Copy to New mods on top of Polyend's main. Copy to New is the newest, and its commit notes say it passed a hardware test; the mods now share a registry of descriptors. It merges newer Tracker CE changes, among them Add to Empty Slot, a transient shaper effect, a Haas sample effect, a CHIP synth speed fix and safer USB storage mode, and a fix so the first note after Stop no longer leaks the last send into the right delay and reverb channel, which now applies to every build.

@@ -6,7 +6,7 @@ summary: >-
   Website and JSON catalogue of firmware and tools for the FM-1 and SMK-37 that makers list themselves from GitHub, with a
   browser installer, a way back to M-VAVE's stock firmware and an RSS feed.
 description: >-
-  A Cloudflare Worker collects entries from other firmware hubs and from makers who sign in with GitHub or publish from a
+  A Cloudflare Worker collects entries from other firmware hubs, from GitHub searches and from makers who sign in with GitHub or publish from a
   release workflow, and follows the releases of each listed repository. Every .fwsc in a release is downloaded once and checked for
   size, SHA-256 and the device ID in its header, and only valid packages reach the catalogue that fm1buddy reads. Each listing can
   install from Chrome or Edge over Web MIDI after asking the unit what it is, and can open in the FM-1 emulator. A rescue page puts M-VAVE's
@@ -32,7 +32,7 @@ install_notes: >-
 brick_risk: false
 tags: [flasher, librarian, utility, web]
 versions:
-- version: main @ cb0e3de
-  date: 2026-11-08
-  url: https://github.com/konsumer/mutantcloud/commit/cb0e3de0eaf1160c698f0c0ba738155622798c3f
-  notes: No tagged releases; this is the latest commit. Since the previous row it adds filters and bulk dismiss to the Found list and an experimental route that plays unlisted firmware.
+- version: main @ cdc6938
+  date: 2026-11-09
+  url: https://github.com/konsumer/mutantcloud/commit/cdc6938b1b5da888ec6dfcb495079513231cf169
+  notes: No tagged releases; this is the latest commit. Since the previous row it also collects repos linked in posts on the FM-1 and SMK-37 subreddits, reads each package's flash chip support and offers a filter for firmware that saves on newer FM-1s, tags firmware built for RemoteFM1, and makes the installer say why an install did not start.

@@ -1,14 +1,14 @@
 device: m5stack-cardputer
 name: Cardputer MIDI Piano
-summary: Standard MIDI file player for the Cardputer-Adv that plays .mid files from the SD card through a 24-voice synthesized piano, with seek, speed control, a piano roll and an experimental USB host output to the FM-1.
+summary: MIDI file player for the Cardputer-Adv that plays .mid files from the SD card through a 24-voice synthesized piano, with seek, speed, a piano roll and an experimental USB host mode that plays to and records from the FM-1.
 description: >-
   The firmware reads Format 0 and 1 files from the SD card's midi folder and plays them on a built-in piano synthesizer
   with 24 voices and two overtones, sending 44.1 kHz audio straight to the I2S codec. Controls cover play and pause,
   seeking by one or five seconds, speed from 0.1 to 3 times, looping, volume, track browsing and a switchable animated
-  piano roll, with sustain pedal handled. The README says version 0.2.1 was checked on a real unit for start-up,
+  piano roll, with sustain pedal handled. Version 0.8.2 adds four pages (player, piano roll, recorder, file manager) with Tab to switch, delete and rename of .mid files, and boot straight to the player. The firmware README says the normal build was checked on a real unit for start-up,
   playback and CPU load, which sits at about a fifth of one core at normal speed. Limits are about 7000 notes per file
   and synthesized sound only; a sampled piano in flash is planned. A separate experimental build drives an FM-1 Sloop
-  over a USB-C cable as a USB MIDI host and mutes the local speaker while connected. The repository also holds a
+  over a USB-C cable as a USB MIDI host, mutes the local speaker while connected, follows the FM-1's MIDI clock tempo and has a recorder page that writes the FM-1's keyboard or sequencer notes (channels 1, 2, 3 or 10) to /midi/MyMIDI. The README marks the host build and the recorder as experimental and still needing hardware retests. The repository also holds a
   design write-up and interface mockups, mostly in Chinese.
 status: active
 authors:
@@ -33,7 +33,11 @@ image:
   source_url: https://github.com/saxon267/Cardputer_MidiPlayer
   first_party: true
 versions:
-- version: main @ a0522c3
+- version: main @ aac20bd
   date: 2026-11-08
-  url: https://github.com/saxon267/Cardputer_MidiPlayer/commit/a0522c3a7d6197aeb7867d96eed4db72c3547820
-  notes: No tagged releases; this is the latest commit. The README names firmware 0.2.1, and recent commits add the experimental USB host output to the FM-1.
+  url: https://github.com/saxon267/Cardputer_MidiPlayer/commit/aac20bd8e292fee4efab76bb85fad8041d07d99e
+  notes: Latest commit, well ahead of the v0.1.0 tag. The README names firmware 0.8.2, which adds the recorder, the four-page interface, file delete and rename, FM-1 clock tempo following and safer parsing of large files.
+- version: v0.1.0
+  date: 2026-11-08
+  url: https://github.com/saxon267/Cardputer_MidiPlayer/releases/tag/v0.1.0
+  notes: GitHub release whose only attached file is the USB host build for 8 MB flash; its notes, in Chinese, list MIDI file playback, FM-1 control over USB host, recording to .mid and file rename and delete. The tag points at an early commit.

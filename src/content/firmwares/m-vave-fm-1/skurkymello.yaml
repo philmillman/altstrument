@@ -21,9 +21,10 @@ license_notes: >-
   LICENSING.md covers the firmware as GPL-3.0-only. reference/skurkymello.html and the design record under docs/mello/
   are all rights reserved, may be kept unchanged in a clone, and are not built into the firmware. The screen mirror encoder is MIT
   (Patrick F. Kellogg) and the Terminus font is SIL OFL 1.1.
-distribution: source-only
+homepage: https://joakimskurk.github.io/fm1mello/
+distribution: browser-installer
 install_notes: >-
-  Build a package with the Makefile, then install it over USB-MIDI with tools/fm1_install.py on an FM-1 running
+  The website installs the latest build of main from Chrome or Edge over USB. Or build a package with the Makefile, then install it over USB-MIDI with tools/fm1_install.py on an FM-1 running
   M-VAVE's V15 or another firmware with the update loader. Holding OCT- while switching on reaches the updater.
 brick_risk: false
 tags: [sequencer, generative, synth-engine, drums, sampler, fork]
@@ -34,7 +35,7 @@ image:
   source_url: https://github.com/joakimskurk/fm1mello
   first_party: true
 versions:
-- version: main @ e2e2863
-  date: 2026-11-08
-  url: https://github.com/joakimskurk/fm1mello/commit/e2e28634349404357e566d5e802cad41717390b9
-  notes: No tagged releases; this is the latest commit, labelled build 0.5-f99. Since 0.5-f97 it syncs Dinghy 0.5's update loader, installer, USB buffer alignment and flash map, and the README has a new front page. Build 0.5-f97 accepts the UC25HQ80 flash chip of newer FM-1s, makes the BASS page say what plays it and the chord it follows, and rolls a new style on each tap of GROOVE with ANY. The build before it, 0.5-f94, added more punch and air to the sound, opens the styles' leads and raises the hats, and animates the start screen with a playhead over the sixteen steps.
+- version: main @ 62c1806
+  date: 2026-11-09
+  url: https://github.com/joakimskurk/fm1mello/commit/62c180614f3a1ee6baab8c1395405600539b888f
+  notes: No tagged releases; this is the latest commit, which only adds a website with a browser installer and a recording of the instrument. The firmware is build 0.5-f99. Since 0.5-f97 it syncs Dinghy 0.5's update loader, installer, USB buffer alignment and flash map, and the README has a new front page. Build 0.5-f97 accepts the UC25HQ80 flash chip of newer FM-1s, makes the BASS page say what plays it and the chord it follows, and rolls a new style on each tap of GROOVE with ANY. The build before it, 0.5-f94, added more punch and air to the sound, opens the styles' leads and raises the hats, and animates the start screen with a playhead over the sixteen steps.

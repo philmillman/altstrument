@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: piterfly
+kind: firmware
+summary: >-
+  SLOOP 2.8.5 modified to store 24 patterns, arrange songs of 128 positions and show every step of a track on the main screens; it gives up one of the four user sample banks.
+description: >-
+  Based on SLOOP and Felucca. Patterns go from four (A to D) to 24 in six banks of four, and the song order from 16 entries to 128, each one to 64 bars long. Track overviews show all steps in rows of 16, page navigation is a row of dots, and each track has a MIDI THRU switch. A store shows PENDING until the flash write finishes and SAVED after. The fourth user sample bank is reused for patterns, so there are three. The 1.0.0 notes also mention live granular effects for synth and sample tracks and a browser editor with audio preview. The repository is a cleaned copy of the author's private tree with a new history, and leaves out SLOOP's inherited artwork. The README says the build has not been validated on a physical FM-1, while the release notes say it was tested on one.
+status: active
+authors:
+- name: piotrwozniak
+  url: https://github.com/piotrwozniak
+source: https://github.com/piotrwozniak/piterfly
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md gives GPL-3.0-only for the code, as SLOOP and Felucca. Third-party parts keep their licences (msfa Apache-2.0, DaisySP, Rings and Fukiai MIT, Terminus SIL OFL 1.1, JieLi SDK Apache-2.0, some CC0 and CC-BY-3.0 material). The 86 device icons are new GPL-3.0-only work; SLOOP's icon atlas and screenshots are excluded because their terms were not established.
+homepage: https://piotrwozniak.github.io/piterfly/
+distribution: browser-installer
+install_notes: >-
+  Use the installer page in Chrome or Edge with the FM-1 on USB, or download piterfly-1.0.1.fwsc from the release, which also carries the source archive and SHA256SUMS. The README says to back up first: the fourth sample bank is repurposed and importing a song file replaces all pattern slots, empty ones too. Recovery is the same as for SLOOP: hold OCT- while powering on for USB rescue.
+brick_risk: false
+tags: [groovebox, sequencer, sampler, synth-engine, fx, editor, fork]
+image:
+  url: https://raw.githubusercontent.com/piotrwozniak/piterfly/main/assets/piterfly/screenshots/home-64.png
+  alt: "piterfly HOME render: 120 BPM, pattern A1, four coloured tracks (808 BOOM, RHODES, LOFI FLUTE, 808 DRUMS) with 64-step grids, and SWING, LEVEL, STEPS and PAN dials"
+  credit: piotrwozniak
+  source_url: https://github.com/piotrwozniak/piterfly#readme
+  first_party: true
+versions:
+- version: 1.0.1
+  date: 2026-11-09
+  url: https://github.com/piotrwozniak/piterfly/releases/tag/1.0.1
+  notes: Gives the firmware its own package identity, FM-1_1120101; settings, patterns, sample allocation and project formats are as in 1.0.0.
+- version: 1.0.0
+  date: 2026-11-09
+  url: https://github.com/piotrwozniak/piterfly/releases/tag/1.0.0
+  notes: First release.

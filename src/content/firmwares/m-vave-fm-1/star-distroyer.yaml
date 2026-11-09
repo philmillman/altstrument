@@ -8,7 +8,8 @@ description: >-
   offers filter models from band-pass to comb and allpass, and a four-band destroyer adds shapers, dynamics and a
   feedback loop, and a delay and room sit after it. The README lists 33 factory patches and 32 user places, with two LFOs
   and four macros, and says the project is in development and not yet tested on a real FM-1. It is based on Dinghy 0.5
-  and the repository carries engine and update-path tests and a Firmware Hub card.
+  and the repository carries engine and update-path tests and a Firmware Hub card. A project page plays it in the browser
+  and installs the latest build of main.
 status: active
 authors:
 - name: joakimskurk
@@ -19,15 +20,16 @@ license: GPL-3.0-only
 license_notes: >-
   LICENSING.md gives GPL-3.0-only, as Dinghy, with Felucca, SLOOP and OberVave platform code under their own notices.
   The Terminus font is SIL OFL 1.1, and the designburg logo in assets/ is all rights reserved and not under the GPL.
-distribution: source-only
+homepage: https://joakimskurk.github.io/fm1stardistroyer/
+distribution: browser-installer
 install_notes: >-
-  Build with build.sh and install the package with tools/fm1_install.py over USB, on an FM-1 running M-VAVE's V15 or
+  The project page installs the latest build of main from Chrome or Edge over USB. Or build with build.sh and install the package with tools/fm1_install.py over USB, on an FM-1 running M-VAVE's V15 or
   another firmware with the update loader. The Dinghy README documents a USB rescue, reached by holding OCT- while
   switching on, and an automatic fall back to it after two failed boots.
 brick_risk: false
 tags: [synth-engine, oscillator, filter, fx, arpeggiator, sequencer, generative, fork]
 versions:
-- version: main @ 670cc0c
-  date: 2026-11-08
-  url: https://github.com/joakimskurk/fm1stardistroyer/commit/670cc0cd3d379fae0a3409a9d13cdfd2d5ed0254
-  notes: No tagged releases; this is the latest commit, a single commit that replaces the earlier history. It moves the base from Dinghy 0.4 to 0.5 and adds the delay and room, a modulation matrix with two LFOs and four macros, two sequencer tracks with chords and TURING, and host mode.
+- version: main @ 33d434b
+  date: 2026-11-09
+  url: https://github.com/joakimskurk/fm1stardistroyer/commit/33d434b36493c914a90d90b97699f19ebfe51d31
+  notes: No tagged releases; this is the latest commit. Since 670cc0c it adds patches without classic FM, a DERELICT overture, the NAV and REACTOR pages with VOYAGE and FUSION, a retuned RANGE, an engine fix that silences a modulator with nothing to its right, and the project page. The commit before that moved the base from Dinghy 0.4 to 0.5 and added the delay and room, a modulation matrix with two LFOs and four macros, two sequencer tracks with chords and TURING, and host mode.

@@ -1,0 +1,27 @@
+device: m-vave-smk-37
+name: SMK37 Firmware Drawer
+kind: tool
+summary: >-
+  Browser installer and catalogue for the SMK-37 that re-hosts other authors' open packages (Frodhes, OberVave), checks them before writing, and keeps backups. The app text is in Korean.
+description: >-
+  A React web app, also built as a Pages site and an installable PWA, that lists SMK-37 Pro, Elite and MKE-P37 firmware with source, version and recovery notes. It downloads fixed packages, checks hash, CRC, model and flash region, and writes over Web MIDI only when the user presses the final button. It has a vault for flash backups and project files, and a porting workspace. The installer and package parser come from isod89's sloop-pro, which is GPL-3.0-only. The Pages build copies Frodhes 0.9.9 and OberVave 3.3.2 from their original releases unchanged after a hash check, with a notices file and the GPL text; other packages are read from their authors' servers. No firmware binary is committed to the repository, and the notices say no stock or factory image is part of the distribution. M-VAVE firmware is not served. The +VA files are fetched from the author's site by a local Windows helper only on request. The release page also carries sloopDX SMK37 preview.1, an untested port of zvenson/dxsloop to the SMK-37 built with this project's patch; the README says hardware boot, sound, input, display and storage are unverified, and this entry does not list it as a version.
+status: active
+authors:
+- name: THEGREATCJPark
+  url: https://github.com/THEGREATCJPark
+source: https://github.com/THEGREATCJPark/SMK37-Firmware-Drawer
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states GPL-3.0-only for the app code and the LICENSE file is GPL version 3. Re-hosted firmware keeps its authors' licences, which THIRD_PARTY_NOTICES.md says are GPL-3.0-only for Frodhes and OberVave with component notices in each LICENSING.md. The Korean porting summaries adapt material from genkigenki's fm1-to-smk37 that is CC BY-NC 4.0 and stay under that licence.
+homepage: https://thegreatcjpark.github.io/SMK37-Firmware-Drawer/
+distribution: browser-installer
+install_notes: >-
+  Open the Pages site in Chrome or Edge, or run Start-Drawer.cmd on Windows for a local copy at 127.0.0.1:4173. Pick the model, make a full backup first as the README advises, check the package and press install. The author marks USB writing, sound and Android USB as not verified on real hardware, and the +VA route needs the Windows helper and a stock V016 start.
+brick_risk: false
+tags: [installer, utility, web-midi, backup]
+versions:
+- version: main @ ee31cdc
+  date: 2026-11-09
+  url: https://github.com/THEGREATCJPark/SMK37-Firmware-Drawer/commit/ee31cdc55f5af207fb6a8f5926b3d1659493454c
+  notes: No tagged releases of the app; this is the latest commit.

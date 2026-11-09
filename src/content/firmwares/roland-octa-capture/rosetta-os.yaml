@@ -14,8 +14,14 @@ description: >-
   limiter) on the unit's DSP, a STRIP page and a new Channel page on the LCD,
   and Rosetta Octa Control, a Python PC editor that sets the strip, preamp gain
   and 48 V and shows meters. The README says the strip runs on lab test builds
-  only; the one-command build still produces the boot-screen file. A gate,
-  presets, a solo mode and a clip guard are planned. The
+  only; the one-command build still produces the boot-screen file. The newest
+  commits add Rosetta Dual, a Windows ASIO driver that presents two
+  OCTA-CAPTUREs as one device without a coax cable, a one-tap recorder in the
+  PC app that uses the project's own USB path, USB monitoring of the other
+  unit through the PC (about 15 ms, needs the libusbK driver on the playing
+  unit) and a guitar amp mode on the unit's DSP, built and host-tested but not
+  yet run on hardware. The README says sample-exact sync between two units is
+  not yet proven. A gate, presets, a solo mode and a clip guard are planned. The
   author credits Claude, an AI assistant, with the reverse engineering and
   tools.
 status: active
@@ -28,7 +34,8 @@ license: MIT
 license_notes: >-
   Covers the repository only. The README says no Roland code is included and
   the build starts from Roland's own update file; the built UpdOcta.dat
-  contains Roland's code and should not be shared.
+  contains Roland's code and should not be shared. The dual/ folder (the
+  Rosetta Dual driver) has its own LICENSE file, which is the GPL version 3 text.
 homepage: https://yuyoi.github.io/octa-capture-rosetta-OS/
 distribution: patch-your-own
 requires_stock: "1.51"
@@ -51,7 +58,7 @@ image:
   source_url: https://github.com/yuyoi/octa-capture-rosetta-OS#readme
   first_party: true
 versions:
-  - version: main @ 87ac68e
+  - version: main @ ee76733
     date: 2026-11-08
-    url: https://github.com/yuyoi/octa-capture-rosetta-OS/commit/87ac68e3a87bb2538d25132573d7b6df960be7f2
-    notes: No tagged releases; this is the latest commit. Recent commits add the channel strip DSP, the STRIP and Channel LCD pages and the Rosetta Octa Control PC app, which the README says run on lab test builds.
+    url: https://github.com/yuyoi/octa-capture-rosetta-OS/commit/ee76733629644476c0860a80fd1b000122e029c6
+    notes: No tagged releases; this is the latest commit. Recent commits add the channel strip DSP, the STRIP and Channel LCD pages, the Rosetta Octa Control PC app, the Rosetta Dual two-unit ASIO driver, USB monitoring and a guitar amp mode; the README says the strip and amp run on lab test builds.

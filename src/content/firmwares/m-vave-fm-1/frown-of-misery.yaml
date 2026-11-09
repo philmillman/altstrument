@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: Frown of Misery
+summary: >-
+  Mutable Instruments' Braids, Rings and Clouds on the FM-1, played alone or chained, with a Marbles-driven random sequencer in front, on a Dinghy base.
+description: >-
+  Braids plays 48 shapes with four voices or mono and glide. Rings runs its modal resonator, sympathetic strings and string
+  models, rewritten in fixed point because the chip has no FPU, and Clouds' granular mode follows either one. Six routes
+  chain the modules, including Braids into Rings' audio input, and the screen shows each module's faceplate and the route as patch
+  cables. Marbles feeds notes to three voices from the SEQ button. The fixed-point ports are measured against the
+  original float code on the host. The README says Braids and Rings have been played on an FM-1 and Clouds only in an emulator,
+  and that stretch, looping delay and spectral modes are still to come. SMK-37 builds are available with --board smk37.
+status: active
+authors:
+- name: andiogenes
+  url: https://github.com/andiogenes
+source: https://github.com/andiogenes/frown-of-misery-1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md gives GPL-3.0-only, as Dinghy, with Felucca, SLOOP and genkigenki platform code under their own notices. The dsp/ directory is MIT and holds Mutable Instruments' Braids,
+  Rings, Clouds and stmlib code by Emilie Gillet, MIT, with MD-One's Braids adapter.
+homepage: https://andiogenes.github.io/frown-of-misery-1/
+distribution: browser-installer
+install_notes: >-
+  Use the web installer in Chrome or Edge, or build with build.sh and install build/frown.fwsc with tools/fm1_install.py. The installer refuses the wrong board and other
+  firmwares' update modes before writing, and resumes a cut-off install. The README documents a USB rescue by holding OCT- while switching on, and The Firmware Hub for returning to other firmware.
+brick_risk: false
+tags: [synth-engine, oscillator, physical-modeling, granular, generative, fx, emulator, fork]
+versions:
+- version: main @ 90232ee
+  date: 2026-11-09
+  url: https://github.com/andiogenes/frown-of-misery-1/commit/90232eec0fde3365b681c4d716d510ebdcddae61
+  notes: No tagged releases; this is the latest commit, which makes the browser emulator page run the newest build.

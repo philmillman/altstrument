@@ -5,37 +5,38 @@ description: >-
   The author describes a smaller, curated take on Modded Cycles, with mods that
   declare what they touch so that compatible combinations can be worked out
   rather than listed by hand. The web flasher builds the OS in your browser from
-  your own official file and sends it over USB. At the last release it offered fourteen cards, the newest being Transpose; the first thirteen were:
+  your own official file and sends it over USB. The README lists fifteen cards:
   the SAMPLE machine from the author's Cycles One-Shot, a one-shot sampler for
   samples on the +Drive, Control All Config, two delay effects (Digital Delay
   and POTS), trig conditions that put A:B before the percentages, drumkilla's
-  trig preview, and five Track FX: Samples, which puts SAMPLE's filter on any
-  track, Crush, a sample-rate and bit reducer, Ring, a ring modulator, Reso, a
-  tuned resonator, and EQ, a three-band equalizer. The two newest cards are a CPU
-  page in SETTINGS that shows how much of the Model:Cycles' processing time the sound takes, and RESAMPLE, which
-  records a track, the main mix or USB audio and saves the take as a sample in /recordings. Since 0.38 POTS runs its
-  loop at 6 kHz, which cuts its load to about a third and changes its sound slightly. The README, at release 0.42,
-  says up to six added machines can be combined and that every card was played
-  on a Model:Cycles as the page builds it. Every other
-  Modded Cycles 1.55 mod stays buildable with the command-line tools until the
-  author decides which to offer. An Uploader page puts audio files and folders onto the +Drive over USB; it is the
-  continuation of the upload page that Cycles One-Shot used to carry. A Manager page keeps one project per firmware and, on Switch, backs up the
+  trig preview, five Track FX (Samples, which puts SAMPLE's filter on any
+  track, Crush, Ring, Reso and EQ), a CPU page in SETTINGS, RESAMPLE, which
+  records a track, the main mix or USB audio and saves the take as a sample in
+  /recordings, Transpose, and CHORD Tables, which lets the CHORD machine play
+  wavetables from the +Drive, one per pattern. Since 0.38 POTS runs its loop at
+  6 kHz, which cuts its load to about a third and changes its sound slightly.
+  The README says up to six added machines can be combined and that every card
+  is played on a Model:Cycles. Every other Modded Cycles 1.55 mod stays
+  buildable with the command-line tools until the author decides which to offer.
+  An Uploader page puts audio files and folders onto the +Drive over USB. A
+  Manager page keeps one project per firmware and, on Switch, backs up the
   current project, flashes the other firmware over USB and restores that
-  firmware's project. On SAMPLE tracks, MACHINES + PUNCH or GATE with trigs held locks Loop or Reverse on those steps. The Modded Cycles startup animation is left out
-  of the flasher as that project's branding. The rules a mod follows are set out in a separate
-  draft standard, the Cycles Mod Standard (draft 0.5), in its own repository.
-  The original repository durchgemacht/model27 and the author's other Cycles repositories were taken offline on
-  2026-11-06 and 2026-11-07. This repository is a restoration of the original history up to the last commit anyone
-  recorded, made by another person, who says that nothing has been built, flashed or tested since and that later work is
-  lost. The hosted web flasher is gone; the flasher pages are in the repository's docs folder and the Python build
-  tools still work.
-status: dormant
+  firmware's project. On SAMPLE tracks, MACHINES + PUNCH or GATE with trigs held
+  locks Loop or Reverse on those steps. The Modded Cycles startup animation is
+  left out of the flasher as that project's branding. The rules a mod follows
+  are set out in a separate draft standard, the Cycles Mod Standard.
+  The author took this repository and their other Cycles repositories offline
+  on 2026-11-06 and 2026-11-07. Another person kept a restoration at
+  nicolai-creates/model27 meanwhile. The original repository and its hosted web
+  flasher were public again on 2026-11-09; the author's other Cycles tools and
+  the standard's repository were still offline.
+status: active
 authors:
   - name: durchgemacht
     url: https://github.com/durchgemacht
   - name: 18nelli18
     url: https://github.com/18nelli18
-source: https://github.com/nicolai-creates/model27
+source: https://github.com/durchgemacht/model27
 source_status: open
 license: MIT
 license_notes: >-
@@ -43,18 +44,24 @@ license_notes: >-
   Third-party code (Braids, Open303, Model-TG, elektron-model-tweaks and others)
   keeps its own license, listed in THIRD-PARTY-NOTICES.md. No Elektron firmware
   is included.
-homepage: https://github.com/nicolai-creates/model27
-distribution: source-only
+homepage: https://durchgemacht.github.io/model27/flasher/
+distribution: browser-installer
 requires_stock: "1.13"
 install_notes: >-
-  The hosted web flasher no longer exists. Serve the docs folder locally or build with tools/build.py from your
-  official model-cycles_OS1.13.syx, then send the result to the Model:Cycles; the restorer has not tested either route.
-  Back up projects and samples with Elektron Transfer first. To return to stock, send the official file the same way, after
-  setting any track that uses an added machine back to one of the six original
-  machines. The README describes recovery from the startup menu through MIDI IN.
+  Open the web flasher in Chrome, Edge or Opera, tick the cards you want, drop
+  your own official model-cycles_OS1.13.syx and send the result over USB; close
+  Elektron Transfer first. Back up projects and samples with Elektron Transfer
+  before flashing. To return to stock, send the official file the same way,
+  after setting any track that uses an added machine back to one of the six
+  original machines. The README describes recovery from the startup menu through
+  MIDI IN.
 tags: [machines, sampler, fork, flasher, usb-audio]
 versions:
+  - version: main @ 587cb8e
+    date: 2026-11-09
+    url: https://github.com/durchgemacht/model27/commit/587cb8e
+    notes: No tagged releases in the original repository; this is the latest commit. Adds the CHORD Tables card (0.52 to 0.54 in the commit messages) and uploader warnings.
   - version: "0.51"
     date: 2026-11-06
-    url: https://github.com/nicolai-creates/model27/tree/v0.51
-    notes: Git tag; no GitHub release page. The tag was reconstructed on the restored history, since the original repository had no tags. Adds the Transpose card, played on a Model:Cycles. The latest restored commit, 574cf73, comes after it and adds a Transpose note. A warning commit by the restorer sits on top.
+    url: https://github.com/durchgemacht/model27/commit/2ec871d
+    notes: Adds the Transpose card, played on a Model:Cycles. Commit message names the release; the original repository has no tag.

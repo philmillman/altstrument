@@ -1,0 +1,26 @@
+device: m-vave-fm-1
+name: FORM
+summary: >-
+  Vocal synth for the FM-1 on SLOOP and Felucca: a six-operator formant-FM engine sings nine vowels and 23 consonants without samples, with a 64-step vowel sequencer, typed words, Markov melodies and a mono sub.
+description: >-
+  Each voice uses six operators: three for the formants, one carrier, a driver that moves the formants, and a noise operator for breath and consonants. Two voice tracks can be split so one sings vowels and the other plays consonants in time. Words are typed letter by letter or taken from built-in lists, and a Markov page writes melodies in a choice of scales including just and Pythagorean tunings. A mono sub plays under the voice, and the screen shows a singing cyborg face. A beginner mode locks the settings that can silence the instrument, and a new unit starts in it. It keeps SLOOP's sequencer, effects, MIDI and USB audio where they fit. The repository holds the compiled package and a one-page flash helper but not the source; the README says the corresponding source will be published and is available on request. The author calls version 1.3 a test build that has not been run on a real FM-1.
+status: active
+authors:
+- name: HanzVolt
+  url: https://github.com/HanzVolt
+source: https://github.com/HanzVolt/form
+source_status: binary-only
+license: GPL-3.0-only
+license_notes: >-
+  The README and LICENSE state GPL-3.0-only for the firmware code. The HV boot logo is all rights reserved and not covered by it, and the cyborg face is CC BY-SA 4.0 (Wikimedia Commons, Perquirius). The complete corresponding source is not yet in the repository.
+distribution: download
+requires_stock: Flashes over official V15 or another FM-1 firmware
+install_notes: >-
+  Open the flash helper page saved from the repository in desktop Chrome or Edge, connect the FM-1 by USB data cable and flash over Web MIDI; an interrupted write resumes by running the page again. Holding OCT- alone at power-on opens USB rescue, and M-VAVE's V15 package and updater are the way back to stock, which the author has not tested with this build. The README advises a spare unit and a backup first.
+brick_risk: false
+tags: [voice, synth-engine, fm, sequencer, generative, fork]
+versions:
+- version: '1.3'
+  date: 2026-11-09
+  url: https://github.com/HanzVolt/form/commit/4bf3471
+  notes: Test build FORM-1.3-MARKOV-public.fwsc, committed to main; no tagged releases. Adds the Markov melody page and the beginner mode.

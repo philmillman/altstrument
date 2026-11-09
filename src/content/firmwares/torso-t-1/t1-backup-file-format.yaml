@@ -5,7 +5,9 @@ summary: Python tools that decode the T-1's .t1 backup banks, export patterns as
 description: >-
   The repository documents the byte layout of the T-1 backup format, including
   steps up to 64, per-step locks, chords, cycles, track routing and the tempo and
-  timing fields. A parser reads a bank into a data model, an exporter writes one
+  timing fields. A second parser, t1_firmware_parser.py, follows the order in
+  which the T-1's firmware reads a backup, and the specification was aligned with
+  firmware v2.1.5. A parser reads a bank into a data model, an exporter writes one
   MIDI file per pattern, and an importer turns MIDI files into a bank or splices
   one into a full device backup. The author says the work was done with heavy
   help from an AI coding assistant. Needs only the Python standard library.
@@ -26,7 +28,7 @@ install_notes: >-
 brick_risk: false
 tags: [research, converter, midi, sequencer, python]
 versions:
-  - version: main @ ee8de38
-    date: 2026-08-11
-    url: https://github.com/pizboese/t1-backup-file-format/commit/ee8de38fd6afbabe55551544aabdd2fbf87eafb7
-    notes: No tagged releases; this is the latest commit.
+  - version: main @ 4ef2866
+    date: 2026-10-19
+    url: https://github.com/pizboese/t1-backup-file-format/commit/4ef2866b61772fb38d947a2a64c6f5ef76222938
+    notes: No tagged releases; this is the latest commit. It adds a parser that mirrors the firmware's reading order and aligns the format specification with firmware v2.1.5.

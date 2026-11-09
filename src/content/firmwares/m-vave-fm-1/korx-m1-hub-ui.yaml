@@ -2,8 +2,8 @@ device: m-vave-fm-1
 name: KORX-M1 Hub UI
 summary: Work in progress that runs the PicoFaceM1 Korg M1 engine as a WebAssembly firmware for the Firmware Hub player with a touch-style program and combination editor, plus an unflashed FM-1 build with a compressed sample bank.
 description: >-
-  Rights warning: the repository holds only source and no Korg data, but the .wasm and .fwsc builds it produces embed Korg's M1
-  sample ROM, which you must supply yourself, so built images should not be shared.
+  Rights warning: the repository holds only source and no Korg data, but the .wasm and .fwsc builds it produces from your own
+  M1 ROM set embed Korg's sample ROM, so such images should not be shared. The separate ROM-free .wasm release has none.
 
   The engine is Michi71's float re-implementation of the M1 voices, filters, envelopes and effects. The repository adds a
   Firmware Hub adapter with resampling to the host rate and a limiter, a 480 by 320 interface with page tabs, arc knobs,
@@ -11,7 +11,9 @@ description: >-
   levels. A second part ports the engine to the FM-1 with integer voices, effects and resampler and a three-bit ADPCM bank
   of 51 programs and 19 combinations; the status notes say it passes the build tool's checks but has never been flashed and
   has no interface. The README calls the project unfinished. A resampler bug that doubled playback speed was fixed on
-  2026-11-07 and a tester reports the Lite build sounds much better, while the full build has not been auditioned. The
+  2026-11-07 and a tester reports the Lite build sounds much better, while the full build has not been auditioned.
+  Since 2026-11-08 a ROM-free build with generated waveforms and original programs is published as a release; it plays in the Hub
+  player but is not an M1 clone and has not been listened to. The
   code was written by a local language model from briefs and reviewed by an AI orchestrator, with a human tester.
 status: active
 authors:
@@ -25,10 +27,11 @@ license_notes: >-
   LICENSE file is the GPL version 3 text. The baked font is under the Ubuntu Font Licence. No Korg ROM data, firmware or
   sounds are included, and .gitignore blocks the wasm and fwsc builds, ROM archives and sample banks. THIRD_PARTY.md lists
   the engine itself as not copied.
-distribution: source-only
+distribution: download
 requires_stock: Firmware Hub player or M-VAVE open firmware (FM-1 build)
 install_notes: >-
-  Not buildable from the repository alone. You need your own legally obtained M1 ROM set, PicoFaceM1's m1_extract tool to
+  Download korx-m1-free.wasm from the free-v0.1.0 release and load it in the Firmware Hub player through Load your own .wasm. The
+  Korg-sample builds are not buildable from the repository alone. You need your own legally obtained M1 ROM set, PicoFaceM1's m1_extract tool to
   make the ROM tables and PCM, and Zig to build the engine and link the Hub .wasm. The FM-1 .fwsc has not been flashed by
   anyone; the status notes give holding OCT- while powering on as the rescue mode.
 brick_risk: false
@@ -40,7 +43,11 @@ image:
   source_url: https://github.com/fizzy2562/korx-m1-hub-ui#readme
   first_party: true
 versions:
-  - version: main @ 7583303
+  - version: main @ 7fc65fa
+    date: 2026-11-09
+    url: https://github.com/fizzy2562/korx-m1-hub-ui/commit/7fc65fa5a79ca89f6041c15ed673ff7b91991459
+    notes: Latest commit, which only updates the README to point at the ROM-free release below. Before it, the ROM-free build gained all 33 effect types, render-tested, plus a help screen and page-aware key captions.
+  - version: free-v0.1.0
     date: 2026-11-08
-    url: https://github.com/fizzy2562/korx-m1-hub-ui/commit/7583303a65c432270ba339b1eec3a017aaef592b
-    notes: No tagged releases; this is the latest commit. Since the previous row the ROM-free FM-1 build has all 33 effect types ported and render-tested, plus a help screen and page-aware key captions.
+    url: https://github.com/fizzy2562/korx-m1-hub-ui/releases/tag/free-v0.1.0
+    notes: ROM-free korx-m1-free.wasm for the Firmware Hub player, built from commit 7583303. It has synthetic waveforms, 19 original programs and 33 effect types on tables written for this project, and is not an M1 clone. Known problems on the release page include static timbre, flat sustain and some layout glitches; nobody has listened to it yet.

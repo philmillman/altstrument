@@ -1,6 +1,6 @@
 device: novation-circuit-rhythm
 name: cr_stereo
-summary: Patch sources and build tools that turn the Circuit Rhythm's 5706 firmware into a build with stereo sampling, paired tracks, key groups and an auto-sampler.
+summary: Patch sources and build tools that turn the Circuit Rhythm's 5706 firmware into a build with stereo sampling, paired tracks, key groups, an auto-sampler, a micro-looper and a grain engine.
 description: >-
   cr_stereo does not ship firmware. You supply Novation's build 5706 update file, the build script checks it by
   SHA-256 and patches it locally, and the result is sent to the Rhythm's bootloader with a Web MIDI page that is part
@@ -8,9 +8,9 @@ description: >-
   can be paired so one plays the left half and the other the right, with pan, FX sends, volume and sidechain coupled.
   Version 0.2.0 adds key groups, where samples tagged with root notes play as one multi-sample instrument, and an
   auto-sampler on the Sample Rec page that records C2 to C6 from an external synth over MIDI, one note per slot. It
-  also refuses recording and stops a take when sample memory runs low. The patches are written in Rust and DSP56300
+  also refuses recording and stops a take when sample memory runs low. Version 0.3.0 adds a per-track micro-looper view (position, size, one-shot, gated, loop and reverse) and a granular engine that runs on the DSP with up to 32 grains, pitch scatter and three grain shapes, with grains triggered by held notes. The patches are written in Rust and DSP56300
   assembly, and the build instructions given are for Windows with PowerShell 7, Python and a Rust toolchain. The
-  project's notes record the v0.2.0 build as confirmed on hardware.
+  project's notes record the v0.3.0 build as confirmed on hardware.
 status: active
 authors:
   - name: Jake Smith
@@ -27,7 +27,7 @@ distribution: patch-your-own
 requires_stock: "5706"
 install_notes: >-
   Get circuitrhythm-firmware-5706.syx from Novation Components, decode it and run the build script as described in
-  the README, which lists the expected SHA-256 of the stock file and of the v0.2.0 output. Enter the bootloader by
+  the README, which lists the expected SHA-256 of the stock file and of the v0.3.0 output. Enter the bootloader by
   holding Sample Rec, Samples and Note while powering on, serve tools/firmware_sender.html over localhost and send
   the built .syx from Chrome or Edge, which takes about 25 seconds. To go back, send the official .syx the same way
   or use Novation Components.
@@ -35,6 +35,10 @@ install_notes: >-
 brick_risk: false
 tags: [sampler, stereo, sequencer, key-groups]
 versions:
+  - version: v0.3.0
+    date: 2026-11-09
+    url: https://github.com/jsmith13/cr_stereo/tree/v0.3.0
+    notes: Git tag; no GitHub release page. Adds the micro-looper view, the DSP grain engine with Off, Preview and Armed modes, note-driven grains, pitch scatter and grain shapes. The project's notes list this build as confirmed on hardware; its image is 399,460 bytes, larger than the 0.2.0 one.
   - version: v0.2.0
     date: 2026-10-19
     url: https://github.com/jsmith13/cr_stereo/tree/v0.2.0

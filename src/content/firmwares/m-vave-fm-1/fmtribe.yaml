@@ -1,0 +1,60 @@
+device: m-vave-fm-1
+name: FMtribe
+summary: >-
+  Clean-room recreation of a Korg monotribe for the FM-1: one oscillator, a two-pole MS-style filter, an LFO, three drums and an eight-step sequencer with the panel's step row on the keys.
+description: >-
+  The sound is synthesised from published filter papers and fitted to public recordings of real units, with no Korg code or data and no samples. The oscillator has saw, triangle and square, noise and a self-oscillating filter, and the amplifier has the monotribe's three fixed envelopes. The LFO moves pitch, filter or both. Bass drum, snare and hi-hat have decay controls. The sequencer runs eight steps for each part, sixteen for the synth, with active steps, gate time, swing, motion volume, drum rolls and recording, and it follows MIDI clock. MIDI uses the monotribe's channel and controller map over USB, Bluetooth and TRS. It is built on fm1-base. The README calls it an early test build, and the release notes call each alpha untested on hardware; the author asks for help measuring a real unit.
+status: active
+authors:
+- name: GuinanNo1
+  url: https://github.com/GuinanNo1
+source: https://github.com/GuinanNo1/FMtribe
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSING.md states MPL-2.0 file by file. It builds on fm1-base and felucca-bsp (MPL-2.0). Fonts are SIL OFL 1.1 and the JieLi SDK files that go into each package are Apache-2.0 and are not committed. The project says it is clean-room and does not use code from GPL-3.0 monotribe emulations.
+homepage: https://guinanno1.github.io/FMtribe/
+distribution: browser-installer
+install_notes: >-
+  Browser installer in Chrome or Edge, or tools/fm1_install.py with the .fwsc from a release. The release notes describe a way back to M-VAVE's firmware in the installer and say to install at your own risk.
+brick_risk: false
+tags: [synth-engine, sequencer, drums, groovebox, emulator, web]
+image:
+  url: https://raw.githubusercontent.com/GuinanNo1/FMtribe/main/app/docs/img/screen-ready.png
+  alt: "FMtribe HOME page on the FM-1 screen with level, rhythm, cutoff and peak knobs, the sawtooth wave selected, and octave, tempo and volume readouts below a row of key lights"
+  credit: GuinanNo1
+  source_url: https://github.com/GuinanNo1/FMtribe/blob/main/app/docs/MANUAL.md
+  first_party: true
+versions:
+- version: 0.4.4-alpha
+  date: 2026-11-09
+  url: https://github.com/GuinanNo1/FMtribe/releases/tag/v0.4.4-alpha
+  notes: Marked pre-release. Adds drum rolls on the DRUMS pads and the step row, and spreads an eight-step part over every other white key.
+- version: 0.4.3-alpha
+  date: 2026-11-09
+  url: https://github.com/GuinanNo1/FMtribe/releases/tag/v0.4.3-alpha
+  notes: Marked pre-release. The DRUMS pads are on the first three black keys only; every other key plays the synth.
+- version: 0.4.2-alpha
+  date: 2026-11-09
+  url: https://github.com/GuinanNo1/FMtribe/releases/tag/v0.4.2-alpha
+  notes: Marked pre-release. The keys play the synth on the DRUMS page, and with REC on the part keys record their drums.
+- version: 0.4.1-alpha
+  date: 2026-11-09
+  url: https://github.com/GuinanNo1/FMtribe/releases/tag/v0.4.1-alpha
+  notes: Marked pre-release. Adds a working RANGE glide, motion volume, gate-time hold and a drum preview option.
+- version: 0.4-alpha
+  date: 2026-11-09
+  url: https://github.com/GuinanNo1/FMtribe/releases/tag/v0.4-alpha
+  notes: Marked pre-release. Rearranges the pages after the monotribe's panel and puts its step row and gate-time key on the keys.
+- version: 0.3-alpha
+  date: 2026-11-09
+  url: https://github.com/GuinanNo1/FMtribe/releases/tag/v0.3-alpha
+  notes: Marked pre-release. Adds the LFO, the eight-step sequencer with MIDI clock, paged panel and Bluetooth MIDI device selection.
+- version: 0.2-alpha
+  date: 2026-11-09
+  url: https://github.com/GuinanNo1/FMtribe/releases/tag/v0.2-alpha
+  notes: Marked pre-release. Adds the synth voice, filter, envelopes and the three drums.
+- version: 0.1-alpha
+  date: 2026-11-09
+  url: https://github.com/GuinanNo1/FMtribe/releases/tag/v0.1-alpha
+  notes: Marked pre-release. Platform test build that plays a plain test voice under the FMtribe name.

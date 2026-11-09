@@ -12,16 +12,22 @@ description: >-
 
   The Advance adapter source was part of the public picoTracker repository through tag v2.3.0, and the image
   attached to that release is pTAdvance-v2.3.0.bin. The adapter was removed in April 2026 when the projects were
-  split, and the v3 images are provided by xiphonics only as binaries from its website.
+  split. Since October 2026 the xiphonics/advance-firmware repository holds a source snapshot for each stable
+  release from v3.0.0 onward, and the images are still distributed from the xiphonics website.
 status: active
 authors:
   - name: xiphonics
     url: https://github.com/xiphonics
   - name: Maksim Lin
     url: https://github.com/maks
-source_status: binary-only
-license: unspecified
-license_notes: The shared tracker code in the xiphonics/picoTracker repository is BSD-3-Clause, with copyright to Discodirt and xiphonics, inc. The Advance manual's credits page names third-party code but gives no license for the Advance firmware itself.
+source: https://github.com/xiphonics/advance-firmware
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The repository's LICENSE and LICENSING.md say new original contributions are GPL-3.0-only (no later-version option).
+  The picoTracker v2.3.0 baseline keeps BSD-3-Clause, files mixing both are marked BSD-3-Clause AND GPL-3.0-only, and
+  third-party components such as FatFs keep their own terms. The README says the code is for owners, who may build
+  modified firmware at their own risk.
 homepage: https://xiphonics.com/pages/picotracker
 distribution: download
 install_notes: >-
@@ -32,6 +38,10 @@ install_notes: >-
 brick_risk: false
 tags: [official, tracker, sequencer, sampler, synth-engine, fm, sid, midi, usb-midi, recording]
 versions:
+  - version: 3.2.1
+    date: 2026-10-23
+    url: https://github.com/xiphonics/advance-firmware/tree/v3.2.1
+    notes: Git tag; no GitHub release page. Source snapshot with changes to the Advance adapter code; the xiphonics site still names 3.2.0 as the latest stable release.
   - version: 3.2.0
     url: https://xiphonics.com/pages/picotracker
     notes: Adds a master reverb and delay with automation commands, loop playback of a song selection and a tempo readout.

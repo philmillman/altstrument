@@ -9,7 +9,8 @@ description: >-
   includes their code in one build. Only the minimal preset is buildable; the Melodee, Felucca and SLOOP presets and
   per-engine selection are planned, and the author says audio, engine mixing and musical workflows are still being
   integrated and that hardware testing is pending. Recent commits add a Wi-Fi station driver written from scratch for
-  the radio in the FM-1's chip and a simulated Bluetooth connection for emulator tests. Builds run the JieLi compiler
+  the radio in the FM-1's chip, a simulated Bluetooth connection for emulator tests, a modd interface theme on Melodee's
+  renderer (settings menu, weather page, USB-drive file browser, debug log) and a USB host driver that can write to a drive. Builds run the JieLi compiler
   on x86-64 Linux, with Docker on macOS, and are checked in a browser emulator. The packaged image carries three small
   JieLi SDK files under Apache-2.0.
 status: active
@@ -31,7 +32,7 @@ install_notes: >-
 brick_risk: false
 tags: [fork, platform, synth-engine, sdk]
 versions:
-- version: main @ 4712fb5
-  date: 2026-11-07
-  url: https://github.com/DimmKirr/modd/commit/4712fb5bab68035b3caa8344b9d4782688ab1f0b
-  notes: No tagged releases; this is the latest commit. The repository's only releases are rolling CI pre-releases. The project is now called modd, and its history was rewritten for a public release, so earlier commit links no longer resolve.
+- version: main @ cee682b
+  date: 2026-11-09
+  url: https://github.com/DimmKirr/modd/commit/cee682b28d2f580d2954faad3eb50011d45fb347
+  notes: No tagged releases; this is the latest commit. The repository's only releases are rolling CI pre-releases. The project is now called modd, and its history was rewritten for a public release, so earlier commit links no longer resolve. Since the previous row it adds the modd interface theme with settings, weather, file-browser and debug pages, USB-drive writes, and a vendor build system for comparing against the original firmwares.

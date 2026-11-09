@@ -5,18 +5,15 @@ summary: >-
   an ORBIT mode that moves notes on its own, a freezing hall reverb and 32 morphing scenes.
 description: >-
   Eight bodies sound at once, drawn on the screen as beams over the keys, planets round a sun, a nebula or a radar
-  scope. Four knob groups, MASS, DRIFT, SPACE and TIDE, shape all bodies together, and eight models (solar, void,
-  glass, string, choir, bell, Shepard and fold) can be mixed with a noise layer. Effects are a tape delay, an
-  ensemble and a hall reverb with freeze and shimmer, and scenes recall everything and crossfade into each other.
-  MIDI runs over USB, TRS and Bluetooth in both directions, with MIDI clock in and out. It lives in the same
-  repository as Pocket Poly, which is listed separately. The author's handoff notes record flashing builds on a real FM-1 through 2026-11-07, where the newest booted
-  cleanly at about 5 percent CPU; the notes say the new SCAN and DX voices and the delay types have not yet been
-  heard on the unit, and device CPU load with them is unmeasured.
+  scope. Four knob groups, MASS, DRIFT, SPACE and TIDE, shape all bodies together, and thirteen models can be mixed with a noise layer, with SCAN and DX voices among
+  them. Effects are a delay of seven kinds, an ensemble and a hall reverb with freeze and shimmer, and scenes recall everything and crossfade into each other.
+  MIDI runs over USB, TRS and Bluetooth in both directions, with MIDI clock in and out. Pocket Poly and GNOMNOM lived in the same repository until 2026-11-08 and have their own repositories now. The commit
+  messages record a 1.0 package flashed on a real FM-1 on 2026-11-09.
 status: active
 authors:
 - name: WisestWizard
   url: https://github.com/WisestWizard
-source: https://github.com/WisestWizard/deepfield/tree/master/deepfield
+source: https://github.com/WisestWizard/deepfield
 source_status: open
 license: MPL-2.0
 license_notes: >-
@@ -25,14 +22,14 @@ license_notes: >-
 homepage: https://wisestwizard.github.io/deepfield/
 distribution: browser-installer
 install_notes: >-
-  The project site has a Chrome or Edge installer over USB and a package (the handoff notes call the latest 0.4), which its installer can replace with
+  The project site has a Chrome or Edge installer over USB and a package, which its installer can replace with
   M-VAVE's firmware. To build instead, build.sh deepfield needs a Linux container for JieLi's toolchain plus the AC79
   SDK, and fm1_install.py installs the package. The package identity is FM-1_1400. Holding OCT- at power-on opens
   update mode. Back up and keep M-VAVE's updater ready.
 brick_risk: false
 tags: [synth-engine, ambient, drone, reverb, delay, generative, ble-midi, platform, emulator]
 versions:
-- version: master @ 598feb0
-  date: 2026-11-08
-  url: https://github.com/WisestWizard/deepfield/commit/598feb07fb1baea21bea916f1a3d06db0d99de46
-  notes: No tagged releases; this is the latest commit. Since the previous row it adds seven delay types, per-body level, tone, tuning and pin from a held key, Euclidean arpeggiator rhythms and SCAN and DX voices. The handoff notes say the project site went up as 0.4 and that the newer build booted cleanly on a real FM-1. The later commits only fix the base-firmware submodule pointer and update the handoff notes.
+- version: master @ 04f99d6
+  date: 2026-11-09
+  url: https://github.com/WisestWizard/deepfield/commit/04f99d645b57cd2d9c7ec4083c0ea82fd2f75894
+  notes: No tagged releases; this is the latest commit. Since the previous row the repository holds DEEP FIELD alone, the volume law is reworked so MASTER also reaches what a computer records, notes are no longer left held on whatever is listening over MIDI, and the knobs on the FM voice, mixer and echo are rebalanced so a thick chord no longer hides the delay. The rest are commits to the author's notes and the build's base-firmware pointer.

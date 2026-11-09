@@ -1,19 +1,23 @@
 device: m-vave-fm-1
 name: Amenity
 summary: >-
-  Live jungle firmware built on FM1 Open: the Amen break sliced into sixteen steps, with rolls, builds, echo and
-  stretch effects on the white keys, a self-varying pattern, MIDI clock and a lo-fi, EQ, saturation and compressor chain.
+  Live jungle firmware: Amen, Apache and Think breaks sliced into sixteen steps, four slots for your own breaks, rolls,
+  builds, echo and stretch on the white keys, a self-varying pattern, MIDI clock and a lo-fi, EQ, saturation and compressor chain.
 description: >-
-  Rights warning: the repository carries amen.wav, a two-bar loop of the drum break from The Winstons' "Amen, Brother"
-  (1969). The author states it is not covered by the project's licence, that all rights stay with the original holders
-  and that it is included for convenience; it is also built into the firmware image and the installer page. Deleting
-  assets/third-party/amen/ gives a build without it.
+  Rights warning: the repository carries amen.wav, apache.wav and think.wav, two-bar loops of drum breaks from "Amen,
+  Brother" by The Winstons (1969), "Apache" by the Incredible Bongo Band (1973) and "Think (About It)" by Lyn Collins
+  (1972). The author states they are not covered by the project's licence, that all rights stay with the original holders
+  and that they are included for convenience; copies are also built into the firmware image. Deleting the folders under
+  assets/third-party/ gives a build without them.
 
   Hold a white key for a repeat, roll, build, echo or old-sampler stretch while the pattern keeps running; black keys
-  play single hits. Knobs set a short ringing feedback delay, how much the pattern varies, how many hits are warped, and
-  a DJ filter. The firmware follows MIDI clock from any input and sends its own clock when it leads. It is built on
-  M-VAVE's FM1 Open V14 SDK and ported from the author's Jungle Choppa plugin. M-VAVE's update loader is included, so
-  the unit can go back to V15 or move to another firmware.
+  play single hits, and the top three give instant feedback, lo-fi or an octave drop while held. Knobs set a short ringing
+  feedback delay, how much the pattern varies (including a flip that restarts the break on the "and" of beat 3), how many
+  hits are warped, and a DJ filter. PRESETS picks the break, and four slots take WAV files sent from a web page, which
+  makes them mono and picks the hits for the black keys. The firmware follows MIDI clock from USB, Bluetooth or TRS and
+  sends its own clock when it leads. Version 2.0 is rebuilt on fm1-base and felucca-bsp and runs on both flash chips;
+  1.0 was built on M-VAVE's FM1 Open SDK and ported from the author's Jungle Choppa plugin. The installer's back to stock
+  option puts M-VAVE's V15 or V16 back.
 status: active
 authors:
 - name: Presethead
@@ -22,17 +26,17 @@ source: https://github.com/ejtb76/amenity
 source_status: open
 license: GPL-3.0-only
 license_notes: >-
-  LICENSE.md is M-VAVE's FM1 APP licence: GPL-3.0 only with an added permission to link the binary SDK, whose engine
-  library keeps M-VAVE's separate terms (THIRD_PARTY.md). Files under assets/third-party/ are excluded from the licence.
-  sdk/firmware/FM-1_015.fwsc matches M-VAVE's FM-1 V15 image licensed Apache-2.0 (git blob
-  ce49cc1595b67347c68a3ac7463017f9fa8c19dd).
+  LICENSE.md puts the project's own code under GPL-3.0-only. fm1-base and felucca-bsp (the base/ submodule) are MPL-2.0,
+  the SEA codec files are MIT, and files carried over from 1.0 may still carry M-VAVE's SDK linking exception. The files
+  under assets/third-party/ are excluded. The repository commits no M-VAVE firmware image.
 homepage: https://ejtb76.github.io/amenity/
 distribution: browser-installer
 install_notes: >-
-  Open the installer page in Chrome or Edge with the FM-1 on USB, connected directly without a hub, and confirm you
-  have a backup. If the FM-1 has no valid sample bank the page also writes the full-quality break to it; otherwise the
-  firmware plays its built-in 20 kHz copy unless you load the bank from the page, which replaces all eight sample
-  slots. The same page restores V15. Projects and samples are not shared between firmwares.
+  Open the installer page in Chrome or Edge with the FM-1 on USB, connected directly without a hub. An interrupted
+  install carries on when you press Install again, and coming from 1.0 the page may ask you to go back to the stock
+  firmware first. Back to the stock firmware on the same page restores V15 or V16, and installing another firmware
+  erases your own breaks. Version 2.0 keeps no settings from 1.0, and its breaks are built in rather than read from a
+  sample bank. A .fwsc is attached to each release for The Firmware Hub.
 brick_risk: false
 tags: [sampler, sequencer, performance, fx, drums, midi, fork]
 image:
@@ -44,6 +48,10 @@ image:
   source_url: https://github.com/ejtb76/amenity
   first_party: true
 versions:
+- version: 2.0.0
+  date: 2026-11-08
+  url: https://github.com/ejtb76/amenity/releases/tag/v2.0.0
+  notes: Rebuilt on fm1-base and felucca-bsp instead of M-VAVE's FM1 Open SDK, so it saves and updates on both flash chips. Adds the Apache and Think breaks beside the Amen, four slots for your own breaks, instant effects on the top black keys, a flip, tempo on SELECT and a delay-locked MIDI clock follower. Nothing from 1.0 carries over, including its settings and sample bank.
 - version: 1.0.0
   date: 2026-11-01
   url: https://github.com/ejtb76/amenity/releases/tag/v1.0.0

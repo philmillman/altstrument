@@ -1,0 +1,51 @@
+device: miyoo-miyoo-flip
+name: Cirmolo
+summary: >-
+  Fork of spruceOS for the Miyoo Flip with an Italian-first interface and native music apps, among them a drum-led groovebox, a pad sampler, a General MIDI piano, a chord synth, a generative garden and a tuner, plus optional AI features.
+description: >-
+  Cirmolo keeps spruceOS's launcher, emulation setup and updater, and changes its updates to come from its own feed. It
+  adds a complete Italian translation, two themes, one based on the author's Stame instrument, apps grouped into folders
+  with Music as the first icon, and a boot logo change that copies the internal flash to the SD card first and restores
+  it if the write fails. The native apps are written in C on a shared kit: Cirmolo Synth with 26 drum kits, an acid bass
+  and a West Coast synth over 14 sequencer tracks, Cirmolo Sampler, Cirmolo Piano on a SoundFont, OpenOrc for the MPK mini IV, Fioritura, which
+  can use a Launchpad Mini MK3 as its grid, and Diapason. An Ask AI app chats with several hosted models and adds a game
+  translator, game cards and a play diary; it needs Wi-Fi and the user's own API keys. The project says it contains no
+  games or BIOS files and has been tested on the Miyoo Flip only. The repository is about 5 GB and was read through the
+  API, not cloned.
+status: active
+authors:
+  - name: Luigi Massari
+    url: https://github.com/luigismith
+source: https://github.com/luigismith/cirmolo
+source_status: open
+license: CC-BY-NC-4.0
+license_notes: >-
+  The LICENSE file keeps spruceOS's Creative Commons Attribution-NonCommercial 4.0 licence, so the firmware is not open
+  source in the OSI sense. Third-party components keep their own licences.
+homepage: https://luigismith.github.io/cirmolo/
+distribution: download
+requires_stock: Miyoo Flip; spruceOS-based, installed to the SD card
+install_notes: >-
+  Download the release .7z and copy its files to a FAT32 SD card, as for spruceOS. The firmware runs from the SD card.
+  The README says the Boot Logo app checks the battery, backs up the internal flash with checksums and restores it by
+  itself if the write fails, so it is the one feature that writes internal flash; the rest leaves the console's own
+  firmware alone. The README says to use it at your own risk and to report problems to the Cirmolo repository.
+brick_risk: false
+tags: [fork, spruceos, groovebox, sampler, synth-engine, usb-midi, handheld]
+image:
+  url: https://raw.githubusercontent.com/luigismith/cirmolo/cirmolo/.github/branding/schermate/musica.png
+  alt: "Cirmolo Music screen in a grey-green theme with a battery at 100 percent, listing Cirmolo Piano, Cirmolo Sampler, Cirmolo Synth, Diapason, Fioritura and OpenOrc with short Italian descriptions"
+  credit: Luigi Massari
+  source_url: https://github.com/luigismith/cirmolo
+  first_party: true
+versions:
+  - version: v0.3.0
+    date: 2026-10-13
+    url: https://github.com/luigismith/cirmolo/releases/tag/v0.3.0
+    notes: Music as the first Home icon, and new Fioritura, Cirmolo Piano and Cirmolo Sampler apps, a reworked OpenOrc with MPK mini IV support and one free API key for the AI features.
+  - version: v0.2.0
+    date: 2026-10-09
+    url: https://github.com/luigismith/cirmolo/releases/tag/v0.2.0
+  - version: v0.1.0
+    date: 2026-10-08
+    url: https://github.com/luigismith/cirmolo/releases/tag/v0.1.0

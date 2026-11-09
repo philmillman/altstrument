@@ -1,0 +1,38 @@
+device: m-vave-fm-1
+name: BAILE
+summary: >-
+  Three-kit Brazilian funk rhythm instrument built on FM1 Open: Tamborzao, Voltmix and Beat Bolha, each with four sound parts and a one-bar pattern edited on the white keys.
+description: >-
+  Rights warning: the firmware embeds 12 drum samples, patterns and boot and title artwork that the author received from the
+  musician Mulu, taken from an R8 drum rack and Ableton drum racks. The repository's assets README says they are not
+  relicensed under the code's GPL and grants no right to reuse or redistribute them outside the project.
+
+  Each kit has four sound parts chosen with ALGORITHM, with saturation, reverb, tempo and swing on the knobs; edits last
+  until restart and the banks are read-only. The app is a fresh build on M-VAVE's fm1_open pinned at one commit, not on SLOOP or Felucca, and ships
+  as a prebuilt .fwsc with a SHA-256 list, a WebAssembly preview and build notes. The README says the 0.4 build was confirmed on a physical FM-1,
+  while 0.6 is checked in an emulator and by package checks only, and that the 396 KiB user partition has not been validated for migration from other firmware.
+status: active
+authors:
+- name: arrastao
+  url: https://github.com/arrastao
+source: https://github.com/arrastao/baile-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE.md is M-VAVE's FM1 APP licence, GPL-3.0-only with a section 7 permission to link the binary FM1 SDK. SDK binaries keep their terms in THIRD_PARTY.md. The drum samples and artwork are excluded
+  from the GPL (assets/README.md). The committed sdk/firmware/FM-1_015.fwsc is the file M-VAVE licenses under Apache-2.0 (git blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd).
+distribution: download
+install_notes: >-
+  Download firmware/BAILE-0.6-MAC.fwsc, check it against SHA256SUMS.txt and install it with M-VAVE's M-UPGRADE; the README says M-UPGRADE installation of this build is still pending. Back up first.
+  M-VAVE's own updater puts stock firmware back; the README gives no other recovery notes.
+brick_risk: false
+tags: [drums, sequencer, sampler, emulator]
+versions:
+- version: "0.6"
+  date: 2026-11-09
+  url: https://github.com/arrastao/baile-fm1/commit/24c1618
+  notes: Latest commit on the default branch; holds the splash artwork for three seconds and makes all presets one 16-step bar. Not a GitHub release.
+- version: v0.4.0-experimental
+  date: 2026-11-09
+  url: https://github.com/arrastao/baile-fm1/releases/tag/v0.4.0-experimental
+  notes: Pre-release; the first firmware rebuilt on FM1 Open, with the three kits embedded.

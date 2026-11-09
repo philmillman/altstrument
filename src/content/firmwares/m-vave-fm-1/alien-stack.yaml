@@ -1,0 +1,26 @@
+device: m-vave-fm-1
+name: Alien Stack
+kind: firmware
+summary: >-
+  Five-part groovebox on the Earth Creature Beats platform: a poly synth, a synthesised drum machine with eight kits, an alien bass bank, a sampler and synth, and a 32-step sequencer with scenes and a song builder.
+description: >-
+  Each part is a visitor with its own button: Nordics the poly synth, Mantis a 16-voice synthesised drum machine with eight kits and no samples, Reptiles sixteen chromatic one-shots and 24 synth basses, Greys a wavetable and FM synth that can also load user samples, and the Ship the sequencer with eight patterns, scenes and a 16-slot song. Parameter locks, polymeter, a reverb bus with per-part sends, live transpose, Euclidean patterns and fills on a held key are in the Ship. The song builder repeats slots and recalls mixer scenes. USB audio goes out at full level. The firmware identifies as FM-1_5800 with the USB name Alien Stack. It is the second firmware in the Sin Fetish Audio repository, kept in the visitors folder beside Earth Creature Beats, and it builds with the same fm1-base tools. The commit log records flashing it on a unit through Build 5, and the shipped samples are the authors' own, released as CC0.
+status: active
+authors:
+- name: SoulandCode69
+  url: https://github.com/SoulandCode69
+source: https://github.com/SoulandCode69/sfa-fm1/tree/main/visitors
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The NOTICE says the source in visitors/ is GPL-3.0-only, fm1-base is MPL-2.0 as a submodule, and the bundled samples are original and released as CC0 1.0. The repository's LICENSE is the GPL v3 text.
+distribution: source-only
+install_notes: >-
+  Clone with submodules and run tools/go.sh visitors with the unit alone on USB; the package is written to visitors/build/alien.fwsc. The README says to keep a way back to the official firmware through the Firmware Hub.
+brick_risk: false
+tags: [groovebox, sequencer, drums, sampler, synth-engine, experimental]
+versions:
+- version: main @ 873b5a0
+  date: 2026-11-09
+  url: https://github.com/SoulandCode69/sfa-fm1/commit/873b5a0f832d2cccd9ed4b30e009f33f3f170f76
+  notes: No tagged releases; this is the latest commit. Alien Stack Build 5 adds a declick pass, ramped mixer gains and the song builder.

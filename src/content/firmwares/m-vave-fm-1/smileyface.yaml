@@ -12,7 +12,7 @@ description: >-
   muffler, sweep speed, hi-res and poles. The project site has an online player, a guide and a cheat sheet. The
   releases up to 0.0.4 are labelled beta; 1.0.0 is not, and the README says only that it has been tested. Version 1.0.1-fx adds an FX page
   that puts one effect after the bass, chosen with ALGORITHM from three delays, two crushers and two drives. Version 1.0.5 trims
-  the drive effect to a single type, the fold.
+  the drive effect to a single type, the fold. Version 1.1.0 adds Brothers Link, a Bluetooth sync with the author's Chipbox and Drumlab in which one FM-1 leads and the others follow pattern changes and swing, and eight punch-in effects. Version 1.1.1 adds copying of patterns.
 status: active
 authors:
 - name: Pasquale Barilla (pbarilla)
@@ -22,7 +22,7 @@ source_status: open
 license: GPL-3.0-only
 license_notes: >-
   Stated in the README and LICENSING.md. The platform layer is Felucca's with SLOOP's changes, the wiring comes from
-  Dinghy by zvenson, and the font is SIL OFL 1.1. No JieLi SDK files are in the tree.
+  Dinghy by zvenson, and the font is SIL OFL 1.1. The Bluetooth radio and link layer in firmware/ble are copies of fm1-base's stack (GPL-3.0-only OR MPL-2.0, used under the GPL) and felucca-bsp's radio drivers (MPL-2.0 and Apache-2.0). No JieLi SDK files are in the tree.
 homepage: https://ihavenocluewhatimdoing.com/smileyface/
 distribution: browser-installer
 install_notes: >-
@@ -38,6 +38,14 @@ image:
   source_url: https://github.com/pbarilla/smileyface
   first_party: true
 versions:
+- version: 1.1.1
+  date: 2026-11-09
+  url: https://github.com/pbarilla/smileyface/releases/tag/v1.1.1
+  notes: Adds copying of patterns. The release page has only a changelog link.
+- version: 1.1.0
+  date: 2026-11-08
+  url: https://github.com/pbarilla/smileyface/releases/tag/v1.1.0
+  notes: Adds Brothers Link, a Bluetooth sync between Smileyface, Chipbox and Drumlab, set from GLO and HOME as leader or follower, with specs for other firmwares to adopt it. The release page has only a changelog link.
 - version: '1.0.7'
   date: 2026-11-07
   url: https://github.com/pbarilla/smileyface/releases/tag/v1.0.7

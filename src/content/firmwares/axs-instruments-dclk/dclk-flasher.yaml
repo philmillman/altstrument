@@ -2,7 +2,7 @@ device: axs-instruments-dclk
 name: DCLK-Flasher
 kind: tool
 summary: >-
-  Browser tools for the DCLK dual MIDI clock: a WebUSB DfuSe flasher for the STM32 ROM bootloader with a bundled v1.6.2 build, and a settings editor over Web MIDI SysEx that changes tempo, dividers, wait length, sync output rates and more live. Both pages have a demo mode.
+  Browser tools for the DCLK dual MIDI clock: a WebUSB DfuSe flasher for the STM32 ROM bootloader with a bundled v1.6.3 build, and a settings editor over Web MIDI SysEx that changes tempo, dividers, wait length, sync output rates and more live. Both pages have a demo mode.
 description: >-
   The flasher has an Enter update mode button that sends a SysEx command to restart DCLK into the ROM bootloader without the BOOT0 and NRST pins, which needs firmware 1.5 or later; older firmware still needs the pin method. The editor needs firmware 1.3 or later, finds the unit by asking each MIDI port rather than by port name, polls the unit several times a second to follow panel changes, and can start and stop each output. The flasher leaves the last flash sector alone so saved settings survive an update. The repository has a simulated STM32 bootloader for its tests.
   It also bundles the WeAct Black Pill's HID bootloader image and MC8P MkII firmware files as test fixtures. Commit messages credit Claude as a co-author.
@@ -22,7 +22,7 @@ install_notes: >-
 brick_risk: false
 tags: [flasher, editor, web-midi, sysex, midi, web]
 versions:
-  - version: main @ 17d92d5
-    date: 2026-11-07
-    url: https://github.com/joebmz98/DCLK-Flasher/commit/17d92d5706f8f268be022fea9e9c52ad827c6810
-    notes: No tagged releases; this is the latest commit, which still bundles firmware v1.6.2, edits the sync output rates, and makes the editor preview's beat bars follow the host on firmware 1.6.3 and later.
+  - version: main @ 478b7d1
+    date: 2026-11-08
+    url: https://github.com/joebmz98/DCLK-Flasher/commit/478b7d195351e3e1ab209c2e45cc744bd83b24ef
+    notes: No tagged releases; this is the latest commit, which now bundles firmware v1.6.3, edits the sync output rates, and makes the editor preview's beat bars follow the host on firmware 1.6.3 and later.

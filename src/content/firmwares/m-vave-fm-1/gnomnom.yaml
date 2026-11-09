@@ -1,0 +1,31 @@
+device: m-vave-fm-1
+name: GNOMNOM
+summary: >-
+  Rhythm game for the FM-1 in which a gnome eats falling mushrooms that are the notes of public-domain tunes, over a backing band that moves from folk through house, acid and IDM across eight stages.
+description: >-
+  Mushrooms fall down seven lanes on the white keys, and eating one on the beat plays its note on the synth, so a clean run plays the melody. Key lights cue the lanes, the lowest black keys hold stashed power-ups, and a trip meter acts as the life bar. The tunes are Grieg, Mussorgsky, Offenbach, Chopin and other public-domain works. There are eight stages and a boss, a JAM mode, MIDI in and out over USB and Bluetooth, and a browser emulator. It is built on fm1-base. The README says it has never run on a real FM-1 and that audio load at stage 8 is the open question.
+status: active
+authors:
+- name: WisestWizard
+  url: https://github.com/WisestWizard
+source: https://github.com/WisestWizard/gnomnom
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The LICENSE file is the MPL-2.0 text. fm1-base and felucca-bsp keep their MPL-2.0 files, and the JieLi SDK files used by the build are Apache-2.0 and not committed. The README says the tunes are public domain.
+distribution: source-only
+install_notes: >-
+  No release. ./build.sh builds app/build/gnomnom.fwsc with the JieLi toolchain and AC79 SDK, and base/tools/fm1_install.py installs it over USB. Holding OCT- at power-on opens update mode, the installer can put M-VAVE's firmware back, and felucca-bsp's fm1_rescue covers a unit that shows only the chip's boot disk.
+brick_risk: false
+tags: [game, synth-engine, sequencer, emulator, midi, ble-midi]
+image:
+  url: https://raw.githubusercontent.com/WisestWizard/gnomnom/master/app/docs/img/screen-title.png
+  alt: "GNOMNOM title screen in rainbow letters over a night forest, with PRESS PLAY, high score 000000, stage 1 and JAM OFF, and a pixel-art gnome beside a red mushroom house"
+  credit: WisestWizard
+  source_url: https://github.com/WisestWizard/gnomnom/blob/master/app/docs/MANUAL.md
+  first_party: true
+versions:
+- version: master @ f1d6ca0
+  date: 2026-11-09
+  url: https://github.com/WisestWizard/gnomnom/commit/f1d6ca0
+  notes: No tagged releases; this is the latest commit.

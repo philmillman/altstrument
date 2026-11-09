@@ -20,9 +20,10 @@ license: GPL-3.0-only
 license_notes: >-
   LICENSING.md gives GPL-3.0-only, as Dinghy, with Felucca, SLOOP and OberVave platform code under their own notices.
   The Terminus font is SIL OFL 1.1, and the designburg logo in assets/ is all rights reserved and not under the GPL.
-distribution: source-only
+homepage: https://joakimskurk.github.io/fm1roboseq/
+distribution: browser-installer
 install_notes: >-
-  Build with the Makefile, then install build/roboseq.fwsc over USB-MIDI with tools/fm1_install.py on an FM-1 running
+  The project page installs the latest build of main from Chrome or Edge over USB and plays the firmware in the browser. Or build with the Makefile, then install build/roboseq.fwsc over USB-MIDI with tools/fm1_install.py on an FM-1 running
   M-VAVE's V15 or another firmware with the update loader. The README warns that any flash can brick a unit and says
   holding OCT- while switching on reaches the updater.
 brick_risk: false
@@ -34,7 +35,7 @@ image:
   source_url: https://github.com/joakimskurk/fm1roboseq
   first_party: true
 versions:
-- version: main @ 6efa957
+- version: main @ 0ac6290
   date: 2026-11-08
-  url: https://github.com/joakimskurk/fm1roboseq/commit/6efa957bab4153591a95af8bdc960eced4c4b0cd
-  notes: No tagged releases; this is the latest commit. Since the last sha the music has two modes, PLUS (the default) and CLASSIC, with a band of chord-following bots and a drummer, a two-player battle mode, a saved project, and acceptance of the UC25HQ80 flash chip of newer FM-1s. The later commits only reorganise the README and its images.
+  url: https://github.com/joakimskurk/fm1roboseq/commit/0ac629000452fe92f5acd07feb00003bab9ae38d
+  notes: No tagged releases; this is the latest commit. Since 6efa957 the project has a page where the firmware's own code runs in the browser and which installs the latest build of main over USB, the battle beat and strike are drawn in the board's own art, and there is a new logo. Before that the music gained two modes, PLUS (the default) and CLASSIC, with a band of chord-following bots and a drummer, a two-player battle mode, a saved project, and acceptance of the UC25HQ80 flash chip of newer FM-1s.

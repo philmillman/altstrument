@@ -14,7 +14,7 @@ description: >-
   ChoralRoot from The FM-1 Firmware Hub and M-VAVE's open firmware V14, and
   a Library tab lists them and downloads more from the Hub and, as the README now lists, fm1-editor.com, Reverbose's FM-1 and SMK-37 lists and mutant.cloud, and a settings tab picks a colour theme, a light or dark mode and, for three of the themes, an accent colour. A pane can be pinned so its flash contents survive power-off.
   For live units, the app probes FM-1-named MIDI ports, and now SMK-37 and Starrykey port names too, with the M-UPGRADE handshake, shows which firmware is running,
-  switches their clock and flashes a chosen package. The repository also builds fm1-tty, a terminal version of the
+  switches their clock and flashes a chosen package. A unit in ROM download mode is also listed, and with Rescue switched on it can be given the m-bootloader, on Linux, macOS (needs sudo) and Windows (needs administrator rights). An About tab shows the release history and licences. The repository also builds fm1-tty, a terminal version of the
   library, flashing, keyboard, metronome and MIDI routing. The emulated panes accept MIDI in only. The author calls it a local tool,
   not a distributed binary.
 status: active
@@ -34,8 +34,8 @@ install_notes: >-
   Build with Rust 1.91 or newer using cargo run --release; Linux needs ALSA and X11 or Wayland development
   packages. The first build downloads any missing firmware packages listed in fm1-performer/firmware/firmwares.json and checks
   their hashes; scripts/firmware.sh edits the list. Flashing a connected unit uses the same update path as other
-  installers, so back up first and follow the brick-risk notes on the FM-1 device page.
-brick_risk: false
+  installers, so back up first and follow the brick-risk notes on the FM-1 device page. The Rescue option writes a replacement bootloader through the chip's ROM download mode, which the build fetches from the m-bootloader release and checks by hash.
+brick_risk: true
 tags: [emulator, midi, flasher, utility]
 image:
   url: https://raw.githubusercontent.com/jasonbot/fm1-grid/main/screenshot/emulator.png
@@ -44,7 +44,7 @@ image:
   source_url: https://github.com/jasonbot/fm1-grid
   first_party: true
 versions:
-- version: main @ 513acb4
+- version: main @ 951aad5
   date: 2026-11-08
-  url: https://github.com/jasonbot/fm1-grid/commit/513acb45c93941fe199a32fabd3e00957c1c56ca
-  notes: No tagged releases; this is the latest commit. Since the previous row the graphical and terminal apps share one saved record for tempo, Download All and the library device checkboxes, flashing treats Donner Starrykey 37 Play and SMK-37 packages as interchangeable, Esc clears the terminal filter, navigation keys move from the filter into the library, the terminal flash picker shows USB paths to tell identical units apart, and the sidebar screen scales to 3x and 6x. The panel's key LED windows are redrawn.
+  url: https://github.com/jasonbot/fm1-grid/commit/951aad5d9230e46cd72b98da53c3681944b90a00
+  notes: No tagged releases; this is the latest commit. Since the previous row the devices pane lists units in ROM download mode and, with Rescue on, can write m-bootloader to them, and an About tab shows release history and licences. Earlier, the graphical and terminal apps share one saved record for tempo, Download All and the library device checkboxes, flashing treats Donner Starrykey 37 Play and SMK-37 packages as interchangeable, Esc clears the terminal filter, navigation keys move from the filter into the library, the terminal flash picker shows USB paths to tell identical units apart, and the sidebar screen scales to 3x and 6x. The panel's key LED windows are redrawn.

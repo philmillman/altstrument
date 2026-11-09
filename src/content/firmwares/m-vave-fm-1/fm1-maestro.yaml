@@ -6,12 +6,12 @@ summary: >-
 description: >-
   The screen shows a staff with a clef that scrolls as notes are played, the keys sound a piano (nine
   looped samples up to 0.16, DX7-style FM piano voices from 0.17), and the later builds add recording, rewind, punch-in, erasing and playback of what was played, shown as
-  notation, with an end bar and loop from 0.11. From 0.12 the sheet has a fixed playhead and a tempo knob, notes layer on top of earlier ones, OCT+ and OCT- shift the octave and the piano sound is resampled with corrected rates. Builds 0.17 to 0.19 swap in the FM piano voices, add presets, decouple the transport, and add overdub, scrub and jump; 0.20 swaps the roles of KNOB3 and KNOB4 for scrolling, among other fixes. The README still describes lesson files with timing and pitch grading, seeded sight-reading drills and
+  notation, with an end bar and loop from 0.11. From 0.12 the sheet has a fixed playhead and a tempo knob, notes layer on top of earlier ones, OCT+ and OCT- shift the octave and the piano sound is resampled with corrected rates. Builds 0.17 to 0.19 swap in the FM piano voices, add presets, decouple the transport, and add overdub, scrub and jump; 0.20 swaps the roles of KNOB3 and KNOB4 for scrolling, among other fixes, 0.21 unifies the playhead into one sound path and 0.22 stores the take as Standard MIDI File data. The README still describes lesson files with timing and pitch grading, seeded sight-reading drills and
   stored progress, and the repository holds five plain-text lessons and a converter that turns them into C data.
   Commit messages from 4 November say scoring was dropped in favour of the sheet-music and tape-recorder design, so
   the README is ahead of or behind the code in places. It is built on Dinghy with its platform files kept out of the
   tree, so a build starts from the Dinghy template. The repository holds a browser simulator, a web installer on
-  GitHub Pages and a .fwsc package for every build from 0.1 to 0.20 under docs/fw. The page calls the package a
+  GitHub Pages and a .fwsc package for every build from 0.1 to 0.22 under docs/fw. The page calls the package a
   test build, and nothing says it was checked on a real FM-1. An SMK-37 build is described in a design note.
 status: active
 authors:
@@ -34,7 +34,7 @@ install_notes: >-
 brick_risk: false
 tags: [lessons, ear-training, piano, sampler, emulator, fork]
 versions:
-- version: main @ f7742e9
-  date: 2026-11-08
-  url: https://github.com/node56/fm1-maestro/commit/f7742e9c33d8db9583a105d32d6be69dbf79d6cd
-  notes: No tagged releases; this is the latest commit, which makes the installer show the current version. The repository now holds firmware v0.20 in docs/fw, which swaps the scroll roles of KNOB3 and KNOB4, stops clipping the clef and top notes, makes loops cover whole bars and fixes stop and loop at the end of a piece. Builds 0.12 to 0.16 move to a groovebox-style playhead with a tempo knob, layering, an octave shift and a corrected piano engine; 0.17 and 0.18 replace the sampled piano with DX7-style FM piano voices, and 0.19 adds presets, overdub, scrub, jump and a backlight setting.
+- version: main @ 6d7ced9
+  date: 2026-11-09
+  url: https://github.com/node56/fm1-maestro/commit/6d7ced994f78f542be2b457f5a34ba1aa31833b9
+  notes: No tagged releases; this is the latest commit, which ships firmware v0.22 with the recorded take held as Standard MIDI File data; v0.21 before it unifies the playhead into one sound path. The repository holds v0.20 in docs/fw, which swaps the scroll roles of KNOB3 and KNOB4, stops clipping the clef and top notes, makes loops cover whole bars and fixes stop and loop at the end of a piece. Builds 0.12 to 0.16 move to a groovebox-style playhead with a tempo knob, layering, an octave shift and a corrected piano engine; 0.17 and 0.18 replace the sampled piano with DX7-style FM piano voices, and 0.19 adds presets, overdub, scrub, jump and a backlight setting.

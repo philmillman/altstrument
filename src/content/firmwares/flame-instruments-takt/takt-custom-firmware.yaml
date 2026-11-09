@@ -1,0 +1,38 @@
+device: flame-instruments-takt
+name: TAKT custom firmware
+summary: Unofficial modified build of Flame's TAKT v1.7.2 that adds seeded VARIATION, a performance mode on the function buttons, three random sample-and-hold LFO waves and a fix for a velocity-recording LED bug.
+description: >-
+  Rights warning: the repository's .syx file is a modified build of Flame's stock TAKT v1.7.2 firmware, and no source is
+  published. Flame has not licensed redistribution of its firmware, and the repository's licence covers only the
+  author's modifications.
+
+  Seeded VARIATION lets a random variation repeat on every loop, with a three-character seed per track that is saved with
+  the scene. Holding a function button for a moment acts as a momentary view and returns to the previous screen on
+  release, and HOLD, MUTE and VARIATION changes made this way are staged and land on the first step of the next bar. Three
+  new LFO waves play a random 16-step pattern, or its first 4 or 8 steps. The build also stops LEDs staying lit after
+  entering velocity recording. The author says existing scenes load and sound the same, and that scenes saved on this
+  build load on stock, with the seeds ignored.
+status: active
+authors:
+  - name: Daniel Gorgan
+    url: https://github.com/danut007ro
+source_status: binary-only
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text, copyright 2026 Daniel Gorgan, and says it covers only the modifications made in the
+  repository, not Flame's original firmware, which it says belongs to Flame. The firmware file is a modified vendor
+  image and its redistribution has no stated permission from Flame.
+homepage: https://github.com/danut007ro/flame-takt-fire
+distribution: download
+requires_stock: 1.7.2
+install_notes: >-
+  Back up scenes with a SysEx dump, power on with MOD-CV and TRACK 8 held until the display shows UPd, then send
+  FlameTaktV1_7_2_custom.syx. To go back, send Flame's original FlameTaktV1_7_2.syx the same way; it is on Flame's
+  downloads page and not in the repository.
+brick_risk: false
+tags: [sequencer, lfo, performance, modulation, sysex]
+versions:
+  - version: main @ 23941c5
+    date: 2026-11-09
+    url: https://github.com/danut007ro/flame-takt-fire/commit/23941c5de66d9a0ecf808ae0663738fdb0ab5aaf
+    notes: No tagged releases; this is the latest commit.

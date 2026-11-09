@@ -1,0 +1,38 @@
+device: m-vave-fm-1
+name: VEGETAL
+summary: >-
+  Plant-process engine for the FM-1 that turns phyllotaxis, L-system branching, tropisms and root and mycorrhiza networks into notes, added to Felucca and installed from a browser page the repository builds. The text is in Spanish.
+description: >-
+  The repository holds only an overlay of files that change or add to Felucca at a pinned commit, and a GitHub Actions
+  workflow that applies it, builds the firmware, tests the engine on Felucca's host harness and publishes a site with an
+  installer, a browser simulator and an editor. The engine runs 21 processes taken from plant growth, among them
+  phyllotaxis stepping the scale at the golden angle, branching trees read by a turtle, root systems, flowering, a
+  circadian clock and mycorrhiza, which listens to another track and answers it. The tempo clocks the processes, and a
+  growth setting picks the step length. A load governor adds or drops nodes as the processor fills. On the home screen
+  the unit draws the selected track's plant instead of the oscilloscope. The author is a university researcher, and the
+  README says the software is experimental.
+status: active
+authors:
+- name: Mauricio Vásquez Arias
+  url: https://github.com/capitanplaneta80-create
+source: https://github.com/capitanplaneta80-create/vegetal-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL version 3 text and the README says GPL-3.0 like Felucca, with no later-version clause; the landing
+  page source carries an SPDX GPL-3.0-only header. The built firmware also contains Felucca, which the workflow fetches
+  at a fixed commit.
+homepage: https://capitanplaneta80-create.github.io/vegetal-fm1/
+distribution: browser-installer
+install_notes: >-
+  Open the site's installer in Chrome or Edge with the FM-1 on USB, allow MIDI with SysEx and press install, without
+  unplugging during the write. If an update is cut off, pressing install again resumes the update mode. The installer's
+  return to the official firmware backs up your music and writes M-VAVE's V15 file, which you choose yourself and which
+  the browser checks by SHA-256; for V16 the page points to M-VAVE's own updater.
+brick_risk: false
+tags: [synth-engine, generative, sequencer, emulator, editor, web, fork]
+versions:
+- version: main @ 1d7bf27
+  date: 2026-11-08
+  url: https://github.com/capitanplaneta80-create/vegetal-fm1/commit/1d7bf2782916d5c531a1cb447b840be6db9a5d1a
+  notes: No tagged releases; this is the latest commit.

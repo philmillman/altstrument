@@ -1,0 +1,43 @@
+device: behringer-ignite
+also_devices: [behringer-aq64l, behringer-bcr32]
+name: behringer-desktop-emulators
+kind: tool
+summary: macOS emulators that build and run the firmware Behringer published for the IGNITE, AQ64L and BCR32, each with a clickable, scriptable front panel and virtual MIDI ports.
+description: >-
+  One repository and one emu command cover three units. The IGNITE emulator runs Behringer's application, lightly
+  patched, against an emulated panel microcontroller that speaks the panel's serial protocol, and shows the application's
+  screen inside the panel with touch support. The AQ64L and BCR32 emulators compile Behringer's demo firmware for the
+  desktop and expose its USB and DIN MIDI as virtual CoreMIDI ports, with the BCR32's OLED, LED rings, knobs and
+  CV and gate outputs emulated. A control tool presses keys, turns knobs, reads LEDs and takes screenshots for scripted
+  tests. No Behringer code is stored in the repository; the first run downloads it from Behringer's public repositories
+  and also fetches JUCE, so builds can take several minutes. It needs macOS with Xcode command-line tools and CMake, and the
+  README calls the project unofficial.
+status: active
+authors:
+  - name: tijnisfijn
+    url: https://github.com/tijnisfijn
+source: https://github.com/tijnisfijn/behringer-desktop-emulators
+source_status: open
+license: AGPL-3.0-or-later
+license_notes: >-
+  The README states AGPL-3.0-or-later, and the LICENSE file is the AGPL-3.0 text. Two files come from the KickEmulator and
+  the KICK firmware under the AGPL with their original headers. Behringer's sources, which the build downloads, keep
+  their own licences.
+distribution: source-only
+install_notes: >-
+  Run ./emu run ignite, aq64l or bcr32 on macOS. The script fetches Behringer's source and JUCE and builds in
+  ~/.cache/behringer-desktop-emulators, and options point it at your own checkout or fork of Behringer's repository.
+  Nothing runs on or is written to a real unit.
+brick_risk: false
+tags: [emulator, firmware, macos, virtual-midi, sequencer, controller]
+image:
+  url: https://raw.githubusercontent.com/tijnisfijn/behringer-desktop-emulators/main/docs/images/ignite-panel.png
+  alt: "Emulated IGNITE panel marked unofficial emulator, with the blue song screen in the display, eight knobs, transport and mode buttons, two encoders and sixteen step pads, the first lit"
+  credit: tijnisfijn
+  source_url: https://github.com/tijnisfijn/behringer-desktop-emulators
+  first_party: true
+versions:
+  - version: main @ 534d30c
+    date: 2026-11-06
+    url: https://github.com/tijnisfijn/behringer-desktop-emulators/commit/534d30c68593b01a856efd104daa0935d70b9414
+    notes: No tagged releases; this is the latest commit.

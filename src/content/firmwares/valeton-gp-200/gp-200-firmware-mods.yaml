@@ -11,7 +11,7 @@ description: >-
   does not license for redistribution. The file is no longer in the current tree but is still in the git history,
   so do not take it from an older commit. Build your own image from the configurator.
 
-  The main route is the configurator, an offline HTML page (version 0.7.2). You load your own unmodified
+  The main route is the configurator, an offline HTML page (version 0.7.3). You load your own unmodified
   BIN, tick the mods you want and download a ZIP with the generated firmware and a manifest. The mods are a
   DSP load percentage at the top of the screen, a Dual Chain mode with two paths, a blend control, sample
   alignment and a polarity switch for the second path, a Scenes mode with four snapshots per preset on top
@@ -22,7 +22,7 @@ description: >-
   Valeton's editor does not support them, and a NAM model takes about 55% of the DSP budget, so the author
   lists effects to leave out of a patch that uses one.
 
-  Version 0.7.2 changes the effect block buttons to open the block's configuration menu by position in the chain rather than by block type. Version 0.7.1 fixes a bug in the scenes mod. Version 0.7 shortens the gap when switching presets that use a universal block and reduces the pop when changing between NAM files; 0.6.3 made scene changes keep the live values of parameters driven by an active expression pedal. The repository root has the configurator and the NAM
+  Version 0.7.3 changes the stock module buttons so a press opens the module's settings menu, a hold switches the module on or off and short presses cycle through the blocks of that type. Version 0.7.2 changes the effect block buttons to open the block's configuration menu by position in the chain rather than by block type. Version 0.7.1 fixes a bug in the scenes mod. Version 0.7 shortens the gap when switching presets that use a universal block and reduces the pop when changing between NAM files; 0.6.3 made scene changes keep the live values of parameters driven by an active expression pedal. The repository root has the configurator and the NAM
   loader page, and earlier configurator versions are in an _OLD folder. The page says it is experimental and
   unofficial.
 
@@ -43,7 +43,7 @@ license_notes: >-
 distribution: patch-your-own
 requires_stock: GP-200 (also GP-200R and GP-200X) V1.8.0 or V1.8.2, or an image the configurator already modified
 install_notes: >-
-  Open Custom0.7.2.html from the repository in a desktop browser, load your own unmodified
+  Open Custom0.7.3.html from the repository in a desktop browser, load your own unmodified
   firmware BIN, choose and configure the mods, and build. Unzip the result, read the manifest and flash
   the BIN with Valeton's official update procedure for your version; do not interrupt the update. Copy the
   replacement files listed in the ZIP into Valeton's editor only if the manifest says to, after backing
@@ -68,7 +68,7 @@ videos:
   first_party: true
   found_via: https://github.com/Goaltoday/GP-200-FIRMWARE-MODS#readme
 versions:
-- version: main @ dd5bd2b
+- version: main @ be78bb2
   date: 2026-11-08
-  url: https://github.com/Goaltoday/GP-200-FIRMWARE-MODS/commit/dd5bd2b50c161347856babc948798e2ef07dc489
-  notes: No tagged releases; this is the latest commit, which is configurator version 0.7.2. It makes the effect block buttons open the configuration menu by chain position rather than block type, and the README gains a go-back-to-stock section. 0.7.1 fixed a bug in the scenes mod.
+  url: https://github.com/Goaltoday/GP-200-FIRMWARE-MODS/commit/be78bb23ec60ab88ba88a240f2903d9c46479f75
+  notes: No tagged releases; this is the latest commit, which is configurator version 0.7.3. It changes the stock module buttons to open settings on a press and switch the module on or off on a hold. 0.7.2 made the effect block buttons open the configuration menu by chain position, and 0.7.1 fixed a bug in the scenes mod.

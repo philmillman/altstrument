@@ -1,0 +1,30 @@
+device: m-vave-fm-1
+name: RetroDash
+summary: >-
+  Pixel-art rhythm game for the FM-1 built on VaveHero, Dinghy, Felucca and SLOOP: play the melody on the keys while the rest is accompanied, with two songs played back from SNES SPC data.
+description: >-
+  Rights warning: the repository commits the Chrono Trigger and Final Fantasy VI music (SPC data, BRR samples and RAM snapshots) and the character and scene artwork derived from those games, and the firmware compiles them in. The README says these are third-party demo material that the GPL does not relicense.
+  The game scrolls enemies toward the player and each pitch has a fixed physical key; accompaniment and a few automatic fills play on their own, and the next two notes are shown on the key lights. Knob 1 sets scroll speed without changing music tempo or judging. Audio is rendered from the original sample data by an integer fast S-DSP backend. 0.2.0-beta holds two songs, selected on the song screen, and each keeps its own chart, art and score. Song projects are built into the firmware from a documented tree; there is no import over USB. The author's hardware measurements cover the earlier single-song build only, with a display of about 40 to 60 frames per second, and the 0.2.0 build has not been flashed. Stock V15 migration and SMK-37 builds are not validated.
+status: active
+authors:
+- name: nasonliu
+  url: https://github.com/nasonliu
+source: https://github.com/nasonliu/retrodash
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL-3.0 text and the README says GPL-3.0-only, with upstream notices kept in LICENSING.md. snes_spc (Shay Green) is LGPL-2.1-or-later and fonts are OFL. The Chrono Trigger and Final Fantasy VI music, characters and derived game assets are third-party material not relicensed by the firmware licence.
+distribution: download
+install_notes: >-
+  Flash the .fwsc from a release with tools/fm1_install.py over USB, port name Felucca. Package identities are FM-1_91720101 and FM-1_91720102. Holding OCT- at power-on opens the USB rescue loader inherited from the platform.
+brick_risk: false
+tags: [game, synth-engine, fork, sampler]
+versions:
+- version: 0.2.0-beta
+  date: 2026-11-09
+  url: https://github.com/nasonliu/retrodash/releases/tag/v0.2.0-beta
+  notes: Marked pre-release. Adds a second song, Terra Snow March, with a selector on the song screen. Tested on the host and built, not flashed.
+- version: 0.1.0-beta
+  date: 2026-11-09
+  url: https://github.com/nasonliu/retrodash/releases/tag/v0.1.0-beta
+  notes: Marked pre-release. First build with the Peaceful Days song, 200 targets, key hints and a fix for the display freeze at the hardware timer rollover. The author reports flashing it and playing a full song.

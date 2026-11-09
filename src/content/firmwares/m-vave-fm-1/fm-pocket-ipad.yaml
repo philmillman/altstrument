@@ -1,0 +1,28 @@
+device: m-vave-fm-1
+name: FM Pocket for iPad
+kind: tool
+summary: >-
+  SwiftUI iPad app that recreates the FM-1's panel, 240x240 screen and six-operator DX7-compatible engine with the V15 factory banks, MIDI and SysEx, plus a groovebox mode offered as a second firmware.
+description: >-
+  Rights warning: the research folder commits M-VAVE promotional images, a retailer listing screenshot and screenshots taken from other firmwares' pages and documentation.
+  The app is a reimplementation of V15's behaviour rather than an emulation of the chip: its own FM engine, effect chain, arpeggiator, a sixteen-step sequencer and a CoreMIDI and Bluetooth MIDI host. Its firmware menu holds the V15 imitation and FM Pocket Groove, which adds eight patterns with a synth track and an 11-lane drum track, a Euclidean generator, parameter locks and a perform layer. The 128 factory voices come from the V15 recovery image that M-VAVE licenses in fm1_open. It targets iPadOS 18 and builds with XcodeGen and Xcode. It writes nothing to a real FM-1.
+status: active
+authors:
+- name: OriolFF
+  url: https://github.com/OriolFF
+source: https://github.com/OriolFF/FM1_ios
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no licence file and the README gives no licence statement. The four factory bank .syx files were extracted from M-VAVE's Apache-2.0 V15 image in m-vave/fm1_open. No firmware package is committed.
+homepage: https://github.com/OriolFF/FM1_ios
+distribution: source-only
+install_notes: >-
+  Generate the project with xcodegen, open FM1.xcodeproj and run it on an iPad simulator or, with your own signing team, on a device. The app runs on the iPad only and does not flash an FM-1.
+brick_risk: false
+tags: [emulator, ios, groovebox, sequencer, dx7]
+versions:
+- version: main @ 5692807
+  date: 2026-11-08
+  url: https://github.com/OriolFF/FM1_ios/commit/5692807
+  notes: No tagged releases; this is the latest commit.

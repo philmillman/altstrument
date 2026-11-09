@@ -8,7 +8,7 @@ description: >-
   on a gong modelled from a recording taken apart into 742 modes, and the cuckoo clock opens a door, shows a bird and calls on two FM pipes. All sound is synthesised and no
   recording is included. SELECT and PRESETS set minutes and hours, the key lights follow the pendulum or flash the hour, and MIDI CC 20 to 22 set the time from a computer.
   The unit has no battery-backed clock, so it starts at 10:10 each time. It is a Dinghy 0.5 app from the same author as RoboSeq, SkurkyMello and Star Distroyer. The README
-  calls it 0.1, tested in the emulator and on a computer and now being tried on a real FM-1.
+  calls it 0.1, tested in CI, the emulator and on a computer and not yet tried on a real FM-1. The ENV key winds the cuckoo clock by hand. The project page installs it from the browser and runs the firmware in the page.
 status: active
 authors:
 - name: joakimskurk
@@ -19,9 +19,10 @@ license: GPL-3.0-only
 license_notes: >-
   LICENSING.md gives GPL-3.0-only, as Dinghy, with Felucca, SLOOP and OberVave platform code under their own notices. The Terminus font is SIL OFL 1.1.
   Only measurements of the clock recordings are in the repository.
-distribution: source-only
+homepage: https://joakimskurk.github.io/fm1clock/
+distribution: browser-installer
 install_notes: >-
-  Build with the Makefile and JieLi's toolchain, then install build/fm1clock.fwsc over USB-MIDI with tools/fm1_install.py or through the Firmware Hub.
+  Use the installer on the project page (Chrome or Edge over USB), or build with the Makefile and JieLi's toolchain, then install build/fm1clock.fwsc over USB-MIDI with tools/fm1_install.py or through the Firmware Hub.
   A package from a CI run can be tried in the fm1-emu browser emulator. Holding OCT- while switching on reaches the USB rescue.
 brick_risk: false
 tags: [synth-engine, fm, ui, utility]
@@ -32,7 +33,7 @@ image:
   source_url: https://github.com/joakimskurk/fm1clock
   first_party: true
 versions:
-- version: ccr-8fc2946b-9il8uc @ 91b9b3d
+- version: ccr-8fc2946b-9il8uc @ 7a20f13
   date: 2026-11-08
-  url: https://github.com/joakimskurk/fm1clock/commit/91b9b3d60f934e2578a38fd839073746fb51eec2
-  notes: No tagged releases; this is the latest commit on the default branch, which shortens the README and moves details into docs.
+  url: https://github.com/joakimskurk/fm1clock/commit/7a20f130aa9320d5ef174226bac698bb1d43752c
+  notes: No tagged releases; this is the latest commit on the default branch. Since the previous row it adds a project page with a browser installer and a build of the clock that runs in the page, redraws the cuckoo clock, makes ALGORITHM switch one clock per turn and brings ENV back to wind the cuckoo clock.

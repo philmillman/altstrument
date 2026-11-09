@@ -1,0 +1,45 @@
+device: korg-ms2000
+name: ms2000r-emu
+kind: tool
+summary: Hardware-level emulator of the MS2000R that runs KORG's own firmware from a dump of your unit on an emulated H8S CPU and DSP56362, as a Windows and macOS app and a VST3 plugin, with a flash-dump tool for real units.
+description: >-
+  The emulator executes the firmware instruction by instruction and uses no re-implemented synth engine, so programs,
+  the vocoder, the arpeggiator, the motion sequencer and the demo songs behave as on the unit. The full front panel is
+  drawn, with knobs, switches, LEDs and the two-line LCD, and writes go to an emulated, persistent flash. The plugin
+  exposes 59 host parameters, one for each physical control, and takes host tempo and transport as MIDI clock and
+  start. SysEx banks and programs load and save as .syx files. No firmware or ROM is in the repository: the user supplies
+  a dump of their own unit's 1 MB flash and the DSP boot ROM. A separate Windows tool in the release reads that flash
+  over MIDI by sending a small dump routine added to KORG's v1.07 updater file through the unit's own update mode.
+  The README says it must never be used with the MS2000B or MS2000BR.
+status: active
+authors:
+  - name: Tuth
+    url: https://github.com/Tuth
+source: https://github.com/Tuth/ms2000r-emu
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README says GPL-3.0 and the LICENSE.md file is the GPL version 3 text with no statement that later versions apply.
+  The emulation core is built on the dsp56300 library, which is GPL-3.0. No KORG firmware or ROM is included.
+distribution: download
+requires_stock: KORG's MS2000 system updater v1.07, for the flash-dump tool only
+install_notes: >-
+  The Windows release holds ms2000_emulator.exe, two launchers and MS2000R.vst3; the macOS port builds from source. Put
+  flash.bin and boot-362.bin from your own unit beside the program. The emulator never writes flash.bin. The flash tool
+  installs a dump routine over the unit's update mode and its notes name the first flash block, which holds the boot
+  code, as the risky moment; the tool can reinstall KORG's unchanged v1.07 afterwards. Keep the unit powered, and never
+  use it on an MS2000B or MS2000BR.
+brick_risk: true
+tags: [emulator, vst3, synth, flash-dump, macos, windows]
+versions:
+  - version: v0.9.9
+    date: 2026-11-08
+    url: https://github.com/Tuth/ms2000r-emu/releases/tag/v0.9.9
+    notes: Profile-guided Windows build that runs faster with identical audio, and a dot-matrix LCD in the plugin.
+  - version: v0.9.8
+    date: 2026-10-15
+    url: https://github.com/Tuth/ms2000r-emu/releases/tag/v0.9.8
+    notes: Fixes sound dropping out after program changes, at the cost of more CPU use.
+  - version: v0.9.7
+    date: 2026-10-11
+    url: https://github.com/Tuth/ms2000r-emu/releases/tag/v0.9.7

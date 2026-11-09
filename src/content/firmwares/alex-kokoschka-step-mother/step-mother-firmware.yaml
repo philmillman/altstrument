@@ -1,0 +1,57 @@
+device: alex-kokoschka-step-mother
+name: Step Mother firmware (StepDaddy)
+summary: Open firmware for the Step Mother controller with the StepBro MIDI step sequencer and the Yummy Gummy 303-style bass synth, installed with the StepDaddy updater for macOS and Windows or with Teensy Loader.
+description: >-
+  Two engines run in one firmware and keep playing while the panel is switched between them. StepBro is a MIDI step
+  sequencer with two banks of patterns, pattern chaining, per-step velocity, note repeat and a density knob, and it
+  follows the host's MIDI clock. Yummy Gummy is a mono or four-note paraphonic saw and square synth with slides,
+  accents, a ladder filter, distortion, a tempo-synced delay and its own sequencer with automation of eight parameters,
+  and it streams 48 kHz audio to the computer over USB. Patterns and settings are written to a journal in program flash
+  only while the sequencer is stopped, and an update keeps them. StepDaddy is a separate updater app, unsigned on both
+  platforms, that carries the firmware file and can ask a running unit to restart into the Teensy bootloader. The
+  README states that the 303 name is a Roland trademark and that the project is not affiliated with Roland.
+status: active
+authors:
+  - name: Alex Kokoschka
+    url: https://github.com/AlexKokoschka
+source: https://github.com/AlexKokoschka/StepDaddy
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The README and NOTICE state GPL version 3 or later for the firmware and updater. The hardware repository is separate
+  and uses CERN-OHL-S-2.0. The vendored Teensyduino 1.62.0 subset keeps its own licences (MIT-style, LGPL-2.1-or-later,
+  BSD-3-Clause), as listed in NOTICE.
+homepage: https://github.com/AlexKokoschka/StepMother
+distribution: download
+install_notes: >-
+  Open StepDaddy from the release page and choose Step Mother; the case stays closed. A running unit restarts into the
+  bootloader by itself. Otherwise hold Glide and Function while plugging in USB, or press the PROGRAM button on the
+  Teensy once if it has never run this firmware. To install by hand, load the .hex file in PJRC's Teensy Loader. The
+  macOS and Windows apps are not code-signed and show a one-time warning.
+brick_risk: false
+tags: [official, sequencer, synth-engine, midi, usb-audio, open-source]
+video:
+  url: https://www.youtube.com/watch?v=5FidxB0JIPQ
+  title: Meet the Step Mother - TR-Style MIDI Drum Programming and 303-esque Synth
+  credit: Mr.Moose
+  first_party: true
+  found_via: https://github.com/AlexKokoschka/StepDaddy#readme
+  version: 1.0.0
+videos:
+  - url: https://www.youtube.com/watch?v=CbF5JtVqbY4
+    title: Step Mother - Yummy Gummy Synth (Layer 2)
+    credit: Mr.Moose
+    first_party: true
+    found_via: https://github.com/AlexKokoschka/StepDaddy#readme
+    version: 1.0.0
+  - url: https://www.youtube.com/watch?v=w0sGw5nPOf4
+    title: Step Mother - Programming a Beat on Layer 1 (StepBro Engine)
+    credit: Mr.Moose
+    first_party: true
+    found_via: https://github.com/AlexKokoschka/StepDaddy#readme
+    version: 1.0.0
+versions:
+  - version: 1.0.0
+    date: 2026-11-07
+    url: https://github.com/AlexKokoschka/StepDaddy/releases/tag/v1.0.0
+    notes: First public release with StepBro, Yummy Gummy, a combined save journal and the StepDaddy updater.

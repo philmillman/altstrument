@@ -6,12 +6,12 @@ summary: >-
 description: >-
   Each of the two parts has four operators with feedback on every one, and the waveforms come from the OPL3 and OPZ
   families, with the pulse, square and saw redone to avoid aliasing. The author says the DSP was written from scratch
-  with ymfm and Dexed as references. Two global multimode filters follow, the first with its own envelope and the second
-  without, and a wavefolder adds harmonics and noise. A performance page, per-operator envelope views, patch save, load,
+  with ymfm and Dexed as references. A global multimode filter with its own envelope follows, shared by both parts; versions up to 1.0.6 also had a second
+  filter and a wavefolder. A performance page, per-operator envelope views, patch save, load,
   init and copy, and a manual with MIDI and SysEx reference are included. There is no sequencer. The firmware was built
   with the umetate framework as its test case, and the author notes that they had no physical FM-1 at hand and cannot
   guarantee the install. The repository bundles the whole framework and fetched plugin dependencies, and its latest
-  release is 1.0.6.
+  release is 1.0.7.
 status: active
 authors:
 - name: P1Onken
@@ -33,6 +33,10 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, phase-modulation, fm, filter, emulator, web, fork]
 versions:
+- version: 1.0.7
+  date: 2026-11-08
+  url: https://github.com/AkirakoSaintJust/type-p-fm1/releases/tag/v1.0.7
+  notes: The filter envelope now retriggers on every note, so a sequencer restarts the filter shape for each note. The second filter and the wavefolder are removed, which moves the CCs after them down by three. Portamento is mono-only, part delay works in mono, and the plugin keeps a global part and patch library with export and import.
 - version: 1.0.6
   date: 2026-11-08
   url: https://github.com/AkirakoSaintJust/type-p-fm1/releases/tag/v1.0.6

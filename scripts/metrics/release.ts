@@ -13,7 +13,7 @@
 import { execFileSync } from 'node:child_process';
 import { existsSync } from 'node:fs';
 import { parseArgs } from 'node:util';
-import { cachePath, LOCK_FILE, METRICS_REPO, METRICS_TAG, parseLock, readCachedAsset, readLock, type MetricsLock } from '../../src/lib/repo-metrics.ts';
+import { assetPublished, cachePath, LOCK_FILE, METRICS_REPO, METRICS_TAG, parseLock, readCachedAsset, readLock, type MetricsLock } from '../../src/lib/repo-metrics.ts';
 
 const KEEP_DAYS = 60;
 const DAY_MS = 24 * 60 * 60 * 1000;
@@ -44,7 +44,20 @@ function listAssets(): Asset[] {
   return (JSON.parse(out) as Asset[][]).flat();
 }
 
-/** Uploads the lock's asset from the cache unless the release has it already. */
+/**
+ * The public download URL can answer 404 for a minute or so after an upload. Wait until it
+ * serves the asset, so a lock committed right after publishing never fails CI.
+ */
+async function waitPublic(asset: string) {
+  for (let i = 0; i < 30; i++) {
+    if (await assetPublished(asset).catch(() => false)) return;
+    if (i === 0) console.log(`Waiting for ${asset} to be downloadable`);
+    await new Promise((r) => setTimeout(r, 10_000));
+  }
+  throw new Error(`${asset} is on the release but its public URL still fails after 5 minutes`);
+}
+
+/** Uploads the lock's asset from the cache unless the release has it already, then waits until it downloads. */
 export async function publish(root: string, lock: MetricsLock) {
   if (!readCachedAsset(root, lock)) {
     throw new Error(`${lock.asset} is not in the cache (or does not match ${LOCK_FILE}); run pnpm metrics:fetch first`);
@@ -60,10 +73,11 @@ export async function publish(root: string, lock: MetricsLock) {
     ]);
   } else if (listAssets().some((a) => a.name === lock.asset)) {
     console.log(`${lock.asset} is already on the "${METRICS_TAG}" release`);
-    return;
+    return waitPublic(lock.asset);
   }
   run('gh', ['release', 'upload', METRICS_TAG, cachePath(root, lock.asset), '--repo', METRICS_REPO]);
   console.log(`Uploaded ${lock.asset} to the "${METRICS_TAG}" release`);
+  await waitPublic(lock.asset);
 }
 
 /** Asset names referenced by the lock on `ref` at any point in the last KEEP_DAYS days. */

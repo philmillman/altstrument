@@ -13,7 +13,7 @@ description: >-
   that are built into the firmware from 2.0 (1.x wrote a separate sample bank with the updater). Sixteen user slots hold
   saved scenes, which keep their scene, sounds, FX and SPACE when renamed. The installer page can return the unit to
   V15 from a file you supply, or you can install another firmware. Projects saved in 1.x do not carry over to 2.0, and
-  Bluetooth MIDI is not in 2.0.
+  Bluetooth MIDI is not in 2.0. Version 2.0.2 adds support for newer units with the UC25HQ80 flash chip; a unit that already runs 2.0.1 cannot be updated by the installer and has to be recovered through update mode first.
 status: active
 authors:
 - name: Fat Cat Studios
@@ -27,12 +27,12 @@ license_notes: >-
   that fm1-base and felucca-bsp are MPL-2.0. The binary engine library sdk/lib/libfm1_engine.a is under M-VAVE's
   separate terms for FM-1 devices (THIRD_PARTY.md). Up to 1.1.0, on the v1 branch, the repository contained M-VAVE's
   licensed V15 recovery image sdk/firmware/FM-1_015.fwsc, Apache-2.0, git blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd,
-  the same file as in m-vave/fm1_open; the 2.0.1 tree no longer has an sdk directory, though THIRD_PARTY.md still lists
+  the same file as in m-vave/fm1_open; the 2.0 tree no longer has an sdk directory, though THIRD_PARTY.md still lists
   those parts. The sample bank is CC0 material from VSCO-2 Community Edition.
 distribution: browser-installer
 requires_stock: V15 or another open firmware
 install_notes: >-
-  Install from the FM-1 Firmware Hub, or open FM1-VESPER-2.0.1-Installer.html from the release in Chrome or Edge with
+  Install from the FM-1 Firmware Hub, or open FM1-VESPER-2.0.2-Installer.html from the release in Chrome or Edge with
   the FM-1 on USB. The page installs over M-VAVE's V15 or another open firmware, and its Back to the stock firmware
   option needs M-VAVE's own FM-1.fwsc, which you supply. Saved presets stay when updating from 2.0.0, but projects from
   1.x do not carry over, so back them up first. Holding REC while switching on enters the chip's update mode if the
@@ -46,6 +46,10 @@ image:
   source_url: https://github.com/fatcatstudios-hub/vesper-fm1
   first_party: true
 versions:
+- version: 2.0.2
+  date: 2026-11-09
+  url: https://github.com/fatcatstudios-hub/vesper-fm1/releases/tag/vesper-2.0.2
+  notes: Works on newer FM-1 units with the UC25HQ80 flash chip, where 2.0.1 played but could not save presets or install another firmware over itself. A newer unit already on 2.0.1 has to be put into update mode (hold REC while powering on) and recovered through The Firmware Hub's rescue page first.
 - version: 2.0.1
   date: 2026-10-31
   url: https://github.com/fatcatstudios-hub/vesper-fm1/releases/tag/vesper-2.0.1

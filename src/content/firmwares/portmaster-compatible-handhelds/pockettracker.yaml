@@ -1,0 +1,42 @@
+device: portmaster-compatible-handhelds
+also_devices: [miyoo-miyoo-mini]
+name: PocketTracker
+summary: Tracker for small screens with a sampler, SoundFont player, effects and stem export, packaged as a PortMaster zip, an OnionOS port for the Miyoo Mini and an Android app.
+description: >-
+  PocketTracker is a tracker in the style of LSDj and LGPT with eight stereo tracks, a sampler that loads common audio
+  formats, a SoundFont player, a sample editor with slicing and time stretch, send effects, a mixer and WAV or stem
+  export. One code base and one 640x480 interface serve Android, Linux handhelds, Linux desktop and Windows. On Linux
+  handhelds it installs as a PortMaster port for aarch64 firmwares such as ArkOS, muOS, JELOS, Knulli and ROCKNIX, and
+  the Miyoo Mini and Mini Plus get a separate 32-bit package for OnionOS. The README states that the project was
+  developed with AI assistance. The sibling entry TrackWerk is an independent fork by another author.
+status: active
+authors:
+  - name: conanizer
+    url: https://github.com/conanizer
+source: https://github.com/conanizer/pockettracker
+source_status: open
+license: GPL-3.0-only
+license_notes: The LICENSE file is the plain GPL version 3 text, and the README says GPL-3.0 without an "or later" statement.
+homepage: https://conanizer.github.io/pockettracker/
+distribution: download
+install_notes: >-
+  PortMaster handhelds: copy the PortMaster zip, still zipped, into the autoinstall folder of the PortMaster
+  directory and open PortMaster, which unpacks it. Miyoo Mini and Mini Plus: extract the OnionOS zip at the top
+  level of the SD card; Onion's Ports Collection must be installed first. Android: install the APK from the release,
+  F-Droid or Obtainium. Nothing is flashed to the device.
+brick_risk: false
+tags: [tracker, sampler, sequencer, open-source]
+image:
+  url: https://raw.githubusercontent.com/conanizer/pockettracker/main/docs/images/screenshot.png
+  alt: PocketTracker phrase screen with a column of note, volume, instrument and three effect columns in light blue on black, a pattern chain list on the right and a waveform strip across the top
+  credit: conanizer
+  source_url: https://github.com/conanizer/pockettracker#readme
+  first_party: true
+versions:
+  - version: v0.9.9.1
+    date: 2026-10-27
+    url: https://github.com/conanizer/pockettracker/releases/tag/v0.9.9.1
+    notes: Adds a Collect command that copies a song and its samples into one folder, and fixes time stretch playing early.
+  - version: v0.9.9
+    date: 2026-10-24
+    url: https://github.com/conanizer/pockettracker/releases/tag/v0.9.9

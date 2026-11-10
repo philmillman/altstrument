@@ -1,0 +1,63 @@
+device: m-vave-fm-1
+name: FM-FAM
+summary: >-
+  Drum synth and 16-step sequencer for the FM-1 in the manner of a semi-modular analog drum synth: two oscillators,
+  a kick with its own sequence, parameter locks, a sound saved with each pattern, an effects chain and random pages.
+description: >-
+  The synth voice has two oscillators with 16 wave types each, hard sync, FM, noise, a ladder or state-variable filter, three
+  envelopes and a patch bay of eight virtual cables. A second voice, the kick, has its own 16-step sequence with pitch,
+  volume, condition, ratchet and nudge per step. The main sequencer offers parameter locks, step conditions, ratchets, swing and
+  nudge, with 176 patterns in 11 banks, a 32-slot song and a sound stored with every pattern. The effects chain has a
+  compressor, stutter, delay, reverb, DJ filter and limiter. Other parts are 16 scales, presets, four projects that save
+  by themselves, random pages that draw a whole sound, a percussion pattern or a melody, MIDI clock sync, and
+  experimental Bluetooth MIDI and Bluetooth audio on the fm1-base stack. A browser page mirrors the screen and panel over USB, plays the
+  panel from the computer, backs up and restores projects and installs a release from GitHub. The repository is a GitHub fork of
+  fm1-base and keeps its README below the FM-FAM text, so the repository description still reads as the base. The README calls FM-FAM beta software.
+status: active
+authors:
+- name: David Amo
+  url: https://github.com/davidamomusic
+source: https://github.com/davidamomusic/fm-fam
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The licence file is the MPL-2.0 text, with an SPDX line in each source file. Parts taken from fm1-base keep the licences
+  that fm1-base's LICENSING.md lists.
+homepage: https://davidamomusic.github.io/fm-fam/fam/docs/FM-FAM-mirror.html
+distribution: download
+requires_stock: Any FM-1 firmware; the installers write the package over it
+install_notes: >-
+  Install the .fwsc package from a release with The Firmware Hub, M-UPGRADE or tools/fm1_install.py. M-UPGRADE refuses a
+  package that has the same identity as the firmware already on the unit, which is the case when updating FM-FAM, so use
+  tools/fm1_install.py or the install section of the mirror page, in Chrome or Edge, for that. The README says to back up first, with the mirror
+  page, and not to unplug the unit while it writes. A unit that stops starting is brought back by installing another firmware package with
+  The Firmware Hub or M-UPGRADE. Building from source needs the JieLi pi32v2 toolchain and AC79 SDK.
+brick_risk: false
+tags: [sequencer, drums, synth-engine, fx, generative, scales, midi, usb-midi, usb-audio, ble-midi, emulator, fork]
+video:
+  url: https://youtu.be/w_OxwuAZFbY
+  title: FM-FAM for M-Vave FM-1
+  credit: David Amo
+  first_party: true
+  found_via: https://github.com/davidamomusic/fm-fam#readme
+versions:
+- version: v0.2.5
+  date: 2026-11-10
+  url: https://github.com/davidamomusic/fm-fam/releases/tag/v0.2.5
+  notes: Makes the combination of OCT+ and HOME the general random and keeps the older wider draw on OCT+ and REC.
+- version: v0.2.4
+  date: 2026-11-10
+  url: https://github.com/davidamomusic/fm-fam/releases/tag/v0.2.4
+  notes: Adds a melody random, a VERSION page and caps for the general random.
+- version: v0.2.1
+  date: 2026-11-08
+  url: https://github.com/davidamomusic/fm-fam/releases/tag/v0.2.1
+  notes: Choices such as waves and filter types are kept as equal parts of the knob range and the encoder click steps through them.
+- version: v0.2.0
+  date: 2026-11-08
+  url: https://github.com/davidamomusic/fm-fam/releases/tag/v0.2.0
+  notes: Adds the Projects and backup section and the install-a-version section to the mirror page.
+- version: v0.19
+  date: 2026-11-08
+  url: https://github.com/davidamomusic/fm-fam/releases/tag/v0.19
+  notes: Marked as a pre-release on GitHub.

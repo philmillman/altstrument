@@ -1,0 +1,38 @@
+device: m-vave-fm-1
+name: Undertone
+summary: >-
+  Dedicated instrument firmware built on FM1 Open V14: a subharmonic polysynth, a West Coast percussion voice and an eight-voice drone module with a shared drive, delay and LFO bus.
+description: >-
+  The stock FM1 Open synths and screens are replaced, while M-VAVE's USB update, recovery, storage, USB audio and MIDI and Bluetooth layers stay underneath. VOICE is a four-voice
+  polysynth in which each note adds up to three subharmonics, in just intonation, equal temperament or snapped to a scale, with a COAST control that moves from a filtered saw and pulse
+  sound to a low-pass-gate and wavefolder sound. PERC has six West Coast percussion voices of a sine FM pair through a wavefolder and a vactrol-style gate, with a bounce retrigger. DRONE
+  has eight sustained voices in four detunable pairs with cross-modulation. A shared bus adds drive, a modulated delay and a global LFO, and each module has six presets. Settings are not
+  saved across power cycles, and the UNDERTONE.md notes say it has not yet run on hardware, so the CPU headroom with all modules sounding is unknown. The repository carries M-VAVE's FM1 Open
+  sources and SDK, including the V15 stock image.
+status: active
+authors:
+- name: edlawes-create
+  url: https://github.com/edlawes-create
+source: https://github.com/edlawes-create/undertone-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE.md is M-VAVE's FM1 APP licence, GPL-3.0-only with a section 7 permission to link the binary FM1 SDK (GitHub shows it as NOASSERTION). SDK binaries keep their terms in THIRD_PARTY.md.
+  The committed sdk/firmware/FM-1_015.fwsc is the file M-VAVE licenses under Apache-2.0 (git blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd, 699,956 bytes).
+based_on: m-vave-fm-1/fm1-open
+distribution: source-only
+requires_stock: FM1 Open V14 base
+install_notes: >-
+  No package is published. UNDERTONE.md builds it as FM1 Open is built, with JieLi toolchain 2.5.3 on Windows: sdk\Build.ps1 -FirmwareOnly for a test build, or build.bat --package with FM1_SOURCE_URL set to
+  the tag's source archive. The README says the workbench or the standard FM-1 update protocol installs it and that M-VAVE's original V15 can be restored; keep a backup.
+brick_risk: false
+tags: [synth-engine, polyphonic, drone, drums, fx, lfo, microtonal]
+versions:
+- version: v0.2
+  date: 2026-11-09
+  url: https://github.com/edlawes-create/undertone-fm1/tree/v0.2
+  notes: Git tag; no GitHub release page. Reworks the firmware into a dedicated instrument with the VOICE, PERC and DRONE modules and the shared FX bus.
+- version: v0.1
+  date: 2026-11-09
+  url: https://github.com/edlawes-create/undertone-fm1/tree/v0.1
+  notes: Git tag; no GitHub release page. First subharmonic voice engine on FM1 Open V14.

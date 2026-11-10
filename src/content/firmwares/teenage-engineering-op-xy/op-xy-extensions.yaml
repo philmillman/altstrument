@@ -1,0 +1,41 @@
+device: teenage-engineering-op-xy
+name: OP-XY Extensions
+summary: Open-XY SDK extensions that change how the stock OP-XY behaves, starting with Drumline page 2, a second page per Drumline key with its own filter, sample-rate reduction and two effect sends.
+description: >-
+  Each folder in the repository is one extension, as opposed to a new sound
+  machine. The only one so far, Drumline page 2, makes a press on any encoder
+  on a Drumline track switch to a second page for the key in use. The page sets
+  a low-pass or high-pass filter, sample-rate reduction and the key's own sends
+  to the two effects, or follows the track's send. Step locks work per key and
+  step, the settings are saved with the project and apply to every Drumline
+  track in the build. With the defaults Drumline sounds as stock, and stock
+  Drumline presets do not store the second page. The repository has host tests
+  and a workflow that compiles it for the device's Blackfin processor. That
+  workflow builds against a branch of the SDK that adds the drumline_page
+  capability, which the README does not say has been merged into the main SDK.
+  The commit messages record AI assistance.
+status: active
+authors:
+  - name: mmockett
+    url: https://github.com/mmockett
+source: https://github.com/mmockett/OP-XY-Extensions
+source_status: open
+license: MIT
+license_notes: >-
+  The repository holds source, tests and an extension record only, with no OP-XY
+  OS file or sample. Builds link the extension into a modified copy of the
+  user's own OP-XY OS through the Open-XY SDK.
+distribution: source-only
+requires_stock: "1.2.1"
+install_notes: >-
+  Build with the Open-XY SDK's sdk.py and the extension flag against your own
+  stock os.ldr, or pick the extension in the open-xy.com builder's Extensions
+  step when it is offered there. The Open-XY authors say a faulty image may not
+  be recoverable, so follow that project's install guide and keep the stock OS.
+brick_risk: true
+tags: [sdk, drums, fx, patch]
+versions:
+  - version: main @ 664db61
+    date: 2026-11-10
+    url: https://github.com/mmockett/OP-XY-Extensions/commit/664db61274415300bb1aa850093db41d238ebe3c
+    notes: No tagged releases; this is the latest commit.

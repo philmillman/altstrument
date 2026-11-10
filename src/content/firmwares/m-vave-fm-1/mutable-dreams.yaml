@@ -1,7 +1,7 @@
 device: m-vave-fm-1
 name: Mutable Dreams
 summary: >-
-  Six-track generative instrument with 15 engines, 156 editable Biomes plus Blank, 352 tones,
+  Six-track generative instrument with 15 engines, 168 editable Biomes plus Blank, 364 tones,
   user banks and granular, delay and room sends, with a playable browser instrument and live editor.
 description: >-
   Each of the six tracks can use any engine, or three synth tracks can share the space with one of five Lo-Fi drum
@@ -17,8 +17,8 @@ description: >-
   Full-bank restore requires physical SEL confirmation. Granular audio is not saved in a Biome.
   Version 1.3 adds two LFOs per synth track, five sequence directions and more generators and chord journeys. Version 1.4
   adds 48 Biomes and 16 tones, five scales (thirteen in all), per-track USB MIDI input channels and dimmed muted tracks.
-  USB MIDI was tested; TRS MIDI input is implemented but its physical cable test remains outstanding.
-  The complete 1.4 source tree is directly browsable, with build instructions and a device test report
+  Version 1.5 adds 12 Biomes and 12 tones and receives Bluetooth MIDI from a phone, tablet or computer on a GLO > WIRELESS MIDI page. USB MIDI was tested; TRS MIDI input is implemented but its physical cable test remains outstanding.
+  The complete 1.5 source tree is directly browsable, with build instructions and a device test report
   describing the qualification scope. These are selected algorithms and inspired functions, not full
   ports of every Mutable Instruments module.
 status: active
@@ -34,11 +34,11 @@ license_notes: >-
   fm1-base and Felucca board support retain MPL-2.0 notices, distributed with the application
   under MPL section 3.3. Fonts retain their SIL OFL 1.1 notices and SDK-derived files their
   Apache-2.0 notices. See LICENSING-GPL.txt and the component notices in the source tree.
-homepage: https://mutable-dreams.sugarypixie10.chatgpt.site/
+homepage: https://mutable-dreams.kidbee85.chatgpt.site/
 distribution: browser-installer
 install_notes: >-
   Use the project installer in desktop Chrome or Edge over USB, or the Python installer kit.
-  Stock V15 and V16 installation and return are documented in Recovery-1.4.txt; M-VAVE's M-UPGRADE rejected a
+  Stock V15 and V16 installation and return are documented in Recovery-1.5.txt; M-VAVE's M-UPGRADE rejected a
   custom Mutable Dreams package, so use the project installer. For 1.0, use the documented route through 1.1 first and back up in
   1.1 before installing a later version. Follow the published instructions for other starting firmwares; not
   every route is tested. Back up first. On 1.1 and later save both .mddb for stored banks and JSON for unsaved
@@ -67,6 +67,10 @@ videos:
   found_via: https://github.com/kidbee85-beep/mutable-dreams#readme
   version: v1.1
 versions:
+- version: v1.5
+  date: 2026-11-09
+  url: https://github.com/kidbee85-beep/mutable-dreams/releases/tag/v1.5
+  notes: Adds Bluetooth MIDI reception (notes, CC, pitch bend, sustain, transport and clock, one connection at a time) on a new GLO > WIRELESS MIDI page, 12 Biomes (168 plus Blank) and 12 tones (364), brighter display colour families, corrected echo delay bounds and an updater that restarts the unit. A newer UC25HQ80 unit was not available for testing. FM-1 only, not SMK-37. Package ID FM-1_710010500.
 - version: v1.4
   date: 2026-10-31
   url: https://github.com/kidbee85-beep/mutable-dreams/releases/tag/v1.4

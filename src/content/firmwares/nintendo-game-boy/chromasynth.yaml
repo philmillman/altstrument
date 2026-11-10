@@ -1,0 +1,46 @@
+device: nintendo-game-boy
+name: ChromaSynth
+summary: Synthesizer and piano-roll sequencer ROM for Game Boy Color cartridges, written for the ModRetro Chromatic, with optional Bluetooth and USB MIDI to a Mac through patched console firmware.
+description: >-
+  A Game Boy Color only ROM written in RGBDS assembly. It drives the four sound
+  channels (two pulse, wave and noise), provides a piano roll for entering
+  patterns, and saves songs to cartridge SRAM. Two builds are released: a 32 KB
+  SRAM build that stores four songs and an 8 KB SRAM build that stores one. The
+  Chromatic is a Game Boy Color compatible handheld with a built-in ESP32. The
+  repository also holds patches to ModRetro's open console firmware for that
+  ESP32 and a Mac menu-bar app, ChromaSynth Link, which together let a DAW play
+  the ROM, record its sequencer and follow the DAW's transport and tempo over
+  Bluetooth MIDI or USB-C. The ROM works without them. The release notes say the
+  ROMs were tested in an emulator only, that the console link was tested on a
+  Chromatic with an EMS 64M cartridge running a different build, and that
+  Bluetooth timing can drop or delay notes. The author calls the project
+  unofficial.
+status: active
+authors:
+  - name: sharuru3501
+    url: https://github.com/sharuru3501
+source: https://github.com/sharuru3501/ChromaSynth
+source_status: open
+license: MIT
+license_notes: >-
+  The ROM, tools and documents are MIT. The patches in chromatic-mcu/ derive
+  from ModRetro's console firmware and are GPL-3.0; the repository does not
+  include the original ModRetro source.
+distribution: download
+requires_stock: Game Boy Color cartridge, flash cartridge or emulator. The optional MIDI link needs a Chromatic running ModRetro MCU firmware v4.6.
+install_notes: >-
+  Download the 32 KB or 8 KB SRAM ROM from the release and load it on an
+  emulator or a flash cartridge with battery RAM; MBC5 is recommended. Nothing
+  needs to be flashed to the console for this. The MIDI link is optional and
+  needs the patched ESP32 firmware built from chromatic-mcu/, which the project
+  warns is risky. It instructs a full backup of the ESP32 flash, a restore
+  rehearsal and writing only the application slot, and leaves the bootloader,
+  partition table and FPGA alone, so the USB route to restore stock stays open.
+  A shared SRAM on EMS cards means saving can overwrite other games' saves.
+brick_risk: false
+tags: [synth, sequencer, chiptune, midi, bluetooth, mac]
+versions:
+  - version: v0.1.0
+    date: 2026-11-10
+    url: https://github.com/sharuru3501/ChromaSynth/releases/tag/v0.1.0
+    notes: First public release, with the 32 KB and 8 KB SRAM ROMs and the ChromaSynth Link Mac app.

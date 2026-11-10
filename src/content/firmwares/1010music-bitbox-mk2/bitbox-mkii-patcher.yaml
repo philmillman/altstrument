@@ -1,6 +1,6 @@
 device: 1010music-bitbox-mk2
-name: Bitbox MkII patcher (2.3.4+c7)
-summary: Browser patcher that turns your own official 2.3.4 image into 2.3.4+c7, adding a per-pad pattern generator, pitch-preserving sample speed, vertical waveform zoom, extra modulation sources and a screen saver with MIDI or CV wake.
+name: Bitbox MkII patcher (2.3.4+c8)
+summary: Browser patcher that turns your own official 2.3.4 image into 2.3.4+c8, adding a per-pad pattern generator, pitch-preserving sample speed, vertical waveform zoom, extra modulation sources and a screen saver with MIDI or CV wake.
 description: >-
   Licence note: the repository has no licence file or licence statement, only an
   "as is" disclaimer from the author, so the terms for reuse are not stated. A
@@ -9,12 +9,12 @@ description: >-
 
   The page checks your 2.3.4 image by SHA-256, applies a binary delta held in the
   repository, checks the result again and offers it as BITBOXMK2.bin to copy to
-  the card; the module identifies itself as 2.3.4+c7. Changes include vertical
+  the card; the module identifies itself as 2.3.4+c8. Changes include vertical
   waveform zoom, an optional screen saver with a MIDI or CV trigger wake, Sample
   Speed from 50 to 200 percent that keeps pitch and can combine with native
   Pitch, double-tap dial defaults, a clocked pattern generator for each of the 16
   pads, extra per-pad modulation sources, a modulated master filter sweep and
-  extra delay and distortion controls. The repository holds the static site, the
+  extra delay and distortion controls, plus live-input filter, tone and dry-level processing with a persistent Input FX pad. The repository holds the static site, the
   delta and reference PDFs, not 1010music's firmware or the patched firmware; the
   source of the changes is not published. The page says it is an independent
   customization and not an official release.
@@ -48,6 +48,10 @@ video:
   first_party: true
   found_via: https://github.com/vwal/bitbox-mkii-patcher#readme
 versions:
+  - version: 2.3.4+c8
+    date: 2026-11-10
+    url: https://github.com/vwal/bitbox-mkii-patcher/releases/tag/2.3.4%2Bc8
+    notes: Adds an Input FX pad setting (Off, Follow or a fixed pad), Filter and Tone processing on live input, an input Dry Level, corrected FX1 and FX2 sends for external audio and an FX1 Purge. Empty-pad LFO controls keep their values. The release was refreshed after publishing under the same tag.
   - version: 2.3.4+c7
     date: 2026-11-08
     url: https://github.com/vwal/bitbox-mkii-patcher/releases/tag/2.3.4%2Bc7

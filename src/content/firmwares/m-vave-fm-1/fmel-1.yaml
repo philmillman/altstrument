@@ -8,7 +8,7 @@ description: >-
   dropout, drift and crush, and there are vibrato or chorus, echo and reverb (hall or plate) effects, EQ, hold and half
   speed. Version 1.0 adds a piano taken from SLOOP's LOFI KEYS; 1.1 plays a Steinway B from the CC0 VCSL library
   instead, adds a tenor sax tape as the fifth tape, and adds separate packages for the SMK-37 Pro, Elite and MKE-P37 with
-  37 velocity keys, pads, faders and wheels. Version 1.2 restores the 1.0 flute tapes and keeps the sax. The screen shows drawn animals playing along. The tape samples are Bernie Kornowicz's (Taijiguy), used
+  37 velocity keys, pads, faders and wheels. Version 1.2 restores the 1.0 flute tapes and keeps the sax, and 1.3 accepts the UC25HQ80 flash chip of newer FM-1s. The screen shows drawn animals playing along. The tape samples are Bernie Kornowicz's (Taijiguy), used
   under the sample author's terms that they are free but not for commercial use, so they are not GPL and the firmware should not
   be sold. The 0.1 release notes say it had not been tried on an FM-1 and ran only in the host mode and in the
   browser.
@@ -28,7 +28,7 @@ homepage: https://antonioaltea.github.io/fmel-1/
 distribution: browser-installer
 requires_stock: M-VAVE V15
 install_notes: >-
-  Web installer in Chrome or Edge, or tools/fm1_install.py with mel-1.2.fwsc from the release. The release notes
+  Web installer in Chrome or Edge, or tools/fm1_install.py with mel-1.3.fwsc from the release. The release notes
   say to install over M-VAVE's V15 or an earlier FMEL-1. Over another custom firmware, going back to the official
   firmware first is safer, but the web installer installs over it anyway and the script takes --over-custom. The SMK-37
   packages are for other keyboards. If it does not start, the FM-1 falls back to USB rescue after two tries (or hold OCT-).
@@ -36,6 +36,10 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, sampler, fx, sequencer, emulator]
 versions:
+- version: '1.3'
+  date: 2026-11-10
+  url: https://github.com/AntonioAltea/fmel-1/releases/tag/v1.3
+  notes: The release page has no notes; the commits since 1.2 let the firmware save to flash on newer FM-1s that carry the UC25HQ80 flash chip, where Dinghy-based builds had kept saves in RAM only, and show the version in the installer. The release again holds packages for the SMK-37 Pro, Elite and MKE-P37.
 - version: '1.2'
   date: 2026-11-04
   url: https://github.com/AntonioAltea/fmel-1/releases/tag/v1.2

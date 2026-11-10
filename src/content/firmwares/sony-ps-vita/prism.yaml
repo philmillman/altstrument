@@ -1,23 +1,24 @@
 device: sony-ps-vita
 name: PRISM
-summary: Sound module for the PS Vita that plays SoundFont banks as a sixteen-part General MIDI module and emulates the Roland MT-32 with Munt, driven by the PSP-MIDI adapter.
+summary: Sound module for the PS Vita that plays SoundFont banks as a sixteen-part General MIDI module and emulates the Roland MT-32 with Munt and the SC-55 with libEmuSC, driven by the PSP-MIDI adapter.
 description: >-
   Sixteen parts, each with its own MIDI channel, patch, level, pan, cutoff, resonance, attack, release, key range and
   transpose, play any SoundFont 2 bank placed in ux0:data/prism/soundfonts, and GeneralUser GS is built in. An effects
   rack adds reverb and chorus with a send per part, a three-band EQ and a limiter on the master. MT-32 mode runs the
   Munt emulator, with its work spread over the Vita's three cores, and needs the user's own MT-32 or CM-32L ROM images,
-  which the project does not include. Sixteen user states store the whole module. MIDI arrives over USB from the
+  which the project does not include. SC-55 mode runs libEmuSC on the control, CPU and wave ROM dumps of an SC-55,
+  SC-55mkII, SC-155 or SCC-1 the user owns; no SC-55 ROMs are included either. Sixteen user states store the whole module. MIDI arrives over USB from the
   PSP-MIDI adapter through a kernel module bundled with the app.
 status: active
 authors:
   - name: HobbyChop
     url: https://hobbychop.com/
-source: https://github.com/HobbyChop/prism
+source: https://github.com/HobbyChop/PRISM-PS-VITA
 source_status: open
 license: unspecified
 license_notes: >-
   The repository has no license file for PRISM's own code. The README lists Munt (libmt32emu, LGPL 2.1, statically
-  linked, with its modified source and a patch in the repository), TinySoundFont (MIT), the GeneralUser GS SoundFont
+  linked, with its modified source and a patch in the repository), libEmuSC (LGPL 2.1, likewise vendored with its changes), TinySoundFont (MIT), the GeneralUser GS SoundFont
   under its own license in prism/sf/LICENSE.txt and the IBM Plex fonts (SIL Open Font License).
 homepage: https://www.hobbychop.com/product/prism-free-sound-module-mt32-emulator-and-rompler-for-ps-vita-link-inside
 distribution: download
@@ -27,12 +28,13 @@ install_notes: >-
   PSP-MIDI adapter must be connected to the USB port, and holding SELECT triggers a manual USB reconnect. The shop
   lists the app at $1 and says the software is free.
 brick_risk: false
-tags: [sound-module, soundfont, mt-32, midi]
+tags: [sound-module, soundfont, mt-32, sc-55, midi]
 versions:
   - version: "0.27"
-    date: 2026-11-08
-    url: https://github.com/HobbyChop/prism/releases/tag/0.27
+    date: 2026-11-10
+    url: https://github.com/HobbyChop/PRISM-PS-VITA/releases/tag/0.27
     notes: Adds an SC-55 emulator, ported from the emuSC code.
   - version: v0.25
     date: 2026-09-29
-    url: https://github.com/HobbyChop/prism/releases/tag/v0.25
+    url: https://github.com/HobbyChop/PRISM-PS-VITA/tree/v0.25
+    notes: Git tag; no GitHub release page.

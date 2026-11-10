@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: Rumiboard
+summary: >-
+  Melodee fork aimed at chillhop and lofi: a rebranded interface with RUMI and 1984 colour palettes and animated creature sprites that follow each track's sound, with a planned lofi sound set and drum kits.
+description: >-
+  Rights warning: the fork keeps Melodee's bundled Casio CZ-1 factory tones and Sequential Prophet-5 factory programs as SysEx sound data, and Melodee's licensing says those rights stay
+  with Casio and Sequential and no licence is granted.
+
+  Rumiboard starts from Melodee 1.6.1, so it keeps that firmware's engines, sequencer and web tools. The changes so far are on the interface and the emulator: the visible name and
+  emulator page are rebranded, two palettes (RUMI, the default, and 1984) replace the original colours, Home and the mixer use pad-style rows, and a sprite is posed on the track
+  that plays a sound, chosen by the sound's name and driven by the track's output level. The creatures are an anglerfish for bass, a bulldog, chameleon, cloud, octopus, hedgehog, axolotl,
+  sloth and a fallback blob, drawn from concept sheets by tools/gen_creatures.py, with a picker on the emulator page to force one. The README and the
+  vision document describe further plans, namely a sub bass, a sine family, a felted piano, a pad that brightens as a chord is held, a lofi master bus,
+  sampled lofi kits and a USB stem route for a DAW, which the documents mark as planned. The default branch is a working branch with no releases.
+status: active
+authors:
+- name: Mike Mathieu
+  url: https://github.com/MikeMaven
+source: https://github.com/MikeMaven/MWAVE-FM1-Rumiboard
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and LICENSING.md state GPL-3.0-only, as Melodee and Felucca do. Ported DSP, fonts, ReSID tables and JieLi SDK files keep the licences in LICENSES/. The repository
+  bundles the CZ-1 and Prophet-5 sound data described in the rights warning. assets/recovery/wl82loader.bin is JieLi's RAM recovery helper from the AC79 SDK
+  (Apache-2.0), not a stock M-VAVE image.
+based_on: m-vave-fm-1/melodee
+distribution: source-only
+install_notes: >-
+  Build from source following BUILDING.md. The repository carries Melodee's browser installer, recovery tools and release workflows, but has published no release or installer page. A fork of Melodee
+  keeps its recovery path, described in docs/RECOVERY.md and the inherited README.
+brick_risk: false
+tags: [synth-engine, sequencer, ui, emulator, fork]
+versions:
+- version: claude/funny-clarke-kyhpyp @ 25eb03f
+  date: 2026-11-09
+  url: https://github.com/MikeMaven/MWAVE-FM1-Rumiboard/commit/25eb03f72fbbecb9e65a6970288c4eef77146547
+  notes: No tagged releases; this is the latest commit.

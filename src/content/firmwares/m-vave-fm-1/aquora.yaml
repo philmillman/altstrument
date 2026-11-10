@@ -27,10 +27,19 @@ install_notes: >-
   The release notes link a browser installer that needs Chrome or Edge with Web MIDI and SysEx access, and the
   releases carry the .fwsc and a single-core .fwsc. The manual says an interrupted application write needs recovery
   and that the update is not a dual-bank rollback. Earlier builds are kept for rollback, and the release notes say
-  physical flashing and rollback are unverified.
+  physical flashing and rollback are unverified. The 0.7 releases say they are for the original Puya flash chip only
+  and do not support the newer UC25HQ80.
 brick_risk: false
 tags: [generative, ambient, synth-engine, fx, sequencer, drums, reverb, delay, emulator]
 versions:
+- version: 0.7.2
+  date: 2026-11-10
+  url: https://github.com/CodingSlapfu/AQUORA/releases/tag/v0.7.2
+  notes: Adds an ARRANGE view that shows upcoming sections, queues a chosen next section and sets its length, a dedicated EVOLVE graph with a two-bar event preview, joint intention and mode profiles for instruments and drum kits, and new two-bar Neoclassical phrasing with stronger dynamics. Banks move to a V7 layout that migrates V1 to V6. For the original Puya 0x856014 flash only; the newer UC25HQ80 is unsupported. The notes say LCD, DMA and radio timing and listening remain owner observations, not inferred from host tests.
+- version: 0.7.1
+  date: 2026-11-10
+  url: https://github.com/CodingSlapfu/AQUORA/releases/tag/v0.7.1
+  notes: Adds stable rhythmic themes with twelve contours and four rhythmic identities, bass anchors and ghost percussion, a 160-pixel EVOLVE display with onset blocks, and 21 intention reference tones with an exact audible oscillator. For the original Puya 0x856014 flash only; the newer UC25HQ80 is unsupported. The notes give host-side test counts and say host timing is not FM-1 DMA, LCD or radio evidence.
 - version: 0.6.7
   date: 2026-11-07
   url: https://github.com/CodingSlapfu/AQUORA/releases/tag/v0.6.7

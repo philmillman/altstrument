@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+kind: tool
+name: synthfm1-mcp
+summary: >-
+  Set of MCP servers that let an AI assistant drive an FM-1 over USB or Bluetooth MIDI: edit Felucca patterns and presets, stream a
+  MIDI file to the tracks, or send plain notes to any firmware.
+description: >-
+  The repository holds four packages. felucca-mcp speaks Felucca's editor SysEx protocol and offers tools to read the
+  status, pick engines and presets per track, read and write parameters, write steps into a track, split a MIDI
+  file into project slots chained as a song, and play a whole MIDI file live over channels 1 to 4 with the computer as the
+  sequencer. fm1-midi-mcp is firmware-agnostic: it plays a MIDI file to any output port and sends notes, program changes and
+  controllers, and works over USB or Bluetooth LE MIDI. fm1open-mcp is a TypeScript client with scripts for FM1 Open V14 that can read,
+  back up and write projects over its transfer SysEx, and it is not an MCP server yet. baudgirl-mcp is experimental and off by default; it needs
+  an environment switch before it downloads Baud Girl's proprietary editor scripts at run time, which the repository does not contain.
+  The write tools overwrite patterns, presets and project slots on the unit, and the README says nothing in it flashes firmware.
+status: active
+authors:
+- name: Alberto Robles
+  url: https://github.com/elyal2
+source: https://github.com/elyal2/synthfm1-mcp
+source_status: open
+license: MIT
+distribution: source-only
+install_notes: >-
+  Needs Node.js 20 or newer and a C++ toolchain, since the midi package builds a native module. Run npm install in a package
+  folder and register its src/server.ts with an MCP client through tsx. Felucca's MIDI IN routing must be set to CH1-4 for live
+  playback. Back up the unit before using the write tools; the tools do not touch the firmware, so a failed write is
+  fixed by restoring the backup or rewriting the patterns.
+brick_risk: false
+tags: [mcp, midi, usb-midi, ble-midi, sequencer, presets, editor]
+versions:
+- version: main @ c86ddc5
+  date: 2026-11-10
+  url: https://github.com/elyal2/synthfm1-mcp/commit/c86ddc561b9149bc49bb7c4e134c203cbebaefbf
+  notes: No tagged releases; this is the latest commit.

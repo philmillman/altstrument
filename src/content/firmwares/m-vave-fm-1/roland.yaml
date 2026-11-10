@@ -7,7 +7,7 @@ description: >-
   its model kits, SLOOP's synthesized TR-606 and CC0 acoustic drum recordings in five treatments, and sample kits built
   at build time from E-mu Drumulator sounds and the Cluster Sound HR-16B WAV pack, which the author does not include in
   the repository. Each track has its own pattern, with lane mutes, ratchets, chance, conditions, parameter locks, song
-  chaining and MIDI. Newer work adds a fixed-point compressor and a tape-rot effect on an INSERT page and a tape-style delay.
+  chaining and MIDI. Newer work adds a fixed-point compressor, a tape-rot effect, a tape-style delay and further INSERT types modelled from circuit netlists, a master INSERT chain and a Dragonfly Room reverb port in place of the older room, spring and hall.
   The README says the sources build on the host only, that no .fwsc has been built because the toolchain could not be
   fetched, and that nothing has been tried on an FM-1. The README says all new code and text was written by an AI model.
 status: active
@@ -33,7 +33,7 @@ image:
   source_url: https://github.com/andiogenes/roland
   first_party: true
 versions:
-- version: ccr-6e70ba7d-sinu2i @ d5b4167
+- version: ccr-6e70ba7d-sinu2i @ 1d108cd
   date: 2026-11-09
-  url: https://github.com/andiogenes/roland/commit/d5b4167
-  notes: No tagged releases; this is the latest commit on the default branch, which adds the tape-rot effect to the INSERT page.
+  url: https://github.com/andiogenes/roland/commit/1d108cd07d9124432e925ab50c9df64a735ddc02
+  notes: No tagged releases; this is the latest commit on the default branch, which adds a GitHub Actions workflow that builds the firmware and drafts a release. Since d5b4167 the commits replace the ROOM, SPRING and HALL reverbs with a Dragonfly Room port, add a two-slot master INSERT chain and add preamp, harmonic percolator and HM-2 style INSERT types.

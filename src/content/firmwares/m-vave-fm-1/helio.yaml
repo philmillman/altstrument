@@ -1,0 +1,30 @@
+device: m-vave-fm-1
+name: HELIO
+summary: >-
+  Drone synth module for fm1-dock with six drones of four oscillators each, resonant filters swept in opposite directions, an LFO on every oscillator and a hall reverb with a decay of up to 60 seconds.
+description: >-
+  A module for the dock firmware, not a firmware of its own, inspired by Elta Music's Solar 42 drone synth. Each of the six drones has four oscillators tuned freely in
+  small steps, a slow random drift and a sine to saw morph, and swells in and fades out slowly. Drones 1 to 3 feed one resonant low-pass filter and drones 4 to 6 feed a second one,
+  swept in opposite directions by a slow LFO. The white keys latch the drones and select them, and the knobs on separate pages set oscillator levels, the reverb, the filters, the 24 LFOs
+  and the swell and fade times. SAVE keeps the sound for the next start. MIDI notes 48 to 53 switch the drones. The repository includes a host simulation that renders a test WAV and the
+  emulator save of the current build, and GitHub's workflow builds the .dock file. No hardware test is mentioned.
+status: active
+authors:
+- name: joehard4712
+  url: https://github.com/joehard4712
+source: https://github.com/joehard4712/Helio-FM1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  There is no LICENSE file. The README states GPL-3.0-only, as fm1-dock, and the source file carries an SPDX GPL-3.0-only header.
+distribution: source-only
+install_notes: >-
+  Needs fm1-dock installed first. The README builds helio.dock by copying the helio folder into an fm1-dock checkout with the JieLi toolchain and running tools/hbmod.py,
+  or from the artifact of the GitHub workflow. No release is published, and the README gives no install steps for the .dock file beyond fm1-dock's own.
+brick_risk: false
+tags: [synth-engine, drone, oscillator, microtonal, fx, reverb, filter, lfo, emulator]
+versions:
+- version: main @ fd5bf46
+  date: 2026-11-09
+  url: https://github.com/joehard4712/Helio-FM1/commit/fd5bf46ae9b14fce8be681c723b5ef6a90415270
+  notes: No tagged releases; this is the latest commit.

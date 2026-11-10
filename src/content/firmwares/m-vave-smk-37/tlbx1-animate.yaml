@@ -1,0 +1,38 @@
+device: m-vave-smk-37
+name: TLBX-1 Animate
+summary: >-
+  Vector wavetable synth for the SMK-37 Pro, ported from the Animate engine of the TLBX-1 desktop app and plugin: four wavetable slots, a 289-wave bank and a ten-lane 128-step sequencer.
+description: >-
+  Rights warning: the 289-wave bank is built from Korg MS2000 and DWGS single-cycle waves, 200 Access Virus wavetables and 15 "Spectral Growl" tables, and LICENSING.md says no licence to
+  any of them is granted, that the Spectral Growl source is not yet confirmed and that the maintainer should settle it before publication. Packages built from the repository embed that bank and the stock firmware's protected bytes.
+
+  Animate is the only engine. Each of four slots, A to D, plays a wavetable, with vector X and Y modulation between them, five filter modes, wavetable LFO sync and its own randomization. The sequencer has ten
+  lanes of 128 steps over eight pages, and the keys support hold, arpeggio and repeat, scale and chord mapping, and 1 to 16 voices. Sixteen factory sounds with sequences and 16 patch slots in
+  browser storage or a flash bank on the unit are included. A browser simulator runs the same C runtime as the hardware build. The sound is taken from the Melodee adaptation of Animate, and the code builds on Melodee, itself a
+  modified Felucca. The README says the owner confirmed the 2026-11-07 build runs on the unit, that overload in some factory sequences is
+  open, that full device project saving and TRS MIDI are missing, and that it is not complete desktop parity.
+status: active
+authors:
+- name: MMI Studios
+  url: https://github.com/MMI-Studios
+source: https://github.com/MMI-Studios/tlbx1-animate-smk37
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL v3 text and LICENSING.md names GPL-3.0-only for the firmware, which builds on Melodee (GPL-3.0-only). Melodee's own parts such as DaisySP and
+  reSID keep their licences, and FunDSP code in an unbuilt reference file is MIT. The sound data listed in the rights warning is not covered.
+based_on: m-vave-smk-37/melodee-smk37
+distribution: source-only
+requires_stock: M-VAVE SMK-37 Pro firmware V016, which the builder downloads from M-VAVE for packaging
+install_notes: >-
+  Build with tools/build.py after fetching the JieLi pi32v2 toolchain (Linux x86-64 or WSL, Python, Node, Zig for the simulator). Packaging needs the
+  SMK-37 Pro V016 file from M-VAVE's download page, placed in assets/stock and checked by hash; it is not in the repository. Install the resulting
+  update with the browser updater in web/update.html, which needs a unit already running a compatible Melodee or Animate loader. The docs say an interrupted application
+  write can need a hardware recovery adapter and that no software-only recovery guarantee exists. Back up the unit first.
+brick_risk: false
+tags: [synth-engine, wavetable, sequencer, performance, emulator, fork]
+versions:
+- version: main @ fa4a90f
+  date: 2026-11-09
+  url: https://github.com/MMI-Studios/tlbx1-animate-smk37/commit/fa4a90f34f8a8ffb3c41846ccd90663aa7706907
+  notes: No tagged releases; this is the latest commit.

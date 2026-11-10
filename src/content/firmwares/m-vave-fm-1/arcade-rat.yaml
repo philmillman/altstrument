@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: ARCADE RAT
+summary: >-
+  Arcade sound lab and tracker for the FM-1 with Z80-based arcade game engines, emulated arcade sound chips, a 16-step multi-chip tracker, SFX banks on the keys and speech samples.
+description: >-
+  Rights warning: src/pacman_roms.h holds the byte data of Pac-Man's program, tile, sprite, colour and sound ROMs, and the repository and release carry speech recordings taken from Berzerk, Q*bert, Sinistar, Wizard of Wor,
+  Gorf and Dragon's Lair arcade games. The repository has no licence and no permission for any of this material.
+
+  The README describes eight game engines (Pac-Man, Crazy Climber, Galaga, Donkey Kong, Frogger, Asteroids, Tempest and Gyruss) running a Z80 core and emulated Namco, AY-3-8910 and POKEY sound hardware, a studio
+  of five synth engines with a filter and delay, a four-channel 16-step tracker with eight factory patterns, 108 SFX pads in four banks, a flash high-score table and circuit-bending effects on the 240 by 240 screen.
+  The repository is mostly tools, tests and a browser simulator. The release contains a demo video and audio renders but no firmware package, and the README gives a flash command for an arcade_rat_fm1.fwsc that is not in the repository.
+  Its source section shows only the Pac-Man engine in C, so how much of the rest is native firmware is unclear.
+status: active
+authors:
+- name: Stack Trace
+  url: https://github.com/jonludwig1234
+source: https://github.com/jonludwig1234/stack-trace-arcade-rat-fm1
+source_status: open
+license: unspecified
+license_notes: >-
+  No LICENSE file and no licence statement; the README's credits say it builds on m-vave/fm1_open and lists the Z80, AY-3-8910, Namco WSG and POKEY emulation cores without naming their licences.
+distribution: source-only
+install_notes: >-
+  The README says to put the FM-1 into download mode and flash arcade_rat_fm1.fwsc with M-Flasher or M-UPGRADE. No such file is published, and the README gives no recovery notes.
+brick_risk: false
+tags: [chiptune, tracker, emulator, sequencer, synth-engine, game, sfx, speech]
+image:
+  url: https://raw.githubusercontent.com/jonludwig1234/stack-trace-arcade-rat-fm1/main/web/demo_preview.gif
+  alt: "ARCADE RAT web simulator: a dark dashboard with game slots, an emulated CRT screen showing a vertical shooter, rotary encoder dials, an oscilloscope and a row of 16 tracker steps along the bottom"
+  credit: Stack Trace
+  source_url: https://github.com/jonludwig1234/stack-trace-arcade-rat-fm1
+  first_party: true
+versions:
+- version: 1.0.0
+  date: 2026-11-09
+  url: https://github.com/jonludwig1234/stack-trace-arcade-rat-fm1/releases/tag/v1.0.0
+  notes: Initial release; the attached files are a demo video and audio renders, not a firmware package.

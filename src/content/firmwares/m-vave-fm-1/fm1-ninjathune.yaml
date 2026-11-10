@@ -2,12 +2,12 @@ device: m-vave-fm-1
 name: FM-1 in the browser (Ninjathune)
 kind: tool
 summary: >-
-  Browser emulator with one FM-1 panel that runs a selector of 118 open-source firmwares, 59 of them compiled natively,
+  Browser emulator with one FM-1 panel that runs a selector of 121 open-source firmwares, 62 of them compiled natively,
   or FM-1+VA, a reimplementation of the stock instrument written from the manual.
 description: >-
   Runs on computers, iPads and iPhones, with mouse, touch or stylus. Most firmwares run unchanged on Joakim Eriksson's
-  fm1-emu; 59 are compiled from source for the browser with no emulated processor. A local .fwsc can be opened, and a Duo
-  page runs two FM-1s side by side. Presets and patterns are kept in the browser for each firmware. The repository
+  fm1-emu; 62 are compiled from source for the browser with no emulated processor. A local .fwsc can be opened, and a Duo
+  page runs two FM-1s side by side, with a shared tempo clock if wanted. Presets and patterns are kept in the browser for each firmware, and a backup menu saves all of that to one JSON file and restores it. The repository
   publishes a verification report saying how each package ran. The interface and README are in French, with an FR/EN switch that also translates the manual, shortcuts and firmware help sheets.
 status: active
 authors:
@@ -33,7 +33,7 @@ image:
   source_url: https://github.com/Ninjathune-Human/Fm1
   first_party: true
 versions:
-- version: main @ 2637867
-  date: 2026-11-08
-  url: https://github.com/Ninjathune-Human/Fm1/commit/263786777be47c08d046a96ac0295524f80de141
-  notes: Runtime builds are published as releases; this is the latest commit. Since the previous row it adds an English interface and manual, and more firmwares (FMDj, SPAMPY, Scintilla, MNM-1 and others) among those compiled natively.
+- version: main @ 1faec13
+  date: 2026-11-10
+  url: https://github.com/Ninjathune-Human/Fm1/commit/1faec13d0bef11d12e293ab613379da0a39453b0
+  notes: Runtime builds are published as releases; this is the latest commit. Since the previous row it adds an English interface and manual, and more firmwares (FMDj, SPAMPY, Scintilla, MNM-1 and others) among those compiled natively. Later commits add backup and restore of the browser's saved data, a tempo clock shared by the Duo page, Elixir, ECHOFIELD and GRAINE among the native firmwares, and LED brightness drawn from each firmware's own levels.

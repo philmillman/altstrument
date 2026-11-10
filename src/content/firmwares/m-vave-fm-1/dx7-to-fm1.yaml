@@ -12,7 +12,8 @@ description: >-
   no packages and has a round-trip self-test, and the README reports that the voice names it recovers from ROM1A match the official list. It works
   only one way and does not merge voices back into a bank. The README does not name particular firmwares; it says only
   that FM-1 third-party firmware imports one voice per file and not whole banks, and it points to a public collection of DX7
-  patch banks to start from. Whether a given firmware accepts the files is not shown in the repository.
+  patch banks to start from. Version 1.1.0 adds a --json mode that writes a felucca-library file with one patch per voice, for the web editor's library import.
+  Whether a given firmware accepts the files is not shown in the repository.
 status: active
 authors:
 - name: s0fx2
@@ -27,11 +28,12 @@ homepage: https://github.com/s0fx2/YamahaDX7_to_FM-1
 distribution: source-only
 install_notes: >-
   Run python3 dx7toFM1.py bank.syx; it only reads and writes files on the computer and never talks to the FM-1. Import
-  the resulting voice files with a firmware that accepts single-voice DX7 SysEx.
+  the resulting voice files with a firmware that accepts single-voice DX7 SysEx, or the --json library file in a web editor
+  that reads felucca-library files.
 brick_risk: false
 tags: [librarian, fm, utility, patch]
 versions:
-- version: main @ 21e3e26
-  date: 2026-10-21
-  url: https://github.com/s0fx2/YamahaDX7_to_FM-1/commit/21e3e26c0add9b3eeb8432600138c7d6e86bac91
-  notes: No tagged releases; this is the latest commit.
+- version: main @ dfeb81f
+  date: 2026-11-10
+  url: https://github.com/s0fx2/YamahaDX7_to_FM-1/commit/dfeb81f35f08e34f0815a29ddff389743e062c37
+  notes: No tagged releases; this is the latest commit, which the script and README mark as version 1.1.0. It adds a --json mode that writes a felucca-library file with one FM6 patch per voice, a --template option and a --version flag; default .syx splitting is unchanged.

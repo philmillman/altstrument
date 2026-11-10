@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: NOICE VOICE
+summary: >-
+  Vocal synthesizer built on a physical model of the throat and mouth, with 44 onset and 29 coda phonemes, four creature
+  voices, a drawn vocal-tract view on the screen and a 16-step sequencer that speaks sentences.
+description: >-
+  A 44-section waveguide models the airway, with a nasal branch gated by a velum, a glottal pulse source, breath noise and a
+  lip radiation filter. Four archetypes (human, troll, elf and beast) change tract length and character, with 48 presets, and
+  a mouth envelope moves tongue, jaw, lips and velum between a start and an end shape on each note. Beatbox percussion sounds
+  are among the onsets. Four tracks are preloaded at boot with spoken phrases for the sequencer. A mid-sagittal drawing of
+  the tract is animated on the 240 by 240 screen. It forks Felucca's code, adding the tract engine and its views, and a
+  browser build runs it as WebAssembly. The README documents install commands but no hardware test; no release has been
+  published.
+status: active
+authors:
+- name: mrjoshida
+  url: https://github.com/mrjoshida
+source: https://github.com/mrjoshida/noice-voice
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL version 3 text and the README badge and credits say GPL-3.0-only. LICENSING.md and LICENSES/ keep
+  Felucca's notices: MIT engines, MPL-2.0 board support, Apache-2.0 and LGPL-2.1 ports and SIL OFL fonts.
+homepage: https://mrjoshida.github.io/noice-voice/
+based_on: m-vave-fm-1/felucca
+distribution: source-only
+install_notes: >-
+  Build build/noice.fwsc with ./build.sh (JieLi toolchain through Docker) and install it with tools/fm1_install.py over USB.
+  No prebuilt package is published. The README's recovery note, taken from Felucca, points to FM-1-transporter if an install
+  fails and the unit no longer starts.
+brick_risk: false
+tags: [synth-engine, voice, physical-modeling, sequencer, emulator, web, fork]
+versions:
+- version: main @ 6b4eec1
+  date: 2026-11-10
+  url: https://github.com/mrjoshida/noice-voice/commit/6b4eec1215a1d240421ca4d48c88c1cd5c7d4da6
+  notes: No tagged releases; this is the latest commit.

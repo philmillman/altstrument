@@ -11,7 +11,7 @@ description: >-
   64-bit division. The default platform is Felucca's via SLOOP and Dinghy, with an optional Bluetooth MIDI link in and
   out that can also connect to a Bluetooth MIDI controller or another FM-1 (the stack comes from Optimist). An optional
   platform runs on M-VAVE's FM-1 SDK to add Bluetooth audio and USB audio both ways at the cost of most of the flash
-  space. FOMAJAM is built with it. The repository doubles as a template: `./fm1 new` renames
+  space. A bigscreen folder holds a one-file C header, with its protocol, that sends the FM-1's screen to a computer, a phone or fm1buddy over USB MIDI. FOMAJAM is built with it. The repository doubles as a template: `./fm1 new` renames
   it for a new firmware.
 status: active
 authors:
@@ -33,7 +33,7 @@ install_notes: >-
 brick_risk: false
 tags: [sdk, emulator, platform, flasher, usb-midi]
 versions:
-- version: main @ 03fba22
-  date: 2026-11-08
-  url: https://github.com/konsumer/foma/commit/03fba2205d95d04c78ae6f8e7309dc3bd7b8e10a
-  notes: No tagged releases; this is the latest commit, which accepts the newer B36014 flash chip in the platform, loader and recovery code. Before that the Docker toolchain image includes the AC79 SDK, fetched from a mirror, and the README drops its note that the M-VAVE SDK platform was only tried in an emulator.
+- version: main @ 885100f
+  date: 2026-11-10
+  url: https://github.com/konsumer/foma/commit/885100f027356014b42a1d9c7d9902eb3ac41801
+  notes: No tagged releases; this is the latest commit, which adds a Big Screen header for sending the FM-1's screen to a computer. Before that it accepts the newer B36014 flash chip in the platform, loader and recovery code, the Docker toolchain image includes the AC79 SDK, fetched from a mirror, and the README drops its note that the M-VAVE SDK platform was only tried in an emulator.

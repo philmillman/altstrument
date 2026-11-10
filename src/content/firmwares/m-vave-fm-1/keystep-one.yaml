@@ -8,9 +8,10 @@ description: >-
   playback. LIVE PLAY, opened with LFO, uses the 11 black keys to pick a bank and the 16 white keys to pick one of its
   patterns, so 176 patterns can be chosen from the keyboard; the choice waits for the end of the selected track's loop.
   KNOB 1 to 4 set the four tracks' volumes. The sound comes from the Sonivox General MIDI engine on the FM-1 or from
-  external gear over USB (device or host), Bluetooth or TRS MIDI. The author reports LIVE PLAY working on hardware, but
-  the changelog says the release was packaged from a working copy with no fresh build or flash, and album playback in ONCE
-  mode can repeat after the last song. The user guide is in English and German.
+  external gear over USB (device or host), Bluetooth or TRS MIDI. The author reports LIVE PLAY and album playback in ONCE
+  mode working on hardware. The first beta was packaged from a working copy with no fresh build or flash and had an
+  album ONCE repeat problem; 0.5.42 is marked a beta with an identity-only rebuild and no support yet for the newer
+  UC25HQ80 flash chip. The user guide is in English and German.
 status: active
 authors:
 - name: dzwerg
@@ -25,11 +26,16 @@ license_notes: >-
   rather than built from this tree.
 distribution: download
 install_notes: >-
-  Download keySTEP_ONE_v0.5.35_BETA.fwsc from the releases page, not a source ZIP, and follow docs/FLASHING.md. Back up
-  music and settings first; the README calls the build a community beta and lists a known album-playback issue.
+  Download keystep-one-0.5.42.fwsc (or the older keySTEP_ONE_v0.5.35_BETA.fwsc) from the releases page, not a source ZIP, and follow docs/FLASHING.md. Back up
+  music and settings first; the README calls the build a beta that is not fully tested, and the release says only the
+  original Puya flash chip is supported.
 brick_risk: false
 tags: [controller-mode, sequencer, midi, usb-midi, ble-midi, performance, fork]
 versions:
+- version: 0.5.42-beta
+  date: 2026-11-10
+  url: https://github.com/dzwerg/keySTEP-ONE/releases/tag/v0.5.42
+  notes: Pre-release; confirms ALBUM ONCE on hardware, removes a debug line from the player screen and gives the package its own firmware identity (FM-1_74000542). Only FM-1s with the original Puya flash chip are supported.
 - version: 0.5.35-beta
   date: 2026-11-01
   url: https://github.com/dzwerg/keySTEP-ONE/releases/tag/v0.5.35-beta

@@ -12,7 +12,8 @@ description: >-
   drum kits of CoralFlower's own beside the older ones. The home screen
   draws a flower or a coral whose parts follow the notes played. The author says it is inspired by the
   Telepathic Instruments Orchid. It keeps ChoralRoot's and Felucca's hardware layer and update loader, and
-  the web page also runs the firmware in a browser emulator.
+  the web page also runs the firmware in a browser emulator. From 0.7 it accepts the newer UC25HQ80 flash chip as well
+  as the original Puya one.
 status: active
 authors:
 - name: Danil Tokarev (FicusFicusov)
@@ -41,6 +42,10 @@ image:
   source_url: https://github.com/FicusFicusov/CoralFlower
   first_party: true
 versions:
+- version: '0.7'
+  date: 2026-11-10
+  url: https://github.com/FicusFicusov/CoralFlower/releases/tag/v0.7
+  notes: Adds support for the newer UC25HQ80 flash chip, so sounds, settings and patterns survive power-off and update mode works from CoralFlower on newer units. Swaps the SEQUENCER knobs (SELECT picks a pattern or SONG, ALGORITHM a track or song block), copies a rhythm into an existing pattern's empty Drums track, adds SEL to clear notes and drum hits, and fixes Autosave losing sound edits after a sound name got shorter.
 - version: 0.6.1
   date: 2026-10-30
   url: https://github.com/FicusFicusov/CoralFlower/releases/tag/v0.6.1

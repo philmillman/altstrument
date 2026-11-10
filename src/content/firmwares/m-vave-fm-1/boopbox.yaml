@@ -8,7 +8,7 @@ description: >-
   eight tracks, any of which can be a synth or a drum machine, and is not interchangeable with SLOOP's, although
   presets, samples and themes carry over and the installer updates an FM-1 running SLOOP or Felucca. Additions over
   SLOOP include physical-model strings, bells and hand drums, a noise engine, six-operator FM with DX7 patch import,
-  parameter locks, micro timing, fills, a chain of sections, sequencer output to MIDI out, a visualiser, and
+  parameter locks, micro timing, fills, chains with repeats, eight named scenes, sequencer output to MIDI out, a visualiser, and
   factory sounds levelled against each other. The same repository builds BoopBox Trainer, a second firmware in
   which an on-screen coach lights the controls to press and teaches lo-fi hip-hop, synthwave and melodic dubstep
   songs step by step; a web page can analyse an audio file and add its own song as a fourth level. The Hügelton icon atlas and sample pack that SLOOP carries were replaced with assets
@@ -25,7 +25,8 @@ license_notes: >-
   parts are CC0 samples, a CC BY 3.0 electric piano in the hip-hop pack, the Terminus font (SIL OFL 1.1), the Fukiai
   icon font (MIT), ports from CrispyZebra (GPL-3.0), msfa from Dexed (Apache-2.0), DaisySP and Rings code (MIT), and
   JieLi SDK files read from your SDK checkout at build time (Apache-2.0). The repository commits its own BoopBox
-  builds under docs/firmware; none of them is M-VAVE's stock firmware.
+  builds under docs/firmware; none of them is M-VAVE's stock firmware. The OBERVAVE engine is adapted from zvenson's
+  OberVave and the key velocity model from JIANT FM, both listed as GPL-3.0-only.
 homepage: https://josh-mcfarlin.github.io/boopbox/
 based_on: m-vave-fm-1/sloop
 distribution: browser-installer
@@ -44,6 +45,18 @@ image:
   source_url: https://github.com/Josh-McFarlin/boopbox
   first_party: true
 versions:
+- version: 1.8.1
+  date: 2026-11-10
+  url: https://github.com/Josh-McFarlin/boopbox/releases/tag/v1.8.1
+  notes: 'BoopBox Trainer teaches the new pattern pages: level 2 ends with named scenes and a chain, and the coach points at white keys; BoopBox itself is as in 1.8.0.'
+- version: 1.8.0
+  date: 2026-11-10
+  url: https://github.com/Josh-McFarlin/boopbox/releases/tag/v1.8.0
+  notes: Recognises the newer UC25HQ80 flash chip, so FM-1s sold from late 2026 save and update. Adds NRPN control of every track parameter, optional key velocity and aftertouch (off by default), a browser emulator running the real firmware and a smaller screen font. Projects and settings from 1.7.0 open as before.
+- version: 1.7.0
+  date: 2026-11-10
+  url: https://github.com/Josh-McFarlin/boopbox/releases/tag/v1.7.0
+  notes: 'Splits PATTERNS into PATTERNS, CHAIN and SCENES pages played with the white keys as pads: a chain is a playlist of up to 16 slots with repeats, and eight named scenes switch every track together on the quantize. Adds the OBERVAVE engine, an eight-voice analog polysynth with 70 programs adapted from zvenson''s OberVave, which moves Program Change numbers. Projects saved by 1.7.0 may not open on older builds.'
 - version: 1.6.0
   date: 2026-11-09
   url: https://github.com/Josh-McFarlin/boopbox/releases/tag/v1.6.0

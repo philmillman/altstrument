@@ -5,9 +5,8 @@ summary: >-
   spectrum and envelope drawings, a filter, effects, an arpeggiator and a one-phrase looper.
 description: >-
   Has no drums, patterns or song mode. It uses the DX7 engine as ported to integer C in dxsloop, with 32 algorithms, feedback,
-  keyboard scaling, a pitch envelope and an LFO, and offers 20 factory voices and 32 user slots, which fit a DX7 bank. The
-  screens draw the algorithm live with each operator's level, the envelopes to scale, a spectrum and a scope. Later releases add oversampling and a
-  bit-depth setting, and the 3.5 mm MIDI input. It is built on Dinghy, which carries Felucca as SLOOP does, and the README
+  keyboard scaling, a pitch envelope and an LFO, and offers 20 factory voices and, from 1.2.0, 256 user slots in eight banks of 32, so that a DX7 bank fits one bank. The
+  screens draw the algorithm live with each operator's level, the envelopes to scale, a spectrum and a scope. Later releases add a sample-rate setting down to 8 kHz, a bit-depth setting, the 3.5 mm MIDI input, MIDI bank select and a mono output option. It is built on Dinghy, which carries Felucca as SLOOP does, and the README
   reports about 26 percent of the audio interrupt budget for eight voices. The factory voices are Sven Trogus's, from
   dxsloop, and the README says no Yamaha or M-VAVE voice data is included.
 status: active
@@ -23,9 +22,9 @@ license_notes: >-
 homepage: https://github.com/jsmith13/fm_lab
 distribution: download
 install_notes: >-
-  Download fmlab-1.1.0.fwsc from the release and install it with tools/fm1_install.py over USB, which asks before writing, or
+  Download fmlab-1.2.0.fwsc from the release and install it with tools/fm1_install.py over USB, which asks before writing, or
   with the FM-1 Firmware Hub. Holding OCT- while switching on enters a USB rescue, which two crashes at boot also enter.
-  Settings saved by 1.0.x carry over to 1.1.0.
+  Settings saved by 1.0.x carry over to 1.1.0, and the voices saved in the first user bank stay in place in 1.2.0.
 brick_risk: false
 tags: [synth-engine, fm, oscillator, lfo, filter, fx, arpeggiator, looper, editor]
 image:
@@ -35,6 +34,10 @@ image:
   source_url: https://github.com/jsmith13/fm_lab
   first_party: true
 versions:
+- version: 1.2.0
+  date: 2026-11-10
+  url: https://github.com/jsmith13/fm_lab/releases/tag/v1.2.0
+  notes: Grows the user slots to 256 in eight banks, adds MIDI bank select and per-bank dumps, a mono output option, and replaces the oversampling switch with a sample-rate setting from 88.2 kHz down to 8 kHz.
 - version: 1.1.0
   date: 2026-10-18
   url: https://github.com/jsmith13/fm_lab/releases/tag/v1.1.0

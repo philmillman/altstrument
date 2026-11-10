@@ -26,7 +26,7 @@ license_notes: >-
   repository). The protocol follows jl-uboot-tool, for which JieLi has published no license.
 distribution: download
 install_notes: >-
-  Releases have an unsigned Windows zip (asks for administrator rights), a macOS dmg, .deb and .rpm packages and
+  Releases have an unsigned Windows zip (a small helper asks for administrator rights when the unit is first opened), a macOS dmg, .deb and .rpm packages and
   a Linux tarball that needs one udev rule; the first start needs a manual approval on Windows and macOS. A unit
   with the stock bootloader can enter download mode only through the DOWNLOAD MODE button (USB MIDI), not from its
   keys, until m-bootloader is installed. Bring your own official .fwsc files from M-VAVE; none are included.
@@ -41,6 +41,10 @@ image:
   source_url: https://github.com/jvitkauskas/m-flasher
   first_party: true
 versions:
+- version: 0.10.0
+  date: 2026-11-10
+  url: https://github.com/jvitkauskas/m-flasher/releases/tag/v0.10.0
+  notes: On Windows only a small helper runs as administrator, and the unit is found by its USB IDs, which gives antivirus less to flag. Recommends m-bootloader on a unit with the stock bootloader, adds a restore that keeps the unit's own bootloader, labels the FM-1's old or new flash chip, connects faster and fixes an overflow error on Apple silicon Macs. Tested on an SMK-37 Pro; an FM-1 with the new chip was not tested.
 - version: 0.9.4
   date: 2026-11-08
   url: https://github.com/jvitkauskas/m-flasher/releases/tag/v0.9.4

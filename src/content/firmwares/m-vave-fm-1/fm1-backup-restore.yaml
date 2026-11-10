@@ -1,8 +1,9 @@
 device: m-vave-fm-1
+also_devices: [m-vave-smk-37, m-vave-blackbox, m-vave-pocket-amp]
 name: FM-1 Backup & Restore
 kind: tool
 summary: >-
-  Android app that backs up the FM-1's whole flash over USB, keeps the backups in a library and restores them, and can
+  Android app that backs up an M-VAVE FM-1 or SMK-37's whole flash over USB, keeps the backups in a library and restores them, and can
   rebuild a stock V15 recovery image for units that were never backed up.
 description: >-
   Rights warning: the app bundles a 24 KB USB loader binary for the FM-1's WL82 chip whose origin and licence the
@@ -11,7 +12,8 @@ description: >-
   for byte except for the protected bootloader region, and cannot be cancelled once it starts; from 0.9.6 an emergency restore action also recovers the stock bootloader. Backups can also be
   imported from a .bin file. A menu option, Create recovery image, downloads M-VAVE's V15 package from the m-vave/fm1_open
   repository at a fixed commit, checks its size and SHA-256, and rebuilds a stock V15 flash layout that is added to the
-  library as a backup; the app does not ship that package. It needs Android 8 or later, a USB OTG cable that carries data,
+  library as a backup; the app does not ship that package. From 0.10.0 the same app also handles the SMK-37 Pro and Elite and six other
+  devices, which the README lists by device tag. It needs Android 8 or later, a USB OTG cable that carries data,
   and permission to run in the background so a transfer survives the screen turning off. The app checks GitHub for new
   releases at most once a day and uses no other analytics. The README says it was tested over 100 times across firmwares
   and versions, has a diagnostics menu item that verifies the bootloader's state (0.9.5), and asks for the VID/PID of any firmware it does not recognise.
@@ -39,6 +41,10 @@ install_notes: >-
 brick_risk: true
 tags: [backup, flasher, android, recovery, utility]
 versions:
+- version: 0.10.0
+  date: 2026-11-09
+  url: https://github.com/workeffortwaste/fm1-backup-restore/releases/tag/v0.10.0
+  notes: Adds support for MiniFM, SMK-37 Pro and Elite, Starrykey-37 PLAY, MKE-P37, Pocket X, BlackBox and Pocket AMP. Exported backups carry a BIN and a JSON file with the device tag, firmware identity, date and checksum, and the whole library can be exported and imported as one archive.
 - version: 0.9.6
   date: 2026-11-03
   url: https://github.com/workeffortwaste/fm1-backup-restore/releases/tag/v0.9.6

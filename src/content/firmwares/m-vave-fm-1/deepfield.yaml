@@ -8,7 +8,7 @@ description: >-
   scope. Four knob groups, MASS, DRIFT, SPACE and TIDE, shape all bodies together, and thirteen models can be mixed with a noise layer, with SCAN and DX voices among
   them. Effects are a delay of seven kinds, an ensemble and a hall reverb with freeze and shimmer, and scenes recall everything and crossfade into each other.
   MIDI runs over USB, TRS and Bluetooth in both directions, with MIDI clock in and out. Pocket Poly and GNOMNOM lived in the same repository until 2026-11-08 and have their own repositories now. The commit
-  messages record a 1.0 package flashed on a real FM-1 on 2026-11-09.
+  messages record a 1.0 package flashed on a real FM-1 on 2026-11-09, and the 1.3 package published and verified on 2026-11-10.
 status: active
 authors:
 - name: WisestWizard
@@ -29,7 +29,11 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, ambient, drone, reverb, delay, generative, ble-midi, platform, emulator]
 versions:
-- version: master @ 04f99d6
+- version: '1.3'
+  date: 2026-11-10
+  url: https://github.com/WisestWizard/deepfield/tree/1.3
+  notes: Git tag; no GitHub release page. Takes the dead knobs and skipped values off the panel so every control does what the screen says, removes the clicks heard while turning knobs by sliding changes and blocking DC offset, keeps how long each note was held in a loop, and stops freezing the lowest note under a progression so the harmony can move.
+- version: '1.2'
   date: 2026-11-09
-  url: https://github.com/WisestWizard/deepfield/commit/04f99d645b57cd2d9c7ec4083c0ea82fd2f75894
-  notes: No tagged releases; this is the latest commit. Since the previous row the repository holds DEEP FIELD alone, the volume law is reworked so MASTER also reaches what a computer records, notes are no longer left held on whatever is listening over MIDI, and the knobs on the FM voice, mixer and echo are rebalanced so a thick chord no longer hides the delay. The rest are commits to the author's notes and the build's base-firmware pointer.
+  url: https://github.com/WisestWizard/deepfield/tree/1.2
+  notes: Git tag; no GitHub release page. Holds notes across a chord change so the generator sounds like harmony moving, and gives ROAM its own MIDI control so the knob no longer fires the generator's trigger. Earlier commits since the previous row rework the volume law so MASTER also reaches what a computer records and rebalance the FM voice, mixer and echo knobs.

@@ -1,0 +1,46 @@
+device: m-vave-fm-1
+name: Beat It
+summary: >-
+  SLOOP derivative that keeps the drums and the two FM engines and adds Bluetooth MIDI with clock in and out, a full-screen
+  scope with view presets, a dedicated MIDI menu and a purple-and-black theme.
+description: >-
+  Built on SLOOP, with the Bluetooth stack and radio driver taken from Optimist's open-source code, and a backup of the
+  unit's radio calibration. From 1.1 it sends and receives notes over Bluetooth MIDI; 1.2 follows a Bluetooth clock, 1.3 sends
+  the clock over Bluetooth, USB or both and ends held notes when sending is switched off, and 1.4 adds a SysEx status
+  query for connected apps plus a Linux test script that steps through the Bluetooth checks and writes a log. Bluetooth is
+  off at every power-on and turning it on stops the second processor core until restart. The README is SLOOP's own, with
+  a short Beat It file and install guide beside it. Both state that it has not run on a real FM-1 and that Bluetooth has never
+  been tried over a real radio.
+status: active
+authors:
+- name: epidex
+  url: https://github.com/epidex
+source: https://github.com/epidex/beat-it
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  BEAT-IT.md and the SLOOP README state GPL-3.0-only; LICENSING.md is Felucca's, with Felucca's separately licensed assets
+  excluded. The Bluetooth radio tables carry Apache-2.0. The docs/firmware folder holds a build of SLOOP 2.8.5 rather than
+  a stock image; the repository has no M-VAVE image.
+based_on: m-vave-fm-1/sloop
+distribution: browser-installer
+install_notes: >-
+  Open Beat-It-X.Y-installer.html from the release in Chrome or Edge on a computer with the FM-1 on USB, or install the .fwsc
+  with SLOOP's fm1_install.py or the Firmware Hub. Back up projects first; Beat It cannot open projects from the official
+  firmware. Holding OCT- while switching on starts the USB rescue, and the guide lists M-UPGRADE and the Firmware Hub for
+  going back to stock. The guide warns that earlier installs may have erased the radio calibration, which cannot be restored.
+brick_risk: false
+tags: [groovebox, drums, fm, ble-midi, midi, sequencer, fork]
+versions:
+- version: '1.4'
+  date: 2026-11-10
+  url: https://github.com/epidex/beat-it/releases/tag/v1.4
+  notes: Adds a SysEx BT STATUS query and a Linux Bluetooth test script.
+- version: '1.3'
+  date: 2026-11-10
+  url: https://github.com/epidex/beat-it/releases/tag/v1.3
+  notes: Sends the clock over Bluetooth, ends held notes when Bluetooth sending is turned off and fixes the missing CLOCK IN Bluetooth choice.
+- version: '1.2'
+  date: 2026-11-09
+  url: https://github.com/epidex/beat-it/releases/tag/v1.2
+  notes: Follows a Bluetooth MIDI clock.

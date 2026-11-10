@@ -1,0 +1,62 @@
+device: m-vave-fm-1
+name: JamesOS
+summary: >-
+  Seven-track groovebox with three instrument tracks of Plaits and Braids synth engines and four drum lanes, a 64-step
+  conditional sequencer, 64 presets, MIDI in on the jack and USB, and a browser installer.
+description: >-
+  Rights warning: the repository's releases/ folder commits build packages labelled "from V15" that combine the JamesOS
+  application with a boot area and loader taken from M-VAVE's V14 firmware; the README says the redistribution terms for
+  that material remain to be confirmed. The application-only packages contain none of it. JamesOS is built on Dinghy and
+  the Felucca platform with SLOOP changes and adds Emilie Gillet's Plaits (24 engines) and Braids as synth voices, with
+  synthesized drum kits, eleven patterns per project, a mixer, LFOs and external clock from either MIDI input. The
+  author, who also publishes it through the Gjelly site as a pay-what-you-want release, tested it on one FM-1 and lists other
+  hardware, interrupted updates and long MIDI workloads as unverified.
+status: active
+authors:
+- name: Aaron Grando
+  url: https://github.com/aarongrando
+source: https://github.com/aarongrando/JamesOS
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE and the licences page state GPL-3.0-only for the firmware code. Plaits, Braids and stmlib keep their MIT licence,
+  the built-in drum kits are CC0 1.0 and the JieLi bootloader parts in update packages are Apache-2.0. The combined
+  "from V15" packages include M-VAVE V14-derived material of unconfirmed redistribution terms; no unmodified stock image is
+  committed.
+homepage: https://gjelly.com/JamesOS
+based_on: m-vave-fm-1/dinghy
+distribution: browser-installer
+install_notes: >-
+  The Gjelly page offers a browser installer in Chrome or Edge, free at $0 or pay-what-you-want; it does not make a backup, so
+  save projects first. The "from V15" package also writes the boot configuration (396 MHz) and boot area, and an earlier
+  test start of it entered USB rescue once. To leave JamesOS, install M-VAVE's original V15 with the FM-1 Workbench first.
+  The manual links an FM-1 rescue guide for failed updates.
+brick_risk: true
+tags: [groovebox, synth-engine, drums, sequencer, oscillator, wavetable, midi, fork]
+image:
+  url: https://raw.githubusercontent.com/aarongrando/JamesOS/main/docs/images/home.png
+  alt: JamesOS sound controls page for track 1, titled ANALOG VCF, with four knob panels for timbre, harmonics, morph and oscillator mix and their percentages
+  credit: Aaron Grando
+  source_url: https://github.com/aarongrando/JamesOS
+  first_party: true
+versions:
+- version: 1.0a-2108
+  date: 2026-11-10
+  url: https://github.com/aarongrando/JamesOS/tree/v1.0a-2108
+  notes: Git tag; no GitHub release page. Adds input from the 3.5 mm MIDI IN jack beside USB MIDI.
+- version: 1.0a-2105
+  date: 2026-11-09
+  url: https://github.com/aarongrando/JamesOS/tree/v1.0a-2105
+  notes: Git tag; no GitHub release page.
+- version: 1.0a-2104
+  date: 2026-11-09
+  url: https://github.com/aarongrando/JamesOS/tree/v1.0a-2104
+  notes: Git tag; no GitHub release page.
+- version: 1.0a-2103
+  date: 2026-11-09
+  url: https://github.com/aarongrando/JamesOS/tree/v1.0a-2103
+  notes: Git tag; no GitHub release page.
+- version: 1.0a
+  date: 2026-11-09
+  url: https://github.com/aarongrando/JamesOS/tree/v1.0a
+  notes: Git tag; no GitHub release page.

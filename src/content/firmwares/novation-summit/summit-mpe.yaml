@@ -1,0 +1,35 @@
+device: novation-summit
+name: Summit MPE
+summary: Patcher that adds an MPE receiver with per-note pitch bend, pressure and Slide, switched on per sound, to Novation's Summit firmware 2.2.
+description: >-
+  Summit MPE applies a patch to Novation's official 2.2 (build 2121) update and gives the Summit an MPE 1.0
+  receiver with a lower and an upper zone. Each note gets its own pitch bend, pressure and Slide (CC 74), a zone is
+  set by the sender's MPE configuration message or on new Settings pages, and an MPE switch on the Voice page turns
+  it on per sound, so a sound with it off plays as on stock. Single and Multi mode are covered, and the boot screen
+  shows a version string so the patch is easy to spot. It was tested on one Summit and not on a Peak or other
+  firmware versions. The author states that the project was written with an AI coding assistant and that Novation
+  is not involved. The repository holds the patch source, tools and a simulator, not Novation's firmware.
+status: active
+authors:
+  - name: Michael Kollmann
+    url: https://github.com/michaelkollmann
+source: https://github.com/michaelkollmann/gipfel_mpe
+source_status: open
+license: MIT
+license_notes: The LICENSE covers the repository's own code and documentation only, not Novation's firmware.
+homepage: https://michaelkollmann.github.io/gipfel_mpe/
+distribution: patch-your-own
+requires_stock: Summit firmware 2.2 (build 2121), FPGA build 778
+install_notes: >-
+  Download the 2.2 update from Novation, open the web patcher in Chrome or Edge and give it that file. It checks
+  the file, applies the patch in the browser, verifies the checksum and flashes over Web MIDI, or offers the
+  patched .syx for another tool. A Python flasher is in the repository. Back up sounds first, since an update can
+  change stored data. To return to stock, flash Novation's file again; if the synth does not start, hold the three
+  buttons left of the screen at power-on to reach the bootloader, which the patch never changes.
+brick_risk: false
+tags: [mpe, patcher, midi, synth-engine, sysex, web-midi]
+versions:
+  - version: v1.2
+    date: 2026-11-09
+    url: https://github.com/michaelkollmann/gipfel_mpe/releases/tag/v1.2
+    notes: Built for Summit firmware 2.2 build 2121 only; no firmware file is attached to the release.

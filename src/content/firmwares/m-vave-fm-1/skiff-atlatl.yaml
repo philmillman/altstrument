@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: skiff-atlatl
+summary: >-
+  Fork of Skiff that replaces its four synth engines with one editable SYNTH (VA, wavetable, additive, drawbar, modal and Plaits-style oscillators, a 303 oscillator and acid filter), adds drum models per lane, a step arpeggiator and USB screen mirroring.
+description: >-
+  The SYNTH has two oscillators with Rings- and Plaits-style models, a choice of voice filters with a blend toward band-pass and high-pass, poly-mod routing and 127 presets, 63 of them brought over from OberVave. A FMINI voice from
+  FMini-1 models a Minimoog. The DRUM engine gains a model per lane (808, 909, 626 and others, 41 in all) and the DX kits, and the sequencer gains the trig conditions PRE, 1ST and NEI, ratchet velocity and a step pattern for the arpeggiator.
+  USB audio carries eight channels, the master plus the six tracks, and the web editor shows the FM-1's screen live. The package has its own identity (FM-1_742XY), and its installer and editor are separate from Skiff's. The default branch
+  currently matches Skiff's main, so the fork's source for each release is at its tag. The releases are not tested on a real FM-1, according to the build notes.
+status: active
+authors:
+- name: LIkst4
+  url: https://github.com/LIkst4
+source: https://github.com/LIkst4/skiff-atlatl
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE is the GPL-3.0 text, as Skiff and Felucca. LICENSING.md lists the borrowed parts: screen_mirror.c is MIT, and the other ported engines keep their own licences, such as Mutable Instruments' Plaits and Rings models (MIT).
+homepage: https://likst4.github.io/skiff-atlatl/installer/
+distribution: browser-installer
+install_notes: >-
+  Use the skiff-atlatl installer page in Chrome or Edge with the FM-1 on USB, not Skiff's own installer. The release also attaches skiff-atlatl-v1.1.fwsc. The README says the package carries the update loader, to back up first and that the official
+  firmware can always be restored.
+brick_risk: false
+tags: [synth-engine, sequencer, drums, arpeggiator, editor, emulator, usb-audio, fx, filter]
+versions:
+- version: V1.1
+  date: 2026-11-06
+  url: https://github.com/LIkst4/skiff-atlatl/releases/tag/V1.1
+  notes: Filter BLEND, so every filter type sweeps toward band-pass and high-pass, a fix to the editor and smoother envelope curves.
+- version: V1.0
+  date: 2026-11-06
+  url: https://github.com/LIkst4/skiff-atlatl/releases/tag/V1.0
+  notes: First release, with the editable SYNTH, drum models per lane, more trig conditions, a step arpeggiator, the web editor and screen mirroring.

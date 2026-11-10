@@ -1,0 +1,32 @@
+device: m-vave-fm-1
+kind: tool
+name: FM-1 Hardware Inspector
+summary: >-
+  Read-only web page that shows an FM-1 hardware report loaded from a local JSON file, identifies the two known SPI flash chips and flags
+  compatibility risks, with a recovery guide for bricked FM-1 and SMK-37 units.
+description: >-
+  The page opens a JSON report that another inspection tool produced, shows the device details, and recognises the Puya
+  P25Q80H and UCUN UC25HQ80 flash chips by their JEDEC IDs. It keeps unknown, experimental, incompatible and verified claims in separate groups, warns
+  when the bootloader identity is unknown or unreadable, and explains why newer flash chips need firmware and update loaders that know them. Reports stay in the
+  browser. The README says direct USB inspection is not implemented, because WebUSB cannot reliably take over the download-mode interface, and
+  that a local helper could add it later. The page has no write, erase, update or bootloader controls. A second page walks through recovery for a unit
+  that will not start, covering M-Flasher, m-bootloader, the chip's ROM download mode and the hard-brick routes.
+status: active
+authors:
+- name: Laurens Profittlich (profikid)
+  url: https://github.com/profikid
+source: https://github.com/profikid/fm1-hardware-inspector
+source_status: open
+license: MIT
+license_notes: The README states "MIT"; the repository has no LICENSE file.
+homepage: https://profikid.github.io/fm1-hardware-inspector/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page, or open index.html locally; there is no build step. It writes nothing to the unit.
+brick_risk: false
+tags: [web, utility, recovery, research]
+versions:
+- version: main @ 60ce0e9
+  date: 2026-11-10
+  url: https://github.com/profikid/fm1-hardware-inspector/commit/60ce0e92afd8453e4595ee61f12df5fce2b39d5f
+  notes: No tagged releases; this is the latest commit.

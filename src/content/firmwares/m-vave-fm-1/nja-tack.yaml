@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+name: NJA TACK
+summary: >-
+  Felucca-derived firmware that plays harmony moves: six keys pick a move, played MIDI notes are bent to the chosen scale and
+  root, and a looper replays the performance with up to four recorded voices.
+description: >-
+  Notes whose onsets fall in an 80 ms window keep their literal pitches, including voicing, while legato and later overlaps
+  follow the scale. The LOOP page replays the timing as played and APPLY writes a four-slot harmony pattern. A take that
+  exceeds the four-voice or other capture limits is rejected whole instead of trimmed. Raw timing, channel and voicing
+  metadata live in RAM only. The firmware sits on Felucca's engines, sounds, drums and effects. It is an experimental release
+  candidate, 6.28-rc5, with identity FM-1_65262805. The author reports one controlled install on one FM-1 and lists audio,
+  timing, voice-budget and recovery tests as still open.
+status: active
+authors:
+- name: NjamesZ
+  url: https://github.com/NjamesZ
+source: https://github.com/NjamesZ/nja-tack-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and LICENSING.md state GPL-3.0-only for the application, with MIT, Apache-2.0, OFL and CC0 components keeping
+  their own terms. The repository commits the release .fwsc, an app .bin and a source archive for 6.28-rc5; none is a stock
+  M-VAVE image.
+based_on: m-vave-fm-1/felucca
+distribution: download
+install_notes: >-
+  Install release/6.28-rc5/felucca-6.28-rc5.fwsc, or the same file from the release, with tools/fm1_install.py over USB, then
+  check that the unit reports FM-1_65262805. Back up first and keep a known-good package; the author warns that projects and
+  samples from other firmware may not carry over and that installs are at your own risk.
+brick_risk: false
+tags: [chords, scales, looper, sequencer, midi, fork]
+image:
+  url: https://raw.githubusercontent.com/NjamesZ/nja-tack-fm1/main/docs/images/loop-rc5-crop.png
+  alt: Host-rendered crop of the NJA TACK LOOP page listing REC, LOOP, QUANTIZE, RHYTHM and EXPORT rows with their values, a user phrase name and a row of slot boxes
+  credit: NjamesZ
+  source_url: https://github.com/NjamesZ/nja-tack-fm1
+  first_party: true
+versions:
+- version: 6.28-rc5
+  date: 2026-11-10
+  url: https://github.com/NjamesZ/nja-tack-fm1/releases/tag/v6.28-rc5
+  notes: Pre-release.

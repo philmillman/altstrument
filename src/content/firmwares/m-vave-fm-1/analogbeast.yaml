@@ -11,10 +11,10 @@ description: >-
   H. SONG mode chains patterns and commands (pattern, tempo, preset, arp, repeat, jump, transpose, octave) over 32
   songs, and ALBUM mode plays up to 32 songs from each of four albums. Version 1.1 added live bank and pattern
   switching on the keys and six more song commands. The package identity stays FM-1_901 for updater
-  compatibility. The README calls the .fwsc hardware tested; the web apps are deployed separately from the
-  repository. A 2.0 release candidate, marked as a pre-release, adds a flash-based MUSIC DISK file system for patterns,
-  songs and albums, a Felucca-based ANALOG and LOFI engine pair and USB host and audio profiles; its notes say these are
-  not yet fully validated on a real FM-1.
+  compatibility up to 1.1 and the first release candidate; the second release candidate moves to FM-1_947. The README calls the .fwsc hardware tested; the web apps are deployed separately from the
+  repository. The 2.0 release candidates, marked as pre-releases, add a flash-based MUSIC DISK file system for patterns,
+  songs and albums, a Felucca-based ANALOG and LOFI engine pair and USB host and audio profiles; their notes say these are
+  not yet fully validated on a real FM-1, and that reinstalling another firmware from RC2 has not been tested.
 status: active
 authors:
 - name: dzwerg
@@ -30,11 +30,15 @@ distribution: browser-installer
 install_notes: >-
   Use the web installer in Chrome or Edge over USB (MIDI and SysEx permission), or flash the .fwsc from the
   releases page. The README tells you to back up personal presets, patterns, songs and projects first and to
-  confirm that the device is detected before writing. Do not rename the FM-1_901 package identity or the
+  confirm that the device is detected before writing. Do not rename the package identity (FM-1_901, or FM-1_947 from RC2) or the
   Felucca Update loader name.
 brick_risk: false
 tags: [synth-engine, sequencer, filter, arpeggiator, editor, emulator, fork]
 versions:
+- version: 2.0.0-rc2
+  date: 2026-11-10
+  url: https://github.com/dzwerg/analogBEAST/releases/tag/v2.0.0-rc2
+  notes: Pre-release. Changes the package identity to FM-1_947 (update loader ota-FM-1_947) and adds Hub metadata in fmhub.json. The notes say it was flashed from FM-1_901 on a real FM-1 and restarted under the new identity, and that reinstalling another firmware from RC2 and the Firmware Hub's full installation and recovery validation have not been done. Experimental B1 engine, MUSIC DISK and USB combinations still need hardware testing.
 - version: 2.0.0-rc1
   date: 2026-11-02
   url: https://github.com/dzwerg/analogBEAST/releases/tag/v2.0.0-rc1

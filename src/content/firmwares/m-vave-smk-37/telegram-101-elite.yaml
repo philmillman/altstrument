@@ -1,0 +1,42 @@
+device: m-vave-smk-37
+name: Telegram 101 Elite
+summary: >-
+  Performance firmware for the SMK-37 Elite only: a Conductor that cues songs and setups on the bar, an SH-101-style lead voice, a TB-303-style bass voice and a synthesized 808 with a phrase and band library.
+description: >-
+  Rights warning: the Band presets and phrase data carry material from the BB1 catalogue, which names song and rhythm-box patterns, and
+  the Dillo phrase bank includes 205 parts from Acid Tabs and Acid Voice. THIRD_PARTY.md and ACID-PARTS-PERMISSION.md rest the distribution on the
+  project owner's own permission statement of 10 November 2026, credit Acid Tabs under CC BY-SA 4.0 where the source says so, and assert no open licence for the Acid Voice parts. The screen type is a generated subset of
+  the Picnic Filled font with no licence asserted.
+
+  The firmware has four parts. Conductor launches songs and saved setups aligned to the bar. Telegram is the lead voice, with sounds, phrases, arpeggiator and glide. Dillo is the bass voice, with
+  accents, slides and phrases. One synthesized 808 offers 16 sounds, rhythms and kits. The library adds Telegram and Dillo phrases, Acid Duets and 1,056 Band preset bars, and keyboard focus can move between Telegram and Dillo while playing. The
+  README says it is meant for the Elite and not for the FM-1, SMK-37 Pro or SMK-37 MKE. Its Dillo, Conductor and 808 parts share a lineage with the BB1 firmware for the FM-1. The build 799 timing figures in the release notes come from one unit.
+  The README claims no procedure for first install from stock firmware.
+status: active
+authors:
+- name: TexasRADIO
+  url: https://github.com/TexasRADIO
+source: https://github.com/TexasRADIO/smk37-elite-firmware
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states GPL-3.0-only for the firmware and the LICENSE file is the GPL v3 text. Retained M-VAVE SMK-37 Open sources are GPLv3 with the section 7
+  linking permission, Big Beat and Felucca-derived code is GPL-3.0-only, and JieLi package parts are Apache-2.0. DaisySP, Rings,
+  msfa, Fukiai and fonts keep their own terms. The music data is not all GPL; see the rights warning. The repository holds the project's own
+  builds (dist/ and packages/ .fwsc files, 651,500 bytes) and no M-VAVE stock image, and none of its files match the licensed V16 blobs.
+based_on: m-vave-fm-1/bb1
+distribution: download
+requires_stock: An SMK-37 Elite already running a compatible Telegram or Conductor build
+install_notes: >-
+  Build 799 is for the SMK-37 Elite only. The supported update is the routine USB-MIDI route in INSTALL.md, run from a unit that already has
+  a compatible Telegram or Conductor build: tools/elite_update.py binds to the unit's USB location, checks the package hash and recovery sector,
+  and confirms the build after reboot. The README does not claim a first install from stock firmware or other custom firmware. Build 797
+  is kept as a verified rollback package. The recovery route is holding FADER BANK while powering on, which the author proved on the test unit, and the
+  README says to confirm it on yours first.
+brick_risk: false
+tags: [sequencer, synth-engine, drums, groovebox, performance, midi, fork]
+versions:
+- version: v1.0.0
+  date: 2026-11-10
+  url: https://github.com/TexasRADIO/smk37-elite-firmware/releases/tag/v1.0.0
+  notes: First public release, build 799, with build 797 as the rollback package.

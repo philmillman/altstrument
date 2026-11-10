@@ -9,8 +9,7 @@ description: >-
 
   Each kit has four sound parts chosen with ALGORITHM, with saturation, reverb, tempo and swing on the knobs; edits last
   until restart and the banks are read-only. The app is a fresh build on M-VAVE's fm1_open pinned at one commit, not on SLOOP or Felucca, and ships
-  as a prebuilt .fwsc with a SHA-256 list, a WebAssembly preview and build notes. The README says the 0.4 build was confirmed on a physical FM-1,
-  while 0.6 is checked in an emulator and by package checks only, and that the 396 KiB user partition has not been validated for migration from other firmware.
+  as a prebuilt .fwsc with a SHA-256 list, a WebAssembly preview and build notes. The README says the stable 0.7 build was confirmed working on a physical FM-1 by a user on 2026-11-09, and that the 396 KiB user partition has not been validated for migration from other firmware.
 status: active
 authors:
 - name: arrastao
@@ -23,15 +22,19 @@ license_notes: >-
   from the GPL (assets/README.md). The committed sdk/firmware/FM-1_015.fwsc is the file M-VAVE licenses under Apache-2.0 (git blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd).
 distribution: download
 install_notes: >-
-  Download firmware/BAILE-0.6-MAC.fwsc, check it against SHA256SUMS.txt and install it with M-VAVE's M-UPGRADE; the README says M-UPGRADE installation of this build is still pending. Back up first.
+  Download BAILE-0.7-FM1.fwsc from the 0.7.0 release or the firmware folder, check it against SHA256SUMS.txt and install it with M-VAVE's M-UPGRADE. Back up first.
   M-VAVE's own updater puts stock firmware back; the README gives no other recovery notes.
 brick_risk: false
 tags: [drums, sequencer, sampler, emulator]
 versions:
+- version: 0.7.0
+  date: 2026-11-09
+  url: https://github.com/arrastao/baile-fm1/releases/tag/v0.7.0
+  notes: Stable release, promoted from the experimental line after a user confirmed it working on a physical FM-1 on 2026-11-09; the firmware is the tested file, not rebuilt. Holds the Tamborzao, Voltmix and Beat Bolha kits with twelve normalized samples, one 16-step bar per preset, an updated Bolha Brilhante pattern and a three-second splash, all in one .fwsc. Migration from other firmwares is untested. Notes in Portuguese.
 - version: "0.6"
   date: 2026-11-09
   url: https://github.com/arrastao/baile-fm1/commit/24c1618
-  notes: Latest commit on the default branch; holds the splash artwork for three seconds and makes all presets one 16-step bar. Not a GitHub release.
+  notes: Commit on the default branch before 0.7.0; holds the splash artwork for three seconds and makes all presets one 16-step bar. Not a GitHub release.
 - version: v0.4.0-experimental
   date: 2026-11-09
   url: https://github.com/arrastao/baile-fm1/releases/tag/v0.4.0-experimental

@@ -1,0 +1,51 @@
+device: portmaster-compatible-handhelds
+also_devices: [miyoo-miyoo-mini]
+name: TrackWerk (Pocket Tracker Extreme)
+summary: Independent fork of PocketTracker that adds synthesis engines, 64 punch-in effects, a drum generator, Internet Archive sampling and a new look, with builds for the TrimUI Brick on KNULLI, Miyoo Mini and Android.
+description: >-
+  TrackWerk, published until 0.9 as Pocket Tracker Extreme, is a fork of conanizer's PocketTracker that the author
+  develops separately. It keeps the eight-track tracker, sampler and editor and adds synthesis engines with live
+  editing and 2,048 instrument presets, 64 momentary punch effects in eight banks, resampling of the post-effects
+  signal, a drum generator built from the user's own sounds, search and import of Internet Archive audio, an import
+  subset for Dirtywave M8 files, reverb, delay and mastering presets, and new themes and typefaces. Selected
+  Mutable Instruments DSP is included. Packages cover Android 8 and later, the TrimUI Brick on KNULLI, and the Miyoo
+  Mini and Mini Plus on Onion. The releases are marked as betas and the author says device testing is still going
+  on; an earlier note on a news site said the download had been pulled, but the releases are listed in the
+  repository.
+status: active
+authors:
+  - name: Kid Bunka (Christoph Link / kidbee85-beep)
+    url: https://github.com/kidbee85-beep
+source: https://github.com/kidbee85-beep/Pocket-Tracker-Extreme
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The LICENSE file is the plain GPL version 3 text. The README states GPL-3.0-or-later for the fork. Bundled
+  third-party components keep their own licenses, listed in the credits.
+homepage: https://kidbee85-beep.github.io/Pocket-Tracker-Extreme/
+based_on: https://github.com/conanizer/pockettracker
+distribution: download
+requires_stock: KNULLI on the TrimUI Brick, or Onion on the Miyoo Mini; Android 8 or later
+install_notes: >-
+  Brick: extract the KNULLI zip onto a working KNULLI card, or apply the program update zip to an existing install.
+  Miyoo Mini and Mini Plus: extract the matching Onion zip at the top of the SD card. Android: install the APK,
+  which has its own app identity and sits beside earlier Pocket Tracker Extreme installs, so export app-private
+  work to a shared folder first. Updates on Linux keep samples, projects and presets. Nothing is flashed to the
+  device.
+brick_risk: false
+tags: [tracker, sampler, sequencer, synth-engine, fx, open-source]
+video:
+  url: https://youtu.be/zIzqFsDHWsA
+  title: TrackWerk 0.9 — One Jazz Find, Two Grooves | Hip-Hop & Drum and Bass
+  credit: Kid Bunka
+  first_party: true
+  found_via: https://kidbee85-beep.github.io/Pocket-Tracker-Extreme/
+versions:
+  - version: v0.9.0-beta
+    date: 2026-11-10
+    url: https://github.com/kidbee85-beep/Pocket-Tracker-Extreme/releases/tag/v0.9.0-beta
+    notes: Pre-release. Renames the project to TrackWerk and adds an independent look, a Studio and Archive workflow, and a Miyoo Mini Plus HTTPS fix.
+  - version: v0.2.0-beta.2
+    date: 2026-11-09
+    url: https://github.com/kidbee85-beep/Pocket-Tracker-Extreme/releases/tag/v0.2.0-beta.2
+    notes: Pre-release. Punch effects, recorder and safe updates.

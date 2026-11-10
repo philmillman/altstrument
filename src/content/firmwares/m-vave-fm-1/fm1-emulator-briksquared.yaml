@@ -2,13 +2,13 @@ device: m-vave-fm-1
 name: FM-1 Emulator (briksquared)
 kind: tool
 summary: >-
-  Offline desktop emulator for Windows, macOS and Linux that runs FM-1 firmware with no hardware, with 115 GPL-3.0
+  Offline desktop emulator for Windows, macOS and Linux that runs FM-1 firmware with no hardware, with 259 open-licence
   firmwares bundled, plus flash backup and recovery on Windows.
 description: >-
   A fork of Joakim Eriksson's fm1-emu, whose Rust and WebAssembly engine does the emulation, in a desktop app. Firmware
   is picked from the bundled list or dropped in as a .fwsc, and played with the computer keyboard, mouse or a USB MIDI
-  controller. The panel colours, decals and stickers can be changed. On Windows the app can also back up a real unit,
-  install firmware and restore it with a bundled M-Flasher. The builds are not code-signed.
+  controller, including a real FM-1 plugged in over USB. The panel colours, decals and stickers can be changed. On Windows the app can also back up a real unit,
+  install firmware and restore it with a bundled M-Flasher. The builds are not code-signed. Version 1.1.0 adds a radar that checks for new firmware releases and a rebuilt search.
 status: active
 authors:
 - name: briksquared
@@ -17,7 +17,7 @@ source: https://github.com/briksquared/fm1-emulator
 source_status: open
 license: MIT
 license_notes: >-
-  MIT covers the app (LICENSE, NOTICE.md). The 115 bundled packages are other authors' GPL-3.0 firmware, redistributed
+  MIT covers the app (LICENSE, NOTICE.md). The 259 bundled packages are other authors' firmware under GPL, MPL or another compatible licence, redistributed
   unchanged with credit in THIRD-PARTY.md; the README says M-VAVE's stock firmware is not bundled. vendor/M-Flasher holds
   a prebuilt M-Flasher.exe with its own LICENSE and SOURCE.md.
 distribution: download
@@ -34,6 +34,10 @@ image:
   source_url: https://github.com/briksquared/fm1-emulator
   first_party: true
 versions:
+- version: 1.1.0
+  date: 2026-11-09
+  url: https://github.com/briksquared/fm1-emulator/releases/tag/v1.1.0
+  notes: Grows the bundled library from 115 to 259 open-licence packages, adds an in-app radar for new firmware releases and a rebuilt search, uses software rendering and the interpreter by default, and lets a real FM-1 on MIDI in play the emulator.
 - version: 1.0.9
   date: 2026-11-01
   url: https://github.com/briksquared/fm1-emulator/releases/tag/v1.0.9

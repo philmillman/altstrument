@@ -1,0 +1,50 @@
+device: m-vave-fm-1
+name: fm1-sf2
+summary: >-
+  SoundFont player: a 32-voice, 16-channel General MIDI sound module that plays a bank converted from an .sf2 file in the
+  browser, with reverb, chorus, USB, DIN and Bluetooth MIDI and a built-in MIDI file player.
+description: >-
+  Rights warning: the repository carries a General MIDI SoundFont (soundfonts/1mgm.sf2), about twenty MIDI files of
+  well-known songs under MIDIs/ and a Pages site that publishes them, with no licence or origin stated for any of them.
+  The firmware itself is a sample player built on M-VAVE's FM1 Open code. A web page converts an .sf2 into an FM1B bank of
+  presets, key and velocity zones, loops, envelopes, filter, LFOs and sends, in one of several sample codecs, and a second
+  page installs the firmware and the bank over USB-MIDI. The bank lives in the 456 KB sample flash and is played in place.
+  Two firmwares exist: a plain player that includes a MIDI file player, and a newer one with a live cache that plays
+  MP3-packed banks about twice as large. A CPU guard lowers the voice count instead of stuttering. A browser emulator and
+  MIDI player on the project site run the firmware without a device. The author calls the live-cache build still being
+  tested on hardware.
+status: active
+authors:
+- name: mwedmark
+  url: https://github.com/mwedmark
+source: https://github.com/mwedmark/fm1-sf2
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The repository has no top-level LICENSE file. The README says the firmware is built on m-vave/fm1_open, whose
+  LICENSE.md (copied into fm1_open/) is GPL-3.0-only with M-VAVE's FM1 SDK linking exception, so that licence is recorded
+  here; this is an inference, not an explicit statement by the author. The SoundFont and MIDI files have no stated
+  licence. The repository contains M-VAVE's licensed V15 recovery image fm1_open/sdk/firmware/FM-1_015.fwsc (Apache-2.0,
+  git blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd, 699,956 bytes, the same file as in m-vave/fm1_open) and the binary
+  engine library libfm1_engine.a under M-VAVE's separate terms for FM-1 devices.
+homepage: https://mwedmark.github.io/fm1-sf2/
+based_on: m-vave-fm-1/fm1-open
+distribution: browser-installer
+install_notes: >-
+  Install page in Chrome or Edge over USB; it writes the firmware through M-VAVE's update loader and then erases the sample
+  flash and sends the bank. From firmware other than V15 it first installs V15, then the player. A section on the page puts
+  V15 and its factory voices back. If the unit does not start, hold OCT- and OCT+ while switching on for SAFE MODE, then
+  install again. Installing erases the sample flash the stock firmware uses for its voices.
+brick_risk: false
+tags: [sampler, synth-engine, midi, usb-midi, ble-midi, fx, reverb, chorus, editor, emulator, web]
+image:
+  url: https://raw.githubusercontent.com/mwedmark/fm1-sf2/main/docs/img/panel.png
+  alt: Emulator view of the FM-1 panel running the SF2 player, with the screen showing 001 PIANO 1, PLAY A KEY, voice and CPU readouts and the master reverb and chorus values
+  credit: mwedmark
+  source_url: https://github.com/mwedmark/fm1-sf2
+  first_party: true
+versions:
+- version: main @ 352afa9
+  date: 2026-11-10
+  url: https://github.com/mwedmark/fm1-sf2/commit/352afa9e9975a86444ddee7418708b7f6f43c552
+  notes: No tagged releases; this is the latest commit.

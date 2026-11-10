@@ -1,0 +1,37 @@
+device: zlosynth-arplus
+name: Arplus firmware
+summary: Zlosynth's own Rust firmware for the Arplus module, a quantizer, arpeggiator and six-string Karplus-Strong synthesizer with 31 scales and chords.
+description: >-
+  This is the firmware that runs on the Arplus, written by the module's maker for the Daisy Patch SM. It provides
+  Karplus-Strong string synthesis with six voices and an external excitation input, 31 scales and chords of up to
+  eight notes that can be edited, CV-controlled arpeggio patterns, a quantized 1V/oct output and three stereo
+  output modes. Release 1.0.0 reworked the interface to give direct control over attributes and added root and
+  rest, Haas and ping-pong output modes. The release page also lists experimental builds that change the gain or
+  contour latching.
+status: active
+authors:
+  - name: Petr Horacek
+    url: https://github.com/zlosynth
+source: https://github.com/zlosynth/arplus
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE-SOFTWARE is GPL version 3 and the README states no "or later" grant. Schematics, PCB layout and the manual
+  are CC-BY-SA.
+homepage: https://zlosynth.com/arplus
+distribution: download
+install_notes: >-
+  Download arplus-firmware-x.y.z.bin from the release, open Electrosmith's web programmer and upload it through the
+  File Upload tab, ignoring the invalid Daisy binary warning. The Daisy bootloader stays in place, so a failed
+  upload can be repeated.
+brick_risk: false
+tags: [official, quantizer, arpeggiator, synth-engine, eurorack, rust, open-source]
+versions:
+  - version: v1.0.1
+    date: 2026-04-05
+    url: https://github.com/zlosynth/arplus/releases/tag/v1.0.1
+    notes: Changes footprints only; the firmware binary is attached.
+  - version: v1.0.0
+    date: 2025-11-09
+    url: https://github.com/zlosynth/arplus/releases/tag/v1.0.0
+    notes: Reworks the interface, adds root/rest, Haas and ping-pong output modes, and persists the scale per group.

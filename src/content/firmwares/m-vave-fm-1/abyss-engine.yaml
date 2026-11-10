@@ -1,0 +1,43 @@
+device: m-vave-fm-1
+name: ABYSS ENGINE
+summary: >-
+  Bass and pad firmware for drum and bass: neuro bass voices navigated through a graph of preset sweet spots, a clean mono
+  sub, stabs, an evolving pad and a harmonic sequencer on a shared key, with a bass-safe master stage.
+description: >-
+  Half of the JUNGLE OS pair; it runs alone or with BREAK SURGEON, ducking from that firmware's kicks and sharing clock,
+  scenes and fills over plain MIDI (JUNGLE LINK). The neuro bass has FM CREATURE and REESE MATRIX voices that the player
+  moves through with morph, snap, explore, mutate and undo; stabs come as rave, orchestral, glass and dark sets. The README
+  states that neither firmware has been installed on a physical FM-1, and that the work was tested in software, in
+  fm1-base's host simulator, a browser emulator and fm1-emu. It has its own manual, emulator, installer page and package.
+status: active
+authors:
+- name: RahelPuest
+  url: https://github.com/RahelPuest
+source: https://github.com/RahelPuest/jungle-os-fm1
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSE is the MPL-2.0 text. fm1-base and felucca-bsp are MPL-2.0 too. The repository commits its own built .fwsc
+  packages in release/; no stock M-VAVE image is among them. The site folder also carries a copy of Julius Vitkauskas'
+  m-bootloader 1.2 package (MIT) offered as an optional extra by the web installer.
+homepage: https://rahelpuest.github.io/jungle-os-fm1/abyss-engine/
+based_on: m-vave-fm-1/fm1-base
+distribution: browser-installer
+install_notes: >-
+  Web installer page in Chrome or Edge over USB, or fm1-base's fm1_install.py with the .fwsc. The installer can also put
+  M-VAVE's firmware back and has an optional, off-by-default m-bootloader install that replaces the stock bootloader. The
+  project's install guide says the update loader writes only the app area and leaves the boot loader, calibration and unit
+  key alone, and recommends a flash backup first.
+brick_risk: false
+tags: [synth-engine, oscillator, sequencer, fx, performance, midi, emulator, web]
+image:
+  url: https://raw.githubusercontent.com/RahelPuest/jungle-os-fm1/main/firmware/abyss-engine/docs/img/perform.png
+  alt: ABYSS ENGINE PERFORM page on the FM-1 screen with a cyan and violet theme, showing the bass node SNARL on the sweet-spot path, key and part settings, and morph, motion, bite and space knob values
+  credit: RahelPuest
+  source_url: https://github.com/RahelPuest/jungle-os-fm1
+  first_party: true
+versions:
+- version: main @ 238f524
+  date: 2026-11-10
+  url: https://github.com/RahelPuest/jungle-os-fm1/commit/238f5243f5790abd1b425df565890e43bd86b9d3
+  notes: No tagged releases; this is the latest commit, titled 0.3.0.

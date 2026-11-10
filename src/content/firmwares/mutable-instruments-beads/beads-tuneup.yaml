@@ -1,0 +1,45 @@
+device: mutable-instruments-beads
+name: Beads Tuneup
+summary: The released Beads source with safer settings saves and start-up, fixes for frozen-delay and grain edge cases, and faster grain code, keeping the stock controls, settings and sound.
+description: >-
+  A base build from the Drizzlet author for people who want the stock Beads
+  behaviour with fixes. It starts from the released Mutable Instruments source
+  and adds the storage work from Drizzlet: every flash operation is checked, a
+  second copy of the calibration is kept, saves do not start below about 2.8 V,
+  and a module whose settings are damaged plays on defaults instead of crashing
+  at start-up. It also bounds frozen delay slices, fixes undefined reads in
+  background grains and at the end of the wavetable, and fades the output
+  around quality and mode changes that restart the converter. Builds with GCC 9
+  and reworked grain mixing lower the peak audio load, from 91 percent to about
+  77 percent in the author's granular test patch, while the reference audio
+  tests stay identical. The author tested installing, playback and the quality
+  button on one 2021 module. Stock settings and calibration stay compatible. It
+  does not come from Mutable Instruments.
+status: active
+authors:
+  - name: Insolent Construct
+    url: https://github.com/insolentconstruct
+source: https://github.com/insolentconstruct/eurorack/tree/beads-tuneup-2026.11.09/beads
+source_status: open
+license: MIT
+license_notes: >-
+  Beads source files carry the Mutable Instruments MIT notice; the release ships
+  a NOTICE.txt with the collected licences. The fork has no top-level LICENSE
+  file.
+homepage: https://github.com/insolentconstruct/eurorack/releases/tag/beads-tuneup-2026.11.09
+distribution: download
+install_notes: >-
+  Install by audio like any Beads update: unplug all CV cables, patch the audio
+  interface to IN L, set TIME near the middle, power on with FREEZE held and
+  play the WAV from the release's WAV zip at its supplied level. The combo zip
+  is for an external programmer and includes the bootloader. The audio updater
+  is not touched, so a stock firmware can be put back the same way. The README
+  describes a SEED-at-power-up repair for a module whose calibration copies are
+  both lost.
+brick_risk: false
+tags: [granular, fx, bugfixes]
+versions:
+  - version: beads-tuneup-2026.11.09
+    date: 2026-11-10
+    url: https://github.com/insolentconstruct/eurorack/releases/tag/beads-tuneup-2026.11.09
+    notes: Pre-release on GitHub. First release.

@@ -2,17 +2,18 @@ device: m-vave-fm-1
 name: Modular One
 summary: >-
   Film-music firmware with a soft FM engine and Modular Town's delay, plate reverb and "island" effect, a four-green
-  interface, a town-view screen that follows the sound, and a built-in MIDI player that plays Satie's first Gymnopedie.
+  interface, a town-view screen that follows the sound, and a tape player for MIDI files and saved sketches.
 description: >-
   Rights warning: the TOWN engine and effects are ported from the Modular Town V2 plugin, and the repository does not say
   who owns that plugin or under what terms it was used. Not the Modular-1 firmware by WiggisModular, which is a different project. The TOWN engine has a carrier, a modulator
-  with feedback, a detunable second modulator and a soft low-pass, with 16 presets in two families, pads and electric
-  pianos. Four controls (brightness, rise, night and island) shape the sound and the effects together. The screen shows a
+  with feedback, a detunable second modulator and a soft low-pass, with 40 presets in five families, from pads and soft
+  electric pianos to felted bells, lows and 80s film synths. Four controls (brightness, rise, night and island) shape the sound and the effects together. The screen shows a
   shoreline view of Modular Town where the hour, light and water follow the sound, and the same picture is used as a
   screen saver. The engine and effects are ported to integer arithmetic from the plugin. Holding OCT- and OCT+ for one
-  second plays a public-domain piano piece on the current track, and you can play over it. Three synth tracks remain
-  and Felucca's drum track and its sample set are removed. The README calls it a beta that has run only on the author's
-  FM-1.
+  second starts a tape player that plays MIDI files sent from a computer and sketches kept from what you played,
+  on the current sound, and you can play over it; holding SEQ lists them, with a browser app called Carnet for managing the songs and sketches. Three synth tracks remain
+  and Felucca's drum track and its sample set are removed. The README calls it a beta. From 0.3 it recognises both FM-1 flash chips, but the author has not tried it on a
+  recent unit.
 status: active
 authors:
 - name: Alexis Arakis (Bungle Society)
@@ -26,16 +27,21 @@ license_notes: >-
   its builds. CC0 instrument samples, SIL OFL fonts and the JieLi SDK files read at build time are listed there too.
   MODULAR_TOWN.md describes the sound as ported from the Modular Town V2 plugin (Amorph, Cmajor) but names no author or
   licence for it, so the GPL-3.0 grant may not cover the ported engine.
-homepage: https://github.com/bunglesociety/modular-one
-distribution: download
+homepage: https://bunglesociety.github.io/modular-one/
+distribution: browser-installer
 install_notes: >-
-  The README asks you to return to M-VAVE's official V15 or newer first with M-UPGRADE, connect the USB cable directly to
-  the computer with no hub, then install the .fwsc from the release with tools/fm1_install.py (--info reads the unit
-  and writes nothing). The way back is M-VAVE's M-UPGRADE, and FM-1-transporter is named as the recovery tool if the unit no
+  The project site installs it in Chrome or Edge over USB in about two minutes; the installer reads the unit and its version
+  first and refuses other devices. The README asks you to connect the USB cable directly to the computer with no hub,
+  and you can instead install the .fwsc from the release with tools/fm1_install.py (--info reads the unit and writes
+  nothing). On a recent FM-1 with the UC25HQ80 chip, 0.1 and 0.2 kept nothing and refused updates. The way back is M-VAVE's M-UPGRADE, and FM-1-transporter is named as the recovery tool if the unit no
   longer starts.
 brick_risk: false
 tags: [synth-engine, fm, fx, reverb, delay, ui, performance]
 versions:
+- version: 0.3-beta
+  date: 2026-11-09
+  url: https://github.com/bunglesociety/modular-one/releases/tag/v0.3-beta
+  notes: Pre-release; recognises recent FM-1s with the UC25HQ80 flash chip (untested by the author), adds the tape list on SEQ held and has the installer read the FM-1 and refuse other devices.
 - version: 0.1-beta
   date: 2026-10-20
   url: https://github.com/bunglesociety/modular-one/releases/tag/v0.1-beta

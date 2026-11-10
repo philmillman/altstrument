@@ -14,7 +14,7 @@ description: >-
   resonators or Plaits engines, and a kit and sound library in flash. 0.20 adds three more MICRO types, per-pattern
   Voices, a Play mode and a song ROWS page. 0.23 adds WANDER, which changes the pattern slowly over minutes, plus RUSH and
   TRANSPOSE performance controls, and 0.24 adds a CC map for assigning your own MIDI CC numbers and a global MIDI channel
-  for launching patterns and kits. 0.25 adds an ENSEMBLE model of eight stacked, warped sines. 1.0 adds granular CLOUD and RAIN voices, 303-style, MS-20 and ladder filters, a separate delay with routing, a frequency shifter and 8-channel USB audio. The keys can play a voice as an
+  for launching patterns and kits. 0.25 adds an ENSEMBLE model of eight stacked, warped sines. 1.0 adds granular CLOUD and RAIN voices, 303-style, MS-20 and ladder filters, a separate delay with routing, a frequency shifter and 8-channel USB audio. 1.1 adds SMOOTH and DRIFT LFO waves, and 1.3 records hits from the black keys like a drum pad. The keys can play a voice as an
   instrument. It was named Kettle up to version 0.13 and a unit running Kettle updates to Elixir keeping its
   projects. It is built on Felucca's hardware layer, USB stack and updater, and its flash data area is shared
   with Felucca, so installing it replaces Felucca's saved data. The project states it is not affiliated with Erica
@@ -47,6 +47,22 @@ image:
   source_url: https://dmajka.github.io/elixir/
   first_party: true
 versions:
+- version: '1.3'
+  date: 2026-11-09
+  url: https://github.com/dmajka/elixir/releases/tag/v1.3
+  notes: Records hits from a track's black key while REC is on and the pattern plays, like a drum pad, with a Quantize record option that can be turned off to keep the played timing. Adds a track nudge of up to 16 steps either way and puts a step's microtiming on the first step-edit page.
+- version: '1.2'
+  date: 2026-11-09
+  url: https://github.com/dmajka/elixir/releases/tag/v1.2
+  notes: A track's black key now plays its voice as it selects the track, outside the PERF page and without recording the hit. Setting Audition to NO in CONFIG restores the silent select.
+- version: '1.1'
+  date: 2026-11-09
+  url: https://github.com/dmajka/elixir/releases/tag/v1.1
+  notes: Adds SMOOTH and DRIFT LFO waves to every LFO, both gliding between random values, SMOOTH on a curve and DRIFT in small steps. Kits sent to an LXR-02 get RANDOM in their place.
+- version: 1.0.1
+  date: 2026-11-09
+  url: https://github.com/dmajka/elixir/releases/tag/v1.0.1
+  notes: Renames the DJ filter to the master filter; nothing else about it changes and projects load as before.
 - version: '1.0'
   date: 2026-11-09
   url: https://github.com/dmajka/elixir/releases/tag/v1.0

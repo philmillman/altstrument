@@ -9,7 +9,8 @@ description: >-
   Audrey II design, and each key press sends a burst into the loop. The DRONE page adds drifting filter, shape and
   reverb movement per track, a tension control and a rise time in bars. Further changes are six presets that hold
   their notes, a close-interval HORROR scale, delay feedback up to 150 percent, keys an octave lower and an
-  aurora-themed screen. It keeps its own saves separate from GR!MM's. The project site has a browser demo, an
+  aurora-themed screen. From 1.5.2 MOD OUT sends each track's level and LFO over USB, and PANEL OUT is an open protocol that tells apps which keys
+  and buttons are down and how the knobs turn. It keeps its own saves separate from GR!MM's. The project site has a browser demo, an
   editor that works with or without an FM-1, and a cheat sheet.
 status: active
 authors:
@@ -20,7 +21,7 @@ source_status: open
 license: GPL-3.0-only
 license_notes: >-
   LICENSING.md states GPL-3.0 only for GR!MM and for PolarPatch's changes. GR!MM's msfa file is Apache-2.0 and its
-  DaisySP and Rings files are MIT. The PolarPatch logo is not under the GPL.
+  DaisySP and Rings files are MIT. The PolarPatch logo is not under the GPL. The 1.5.2 notes say firmware/src/panel_out.c is MIT and docs/PANEL_OUT.md is CC0.
 homepage: https://polarpatch.github.io/Arctic-scream-FM-1/
 distribution: download
 install_notes: >-
@@ -37,6 +38,10 @@ image:
   source_url: https://github.com/PolarPatch/Arctic-scream-FM-1
   first_party: true
 versions:
+- version: 1.5.2
+  date: 2026-11-09
+  url: https://github.com/PolarPatch/Arctic-scream-FM-1/releases/tag/v1.5.2
+  notes: Shows UPDATE MODE, a WRITING bar and DONE on the screen during an install instead of leaving it black. Adds MOD OUT, which sends each track's level (CC 102) and LFO (CC 103) over USB, and PANEL OUT, an open protocol that tells an app which keys and buttons are down and how the knobs turn. DELAY now runs to 2.6 s, the browser demo plays in tune at 48 kHz and RAM use falls from 93 KB to 79 KB. Projects, sounds, samples and settings stay.
 - version: 1.5.1
   date: 2026-11-08
   url: https://github.com/PolarPatch/Arctic-scream-FM-1/releases/tag/v1.5.1

@@ -1,0 +1,47 @@
+device: erica-synths-perkons-hd-01
+name: perkons-re
+kind: tool
+summary: Reverse-engineering and modding framework for Pērkons firmware, with a browser Mod Matrix that builds a patched image from Erica Synths' official 1.3.0 update and the mods you tick.
+description: >-
+  The framework unpacks and repacks Pērkons update images, analyses both processor cores in Ghidra, runs the real
+  firmware code in an emulator and builds patched firmware from byte patches or C code, with regression checks
+  against stock. Its Mod Matrix runs locally in the browser, accepts only an unmodified official 1.3.0 image and
+  writes a new image with the ticked mods; a memory pane shows how much room the chosen mods take. The mods
+  themselves live in the companion perkons-re-mods repository, listed separately. The author calls the work
+  experimental and unofficial. No Erica Synths firmware is in the repository.
+status: active
+authors:
+  - name: Will Baker
+    url: https://github.com/kiteless
+source: https://github.com/kiteless/perkons-re
+source_status: open
+license: MIT
+license_notes: >-
+  The MIT License covers the framework's own code and documentation. Erica Synths' firmware is not included; users
+  supply the official update image.
+distribution: patch-your-own
+requires_stock: Official Pērkons firmware 1.3.0 (perkons_v1.3.0-0-force.img)
+install_notes: >-
+  Clone the repository, install git, Python 3 and the Arm GCC toolchain, and run start_modmatrix.py. Drop Erica
+  Synths' official 1.3.0 image on the page, tick mods and press Patch It to download a new image of the same name.
+  Copy it to the root of the SD card as the only .img file, power off, hold all four voice trigger keys and power on.
+  To go back, install the official image the same way. Only tick mod repositories you trust, because their code runs
+  on your computer during the build.
+brick_risk: false
+tags: [patcher, reverse-engineering, emulator, open-source]
+image:
+  url: https://raw.githubusercontent.com/kiteless/perkons-re/main/docs/img/modmatrix.jpg
+  alt: Perkons Mod Matrix page in a retro purple-on-black home-computer style, with a firmware drop area, a list of mods with tick boxes, a PATCH IT button and a memory pane with three empty columns
+  credit: Will Baker
+  source_url: https://github.com/kiteless/perkons-re#readme
+  first_party: true
+versions:
+  - version: "0.3"
+    date: 2026-11-03
+    url: https://github.com/kiteless/perkons-re/releases/tag/v0.3
+  - version: "0.2"
+    date: 2026-10-31
+    url: https://github.com/kiteless/perkons-re/releases/tag/v0.2
+  - version: "0.1"
+    date: 2026-10-27
+    url: https://github.com/kiteless/perkons-re/releases/tag/v0.1

@@ -7,12 +7,12 @@ description: >-
   The voice is synthesised live from code with no samples and no voicebank, covering 70 Japanese morae with their
   consonants, five characters from DEEP to TINY, four languages (Japanese, animal babble, scat and plain vowels),
   tension, fry and whisper controls, a harmony voice, and chorus, delay, reverb, drive and tremolo. The song side has
-  four tracks (vocal, FM chords, bass, drums) with 16 patterns each, 64 rows, sections, a mixer, swing, undo and eight
+  four tracks (vocal, FM chords, bass, drums) with 16 patterns each, 64 rows, sections, a mixer, swing, undo and ten
   song slots, and GEN writes a whole song in POP, BALLAD, DANCE or CHIP style with locks on individual tracks. On the
   STAGE page the singer's face mouths each vowel, and the DANCE page animates the singer to the song. The singer is fan art of
   Hatsune Miku, and the project says it is unofficial and unrelated to Crypton, Yamaha or M-VAVE. Songs are stored in
-  Dinghy's eight slots and a settings block that other Felucca-family firmwares also use, so saving replaces their
-  data. The README calls the 0.x builds development builds and the release notes report tests on a real FM-1.
+  song slots and a settings block that other Felucca-family firmwares also use, so saving replaces their
+  data. Since 0.7 chords and bass can use a six-operator DX7-style engine with an on-device voice editor and import of DX7 banks over USB MIDI, and songs using it need a newer song format. The README calls the 0.x builds development builds and the release notes report tests on a real FM-1.
 status: active
 authors:
 - name: Michael Perry
@@ -46,6 +46,14 @@ image:
   source_url: https://github.com/MichaelAPerry/MIKU-FM1
   first_party: true
 versions:
+- version: '0.8'
+  date: 2026-11-10
+  url: https://github.com/MichaelAPerry/MIKU-FM1/releases/tag/v0.8
+  notes: Smoother dance animation, equal outfit heights, display fixes on the bank and library pages, naming of user voices and the sustain pedal on every sound. Songs and banks from 0.7 load unchanged.
+- version: '0.7'
+  date: 2026-11-09
+  url: https://github.com/MichaelAPerry/MIKU-FM1/releases/tag/v0.7
+  notes: Adds a six-operator DX7-style engine with ten voices, a BANK page, DX7 bank import over USB, MIDI keyboard input, ten song slots with four Japanese folk songs, a lyrics page, new GEN styles and twelve outfits. Songs that use DX7 sounds need a new song format, and both flash chip versions are supported.
 - version: '0.6'
   date: 2026-11-04
   url: https://github.com/MichaelAPerry/MIKU-FM1/releases/tag/v0.6

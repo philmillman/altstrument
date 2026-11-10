@@ -1,11 +1,11 @@
 device: m-vave-fm-1
 name: FM-1 Audio Router
 summary: >-
-  Turns the FM-1 into a 2-in 2-out USB audio interface and a Bluetooth audio receiver with AAC, with a five-band
+  Turns the FM-1 into a 2-in 2-out USB audio interface and a Bluetooth audio receiver with AAC and aptX, with a five-band
   parametric EQ, a peak limiter, a mixer and three visualizers.
 description: >-
   The FM-1 shows up on the computer as a class-compliant 16-bit 44.1 kHz audio interface, and also receives Bluetooth
-  audio with AAC or SBC. Incoming audio plays through the speaker or headphones, and a USB out can send it back to
+  audio with AAC, aptX, aptX HD or SBC. Incoming audio plays through the speaker or headphones, and a USB out can send it back to
   the computer, raw or after effects. The effects are a five-band parametric EQ with selectable filter types and a peak
   limiter, each with eight presets, switched on by holding FX. A mixer trims the inputs and USB output with mute and solo on
   the keys, and the visualizers are meters, waveforms and a 40-band spectrum, the last two limited during AAC playback because
@@ -24,7 +24,7 @@ license_notes: >-
 homepage: https://github.com/maxravedj/fm1-audio-router
 distribution: download
 install_notes: >-
-  Flash m-bootloader with M-Flasher first, power on holding REC, then flash the release's fm1-audio-router-v0.1.1.fwsc
+  Flash m-bootloader with M-Flasher first, power on holding REC, then flash the release's fm1-audio-router-v0.2.0.fwsc
   with M-Flasher. docs/INSTALL.md says to keep bootloader replacement off for updates, to keep a verified full-flash
   backup, never to write below 0x4000, and that a unit that no longer enumerates on USB may need hardware recovery.
 brick_risk: true
@@ -36,6 +36,10 @@ image:
   source_url: https://github.com/maxravedj/fm1-audio-router
   first_party: true
 versions:
+- version: 0.2.0
+  date: 2026-11-09
+  url: https://github.com/maxravedj/fm1-audio-router/releases/tag/v0.2.0
+  notes: Adds aptX and aptX HD Bluetooth audio and interface improvements.
 - version: 0.1.1
   date: 2026-11-07
   url: https://github.com/maxravedj/fm1-audio-router/releases/tag/v0.1.1

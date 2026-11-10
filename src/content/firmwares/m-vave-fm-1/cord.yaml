@@ -33,7 +33,7 @@ requires_stock: M-VAVE stock firmware, CoralFlower, ChoralRoot or Felucca
 install_notes: >-
   The CORD installer page, in Chrome or Edge over USB, picks the latest release, checks its checksum and also
   takes your own .fwsc. The README and releases say to save a backup first and that the official M-VAVE firmware can be
-  reinstalled. The 0.6-chaseN packages go through CoralFlower's installer under its custom build option. The 1.0.2 release
+  reinstalled. The 0.6-chaseN packages go through CoralFlower's installer under its custom build option. The 1.0.2 and 1.0.3 release
   notes say that hardware acceptance, including install from V15, switching away and recovery from an interrupted
   update, has not been recorded on a physical FM-1.
 brick_risk: false
@@ -45,6 +45,10 @@ image:
   source_url: https://github.com/chasedeanda/cord-fm1
   first_party: true
 versions:
+- version: 1.0.3
+  date: 2026-11-09
+  url: https://github.com/chasedeanda/cord-fm1/releases/tag/v1.0.3
+  notes: Changes the package identity to FM-1_26730001 (update mode shows ota-FM-1_26730001) because FM-1_936 sat inside another developer's reserved range on the Firmware Hub; earlier CORD and CoralFlower packages stay installable through the CORD installer. Backups, flash layout and two-chip support are unchanged. The notes say hardware acceptance is still pending.
 - version: 1.0.2
   date: 2026-11-08
   url: https://github.com/chasedeanda/cord-fm1/releases/tag/v1.0.2

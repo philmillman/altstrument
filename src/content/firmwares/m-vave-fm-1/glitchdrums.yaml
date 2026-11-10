@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: GlitchDrums FM1
+summary: >-
+  Eight-lane drum synthesizer with polyphonic Glitch and Analog voices, sixteen patterns with chaining and parameter
+  locks, live slice and punch-in effects, and MIDI learn, adapted from the author's GlitchDrums iOS app.
+description: >-
+  The author's own port of the GlitchDrums app's instrument to the FM-1, in fixed-point integer code on foma's platform.
+  It has eight drum lanes, sixteen 16-step patterns with chaining, a shared delay with per-lane sends, 27 performance
+  effect keys, sixteen MIDI learn mappings, a second sequencer page that routes the keys to slice the stored pattern or the
+  audio glitch buffer, and 38 colour themes; the whole save fits in about 12 KB of flash. The release is a development
+  prerelease for RemoteFM1, the browser and iOS FM-1 simulator, as an .rfm1 file. The README and release notes say no
+  hardware package has been built or validated yet and warn against flashing it; a native build workflow exists but is
+  marked experimental.
+status: active
+authors:
+- name: Alex Matheu
+  url: https://github.com/distraub
+source: https://github.com/distraub/glitchdrums-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only for the firmware subtree. The repository includes M-VAVE's SDK files from fm1_open
+  (platform/mvave/sdk, including the binary libfm1_engine.a under M-VAVE's own terms for FM-1 devices). No stock firmware
+  image is committed.
+based_on: m-vave-fm-1/foma
+distribution: download
+install_notes: >-
+  Open the .rfm1 from the release in RemoteFM1 (remotefm1.com or the iOS app); it runs on the computer or phone and writes
+  nothing to an FM-1. The release says not to flash it to a device, and no .fwsc exists yet.
+brick_risk: false
+tags: [drums, sequencer, synth-engine, fx, midi, emulator, fork]
+versions:
+- version: 0.17.6
+  date: 2026-11-10
+  url: https://github.com/distraub/glitchdrums-fm1/releases/tag/v0.17.6
+  notes: Pre-release for RemoteFM1 with live slice routing on a second sequencer page and the Glitch Rate and Mix controls.

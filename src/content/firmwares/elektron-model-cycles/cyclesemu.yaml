@@ -1,0 +1,44 @@
+device: elektron-model-cycles
+name: CyclesEmu
+kind: tool
+summary: Unofficial macOS AU, VST3 and standalone plug-ins that run the Model:Cycles sound engine, translated ahead of time to C from the Model:Cycles OS 1.13 file you supply, with eight tracks, a polyphonic voice plug-in and a delay and reverb effect.
+description: >-
+  Three plug-ins share one engine. CyclesEmu is an eight-track instrument with
+  per-track machine, filter, two LFOs and mixer controls, CyclesVoice plays one
+  sound on up to eight voices, and CyclesFX is the delay and reverb as an audio
+  effect. The sound code of the OS file is translated to C by a script in the
+  repository, and the author reports that it matches the digiemu emulator bit for
+  bit on replayed blocks. Optional Syntakt machines can be added through
+  Modded-Cycles from a Syntakt OS file you also supply. The plug-ins add
+  alternative delay and reverb engines, kits and presets of their own. No
+  firmware is included, and the .gitignore keeps firmware and the data derived
+  from it out of the repository. Building takes about an hour of pipeline work
+  and needs Apple silicon, an OS 1.13 .syx file and a particular digiemu commit.
+  The commit messages record AI assistance. The only tag, v1.0, is eight commits
+  behind the main branch.
+status: active
+authors:
+  - name: Jack Herz
+    url: https://github.com/Jackherz
+source: https://github.com/Jackherz/model-cycles-plugin
+source_status: open
+license: proprietary
+license_notes: >-
+  The README says no licence has been chosen for the project's own code, so it
+  is all rights reserved for now. Third-party code in plugin/ThirdParty keeps its
+  own MIT licence files, and the plug-ins use JUCE under its AGPLv3 licence.
+distribution: source-only
+requires_stock: Model:Cycles OS 1.13 (.syx), and Syntakt OS 1.42 for the optional Syntakt machines
+install_notes: >-
+  Supply your own firmware files and follow the build steps in the README: run
+  the firmware pipeline script, copy the dumped state to
+  ~/Library/Application Support/CyclesEmu/state, translate the render and build
+  with CMake. The plug-ins install to ~/Library/Audio/Plug-Ins and stay silent
+  without the state files. Nothing is written to a Model:Cycles.
+brick_risk: false
+tags: [emulator, au, vst3, synth-engine, research]
+versions:
+  - version: v1.0
+    date: 2026-10-24
+    url: https://github.com/Jackherz/model-cycles-plugin/tree/v1.0
+    notes: Git tag; no GitHub release page.

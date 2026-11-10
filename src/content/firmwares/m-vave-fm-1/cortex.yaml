@@ -10,7 +10,8 @@ description: >-
   Three FM voices (pad, bells and bass), each with five modulators, play chords that develop by themselves from power-on,
   and every knob can be played or randomised. A reel of tape records the output and plays it back, with its source
   switchable to USB audio from the computer. Songs come in from MIDI files into slots, DX7 banks are sent over USB, and
-  a video synth on the screen moves with the music and colours the other pages. The engine is the six-operator core
+  a video synth on the screen moves with the music and colours the other pages. Each voice has a Moog-style low-pass filter
+  page, and Tom, a cartoon cat, walks across the header and explains pages and knobs. The engine is the six-operator core
   of Dexed as carried by JIANT FM, on top of AMB-1's generative code, and the project has a browser simulator, an install
   page, an English manual and a Portuguese one. The installer offers m-bootloader as an option.
 status: active
@@ -29,7 +30,7 @@ homepage: https://guiatihe333.github.io/cortex/
 based_on: m-vave-fm-1/amb-1
 distribution: browser-installer
 install_notes: >-
-  Use the install page, The Firmware Hub, M-UPGRADE or base/tools/fm1_install.py with firmware/cortex-1.5.15.fwsc from the
+  Use the install page, The Firmware Hub, M-UPGRADE or base/tools/fm1_install.py with firmware/cortex-1.5.20.fwsc from the
   repository; there are no release pages. The install page can also write Julius Vitkauskas's m-bootloader after the
   firmware, which replaces M-VAVE's bootloader and adds a menu whose wipe option erases saved data. The README says
   firmware is installed at your own risk, holding OCT- and OCT+ for five seconds gives update mode, and
@@ -43,7 +44,7 @@ image:
   source_url: https://github.com/guiatihe333/cortex
   first_party: true
 versions:
-- version: main @ 5e8dc75
-  date: 2026-11-08
-  url: https://github.com/guiatihe333/cortex/commit/5e8dc753ef0fdbffcf97933eaec52be864bb4782
-  notes: No tagged releases; this is the latest commit, which commits the 1.5.15 package.
+- version: main @ 885b13a
+  date: 2026-11-10
+  url: https://github.com/guiatihe333/cortex/commit/885b13a993b2fb02b0ece7d48032d4d7001f26ce
+  notes: No tagged releases; this is the latest commit, which commits the 1.5.20 package beside 1.5.15. Versions 1.5.16 to 1.5.19 add Tom, a cat that crosses the screen and explains pages and knobs, and fix a key's note that could hang; 1.5.20 shows ADSR times and adds a Moog-style low-pass filter page on each voice and new video synth looks.

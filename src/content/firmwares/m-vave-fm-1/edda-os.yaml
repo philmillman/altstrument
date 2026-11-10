@@ -5,14 +5,16 @@ summary: >-
   chord and filter additions, a tempo that matches the decks, tempo bend and sequencer MIDI out with clock.
 description: >-
   Built for the author's live performance of an album, with the album's songs loadable and cued from the keys, a
-  Camelot-wheel key lock, a bank of rhythm patterns and a hard stop that re-enters on the one. Version 1.7.0-EDDA
-  merges Felucca 1.7.0 (EDDA OS 1.1.5 was built on Felucca 1.1.5.1). It counts tempo at the FM-1's real sample rate
+  Camelot-wheel key lock, a bank of rhythm patterns and a hard stop that re-enters on the one. Version 1.7.4-EDDA
+  merges Felucca 1.7.0 and Felucca 1.8's flash and FM6 fixes (EDDA OS 1.1.5 was built on Felucca 1.1.5.1). It counts tempo at the FM-1's real sample rate
   and adds a TEMPO BEND on GLO with G#4 or A#4 that slows or speeds the set by about 4 percent. Other additions are
   user drum kits of 16 WAV pads built from the web editor, a fourth user sample slot, CHORD+ with voice leading and
   strum, a one-knob DJ filter per track, dotted delay times, a sequencer output on USB MIDI with clock and show cues.
   To fit the app slot, the device build leaves out the twelve visualisers, the USB serial console and 48 kHz USB
   audio; the browser emulator keeps the visualisers. The author's guide says the host tests pass and the package
-  compiles with JieLi's toolchain on GitHub, and that it had not yet been flashed onto an FM-1. Projects stay in
+  compiles with JieLi's toolchain on GitHub, and that 1.7.1 was installed on one FM-1 on 9 November 2026 and
+  played its songs. Version 1.7.1 also accepts the newer UC25HQ80 flash chip, which the author had not seen tried on
+  a unit that carries it. Since 1.7.2 the power-on screen shows the artist's own credit lockup and waits for a key press. Projects stay in
   Felucca's own format and EDDA OS 1.1.5's projects open.
 status: active
 authors:
@@ -28,14 +30,15 @@ homepage: https://github.com/mrsheez/felucca/blob/main/EDDA-OS.md
 distribution: source-only
 install_notes: >-
   The guide recommends a single HTML installer with the package inside, opened in Chrome or Edge with the FM-1 on
-  USB (EDDA-OS-Installer-1.7.0.html); web/make_site.py --onefile makes it from a built package, and main holds no
+  USB (EDDA-OS-Installer-1.7.4.html); web/make_site.py --onefile makes it from a built package, and main holds no
   built copy. EDDA-OS.md also describes letting GitHub Actions build the package and publish an installer page from
   your own fork, or building with WSL2 on Windows and installing with tools/fm1_install.py. The CI writes its latest package to the ci-out branch. The installer's Return
-  to official V15 and Felucca's own installer go back; the guide says installing is at your own risk.
+  to official V15 and Felucca's own installer go back on a V15 unit; the guide says a V16 unit cannot go back to stock from this
+  firmware yet and that installing is at your own risk.
 brick_risk: false
 tags: [performance, sequencer, sampler, midi, fork, editor, ui]
 versions:
-- version: main @ 7300323
-  date: 2026-10-30
-  url: https://github.com/mrsheez/felucca/commit/73003234f08f346dfec2d5f20246c1be3efb5fb3
-  notes: No tagged releases; this is the latest commit, labelled 1.7.0-EDDA in the guide.
+- version: main @ ccd853d
+  date: 2026-11-09
+  url: https://github.com/mrsheez/Felucca/commit/ccd853de23bc3ce58f584c6f55e1350d113430c3
+  notes: No tagged releases; this is the latest commit, labelled 1.7.4-EDDA in the guide.

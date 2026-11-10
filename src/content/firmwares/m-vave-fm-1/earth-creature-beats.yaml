@@ -4,11 +4,11 @@ kind: firmware
 summary: >-
   Five-part groovebox: a four-voice polysynth, a sample drum machine with eight kits, 808 and synth basses, a slicer and a four-track sequencer with patterns, scenes and a song chain.
 description: >-
-  Each part is called a creature and has its own button: OTTER the synth with 64 presets, CAT the drum kit, FOX the bass and 808 bank, HOPPER
+  Each part is called a creature and has its own button: OTTER the synth with 76 presets and a filter page with type, LFO shape and a warm high cut, CAT the drum kit, FOX the bass and 808 bank, HOPPER
   the slicer that can use the user's own samples, and BEAVER the sequencer of four tracks with 32 steps, probability, ratchets, parameter locks, polymeter, eight patterns, a 16-slot
   chain and a song builder. A home screen shows all five, a mixer holds levels, pans, effects and a master section, and eight scenes store pattern, preset, kit and mix, with a reverb bus and per-creature sends. USB audio goes out at full level whatever MASTER is set to.
   Generators write a groove on all tracks in one press. The factory samples are synthesised by scripts in the repository and released as CC0.
-  The build is on fm1-base. The author flashes one of two units and the other stays stock, and the README has no hardware test report beyond the simulator audit.
+  The build is on fm1-base. The author flashes one of two units and the other stays stock, and the README has no hardware test report beyond the simulator audit, and the changelog marks Build 12 as not flashed yet.
   The repository belongs to Sin Fetish Audio and also holds a second firmware, Alien Stack, and a console for simulating, measuring and flashing.
 status: active
 authors:
@@ -28,7 +28,7 @@ install_notes: >-
 brick_risk: false
 tags: [groovebox, sequencer, drums, sampler, synth-engine, generative]
 versions:
-- version: main @ 873b5a0
-  date: 2026-11-09
-  url: https://github.com/SoulandCode69/sfa-fm1/commit/873b5a0f832d2cccd9ed4b30e009f33f3f170f76
-  notes: No tagged releases; this is the latest commit. Since the previous row, ECB build 10 adds a reverb bus with sends, a deeper Beaver and USB audio at full level, and build 11 adds a declick pass, ramped mixer gains and a song builder. The other commits add the second firmware and the console.
+- version: main @ caeb00a
+  date: 2026-11-10
+  url: https://github.com/SoulandCode69/sfa-fm1/commit/caeb00a90a93fcd54ddc540809c14728b8c49b7a
+  notes: No tagged releases; this is the latest commit. ECB build 11 added a declick pass, ramped mixer gains and a song builder, and build 12, which the changelog marks as not flashed yet, gives Otter a sixth FILTER+ page and twelve more presets, 76 in all. The other commits are to the console and the second firmware.

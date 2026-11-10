@@ -7,8 +7,10 @@ description: >-
   Each track keeps its own MIDI receive channel, and tracks may share one. Routing is 1-4, 1-6 or the selected track. One
   incoming controller can move several parameters on different tracks at once. The browser emulator can load a JIANT backup file
   to audition saved sounds without touching a unit. The README calls this a development fork, not an official JIANT release, says
-  the host tests and firmware build pass, and says it has not run on a physical FM-1; there is no installer for it,
-  and JIANT's installer must not be used. The manual and editor it links belong to JIANT.
+  the host tests and firmware build pass, and says the maintainer has flashed it to a physical FM-1 without testing
+  features, persistence, MIDI behavior or long-term reliability. The project site has a browser emulator, a
+  USB-MIDI installer for this fork and an editor, and JIANT's installer must not be used. The manual it links is
+  inherited from JIANT and does not cover every new control.
 status: active
 authors:
 - name: Misha Mashina (MishaMashinaMM)
@@ -18,11 +20,13 @@ source_status: open
 license: GPL-3.0-only
 license_notes: >-
   README and LICENSING.md give GPL-3.0-only, as JIANT and Felucca, with upstream credits kept in the file headers.
-homepage: https://mishamashinamm.github.io/jiant-live/emu/
-distribution: source-only
+homepage: https://mishamashinamm.github.io/jiant-live/
+distribution: browser-installer
 install_notes: >-
-  No installer is published. Build as BUILDING.md describes and back up the FM-1 first. The README warns against
-  using JIANT's installer for this fork.
+  The project site's installer sends the package built from the repository's current main commit over USB-MIDI in a
+  supported browser; the README calls it experimental and says no complete recovery procedure is documented, so back
+  up the FM-1 and prepare a recovery method first. It can also be built as BUILDING.md describes. The README warns
+  against using JIANT's installer for this fork.
 brick_risk: false
 tags: [midi, performance, drums, synth-engine, emulator, fork]
 image:
@@ -32,7 +36,7 @@ image:
   source_url: https://github.com/MishaMashinaMM/jiant-live
   first_party: true
 versions:
-- version: main @ b19e80c
-  date: 2026-11-05
-  url: https://github.com/MishaMashinaMM/jiant-live/commit/b19e80c9a1344ff49ab2e92259cf86516d77b4ab
+- version: main @ e04c439
+  date: 2026-11-09
+  url: https://github.com/MishaMashinaMM/jiant-live/commit/e04c4395bfc3f977184132867c0dec360feb9f73
   notes: No tagged releases; this is the latest commit.

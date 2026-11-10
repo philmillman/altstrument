@@ -1,0 +1,46 @@
+device: m-vave-fm-1
+name: QUARTET
+summary: >-
+  Four-track groovebox that plays like a four-piece band: lead, pad, bass and drums with 40 sounds, ten drum kits, five
+  stompbox-style effect pedals, an arpeggiator, step and live recording and a song sequencer.
+description: >-
+  Each track has ten patterns of 16 to 64 steps with swing, and the lead and pad tracks have four voices each. Sounds come
+  from a two-oscillator synth with a resonant filter, envelope and LFO, covering piano, brass, Hammond, theremin, strings,
+  choir, handpan and several basses, and the ten synthesized drum kits range from Rock and Hip-Hop to CR-78, LM-1, 606, 808
+  and 909 styles, with no samples. The pedals (reverb, delay, distortion, chorus, phaser) are drawn as stompboxes on screen.
+  SUPER SEQ chains each track's patterns into ten songs, four save slots hold whole sessions and the current work is kept
+  across power-off. The platform layer comes from Dinghy. The README says QUARTET has been made only for the FM-1; the
+  SMK-37 board code inherited from Dinghy is untested.
+status: active
+authors:
+- name: MammothCheese
+  url: https://github.com/MammothCheese
+source: https://github.com/MammothCheese/quartet
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md and the README state GPL-3.0-only. The platform parts carry the copyright of Leo Kuroshita, genkigenki and
+  others as listed in LICENSING.md.
+based_on: m-vave-fm-1/dinghy
+distribution: download
+install_notes: >-
+  Install quartet-X.Y.fwsc from the release with M-Flasher, after backing up the whole flash, or with tools/fm1_install.py
+  over USB-MIDI. The unit then reports itself as FM-1_988. To go back, restore the M-Flasher backup or install M-VAVE's
+  official firmware; songs sit in flash areas the stock firmware uses for presets, so without a backup the stock presets may
+  need System, Reset Patches. Holding OCT- while switching on starts a USB rescue mode.
+brick_risk: false
+tags: [groovebox, synth-engine, sequencer, drums, fx, arpeggiator, looper, fork]
+image:
+  url: https://raw.githubusercontent.com/MammothCheese/quartet/main/docs/overhaul_mockup.png
+  alt: Ten QUARTET screens in a grid, including sequencer grids, a piano roll, orange, blue and teal effect pedal pages, a four-fader mixer and a startup screen with four stompbox faces
+  credit: MammothCheese
+  source_url: https://github.com/MammothCheese/quartet
+  first_party: true
+versions:
+- version: '1.1'
+  date: 2026-11-10
+  url: https://github.com/MammothCheese/quartet/releases/tag/v1.1
+- version: '1.0'
+  date: 2026-11-10
+  url: https://github.com/MammothCheese/quartet/releases/tag/v1.0
+  notes: First release.

@@ -1,0 +1,39 @@
+device: erica-synths-perkons-hd-01
+name: Pērkons mods
+summary: Firmware mods for the Pērkons that add voice engines, including a chord voice and a step sampler, plus a reverb, a freeze, four MIDI-only tracks and per-voice LFOs, applied to the official 1.3.0 image.
+description: >-
+  One folder per mod, applied to Erica Synths' official 1.3.0 image with the Mod Matrix from the perkons-re
+  framework (listed separately). Voice-map lets any voice run any engine, chosen per kit, and three custom engines
+  build on it: Zibens, a scale-locked synth voice, Akords, a chord voice with progressions and presets, and a step
+  sampler streamed from the SD card. Other mods replace the BBD delay with a reverb, turn the FX switch into a
+  freeze, add four more MIDI-only sequencer tracks, give held voices their own LFO and store tempo per pattern. The
+  author calls the work experimental and unofficial. No Erica Synths firmware is in the repository.
+status: active
+authors:
+  - name: Will Baker
+    url: https://github.com/kiteless
+source: https://github.com/kiteless/perkons-re-mods
+source_status: open
+license: MIT
+license_notes: >-
+  The MIT License covers the mods' own code and documentation. Erica Synths' firmware is not included.
+based_on: erica-synths-perkons-hd-01/perkons-re
+distribution: patch-your-own
+requires_stock: Official Pērkons firmware 1.3.0 (perkons_v1.3.0-0-force.img)
+install_notes: >-
+  Build an image with the perkons-re Mod Matrix (see that entry): tick these mods, press Patch It, copy the new
+  image to the root of the SD card as the only .img file, power off, hold all four voice trigger keys and power on.
+  INFO.TXT then shows a tag after the version. To go back, install the official image the same way. Each mod's
+  folder has a README on how to use it.
+brick_risk: false
+tags: [synth-engine, chords, sampler, reverb, sequencer, lfo, open-source]
+versions:
+  - version: "0.3"
+    date: 2026-11-03
+    url: https://github.com/kiteless/perkons-re-mods/releases/tag/v0.3
+  - version: "0.2"
+    date: 2026-10-31
+    url: https://github.com/kiteless/perkons-re-mods/releases/tag/v0.2
+  - version: "0.1"
+    date: 2026-10-27
+    url: https://github.com/kiteless/perkons-re-mods/releases/tag/v0.1

@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: TeenTaal
+summary: >-
+  Indian classical practice firmware with a physically modelled tanpura, tabla playing ten taals at 20 to 600 matras a minute, and a reference tone on any swara.
+description: >-
+  Made for practising with a bansuri, voice or another instrument, on one screen. The tanpura models four strings with the jawari buzz, a plucking cycle and a tunable Sa and reference pitch. The tabla plays recorded strokes
+  through a taal engine with Teentaal, Ektaal, Jhaptaal, Rupak, Keherwa, Dadra, Jhoomra, Deepchandi, Dhamar and Chautaal, shows the matra, sam and khali, and new taals can be added with a small text file. The reference tone is a
+  sine on any swara over three octaves. SAVE keeps the settings. The README says the firmware was written by an AI coding assistant under the author's direction and has been tested only in emulators, not on a real FM-1. The documentation
+  is in English and Italian. The tabla recordings come from a CC0 Freesound pack.
+status: active
+authors:
+- name: ElectroNick
+  url: https://github.com/ELENICK97
+source: https://github.com/ELENICK97/TeenTaal-FM1
+source_status: open
+license: Apache-2.0
+license_notes: >-
+  The NOTICE file must be kept and the author credited. The platform layer under platform/ is fm1-base and felucca-bsp (MPL-2.0), and the repository vendors the fm1-base web installer's m-bootloader image, not an M-VAVE stock file.
+based_on: m-vave-fm-1/fm1-base
+distribution: download
+requires_stock: V15
+install_notes: >-
+  Download teentaal-1.0.fwsc from the release, check its SHA-256 against the release notes and install it with fm1-base's Python installer, platform/fm1-base/tools/fm1_install.py. It writes only the application area and leaves
+  M-VAVE's bootloader alone, so M-UPGRADE with the V15 file returns the unit to stock. The README advises restoring official V15 before moving from another unofficial firmware. The browser installer page is not online yet.
+brick_risk: false
+tags: [tanpura, tabla, drone, sequencer, practice, physical-modelling, reference-tone]
+image:
+  url: https://raw.githubusercontent.com/ELENICK97/TeenTaal-FM1/main/docs/img/screen.png
+  alt: "TeenTaal main screen: Sa A3 and tanpura A2 at the top, the taal Teentaal at 120 per minute, beat 10 of 16 in blue, a row of beat boxes marked X, 2, 0 and 3, and TANPURA and TONE switched ON"
+  credit: ElectroNick
+  source_url: https://github.com/ELENICK97/TeenTaal-FM1
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-09
+  url: https://github.com/ELENICK97/TeenTaal-FM1/releases/tag/v1.0
+  notes: First release; package teentaal-1.0.fwsc.

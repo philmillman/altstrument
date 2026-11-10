@@ -1,0 +1,51 @@
+device: kurzweil-1000-gx
+name: K1000 Studio
+kind: tool
+summary: Windows tool that turns WAV files into wave ROM images and a matching SETUP image for the 1000 GX, adding up to 33 new patches while the factory sounds stay; not yet tested on a real unit.
+description: >-
+  Kurzweil's data is not included. The tool asks for the user's own dumps of the
+  two GX SETUP chips (V2.5), converts dropped-in WAV files of any bit depth to
+  12-bit samples at 30, 15 or 7.5 kHz, lets the user trim, loop and set a root
+  note per sample, and writes chip images for the two empty wave ROM banks
+  together with a new SETUP that appends the sounds as patches 160 to 192
+  without moving any factory byte. It re-reads the images it built to check
+  them and can call minipro to program the chips on an XGecu T48. At 30 kHz the
+  two free banks hold about 69 seconds of sound. The repository has a write-up
+  of the wave ROM and SETUP formats, worked out from the factory data and
+  firmware. The author says it has not been played on real hardware yet and
+  that the first chip burn is next. The PX Plus, SX and HX SETUP versions are
+  not supported, and reaching the new patches from the front panel is
+  unconfirmed. The author credits Claude for part of the work.
+status: active
+authors:
+  - name: JunkSmithWizard (yuyoi)
+    url: https://github.com/yuyoi
+source: https://github.com/yuyoi/Kurzweil-1000-Rosetta
+source_status: open
+license: MIT
+license_notes: >-
+  The README says no Kurzweil ROM data is included and that ROMs built with it
+  are for the builder's own unit.
+homepage: https://yuyoi.github.io/Kurzweil-1000-Rosetta/
+distribution: source-only
+requires_stock: SETUP V2.5 (U22 and U33 chips)
+install_notes: >-
+  Runs on Windows with Python 3.10 or newer, PySide6, numpy and sounddevice.
+  Needs a chip programmer and minipro, six W27C040 chips for the two empty wave
+  ROM banks and two W27C512 chips for the new SETUP, with the stock jumpers
+  unchanged. The new SETUP replaces U22 and U33 inside the case and has to match
+  the wave ROMs fitted. Keep the original SETUP chips, which are the way back
+  to the stock unit.
+brick_risk: true
+tags: [sampler, converter, patch, hardware, python]
+image:
+  url: https://raw.githubusercontent.com/yuyoi/Kurzweil-1000-Rosetta/main/docs/img/k1000studio.png
+  alt: K1000 Studio window in a dark green theme with a patch list at left, a decaying green waveform in the middle, chip build and burn buttons at right and name, root and rate fields below
+  credit: JunkSmithWizard (yuyoi)
+  source_url: https://github.com/yuyoi/Kurzweil-1000-Rosetta#readme
+  first_party: true
+versions:
+  - version: main @ d508c72
+    date: 2026-11-10
+    url: https://github.com/yuyoi/Kurzweil-1000-Rosetta/commit/d508c725d2501b002ffd4a1c528ccf88cbe72c2e
+    notes: No tagged releases; this is the latest commit.

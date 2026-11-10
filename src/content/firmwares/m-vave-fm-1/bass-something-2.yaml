@@ -2,7 +2,7 @@ device: m-vave-fm-1
 name: Bass Something 2
 summary: >-
   Bass Station II-style monosynth with arpeggiator, sequencer, effects and patch SysEx, plus from 0.7 Drum Something, a
-  13-voice Drumtraks-style drum machine, a RemoteFM1 iOS build and remote pages for Cyma Forma's RND Synth.
+  13-voice Drumtraks-style drum machine, from 0.8 an electric piano and a tape echo, a RemoteFM1 iOS build and remote pages for Cyma Forma's RND Synth.
 description: >-
   Each page draws a section of the Bass Station II panel with its knobs, switches and LEDs, with the extras the original
   lacks on separate plates. The voice has the BS2's LFO routing, envelope triggering modes, oscillator filter mod,
@@ -11,10 +11,12 @@ description: >-
   over SysEx. From 0.4 a HOME page draws the whole panel at once, and three RND pages control Cyma Forma's RND Synth
   (firmware 1.4) over the FM-1's MIDI: seeds and locks, patch type, tracks, root, octave and scale, and a four-track mixer.
   From 0.7 a second instrument, Drum Something, runs beside the bass: thirteen synthesized drum voices with their own
-  volume and tuning, patterns and songs of up to 99 steps, and drum MIDI out, with HOME switching between the two. Releases also include a build in the .rfm1 format for Quixotic7's RemoteFM1 on iPhone and iPad.
+  volume and tuning, patterns and songs of up to 99 steps, and drum MIDI out, with HOME switching between the two. From 0.8 the unit also holds Piano Something 368X, an electric piano, and Space
+  Something 201, a tape echo with a spring reverb that every instrument sends into; from 0.8.1 the sound can also play
+  through Bluetooth headphones or a speaker. Releases also include a build in the .rfm1 format for Quixotic7's RemoteFM1 on iPhone and iPad.
   The author says parts of the arpeggiator and sequencer follow the Bass Station II user guide and have not been
   compared with a real unit. Releases 0.1 and 0.2 shipped a factory bank taken from a third-party patch pack, which 0.3
-  replaces with its own patches. It builds on fm1-base and needs two platform patches that are open as upstream pull
+  replaces with its own patches. It builds on fm1-base and needs local platform patches, two of them open as upstream pull
   requests.
 status: active
 authors:
@@ -41,6 +43,14 @@ image:
   source_url: https://github.com/imijes/bass-something-2/blob/main/docs/MANUAL.md
   first_party: true
 versions:
+- version: 0.8.1
+  date: 2026-11-10
+  url: https://github.com/imijes/bass-something-2/releases/tag/v0.8.1
+  notes: Adds Bluetooth audio to headphones or a speaker, with device search and forget, on a new Bluetooth stack that allows one Bluetooth MIDI link at a time and needs PROX calibrated again. The echo, spring reverb and drum room move to the second core, which drops the first core's load with everything running from about 89 to 64 percent. Button lights glow dimly where they do something.
+- version: '0.8'
+  date: 2026-11-10
+  url: https://github.com/imijes/bass-something-2/releases/tag/v0.8
+  notes: Adds Piano Something 368X, an electric piano on the second core, and Space Something 201, a tape echo with a spring reverb that every instrument sends into, a drum room, a motion recorder for knob moves, PROX (a Bluetooth device's distance turns one knob), 128 named patches, pitch bend, mod wheel and aftertouch, a USB host mode and six-channel USB audio. The package identity changes to FM-1_69XXYYZZ and the first-boot demo is removed.
 - version: 0.7.2
   date: 2026-11-06
   url: https://github.com/imijes/bass-something-2/releases/tag/v0.7.2

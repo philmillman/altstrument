@@ -1,0 +1,46 @@
+device: m-vave-tank-mini
+name: Tank Mini for Mac
+kind: tool
+summary: Native macOS editor for the Tank Mini that edits and saves its 21 presets over USB MIDI, reorders the six effect blocks, includes a tuner and builds a combined audio device, plus a read-only command-line tool.
+description: >-
+  A SwiftUI app built on a reverse-engineered SysEx protocol. It lists the 21
+  presets and follows the pedal's footswitches. Each preset shows as a signal
+  chain of six blocks that can be switched and reordered, with a model choice and
+  knobs per block. Edits go to the pedal's live buffer, and memory is written only
+  on Save. The app notes which real amp or cabinet each model appears to be
+  based on, marked as likely or possible. It also has a tuner, bypass, import and
+  export of .tkm presets and .atkm banks, and a one-click combined USB audio
+  device, since macOS lists the pedal's input and output as two separate devices.
+  Automatic backups of all presets are copied when the app finds them changed. The
+  erase command, factory reset and amp or IR model upload are not implemented.
+  The author tested it with one pedal on firmware TANK MINI_008 and lists saving
+  to the pedal's memory as not yet verified end to end. The interface is in
+  English and Brazilian Portuguese. The repository also builds tankctl, a
+  read-only command-line tool.
+status: active
+authors:
+  - name: Pedro Seibel
+    url: https://github.com/pedroseibel
+source: https://github.com/pedroseibel/tank-mini-mac
+source_status: open
+license: MIT
+distribution: source-only
+requires_stock: TANK MINI_008
+install_notes: >-
+  Needs macOS 14 or later and the Xcode Command Line Tools. Run make-app.sh to
+  build dist/Tank Mini.app and dist/tankctl. The app starts with sample data when
+  given the --demo flag. It never touches the pedal's firmware, and a bad preset
+  write is undone by restoring the automatic backup or the pedal's stock presets.
+brick_risk: false
+tags: [editor, usb-midi, midi, sysex, presets, librarian, research, cli, macos]
+image:
+  url: https://raw.githubusercontent.com/pedroseibel/tank-mini-mac/main/screenshots/main-light.png
+  alt: Tank Mini for Mac in light mode with preset banks 1 to 5 listed at left, a signal chain of six blocks across the top with Amp selected, and five knobs below showing gain, level, bass, mid and treble
+  credit: Pedro Seibel
+  source_url: https://github.com/pedroseibel/tank-mini-mac#readme
+  first_party: true
+versions:
+  - version: main @ 12d5346
+    date: 2026-11-10
+    url: https://github.com/pedroseibel/tank-mini-mac/commit/12d5346f5440161d5d35d85898256b3ccebda06d
+    notes: No tagged releases; this is the latest commit.

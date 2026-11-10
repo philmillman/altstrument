@@ -4,7 +4,7 @@ summary: >-
   Ear-training game for the FM-1, a Melodee fork: hear a short C major or A minor phrase, then play the hidden notes on the keys, with scoring and extra practice on missed degrees.
 description: >-
   Rights warning: the repository vendors the whole Melodee source tree, which includes the Casio CZ-1 factory tones and the Sequential Prophet-5/10 factory programs as SysEx sound data; Melodee's licensing file says the rights to them stay with Casio and Sequential. It is not checked whether the Ear Trainer package compiles them in.
-  Holding HOME and tapping PLAY opens the game. Each question plays one to four notes on the factory TINE EP sound, with a chosen number of the last notes hidden, and the player repeats them in order; the keys and display light the notes that are known, and wrong answers replay the same question. Settings cover the scale, the number of notes, how many are hidden and the gap between onsets. Scores weight later questions toward the scale degrees that were missed, and nothing is kept after a restart. Entering the game replaces track 1's in-memory sound with TINE EP. A browser emulator and a web installer are published with it. The author calls the release a development candidate and reports it installed and working on one FM-1 from V15 and from another firmware; the two flash-chip revisions and audio timing under load are not checked on hardware.
+  Holding HOME and tapping PLAY opens the game. Each question plays one to four notes on the factory TINE EP sound by default (0.0.13 lets PRESETS pick other sounds), with a chosen number of the last notes hidden, and the player repeats them in order; the keys and display light the notes that are known, and wrong answers replay the same question. Settings cover the scale, the number of notes, how many are hidden and the gap between onsets. Scores weight later questions toward the scale degrees that were missed, and the game settings are saved while scores and practice weights are not. Entering the game replaces track 1's in-memory sound with TINE EP. A browser emulator and a web installer are published with it. The author calls the release a development candidate and reported 0.0.8 installed and working on one FM-1 from V15 and from another firmware, while 0.0.13 is untested on hardware; the two flash-chip revisions and audio timing under load are not checked on hardware.
 status: active
 authors:
 - name: copych
@@ -21,6 +21,10 @@ install_notes: >-
 brick_risk: false
 tags: [game, synth-engine, fork, emulator, web]
 versions:
+- version: 0.0.13
+  date: 2026-11-10
+  url: https://github.com/copych/FM1-Ear-Trainer/releases/tag/v0.0.13
+  notes: Pre-release, a development build. Reworks the game screen into four knob zones with note cards and score, plays C major and A minor with one to four notes and a separate hidden-note count, adds octave and full-keyboard ranges, sustained polyphonic playback and PRESETS that pick from 24 FM6 sounds and 200 Prophet programs. Game settings are saved; scores stay per session. The notes say it has not been tested on hardware, though 0.0.8 passed the owner's install, training and exit tests.
 - version: 0.0.8
   date: 2026-11-09
   url: https://github.com/copych/FM1-Ear-Trainer/releases/tag/v0.0.8

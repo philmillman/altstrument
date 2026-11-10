@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: XENOLITH
+summary: >-
+  Experimental cell-based FM synthesizer with up to 64 paired oscillator cells joined in parallel, serial, branching and feedback routings, up to eight-note paraphony, sequencing, a multimode filter and a stereo reverb.
+description: >-
+  Cells are connected by the player, with a choice of FM laws, modulation generators, a sequencer, MIDI note and clock input, a multimode filter, a VCA, a wavefolder, sample-rate and bit-depth reduction and a reverb. A load model
+  mimics voltage sag and shrinks resource use under stress, and a screen-reader dictionary is kept in the repository. The synthesis comes from the author's own SuperCollider design, built on fm1-base. The repository includes
+  the firmware package, a Windows updater with its checksums, a build adapter and a long operator's manual, and says the bundled package was rebuilt byte for byte from the exported source. The README says the newer UC25HQ80 flash chip is recognised
+  but untested, and that no Firmware Hub listing is claimed.
+status: active
+authors:
+- name: Unit_v743
+  url: https://github.com/CaptainChronosis
+source: https://github.com/CaptainChronosis/XENOLITH
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The README and app/THIRD_PARTY.md call the combined instrument GPL-3.0-or-later, taking the later-version option of the SuperCollider-derived LFNoise2 code (GPL-2.0-or-later); the LICENSE file is the GPL-3.0 text. Wrapper files from
+  Charles Vestal's template stay MPL-2.0, the VT323 font is SIL OFL 1.1 and three packaging files come from JieLi's Apache-2.0 SDK.
+based_on: m-vave-fm-1/fm1-base
+distribution: download
+install_notes: >-
+  Download XENOLITH1.fwsc, or on Windows the updater ZIP, which needs Python 3.12 and its py launcher and runs Setup updater.bat once and then Update.bat. It asks before writing and resumes if stopped in update mode. The installer does not
+  include M-VAVE's rescue tools, and INSTALL.md points to the Firmware Hub's rescue page. Other firmware may erase saved patches.
+brick_risk: false
+tags: [synth-engine, fm, paraphonic, sequencer, filter, fx, reverb, midi]
+image:
+  url: https://raw.githubusercontent.com/CaptainChronosis/XENOLITH/main/docs/card.png
+  alt: "XENOLITH boot emblem: the name in large red pixel lettering with a shadow on a black square, an XX29 tag at the top right and a small diamond marker with a yellow dot below"
+  credit: CaptainChronosis
+  source_url: https://github.com/CaptainChronosis/XENOLITH
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-10
+  url: https://github.com/CaptainChronosis/XENOLITH/releases/tag/v1.0
+  notes: First release; the package XENOLITH1.fwsc carries identity FM-1_29000.

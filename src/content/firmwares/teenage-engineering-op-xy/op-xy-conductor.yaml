@@ -12,8 +12,8 @@ description: >-
   lanes to tracks, and the project saves the lanes, roles, routes and seed. Presets are init, Pop, Night and Jazz.
 
   The README calls it experimental and says it runs on an OP-XY on OS 1.2.1 with a development build of the SDK. The SDK
-  changes it needs (notes played on other tracks, the machine's own encoders and sixteen display words) were not on
-  the SDK's main line when the repository was written, and the README links the Open-XY pull requests that carry them. It says Conductor is not in the Open-XY catalog or builder, so it is built from source. The README reports timing measured
+  changes it needs (notes played on other tracks, the machine's own encoders and sixteen display words) were merged
+  into Open-XY's staging branch on 10 November 2026, and the README now targets SDK 1.11. It says Conductor is not in the Open-XY catalog or builder, so it is built from source. The README reports timing measured
   against a recording of the device, with notes starting up to 17 ms late, one display tick. It adds that roles are set by hand per lane, that lanes cover instrument tracks 1 to 8 only and that it has no MIDI
   routing of its own. Found Motive's kit 031 for the OP-XY lists a Conductor by the same author. This repository does not
   mention the kit and the kit publishes no source, so they are probably the same sequencer, which is not confirmed.
@@ -31,8 +31,8 @@ homepage: https://github.com/mmockett/OP-XY-Conductor#readme
 distribution: source-only
 requires_stock: "1.2.1"
 install_notes: >-
-  Needs the Open-XY SDK with the changes the README lists, which sit on the author's fork branch sdk/control-notes until
-  they are merged, and the SDK's toolchain. Build with sdk.py against your own stock 1.2.1 os.ldr, then install the
+  Needs Open-XY SDK 1.11, which carries the track-control notes and encoder changes the README links (pull request 378,
+  merged into the staging branch), and the SDK's toolchain. Build with sdk.py against your own stock 1.2.1 os.ldr, then install the
   build's candidate files as the SDK's build guide describes, which ends with writing the OS from the device's boot
   menu. The SDK's authors say a faulty image may not be recoverable, and the stock update restores the original. On
   track 12, Shift and M1 opens the engine list, where you choose Conductor.
@@ -46,7 +46,7 @@ image:
   source_url: https://github.com/mmockett/OP-XY-Conductor#readme
   first_party: true
 versions:
-  - version: main @ ecf6934
-    date: 2026-11-04
-    url: https://github.com/mmockett/OP-XY-Conductor/commit/ecf6934253e77a2a7afc5c50b714f15fbfd86b73
-    notes: No tagged releases; this is the latest commit.
+  - version: main @ 4506e6b
+    date: 2026-11-10
+    url: https://github.com/mmockett/OP-XY-Conductor/commit/4506e6bca6d43b431d76d2ce875ef8ab5b61d8f8
+    notes: No tagged releases; this is the latest commit, which moves the machine to SDK 1.11 and adds fast encoder turns.

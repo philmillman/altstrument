@@ -2,14 +2,12 @@ device: e103-designs-eurotrack
 name: euroTrack firmware
 summary: Arduino firmware for the euroTrack module that counts bars and beats from a 4 PPQN clock in seven meters, sends a measure pulse every 1 to 16 bars, runs an internal clock and a performance timer, and keeps settings in EEPROM.
 description: >-
-  V4.1 follows an external clock at four pulses per sixteenth note and shows the bar, beat and elapsed time on the
+  V4.2 follows an external clock at four pulses per sixteenth note and shows the bar, beat and elapsed time on the
   OLED, in a bar and beat layout or a larger timer layout. Meters are 4/4, 3/4, 6/8, 5/4, 7/8, 9/8 and 12/8, with
   compound meters shown as rhythmic groups. The measure output pulses on the first bar and then every 1, 2, 4, 8 or
   16 bars, with pulse lengths of 5, 10, 20 or 50 ms. An internal clock from 50 to 250 BPM takes over when the
   external clock stops and the timer is running. The timer can start, pause, resume and stop, and can be coupled to
-  the bar counter. Settings are saved to EEPROM with a checksum. The source comes as a single-file sketch and a
-  modular one with a host-side regression suite. The README calls it an engineering candidate and says only a few
-  hundred bytes of RAM remain free on the ATmega328P.
+  the bar counter. V4.2 adds run-gate control of the timer, a choice of measure output modes and a clock swing setting, and reads V4.0 and V4.1 settings. Settings are saved to EEPROM with a checksum. The current source is a single-file sketch with a host-side regression suite, and the two V4.1 distributions stay in the repository. The README calls V4.2 an engineering release with hardware qualification pending and says about 400 bytes of RAM remain free on the ATmega328P.
 status: active
 authors:
   - name: E103-designs
@@ -24,7 +22,7 @@ homepage: https://github.com/E103-designs/euroTrack#readme
 distribution: source-only
 install_notes: >-
   Install the pinned Arduino AVR core 1.8.6 and the Adafruit SSD1306, GFX and BusIO libraries listed in
-  docs/DEVELOPMENT.md, open one of the two sketch folders in the Arduino IDE and upload it to an Arduino Nano with an
+  docs/DEVELOPMENT.md, open the Eurotrack_V4_2_SingleFile sketch in the Arduino IDE and upload it to an Arduino Nano with an
   ATmega328P at 16 MHz, choosing the old bootloader only if the board needs it. Open only one sketch at a time. The
   repository also holds prebuilt .hex files with SHA-256 sums. Check the hardware revision against the README first;
   an updated schematic PDF dated 2026-10-28 is in hardware/schematics.
@@ -37,7 +35,7 @@ image:
   source_url: https://github.com/E103-designs/euroTrack#readme
   first_party: true
 versions:
-  - version: main @ c729571
-    date: 2026-11-01
-    url: https://github.com/E103-designs/euroTrack/commit/c7295711766e29cd3f4b4492b0d5f5d2bd97c5d4
-    notes: No tagged releases; this is the latest commit. The README lists firmware V4.1, dated 2026-10-20.
+  - version: main @ 3072110
+    date: 2026-11-09
+    url: https://github.com/E103-designs/euroTrack/commit/30721107334e045950ab7aaf3404c521b1a8a3a5
+    notes: No tagged releases; this is the latest commit. The README lists firmware V4.2, dated 2026-11-08.

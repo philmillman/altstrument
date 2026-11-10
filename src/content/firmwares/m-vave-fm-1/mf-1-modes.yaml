@@ -2,7 +2,7 @@ device: m-vave-fm-1
 name: MF-1 Modes
 kind: firmware
 summary: >-
-  One FM-1 firmware that runs the MF-1 emulator's three synth modes, iScream, Almanac and Woof, on fm1-base, each keeping its own settings and chosen by holding a piano key at power-on.
+  One FM-1 firmware that runs the MF-1 emulator's four synth modes, iScream, Almanac, Woof and Phase, on fm1-base, each keeping its own settings and chosen by holding a piano key at power-on.
 description: >-
   The firmware ports the MF-1 emulator's extra modes to the FM-1 as a real app. Until 1.5.0 the repository built iScream on its own;
   it now builds one firmware, fm1-modes, that starts the last mode used and shows a chooser when a piano key is held at
@@ -10,7 +10,7 @@ description: >-
   store. In iScream, flavors are the sounds, with scoops, a cone
   filter and five toppings acting as effects, and it uses only what the FM-1 has, so the flavors export as a standard DX7 bank.
   The engine is a C port of the MF-1 engine, and a parity test checks that it renders the same samples. The README says it has run on one unit, where it boots, plays and has logged no crash, and that CPU
-  load, dropouts and output level have not been measured. No firmware package is attached to a release.
+  load, dropouts and output level have not been measured. Phase, a mode for slowly shifting process music with a ring-shaped score, was added in 1.7.0 and played on hardware at about 31 to 33 frames a second by 1.8.0. No firmware package is attached to a release.
 status: active
 authors:
 - name: Ian Butterworth
@@ -35,7 +35,7 @@ image:
   source_url: https://github.com/IanButterworth/mf-1
   first_party: true
 versions:
-- version: main @ 88118e4
-  date: 2026-11-08
-  url: https://github.com/IanButterworth/mf-1/commit/88118e4219bb81b02c4f110d0540e54a2f6d30e6
-  notes: No firmware package is attached to any release; this is the latest commit that changed the firmware. It replaces the separate iScream, Almanac and Woof firmwares with the one modes firmware, which keeps a settings store for each mode and shares the engine between them.
+- version: main @ b83a7cb
+  date: 2026-11-10
+  url: https://github.com/IanButterworth/mf-1/commit/b83a7cbf53b8cc92dd033f6eb40bbe2ca591c076
+  notes: No firmware package is attached to any release; this is the latest commit that changed the firmware. It adds the idle full-screen score to Phase, the fourth mode, on top of the single modes firmware that keeps a settings store for each mode and shares the engine between them.

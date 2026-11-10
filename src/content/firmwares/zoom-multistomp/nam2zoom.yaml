@@ -22,16 +22,27 @@ license_notes: >-
   repository commits a roughly 16 MB training signal, TRAINING_DI.wav, whose origin was not checked.
 distribution: download
 install_notes: >-
-  Extract the whole portable package from the release into a writable folder and run nam2zoom.exe or open nam2zoom.app.
+  Extract the whole portable package from the release into a writable folder and run nam2zoom.exe or open nam2zoom.app; the first launch needs internet access to download its Python runtime.
   Retraining needs no pedal. Before installing or removing a bank, remove that NAM slot from saved patches and select a
   stock-only patch; the guide says to keep the pedal powered and connected and to follow its recovery steps if a transfer fails.
 brick_risk: false
 tags: [fx, nam, amp-modeler, loader, editor, zd2]
+video:
+  url: https://www.youtube.com/watch?v=bGrUxoQ8vGA
+  title: "How to Use NAM Captures on Zoom MS-50G+ | nam2zoom + sym.bios.is Tutorial"
+  credit: Fretlex
+  first_party: true
+  found_via: https://github.com/freelender/nam-to-zoom/releases/tag/v2.0.1
+  version: v2.0.1
 versions:
+  - version: v2.0.1
+    date: 2026-11-09
+    url: https://github.com/freelender/nam-to-zoom/releases/tag/v2.0.1
+    notes: Redesigned desktop app that retrains NAM captures to 44.1 kHz A2 Lite, with a quality review and a button that opens the sym.bios.is loader. The Build effect page installs up to five captures per effect slot. The Python runtime is downloaded on first launch, and a separate runtime archive is published.
   - version: v1.2.3
     date: 2026-10-14
     url: https://github.com/freelender/nam-to-zoom/releases/tag/v1.2.3
-    notes: Windows x64 and macOS arm64 packages; the default branch has since moved on with a new interface, 44.1 kHz retraining and a direct upload path.
+    notes: Windows x64 and macOS arm64 packages; the default branch then moved on with a new interface, 44.1 kHz retraining and a direct upload path.
   - version: v1.1.1
     date: 2026-10-08
     url: https://github.com/freelender/nam-to-zoom/releases/tag/v1.1.1

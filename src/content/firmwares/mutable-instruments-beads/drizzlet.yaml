@@ -1,6 +1,6 @@
 device: mutable-instruments-beads
 name: Drizzlet
-summary: Beta community build of the released Beads source. Fixes a frozen-delay crash and half-written buffer saves, and adds a three-page options page (Clouds-style reverb, pitch scales, stereo width, limiter), buffer trim and an optional monophonic grain mode.
+summary: Beta community build of the released Beads source. Fixes a frozen-delay crash and unsafe buffer saves, and adds a four-page options page with Clouds-style reverb and diffusion, pitch scales, a Plaits synth, Spectral processing and buffer trim.
 description: >-
   Drizzlet starts from the Beads source published by Mutable Instruments and
   keeps the stock settings layout, so the stock firmware and Drizzlet can read
@@ -12,8 +12,11 @@ description: >-
   control of the wavetable synth. Holding MEDIA and then pressing SEED toggles the original
   monophonic grain code. Beta 1 grows the options page to three pages with a
   Clouds-style reverb, pitch scales, stereo width and delay mode settings, and
-  adds buffer trim. The author says it has been tested only on a single module
-  and calls for testers.
+  adds buffer trim. Beta 2 grows it to four pages and adds adjustable grain
+  diffusion, a six-voice Plaits synth with 24 models, Spectral processing, attack
+  snapping, evolving frozen feedback, scale banks edited in Hygrostat and
+  quieter converter switching. The author says it has been tested only on a
+  single module and calls for testers.
 status: active
 authors:
   - name: Insolent Construct
@@ -39,6 +42,10 @@ install_notes: >-
 brick_risk: true
 tags: [granular, fx, bugfixes]
 versions:
+  - version: drizzlet-2026.11.09
+    date: 2026-11-10
+    url: https://github.com/insolentconstruct/eurorack/releases/tag/drizzlet-2026.11.09
+    notes: Beta 2 "Fog". Adds adjustable grain diffusion, a Plaits synth, Spectral processing, attack snapping and evolving frozen feedback, with custom scale banks through Hygrostat and fewer converter pops. Peak processor load on a heavy granular patch is 80% against 91% for stock, per the release notes.
   - version: drizzlet-2026.10.18
     date: 2026-10-18
     url: https://github.com/insolentconstruct/eurorack/releases/tag/drizzlet-2026.10.18

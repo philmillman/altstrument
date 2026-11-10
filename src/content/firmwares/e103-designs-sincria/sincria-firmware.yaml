@@ -1,15 +1,16 @@
 device: e103-designs-sincria
 name: SINCRIA firmware
-summary: Arduino sketch for the SINCRIA cellular automata sequencer that runs a Conway-style 8x8 world, scans it as 64 steps and emits clock, live-cell and generation-end events.
+summary: Arduino sketch for the SINCRIA cellular automata sequencer with five selectable rules, a dual gate sequencer mode and two small games on the 8x8 LED matrix.
 description: >-
-  The published sketch, SINCRIA_Rev2_OK, is dated August 2025 inside the source and carries no
-  version number. It applies the B3/S23 rules with horizontal wrap-around, scans the grid left to
-  right and bottom to top, and lets the world evolve at the end of each scan. The tempo knob sets
-  an internal clock of 60 to 200 BPM in sixteenth notes, or an external clock advances the scan.
-  Buttons randomise the world, lock evolution, rotate it, and add or remove a random cell, with
-  alternate functions behind AltMode. The README states that it adds no MIDI, pitch CV, pattern
-  storage or reset input, and that the sketch is not matched to every PCB revision. It needs the
-  LedControl library.
+  The current sketch, SINCRIA_Scansione_Righe (dated 3 November 2026), scans the 8x8 world as 64
+  steps and lets it evolve after each complete scan. Five rules can be chosen from a selector: Conway
+  B3/S23, B234/S01, B3/S234, Mazectric and Coagulations. The tempo knob sets an internal clock of 30
+  to 300 BPM, or an external clock advances the scan. A second mode turns the matrix into two gate
+  patterns of up to 32 steps each with separate lengths. Holding a button combination at power-on
+  starts EUROBOY, a Snake game or an editable Life colony. The default input profile fits the
+  inverting inputs of boards Rev2.2 and Rev2.3, and profile 0 covers earlier active-high wiring. The
+  older SINCRIA_Rev2_OK sketch stays in the repository. It needs the LedControl library, and the
+  repository holds a prebuilt hex file and host-side tests.
 status: active
 authors:
   - name: E103-designs
@@ -24,7 +25,7 @@ homepage: https://github.com/E103-designs/SINCRIA#readme
 distribution: source-only
 install_notes: >-
   Install LedControl 1.0.6 from the Arduino Library Manager, open
-  firmware/SINCRIA_Rev2_OK/SINCRIA_Rev2_OK.ino and build for Arduino Nano with an ATmega328P at
+  firmware/SINCRIA_Scansione_Righe/SINCRIA_Scansione_Righe.ino and build for Arduino Nano with an ATmega328P at
   16 MHz, choosing the old bootloader only if the board needs it. Confirm the installed MCU and
   the corrected schematic before uploading to a physical module.
 brick_risk: false
@@ -36,7 +37,7 @@ image:
   source_url: https://github.com/E103-designs/SINCRIA#readme
   first_party: true
 versions:
-  - version: main @ 95763d8
-    date: 2026-11-01
-    url: https://github.com/E103-designs/SINCRIA/commit/95763d892b00ea73a36e93fb0f3dfb295bac4ced
+  - version: main @ 1cb530b
+    date: 2026-11-10
+    url: https://github.com/E103-designs/SINCRIA/commit/1cb530bc28cae8015ac77cd5149ba63c979fe0de
     notes: No tagged releases; this is the latest commit.

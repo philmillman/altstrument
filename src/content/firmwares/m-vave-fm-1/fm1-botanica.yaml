@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: FM1 Botanica
+summary: >-
+  Generative garden add-on for the FM1 Open app: 4 to 12 tracks of 16 flowers that play as they bloom, DX7 voices, a long reverb and a pixel-art screen. Checked on a PC and in a browser build only.
+description: >-
+  A separate project from the BOTANICA edition of NoteSorcery. It is a module of C source files that the builder copies into the app folder of
+  M-VAVE's fm1_open and joins to it with two small edits, one in the audio mix and one in the screen and panel handler. Each track is a row of 16 steps
+  drawn as flowers that bloom while the track plays. The engine has 12 instruments, five of them DX7 voices taken from
+  fm1_open's synth with its 128 factory voices, per-track envelopes, tone, drive and reverb send, grain and repeat effects, and a four-line feedback reverb of
+  about 5.5 seconds. Holding GLO and pressing ARP opens it, and it does not touch the app's projects or flash. The README says it has been built only for a PC and in a browser
+  through WASI, not with the JieLi toolchain, and has not run on an FM-1. The DX7 voice choices were made by name without listening, and the DX7 code allocates from the heap, which the device build may not have.
+status: active
+authors:
+- name: Larkin (larkindom)
+  url: https://github.com/larkindom
+source: https://github.com/larkindom/fm1-botanica
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The repository has no LICENSE file. The README states "GPL-3.0 with the FM1 SDK linking exception, like m-vave/fm1_open", so GPL-3.0-only is
+  read from that statement. The dx7/ code and voice bank come from fm1_open (Apache-2.0), and the font table derives from the MIT-licensed
+  afiskon/stm32-ssd1306.
+based_on: m-vave-fm-1/fm1-open
+distribution: source-only
+requires_stock: FM1 Open (the fm1_open app)
+install_notes: >-
+  Copy the module files and the dx7 folder into fm1_open's app folder, add botanica.c and dx7/*.c to the source list in sdk/Build.ps1 and
+  make the two hook edits described in INTEGRATION.md. Nothing here has been built with the device toolchain yet. For a browser build, run web/build.sh
+  with a WASI SDK and open the generated web/botanica_emulator.html.
+brick_risk: false
+tags: [generative, sequencer, synth-engine, dx7, reverb, emulator, fx]
+versions:
+- version: main @ 00f2ba9
+  date: 2026-11-09
+  url: https://github.com/larkindom/fm1-botanica/commit/00f2ba937bb0faaa5ffa956b12ca03eae1ed4fb6
+  notes: No tagged releases; this is the latest commit.

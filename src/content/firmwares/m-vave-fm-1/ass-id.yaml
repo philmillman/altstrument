@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: ASS-ID
+summary: >-
+  ATEK303 acid synth with a second 64-step drum track on the same clock: eight synthesized 808, 909 and 707 style voices, a seeded pattern generator with mutations and LOCK, a drum matrix editor and shared effects.
+description: >-
+  Keeps ATEK303 1.2 unchanged for the bass line and adds a drum track that plays with it, sharing tempo, PLAY and MIDI clock. The drums are synthesized without samples: kick, snare, clap, closed and open hat, two toms and a cowbell, with a rimshot in the 707 kit. A knob switches between three kits. A seeded generator, set with density, accents and fill, always gives the same groove for the same seed, and the ENV, LFO and ARP buttons mutate backbone, tops and accents. LOCK freezes both tracks. An 8 by 16 matrix edits hits, accents and row offsets with undo, and swing, track length and per-voice level, tune and decay are adjustable. The drums go through the same drive, chorus, delay and reverb, they are sent as General MIDI notes over USB, and eight factory presets store the drum pattern too. Presets saved with ATEK303 1.2 do not load. The README, which is in French, lists checking on a real FM-1 among the steps before publication. The project site has a browser emulator.
+status: active
+authors:
+- name: altessproduction
+  url: https://github.com/altessproduction
+source: https://github.com/altessproduction/ASS-ID_FM1
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The README states GPL-3.0-or-later, as ATEK303, and the LICENSE file is the GPL v3 text. The bass voice carries Open303 by Robin Schmidt (licence file in the repository), and the build clones fm1-base (MPL-2.0). The README says no M-VAVE firmware or flash copies are in the repository.
+based_on: m-vave-fm-1/atek303
+homepage: https://altessproduction.github.io/ASS-ID_FM1/play/
+distribution: download
+requires_stock: V15 or another Felucca-family firmware
+install_notes: >-
+  Install the .fwsc from the release with The Firmware Hub or another installer for this package format. The README documents checking installs from V15 and a return to the previous firmware as steps for a real unit. The release is built by a CI workflow shared with The Firmware Hub.
+brick_risk: false
+tags: [synth-engine, sequencer, drums, fx, generative, emulator, midi]
+image:
+  url: https://raw.githubusercontent.com/altessproduction/ASS-ID_FM1/main/docs/screenshots/drum_dgen.png
+  alt: Emulator screenshot of the DGEN page with density, accents, fill and steps shown as four value bars above a row of step cells and a tab bar
+  credit: altessproduction
+  source_url: https://github.com/altessproduction/ASS-ID_FM1
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-11
+  url: https://github.com/altessproduction/ASS-ID_FM1/releases/tag/v1.0
+  notes: First release, a signed .fwsc built by CI from the v1.0 tag. The release page has no notes.

@@ -17,7 +17,10 @@ description: >-
   moves the chord and scale settings to a synth page opened with Shift and Track 8. Version 0.3.0 moves the FM synth out of the firmware
   into an engine file on the microSD card that each pack selects, adds an arpeggiator on the synth page, a 32-step four-row Euclid
   module, FM feedback up to 8x on macro 1, and a combined loader page for engines and modules. Its notes say the final Euclid revision
-  was tested only in an emulator and the hardware run was waived.
+  was tested only in an emulator and the hardware run was waived. Version 0.3.1 publishes a written interface for track 8
+  engine files (engine ABI 3), loads any engine file that passes its checks, adds engine-defined controls and a cycle
+  meter, and ships fm.dse 2.0.0, which replaces 1.0.0; the firmware refuses the old file, so the pack plays samples until
+  it is replaced.
   The devkit build adds a DSP load meter and module tools and has no synth. Both
   fix parameter locks so that a step without a lock returns to the knob's value,
   and limit how long the unit waits for the sound processor before flagging a
@@ -41,7 +44,7 @@ homepage: https://llcoolkm.github.io/arrhythmia/web/
 distribution: browser-installer
 requires_stock: "5706"
 install_notes: >-
-  Back up the microSD card first. From 0.3.0 the FM synth is a separate file: add fm.dse with the loader page, choose it for a pack
+  Back up the microSD card first. From 0.3.0 the FM synth is a separate file (from 0.3.1 it must be fm.dse 2.0.0): add fm.dse with the loader page, choose it for a pack
   and load that pack, or track 8 plays samples. Download Novation's 5706 update file yourself,
   close Novation Components and other MIDI software, open the installer page in
   Chrome, connect the unit, choose the file and press Install, then press Play
@@ -55,6 +58,10 @@ install_notes: >-
 brick_risk: false
 tags: [synth, chords, scales, sequencer, parameter-locks, modules]
 versions:
+  - version: v0.3.1
+    date: 2026-11-11
+    url: https://github.com/llcoolkm/arrhythmia/releases/tag/v0.3.1
+    notes: Publishes engine ABI 3, a written interface for track 8 engines, and loads any engine file that passes its checks. Adds engine-defined controls and a cycle meter, and ships the FM engine 2.0.0 as fm.dse. Firmware 0.3.1 refuses fm.dse 1.0.0, so install the new file or packs that select the FM engine play their samples.
   - version: v0.3.0
     date: 2026-11-07
     url: https://github.com/llcoolkm/arrhythmia/releases/tag/v0.3.0

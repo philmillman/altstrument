@@ -1,0 +1,32 @@
+device: m-vave-fm-1
+name: RAMBEAVER
+summary: >-
+  Side-scrolling action game for the FM-1: a beaver defends a dam, rides through a robot city and shuts down a boss, with synthesized music, effects and recorded character voices.
+description: >-
+  The first two white keys move left and right, and the last two jump and fire. The third white key from the right ducks or drops through a thin platform, and the black keys enter doors, call a posse and throw a firebomb. Progress saves queue until Pause or death, and the README asks for a pause before power-off. A fresh run with no damage, death or retry and every enemy defeated unlocks a golden ending. The platform descends from Felucca by way of X0X and FoMni, and only Felucca's ANALOG and NOISE DSP excerpts are used. The repository holds the firmware package FM-1_745, a source archive, a quick-start PDF and checksums. The source also includes a browser viewer that can mirror a connected unit and a macOS recorder that exports device video with USB audio. The README says the package was installed and verified on an FM-1 and that the source rebuilds it.
+status: active
+authors:
+- name: adamcharleswilsonmusic-code
+  url: https://github.com/adamcharleswilsonmusic-code
+source: https://github.com/adamcharleswilsonmusic-code/RAMBEAVER
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only for the project source. The song score and eight voice clips come from the author, who authorized their public distribution; the song itself is not identified and no separate media licence is declared. The beaver image was generated with an image tool. Terminus and Barlow fonts keep their SIL OFL texts, and three opaque JieLi AC79 SDK package inputs in vendor/ac79 are bundled under the SDK's Apache-2.0 notice without an independent audit.
+based_on: m-vave-fm-1/felucca
+distribution: download
+install_notes: >-
+  Download the .fwsc from the release page, or clone the repository, and install with tools/fm1_install.py in a Python environment over USB-MIDI. The installer asks before writing, checks the package and verifies the restarted identity (FM-1_745). Stop any recording and the browser viewer's Follow FM-1 mode first. The release notes say the package was installed from M-VAVE V15 and from Spring Poly 1.4 and switched back to both.
+brick_risk: false
+tags: [game, voice, ui]
+image:
+  url: https://raw.githubusercontent.com/adamcharleswilsonmusic-code/rambeaver/main/docs/rambeaver-quick-start.png
+  alt: RAMBEAVER quick-start sheet with a drawing of the FM-1 whose screen shows the beaver on a bike in a robot city, and numbered keys for left, right, duck, jump, fire, door, posse and firebomb
+  credit: adamcharleswilsonmusic-code
+  source_url: https://github.com/adamcharleswilsonmusic-code/RAMBEAVER
+  first_party: true
+versions:
+- version: FM-1_745
+  date: 2026-10-17
+  url: https://github.com/adamcharleswilsonmusic-code/RAMBEAVER/releases/tag/v745
+  notes: Build 745 removes forest ground texture that extended into jump gaps. A second release, v745-hub (2026-11-11), carries the identical firmware file with browsable source and a Firmware Hub card.

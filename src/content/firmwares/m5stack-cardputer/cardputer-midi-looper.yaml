@@ -8,7 +8,7 @@ description: >-
   Settings cover tempo, bars, quantize, swing, a metronome and a count-in. Loops are saved to the SD card as Format 0
   .mid files, and files in /MidiLoop can be loaded, renamed and deleted from the FILE page. Channels can be muted
   separately. The README says v1.2.0 was checked on a unit, lists limits such as 8192 events and no lock to the FM-1's
-  own sequencer, and says the main branch holds a later v1.3.0, with a clear for a single lane, that is not released. The repository includes a browser
+  own sequencer, and lists the Fn+C clear for a single lane added in v1.3.1. The repository includes a browser
   preview of the interface and a host-side test suite. README and notes are in Chinese.
 status: active
 authors:
@@ -33,10 +33,14 @@ image:
   source_url: https://github.com/saxon267/Cardputer_MidiLooper
   first_party: true
 versions:
-- version: main @ fa0e50d
+- version: v1.3.2
   date: 2026-11-10
-  url: https://github.com/saxon267/Cardputer_MidiLooper/commit/fa0e50d6621bd9f60ac7268b90d9b8d28e17a06f
-  notes: Latest commit, after v1.2.0. Per the README this is an unreleased v1.3.0 that adds Fn+C to clear only the selected lane.
+  url: https://github.com/saxon267/Cardputer_MidiLooper/releases/tag/v1.3.2
+  notes: Fixes a stored Loop mode that stopped recording after boot when no loop existed, and stops R from cancelling the wait for the first note while armed.
+- version: v1.3.1
+  date: 2026-11-10
+  url: https://github.com/saxon267/Cardputer_MidiLooper/releases/tag/v1.3.1
+  notes: Adds Fn+C to clear only the selected lane and restores the L key's loop mode that starts and continues recording automatically. The boot screen shows the version.
 - version: v1.2.0
   date: 2026-11-09
   url: https://github.com/saxon267/Cardputer_MidiLooper/releases/tag/v1.2.0

@@ -1,0 +1,27 @@
+device: m-vave-fm-1
+name: FM-1 Touch
+kind: tool
+summary: >-
+  Touch-first installable web page for the fm1-emu FM-1 emulator, with drag knobs, haptic taps, multi-finger play, a firmware picker and body colours.
+description: >-
+  A fork of the emulator's web page rebuilt for phones and tablets, with the emulator kept as a pinned submodule and one patch applied at build time to let the page set the colour of the panel. Knobs turn by dragging, buttons and keys can be held, many fingers can play at once, and a press near a control still finds it. Haptic taps use the Vibration API on Android and a switch-control workaround on iPhone. It is a progressive web app that works offline for firmwares already played, and it lists community firmwares that it fetches from their authors' sites. The page asks for landscape orientation.
+status: active
+authors:
+- name: stravo1
+  url: https://github.com/stravo1
+source: https://github.com/stravo1/fm1-touch
+source_status: open
+license: MIT
+license_notes: The LICENSE file is the MIT text, copyright stravo1; the README says the emulator is MIT and each firmware keeps its author's licence.
+homepage: https://stravo1.github.io/fm1-touch/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page, press Start and play; on Android or iPhone it can be added to the home screen. To build it locally, initialise the submodule and run build.sh, which needs Rust with the wasm32 target. It does not connect to a real FM-1.
+brick_risk: false
+tags: [emulator, web, performance]
+based_on: m-vave-fm-1/fm1-emu
+versions:
+- version: main @ b210864
+  date: 2026-11-10
+  url: https://github.com/stravo1/fm1-touch/commit/b21086479be44d2401b5997d35da6b2cf70389c0
+  notes: No tagged releases; this is the latest commit.

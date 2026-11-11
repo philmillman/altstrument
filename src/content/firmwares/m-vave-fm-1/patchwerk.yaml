@@ -1,0 +1,45 @@
+device: m-vave-fm-1
+name: Patchwerk
+summary: >-
+  Modular synthesizer with over 80 modules patched with virtual cables on the FM-1's own screen and knobs, plus snapshots, a perform page, song mode, four sample banks and a browser emulator with a visual patch bay.
+description: >-
+  Modules include oscillators, a Casio CZ voice and a TX81Z-style FM voice, six filter circuits, drums, a sampler and granular player, step, Euclidean, Turing machine and piano-roll sequencers, effects, envelopes and LFOs. FX adds a module, SELECT and SEL draw cables, and the four knobs edit the selected module. Each patch holds 16 snapshots, a PERFORM page collects favourite knobs, and MUTES, MUTATE and a SONG mode arrange snapshots and automate knobs. It takes MIDI over USB and TRS, sends and receives USB audio, and has four sample banks loaded from the web page or recorded on the unit, with preset 808, 909, FM-drum and miscellaneous banks. There are twelve screen palettes and a user palette. The browser page runs the same firmware in an emulator with a patch bay and can control a connected FM-1 with changes synced both ways. The README says it also works on newer units with the UC25HQ80 flash chip.
+status: active
+authors:
+- name: mattkuebrich
+  url: https://github.com/MattKuebrich
+source: https://github.com/MattKuebrich/patchwerk
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL v3 text and the README states GPL-3.0-only. The base folder keeps fm1-base and felucca-bsp files under MPL-2.0 file by file. The CZ module ports Melodee's engine (GPL-3.0) and MAME's uPD933 model (BSD-3-Clause), and the FM-DX module ports ymfm's OPZ model (BSD-3-Clause). The preset sample banks come from CC0, free-use and personally credited sources listed on the project's samples page, including a free-for-use pack whose own licence is cited there. The installer page links M-VAVE's V15 download on M-VAVE's own server for going back and checks the file by hash; the repository holds no stock image.
+homepage: https://mattkuebrich.com/patchwerk/
+distribution: browser-installer
+requires_stock: V15 or another Felucca-family firmware
+install_notes: >-
+  Open the project page in desktop Chrome or Edge with the FM-1 on a USB data cable, back up projects and samples, and press Install. The page can also take a patchwerk .fwsc file from the releases, and it can put M-VAVE's own firmware back from a file you supply. BUILDING.md has the rescue steps.
+brick_risk: false
+tags: [modular, synth-engine, sequencer, sampler, drums, fx, performance, usb-audio, midi, emulator]
+image:
+  url: https://raw.githubusercontent.com/MattKuebrich/patchwerk/main/web/shots/cable.png
+  alt: Patchwerk PATCH screen showing KEYS1, VCO1, VCF1, VCA1 and ENV1 modules joined by red, orange and green cables, with a row of four knob boxes for glide, octave, bend and velocity curve below
+  credit: mattkuebrich
+  source_url: https://github.com/MattKuebrich/patchwerk
+  first_party: true
+versions:
+- version: 1.0.3
+  date: 2026-11-08
+  url: https://github.com/MattKuebrich/patchwerk/releases/tag/v1.0.3
+  notes: Web screenshots and module pictures now match the unit's panel look, and the name is written Patchwerk in the page and docs. Old patch codes still load.
+- version: 1.0.2
+  date: 2026-11-08
+  url: https://github.com/MattKuebrich/patchwerk/releases/tag/v1.0.2
+  notes: The sample transfer screen is a still, preset pad names are shorter, and the reference document is rewritten.
+- version: 1.0.1
+  date: 2026-11-07
+  url: https://github.com/MattKuebrich/patchwerk/releases/tag/v1.0.1
+  notes: Adds preset sample banks A 808, B 909, C FM drums and D random, loaded from the web page.
+- version: 1.0.0
+  date: 2026-11-07
+  url: https://github.com/MattKuebrich/patchwerk/releases/tag/v1.0.0
+  notes: First release, after more than 200 release candidates.

@@ -6,9 +6,10 @@ summary: >-
 description: >-
   Built on SLOOP, with the Bluetooth stack and radio driver taken from Optimist's open-source code, and a backup of the
   unit's radio calibration. From 1.1 it sends and receives notes over Bluetooth MIDI; 1.2 follows a Bluetooth clock, 1.3 sends
-  the clock over Bluetooth, USB or both and ends held notes when sending is switched off, and 1.4 adds a SysEx status
-  query for connected apps plus a Linux test script that steps through the Bluetooth checks and writes a log. Bluetooth is
-  off at every power-on and turning it on stops the second processor core until restart. The README is SLOOP's own, with
+  the clock over Bluetooth, USB or both and ends held notes when sending is switched off, 1.4 adds a SysEx status
+  query for connected apps plus a Linux test script that steps through the Bluetooth checks and writes a log, and 1.5 keeps
+  both processor cores running with Bluetooth on, where earlier versions stopped the second core until restart. Bluetooth is
+  off at every power-on. The README is SLOOP's own, with
   a short Beat It file and install guide beside it. Both state that it has not run on a real FM-1 and that Bluetooth has never
   been tried over a real radio.
 status: active
@@ -32,6 +33,10 @@ install_notes: >-
 brick_risk: false
 tags: [groovebox, drums, fm, ble-midi, midi, sequencer, fork]
 versions:
+- version: '1.5'
+  date: 2026-11-10
+  url: https://github.com/epidex/beat-it/releases/tag/v1.5
+  notes: Keeps both processor cores running with Bluetooth on, using a start-up order that the project says stops the Bluetooth plus two-core crash. A reset during radio start-up no longer causes a boot loop, and cut-off screen messages fit. The release also offers an optional test installer with raised supply voltages marked as at your own risk. The notes repeat that it has only run in a simulator and nothing has transmitted over a real radio.
 - version: '1.4'
   date: 2026-11-10
   url: https://github.com/epidex/beat-it/releases/tag/v1.4

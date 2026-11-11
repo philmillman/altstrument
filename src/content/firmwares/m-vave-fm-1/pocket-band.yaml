@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: Pocket Band
+summary: >-
+  Generative band for the FM-1: pick a town on a map of sixteen genres and it writes a four-part sketch of drums, bass, keys and lead in one key, with re-rolls, jam and perform modes, step editing, four slots and a small rhythm game.
+description: >-
+  A button opens a screen and pressing it again does that screen's main action. The map blends genres between towns, the stage and audition screens re-roll or replace band members, and jam mode lets the band change its own parts. Perform turns the keys into punch-in effects with a build and drop, a grid edits any part step by step, and six-letter codes rebuild a sketch exactly. The sound engines, sequencer, storage and USB code come from SLOOP 2.8.5, and the sampled drum kit uses CC0 recordings. It shares SLOOP's flash areas for project slots and settings, so it overwrites a slot you store to and cannot open projects from other firmware families. The README calls version 0.4 experimental: 0.2 was run on an FM-1, and 0.3 and 0.4 are tested on a computer against the real engines. The release has a browser installer page.
+status: active
+authors:
+- name: elpabl0
+  url: https://github.com/elpabl0
+source: https://github.com/elpabl0/pocketband
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only, as SLOOP and Felucca, and carries Felucca's licensing statement for inherited code. One inherited source file is Apache-2.0 (msfa). The sampled kit and other instrument samples are CC0 recordings with attribution lists in the repository.
+based_on: m-vave-fm-1/sloop
+distribution: browser-installer
+requires_stock: V15 or another Felucca-family firmware
+install_notes: >-
+  Open pocket-band-installer.html from the release in Chrome or Edge with the FM-1 on USB and press INSTALL. The release also has the bare pocketband.fwsc. If the unit does not start, hold OCT- alone while switching on for the USB rescue and install again. Back up with the other firmware's own tool first, because the four project slots are shared with SLOOP's and a slot you store to is overwritten. The package keeps Felucca's update loader, so any other firmware can be installed over it.
+brick_risk: false
+tags: [generative, sequencer, synth-engine, drums, performance, game, fork]
+image:
+  url: https://raw.githubusercontent.com/elpabl0/pocketband/main/assets/card/screens.png
+  alt: 'Three Pocket Band screens: a pixel map of genre towns, a stage with four band members drawn as small characters, and a running game with a red bar and yellow blocks'
+  credit: elpabl0
+  source_url: https://github.com/elpabl0/pocketband
+  first_party: true
+versions:
+- version: '0.4'
+  date: 2026-11-11
+  url: https://github.com/elpabl0/pocketband/releases/tag/v0.4
+  notes: Experimental. Package identity FM-1_722604. Tested on a computer against the real engines and sequencer, not yet on a device.

@@ -1,0 +1,28 @@
+device: m-vave-fm-1
+name: Compás TEKNO
+summary: >-
+  Rights warning: the sample bank is cut from commercial sample packs. Compás rhythm firmware with a free-party tekno sample kit, 33 tekno grooves at 145 to 180 BPM, four bass voices and a black, green and yellow theme.
+description: >-
+  Rights warning: the replacement drum kit comes from commercial UFO hardtekno, tribecore and tribe190 sample packs, and the packed bank is committed in the repository and inside the .fwsc. The README says redistributing the audio may break the packs' licences and advises swapping in samples you have the rights to share before publishing or selling a build. Compás TEKNO keeps the engine, screens and workflow of Compás and changes what it plays. The TR-727 sounds are replaced by a 15-voice kit of kicks, a clap, a snare, hats, tribal percussion, a hoover stab, a pad stab and a break loop, and the 29 factory grooves become 33 tekno patterns built on four-on-the-floor or double kicks, offbeat hats and tribal sixteenths. The BASS page style knob chooses between a breathy flute, an acid voice, a three-oscillator ladder-filter voice after the Minimoog and a detuned trance lead. The interface and splash portrait are redrawn, and a browser emulator on the project site runs the firmware code with four extra lead scores. The README says the changes stay within the Compás engine and protocol. It is not a GitHub fork of Compás, and the repository has no releases.
+status: active
+authors:
+- name: MarcoCasanova00
+  url: https://github.com/MarcoCasanova00
+source: https://github.com/MarcoCasanova00/compas-tekno
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md, copied from Compás, states GPL-3.0-only and LICENSE is the GPL v3 text; the README says GPL-3.0. Felucca board support (GPL-3.0-only) is vendored under release-inputs, and the JieLi SDK parts in the package are Apache-2.0. The Kumbia kit files from Hanan Cumbia (CC BY-SA 3.0) and Compás's CC-licensed song arrangements are carried over from the parent. The tekno sample bank is not under a free licence: it is cut from commercial packs, and the README warns that redistributing it may violate their terms. No M-VAVE firmware is in the repository.
+based_on: m-vave-fm-1/compas
+homepage: https://marcocasanova00.github.io/compas-tekno/
+distribution: download
+requires_stock: V15
+install_notes: >-
+  Flash firmware/compas-tekno.fwsc (identity FM-1_710) with the same USB installer used for other Felucca-family firmware. The README and docs/FLASH-SAFETY.md say to return to official V15 first when the FM-1 runs any other custom firmware, to keep the stock image backed up and never to unplug during a write; an interrupted update resumes when installed again. The loader's write guard excludes the boot head and user data, and the boot guard falls back to the chip's boot mode after two failed starts. The FM-1's mask-ROM rescue is the fallback.
+brick_risk: false
+tags: [drums, sequencer, performance, synth-engine, emulator, fork]
+versions:
+- version: main @ 2f518d0
+  date: 2026-11-11
+  url: https://github.com/MarcoCasanova00/compas-tekno/commit/2f518d02bb958fa3bcc6bfb5089c85403841b98a
+  notes: No tagged releases; this is the latest commit.

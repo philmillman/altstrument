@@ -27,13 +27,17 @@ license_notes: >-
   Three JieLi SDK files (Apache-2.0) are read from the builder's SDK checkout and are not in the repository.
 distribution: browser-installer
 install_notes: >-
-  Download grana-editor-1.7.html from the release and open it in Chrome or Edge, which need Web MIDI and WebUSB, then
+  Download grana-editor-1.7.1.html from the release and open it in Chrome or Edge, which need Web MIDI and WebUSB, then
   press Installa with the FM-1 on USB. The page has a simulator and a Bluetooth checkbox. The .fwsc packages in the
   release hold the stock sounds, for other installers. Holding OCT- at power-on starts only the USB updater, and rescue/
   has tools for worse cases. To go back, reinstall M-VAVE's firmware with its updater or the FM-1 Firmware Hub.
 brick_risk: false
 tags: [granular, sampler, sequencer, arpeggiator, fx, reverb, lfo, midi, editor, web, fork]
 versions:
+- version: 1.7.1
+  date: 2026-11-11
+  url: https://github.com/mongio/grana-fm1/releases/tag/v1.7.1
+  notes: Recognises the UC25HQ80 flash chip in newer FM-1 units, which earlier builds could not save to or update, in the firmware, the update loader and the USB rescue script. The flash driver waits out slow erases and writes, and the chip name shows on the opening and MIDI screens. Sounds and presets are unchanged; the notes say it was not yet tried on a real UC25HQ80 unit.
 - version: 1.7.0
   date: 2026-11-07
   url: https://github.com/mongio/grana-fm1/releases/tag/1.7.0

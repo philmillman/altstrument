@@ -12,10 +12,12 @@ description: >-
   voice with accent and slide, and every engine has its own animated graphic on a black screen. The README credits
   ryuji kanagawa, and the fork is four commits ahead of Tonitor build 68.
 
-  RC7 is a pre-release. The release notes and HARDWARE-TEST.md record that the author confirmed on 2 November 2026
-  that RC7 works on their own FM-1, with no separate record of the install routes or of recovering from an interrupted
-  update. The browser player runs the firmware's C code as WebAssembly. Sessions use the RC5 format, and earlier ANIMA
-  sessions migrate to ACID.
+  The releases from RC6 to RC10 are pre-releases. The release notes and HARDWARE-TEST.md record that the author confirmed on
+  2 November 2026 that RC7 works on their own FM-1, with no separate record of the install routes or of recovering from an
+  interrupted update. The notes for RC8, RC9 and RC10 say physical FM-1 validation of those builds is pending. RC8 adds
+  reverb, delay and per-track grain controls with a PRISM granular mode, RC9 makes the RYUJI drum kits editable, and RC10
+  rebuilds RYUJI's drum sources from integer synthesis and recorded samples. The browser player runs the firmware's C code
+  as WebAssembly. Sessions use the format of RC7 to RC10 (32774 from RC9), and earlier ANIMA sessions migrate to ACID.
 status: active
 authors:
 - name: IanP06
@@ -27,11 +29,11 @@ license_notes: >-
   LICENSING.md states that the modifications, browser adapter and renderer are GPL-3.0-only and keeps Tonitor's table of
   notices: Felucca, SLOOP and Melodee code (GPL-3.0-only), msfa (Apache-2.0), Plaits and Rings parts (MIT), CALIGULA
   after LIRA-8 (BSD) and fonts under SIL OFL 1.1. The release folders also keep Tonitor's own build 68 package, which
-  is a community image and not M-VAVE's.
+  is a community image and not M-VAVE's. The RC10 notes add CC0 TR-808 captures (tidalcycles/sounds-tr808-fischer) and the GPL-3.0 ER-99 909 samples to the sample bank, with their hashes and notices listed in assets/ryuji/manifest.json.
 homepage: https://ianp06.github.io/bocjuhn/
 distribution: download
 install_notes: >-
-  Download bocjuhn-1.0-rc7.fwsc from the release, which carries SHA-256 sums and a manifest, or use the local
+  Download bocjuhn-1.0-rc10.fwsc from the release, which carries SHA-256 sums and a manifest, or use the local
   installer page that tools/serve_bocjuhn.cjs serves with Node in Chrome or Edge over USB. The README says to back up
   the FM-1 first, because unrelated firmware projects and samples can be overwritten, and the package includes the
   update loader. The README notes a Firmware Hub submission was prepared but not sent.
@@ -44,6 +46,18 @@ image:
   source_url: https://github.com/IanP06/bocjuhn
   first_party: true
 versions:
+- version: v1.0.0-rc10
+  date: 2026-11-11
+  url: https://github.com/IanP06/bocjuhn/releases/tag/v1.0.0-rc10
+  notes: Pre-release. Replaces RYUJI's simplified 808 and 909 bank with integer synthesis for some sources and recorded samples stored as 8-bit companded audio for others, keeping the 48 source IDs, kit maps and session format. RYUJI timbres change on existing sessions. The notes say physical six-track playback, timing and listening checks are pending. Includes the RC7 rollback package.
+- version: v1.0.0-rc9
+  date: 2026-11-11
+  url: https://github.com/IanP06/bocjuhn/releases/tag/v1.0.0-rc9
+  notes: Pre-release. RYUJI gets 48 original sources in editable kits (hold EDIT, then pad, source, tuning and lock knobs), kits and locks that persist in presets and sessions, and PLAY ALONG that keeps running while other tracks are selected. Adds four-pole filter options and resonance up to Q12. Session format 32774 reads RC7 and RC8 sessions. Physical validation is pending.
+- version: v1.0.0-rc8
+  date: 2026-11-10
+  url: https://github.com/IanP06/bocjuhn/releases/tag/v1.0.0-rc8
+  notes: Pre-release. Adds 33 modulation destinations, delay and reverb controls with six reverb and five delay characters, a PRISM granular mode per track, a mixed straight and triplet loop grid, and fixes for overlapping note gates. Session format 32772 reads RC7 sessions. Physical validation is pending.
 - version: v1.0.0-rc7
   date: 2026-11-02
   url: https://github.com/IanP06/bocjuhn/releases/tag/v1.0.0-rc7

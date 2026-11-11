@@ -8,7 +8,7 @@ description: >-
   each engine and effect page draws its knobs in place of the scope, the header and footer are rearranged, and the
   sequencer fills the panel. Projects are replaced by one autosave that writes after three seconds idle, plus 24 saved
   patterns. Some pages and menu items are removed or reordered, such as the automation page and chord entry, which gives
-  way to a quantize setting. A browser emulator build path is in dev/. CHANGES.md lists every change against Felucca, and
+  way to a quantize setting. The project site has a landing page with a browser emulator, an editor and an installer. CHANGES.md lists every change against Felucca, and
   the README says the work was made with AI coding agents and is not an official Felucca release.
 status: active
 authors:
@@ -21,15 +21,18 @@ license_notes: >-
   The README and LICENSE state GPL-3.0-only, as Felucca. The engines are MIT (Felucca-Engines), the hardware layer is
   MPL-2.0 (felucca-bsp), the Hügelton sample pack is CC0, and fonts and ported DSP keep their own licences
   (LICENSING.md). No firmware image is committed.
-distribution: source-only
+homepage: https://julesmarecaille.github.io/mrc-synth/
+distribution: browser-installer
 install_notes: >-
-  No release package: build it with the JieLi toolchain and AC79 SDK as BUILDING.md describes, from a clone with
-  submodules, and install the resulting .fwsc as for Felucca. The README says M-VAVE's own updater takes the unit back
+  Use the installer page on the project site in Chrome or Edge over USB; it combines your own unmodified official V15 file
+  with the MRC Synth app, so keep M-VAVE's V15 file at hand. The installer page can return to V15 from the same file and
+  backs up music, banks, samples and settings first. There is no release package; the README still describes building with the JieLi
+  toolchain and AC79 SDK as BUILDING.md describes, from a clone with submodules. It says M-VAVE's own updater takes the unit back
   to factory firmware.
 brick_risk: false
-tags: [fork, synth-engine, sequencer, fx, ui, emulator]
+tags: [fork, synth-engine, sequencer, fx, ui, emulator, editor]
 versions:
-- version: main @ fcf7e18
-  date: 2026-11-05
-  url: https://github.com/JulesMarecaille/mrc-synth/commit/fcf7e1827df8b5430808e226bc61cb3fc7f4b701
-  notes: No tagged releases; this is the latest commit.
+- version: main @ cb5b74f
+  date: 2026-11-11
+  url: https://github.com/JulesMarecaille/mrc-synth/commit/cb5b74f7de377335b81a15853e7c35565cb11516
+  notes: No tagged releases; this is the latest commit, which adjusts the FM6 engine's AMS levels to match msfa. Since the earlier entry the repository gained a project site with a landing page, an editor and a browser installer.

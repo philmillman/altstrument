@@ -10,9 +10,9 @@ description: >-
   step, the settings are saved with the project and apply to every Drumline
   track in the build. With the defaults Drumline sounds as stock, and stock
   Drumline presets do not store the second page. The repository has host tests
-  and a workflow that compiles it for the device's Blackfin processor. That
-  workflow builds against a branch of the SDK that adds the drumline_page
-  capability, which the README does not say has been merged into the main SDK.
+  and a workflow that compiles it for the device's Blackfin processor. The
+  workflow builds against the SDK's staging branch, where the latest commit
+  message says the drumline_page capability has been merged.
   The commit messages record AI assistance.
 status: active
 authors:
@@ -35,7 +35,7 @@ install_notes: >-
 brick_risk: true
 tags: [sdk, drums, fx, patch]
 versions:
-  - version: main @ 664db61
+  - version: main @ 797fd0e
     date: 2026-11-10
-    url: https://github.com/mmockett/OP-XY-Extensions/commit/664db61274415300bb1aa850093db41d238ebe3c
-    notes: No tagged releases; this is the latest commit.
+    url: https://github.com/mmockett/OP-XY-Extensions/commit/797fd0ec6a04e6d0acf75ac8623e049597a9ce11
+    notes: No tagged releases; this is the latest commit. Switches the CI build to the Open-XY staging branch, where the drumline_page capability merged.

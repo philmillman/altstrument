@@ -9,7 +9,9 @@ description: >-
   per-track routing, a choice of returning input to the song or to an audio
   track, and 0-100 ms delay compensation. It was tested on a 7-segment unit
   with macOS and Linux, and hosting a USB MIDI controller is unavailable while
-  it is in use. Each release is a separate firmware; AUX Sends also has a
+  it is in use. The USB Multitrack Audio 2.0 build adds a USB audio mode setting
+  (off, stereo or multitrack) and takes channels 3 and 4 back from the computer
+  as an audio clip source; the release notes list OLED units, Windows and iPad as untested. Each release is a separate firmware; AUX Sends also has a
   build on stable 1.2.1. Routing is saved with the song.
 status: active
 authors:
@@ -28,6 +30,10 @@ install_notes: >-
   card root and hold Shift while powering on. Back up the SD card first.
 tags: [fork, usb-audio, cv, routing, 7-segment]
 versions:
+  - version: USB-Multitrack-Audio
+    date: 2026-11-11
+    url: https://github.com/sticknobills/DelugeFirmware/releases/tag/USB-Multitrack-Audio
+    notes: USB Multitrack Audio 2.0 on the community nightly of 2026-11-11. Adds a USB audio mode setting (off, stereo or multitrack with 8 channels out and 4 in), per-track channel routing and channels 3 and 4 back as an audio clip source. Tested on a 7-segment unit with macOS only.
   - version: USB-Audio-1.0
     date: 2026-10-13
     url: https://github.com/sticknobills/DelugeFirmware/releases/tag/USB-Audio-1.0

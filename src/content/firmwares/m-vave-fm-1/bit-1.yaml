@@ -1,0 +1,47 @@
+device: m-vave-fm-1
+name: BIT-1
+summary: >-
+  Experimental generative 8-bit tracker: six tracks of NES, Game Boy and SID-style chip voices, effects per cell, patterns chained into songs, and generators that write parts or whole songs; tested only in a simulator.
+description: >-
+  Each song has six tracks of up to 32-step patterns with a note, a volume and two effects per cell, chained into
+  an order list and played up to sixteen times each. Voices are synthesised: pulse and triangle, 4-bit wave, LFSR
+  noise, SID-style saws and pulses through a resonant filter, and a two-op FM bell, with echo, plate reverb and a
+  lo-fi stage. Follow writes bass, chords, arpeggio, counter-line and drums from a melody, Evolve lets patterns
+  drift on each pass, and Grow writes a pattern, a song or a new song from nothing. It has five songs, MIDI clock
+  in, and MIDI out with each track on its own channel. Its ROM voices feature reads a GBA game's instruments from
+  a ROM file the user supplies, in the browser, and sends them to the FM-1; no ROM, game or game audio is in the
+  repository, the site or a release, and the project's terms say the user must own the game and use it only where
+  lawful. It lives in the bit1/ folder of the HYP-1 repository and replaced the author's EVOL-1 tracker there. It
+  is a fork of AMB-1 by way of HYP-1, GRAV-1, CTY-1 and EVOL-1, with tracker ideas after KAWA. The README says it
+  has been built and tested in the simulator and browser emulator only and is numbered 0.x until it runs on a
+  real FM-1.
+status: active
+authors:
+- name: RedtailWorks
+  url: https://github.com/RustyPawz
+source: https://github.com/RustyPawz/fm1-HYP1/tree/main/bit1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Stated in bit1/LICENSING.md. The platform layer is Felucca's by way of X0X and FoMni and the sound code is
+  AMB-1's. Fonts are SIL OFL 1.1. The ROM-voice code is the project's own and reads the format as documented by
+  the GBA homebrew community.
+homepage: https://rustypawz.github.io/fm1-HYP1/bit/
+distribution: browser-installer
+install_notes: >-
+  Web installer in Chrome or Edge over USB, or build from the folder (BUILDING.md). The README says it is
+  untested on hardware and that HYP-1 or M-VAVE's firmware goes back on the same way. The installer can write
+  M-VAVE's V15 back from a file you download yourself. ROM voices are optional and need a ROM of a game you own,
+  used where that is lawful for you.
+brick_risk: false
+tags: [tracker, chiptune, generative, sequencer, drums, synth-engine, fx, emulator, midi]
+image:
+  url: https://raw.githubusercontent.com/RustyPawz/fm1-HYP1/main/bit1/docs/img/bit-hero.png
+  alt: "Render of an FM-1 running BIT-1: a tracker grid for the Overworld song on the screen, with the note, effect, value and pattern fields below it and the 16 keys lit"
+  credit: RedtailWorks
+  source_url: https://github.com/RustyPawz/fm1-HYP1/tree/main/bit1
+  first_party: true
+versions:
+- version: 0.0.95
+  url: https://rustypawz.github.io/fm1-HYP1/bit/install/
+  notes: Latest build offered by the project site's installer when checked on 2026-11-11. Builds are numbered per push; there is no GitHub release, so no date is given.

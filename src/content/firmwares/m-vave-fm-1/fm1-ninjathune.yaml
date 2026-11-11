@@ -2,11 +2,11 @@ device: m-vave-fm-1
 name: FM-1 in the browser (Ninjathune)
 kind: tool
 summary: >-
-  Browser emulator with one FM-1 panel that runs a selector of 121 open-source firmwares, 62 of them compiled natively,
+  Browser emulator with one FM-1 panel that runs a selector of 132 open-source firmwares, 83 of them compiled natively,
   or FM-1+VA, a reimplementation of the stock instrument written from the manual.
 description: >-
   Runs on computers, iPads and iPhones, with mouse, touch or stylus. Most firmwares run unchanged on Joakim Eriksson's
-  fm1-emu; 62 are compiled from source for the browser with no emulated processor. A local .fwsc can be opened, and a Duo
+  fm1-emu; 83 are compiled from source for the browser with no emulated processor. A local .fwsc can be opened, and a Duo
   page runs two FM-1s side by side, with a shared tempo clock if wanted. Presets and patterns are kept in the browser for each firmware, and a backup menu saves all of that to one JSON file and restores it. The repository
   publishes a verification report saying how each package ran. The interface and README are in French, with an FR/EN switch that also translates the manual, shortcuts and firmware help sheets.
 status: active
@@ -33,7 +33,7 @@ image:
   source_url: https://github.com/Ninjathune-Human/Fm1
   first_party: true
 versions:
-- version: main @ 1faec13
-  date: 2026-11-10
-  url: https://github.com/Ninjathune-Human/Fm1/commit/1faec13d0bef11d12e293ab613379da0a39453b0
-  notes: Runtime builds are published as releases; this is the latest commit. Since the previous row it adds an English interface and manual, and more firmwares (FMDj, SPAMPY, Scintilla, MNM-1 and others) among those compiled natively. Later commits add backup and restore of the browser's saved data, a tempo clock shared by the Duo page, Elixir, ECHOFIELD and GRAINE among the native firmwares, and LED brightness drawn from each firmware's own levels.
+- version: main @ 42880f6
+  date: 2026-11-11
+  url: https://github.com/Ninjathune-Human/Fm1/commit/42880f6b92f1e6bcce5c914782132270daeba255
+  notes: Runtime builds are published as releases; this is the latest commit. Since the previous row it adds an English interface and manual, and more firmwares (FMDj, SPAMPY, Scintilla, MNM-1 and others) among those compiled natively. Later commits add backup and restore of the browser's saved data, a tempo clock shared by the Duo page, Elixir, ECHOFIELD and GRAINE among the native firmwares, and LED brightness drawn from each firmware's own levels. Commits after that add eleven firmwares from The Firmware Hub, the native builds Argo, FRASIL, J6 and Mutable Dreams, a linked-tempo choice in the Duo page that offers only firmwares verified to follow the shared clock, and loading of a MIDI file into a SLOOP track.

@@ -1,0 +1,43 @@
+device: m-vave-fm-1
+name: CTY-1
+summary: >-
+  Experimental generative firmware in which a small city builds itself on the FM-1's screen and plays chiptune, with cars as playheads, weather, disasters and a first-responder game; tested only in a simulator.
+description: >-
+  Each power-on founds a new town on new land (forest, desert, alpine, volcano isles, plains, beach or river
+  lands), each with its own look, weather, disaster and sound. The town grows week by week into zoned districts,
+  roads, bridges and landmarks. Cars drive real routes and act as the music's playheads, and the day, seasons,
+  fires, quakes, robberies and festivals shape the music, which plays on NES, Game Boy or SID-style voices. The
+  keys play a lead in the city's scale, and black keys call events on the Events pages. Behind SEL plus EDIT is
+  a game in which the player drives a fire truck, police car or ambulance to calls. It takes MIDI clock in over
+  USB or TRS, plays notes from MIDI in, and sends each chip channel's notes on its own channel with the city's
+  state as CCs. It lives in the cty1/ folder of the HYP-1 repository and is a fork of AMB-1 by way of HYP-1,
+  ECO-1 and GRAV-1. The README says it has been built and tested in the simulator and browser emulator only and
+  is numbered 0.x until it runs on a real FM-1.
+status: active
+authors:
+- name: RedtailWorks
+  url: https://github.com/RustyPawz
+source: https://github.com/RustyPawz/fm1-HYP1/tree/main/cty1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Stated in cty1/LICENSING.md. The platform layer is Felucca's by way of X0X and FoMni and the sound code is
+  AMB-1's. Fonts are SIL OFL 1.1.
+homepage: https://rustypawz.github.io/fm1-HYP1/cty/
+distribution: browser-installer
+install_notes: >-
+  Web installer in Chrome or Edge over USB, or build from the folder (BUILDING.md). The README says it is
+  untested on hardware and that HYP-1 or M-VAVE's firmware goes back on the same way. The installer can write
+  M-VAVE's V15 back from a file you download yourself.
+brick_risk: false
+tags: [generative, chiptune, game, synth-engine, drums, emulator, midi]
+image:
+  url: https://raw.githubusercontent.com/RustyPawz/fm1-HYP1/main/cty1/docs/img/cty-hero.png
+  alt: "Render of an FM-1 running CTY-1: a top-down map of a small green town with roads and houses, a robbery alert across the top, and speed, traffic, people and chats values below"
+  credit: RedtailWorks
+  source_url: https://github.com/RustyPawz/fm1-HYP1/tree/main/cty1
+  first_party: true
+versions:
+- version: 0.0.95
+  url: https://rustypawz.github.io/fm1-HYP1/cty/install/
+  notes: Latest build offered by the project site's installer when checked on 2026-11-11. Builds are numbered per push; there is no GitHub release, so no date is given.

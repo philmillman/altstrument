@@ -1,8 +1,9 @@
 device: zoom-livetrak-l6
+also_devices: [zoom-livetrak-l6max]
 kind: tool
 name: ZOOM L6 Connect
 summary: >-
-  Touch-first PWA mixer surface for the LiveTrak L6 over USB MIDI, built for an iPad. It sends and reads the documented Mixer Control CC mapping, adds LFOs per knob and meters USB audio, with an optional Xcode wrapper for native CoreMIDI.
+  Touch-first PWA mixer surface for the LiveTrak L6 and L6MAX over USB MIDI, built for an iPad. It sends and reads the documented Mixer Control CC mapping, adds LFOs per knob and meters USB audio, with an optional Xcode wrapper for native CoreMIDI.
 description: >-
   The app shows channel strips for EQ, pan, AUX 1 and 2, EFX send and level, with mute, mono and USB routing toggles, the
   compressor and scenes A to C. It connects to the mixer's Mixer Control port and rejects the editor-only port, mirrors
@@ -13,7 +14,7 @@ description: >-
   ios/ wraps the same page in a web view and replaces Web MIDI with CoreMIDI and AVAudioEngine, because Safari has no Web
   MIDI. The repository's AGENTS.MD says the design is inspired by Zoom L6 Companion but has its own interface and
   architecture. Unlike that tool, it uses only the documented CC mapping, not SysEx, so it does not change the mixer's
-  device settings or sound pads. It names the L6 only, not the L6max. Nothing is flashed.
+  device settings or sound pads. Since November 2026 a second page, l6max.html, offers eight channel strips with an L6MAX-specific MIDI mapping; the L6 page is unchanged. Nothing is flashed.
 status: active
 authors:
   - name: enshtein
@@ -32,7 +33,7 @@ install_notes: >-
 brick_risk: false
 tags: [controller, web-midi, usb-midi, midi, web, ios, lfo]
 versions:
-  - version: master @ c8816f5
-    date: 2026-08-30
-    url: https://github.com/enshtein/zooml6connect/commit/c8816f5
-    notes: No tagged releases; this is the latest commit.
+  - version: master @ 0c09eb3
+    date: 2026-11-10
+    url: https://github.com/enshtein/zooml6connect/commit/0c09eb3c1da11ea17a50112c65c24fce97b800c0
+    notes: No tagged releases; this is the latest commit. Adds an L6MAX control page, a manual MIDI port apply result and restored port selections.

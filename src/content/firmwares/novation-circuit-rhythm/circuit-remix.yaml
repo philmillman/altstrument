@@ -15,7 +15,9 @@ description: >-
   a proof-of-concept loader for Arrhythmia .mod modules, which are third-party and not included; alpha 0.10 is the same
   without the module code. Alpha 0.12 is built on alpha 0.10, without the module code, and adds engines selectable in
   Sample mode, the CIRCUIT-HACKS virtual-analog synth and eight-operator FM, voice modes and polyphony of up to four
-  synth voices. Each version has an "S" variant without the features that create, change or delete SD
+  synth voices. Alpha 0.13 builds on alpha 0.12 and adds an effects sequencer that plays the Grid FX slots from a
+  track, delay and reverb throw effects, a live looper and resampler, Pattern Mutate, 64 saved patches per pack,
+  two-times oversampling for the virtual-analog synth and more modulation destinations. Each version has an "S" variant without the features that create, change or delete SD
   card files by themselves. The repository holds the builders, an assembler, manuals in Spanish and English and
   per-version manifests, and no Novation code. The README says the features were checked mostly in emulation and
   partly on the device, and that the project was developed with Claude.
@@ -42,6 +44,10 @@ install_notes: >-
 brick_risk: false
 tags: [sampler, sequencer, drums, fx, midi, arpeggiator, performance]
 versions:
+  - version: alpha-0.13
+    date: 2026-11-11
+    url: https://github.com/Ghillermo/CIRCUIT-REMIX/releases/tag/alpha-0.13
+    notes: Pre-release, built on alpha-0.12. Adds an effects sequencer on a track that plays the Grid FX slots, delay and reverb throws, a live looper and resampler in the Grid FX view, Pattern Mutate, 64 saved patches per pack with starters, oversampling for the virtual-analog synth and more modulation destinations. The release notes say the effects sequencer, Grid FX sends and looper were tried on the device and the rest mostly in emulation; they name alpha-0.10 as the fallback.
   - version: alpha-0.12
     date: 2026-11-07
     url: https://github.com/Ghillermo/CIRCUIT-REMIX/releases/tag/alpha-0.12

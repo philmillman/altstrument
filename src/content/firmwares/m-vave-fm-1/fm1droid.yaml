@@ -1,0 +1,28 @@
+device: m-vave-fm-1
+name: FM1 Droid
+kind: tool
+summary: >-
+  Android app that emulates the FM-1 with a multitouch full-screen panel, low-latency audio, USB and Bluetooth MIDI input with MIDI learn and saved flash, running M-VAVE's firmware and community .fwsc packages. Its README is in Portuguese.
+description: >-
+  Wraps Joakim Eriksson's fm1-emu core, included as a git submodule, in a native Android app. The panel is drawn to fit the phone's screen shape, keys play with haptic feedback that follows touch height as velocity, and audio goes out through AAudio. A class-compliant USB or Bluetooth MIDI keyboard plays the firmware, and a MIDI learn page maps the keyboard's buttons, knobs and sliders to the panel's controls. Firmware is not in the APK: it is installed from the fm1-emu list, with M-VAVE's own downloaded from M-VAVE's server, or imported as a .fwsc file, and each keeps its own flash. Only FM-1 packages are accepted. The emulated clock can be lowered automatically when audio breaks up. The v0.2.0 notes say MIDI learn is untested with the target Yamaha CK61 keyboard.
+status: active
+authors:
+- name: Patrick Coelho (criapix)
+  url: https://github.com/criapix
+source: https://github.com/criapix/fm1droid
+source_status: open
+license: MIT
+license_notes: >-
+  LICENSE is the MIT text, which the API reports as an unrecognised licence because of an added note: the emulation core in vendor/fm1-emu is a separate project by Joakim Eriksson and contributors under its own MIT licence. The README says no firmware is inside the APK.
+based_on: m-vave-fm-1/fm1-emu
+homepage: https://github.com/criapix/fm1droid/releases/latest
+distribution: download
+install_notes: >-
+  Download the APK from the latest release on an Android 8.0 or newer arm64 phone and allow installs from that source; a .sha256 file sits beside it and the release is built and signed by GitHub Actions. Emulation touches no hardware.
+brick_risk: false
+tags: [emulator, midi, controller, mobile]
+versions:
+- version: 0.2.0
+  date: 2026-11-11
+  url: https://github.com/criapix/fm1droid/releases/tag/v0.2.0
+  notes: Adds MIDI learn for an external USB keyboard, with button, knob and slider mapping and a last-message monitor, and moves release builds to signed GitHub Actions.

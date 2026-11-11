@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
+name: DaoGe Synth
+summary: >-
+  Six-voice physical-modelling instrument on Dinghy: plucked strings, struck bars, bells, membranes, bowed strings and wind, with 37 presets, a 16-step sequencer, arpeggiator and effects. README is in Chinese.
+description: >-
+  Eight engine families run in fixed-point code without floating point: plucked and steel strings, marimba and xylophone bars, bells, drums, bowed strings, clarinet and flute, and from 0.2 also koto, gong, organ pipe and bowed bar. Version 0.2 has 37 factory presets, eight user slots saved to two alternating flash sectors with a checksum, four edit pages (tone, effects, arpeggiator, sequencer), reverb, delay and chorus, a 16-step sequencer with recording, an internal clock that sends MIDI clock and follows an external one, and a long list of MIDI controllers. The release page has an FM-1 package and three SMK-37 packages (Pro, Elite, MKE-P37); the README does not say whether any SMK-37 build has been run on hardware. The synthesis core in dsp/ and host/ is MIT, and the firmware linked with Dinghy is GPL-3.0-only as a whole. The repository carries the licensed M-VAVE V15 package in its installer folder for restoring stock; its blob matches the one in m-vave/fm1_open.
+status: active
+authors:
+- name: kong8la
+  url: https://github.com/kong8la
+source: https://github.com/kong8la/xianqiang-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL-3.0 text and LICENSING.md states GPL-3.0-only for the firmware as a whole. The synthesis core in dsp/ and the host tools in host/ are MIT, and the Terminus font is OFL-1.1. The Dinghy platform code is copyright its own authors, and a logo file is all rights reserved. The installer folder includes FM-1_015.fwsc, byte-identical (git blob ce49cc15) to the V15 package that M-VAVE publishes in m-vave/fm1_open under Apache-2.0.
+homepage: https://kong8la.github.io/xianqiang-fm1/
+distribution: browser-installer
+requires_stock: Flashes over official V15 or another FM-1 firmware; refuses M-VAVE's FM1 Open build
+install_notes: >-
+  Use the browser installer in Chrome or Edge with SysEx allowed, or run tools/fm1_install.py on a package from the release. The installer writes the app area and its own update loader, not the boot head at 0x0000-0x3FFF. Take a full flash backup with M-Flasher first. For recovery the README lists holding OCT- at power-on for USB rescue, download mode, and the mask-ROM USB key route with an RP2040 board.
+brick_risk: false
+tags: [synth-engine, physical-modeling, sequencer, arpeggiator, fx]
+based_on: m-vave-fm-1/dinghy
+image:
+  url: https://raw.githubusercontent.com/kong8la/xianqiang-fm1/main/docs/screen.png
+  alt: "Orange-on-black screen showing the title XIANQIANG, preset 01 NYLON PLUCK, note E4, six parameter bars with values and a keyboard strip"
+  credit: kong8la
+  source_url: https://github.com/kong8la/xianqiang-fm1
+  first_party: true
+versions:
+- version: '0.2'
+  date: 2026-11-11
+  url: https://github.com/kong8la/xianqiang-fm1/releases/tag/v0.2
+  notes: Adds koto, gong, organ pipe and bowed bar engines, 37 presets with eight user slots, four edit pages, effects, an arpeggiator and a 16-step sequencer.

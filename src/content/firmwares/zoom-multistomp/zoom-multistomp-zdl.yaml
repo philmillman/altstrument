@@ -10,7 +10,7 @@ description: >-
   MS-70CDR, from the Patch Editor over USB. The build scripts need the TI C6000 compiler, and the docs map the ZDL
   wrapper, runtime ABI, safe DSP rules and an effect-ID registry. In November 2026 the project merged Roman Rusinov's fork
   (themanro/ZoomMultistompZDL) back into this repository and began building effects with their own
-  runtime instead of code taken from Zoom's effects; the first such release is a single effect, Loop 0.03. Testing is
+  runtime instead of code taken from Zoom's effects; the first such release was a single effect, Loop 0.03, and Manro's Scope, Spectrum, Scorch, Stasis, Mangle and Microloom followed as separate per-effect releases. Testing is
   narrow: the primary target is the MS-70CDR on firmware 2.10, the MS-50G on 3.10 is reported working for NAM and cab
   effects by a user, other ZDL pedals are unconfirmed and ZD2-based pedals are unsupported. Two effects with the same
   effect ID once left a pedal unable to boot until its ROM was reprogrammed.
@@ -49,4 +49,4 @@ versions:
   - version: main @ 32f3d68
     date: 2026-11-09
     url: https://github.com/repeat98/ZoomMultistompZDL/commit/32f3d6877d892409c6defeeeec57040ad004d31f
-    notes: No tagged releases for the pack; this is the latest commit. The only release, loop-0.03 (2026-11-09), carries just the Loop effect built with the own runtime.
+    notes: No tagged releases for the pack; this is the latest commit. The GitHub releases are individual effects built with the project's own runtime, from loop-0.03 (2026-11-09) to scope, spectrum, scorch, stasis, mangle and microloom (2026-11-10), not versions of the pack.

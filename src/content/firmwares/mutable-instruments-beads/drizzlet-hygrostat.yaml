@@ -5,14 +5,16 @@ summary: Browser page that builds a Drizzlet update wav for Beads with your own 
 description: >-
   A static page with no server part. You pick a Drizzlet release, choose which
   options page features are off, fixed or adjustable and where each sits on the
-  panel, and the page patches the 512-byte profile block of the release's app
+  panel, and the page patches the profile block of the release's app
   image, encodes it as a Beads update wav in the browser and decodes the result
   to check it. It estimates the processor load of the chosen features, warns
   above 91 percent and blocks above 92 percent, and draws panel guides for the
-  layout. Layouts can be shared as links. It needs a Drizzlet release that
-  carries a profile block, which the README describes as Beta 2 and later; the
-  only entry in the manifest at the time of writing was an unreleased
-  development build, and the published page was not yet live.
+  layout. Layouts can be shared as links. A scale editor sets which pitch scales
+  are available, their order, their notes in cents or from a Scala file, and
+  their LED colour and flash pattern. It needs a Drizzlet release that carries
+  a profile block, which the README describes as Beta 2 and later; the manifest
+  lists drizzlet-2026.11.09. The page is published at hygrostat.insolentconstruct.net
+  and counts visits, builds and downloads with GoatCounter, without cookies.
 status: active
 authors:
   - name: Insolent Construct
@@ -25,19 +27,19 @@ license_notes: >-
   encoder port also credits Émilie Gillet's original. glibc_sincos.js is
   LGPL-2.1-or-later (static/js/COPYING.LIB). The repository has no top-level
   LICENSE file.
-homepage: https://github.com/insolentconstruct/hygrostat#readme
-distribution: source-only
+homepage: https://hygrostat.insolentconstruct.net/
+distribution: browser-installer
 requires_stock: A Drizzlet release with a profile block (Beta 2 or later)
 install_notes: >-
-  Serve the static folder over HTTP, for example with python3 -m http.server,
-  and open it on localhost, which the hash check needs. Pick a release, set the
-  layout and download the wav, then install it like any Beads update. The
-  README links a GitHub Pages deployment that was not live yet. The wav is for
+  Open hygrostat.insolentconstruct.net, or serve the static folder over HTTP, for
+  example with python3 -m http.server, and open it on localhost, which the hash
+  check needs. Pick a release, set the layout and download the wav, then install
+  it like any Beads update. The wav is for
   Drizzlet, not for stock Beads, so see the Drizzlet entry for recovery notes.
 brick_risk: true
 tags: [granular, fx, web, editor]
 versions:
-  - version: main @ d9360e4
-    date: 2026-10-31
-    url: https://github.com/insolentconstruct/hygrostat/commit/d9360e4351856e3f47b43772ae4ba9067395031c
-    notes: No tagged releases; this is the latest commit.
+  - version: main @ 02bf141
+    date: 2026-11-10
+    url: https://github.com/insolentconstruct/hygrostat/commit/02bf1410565cbb6d7f3f72f5b329540e533c2d2a
+    notes: No tagged releases; this is the latest commit. Adds the scale editor, a 4 x 3 options grid and the Drizzlet Beta 2 release to the manifest.

@@ -1,0 +1,26 @@
+device: m-vave-fm-1
+name: fm1-8p
+summary: >-
+  Rights warning: ships Roland JX-8P factory tone data. Polyphonic two-oscillator analog-style synth with a 24 dB lowpass, a highpass, an LFO and a chorus, built as an fm1-dock module or a solo package; its engine is fixed-point C.
+description: >-
+  Rights warning: the 32 patches are the factory tones of the Roland JX-8P, converted from a SysEx bank that the repository commits unchanged; the author says only patch data and names are used, with no Roland logos or panel art. The synth engine is written from scratch in plain C99 without floating point. Each voice has two oscillators (saw, pulse, square or noise, with octave, fine tune, pulse width and a mix), a resonant 24 dB lowpass with key tracking and its own envelope, a four-position highpass, an ADSR amplifier envelope, an LFO routed to pitch and pulse width, velocity, unison, sustain pedal and pitch bend, followed by a stereo chorus with three modes. The engine supports up to eight voices, and the FM-1 module plays four. The module runs from the keys and from MIDI, starts on tone 17, shows the patch on the screen and has a VCF page on the knobs. A CPU-test firmware times the engine on the device, and a guide for running it on a real FM-1 is in the repository; the README does not say that the synth itself has been run on one, only in the fm1-emu emulator. A desktop render tool turns a MIDI file into a WAV. The project is not affiliated with Roland or M-VAVE.
+status: active
+authors:
+- name: ericdahl-dev
+  url: https://github.com/ericdahl-dev
+source: https://github.com/ericdahl-dev/fm1-8p
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The README says GPL-3.0 and LICENSE is the GPL v3 text; the engine's source headers say GPL-3.0-or-later. fm1-dock (GPL-3.0-only), the JieLi toolchain and SDK files and fm1-emu are fetched by the build at pinned hashes and are not in the repository. data/jx8p-factory-1-32.syx is the JX-8P factory bank as downloaded from a fan site, with no stated licence.
+distribution: source-only
+requires_stock: An FM-1 running fm1-dock for the .dock module; the solo .fwsc needs no particular firmware
+install_notes: >-
+  No release exists; CI builds the packages as artifacts, or tools/fm1-build.sh builds them from a Linux checkout. The .dock module goes onto an FM-1 that already runs fm1-dock, over USB without flashing. The solo .fwsc has fm1-dock's safety checks and rescue modes (OCT- at power-on for USB rescue, OCT+ for a safe start). The README advises keeping the stock V15 firmware for recovery.
+brick_risk: false
+tags: [synth-engine, oscillator, filter, lfo, fx, presets, midi]
+versions:
+- version: main @ fb5afae
+  date: 2026-11-11
+  url: https://github.com/ericdahl-dev/fm1-8p/commit/fb5afae8d1e9b656f82668b693c19cd62ec99478
+  notes: No tagged releases; this is the latest commit.

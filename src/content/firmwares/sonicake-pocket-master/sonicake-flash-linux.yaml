@@ -1,0 +1,38 @@
+device: sonicake-pocket-master
+kind: tool
+name: sonicake-flash
+summary: Python tools that parse a Pocket Master HTFW firmware file and send it to the pedal over USB MIDI SysEx from Linux, using a protocol the author reconstructed from Sonicake's Windows DLL.
+description: >-
+  The repository has an HTFW container parser, a SysEx frame codec, an ACK-paced uploader with a dry-run default and a
+  probe mode, a shell wrapper around the uploader and a write-up of the container layout and upload sequence. The tools
+  flash a firmware file you supply, such as a community build made for base version 1.3.3, and the repository contains
+  no firmware image. The pedal has to be put into Sonicake's update mode by hand, by holding the first two footswitches
+  and the VOL/VALUE knob while powering on. The README says the container, frame format and first acknowledgement are
+  verified on hardware, and that a full multi-segment upload has not yet been completed. It reads ALSA rawmidi nodes
+  directly because rtmidi did not receive the pedal's replies.
+status: active
+authors:
+  - name: MigueLesPaul
+    url: https://github.com/MigueLesPaul
+source: https://github.com/MigueLesPaul/sonicake-pocket-master-linux-flash
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and the README gives no license statement. The protocol notes were written from
+  Sonicake's 5868USB.dll, which is not included.
+homepage: https://github.com/MigueLesPaul/sonicake-pocket-master-linux-flash
+distribution: source-only
+requires_stock: A Pocket Master HTFW firmware file of your own, such as a community build for base 1.3.3
+install_notes: >-
+  Needs Linux with ALSA rawmidi, Python 3.10 or newer or uv, and membership in the audio group. Inspect a file with
+  htfw.py, dry-run upload.py to see the frame plan, probe with the init frame to confirm update mode, then run
+  flash-firmware.sh. The upload is about 112,000 acknowledged frames, so keep the pedal powered and connected. The
+  README warns that a wrong image or an interrupted upload can brick the pedal and suggests keeping the stock firmware
+  and Sonicake's official manager as a fallback.
+brick_risk: false
+tags: [flasher, sysex, linux, reverse-engineering, cli]
+versions:
+  - version: master @ 9b233d3
+    date: 2026-11-10
+    url: https://github.com/MigueLesPaul/sonicake-pocket-master-linux-flash/commit/9b233d3b23399aae1f84d5c9ace93656778a29c2
+    notes: No tagged releases; this is the latest commit.

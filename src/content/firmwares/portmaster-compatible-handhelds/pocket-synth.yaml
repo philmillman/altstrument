@@ -1,0 +1,47 @@
+device: portmaster-compatible-handhelds
+name: Pocket Synth
+summary: Gamepad instrument for PortMaster handhelds such as the R36S, with guitar, flute and violin, piano and electric piano and drum modes plus a four-track loop recorder; also builds for macOS.
+description: >-
+  Pocket Synth turns the sticks and buttons of a handheld or a game controller into an instrument. The Guitar mode picks
+  chords with the left stick and strums with the right stick, and a second layout picks the six strings one by one.
+  Expressive plays synthesized flute and violin with a scale wheel or continuous pitch, Keys plays piano and electric
+  piano on eight scale buttons with pitch bend and vibrato, and the Drum Machine has eight pads. A loop recorder with
+  four synchronized tracks supports a count-in, overdubbing, undo, quantization and one or two bars, and settings and
+  recordings are saved when the app exits. The R36S is the only tested handheld; the app runs as a PortMaster package
+  on ARM64 Linux with SDL2 and two analog sticks, and a macOS app for Apple Silicon lets a controller connected to a
+  Mac use the same controls. The sounds are generated in code with DaisySP. The README documents building on macOS and
+  cross-compiling for the handheld with Zig.
+status: active
+authors:
+  - name: FrostMiKu
+    url: https://github.com/FrostMiKu
+source: https://github.com/FrostMiKu/pocket-synth
+source_status: open
+license: MIT
+license_notes: >-
+  Read from the LICENSE file, which names "Pocket Instrument contributors" as the holder. The README says bundled
+  third-party components, including DaisySP and SDL, keep their own licenses in the vendor folder.
+homepage: https://github.com/FrostMiKu/pocket-synth
+distribution: download
+requires_stock: A Linux handheld with PortMaster support, 64-bit ARM, SDL2 and two analog sticks (tested on the R36S)
+install_notes: >-
+  Extract the PortMaster zip from the release into the ports folder and launch Pocket Synth from the Ports menu. The app
+  and its generated sounds live in their own folder, and nothing is flashed to the device. On macOS, unzip the Apple
+  Silicon build; it is signed locally and not notarized by Apple.
+brick_risk: false
+tags: [synth-engine, sequencer, drums, performance, open-source]
+image:
+  url: https://raw.githubusercontent.com/FrostMiKu/pocket-synth/main/docs/guitar.png
+  alt: Pocket Synth in Guitar mode, with a wheel of chord names around a large C, six strings labelled C3 to G4 beside it, and mode tabs and a tempo and bar readout along the top
+  credit: FrostMiKu
+  source_url: https://github.com/FrostMiKu/pocket-synth
+  first_party: true
+versions:
+  - version: v2.2.2
+    date: 2026-11-11
+    url: https://github.com/FrostMiKu/pocket-synth/releases/tag/v2.2.2
+    notes: Picks the six guitar strings from low to high with the face and shoulder buttons, applies octave and semitone modifiers to new attacks, keeps the pitch of loop recordings and fixes the positions of the status text.
+  - version: v2.2.0
+    date: 2026-11-11
+    url: https://github.com/FrostMiKu/pocket-synth/releases/tag/v2.2.0
+    notes: Guitar, Expressive, Keys and Drum Machine modes with a four-track loop recorder; PortMaster and macOS packages.

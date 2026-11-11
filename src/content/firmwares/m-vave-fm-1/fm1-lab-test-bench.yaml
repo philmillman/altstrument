@@ -1,0 +1,25 @@
+device: m-vave-fm-1
+name: FM1-Lab Test Bench
+kind: tool
+summary: >-
+  Command-line test bench that builds FM-1 firmware, runs it on an emulated FM-1 and reports screenshots, sound, MIDI out, flash use, crashes and CPU headroom, with build comparison and a check for the newer flash chip.
+description: >-
+  Not the same project as albinoIguana's FM1-Lab instrument environment. This one is a Node command-line tool with a sandboxed build of firmware projects on fm1-base and Optimist- or Felucca-style trees, using a pinned compiler and SDK files that setup fetches. It runs packages on the fm1-emu emulator with scripted key, knob and MIDI scenarios, writes HTML reports, compares two builds, profiles CPU headroom, checks that a build still saves on both the Puya and UC25HQ80 flash chips, and sweeps hundreds of packages into a gallery. A watch mode rebuilds and retests on each save, and a new command starts a project from the fm1-base template. It also runs the checks of FM-1 Inspect. The README describes the status as early, says nothing has been compared with a real FM-1 and that it does not install anything on one.
+status: active
+authors:
+- name: beowulf-audio
+  url: https://github.com/beowulf-audio
+source: https://github.com/beowulf-audio/fm1-lab
+source_status: open
+license: MIT
+license_notes: The LICENSE file is the MIT text, copyright Beowulf Audio. The emulator is vendored under its own licence, and fm1-base is MPL-2.0.
+distribution: source-only
+install_notes: >-
+  Needs macOS on Apple silicon or Linux, Node 22 or later, git and Rust. Clone the repository and run the setup command, which builds the compiler once, a step the README puts at one to two hours and about 15 GB. Review the build code of any third-party project before building it. The tool does not write to a device.
+brick_risk: false
+tags: [emulator, utility, research, sdk]
+versions:
+- version: main @ 67f921d
+  date: 2026-11-11
+  url: https://github.com/beowulf-audio/fm1-lab/commit/67f921dd51b7f50b4a44c9450381a5d393b29eb2
+  notes: No tagged releases; this is the latest commit.

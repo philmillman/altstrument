@@ -47,7 +47,7 @@ distribution: browser-installer
 requires_stock: Corrected-ID BB1 1.5 or BB1 2.0 for the browser installer
 install_notes: >-
   Use the project's browser installer and follow its supported-browser and starting-firmware checks. Install the
-  application with the sound library of the same release (1.4 for 2.0, 2.1 for 2.1); the 2.1 notes warn against
+  application with the sound library of the same release (1.4 for 2.0, 2.1 for 2.1, 2.2 for 2.2); the 2.1 notes warn against
   mixing the 2.1 application with an older library, and do not treat the application package alone as the complete
   installation. Back up before switching firmware. The attended return to corrected BB1 1.5 was verified by
   restoring the original 1.2 sound library, installing 1.5 through the normal updater and comparing all four flash
@@ -63,6 +63,10 @@ image:
   source_url: https://thebigbeat.app/fm1/
   first_party: true
 versions:
+- version: '2.2'
+  date: 2026-11-10
+  url: https://github.com/TexasRADIO/bb1-firmware/releases/tag/v2.2
+  notes: The release page lists the firmware, a matching sound library, the corresponding source and checksums, and gives no changelog. The project page says the installer puts BB1 2.2 and its matching sound library on together.
 - version: '2.1.1'
   date: 2026-11-03
   url: https://github.com/TexasRADIO/bb1-firmware/releases/tag/v2.1.1

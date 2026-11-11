@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: Lilliput
+summary: >-
+  No-input mixer for the FM-1: six channels that feed back into themselves and each other through tube, op-amp, filter and limiter models and a seven-slot effects rack, with 25 patch recipes and large high-contrast screens.
+description: >-
+  Models a mixing desk with nothing plugged in, after Igor Vasiliev's NoInputMixer app, written anew in fixed point for the FM-1. Each of the six channels has an input selector, a noise source, a tube stage, an op-amp stage with overload protection, shelves or cuts, a peak, notch or band-pass filter, a brickwall limiter whose look-ahead sets the pitch of the loop, two sends, level and pan. The effects rack has seven slots (delay, flanger, chorus, tremolo, formant, bitcrusher and glitch), and the output has an equaliser, an insert and a six-space reverb. HOME draws a new patch from one of 25 recipes, every channel has two LFOs and four modulation slots, and a gesture looper, a rhythm generator and a four-voice drum section run beside the mixer. Sessions, snapshots and MIDI CCs are supported, and USB audio carries the output or six channels. It is built from Tonitor and from Felucca and SLOOP code; none of Tonitor's sound engine is in it. The screens use very large type for low vision. The README says its sound and screens were tested on a computer and that its load on the FM-1 had not been measured. The project site has a browser installer.
+status: active
+authors:
+- name: Nuno Zimas
+  url: https://github.com/nzimas
+source: https://github.com/nzimas/lilliput
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md and the README state GPL-3.0-only for the firmware and LICENSE is the GPL v3 text. The documentation text is MIT, the two bundled fonts are SIL OFL 1.1, and the JieLi SDK files the package needs are read from the builder's own SDK checkout and are not in the tree. The repository commits built .fwsc packages, which are the author's own builds.
+based_on: m-vave-fm-1/tonitor
+homepage: https://nzimas.github.io/lilliput/
+distribution: browser-installer
+install_notes: >-
+  Use the project's browser installer in desktop Chrome, Edge or Opera over USB, or run ./install.sh from a source checkout; it installs over M-VAVE's firmware, Tonitor, Bigorna or another custom firmware. Hold OCT- at power-on for USB rescue mode and install again; two failed starts also enter it, and OCT- with OCT+ held for 5 seconds enters the chip's own updater. Sessions are kept in the flash area that Tonitor, Bigorna and SLOOP use and going back to Tonitor erases them. The README names FM-1-transporter for a unit that no longer starts.
+brick_risk: false
+tags: [synth-engine, fx, generative, drums, looper, performance, ui, reverb, usb-audio]
+image:
+  url: https://nzimas.github.io/lilliput/assets/screens/10_overview.png
+  alt: "Lilliput overview screen on the FM-1: six rows numbered 1 to 6 in separate colours, each with an input name (MIX R, MIX L, SEND 1 and three PRE) and a level bar"
+  credit: Nuno Zimas
+  source_url: https://nzimas.github.io/lilliput/screens.html
+  first_party: true
+versions:
+- version: build-18
+  date: 2026-11-11
+  url: https://github.com/nzimas/lilliput/tree/build-18
+  notes: Git tag; no GitHub release page.

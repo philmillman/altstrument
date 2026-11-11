@@ -1,0 +1,38 @@
+device: m-vave-fm-1
+name: DUB-BOX
+summary: >-
+  Dub station on the FM-1's USB and Bluetooth audio router: a DJ filter, a siren, a tape echo and a four-band isolator over whatever audio you feed it, played from the black keys, with a browser emulator.
+description: >-
+  A fork of maxravedj's FM-1 Audio Router with the dub modules of altessproduction's SLOOP Dub ported onto it, and no sequencer or synths. OCT- opens the DUB screen, which has five pages. DUB holds a bipolar DJ filter and the throw into the tape echo, SIREN and SIREN 2 hold an LFO type, wave, pitch, rate, depth and level, DELAY is a tape echo with time glide, wow and flutter and damped repeats, and ISO has four bands (SUB, BASS, MIDS, TOPS) with gains and kills. The first four black keys kill the isolator bands and the last black key is the siren's gate, from any screen; PLAY mutes the master. Underneath, the router keeps the USB audio interface, the Bluetooth receiver with SBC, AAC, aptX and aptX HD, the mixer, equaliser, limiter and visualizers, and settings persist across boots. The browser emulator on the project site runs the firmware compiled to WebAssembly. The firmware package embeds m-bootloader, and the unit has to run m-bootloader first.
+status: active
+authors:
+- name: altessproduction
+  url: https://github.com/altessproduction
+source: https://github.com/altessproduction/DUB-BOX-FM1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The dub modules, the DUB screen and the emulator faceplate are GPL-3.0-only (ported from SLOOP Dub), and LICENSING.md says the combined firmware is distributed as GPL-3.0-only. The repository's LICENSE file is the MPL-2.0 text of the router and fm1-base platform files, which keep their MPL-2.0 notices. The Bluetooth, AAC and SBC code, vendored Felucca BSP files and the unmodified m-bootloader binary (MIT) keep their own notices.
+based_on: m-vave-fm-1/audio-router
+homepage: https://altessproduction.github.io/DUB-BOX-FM1/dub/
+distribution: download
+requires_stock: m-bootloader installed first
+install_notes: >-
+  Install m-bootloader with M-Flasher once, power on holding REC, then flash the release's dub-box .fwsc with M-Flasher, leaving bootloader replacement and the settings erase unchecked; a browser install page lists the checksums. docs/INSTALL.md says to keep a verified full-flash backup, never to erase the whole chip or write below 0x4000, and that a unit that no longer enumerates on USB may need hardware recovery.
+brick_risk: true
+tags: [fx, delay, usb-audio, mixer, performance, emulator, fork]
+image:
+  url: https://raw.githubusercontent.com/altessproduction/DUB-BOX-FM1/main/assets/github/dubbox.png
+  alt: "DUB-BOX logo: a white outline of a stacked sound system with four round speaker cones in blue, green, yellow and red above the name DUB-BOX and the line 1.0 FM-1 on black"
+  credit: altessproduction
+  source_url: https://github.com/altessproduction/DUB-BOX-FM1
+  first_party: true
+versions:
+- version: 1.0.5
+  date: 2026-11-11
+  url: https://github.com/altessproduction/DUB-BOX-FM1/releases/tag/v1.0.5
+  notes: Gives the DUB pages' knobs the feel of potentiometers, with detents sweeping their share of the range, on the device and in the emulator.
+- version: 1.0.0
+  date: 2026-11-10
+  url: https://github.com/altessproduction/DUB-BOX-FM1/releases/tag/v1.0.0
+  notes: First release, the FM-1 audio router with a dub screen on top.

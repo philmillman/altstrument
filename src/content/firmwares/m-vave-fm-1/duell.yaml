@@ -4,10 +4,10 @@ summary: >-
   Bi-timbral synth built on Felucca: two simultaneous sound parts with their own engines, patches, effects,
   EQ and arpeggiators, in LAYER, SPLIT or STEREO modes, with patch morphing and about 100 factory sounds.
 description: >-
-  Developed emulator-first. The 1.1 release notes say it has run on two FM-1 units, both the author's, and that more than
+  Developed emulator-first. The 1.1 and 1.2 release notes say it has run on two FM-1 units, both the author's, and that more than
   100 people have installed it through the Firmware Hub; the earlier notes reported the return to official V15 working
   about three times on one unit. 1.1 redraws every page and adds chord STRUM, chained MORPH rolls with undo, parameter
-  locks recorded from knob turns and pattern transpose and shift. Recovery notes in docs/RECOVERY.md.
+  locks recorded from knob turns and pattern transpose and shift. 1.2 shares one pool of up to 16 voices a part across both cores and accepts the newer UC25HQ80 flash chip. Recovery notes in docs/RECOVERY.md.
 status: active
 authors:
 - name: OSCILL/R
@@ -21,6 +21,10 @@ install_notes: Installer page at oscillr.github.io/DUELL/install/ and docs/INSTA
 brick_risk: false
 tags: [synth-engine, performance, fx, midi]
 versions:
+- version: '1.2'
+  date: 2026-11-10
+  url: https://github.com/oscillr/DUELL/releases/tag/v1.2
+  notes: Both parts play from one shared pool of up to 16 voices spread over both cores instead of 8 a part, with an AVAILABLE VOICES readout, and FM6 plays up to 12 voices. Fixes crackle on chord starts and knob or MIDI moves, and lets FM-1s with the newer UC25HQ80 flash chip save and update. The installer finds any FM-1 whatever its MIDI port is called and can install other FM-1 firmwares.
 - version: '1.1'
   date: 2026-10-31
   url: https://github.com/oscillr/DUELL/releases/tag/v1.1

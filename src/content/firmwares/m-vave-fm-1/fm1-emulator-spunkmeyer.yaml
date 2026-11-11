@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+name: FM-1 Emulator (Spunkmeyer77)
+kind: tool
+summary: >-
+  AU, VST3 and CLAP instrument plugin that runs FM-1 firmware packages inside a DAW, with a drawn FM-1 panel whose knobs and buttons are host parameters, built on fm1-emu.
+description: >-
+  Starts from an import of Joakim Eriksson's fm1-emu 0.4.0 and develops its plugin, which is released here under the name FM-1 emulator by Transistor Labs. A .fwsc package is loaded in the plugin window, any community firmware or M-VAVE's own, and an SMK-37 package gets that keyboard's panel; MIDI from the DAW plays it. Later releases add a skinned panel, a size menu, knobs and buttons that appear as host parameters so they can be MIDI-mapped and automated, and universal macOS builds for Apple silicon and Intel with an AU component. The firmware and its saved patches are stored in the DAW project. The README is mostly the fm1-emu page text and the releases ship installers for macOS (not notarised), Windows and Linux with a user manual. No firmware is bundled, and the release notes say it is unofficial and not affiliated with M-VAVE. The repository is a separate import of fm1-emu, not a GitHub fork.
+status: active
+authors:
+- name: Spunkmeyer77
+  url: https://github.com/Spunkmeyer77
+source: https://github.com/Spunkmeyer77/FM1-emulator
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text with Joakim Eriksson's 2026 copyright, and the README says the plugin crate is MIT too. The README states that the firmwares it runs are their authors' and are not part of the repository, and the tree holds no .fwsc package.
+based_on: m-vave-fm-1/fm1-emu
+homepage: https://github.com/Spunkmeyer77/FM1-emulator/releases/latest
+distribution: download
+install_notes: >-
+  Installers and archives are on the releases page: a macOS .pkg with AU, VST3 and CLAP, a Windows setup .exe and a Linux .tar.gz with VST3 and CLAP. The macOS installer is not notarised, so the release notes say to right-click it and choose Open. Emulation touches no hardware, and you supply the firmware package yourself.
+brick_risk: false
+tags: [emulator, desktop, midi, fork]
+image:
+  url: https://raw.githubusercontent.com/Spunkmeyer77/FM1-emulator/main/docs/media/plugin-windows-waveform.gif
+  alt: "Waveform DAW on Windows with three tracks, each hosting an FM-1 plugin window; the first shows a Scintilla pad and the other two show Felucca screens, above a timeline of coloured clips"
+  credit: Spunkmeyer77
+  source_url: https://github.com/Spunkmeyer77/FM1-emulator
+  first_party: true
+versions:
+- version: 1.5.1
+  date: 2026-11-11
+  url: https://github.com/Spunkmeyer77/FM1-emulator/releases/tag/v1.5.1
+  notes: Adds a size menu with a locked aspect ratio and a maximum size, makes a MIDI-mapped knob sweep take 128 clicks, and fixes a dark gap above the panel when resizing.
+- version: 1.5.0
+  date: 2026-11-11
+  url: https://github.com/Spunkmeyer77/FM1-emulator/releases/tag/v1.5.0
+  notes: Knobs and buttons become host parameters that can be MIDI-mapped and automated, and the right-hand knobs and buttons are larger.
+- version: 1.0.0
+  date: 2026-11-11
+  url: https://github.com/Spunkmeyer77/FM1-emulator/releases/tag/v1.0.0
+  notes: First release, a free AU, VST3 and CLAP plugin for macOS, Windows and Linux.

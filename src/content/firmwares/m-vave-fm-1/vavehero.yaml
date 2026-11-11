@@ -20,7 +20,7 @@ license_notes: >-
 homepage: https://joakimskurk.github.io/fm1vavehero/
 distribution: browser-installer
 install_notes: >-
-  The project page installs the firmware from Chrome or Edge over USB and also plays the game in the browser. To build it instead, use the Makefile and JieLi's toolchain, then install build/vavehero.fwsc over USB-MIDI with tools/fm1_install.py. The browser reference runs without a device, and a
+  The project page installs the firmware from Chrome or Edge over USB and also plays the game in the browser. To build it instead, use the Makefile and JieLi's toolchain, then install build/vavehero.fwsc (or vavehero-0.1.fwsc from the release) over USB-MIDI with tools/fm1_install.py. The browser reference runs without a device, and a
   CI package opens in the fm1-emu emulator.
 brick_risk: false
 tags: [game, sequencer, synth-engine, midi]
@@ -31,7 +31,11 @@ image:
   source_url: https://github.com/joakimskurk/fm1vavehero
   first_party: true
 versions:
+- version: '0.1'
+  date: 2026-11-11
+  url: https://github.com/joakimskurk/fm1vavehero/releases/tag/v0.1
+  notes: First release, called an alpha and a proof of concept, with four songs (FIRST LIGHT, NEON CARRIER, ENGINE TOUR and CHROME HORIZON), SPREAD, AUTO and DEMO modes and MIDI MODE. Package identity FM-1_951. The notes say it has been tested only in CI and in fm1-emu.
 - version: ccr-c6bd2f5b-v9xbts @ 1388f3b
   date: 2026-11-09
   url: https://github.com/joakimskurk/fm1vavehero/commit/1388f3bddc53566000a8880855546f1894f1fa61
-  notes: No tagged releases; this is the latest commit on the default branch. Since 8d93c4b it adds a project page with a browser installer and an in-browser version of the game, a fixed level per song counted from the notes over time, and FREE SOLO mode with a note counter beside the highway. The README calls it an early version, not yet tried on a real FM-1.
+  notes: Latest commit on the default branch before the first release. Since 8d93c4b it adds a project page with a browser installer and an in-browser version of the game, a fixed level per song counted from the notes over time, and FREE SOLO mode with a note counter beside the highway. The README calls it an early version, not yet tried on a real FM-1.

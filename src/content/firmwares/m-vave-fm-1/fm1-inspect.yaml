@@ -1,0 +1,27 @@
+device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
+name: FM-1 Inspect
+kind: tool
+summary: >-
+  Browser page that checks an FM-1 or SMK-37 .fwsc package before installing: identifies it against an index of known firmware, flags flash-chip support, networking code and USB device descriptors.
+description: >-
+  A package is dropped on the page and decoded locally, with nothing uploaded. The page matches it to a bundled index of community and official releases by checksum and by a code fingerprint, so renamed files and forks still resolve, and lists the closest related projects. It reports whether the build was attached to a GitHub release, built by the project's public CI or carries a build attestation, whether it recognises the newer UC25HQ80 flash chip as well as the Puya part, and whether the code contains networking, hard-coded addresses or USB keyboard, mouse or drive descriptors. A second tab takes an owner and repository name and checks the releases and committed packages through the anonymous GitHub API. The README calls the checks static and says an unknown file is not necessarily bad. It writes nothing to a unit.
+status: active
+authors:
+- name: beowulf-audio
+  url: https://github.com/beowulf-audio
+source: https://github.com/beowulf-audio/fm1-inspect
+source_status: open
+license: MIT
+license_notes: The LICENSE file is the MIT text, copyright "FM-1 Inspect contributors".
+homepage: https://beowulf-audio.github.io/fm1-inspect/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in a browser; there is nothing to install and no device connection. To run it locally, serve the site folder with tools/serve.py and open it on 127.0.0.1.
+brick_risk: false
+tags: [web, utility, research]
+versions:
+- version: main @ 4523e58
+  date: 2026-11-11
+  url: https://github.com/beowulf-audio/fm1-inspect/commit/4523e58b7ecafc456da32f384901ba22b60090ff
+  notes: No tagged releases; this is the latest commit.

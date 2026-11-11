@@ -1,0 +1,48 @@
+device: line-6-pod-go
+name: NAM A2 Lite for POD Go
+summary: A patch for stock POD Go and POD Go Wireless firmware 2.50 that adds a Neural Amp Modeler A2 Lite amp block with a tone stack, running on the unit's own DSP with up to 101 captures stored as IRs. Built in the browser from your own firmware file.
+description: >-
+  A port of Derek Bui's hx-stomp-nam-lite to the POD Go. The patched firmware adds a NAM A2 Lite block to the amp list in
+  the place of the Line 6 Elektrik amp and leaves every other amp, cab, effect and IR as it was. Captures are converted
+  on a web page, which packs a capture's 1,871 weights into an IR-sized .wav, and are imported with POD Go Edit like any
+  IR; the block's Model knob picks the slot, for up to 101 captures. Bass, Mid with frequency and width, Treble and High
+  Cut sit after the capture, with Input and Output knobs. Most captures include the cab, so the cab block can be switched
+  off. The repository also has five preset templates that free the fixed blocks, a block helper that places an amp, cab,
+  IR or FX loop into any empty block, an optional boot screen and experimental capture names on the Model knob. A build
+  can run from RAM first without installing anything. The author measured the NAM block at 28.3 percent of the DSP on a
+  POD Go Wireless, where all 128 user presets loaded, and says the wired POD Go uses the same firmware file but has not
+  been tried.
+status: active
+authors:
+  - name: Mark Daniels
+    url: https://github.com/tavishrox
+source: https://github.com/tavishrox/pod-go-nam-lite
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  NOTICE grants GPL-3.0 or any later version, which the README repeats; the LICENSE file is the plain GPL 3 text. The
+  repository holds no Line 6 code or data, and NOTICE says the built firmware contains Line 6's firmware and should not
+  be redistributed. The SHARC opcode tables are adapted from ghidra-sharc under Apache-2.0. No .nam captures are
+  included.
+homepage: https://tavishrox.github.io/pod-go-nam-lite/
+based_on: line-6-hx-stomp/hx-stomp-nam-lite
+distribution: patch-your-own
+requires_stock: 2.50 (POD_Go_v2.50.0_0x6e984472.hxf, which the build checks)
+install_notes: >-
+  Drop your own copy of the stock 2.50 file on the setup page, which builds in the browser and reports Verified when the
+  result matches the tested build, or run podgo/build_podgo.py. Back up with POD Go Edit, then install the built file with
+  Line 6 Updater using Choose File. The README says the bootloader is never touched. If the unit stops at the splash
+  screen or an update fails, hold Page > while powering on and reinstall the stock 2.50 file with Line 6 Updater.
+brick_risk: false
+tags: [nam, amp-modeling, patch]
+video:
+  url: https://youtu.be/w9rP10gc9I0
+  title: Here's The Update Line 6 Wont Give you - POD GO 'NAM A2 Lite Edition'
+  credit: ToneShift
+  first_party: true
+  found_via: https://github.com/tavishrox/pod-go-nam-lite#readme
+versions:
+  - version: podgo-2.50-v1
+    date: 2026-11-10
+    url: https://github.com/tavishrox/pod-go-nam-lite/releases/tag/podgo-2.50-v1
+    notes: First release, tools only with no firmware included. Adds the in-browser firmware builder, run from RAM, the converter, five preset templates and a step-by-step install guide.

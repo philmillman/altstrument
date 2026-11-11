@@ -1,21 +1,20 @@
 device: m-vave-smk-37
-name: Big Beat Studio BB–37
+name: Big Beat Studio BB-37
 summary: >-
-  Firmware for the SMK-37 Elite only, with Telegram, an SH-101-style lead synth, Dillo, a TB-303-style bass synth, and a synthesized 808, plus a library of
-  sounds and phrases and 16-pad Band arrangements.
+  Firmware for the SMK-37 Pro, SMK-37 Elite and MKE-P37 with Telegram, an SH-101-style lead synth, Dillo, a TB-303-style bass synth, and a synthesized
+  808, plus a library of sounds and phrases and 16-pad Band arrangements.
 description: >-
   Rights warning: the phrase and Band data transcribe named songs and acid lines, such as the Acid Tracks parts, and Band presets
-  are drawn from the BB1 songs. The README points to THIRD_PARTY.md and ACID-PARTS-PERMISSION.md for the terms of this material, but neither file
-  is in the repository as of build 800. Build 799 rested it on the project owner's own permission statement and asserted no open licence for the
-  Acid Voice parts.
+  are drawn from the BB1 songs. Build 799 rested this material on the project owner's own permission statement and asserted no open licence for
+  the Acid Voice parts; the build 800 tree carries no file about these terms.
 
-  BB–37 has three instruments. Telegram is a one-oscillator lead synth modelled on the SH-101, with saw, pulse, sub and noise on a mixer, a four-pole
-  filter, LFO or envelope pulse-width modulation, gate and trigger modes, legato-only auto glide, an arpeggiator and a 100-step sequencer. Its 112
-  patches include the 40 sounds charted in the SH-101 owner's manual and eight reader patches from 1980s magazines, with 329 phrases. Dillo is a
-  TB-303-style bass voice with accent, slide and two Devilfish-style controls (slide time and accent decay), with 106 sounds and 1,136 patterns.
-  The 808 has 16 synthesized sounds. Band puts Telegram, Dillo and 808 parts on the 16 pads, each change landing on the next bar. Dillo and the
-  808 share their sound engine with Big Beat Studio and BB1 for the FM-1; Telegram, the screens and the controls were written for the Elite. The README says it is not
-  for the FM-1, SMK-37 Pro or SMK-37 MKE.
+  BB-37 has three instruments. Telegram is a one-oscillator lead synth modelled on the SH-101, with saw, pulse, sub and noise on a mixer, a four-pole
+  filter, LFO or envelope pulse-width modulation, gate and trigger modes, legato-only auto glide, an arpeggiator and a 100-step sequencer. Its
+  patches include the 40 sounds charted in the SH-101 owner's manual and eight reader patches from 1980s magazines. Dillo is a TB-303-style bass
+  voice with accent, slide and two Devilfish-style controls (slide time and accent decay), with 106 sounds and 1,136 patterns. The 808 has 16
+  synthesized sounds. Band puts Telegram, Dillo and 808 parts on the 16 pads, each change landing on the next bar. Dillo and the 808 share their
+  sound engine with Big Beat Studio and BB1 for the FM-1. Build 800 was first released for the Elite only; the same release now carries
+  separate packages for the SMK-37 Pro, the SMK-37 Elite and the EROK MKE-P37.
 status: active
 authors:
 - name: TexasRADIO (The Big Beat)
@@ -26,25 +25,24 @@ license: GPL-3.0-only
 license_notes: >-
   The README and LICENSE file give GPL-3.0-only. Retained M-VAVE SMK-37 Open sources are GPLv3 with the section 7 linking permission
   (vendor/smk37/LICENSE.md), Big Beat and Felucca-derived code is GPL-3.0-only (vendor/bb/LICENSING.md), and DaisySP, Rings, msfa, Fukiai, uPD933,
-  Terminus and Inter Tight keep their own terms. The music data is not all GPL; see the rights warning. The build 800 tree also lacks the
-  BUILDING.md, TESTING.md, PROVENANCE.md and SHA256SUMS files the README links, and its Makefile has no build or check targets. The
-  repository holds the project's own build (firmware/BB-37-Build-800.fwsc, 651,500 bytes) and no M-VAVE stock image.
+  Terminus and Inter Tight keep their own terms. The music data is not all GPL; see the rights warning. The repository has no build script (its
+  Makefile only checks the release tree). It holds the project's own builds (firmware/BB-37-Elite, BB-37-Pro and BB-37-MKE-P37 Build 800 .fwsc
+  files) and no M-VAVE stock image.
 homepage: https://thebigbeat.app/elite/
 based_on: m-vave-fm-1/bb1
 distribution: browser-installer
 install_notes: >-
-  For the SMK-37 Elite only. The installer at thebigbeat.app/elite/install/ runs in current desktop Chrome or Edge over WebMIDI with SysEx
-  permission; connect the Elite directly with a USB data cable and keep it connected until the page reports the restart. It installs from the
-  stock firmware, and the package it serves is identical to the v1.0.0 release asset. The installer feeds the package to the keyboard's own
-  SysEx update loader in two stages, as M-VAVE's updater does. The README says the installer backs the unit up first and that this backup is
-  the way back to factory firmware, but the installer page's script sends only the BB–37 package and shows no backup step. The device's
-  mask-ROM rescue and M-VAVE's updater remain the recovery route (see the device notes). The author reports testing build 800, a return to
-  build 797 and a reinstall of build 800 on one Elite; build 797 is no longer published.
+  The installer at thebigbeat.app/elite/install/ runs in current desktop Chrome or Edge over WebMIDI with SysEx permission. Connect the keyboard
+  directly with a USB data cable and keep it connected until the page reports the restart. The installer asks the connected unit for its model
+  and sends the matching SMK-37 Pro, SMK-37 Elite or MKE-P37 package; the three packages it serves are identical to the v1.0.0 release assets.
+  It installs from the stock firmware by feeding the package to the keyboard's own SysEx update loader in two stages, as M-VAVE's updater does,
+  and makes no backup. The device's mask-ROM rescue and M-VAVE's updater remain the recovery route (see the device notes). The author reports
+  testing build 800 on an Elite, including a return to build 797 and a reinstall; the issue thread names no test on the Pro or MKE-P37.
 brick_risk: false
 tags: [synth-engine, sequencer, drums, arpeggiator, performance, midi, fork]
 image:
   url: https://raw.githubusercontent.com/TexasRADIO/smk37-elite-firmware/main/media/screen-telegram.png
-  alt: BB–37 Telegram screen, rendered on a host from the firmware's drawing code
+  alt: BB-37 Telegram screen, rendered on a host from the firmware's drawing code
   credit: TexasRADIO
   source_url: https://github.com/TexasRADIO/smk37-elite-firmware
   first_party: true
@@ -52,4 +50,4 @@ versions:
 - version: v1.0.0
   date: 2026-11-11
   url: https://github.com/TexasRADIO/smk37-elite-firmware/releases/tag/v1.0.0
-  notes: Build 800, renamed BB–37, with a browser installer; the v1.0.0 tag first held build 799 and was moved to build 800 the same day.
+  notes: Build 800 with a browser installer and packages for the SMK-37 Pro, SMK-37 Elite and MKE-P37; the tag first held build 799 (Elite only).

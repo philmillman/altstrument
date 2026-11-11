@@ -12,7 +12,7 @@ description: >-
   install from Chrome or Edge over Web MIDI after asking the unit what it is, and can open in the FM-1 emulator. A rescue page puts M-VAVE's
   V15 back for an FM-1, taken from m-vave/fm1_open, and M-VAVE's V16 packages for SMK-37 and MKE-P37, linked from M-VAVE's own
   download server, and finishes an interrupted install. The update protocol code is fomajam's, copied unchanged. The repository holds the
-  Worker, the site and screenshots made with fm1-emu.
+  Worker, the site and screenshots made with fm1-emu. It also lists Polyend Tracker firmware (.ptf files, checked by hash and size), with install instructions for the SD card only; the JSON catalogue stays FM-1 and SMK-37 only.
 status: active
 authors:
 - name: David Konsumer (konsumer)
@@ -32,7 +32,7 @@ install_notes: >-
 brick_risk: false
 tags: [flasher, librarian, utility, web]
 versions:
-- version: main @ cdc6938
-  date: 2026-11-09
-  url: https://github.com/konsumer/mutantcloud/commit/cdc6938b1b5da888ec6dfcb495079513231cf169
-  notes: No tagged releases; this is the latest commit. Since the previous row it also collects repos linked in posts on the FM-1 and SMK-37 subreddits, reads each package's flash chip support and offers a filter for firmware that saves on newer FM-1s, tags firmware built for RemoteFM1, and makes the installer say why an install did not start.
+- version: main @ 037909a
+  date: 2026-11-11
+  url: https://github.com/konsumer/mutantcloud/commit/037909af67304a04693bb39afb0b1aca0e03761d
+  notes: No tagged releases; this is the latest commit. It also lists Polyend Tracker, Tracker+ and Tracker Mini firmware (.ptf files) as separate devices, without a browser install, and fixes a wrong SMK-37 model shown by the rescue page. Before it, the site also collects repos linked in posts on the FM-1 and SMK-37 subreddits, reads each package's flash chip support and offers a filter for firmware that saves on newer FM-1s, tags firmware built for RemoteFM1, and makes the installer say why an install did not start.

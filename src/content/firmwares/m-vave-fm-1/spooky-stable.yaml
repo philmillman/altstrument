@@ -1,0 +1,31 @@
+device: m-vave-fm-1
+name: Spooky Stable v2
+summary: >-
+  No-text toy firmware for a young child: eight buttons open animated unicorn toys, every key triggers sound and animation, and notes snap to the scale of one of eight moods.
+description: >-
+  Each of the eight function buttons opens a toy with its own screen animation, sounds and four knob parameters: fart, poop, pee, burp, sneeze, a drum jam with a loop recorder, a toilet flush and a booger flick. Pressing any of the 27 keys makes the toy act at once, and notes are quantised to the current mood's scale, which also changes the sky, props and particles. Volume is capped, and a quiet mode lowers it further. Hats and manes unlock by playing, and settings are remembered across power cycles. This v2 splits the single-file v1 app into modules, with a 12-voice FM synth, 60 patches and a host-side test run. It is built on fm1-base, and the repository has no release or tag yet; the README describes unzipping the project and tagging it in one's own GitHub repository to get a package built by the workflow.
+status: active
+authors:
+- name: hvemnd
+  url: https://github.com/hvemnd
+source: https://github.com/hvemnd/spooky-stable-v2
+source_status: open
+license: MPL-2.0
+license_notes: The LICENSE file is the MPL-2.0 text.
+distribution: source-only
+requires_stock: Flashes over official V15 or another FM-1 firmware
+install_notes: >-
+  Build with the JieLi toolchain through build.sh on Linux x86-64, or on macOS with Docker, and install the package with fm1_install.py from the fm1-base submodule. The README says the bootloader is not touched, so the safe mode and the way back to stock remain. Back up anything on the unit first.
+brick_risk: false
+tags: [game, synth-engine, fm, drums, performance]
+image:
+  url: https://raw.githubusercontent.com/hvemnd/spooky-stable-v2/main/app/docs/img/moods.png
+  alt: "Strip of eight screen captures of a cartoon unicorn with a rainbow burst, each on a different themed background such as meadow, night, swamp and castle"
+  credit: hvemnd
+  source_url: https://github.com/hvemnd/spooky-stable-v2
+  first_party: true
+versions:
+- version: main @ 75d79d3
+  date: 2026-11-11
+  url: https://github.com/hvemnd/spooky-stable-v2/commit/75d79d3fe41fd5ea78b66913f1fbded121e010f5
+  notes: No tagged releases; this is the latest commit.

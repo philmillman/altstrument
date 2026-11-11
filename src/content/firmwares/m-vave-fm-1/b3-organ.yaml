@@ -9,7 +9,7 @@ description: >-
   the README lists measurements against setBfree running on a Raspberry Pi. Drawbars, percussion and effects
   follow setBfree's default MIDI controller numbers over USB and TRS. The repository also has a WebAssembly
   build of the engine to play in a browser and a host mode that writes WAV files. The README says release 0.1
-  has been tested on one FM-1. From 0.2 the overdrive follows setBfree's preamp model, and the firmware identifies as FM-1_953.
+  has been tested on one FM-1. From 0.2 the overdrive follows setBfree's preamp model, and the firmware identifies as FM-1_953. From 0.3 it has three manuals (upper, lower and pedal) on MIDI channels 1 to 3, each with its own drawbars, and accepts the newer UC25HQ80 flash chip.
 status: active
 authors:
 - name: R-Jeb
@@ -22,7 +22,7 @@ license_notes: >-
   Terminus font is SIL OFL 1.1. The designburg logo in assets/ is all rights reserved and not under the GPL.
 distribution: browser-installer
 install_notes: >-
-  Download b3organ-0.2.fwsc from the release and install it through the FM-1 Firmware Hub in Chrome or Edge, or
+  Download b3organ-0.3.fwsc from the release and install it through the FM-1 Firmware Hub in Chrome or Edge, or
   with tools/fm1_install.py over USB. Hold OCT- while switching on for the USB rescue. The official firmware can
   be put back the usual way.
 brick_risk: false
@@ -34,6 +34,10 @@ image:
   source_url: https://github.com/R-Jeb/setBfree-fm1
   first_party: true
 versions:
+- version: '0.3'
+  date: 2026-11-11
+  url: https://github.com/R-Jeb/setBfree-fm1/releases/tag/v0.3
+  notes: Adds three manuals (upper, lower and pedal) with their own drawbars on MIDI channels 1 to 3, three screens, a vibrato and chorus selector, a finer reverb scale and the newer UC25HQ80 flash chip, which the release notes say was tried on an FM-1 with that chip. The percussion no longer passes through the vibrato. Saved settings use a new layout, so the first start of 0.3 loads the defaults. 0.2 stays available as a fallback.
 - version: '0.2'
   date: 2026-11-05
   url: https://github.com/R-Jeb/setBfree-fm1/releases/tag/v0.2

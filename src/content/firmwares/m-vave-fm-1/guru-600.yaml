@@ -1,0 +1,38 @@
+device: m-vave-fm-1
+name: Guru-600
+summary: >-
+  Felucca-based Prophet-600 emulator for the FM-1: a six-voice P600 engine with 255 sounds, MORPH and MUTATE, a chord memory, full backup, a web editor with a Prophet-600 style panel in seven languages and a Mac app.
+description: >-
+  Rights warning: sounds 1 to 100 are the Prophet-600's factory programs under their real names, and the licence table in the repository does not state where they come from or on what terms. The P600 engine has two oscillators per voice with sync, a 24 dB filter with its own envelope, Poly-Mod, an LFO, unison and six voices. Sounds 101 to 200 are the free 2022 patch collection from the GliGli p600fw community, and 55 more were made for the project. MORPH turns one sound gradually into another and MUTATE makes a variation in one gesture. There are 55 extra places for P600 sounds, Prophet-600 .syx files can be sent from a computer and read back, and the MIDI map follows the GliGli firmware. A full FM-1 backup can be made from the editor so another firmware can be tried and the unit restored. The editor runs in the browser with a panel inspired by the Prophet-600, a keyboard and a guide in seven languages, and a Mac application for Apple silicon is attached to the release. Everything Felucca does stays, including four tracks, other engines, the 64-step sequencer, effects and songs. The repository also holds a modified FM-1 emulator and a SID synth study.
+status: active
+authors:
+- name: marcgoudy
+  url: https://github.com/MarcGoudy
+source: https://github.com/MarcGoudy/guru-600
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states GPL-3.0, like Felucca, and the bundled Felucca licence file says GPL-3.0-only. The 2022 patch collection keeps the licence of the p600fw project (GPL-3.0), and fonts, DaisySP, msfa and the Fukiai icons carry their own licences in the repository. The factory program data for sounds 1 to 100 has no stated source. The emulator folder is MIT. The Mac application and the editor guide are release downloads.
+based_on: m-vave-fm-1/felucca
+homepage: https://marcgoudy.github.io/guru-600/
+distribution: browser-installer
+requires_stock: V15 or another Felucca-family firmware
+install_notes: >-
+  Open the installation page in Chrome, Edge, Brave or Opera with the FM-1 on a USB data cable, press Install and leave the cable and page alone until it finishes. The release also has the .fwsc, the user guide, an offline editor and the Mac app. The README calls version 1.0 a first release installed at your own risk, and says the official M-VAVE firmware can be put back at any time with M-VAVE's updater. Make a backup with the Guru-600 editor first if you want to return to the current state.
+brick_risk: false
+tags: [synth-engine, polysynth, emulator, editor, sequencer, fork]
+image:
+  url: https://raw.githubusercontent.com/MarcGoudy/guru-600/main/docs/card.png
+  alt: Guru-600 home screen on a dark display with four boxes for cutoff, resonance, filter envelope and mix, a rainbow-coloured ring of bars below, and the P600 sound name 1 ORGAN I at the bottom
+  credit: marcgoudy
+  source_url: https://github.com/MarcGoudy/guru-600
+  first_party: true
+versions:
+- version: 1.0.1
+  date: 2026-11-11
+  url: https://github.com/MarcGoudy/guru-600/releases/tag/v1.0.1
+  notes: MENU, SYSTEM, ABOUT shows the Guru-600 logo, version, install-page QR code and credits, and the firmware fonts gain accented E. Sound, sequencer and saves are unchanged from 1.0.
+- version: '1.0'
+  date: 2026-11-10
+  url: https://github.com/MarcGoudy/guru-600/releases/tag/v1.0
+  notes: First release, with the firmware, an offline editor, a Mac app and user guides in seven languages.

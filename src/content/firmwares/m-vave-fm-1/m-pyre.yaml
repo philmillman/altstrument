@@ -1,0 +1,41 @@
+device: m-vave-fm-1
+name: M-PYRE
+summary: >-
+  SLOOP-based riff box for rock and metal: sampled guitar and bass through amp models and cabinet IRs, a pedalboard, an editable drum kit, live bend, vibrato, palm-mute and whammy controls, and a four-track recorder.
+description: >-
+  Four tracks hold rhythm guitar, lead, bass and drums, with the SLOOP step sequencer extended with palm mutes, slides, hammer-ons and power chords per step, plus song mode with sections A to D. Guitar and bass are played from the author's own samples through five amp views and cabinet impulse responses, and a pedalboard of boost, overdrive, distortion, fuzz, octave, modulation, delay and reverb is drawn on the screen. A LIVE view puts chords, bend, vibrato, palm mute, legato, whammy and wah on the knobs. The drums are an editable sampled kit plus synthesized 808, 909 and other kits. Everything SLOOP does is kept, including the synth engines, MIDI, USB audio and a web editor. The browser installer writes the guitar and bass sound pack into all four user sample slots after the firmware, and projects saved with SLOOP 2.6 to 2.8 do not open. Version 1.0.3 adds support for FM-1 units with the UC25HQ80 flash chip and gives the firmware its own USB identity, FM-1_123. The README credits the author with Claude on the code.
+status: active
+authors:
+- name: History Of Sky
+  url: https://github.com/HistoryOfSky
+source: https://github.com/HistoryOfSky/m-pyre
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only for the code, as SLOOP and Felucca, with the Clipper HYBRID voice (3dSam, GPL-3.0) and msfa (Apache-2.0) inside. The author's guitar and bass samples, cabinet impulse responses and artwork are CC BY 4.0, and the built-in drum recordings are CC0. Piano, vibes and strings come from CC0 libraries.
+based_on: m-vave-fm-1/sloop
+homepage: https://historyofsky.github.io/m-pyre/
+distribution: browser-installer
+install_notes: >-
+  Open the project's installer page in Chrome or Edge with the FM-1 on USB, press INSTALL M-PYRE and wait for the sound pack to be written to the four sample slots, which takes about a minute. The release also has the bare .fwsc, soundpack.bin and an offline zip. Back up projects and samples first. To go back, use M-VAVE's M-UPGRADE with the official firmware. If the unit does not start M-PYRE, hold OCT- alone while switching on for the USB rescue and install again, and an interrupted install resumes by pressing INSTALL again.
+brick_risk: false
+tags: [guitar, sampler, sequencer, drums, fx, synth-engine, performance, usb-audio, midi, editor, fork]
+image:
+  url: https://raw.githubusercontent.com/HistoryOfSky/m-pyre/main/assets/screens/mpyre/live.png
+  alt: M-PYRE LIVE view on a dark screen with 120 BPM, a loop indicator, four controls named chord, bend, vibrato and palm all set to off, and an orange waveform below
+  credit: History Of Sky
+  source_url: https://github.com/HistoryOfSky/m-pyre
+  first_party: true
+versions:
+- version: 1.0.3
+  date: 2026-11-10
+  url: https://github.com/HistoryOfSky/m-pyre/releases/tag/v1.0.3
+  notes: Supports newer FM-1 units with the UC25HQ80 flash chip, in the app, the USB rescue and the update loader. The firmware now reports its own identity, FM-1_123, and keeps projects and samples.
+- version: 1.0.2
+  date: 2026-11-09
+  url: https://github.com/HistoryOfSky/m-pyre/releases/tag/v1.0.2
+  notes: Held power chords keep their fifth under drum load, a replayed note replaces the earlier pass when recording, and the installer writes the sound pack automatically.
+- version: '1.0'
+  date: 2026-11-09
+  url: https://github.com/HistoryOfSky/m-pyre/releases/tag/v1.0
+  notes: First release, with the firmware, the sound pack and an offline installer zip.

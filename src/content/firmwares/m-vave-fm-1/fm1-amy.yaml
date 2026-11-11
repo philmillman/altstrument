@@ -27,12 +27,12 @@ license_notes: >-
   compiled in from your own checkout, not kept in this tree. The tree still carries X0X's groovebox sources and
   assets under their own terms. The tests include two small flash-store fixture files (.bin) that are test data, not firmware.
 homepage: https://github.com/dpwe/fm1-amy
-distribution: source-only
+distribution: download
 requires_stock: M-VAVE V15 or X0X
 install_notes: >-
-  There is no prebuilt firmware file yet. Build x0x-amy.fwsc with X0X_AMY=1 and an unmodified AMY checkout (needs Docker
-  or an x86-64 Linux host, JieLi's toolchain and three AC79 SDK files), then install it with tools/fm1_install.py over
-  USB. The firmware reports itself as FM-1_900 afterwards. X0X's safe mode and update mode still work, and X0X's web installer can
+  Download fm1-amy-0.1.0.fwsc from the release and install it with tools/fm1_install.py over USB; the firmware then
+  reports itself as FM-1_269000100 and its MIDI port is named AMY FM-1. To build it instead, use an unmodified AMY checkout
+  (needs Docker or an x86-64 Linux host, JieLi's toolchain and three AC79 SDK files). X0X's safe mode and update mode still work, and X0X's web installer can
   put M-VAVE's firmware back. Installing is at your own risk.
 brick_risk: false
 tags: [synth-engine, oscillator, filter, lfo, midi, usb-midi, emulator]
@@ -43,7 +43,7 @@ image:
   source_url: https://github.com/dpwe/fm1-amy
   first_party: true
 versions:
-- version: main @ 729e940
-  date: 2026-10-28
-  url: https://github.com/dpwe/fm1-amy/commit/729e940fbf363c18947a7f4664eec71649625c04
-  notes: No tagged releases; this is the latest commit.
+- version: 0.1.0
+  date: 2026-11-10
+  url: https://github.com/dpwe/fm1-amy/releases/tag/v0.1.0
+  notes: First release, with a prebuilt fm1-amy-0.1.0.fwsc. The firmware has its own identity (FM-1_269000100), accepts both FM-1 flash chips, and was tried on an FM-1 with the older chip only.

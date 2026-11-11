@@ -1,7 +1,7 @@
 device: polyend-tracker-plus
-also_devices: [polyend-tracker-mini]
+also_devices: [polyend-tracker-mini, polyend-tracker]
 name: Tracker Enhanced
-summary: Fork of Polyend's Tracker Community Edition for the Tracker+ and Tracker Mini that adds a per-project lines-per-beat setting (1, 2, 4, 8, 12 or 16) and patterns of up to 512 rows; extended MIDI CC control and new effects are planned.
+summary: Fork of Polyend's Tracker Community Edition for the Tracker+, Tracker Mini and Original Tracker that adds a per-project lines-per-beat setting (1, 2, 4, 8, 12 or 16) and patterns of up to 512 rows, with extended MIDI CC control and new effects planned.
 description: >-
   Lines per beat is the main change implemented so far. It is set for each project (1, 2, 4, 8, 12 for triplets, or 16),
   with a global default for new projects, and step effects, envelope and LFO sync, MIDI clock and the metronome follow
@@ -22,17 +22,17 @@ license: MIT
 license_notes: >-
   The LICENSE is Polyend's "MIT License with Wholesale Commercial Clone Restriction", so the complete firmware and .ptf
   builds cannot be sold. The precompiled synth libraries stay Polyend's proprietary code under their own licence file.
-distribution: source-only
+distribution: download
 install_notes: >-
-  No prebuilt firmware is published and no release exists yet. Build the Tracker+ or Tracker Mini target, copy the
-  resulting .ptf to /Firmware/ on the microSD card and run the firmware update from Config. Back up the card first:
+  Download the .ptf for your model from the release (TrackerPlus_ENH or TrackerMini_ENH; a PolyendTracker_ENH file is
+  there for the Original), copy it to /Firmware/ on the microSD card and run the firmware update from Config. Back up the card first:
   projects saved with this firmware cannot be opened by older firmware. The README says the bootloader sits in a
   protected region below the application, and Polyend's recessed reset button flashes a known-good .ptf from /Firmware if
   a build does not boot.
 brick_risk: false
 tags: [fork, sequencer, tracker, midi, platform]
 versions:
-  - version: main @ 758aa89
-    date: 2026-11-10
-    url: https://github.com/llozd/tracker-enhanced/commit/758aa89bbcc533334afd651760f112053f87eddd
-    notes: No tagged releases; this is the latest commit.
+  - version: v0.1.0-beta.1
+    date: 2026-11-11
+    url: https://github.com/llozd/tracker-enhanced/releases/tag/v0.1.0-beta.1
+    notes: First release, labelled a beta and tested on a Tracker+. Adds lines per beat with 512-row patterns, beat shading on row numbers, gated legato rolls, Position scrubbing within slices, effects on rows without a note and an Original Tracker build. Sample memory drops from 60 MB to 55 MB on the Tracker+ and Mini.

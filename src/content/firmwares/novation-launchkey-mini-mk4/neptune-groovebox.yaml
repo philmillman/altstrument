@@ -1,0 +1,42 @@
+device: novation-launchkey-mini-mk4
+name: Neptune Groovebox
+summary: Patched Launchkey Mini MK4 firmware that hands the display and every button to a macOS groovebox app, with a documented map of Novation's 1563 firmware and the host tools used to build and flash it.
+description: >-
+  The project has two parts. The firmware part is a small set of patches applied to Novation's own 1563 update file for
+  the Launchkey Mini 25 MK4. The patched build lets the host draw on the OLED display, reports the Settings, Arp and
+  Scale buttons to the host as MIDI CCs instead of acting on them, sends polyphonic pad aftertouch in the DAW pad
+  layout, confirms firmware updates without a button press and exposes a debug SysEx command for calling functions and
+  reading memory. The Python tools in the repository decode and re-encode the update file, check each patch against the
+  stock bytes it replaces, flash with per-packet acknowledgement and read the display back. The app part is a C++ and
+  JUCE program for macOS that turns the controller into a groovebox played without looking at a screen, with a
+  step sequencer with parameter locks, eight sound engines, a sampler, effects and an arpeggiator per track. The
+  documents include a map of the stock firmware checked on hardware, the update-file format and a control map. The
+  README calls the project work in progress and unreleased.
+status: active
+authors:
+  - name: chchatham
+    url: https://github.com/chchatham
+source: https://github.com/chchatham/neptune-groovebox
+source_status: open
+license: AGPL-3.0-only
+license_notes: >-
+  The LICENSE file is the AGPL version 3 text, and the README says the code and the documents in docs/ are under version
+  3 as published by the Free Software Foundation, with no "or later" wording. JUCE is used under its AGPLv3 option.
+  Novation's firmware and documentation are not part of the repository and are not covered by the licence.
+homepage: https://github.com/chchatham/neptune-groovebox
+distribution: patch-your-own
+requires_stock: Novation Launchkey Mini MK4 firmware 1563 (.syx update file, from Novation)
+install_notes: >-
+  Download the 1563 update file from Novation, put it in the git-ignored firmware folder, run tools/build_neptune_fw.py
+  with a three-character tag and flash the result with tools/flash_confirmed.py, then check the tag in the USB HID
+  string. The update is staged and installed only after a verified transfer. The rules document says a build that
+  transfers but cannot run USB and the update handler needs Oct + and Oct - held while plugging in, by hand, to reach
+  the hardware bootloader, which the patches never touch. The app builds with CMake on macOS and expects a Launchkey
+  Mini 25 MK4 running the patched firmware.
+brick_risk: false
+tags: [groovebox, sequencer, synth-engine, sampler, midi, reverse-engineering, patcher, performance]
+versions:
+  - version: main @ b16ca9e
+    date: 2026-11-11
+    url: https://github.com/chchatham/neptune-groovebox/commit/b16ca9ea24a068214155b37b594dde8d90cb3d20
+    notes: No tagged releases; this is the latest commit.

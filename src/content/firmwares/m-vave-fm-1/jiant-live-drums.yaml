@@ -1,12 +1,11 @@
 device: m-vave-fm-1
 name: JIANT LIVE DRUMS
 summary: >-
-  JIANT fork that turns the FM-1 into a multitimbral drum sound module: two 12-pad engines, a MIDI receive channel per track, 32-destination MIDI LEARN and the sequencer switched off.
+  JIANT fork that turns the FM-1 into a multitimbral drum sound module: two 12-pad engines, a MIDI receive channel per track, 32-destination MIDI LEARN, 32 project MIDI CC macros and the sequencer switched off.
 description: >-
-  DRUM-X is extended to 12 independent sounds and a new DRUM-LAB engine adds 12 synthesized pads with ten editable parameters each and eight kit-wide controls. The SEQ and PLAY buttons open an
-  editable drum MIDI map and a performance page for velocity response, choke and retrigger instead of starting a transport. Six tracks each take their own receive channel,
-  one controller can move several parameters at once, and eight voices are shared across everything. The repository has a dedicated browser emulator, installer and editor. The README says a physical FM-1 installed it through
-  that installer and that the drum editing, SEQ and PLAY pages were checked on the unit, calling this limited device testing, and warns against JIANT's own installer. It is a separate repository from the catalogued JIANT LIVE.
+  DRUM-X is extended to 12 independent sounds and a new DRUM-LAB engine adds 12 synthesized pads with ten editable parameters each and eight kit-wide controls. The SEQ, PLAY and REC buttons open an
+  editable drum MIDI map, a performance page for velocity response, choke and retrigger, and a table of up to 32 project MIDI CC macros instead of starting a transport. Six tracks each take their own receive channel,
+  one controller can move several parameters at once, and eight voices are shared across everything. The repository has a dedicated browser emulator, installer and editor. The README says v0.3 was installed on two physical FM-1s, one from V15 and one from JIANT, and calls these owner-reported device tests rather than a full hardware qualification. It warns against JIANT's own installer. It is a separate repository from the catalogued JIANT LIVE.
 status: active
 authors:
 - name: Misha Mashina (MishaMashinaMM)
@@ -23,13 +22,13 @@ install_notes: >-
 brick_risk: false
 tags: [drums, midi, performance, synth-engine, emulator, fork]
 image:
-  url: https://raw.githubusercontent.com/MishaMashinaMM/jiant-live-drums/main/docs/jiant-live-drums-overview.svg
-  alt: "Illustration titled JIANT LIVE DRUMS v0.2 showing two independent twelve-pad drum engines, DRUM-X and DRUM-LAB, the SEQ button as a MIDI map and the PLAY button as performance, and eight shared voices"
+  url: https://raw.githubusercontent.com/MishaMashinaMM/jiant-live-drums/main/docs/jiant-live-drums-overview-32-macros.svg
+  alt: "Illustration titled JIANT LIVE DRUMS v0.3, 32 MIDI macros per project: DRUM-X and DRUM-LAB twelve-pad engines, SEQ as MIDI map, PLAY as performance, REC as macros, eight shared voices"
   credit: Misha Mashina
   source_url: https://github.com/MishaMashinaMM/jiant-live-drums
   first_party: true
 versions:
-- version: main @ 006f3e4
-  date: 2026-11-09
-  url: https://github.com/MishaMashinaMM/jiant-live-drums/commit/006f3e4
-  notes: No tagged releases; this is the latest commit, which records the physical FM-1 check of the screen updates.
+- version: main @ 203c894
+  date: 2026-11-11
+  url: https://github.com/MishaMashinaMM/jiant-live-drums/commit/203c8946722b5c4d6ca5c4cdaf8f7968ba5a5f15
+  notes: No tagged releases; this is the latest commit. The README calls the tree v0.3, which adds per-project receive channels and 32 project MIDI CC macros edited on the REC page, and records installs on two FM-1 units. The latest commit removes two inaccurate manual screenshots.

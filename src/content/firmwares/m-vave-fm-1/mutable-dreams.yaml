@@ -1,8 +1,8 @@
 device: m-vave-fm-1
 name: Mutable Dreams
 summary: >-
-  Six-track generative instrument with 15 engines, 168 editable Biomes plus Blank, 364 tones,
-  user banks and granular, delay and room sends, with a playable browser instrument and live editor.
+  Six-track generative synth with 272 factory Biomes including Blank, Journey Arranger, a six-track grid
+  and six mono USB voices plus the stereo mix.
 description: >-
   Each of the six tracks can use any engine, or three synth tracks can share the space with one of five Lo-Fi drum
   kits. Selected Plaits, Rings and Elements algorithms sit alongside
@@ -18,12 +18,17 @@ description: >-
   Version 1.3 adds two LFOs per synth track, five sequence directions and more generators and chord journeys. Version 1.4
   adds 48 Biomes and 16 tones, five scales (thirteen in all), per-track USB MIDI input channels and dimmed muted tracks.
   Version 1.5 adds 12 Biomes and 12 tones and receives Bluetooth MIDI from a phone, tablet or computer on a GLO > WIRELESS MIDI page. USB MIDI was tested; TRS MIDI input is implemented but its physical cable test remains outstanding.
-  The complete 1.5 source tree is directly browsable, with build instructions and a device test report
-  describing the qualification scope. These are selected algorithms and inspired functions, not full
+  Version 2.0 brings 272 factory Biomes including Blank and 632 tone presets, a Journey Arranger that links up to
+  eight sections, a six-track sequencer grid with individual pattern lengths and one-bar fills, Living Links,
+  Biome Drift and MIDI Learn. USB audio at 44.1 kHz carries the stereo mix on inputs 1–2 and six pre-pan,
+  pre-effects mono voices on inputs 3–8, and the FM-1 display can be mirrored over USB.
+  The complete 2.0 source tree is directly browsable at the release tag, with build instructions. The release
+  notes separate the device tests (an FM-1 updated from 1.5 and from stock V15 and V16) from the UC25HQ80 hardware
+  check, which is still pending for this exact build. These are selected algorithms and inspired functions, not full
   ports of every Mutable Instruments module.
 status: active
 authors:
-- name: Kid Bunka (Christoph Link / kidbee85-beep)
+- name: Kid Bunka
   url: https://github.com/kidbee85-beep
 source: https://github.com/kidbee85-beep/mutable-dreams
 source_status: open
@@ -34,11 +39,11 @@ license_notes: >-
   fm1-base and Felucca board support retain MPL-2.0 notices, distributed with the application
   under MPL section 3.3. Fonts retain their SIL OFL 1.1 notices and SDK-derived files their
   Apache-2.0 notices. See LICENSING-GPL.txt and the component notices in the source tree.
-homepage: https://mutable-dreams.kidbee85.chatgpt.site/
+homepage: https://kidbee85-beep.github.io/mutable-dreams/
 distribution: browser-installer
 install_notes: >-
   Use the project installer in desktop Chrome or Edge over USB, or the Python installer kit.
-  Stock V15 and V16 installation and return are documented in Recovery-1.5.txt; M-VAVE's M-UPGRADE rejected a
+  The 2.0 guide covers installation and return to stock; M-VAVE's M-UPGRADE rejected a
   custom Mutable Dreams package, so use the project installer. For 1.0, use the documented route through 1.1 first and back up in
   1.1 before installing a later version. Follow the published instructions for other starting firmwares; not
   every route is tested. Back up first. On 1.1 and later save both .mddb for stored banks and JSON for unsaved
@@ -47,13 +52,19 @@ install_notes: >-
 brick_risk: false
 tags: [generative, ambient, synth-engine, drums, granular, sequencer, physical-modeling, emulator]
 video:
-  url: https://www.youtube.com/watch?v=VX05as2BocI
+  url: https://www.youtube.com/watch?v=TWSY1P0AQls
+  title: "Mutable Dreams 2.0 | From a Biome to a Piece — M-VAVE FM-1"
+  credit: Kid Bunka
+  first_party: true
+  found_via: https://github.com/kidbee85-beep/mutable-dreams/releases/tag/v2.0
+  version: v2.0
+videos:
+- url: https://www.youtube.com/watch?v=VX05as2BocI
   title: "Mutable Dreams 1.3 — Lo-Fi Kits, Living Motion & More Biomes | M-VAVE FM-1"
   credit: Kid Bunka
   first_party: true
   found_via: https://github.com/kidbee85-beep/mutable-dreams/releases/tag/v1.3
   version: v1.3
-videos:
 - url: https://www.youtube.com/watch?v=CBhFDaGCa44
   title: "Mutable Dreams 1.2 — Warmer Worlds, Your Own Sequences | M-VAVE FM-1"
   credit: Kid Bunka
@@ -67,6 +78,10 @@ videos:
   found_via: https://github.com/kidbee85-beep/mutable-dreams#readme
   version: v1.1
 versions:
+- version: v2.0
+  date: 2026-11-11
+  url: https://github.com/kidbee85-beep/mutable-dreams/releases/tag/v2.0
+  notes: Adds the Journey Arranger (up to eight sections, with factory loops in three Biomes), a six-track sequencer grid, Living Links, Biome Drift, MIDI Learn, 272 Biomes including Blank and 632 tones, USB audio with six mono voices plus the stereo mix, and USB screen mirroring. Tested on an FM-1 from 1.5 and stock V15 and V16; UC25HQ80 flash checks passed offline, but this exact build is still awaiting a hardware check on a UC25HQ80 unit. FM-1 only; SMK-37 is a separate adaptation in development. Package ID FM-1_710020000.
 - version: v1.5
   date: 2026-11-09
   url: https://github.com/kidbee85-beep/mutable-dreams/releases/tag/v1.5

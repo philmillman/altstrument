@@ -1,0 +1,40 @@
+device: m-vave-smk-37
+name: M-Vave DAW scripts
+kind: tool
+summary: >-
+  Bitwig controller scripts for the SMK-37 Pro and Elite, with an FL Studio script and Reaper mappings for the Pro, on stock
+  firmware, adding transport, track, cue, fader and knob control and writing labels and pad colours back to the unit.
+description: >-
+  The Bitwig folders hold one script per model. The Pro script maps the bank 2 pads to transport, record, pause, bar
+  navigation and cue points, arms tracks and cycles solo and mute with a pad used as shift, and ties faders and knobs to
+  track volume and pan; it needs a keyboard preset, supplied as mapped_preset.smk37, in which one pad is a momentary
+  shift and the bank 2 knobs send CC on channel 6. The Elite script is larger and has a device communicator that sends
+  MIDI and SysEx for pad names, pad colours and the screen, and a plugin-parameter mapping layer driven by plugin_mappings.json. An SMC-PAD
+  script exists in the repository but is marked as barely working, and the README lists the SMC-Pad as having nothing implemented.
+  The FL Studio folder has a Python device script and its mapping, and the Reaper folder has ReaLearn/Helgobox mappings, with an
+  older Lua script that the author names not_working. The README says it was tested on Linux Mint and macOS, and that device
+  names must be set by hand.
+status: active
+authors:
+- name: kartun83
+  url: https://github.com/kartun83
+source: https://github.com/kartun83/M-Vave
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no licence file and the README carries no licence statement; it calls itself an independent project not
+  affiliated with M-VAVE. It also commits a node_modules folder with the typed-bitwig-api package, and two PDF guides under
+  BitWig/docs whose authorship was not checked.
+distribution: source-only
+requires_stock: Stock SMK-37 Pro or Elite firmware, with the keyboard preset from the repository
+install_notes: >-
+  For Bitwig, copy a model's folder into the Controller Scripts directory (Documents/Bitwig Studio/Controller Scripts on macOS,
+  Bitwig Studio/Extensions on Linux or Windows) and select the ports by hand. Load mapped_preset.smk37 into the keyboard
+  with M-VAVE's tool first. The FL Studio and Reaper folders have their own installation.md. No firmware is changed.
+brick_risk: false
+tags: [controller-mode, scripting, midi, sysex, javascript, python]
+versions:
+- version: main @ 6a6706b
+  date: 2026-11-12
+  url: https://github.com/kartun83/M-Vave/commit/6a6706bd8254930d47b7f107f839391498773b6d
+  notes: No tagged releases; this is the latest commit, which adds the SMK-37 Elite Bitwig script and updates the SMC-PAD one.

@@ -3,7 +3,7 @@ name: Mono Station Mods
 summary: Source-built modifications of Novation's Circuit Mono Station 1.2 firmware, with reverse-engineering tools. The mods make Mutate randomise one note property per view or nudge the patch, and add live transpose from the keys.
 description: >-
   The repository holds tools that decode Novation's 1.2 update file, turn it into assembly that rebuilds byte for byte,
-  and let overlays replace stock functions by name with C or assembly, plus a flasher and notes on the bootloader,
+  and let overlays replace stock functions by name with C, C++ or assembly, plus a flasher and notes on the bootloader,
   update protocol, patch and session SysEx formats and sequencer. Novation's code is not included: you unpack the stock
   update from Novation Components yourself and build locally with arm-none-eabi-gcc. The Randomise mod
   changes Mutate on the Osc 1 and Osc 2 tracks so that in the Velocity, Gate, Glide and Expand views it randomises
@@ -37,7 +37,11 @@ install_notes: >-
 brick_risk: false
 tags: [sequencer, generative, flasher, python]
 versions:
+  - version: main @ 5a0e5dc
+    date: 2026-11-11
+    url: https://github.com/matozoid/novation_circuit_monostation_reverse_engineering/commit/5a0e5dccde182f6af452d7fc1b83ecd1fda95f19
+    notes: No tagged releases; this is the latest commit. Adds C++ overlay support with a C++ rewrite of the note sink, 176 named data labels and notes on MIDI input ports.
   - version: main @ ec27da9
     date: 2026-11-10
     url: https://github.com/matozoid/novation_circuit_monostation_reverse_engineering/commit/ec27da9fa358bbbce809eee4414eaf54a4fbc40c
-    notes: No tagged releases; this is the latest commit.
+    notes: No tagged releases.

@@ -1,0 +1,50 @@
+device: m-vave-fm-1
+name: SPLITMILK
+summary: >-
+  Split-keyboard performance firmware that plays two instruments at once, CHOC on the lower keys and BERRY on the upper,
+  with 24 sounds, chord and arpeggiator modes, per-instrument effects, a wave editor, a drum machine and a pad sequencer.
+description: >-
+  Rights warning: two of the eight drum kits use recordings that are not under the GPL. The LM-1 kit is made from
+  six sounds of rossf's Freesound pack under Sampling+ 1.0, which allows noncommercial sharing of whole copies with
+  credit, and the MINI POPS kit from six sounds of Drumkito's Korg Mini Pops pack, whose site reads "All Rights
+  Reserved" and which states no licence.
+
+  The split point can sit on any key. CHOC and BERRY each have their own sound, octave, volume and playing mode, which is
+  single notes, one-key major, minor or seventh chords, octaves or an arpeggiator. A latch keeps held notes sounding,
+  and each instrument has reverb, delay, distortion, chorus and phaser. A wave editor changes oscillators, filter,
+  envelope and LFO. The drum machine has eight kits, and the pad sequencer Paddock plays up to four bars of chords along
+  with the drums. Four save slots hold setups, and the current setup survives power-off. It grew out of QUARTET, whose
+  synth engine and drum kits it reuses, and runs on Dinghy's platform layer. The repository also holds Dinghy's SMK-37
+  board code, but the README describes the firmware for the FM-1 only.
+status: active
+authors:
+- name: MammothCheese
+  url: https://github.com/MammothCheese
+source: https://github.com/MammothCheese/SPLITMILK
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md and the README state GPL-3.0-only, and LICENSE is the GPL v3 text. The platform parts carry the
+  copyright of Leo Kuroshita, genkigenki and others as listed in LICENSING.md, the font is SIL OFL 1.1, and the two
+  sampled drum kits keep their own terms, described in the rights warning. The release holds only SPLITMILK's own
+  build.
+based_on: m-vave-fm-1/quartet
+distribution: download
+install_notes: >-
+  Install splitmilk-1.0.fwsc from the release with M-Flasher, after backing up the whole flash, or with
+  tools/fm1_install.py over USB-MIDI. The unit then reports itself as FM-1_986. To go back, restore the M-Flasher backup or
+  install M-VAVE's official firmware; settings and slots sit where the stock firmware keeps presets, so without a backup
+  the stock presets may need System, Reset Patches. Holding OCT- while switching on starts a USB rescue mode.
+brick_risk: false
+tags: [synth-engine, sequencer, drums, fx, arpeggiator, performance, fork]
+image:
+  url: https://raw.githubusercontent.com/MammothCheese/SPLITMILK/main/docs/card.png
+  alt: SPLITMILK's main screen with a brown CHOC panel on the left and a pink BERRY panel on the right, each showing octave, sound, mode and volume settings and a keyboard
+  credit: MammothCheese
+  source_url: https://github.com/MammothCheese/SPLITMILK
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-11
+  url: https://github.com/MammothCheese/SPLITMILK/releases/tag/v1.0
+  notes: First release.

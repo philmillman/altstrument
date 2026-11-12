@@ -1,0 +1,40 @@
+device: m-vave-fm-1
+name: Album 02
+kind: firmware
+summary: >-
+  Second firmware in the Album series: five filter-house tracks of three patches each, a sequencer modelled on the KeyStep Pro, a bus that pumps on the kick and a code-drawn animation for every patch.
+description: >-
+  The tracks are DRUMS (BOX, BOOM, CLUB), BASS (PLUCK, ACID, ROUND), CHORDS (PAD, STAB, WIND), LEAD (BRASS, GLASS, FUNK) and VOX, a formant singer (CHOIR, ROBOT, MONK). Every patch has
+  five knobs (TONE, MOTION, PUMP, SWEEP and SPACE) and four effects under EDIT (PHASER, CHORUS, GRIT and ECHO), and everything except the drums pumps on the kick. Each patch has a picture drawn by code
+  each frame in the manner of 1970s space-opera animation that its knobs and effects move. The sequencer has 16 patterns a track of up to 64 steps with up to four notes, gate, velocity, shift and chance,
+  step mode and live recording, scenes and a scene chain, an arpeggiator and chord mode, with four projects saved safely against power loss. MIDI runs over USB and TRS in and USB out, one channel a track, with clock in and out. The
+  second core renders chords, echo and reverb and the first core takes over if it misbehaves. There is no Bluetooth. The README says it runs in the simulator and its tests but has not yet been played on an FM-1. The project site has a browser
+  emulator, an install page and a manual. Album 01 is a separate entry.
+status: active
+authors:
+- name: joshbartlettband-web
+  url: https://github.com/joshbartlettband-web
+source: https://github.com/joshbartlettband-web/album-02-fm1
+source_status: open
+license: MIT
+license_notes: >-
+  LICENSE is the MIT text, copyrighted to Alive-Stable-7254. The README says it is built on fm1-base (Charles Vestal) and felucca-bsp (Leo Kuroshita, Hügelton Instruments), both MPL-2.0, which come in as the base
+  submodule. The build fetches JieLi's toolchain and three SDK files for the package's boot files, which are not in the repository. The package the site serves is 611,496 bytes, not an M-VAVE image.
+homepage: https://joshbartlettband-web.github.io/album-02-fm1/
+distribution: browser-installer
+install_notes: >-
+  The project site has an install page for Chrome or Edge over USB and a package download (album02-0.1.5.fwsc) for the command-line installer; the site says the installer can put M-VAVE's firmware back. The repository's workflow builds the package and
+  site on every push to main. No release has been tagged, so the package version comes from the site and not from a tag.
+brick_risk: false
+tags: [synth-engine, sequencer, drums, chords, fx, ui, midi, emulator]
+image:
+  url: https://raw.githubusercontent.com/joshbartlettband-web/album-02-fm1/main/album/docs/img/screen-playing.png
+  alt: "Album 02 screen with CHORDS PAD in the top left: overlapping translucent circles in teal, violet and orange over a dark starfield, and a row of small empty step cells at the bottom"
+  credit: joshbartlettband-web
+  source_url: https://joshbartlettband-web.github.io/album-02-fm1/
+  first_party: true
+versions:
+- version: main @ 985ec6f
+  date: 2026-11-12
+  url: https://github.com/joshbartlettband-web/album-02-fm1/commit/985ec6fd004f11bdde42ffd5723446d1d005aafc
+  notes: No tagged releases; this is the latest commit.

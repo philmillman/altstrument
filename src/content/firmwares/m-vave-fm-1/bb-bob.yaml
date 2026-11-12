@@ -7,11 +7,12 @@ description: >-
   Rights warning: the FM-1 application compiles in 103 short spoken calls in Bob Wills's voice and a two-bar steel
   guitar clip. The first source archive's call index named the discs, tracks and timings of the commercial Bob Wills box
   set the calls were cut from, and the browser player described the clip as an estimate from Steel Guitar Rag. The
-  current r2 archive lists the calls only by ID and type, and its clip header calls the steel part a source-derived
-  estimate with separate rights. The 50 classics are written melody heads of published songs such as San Antonio Rose
-  and Faded Love, and the steel solos are transcriptions. The archive's README says the character art, historical
-  recordings, font and music editions carry separate rights and leaves the private collection and media masters out;
-  nothing in the archive or on the site shows a licence from the rights holders.
+  GitHub repository's call index lists the calls only by ID and family, and its clip header calls the steel part a
+  source-derived estimate with separate rights; the audio itself is committed as C headers. The 50 classics are written
+  melody heads of published songs such as San Antonio Rose and Faded Love, and the steel solos are transcriptions. The
+  README and LICENSING.md say the character art, historical recordings, font and music editions carry separate rights
+  and leave the private collection and media masters out; nothing in the repository or on the site shows a licence from
+  the rights holders.
 
   BB-BOB grew out of the BB1 base code but installs and runs without BB1. A band of fiddle, steel guitar, archtop rhythm
   guitar, piano, upright bass and light drums plays one of the classics or a New Tune, for which it generates the
@@ -25,29 +26,28 @@ status: active
 authors:
 - name: TexasRADIO
   url: https://github.com/TexasRADIO
-source: https://thebigbeat.app/bb-bob/downloads/BB-BOB-50-Source-r2.zip
+source: https://github.com/TexasRADIO/bb-bob-firmware
 source_status: open
 license: GPL-3.0-only
 license_notes: >-
-  The archive's README states GPL-3.0-only for the original instrument code, and firmware/LICENSE and the browser
-  player's LICENSE.txt are the GPL v3 text. The FM-1 platform layer is imported from Felucca under GPL-3.0-only, with
-  Apache-2.0 files alongside. The fiddle timbre is adapted from the CC0 VSCO2 CE solo violin, and the acid phrases are
+  LICENSING.md and the README state GPL-3.0-only for the original instrument code, and LICENSE is the GPL v3 text. The
+  FM-1 platform layer in vendor/fm1/ is imported from Felucca under its GPL notices, with Apache-2.0 files alongside. The fiddle timbre is adapted from the CC0 VSCO2 CE solo violin, and the acid phrases are
   credited to J. McConaghy / Acid-Tabs.com under CC BY-SA 4.0. The record calls, steel clip, character art, font and
-  music editions are outside the GPL; see the rights warning above. The archive holds the code and build inputs and
-  needs the JieLi PI32r3 toolchain and AC79 SDK to build.
+  music editions are outside the GPL; see the rights warning above. The repository holds the source, the generated build
+  inputs and the released packages and loader, and needs the JieLi PI32r3 toolchain and AC79 SDK to build. The
+  README says a clean build reproduces the released application and loader byte for byte. No M-VAVE stock image is
+  bundled.
 homepage: https://thebigbeat.app/bb-bob/about/
 distribution: browser-installer
 install_notes: >-
-  The assisted installer at thebigbeat.app/bb-bob/install/ runs in desktop Chrome or Edge on Windows, macOS or Linux
-  and installs the application, sounds and artwork over the current firmware. Before writing it asks you to prove a
-  chip-ROM recovery route on the unit: with the FM-1 in ROM boot (USB 4C4A:8057), save a full backup with M-Flasher 0.9.3
-  and give the installer its JSON receipt, then load fm1-stage-ram.bin from the m-bootloader v2.2 release into RAM with
-  M-Flasher. The installer stops if it finds existing data that BB-BOB would erase, can restore a saved backup, and
-  repeats the backup for a verify pass after the restart. The author reports install and restore passing against
-  simulated factory V15, factory V16 and Compás units, with physical FM-1 verification still to do, and the identity
-  file in the source archive still marks the build as not hardware accepted. The Mac kit in the archive, which needed
-  BB1 2.0 with sound library 1.4, is now described as a historical test workflow. Without a proven ROM route, the author
-  points to the browser player instead.
+  The assisted installer at thebigbeat.app/bb-bob/install/ runs in desktop Chrome or Edge, installs the firmware, sounds
+  and artwork together, and keeps a backup to restore your previous firmware; the page says it stages a small helper in the
+  FM-1's update area before taking the backup, so the backup lacks that area's earlier contents. The R34 release also
+  carries a single Hub-compatible .fwsc, which the README says installs the application and its sound and art banks in one
+  package without BB1. The README reports the package installed on a physical FM-1, booted, returned to official V15 and
+  installed again from V15. Earlier installer versions asked for a chip-ROM recovery route first (a full M-Flasher backup
+  and a RAM-loaded stage file); the current page does not mention it. The installer may replace existing sounds, artwork
+  and saved sequences.
 brick_risk: false
 tags: [synth-engine, sequencer, generative, performance, sampler, emulator]
 image:
@@ -57,6 +57,7 @@ image:
   source_url: https://thebigbeat.app/bb-bob/about/
   first_party: true
 versions:
-- version: 50-song edition (R34)
-  url: https://thebigbeat.app/bb-bob/about/
-  notes: First public edition, with 50 classics, New Tune and Play Bob; the r2 source archive and the assisted browser installer are linked from the about page, which has no release date.
+- version: R34
+  date: 2026-11-12
+  url: https://github.com/TexasRADIO/bb-bob-firmware/releases/tag/r34
+  notes: First GitHub release, with the 50-song edition as one Hub-compatible .fwsc, source and a hardware-test record.

@@ -1,0 +1,51 @@
+device: m-vave-fm-1
+name: KRIECHSTROM
+summary: >-
+  Dark industrial and EBM firmware built on Felucca, with a distorted glitch engine, 171 sounds, 13 drum kits, a
+  mood-based pattern generator and degradation, wall and tape-hiss controls on the master.
+description: >-
+  Starts from Felucca 1.8.2 and keeps its sequencer, effects, chord keys, MIDI, USB audio, projects and web editor.
+  It adds the GLCH engine from Glitchbox, which clips, folds and bit-crushes with a resonant filter and micro-stutter,
+  with the DESTROY drum kit and the MUFF, BASS and SMASH pedals and ROLL and GATE live effects from the same project.
+  New controls include DICE, which writes a new part for a track in one of eight moods, HAPPY ACCIDENT, which changes
+  two or three parameters of a sound at random with undo, and DAMAGE, which degrades the master between tape and digital. WALL
+  pushes sends, distortion and mix width up with one knob, and HISS adds a tape noise floor that sounds only while the
+  tape runs. The screen uses a black and red theme. The README says Glitchbox does not run on FM-1s with the newer
+  UC25HQ80 flash chip and that this firmware does, but the 0.1 notes say the older chip was not tested with this release.
+  The manual is in English and Russian.
+status: active
+authors:
+- name: Grigorii Bezborodov (Xforsa)
+  url: https://github.com/Xforsa
+source: https://github.com/Xforsa/kriechstrom
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md keeps Felucca's licences: GPL-3.0-only for the firmware, with felucca-bsp under MPL-2.0 and
+  Felucca-Engines under MIT in the tree. The Glitchbox parts are GPL-3.0-only, and ported DSP and fonts keep their own
+  licences (LICENSES/). The pictures are generated in the tree and no stock images are bundled.
+homepage: https://xforsa.github.io/kriechstrom/
+based_on: m-vave-fm-1/felucca
+distribution: browser-installer
+install_notes: >-
+  Back up your projects and presets, then use the web installer in Chrome or Edge with the FM-1 on USB, or run
+  tools/fm1_install.py with the .fwsc from a release. The installer can return the FM-1 to M-VAVE's official V15 and, per
+  its commit log, V16. Projects of other firmwares are not read, but Felucca's projects, presets and samples load. The unit
+  reports itself as FM-1_57810001 (0.1) or FM-1_57810002 (0.2).
+brick_risk: false
+tags: [synth-engine, sequencer, drums, fx, distortion, generative, performance, usb-audio, midi, editor, fork]
+image:
+  url: https://raw.githubusercontent.com/Xforsa/kriechstrom/main/docs/card.png
+  alt: KRIECHSTROM splash screen on black, a branching red and white lightning-like pattern above the red name, with v0.1 and built on Felucca underneath
+  credit: Grigorii Bezborodov
+  source_url: https://github.com/Xforsa/kriechstrom/releases/tag/v0.1
+  first_party: true
+versions:
+- version: '0.2'
+  date: 2026-11-12
+  url: https://github.com/Xforsa/kriechstrom/releases/tag/v0.2
+  notes: HISS now sounds only while the tape runs and for a second after notes stop. Projects and presets of 0.1 load as they are.
+- version: '0.1'
+  date: 2026-11-12
+  url: https://github.com/Xforsa/kriechstrom/releases/tag/v0.1
+  notes: First release; tested on an FM-1 with the newer UC25HQ80 flash.

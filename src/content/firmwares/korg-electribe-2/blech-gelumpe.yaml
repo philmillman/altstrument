@@ -2,12 +2,12 @@ device: korg-electribe-2
 name: BLECH and Kuhler's GELUMPE
 summary: >-
   BLECH patch set for Electribe 2 firmware 2.02, with Plugins, themes, pattern-change confirmation and more, plus
-  GELUMPE, an app with firmware patcher, emulator, effect and pattern editors and a rescue guide.
+  GELUMPE, an app with firmware patcher, emulator, effect and pattern editors and a help page for rescue cases.
 description: >-
   GELUMPE runs as a desktop app or in a browser and has an emulator that boots the real 2.02 firmware's ARM code
   without sound, a patcher that applies BLECH to your own SYSTEM.VSB and checks the result in the emulator before
   offering the file, an effect and pattern editor, a plugin editor, a sample manager that reads and writes the card's
-  samples over USB, and a rescue page. The app is available in eleven languages. BLECH, the firmware changes,
+  samples over USB, and Blechy, a help page that replaced the rescue guide in v1.4.5. The app is available in eleven languages. BLECH, the firmware changes,
   runs on the red Sampler either over Hacktribe 2.02 or directly on Korg's original 2.02. The blue Synth has a
   smaller patch set. It adds a BLECH menu with plugins written in a small JavaScript subset that compile to
   bytecode for a VM in the firmware, display and LED colors, pattern changes only after confirmation, TAP Motion, a
@@ -45,6 +45,13 @@ image:
   source_url: https://github.com/KuhlerBuhler/kuhlers-gelumpe
   first_party: true
 versions:
+  - version: v1.4.5
+    date: 2026-11-11
+    url: https://github.com/KuhlerBuhler/kuhlers-gelumpe/releases/tag/v1.4.5
+    notes: >-
+      Adds catalog plugins for momentary part mute, step copy between bars and a PLAY LED that blinks at the pattern tempo,
+      key pads, a filter toggle, AUTO SAVE, 76 Hacktribe oscillators on Korg's red firmware and blinking pads in the pattern
+      preview. In the app, the rescue page becomes Blechy, which checks the SD card layout, and the patcher can save straight to a card.
   - version: v1.4.2
     date: 2026-11-05
     url: https://github.com/KuhlerBuhler/kuhlers-gelumpe/releases/tag/v1.4.2

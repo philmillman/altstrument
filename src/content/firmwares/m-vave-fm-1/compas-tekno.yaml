@@ -15,13 +15,17 @@ license_notes: >-
   LICENSING.md, copied from Compás, states GPL-3.0-only and LICENSE is the GPL v3 text; the README says GPL-3.0. Felucca board support (GPL-3.0-only) is vendored under release-inputs, and the JieLi SDK parts in the package are Apache-2.0. The Kumbia kit files from Hanan Cumbia (CC BY-SA 3.0) and Compás's CC-licensed song arrangements are carried over from the parent. The tekno sample bank is not under a free licence: it is cut from commercial packs, and the README warns that redistributing it may violate their terms. No M-VAVE firmware is in the repository.
 based_on: m-vave-fm-1/compas
 homepage: https://marcocasanova00.github.io/compas-tekno/
-distribution: download
+distribution: browser-installer
 requires_stock: V15
 install_notes: >-
-  Flash firmware/compas-tekno.fwsc (identity FM-1_710) with the same USB installer used for other Felucca-family firmware. The README and docs/FLASH-SAFETY.md say to return to official V15 first when the FM-1 runs any other custom firmware, to keep the stock image backed up and never to unplug during a write; an interrupted update resumes when installed again. The loader's write guard excludes the boot head and user data, and the boot guard falls back to the chip's boot mode after two failed starts. The FM-1's mask-ROM rescue is the fallback.
+  Use the web installer on the project site in Chrome or Edge over USB, adapted from Amaru OS's installer and keeping a gate for returning to V15 first, or flash firmware/compas-tekno.fwsc (identity FM-1_710) with the USB installer used for other Felucca-family firmware. The README and docs/FLASH-SAFETY.md say to return to official V15 first when the FM-1 runs any other custom firmware, to keep the stock image backed up and never to unplug during a write; an interrupted update resumes when installed again. The loader's write guard excludes the boot head and user data, and the boot guard falls back to the chip's boot mode after two failed starts. The FM-1's mask-ROM rescue is the fallback.
 brick_risk: false
 tags: [drums, sequencer, performance, synth-engine, emulator, fork]
 versions:
+- version: main @ 2f80bae
+  date: 2026-11-11
+  url: https://github.com/MarcoCasanova00/compas-tekno/commit/2f80baeb073159144c6487f6b9ee1725b76b99c8
+  notes: Since the previous row it adds a web installer on the project site, a BPM lock across song changes, a global FX layer for mute and solo from any page, lead scores on the SONG knob past groove 32, droning latched pads, a three-state step velocity cycle and a TD-3-style cutoff and envelope on the lead, with a 90 percent flash guard and an exact flash-size check in the installer. No tagged releases; this is the latest commit.
 - version: main @ 2f518d0
   date: 2026-11-11
   url: https://github.com/MarcoCasanova00/compas-tekno/commit/2f518d02bb958fa3bcc6bfb5089c85403841b98a

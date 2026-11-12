@@ -1,18 +1,18 @@
 device: e103-designs-alteria
 name: ALTERIA ALLROUNDER
-summary: Arduino firmware for the ALTERIA module with sixteen selectable modes, including envelopes, ducking, burst, acid pitch patterns, tremolo, clock tools, logic, Turing-style CV and a preset manager.
+summary: Arduino firmware for the ALTERIA module with sixteen selectable modes, including envelopes, ducking, burst, acid pitch patterns, tremolo, clock tools, Euclidean triggers, logic, Turing-style CV and a sample and hold with glide.
 description: >-
-  ALLROUNDER 2.0.2 runs one mode at a time and steps through them with the mode button. The modes
+  ALLROUNDER 2.3.0 runs one mode at a time and steps through them with the mode button. The modes
   include AD and AR envelopes, dual decay, ducking, burst, an acid pitch generator, tremolo and
-  autopan, Grids-style trigger patterns, triple clock ratios, mutant kick and snare synthesis,
-  XOR logic, a Turing-machine register, humaniser, Bernoulli routing, a trance gate and a
-  preset manager. Output calibration at 0 V, +5 V and -5 V is stored per board in EEPROM. The
-  sources credit an acid-pattern generator by drakh (CC0) as inspiration for one mode. The
-  README says the 2.0.2 sound changes still need listening and bench checks. A separate
-  experimental 2.1.0 sketch in the same repository replaces the Mutant Drums mode with an Acid Voice mode and is marked
-  untested on hardware. A further
-  experimental 2.2.1 sketch, also untested, adds an ORBIT mode that generates CV and gate only, makes the I/O jack an output in that mode
-  and stores eight new presets.
+  autopan, Grids-style trigger patterns, triple clock ratios, three Euclidean trigger lanes with
+  separate densities, XOR logic, a Turing-machine register, humaniser, Bernoulli routing, a trance
+  gate and a sample and hold with glide. Version 2.3.0 replaced the earlier Mutant Drums and preset
+  manager slots, and sessions saved in those slots now start at AD Shaper. Output calibration at 0 V,
+  +5 V and -5 V is stored per board in EEPROM. The sources credit an acid-pattern generator by drakh
+  (CC0) as inspiration for one mode. The README says the firmware was compiled and checked in
+  software only, with testing on a physical module still pending. The repository also holds a
+  Firmware Builder that assembles a custom set of up to sixteen modes, and a library of 47
+  single-mode sketches that includes ORBIT, the eight-step preset manager and the drum modes.
 status: active
 authors:
   - name: E103-designs
@@ -25,10 +25,11 @@ license_notes: >-
 homepage: https://github.com/E103-designs/ALTERIA#readme
 distribution: source-only
 install_notes: >-
-  Open firmware/ALTERIA_ALLROUNDER/ALTERIA_ALLROUNDER.ino in the Arduino IDE and build for
-  Arduino Nano with an ATmega328P at 16 MHz, choosing the old bootloader only if the board needs
-  it. Upload one of the three ALTERIA sketches at a time. Calibrate the outputs with a multimeter
-  before use, and disconnect external signals from the I/O jack before entering modes 3 or 10.
+  Open ALLROUNDER/Firmware/ALTERIA_ALLROUNDER/ALTERIA_ALLROUNDER.ino from its own folder in the
+  Arduino IDE, together with the two header files beside it, and build for Arduino Nano with an
+  ATmega328P at 16 MHz, choosing the old bootloader only if the board needs it. Upload one ALTERIA
+  sketch at a time. Calibrate the outputs with a multimeter before use, and disconnect external
+  signals from the I/O jack before leaving mode 3 or rebooting.
 brick_risk: false
 tags: [official, generative, sequencer, drums, envelope, arduino, eurorack]
 image:
@@ -38,7 +39,11 @@ image:
   source_url: https://github.com/E103-designs/ALTERIA#readme
   first_party: true
 versions:
+  - version: main @ 98cfe2f
+    date: 2026-11-11
+    url: https://github.com/E103-designs/ALTERIA/commit/98cfe2fc71a6a4a005d252096878999c45687967
+    notes: No tagged releases; this is the latest commit. It publishes ALLROUNDER 2.3.0, which replaces slots 10 and 16 with Euclidean Trigs and S&H Glide.
   - version: main @ f3f8a7e
     date: 2026-11-06
     url: https://github.com/E103-designs/ALTERIA/commit/f3f8a7e1be2ebf69de92b56ca8e3e33b1f026848
-    notes: No tagged releases; this is the latest commit. The README lists ALLROUNDER 2.0.2 and experimental 2.1.0 and 2.2.1 variants that are untested on hardware.
+    notes: No tagged releases. The README listed ALLROUNDER 2.0.2 and experimental 2.1.0 and 2.2.1 variants that were untested on hardware.

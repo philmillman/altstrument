@@ -9,7 +9,10 @@ description: >-
   C. It offers 16 factory patches, upper, lower and pedal drawbar pages, two rotary models, reverb, delay, a
   three-band equaliser, an advanced page with setBfree's own tone-generator settings, split keyboard, and MIDI
   CC control with MIDI Learn. The project site has an installer, a patch editor and a browser emulator, with
-  text in English and Portuguese. The README says nothing has been tested on a real FM-1 and warns against
+  text in English and Portuguese. A beta SMK-37 port builds from the same source (SMK37.md on the organvave-37
+  branch): the keys, pads, faders and wheels are mapped to the organ, and the project site offers packages for the
+  SMK-37 Pro, SMK-37 Elite and MKE-P37 at the same version as the FM-1 build. The board layer was verified on an
+  SMK-37 Pro by its author; the organ's mapping has only been tested on the host. The README says nothing has been tested on a real FM-1 and warns against
   installing it without a way to recover the unit. The author says it was developed with Claude.
 status: active
 authors:
@@ -27,11 +30,14 @@ distribution: browser-installer
 requires_stock: V15
 install_notes: >-
   Web installer on the project site in Chrome or Edge over USB, or the .fwsc package it offers. BUILDING.md
-  explains recovery; the README advises against installing unless you know how to recover an FM-1.
+  explains recovery; the README advises against installing unless you know how to recover an FM-1. SMK-37: the
+  project site's smk.html page installs the package for the connected model (organvave-1-smk37-v0.9.45.fwsc for the
+  Pro, -elite- and -mke- for the others). The page warns that the keyboard's flash holds calibration and a key that
+  cannot be downloaded again, advises a full flash backup first and says the firmware never writes those areas.
 brick_risk: false
 tags: [synth-engine, fork, editor, emulator, fx]
 versions:
 - version: main @ d251b57
   date: 2026-11-10
   url: https://github.com/ruppert/organvave-1/commit/d251b579019636bec116a93a0526bfb492110350
-  notes: No tagged releases; this is the latest commit, a workflow change that publishes an SMK-37 installer from the organvave-37 branch; the firmware is still labelled v0.9.45. Since v0.9.40 the drive gains four types (soft tube, mid drive, hard clip and a tight tube stage modelled on a 12AX7), their gain is raised, its tone control becomes treble, middle and bass, and the CPU meter is removed from the HOME screen.
+  notes: No tagged releases; this is the latest commit, a workflow change that publishes an SMK-37 installer from the organvave-37 branch, which now offers v0.9.45 packages for the SMK-37 Pro, Elite and MKE-P37 beside the FM-1 build; the firmware is still labelled v0.9.45. Since v0.9.40 the drive gains four types (soft tube, mid drive, hard clip and a tight tube stage modelled on a 12AX7), their gain is raised, its tone control becomes treble, middle and bass, and the CPU meter is removed from the HOME screen.

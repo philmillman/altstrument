@@ -18,7 +18,7 @@ homepage: https://altessproduction.github.io/DUB-BOX-FM1/dub/
 distribution: download
 requires_stock: m-bootloader installed first
 install_notes: >-
-  Install m-bootloader with M-Flasher once, power on holding REC, then flash the release's dub-box .fwsc with M-Flasher, leaving bootloader replacement and the settings erase unchecked; a browser install page lists the checksums. docs/INSTALL.md says to keep a verified full-flash backup, never to erase the whole chip or write below 0x4000, and that a unit that no longer enumerates on USB may need hardware recovery.
+  Install m-bootloader with M-Flasher once, power on holding REC, then flash the release's dub-box .fwsc with M-Flasher, leaving bootloader replacement and the settings erase unchecked; a browser install page lists the checksums. Since 1.0.8 the newer UC25HQ80 flash chip is accepted. docs/INSTALL.md says to keep a verified full-flash backup, never to erase the whole chip or write below 0x4000, and that a unit that no longer enumerates on USB may need hardware recovery.
 brick_risk: true
 tags: [fx, delay, usb-audio, mixer, performance, emulator, fork]
 image:
@@ -28,6 +28,18 @@ image:
   source_url: https://github.com/altessproduction/DUB-BOX-FM1
   first_party: true
 versions:
+- version: 1.0.8
+  date: 2026-11-12
+  url: https://github.com/altessproduction/DUB-BOX-FM1/releases/tag/v1.0.8
+  notes: Accepts the newer FM-1 flash chip (JEDEC B3 60 14) at boot, so settings are kept in flash and updates install on units sold since late 2026, and the rescue tool accepts it too. The dub pages and emulator are 1.0.7's.
+- version: 1.0.7
+  date: 2026-11-12
+  url: https://github.com/altessproduction/DUB-BOX-FM1/releases/tag/v1.0.7
+  notes: Makes the DUB page's four knobs pots, adds separate sends from the USB input and the Bluetooth input into the tape echo, both at 0 at boot, and moves the DUB module's on and off switch to the eighth black key, on at boot. The ninth and tenth black keys arm the two sends.
+- version: 1.0.6
+  date: 2026-11-11
+  url: https://github.com/altessproduction/DUB-BOX-FM1/releases/tag/v1.0.6
+  notes: The Firmware Hub submission release. It completes the project's hub listing file, gives the package the identity FM-1_2345 and fixes the build configuration that had broken the 1.0.5 tag's CI run. The firmware is the same as 1.0.5.
 - version: 1.0.5
   date: 2026-11-11
   url: https://github.com/altessproduction/DUB-BOX-FM1/releases/tag/v1.0.5

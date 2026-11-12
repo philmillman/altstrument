@@ -1,7 +1,7 @@
 device: m-vave-fm-1
 name: ARP WAV 09
 summary: >-
-  Five-voice instrument on the Dinghy platform: a latching arpeggiated lead, a droning bass, a 16-step recorded loop, a drum kit and a radio voice
+  Multi-voice instrument on the Dinghy platform: a latching arpeggiated lead, a droning bass, a 16-step recorded loop, a drum kit and a radio voice
   that tunes through generated sounds, with 303-style knobs and a neon start-up logo.
 description: >-
   The app's header comment describes a minimal instrument with no presets and no saving: switch on and a raw sawtooth plays.
@@ -10,7 +10,7 @@ description: >-
   writes notes into a loop of 16 boxes; KIT is a kick, snare and hat pattern with a tempo of its own that ducks the other voices; FM1 is a radio with
   stations hidden on a dial. Two pages of knobs per voice cover cutoff, envelope, decay, delay, stretch, FM and crush. The
   code is integer-only and lives in the platform's dinghy.c, with lookup tables in acid_tables.h. The README and
-  documentation are still Dinghy's, so the description above comes from the source's header comment.
+  documentation are still Dinghy's, so the description above comes from the source's header comment. The project's fmhub.json, written since, describes six voices to play alone or chained (ARP, WAV drone, SEQ, KIT drums, X02 ghost and alien noises and A09 ghost radio) with no menu and no sound presets.
 status: active
 authors:
 - name: wav0902
@@ -22,14 +22,22 @@ license_notes: >-
   LICENSING.md states GPL-3.0-only, inherited from Dinghy, Felucca (Leo Kuroshita) and SLOOP, and the app source carries a
   GPL-3.0-only header. The Dinghy logo in assets/ is copyright designburg, all rights reserved and not under the GPL, according to
   LICENSING.md. The screen font is now generated from Share Tech Mono (SIL OFL 1.1, text in firmware/gen); LICENSING.md still names Terminus.
-distribution: source-only
+distribution: download
 install_notes: >-
-  No release page. A manual GitHub workflow named acid builds the package on a runner and keeps it as an artifact; locally the
+  Releases from v1.0.2 carry a .fwsc package named dinghy.fwsc, and a GitHub workflow builds it; locally the
   Dinghy build and install scripts apply (./build.sh, then tools/fm1_install.py). The README says the USB rescue and the
   Firmware Hub can return the unit to other firmware.
 brick_risk: false
 tags: [synth-engine, arpeggiator, sequencer, drums, fx, fork]
 versions:
+- version: v1.0.5
+  date: 2026-11-11
+  url: https://github.com/wav0902/wav-fm1/releases/tag/v1.0.5
+  notes: The release page has no notes and holds dinghy.fwsc. The commits since 1.0.2 rename the package file and change the build script.
+- version: v1.0.2
+  date: 2026-11-11
+  url: https://github.com/wav0902/wav-fm1/releases/tag/v1.0.2
+  notes: Gives the package its own unique device ID, FM-1_908. The release holds dinghy.fwsc and a checksum file.
 - version: main @ 4cb37af
   date: 2026-11-08
   url: https://github.com/wav0902/wav-fm1/commit/4cb37af36c5e28d97d3477e8ace15bba32d0f553

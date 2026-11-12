@@ -4,15 +4,17 @@ summary: >-
   SoundFont player: a 32-voice, 16-channel General MIDI sound module that plays a bank converted from an .sf2 file in the
   browser, with reverb, chorus, USB, DIN and Bluetooth MIDI and a built-in MIDI file player.
 description: >-
-  Rights warning: the repository carries a General MIDI SoundFont (soundfonts/1mgm.sf2), about twenty MIDI files of
-  well-known songs under MIDIs/ and a Pages site that publishes them, with no licence or origin stated for any of them.
+  Rights warning: the repository carries about twenty MIDI files of well-known songs under MIDIs/ and a Pages site that
+  publishes them, with no licence or origin stated, and a bundled General MIDI bank converted from a SoundFont whose header
+  names E-mu Systems (1993) as the copyright holder.
   The firmware itself is a sample player built on M-VAVE's FM1 Open code. A web page converts an .sf2 into an FM1B bank of
   presets, key and velocity zones, loops, envelopes, filter, LFOs and sends, in one of several sample codecs, and a second
   page installs the firmware and the bank over USB-MIDI. The bank lives in the 456 KB sample flash and is played in place.
-  Two firmwares exist: a plain player that includes a MIDI file player, and a newer one with a live cache that plays
-  MP3-packed banks about twice as large. A CPU guard lowers the voice count instead of stuttering. A browser emulator and
-  MIDI player on the project site run the firmware without a device. The author calls the live-cache build still being
-  tested on hardware.
+  There is one firmware, the one with a live cache that plays MP3-packed banks about twice as large; it has no MIDI file
+  player and plays no SEA or PCM banks, which a build without the live cache keeps. A CPU guard lowers the voice count
+  instead of stuttering. A browser emulator and MIDI player on the project site run the firmware without a device. The
+  firmware package has its own identity, FM-1_8320501, and the release is marked a beta that the author says is still being
+  tested on the device.
 status: active
 authors:
 - name: mwedmark
@@ -21,10 +23,9 @@ source: https://github.com/mwedmark/fm1-sf2
 source_status: open
 license: GPL-3.0-only
 license_notes: >-
-  The repository has no top-level LICENSE file. The README says the firmware is built on m-vave/fm1_open, whose
-  LICENSE.md (copied into fm1_open/) is GPL-3.0-only with M-VAVE's FM1 SDK linking exception, so that licence is recorded
-  here; this is an inference, not an explicit statement by the author. The SoundFont and MIDI files have no stated
-  licence. The repository contains M-VAVE's licensed V15 recovery image fm1_open/sdk/firmware/FM-1_015.fwsc (Apache-2.0,
+  The top-level LICENSE and the README's Licence section give GPL-3.0 with M-VAVE's FM1 SDK linking exception, the same
+  text as m-vave/fm1_open's LICENSE.md, which the firmware is built on; the README says the code outside fm1_open is
+  GPL-3.0 too. The MIDI files have no stated licence, and the bank is not covered by it. The repository contains M-VAVE's licensed V15 recovery image fm1_open/sdk/firmware/FM-1_015.fwsc (Apache-2.0,
   git blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd, 699,956 bytes, the same file as in m-vave/fm1_open) and the binary
   engine library libfm1_engine.a under M-VAVE's separate terms for FM-1 devices.
 homepage: https://mwedmark.github.io/fm1-sf2/
@@ -44,7 +45,7 @@ image:
   source_url: https://github.com/mwedmark/fm1-sf2
   first_party: true
 versions:
-- version: main @ baaca80
-  date: 2026-11-10
-  url: https://github.com/mwedmark/fm1-sf2/commit/baaca803b41474356bac04e4c864193e1e01e66f
-  notes: No tagged releases; this is the latest commit. Since the previous row the rescue accepts the UC25HQ80 flash chip (0xB36014) of newer FM-1s, the converter can take chosen instruments only, the simulator plays banks of any size, and the panel steps over empty programs.
+- version: v0.5.2
+  date: 2026-11-11
+  url: https://github.com/mwedmark/fm1-sf2/releases/tag/v0.5.2
+  notes: Pre-release; the first GitHub release, a single SF2 player package with the live cache, a bundled General MIDI bank in BFP8 at 32 kHz, the author's own firmware identity and the rescue that accepts the UC25HQ80 flash chip of newer FM-1s. The package replaces the plain player and its MIDI file player.

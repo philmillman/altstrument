@@ -1,0 +1,38 @@
+device: m-vave-fm-1
+name: dubengine
+summary: >-
+  Dub techno chord sequencer built on DUB-1: pick a key and mode, play scale chords with one finger, record or step-enter
+  patterns with per-step locks, and run everything through a filter, tape echo and plate reverb.
+description: >-
+  Turns the FM-1 into a chord sequencer. Only the keys of the chosen root and mode light up, and each plays the triad the
+  scale builds on it in root position or the first or second inversion. A metronome, pattern lengths up to 64 steps and
+  live or step recording are done, and each step can lock its chord, voicing, octave and length. Saving patterns, clock
+  sync to an Elektron Digitakt II, and randomise and evolve functions are planned in the README. DUB-1's generative
+  layers are still in the code, switched off. The repository builds a browser emulator of the same code, which the
+  project site hosts, and the README describes itself as a brief for continuing the work in a codespace.
+status: active
+authors:
+- name: marwanfarha
+  url: https://github.com/marwanfarha
+source: https://github.com/marwanfarha/dubengine
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md and the README state GPL-3.0-only, kept from DUB-1, AMB-1 and Felucca, and LICENSE is the GPL v3 text. The
+  fonts are SIL OFL 1.1. The repository holds small test .bin project saves for the host simulator and no firmware image.
+homepage: https://marwanfarha.github.io/dubengine/
+based_on: m-vave-fm-1/dub-1
+distribution: source-only
+requires_stock: M-VAVE stock firmware V15 (the README tells you to keep it)
+install_notes: >-
+  No release exists yet; a pushed version tag builds the .fwsc in GitHub Actions. Build it with ./dev.sh build or
+  build.sh and install it over USB with tools/fm1_install.py. The README lists recovery steps: holding OCT- while
+  switching on enters a USB rescue mode, a unit that shows only the WL82 UBOOT disk can be fixed with M Flasher or
+  MvaveFM1Unbricker, and the Firmware Hub's rescue page covers the rest. The firmware accepts both FM-1 flash chips.
+brick_risk: false
+tags: [sequencer, synth-engine, fx, emulator, performance, midi, fork]
+versions:
+- version: main @ 250cbef
+  date: 2026-11-12
+  url: https://github.com/marwanfarha/dubengine/commit/250cbef479fc7ec8a7f13686d980a9d1c6d09b3a
+  notes: No tagged releases; this is the latest commit.

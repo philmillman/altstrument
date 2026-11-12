@@ -1,0 +1,45 @@
+device: e103-designs-alteria
+name: ALTERIA ACPM
+summary: Arduino firmware that turns the ALTERIA module into an Addressable or Clocked Preset Manager, storing up to 16 steps of two CV values and a gate and stepping through them by clock or CV address.
+description: >-
+  ACPM 1.0.0 is a standalone sketch that stores sixteen steps, each holding output 1, output 2
+  and a gate state, with an active length from 1 to 16 that does not erase the other steps. In
+  play mode CV in either advances one step per rising edge (clock) or selects a step by level
+  across 0 to +5 V split into as many bands as there are active steps (address). Outputs 1 and 2
+  replay the stored CV values and the I/O jack is always a gate output. Edit mode sets the two CVs
+  and the gate with the three knobs, which use pickup, and setup mode sets the length, a shared
+  output range of plus or minus 1, 2 or 5 V and the CV in function. A long press of the mode
+  button saves the bank to two checksummed EEPROM banks that leave the ALLROUNDER, FULL VOICE,
+  DRUM LAB and calibration data alone. The range is not a 1 V per octave quantizer. The README
+  marks the firmware as untested on the physical module.
+status: active
+authors:
+  - name: E103-designs
+    url: https://github.com/E103-designs
+source: https://github.com/E103-designs/ALTERIA
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Covers the original source, documentation, photographs and design files in the repository.
+homepage: https://github.com/E103-designs/ALTERIA/tree/main/ACPM#readme
+distribution: source-only
+install_notes: >-
+  Open ACPM/Firmware/ALTERIA_ACPM/ALTERIA_ACPM.ino in the Arduino IDE and build for Arduino Nano with
+  an ATmega328P at 16 MHz (the ALTERIA REV5-2 board), choosing the old bootloader only if the Nano
+  needs it. Upload one ALTERIA sketch at a time, and disconnect external sources from the I/O
+  jack first because it is an output in this firmware. The firmware only reads the existing
+  output calibration. Check the CV in limits on your board before patching bipolar signals into
+  it, and do not power off while the LEDs flash during a save.
+brick_risk: false
+tags: [official, sequencer, preset, cv, arduino, eurorack]
+image:
+  url: https://raw.githubusercontent.com/E103-designs/ALTERIA/main/images/ALTERIA_front_IMG_3251_clean.png
+  alt: Front panel of the ALTERIA module with four LEDs, two buttons, three white knobs and four jacks
+  credit: E103-designs
+  source_url: https://github.com/E103-designs/ALTERIA#readme
+  first_party: true
+versions:
+  - version: main @ 98cfe2f
+    date: 2026-11-11
+    url: https://github.com/E103-designs/ALTERIA/commit/98cfe2fc71a6a4a005d252096878999c45687967
+    notes: No tagged releases; this is the latest commit. The README lists ACPM 1.0.0.

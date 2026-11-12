@@ -1,0 +1,35 @@
+device: m-vave-smc-pad
+name: Uber SMC-PAD
+kind: firmware
+summary: >-
+  Clean-room firmware for the SMC-PAD with a 16-track by 64-step sequencer, USB and BLE-MIDI, stock-compatible presets and configuration protocol, and a browser patcher that builds the image from your own stock file.
+description: >-
+  Written on JieLi's public AC63 SDK without vendor code, and it keeps the stock flash layout, so presets at 0x77000 and the factory pad calibration at 0x7E000 stay in place. It does the pad controller's work (sixteen
+  velocity and pressure pads, eight encoders, ten buttons, USB-MIDI with three cables, TRS MIDI out and BLE-MIDI) and reads the stock presets and the Midi Suite configuration protocol over BLE and USB SysEx while refusing raw flash writes. Shift plus Note Repeat opens the sequencer, with sixteen tracks of
+  64 steps, chords of up to four notes, per-step velocity, gate, micro-timing, probability, ratchets, ties and Elektron-style trig conditions, live recording with retroactive quantize, scale and root locking, a per-track rate that keeps existing notes in time,
+  sixteen pattern slots kept in flash, undo and redo, and a 960 PPQN clock that can send or follow MIDI clock. A boot-loop safe mode keeps BLE OTA and USB running. The repository also holds a preset binary-to-JSON editor, a GATT profile generator, diagnostic tools, printable overlays and the design of an RP2040 USB_KEY dongle for
+  mask-ROM recovery, which the repository describes as untested on hardware. It is not affiliated with M-VAVE.
+status: active
+authors:
+- name: alenauta
+  url: https://github.com/alenauta
+source: https://github.com/alenauta/uber-smc-pad
+source_status: open
+license: MIT
+license_notes: >-
+  LICENSE is the MIT text. The repository holds no M-VAVE firmware and no JieLi SDK source; the builder fetches JieLi's AC63 SDK and toolchain at build time, and the NOTICE file tells anyone redistributing built images to check the SDK terms. docs/payload/smcpad_925.bin is a 168,956-byte bundle of the custom
+  firmware sections only, which the browser patcher combines with the bootloader, updater and keys from your own SMC-PAD_005.fwsc; it is not a stock image.
+homepage: https://alenauta.github.io/uber-smc-pad/
+distribution: patch-your-own
+requires_stock: SMC-PAD_005
+install_notes: >-
+  The patcher page takes your own unmodified SMC-PAD_005.fwsc (517,940 bytes) and makes SMC-PAD_925.fwsc in the browser, or the Docker build in firmware/builder makes it from source. Flash it with SincoOTA on a phone, which often needs two attempts. The repository says stock bootloader, OTA loader, presets
+  and calibration are preserved, that flashing SMC-PAD_005.fwsc through SincoOTA returns to stock, that two quick boots in a row start a safe mode that keeps BLE OTA and USB alive, and that the chip's mask-ROM USB bootloader cannot be overwritten. Its own notes warn of a possible brick, advise a verified 512 KB flash backup first, and mark the
+  dongle-based hardware recovery as untested.
+brick_risk: false
+tags: [controller, sequencer, midi, usb-midi, ble-midi, editor, platform]
+versions:
+- version: main @ 2f06a8a
+  date: 2026-11-12
+  url: https://github.com/alenauta/uber-smc-pad/commit/2f06a8a40cc7f5505b6f19631383c20573465e52
+  notes: No tagged releases; this is the latest commit.

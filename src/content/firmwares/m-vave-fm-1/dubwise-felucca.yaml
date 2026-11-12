@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+name: DUBWISE (Felucca fork)
+kind: firmware
+summary: >-
+  Dub techno fork of Felucca 1.8.1 with a one-key chord-stab engine, a tape echo in place of the delay bus and a dub song that loads at power-on, plus new presets and phrases.
+description: >-
+  Keeps all of Felucca and adds the STAB engine, in which one key plays a whole chord (m7, m9, m11, fourths, minor, fifth, sus4, maj7, maj9 or octave)
+  through a four-pole low-pass with its own decay envelope, with CUT, ENV, DEC and CHRD on the HOME knobs. The delay bus is replaced by a tape
+  echo with wow and flutter, a stereo offset, a low cut, two low-pass poles in the loop and tape saturation, so feedback past about 100 percent runs
+  away into a bounded howl, and ECHO THROW pushes feedback to 0.98. The song that loads at power-on uses STAB DUB M7, ANALOG DUB SUB, NOISE VINYL and
+  a DRUM DUB KIT with patterns, a dotted eighth echo and a long dark hall. It adds eleven STAB presets, a tape-hiss sound and six phrases. The screen shows a cassette
+  deck with reels that follow the transport. This is a different project from the catalogued DUBWISE by hatch-blip, which is a riddim-and-skank app on fm1-base.
+status: active
+authors:
+- name: aviron3
+  url: https://github.com/aviron3
+source: https://github.com/aviron3/fm-1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL-3.0 text and the README says GPL-3.0-only, as Felucca. LICENSING.md and LICENSES/ keep the licences of the parts it carries:
+  Felucca-Engines, Rings and DaisySP DSP (MIT), msfa (Apache-2.0), snes_spc (LGPL-2.1), felucca-bsp (MPL-2.0), Inter Tight (SIL OFL) and CC0 samples.
+homepage: https://aviron3.github.io/fm-1/webapp/installer/
+based_on: m-vave-fm-1/felucca
+distribution: browser-installer
+install_notes: >-
+  Use the installer page in Chrome or Edge with the FM-1 on USB; the repository's workflow builds the package and publishes the page on every push to main.
+  The README says to install at your own risk and to keep Felucca's recovery notes at hand, which are the installer's Return to official V15 and USB rescue.
+brick_risk: false
+tags: [fork, dub, sequencer, synth-engine, fx, delay, ui]
+versions:
+- version: main @ 48df096
+  date: 2026-11-11
+  url: https://github.com/aviron3/fm-1/commit/48df096e1050a32fb277b46779050b73cc57b03e
+  notes: No tagged releases; this is the latest commit.

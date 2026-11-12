@@ -2,7 +2,7 @@ device: m-vave-fm-1
 name: CHORDS
 summary: >-
   Chord generator for the FM-1: pick a scale and root, the white keys play the scale's chords and the black keys its
-  notes, with twelve synth sounds, voicings from dyads to 11ths, an arpeggiator and a bass.
+  notes, with 36 synth sounds, voicings from dyads to 11ths, chord extensions, a progression generator, an arpeggiator and a bass.
 description: >-
   Puts the author's Chord Generator web app on the device, built on FoMni's copy of the Felucca platform with a new
   instrument and interface. It keeps HOLD and an effects chain. The README says it passes its tests in the simulator
@@ -30,6 +30,10 @@ image:
   source_url: https://github.com/Mighty-stack444/Chords-fm1
   first_party: true
 versions:
+- version: main @ 6e2162e
+  date: 2026-11-12
+  url: https://github.com/Mighty-stack444/Chords-fm1/commit/6e2162e5990847c6d948c73b0f2c75ae48e4ae11
+  notes: Since the previous row 0.5 adds extensions held with a chord key (7th, 9th, 6th, sus4, sus2, major or minor flip), inversions, 24 new sounds, Bassline's bass voice, 36 chord sets by mood, a sketch that loops with the arpeggiator, bass and melody, a progression generator and key detection. 0.6 adds strumming with ENV, melody phrase forms, separate rhythm and note re-rolls and ornaments. The README still says it has not been run on a real FM-1. No tagged releases; this is the latest commit, titled 0.6.
 - version: main @ 73933a6
   date: 2026-10-30
   url: https://github.com/Mighty-stack444/Chords-fm1/commit/73933a6e8309edd3e40b35347248df7353faf5c4

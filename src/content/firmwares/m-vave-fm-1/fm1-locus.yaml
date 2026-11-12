@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: FM1_Locus
+kind: firmware
+summary: >-
+  Modal resonator feeding a granular processor on the FM-1, built on Mutable Instruments' Rings and Clouds DSP, with USB audio routing, an 8-pattern step sequencer and four chance-based trigger generators.
+description: >-
+  The RESONATOR has modal, sympathetic string, string, FM voice and quantized chord models with one, two or four voices, struck by an internal exciter, by routed
+  audio or by that audio's onsets. LOCUS is a granular processor with granular, stretch, looper and spectral modes and a buffer of roughly 1 to 8 seconds that REC freezes. ROUTING sends the
+  computer's USB audio into the resonator, into LOCUS or straight out, and the resonator into LOCUS or out, each from off to +6 dB. The sequencer has eight patterns of up to 32 steps
+  with note, accent and grain per step, and CHANCE triggers come from a Geiger counter, a Lorenz attractor, a cellular automaton (rules 30, 90 and 110) or a dripping-faucet model.
+  USB audio runs both ways, MIDI notes, start and stop and program change come in over USB and TRS, and settings and patterns are saved to flash. The DSP is Emilie Gillet's Rings and Clouds
+  code, with no CV or audio jacks of its own, no MIDI clock yet and no string-and-reverb model. The README says it has not been tested on an FM-1 and runs in the FM-1 emulator, and
+  that the 0.2 package was checked by update tests but not on a device.
+status: active
+authors:
+- name: stevexfer
+  url: https://github.com/stevexfer
+source: https://github.com/stevexfer/FM1_Locus
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE and LICENSING.md say GPL-3.0-only. The Rings and Clouds DSP and stmlib in third_party/eurorack are Emilie Gillet's under MIT, patched as listed in PATCHES.md. The Felucca platform code is
+  Leo Kuroshita's under GPL-3.0, the Terminus font is SIL OFL 1.1 and three JieLi AC79 SDK files in each package are Apache-2.0. The release package is 610,152 bytes, not an M-VAVE image.
+homepage: https://stevexfer.github.io/FM1_Locus/
+based_on: m-vave-fm-1/fm1-audiobase
+distribution: browser-installer
+install_notes: >-
+  Use the web installer in Chrome or Edge with the FM-1 on USB, or tools/fm1_install.py with the release's locus-0.2.fwsc. The README says an interrupted write resumes when Install is pressed again, two
+  failed boots open USB RESCUE (or hold OCT- at power-on), the installer's Back to the official firmware takes M-VAVE's V15 file you supply, and MvaveFM1Unbricker recovers a unit that does not start.
+  The 0.2 package has not been tried on a device.
+brick_risk: false
+tags: [physical-modeling, granular, sequencer, generative, usb-audio, fx, fork]
+versions:
+- version: '0.2'
+  date: 2026-11-11
+  url: https://github.com/stevexfer/FM1_Locus/releases/tag/v0.2
+  notes: First release; resonator, granular processor, routing, sequencer and chance triggers.

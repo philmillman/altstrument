@@ -1,0 +1,47 @@
+device: m-vave-fm-1
+name: FM1 Flasher for iOS
+kind: tool
+summary: >-
+  Native iPhone and iPad app that installs community FM-1 firmware over USB MIDI SysEx, from a short list of bundled
+  packages or from The Firmware Hub's catalogue, with no computer or Web MIDI browser.
+description: >-
+  Rights warning: PLAN.md says the protocol code is ported from ChoralRootFM1's fm1_install.py, which it describes
+  as GPL-3.0, while the repository is released under MIT. The app speaks the same two-step update protocol: it reads the unit's firmware
+  version and flash chip ID, lets the unit's updater pull a package over CoreMIDI, waits for the update loader to appear as a
+  new MIDI port, writes, and checks the identity after the restart. Packages are checked by SHA-256 before every install,
+  whether they come from the bundle or from the in-app catalogue browser, which lists thefirmwarehub.com's public catalogue
+  with thumbnails and sorting by stars, installs and recency. The repository holds no firmware packages; a gitignored
+  Firmware folder takes files you download yourself. The README calls it an early experiment that its author has used only
+  personally, tested for connecting, device identification and upload on iOS 17, and says it has no App Store or TestFlight
+  release. PLAN.md records the protocol notes and the author's list of bricking risks.
+status: active
+authors:
+- name: Nils P. Ellingsen
+  url: https://github.com/nilselathome
+source: https://github.com/nilselathome/fm1-flasher
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text, copyright 2026 Nils P. Ellingsen. PLAN.md says the protocol code was ported from
+  ChoralRootFM1's fm1_install.py, which it describes as GPL-3.0; the repository does not discuss how that affects the MIT
+  grant. Firmware you flash keeps its own licence.
+distribution: source-only
+requires_stock: A firmware with a compatible USB updater, such as M-VAVE's V15 or a Felucca-family build
+install_notes: >-
+  Build with XcodeGen and Xcode (brew install xcodegen, xcodegen generate, then pick your own signing team) and run it on an
+  iPhone or iPad. USB-C phones connect with a cable; a Lightning phone needs Apple's Lightning to USB camera adapter. PLAN.md
+  suggests testing only against a unit that runs a build with an interrupted-install safety net, and keeping the OCT- ROM
+  USB rescue mode in mind as the way back.
+brick_risk: false
+tags: [flasher, ios, usb-midi, sysex]
+image:
+  url: https://raw.githubusercontent.com/nilselathome/fm1-flasher/main/docs/screenshots/fm1-flasher-1.png
+  alt: FM1 Flasher main screen in an iPhone simulator, with a firmware picker set to X0X 1.2.2, a Browse Firmwares Online link, a USB section showing UMP Network, and the FM-1 section reading Not connected
+  credit: Nils P. Ellingsen
+  source_url: https://github.com/nilselathome/fm1-flasher#readme
+  first_party: true
+versions:
+- version: main @ d0e3a48
+  date: 2026-11-12
+  url: https://github.com/nilselathome/fm1-flasher/commit/d0e3a4893980b0bf82288fc474eb48af3fccbb24
+  notes: No tagged releases; this is the latest commit.

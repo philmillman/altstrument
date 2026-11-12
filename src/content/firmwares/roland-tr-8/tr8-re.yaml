@@ -1,0 +1,37 @@
+device: roland-tr-8
+name: tr8-re
+summary: Reverse engineering notes and a Python patcher for Roland TR-8 system program 1.61; the first patch adds motion recording of knob and fader moves, played back with the pattern.
+description: >-
+  The patcher reads Roland's own TR8_UPD.BIN for version 1.61, refuses any other file, and writes a modified update that the
+  TR-8's updater accepts, with the size and byte sums recomputed. The motion patch records a knob or fader move at the current
+  step while TR-REC is held with the sequencer running, plays it back on later passes, and erases a control's motion
+  while CLEAR is held. All 49 controls can record, for 16 steps and two variations each. The motion is kept in RAM in one
+  buffer shared by all patterns and is lost at power-off. The author reports it working on a real TR-8. The repository also
+  documents the update file format, the boot loader and updater, the sequencer and control handling, and a developer
+  guide for writing further patches, with emulation tests that need Ghidra and Unicorn. It holds no Roland code, and its
+  .gitignore excludes the firmware and analysis folders.
+status: active
+authors:
+  - name: yo1frenchtoast
+    url: https://github.com/yo1frenchtoast
+source: https://github.com/yo1frenchtoast/tr8-re
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file covers the code and documents in the repository only. Roland's firmware is not included and is not
+  licensed by it.
+distribution: patch-your-own
+requires_stock: System program 1.61 (tr8_sys_v161.zip from Roland's support page; the patcher accepts only this file)
+install_notes: >-
+  Run python3 -I tools/tr8patch.py TR8_UPD.BIN TR8_UPD_motion.BIN on the unzipped Roland file, back up patterns and kits over
+  USB, then flash it by Roland's procedure: hold step button 1 at power-on, copy the file as TR8_UPD.BIN to the TR-8 drive and
+  press step button 2 after ejecting. The update never writes the boot loader or the updater, and holding step button 1 at
+  power-on always reaches the updater, so reinstalling the original file recovers a bad build. Do not cut the power during the
+  write; the README says Roland then requires service. The build keeps version number 161.
+brick_risk: false
+tags: [patch, sequencer, motion-recording, reverse-engineering, drums]
+versions:
+  - version: main @ 4d5d684
+    date: 2026-11-11
+    url: https://github.com/yo1frenchtoast/tr8-re/commit/4d5d6847ac178d625b08ee2c73507468b4a34f8c
+    notes: No tagged releases; this is the latest commit.

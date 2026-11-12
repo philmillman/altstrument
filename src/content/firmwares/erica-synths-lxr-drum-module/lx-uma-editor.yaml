@@ -1,0 +1,37 @@
+device: erica-synths-lxr-drum-module
+name: LX_UMA editors
+kind: tool
+summary: Browser editors that make wavetable, wave terrain and DX7 bank files for the Plaits models in LX_UMA, an unofficial community firmware for the LXR Drum Module, adapted from Mutable Instruments' Plaits editor.
+description: >-
+  The wavetable page edits an 8 x 8 map and 15 custom waves and downloads wavetable.bin, which the firmware's wavetable model
+  reads as bank D. The wave terrain page edits a 64 x 64 height map and downloads terrain.bin, a ninth terrain for the
+  wave terrain model. A third page edits a 32-voice DX7 bank and downloads a .syx file for the 6-operator model, from the
+  card's DX7 folder in LX_UMA 0.34 and later. Each page previews the sound in the browser, and file names are limited to
+  eight characters because the module reads 8.3 names. The code adapts Emilie Gillet's Plaits editors by replacing the
+  audio-transfer step used for a real Plaits with file downloads. The README says LX_UMA has its own manual and is not
+  affiliated with Erica Synths or Mutable Instruments. No public source repository for LX_UMA itself was found when
+  this entry was written.
+status: active
+authors:
+  - name: mauSuaza
+    url: https://github.com/mauSuaza
+  - name: Emilie Gillet
+    url: https://github.com/pichenettes
+source: https://github.com/mauSuaza/LX_UMA-editor
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file lists copyright for Emilie Gillet (2022, the Plaits editor) and "LX_UMA contributors" (2026, the
+  changes for LX_UMA).
+homepage: https://mausuaza.github.io/LX_UMA-editor/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page, make a wavetable, terrain or DX7 bank, and download the file. The page writes nothing to the module;
+  copy the file to the folder the LX_UMA manual names on the SD card.
+brick_risk: false
+tags: [editor, web, wavetable, plaits, dx7, eurorack]
+versions:
+  - version: main @ 7e2dfaf
+    date: 2026-11-12
+    url: https://github.com/mauSuaza/LX_UMA-editor/commit/7e2dfaff5e2a982c77b9e469e298d3edc14f75b6
+    notes: No tagged releases; this is the latest commit.

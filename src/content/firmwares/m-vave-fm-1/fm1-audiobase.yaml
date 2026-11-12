@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+name: FM1_AudioBase
+kind: firmware
+summary: >-
+  Turns the FM-1 into a USB audio interface in both directions with a MASTER volume, peak meters and a waveform visualizer, written as a small base to fork new FM-1 firmware from.
+description: >-
+  What the computer plays comes out of the FM-1's outputs and what the FM-1 plays can be recorded back as a USB audio input, both 48 kHz 16-bit stereo and
+  class-compliant, so no driver is needed. MASTER is the volume of both streams, ramped per block, and the screen shows both stream states, left and right peak
+  meters, the level in dB, CPU, USB and MIDI activity, with PLAY and REC LEDs for the two directions. GLO toggles a waveform visualizer that feeds back on itself. USB-MIDI
+  and TRS MIDI input keep running so the installers still reach the unit. It is a fork of MOOD_FM1, which is built on GATOR and the Felucca platform loader, and an app's
+  DSP is meant to sit between the USB audio and the volume. The README calls it very early development and says it was tested on an FM-1.
+status: active
+authors:
+- name: stevexfer
+  url: https://github.com/stevexfer
+source: https://github.com/stevexfer/FM1_AudioBase
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE and LICENSING.md say GPL-3.0-only. The Felucca platform code is Leo Kuroshita's under the same licence, the Terminus font is SIL OFL 1.1 and three
+  JieLi AC79 SDK files in each package are Apache-2.0. The release package is 610,152 bytes, not an M-VAVE image.
+homepage: https://stevexfer.github.io/FM1_AudioBase/
+based_on: m-vave-fm-1/gator
+distribution: browser-installer
+install_notes: >-
+  Use the web installer in Chrome or Edge with the FM-1 on USB, or tools/fm1_install.py with the release's audiobase-0.1.fwsc. The README says an interrupted write
+  resumes when Install is pressed again, two failed boots open USB RESCUE (or hold OCT- at power-on), the installer's Back to the official firmware takes M-VAVE's V15 file
+  you supply, and MvaveFM1Unbricker recovers a unit that does not start. It installs over other Felucca-platform firmware.
+brick_risk: false
+tags: [usb-audio, utility, platform, ui, fork]
+versions:
+- version: '0.1'
+  date: 2026-11-11
+  url: https://github.com/stevexfer/FM1_AudioBase/releases/tag/v0.1
+  notes: First release; USB audio output and input, MASTER volume, meters and the visualizer.

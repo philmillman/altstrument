@@ -11,7 +11,7 @@ description: >-
   programs in 99 slots, an arpeggiator for each sound and, since 3.0, four tracks with four sounds that share the
   sixteen keyers, each with its own registers, ensemble and phaser, mixed through delay, reverb and drive sends and a
   master section. The panel, sequencer, delay and reverb come from OberVave, and the platform from Dinghy, Felucca and
-  SLOOP. Version 1.2.2 opened the FM-1's TRS MIDI IN jack, and 1.2.3 gave the update loader a progress screen.
+  SLOOP. Version 1.2.2 opened the FM-1's TRS MIDI IN jack, and 1.2.3 gave the update loader a progress screen. Version 3.5 replaced auto-save with eight memory slots.
   The browser simulator compiles the firmware's own C code. The same releases carry SMK-37 builds, which are not
   catalogued here and which the licensing notes say are untested on an SMK-37.
 status: active
@@ -40,6 +40,10 @@ image:
   source_url: https://github.com/zvenson/shineon
   first_party: true
 versions:
+- version: v3.5
+  date: 2026-11-12
+  url: https://github.com/zvenson/shineon/releases/tag/v3.5
+  notes: Replaces auto-save with a MEMORY page of eight slots that each hold all four tracks, their sounds, the mixer and effects, with SAVE, LOAD, COPY, PASTE, INIT and SOUND actions. Shine On now keeps its own store in flash, adds a VIBE LINK controller mode and a USB backup, and newer FM-1s with the UC25HQ80 flash chip can save and update. Identity FM-1_9635.
 - version: v3.0.1
   date: 2026-10-23
   url: https://github.com/zvenson/shineon/releases/tag/v3.0.1

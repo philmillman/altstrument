@@ -7,9 +7,9 @@ description: >-
   Rights warning: the LICENSE says the original Simple Touch panel artwork stays with Synthux Academy and is outside the MIT terms. The shipped
   panel_blank.svg is described as the Synthux panel drawing with a blank faceplate.
 
-  The library lists reference control maps with Synthux, libDaisy and Pd names, manuals for TouchBass, Touch FX, Touch String and
-  Audrey II Touch, and the Simple Touch entries of the Synthux community directory, whose labels are read from each firmware's
-  repository README. The designer sets labels, modifier layers, switch modes, notes, MIDI assignments and a theme,
+  The library lists reference control maps with Synthux, libDaisy and Pd names, manuals for TouchBass, Touch FX, Touch String,
+  Audrey II Touch and TouchBloop, and the Simple Touch entries of the Synthux community directory, whose labels are read from each firmware's
+  repository README, grouped under Official, Community and DIY wiring tabs. The designer sets labels, modifier layers, switch modes, notes, MIDI assignments and a theme,
   saves a JSON label file, and exports a repository kit, a standalone manual page or a Pages site. Play runs a firmware built for the simple-touch-web runtime
   inside the page, with Web MIDI input and output attached to the emulated device. The Connect to Simple Touch mode reads and
   writes a real board over Web MIDI instead, with no firmware in the page: a label file with a device block gets settings
@@ -39,7 +39,11 @@ image:
   source_url: https://github.com/jonwaterschoot/simple-touch-labels#readme
   first_party: true
 versions:
+  - version: main @ e0b2259
+    date: 2026-11-12
+    url: https://github.com/jonwaterschoot/simple-touch-labels/commit/e0b225910d1a27cd2674dcdd509fdf82d19c8712
+    notes: No tagged releases; this is the latest commit. Since the previous entry it adds a TouchBloop manual to the official list, Official, Community and DIY wiring tabs in the library, and a theme dropdown.
   - version: main @ cec2741
     date: 2026-11-09
     url: https://github.com/jonwaterschoot/simple-touch-labels/commit/cec2741f0c045300573a5f1e36d56652d35d5319
-    notes: No tagged releases; this is the latest commit. Recent commits add the settings and presets panel, the Connect to Simple Touch mode with live drawing over Web MIDI, per-layout label options and Upload to device over WebUSB.
+    notes: No tagged releases. Recent commits add the settings and presets panel, the Connect to Simple Touch mode with live drawing over Web MIDI, per-layout label options and Upload to device over WebUSB.

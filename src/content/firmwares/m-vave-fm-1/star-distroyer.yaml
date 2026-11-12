@@ -9,7 +9,7 @@ description: >-
   feedback loop, and a delay and room sit after it. The README lists 33 factory patches and 32 user places, with two LFOs
   and four macros, and says the project is in development and not yet tested on a real FM-1. It is based on Dinghy 0.5
   and the repository carries engine and update-path tests and a Firmware Hub card. A project page plays it in the browser
-  and installs the latest build of main.
+  and installs the latest build of main. The 0.1-beta release page carries the FM-1 package and untested SMK-37 builds.
 status: active
 authors:
 - name: joakimskurk
@@ -29,7 +29,7 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, oscillator, filter, fx, arpeggiator, sequencer, generative, fork]
 versions:
-- version: main @ 4bdd313
-  date: 2026-11-10
-  url: https://github.com/joakimskurk/fm1stardistroyer/commit/4bdd31315b4e294956905a749674999b1015d053
-  notes: No tagged releases; this is the latest commit. Since 33d434b it adds MIDI clock in, an ORBIT page, an output limiter, browsable presets, a DISTROY page, TURING as an LFO modulation source and a project page that runs the firmware in the browser. Before that it added patches without classic FM, a DERELICT overture, NAV and REACTOR pages, and moved the base from Dinghy 0.4 to 0.5.
+- version: 0.1-beta
+  date: 2026-11-12
+  url: https://github.com/joakimskurk/fm1stardistroyer/releases/tag/v0.1-beta
+  notes: Pre-release; the first beta, built and tested on the host and in the emulator only. The notes say to back up the FM-1's flash first, because the first SAVE can overwrite another firmware's projects, and that saves may change until 1.0. Package identity FM-1_96201; the release also carries SMK-37 builds, untested on that device. Commits since 33d434b add MIDI clock in, an ORBIT page, an output limiter, browsable presets, a DISTROY page, TURING as an LFO modulation source and a project page that runs the firmware in the browser. Earlier ones added patches without classic FM, a DERELICT overture, NAV and REACTOR pages, and moved the base from Dinghy 0.4 to 0.5.

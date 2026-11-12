@@ -1,0 +1,45 @@
+device: erica-synths-lxr-drum-module
+name: SHARD
+summary: Unofficial fork of Erica Synths' open LXR Eurorack firmware that lets any of 23 sound engines, including Plaits-derived ones, run on any of the six channels, with a channel strip, a 36-slot CV matrix, kit morphing, a glitch and ring modulator FX and kit banks on the card.
+description: >-
+  SHARD keeps the LXR panel, menus and kit workflow and replaces the fixed voice layout. Each of the six channels can
+  take one of 23 engines: the four LXR voices, percussion and physical-model engines taken from a subset of Mutable
+  Instruments Plaits, six engines modelled on the Machinedrum and a set of glitch-oriented engines such as bytebeat,
+  crusher and comb. Every channel gets a strip with ring modulator, multimode filter with drive, AD envelope, sample-rate
+  reduction, bit crusher, pan and LFO. A CV matrix gives each channel six modulation slots fed by the five CV inputs, the
+  LFOs and accents, and kit morphing offers four curves. The FX bus adds a trigger-driven glitch beat repeat and a ring
+  modulator, the mix is summed in floating point with a soft limiter, and kit banks of 128 kits, up to 100 of them, live
+  in a folder on the SD card; five banks with 640 kits come in a separate zip. Later versions update from a menu entry
+  without power cycling. The project is not affiliated with Erica Synths or Elektron, and the start-up screen shows the
+  SHARD name as Erica's terms require.
+status: active
+authors:
+  - name: olloylv
+    url: https://github.com/olloylv
+source: https://github.com/olloylv/shard-firmware
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL version 3 text, and NOTICE.md names GPL-3.0-only with Erica Synths' added terms:
+  trademark limits on the Erica Synths and LXR names, and a rule that modified firmware shows on the start-up screen that
+  it is modified. SHARD's own code and the generated factory kits carry the same licence. The bundled Plaits and stmlib
+  subset is Emilie Gillet's MIT-licensed code.
+distribution: download
+requires_stock: Not stated; installs as a complete LXRE update image over the stock or an earlier SHARD firmware
+install_notes: >-
+  Copy LXRE_SHARD_V0.5.img to the top folder of a FAT32 SD card with any other LXRE image removed, copy the shard folder
+  from the banks zip next to it (this replaces banks 00 to 04 on the card), then hold the encoder while powering on until
+  the updater appears. The bootloader is never changed, and copying Erica's official LXRE image to the card the same way
+  goes back to stock. The source's flash_full target, which also writes the bootloader through a debug probe, can leave
+  the module recoverable only with that probe.
+brick_risk: false
+tags: [fork, drums, fx, plaits, cv, generative, open-source]
+versions:
+  - version: v0.5
+    date: 2026-11-08
+    url: https://github.com/olloylv/shard-firmware/releases/tag/v0.5
+    notes: Adds kit banks with five factory banks of 640 kits, a ring modulator per channel and as an FX, a floating-point mix bus with soft limiter and a lighter compressor FX. Kits from 0.4 load unchanged.
+  - version: v0.4
+    date: 2026-11-01
+    url: https://github.com/olloylv/shard-firmware/releases/tag/v0.4
+    notes: Adds a CV matrix with six slots per channel and a glitch FX, with a new factory bank of 128 kits.

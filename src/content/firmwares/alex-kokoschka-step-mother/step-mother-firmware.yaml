@@ -1,6 +1,6 @@
 device: alex-kokoschka-step-mother
 name: Step Mother firmware (StepDaddy)
-summary: Open firmware for the Step Mother controller with the StepBro MIDI step sequencer and the Yummy Gummy 303-style bass synth, installed with the StepDaddy updater for macOS and Windows or with Teensy Loader.
+summary: Open firmware for the Step Mother controller, in Teensy 4.1 and RP2040 versions, with the StepBro MIDI step sequencer and the Yummy Gummy 303-style bass synth, installed with the StepDaddy updater for macOS and Windows or with Teensy Loader or a UF2 copy.
 description: >-
   Two engines run in one firmware and keep playing while the panel is switched between them. StepBro is a MIDI step
   sequencer with two banks of patterns, pattern chaining, per-step velocity, note repeat and a density knob, and it
@@ -9,6 +9,8 @@ description: >-
   and it streams 48 kHz audio to the computer over USB. Patterns and settings are written to a journal in program flash
   only while the sequencer is stopped, and an update keeps them. StepDaddy is a separate updater app, unsigned on both
   platforms, that carries the firmware file and can ask a running unit to restart into the Teensy bootloader. The
+  Version 1.1.0 adds firmware for the Step Mother 2, a revision built around an RP2040 instead of a Teensy 4.1, with
+  the same two engines; one StepDaddy updates both boards. The
   README states that the 303 name is a Roland trademark and that the project is not affiliated with Roland.
 status: active
 authors:
@@ -26,7 +28,9 @@ distribution: download
 install_notes: >-
   Open StepDaddy from the release page and choose Step Mother; the case stays closed. A running unit restarts into the
   bootloader by itself. Otherwise hold Glide and Function while plugging in USB, or press the PROGRAM button on the
-  Teensy once if it has never run this firmware. To install by hand, load the .hex file in PJRC's Teensy Loader. The
+  Teensy once if it has never run this firmware. To install by hand, load the .hex file in PJRC's Teensy Loader. On a
+  Step Mother 2 (USB-C), hold Glide and Function while plugging in USB, or use a brand-new board as it is, and copy the
+  .uf2 file onto the RPI-RP2 drive. The
   macOS and Windows apps are not code-signed and show a one-time warning.
 brick_risk: false
 tags: [official, sequencer, synth-engine, midi, usb-audio, open-source]
@@ -51,6 +55,10 @@ videos:
     found_via: https://github.com/AlexKokoschka/StepDaddy#readme
     version: 1.0.0
 versions:
+  - version: 1.1.0
+    date: 2026-11-12
+    url: https://github.com/AlexKokoschka/StepDaddy/releases/tag/v1.1.0
+    notes: Adds RP2040 firmware for the Step Mother 2, with StepDaddy updating both boards. The Teensy firmware is unchanged.
   - version: 1.0.0
     date: 2026-11-07
     url: https://github.com/AlexKokoschka/StepDaddy/releases/tag/v1.0.0

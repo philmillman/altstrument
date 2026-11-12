@@ -19,9 +19,11 @@ description: >-
   OCTA-CAPTUREs as one device without a coax cable, a one-tap recorder in the
   PC app that uses the project's own USB path, USB monitoring of the other
   unit through the PC (about 15 ms, needs the libusbK driver on the playing
-  unit) and a guitar amp mode on the unit's DSP, built and host-tested but not
-  yet run on hardware. The README says sample-exact sync between two units is
-  not yet proven. A gate, presets, a solo mode and a clip guard are planned. The
+  unit) and a guitar amp mode on the unit's DSP, which the README now lists as
+  running on hardware, with an amp head in the PC app and six factory tones.
+  Hard clip, a noise gate, echo and reverb, and a bank of 16 scenes on the
+  box are built and host-tested only, in test build strip10. The README says
+  sample-exact sync between two units is not yet proven. The
   author credits Claude, an AI assistant, with the reverse engineering and
   tools.
 status: active
@@ -58,6 +60,10 @@ image:
   source_url: https://github.com/yuyoi/octa-capture-rosetta-OS#readme
   first_party: true
 versions:
+  - version: main @ 0664959
+    date: 2026-11-12
+    url: https://github.com/yuyoi/octa-capture-rosetta-OS/commit/066495988980dee8f034e728687fb92d5c13c652
+    notes: No tagged releases; this is the latest commit. Adds the amp head with six factory tones and a live DSP bar to the PC app, which the commit message reports running on hardware. Hard clip, a noise gate, echo and reverb, scenes and Hi-Z on the knob page are built and host-tested but not yet on hardware.
   - version: main @ ee76733
     date: 2026-11-08
     url: https://github.com/yuyoi/octa-capture-rosetta-OS/commit/ee76733629644476c0860a80fd1b000122e029c6

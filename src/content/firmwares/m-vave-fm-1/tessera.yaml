@@ -12,7 +12,7 @@ description: >-
   Tweak pages mutate phrases and build sections, and a modulation matrix routes any source to any destination.
   Version 2.0 played three engines (FM6, TRIO and DRUM), dropping the SID, PHYS, CZ-1 and Prophet engines and their
   sound banks (PHYS returned in 3.2); projects saved by 1.x do not load. Version 3.0 adds ORACLE, a polyphonic analogue-style voice with
-  sounds of its own, and draws every screen in one ink on black with its own 5 x 7 font and nine colours. Version 3.1 adds a USB host mode for one USB-MIDI device, a fixed MIDI CC map and NRPN control of every parameter, untested on a device at release. Version 3.2 brings back the PHYS physical-modelling engine, 3.2.1 adds tunings loaded from Scala files and 3.2.2 adds Snap to scale. Version 3.3 adds long-form structure (CHAIN, ENTRIES and PIECE), macros and CC out from mods. The README calls it experimental. A browser
+  sounds of its own, and draws every screen in one ink on black with its own 5 x 7 font and nine colours. Version 3.1 adds a USB host mode for one USB-MIDI device, a fixed MIDI CC map and NRPN control of every parameter, untested on a device at release. Version 3.2 brings back the PHYS physical-modelling engine, 3.2.1 adds tunings loaded from Scala files and 3.2.2 adds Snap to scale. Version 3.3 adds long-form structure (CHAIN, ENTRIES and PIECE), macros and CC out from mods, and version 3.5 adds modular-style mod buses, pattern directions and a light screen theme. The README calls it experimental. A browser
   simulator, installer and editor are included.
 status: active
 authors:
@@ -41,6 +41,10 @@ image:
   source_url: https://github.com/Rastapopolix/tessera
   first_party: true
 versions:
+- version: '3.5'
+  date: 2026-11-12
+  url: https://github.com/Rastapopolix/tessera/releases/tag/v3.5
+  notes: Adds modular-style patching with two mod mix buses, EOC, CLOCK and PLAY destinations, a MOD DEPTH control and a MOD SCOPE view, plus a direction for each pattern (FWD, BACK, PEND, FOLD, RAND, DRUNK), per-pattern generator setups, four USER scales, chord strum, a light screen theme and one key rule (OCT+ in, OCT- back) on every page. A project that uses the new mod features does not load on 3.4.1; projects from 3.4.1 load on 3.5. Packages in standard and single-core builds.
 - version: '3.4.1'
   date: 2026-11-07
   url: https://github.com/Rastapopolix/tessera/releases/tag/v3.4.1

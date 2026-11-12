@@ -8,9 +8,10 @@ description: >-
   drives, modulations, delays and reverbs, and a group of synth, organ and string voices played from a normal guitar. The
   audio path is 24-bit and reads the left input only, as the official firmware does. There are 52 factory presets and 52
   slots that survive updates, saved with a power-cut-safe store, a chromatic tuner and a web page for editing the presets. The pedal appears as a USB MIDI device
-  and takes updates from the project's web installer page, which can also return it to the official firmware from a file you
+  and, with a setting that is off by default, as a USB sound card; it takes updates from the project's web installer page, which can also return it to the official firmware from a file you
   download from the maker. Since v37 the AMP block can also run Neural Amp Modeler A2 networks, with 12 factory models and
-  16 user slots loaded from the web editor, and the pedal takes MIDI program and control changes over USB. The engine is
+  16 user slots loaded from the web editor, and the pedal takes MIDI program and control changes over USB. Version 42 reworked the pedal's controls, added diagnostics pages and a four-section web editor, and the
+  README says the new USB audio is tried on a BlackBox with macOS only. The engine is
   portable C tested on a computer with a simulated pedal and flash. The project builds a package for the M-VAVE BlackBox
   too. Early builds restarted in a loop on a BlackBox (issue 1, now closed); the README says v31 fixes it and that it is
   being tested, and an owner reported v31 working there. The Pocket X install is reported as tested by the author and by
@@ -33,7 +34,7 @@ requires_stock: Donner Pocket X official firmware (the page also takes your own 
 install_notes: >-
   Open the installer page in Chrome or Edge on a computer, connect the pedal over USB, press Connect and then Install. To go
   back, pick the official .fwsc from the maker in the same page, which checks it in the browser. Keep the SD-card recovery
-  described in the flash folder (fm1buddy on an ESP32-S3) at hand. The BlackBox package is still marked as being tested.
+  described in the flash folder (fm1buddy on an ESP32-S3) at hand. The BlackBox package is still marked as being tested. The official BlackBox V21 download contains no sound bank, so after going back to it the installer can check the factory sounds and the repository describes a macOS recovery tool for them.
 brick_risk: false
 tags: [fx, amp-sim, ir, synth-engine, presets, tuner, flasher, web, usb-midi, open-source]
 image:
@@ -43,6 +44,14 @@ image:
   source_url: https://github.com/isod89/openpocket#readme
   first_party: true
 versions:
+  - version: v42
+    date: 2026-11-10
+    url: https://github.com/isod89/openpocket/releases/tag/v42
+    notes: Reworks the pedal's footswitch and knob controls, adds diagnostics pages, a four-section web editor and an optional USB sound card mode. The sound engine is unchanged.
+  - version: v41
+    date: 2026-11-10
+    url: https://github.com/isod89/openpocket/releases/tag/v41
+    notes: Splits NAM models across the two cores by layer to lower the processor load, frees 24 KB of RAM and speeds up preset changes. Output samples are the same as v40.
   - version: v40
     date: 2026-11-09
     url: https://github.com/isod89/openpocket/releases/tag/v40

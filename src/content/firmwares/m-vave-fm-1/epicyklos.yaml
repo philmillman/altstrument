@@ -1,0 +1,39 @@
+device: m-vave-fm-1
+name: EPICYKLOS
+summary: >-
+  Six-track sequencer instrument for the FM-1 aimed at dub techno, hypnotic techno, ambient and drone, with a euclidean,
+  polymetric sequencer, dub chord and drone engines, and drum voices.
+description: >-
+  The project name is marked provisional. The manual describes six tracks with a euclidean, polymetric sequencer:
+  a kick, metallic hats, a clap or snare, a toms and percussion engine, a dub-techno chord voice with selectable
+  chord tables (Plaits Palette), a sustaining drone with drift and a second voice, and a bass track that is still a
+  placeholder. Views cover orbit, mix, effects, flow and mod, with pattern slots, tempo, a delay with throw and
+  freeze, a master filter, undo and, in the latest commit, eight scenes with eight locks each and a per-scene fade.
+  It is built on charlesvestal's fm1-base with Felucca's board support code underneath. The README still says phase 0 and
+  warns not to flash it, and the manual says nothing has been tested on a real FM-1; it has been run only in the host
+  simulator and the browser emulator. The CI workflow compiles a development .fwsc but publishes it only as a build
+  artifact, not as a release. The manual is in English and Spanish and the on-screen labels are Spanish for now.
+status: active
+authors:
+- name: JavierIng
+  url: https://github.com/JavierIng
+source: https://github.com/JavierIng/fm1-epicyklos
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  GPL-3.0-only (LICENSE, LICENSING.md). The fm1-base and felucca-bsp submodules and the copied template files are
+  MPL-2.0, the Plaits Palette chord tables are MIT, and the AC79 SDK parts in compiled packages are Apache-2.0 (LICENSING.md).
+  Bluetooth uses fm1-base's own stack, with no binary JieLi libraries. No M-VAVE stock image is bundled.
+distribution: source-only
+install_notes: >-
+  No package is published. Clone with --recursive and build with ./build.sh, which needs the JieLi toolchain and AC79 SDK
+  (see fm1-base's README), or run the browser emulator and host simulator with ./build.sh --web and ./build.sh --host.
+  The README says not to flash it yet, and the project's licence notice says installing other firmware on an FM-1 is at
+  your own risk.
+brick_risk: false
+tags: [sequencer, drums, synth-engine, generative, emulator]
+versions:
+- version: main @ c8eee04
+  date: 2026-11-12
+  url: https://github.com/JavierIng/fm1-epicyklos/commit/c8eee04b80511fb71077e2a5da4563ec9617c518
+  notes: No tagged releases; this is the latest commit, which adds eight scenes with eight locks each, hold and latch on the black keys, and per-scene fades.

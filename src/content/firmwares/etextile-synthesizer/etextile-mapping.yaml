@@ -1,0 +1,37 @@
+device: etextile-synthesizer
+name: eTextile Mapping
+kind: tool
+summary: Browser app for the eTextile Synthesizer's e256 board that draws control zones over the sensor matrix, assigns MIDI messages to them, uploads and fetches the board's mapping file over USB MIDI SysEx and can flash the bundled firmware.
+description: >-
+  The app runs in Chrome through the Web MIDI API. It shows the raw or interpolated sensor matrix in 3D, calibrates the
+  sensor baseline and offers an editor where touchpads, sliders, knobs, switches, note grids, freeform paths and polygons
+  are placed over the pressure surface and given Note, Control Change, Program Change, aftertouch or pitch bend
+  messages. A mapping is uploaded to the board as a JSON blob, applied at once and written to flash when the board's
+  left button is pressed, and the stored mapping can be fetched back or saved as a file. A play mode animates the canvas
+  from MIDI the board sends. The repository carries a firmware HEX file, and when the version the board reports differs
+  from the app's, the app offers to reboot the Teensy into its HalfKay bootloader and flash that file over WebHID. The
+  README states version 1.0.28 for both app and firmware.
+status: active
+authors:
+  - name: Maurin Donneaud
+    url: https://github.com/MaurinElectroTextile
+source: https://github.com/eTextile/Mapping
+source_status: open
+license: CC-BY-SA-4.0
+license_notes: >-
+  LICENSE.txt, which GitHub does not recognise, states Creative Commons Attribution-ShareAlike 4.0 and requires the
+  credit line "Original work by Maurin Donneaud, https://synth.etextile.org"; the README gives the same licence. The
+  bundled Bootstrap, Paper.js, Three.js and jQuery files keep their own licences.
+homepage: https://mapping.etextile.org/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted app in Chrome or another Chromium browser, connect the e256 over USB and press Connect. A mapping
+  lives in RAM until the left button on the board is pressed to write it to flash. The firmware update goes through the
+  Teensy's HalfKay bootloader, which an upload leaves intact, so a failed flash can be repeated.
+brick_risk: false
+tags: [editor, web, midi, controller, touch, textile, diy]
+versions:
+  - version: master @ 55700c8
+    date: 2026-07-05
+    url: https://github.com/eTextile/Mapping/commit/55700c85bf72648e7a4e42a61b8d41281b717ed3
+    notes: No tagged releases; this is the latest commit. The README states version 1.0.28.

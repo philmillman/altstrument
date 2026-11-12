@@ -1,0 +1,29 @@
+device: m-vave-fm-1
+name: Juno to FM-106
+kind: tool
+summary: >-
+  Single-page WebMIDI bridge that plays FM-106 on an FM-1 from a real Roland Juno-106, passing notes, slider and switch SysEx and patch changes.
+description: >-
+  Runs in Chrome or Edge from one HTML file with no server. Notes pass straight through, the Juno's slider and switch SysEx is paced so that the newest value of each control goes out every 15 ms and its final value is resent when it stops,
+  because FM-106 accepts one SysEx message at a time. A Juno patch change selects the same preset number on FM-106 (bank A or B) and loads the Juno's panel settings live, and the Juno's store message is never forwarded, so FM-106's saved presets are not overwritten.
+  An optional flicker filter ignores a worn slider that flips between two values. The Juno's MIDI function switch is set to III and PC IN is turned on at FM-106's MIDI SETUP page. The page is published from the repository's main branch.
+status: active
+authors:
+- name: Fat Cat Studios
+  url: https://github.com/fatcatstudios-hub
+source: https://github.com/fatcatstudios-hub/juno-to-fm106
+source_status: open
+license: MIT
+license_notes: >-
+  Stated in the README and in the LICENSE file. FM-106 itself is PatttF's firmware, catalogued separately.
+distribution: source-only
+install_notes: >-
+  Needs FM-106 on the FM-1 and a Juno-106 connected through a MIDI interface. The README points to the hosted page at fatcatstudios-hub.github.io/juno-to-fm106, which returned 404 when checked on 2026-11-12 while GitHub Pages was still building;
+  index.html in the repository can also be opened locally in Chrome or Edge. Nothing is written to the FM-1's firmware.
+brick_risk: false
+tags: [midi, sysex, editor, utility, usb-midi]
+versions:
+- version: main @ e8ebb52
+  date: 2026-11-11
+  url: https://github.com/fatcatstudios-hub/juno-to-fm106/commit/e8ebb52c77bad5bf45fffb3adbb90cf918aa4055
+  notes: No tagged releases; this is the latest commit.

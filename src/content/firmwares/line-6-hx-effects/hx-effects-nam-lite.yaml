@@ -2,20 +2,23 @@ device: line-6-hx-effects
 name: NAM A2 Lite for HX Effects
 summary: >-
   A port of NAM A2 Lite to the HX Effects that patches stock firmware 3.80.0 so Neural Amp Modeler captures run on the
-  pedal's SHARC DSP, in place of the 1024-sample IR block. Optional builds add a Click metronome and a Geiger bit crusher.
+  pedal's SHARC DSP. An all-in-one build adds original effects (Click, Geiger, Commander, Corrupt, Ottobit, Doom Chug) and a stock Line 6 amp.
 description: >-
-  The HX Effects has no amp blocks, so the NAM block takes over the identity of the 1024-sample IR block under IR > Single,
-  and that block is no longer available. The 2048-sample IR block stays, so a preset can run a capture into a cab IR. The knobs
-  are Model, Input, Bass, Mid, Treble, Presence, Ch Vol and Polarity, and captures load as User IRs like the HX Stomp version.
+  The HX Effects has no amp blocks. In the NAM-only build the NAM block takes over the identity of the 1024-sample IR block under
+  IR > Single, and that block is no longer available; in the all-in-one build it sits under Distortion > Mono in place of the mono
+  Regal Bass DI, so a cab IR can follow it. The knobs are Model, Input, Bass, Mid, Treble, Presence, Ch Vol and Polarity, and captures
+  load as User IRs like the HX Stomp version.
   The kernel, assembler, simulator and firmware tools come from Derek Bui's hx-stomp-nam-lite, with a few hundred lines of offsets
   and workarounds added. The kernel measures about 23% of a block in the simulator, and the README explains how to
   tune the declared DSP cost by hand.
 
-  Two original effects can go into the same image. Click is a metronome block that takes over the mono Mod/Chorus Echo delay,
+  Original effects can go into the same image. Click is a metronome block that takes over the mono Mod/Chorus Echo delay,
   with a Time knob synced to tap tempo, beats per bar, accent, three sounds, level and subdivision. Geiger is a bit crusher with
-  16 shaping curves that takes over the mono Megaphone. build_nam_click.py builds NAM with Click and build_all.py builds all
-  three, in which NAM runs two blocks at once instead of three. The author reports these images flashed and working on an
-  HX Effects. A tools/flash.py script repeats the Line 6 Updater update over USB and checks that the unit boots.
+  16 shaping curves that takes over the mono Megaphone. Commander (octave fuzz), Corrupt (tracking square synth), Ottobit (sequenced
+  bit crusher with random stutters) and Doom Chug (low drone generator) take over other fuzz and crusher blocks, and the stock
+  Line 6 US Small Tweed amp is added in place of the mono Tycoctavia Fuzz. build_nam_click.py builds NAM with Click and build_all.py
+  builds the all-in-one image the README recommends, in which NAM runs two blocks at once instead of three. The author reports the
+  all-in-one image running on their unit on 2026-11-11. A tools/flash.py script repeats the Line 6 Updater update over USB and checks that the unit boots.
 
   The repository includes demo captures that its author made, already converted to .wav. Its author warns that this is for
   people comfortable with command line tools and with recovering the unit themselves.
@@ -44,6 +47,10 @@ install_notes: >-
 brick_risk: false
 tags: [nam, amp-modeling, patch]
 versions:
+  - version: main @ 8107954
+    date: 2026-11-11
+    url: https://github.com/scottlynn73/hx-effects-nam-lite/commit/8107954063f244f4ed5ec4f61d0a2e33fad8a0be
+    notes: No tagged releases; this is the latest commit. Adds the Commander, Corrupt, Ottobit and Doom Chug effects and the stock US Small Tweed amp, moves NAM out of the IR category in the all-in-one image so a cab IR can follow it, and makes that image the README's recommended build.
   - version: main @ 46b3c61
     date: 2026-11-04
     url: https://github.com/scottlynn73/hx-effects-nam-lite/commit/46b3c61b5b8524318cd6b53fe370fb9ba9b2a0f9

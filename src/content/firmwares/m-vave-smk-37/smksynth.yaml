@@ -1,7 +1,7 @@
 device: m-vave-smk-37
 name: SMKSYNTH
 summary: >-
-  Performance firmware for the SMK-37 Pro that pairs OberVave's analog synth with the DRUM-X drum engine on four
+  Performance firmware for the SMK-37 Pro and Elite that pairs OberVave's analog synth with the DRUM-X drum engine on four
   parts, with favourites, split and layer, a four-track sequencer, 16 scenes and a browser simulator.
 description: >-
   Each of four parts plays either the OberVave ANALOG synth on eight shared voices or the DRUM-X drum engine
@@ -9,7 +9,7 @@ description: >-
   favourite sounds, split and layer setups, 16 saved patterns or scenes and drum hits with velocity. The sequencer
   has four tracks of up to 256 steps with live or step recording and keyboard transposition. The factory content is five
   patterns and eight favourites by the author, and the README says no third-party samples are included. A browser
-  simulator runs the same C code, and there are pages for backup and restore. Version 1.0.2 brings back stereo USB audio at 44.1 and 48 kHz, and 1.0.3 adds a SUPER oscillator type to the ANALOG engine: seven detuned saws per oscillator with separate detune and mix, adapted from the supersaw in Clipper and bypassing sync and cross-modulation while it is on.
+  simulator runs the same C code, and there are pages for backup and restore. Version 1.0.2 brings back stereo USB audio at 44.1 and 48 kHz, 1.0.3 adds a SUPER oscillator type to the ANALOG engine: seven detuned saws per oscillator with separate detune and mix, adapted from the supersaw in Clipper and bypassing sync and cross-modulation while it is on. Version 1.1.0 adds MIDI output over USB and TRS with a channel per part, pitch bend and mod wheel, a sustain pedal input and a MIDI panic, and one installer for the Pro and the Elite.
 
   The README says ChatGPT generated and revised the adaptation code, web tools and documentation under the author's
   direction. The author reports testing the earlier DP2 build on a real SMK-37 Pro and confirming the first USB
@@ -31,14 +31,14 @@ license_notes: >-
   the README states that M-VAVE's firmware is not redistributed.
 homepage: https://4t59m4f784-creator.github.io/SMKSYNTH/
 distribution: browser-installer
-requires_stock: SMK-37 Pro official V016 (identity SMK-37 Pro_016)
+requires_stock: SMK-37 Pro or Elite official V016 for a first install (identity SMK-37 Pro_016 or SMK-37 Elite_016)
 install_notes: >-
-  A first-install package for an SMK-37 Pro running M-VAVE's official V016 only; the installer refuses the Elite,
-  MKE-P37, FM-1, other versions and other firmwares. Get V016 for the Pro from M-VAVE's download page and install
-  it with M-UPGRADE, then use the browser installer in Chrome or Edge over USB and wait for the new identity
-  SMK-37 Pro_19618. It resets the bank to the factory content and does not keep a previous SMKSYNTH bank, so export
-  it first. An interrupted transfer resumes with the same browser and package. Return to M-VAVE firmware as the
-  installation guide describes.
+  From 1.1.0 the installer picks a package for the connected SMK-37 Pro or Elite and refuses the MKE-P37, FM-1 and
+  other firmwares. A first install needs M-VAVE's official V016 for that model: get it from M-VAVE's download page and
+  install it with M-UPGRADE, then use the browser installer in Chrome or Edge over USB and wait for the new identity
+  (SMK-37 Pro_19634 or SMK-37 Elite_19634 for 1.1.0). A first install resets the bank to the factory content, so export
+  the old bank first; an update keeps the saved bank, but export a backup anyway. An interrupted transfer resumes with
+  the same browser and package. Return to M-VAVE firmware as the installation guide describes.
 brick_risk: false
 tags: [synth-engine, drums, sequencer, performance, emulator, backup, usb-midi]
 video:
@@ -49,6 +49,10 @@ video:
   found_via: https://github.com/4t59m4f784-creator/SMKSYNTH#readme
   version: v1.0.0
 versions:
+- version: v1.1.0
+  date: 2026-11-12
+  url: https://github.com/4t59m4f784-creator/SMKSYNTH/releases/tag/v1.1.0
+  notes: Adds MIDI output on USB and TRS with a base channel and a channel per part, pitch bend and mod wheel, a sustain pedal input and a MIDI panic (GLOBE + PLAY), and fixes notes that stuck after switching from POLY or DUAL to MONO or UNISON. One installer now covers the SMK-37 Pro and Elite, with separate first-install and update packages per model. The update packages keep the saved bank; the notes advise exporting a backup first. The MIDI output sends no clock, start or stop. The notes say the MIDI was tested on a Pro and the Elite install path by a user.
 - version: v1.0.3
   date: 2026-11-05
   url: https://github.com/4t59m4f784-creator/SMKSYNTH/releases/tag/v1.0.3

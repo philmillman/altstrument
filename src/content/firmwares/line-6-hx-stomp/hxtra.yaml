@@ -12,7 +12,8 @@ description: >-
   turns and resets from changing the tuner's settings. BPM shows the tempo at the top left of the Home screen with a beat dot
   that follows the TAP footswitch ring, with font, colour and dot position settings. DSP meter shows each Edit-view block's
   share of the DSP in per cent and the total at the top right, and each model's share in the model browser. Breathing line
-  animates the line across the Home screen. Long press makes holding a footswitch for one second open the tuner, act as FS4 or
+  animates the line across the Home screen. Metronome adds a click track in time with the tempo. GR meter shows gain
+  reduction on compressor blocks. Long press makes holding a footswitch for one second open the tuner, act as FS4 or
   FS5, or send virtual footswitches FS6 to FS10 on MIDI CC 20 to 24. More snapshots adds snapshots 4 to 6 as a second bank saved
   in the preset file. The boot screen option replaces the boot picture and the boot text, with emoji. The author reports running
   each feature from RAM on an HX Stomp. FIRMWARE_NOTES.md records what is known about the 3.80.0 firmware, marking each claim as
@@ -20,14 +21,14 @@ description: >-
 
   The added features are for the HX Stomp only. The HX Stomp XL builds with NAM A2 Lite only, and the README marks it untested.
   The repository has a browser setup page for building and running from RAM; the README gives no hosted address, so build with
-  build.py.
+  build.py. The repository was renamed from hx-stomp-customOS to hxtra.
 status: active
 authors:
   - name: wisemandenny
     url: https://github.com/wisemandenny
   - name: Derek Bui
     url: https://github.com/nocaseguy
-source: https://github.com/wisemandenny/hx-stomp-customOS
+source: https://github.com/wisemandenny/hxtra
 source_status: open
 license: GPL-3.0-or-later
 license_notes: >-
@@ -45,7 +46,7 @@ install_notes: >-
 brick_risk: false
 tags: [nam, amp-modeling, patch, tuner]
 versions:
-  - version: main @ 734e834
+  - version: v1.0.0
     date: 2026-11-11
-    url: https://github.com/wisemandenny/hx-stomp-customOS/commit/734e83401c6e72980221dc53693fe938a04b5b88
-    notes: No tagged releases; this is the latest commit. The project is renamed from CustomOS to HXtra (the repository keeps its name). Recent commits move the long-press hold settings into Global Settings > Footswitches, add the Breathing line feature and give each settings page a title and icon.
+    url: https://github.com/wisemandenny/hxtra/releases/tag/v1.0.0
+    notes: First release under the HXtra name, with the repository renamed to hxtra. Adds a metronome block, a gain-reduction meter on compressor blocks, a Global Settings section for each feature, boot screen text showing the version and a setup page listing every feature per build.

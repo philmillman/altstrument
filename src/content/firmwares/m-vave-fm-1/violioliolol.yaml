@@ -1,0 +1,50 @@
+device: m-vave-fm-1
+name: fm1-violioliolol
+summary: >-
+  Physical-modelling string instrument for the FM-1 with no samples: 19 plucked and bowed instruments in four
+  families, up to 12 voices, modal bodies and 16 user presets.
+description: >-
+  Every note is a vibrating string computed in real time. The 19 instruments cover finger, pick, slap, fretless and
+  upright bass; nylon, steel, clean, driven and jazz guitar; violin, viola, cello and contrabass; and harp, mandolin,
+  banjo, koto and zither. Plucked strings use extended Karplus-Strong waveguides with stiffness, pluck position, pickup
+  position, buzz and five excitation styles. Bowed strings use a stick-slip waveguide with bow pressure, speed and
+  position, and vibrato. A modal body is shared by all voices, followed by tone, drive and a limiter. Keys give velocity
+  and pressure; MIDI covers pitch bend, mod wheel, volume, expression, sustain, pressure, the knobs on CC16-23 and
+  program change. The 16 user presets store model parameters, not audio. Built on charlesvestal's fm1-base, with
+  Felucca's board support code underneath. The README calls it experimental: it builds and passes the base's checks, but
+  nothing has been verified on a physical FM-1, CPU load and polyphony on the unit are unmeasured, and the default
+  polyphony of 8 is described as a guess. The project site has a browser emulator, a manual and a web installer.
+status: active
+authors:
+- name: Laurens Profittlich (profikid)
+  url: https://github.com/profikid
+source: https://github.com/profikid/fm1-violioliolol
+source_status: open
+license: MIT
+license_notes: >-
+  Stated in the README ("MIT licence") and in the SPDX header of the release workflow; the repository has no LICENSE
+  file. Built on fm1-base and felucca-bsp, which are pinned as the base/ submodule and keep their own licences. No
+  M-VAVE stock image is bundled.
+homepage: https://profikid.github.io/fm1-violioliolol/
+distribution: browser-installer
+requires_stock: M-VAVE stock firmware or another Felucca / fm1-base build
+install_notes: >-
+  The README gives a web installer on the project site (Chrome or Edge over USB) and says to download the .fwsc from
+  the latest release for the Firmware Hub or fm1-base's tools/fm1_install.py. No GitHub release exists yet, since the
+  workflow run for the v0.1 tag failed, so check the site or the releases page for a package; the source builds with
+  sh build.sh and the JieLi toolchain. The README says the firmware does not touch the bootloader or the recovery path,
+  that the stock firmware can be reinstalled the usual way, and that the installer offers the open m-bootloader as a
+  separate opt-in box. docs/benchmark-procedure.md asks installers to measure CPU load and polyphony.
+brick_risk: false
+tags: [synth-engine, physical-modelling, presets, emulator, midi]
+image:
+  url: https://raw.githubusercontent.com/profikid/fm1-violioliolol/main/docs/img/screen-violin.png
+  alt: "The FM-1 screen in the BOWED family showing VIOLIN with four parameter bars: bow pressure 60, bow speed 80, vibrato 45 and body 100"
+  credit: Laurens Profittlich
+  source_url: https://github.com/profikid/fm1-violioliolol
+  first_party: true
+versions:
+- version: "0.1"
+  date: 2026-11-11
+  url: https://github.com/profikid/fm1-violioliolol/tree/v0.1
+  notes: Git tag; no GitHub release page.

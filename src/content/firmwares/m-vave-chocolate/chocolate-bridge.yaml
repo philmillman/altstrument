@@ -1,0 +1,33 @@
+device: m-vave-chocolate
+name: chocolate-bridge
+kind: tool
+summary: >-
+  macOS background program that turns the original Chocolate's Program Change messages into notes on a virtual MIDI port, so
+  each switch in each group becomes a separate mappable toggle in Ableton Live.
+description: >-
+  Live cannot MIDI-map Program Change, and the original Chocolate switches between groups only in its Program Change modes. The
+  bridge listens to the pedal over USB and Bluetooth, drops duplicates when both deliver the same press, and sends notes
+  from C1 upward on a virtual port named Chocolate to Live. A group change is A and B together for the previous group and C and D
+  together for the next. The included choc.py talks to the pedal's SysEx protocol to set it to Program Change A mode, and trs.py
+  switches the TRS jack between MIDI and expression pedal mode; those settings are stored in the pedal. install.sh makes a Python
+  environment and a login item. The README is in Japanese and English and credits cbix, vctorgab and majabojarska
+  for the protocol knowledge. It was tested on one original Chocolate on macOS 14 and does not cover the Chocolate Plus.
+status: active
+authors:
+- name: goto-a-toast
+  url: https://github.com/goto-a-toast
+source: https://github.com/goto-a-toast/chocolate-bridge
+source_status: open
+license: MIT
+distribution: source-only
+install_notes: >-
+  Clone the repository and run bash install.sh on a Mac; uninstall.sh removes it. Set the pedal to Program Change A over
+  USB once, using the choc.py command in the README. For Bluetooth, connect the pedal from Audio MIDI Setup's Bluetooth
+  window. In Live, turn Remote on for the Chocolate to Live input only and leave the pedal's own ports off.
+brick_risk: false
+tags: [config-tool, midi, sysex, python, macos]
+versions:
+- version: main @ 60130a9
+  date: 2026-11-12
+  url: https://github.com/goto-a-toast/chocolate-bridge/commit/60130a9e0a31f881c19016a1eca71c613bfcfc46
+  notes: No tagged releases; this is the latest commit.

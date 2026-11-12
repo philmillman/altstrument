@@ -1,0 +1,38 @@
+name: eTextile Synthesizer
+manufacturer: eTextile
+category: diy-platform
+added: 2026-11-12
+tagline: Open-hardware multi-touch textile sensor that plays MIDI from a Teensy 4.0
+description: >-
+  The eTextile Synthesizer is a hand-built multi-touch instrument made from a
+  16x16 pressure-sensing textile matrix and the e256 circuit board, which carries
+  a Teensy 4.0, audio in and out jacks and a MIDI jack. The board interpolates
+  the matrix to a 64x64 grid, tracks touches and sends MIDI over USB or the MIDI
+  jack. Maurin Donneaud publishes the textile construction guide, the KiCad
+  electronics files, the firmware and demo software in one repository.
+platform: NXP i.MX RT1062 (Teensy 4.0, Cortex-M7, 600 MHz)
+links:
+  manufacturer: https://synth.etextile.org/
+  community:
+    - label: Mapping app (browser-based MIDI mapping editor)
+      url: https://mapping.etextile.org/
+    - label: eTextile Synthesizer source
+      url: https://github.com/eTextile/Synth
+notes: >-
+  The firmware is built with PlatformIO and loaded onto the Teensy 4.0 over USB.
+  The Teensy's own boot chip stays untouched by an upload, so a failed upload is
+  repeated with the board's program button. Mappings are made in the browser
+  mapping app and saved to the board's flash with a long press of the left
+  button.
+related: []
+image:
+  src: /images/devices/etextile-synthesizer.webp
+  style: photo
+  alt: e256 board with a Teensy 4.0 and a knob, connected by cables to a ribbon-like textile sensor strip with blue fabric beside it, on a dark desk
+  width: 799
+  height: 533
+  credit: eTextile
+  license: project photo, published on the official eTextile Synthesizer page
+  source_url: https://synth.etextile.org/
+  original_url: https://live.staticflickr.com/65535/50866131211_85efdc979a_c_d.jpg
+pinned: [etextile-synthesizer-firmware]

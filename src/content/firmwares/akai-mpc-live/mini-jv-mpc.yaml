@@ -5,8 +5,10 @@ description: >-
   The sound engine is the JV-880 microcontroller and PCM wavetable emulation
   that traces back to nukeykt's Nuked-SC55 core, via giulioz's mini-jv880 and
   charlesvestal's Schwung port for Ableton Move. This repository wraps it as
-  an MPC OS plugin with its own skin: a play page with macro controls, a bank
-  and patch browser, and pages for each of the four tones. SR-JV80 expansion
+  an MPC OS plugin. Since v2.0.0 it is built on Akai's MPC Plugin SDK with a
+  rack-style panel and LCD-style screens: a play page with macro controls, bank
+  browsing, a common page, pages for each of the four tones with drawn envelopes,
+  wave names, a random patch button and up to 64 favourites in MPC's preset list. SR-JV80 expansion
   cards placed next to the ROMs appear as extra banks. The ROMs and expansion
   cards are Roland's and are not included in the repository or release zip; the
   README says only the v1.0.0 ROM dump works. Builds for 32-bit and 64-bit ARM
@@ -24,16 +26,21 @@ license_notes: >-
   juce-jv880: source-available, not for sale or commercial use, and modified
   versions must ship complete source. Not an OSI-approved license.
 distribution: download
-requires_stock: MPC OS 3.x (v1.0.6 and later are built for 2.x as well, untested there)
+requires_stock: MPC OS 3.x for v2.0.0 (v1.0.6 to v1.0.9 are built for 2.x as well, untested there)
 install_notes: >-
   Needs root SSH access to the device. Unzip the release, copy the folder over
   with scp and run its install.sh, which stops MPC, so save the project first.
   Then copy your own JV-880 v1.0.0 ROMs to the plugin's jv880-roms/roms folder.
   Plan for a few instances at most; one playing instance used about half of a
-  core on a Force. Installing plugins this way is unofficial and needs a modded
+  core on a Force. v2.0.0 also has a plugin-folder zip for MPCs that load plugins
+  from the VST2 Plugins folder. Installing plugins this way is unofficial and needs a modded
   unit.
 tags: [synth-engine, sampler, emulator, platform]
 versions:
+  - version: v2.0.0
+    date: 2026-11-12
+    url: https://github.com/sd88me/mpc-vst-jv880/releases/tag/v2.0.0
+    notes: Rebuilt on Akai's MPC Plugin SDK with a new screen, live envelope displays, a random patch button, favourites in MPC's preset list, a COMMON page and wave names. Projects saved with 1.x still load; MPC OS 2.x users stay on v1.0.9.
   - version: v1.0.9
     date: 2026-11-01
     url: https://github.com/sd88me/mpc-vst-jv880/releases/tag/v1.0.9

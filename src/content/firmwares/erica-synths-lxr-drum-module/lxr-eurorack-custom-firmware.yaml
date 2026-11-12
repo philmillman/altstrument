@@ -1,0 +1,42 @@
+device: erica-synths-lxr-drum-module
+name: LXR Eurorack custom firmware
+summary: Unofficial fork of Erica Synths' open LXR Eurorack firmware 1.51 that adds LFO and mute shortcuts, a DJ filter on the perform page, stereo delay echoes, an output limiter, loading one drum from another kit and bug fixes, published as ready-to-flash images.
+description: >-
+  The fork is based on the official 1.51 source and lists every difference from it in MODIFICATIONS.md. Holding MOD or
+  DRUM with a select button opens the LFO page of a drum without changing the active drum, and perform mode mutes drums
+  with a single press. A DJ filter sits on the perform page, each output jack gets a limiter, and the delay can echo in
+  stereo. Holding select button 2 to 8 on a drum page while turning the encoder auditions that drum from every saved kit
+  so it can be copied into the current one. Other changes include an FX routing shortcut, a restart shortcut that
+  skips switching the module off, an edit light that blinks while morph is in use, and fixes, some of them ported from
+  the OpenElixir-02 firmware for the LXR-02. Versions are numbered as the official version plus a custom suffix, such as
+  1.51-c6, and the start-up screen reads Custom firmware as Erica's terms require. Erica Synths gives no support for
+  this build.
+status: active
+authors:
+  - name: sawtoothwave
+    url: https://github.com/sawtoothwave
+source: https://github.com/sawtoothwave/lxr-eurorack-app
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL version 3 text, and NOTICE.md names GPL-3.0-only with Erica Synths' added terms:
+  trademark limits on the Erica Synths and LXR names, and a rule that modified firmware shows on the start-up screen that
+  it is modified. Third-party components keep their own licences.
+distribution: download
+requires_stock: Not stated; installs as a complete LXRE update image
+install_notes: >-
+  Copy the LXRE_V2_V1.51-c6.img from the release to the top folder of a FAT32 SD card with any older LXRE image removed,
+  hold the encoder while powering on until the updater appears, and wait for the update to finish. The updater is never
+  changed, so an interrupted update can be repeated, and installing Erica's stock image the same way returns to stock.
+  From 1.51-c2 on, holding DRUM and the encoder for three seconds restarts into the updater without switching off.
+brick_risk: false
+tags: [fork, drums, fx, performance, open-source]
+versions:
+  - version: v1.51-c6
+    date: 2026-11-05
+    url: https://github.com/sawtoothwave/lxr-eurorack-app/releases/tag/v1.51-c6
+    notes: Fixes loading a drum from another kit right after start-up, which in c4 and c5 always went into drum 1.
+  - version: v1.51-c5
+    date: 2026-11-04
+    url: https://github.com/sawtoothwave/lxr-eurorack-app/releases/tag/v1.51-c5
+    notes: The edit light blinks while morph is in use. The release notes warn of the start-up bug in loading a drum from another kit and point to c6.

@@ -1,0 +1,43 @@
+device: m-vave-fm-1
+name: FM-1 Rescue
+kind: tool
+summary: >-
+  Desktop assistant for Windows, Linux and macOS that guides recovery of a hard-bricked FM-1 through an RP2040 FM-1
+  Transporter, wrapping the MvaveFM1Unbricker engine with wiring steps, backups and a typed write confirmation.
+description: >-
+  The interface runs in a browser engine or a native macOS window and starts in simulation; hardware mode needs the --live
+  option. It walks through wiring a Seeed XIAO RP2040 to the unit's D+, D- and ground lines, makes a double-read backup of
+  the flash, checks that the package you supply is M-VAVE's V15 by hash, shows the write plan and asks you to type WRITE before it
+  writes. It refuses V16, and the engine it wraps restricts writes to 0x4000 to 0x92FFF, so the boot area is not touched.
+  The recovery code is an unmodified vendored copy of Quixotic7's MvaveFM1Unbricker pinned at commit 0edc5ad, and the
+  Transporter board firmware and the JieLi loader are not included. The interface is in English and Portuguese. The prerelease
+  has Windows and Linux standalone archives that bundle Python and a browser runtime. The README says these passed
+  a simulated recovery in CI, and that recovery on real hardware through this interface is still to be validated. The
+  repository holds no firmware; its quick-start says the macOS standalone app carries the V15 package and checks it by SHA-256.
+status: active
+authors:
+- name: Pedro Nogueira
+  url: https://github.com/pedronogueiranunes
+source: https://github.com/pedronogueiranunes/fm1-rescue
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is MIT, copyright 2026 Pedro Nogueira. vendor/MvaveFM1Unbricker is MIT, copyright Michael P Jones, and the
+  standalone builds also carry Python, pyserial, PyInstaller and Chrome for Testing under their own licences. The V15 package
+  the macOS app is said to embed hashes to db1642b2b6fa5c2cccb11ffd13878068bb28601678d3644049f99dc40e7edb8a, the same as M-VAVE's
+  Apache-2.0 FM-1_015.fwsc (git blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd) in m-vave/fm1_open; that macOS app is not in the
+  repository or the release, so the embedded file itself was not compared.
+distribution: download
+requires_stock: Official V15 package, supplied by you
+install_notes: >-
+  Download the Windows or Linux archive from the release, or run the source launchers with Python 3.10 or newer and Chrome,
+  Edge or Chromium; on macOS build the native app with macos/build.sh. You supply M-VAVE's V15 and a Transporter UF2 made by
+  the MvaveFM1Unbricker setup command. The app writes only after a verified backup and the typed WRITE. The archives are
+  unsigned, and the README asks you to charge the unit first.
+brick_risk: false
+tags: [flasher, loader, backup, utility]
+versions:
+- version: v0.3.0-preview
+  date: 2026-11-12
+  url: https://github.com/pedronogueiranunes/fm1-rescue/releases/tag/v0.3.0-preview
+  notes: Prerelease with Windows x64 and Linux x64 standalone archives and their checksums; real-hardware recovery is not yet verified.

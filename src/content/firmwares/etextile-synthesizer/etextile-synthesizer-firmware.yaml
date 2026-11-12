@@ -1,0 +1,44 @@
+device: etextile-synthesizer
+name: eTextile Synthesizer firmware
+summary: Teensy 4.0 firmware for the eTextile e256 textile sensor board; it scans the 16x16 matrix, tracks touches and turns them into MIDI through mappings uploaded from a browser app.
+description: >-
+  The firmware interpolates the sensor matrix to 64x64 points, finds touch blobs
+  with position, size and pressure, and evaluates mappings made of switches,
+  sliders, knobs, touchpads, polygons and a note grid. A mapping is a JSON file
+  that the browser mapping app sends over USB MIDI SysEx; a long press of the
+  board's left button stores it in flash so the board can run on USB power alone
+  and send MIDI from its jack. Further modes make the board a USB to DIN MIDI
+  bridge and stream raw or interpolated sensor frames to the app. The repository
+  also holds the textile construction guide, KiCad files for the e256 board and
+  demo software for Pure Data, Processing, SuperCollider and openFrameworks.
+status: active
+authors:
+  - name: Maurin Donneaud
+    url: https://github.com/MaurinElectroTextile
+source: https://github.com/eTextile/Synth
+source_status: open
+license: CC-BY-SA-4.0
+license_notes: >-
+  LICENSE.txt states Creative Commons Attribution-ShareAlike 4.0 for the
+  repository, with a required credit line naming Maurin Donneaud and
+  synth.etextile.org. GitHub does not recognise the file, and a licence aimed at
+  content is applied here to firmware, hardware files and documents alike.
+homepage: https://synth.etextile.org/
+distribution: source-only
+install_notes: >-
+  Build the Firmware folder with PlatformIO using the platform-teensy-e256
+  package and upload it to the Teensy 4.0 over USB. A failed upload leaves the
+  Teensy's boot chip intact and can be repeated.
+brick_risk: false
+tags: [midi, controller, touch, textile, diy, open-hardware]
+image:
+  url: https://live.staticflickr.com/65535/50866131211_85efdc979a_c_d.jpg
+  alt: e256 board with a Teensy 4.0 and a knob, connected by cables to a ribbon-like textile sensor strip with blue fabric beside it, on a dark desk
+  credit: eTextile
+  source_url: https://synth.etextile.org/
+  first_party: true
+versions:
+  - version: master @ d8e3407
+    date: 2026-11-12
+    url: https://github.com/eTextile/Synth/commit/d8e3407fe3a24773c1661d0ed1e1d03497ce76bd
+    notes: No tagged releases; this is the latest commit. The firmware README states version 1.0.25.

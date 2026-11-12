@@ -1,28 +1,34 @@
 device: m-vave-fm-1
 name: VEGETAL
 summary: >-
-  Plant-process engine for the FM-1 that turns phyllotaxis, L-system branching, tropisms and root and mycorrhiza networks into notes, added to Felucca and installed from a browser page the repository builds. The text is in Spanish.
+  Plant-process engine for the FM-1 that turns 21 processes, from phyllotaxis to root and mycorrhiza networks, into notes, with 24 timbres, MIDI note output and a browser visualiser, added to Felucca. Installs from a browser page; the text is in Spanish.
 description: >-
-  The repository holds only an overlay of files that change or add to Felucca at a pinned commit, and a GitHub Actions
-  workflow that applies it, builds the firmware, tests the engine on Felucca's host harness and publishes a site with an
-  installer, a browser simulator and an editor. The engine runs 21 processes taken from plant growth, among them
-  phyllotaxis stepping the scale at the golden angle, branching trees read by a turtle, root systems, flowering, a
+  Each version of the project is published in its own repository, so the newest, vegetal-1.8.1-v3, is the source here and
+  the earlier repositories vegetal-fm1 and AAAVEGETAL hold the first state and 1.8.1-vegetal2 of the same overlay. A
+  repository holds only the files that change or add to Felucca at a pinned commit, and a GitHub Actions workflow applies
+  them, builds the firmware, tests the engine on Felucca's host harness and publishes a site with an installer, a browser
+  simulator and an editor. The engine runs 21 processes taken from plant growth, among
+  them phyllotaxis stepping the scale at the golden angle, branching trees read by a turtle, root systems, flowering, a
   circadian clock and mycorrhiza, which listens to another track and answers it. The tempo clocks the processes, and a
-  growth setting picks the step length. A load governor adds or drops nodes as the processor fills. On the home screen
-  the unit draws the selected track's plant instead of the oscilloscope. The author is a university researcher, and the
-  README says the software is experimental.
+  growth setting picks the step length. A load governor adds or drops nodes as the processor fills, and on the home
+  screen the unit draws the selected track's plant instead of the oscilloscope. Version 1.8.1-vegetal2 adds a timbre per
+  track, notes sent out over USB MIDI on channels 5 to 8, and a mirror page for Chrome that listens to the FM-1 over USB
+  and draws each process as pixels, a 3D mesh or a point cloud, with controls for projection. Version 1.8.1-vegetal3
+  raises the timbres to 24, adds an organ setting that gives each plant part its own sound and lets the shape control
+  change each timbre from inside. The author is a university researcher, and the README says the software is experimental.
 status: active
 authors:
 - name: Mauricio Vásquez Arias
   url: https://github.com/capitanplaneta80-create
-source: https://github.com/capitanplaneta80-create/vegetal-fm1
+source: https://github.com/capitanplaneta80-create/vegetal-1.8.1-v3
 source_status: open
 license: GPL-3.0-only
 license_notes: >-
   LICENSE is the GPL version 3 text and the README says GPL-3.0 like Felucca, with no later-version clause; the landing
-  page source carries an SPDX GPL-3.0-only header. The built firmware also contains Felucca, which the workflow fetches
-  at a fixed commit.
-homepage: https://capitanplaneta80-create.github.io/vegetal-fm1/
+  page source carries an SPDX GPL-3.0-only header; the newer repositories carry the same LICENSE. The built firmware also
+  contains Felucca, which the workflow fetches at a fixed commit. No M-VAVE stock image is bundled; the .fwsc files the
+  sites serve are VEGETAL builds.
+homepage: https://capitanplaneta80-create.github.io/vegetal-1.8.1-v3/
 distribution: browser-installer
 install_notes: >-
   Open the site's installer in Chrome or Edge with the FM-1 on USB, allow MIDI with SysEx and press install, without
@@ -32,7 +38,15 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, generative, sequencer, emulator, editor, web, fork]
 versions:
+- version: 1.8.1-vegetal3
+  date: 2026-11-12
+  url: https://github.com/capitanplaneta80-create/vegetal-1.8.1-v3/commit/aa2dd37f0ee02fc5e5cffab392a342ea95c6f9ed
+  notes: No tagged releases; the repository's latest commit. Raises the timbres to 24 and adds the organ setting and per-timbre character control.
+- version: 1.8.1-vegetal2
+  date: 2026-11-12
+  url: https://github.com/capitanplaneta80-create/AAAVEGETAL/commit/2b87d108bd835e146996f77a0aba72f7879a7603
+  notes: No tagged releases; the latest commit of its own repository. Adds a timbre per track, MIDI note output and the browser mirror page.
 - version: main @ 1d7bf27
   date: 2026-11-08
   url: https://github.com/capitanplaneta80-create/vegetal-fm1/commit/1d7bf2782916d5c531a1cb447b840be6db9a5d1a
-  notes: No tagged releases; this is the latest commit.
+  notes: No tagged releases; the first repository's latest commit, whose README names four process families.

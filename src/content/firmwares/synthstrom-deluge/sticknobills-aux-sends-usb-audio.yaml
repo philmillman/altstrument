@@ -12,7 +12,9 @@ description: >-
   it is in use. The USB Multitrack Audio 2.0 build adds a USB audio mode setting
   (off, stereo or multitrack) and takes channels 3 and 4 back from the computer
   as an audio clip source; the release notes list OLED units, Windows and iPad as untested. Each release is a separate firmware; AUX Sends also has a
-  build on stable 1.2.1. Routing is saved with the song.
+  build on stable 1.2.1. Routing is saved with the song. From release 2.0
+  the AUX Sends feature is called CV Audio Output: it sends a whole track to
+  CV socket 1, 2 or both in stereo instead of using send levels.
 status: active
 authors:
   - name: sticknobills
@@ -30,6 +32,10 @@ install_notes: >-
   card root and hold Shift while powering on. Back up the SD card first.
 tags: [fork, usb-audio, cv, routing, 7-segment]
 versions:
+  - version: CV-Audio-Output-2.0
+    date: 2026-11-11
+    url: https://github.com/sticknobills/DelugeFirmware/releases/tag/CV-Audio-Output-2.0
+    notes: AUX Sends renamed CV Audio Output and rebuilt on community 1.3.0. Each track gets a CV Audio setting (main, CV 1, CV 2 or CV stereo) that takes it out of the main mix; send levels and the AUX master level are removed. Tested on one 7-segment unit.
   - version: USB-Multitrack-Audio
     date: 2026-11-11
     url: https://github.com/sticknobills/DelugeFirmware/releases/tag/USB-Multitrack-Audio

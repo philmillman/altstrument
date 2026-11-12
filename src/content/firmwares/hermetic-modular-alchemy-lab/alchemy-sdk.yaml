@@ -9,8 +9,8 @@ description: >-
   opt-in and provides the user interface conventions used by Echoa and
   Spagyros: virtual knobs with LED ring styles, pages and shift layers, pot
   catch, parameter locks, CV routing for the field-programmable jacks, preset
-  storage, settings pages, a clip indicator, USB-MIDI and HostLink for
-  talking to the web programmer, and firmware-authored manuals. The SDK is in
+  storage, settings pages, a clip indicator, USB-MIDI (with note handling, MIDI learn and
+  clock) and HostLink for talking to the web programmer, and firmware-authored manuals. The SDK is in
   beta, and its APIs and preset formats may change. The alchemy-template
   repository packages its stereo EQ example as a starting project, and the
   alchemy-lab-bootloader repository holds the module's fork of the Daisy
@@ -37,6 +37,10 @@ image:
   source_url: https://github.com/hermetic-modular/alchemy-sdk
   first_party: true
 versions:
+  - version: v0.13.0
+    date: 2026-11-12
+    url: https://github.com/hermetic-modular/alchemy-sdk/releases/tag/v0.13.0
+    notes: USB MIDI shares the connection with HostLink, with note handling, controller mapping, clock and scheduled output; adds an optional fast HostLink path, 64 diagnostic values and RGB page colors.
   - version: v0.12.0
     date: 2026-09-29
     url: https://github.com/hermetic-modular/alchemy-sdk/releases/tag/v0.12.0

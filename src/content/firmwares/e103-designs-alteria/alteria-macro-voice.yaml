@@ -1,0 +1,48 @@
+device: e103-designs-alteria
+name: ALTERIA MACRO VOICE
+summary: Experimental Arduino firmware that turns the ALTERIA module into a digital voice with five oscillator models (fold, FM, chord, wavetable and Karplus-Strong) and two audio outputs.
+description: >-
+  MACRO VOICE 1.0.0 is a standalone sketch that does not replace the other ALTERIA firmwares. The
+  mode button steps through five models: Fold (folded triangle), FM, Chord (four-note chords with
+  inversions and a morph from sine to a richer tone), Wavetable (three banks of four waveforms,
+  scanned independently on each output) and Karplus (a plucked string). Three knobs act on the
+  current model immediately. CV in sets pitch at a nominal 1 V per octave, and the I/O jack is
+  always an input. In the first four models it resyncs the oscillator phase on a rising edge,
+  and in Karplus it plucks the string, as does the manual button. Both outputs carry audio; in
+  Chord, output 2 holds the root. There is no envelope, filter or VCA, so notes are shaped with an
+  external VCA. The sound runs at 8 kHz and is lo-fi, and the fold and FM models can alias on high
+  notes. The synthesis models are original fixed-point code that cites the Mutable Instruments
+  Plaits manual only as a reference for the families. The README marks the sketch as untested on
+  hardware and links a stereo demo WAV that is a software render, not a recording of the module.
+status: active
+authors:
+  - name: E103-designs
+    url: https://github.com/E103-designs
+source: https://github.com/E103-designs/ALTERIA
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Covers the original source, documentation, photographs and design files in the repository.
+homepage: https://github.com/E103-designs/ALTERIA/tree/main/MACRO-VOICE#readme
+distribution: source-only
+install_notes: >-
+  Open MACRO-VOICE/Firmware/ALTERIA_MACRO_VOICE/ALTERIA_MACRO_VOICE.ino in the Arduino IDE and build
+  for Arduino Nano with an ATmega328P at 16 MHz (the ALTERIA REV5-2 board), choosing the old
+  bootloader only if the Nano needs it. The sketch does not suit an ATmega168P. Upload one ALTERIA
+  sketch at a time, and disconnect external sources from the I/O jack first because some
+  ALLROUNDER variants drive it as an output. The firmware reads the existing output calibration
+  but has no calibration menu and writes nothing to EEPROM. Use only positive voltages on CV in
+  and send the outputs to a mixer at modular levels, not to headphones.
+brick_risk: false
+tags: [official, synth, voice, wavetable, fm, karplus-strong, arduino, eurorack]
+image:
+  url: https://raw.githubusercontent.com/E103-designs/ALTERIA/main/images/ALTERIA_front_IMG_3251_clean.png
+  alt: Front panel of the ALTERIA module with four LEDs, two buttons, three white knobs and four jacks
+  credit: E103-designs
+  source_url: https://github.com/E103-designs/ALTERIA#readme
+  first_party: true
+versions:
+  - version: main @ 98cfe2f
+    date: 2026-11-11
+    url: https://github.com/E103-designs/ALTERIA/commit/98cfe2fc71a6a4a005d252096878999c45687967
+    notes: No tagged releases; this is the latest commit. The README lists MACRO VOICE 1.0.0.

@@ -1,0 +1,39 @@
+device: m-vave-fm-1
+name: Koiffeur FM
+kind: firmware
+summary: >-
+  Felucca fork for the FM-1 with a frosted-glass interface, three warm colour palettes and a pixel koi pond on the home screen that drops a ripple for every note played. The sound engine is unchanged.
+description: >-
+  Source note: the code cannot be browsed on GitHub, because the repository commits it only as a single koiffeur-fm.zip; the
+  project's own GitHub workflow unpacks that zip and builds the package the installer serves. Built on Felucca 1.8.1, so the engines, sequencer, drum grid, song mode, MIDI, USB audio and web editor are all still there. The
+  GLASS style draws every screen over a water gradient with caustic light and puts frosted panels over it, leaving text, icons and gauges
+  untouched, and FLAT and LINE remain in the menu. The POND home view shows three koi, lily pads and a lotus; each note drops a ripple at a
+  position set by its pitch and track and a pellet of food that the nearest koi eats, and raindrops fall when nothing is played. It redraws at 15 frames
+  a second while playing and 8 when idle, and an animation-off menu item stops it. The KOI, LANTERN and DUSK palettes are added to Felucca's.
+  The package identity is FM-1_970, so it does not clash with Felucca's. The repository has no root README and no release; the README
+  inside the zip is the project's own.
+status: active
+authors:
+- name: blobz1800
+  url: https://github.com/blobz1800
+source: https://github.com/blobz1800/koiffeur-fm
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and LICENSE inside koiffeur-fm.zip say GPL-3.0-only, as Felucca. The GitHub repository's own top-level LICENSE file is an MIT
+  text copyrighted to blobz1800 that applies to the repository wrapper, and it disagrees with the zip. The engines, hardware layer,
+  fonts, icons and samples keep their own licences, listed in CREDITS.md and LICENSING.md inside the zip. The README credits the work to jemeruy.
+homepage: https://blobz1800.github.io/koiffeur-fm/webapp/installer/
+based_on: m-vave-fm-1/felucca
+distribution: browser-installer
+install_notes: >-
+  Use the installer page in Chrome or Edge with the FM-1 on USB, or tools/fm1_install.py with the .fwsc built by the repository's
+  Build Koiffeur FM workflow (the koiffeur-fm artifact). The README says the installer saves projects, sounds, samples and settings first and offers
+  Return to official V15 from M-VAVE's own file; Felucca's recovery paths apply.
+brick_risk: false
+tags: [fork, ui, performance, synth-engine, sequencer, emulator]
+versions:
+- version: main @ 5a0be06
+  date: 2026-11-11
+  url: https://github.com/blobz1800/koiffeur-fm/commit/5a0be06c1da096daca904c26cfcd16ceba12d1f5
+  notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,47 @@
+device: line-6-helix
+name: HX Unbound Floor
+summary: A patcher that builds Helix Floor firmware 3.80.0 with Neural Amp Modeler A2 Lite amp blocks, two per DSP, from your own stock file; further Floor features are planned.
+description: >-
+  The build reads Line 6's stock Helix Floor 3.80.0 file on your computer and writes a modified file that adds an
+  NAM block under Amp > NAM, using the same User IR captures and knobs as the HX Stomp patch. Each of the Floor's two
+  DSPs can run two blocks, so a preset holds up to four, and a path holds at most two amp-type blocks because the
+  Floor's DSPs have less free memory than the Stomp's. The author reports that one unit has run it. The repository
+  also holds a browser setup page that builds the file with Pyodide and converts .nam captures to User IR files, plus
+  research notes on the Floor firmware. At the first commit it builds exactly what savedadodo's helix-floor-nam-lite
+  branch builds at commit ad69ec4, and the README lists a feature engine like HXtra's, a metronome and more NAM menu
+  options as goals that have not been started. HX Edit may drop NAM blocks when it rewrites a preset.
+status: active
+authors:
+  - name: Suddl3
+    url: https://github.com/Suddl3
+  - name: savedadodo
+    url: https://github.com/savedadodo
+  - name: Derek Bui
+    url: https://github.com/nocaseguy
+source: https://github.com/Suddl3/hx-unbound-floor
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The NOTICE file grants GPL-3.0 or any later version and credits Derek Bui's hx-stomp-nam-lite as the base. The
+  repository holds no Line 6 code or data and no .nam captures. A built file contains Line 6's firmware, and the README says it
+  must never be shared.
+homepage: https://github.com/Suddl3/hx-unbound
+based_on: line-6-hx-stomp/hx-stomp-nam-lite
+community:
+  - label: HX Unbound hub
+    url: https://github.com/Suddl3/hx-unbound
+distribution: patch-your-own
+requires_stock: 3.80.0 (Helix_Floor_v3.80.0_0x7d01f5efb.hxf, MD5 805caa03e8a30fd6ff7892f32ed5a9f4)
+install_notes: >-
+  Run helix-floor/floor/build_floor2.py on the stock file (Python 3.10 or newer with capstone), then install the
+  result with Line 6 Updater in Offline Mode. To go back, hold footswitches 6 and 12 while powering on to enter update
+  mode and install the stock 3.80.0 file; presets survive. The README advises leaving the unit on a preset without an NAM
+  block before installing and rehearsing the recovery first. After any firmware install the Floor starts on a factory
+  setlist.
+brick_risk: false
+tags: [nam, amp-modeling, patch]
+versions:
+  - version: main @ a84fcdb
+    date: 2026-11-12
+    url: https://github.com/Suddl3/hx-unbound-floor/commit/a84fcdb94a1bff4f1fd18d4e7d0b909c31450dd7
+    notes: No tagged releases; this is the latest commit.

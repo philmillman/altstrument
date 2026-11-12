@@ -1,0 +1,59 @@
+device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
+name: M-vance
+summary: >-
+  Virtual analog synth that ports the author's JT-8000, a JP-8000-style engine, to the FM-1 in fixed point: Super Saw, a
+  JP-style filter, multi-effects, delay, plate reverb, arpeggiator, two-track sequencer, split and dual layers and 64
+  programs on eight voices.
+description: >-
+  The engine was rewritten from the floating-point JT-8000 for the FM-1's chip, which has no FPU, and the README says its
+  envelope times, LFO rates, modulation depths and filter laws were measured against the JP-8000's own firmware in an
+  emulator. OSC 1 has Super Saw, triangle mod, noise, feedback, square, saw and triangle waves, OSC 2 syncs to it, and the
+  filter has low, band and high pass at 12 or 24 dB. Effects are tone, a multi-effect (super chorus, flanger, phaser,
+  twist, freeze, distortion), delay, a plate reverb and an output limiter. Every program is a performance with an upper
+  and a lower patch played single, dual or split. The arpeggiator is ported from Skiff. The sequencer records two tracks in real time,
+  with a piano roll and twelve named clips in flash. Sound pages follow the JP-8080's sections, and the knobs send and
+  receive its MODE2 controller numbers. A browser page loads and sends banks of JP-8000 or JP-8080 SysEx files to the
+  unit. The 64 factory programs are the author's own. Builds on Dinghy's platform layer. Releases from 2.2 carry SMK-37 Pro, Elite
+  and MKE-P37 builds from the same source, which the README says have not been tested with M-vance.
+status: active
+authors:
+- name: Kris (bk40-home)
+  url: https://github.com/bk40-home
+source: https://github.com/bk40-home/M-vance
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md and the README state GPL-3.0-only, and LICENSE is the GPL v3 text. The platform parts carry the
+  copyright of Leo Kuroshita, genkigenki, zvenson and others as listed there, the USB audio output files are MPL-2.0
+  from felucca-bsp, and the font is SIL OFL 1.1. LICENSING.md says the factory programs are the author's own and that no
+  third-party bank is used. The repository holds a 64-program .syx bank, and no stock firmware image.
+homepage: https://bk40-home.github.io/M-vance/
+based_on: m-vave-fm-1/dinghy
+distribution: download
+install_notes: >-
+  Install mvance-X.Y.fwsc from a release with tools/fm1_install.py over USB-MIDI, or from the FM-1 Firmware Hub once it is
+  listed there. The release files for the SMK-37 are mvance-X.Y-smk37.fwsc for the Pro, -smk37-elite and -smk37-mke. Holding OCT-
+  while switching on starts a USB rescue mode in which a working build or another firmware can be installed. The README
+  says to install at your own risk.
+brick_risk: false
+tags: [synth-engine, virtual-analog, supersaw, polyphonic, sequencer, arpeggiator, fx, reverb, usb-midi, usb-audio, port, fork]
+image:
+  url: https://raw.githubusercontent.com/bk40-home/M-vance/main/docs/img/home.png
+  alt: M-vance home screen in orange on black, with program 08 SAW CROWN, four knob readouts for cutoff, resonance, delay and reverb, a voice strip and an oscilloscope trace
+  credit: Kris (bk40-home)
+  source_url: https://github.com/bk40-home/M-vance
+  first_party: true
+versions:
+- version: '2.4'
+  date: 2026-11-09
+  url: https://github.com/bk40-home/M-vance/releases/tag/v2.4
+  notes: FM-1 and SMK-37 Pro, Elite and MKE-P37 builds; the release page has no notes.
+- version: '2.3'
+  date: 2026-11-08
+  url: https://github.com/bk40-home/M-vance/releases/tag/v2.3
+  notes: FM-1 and SMK-37 builds; the release page has no notes.
+- version: '2.2'
+  date: 2026-11-08
+  url: https://github.com/bk40-home/M-vance/releases/tag/v2.2
+  notes: First release with downloadable .fwsc files, for the FM-1 and the SMK-37 models; the README calls the project unreleased.

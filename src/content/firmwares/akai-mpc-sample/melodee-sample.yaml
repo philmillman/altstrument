@@ -1,0 +1,55 @@
+device: akai-mpc-sample
+name: Melodee (MPC Sample)
+summary: >-
+  keremimo's 16-track groovebox for the MPC Sample, started from the microSD card in place of the stock app: kits,
+  sampled instruments, a VST3 and VST2 host, MIDI tracks, patterns, song mode and a looper.
+description: >-
+  A separate app from the author's FM-1 firmware of the same name, built on the author's sample-base runtime for
+  the MPC Sample. Each pad is a track holding a kit of up to 128 pads, a sampled instrument, a plug-in instrument or
+  a MIDI track for external gear. Sampled instruments stream from the card and can be SFZ, MPC keygroup and drum
+  programs, MPC expansions, EXS24, SoundFont or DecentSampler files; stock MPC Sample projects open as well. The
+  sequencer has 16 patterns per track of up to 128 bars, with parameter locks, ratchets and trig conditions, plus
+  scenes, chains and a song arrangement that exports a WAV mix, stems or a MIDI file. There are 41 effects on track
+  chains, four send buses and the master, a four-loop looper and MIDI clock and MTC sync. The plug-in host loads
+  aarch64 Linux VST3 and VST2 builds and Open MPC plug-ins, and runs 32-bit ARM plug-ins through a bridge. Its own
+  synths moved out into three separate plug-ins at 0.1.0: Melodee Poly, Melodee PD and Melodee Chip.
+status: active
+authors:
+  - name: keremimo
+    url: https://github.com/keremimo
+source: https://github.com/keremimo/melodee-sample
+source_status: open
+license: AGPL-3.0-only
+license_notes: >-
+  AGPL-3.0-only (LICENSE), with JUCE used under the AGPLv3 and the Rubik font under OFL-1.1 (THIRD_PARTY.md). The
+  boot animation's logo and backdrop are not covered by the AGPL: forks may keep the files, but no public release of
+  a fork may include them.
+homepage: https://github.com/keremimo/melodee-sample
+distribution: download
+requires_stock: "1.3.0.12"
+install_notes: >-
+  Back up the microSD card and move any existing top-level autorun folder aside, then copy the release zip's autorun
+  folder to the top of the card. The stock app starts first and Melodee takes over a few seconds later. On any other
+  stock firmware it does not start. Nothing on the MPC itself changes: choose MPC APP on Melodee's exit screen, or
+  delete the autorun folder, to get the stock app back. Plug-ins go in a Plugins folder on the card.
+brick_risk: false
+tags: [groovebox, sequencer, sampler, platform, midi]
+image:
+  url: https://raw.githubusercontent.com/keremimo/melodee-sample/main/docs/images/melodee-promo.png
+  alt: "Melodee promo banner: the pixel wordmark and feature list beside six screen captures, including a song arrangement, a four-loop looper, a sample chop view and a plug-in picker"
+  credit: keremimo
+  source_url: https://github.com/keremimo/melodee-sample#readme
+  first_party: true
+versions:
+  - version: v0.1.0
+    date: 2026-11-12
+    url: https://github.com/keremimo/melodee-sample/releases/tag/v0.1.0
+    notes: First full release. The built-in synths became the separate Melodee Poly, PD and Chip plug-ins; FM6 and 909 tracks were dropped.
+  - version: v0.1.0-alpha.6
+    date: 2026-11-11
+    url: https://github.com/keremimo/melodee-sample/releases/tag/v0.1.0-alpha.6
+    notes: Adds a skippable boot animation.
+  - version: v0.1.0-alpha.5
+    date: 2026-11-11
+    url: https://github.com/keremimo/melodee-sample/releases/tag/v0.1.0-alpha.5
+    notes: Adds Logic EXS24 instruments to the streamed multisample formats.

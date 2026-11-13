@@ -1,0 +1,44 @@
+device: m-vave-fm-1
+name: LEDGER-4
+summary: >-
+  Tracker for the FM-1 in the style of Little Sound DJ and the Dirtywave M8: song, chain and phrase pages with 13 per-
+  row commands.
+description: >-
+  The song is 64 rows by 4 tracks of chain numbers, with each track walking its own column. A chain is 16 rows of
+  phrase and transpose, and a phrase is 16 rows of note, instrument, velocity, command and value. The 13 commands are
+  arpeggio, chance, delay, kill, retrigger, slide, tempo, hop, filter, MIDI CC, random, groove and echo, each
+  explained on the line under the grid. Grooves are two tick counts per row, as in LSDJ. There are 16 instruments
+  (synth, drums or MIDI only), copy and paste, and phrase transpose. The 16 white keys type hex digits in number
+  columns. It has its own 8-voice synth and drums, sends MIDI over USB and Bluetooth, and can send or follow MIDI
+  clock. The README names Little Sound DJ, the Dirtywave M8 and Renoise as the models.
+status: active
+authors:
+- name: David Ryan (davidpryan)
+  url: https://github.com/davidpryan
+source: https://github.com/davidpryan/ledger-4
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSE is the MPL-2.0 text, as fm1-base. The base/ copy of fm1-base and felucca-bsp keeps its own files' licences
+  (base/LICENSING.md). The only .fwsc in the repository is the M-Bootloader package used by the web tools (18,068
+  bytes), not a stock M-VAVE image.
+homepage: https://davidpryan.github.io/ledger-4/
+distribution: browser-installer
+install_notes: >-
+  Browser installer at davidpryan.github.io/ledger-4/install/ in Chrome or Edge (allow MIDI when asked), or build with
+  ./build.sh (Docker and JieLi's toolchain, see fm1-base) and run base/tools/fm1_install.py on the .fwsc. The README
+  says to keep M-VAVE's stock firmware and M-UPGRADE at hand, and the installer page has a section for putting the
+  stock firmware back.
+brick_risk: false
+tags: [sequencer, midi, usb-midi, ble-midi, performance, tracker]
+image:
+  url: https://raw.githubusercontent.com/davidpryan/ledger-4/main/app/docs/img/screen-phrase.png
+  alt: "LEDGER-4 phrase page on the FM-1: a 16-row table with note, instrument, velocity and command columns in hex, a cursor on the third row, and an instrument panel at the right"
+  credit: David Ryan
+  source_url: https://github.com/davidpryan/ledger-4
+  first_party: true
+versions:
+- version: main @ 06dd357
+  date: "2026-11-13"
+  url: https://github.com/davidpryan/ledger-4/commit/06dd3571a3baf14105c2c30b87221dffba4f40c4
+  notes: No tagged releases; this is the latest commit. The README and the installer package call it 0.1 and say it passes the host simulator's tests but has not been run on a real FM-1.

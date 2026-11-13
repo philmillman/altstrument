@@ -1,0 +1,33 @@
+device: m-vave-blackbox
+kind: tool
+name: Black Box Hub
+summary: Browser panel for the M-VAVE Blackbox pedal that switches its presets and module blocks over USB MIDI, with a drum machine, songs that change presets by section, setlists and a preset naming and notes layer.
+description: >-
+  A static web app, installable as a PWA, that talks to the pedal over Web MIDI in Chrome or Edge on desktop and in Chrome on
+  Android. It sends Program Change messages to select presets P01 to P80 and Control Change messages to switch the FX, AMP,
+  MOD, DLY, REV and CAB blocks, and it keeps names, colors, notes and favorites for each preset in the browser. It adds a
+  synthesized drum machine with 16 patterns and tap tempo, songs made of sections that change the pedal's preset at each
+  part, and setlists, with backup export and restore. The interface is in Portuguese. SysEx is switched off, so it does not
+  read or write presets or firmware. The README says the control numbers come from M-VAVE's release notes and are still to
+  be confirmed on each pedal, and lists a preset editor as a future step.
+status: active
+authors:
+  - name: JoaocarlosTeco
+    url: https://github.com/JoaocarlosTeco
+source: https://github.com/JoaocarlosTeco/blackbox-hub
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and the README states no license.
+homepage: https://joaocarlosteco.github.io/blackbox-hub/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Edge, connect the pedal by USB-C and press Connect (Conectar pedal). On Android, use an
+  OTG or USB-C to USB-C cable and install the page from Chrome. iOS, Firefox and Safari lack Web MIDI. Nothing is flashed.
+brick_risk: false
+tags: [controller, web-midi, usb-midi, midi, drum-machine, setlist, presets, web]
+versions:
+  - version: main @ 6819ed2
+    date: 2026-11-12
+    url: https://github.com/JoaocarlosTeco/blackbox-hub/commit/6819ed2
+    notes: No tagged releases; this is the latest commit.

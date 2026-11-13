@@ -1,0 +1,46 @@
+device: m-vave-fm-1
+name: Adrift
+summary: >-
+  Polyphonic synth firmware that sends oscillators through key-tracked bucket-brigade delay resonators: 16 voices in six
+  multi-timbral groups, per-group arpeggiators, three LFOs a group and a stereo effects bus, with a browser emulator and
+  installer.
+description: >-
+  Each voice runs an exciter (a morphing oscillator with pluck and noise) through a resonant filter into a 1024-stage
+  bucket-brigade delay loop tuned to the played note, which gives string, pipe and bell-like bodies. Feedback, polarity
+  invert and dispersion shape the resonance, and a second envelope after the loop gates it. The 16 voices are split into
+  six groups that answer to separate MIDI channels, each with its own arpeggiator, three LFOs and settings. A shared
+  effects bus has a chorus, a tempo-syncable ping-pong delay, an octave shimmer reverb and a bus compressor. There are
+  24 factory and 24 user presets, 16 scales, and MIDI clock sync over USB and TRS. The project site plays the same code
+  in the browser and installs the firmware over WebMIDI; its restore option takes a stock FM-1.fwsc that the user
+  supplies, and the repository holds no stock image. The code builds on felucca-bsp and the fm1-emu emulator. The first
+  release is v0.1.0, published the same day as this entry.
+status: active
+authors:
+- name: romainguy
+  url: https://github.com/romainguy
+source: https://github.com/romainguy/adrift
+source_status: open
+license: MPL-2.0
+license_notes: Stated in the repository's LICENSE and in the README.
+homepage: https://romainguy.github.io/adrift/
+distribution: browser-installer
+requires_stock: V15
+install_notes: >-
+  Open the project site in Chrome, Edge, Brave or Opera with the FM-1 connected by USB data cable, and press the install
+  button; the installer verifies the package and writes changed blocks in about 15 seconds. The site's restore section
+  flashes an unmodified stock FM-1.fwsc, which the user provides, and the installer accepts only Adrift or Felucca
+  packages and the official V15 image. Releases are attested through the Firmware Hub's shared build workflow and can be
+  checked with `gh attestation verify`.
+brick_risk: false
+tags: [synth-engine, physical-modeling, arpeggiator, fx, reverb, delay, emulator, web, midi]
+image:
+  url: https://raw.githubusercontent.com/romainguy/adrift/main/screenshots/04_home_stage.png
+  alt: "Adrift home screen titled STAGE, plotting voices as coloured squares labelled with notes such as G7, A5 and C3 on a left-right pan and low-to-high register grid, with preset P24 POLYPRISM at the top"
+  credit: romainguy
+  source_url: https://github.com/romainguy/adrift
+  first_party: true
+versions:
+- version: 0.1.0
+  date: 2026-11-13
+  url: https://github.com/romainguy/adrift/releases/tag/v0.1.0
+  notes: First public release.

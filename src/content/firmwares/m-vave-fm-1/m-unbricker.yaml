@@ -1,0 +1,44 @@
+device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
+name: M-Unbricker
+kind: tool
+summary: >-
+  Repairs a broken FM-1 or SMK-37 using a second, working unit and a USB-C cable, with no dongle: the working unit becomes a USB host that
+  rewrites the broken one's bootloader. Either model can repair either.
+description: >-
+  A browser page guides the steps in Chrome or Edge, or in Chrome on Android, or with the MIDIWeb app on iOS. The page first starts a RAM stage of m-bootloader on the working unit through the
+  firmware's own update route, leaving its firmware and settings in place, and then sends the M-Unbricker RAM app, which takes over that unit's
+  USB-C port and screen. With the cable moved to the broken unit, it sends the JieLi USB_KEY and calibration pulses that put that unit's mask ROM into USB download mode
+  whatever its flash holds, loads M-Flasher's flash loader over mass storage, identifies the model and writes a fresh m-bootloader to the boot
+  area, erasing the rest of the firmware area up to 0xFEFFF and verifying with the chip's CRC32. The top flash page (0xFF000 onwards) and the
+  SMK-37's Bluetooth pairing and calibration area are never written. With no firmware left, m-bootloader opens its MIDI mode by itself and the unit takes a firmware from that
+  firmware's own browser installer. The README reports tests on an FM-1 and an SMK-37 Pro in both directions, including an FM-1 bricked by a firmware that hangs
+  at start, and lists the firmwares the helper stage has started on. The same page can also be run from M-Flasher with its run-ram command.
+status: active
+authors:
+- name: Julius Vitkauskas (jvitkauskas)
+  url: https://github.com/jvitkauskas
+source: https://github.com/jvitkauskas/m-unbricker
+source_status: open
+license: MIT
+license_notes: >-
+  THIRD-PARTY.md lists the third-party parts. The repository holds m-bootloader 2.3 boot images and RAM stage packages (rescue/ and web/assets/); the SMK-37 boot image
+  sits on the header and chip-key record of M-VAVE's official SMK-37 Pro 016 package. It holds no M-VAVE firmware image.
+homepage: https://jvitkauskas.github.io/m-unbricker/
+distribution: browser-installer
+install_notes: >-
+  Open the page and follow the steps with a working FM-1 or SMK-37 and a USB-C cable. Building the apps from source needs GNU Make, Python 3 and the
+  author's open pi32v2 LLVM toolchain on Linux x86-64.
+brick_risk: true
+tags: [flasher, loader, utility, web]
+image:
+  url: https://raw.githubusercontent.com/jvitkauskas/m-unbricker/main/art/web/hero.png
+  alt: "Illustration of an orange FM-1 with a green screen joined by a USB cable and a heart to a grey unit whose screen shows a question mark"
+  credit: jvitkauskas
+  source_url: https://github.com/jvitkauskas/m-unbricker
+  first_party: true
+versions:
+- version: main @ d4e3bfe
+  date: 2026-11-13
+  url: https://github.com/jvitkauskas/m-unbricker/commit/d4e3bfe15775a2ff9cf6ba63de383725d1407b83
+  notes: No tagged releases; this is the latest commit.

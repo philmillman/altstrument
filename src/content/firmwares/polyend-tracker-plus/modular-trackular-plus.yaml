@@ -6,7 +6,7 @@ description: >-
   rather than patched into a stock file. Which mods are on is saved with each project, Config > Mods holds the defaults for
   new projects, and a project with no mod data opens with every mod off. Humanize adds small random changes to the
   micro-move and volume of the selected notes, Global Swing makes every take and pattern start use the project's swing
-  amount, Color Song colours song blocks by their content, Song Loop repeats a block of song positions, and Variable Track Length gives each track of a pattern its own length, looping a short track until the pattern ends. Master FX replaces CE's reverb and delay with other types (Freeverb, plate, spring, shimmer, gated or reverse reverb; tape or BBD delay) chosen on the Master screen, and Copy to New on page 3 of the Pattern screen copies the current pattern into the next empty one. Synths adds two synth models to the picker, WAVE (wavetable) and PHASE (phase distortion), each with a chorus, flanger or phaser and a distortion page, and Synth FX puts the same effects on Community Edition's own synth models. The earlier Chords mod was retired because Community Edition
+  amount, Color Song colours song blocks by their content, Song Loop repeats a block of song positions, and Variable Track Length gives each track of a pattern its own length, looping a short track until the pattern ends. Master FX replaces CE's reverb and delay with other types (Freeverb, plate, spring, shimmer, gated or reverse reverb; tape or BBD delay) chosen on the Master screen, and Copy to New on page 3 of the Pattern screen copies the current pattern into the next empty one. Synths adds two synth models to the picker, WAVE (wavetable) and PHASE (phase distortion), each with a chorus, flanger or phaser and a distortion page, and Synth FX gives each synth part two effect slots, on Community Edition's seven engines as well as WAVE and PHASE, that load plugins from /SynthFX/ on the card; the firmware writes a default pack of overdrive, distortion, bit crusher, chorus, flanger and phaser there and the repository holds an SDK for building more. The earlier Chords mod was retired because Community Edition
   now has those chord inversions itself. The mods get 1 MiB of sample memory, so the longest stereo recording is slightly
   shorter. A script copies a project saved on Community Edition into a form 1.2.0 can open. Commits report each step
   tested on hardware. Builds name themselves 1.0.0 MT in Config, Original Tracker and Tracker Mini builds stay plain
@@ -34,6 +34,10 @@ install_notes: >-
 brick_risk: false
 tags: [fork, platform, midi, sequencer, tracker]
 versions:
+  - version: modular @ c32fee7
+    date: 2026-11-13
+    url: https://github.com/FatRodzianko/Modular-Trackular-Plus/commit/c32fee71985919d352da7991ea0c2abada0cf9e4
+    notes: No tagged releases; this is the latest commit. Adds the Synth FX plugin runtime, default pack and SDK in four phases, with WAVE and PHASE moved onto the plugin slots, and merges newer Tracker CE changes with many bug fixes to the Pattern, Song, File, Sample and Instrument screens.
   - version: modular @ d5403b2
     date: 2026-11-11
     url: https://github.com/FatRodzianko/Modular-Trackular-Plus/commit/d5403b2fd9ac29432970a6e52b1360cf5fa8b964

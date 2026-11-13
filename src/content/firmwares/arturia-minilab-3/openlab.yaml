@@ -1,0 +1,35 @@
+device: arturia-minilab-3
+kind: firmware
+name: OpenLab
+summary: Unofficial open firmware for the Arturia MiniLab 3 (hardware revision A), written from scratch, with a browser groovebox and tools to flash it and go back to stock.
+description: >-
+  OpenLab replaces the application area of the MiniLab 3's STM32G0B1 and leaves Arturia's bootloader alone. It covers the
+  keys, pads, knobs, faders, touch strips, OLED, RGB LEDs, USB MIDI and DIN output, and adds scales, chords, an arpeggiator,
+  tap tempo, transport control, saved settings and a watchdog that falls back to the updater. The repository also holds
+  reverse-engineering notes on the update protocol and pin map, Python tools that pack, check and flash .mnl3 images through
+  Arturia's own driver, and OpenLab Studio, a browser groovebox that uses Web MIDI and Web Audio. The README says no Arturia
+  code or binaries are included. It supports hardware revision A only, was tested on one unit, and the README lists DIN out
+  and the sustain pedal as untested in its 0.2 status.
+status: active
+authors:
+  - name: akumanara
+    url: https://github.com/akumanara
+source: https://github.com/akumanara/openlab-minilab3
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The README states GPL-3.0-or-later and the LICENSE file is the GPL version 3 text. TinyUSB (MIT) and CMSIS (Apache-2.0)
+  keep their own licenses under firmware/third_party/.
+distribution: source-only
+install_notes: >-
+  Build with arm-none-eabi-gcc and make to get an .mnl3 image, then flash it with tools/flash_mnl3.py through Arturia's USB
+  driver on Windows, or with MIDI Control Center. Close MIDI Control Center and any DAW first. To return to stock, flash
+  Arturia's 1.2.0 image the same way. Update mode can also be entered by holding two of Shift, Hold, Oct- and Oct+ while
+  plugging in USB, or by SysEx. Revision B (USB PID 0x220B) is not supported.
+brick_risk: false
+tags: [controller, midi, arpeggiator, chords, usb-midi, web-midi, groovebox, research, python]
+versions:
+  - version: main @ e9aea85
+    date: 2026-11-12
+    url: https://github.com/akumanara/openlab-minilab3/commit/e9aea85
+    notes: No tagged releases; this is the latest commit. The source reports version 0.3.0, while the README still describes 0.2.

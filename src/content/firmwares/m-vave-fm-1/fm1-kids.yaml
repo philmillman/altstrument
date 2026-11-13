@@ -1,0 +1,46 @@
+device: m-vave-fm-1
+name: FM1 Kids
+summary: >-
+  Child-friendly interface for the FM-1 built on M-VAVE's open FM1 Open: picture tiles instead of menus, a pentatonic scale on the keys,
+  a drum and melody step grid on the white keys, an arpeggiator and a volume cap.
+description: >-
+  Replaces only the screen code of FM1 Open and keeps its sound engines. Eight instrument tiles (piano, bass, game, guitar,
+  fun samples and drums) are chosen with SELECT, and melodic instruments play a C major pentatonic scale so every key
+  fits. BEAT mode turns the 16 white keys into steps and the black keys pick the drum or note, with the key lights showing the
+  pattern and playhead. The arpeggiator has up, down, bounce and random with speed, octave, length and swing, and four knobs
+  cover loudness, brightness, sound and speed. Songs save themselves, EDIT is undo, the volume is capped and a battery
+  gauge warns when charging is needed, and holding GLO opens a parent panel for Bluetooth MIDI keyboards. The firmware update
+  path stays M-VAVE's own, so stock or another community firmware installs over it. The README says version 0.1
+  passes the project's tests in the fm1-emu emulator but has not been confirmed on a real FM-1. The project is unofficial
+  and not affiliated with M-VAVE.
+status: active
+authors:
+- name: cds879
+  url: https://github.com/cds879
+source: https://github.com/cds879/FM1-Kids-Firmware
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The app is GPLv3 only with M-VAVE's FM1 SDK linking exception (LICENSE.md), as in FM1 Open. The sound engines come as M-VAVE's
+  binary SDK under separate terms (THIRD_PARTY.md), which the repository carries together with M-VAVE's FM-1 V15 recovery
+  image (sdk/firmware/FM-1_015.fwsc, byte-identical to the licensed file in m-vave/fm1_open).
+homepage: https://cds879.github.io/FM1-Kids-Firmware/
+based_on: m-vave-fm-1/fm1-open
+distribution: browser-installer
+install_notes: >-
+  Install from the hosted page in Chrome or Edge over USB-C. The flashing guide recommends building an FM-1 Transporter recovery dongle and
+  taking a full backup before the first install, then installing the original-UI build of the repository before the Kids build.
+  Building from source uses Docker on macOS or Linux, or M-VAVE's scripts with the JieLi Windows toolchain.
+brick_risk: false
+tags: [fork, sequencer, arpeggiator, ui, controller-mode, emulator]
+image:
+  url: https://raw.githubusercontent.com/cds879/FM1-Kids-Firmware/main/docs/images/screens.png
+  alt: "Four FM-1 screens: PLAY with eight picture tiles, a BEAT drum step grid, a BEAT note grid in coloured bars, and PLAY with arpeggiator settings"
+  credit: cds879
+  source_url: https://github.com/cds879/FM1-Kids-Firmware
+  first_party: true
+versions:
+- version: main @ c2baf89
+  date: 2026-11-13
+  url: https://github.com/cds879/FM1-Kids-Firmware/commit/c2baf89a20c700cac19f5ffdcedf6be76d5b5c33
+  notes: No tagged releases; this is the latest commit.

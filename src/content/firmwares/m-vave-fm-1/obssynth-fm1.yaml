@@ -1,0 +1,47 @@
+device: m-vave-fm-1
+name: ObsSynth FM-1
+summary: >-
+  Four-voice subtractive synth with STD, SUPER, wavetable and granular oscillator engines, two LFOs, delay, reverb and
+  chorus, drawn after the ObsSynth desktop instruments, with a WebAssembly simulator of the same code.
+description: >-
+  Each of two oscillators runs one of four engines: standard waveforms, a seven-saw supersaw, wavetable banks, or granular
+  playback of three samples (organ and bell from VCSL, CC0, and a generated voice). A sub oscillator, six noise colours,
+  sync and ring modulation feed a 12 or 24 dB filter (low-pass, band-pass, high-pass, notch) and amp, each with its own
+  ADSR. Modes are poly (4 voices), mono, legato and unison. Two LFOs have one destination each, and the effects are delay,
+  room reverb and stereo chorus. There are 14 factory presets and 16 user slots, and each page draws what it edits, such as
+  envelope curves, filter response and live grains. It appears as the USB-MIDI device ObsSynthFM1. The base comes from
+  Hortator, itself a Felucca fork, with the drum machine removed; the HAL, update loader and simulator structure are kept.
+  The README says 0.1.0 was installed from stock V15 and from another custom firmware on an FM-1 and removed again.
+status: active
+authors:
+- name: orianbsilva
+  url: https://github.com/orianbsilva
+source: https://github.com/orianbsilva/obssynth-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Stated in LICENSING.md. Felucca code is Leo Kuroshita's and Hortator's changes are DEADACTIVE's, each under their own
+  notices; the recovery tool's boot-mode code is MIT from jl-uboot-tool. Felucca's panel photograph and sample pack are not
+  in the tree.
+homepage: https://orianbsilva.github.io/obssynth-fm1/
+based_on: m-vave-fm-1/hortator
+distribution: browser-installer
+requires_stock: V15
+install_notes: >-
+  The README says the package is also on The Firmware Hub, which installs it from the browser; tools/fm1_install.py works
+  from a terminal. The installer resumes an interrupted update, and holding OCT- and OCT+ for 5 seconds enters the chip's
+  boot mode (docs/RECOVERY.md). Presets and settings sit in their own flash area, and other firmwares' projects and
+  samples may be overwritten, so back them up first. To return to stock, use M-VAVE's M-UPGRADE with the V15 package.
+brick_risk: false
+tags: [synth-engine, oscillator, filter, wavetable, granular, lfo, fx, usb-midi, emulator, web, fork]
+image:
+  url: https://raw.githubusercontent.com/orianbsilva/obssynth-fm1/main/docs/img/screen-waves.png
+  alt: "ObsSynth FM-1 screen in orange on black: page F12 WAVES, OSC 1 WT with POS, TUNE, GLIDE and SUB values and a morph graph of overlaid wavetable curves"
+  credit: orianbsilva
+  source_url: https://github.com/orianbsilva/obssynth-fm1
+  first_party: true
+versions:
+- version: 0.1.0
+  date: 2026-11-13
+  url: https://github.com/orianbsilva/obssynth-fm1/releases/tag/v0.1.0
+  notes: First release.

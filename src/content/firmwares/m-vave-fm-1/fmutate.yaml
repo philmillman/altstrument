@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+name: FMutate
+kind: tool
+summary: >-
+  Android app that runs FM-1 community firmwares on a phone, with a multitouch panel you can rearrange, a firmware library fed by the FM-1 Firmware Hub catalogue and a virtual MIDI port.
+description: >-
+  Firmwares run in two ways. Native cartridges are firmwares built from source for the phone, and this build ships OberVave 3.3.2 and Shine On 3.0.1.
+  Any other firmware's update package (.fwsc), binary-only ones included, runs in fm1-emu. Each firmware runs in its own process, so a crash
+  restarts only that instance, and one that crashes twice in a minute is quarantined until you choose to run it anyway. The library downloads
+  from the Firmware Hub catalogue, imports your own .fwsc files (M-VAVE's stock firmware is bring-your-own) and switches with one tap
+  and undo. The panel starts as a classic FM-1 layout and can be edited into any arrangement of keys, knobs, pads, sliders and pages, saved per
+  firmware. Keys take velocity from where they are struck, and with OberVave a held note's level follows the finger. Audio goes out through AAudio, and there
+  is a virtual MIDI port, USB and Bluetooth MIDI devices and MIDI clock in and out. The README calls it early: Android only, installed
+  from source with Elixir, the Mob framework and the Android NDK, and tested on two Moto G Power phones and Android 17 emulators.
+status: active
+authors:
+- name: GenericJam
+  url: https://github.com/GenericJam
+source: https://github.com/GenericJam/fmutate
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is GPL-3.0 and the README says it is GPLv3 because it compiles in GPL-3 firmwares. OberVave and Shine On are by zvenson
+  (GPL-3.0), fm1-emu is MIT, and the Hub catalogue is CC BY 4.0. Every firmware belongs to its author and is downloaded from where they publish it.
+  A 1 KB test fixture .fwsc in the repository is not a stock image.
+distribution: source-only
+install_notes: >-
+  Build with mise (Erlang, Elixir, Java, Zig and Rust at the pinned versions), the Android SDK with NDK 27.2 and adb, then deploy with mix mob.deploy to a
+  phone with USB debugging on. There is no prebuilt app. The app writes nothing to a physical FM-1.
+brick_risk: false
+tags: [emulator, performance, midi, usb-midi, ui]
+image:
+  url: https://raw.githubusercontent.com/GenericJam/fmutate/master/docs/media/instrument.png
+  alt: "FMutate's classic layout: the firmware's small screen at the top showing OberVave's Dark Arp patch, knobs and buttons around it and two octaves of keys below"
+  credit: GenericJam
+  source_url: https://github.com/GenericJam/fmutate
+  first_party: true
+versions:
+- version: main @ 127d219
+  date: 2026-11-13
+  url: https://github.com/GenericJam/fmutate/commit/127d2192e0c11afa964d0d132717d8d55659e6cf
+  notes: No tagged releases; this is the latest commit.

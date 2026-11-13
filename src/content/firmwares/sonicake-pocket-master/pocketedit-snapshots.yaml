@@ -8,8 +8,9 @@ description: >-
   vertical snapshot views, eight scenes per preset with the first selected automatically, effect order saved with each
   scene, and an enlarged tap tempo for phones. A change notes that switching snapshots sends only the pedals that differ
   to avoid cutting reverb and delay tails, and that auto-save to flash is prevented while switching. Snapshots are kept in
-  persistent browser storage, mirrored to IndexedDB, and can be exported to and restored from a JSON file. The README is
-  the upstream text and does not mention these additions, which come from the commit history and the page itself. The
+  persistent browser storage, mirrored to IndexedDB, and can be exported to and restored from a JSON file. The README now
+  describes the snapshots, which keep switch state, knobs, amp model and delay note value, with automatic saving, undo
+  and a full-window stage view. The
   connection and parameter code is upstream's, so everything else in the editor behaves as in that project.
 status: active
 authors:
@@ -27,6 +28,10 @@ install_notes: >-
 brick_risk: false
 tags: [editor, web-midi, sysex, usb-midi, midi, bluetooth, presets, fork, web]
 versions:
+  - version: main @ 5375242
+    date: 2026-11-12
+    url: https://github.com/ocarlosads/pocket/commit/53752420aa8fd7464ea12161aaea670240afa948
+    notes: No tagged releases; this is the latest commit. Since the previous entry it adds a full-window Snapshots screen with the active snapshot lit, automatic snapshot saving with undo and an activation queue, preset-wide EQ and amp tone defaults, a blue theme and mobile layout changes.
   - version: main @ 7ee3815
     date: 2026-10-23
     url: https://github.com/ocarlosads/pocket/commit/7ee3815

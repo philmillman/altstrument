@@ -7,9 +7,9 @@ description: >-
   Every patch has one photograph and a sound drawn from it, with five knobs (glide, swell, tone, blur and fuzz) that change both
   the sound and the picture. In chord mode every key plays a chord, black keys included, chosen from a table of chords taken from
   My Bloody Valentine records and voiced differently by each patch, and the note names show on the photo in a colour per note.
-  Each patch has a quiet beat with fills, an auto bass and an amount sent into the reverse reverb. MIDI works over USB, Bluetooth
-  and TRS in, and two FM-1s linked by Bluetooth MIDI can play as one. The sound runs on one core with eight voices, with the
-  second core as an experiment. The repository has a manual and a project site with a browser emulator and an installer page.
+  Each patch has a quiet beat with fills, an auto bass and an amount sent into the reverse reverb. MIDI works over USB in and out
+  and over TRS in. The sound runs on two cores with twelve voices, and falls back to one core with eight voices on a unit whose
+  second core misbehaves. Earlier builds had Bluetooth MIDI, including linking two FM-1s; the latest commit removes it. The repository has a manual and a project site with a browser emulator and an installer page.
 status: active
 authors:
 - name: joshbartlettband-web
@@ -25,10 +25,9 @@ homepage: https://joshbartlettband-web.github.io/album-fm1/
 distribution: browser-installer
 install_notes: >-
   The project site has an install page for Chrome or Edge over USB and a download of the package for the command-line
-  installer; the page says the installer can put M-VAVE's firmware back. Builds with and without Bluetooth are made by the
-  repository's workflows. No release has been tagged yet.
+  installer; the page says the installer can put M-VAVE's firmware back. The repository's workflow builds a single package, without Bluetooth. No release has been tagged yet.
 brick_risk: false
-tags: [synth-engine, chords, drums, fx, reverb, midi, ble-midi, emulator]
+tags: [synth-engine, chords, drums, fx, reverb, midi, emulator]
 image:
   url: https://joshbartlettband-web.github.io/album-fm1/img/screen-playing.png
   alt: "Album's screen while the Red Door patch plays: a blurred fire-pit photograph in reds and violets with the label KEY C in the lower right corner"
@@ -36,7 +35,7 @@ image:
   source_url: https://joshbartlettband-web.github.io/album-fm1/
   first_party: true
 versions:
-- version: main @ 7b217bc
-  date: 2026-11-08
-  url: https://github.com/joshbartlettband-web/album-fm1/commit/7b217bc53c83820f73f905ad9d019b6ac68d9fdd
-  notes: No tagged releases; this is the latest commit. Since the previous row, units with the newer UC25HQ80 flash chip can save and update, and the repository has a card file for The Firmware Hub.
+- version: main @ 088038a
+  date: 2026-11-12
+  url: https://github.com/joshbartlettband-web/album-fm1/commit/088038a5c068dbce581bb798f227db306fe782e6
+  notes: No tagged releases; this is the latest commit. Since the previous row, the second core starts from fm1-base's code at power-on, two cores and twelve voices are the default with one core as the fallback, and Bluetooth is removed. The pull request says it had not yet been run on an FM-1.

@@ -1,0 +1,39 @@
+device: akai-mpc-live
+also_devices: [akai-force]
+kind: tool
+name: MPC Plugin SDK
+summary: inMusic's open SDK for building instrument and effect plugins that run inside MPC OS 3.10.1 or later on standalone MPCs and Force, with a build tool, a host simulator and agent skills.
+description: >-
+  A plugin is a Linux shared library that follows the VST 2.4 binary interface, packaged with a plugin.json manifest and JSON
+  skins for the touch screen and the sixteen hardware knobs. The repository holds a header-only C++ framework, DSP helpers,
+  three example plugins (a synth, a delay and a drum synth), a cross-compiling build script for 32-bit and 64-bit MPC
+  processors, a command-line host simulator and a tool that installs plugins onto an MPC over the network. It also ships agent
+  skills and instructions so that a coding assistant can write a plugin from a plain-language description. The README lists
+  the MPC X, X SE, Live, Live II, One, One+, Key 37, Key 61, Force, Live III and XL as targets and requires the External
+  Plugin Support option under Preferences, Enhancements, which Akai marks as beta. It does not list the MPC Sample. The README
+  warns that a plugin runs inside the MPC application unprotected and that inMusic does not support third-party plugins.
+status: active
+authors:
+  - name: inMusic Brands
+    url: https://github.com/inmusic-software
+source: https://github.com/inmusic-software/mpc-plugin-builder-sdk
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT License with copyright held by inMusic Brands, Inc. The README says the SDK contains no
+  Steinberg VST SDK code and notes that VST is a trademark of Steinberg Media Technologies.
+homepage: https://www.akaipro.com/downloads-and-support/downloads/firmware/mpc/
+distribution: source-only
+requires_stock: MPC OS 3.10.1 or later
+install_notes: >-
+  Update the MPC to OS 3.10.1 or later, then turn on Enable Enhancements and External Plugin Support under Preferences,
+  Enhancements. Build a plugin with python tools/build.py and copy the output folder to VST2 Plugins on a USB drive or SD
+  card, or install it with the SDK's network tool. A faulty plugin can freeze or restart the MPC; remove its folder from the
+  drive to recover.
+brick_risk: false
+tags: [official, sdk, platform, vst, dsp, plugins, ai]
+versions:
+  - version: main @ febd2ca
+    date: 2026-11-07
+    url: https://github.com/inmusic-software/mpc-plugin-builder-sdk/commit/febd2ca
+    notes: No tagged releases; this is the latest commit. The plugin host ships in MPC OS 3.10.1, released 2026-11-12.

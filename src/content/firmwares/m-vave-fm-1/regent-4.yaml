@@ -1,0 +1,44 @@
+device: m-vave-fm-1
+name: REGENT-4
+summary: >-
+  Harmonic conductor for the FM-1: play chords on the keys and a pad, a bass, two arpeggiating motifs and a beat
+  follow them.
+description: >-
+  The white keys are the degrees of the key, so every chord is in key, and the black keys colour it with 7th, sus2,
+  sus4, add9, 6th, major/minor flip or flat five. A pad voice-leads through the changes, a bass plays one of eight
+  figures from the root, two motifs arpeggiate the chord at their own rates and a beat with six grooves runs under
+  them. Chords change at once, on the beat or at the bar. A progression of 16 chords is recorded by playing it with
+  REC and then replays from SEQ, and PRESETS changes key on the fly. The screen shows the chord name and numeral large
+  above the part settings. It has its own 8-voice synth and drums, sends MIDI over USB and Bluetooth, and can send or
+  follow MIDI clock. The README names the Conductive Labs NDLR as a model.
+status: active
+authors:
+- name: David Ryan (davidpryan)
+  url: https://github.com/davidpryan
+source: https://github.com/davidpryan/regent-4
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSE is the MPL-2.0 text, as fm1-base. The base/ copy of fm1-base and felucca-bsp keeps its own files' licences
+  (base/LICENSING.md). The only .fwsc in the repository is the M-Bootloader package used by the web tools (18,068
+  bytes), not a stock M-VAVE image.
+homepage: https://davidpryan.github.io/regent-4/
+distribution: browser-installer
+install_notes: >-
+  Browser installer at davidpryan.github.io/regent-4/install/ in Chrome or Edge (allow MIDI when asked), or build with
+  ./build.sh (Docker and JieLi's toolchain, see fm1-base) and run base/tools/fm1_install.py on the .fwsc. The README
+  says to keep M-VAVE's stock firmware and M-UPGRADE at hand, and the installer page has a section for putting the
+  stock firmware back.
+brick_risk: false
+tags: [sequencer, midi, usb-midi, ble-midi, performance, scales, chords]
+image:
+  url: https://raw.githubusercontent.com/davidpryan/regent-4/main/app/docs/img/screen-conductor.png
+  alt: "REGENT-4 conductor page on the FM-1: the chord name Am7 and numeral vi in large type, a strip of the pad voicing, and rows for the pad, bass, motif A, motif B and beat with their figure names"
+  credit: David Ryan
+  source_url: https://github.com/davidpryan/regent-4
+  first_party: true
+versions:
+- version: main @ ddd2ded
+  date: "2026-11-13"
+  url: https://github.com/davidpryan/regent-4/commit/ddd2dedef424ec950354df9d13058f1505558d68
+  notes: No tagged releases; this is the latest commit. The README and the installer package call it 0.1 and say it passes the host simulator's tests but has not been run on a real FM-1.

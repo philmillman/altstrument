@@ -6,7 +6,7 @@ summary: >-
   downloads more from The Firmware Hub over WiFi and installs them over USB MIDI SysEx from a touchscreen, with no
   computer.
 description: >-
-  The device is an Adafruit Metro ESP32-P4 with the 2.8-inch capacitive TFT touch shield. The FM-1 plugs into the
+  The device is an Adafruit Metro ESP32-P4 with the 2.8-inch TFT touch shield, either the capacitive (FT6206) or the resistive (TSC2007) one, which the flasher detects at start-up. The FM-1 plugs into the
   Metro's native USB host port, and packages come from thefirmwarehub.com over WiFi. The screen browses the card's
   firmwares as picture cards or a list, filters by type or favourites, shows a firmware's details before installing,
   and its Catalog page fetches new firmwares and versions, only ever adding or updating. The README reports V15 to
@@ -46,7 +46,7 @@ install_notes: >-
 brick_risk: false
 tags: [flasher, loader, usb-midi, sysex, python, utility]
 versions:
-- version: main @ 8016791
+- version: main @ da19f1f
   date: 2026-11-12
-  url: https://github.com/adafruit/Adafruit_Learning_System_Guides/commit/8016791cb0cd29717885566c3deacc7c65893c02
-  notes: No releases of the flasher itself; this is the latest commit to the folder, which switches to stock CircuitPython now that both fixes are upstream and drops the custom UF2. The tag v1-feather-final in jedgarpark/FM-1_Flasher marks the last version for the Feather.
+  url: https://github.com/adafruit/Adafruit_Learning_System_Guides/commit/da19f1f86404f1d772a2d9c344b3555d9676cfdf
+  notes: No releases of the flasher itself; this is the latest commit to the folder. It adds support for Adafruit's resistive 2.8-inch TFT touch shield with a measured touch calibration, after an earlier commit that switched to stock CircuitPython now that both fixes are upstream and dropped the custom UF2. The tag v1-feather-final in jedgarpark/FM-1_Flasher marks the last version for the Feather.

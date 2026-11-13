@@ -1,0 +1,32 @@
+device: m-vave-fm-1
+name: Lorcha
+summary: >-
+  Small on-screen hardware checker for felucca-bsp: shows the keys, buttons and knobs as they are used, steps the LEDs through brightness levels, plays a test tone and shows USB and MIDI state.
+description: >-
+  Not an instrument and with no update entry of its own. Each of the 14 buttons has a cell, the 27 keys a strip with each sending a USB MIDI note
+  on channel 1, and the encoders, MASTER pot and battery are shown as counts and bars. REC steps every LED through off, 3%, 15%, breathing and full, PLAY toggles a 440 Hz sine at
+  -12 dBFS, and the screen reports whether USB enumerated and counts MIDI in and out. The same source also builds for the SMK-37 Pro and Elite and for the
+  Pocket AMP, but the FM-1 is the target and the other two are only built. The SMK-37 loader cannot be built from felucca-bsp as it stands, so the repository carries a patch for that. To leave it, a SysEx soft
+  key or two quick boots return to the ROM boot mode, and then felucca-bsp's rescue script puts stock firmware back. It cannot be replaced
+  over M-UPGRADE directly. Building needs the JieLi pi32v2 toolchain on Linux x86-64, the AC79 SDK and Docker.
+status: active
+authors:
+- name: hugelton (kurogedelic)
+  url: https://github.com/hugelton
+source: https://github.com/hugelton/Lorcha
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSE is MPL-2.0. felucca-bsp and pendel-bsp (the Pocket AMP loader) are included as submodules with their own MPL-2.0 files and notices (NOTICE).
+  A package carries three JieLi SDK files under Apache-2.0, so LICENSES/Apache-2.0.txt has to ship with it.
+distribution: source-only
+install_notes: >-
+  Build with tools/build.sh --board fm1, which produces build/fm1/lorcha-fm1.fwsc, then install the package the way felucca-bsp's tools do. It is unofficial and has no
+  prebuilt release. Going back needs felucca-bsp's fm1_rescue.sh.
+brick_risk: false
+tags: [research, utility, sdk]
+versions:
+- version: main @ 70109be
+  date: 2026-11-13
+  url: https://github.com/hugelton/Lorcha/commit/70109be7d7fb2dd498676292dd47bd9948427f59
+  notes: No tagged releases; this is the latest commit.

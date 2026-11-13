@@ -1,0 +1,48 @@
+device: m-vave-fm-1
+name: MANIFOLD
+summary: >-
+  Generative just-intonation firmware: moving points wander over a Tonnetz map of a scale and sound the notes they pass,
+  with twelve motions, 41 scales, a 24-route modulation matrix, Bluetooth audio out and a browser emulator.
+description: >-
+  Two layers of points move over a map of a just-intonation scale, and each note they pass near sounds in proportion to
+  how close the points are. The 41 scales include handpan and tongue-drum tunings, and a Temper control moves them toward
+  12-tone equal temperament. There are twelve motion generators (Orbit, Lorenz, Swarm, Billiard and others) and eight
+  envelope types. Voices use up to 16 exact harmonics shaped by one spectral function. The rhythm is a continuous function
+  of the bar rather than a grid, and four drums place envelopes on notes the synth already plays. A 24-route matrix has six
+  LFOs, the knobs and the generators as sources. Effects are fuzz, a morphing filter, tempo delay, an 8-line reverb that
+  can be tuned to the scale, a bus compressor and a limiter. There are 16 patches with four scenes each, MIDI over USB and
+  Bluetooth, and Bluetooth audio out to headphones and speakers. It is an app on fm1-base with small patches to fm1-base
+  and felucca-bsp. The README lists 1.0 (2026-11-10) and 1.0.2 as earlier releases, but only the 1.0.3 tag and release
+  page exist on GitHub.
+status: active
+authors:
+- name: stets43
+  url: https://github.com/stets43
+source: https://github.com/stets43/Manifold
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  Stated in the README and LICENSE. fm1-base is MPL-2.0 and carries code by Leo Kuroshita and others; the Bluetooth stack
+  includes Apache-2.0 and BSD-2-Clause code, whose texts ship in the firmware folder, and the Barlow Semi Condensed screen
+  font is SIL OFL 1.1.
+homepage: https://stets43.github.io/Manifold/
+distribution: browser-installer
+requires_stock: V15
+install_notes: >-
+  Use the web installer on the project site in Chrome or Edge, or run fm1-base's tools/fm1_install.py with
+  firmware/manifold-1.0.3.fwsc from the repository. Building needs fm1-base at a pinned commit with the patches in the
+  repository's patches folder applied. Release 1.0.3 adds support for FM-1s with the newer UC25HQ80 flash chip; before it,
+  those units kept no settings between power-ons.
+brick_risk: false
+tags: [generative, synth-engine, scales, fx, reverb, delay, usb-midi, ble-midi, emulator, web]
+image:
+  url: https://raw.githubusercontent.com/stets43/Manifold/main/docs/img/manual/perform.png
+  alt: "MANIFOLD Perform page: a dot map with white crosses beside the scale name Hexany 1-3-5-9, mode and groove readouts, toggle buttons, and TIMBRE, SPACE, GROOVE and MOTION sliders"
+  credit: stets43
+  source_url: https://github.com/stets43/Manifold
+  first_party: true
+versions:
+- version: 1.0.3
+  date: 2026-11-12
+  url: https://github.com/stets43/Manifold/releases/tag/v1.0.3
+  notes: Recognises FM-1s with the newer UC25HQ80 flash alongside the Puya P25Q80, so patches, settings and Bluetooth devices persist on those units; nothing else changed. The notes also list 1.0.2, which fixes Bluetooth audio to speakers that set up the stream themselves after pairing.

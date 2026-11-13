@@ -1,0 +1,28 @@
+device: m-vave-fm-1
+name: FM-1 MIDI Bridge (Launchkey and Melodee)
+kind: tool
+summary: >-
+  Headless Raspberry Pi bridge between a Novation Launchkey Mini MK3 and an FM-1 running Melodee, with DAW-mode pad feedback and a web dashboard.
+description: >-
+  Python service (FastAPI with a WebSocket backend) that does the Launchkey's DAW-mode handshake, tracks which encoder bank is active (Device, Mixer or Sends),
+  returns pad feedback for track mutes, the active track and pattern triggers, and manages hot-plugged ALSA MIDI ports. A live dashboard shows a MIDI monitor, a mapping editor and troubleshooting
+  actions, and a systemd unit starts it on boot. Controller and synth profiles are YAML files, with Launchkey MK3, MK4 and generic CC controllers and a Melodee profile. It is
+  separate from fm1-midi-bridge, which is firmware. The repository is a day old, and its plan.md describes the architecture and mappings.
+status: active
+authors:
+- name: guushamann
+  url: https://github.com/guushamann
+source: https://github.com/guushamann/fm1-midi-controller-daw-features
+source_status: open
+license: unspecified
+license_notes: There is no licence file or licence statement in the repository.
+distribution: source-only
+install_notes: >-
+  Run with uv on a computer or deploy to a Raspberry Pi with the systemd unit; the README paths assume the author's own Pi. It does not write to the FM-1, and needs Melodee installed on it.
+brick_risk: false
+tags: [midi, controller-mode, utility]
+versions:
+- version: main @ 15e14a3
+  date: 2026-11-12
+  url: https://github.com/guushamann/fm1-midi-controller-daw-features/commit/15e14a37cec5774ec419ca7808b9e47c850b4e59
+  notes: No tagged releases; this is the latest commit.

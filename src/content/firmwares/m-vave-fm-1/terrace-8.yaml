@@ -1,0 +1,44 @@
+device: m-vave-fm-1
+name: TERRACE-8
+summary: >-
+  Stage sequencer for the FM-1 in the manner of Metropolis and Mutable Stages: two lines of eight stages with pulses,
+  gate modes, ratchets, slide and an accumulator.
+description: >-
+  Each of eight stages on two lines has a pitch (scale degree), a pulse count of 1 to 8, a gate mode (silent, once,
+  every pulse, held, every other), ratchets of 1 to 4, slide, accent and skip. Directions are forward, backward, ping-
+  pong, random and random walk, with a variable number of stages in play, so two lines of different lengths cross
+  against each other. An accumulator adds scale degrees each time round and returns to zero past its limit. The screen
+  draws each stage as a bar as wide as it lasts and as high as it sounds. It has its own 8-voice synth, eleven drums
+  and an echo, sends MIDI over USB and Bluetooth, and can send or follow MIDI clock. The README names Intellijel
+  Metropolis and Metropolix and the Moog 960 as the models.
+status: active
+authors:
+- name: David Ryan (davidpryan)
+  url: https://github.com/davidpryan
+source: https://github.com/davidpryan/terrace-8
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSE is the MPL-2.0 text, as fm1-base. The base/ copy of fm1-base and felucca-bsp keeps its own files' licences
+  (base/LICENSING.md). The only .fwsc in the repository is the M-Bootloader package used by the web tools (18,068
+  bytes), not a stock M-VAVE image.
+homepage: https://davidpryan.github.io/terrace-8/
+distribution: browser-installer
+install_notes: >-
+  Browser installer at davidpryan.github.io/terrace-8/install/ in Chrome or Edge (allow MIDI when asked), or build
+  with ./build.sh (Docker and JieLi's toolchain, see fm1-base) and run base/tools/fm1_install.py on the .fwsc. The
+  README says to keep M-VAVE's stock firmware and M-UPGRADE at hand, and the installer page has a section for putting
+  the stock firmware back.
+brick_risk: false
+tags: [sequencer, midi, usb-midi, ble-midi, performance, generative, scales]
+image:
+  url: https://raw.githubusercontent.com/davidpryan/terrace-8/main/app/docs/img/screen-stages.png
+  alt: "TERRACE-8 stages page on the FM-1: two rows of bars, line A in orange and line B in blue, each bar as wide as its stage lasts and as high as its pitch, with gate marks under them"
+  credit: David Ryan
+  source_url: https://github.com/davidpryan/terrace-8
+  first_party: true
+versions:
+- version: main @ 9e8a4f7
+  date: "2026-11-13"
+  url: https://github.com/davidpryan/terrace-8/commit/9e8a4f70d6b6372f512706f6bd381b64b11947a6
+  notes: No tagged releases; this is the latest commit. The README and the installer package call it 0.1 and say it passes the host simulator's tests but has not been run on a real FM-1.

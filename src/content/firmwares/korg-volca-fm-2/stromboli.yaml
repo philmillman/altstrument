@@ -1,17 +1,20 @@
 device: korg-volca-fm-2
 name: STROMBOLI
 summary: >-
-  Beta patch for the volca fm2 firmware 1.12 that adds step probability and conditions, HOLD, new arpeggiator modes with arpeggio on MIDI OUT, scales, humanize,
-  a delay in place of the reverb and a free-order chain.
+  Beta patch for the volca fm2 firmware 1.12 that adds step probability, ratchet, microtiming and swing, new arpeggiator modes, scales, a tape LOFI delay, a phaser or tremolo and a free-order chain. Release WAVs contain Korg's firmware.
 description: >-
-  The patch adds per-step probability and trig conditions, a global probability, a virtual sustain (HOLD), seven extra
+  Rights warning: the GitHub release has ready-made update WAVs that contain Korg's firmware 1.12 with the patch
+  applied. The Korg part is not under the GPL and remains Korg's; the project says the WAVs are offered for owners
+  of a volca fm2 and will be removed if Korg asks. The patch adds per-step probability and trig conditions, a global probability, a virtual sustain (HOLD), seven extra
   arpeggio modes and arpeggio output on MIDI OUT. It also adds 15 musical scales with a root note that apply to the
   sequencer too, velocity humanize and random octave per pattern, and a tempo-synced or free-time delay, mono or
-  ping-pong, that can stand in for the reverb. The chain feature allows free order with repeats up to 64 entries, live
+  ping-pong, that can stand in for the reverb, with a tape-style LOFI mode (hiss, wow and flutter, self-oscillation).
+  Later versions add a Rhodes-style phaser or stereo tremolo in place of the chorus, ratchet, microtiming and swing per
+  pattern, play direction per pattern and note mutation within the scale. The chain feature allows free order with repeats up to 64 entries, live
   chain capture and recording while a chain plays. It is for the second-generation volca fm only, not the 2016 model.
-  The repository holds no Korg firmware and no ready-made update audio: a Python script reads the official updater
-  1.12 zip that the user downloads from Korg, checks every byte it touches and writes an install WAV, a WAV that
-  restores the original 1.12 and checksums. The WAVs are played into SYNC IN with the Korg update procedure. The
+  The repository source holds no Korg firmware: a Python script reads the official updater 1.12 zip that the user
+  downloads from Korg, checks every byte it touches and writes an install WAV, a WAV that restores the original 1.12
+  and checksums. Since release 1.24 the same WAVs are also attached to the GitHub release. The WAVs are played into SYNC IN with the Korg update procedure. The
   README says the patch was tested on a real unit and in an ARM emulator, and the licence file says it was written with
   Claude's help.
 status: active
@@ -23,20 +26,22 @@ source_status: open
 license: GPL-3.0-only
 license_notes: >-
   LICENSING.md states GPL-3.0-only and LICENSE is the GPL version 3 text. No Korg firmware, updater or WAV is in the
-  repository; it says the user's built WAVs fall under Korg's licence and should not be published.
+  source tree. LICENSING.md says the WAVs on the GitHub release contain Korg's firmware 1.12, are not covered by the
+  GPL and remain under Korg's licence, and that they will be removed if Korg asks.
 homepage: https://github.com/mongio/stromboli-fm2
-distribution: patch-your-own
+distribution: download
 requires_stock: "1.12"
 install_notes: >-
-  Download the official volca fm2 System Updater 1.12 from Korg, put the zip unchanged in reference/ and run
-  build_release.py (Python 3.11 or later and LLVM 18 tools). Play the install WAV into SYNC IN after powering on
+  Download the FM2_1_24_BETA zip from the GitHub release, or build the WAVs yourself: download the official volca fm2
+  System Updater 1.12 from Korg, put the zip unchanged in reference/ and run build_release.py (Python 3.11 or later
+  and LLVM 18 tools). Play the install WAV into SYNC IN after powering on
   holding FUNC and PLAY, as for a Korg update. The README says the bootloader and update receiver are not changed, the
   beta reports application version 1.11 so the official 1.12 WAV is always accepted, and the second built WAV restores
   the exact original 1.12. Do not play the WAVs through speakers or headphones.
 brick_risk: false
 tags: [sequencer, arpeggiator, fx, delay, scales, patcher, midi, fm]
 versions:
-- version: main @ 2dbe396
-  date: 2026-11-10
-  url: https://github.com/mongio/stromboli-fm2/commit/2dbe3960728a4c279307d184a88630a7884581a2
-  notes: No tagged releases; this is the latest commit. The README names the patch version as 1.21 beta and says it was tested on a real volca fm2. Version 1.21 lets the chain run free of the Korg chain with recording, works REC and FUNC while a chain plays, copies the previous pattern into an empty one, adds a fixed REC mode, accepts Program Change in and saves the effect choice in the pattern.
+- version: 1v.2.4
+  date: 2026-11-12
+  url: https://github.com/mongio/stromboli-fm2/releases/tag/1v.2.4
+  notes: First GitHub release, named 1.24 beta in the notes; the attached zip holds the install WAV and a WAV that restores 1.12. Adds ratchet, microtiming and swing per pattern, play direction and note mutation per pattern, a tape LOFI delay, and a phaser or tremolo in place of the chorus. The README says it was tested in an emulator and on a real volca fm2.

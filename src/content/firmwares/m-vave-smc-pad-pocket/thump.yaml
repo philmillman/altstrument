@@ -1,0 +1,35 @@
+device: m-vave-smc-pad-pocket
+kind: tool
+name: Thump
+summary: Browser drum machine and beat maker for the SMC-PAD Pocket that runs in a Chromium app window, plays 318 sounds from the pad and lights its pads over USB or Bluetooth.
+description: >-
+  Thump is a web app styled as a hardware drum machine, started by a Linux launcher script that opens Chromium with its own
+  profile and Web Bluetooth switched on. It reads the pad over USB or Bluetooth MIDI and also accepts mouse and keyboard.
+  It has 86 synth sounds written for the project and 232 drum samples from twelve Hydrogen kits, 13 ready-made kits, eight
+  patterns that can be chained into a song, a wobble bass designer, per-pad sound controls, microphone recording, sample
+  chopping and export to MP3 or WAV. For the pad lights it writes pad colors through the pad's own settings protocol,
+  which the README says was worked out by the spectalive/smc-pad project for the larger SMC-PAD, and it restores the pad's
+  own colors when it closes. Nothing is flashed to the pad.
+status: active
+authors:
+  - name: SageSchiller
+    url: https://github.com/SageSchiller
+source: https://github.com/SageSchiller/thump
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT License and covers the code and the synth sounds. The drum samples keep the licenses of their
+  Hydrogen kits (GPL, CC-BY, CC-BY-SA, CC0 and the Green Open Music License), listed in CREDITS.md. The bundled MP3 encoder
+  is LGPL and the fonts are under the SIL Open Font License 1.1.
+distribution: source-only
+install_notes: >-
+  Clone the repository and run the thump launcher, which needs Chromium on Linux; the README describes the Linux launcher
+  only. Allow MIDI device control and the microphone when Chromium asks. For pad lights over Bluetooth, use the Connect
+  button in the Lights panel.
+brick_risk: false
+tags: [drum-machine, sequencer, controller, web-midi, bluetooth, sysex, web, samples]
+versions:
+  - version: main @ 08a1193
+    date: 2026-11-13
+    url: https://github.com/SageSchiller/thump/commit/08a1193
+    notes: No tagged releases; this is the latest commit.

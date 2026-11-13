@@ -1,0 +1,49 @@
+device: m-vave-fm-1
+name: Drumtonic
+summary: >-
+  Synthesised drum machine with ten channels, a 64-step sequencer with p-locks, conditions, micro timing and ratchets,
+  beat repeat, and reverb, tape delay and master compressor, built on Dinghy.
+description: >-
+  Ten drum channels (bass drum, snare, clap, hats, toms, rimshot, cymbal) each combine an oscillator with a pitch envelope
+  and a filtered noise source, with 24 controls per channel, three factory kits, 8 user kits and a library of 59 sounds
+  plus 64 user slots. The sequencer holds 32 patterns of ten parts, each part 1 to 64 steps long, with per-step
+  parameter locks, probability and cycle conditions, micro timing and ratchets, eight LFOs per pattern, knob-motion
+  recording, chains and per-pattern kits. Performance features are beat repeat, note repeat and kit changes from the keys.
+  Effects are a shared reverb and tape delay, and a master section with drive, filters and a compressor with sidechain
+  filter and a look-ahead limiter. It takes MIDI over USB and TRS, sends clock, and appears as a USB audio input. The
+  UI follows X0X and the effects follow 9W9, both credited in LICENSING.md. The project's logo is all rights reserved and
+  is not under the GPL. The source also holds an SMK-37 board layer inherited from Dinghy, but the release package is the
+  FM-1 build.
+status: active
+authors:
+- name: Federico Ciapi (fc79)
+  url: https://github.com/fc79
+source: https://github.com/fc79/drumtonic
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Stated in LICENSING.md. Platform code from Felucca, SLOOP, Dinghy and OberVave keeps its authors' copyright lines; the
+  Terminus and Saira fonts are SIL OFL 1.1, the bundled jl-uboot-tool port is MIT, and the Drumtonic and designburg logos
+  are all rights reserved.
+homepage: https://fc79.github.io/drumtonic/
+based_on: m-vave-fm-1/dinghy
+distribution: browser-installer
+requires_stock: V15
+install_notes: >-
+  Back up the flash first with the project's backup tool (docs/BACKUP.md), which writes nothing to the FM-1. Install from
+  the project site in Chrome or Edge, or from the single-file installer attached to each release, or with
+  tools/fm1_install.py. The first save overwrites the settings area that other FM-1 firmwares share. The installers never
+  write the boot area (0x0-0x3FFF), 0xC0000-0xC1FFF or the unit's key at 0xFF000.
+brick_risk: false
+tags: [drums, sequencer, synth-engine, fx, reverb, delay, usb-midi, usb-audio, performance, web]
+image:
+  url: https://raw.githubusercontent.com/fc79/drumtonic/main/docs/screens/live.png
+  alt: "Drumtonic LIVE screen with tempo, swing, reso and filter readouts, pattern P1 on KIT 1, ten channel meters from BD to CY and a red band reading 1 BD LIVE PLAY"
+  credit: fc79
+  source_url: https://github.com/fc79/drumtonic
+  first_party: true
+versions:
+- version: '0.1'
+  date: 2026-11-13
+  url: https://github.com/fc79/drumtonic/releases/tag/v0.1
+  notes: First release; the package reports itself as FM-1_923 and a single-file browser installer is attached.

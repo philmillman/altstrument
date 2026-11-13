@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+name: RudimentSeq
+summary: >-
+  Felucca fork that adds a drum-rudiment layer: each track can play one of 174 rudiments instead of its step pattern, and
+  the sequencer, rudiments and arpeggiator send USB MIDI with optional clock.
+description: >-
+  RUDI can be switched on for any of the four tracks, which then plays the next hit of the chosen rudiment at each step
+  instead of reading its 16 steps. Right and left hands use two separate notes from the drum kit, another engine or
+  external gear, each with its own probability, and accents, ghost notes and grace notes follow the sticking. A SMART
+  mode cycles scenes that raise and lower density, and a feathering control softens the ghost notes. The 174 rudiments
+  are the 40 PAS standard rudiments plus the extended set of the author's RudimentSeq web app. Rudiment settings save
+  with the project. Unlike Felucca, it also sends the sequencer and arpeggiator output over USB MIDI on each track's
+  channel and, from the CLOCK page, MIDI clock, start and stop. Everything else in Felucca is kept. The README says r0.1 is
+  built on Felucca v1.9.0 and was tested on one FM-1 with the UC25HQ80 flash chip; a factory demo project and the
+  rudiment list in the web editor are not there yet.
+status: active
+authors:
+- name: RudimentSeq
+  url: https://github.com/RudimentSeq
+source: https://github.com/RudimentSeq/RudimentSeq-FM1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Stated in LICENSING.md. Felucca's own licence and its bundled parts are kept: engines are MIT, the BSP is MPL-2.0, the
+  Hügelton Sample Pack is CC0 and ported DSP keeps its own licences. The rudiment changes are licensed GPL-3.0-only by
+  the project.
+homepage: https://rudimentseq.com
+based_on: m-vave-fm-1/felucca
+distribution: browser-installer
+requires_stock: V15
+install_notes: >-
+  Web installer at rudimentseq.github.io/RudimentSeq-FM1 (Chrome or Edge, Web MIDI), or tools/fm1_install.py with the
+  package from the release. The package keeps the name of Felucca's, and the device reports FM-1_900 to installers. The
+  installer's "Return to official V15" option or M-VAVE's own updater goes back to stock. The stock OTA loader is kept, as
+  in Felucca.
+brick_risk: false
+tags: [sequencer, drums, groovebox, arpeggiator, midi, usb-midi, fork]
+versions:
+- version: r0.1
+  date: 2026-11-12
+  url: https://github.com/RudimentSeq/RudimentSeq-FM1/releases/tag/r0.1
+  notes: First release; adds the rudiment layer on every track, USB MIDI out from the sequencer, rudiments and arpeggiator, MIDI clock send, and a RudimentSeq splash and about page.

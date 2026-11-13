@@ -1,0 +1,45 @@
+device: valeton-gp-5
+kind: firmware
+name: Dreamcatcher
+summary: Ambient texture firmware for the Valeton GP-5 with an always-recording micro-looper and a chance-driven glitch delay, built on OpenGP5.
+description: >-
+  Dreamcatcher records the input continuously, and one foot switch press turns the last moments into a loop that plays back
+  like tape or is stretched into slowly moving slices. A wet channel lets pieces of sound into a delay at random once per LFO
+  cycle, smears them into reverb and can jump their clock in octaves, reverse or crush them, with tremolo or vibrato and a
+  low-pass or high-pass filter. A CLOCK setting sets the sample rate of both halves, from 1.4 kHz to 44 kHz. There are 19
+  settings shown on a purple screen and eight preset slots. The README names two pedals as inspiration and says the project
+  contains none of their code. It runs on the OpenGP5 platform, is alpha and has been tested on one pedal.
+status: active
+authors:
+  - name: the Dreamcatcher contributors
+    url: https://github.com/OpenGP5
+source: https://github.com/OpenGP5/Dreamcatcher
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT License. The font tables in nds32/font_aa.h are made from Rubik and fall under the SIL Open
+  Font License 1.1, which the repository includes.
+homepage: https://opengp5.github.io/OpenGP5/flasher/
+distribution: browser-installer
+install_notes: >-
+  Choose Dreamcatcher in the OpenGP5 browser flasher (Chrome, Edge or Opera, pedal connected over USB), or flash the release
+  .bin with OpenGP5's gp5tool.py using --sections all. Read OpenGP5's getting-started guide first, especially the recovery
+  section: the factory loader cannot be overwritten over USB, and in some cases recovery needs an FT232H adapter wired to
+  the pedal's debug pads.
+brick_risk: true
+tags: [fx, delay, looper, granular, ambient, glitch, usb-midi]
+based_on: valeton-gp-5/opengp5
+image:
+  url: https://raw.githubusercontent.com/OpenGP5/Dreamcatcher/main/docs/pedal.jpg
+  alt: A Valeton GP-5 running Dreamcatcher, with CLOCK 8.3K on the screen and the foot switch glowing violet
+  credit: the Dreamcatcher contributors
+  source_url: https://github.com/OpenGP5/Dreamcatcher#readme
+  first_party: true
+versions:
+  - version: 1.0.1
+    date: 2026-11-12
+    url: https://github.com/OpenGP5/Dreamcatcher/releases/tag/v1.0.1
+    notes: Same firmware as 1.0 on OpenGP5 0.2.1-alpha, which fixes the swapped red and blue on the screen.
+  - version: 1.0.0
+    date: 2026-11-12
+    url: https://github.com/OpenGP5/Dreamcatcher/releases/tag/v1.0.0

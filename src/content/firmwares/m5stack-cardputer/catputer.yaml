@@ -9,19 +9,20 @@ description: >-
   share the same composer, a pure synthesis one and a hybrid one that adds a small bank of one-shots, and sessions can
   be saved as favorites. The screen shows a cat and a room, with a strip of part activity, and a sleep timer and
   automatic dimming are included. A desktop SDL preview and offline exports share the music engine. The README calls
-  the current build, 0.1.12, a development candidate; the notes record one test of a full-image install on a Cardputer ADV
+  the current build, 0.1.13-dev, a development candidate; the notes record one test of a full-image install on a Cardputer ADV
   and one listening report, and say more physical verification of audio, display and install is still needed. The
-  sound has a plate reverb and slow tape-style drift. A project licence has not been chosen yet.
+  sound has a plate reverb and slow tape-style drift. From 0.1.13-dev the same image also starts on the original
+  Cardputer, which the README labels untested because it was built from pin tables without a device.
 status: active
 authors:
   - name: Anton Lenev
     url: https://github.com/m0rg0t
 source: https://github.com/m0rg0t/catputer
 source_status: open
-license: unspecified
+license: MIT
 license_notes: >-
-  The repository has no LICENSE file, and the README and docs/THIRD_PARTY.md say a project licence has not been
-  selected yet. Dependencies keep their own licences, such as MIT for the M5Stack libraries.
+  LICENSE is the MIT text, and the README says code and documentation are MIT. Artwork and sounds are CC BY 4.0
+  (LICENSE-ASSETS.md). Dependencies keep their own licences, such as MIT for the M5Stack libraries.
 homepage: https://m0rg0t.github.io/catputer/
 distribution: download
 requires_stock: Cardputer ADV
@@ -40,6 +41,10 @@ image:
   source_url: https://github.com/m0rg0t/catputer
   first_party: true
 versions:
+  - version: main @ a264c4e
+    date: 2026-11-13
+    url: https://github.com/m0rg0t/catputer/commit/a264c4e8629001a2161de41a8ff79025c9a11f53
+    notes: No tagged releases; this is the latest commit. Version 0.1.13-dev lets the original Cardputer start the app, labeled untested, and records a check on the ADV.
   - version: main @ ca008c7
     date: 2026-11-11
     url: https://github.com/m0rg0t/catputer/commit/ca008c746b728c6cb6c0d821d9dff9543816343a

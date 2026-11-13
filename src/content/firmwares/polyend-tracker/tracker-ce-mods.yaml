@@ -15,7 +15,7 @@ description: >-
   with a count, each MIDI channel can play and record its own track with CCs editing that track's instrument, and the sample
   editor draws bar and beat lines at the project tempo. The manual also lists fixes for track-length handling in
   Performance mode. Projects open on the official Community Edition, which ignores the extra data and plays every track at
-  the length of track 1. The README names the file versions 1.0.0 and says nothing about hardware testing.
+  the length of track 1. The README names the file versions 1.0.0, the latest commit is titled 1.0.1, and nothing is said about hardware testing.
 status: active
 authors:
   - name: simoianni
@@ -38,6 +38,10 @@ install_notes: >-
 brick_risk: false
 tags: [fork, sequencer, tracker, midi, sampler, ui, performance]
 versions:
+  - version: main @ d97a130
+    date: 2026-11-13
+    url: https://github.com/simoianni/tracker-ce-mods/commit/d97a1307cd090a069bfdc8e3bf8dc0c53c00d6f6
+    notes: No tagged releases; this is the latest commit, titled Tracker CE Mods 1.0.1. Fixes an empty MIDI track using its channel's instrument with per-track MIDI in, full 255-slot songs, pattern end and sync with polymeter, and hanging notes when MIDI in settings change.
   - version: main @ be98215
     date: 2026-11-03
     url: https://github.com/simoianni/tracker-ce-mods/commit/be98215e37bf24fbe278ecd7e05533c67e1bdac0

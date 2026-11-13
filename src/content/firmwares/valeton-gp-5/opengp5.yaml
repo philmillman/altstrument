@@ -1,0 +1,44 @@
+device: valeton-gp-5
+kind: firmware
+name: OpenGP5
+summary: Open firmware platform for the Valeton GP-5, written for both of its processors, with example effects in C, a USB flasher and a browser flasher.
+description: >-
+  OpenGP5 replaces the GP-5's firmware with code written from scratch for its control processor and its DSP. A firmware
+  author writes the audio function and the controls and screen handlers in C, and the platform supplies start-up, drivers,
+  USB-MIDI, the colour screen, the foot switch, knobs, LEDs and the link between the two processors. The releases ship a
+  tremolo, a granular delay with micro-looper and a pass-through build, and the repository has a command line flasher, a
+  browser flasher and tools that run an effect on a WAV file or boot the DSP image in an emulator. The author states that it
+  contains no Valeton code or data and no chip vendor SDK code. It is alpha and has been tested on one pedal.
+status: active
+authors:
+  - name: the OpenGP5 contributors
+    url: https://github.com/OpenGP5
+source: https://github.com/OpenGP5/OpenGP5
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT License with copyright held by the OpenGP5 contributors. The README states that "Valeton"
+  and "GP-5" are Valeton's trademarks.
+homepage: https://opengp5.github.io/OpenGP5/flasher/
+distribution: browser-installer
+install_notes: >-
+  Open the browser flasher in Chrome, Edge or Opera, connect the pedal over USB and choose a firmware or upload a .bin.
+  Alternatively run python3 tools/gp5tool.py flash <file>.bin --sections all. To recover, unplug the pedal, hold the foot
+  switch and the PARA knob while plugging it in, and flash again; the README suggests Valeton's own firmware flashed with
+  gp5tool.py as the way back, as Valeton Suite is not reliable for that. The README warns that in some cases, such as a pedal whose DSP updater stalls, USB recovery is not enough and an FT232H adapter wired to the internal debug pads is needed.
+brick_risk: true
+tags: [platform, sdk, fx, usb-midi, web, flasher]
+image:
+  url: https://raw.githubusercontent.com/OpenGP5/OpenGP5/main/docs/assets/opengp5-banner.webp
+  alt: OpenGP5 banner for the Valeton GP-5
+  credit: the OpenGP5 contributors
+  source_url: https://github.com/OpenGP5/OpenGP5#readme
+  first_party: true
+versions:
+  - version: 0.2.1-alpha
+    date: 2026-11-12
+    url: https://github.com/OpenGP5/OpenGP5/releases/tag/v0.2.1-alpha
+    notes: Fixes the screen set-up that swapped red and blue; firmwares need a rebuild on this platform.
+  - version: 0.1.0-alpha
+    date: 2026-11-11
+    url: https://github.com/OpenGP5/OpenGP5/releases/tag/v0.1.0-alpha

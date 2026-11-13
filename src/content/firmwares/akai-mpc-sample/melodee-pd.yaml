@@ -1,0 +1,31 @@
+device: akai-mpc-sample
+also_devices: [akai-mpc-live, akai-force]
+name: Melodee PD
+summary: >-
+  Eight-voice phase distortion synth plug-in taken out of Melodee for the MPC Sample, also built for MPC OS devices through Open MPC.
+description: >-
+  Melodee's former built-in phase distortion engine as a plug-in of its own. Eight voices read a cosine with a bent phase, shaped by a DCW envelope with key follow into saw, square, pulse, double sine, saw-pulse or three resonant windows, with two alternating waves, single or detuned line modes and a DCA envelope. There are 8 factory sounds. It is a VST2 instrument built with the Open MPC toolchain, with its own MPC screen page, two banks of Q-Link
+  pages, factory presets in the PRESET menu and an eight-route mod matrix, and it answers pitch bend, the mod wheel,
+  poly and channel pressure and the sustain pedal. Melodee's sequencer slide and tie steps reach it as CC 84 and CC 68,
+  and it can load a track saved by a Melodee version that still had the engine built in. Builds are published for the
+  MPC Sample under Melodee and for armv7 and aarch64 MPC OS devices; at 1.0.0 the author had tested the aarch64 build
+  in Melodee only, and none on an MPC OS device.
+status: active
+authors:
+  - name: keremimo
+    url: https://github.com/keremimo
+source: https://github.com/keremimo/mpc-vst-melodee-pd
+source_status: open
+license: AGPL-3.0-only
+homepage: https://github.com/keremimo/mpc-vst-melodee-pd
+distribution: download
+install_notes: >-
+  For Melodee on the MPC Sample, unzip the release's -mpc-sample.zip and copy the plug-in folder inside into the
+  Plugins folder at the top of the card. MPC OS devices that load Open MPC plug-ins, which needs root access, take the
+  -mpc-aarch64.zip (Gen 2) or -mpc-armv7.zip (Gen 1). Building needs Docker and a checkout of mpc-vst-plugins.
+brick_risk: false
+tags: [synth-engine, phase-distortion, polyphonic, platform]
+versions:
+  - version: v1.0.0
+    date: 2026-11-12
+    url: https://github.com/keremimo/mpc-vst-melodee-pd/releases/tag/v1.0.0

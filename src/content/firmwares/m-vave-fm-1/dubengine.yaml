@@ -4,12 +4,14 @@ summary: >-
   Dub techno chord sequencer built on DUB-1: pick a key and mode, play scale chords with one finger, record or step-enter
   patterns with per-step locks, and run everything through a filter, tape echo and plate reverb.
 description: >-
-  Turns the FM-1 into a chord sequencer. Only the keys of the chosen root and mode light up, and each plays the triad the
-  scale builds on it in root position or the first or second inversion. A metronome, pattern lengths up to 64 steps and
-  live or step recording are done, and each step can lock its chord, voicing, octave and length. Saving patterns, clock
-  sync to an Elektron Digitakt II, and randomise and evolve functions are planned in the README. DUB-1's generative
-  layers are still in the code, switched off. The repository builds a browser emulator of the same code, which the
-  project site hosts, and the README describes itself as a brief for continuing the work in a codespace.
+  Two chord tracks, A and B, plus a bass and an FM ping, for dub techno, minimal and microhouse. Only the keys of a track's
+  root and mode light up, and each plays the triad the scale builds on it in root position or the first or second
+  inversion. Patterns run up to 64 steps per track with live or step recording and per-step locks (chord, voicing, octave,
+  length, level, cutoff and delay mix). Each chord track has its own synth with two oscillators a voice, a wavefolder, a
+  resonant filter, four envelopes and two LFOs, a tape delay and an EQ, and both share a plate reverb. The README lists eight
+  pattern slots and eight sound slots and a randomise function. The code is built on DUB-1, whose generative layers, panel and
+  project code have been removed. The repository builds a browser emulator of the same code, which the project site hosts
+  together with a web installer, and the README describes itself as a brief for continuing the work in a codespace.
 status: active
 authors:
 - name: marwanfarha
@@ -22,17 +24,18 @@ license_notes: >-
   fonts are SIL OFL 1.1. The repository holds small test .bin project saves for the host simulator and no firmware image.
 homepage: https://marwanfarha.github.io/dubengine/
 based_on: m-vave-fm-1/dub-1
-distribution: source-only
-requires_stock: M-VAVE stock firmware V15 (the README tells you to keep it)
+distribution: browser-installer
+requires_stock: M-VAVE stock firmware V15 or DUB-1 (the README says it works from either and offers a way back to stock)
 install_notes: >-
-  No release exists yet; a pushed version tag builds the .fwsc in GitHub Actions. Build it with ./dev.sh build or
-  build.sh and install it over USB with tools/fm1_install.py. The README lists recovery steps: holding OCT- while
-  switching on enters a USB rescue mode, a unit that shows only the WL82 UBOOT disk can be fixed with M Flasher or
-  MvaveFM1Unbricker, and the Firmware Hub's rescue page covers the rest. The firmware accepts both FM-1 flash chips.
+  Use the installer on the project site in Chrome or Edge with the FM-1 on USB, which takes about two minutes, or build with
+  ./dev.sh build or build.sh and install with tools/fm1_install.py. No GitHub release exists yet. The README lists recovery
+  steps: holding OCT- and OCT+ for 5 seconds enters update mode, two failed starts bring up a safe mode that the installer can
+  still reach, a unit that shows only the WL82 UBOOT disk can be fixed with M Flasher or MvaveFM1Unbricker, and the Firmware
+  Hub's rescue page covers the rest. The firmware accepts both FM-1 flash chips.
 brick_risk: false
 tags: [sequencer, synth-engine, fx, emulator, performance, midi, fork]
 versions:
-- version: main @ 250cbef
+- version: main @ d4e0e8a
   date: 2026-11-12
-  url: https://github.com/marwanfarha/dubengine/commit/250cbef479fc7ec8a7f13686d980a9d1c6d09b3a
-  notes: No tagged releases; this is the latest commit.
+  url: https://github.com/marwanfarha/dubengine/commit/d4e0e8ab8a7d088f8ca38f22914b78eb6f7313d9
+  notes: No tagged releases; this is the latest commit. Since the previous row, the commits add a synth for each chord track, delay and reverb pages, saved patterns and sounds, a web installer with its own identity, a black and orange screen with live pictures, and a lean engine with DUB 1's layers and panel removed. One commit message records a 0.1.1 step page for steps 17 to 32.

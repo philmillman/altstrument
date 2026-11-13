@@ -4,12 +4,13 @@ name: Synth Rescue
 kind: tool
 summary: >-
   Firmware for an M5Stack Cardputer ADV that revives a bricked FM-1 or SMK-37 by itself: it forces the chip into ROM download
-  mode, backs the flash up to an SD card and installs m-bootloader and a minimal open firmware.
+  mode, backs the flash up to an SD card and installs m-bootloader so the unit waits in MIDI mode for a firmware.
 description: >-
   The Cardputer sends the JieLi USB key through its USB-C data pins, answers the ROM's calibration pulses, then acts as a
   USB host and runs M-Flasher's flash loader. It identifies the unit from the flash ID and the SMK-37's calibration record,
-  backs up the whole 1 MiB to /fm1 on the SD card, and installs a clean image for that board: m-bootloader 2.3 and
-  fm1-base's template firmware, which plays the keys and takes any other firmware over USB MIDI afterwards. Sectors up to
+  backs up the whole 1 MiB to /fm1 on the SD card, and installs a clean image for that board: m-bootloader 2.3 and no
+  firmware. From 0.2.0 the unit then waits in m-bootloader's MIDI mode and takes a firmware from that firmware's own installer on a
+  phone or computer; 0.1.0 also installed fm1-base's template firmware. Sectors up to
   0xFEFFF end up as the image says, so earlier presets and settings are erased; 0xFF000 to 0xFFFFF and, on the SMK-37, the
   Bluetooth pairing and calibration sectors at 0xC0000 to 0xC1FFF are never written. A guided mode shows one step per screen and
   an advanced mode shows the log and runs self-tests. The author reports repairs of an FM-1 and an SMK-37 Pro, including an FM-1 that
@@ -38,6 +39,10 @@ install_notes: >-
 brick_risk: true
 tags: [flasher, loader, backup, utility]
 versions:
+- version: v0.2.0
+  date: 2026-11-13
+  url: https://github.com/jvitkauskas/cardputer-synth-rescue/releases/tag/v0.2.0
+  notes: The rescue now installs m-bootloader only, with no firmware, and the synth then waits in MIDI mode for a firmware installed from its own installer.
 - version: v0.1.0
   date: 2026-11-12
   url: https://github.com/jvitkauskas/cardputer-synth-rescue/releases/tag/v0.1.0

@@ -1,0 +1,43 @@
+device: m-vave-fm-1
+name: CANON-4
+summary: >-
+  Canon sequencer for the FM-1: one 16-cell phrase read by four playheads at once, each with its own rate, direction,
+  path and transpose, with its own synth and MIDI out.
+description: >-
+  Sixteen cells, a 4 x 4 field of scale degrees and rests on the white keys, are read by four heads. Each head has its
+  own rate (1/32 to 1/2), direction, one of six paths (rows, columns, snake, diagonals, spiral, random), offset,
+  length, transpose, octave, sound and mute. The heads drift apart and re-sync every N bars or on a key. Cells carry
+  velocity, chance and length, and REC writes cells as the keys are played. It has its own 8-voice synth, eleven drums
+  and an echo, sends MIDI over USB and Bluetooth, can send or follow MIDI clock, and keeps four project slots. The
+  README names Fugue Machine, PolyPhase and Make Noise Rene as the models.
+status: active
+authors:
+- name: David Ryan (davidpryan)
+  url: https://github.com/davidpryan
+source: https://github.com/davidpryan/canon-4
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSE is the MPL-2.0 text, as fm1-base. The base/ copy of fm1-base and felucca-bsp keeps its own files' licences
+  (base/LICENSING.md). The only .fwsc in the repository is the M-Bootloader package used by the web tools (18,068
+  bytes), not a stock M-VAVE image.
+homepage: https://davidpryan.github.io/canon-4/
+distribution: browser-installer
+install_notes: >-
+  Browser installer at davidpryan.github.io/canon-4/install/ in Chrome or Edge (allow MIDI when asked), or build with
+  ./build.sh (Docker and JieLi's toolchain, see fm1-base) and run base/tools/fm1_install.py on the .fwsc. The README
+  says to keep M-VAVE's stock firmware and M-UPGRADE at hand, and the installer page has a section for putting the
+  stock firmware back.
+brick_risk: false
+tags: [sequencer, midi, usb-midi, ble-midi, performance, generative, scales]
+image:
+  url: https://raw.githubusercontent.com/davidpryan/canon-4/main/app/docs/img/screen-field.png
+  alt: "CANON-4 field page on the FM-1: a 4 x 4 grid of note names and rests at the left, and at the right four coloured head labels with their rate, path, transpose and octave"
+  credit: David Ryan
+  source_url: https://github.com/davidpryan/canon-4
+  first_party: true
+versions:
+- version: main @ f3bb6ac
+  date: "2026-11-13"
+  url: https://github.com/davidpryan/canon-4/commit/f3bb6ace5b452e92755c9a1566cb01b097c0dad8
+  notes: No tagged releases; this is the latest commit. The README and the installer package call it 0.1 and say it passes the host simulator's tests but has not been run on a real FM-1.

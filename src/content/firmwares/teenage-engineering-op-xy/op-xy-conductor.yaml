@@ -11,9 +11,9 @@ description: >-
   holds the current phrase. Four pages cover the song, the lanes, the selected lane's role controls and the routing of
   lanes to tracks, and the project saves the lanes, roles, routes and seed. Presets are init, Pop, Night and Jazz.
 
-  The README calls it experimental and says it runs on an OP-XY on OS 1.2.1 with a development build of the SDK. The SDK
-  changes it needs (notes played on other tracks, the machine's own encoders and sixteen display words) were merged
-  into Open-XY's staging branch on 10 November 2026, and the README now targets SDK 1.11. It says Conductor is not in the Open-XY catalog or builder, so it is built from source. The README reports timing measured
+  The README gives the status as v1.0.0 and says it runs on an OP-XY on OS 1.2.1, in a firmware built with the SDK at
+  version 1.11 or later. The SDK changes it needs (notes played on other tracks, the machine's own encoders and sixteen
+  display words) were merged into Open-XY's staging branch on 10 November 2026, and the README builds against that branch. It says Conductor is not in the Open-XY catalog or builder, so it is built from source. The README reports timing measured
   against a recording of the device, with notes starting up to 17 ms late, one display tick. It adds that roles are set by hand per lane, that lanes cover instrument tracks 1 to 8 only and that it has no MIDI
   routing of its own. Found Motive's kit 031 for the OP-XY lists a Conductor by the same author. This repository does not
   mention the kit and the kit publishes no source, so they are probably the same sequencer, which is not confirmed.
@@ -46,6 +46,10 @@ image:
   source_url: https://github.com/mmockett/OP-XY-Conductor#readme
   first_party: true
 versions:
+  - version: v1.0.0
+    date: 2026-11-13
+    url: https://github.com/mmockett/OP-XY-Conductor/tree/v1.0.0
+    notes: Git tag; no GitHub release page. The README now gives the status as v1.0.0 and builds against the SDK's staging branch, which carries the changes Conductor needs.
   - version: main @ 4506e6b
     date: 2026-11-10
     url: https://github.com/mmockett/OP-XY-Conductor/commit/4506e6bca6d43b431d76d2ce875ef8ab5b61d8f8

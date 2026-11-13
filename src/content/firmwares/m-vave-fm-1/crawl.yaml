@@ -1,0 +1,47 @@
+device: m-vave-fm-1
+name: Crawl
+summary: >-
+  Dark generative ambient firmware forked from ZEN-1: four animated scenes (crypt, forest ruins, frozen lake, night sky)
+  whose on-screen events sound the notes, with a browser emulator. Not yet flashed to an FM-1.
+description: >-
+  The README says Crawl has not been flashed to an FM-1, has no release and no installer, and
+  that builds from the tree should not be installed on a unit the owner cares about. It runs in a host simulator and in a
+  browser emulator, and builds from source.
+  Each scene has four moods and a Long Night mode that moves through all of them over about two hours. Notes come from
+  events in the picture, such as candle flames, falling leaves, ice cracks and meteors, in dark five-note scales over a
+  breathing drone. Sound sources include a six-operator FM engine, a formant voice with choirs, physical models, a sampled
+  ice groan and CC0 field recordings, with tape, delay, granular and plate reverb effects. The scenes, conductor and
+  renderer come from ZEN-1 by aceyprime. The voice, physical-model, tape, delay and grain code is ported from GR!MM, and the
+  platform layer comes from Felucca by way of X0X and FoMni. The simulator still carries ZEN-1's three scenes, which the
+  FM-1 image leaves out.
+status: active
+authors:
+- name: keuller-clone
+  url: https://github.com/keuller-clone
+source: https://github.com/keuller-clone/crawl
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Stated in LICENSING.md, which lists each file's origin. The msfa FM core is Apache-2.0 and DaisySP and Rings code is MIT;
+  the VocalSet-derived choir wavetables are CC-BY-4.0, the recordings are CC0, the moon map is NASA public domain and the
+  fonts are SIL OFL 1.1.
+homepage: https://keuller-clone.github.io/crawl/emu/
+based_on: m-vave-fm-1/zen-1
+distribution: source-only
+install_notes: >-
+  No release or installer exists yet. The README asks users not to install a build from the tree until a release says the
+  install and the restore of M-VAVE's firmware have been tested. Builds use the Docker or shell scripts in the repository
+  and need JieLi's toolchain and three AC79 SDK files.
+brick_risk: false
+tags: [generative, ambient, synth-engine, fx, reverb, delay, granular, emulator, fork, web]
+image:
+  url: https://raw.githubusercontent.com/keuller-clone/crawl/main/docs/img/crawl/crypt-vigil.png
+  alt: "Pixel-art crypt scene, Vigil mood: five lit candles on a stone tomb in front of a dark pointed archway"
+  credit: keuller-clone
+  source_url: https://github.com/keuller-clone/crawl
+  first_party: true
+versions:
+- version: main @ 2e28e6e
+  date: 2026-11-12
+  url: https://github.com/keuller-clone/crawl/commit/2e28e6e0a84bc66d795ed13752001284b6d63be3
+  notes: No tagged releases; this is the latest commit.

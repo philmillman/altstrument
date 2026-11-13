@@ -6,7 +6,7 @@ description: >-
   also hosts independently written drumlogue units under platform/drumlogue.
   Synths are EffeMD (percussion FM based on the md-drum-synth Machinedrum-style
   models), EffeESP32 (a port of Copych's ESP32-S3 FM drum synth engine with 59
-  patches), Brachetti (physical-modelling percussion, released since 3.6 as eight units for kicks, toms, snares, struck bars, small metal, timpani and taiko, cymbals and noise voices, split from one 40-preset unit)
+  patches), Brachetti (physical-modelling percussion, released since 3.6 as separate units for kicks, toms, snares, struck bars, small metal, timpani and taiko, cymbals and noise voices, split from one 40-preset unit, with a ninth world-percussion unit added in 3.8)
   and ScrutaAstri (a drone synth based on the Moffenzeef Stargazer). Reverbs
   are LuceAlNeon (an FDN reverb feeding five parallel effect paths) and
   NeonLabirinto (an 8-channel FDN reverb); the delay is Tribale, which
@@ -33,7 +33,7 @@ install_notes: >-
   on while holding the record button so it appears as a drive, and copy the
   files into Units/ReverbFXs (LuceAlNeon, NeonLabirinto), Units/DelayFXs
   (Tribale), Units/MasterFXs (OmniPress, PortaCassette) or Units/Synths
-  (EffeMD, EffeESP32, the eight brachetti_* units, ScrutaAstri), then restart.
+  (EffeMD, EffeESP32, the nine brachetti_* units, ScrutaAstri), then restart.
 tags: [synth, drum-synth, fm, physical-modelling, delfx, revfx, masterfx, reverb, compressor, drumlogue, open-source]
 video:
   url: https://www.youtube.com/watch?v=KKISr5N7nGA
@@ -41,6 +41,10 @@ video:
   credit: Federico Gennari
   first_party: true
 versions:
+  - version: "3.8"
+    date: 2026-11-12
+    url: https://github.com/fedemone/logue-sdk/releases/tag/3.8
+    notes: Adds a ninth Brachetti unit, brachetti_world, and an organic percussion preset set voiced after the Pelle e Legno samples, using synthesis only. A new Punch parameter shapes the transient on all nine units and lowers the volume.
   - version: "3.6"
     date: 2026-11-11
     url: https://github.com/fedemone/logue-sdk/releases/tag/3.6

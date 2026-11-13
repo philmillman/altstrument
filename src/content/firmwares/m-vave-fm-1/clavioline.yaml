@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+name: Clavioline
+summary: >-
+  Recreation of the 1947 Clavioline valve keyboard: a monophonic voice shaped by a row of tone tablets, a knee-lever swell,
+  three-speed vibrato and Concert sub-octaves, modelled from the original circuit diagrams.
+description: >-
+  The author traced the Clavioline's tone network from published diagrams into a circuit model, solved it on a computer
+  for all 8,192 tablet combinations, and stores the result as compact filters the FM-1 plays back, so the tablets still
+  interact as in the circuit. The instrument plays one note at a time, with the highest held key sounding. The GLO button
+  opens STOPS mode, where keys switch the tablets, vibrato speed and depth and the sub-octaves. The PRESETS knob acts as
+  the knee lever, and an octave coupler, tuning, plucked decay and portamento are available as options. There are 40
+  voicings taken from period tables, plus 4 user slots. Some circuit values were not found in the sources and are
+  estimates compared against a recording. The platform is Dinghy.
+status: active
+authors:
+- name: MammothCheese
+  url: https://github.com/MammothCheese
+source: https://github.com/MammothCheese/clavioline
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Stated in LICENSING.md. Platform code from Felucca, SLOOP, OberVave and Dinghy keeps its authors' copyright lines; the
+  Terminus and Orbitron fonts are SIL OFL 1.1.
+based_on: m-vave-fm-1/dinghy
+distribution: download
+install_notes: >-
+  Install clavioline.fwsc with the FM-1 Firmware Hub. The firmware hub can also put back the official or another
+  firmware. Holding OCT- while switching on starts the USB rescue, which has no sound and offers only the updater. The
+  README says installing is at the user's own risk.
+brick_risk: false
+tags: [synth-engine, emulator, ui, research]
+image:
+  url: https://raw.githubusercontent.com/MammothCheese/clavioline/main/docs/screen.png
+  alt: "Clavioline screen with two rows of tone tablets, some lit orange, the preset CLAVIOLINE TONE, a KNEE readout at 75% around the note C4, the coupler on MED and the key range F3-G5"
+  credit: MammothCheese
+  source_url: https://github.com/MammothCheese/clavioline
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-13
+  url: https://github.com/MammothCheese/clavioline/releases/tag/v1.0
+  notes: First release.

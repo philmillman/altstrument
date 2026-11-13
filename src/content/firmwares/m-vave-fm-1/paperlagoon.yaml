@@ -1,0 +1,48 @@
+device: m-vave-fm-1
+name: PaperLagoon
+summary: >-
+  Generative environmental-music firmware: FM voices through AMB-1's tape echo and plate reverb, played in seven worlds
+  steered by a hidden state that key presses offer notes to, with a browser emulator.
+description: >-
+  The firmware plays by itself. Seven worlds each have their own way of making music, from a motif that is written and then
+  erased note by note to a drone with occasional melody and a staircase walk with a shadow note. Ten kits each hold three
+  voices (lead, answer and low). The keys play no notes by default; pressing one offers something to a hidden state that
+  changes scale, register, rests and motifs over seconds and fades over minutes, while three slow cycles keep moving that
+  state. Further pages cover broken chords and a muffled pulse, a memory that repeats and varies phrases, tape wear and
+  dropouts, a sleep timer and global settings. The author's code sits on fm1-base and felucca-bsp, and the echo, plate
+  and voice parts are taken from AMB-1 with changes. The README says it reads nothing another firmware saved, so back up
+  first. The site offers an emulator and installer, and the manual is in English and Japanese.
+status: active
+authors:
+- name: hacha
+  url: https://github.com/hacha
+source: https://github.com/hacha/paperlagoon
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Stated in LICENSING.md. The files taken from AMB-1 and fm1-base stay MPL-2.0, which the file notes allow combining with
+  GPL code; the Barlow Semi Condensed and Terminus fonts are SIL OFL 1.1.
+homepage: https://hacha.github.io/paperlagoon/
+based_on: m-vave-fm-1/amb-1
+distribution: browser-installer
+requires_stock: V15
+install_notes: >-
+  Install from the project site in a WebMIDI browser, or with install.sh (needs mido and python-rtmidi) from a clone with
+  submodules. Releases attach .fwsc and .rfm1 packages and a firmware.json, and are attested through the Firmware Hub's
+  build workflow. Projects, presets and samples from other firmwares are not read and may be gone when switching back.
+brick_risk: false
+tags: [generative, ambient, synth-engine, fx, delay, reverb, arpeggiator, emulator, web]
+image:
+  url: https://raw.githubusercontent.com/hacha/paperlagoon/main/app/site/img/title.png
+  alt: "PaperLagoon title graphic: white title text on black with the line Generative environmental music for the FM-1, a blue circle over a horizontal waterline with concentric ripples"
+  credit: hacha
+  source_url: https://github.com/hacha/paperlagoon
+  first_party: true
+versions:
+- version: 1.0.1
+  date: 2026-11-13
+  url: https://github.com/hacha/paperlagoon/releases/tag/v1.0.1
+- version: '1.0'
+  date: 2026-11-13
+  url: https://github.com/hacha/paperlagoon/releases/tag/v1.0
+  notes: First release.

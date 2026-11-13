@@ -1,0 +1,36 @@
+device: akai-mpc-sample
+name: sample-base
+kind: tool
+summary: >-
+  Open JUCE application base for the MPC Sample that drives the screen, pads, lights, audio and MIDI itself and
+  hands back to the stock app on exit; ships with demo pages and is the runtime under Melodee.
+description: >-
+  A standalone app framework for MPC Sample firmware 1.3.0.12 that runs in place of the stock ac50 service without
+  injecting into it. An app implements one interface and the runtime handles the hardware, threads, remote control
+  and the return to the stock app, which also follows a crash or a startup failure. The base covers the display and
+  backlight, pads with velocity and pressure, buttons, bank and pad lights, audio in and out, headphone and line-out
+  detection, USB-C audio to a computer, MIDI with hotplug, sync output, power and thermal readings and storage. The
+  release build is a set of demos: a 16-voice pad synth, an input recorder, a light show, a pad pressure view, an
+  eight-track drum step sequencer and a system dashboard. Melodee uses it as a git submodule.
+status: active
+authors:
+  - name: keremimo
+    url: https://github.com/keremimo
+source: https://github.com/keremimo/sample-base
+source_status: open
+license: AGPL-3.0-only
+license_notes: AGPL-3.0-only (LICENSE). JUCE 9.0.5 is fetched at build time and used under the AGPLv3.
+homepage: https://github.com/keremimo/sample-base
+distribution: download
+requires_stock: "1.3.0.12"
+install_notes: >-
+  The release zip holds an autorun folder for the top of the microSD card; the stock app starts, runs it, and the
+  demos take over a few seconds later. Push the wheel to return to stock until the next boot, or delete the folder
+  to uninstall. Developers with root SSH over USB can start a build from RAM with device.py instead; nothing in the
+  firmware, the stock libraries or the card's startup files changes that way. Building needs Docker and Python 3.
+brick_risk: false
+tags: [sdk, platform, synth-engine, sequencer]
+versions:
+  - version: v0.1.0
+    date: 2026-11-11
+    url: https://github.com/keremimo/sample-base/releases/tag/v0.1.0

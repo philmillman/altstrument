@@ -1,0 +1,47 @@
+device: m-vave-fm-1
+name: GLOAM
+summary: >-
+  Witch house and melodic dubstep groovebox for the FM-1 with drum, bass, chord and vocal-slice lanes, a section
+  arranger and a SCREW control that slows tempo and pitch together.
+description: >-
+  Drum, bass, chord and choir lanes each hold 8 patterns of up to 64 steps. Drums have 8 sounds with nudge, roll and
+  drift, bass has 808, Reese and wobble modes, chords voice-lead, and the CHOIR sings slices of a vocal bank at
+  independent pitch and formant. AIR adds rain, vinyl crackle, hiss, wind and mains hum made from noise. The kick
+  ducks the other lanes and the reverb can freeze. The arranger holds up to 32 sections with bars, repeats, follow
+  actions, transitions (drum fill, riser, reverse swell, dropout, tape stop, impact, filter sweep) and eight ramped
+  macros, and forms such as DROP and WITCH rewrite the song. The factory vocal bank is made by the project's own
+  formant synthesiser, with no recordings of people, and a script packs up to 16 of your own WAV files instead. It
+  sends MIDI and can send or follow MIDI clock.
+status: active
+authors:
+- name: David Ryan (davidpryan)
+  url: https://github.com/davidpryan
+source: https://github.com/davidpryan/gloam
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSE is the MPL-2.0 text, as fm1-base. The base/ copy of fm1-base and felucca-bsp keeps its own files' licences
+  (base/LICENSING.md). The only .fwsc in the repository is the M-Bootloader package used by the web tools (18,068
+  bytes), not a stock M-VAVE image. The vocal bank (app/bank/bank.bin and the gloam-0.1-res.bin resource) is generated
+  by the repository's own tools/make_bank.py.
+homepage: https://davidpryan.github.io/gloam/
+distribution: browser-installer
+install_notes: >-
+  Browser installer at davidpryan.github.io/gloam/install/ in Chrome or Edge (allow MIDI when asked), or build with
+  ./build.sh (Docker and JieLi's toolchain, see fm1-base) and run base/tools/fm1_install.py on the .fwsc. The README
+  says to keep M-VAVE's stock firmware and M-UPGRADE at hand, and the installer page has a section for putting the
+  stock firmware back. The installer also writes the vocal bank, a resource area after the firmware (gloam-0.1-res.bin
+  beside the package).
+brick_risk: false
+tags: [sequencer, midi, usb-midi, ble-midi, performance, groovebox, arranger, sampler]
+image:
+  url: https://raw.githubusercontent.com/davidpryan/gloam/main/app/docs/img/screen-drums.png
+  alt: "GLOAM drums page on the FM-1: eight lane rows from kick to perc with orange step blocks on the kick, snare, clap and hat rows, and values for pattern 2, screw 0% and unsnap 0% below"
+  credit: David Ryan
+  source_url: https://github.com/davidpryan/gloam
+  first_party: true
+versions:
+- version: main @ 303d25c
+  date: "2026-11-13"
+  url: https://github.com/davidpryan/gloam/commit/303d25c670f77a191a2902071abbc1440a28e393
+  notes: No tagged releases; this is the latest commit. The README and the installer package call it 0.1 and say it passes the host simulator's tests but has not been run on a real FM-1.

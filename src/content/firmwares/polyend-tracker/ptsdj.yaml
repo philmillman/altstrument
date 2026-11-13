@@ -1,0 +1,47 @@
+device: polyend-tracker
+name: PTSDJ
+summary: LSDJ-style Game Boy music tracker firmware for the original Polyend Tracker, with two linked Game Boy sound engines, drum kits, WAV export and export of songs and ROMs for a real Game Boy.
+description: >-
+  PTSDJ runs two emulated Game Boy sound engines side by side, eight tracks in all, and follows the page structure and
+  commands of LSDJ: Song, Chain, Phrase, Instrument, Table, Groove, Synth, Wave and Project pages, with the Tracker's pads
+  playing notes. It ships 272 instrument presets and a drum and bass demo pair with two drum kits, and kits can be made from
+  WAV files or recordings. Master volume and a limiter page shape the output. Songs and a ROM with the drum kits inside can
+  be exported for a real Game Boy, a flash cartridge or an emulator, and audio exports as WAV. The author states that it
+  contains no LSDJ code, no Polyend firmware code and none of the proprietary Polyend libraries. Drum kits, the Synth page
+  and ROM export need the user's own LSDJ ROM saved as GB/LSDJ.GB, which is not included. It is built on the MIT-licensed
+  OpenTracker hardware layer and SIDTracker code. The README calls it experimental and says it was tested on one Tracker
+  of hardware version 2.
+status: active
+authors:
+  - name: hostingghosts
+    url: https://github.com/hostingghosts
+source: https://github.com/hostingghosts/ptsdj
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT License with copyright held by hostingghosts. NOTICE.md lists the MIT-licensed OpenTracker
+  and SIDTracker code and the PJRC Teensy core, FatFs and font files that keep their own licenses; GitHub reports the
+  repository license as undetermined because of these several files.
+distribution: download
+install_notes: >-
+  Format the SD card as FAT32, put your own LSDJ ROM at GB/LSDJ.GB, and copy the release .ptf and ot_restore.txt into the
+  Firmware folder, then power the Tracker off and on. The image name must be exactly 24 characters, start with PolyendTrac
+  and end in .ptf. To return to stock, put Polyend's stock .ptf in the Firmware folder and name it in ot_restore.txt. Back up
+  the card first; the README says the ways back are not guaranteed in every situation.
+brick_risk: false
+tags: [tracker, chiptune, gameboy, lsdj, sequencer, synth-engine, drums, export]
+based_on: polyend-tracker/sidtracker
+image:
+  url: https://raw.githubusercontent.com/hostingghosts/ptsdj/main/docs/images/song-page.png
+  alt: PTSDJ Song page in a simulated Game Boy bezel, with chain numbers under PU1, PU2, WAV and NOI columns on a green screen
+  credit: hostingghosts
+  source_url: https://github.com/hostingghosts/ptsdj#readme
+  first_party: true
+versions:
+  - version: 1.0.3
+    date: 2026-11-12
+    url: https://github.com/hostingghosts/ptsdj/releases/tag/v1.0.3
+    notes: Adds master volume with a meter, an output limiter and the Master Mix page.
+  - version: 1.0.0
+    date: 2026-11-11
+    url: https://github.com/hostingghosts/ptsdj/releases/tag/v1.0.0

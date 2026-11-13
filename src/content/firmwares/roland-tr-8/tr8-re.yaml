@@ -1,12 +1,15 @@
 device: roland-tr-8
 name: tr8-re
-summary: Reverse engineering notes and a Python patcher for Roland TR-8 system program 1.61; the first patch adds motion recording of knob and fader moves, played back with the pattern.
+summary: Reverse engineering notes, a Python patcher and a browser patcher for Roland TR-8 system program 1.61, with patches for motion recording of knob and fader moves and for a separate pattern length per instrument.
 description: >-
   The patcher reads Roland's own TR8_UPD.BIN for version 1.61, refuses any other file, and writes a modified update that the
   TR-8's updater accepts, with the size and byte sums recomputed. The motion patch records a knob or fader move at the current
   step while TR-REC is held with the sequencer running, plays it back on later passes, and erases a control's motion
   while CLEAR is held. All 49 controls can record, for 16 steps and two variations each. The motion is kept in RAM in one
-  buffer shared by all patterns and is lost at power-off. The author reports it working on a real TR-8. The repository also
+  buffer shared by all patterns and is lost at power-off. A second patch gives each instrument its own pattern length for
+  polyrhythms, stored with the pattern, and a combined build applies both; the author reports the motion patch and the
+  combined build working on a real TR-8. A web page runs the same patcher in the browser on Roland's file, with output
+  that the repository's tests check against the Python tool byte for byte. The repository also
   documents the update file format, the boot loader and updater, the sequencer and control handling, and a developer
   guide for writing further patches, with emulation tests that need Ghidra and Unicorn. It holds no Roland code, and its
   .gitignore excludes the firmware and analysis folders.
@@ -20,10 +23,11 @@ license: MIT
 license_notes: >-
   The LICENSE file covers the code and documents in the repository only. Roland's firmware is not included and is not
   licensed by it.
+homepage: https://yo1frenchtoast.github.io/tr8-re/
 distribution: patch-your-own
 requires_stock: System program 1.61 (tr8_sys_v161.zip from Roland's support page; the patcher accepts only this file)
 install_notes: >-
-  Run python3 -I tools/tr8patch.py TR8_UPD.BIN TR8_UPD_motion.BIN on the unzipped Roland file, back up patterns and kits over
+  Use the web patcher at yo1frenchtoast.github.io/tr8-re (tick one patch or both and drop in Roland's file), or run python3 -I tools/tr8patch.py TR8_UPD.BIN TR8_UPD_motion.BIN on the unzipped Roland file, back up patterns and kits over
   USB, then flash it by Roland's procedure: hold step button 1 at power-on, copy the file as TR8_UPD.BIN to the TR-8 drive and
   press step button 2 after ejecting. The update never writes the boot loader or the updater, and holding step button 1 at
   power-on always reaches the updater, so reinstalling the original file recovers a bad build. Do not cut the power during the
@@ -31,6 +35,10 @@ install_notes: >-
 brick_risk: false
 tags: [patch, sequencer, motion-recording, reverse-engineering, drums]
 versions:
+  - version: main @ 4885060
+    date: 2026-11-12
+    url: https://github.com/yo1frenchtoast/tr8-re/commit/48850602db33e5c7b9c276ac4ca495c98497041b
+    notes: No tagged releases; this is the latest commit. Since the previous entry it adds a second patch for per-instrument pattern length, set from the panel and saved with each pattern, a combined motion and pattern-length build, and a web flasher on GitHub Pages; the commit messages report the length patch working on the unit.
   - version: main @ 4d5d684
     date: 2026-11-11
     url: https://github.com/yo1frenchtoast/tr8-re/commit/4d5d6847ac178d625b08ee2c73507468b4a34f8c

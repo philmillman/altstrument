@@ -1,0 +1,32 @@
+device: m-vave-fm-1
+name: FM-1 Lite
+kind: tool
+summary: >-
+  Installable web app that plays FM-1 community firmwares on a phone by running each one's own browser build on a light touch panel, without emulating the chip.
+description: >-
+  Fetches each firmware's WebAssembly build from its author's GitHub Pages site and runs it behind a panel of knobs and keys, so it needs
+  little CPU. A firmware is picked by name, with a marker for ones that are heavy on phones. Knobs turn by dragging, keys can be slid across,
+  and the settings cover audio buffer size, vibration, keep-screen-on, USB MIDI input and full screen. Saves stay on the phone in IndexedDB
+  and firmwares played once work offline. catalog.json lists 29 firmwares found by checking the FM-1 Firmware Hub for repositories with a browser
+  build and testing each one headless, and a firmware can also be added by the URL of any Felucca- or X0X-style browser build's .wasm. It installs
+  from Chrome's menu as an app. The worklet and panel follow Felucca's and X0X's browser emulators.
+status: active
+authors:
+- name: Armstrod
+  url: https://github.com/Armstrod
+source: https://github.com/Armstrod/fm1-lite
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is GPL-3.0 and the README says the app is GPL-3.0. Firmwares belong to their authors under their own licences and are not in the repository.
+homepage: https://armstrod.github.io/fm1-lite/
+distribution: browser-installer
+install_notes: >-
+  Open the page in Chrome and use the menu to install it as an app. Nothing is written to an FM-1.
+brick_risk: false
+tags: [emulator, web, performance]
+versions:
+- version: main @ ed85c59
+  date: 2026-11-13
+  url: https://github.com/Armstrod/fm1-lite/commit/ed85c590f1a1a4429e3e78431e5c6679c0eb91da
+  notes: No tagged releases; this is the latest commit.

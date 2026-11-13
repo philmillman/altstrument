@@ -1,0 +1,45 @@
+device: m-vave-smk-37
+name: DnBOX
+summary: >-
+  Groovebox firmware for the SMK-37 Elite and Pro with a 909, an 808, two 303s with line generators and a breakbeat
+  player, built to be played with Loopy Pro and as a stand-alone instrument. Formerly X0X37.
+description: >-
+  Runs the five parts at once, each with its own pattern length (up to 64 steps) and rate, with chained patterns,
+  recorded knob moves and a shared stereo reverb, tape delay and master compressor. Over USB the keyboard acts as a MIDI
+  device and an audio interface. The breakbeat player cuts a loop into eight slices; the firmware ships only two loops
+  played by its own 909, and the project's sample importer loads your own breaks into the three sample slots, which are
+  not covered by the project's licence. Clip mode can act as an Akai APC40 mkII for Loopy Pro (experimental). A matching
+  Bluetooth MIDI controller image can only be built by the user, because JieLi's Bluetooth files cannot be shipped.
+  It descends from Felucca, then X0X, then genkigenki's SMK-37 port, and keeps Felucca's hardware layer, update loader and
+  web installer. FM-1 builds exist in source, but the public packages are for the SMK-37 only. The README calls it beta
+  software and says 0.0.25.1 has been software-checked and tested by the owner on an Elite, with no full hardware
+  sign-off and the Pro package untested on a device. A 0.0.26 package was briefly offered on the separate nightly
+  installer (gobbajogger/x0x37-for-Loopy-Pro_nightly) and withdrawn after a black-screen boot; the README says not to
+  install it and to restore stock firmware if it is already on a unit.
+status: active
+authors:
+- name: gobbajogger
+  url: https://github.com/gobbajogger
+source: https://github.com/gobbajogger/X0X37-for-Loopy-Pro
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is GPL-3.0 and the README says GPL-3.0-only, like Felucca, 9W9, 8W8 and schwung-tb3po. Open303 is MIT,
+  the 909 hi-hat, ride and crash samples come from ER-99 (GPL-3.0), the fonts are SIL OFL 1.1 and the BLE-MIDI host is
+  MPL-2.0 (LICENSING.md, CREDITS.md). Packages carry three JieLi SDK files under Apache-2.0. The repository holds no
+  M-VAVE stock firmware.
+homepage: https://gobbajogger.github.io/X0X37-for-Loopy-Pro/install/
+based_on: m-vave-smk-37/x0x37
+distribution: browser-installer
+install_notes: >-
+  Use the web installer in Chrome or Edge with the keyboard on USB, or download the Elite or Pro package from the
+  release (Starrykey 37 Play uses the Pro package). Back up the sample slots first; the installer offers to. The installer can
+  also restore M-VAVE stock firmware, and M-UPGRADE works too. The repository and Pages URLs still carry the old
+  X0X37-for-Loopy-Pro name.
+brick_risk: false
+tags: [groovebox, drums, sequencer, synth-engine, usb-audio, usb-midi, performance, fork]
+versions:
+- version: 0.0.25.1
+  date: 2026-11-13
+  url: https://github.com/gobbajogger/X0X37-for-Loopy-Pro/releases/tag/v0.0.25.1
+  notes: A pattern-chain slot now lasts for the longest playing part, rounded up to a whole 909 bar; chaining stays live-only. Elite and Pro packages, software-checked; the changelog says the source commit is not on main.

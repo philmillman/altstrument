@@ -1,0 +1,52 @@
+device: m-vave-fm-1
+name: RAKT
+summary: >-
+  Rack-style chord instrument and groovebox for the FM-1 that plays a generated band of Chords, Bass, Drums and Layer over a
+  shared progression, with a Studio page for shaping it live, a sound library, USB audio stems and a browser player. A fork of CORD.
+description: >-
+  Fork of CORD, which is a fork of CoralFlower. The four parts share a progression and clock, and each has its own playing
+  style and sound. Some styles react to another part, for instance a bass that accents notes landing with the kick. Studio
+  has Energy and Evolve controls, Hold for a single phrase, queued key, scale and meter changes (3/4, 4/4 and 6/8) and a
+  progression editor of chord slots. A sound library browses by genre, EDIT shuffles tones, kits and effects, and each part
+  has envelope and send pages. GLO is a live mixer with fills, drum drops and hold-to-use effects. REC captures the four parts into the
+  latest three takes of up to eight bars, and USB audio carries the full mix with Chords and Bass stems at 44.1 or
+  48 kHz. A browser player runs the firmware compiled to WebAssembly. The README credits JIANT FM, Tessera,
+  PERF-1, Bass Something 2 and Orchid for ideas, and Melodee for FM synthesis and drum recipes. The release page says
+  the 0.1.x releases came out within a day of each other.
+status: active
+authors:
+- name: Chase DeAnda
+  url: https://github.com/chasedeanda
+source: https://github.com/chasedeanda/rakt-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md puts the firmware under GPL-3.0-only as a whole, inheriting from CORD, CoralFlower, ChoralRoot FM-1 and
+  Felucca. Bundled parts keep their own terms: the Aquanode DX7 voices are CC0, the fonts are SIL OFL, and the packages carry
+  three JieLi SDK files under Apache-2.0. The repository commits earlier ChaseFlower packages under releases/; none is
+  an M-VAVE stock image.
+homepage: https://chasedeanda.github.io/rakt-fm1/play/
+based_on: m-vave-fm-1/cord
+distribution: browser-installer
+requires_stock: M-VAVE stock firmware or another FM-1 community firmware
+install_notes: >-
+  Open the RAKT installer in desktop Chrome or Edge with the FM-1 on a USB data cable. It picks the latest release and
+  checks it; another .fwsc can be chosen under the custom build option. Back up first and keep a known-working firmware
+  package to hand. The release notes say the official M-VAVE firmware can always be reinstalled.
+brick_risk: false
+tags: [chords, groovebox, sequencer, arpeggiator, drums, fx, usb-audio, usb-midi, fork, emulator, performance]
+image:
+  url: https://raw.githubusercontent.com/chasedeanda/rakt-fm1/main/docs/images/rakt-quick-start.png
+  alt: "RAKT quick-start sheet: a three-step first jam, the Studio, Sound, Record and Help tabs, tips for groove, sounds and arp, and the GLO mixer key map"
+  credit: Chase DeAnda
+  source_url: https://github.com/chasedeanda/rakt-fm1
+  first_party: true
+versions:
+- version: 0.1.5
+  date: 2026-11-13
+  url: https://github.com/chasedeanda/rakt-fm1/releases/tag/v0.1.5
+  notes: Latest of six releases published between 12 and 13 November; the package identity is shared with CORD and CoralFlower.
+- version: 0.1.0
+  date: 2026-11-12
+  url: https://github.com/chasedeanda/rakt-fm1/releases/tag/v0.1.0
+  notes: First RAKT release.

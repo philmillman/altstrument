@@ -1,16 +1,18 @@
 device: akai-mpc-live
-name: OpenMPC Plugin Manager G2
-summary: On-device VST2 plugin manager for MPC OS 3.x, a fork of poloq's Plugin Manager for MPC with Gen1 and Gen2 builds, that installs, updates and removes catalog plugins from the MPC itself with rollback.
+name: OpenMPC Plugin Manager
+summary: On-device VST2 plugin manager for MPC OS 3.x, a fork of poloq's Plugin Manager for MPC with Gen1 and Gen2 builds, that installs, updates and removes catalog plugins from the MPC itself with rollback. Called Plugin Manager G2 before v1.1.0.
 description: >-
   Runs as an instrument plugin with its own touchscreen skin and reads the
   mpc-vst-plugins catalog over the device's network. Tabs list plugins to
   discover, installed ones and updates, with search, filter and sort. Changes
   are queued and applied together with one MPC restart. Before MPC is stopped
   each package's SHA-256 is checked and its manifest is compared with the
-  device's architecture, glibc and MPC OS, and plugins go only to a folder MPC
-  lists in SynthContentLocations. A failed install puts the plugin folder and
+  device's architecture, glibc and MPC OS, and plugins go to a folder MPC lists
+  in SynthContentLocations or, on MPC OS 3.10.1, into VST2 Plugins. A failed install puts the plugin folder and
   MPC.settings back. It also takes local zips, registers hand-copied plugin
-  folders, handles addins and has a light and dark theme. It started as a fork
+  folders, handles addins and has a light and dark theme. Since v1.0.0 it supports
+  MPC OS 3.10.1, serves a web page on the local network without a password and moves
+  plugins from the old location with a Move button. It started as a fork
   of poloq's Plugin Manager for MPC and keeps that project's history. v0.1.9
   was Gen2 only; v0.2.0 ships a 32-bit armv7 zip for Gen1 devices (Force, Live,
   Live II, One, X, Key) next to the 64-bit aarch64 zip for Gen2. The author
@@ -22,7 +24,7 @@ authors:
     url: https://github.com/sd88me
   - name: poloq-instruments
     url: https://github.com/poloq-instruments
-source: https://github.com/open-mpc/mpc-vst-plugins/tree/main/tools/plugin_manager_g2
+source: https://github.com/open-mpc/plugin-manager
 source_status: open
 license: MIT
 license_notes: >-
@@ -46,12 +48,36 @@ install_notes: >-
 brick_risk: false
 tags: [loader, utility, platform, ui]
 image:
-  url: https://raw.githubusercontent.com/open-mpc/mpc-vst-plugins/main/tools/plugin_manager_g2/docs/screenshots/manager-discover-light.png
+  url: https://raw.githubusercontent.com/open-mpc/plugin-manager/main/docs/screenshots/manager-discover-light.png
   alt: Plugin Manager G2 Discover tab in the light theme, listing five plugins with Beta or Stable badges, versions and red INSTALL buttons, above Update All and Apply buttons
   credit: sd88me
-  source_url: https://github.com/open-mpc/mpc-vst-plugins/tree/main/tools/plugin_manager_g2
+  source_url: https://github.com/open-mpc/plugin-manager
   first_party: true
 versions:
+  - version: plugin-manager-g2-v1.1.1
+    date: 2026-11-13
+    url: https://github.com/open-mpc/plugin-manager/releases/tag/plugin-manager-g2-v1.1.1
+    notes: First release from the manager's own repository. Hides plugins that need MPC OS 3.10.1 on older systems and installs into VST2 Plugins on 3.10.1 when no Synths folder is usable; the release page repeats the README.
+  - version: g2-stick-v1.1.1
+    date: 2026-11-13
+    url: https://github.com/open-mpc/mpc-vst-plugins/releases/tag/g2-stick-v1.1.1
+    notes: USB stick package that installs Plugin Manager 1.1.1 on MPC OS 3.x without SSH or a network connection; MPC OS 2.x is refused.
+  - version: plugin-manager-g2-v1.1.0
+    date: 2026-11-13
+    url: https://github.com/open-mpc/mpc-vst-plugins/releases/tag/plugin-manager-g2-v1.1.0
+    notes: Renamed Plugin Manager, with the old G2 folder removed on update. Fixes MPC OS 3.10.1 detection of plugins already in VST2 Plugins, plugins built with Akai's SDK and plugin makers with an apostrophe, and Move now finds plugins on every drive.
+  - version: g2-stick-v1.1.0
+    date: 2026-11-13
+    url: https://github.com/open-mpc/mpc-vst-plugins/releases/tag/g2-stick-v1.1.0
+    notes: USB stick package that installs Plugin Manager 1.1.0 on MPC OS 3.x up to 3.9.1; it has no prompt on 3.10.1.
+  - version: plugin-manager-g2-v1.0.0
+    date: 2026-11-12
+    url: https://github.com/open-mpc/mpc-vst-plugins/releases/tag/plugin-manager-g2-v1.0.0
+    notes: Adds MPC OS 3.10.1 support with installs into VST2 Plugins and a Move button for existing plugins, a web page for phone or computer without a password, and Locations, Patches, Settings and About pages.
+  - version: g2-stick-v1.0.0
+    date: 2026-11-12
+    url: https://github.com/open-mpc/mpc-vst-plugins/releases/tag/g2-stick-v1.0.0
+    notes: USB stick package that installs Plugin Manager 1.0.0 on MPC OS 3.x up to 3.9.1.
   - version: plugin-manager-g2-v0.9.1
     date: 2026-11-10
     url: https://github.com/open-mpc/mpc-vst-plugins/releases/tag/plugin-manager-g2-v0.9.1

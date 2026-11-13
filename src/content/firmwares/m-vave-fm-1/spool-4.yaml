@@ -1,0 +1,44 @@
+device: m-vave-fm-1
+name: SPOOL-4
+summary: >-
+  Four-loop recorder for the FM-1: record loops by playing, overdub in layers with undo and redo, and capture the
+  phrase you just played.
+description: >-
+  Four loops of up to 16 bars and 448 notes each, each with its own sound and MIDI channel. The first take sets a
+  loop's length to the nearest bar, or to a fixed length, and later passes are overdub layers that UNDO and REDO
+  remove and restore. Quantise is an amount and a grid applied at playback and never written into the notes. CAPTURE
+  puts the phrase last played on the keys into the loop, whether or not recording was on. Other functions are erase
+  while a loop plays, note repeat, doubling and halving a loop, half, normal or double speed, and transpose. It has
+  its own 8-voice synth, drums and echo, sends MIDI over USB and Bluetooth, and can send or follow MIDI clock. The
+  README names loopers, the OP-1 tape and MPC live record as the models.
+status: active
+authors:
+- name: David Ryan (davidpryan)
+  url: https://github.com/davidpryan
+source: https://github.com/davidpryan/spool-4
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSE is the MPL-2.0 text, as fm1-base. The base/ copy of fm1-base and felucca-bsp keeps its own files' licences
+  (base/LICENSING.md). The only .fwsc in the repository is the M-Bootloader package used by the web tools (18,068
+  bytes), not a stock M-VAVE image.
+homepage: https://davidpryan.github.io/spool-4/
+distribution: browser-installer
+install_notes: >-
+  Browser installer at davidpryan.github.io/spool-4/install/ in Chrome or Edge (allow MIDI when asked), or build with
+  ./build.sh (Docker and JieLi's toolchain, see fm1-base) and run base/tools/fm1_install.py on the .fwsc. The README
+  says to keep M-VAVE's stock firmware and M-UPGRADE at hand, and the installer page has a section for putting the
+  stock firmware back.
+brick_risk: false
+tags: [sequencer, midi, usb-midi, ble-midi, performance, looper]
+image:
+  url: https://raw.githubusercontent.com/davidpryan/spool-4/main/app/docs/img/screen-loops.png
+  alt: "SPOOL-4 loops page on the FM-1: four coloured loop lanes with note dots and a playhead line, loop 4 empty, and a status line saying capture 13 notes just played"
+  credit: David Ryan
+  source_url: https://github.com/davidpryan/spool-4
+  first_party: true
+versions:
+- version: main @ a7b4136
+  date: "2026-11-13"
+  url: https://github.com/davidpryan/spool-4/commit/a7b41361e9a69026d05746c50e03f91feabae2c0
+  notes: No tagged releases; this is the latest commit. The README and the installer package call it 0.1 and say it passes the host simulator's tests but has not been run on a real FM-1.

@@ -1,0 +1,44 @@
+device: m-vave-fm-1
+name: MYCEL-8
+summary: >-
+  Generative sequencer for the FM-1: eight parts, each a Euclidean rhythm plus a Turing-machine shift register picking
+  notes from a scale pool.
+description: >-
+  Each of eight parts has a rhythm (1 to 32 steps, pulses, rotate, division), a pitch register (length, mutate
+  percentage, range, and mode: Turing, cycle, bounce, random or drone), a feel page (chance, accents, gate, ratchets)
+  and a sound. The register draws notes from a pool of scale degrees lit on the white keys, so output stays in key.
+  Registers can be locked, diced with a history to step back through, and DENSITY and TIDE change every part at once.
+  Eight snapshots return the whole field at the next bar. It has its own 8-voice synth and drums, sends MIDI over USB
+  and Bluetooth, and can send or follow MIDI clock. The README names the Music Thing Turing Machine, Euclidean rhythms
+  and the Torso T-1 as the models.
+status: active
+authors:
+- name: David Ryan (davidpryan)
+  url: https://github.com/davidpryan
+source: https://github.com/davidpryan/mycel-8
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSE is the MPL-2.0 text, as fm1-base. The base/ copy of fm1-base and felucca-bsp keeps its own files' licences
+  (base/LICENSING.md). The only .fwsc in the repository is the M-Bootloader package used by the web tools (18,068
+  bytes), not a stock M-VAVE image.
+homepage: https://davidpryan.github.io/mycel-8/
+distribution: browser-installer
+install_notes: >-
+  Browser installer at davidpryan.github.io/mycel-8/install/ in Chrome or Edge (allow MIDI when asked), or build with
+  ./build.sh (Docker and JieLi's toolchain, see fm1-base) and run base/tools/fm1_install.py on the .fwsc. The README
+  says to keep M-VAVE's stock firmware and M-UPGRADE at hand, and the installer page has a section for putting the
+  stock firmware back.
+brick_risk: false
+tags: [sequencer, midi, usb-midi, ble-midi, performance, generative, euclidean]
+image:
+  url: https://raw.githubusercontent.com/davidpryan/mycel-8/main/app/docs/img/screen-field.png
+  alt: "MYCEL-8 rhythm page on the FM-1: part 4 with a ring of dots for steps, values for steps 16, pulses 7, rotate 0 and division 1/16, and a pattern grid of eight parts at the bottom"
+  credit: David Ryan
+  source_url: https://github.com/davidpryan/mycel-8
+  first_party: true
+versions:
+- version: main @ fac0758
+  date: "2026-11-13"
+  url: https://github.com/davidpryan/mycel-8/commit/fac07582f34b45610335922d8045d9d99a329436
+  notes: No tagged releases; this is the latest commit. The README and the installer package call it 0.1 and say it passes the host simulator's tests but has not been run on a real FM-1.

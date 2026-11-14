@@ -2,7 +2,7 @@ device: akai-mpc-sample
 name: Melodee (MPC Sample)
 summary: >-
   keremimo's 16-track groovebox for the MPC Sample, started from the microSD card in place of the stock app: kits,
-  sampled instruments, a VST3 and VST2 host, MIDI tracks, patterns, song mode and a looper.
+  sampled instruments, a VST3, VST2, LV2 and CLAP host, MIDI tracks, patterns, song mode and a looper.
 description: >-
   A separate app from the author's FM-1 firmware of the same name, built on the author's sample-base runtime for
   the MPC Sample. Each pad is a track holding a kit of up to 128 pads, a sampled instrument, a plug-in instrument or
@@ -11,7 +11,7 @@ description: >-
   sequencer has 16 patterns per track of up to 128 bars, with parameter locks, ratchets and trig conditions, plus
   scenes, chains and a song arrangement that exports a WAV mix, stems or a MIDI file. There are 41 effects on track
   chains, four send buses and the master, a four-loop looper and MIDI clock and MTC sync. The plug-in host loads
-  aarch64 Linux VST3 and VST2 builds and Open MPC plug-ins, and runs 32-bit ARM plug-ins through a bridge. Its own
+  aarch64 Linux VST3, VST2, LV2 and CLAP builds and Open MPC plug-ins, and runs 32-bit ARM plug-ins through a bridge. Its own
   synths moved out into three separate plug-ins at 0.1.0: Melodee Poly, Melodee PD and Melodee Chip.
 status: active
 authors:
@@ -31,7 +31,7 @@ install_notes: >-
   Back up the microSD card and move any existing top-level autorun folder aside, then copy the release zip's autorun
   folder to the top of the card. The stock app starts first and Melodee takes over a few seconds later. On any other
   stock firmware it does not start. Nothing on the MPC itself changes: choose MPC APP on Melodee's exit screen, or
-  delete the autorun folder, to get the stock app back. Plug-ins go in a Plugins folder on the card.
+  delete the autorun folder, to get the stock app back. Plug-ins go in Melodee/Plugins on the card. Since 0.2.0 Melodee installs later releases from a zip copied to the card; 0.1.0 has to be replaced by hand.
 brick_risk: false
 tags: [groovebox, sequencer, sampler, platform, midi]
 image:
@@ -41,6 +41,10 @@ image:
   source_url: https://github.com/keremimo/melodee-sample#readme
   first_party: true
 versions:
+  - version: v0.2.0
+    date: 2026-11-14
+    url: https://github.com/keremimo/melodee-sample/releases/tag/v0.2.0
+    notes: Adds updates from a release zip on the card, a web page at melodee.local over USB-C, a screen mirror that shows the MPC as a webcam, LV2 and CLAP plug-ins, track freeze, 128 patterns per track and Roll, Chop and 16 Levels changes. Plug-ins move to Melodee/Plugins on the card, and 0.1.0 has to be replaced by hand once.
   - version: v0.1.0
     date: 2026-11-12
     url: https://github.com/keremimo/melodee-sample/releases/tag/v0.1.0

@@ -12,8 +12,8 @@ description: >-
   the shift deck and the Web Studio come from Pocket GammaWave. The README's later notes (v1.5 to v1.7) add a new
   power-on screen, CPU mode and visualizer-quality settings, a smooth random LFO wave, polyphonic aftertouch as a
   modulation source and a 200-sound library. The commits after that add a two-band Punch-in FX keyboard with latched mutes, flash and loader hardening, and a rebuilt project portal, Web Studio and emulator. Version 1.8.9 made the master EQ round instead of truncate, which fixes a DC offset and a shallow 20 Hz cut, and the repository gained a verified flash-backup tool and a restore tool that needs an external programmer. Version 1.9.0 is the first tagged release: a signed package that the installer checks against a pinned key. The release notes say a power cut during the app erase may leave the unit unable to boot and that recovery needs the chip's ROM mode and an external full-dump tool. Many of the newer commits are authored by
-  google-labs-jules[bot] and merged by the owner. The status document lists host, installer and web tests and
-  records no hardware result for these changes. Like the parent it keeps songs and the FM6 user bank in the user
+  google-labs-jules[bot] and merged by the owner. The status document lists host, installer and web tests; the 3.1.1 notes add an owner-reported install on two FM-1 units, which
+  that environment did not observe. Like the parent it keeps songs and the FM6 user bank in the user
   sample flash, so user samples are lost.
 status: active
 authors:
@@ -36,6 +36,22 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, sequencer, generative, fx, filter, editor, emulator, fork]
 versions:
+- version: 3.1.4
+  date: 2026-11-14
+  url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v3.1.4
+  notes: The HOME bay changes from five concentric orbits to five fixed seats so that no two bodies' touch discs overlap. Latest of a run of patch releases from 3.1.1 to 3.1.4 that fix HOME animation and touch handling; the package is unsigned, checked by SHA-256 and a build record. The notes are in Spanish.
+- version: 3.1.1
+  date: 2026-11-14
+  url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v3.1.1
+  notes: The notes record the owner's report that this package was installed on two FM-1 units, one with a Puya and one with a UCUN flash chip. They state that this environment did not observe it and that no flash read, dump or recovery was tried.
+- version: 3.0.1
+  date: 2026-11-13
+  url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v3.0.1
+  notes: The release page gives one line, naming a HOME visualizer knob 1 focus and validated CPU optimizations, and carries no files.
+- version: 2.9.4
+  date: 2026-11-13
+  url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v2.9.4
+  notes: HOME has five screens, MAIN, VISUALIZER, OVERVIEW, MIX and PERFORM, and the other HOME screens' controls move to the EDIT, MOD, SYSTEM and FX pages. Patch releases 2.9.5 to 2.9.7 the same day add section backgrounds, interval names on the SCL page and a splash that runs the start-up stages one frame at a time.
 - version: 2.9.3
   date: 2026-11-13
   url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v2.9.3

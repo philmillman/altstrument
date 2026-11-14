@@ -1,4 +1,5 @@
 device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
 name: FRASIL
 summary: >-
   Ambient drone and texture instrument: tapped keys latch layered drones that swell with pressure, into a
@@ -12,7 +13,7 @@ description: >-
   up to 32, and there are sixteen saved sounds per track. There are twelve scales, chords built in the scale, three LFOs, a master filter, lofi tape and master EQ (from 2.5), from 3.1 a tape speed control, an ANCHOR snapshot that morphs back to a held sound, an amount for each LFO target and a tuning setting, sixteen scene slots
   with eight factory scenes, and MIDI over USB and TRS that sends incoming notes through the harmony. Three web
   tools go with it: the FRASIL River for backing up the unit and sharing scenes, an Editor and a Perform second screen
-  over Web MIDI. It is built on fm1-base and felucca-bsp.
+  over Web MIDI. A fifth MIDI track, added in 3.3.1, sends the keys, an arpeggiator and a sequencer to a DAW over USB. It is built on fm1-base and felucca-bsp. From 3.3.1 it also runs on the SMK-37 Elite, with packages for the Pro and MKE-P37 that the release says are untested.
 status: active
 authors:
 - name: Styves Goupil
@@ -28,7 +29,7 @@ install_notes: >-
   Install it from FRASIL's page on The FM-1 Firmware Hub in Chrome or Edge, or download a frasil-X.Y.fwsc from the
   releases page and install it with base/tools/fm1_install.py from a recursive clone. To build
   it yourself, run ./build.sh (Docker and the JieLi toolchain and AC79 SDK are needed). To go back, install
-  M-VAVE's V15; if the unit does not start, hold OCT- while switching it on for update mode.
+  M-VAVE's V15; if the unit does not start, hold OCT- while switching it on for update mode. On an SMK-37, back up the keyboard with the backup tool first, because its calibration belongs to that keyboard, then install the matching frasil-smk37-elite, -pro or -mke package from a terminal.
 brick_risk: false
 tags: [ambient, synth-engine, fx, reverb, chords, scales, midi, performance]
 image:
@@ -38,6 +39,10 @@ image:
   source_url: https://github.com/styvesgoupil/frasil
   first_party: true
 versions:
+- version: 3.3.1
+  date: 2026-11-14
+  url: https://github.com/styvesgoupil/frasil/releases/tag/v3.3.1
+  notes: Adds a fifth MIDI track whose keys play instruments in a DAW over USB, with velocity curves, aftertouch, its own arpeggiator and sequencer, MIDI clock out and a RETURN fader for audio coming back. Adds packages for the M-VAVE SMK-37 Elite, with the Pro and MKE-P37 included but untested, and an .rfm1 file for RemoteFM1. A 3.3.1 backup does not restore on 3.3 or earlier.
 - version: '3.3'
   date: 2026-11-12
   url: https://github.com/styvesgoupil/frasil/releases/tag/v3.3

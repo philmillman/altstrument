@@ -21,6 +21,10 @@ install_notes: >-
 brick_risk: false
 tags: [sequencer, tracker, midi, fork, editor]
 versions:
+- version: tabby-v04.4
+  date: 2026-11-14
+  url: https://github.com/SeattleUser0/classic-tabby/releases/tag/tabby-v04.4
+  notes: Timed MIDI out; every queued note and clock byte carries its due time and a 0.5 ms hardware timer sends it, so song notes leave within 1.9 ms for one line and 3 ms for eight on every screen page. Notes due together leave as one burst, and external clock follow stays one block ahead of the master. Removes the 0xF9 bytes added in v04.3.1, since the missing USB replies were a fault in the developer's measuring tool. Same storage layout; the notes advise a full backup first.
 - version: tabby-v04.3.1
   date: 2026-11-13
   url: https://github.com/SeattleUser0/classic-tabby/releases/tag/tabby-v04.3.1

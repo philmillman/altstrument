@@ -1,0 +1,45 @@
+device: m-vave-fm-1
+name: FM1Lab
+kind: tool
+summary: >-
+  Desktop performance panel and lab for the FM-1 that detects the running firmware, loads a matching profile, and adds assignable strips, a CC and NRPN
+  monitor, setlists and a firmware library with OTA install.
+description: >-
+  Written in Rust, with a terminal-style panel and an fm1ctl command line. It detects the firmware on the unit and
+  picks a profile that maps that firmware's parameters to strips, with MIDI transport and clock, setlists of projects and sections, and a learn mode for
+  CC and NRPN. The firmware library installs .fwsc packages over the updater: it checks the SHA-256, backs up the app's configuration and the downloaded
+  packages, pauses the other MIDI traffic and asks for confirmation before writing. It chooses a route between firmware families and warns that changing between forks can leave the
+  saved projects and presets unusable. The README is in Spanish, and the library lists packages from other authors by hash and link. The README gives a
+  Homebrew cask for macOS, and the releases hold macOS builds only.
+status: active
+authors:
+- name: Hugo Moraga
+  url: https://github.com/quicio
+source: https://github.com/quicio/fm1lab
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text, copyright 2026 Hugo Moraga. The firmware packages in the library belong to their authors and keep their licences; none is in the repository.
+distribution: download
+install_notes: >-
+  On macOS run brew install --cask quicio/tap/fm1lab, after brew trust quicio/tap if Homebrew refuses the tap, or unpack a release tarball. The app is not notarised, so the
+  first launch may need right-click, Open. Other systems build from source with cargo. The installer writes through the updater's firmware path; the README points to M-UPGRADE for
+  stock firmware and to M-VAVE's Python installer as the rescue.
+brick_risk: false
+tags: [performance, flasher, editor, midi, utility]
+image:
+  url: https://raw.githubusercontent.com/quicio/fm1lab/main/shots/panel.png
+  alt: "FM1Lab panel on a dark background, with a six-step setlist on the left, a large letter A for project 3 section A, and sliders labelled T1 Filter, DJ Filt, Size and Mix"
+  credit: Hugo Moraga
+  source_url: https://github.com/quicio/fm1lab
+  first_party: true
+versions:
+- version: 0.1.3
+  date: 2026-11-14
+  url: https://github.com/quicio/fm1lab/releases/tag/v0.1.3
+- version: 0.1.2
+  date: 2026-11-14
+  url: https://github.com/quicio/fm1lab/releases/tag/v0.1.2
+- version: 0.1.0
+  date: 2026-11-13
+  url: https://github.com/quicio/fm1lab/releases/tag/v0.1.0

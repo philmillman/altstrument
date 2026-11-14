@@ -1,0 +1,49 @@
+device: m-vave-fm-1
+name: KIST
+summary: >-
+  Physically modelled continuo organ after the Dutch box organs of the Klop workshop: four wooden stops computed live as
+  digital waveguides, no samples, with temperaments and a room; KIST-P swaps the room for a plate reverb.
+description: >-
+  One manual with Gedackt 8', Rohrflöte 4', Principal 2' and a treble-only Quint 2 2/3', each split into bass and treble halves at
+  c', for 192 pipes and up to 48 sounding at once. The tuning page offers equal temperament with 5 to 72 divisions, Werckmeister
+  III, quarter-comma meantone, Kirnberger III and Vallotti on any root, with A set from 300 to 500.99 Hz, and a pipe drift on top.
+  A blower, a tremulant and wind and touch settings shape the sound, velocity sets how fast a pallet opens, and the algorithmic
+  room has five sizes from dry to an abbey nave. The screens are drawn as Baroque engravings. The same repository builds KIST-P, with
+  a Dattorro plate reverb that has its own drawn pages. Releases also carry FM-1 Manager, a desktop app for macOS, Windows and
+  Linux that installs any FM-1 firmware, backs up saved data and the whole flash, and can put M-VAVE's firmware back. The README
+  lists the pipe count, the cost of the room and the sound on the FM-1's own speaker as not yet measured on the device.
+status: active
+authors:
+- name: 78Hz
+  url: https://github.com/78Hz
+source: https://github.com/78Hz/kist
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The README states MPL-2.0, as fm1-base and felucca-bsp, and LICENSE is the MPL-2.0 text. The Fell and UnifrakturMaguntia fonts
+  are SIL OFL 1.1. The release package is the project's own, not a stock M-VAVE image; FM-1 Manager downloads M-VAVE's V16 from
+  M-VAVE's own file host and checks its checksum.
+based_on: m-vave-fm-1/fm1-base
+distribution: download
+install_notes: >-
+  Download kist-X.Y.fwsc (and kist-p-X.Y.fwsc for the plate version) from the release and install it with FM-1 Manager or with
+  fm1-base's fm1_install.py over USB; no update mode is needed. A whole-flash backup before the first install is advised. A
+  firmware that fails to start twice shows SAFE MODE with USB still working, and the Manager can put M-VAVE's firmware back; its
+  whole-flash restore never writes the bootloader. The release notes say to install at your own risk.
+brick_risk: false
+tags: [physical-modeling, synth-engine, reverb, scales, midi, flasher, backup]
+image:
+  url: https://raw.githubusercontent.com/78Hz/kist/main/docs/img/screens.png
+  alt: "KIST screens in a grid, drawn as Baroque engravings in red and black on cream paper: Console with four stops, Tuning with a clock face, The Room, The Wind and Temperament"
+  credit: 78Hz
+  source_url: https://github.com/78Hz/kist
+  first_party: true
+versions:
+- version: '0.2'
+  date: 2026-11-11
+  url: https://github.com/78Hz/kist/releases/tag/v0.2
+  notes: Adds the player's manual as a PDF to the release, with kist-0.2.fwsc and FM-1 Manager for macOS, Windows and Linux.
+- version: '0.1'
+  date: 2026-11-11
+  url: https://github.com/78Hz/kist/releases/tag/v0.1
+  notes: First release, with kist-0.1.fwsc and FM-1 Manager.

@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: ASTRA FM-1
+summary: >-
+  Astrology instrument built on Dinghy: the FM-1 calculates planet positions for 1800 to 2200, casts a birth chart from your details, and wires ten FM operators from the chart's aspects.
+description: >-
+  The firmware computes the positions of the Sun, Moon, Mercury to Pluto and the Moon's node on the device, with no network, in seven house systems and in tropical or sidereal form. Entering a birth date, time and place builds a chart, and the aspects between planets decide which of ten FM operators modulates which: the README describes a trine as a smooth bend, a square as a metallic ring and an opposition as a loop. Four notes play at once through 37 wirings, with chorus, echo and reverb, and 64 preset slots whose unsaved entries build a sound from your chart. Seven screen pages show the chart as a wheel and a horoscope of today's transits, closest to exact first, with a 30-day graph either side and the Moon's phase. Readings quote the Tarot titles that Aleister Crowley's 777 gives each planet and sign. The README calls it a working title and an early build, tested on a physical FM-1 and in the fm1-emu emulator, and says astrology here is symbolic reading, not prediction. The project site runs the firmware in a browser emulator.
+status: active
+authors:
+- name: Michael Perry
+  url: https://github.com/MichaelAPerry
+source: https://github.com/MichaelAPerry/ASTRA-FM-1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README names GPL-3.0-only, and LICENSING.md says the firmware is GPL-3.0-only because it is built on Dinghy. The planet series are VSOP87B coefficients as truncated in Astronomy Engine (MIT), and the site's installer is Felucca's. The reading text is the author's own, and the Crowley table titles are from a work the file treats as public domain. The package carries the JieLi SDK files that Dinghy's build adds.
+homepage: https://michaelaperry.github.io/ASTRA-FM-1/
+distribution: browser-installer
+requires_stock: V15 or another custom firmware
+install_notes: >-
+  Use the installer on the project site, or download astra-0.1.fwsc from the release. The README says to know the USB rescue before installing: hold OCT- while switching on. Back up first.
+brick_risk: false
+tags: [generative, fm, synth-engine, education, emulator, fork]
+based_on: m-vave-fm-1/dinghy
+image:
+  url: https://raw.githubusercontent.com/MichaelAPerry/ASTRA-FM-1/main/site/media/screens/wheel.png
+  alt: "ASTRA wheel page: a zodiac ring with planet glyphs and coloured aspect lines between them, a date and time at the top and four knob labels along the bottom"
+  credit: Michael Perry
+  source_url: https://michaelaperry.github.io/ASTRA-FM-1/
+  first_party: true
+versions:
+- version: '0.1'
+  date: 2026-11-13
+  url: https://github.com/MichaelAPerry/ASTRA-FM-1/releases/tag/v0.1

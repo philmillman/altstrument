@@ -1,0 +1,41 @@
+device: m-vave-fm-1
+name: FM-1 KEYS
+summary: >-
+  Physically modelled keyboard firmware: Frodhes's Rhodes engine, an exciter-and-resonator voice for strings, tubes and bodies,
+  and a one-key chord engine, so far a test build that runs in a browser emulator.
+description: >-
+  KEYS is the Rhodes engine of Frodhes, taken over unchanged, with four types and tone, bark, bell and decay controls. PHYS plays a
+  pluck, strike, bow, blow or noise exciter into a string, a reed tube or a struck body that morphs from wood to glass, metal and
+  skin. One key plays the chord on that degree of a chosen key and scale, with three to six notes, close, open or voice-led
+  voicings, an optional bass note and a strum. There are 15 factory patches, four pages of controls and animated screens that draw
+  the tines, the delay lines or the chord. The README calls this test build 0.1-dev and says it has not been installed on an FM-1;
+  it can be built from source with fm1-base, and the project site has a browser emulator.
+status: active
+authors:
+- name: soundbydrp-art
+  url: https://github.com/soundbydrp-art
+source: https://github.com/soundbydrp-art/Fm1-keys
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and LICENSE give GPL-3.0-only, chosen because the electric piano is Frodhes's engine (GPL-3.0-only), kept in
+  app/frodhes/. fm1-base and felucca-bsp are MPL-2.0.
+homepage: https://soundbydrp-art.github.io/fm1-keys/
+based_on: m-vave-fm-1/frodhes
+distribution: source-only
+install_notes: >-
+  No package is published yet; the handoff notes say a release workflow is not set up. Build with fm1-base's build.py after
+  cloning with submodules. The README says nothing has run on hardware yet.
+brick_risk: false
+tags: [physical-modeling, synth-engine, chords, scales, emulator, web]
+image:
+  url: https://raw.githubusercontent.com/soundbydrp-art/Fm1-keys/main/docs/img/screen-keys.png
+  alt: "FM-1 KEYS screen on the SUITCASE patch: five tines swinging with glowing pickups under the header, and TONE, BARK, BELL and DECAY at 50 in the footer"
+  credit: soundbydrp-art
+  source_url: https://github.com/soundbydrp-art/Fm1-keys
+  first_party: true
+versions:
+- version: main @ 5c5a759
+  date: 2026-11-14
+  url: https://github.com/soundbydrp-art/Fm1-keys/commit/5c5a759197a76e243c1259eb2712b96708e2a63e
+  notes: No tagged releases; this is the latest commit.

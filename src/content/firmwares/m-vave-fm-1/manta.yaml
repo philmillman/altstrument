@@ -1,0 +1,44 @@
+device: m-vave-fm-1
+name: Manta
+summary: >-
+  Generative Latin groove firmware with a band on the clave in twelve styles, sampled percussion, upright piano and brass, a
+  Havana song form, and a solo trumpet played from the keys. Built on Sill, Tuna and Felucca.
+description: >-
+  Press PLAY and a piano montuno, tumbao bass, horn section and percussion play on the clave, 3-2 or 2-3, in twelve styles split
+  into CALIENTE (salsa, mambo, merengue, cumbia, samba, guaracha) and NOCHE (son, cha-cha, bolero, bossa, tango, danzon). The
+  percussion section is thirty one-shots, and a sampled upright, a trumpet and trombone section, a tenor sax and violins come from
+  CC0 libraries. Four knobs set heat, clave, solo and band hits, BAND HIT fires the whole band together on the next bar, and MAMBO
+  sends the horns into a riff. Keys play the solo trumpet with mutes and a 3D pan on headphones, and each instrument page can be
+  edited note by note. Settings, eight sets and the parts' patterns live in Felucca's first four song slots. The project site has a
+  browser emulator and a web installer, and the README says the older songs' phrases and the full PAN 3D are still to come.
+status: active
+authors:
+- name: delirioux
+  url: https://github.com/delirioux
+source: https://github.com/delirioux/manta
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Stated in the README and LICENSING.md, as for Sill, Tuna and Felucca. The percussion, upright, sax, trumpet, trombone and violin
+  samples are from the Versilian Community Sample Library and VSCO 2 CE (CC0). Three JieLi SDK files are in vendor/jieli-ac79 and
+  other bundled parts keep their own licences.
+homepage: https://delirioux.github.io/manta/
+based_on: m-vave-fm-1/sill
+distribution: browser-installer
+install_notes: >-
+  Web installer in Chrome or Edge over USB, or fm1_install.py with the release's .fwsc. It keeps its data in Felucca's first four
+  song slots, so back up anything made in Felucca first. The README says Felucca's installer or the official V15 takes the unit
+  back, and that it is built with no warranty. A banner says it is patched for units with the newer flash chip.
+brick_risk: false
+tags: [generative, sequencer, synth-engine, drums, chords, midi, emulator, web, fork]
+image:
+  url: https://raw.githubusercontent.com/delirioux/manta/main/docs/manta-logo.png
+  alt: "Manta logo: an orange-outlined black manta ray over green and orange equaliser bars, holding drumsticks above a four-knob panel, with MANTA in yellow and orange lettering below"
+  credit: delirioux
+  source_url: https://github.com/delirioux/manta
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-11
+  url: https://github.com/delirioux/manta/releases/tag/v1.0
+  notes: First release, with twelve styles, the sampled percussion kit and instruments, the Havana song form, scopes and the instrument pages with EDIT.

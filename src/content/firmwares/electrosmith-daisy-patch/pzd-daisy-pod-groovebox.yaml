@@ -2,7 +2,7 @@ device: electrosmith-daisy-patch
 name: PZD Daisy Pod Groovebox
 summary: >-
   Multitimbral groovebox firmware for the Daisy Pod with a four-layer looper, DX7-style FM, granular, string
-  ensemble, organ and sampler engines, an I2C OLED menu and SD card storage.
+  ensemble, organ, supersaw and sampler engines, a MIDI sequencer, an I2C OLED menu and SD card storage.
 description: >-
   Needs a Daisy Pod with an added 128x64 I2C OLED and a hand-wired micro SD socket. The looper has four
   tempo-locked stereo layers with undo, per-layer filter, effects and reverb send, vari-speed, and WAV export of
@@ -10,7 +10,9 @@ description: >-
   presets, of up to 16 voices and, since v3.6.0, a second Dexed engine with up to 24 voices across both, a granular
   instrument, a string ensemble with up to 16 voices, a drawbar organ added in v3.6.5, and, since v3.6.6, two separate samplers, a chromatic sound
   player and a sliced drum kit that start on their own MIDI channels and can import OP-1 drum and instrument packs you supply. All engines play at the
-  same time, each on its own MIDI channel, and share a plate reverb and delay. Presets, performances and samples
+  same time, each on its own MIDI channel, and share a plate reverb and delay. Since v4.0.0 there are eight MIDI
+  tracks with patterns, chains and an arpeggiator, 16 scenes and a song mode, and v4.0.1 adds a Supersaw engine as the
+  eighth. Presets, performances and samples
   live on the SD card. From v1.6.0 the app runs from QSPI flash behind a separate Daisy bootloader, which each Pod
   needs flashed once. v3.0.0 renamed the SD card folders, so cards from v2.x need their folders renamed.
 status: active
@@ -19,10 +21,12 @@ authors:
     url: https://github.com/Peteranthony1st
 source: https://github.com/Peteranthony1st/PZD-Daisy-Pod-Groovebox
 source_status: open
-license: MIT
+license: PolyForm-Noncommercial-1.0.0
 license_notes: >-
-  LICENSE is MIT, copyright PZD. The vendored msfa DX7 core in src/msfa/ is Apache-2.0 and the Dattorro reverb
-  port is MIT. The libDaisy and DaisySP submodules point to the author's forks, and the build also compiles
+  LICENSE is PolyForm Noncommercial 1.0.0, copyright PZD, with an added permission to make, perform, record,
+  publish and sell music with the firmware; selling the firmware or hardware running it needs a commercial
+  licence. Releases up to v3.6.7 were binary-only; source is published from v4.0.0. The vendored msfa DX7 core in
+  src/msfa/ is Apache-2.0 and the Dattorro reverb port is MIT. The libDaisy and DaisySP submodules point to the author's forks, and the build also compiles
   DaisySP-LGPL. The factory DX7 presets are SysEx banks collected from the wider Dexed community; the repository
   does not state their terms. OP-1 packs are not bundled.
 distribution: download
@@ -33,7 +37,7 @@ install_notes: >-
   Pod, or flash it over DFU. The sdcard-template folder from the release gives a ready-made card layout. Power off
   before swapping cards. Building from source needs the Arm GNU toolchain and make.
 brick_risk: false
-tags: [groovebox, looper, synth-engine, fm, granular, sampler, fx, reverb, midi]
+tags: [groovebox, looper, sequencer, arpeggiator, synth-engine, fm, granular, sampler, fx, reverb, midi]
 image:
   url: https://raw.githubusercontent.com/Peteranthony1st/PZD-Daisy-Pod-Groovebox/main/images/home.jpg
   alt: A Daisy Pod in a white 3D-printed case with an OLED showing four looper layers, BPM 100 and bypass on, above two knobs, two buttons and an encoder
@@ -41,6 +45,14 @@ image:
   source_url: https://github.com/Peteranthony1st/PZD-Daisy-Pod-Groovebox
   first_party: true
 versions:
+  - version: v4.0.1
+    date: 2026-11-14
+    url: https://github.com/Peteranthony1st/PZD-Daisy-Pod-Groovebox/releases/tag/v4.0.1
+    notes: Adds a Supersaw engine modelled on the JP-8000's Super Saw, with 42 factory sounds, a new Global:Tracks and Global:Synths mixer, an Ensemble LFO and velocity, a stereo chorus and a Quick Start PDF on the card template.
+  - version: v4.0.0
+    date: 2026-11-13
+    url: https://github.com/Peteranthony1st/PZD-Daisy-Pod-Groovebox/releases/tag/v4.0.0
+    notes: Adds eight MIDI tracks with pattern grids, chains and an arpeggiator, 16 scenes, a song mode and live and song WAV export. Source code is published from this release, under PolyForm Noncommercial 1.0.0.
   - version: v3.6.7
     date: 2026-11-07
     url: https://github.com/Peteranthony1st/PZD-Daisy-Pod-Groovebox/releases/tag/v3.6.7

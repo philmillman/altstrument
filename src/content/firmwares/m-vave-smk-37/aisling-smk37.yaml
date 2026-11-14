@@ -1,18 +1,19 @@
 device: m-vave-smk-37
 name: AISLING SMK-37 Elite
 summary: >-
-  Source port of the AISLING generative Irish ambient instrument to the SMK-37 Elite, with a board layer for its 37 keys
-  and extra controls. It builds and passes tests on a computer and has not yet run on an Elite.
+  Port of the AISLING generative Irish ambient instrument to the SMK-37 Elite, with a board layer for its 37 keys,
+  pads and faders. Version 1.3.1 ships a package that the author tested on one Elite.
 description: >-
   Same engine, eight pieces and screens as the FM-1 version, with the FM-1 build left byte for byte unchanged and one
   compile switch selecting the Elite. A board layer covers the Elite's pins, key and button matrix, lights, display and
   flash map, which the author read from M-VAVE's V016 update package and from the makkuro and genkigenki SMK-37 ports.
-  The middle 27 of the 37 keys play as the FM-1's keys do, the first knob is the master level, and the pads, faders and
-  wheels are planned but unused. The Elite's USB MIDI works; TRS MIDI is off. The firmware never writes the first
-  16 KiB, the Bluetooth pairings, the per-unit key calibration or the stock resources. The README and the SMK37 document
-  say nothing is offered to install until it has been installed, played and removed on an Elite with the way back
-  to M-VAVE's firmware proven, and list seven open hardware questions such as the shift register bit order and the
-  Elite's flash chip ID. It is for the Elite only, not the Pro or MKE-P37. No package or release exists.
+  The middle 27 of the 37 keys (F3 to G5) play as the FM-1's keys do, the buttons and knobs take the FM-1's jobs, the
+  16 pads act as PERFORM's effects while held, with latch and lights, and the four faders set the mix. The Elite's USB
+  MIDI works; TRS MIDI is off. The firmware never writes the first 16 KiB, the Bluetooth pairings, the per-unit key
+  calibration or the stock resources. The release notes say the 1.3.1 package was installed over M-VAVE's V016, removed
+  again with M-VAVE's own package, installed again, and every control checked by hand on one Elite, with an hour's run
+  without dropouts. The web installer has not been tried on an Elite. It is for the Elite only, not the Pro or
+  MKE-P37.
 status: active
 authors:
 - name: Stephen Cummins
@@ -27,17 +28,19 @@ license_notes: >-
   package is in the repository.
 homepage: https://stephencummins.github.io/smk37-aisling/
 based_on: m-vave-fm-1/aisling
-distribution: source-only
+distribution: download
 requires_stock: SMK-37 Elite on M-VAVE V016
 install_notes: >-
-  Nothing to install yet. The repository's tools check the Elite by its USB name and refuse an FM-1 package. They also
-  include a rescue tool that writes only the app area from your own M-VAVE SMK-37 Elite V016 package after
-  checking the flash chip and that your backup holds the key calibration. The author warns that building and installing
-  it now is not wise because the way back is untried on an Elite. Take a full flash backup first.
+  Take a full flash backup first, then install the release's aisling-smk37-elite-1.3.1.fwsc with the repository's
+  tools/fm1_install.py and the port named SMK-37 Elite. The tools check the Elite by its USB name and refuse an FM-1
+  package. They also include a rescue tool that writes only the app area from your own M-VAVE SMK-37 Elite V016
+  package after checking the flash chip and that your backup holds the key calibration. docs/SMK37.md section 11
+  covers installing and going back. The release notes say installing is at your own risk and that the package has run
+  on one unit.
 brick_risk: false
 tags: [generative, ambient, sequencer, synth-engine, fx, fork, emulator]
 versions:
-- version: main @ b09ea91
-  date: 2026-11-07
-  url: https://github.com/stephencummins/smk37-aisling/commit/b09ea91
-  notes: No tagged releases; this is the latest commit.
+- version: v1.3.1
+  date: 2026-11-13
+  url: https://github.com/stephencummins/smk37-aisling/releases/tag/v1.3.1
+  notes: First release. AISLING 1.3.1 with the Elite board layer, tested on one Elite (identity SMK-37 Elite_353010301) and published as a 650,650-byte .fwsc package.

@@ -1,0 +1,46 @@
+device: m-vave-fm-1
+name: FM-1 Flasher for Android
+kind: tool
+summary: >-
+  Android app that browses The Firmware Hub's catalogue, downloads firmware packages and installs them on an FM-1 over
+  USB MIDI, with an experimental chip detection, backup and ROM-recovery path.
+description: >-
+  Needs Android 14 or newer and a phone with USB host support, and works on one FM-1 chosen from the ports on a hub. The catalogue tab lists the
+  Hub's entries with favourites, filters and update marks, and keeps downloaded packages for offline use. Before writing, the app checks the
+  catalogue's SHA-256, the package header and the file CRCs, then runs the two-step update and checks the unit's identity after each restart. The only
+  package it pins is M-VAVE's official V15. An experimental switch in Settings turns on a multi-port MIDI logger, flash chip detection through the
+  chip's USB download mode, and a recovery that backs up the whole flash and rewrites only the firmware region from the V15 package. The app has
+  English, Polish and Simplified Chinese interfaces. The README calls it experimental, says one user has flashed a real FM-1 with an earlier build and
+  lists physical USB recovery and automatic reconnection as untested.
+status: active
+authors:
+- name: ekim-pl
+  url: https://github.com/ekim-pl
+source: https://github.com/ekim-pl/android-fm1-flasher
+source_status: open
+license: MIT
+license_notes: >-
+  LICENSE.md is the MIT text, copyright 2026 ekim.pl@gmail.com, with a note that third-party components, firmware packages, catalogue entries and artwork
+  keep their own terms. GitHub reports the file as unrecognised because of that note. The two flash loader binaries in app/src/main/assets are
+  unmodified builds from jvitkauskas/m-flasher (MIT), documented in third_party/. No firmware package is in the repository.
+homepage: https://ekim-pl.github.io/android-fm1-flasher/
+distribution: download
+requires_stock: A firmware with a compatible USB updater, such as M-VAVE's V15
+install_notes: >-
+  Releases carry a debug-signed APK with a SHA-256 file, meant for testing. The app writes only the firmware region and leaves the boot area alone; its
+  recovery refuses a unit whose boot area is not a recognised stock one, and downloading is separate from writing. It does not install
+  m-bootloader or rewrite the bootloader. Keep M-UPGRADE or another rescue route ready, since a power loss while writing can need a USB rescue.
+brick_risk: false
+tags: [flasher, usb-midi, recovery, backup]
+versions:
+- version: 0.7.0-experimental
+  date: 2026-11-14
+  url: https://github.com/ekim-pl/android-fm1-flasher/releases/tag/v0.7.0-experimental
+  notes: Adds the opt-in experimental MIDI logger, chip detection and ROM recovery.
+- version: 0.6.0
+  date: 2026-11-14
+  url: https://github.com/ekim-pl/android-fm1-flasher/releases/tag/v0.6.0
+  notes: Requires Android 14, simplifies MIDI discovery and fixes a cold-start crash.
+- version: 0.5.1-experimental
+  date: 2026-11-14
+  url: https://github.com/ekim-pl/android-fm1-flasher/releases/tag/v0.5.1-experimental

@@ -2,7 +2,8 @@ device: m-vave-smk-37
 name: SMKTRON
 summary: >-
   Mellotron-style tape firmware for the SMK-37 Pro, adapted from FMEL-1: flute, choir, cello and violin tapes with
-  layers, chord pads, a sequencer, a granular mode, tape wear, vibrato, Leslie, echo and reverb.
+  layers, chord pads, a sequencer, a granular mode, tape wear, vibrato, Leslie, echo and reverb, plus a MIDI mode that
+  turns the keyboard into a controller.
 description: >-
   Rights warning: the four tape banks are Mellotron recordings by Bernie Kornowicz (Taijiguy), whose own statement
   allows use but excludes commercial software for profit, so they are not GPL and the packages must not be sold.
@@ -11,7 +12,9 @@ description: >-
   performance on the SMK-37 Pro. Patch and layer screens show a tape machine. A GRAIN page has four modes (free,
   mist, pulses and fragments) with size, spread, density and mix, the modulation wheel opens vibrato, and a knob bank
   moves between performance controls, favourites and chord pads. The chord pads can record and hold chords, and the
-  sequencer is kept while the arpeggiator is removed. The screen has light, dark and zoomed looks. The reverb is adapted
+  sequencer is kept while the arpeggiator is removed. Since 0.3.0-mm1f a MIDI mode makes the synth and the controller
+  exclusive: the controller sends no internal audio and has USB and TRS output, four editable key maps, banks A and B,
+  pad colours, velocity, pitch bend, modulation, sustain and a panic function. The screen has light, dark and zoomed looks. The reverb is adapted
   from OberVave. The README says ChatGPT and Codex helped write the adaptations, web pages and documentation under the
   author's direction, and that native builds and simulator checks passed but no physical test is claimed for the
   V016-only installer. The site, simulator and installer are in Portuguese and English.
@@ -34,8 +37,9 @@ requires_stock: SMK-37 Pro official V016 (identity SMK-37 Pro_016)
 install_notes: >-
   A first-install package for an SMK-37 Pro running M-VAVE's official V016 only; the installer checks the file you select
   and the model, and refuses other models and firmware. Use M-UPGRADE to return to V016 first, then the browser installer
-  in Chrome or Edge on desktop over HTTPS with a USB data cable, with other MIDI software closed, and look for 0.3.0-gr3
-  at boot. Note your settings first, since new records use a format the earlier AT2 version cannot read.
+  in Chrome or Edge on desktop over HTTPS with a USB data cable, with other MIDI software closed, and look for the
+  version name, such as 0.3.0-mm1h, at boot. Earlier SMKTRON builds update directly, and mm1f stays available for
+  rollback. Note your settings first, since new records use a format the earlier AT2 version cannot read.
 brick_risk: false
 tags: [synth-engine, sampler, tape, granular, fx, sequencer, chords, performance, emulator, fork]
 image:
@@ -45,6 +49,14 @@ image:
   source_url: https://github.com/4t59m4f784-creator/SMKTRON
   first_party: true
 versions:
+- version: 0.3.0-mm1h
+  date: 2026-11-14
+  url: https://github.com/4t59m4f784-creator/SMKTRON/releases/tag/v0.3.0-mm1h
+  notes: The mm1f MIDI mode with keys, sustain, pitch bend and modulation serviced during screen redraws, which tightens chord timing and removes gaps. The main key channel is set under GLOBE and each control's channel under PARA. The release says it is the hardware-tested package, promoted without a rebuild.
+- version: 0.3.0-mm1f
+  date: 2026-11-14
+  url: https://github.com/4t59m4f784-creator/SMKTRON/releases/tag/v0.3.0-mm1f
+  notes: Adds MIDI mode with USB and TRS output, four editable key maps, ABS and REL, banks A and B, pad colours, velocity, bend, modulation, sustain and panic, plus larger GLOBAL screens. Identity SMK-37 Pro_460; the release says it passed physical tests.
 - version: 0.3.0-gr3
   date: 2026-11-13
   url: https://github.com/4t59m4f784-creator/SMKTRON/releases/tag/v0.3.0-gr3

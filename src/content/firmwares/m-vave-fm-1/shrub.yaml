@@ -1,21 +1,45 @@
 device: m-vave-fm-1
 name: SHRUB
 summary: >-
-  Wavetable synth firmware for the FM-1 by Steve Duda of Xfer Records, described as a reduced Serum:
-  wavetable oscillator, Serum 2-derived filter, arpeggiator and motion sequencer. Announced as free; in
-  private testing.
+  Wavetable synth firmware for the FM-1 by Steve Duda of Xfer Records, a reduced Serum with Serum wavetables, filters,
+  envelopes and LFOs, a mod matrix, an effects rack, an arpeggiator and a motion sequencer. Free beta, installed from a
+  web page.
 description: >-
-  Synth Anatomy reported on 2026-10-24 that SHRUB is synth-only, with no groovebox features. The
-  announced engine has a wavetable oscillator, a filter taken from Serum 2, two ADSR envelopes, two
-  LFOs, a multi-effects section, an arpeggiator, an eight-lane motion sequencer and built-in scales.
-  Filters are not per voice, and the author says the sound quality is below Serum's. Testers were
-  recruited in the r/MVaveFM1 subreddit. No download, source or release date has been published.
-status: announced
+  Licence note: the project site states "copyright 2026 Xfer Inc. All rights reserved" and publishes no source, so the
+  licence is recorded as proprietary although the download is free.
+
+  SHRUB turns the FM-1 into a synth-only instrument with no groovebox features. Per the operation guide it has Serum
+  wavetables and warps, Serum 2-style filters, Serum envelopes and LFOs, a 16-slot mod matrix, an effects rack with
+  distortion, chorus, delay, compressor, reverb and EQ, an algorithmic arpeggiator, a motion sequencer, scales, poly and
+  mono modes and 100 presets. The filter is a single stereo filter, not one per voice, and the author says the sound is below the
+  plugin's. A browser editor at shrub.audio plays the same engine without an FM-1, edits a connected FM-1 live, imports Serum 1
+  presets, exports to Serum 2 and loads user wavetables. A page on the site runs the firmware in joakimeriksson's
+  fm1-emu emulator, and a VST3 for macOS, Windows and Linux is listed as coming soon. Synth Anatomy reported the beta on
+  2026-11-13, after a closed test announced on r/MVaveFM1 in October.
+status: active
 authors:
   - name: Steve Duda (Xfer Records)
     url: https://xferrecords.com/
-source_status: closed
-license: unspecified
-license_notes: Announced as a free download; no licence terms or source have been published.
-homepage: https://www.reddit.com/r/MVaveFM1/comments/1xdyrwa/shrub_firmware_testers/
-tags: [synth-engine, wavetable, arpeggiator, sequencer, fx]
+source_status: binary-only
+license: proprietary
+license_notes: >-
+  The site and operation guide state "copyright 2026 Xfer Inc. All rights reserved" and call SHRUB free. No source or
+  redistribution terms are published. SHRUB is not made, sold or supported by M-VAVE.
+homepage: https://shrub.audio/
+community:
+  - label: Shrub Club on Discord
+    url: https://discord.gg/8fDZKYvARA
+  - label: r/MVaveFM1 tester thread
+    url: https://www.reddit.com/r/MVaveFM1/comments/1xdyrwa/shrub_firmware_testers/
+distribution: browser-installer
+install_notes: >-
+  Connect the FM-1 over USB and open shrub.audio/editor/install in Chrome or Edge. Close the editor, M-VAVE's updater and any
+  other software using the FM-1, then install the hosted package or choose a downloaded SHRUB.fwsc. The guide says the
+  installer writes only the part of the FM-1 that an update writes, and that M-VAVE's firmware can be installed again.
+  Synth Anatomy quotes the developer warning that bricking is possible, and the site labels the release a beta.
+brick_risk: false
+tags: [synth-engine, wavetable, arpeggiator, sequencer, fx, editor, web, emulator]
+versions:
+  - version: "1.00"
+    url: https://shrub.audio/guide/
+    notes: Firmware V1.00 according to the November 2026 operation guide; the site labels it a beta.

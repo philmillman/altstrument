@@ -1,12 +1,14 @@
 device: valeton-gp-5
 kind: firmware
 name: OpenGP5
-summary: Open firmware platform for the Valeton GP-5, written for both of its processors, with example effects in C, a USB flasher and a browser flasher.
+summary: Open firmware platform for the Valeton GP-5, written for both of its processors, with a pass-through template and a tuner demo in C, a USB flasher and a browser flasher.
 description: >-
   OpenGP5 replaces the GP-5's firmware with code written from scratch for its control processor and its DSP. A firmware
   author writes the audio function and the controls and screen handlers in C, and the platform supplies start-up, drivers,
-  USB-MIDI, the colour screen, the foot switch, knobs, LEDs and the link between the two processors. The releases ship a
-  tremolo, a granular delay with micro-looper and a pass-through build, and the repository has a command line flasher, a
+  USB-MIDI, the colour screen, the foot switch, knobs, LEDs and the link between the two processors. The releases up to
+  0.2.1-alpha shipped a tremolo, a granular delay with micro-looper and a pass-through build. 0.3.0-alpha removes the
+  two example effects, adds a pass-through template with a tutorial for a first tremolo, a strobe tuner demo, an audio
+  link that lets the two processors exchange data after every audio block and smooth text in any font. The repository has a command line flasher, a
   browser flasher and tools that run an effect on a WAV file or boot the DSP image in an emulator. The author states that it
   contains no Valeton code or data and no chip vendor SDK code. It is alpha and has been tested on one pedal.
 status: active
@@ -35,6 +37,10 @@ image:
   source_url: https://github.com/OpenGP5/OpenGP5#readme
   first_party: true
 versions:
+  - version: 0.3.0-alpha
+    date: 2026-11-13
+    url: https://github.com/OpenGP5/OpenGP5/releases/tag/v0.3.0-alpha
+    notes: Pre-release. Adds a link for exchanging data between the two processors after each audio block, debounced foot switch and PARA presses, reliable switching to update mode from a running firmware, smooth text fonts and a pass-through template; the example effects are removed. Fonts made with the old make_font.py need regenerating.
   - version: 0.2.1-alpha
     date: 2026-11-12
     url: https://github.com/OpenGP5/OpenGP5/releases/tag/v0.2.1-alpha

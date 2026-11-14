@@ -1,0 +1,35 @@
+device: warft-ctrl-toern
+name: TŒRN
+summary: Open-source firmware for the TŒRN sampler and sequencer, with eight sample voices, three synth parts, a 32-step by 8-page grid sequencer, song mode, effects and MIDI, plus browser tools for flashing and SD cards.
+description: >-
+  The sequencer holds 32 steps on each of eight pages, or 16 by 16 on the smaller panel, and stores up to 999 patterns. Eight
+  voices play samples from the SD card with trim, reverse and independent time stretch, and can record from the built-in mic,
+  line in or mic in. A three-voice, three-oscillator poly synth with presets and two mono synths with LFO and arpeggiator share
+  the grid. Each channel has an ADSR, bitcrusher, filter and reverb, steps can carry probability and conditions, and patterns
+  chain into songs. The device sends and receives MIDI clock over TRS, and its USB port carries audio and serial. The
+  repository also has browser tools for flashing the Teensy, managing the SD card, converting samples and simulating the unit, and the
+  README describes the firmware as under very active development. It builds on the author's earlier NI404 design.
+status: active
+authors:
+  - name: Jan-Peter Kuntoff
+    url: https://github.com/Soundpauli
+source: https://github.com/Soundpauli/toern
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file covers the software under MIT, copyright 2025 Jan-Peter Kuntoff. The browser firmware loader in
+  tools/firmware is GPL-3.0 because it is based on Teensy Loader Javascript. Hardware design files are CC BY-NC 4.0, and
+  the README reserves sales of TŒRN hardware to the author.
+homepage: https://toern.live/
+distribution: source-only
+install_notes: >-
+  Build with PlatformIO using the pinned teensy41 environment and USB type Serial + MIDI + Audio, then upload through the
+  Teensy loader, or use the repository's browser flasher. The Teensy 4.1's separate bootloader chip stays available, so a bad
+  upload can be replaced by holding the program button. Units bought from the author arrive with firmware installed.
+brick_risk: false
+tags: [sampler, sequencer, groovebox, synth-engine, midi, official, open-source]
+versions:
+  - version: main @ 9671a48
+    date: 2026-11-09
+    url: https://github.com/Soundpauli/toern/commit/9671a48270638c8520f5cc465844da59033f2dde
+    notes: No tagged releases; this is the latest commit.

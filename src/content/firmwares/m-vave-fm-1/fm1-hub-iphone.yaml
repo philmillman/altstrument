@@ -9,7 +9,7 @@ description: >-
   update protocol as the hub's installer and M-VAVE's updater, including resuming an interrupted update. It fetches M-VAVE's current firmware
   from M-VAVE's own server and keeps the V15 recovery image the hub offers, checked against a pinned file. A backup stores the package and, for
   Felucca and SLOOP families, reads the unit's music, settings and projects in those editors' backup formats. Settings, packages and
-  history stay on the phone. The ROM-bootloader rescue is not included. The protocol code is a Swift port of Leo Kuroshita's GPL code, and
+  history stay on the phone. It reads the unit's flash chip and warns before installing firmware the catalogue marks as first-chip only onto a unit with the newer chip. The ROM-bootloader rescue is not included. The protocol code is a Swift port of Leo Kuroshita's GPL code, and
   the README says Hügelton Instruments had no objection while it stays open source.
 status: active
 authors:
@@ -30,10 +30,10 @@ install_notes: >-
 brick_risk: false
 tags: [flasher, librarian, backup, usb-midi]
 versions:
-- version: main @ 8a78400
+- version: main @ f168a0e
   date: 2026-11-13
-  url: https://github.com/debreczi/fm1firmwarehost/commit/8a784009b8e03ca406cde31a6d982186df6b701c
-  notes: Latest commit, a merge of the release/1.0 branch that updates NOTICE.md.
+  url: https://github.com/debreczi/fm1firmwarehost/commit/f168a0efa13e9fab90352078544d14d559946764
+  notes: Latest commit. The app checks the FM-1's flash chip against the hub catalogue's chip field before each install, shows a red warning, refuses firmware marked for the first chip only on a unit that reports the newer one unless a Settings switch allows it, and gives M-VAVE's official firmware its own card at the top of the Firmwares tab.
 - version: v1.0
   date: 2026-11-02
   url: https://github.com/debreczi/fm1firmwarehost/tree/v1.0

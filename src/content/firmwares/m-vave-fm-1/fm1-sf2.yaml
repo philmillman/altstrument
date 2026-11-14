@@ -13,8 +13,8 @@ description: >-
   There is one firmware, the one with a live cache that plays MP3-packed banks about twice as large; it has no MIDI file
   player and plays no SEA or PCM banks, which a build without the live cache keeps. A CPU guard lowers the voice count
   instead of stuttering. A browser emulator and MIDI player on the project site run the firmware without a device. The
-  firmware package has its own identity, FM-1_8320501, and the release is marked a beta that the author says is still being
-  tested on the device.
+  firmware package has its own identity, FM-1_8320501. Since v1.0.0 the player runs at 44.1 kHz, and banks packed for the
+  32 kHz firmware of earlier releases must be converted again.
 status: active
 authors:
 - name: mwedmark
@@ -45,6 +45,10 @@ image:
   source_url: https://github.com/mwedmark/fm1-sf2
   first_party: true
 versions:
+- version: v1.0.0
+  date: 2026-11-14
+  url: https://github.com/mwedmark/fm1-sf2/releases/tag/v1.0.0
+  notes: First stable release, tested on an FM-1. The player runs at 44.1 kHz with the voices shared between both CPU cores, four-point interpolation and the live cache, and plays MP3-packed banks made at 44.1 kHz and BFP8 banks of any rate. Banks made for the 32 kHz firmware of v0.5.x do not play and need converting again. The bundled General MIDI bank is now 44.1 kHz.
 - version: v0.5.2
   date: 2026-11-11
   url: https://github.com/mwedmark/fm1-sf2/releases/tag/v0.5.2

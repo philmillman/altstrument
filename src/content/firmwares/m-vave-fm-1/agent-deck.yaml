@@ -31,8 +31,8 @@ homepage: https://github.com/kevinelliott/fm-1-agent-deck
 based_on: m-vave-fm-1/dinghy
 distribution: download
 install_notes: >-
-  Download agentdeck-0.6.fwsc from the latest release and install it with firmware-build/tools/fm1_install.py or the FM-1
-  Firmware Hub, then run host/agentdeck.py on the computer. The README asks you to return a V16 unit to V15 first, says a cut-off write
+  Download agtdeck-0.7.fwsc from the latest release and install it with firmware-build/tools/fm1_install.py or the FM-1
+  Firmware Hub, then run host/agtdeck.py on the computer. The README asks you to return a V16 unit to V15 first, says a cut-off write
   can leave the unit dark until the chip's mask-ROM mode rescues it, and notes that holding OCT- at power-on gives the
   USB rescue.
 brick_risk: false
@@ -44,6 +44,22 @@ image:
   source_url: https://github.com/kevinelliott/fm-1-agent-deck
   first_party: true
 versions:
+- version: '0.7'
+  date: 2026-11-14
+  url: https://github.com/kevinelliott/fm-1-agent-deck/releases/tag/v0.7
+  notes: "Renames the package and daemon files from agentdeck to agtdeck; nothing new on the device. The daemon gains a doctor check, a login service, an auto-approve allow-list and reconnect after an unplug, and the repository adds a browser config editor. The notes say this package has run in the emulator only."
+- version: 0.6.3
+  date: 2026-11-13
+  url: https://github.com/kevinelliott/fm-1-agent-deck/releases/tag/v0.6.3
+  notes: "The firmware is 0.6.2 with a new number; the package is now built and attested on GitHub through the Firmware Hub's shared build workflow."
+- version: 0.6.2
+  date: 2026-11-13
+  url: https://github.com/kevinelliott/fm-1-agent-deck/releases/tag/v0.6.2
+  notes: "Gives the firmware its own package identity (FM-1_24356) and USB name FM-1 AGTDECK in place of Felucca; adds a root GPL-3.0 licence file."
+- version: 0.6.1
+  date: 2026-11-13
+  url: https://github.com/kevinelliott/fm-1-agent-deck/releases/tag/v0.6.1
+  notes: "Moves the context gauge in box view to the tile's right edge so it no longer crosses the text."
 - version: '0.6'
   date: 2026-11-13
   url: https://github.com/kevinelliott/fm-1-agent-deck/releases/tag/v0.6

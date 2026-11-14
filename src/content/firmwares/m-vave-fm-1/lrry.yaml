@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: L/RRY
+summary: >-
+  Stereo-field morphing synth from the author of DUELL: every voice has two oscillators, a sub, noise and ring mod, two filters and two dirt stages, each with its own left-right pan, plus morphing between two versions of a sound.
+description: >-
+  Each note runs through one stereo chain. Two oscillators have eight models each (saw, triangle, sine, pulse, sync, a supersaw, FM and wavefold), and a sub, noise and ring modulation sit beside them. Every source has its own level, pan and filter balance. A multi filter and a twin filter run in series or parallel, two dirt stages follow, and an 8-slot mod matrix can reach every pan. MORPH glides between a patch and a randomised version of it. Other parts are chord strum, an arpeggiator, a 64-step sequencer with parameter locks, velocity and aftertouch, a chorus, a four-mode delay and six reverbs, and 128 patches. Both cores of the FM-1 play voices. The project site has a browser emulator, an installer and a web editor with a patch librarian. The author says the synth began on a Teensy before the FM-1 port and has run on one FM-1, the author's own. It is a first public beta, and until 1.0 the format of saved patches and settings may change. The name and logo artwork are reserved by the author and are not under the GPL.
+status: active
+authors:
+- name: OSCILL/R
+  url: https://github.com/oscillr
+source: https://github.com/oscillr/LRRY
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Stated in LICENSE, the README and NOTICE.md, as a modified Felucca with the same terms. The name L/RRY, the OSCILL/R name and the logo artwork belong to the author and are not part of the GPL licence. Third-party parts keep their own licences (lrry/LICENSING.md): MIT code from DaisySP, Rings and CHOMPI's plate reverb, Apache-2.0 msfa, and a CC0 FM bass voice. Three JieLi SDK files go into every package.
+homepage: https://oscillr.github.io/LRRY/emu/
+based_on: m-vave-fm-1/duell
+distribution: browser-installer
+requires_stock: V15 or another custom firmware
+install_notes: >-
+  Use the installer page at oscillr.github.io/LRRY/install/ in Chrome or Edge with a data USB cable plugged straight into the computer, save a backup first and do not unplug during the write. Its Return to official V15 and M-VAVE's own updater go back; M-VAVE's firmware is not distributed here. The README warns that the FM-1 keeps a single copy of its firmware and that backups from one beta may not restore in the next. The package is lrry-0.1.0-beta.fwsc, with a SHA-256 on the release page.
+brick_risk: false
+tags: [synth-engine, fx, performance, sequencer, arpeggiator, emulator, editor, fork]
+image:
+  url: https://raw.githubusercontent.com/oscillr/LRRY/main/docs/lrry-deck.png
+  alt: Title slide on a black background with the large white logo L/RRY, the words Stereo-field morphing synthesizer by OSCILL/R and orange ellipses on the right
+  credit: OSCILL/R
+  source_url: https://github.com/oscillr/LRRY
+  first_party: true
+versions:
+- version: 0.1.0 beta
+  date: 2026-11-13
+  url: https://github.com/oscillr/LRRY/releases/tag/v0.1.0-beta
+  notes: First public beta, published as a GitHub pre-release.

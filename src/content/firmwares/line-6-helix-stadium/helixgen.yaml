@@ -11,7 +11,8 @@ description: >-
   expression pedals, MIDI and Command Center, edits parameters, blocks and controller assignments in an existing
   file, reads a preset back as a recipe, and can also produce legacy .hlx files. It computes the Stadium's IR hash
   and talks to a Stadium over the LAN with OSC over ZeroMQ, with no editor app, to list, load, create, rename and
-  delete content, set parameters, sync setlists and back up. The protocol document says the CRUD operations and live
+  delete content, set parameters, sync setlists and back up, and its device live command serves a local web page that edits
+  the active tone block by block. The protocol document says the CRUD operations and live
   parameter edits were exercised on a Stadium XL on firmware 1.3.2, and the project has since added firmware 1.4
   handling. The README warns that loading generated presets can be rejected, corrupt slots or crash the unit.
   helixgen-tui is a separate repository and PyPI package, a Textual terminal librarian for tones, setlists, IRs and
@@ -38,6 +39,22 @@ install_notes: >-
 brick_risk: false
 tags: [generator, editor, protocol, research, python, cli, tui]
 versions:
+  - version: v0.62.0
+    date: 2026-11-14
+    url: https://github.com/sheax0r/helixgen-core/tree/v0.62.0
+    notes: Git tag; no GitHub release page. The live chain editor colours the knobs matched by its quality search by the direction to turn them.
+  - version: v0.61.0
+    date: 2026-11-14
+    url: https://github.com/sheax0r/helixgen-core/tree/v0.61.0
+    notes: Git tag; no GitHub release page. The live chain editor opens in its own app window, switches snapshots and loads other presets from the page, applies snapshot changes in place and adds the quality search.
+  - version: v0.60.1
+    date: 2026-11-14
+    url: https://github.com/sheax0r/helixgen-core/tree/v0.60.1
+    notes: Git tag; no GitHub release page. Packaging fix that ships the live editor's page in the wheel.
+  - version: v0.60.0
+    date: 2026-11-13
+    url: https://github.com/sheax0r/helixgen-core/tree/v0.60.0
+    notes: Git tag; no GitHub release page. Adds helixgen device live, a local web page that edits the active tone as a signal chain with every control written to the unit at once, and fixes parameter writes for list and switch values, which the unit had been ignoring.
   - version: v0.59.1
     date: 2026-11-13
     url: https://github.com/sheax0r/helixgen-core/tree/v0.59.1

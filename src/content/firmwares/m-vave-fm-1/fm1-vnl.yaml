@@ -1,37 +1,45 @@
 device: m-vave-fm-1
 name: VNL-1
 summary: >-
-  Generative lo-fi hip hop radio: plans whole songs of two to three and a half minutes, then a pause and a new
-  song, on placeholder voices; built on fm1-base.
+  Generative lo-fi DJ groovebox: writes endless songs with their own key, tempo, chords and band, plays them through a
+  six-part band of sampled and synth instruments, and lets you re-roll, lock or loop parts from the knobs.
 description: >-
-  Each song has a chord loop, groove, bass, melody and a map of layers entering and leaving in four and
-  eight-bar blocks, and the next song is meant to differ in key, tempo and texture. Controls are minimal: PLAY
-  stops and starts, K1 to K4 set key, tempo, motion and mood, each taking effect at the next four-bar boundary.
-  It has no MIDI or Bluetooth. The author's status note says the voices are placeholders, the firmware passes in the
-  host simulator and the browser emulator, and it has not yet been installed on a real FM-1. The repository
-  includes the design spec and the lo-fi music research behind the rules.
+  Each song comes from a seed with its own key, mode, tempo, chord progression, layout and band, ends properly, and is
+  followed by a short silence and a different song. The band has drums (eight kits, two of them sampled), bass, a comp
+  with strummed guitars and a harp, a lead in eight styles, a pad and a texture layer, and the sampled piano, guitars,
+  cello, harp and room kits come from CC0 libraries in a sample bank that the installer writes once. A lo-fi effects chain
+  and a CPU guard that sheds reverb tails and quiet voices are included. K1 to K4 set key, tempo, motion and mood, SEQ
+  re-rolls a song or a part, parts can be locked, muted and soloed, sections can be looped, and 16 songs can be saved. It
+  has now-playing and detailed main screens, fifteen colour themes, a screen reader and USB audio in and out, and no
+  Bluetooth. A workbench web page, a browser emulator and a host simulator that renders WAV, MIDI and MusicXML go with
+  it. The author says it was tested on an FM-1 with the original flash chip and should work on newer units with the
+  UC25HQ80 chip, which has not been verified. It is built on fm1-base.
 status: active
 authors:
 - name: pianomansam
   url: https://github.com/pianomansam
 source: https://github.com/pianomansam/fm1-vnl
 source_status: open
-license: MPL-2.0
+license: GPL-3.0-or-later
 license_notes: >-
-  Inherited from fm1-base, which is a git submodule; the app's own files may use any licence and carry the repository's
-  MPL-2.0. Building needs JieLi's AC79 SDK, which is not in the repository.
-homepage: https://github.com/pianomansam/fm1-vnl
-distribution: source-only
+  The LICENSE file and the README give GPL-3.0-or-later for VNL-1's own source; up to the tag mpl-final it was MPL-2.0.
+  The README says the firmware binary as a whole is GPL-3.0-only because it includes GPL-3.0-only drum engines from
+  FOMAJAM and Optimist, Optimist's CPU guard and Cut-A-Dor's rhythm tables. Files adapted from fm1-base keep their
+  MPL-2.0 notices, the reverb and chorus adapted from Mutable Instruments Rings are MIT, and the Barlow font is SIL OFL
+  1.1. The samples are CC0 except a jazz guitar re-amp recording under GPL-3.0-or-later, and the AC79 SDK boot files in
+  the package are Apache-2.0.
+homepage: https://pianomansam.github.io/fm1-vnl/
+distribution: browser-installer
 install_notes: >-
-  No prebuilt package is published. Clone with submodules, then ./build.sh (JieLi toolchain in Docker, AC79 SDK
-  and a Python venv with Pillow, mido and python-rtmidi) writes app/build/vnl.fwsc, installed with
-  base/tools/fm1_install.py. Holding OCT- and OCT+ for 5 s enters update mode, and base/bsp/tools/fm1_rescue.sh
-  restores stock firmware on a unit that shows up as 4C4A:8057 on USB. The README says installing is at your own
-  risk.
+  Open the project site in Chrome or Edge with the FM-1 on USB and press Install; it writes the firmware and then offers
+  the sample bank, which a first install should accept. The release also has a .fwsc and the bank as a .bin for
+  base/tools/fm1_install.py and tools/fm1_bank.py. Hold REC while switching on for update mode. If the unit does not
+  boot but shows up on USB as 4C4A:8057, base/bsp/tools/fm1_rescue.sh restores M-VAVE's firmware. The README says
+  installing is at your own risk and that you can go back to M-VAVE's firmware.
 brick_risk: false
-tags: [generative, sequencer, chords, drums, synth-engine, emulator]
+tags: [generative, sequencer, chords, drums, synth-engine, sampler, fx, emulator]
 versions:
-- version: main @ d015b4f
-  date: 2026-10-26
-  url: https://github.com/pianomansam/fm1-vnl/commit/d015b4fb72600fd23bf0b4f09ffddfc4d4b5b7af
-  notes: No tagged releases; this is the latest commit.
+- version: 0.9.0
+  date: 2026-11-14
+  url: https://github.com/pianomansam/fm1-vnl/releases/tag/v0.9.0
+  notes: First release, with the firmware and a sample bank. Spreads each bar's planning so songs no longer drop out mid-song, sets up a new song during the silence before it, and adds endless generated songs, six parts, sampled instruments and a screen reader. Tested on the original FM-1; the newer UC25HQ80 units are expected to work but are not verified.

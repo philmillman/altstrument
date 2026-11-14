@@ -10,7 +10,7 @@ description: >-
   when you start it, and plays through the computer keyboard, mouse, touch or Web MIDI. The native build
   (Rust, fm1-live) runs at full clock speed with a JIT on Apple silicon Macs, 64-bit ARM Linux and, since 0.3.0,
   x86-64 Linux. Release 0.4.0 has prebuilt archives of it for those three, a plugin build (AU, VST3, CLAP) for
-  Apple-silicon Macs and, new in 0.4.0, a VST3 and CLAP plugin for Windows; the emulator runs M-VAVE's V16 firmware and
+  Apple-silicon Macs and, new in 0.4.0, a VST3 and CLAP plugin for Windows; 0.5.1 adds a Windows build of fm1-live; the emulator runs M-VAVE's V16 firmware and
   its FM1 Open since 0.3.0. Since 0.4.0 it also models the chip's hardware DSP units and resets, and an opt-in strict mode
   uses timings measured on a real FM-1. FM-1 SID, a Commodore 64 SID
   synth firmware with a sequencer and effects, began in this repository and now lives in a repository of its own
@@ -29,7 +29,7 @@ homepage: https://joakimeriksson.github.io/fm1-emu/
 install_notes: >-
   Browser version needs nothing installed. To run M-VAVE's stock firmware, download FM-1.fwsc from M-VAVE and
   open it on the page; the emulator does not bundle or fetch it. Native build: download the fm1-live archive
-  for macOS or Linux from the releases page (unsigned; macOS asks for approval), or run cargo run --release
+  for macOS, Linux or Windows from the releases page (unsigned; macOS asks for approval), or run cargo run --release
   -p fm1-live.
 brick_risk: false
 tags: [emulator, research]
@@ -42,6 +42,14 @@ image:
   source_url: https://github.com/joakimeriksson/fm1-emu
   first_party: true
 versions:
+- version: 0.5.1
+  date: 2026-11-14
+  url: https://github.com/joakimeriksson/fm1-emu/releases/tag/v0.5.1
+  notes: Adds fm1-live for Windows, plays Polly's band and Melodee's factory sounds from their packages alone, can emulate the newer FM-1 with its other flash chip, and the page lists 202 firmwares refreshed from the Hub.
+- version: 0.5.0
+  date: 2026-11-13
+  url: https://github.com/joakimeriksson/fm1-emu/releases/tag/v0.5.0
+  notes: Firmwares built on the new felucca-bsp (FRASIL 3.3, AMB-1 1.3.2, CTL-1 1.0.3, CHOPPAH 0.99, Polly 0.6.2) play again in fm1-live and the plugin after staying silent in 0.4.0, the JIT is faster on firmwares that use both cores, and fm1-live gets a sharp window on Windows.
 - version: 0.4.0
   date: 2026-11-02
   url: https://github.com/joakimeriksson/fm1-emu/releases/tag/v0.4.0

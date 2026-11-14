@@ -1,0 +1,27 @@
+device: m-vave-fm-1
+name: SIGNAL GARDEN
+summary: >-
+  Ear-training mode built into Felucca: hold F3 and F#3 at power-on to play back a reference C and a note, then answer on the keys. Normal power-on gives Felucca.
+description: >-
+  A modified Felucca that adds an ear trainer called station 88.1 NOTE ID. It plays a reference C and then a note, and the learner answers on the keys in any octave. A new note is shown and played in a Reveal before it is quizzed, each answer gets a short explanation and a hint about the next likely mistake, and the key LEDs mark the reference C and the right note. A session is ten prompts plus any misses brought back. Notes come back on a spaced-repetition schedule counted in sessions, since the unit has no clock, and the engine tracks accuracy, answer time and a confusion matrix. Normal power-on starts Felucca unchanged, and Felucca's code is touched in only a few marked places. This is version 0.1, a dev pre-release. Progress is kept in RAM and is lost at power-off, and the README says it has not yet been tested on a real unit. Half and whole steps, intervals, scales and chords are listed as planned. The README says the code was written with an AI model.
+status: active
+authors:
+- name: hvemnd
+  url: https://github.com/hvemnd
+source: https://github.com/hvemnd/signal-garden
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Stated in LICENSE, the README and docs/SIGNAL_GARDEN.md, inherited from Felucca. LICENSING.md keeps Felucca's parts: the engines are MIT, the hardware layer is MPL-2.0, and ported DSP and fonts have their own licences.
+distribution: download
+requires_stock: Flashes over official V15 or another Felucca-family firmware
+install_notes: >-
+  Download signal-garden-dev.fwsc from the dev pre-release and install it with tools/fm1_install.py, or with Felucca's installer page run from localhost (steps in docs/SIGNAL_GARDEN.md). Back up with the Felucca web editor first. Reinstalling a Felucca release or running M-VAVE's updater puts the firmware back to Felucca or V15. If the screen stays black after a failed install, the docs point to the chip's WL80UBOOT boot mode and FM-1 Transporter for recovery.
+brick_risk: false
+tags: [education, ear-training, fork, ui]
+based_on: m-vave-fm-1/felucca
+versions:
+- version: dev
+  date: 2026-11-13
+  url: https://github.com/hvemnd/signal-garden/releases/tag/dev
+  notes: Rolling pre-release that GitHub Actions rebuilds on each push to main, built from 3baf2c5; the docs call it v0.1.

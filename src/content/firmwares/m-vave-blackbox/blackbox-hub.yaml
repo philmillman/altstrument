@@ -1,15 +1,17 @@
 device: m-vave-blackbox
 kind: tool
 name: Black Box Hub
-summary: Browser panel for the M-VAVE Blackbox pedal that switches its presets and module blocks over USB MIDI, with a drum machine, songs that change presets by section, setlists and a preset naming and notes layer.
+summary: Browser panel for the M-VAVE Blackbox pedal that switches its presets and module blocks over USB MIDI and reads, edits and writes presets over SysEx, with a drum machine, songs that change presets by section, setlists and a preset naming and notes layer.
 description: >-
   A static web app, installable as a PWA, that talks to the pedal over Web MIDI in Chrome or Edge on desktop and in Chrome on
   Android. It sends Program Change messages to select presets P01 to P80 and Control Change messages to switch the FX, AMP,
   MOD, DLY, REV and CAB blocks, and it keeps names, colors, notes and favorites for each preset in the browser. It adds a
   synthesized drum machine with 16 patterns and tap tempo, songs made of sections that change the pedal's preset at each
-  part, and setlists, with backup export and restore. The interface is in Portuguese. SysEx is switched off, so it does not
-  read or write presets or firmware. The README says the control numbers come from M-VAVE's release notes and are still to
-  be confirmed on each pedal, and lists a preset editor as a future step.
+  part, and setlists, with backup export and restore. The interface is in Portuguese. It also uses the pedal's own SysEx
+  protocol to read all 80 preset slots, edit a preset's volume, block order, on/off state, models and knobs with the pedal
+  following live, and save to a slot; each save reads the slot first, re-reads and compares it, restores the old bytes on a
+  mismatch and keeps the last five versions of the slot. The README says no code touches firmware, amps, IRs or global
+  settings, and that the CC numbers come from M-VAVE's release notes and are still to be confirmed on each pedal.
 status: active
 authors:
   - name: JoaocarlosTeco
@@ -23,10 +25,14 @@ homepage: https://joaocarlosteco.github.io/blackbox-hub/
 distribution: browser-installer
 install_notes: >-
   Open the hosted page in Chrome or Edge, connect the pedal by USB-C and press Connect (Conectar pedal). On Android, use an
-  OTG or USB-C to USB-C cable and install the page from Chrome. iOS, Firefox and Safari lack Web MIDI. Nothing is flashed.
+  OTG or USB-C to USB-C cable and install the page from Chrome. iOS, Firefox and Safari lack Web MIDI. The editor's pull, edit and save features use SysEx, so the browser asks for an extra MIDI permission. Nothing is flashed.
 brick_risk: false
-tags: [controller, web-midi, usb-midi, midi, drum-machine, setlist, presets, web]
+tags: [controller, editor, sysex, web-midi, usb-midi, midi, drum-machine, setlist, presets, web]
 versions:
+  - version: main @ 7fff66b
+    date: 2026-11-13
+    url: https://github.com/JoaocarlosTeco/blackbox-hub/commit/7fff66b53e97d50debbbcf89f31612f4a052765e
+    notes: No tagged releases; this is the latest commit. Adds reading, editing and writing presets over USB SysEx, with a preset editor, a read-back check on every save and the last five versions of each slot kept, then a layout for phones.
   - version: main @ 6819ed2
     date: 2026-11-12
     url: https://github.com/JoaocarlosTeco/blackbox-hub/commit/6819ed2

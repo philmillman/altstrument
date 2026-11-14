@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: FM-1 Learn to Play
+kind: tool
+summary: >-
+  Browser replica of the FM-1 with a six-operator FM engine, guided lessons, MIDI file import, WAV and DX7 SysEx export, and a way to run community firmwares in fm1-emu.
+description: >-
+  The panel has the FM-1's knobs, buttons, screen and 27 keys, played with the mouse, the computer keyboard or a MIDI keyboard. Lessons show which control to press next, and
+  a MIDI file can be turned into a step-by-step lesson. Sounds export as a WAV recording with effects or as a DX7 .syx bank that Dexed, a DX7 or the real FM-1 can read. A separate mode runs community firmwares
+  such as sloopDX, Frodhes, X0X and CHOPPAH inside the vendored fm1-emu, each downloaded from its author's page or The Firmware Hub. The page and the README are in Spanish and English. It does not
+  install anything on a physical unit.
+status: active
+authors:
+- name: Luis Chacon
+  url: https://github.com/Exmachia
+source: https://github.com/Exmachia/fm1
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no licence file for the app. public/emu holds Joakim Eriksson's fm1-emu WebAssembly build with its MIT licence. Firmwares it runs belong to their authors and are fetched when used.
+homepage: https://fm1-sigma.vercel.app
+distribution: browser-installer
+install_notes: >-
+  Open the live page, or run npm install and npm run dev. It writes nothing to a physical FM-1.
+brick_risk: false
+tags: [emulator, web, fm, dx7, ui]
+image:
+  url: https://raw.githubusercontent.com/Exmachia/fm1/main/public/og.jpg
+  alt: Drawing of the FM-1 panel with a screen on the E.PIANO 1 envelope page, knobs, buttons labelled FX, SEL, ENV and LFO, and a row of keys, captioned Learn to play it in your browser
+  credit: Luis Chacon
+  source_url: https://github.com/Exmachia/fm1
+  first_party: true
+versions:
+- version: main @ b956b3f
+  date: 2026-11-13
+  url: https://github.com/Exmachia/fm1/commit/b956b3fb00f460f2bb00a716e7018f55ff4edd73
+  notes: No tagged releases; this is the latest commit.

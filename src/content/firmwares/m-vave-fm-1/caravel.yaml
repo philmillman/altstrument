@@ -9,7 +9,7 @@ description: >-
   parameters need Caravel to open, and projects saved by 0.3.0 or later do not open on 0.2.0 or earlier, projects saved by 0.7.1 or later do not open on 0.7.0, and projects saved by 0.8.0 do not open on 0.7.x or earlier, and projects saved by 0.9.0 (new project format 3) do not open on 0.8.0. Added
   features include a latch for held keys, a button to clear the step under the cursor, per-track voice reservations
   and a MORE page for spread and morph; 0.6.0 adds a STASIS hold with ADD and BLEND, and leaves out ROOM, SPRING
-  and the SLICE engine; 0.8.0 adds a Morph Journey bank that chains the four Random Morph snapshots into a hands-free loop; 0.9.0 makes Random Morph and Morph Journey per track and retires the SAX sample set; 0.10.0 adds the ENSEMBLE strings, choir and dark-texture engine with fourteen factory presets; 0.11.0 makes ENSEMBLE stereo, with the track's SPREAD setting as its width; 0.12.0 adds a HARMONY chord progression that tracks follow, LINK between tracks and the newer UC25HQ80 flash chip, and shows as empty on 0.11.0 and earlier any project it saved. DRUM-X, MORPH and the BYTE and FLOAT waves in LOFI are adapted from the
+  and the SLICE engine; 0.8.0 adds a Morph Journey bank that chains the four Random Morph snapshots into a hands-free loop; 0.9.0 makes Random Morph and Morph Journey per track and retires the SAX sample set; 0.10.0 adds the ENSEMBLE strings, choir and dark-texture engine with fourteen factory presets; 0.11.0 makes ENSEMBLE stereo, with the track's SPREAD setting as its width; 0.12.0 adds a HARMONY chord progression that tracks follow, LINK between tracks and the newer UC25HQ80 flash chip, and shows as empty on 0.11.0 and earlier any project it saved. 0.13.0 adds ELASTIC, a bank of temporary springs on HOME controls, trims the PIANO and FLUTE sample sets, and saves projects with a new HOME capsule version that 0.12.0 cannot read. DRUM-X, MORPH and the BYTE and FLOAT waves in LOFI are adapted from the
   JIANT FM fork. A web installer, editor and browser emulator are published on the project site. The README says
   hardware acceptance on a real FM-1 is still pending (the 0.10.0 notes say only an earlier test build was installed on a unit; the 0.11.0 notes say the maintainer checked a release-candidate build on an FM-1 without recording per-item findings, and the 0.12.0 notes say the later fixes were not tried on a device), and that the firmware uses USB test IDs that the pid.codes
   policy does not allow on devices that are shared or sold. Not affiliated with Hügelton Instruments or M-VAVE.
@@ -46,6 +46,10 @@ videos:
     first_party: true
     found_via: https://github.com/bonszaimusic/caravel#readme
 versions:
+- version: 0.13.0
+  date: 2026-11-13
+  url: https://github.com/bonszaimusic/caravel/releases/tag/v0.13.0
+  notes: "Adds ELASTIC, a seventh HOME ACTION bank that turns supported HOME controls into temporary springs with a tempo-synced bounce period. The factory PIANO and FLUTE samples use fewer zones, freeing 27,014 bytes of flash and changing how some notes sound. Projects saved by 0.13.0 use a newer HOME capsule version that 0.12.0 does not read, so back up first. The notes say the final package was not byte-identical to the release candidate tested on an FM-1 and has not itself been tried on a device."
 - version: 0.12.0
   date: 2026-11-10
   url: https://github.com/bonszaimusic/caravel/releases/tag/v0.12.0

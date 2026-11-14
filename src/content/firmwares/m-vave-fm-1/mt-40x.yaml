@@ -1,0 +1,57 @@
+device: m-vave-fm-1
+name: MT-40X
+summary: >-
+  Felucca 1.8.2 fork that turns the FM-1 into a reggae riddim machine after the Casio MT-40: 28 riddims that load bass, skank and
+  drums at their own tempo, a bass keyboard that re-roots the pattern live, and a synchro start.
+description: >-
+  The riddim bank is the 28 riddims of SLOOP Dub 1.6, converted note for note, including the Sleng Teng at 82 BPM and five more
+  rhythms of the Casiotone. Choosing a riddim in MENU, AUDIO loads three tracks (skank chords, mono bass and drums), sets the
+  tempo and poses Casiotone-style analog tones on the pitched tracks, and leaves track 1 free for the player. With MT-40X armed,
+  the keys no longer sound notes but set the accompaniment: a key is a major root, the key above it a minor chord, and the one
+  above that a seventh, while the drums never transpose. The first chord played starts playback, as on the machine. Version 0.6
+  rebuilds five riddims from MIDI transcriptions of the original recordings. Everything else of Felucca is kept, and disarmed it
+  behaves as Felucca. The project site has a browser emulator, a cheat sheet and a web installer, and the README is in French.
+status: active
+authors:
+- name: altessproduction
+  url: https://github.com/altessproduction
+source: https://github.com/altessproduction/MT-40-FM1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and LICENSING.md state GPL-3.0-only, as Felucca and SLOOP Dub, whose licence text is kept in LICENSES/. The README
+  says no data from the Casio machine is included. The v0.6 release notes name the riddim transcriptions as the BaroqueDub MIDI
+  files under CC-Sampling-1.0. Felucca's bundled parts keep their own licences.
+homepage: https://altessproduction.github.io/MT-40-FM1/dub/
+based_on: m-vave-fm-1/felucca
+distribution: download
+requires_stock: V15 or another firmware with the update loader
+install_notes: >-
+  The release attaches the .fwsc, the application .bin and SHA256SUMS. Copy the package to a FAT32 USB stick for M-UPGRADE, or
+  flash it from The Firmware Hub or the project's installer; the package carries Felucca's update loader and both flash chips
+  are recognised. Back up projects, presets and samples first. Reflashing V15 or Felucca takes the unit back.
+brick_risk: false
+tags: [sequencer, drums, performance, midi, emulator, fork]
+image:
+  url: https://raw.githubusercontent.com/altessproduction/MT-40-FM1/main/assets/mt40x-hub-card.webp
+  alt: "MT-40X card: the title MT-40X above a drawing of a Casiotone MT-40 keyboard, a green display reading RIDDIM: SLENG TENG 82, and the lines one key re-roots the whole pattern and 28 riddims"
+  credit: altessproduction
+  source_url: https://github.com/altessproduction/MT-40-FM1
+  first_party: true
+versions:
+- version: '0.6'
+  date: 2026-11-14
+  url: https://github.com/altessproduction/MT-40-FM1/releases/tag/mt40x-v0.6
+  notes: Rebuilds five riddims (Gunman, Heavenless, Sleng Teng, Tempo, Peany Peany) from MIDI transcriptions of the original takes, adds double hits to the drum grid and gives bars two to four their bass re-strikes.
+- version: '0.5'
+  date: 2026-11-14
+  url: https://github.com/altessproduction/MT-40-FM1/releases/tag/mt40x-v0.5
+  notes: Drops the melody track from the bank, since the machine has bass, skank and drums, and re-strikes every bass hold as a pluck.
+- version: '0.4'
+  date: 2026-11-14
+  url: https://github.com/altessproduction/MT-40-FM1/releases/tag/mt40x-v0.4
+  notes: Poses Casiotone-style analog tones on the three pitched tracks at every riddim load, and the MENU redraws after a load.
+- version: '0.3'
+  date: 2026-11-14
+  url: https://github.com/altessproduction/MT-40-FM1/releases/tag/mt40x-v0.3
+  notes: First release. Felucca 1.8.2 with the 28-riddim bank, the bass keyboard and the synchro start.

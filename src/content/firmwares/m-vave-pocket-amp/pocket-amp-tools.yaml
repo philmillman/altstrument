@@ -2,7 +2,7 @@ device: m-vave-pocket-amp
 name: Pocket AMP Tools
 kind: tool
 summary: >-
-  Desktop app for Windows, macOS and Linux that installs M-VAVE's official Pocket AMP firmware over USB MIDI and edits
+  Desktop and Android app for Windows, macOS, Linux and Android that installs M-VAVE's official Pocket AMP firmware over USB MIDI and edits
   the pedal's presets live, with a preset backup before each update and a resume step for an interrupted one.
 description: >-
   M-VAVE's own updater runs on Windows only. This Flutter app, called Pocket AMP Upgrader until v0.2.0, does the
@@ -17,7 +17,9 @@ description: >-
   and Bluetooth access on Linux. Clones of the Pocket AMP sold under other names, such as the Coolmusic PIXIE1, New Bee
   SK17 and Donner Pocket AMP, are accepted after a separate confirmation. The README says the editor, live editing and
   backups were tried on a real pedal under Linux, the IR upload and Bluetooth only against a simulated pedal, and that
-  Windows and macOS have not been tried on hardware.
+  Windows and macOS have not been tried on hardware. Version 0.3.0 adds an Android build over USB MIDI, a way to send
+  a .nam capture to an amp slot, names, labels and ratings for presets, an assistant in a side panel and Sentry error
+  reporting with an onboarding screen.
 status: active
 authors:
 - name: vitoramaral10
@@ -32,12 +34,16 @@ homepage: https://vitoramaral10.github.io/pocket-amp-tools/
 distribution: download
 install_notes: >-
   Download the build for your system from the latest release: a zip for Windows or macOS (the macOS app is unsigned),
-  or an AppImage or tarball for Linux. Close other MIDI apps, connect the charged pedal with a USB data cable, then
+  an AppImage or tarball for Linux, or an APK for Android. Close other MIDI apps, connect the charged pedal with a USB data cable, then
   download or open the firmware and start the update; it takes about two minutes and the pedal restarts twice. If it
   stops halfway, reconnect the pedal and use Resume update.
 brick_risk: false
 tags: [flasher, updater, desktop, backup, editor, midi]
 versions:
+- version: v0.3.0
+  date: 2026-11-14
+  url: https://github.com/vitoramaral10/pocket-amp-tools/releases/tag/v0.3.0
+  notes: First stable release after the 0.2.0 betas. Adds an Android build over USB MIDI, .nam captures sent to an amp slot, preset names, labels and ratings, EQ bands labelled by frequency, backups that stay restorable from beta 1 and raw copies from pedals whose name has spaces. The Android APK was attached after the release.
 - version: v0.2.0-beta.4
   date: 2026-11-11
   url: https://github.com/vitoramaral10/pocket-amp-tools/releases/tag/v0.2.0-beta.4

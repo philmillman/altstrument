@@ -1,0 +1,42 @@
+device: teenage-engineering-sp-1
+name: Sleepcousonique
+summary: Patch language, desktop editor and SP-1 firmware that play modular-style patches written as dated journal entries, with the SP-1's faders, buttons and rocker mapped into the patch.
+description: >-
+  A patch is text: each dated entry names modules, such as slope, sine, delay or folder, and connects them with arrows,
+  and the SP-1's four faders, four track buttons, rocker and LEDs appear as a source module that can be wired into it. The
+  macOS and Windows editor shows the same patch as boards and cords, plays it on the computer and sends it over USB to the
+  SP-1. The language has 129 module types taken from modular history and a quantizer with 38 scales plus Scala files. The
+  engine is shared C code in the editor and the firmware, and the firmware's hardware layer comes from Wakes. A load meter
+  in the editor warns when a patch is too heavy for the SP-1. The README states that the project is unofficial and not
+  affiliated with Teenage Engineering.
+status: active
+authors:
+  - name: femifleming
+    url: https://github.com/femifleming
+source: https://github.com/femifleming/sleepcousonique
+source_status: open
+license: MIT
+license_notes: >-
+  The root LICENSE is the MIT text, copyright 2026 femifleming. It states that the SP-1 firmware builds on Wakes (Worldwave,
+  MIT) and the code Wakes credits, whose licences are in firmware/. GitHub reports the licence as unrecognised because of the
+  added paragraph.
+based_on: teenage-engineering-sp-1/wakes
+distribution: download
+install_notes: >-
+  Turn the SP-1 off, hold T1 and T4 while plugging in USB, and flash sleepcousonique-sp1.bin from the release with the
+  Solderless web updater in Chrome or Edge. This is needed once; later patches go over USB from the editor. FLASHING.md says
+  the bootloader is never touched, so holding T1 and T4 again always allows flashing another .bin, and that reflashing can
+  clear the five stored patch slots. The macOS app is not notarised, so open it from the context menu the first time.
+brick_risk: false
+tags: [synth-engine, generative, editor, performance, usb-midi, open-source]
+image:
+  url: https://raw.githubusercontent.com/femifleming/sleepcousonique/main/docs/screenshot.png
+  alt: Sleepcousonique editor with dated patch text on the left, a canvas of connected module boards on the right and the SP-1's faders, buttons and rocker drawn along the bottom
+  credit: femifleming
+  source_url: https://github.com/femifleming/sleepcousonique
+  first_party: true
+versions:
+  - version: v1.0.0
+    date: 2026-11-13
+    url: https://github.com/femifleming/sleepcousonique/releases/tag/v1.0.0
+    notes: First release, with macOS and Windows editors, the SP-1 firmware and the manual.

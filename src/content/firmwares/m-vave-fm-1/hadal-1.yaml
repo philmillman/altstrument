@@ -1,0 +1,32 @@
+device: m-vave-fm-1
+name: HADAL-1
+summary: >-
+  Generative dark ambient firmware: drones, choirs, bells and distant effects that keep changing across 15 worlds, with 40 full-screen pictures, and a keyboard that plays bells or choir voices over it.
+description: >-
+  The firmware plays on its own and keeps changing for as long as it stays on, steered with the knobs if wanted. Each of the 15 worlds draws on a bank of 34 drones, 29 choirs, 41 bells and 135 effects, and 40 full-screen pictures blend into each other. The keys can play bells or choir voices, latch up to four voices, or split bells and voices across the keyboard. The FX menu plays an effect once or keeps up to four running, and ENV lets everything go at once. Knob pages set darkness, activity, decay, space, levels, room, tape wear and movement, key and mood, and a short tune that returns in changed form. Four save slots hold worlds, and power-on can restore a saved world or start a new one. MIDI in over USB or TRS picks worlds with program change and moves the knob pages with CC 16 to 31, and USB MIDI out sends the notes the world plays. A seven-page guide shows at first start, with help text on each control. A speaker mode is the default, and a headphone mode is in the GLOBAL menu. It accepts both flash chips, the Puya P25Q80 and the newer UC25HQ80. It follows the design of AMB-1, and a browser page plays the engine.
+status: active
+authors:
+- name: sparky480v
+  url: https://github.com/sparky480v
+source: https://github.com/sparky480v/hadal-1
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The LICENSE file is the MPL-2.0 text, and the README says MPL-2.0. fm1-base and felucca-bsp sit in base/ under their own licences (base/LICENSING.md), and the fonts are SIL OFL.
+homepage: https://sparky480v.github.io/hadal-1/emu/
+distribution: download
+requires_stock: V15 or another custom firmware
+install_notes: >-
+  Install from The Firmware Hub or an FM-1 web installer in Chrome or Edge, or run base/tools/fm1_install.py with hadal-1.0.fwsc from the release. The README says the update loader is included, so another firmware can be installed afterwards, and that the FM-1 comes up in a safe mode the installer can reach if the firmware fails to start twice. Keep M-VAVE's stock V15 file at hand.
+brick_risk: false
+tags: [generative, ambient, synth-engine, fx, emulator, midi]
+image:
+  url: https://raw.githubusercontent.com/sparky480v/hadal-1/main/docs/card.png
+  alt: Pixel-art dark circle with a pale teal glow around its rim on a black background, with the words FOUNDRY and VOID at the bottom
+  credit: sparky480v
+  source_url: https://github.com/sparky480v/hadal-1
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-13
+  url: https://github.com/sparky480v/hadal-1/releases/tag/v1.0

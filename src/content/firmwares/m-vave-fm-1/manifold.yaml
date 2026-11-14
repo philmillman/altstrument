@@ -10,9 +10,9 @@ description: >-
   envelope types. Voices use up to 16 exact harmonics shaped by one spectral function. The rhythm is a continuous function
   of the bar rather than a grid, and four drums place envelopes on notes the synth already plays. A 24-route matrix has six
   LFOs, the knobs and the generators as sources. Effects are fuzz, a morphing filter, tempo delay, an 8-line reverb that
-  can be tuned to the scale, a bus compressor and a limiter. There are 16 patches with four scenes each, MIDI over USB and
+  can be tuned to the scale, a bus compressor and a limiter. There are 64 patches in four banks of 16, each with four scenes, MIDI over USB and
   Bluetooth, and Bluetooth audio out to headphones and speakers. It is an app on fm1-base with small patches to fm1-base
-  and felucca-bsp. The README lists 1.0 (2026-11-10) and 1.0.2 as earlier releases, but only the 1.0.3 tag and release
+  and felucca-bsp. The README lists 1.0 (2026-11-10) and 1.0.2 as earlier releases, but only the 1.0.3 and 1.0.4 tags and release
   page exist on GitHub.
 status: active
 authors:
@@ -30,7 +30,7 @@ distribution: browser-installer
 requires_stock: V15
 install_notes: >-
   Use the web installer on the project site in Chrome or Edge, or run fm1-base's tools/fm1_install.py with
-  firmware/manifold-1.0.3.fwsc from the repository. Building needs fm1-base at a pinned commit with the patches in the
+  firmware/manifold-1.0.4.fwsc from the repository. Building needs fm1-base at a pinned commit with the patches in the
   repository's patches folder applied. Release 1.0.3 adds support for FM-1s with the newer UC25HQ80 flash chip; before it,
   those units kept no settings between power-ons.
 brick_risk: false
@@ -42,6 +42,10 @@ image:
   source_url: https://github.com/stets43/Manifold
   first_party: true
 versions:
+- version: 1.0.4
+  date: 2026-11-13
+  url: https://github.com/stets43/Manifold/releases/tag/v1.0.4
+  notes: Patches grow from 16 to 64 slots in four banks of 16. A tap on SAVE shows the Patches page, K1 or OCT- and OCT+ choose the bank, and settings are saved with SAVE + OCT+. Existing patches become bank A at first power-on. The release warns that going back to an earlier version would miss some patches and forget Bluetooth speakers.
 - version: 1.0.3
   date: 2026-11-12
   url: https://github.com/stets43/Manifold/releases/tag/v1.0.3

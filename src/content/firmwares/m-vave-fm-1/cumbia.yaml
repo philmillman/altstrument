@@ -1,0 +1,39 @@
+device: m-vave-fm-1
+name: Cumbia
+summary: >-
+  Felucca 1.8.2 derivative that generates a cumbia song on four tracks, with sampled accordion, bass, real percussion one-shots and
+  shouts, plus its own screen with a DJ view and sound-system effects.
+description: >-
+  Rights warning: the accordion, shouts and percussion samples come with no stated source or licence, and the build notes say
+  the groove was extracted from isolated tracks of a percussion pack and that a voice was authorised for the shouts. Each press of
+  PLAY generates a new song from a seed, in the manner of a slow Colombian cumbia from Monterrey, in a minor key picked from six
+  accordion keys, with an intro, accordion sections, spaces for a voice and an ending. The accordion is a sample set, the bass an
+  analog sub bass, and the percussion a kit of one-shots loaded by the installer into a user sample slot. A second slot holds
+  recorded shouts played from the keys with an echo. Controls include a slowdown, a reverb, a sound-system echo, a boom bap
+  drum layer and push effects such as a choke, a brake and a tape-reverse. The repository is a copy of Felucca's, with its README
+  and installer unchanged and no text of its own about Cumbia. The code comments call it a port of a web prototype.
+status: active
+authors:
+- name: alandaf-lab
+  url: https://github.com/alandaf-lab
+source: https://github.com/alandaf-lab/cumbia-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README, LICENSING.md and the SPDX headers of the new files state GPL-3.0-only, as Felucca. The CC0 sample sets of Felucca
+  stay under CC0 1.0. The origin of the cumbia accordion, voice and percussion samples is not stated anywhere in the tree.
+homepage: https://alandaf-lab.github.io/cumbia-fm1/
+based_on: m-vave-fm-1/felucca
+distribution: browser-installer
+requires_stock: M-VAVE V15 (selected in the installer)
+install_notes: >-
+  Web installer on the project site in Chrome or Edge over USB. It serves a build named after the commit and uploads the
+  percussion kit and shouts into user sample slots, and its commits mention retrying lost replies while writing samples. As
+  in Felucca, its return path asks you to select M-VAVE's V15 file yourself. Back up projects and samples first.
+brick_risk: false
+tags: [generative, sequencer, sampler, drums, voice, performance, fx, fork]
+versions:
+- version: main @ 83f9231
+  date: 2026-11-14
+  url: https://github.com/alandaf-lab/cumbia-fm1/commit/83f92317304e597e4fef2d4d69a03231afdf0066
+  notes: No tagged releases; this is the latest commit.

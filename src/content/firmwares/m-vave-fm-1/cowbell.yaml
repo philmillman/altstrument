@@ -1,0 +1,44 @@
+device: m-vave-fm-1
+name: COWBELL
+summary: >-
+  16-step cowbell groovebox modelled on a Bad Gear meme about a Volca Cowbell, with a giant MORE knob for ratchets, FEVER for
+  pitch and PRESCRIPTION to pick one of 13 recorded cowbells.
+description: >-
+  The panel is a single screen with a tempo readout, the three big controls and the 16 steps along the bottom. MORE sets ratchets,
+  FEVER the pitch and PRESCRIPTION chooses a sample, and two pattern slots are kept in the user partition. The 13 cowbell samples
+  were recorded by the maker from their own Roland TR-8S and Alesis DM-10. A 22 kHz starter bank is built into the firmware, so it
+  plays straight after installing, and a browser page sends the full 44.1 kHz set over USB-MIDI to the user partition, where it stays
+  through power-offs and firmware updates. It is built on M-VAVE's fm1_open SDK and installs with M-VAVE's own update loader. The
+  fw README says it was tested on a real FM-1, installing V02 over V01, V15 over V02 and the v2 release back over V15.
+status: active
+authors:
+- name: C0DED00D
+  url: https://github.com/C0DED00D
+source: https://github.com/C0DED00D/fm1-cowbell
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only. Files taken from M-VAVE's fm1_open app are GPL-3.0-only with its linking exception, fm1-dock's
+  module interface is GPL-3.0-only and the Terminus font is SIL OFL 1.1. The fm1_open binary SDK libraries are not in the
+  repository and keep their own terms. The release package is the project's own build (492,084 bytes), not a stock M-VAVE image.
+homepage: https://c0ded00d.github.io/fm1-cowbell/
+based_on: m-vave-fm-1/fm1-open
+distribution: download
+install_notes: >-
+  Download COWBELL.fwsc from the release and install it with fm1-dock's fm1_install.py using --force, since the package carries
+  M-VAVE's loader. M-VAVE's workbench is said to accept it but is untried. To go back to M-VAVE's firmware use the workbench; the
+  README notes that fm1-dock's installer refuses fm1_open's own V15 file at its pre-check. Then send the full-quality samples from
+  the project page or with tools/cowbell_upload.py.
+brick_risk: false
+tags: [groovebox, sequencer, drums, sampler, emulator, web]
+image:
+  url: https://raw.githubusercontent.com/C0DED00D/fm1-cowbell/main/docs/cowbell_screen.png
+  alt: "COWBELL screen in pink: tempo 120 in a red seven-segment display, FEVER and PRESCRIPT knobs, a large MORE knob, part P1 and X1 labels, and a row of 16 step squares along the bottom"
+  credit: C0DED00D
+  source_url: https://github.com/C0DED00D/fm1-cowbell
+  first_party: true
+versions:
+- version: v2
+  date: 2026-11-14
+  url: https://github.com/C0DED00D/fm1-cowbell/releases/tag/v2
+  notes: First release; the package is built from the tag's source byte for byte and carries the 22 kHz starter samples.

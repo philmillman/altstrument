@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+name: ChordSmith FM
+summary: >-
+  Chord and phrase player for the FM-1 with 16 chord pads on the white keys, scale degrees on the black keys, a chord library, strum, arp, humanize and
+  inversion effects, and MIDI file slicing.
+description: >-
+  The white keys play the chords of the chosen key and scale and the black keys play its scale degrees, lighting up with each chord's root. MIDI files can be copied
+  onto the FM-1 as on a USB drive or recorded into it, then cut into slices that go on pads. The README calls it early test builds by BeatSmith and
+  the hardware version of ChordSmith Web and groundwork for MPS-16. It is built on fm1-base and felucca-bsp with Felucca-Engines voices. The project site has
+  a browser emulator that runs the same code, a browser installer that can put M-VAVE's own firmware back, and a .fwsc download for the command-line installer.
+  The licence for the project's own code is still undecided.
+status: active
+authors:
+- name: Brent Walker
+  url: https://github.com/BrentWalker
+source: https://github.com/BrentWalker/chordsmith-fm
+source_status: open
+license: unspecified
+license_notes: >-
+  The README says the licence for ChordSmith FM's own code is still to be chosen, and firmware.json lists it as LicenseRef-ChordSmith-TBD. The fm1-base and
+  felucca-bsp files it builds on are MPL-2.0 and the Felucca-Engines voices are MIT.
+homepage: https://brentwalker.github.io/chordsmith-fm/
+based_on: m-vave-fm-1/fm1-base
+distribution: browser-installer
+requires_stock: M-VAVE FM-1 V15 or later
+install_notes: >-
+  Use the installer page in Chrome or Edge with the FM-1 on USB, or run tools/fm1_install.py from fm1-base with the .fwsc from the site. The page offers to
+  reinstall the stock firmware from a file you downloaded from M-VAVE, and links the m-bootloader recovery for a unit that will not start.
+  The site calls it a test build to install at your own risk.
+brick_risk: false
+tags: [chords, performance, sequencer, midi, synth-engine]
+image:
+  url: https://brentwalker.github.io/chordsmith-fm/manual/img/screen-playing.png
+  alt: ChordSmith FM's screen showing Kit 01 in A minor, pad 2 with the chord B minor 7 flat 5, a row of sixteen pad cells, root buttons 1 to 7 and strum, arp, humanize and tempo values
+  credit: Brent Walker
+  source_url: https://brentwalker.github.io/chordsmith-fm/
+  first_party: true
+versions:
+- version: main @ 8f4d15b
+  date: 2026-11-14
+  url: https://github.com/BrentWalker/chordsmith-fm/commit/8f4d15bf58f18aad2b1bce4f0c1794d13d511a87
+  notes: No tagged releases; this is the latest commit.

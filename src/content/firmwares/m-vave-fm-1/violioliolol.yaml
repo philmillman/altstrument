@@ -30,8 +30,8 @@ distribution: browser-installer
 requires_stock: M-VAVE stock firmware or another Felucca / fm1-base build
 install_notes: >-
   The README gives a web installer on the project site (Chrome or Edge over USB) and says to download the .fwsc from
-  the latest release for the Firmware Hub or fm1-base's tools/fm1_install.py. No GitHub release exists yet, since the
-  workflow run for the v0.1 tag failed, so check the site or the releases page for a package; the source builds with
+  the latest release for the Firmware Hub or fm1-base's tools/fm1_install.py. The first GitHub release is 0.1.1; the workflow run for the v0.1
+  tag had failed. The source builds with
   sh build.sh and the JieLi toolchain. The README says the firmware does not touch the bootloader or the recovery path,
   that the stock firmware can be reinstalled the usual way, and that the installer offers the open m-bootloader as a
   separate opt-in box. docs/benchmark-procedure.md asks installers to measure CPU load and polyphony.
@@ -44,6 +44,10 @@ image:
   source_url: https://github.com/profikid/fm1-violioliolol
   first_party: true
 versions:
+- version: 0.1.1
+  date: 2026-11-13
+  url: https://github.com/profikid/fm1-violioliolol/releases/tag/v0.1.1
+  notes: First GitHub release, with the .fwsc, the app binary and checksums. The notes call it experimental, built and tested in the simulator and native DSP tests but not measured on an FM-1, so CPU load and the default of eight voices are unverified. They list 19 instruments, plucked and bowed string models, and up to 12 voices.
 - version: "0.1"
   date: 2026-11-11
   url: https://github.com/profikid/fm1-violioliolol/tree/v0.1

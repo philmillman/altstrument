@@ -1,0 +1,51 @@
+device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
+name: Stallion
+summary: >-
+  Synthesizer firmware for the FM-1 and SMK-37 Pro grown out of Clipper, SLOOP and Felucca, with 26 engines and 819 sounds, a
+  three-oscillator HYBRID voice, a 24-slot modulation matrix, key touch and a web editor.
+description: >-
+  One instrument, two in MULTI, with no tracks, drum machine, song mode or built-in samples. Stallion forked Clipper at 1.1 and
+  merged 1.3, so it keeps SLOOP's engines, effects, arpeggiator, step sequencer, USB audio and MIDI, and Clipper's HYBRID voice
+  with its modulation matrix. It adds four engines (PALOMINO, STAMPEDE, RODEO and MARE), a rebuilt PONY, a full bank of classic
+  sounds on every engine, more filter models and insert effects, velocity and pressure from the FM-1's own keys, a bend lever
+  and a ribbon on OCT- and SELECT, and a larger web editor. The SMK-37 Pro build plays from its 37 keys with pad and key
+  aftertouch, the wheels and a pedal, and its installer never writes the keyboard's factory calibration. The README says it passes
+  its test suite on a computer, that the SMK-37 builds have been flashed and played on an SMK-37 Pro, and that the newer UC25HQ80
+  flash chip is covered by tests but not yet confirmed on such a unit. Multi sounds are on the SMK-37 Pro only for now.
+status: active
+authors:
+- name: Eberon Limited (John Gorman)
+  url: https://github.com/EberonLtd
+source: https://github.com/EberonLtd/stallion-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only for the code and the firmware image as a whole. Third-party files keep their licences, such as
+  Apache-2.0 for the FM6 core and MIT for the physical-model parts, and data files are GPL-3.0, CC0, CC BY 3.0, SIL OFL or MIT.
+  The repository's docs/firmware holds Clipper Pro's own built packages, not stock M-VAVE images.
+homepage: https://eberonltd.github.io/stallion-fm1/
+based_on: m-vave-fm-1/clipper
+distribution: browser-installer
+install_notes: >-
+  Web installers in Chrome or Edge over USB, one for the FM-1 (stallion-<version>.fwsc) and one for the SMK-37 Pro
+  (stallion-smk37-<version>.fwsc), each reading which board a package was built for. The releases attach both packages and
+  SHA256SUMS, built and attested on GitHub. Make a backup with the editor first. The installer pages go back to M-VAVE's V16 or
+  V15, to Clipper or to SLOOP. The README says to install at your own risk.
+brick_risk: false
+tags: [synth-engine, oscillator, filter, fx, arpeggiator, sequencer, midi, editor, web, fork]
+image:
+  url: https://raw.githubusercontent.com/EberonLtd/stallion-fm1/main/assets/logo/stallion-logo.png
+  alt: "Stallion logo: an orange Viking longship with a red and cream striped sail and a horse-head prow above blue waves, beside the word STALLION in cream capitals on a navy background"
+  credit: Eberon Limited (John Gorman)
+  source_url: https://github.com/EberonLtd/stallion-fm1
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-14
+  url: https://github.com/EberonLtd/stallion-fm1/releases/tag/v1.0
+  notes: Same code as v1.0.0, rebuilt and signed on GitHub with the FM-1 Firmware Hub's shared build workflow; only the build date shown on screen differs.
+- version: 1.0.0
+  date: 2026-11-13
+  url: https://github.com/EberonLtd/stallion-fm1/releases/tag/v1.0.0
+  notes: First release, with FM-1 and SMK-37 Pro packages.

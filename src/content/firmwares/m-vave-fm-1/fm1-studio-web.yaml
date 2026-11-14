@@ -1,0 +1,31 @@
+device: m-vave-fm-1
+name: FM-1 Studio (browser)
+kind: tool
+summary: >-
+  Browser workstation at fm1studio.com that compiles C or C++ in the page and plays it on a simulated FM-1, and loads and runs nine open FM-1 firmwares from their GitHub sources.
+description: >-
+  Everything runs in the page: clang as WebAssembly in a worker compiles a project written against an fm1.h API, and the module plays on an AudioWorklet next to a
+  panel with the 240 x 240 screen, 27 keys, buttons, encoders and the master pot. Web MIDI input is supported. A gallery fetches the source of nine community firmwares at fixed tags or commits,
+  compiles them and runs them with their own browser emulators. The README says programs written against fm1.h run in the simulator only, since the adapter for a real FM-1 does not exist yet.
+  It does not install anything on a unit. The gallery needs the first load to download about 60 MB of compiler. Not the same project as thingsapart's Android FM-1 Studio.
+status: active
+authors:
+- name: Tim Samshuijzen
+  url: https://github.com/TimSamshuijzen
+source: https://github.com/TimSamshuijzen/fm1studiocom
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is GPL-3.0 and the README states GPL-3.0-only. The gallery firmwares are their authors' work under their own licences, which load with each project;
+  the generated files in src/extras are made from that code and carry its licences. The compiler is binji's wasm-clang, loaded from its demo site.
+homepage: https://fm1studio.com
+distribution: browser-installer
+install_notes: >-
+  Open fm1studio.com in a browser, or serve the src folder with any static server. The page keeps nothing between visits, so SAVE a project as a zip before closing it. The tool writes nothing to a physical FM-1.
+brick_risk: false
+tags: [emulator, web, sdk, synth-engine]
+versions:
+- version: main @ 3986fee
+  date: 2026-11-14
+  url: https://github.com/TimSamshuijzen/fm1studiocom/commit/3986fee4dd6b9cf9663c7361224d260ccffdd835
+  notes: No tagged releases; this is the latest commit.

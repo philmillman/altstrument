@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: Spooky Stable v3
+summary: >-
+  No-text toy firmware for a young child that adds a School mode to v2's eight unicorn toys: four learning toys on rhythm, pitch and counting, with no fail states, plus a sticker book.
+description: >-
+  Version 3 of hvemnd's Spooky Stable toy. Play mode is v2's, with eight buttons that each open an animated unicorn toy, every key acting at once and notes snapped to the scale of one of eight moods. Holding OCT- rings a School Bell that turns four of the toys into learning toys. Poop Parade is a three-lane step sequencer, Fart Mix-Up is a two-operator FM synth with a ratio snap, Pee Piano is a pitch ladder where height maps to pitch, and Booger Wall is a matching, counting and sorting game. Short challenges come only after some free play and never show a fail state, a timer or a score, and difficulty follows the last eight tries. A sticker book holds 24 stickers won by discoveries, and every fourth one unlocks a hat or mane. A parent's switch at power-on turns the challenges off. Settings from a v2 unit are carried over at the first v3 boot. The repository is a source snapshot with a setup script and a GitHub Actions workflow that builds the package from a pushed tag, and it has no tag or release yet. The README says the code was tested in a host simulator only and has not run on a real FM-1: the JieLi build size and the frame rate of Fart Mix-Up are the open points.
+status: active
+authors:
+- name: hvemnd
+  url: https://github.com/hvemnd
+source: https://github.com/hvemnd/spookystablev3
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The LICENSE file is the MPL-2.0 text, and the README says fm1-base and felucca-bsp keep their own licences in base/, which setup.sh fetches as a submodule.
+distribution: source-only
+requires_stock: Flashes over official V15 or another FM-1 firmware
+install_notes: >-
+  Run setup.sh, then build with the JieLi toolchain through build.sh on Linux x86-64, or on macOS with Docker, or push a v3.0 tag to your own GitHub repository so the workflow builds spooky-3.0.fwsc. Install with fm1_install.py from the fm1-base submodule. The README says the bootloader is not touched, so safe mode and the way back to stock remain. Back up anything on the unit first.
+brick_risk: false
+tags: [game, education, synth-engine, fm, drums, performance, sequencer, fork]
+based_on: m-vave-fm-1/spooky-stable
+image:
+  url: https://raw.githubusercontent.com/hvemnd/spookystablev3/main/app/docs/img/school_parade.png
+  alt: "Poop Parade screen: three lanes of brown poop figures on a pastel sky, a red apple in the corner and a white unicorn with a rainbow mane at the bottom"
+  credit: hvemnd
+  source_url: https://github.com/hvemnd/spookystablev3
+  first_party: true
+versions:
+- version: main @ 6a81879
+  date: 2026-11-13
+  url: https://github.com/hvemnd/spookystablev3/commit/6a81879e948c6c884e308ba5a60b2f15deb0f846
+  notes: No tagged releases; this is the latest commit.

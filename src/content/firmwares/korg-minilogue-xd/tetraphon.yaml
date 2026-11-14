@@ -1,0 +1,46 @@
+device: korg-minilogue-xd
+name: Tetraphon
+kind: tool
+summary: Free macOS editor for the minilogue xd, with a single-panel view that follows the synth, a 16-step sequencer with motion curves, a 500-preset librarian with backup, a variation generator and a Max for Live device.
+description: >-
+  Licence note: the site calls Tetraphon free and says it will stay free, and no licence terms or source are published.
+
+  Every sound parameter, the multi engine, the arpeggiator and the Program Edit and Global menus appear on one panel, and a
+  knob turned on the synth moves in the app and the other way round. The sequencer view shows 16 steps with four voices each
+  and draws motion curves, and a generator writes waves or random curves into a motion lane. The preset list covers all 500
+  slots with search, favourites, move, swap and compare, and backs them up with the user oscillators and effects; Korg preset
+  and library files can be opened. Inspiration plays four variations of the current sound. A Max for Live device for Live 12
+  automates the parameters, and a mode with a simulated synth works without hardware. The page lists it as an alpha, needs macOS 15 and
+  USB, and warns that storing, moving or swapping presets overwrites slots on the synth.
+status: active
+authors:
+  - name: Vinterhavn
+    url: https://vinterhavn.com/
+source_status: closed
+license: proprietary
+license_notes: >-
+  The page says "Free" and that it "will stay free", needs no account and does not go online. No source or licence text is
+  published.
+homepage: https://vinterhavn.com/tetraphon/
+community:
+  - label: Elektronauts thread
+    url: https://www.elektronauts.com/t/tetraphon-a-free-minilogue-xd-editor-for-the-mac/258953
+distribution: download
+requires_stock: minilogue xd with MIDI Rx and Tx CC and program change switched on
+install_notes: >-
+  Download the DMG from the project page, or join the TestFlight test. It needs macOS 15 or later and the synth connected
+  over USB, with MIDI Rx CC, Tx CC, Rx program change and Tx program change enabled in the Global menu. The page warns that
+  an alpha can overwrite presets, so run File, Back Up All Presets first. It writes presets and settings through MIDI and
+  does not touch the synth's firmware.
+brick_risk: false
+tags: [editor, librarian, sequencer, presets, midi, usb-midi]
+image:
+  url: https://vinterhavn.com/tetraphon/img/global-en-light-1120.webp
+  alt: Tetraphon's minilogue xd Global Settings window with tuning, keyboard, system, MIDI, MIDI receive and transmit and sync controls above a help strip that explains Knob Mode
+  credit: Vinterhavn
+  source_url: https://vinterhavn.com/tetraphon/
+  first_party: true
+versions:
+  - version: "0.5.1"
+    url: https://vinterhavn.com/tetraphon/
+    notes: Alpha build listed on the project page, with a DMG download.

@@ -17,7 +17,7 @@ description: >-
   later). Both changes it needed, a larger USB host enumeration buffer and a TinyUSB host fix, are now in
   CircuitPython; the two patches stay in the repository only as history. A desktop command-line flasher, a screen simulator with a faked FM-1 and a unit-test suite are included, and
   tools/make_sd.py prepares a card from .fwsc files or from the hub catalogue. The repository holds no firmware
-  packages; M-VAVE's stock V15 is added from a clone of m-vave/fm1_open and cannot be removed from the screen.
+  packages; M-VAVE's stock V15 is added from a clone of m-vave/fm1_open and cannot be removed from the screen. A Settings option for FM-1s with the newer UC25HQ80 flash chip leaves out firmware the hub marks first-chip only, and the flasher installs from M-VAVE's V16, which only M-VAVE's own updater provides, and warns when a firmware would refuse V15 after it.
   The earlier version for an Adafruit Feather RP2040 or RP2350 with a TFT FeatherWing is deprecated and its code is
   gone from the main branch; its last tested state is the tag v1-feather-final in the old repository. On 5 November 2026 the project moved from
   jedgarpark/FM-1_Flasher, now archived, to the FM-1_Flasher folder of Adafruit's Learning System Guides repository. A
@@ -46,7 +46,7 @@ install_notes: >-
 brick_risk: false
 tags: [flasher, loader, usb-midi, sysex, python, utility]
 versions:
-- version: main @ da19f1f
-  date: 2026-11-12
-  url: https://github.com/adafruit/Adafruit_Learning_System_Guides/commit/da19f1f86404f1d772a2d9c344b3555d9676cfdf
-  notes: No releases of the flasher itself; this is the latest commit to the folder. It adds support for Adafruit's resistive 2.8-inch TFT touch shield with a measured touch calibration, after an earlier commit that switched to stock CircuitPython now that both fixes are upstream and dropped the custom UF2. The tag v1-feather-final in jedgarpark/FM-1_Flasher marks the last version for the Feather.
+- version: main @ 4930ff0
+  date: 2026-11-13
+  url: https://github.com/adafruit/Adafruit_Learning_System_Guides/commit/4930ff0b2e479326644babe668a0ceec0ef2cc63
+  notes: No releases of the flasher itself; this is the latest commit to the folder. It adds a Settings option for the newer UC25HQ80 flash chip, which hides firmware the Hub marks as first-chip only, and records M-VAVE's V16 start-up code so the confirm screen says when V16 must be restored before a firmware that would refuse V15. Before that it added support for Adafruit's resistive 2.8-inch TFT touch shield with a measured touch calibration and switched to stock CircuitPython, dropping the custom UF2. The tag v1-feather-final in jedgarpark/FM-1_Flasher marks the last version for the Feather.

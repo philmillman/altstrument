@@ -1,0 +1,45 @@
+device: south-signal-lab-clock
+name: CLOCK firmware
+summary: South Signal Lab's source-available firmware for its CLOCK module, with clock, Euclidean and sequencer channels, grooves with a custom editor and TAP recording, pre-count, assignable inputs, presets and a desktop simulator.
+description: >-
+  Licence note: the source is under PolyForm Noncommercial 1.0.0, so the README calls it source-available and not open source.
+
+  The firmware runs three topologies: One Clock, Independent channels, and a Divider Bank. Each of the eight channels can be
+  off, a clock, a Euclidean pattern of up to 64 steps, or a sequencer. Tempo ranges from 20 to 999 BPM by default, and the module always starts
+  stopped. Version 1.1.0 adds factory swing and pocket grooves, a custom groove editor with ten named slots and TAP
+  recording, an optional pre-count and configurable roles for the two inputs. State is kept as one current setting
+  plus eight presets with checks, in a flash layout that normal updates leave alone. The repository also holds a native
+  SDL simulator, host tests, a manual and an experimental VCV Rack build of the same runtime. Five release images differ only
+  in the Easter-egg game shown at boot.
+status: active
+authors:
+  - name: Axel Napolitano
+    url: https://github.com/napolitano
+  - name: South Signal Lab
+    url: https://southsignallab.com/
+source: https://github.com/southsignallab/eurorack-clock-firmware
+source_status: open
+license: PolyForm-Noncommercial-1.0.0
+license_notes: >-
+  LICENSE.md is the PolyForm Noncommercial 1.0.0 text with the notice "Copyright 2026 Axel Napolitano". The manual has its
+  own documentation licence, and third-party components keep their upstream licences, listed in THIRD_PARTY_NOTICES.md.
+homepage: https://southsignallab.com/hardware/clock/
+distribution: download
+install_notes: >-
+  Download a .dfu image from the release for a module that already runs CLOCK, and update it over USB DFU as described in
+  docs/FIRMWARE_UPDATE.md; settings and presets are kept. A new or non-booting Black Pill is programmed through an ST-LINK on
+  the SWD pins, which the guide gives as the recovery route. Disconnect the Eurorack ribbon cable before connecting USB, because
+  the two power sources must not be joined.
+brick_risk: true
+tags: [official, clock, sequencer, euclidean, generative, simulator]
+versions:
+  - version: v1.1.0
+    date: 2026-09-23
+    url: https://github.com/southsignallab/eurorack-clock-firmware/releases/tag/v1.1.0
+    notes: Adds grooves with a custom editor and TAP recording, pre-count and configurable input roles.
+  - version: v1.0.1
+    date: 2026-09-18
+    url: https://github.com/southsignallab/eurorack-clock-firmware/releases/tag/v1.0.1
+  - version: v1.0.0
+    date: 2026-09-18
+    url: https://github.com/southsignallab/eurorack-clock-firmware/releases/tag/v1.0.0

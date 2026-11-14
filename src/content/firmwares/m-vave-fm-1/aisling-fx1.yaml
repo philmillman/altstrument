@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: AISLING FX-1
+summary: >-
+  AISLING with its voices removed, turning the FM-1 into a USB effects box: the computer's audio comes in over USB, runs through AISLING's filter, echo, plate reverb and key effects, and leaves at the 3.5 mm socket.
+description: >-
+  Built from AISLING's source with a switch that leaves out the harps, drone and flute and adds a second USB sound stream, so the FM-1 appears to the computer as a standard 44.1 kHz, 16-bit stereo USB audio device with no driver. Whatever the computer plays goes through a filter, an echo and a plate reverb with a dry control, and through the effects on the keys: 17 of the 27 keys are effects while held, the black keys are Shimmer, Freeze, Macalla and Fras, and REC holds the echo and reverb. The processed sound also goes back up the cable so the computer can record it. The screen shows the incoming stream's state, its level and its packet counts. A piece chosen with PRESETS or a MIDI program change sets the echo and reverb settings and the tempo the echo counts in. Saved settings use AISLING's format and location, so a save here replaces what NACHTFAHRT, DUB-1 or AMB-1 saved. The README says 1.0 ran on one FM-1 with the first flash chip and a Mac, with no gaps or lost packets, and lists latency, long sessions, newer units and other computers as untested. The ENV, ARP, LFO, SEQ, SAVE and EDIT pages are still present but change nothing audible. The repository also holds a browser page for a separate screen build of AISLING.
+status: active
+authors:
+- name: Stephen Cummins
+  url: https://github.com/stephencummins
+source: https://github.com/stephencummins/fx1-aisling
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md puts the work under GPL-3.0-only, inherited from AISLING, NACHTFAHRT, DUB-1, AMB-1 and Felucca. Fonts are SIL OFL 1.1, and the JieLi AC79 SDK files are read from your SDK checkout at build time.
+homepage: https://aisling.stephen8n.com/
+distribution: download
+requires_stock: Installs over AISLING, another custom firmware or the stock firmware (tried from V16)
+install_notes: >-
+  Download aislingfx-1.0.fwsc from the release and install it with tools/fm1_install.py in the repository (Python 3 with mido and python-rtmidi). Its identity is FM-1_391, so The Firmware Hub and AISLING's web installer do not take it for AISLING. To go back, install AISLING from its web installer or use its Back to stock steps. The release notes report installs over AISLING 1.4 and over V16, and AISLING 1.4 put back over it with its saved pieces unchanged.
+brick_risk: false
+tags: [fx, usb-audio, reverb, delay, effects, fork, ambient]
+based_on: m-vave-fm-1/aisling
+image:
+  url: https://raw.githubusercontent.com/stephencummins/fx1-aisling/main/docs/card-fx1.png
+  alt: A gold pixel-art harp with the letters FX beside it on a flat green background
+  credit: Stephen Cummins
+  source_url: https://github.com/stephencummins/fx1-aisling
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-13
+  url: https://github.com/stephencummins/fx1-aisling/releases/tag/v1.0
+  notes: First release. Built with ./build.sh --release 1.0 --fx.

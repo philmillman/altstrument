@@ -1,0 +1,40 @@
+device: livtra-nanocore
+name: nanocore-toolkit
+kind: tool
+summary: Python tools, browser DFU pages and format notes for the NanoCore that convert .nam captures into amp-slot blobs, load cabinet slots from WAV files, and build and flash a custom effect patch for firmware 1.2 from the owner's own backup.
+description: >-
+  Rights warning: fx12/examples/patch-1.2.json holds a few bytes quoted from the vendor's OS image, which the NOTICE file
+  says its GPL grant does not cover. No firmware image, readback or patched partition is in the repository.
+
+  The command-line tool converts Neural Amp Modeler files into the pedal's NA2L amp blob, uploads them to the 30 amp slots
+  over USB MIDI and reads each slot back to check size and CRC. It accepts only the two-submodel A2 Lite container that the
+  pedal parses. The ir folder turns WAV files into cabinet slot payloads. Two WebUSB pages read the OS partition over DFU
+  without writing, and flash a patched image only if the live partition matches the owner's backup byte for byte. The fx12
+  folder builds a UniVibe-style modulation effect for firmware 1.2 with a RISC-V toolchain. The docs describe the NA2L format,
+  the 31-byte slot-info record and the 1.2 patch sites, and credit jcuhnoio's re-nanocore research for the base work.
+status: active
+authors:
+  - name: soficis
+    url: https://github.com/soficis
+source: https://github.com/soficis/nanocore-toolkit
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GNU GPL version 3 text and NOTICE.md calls it GPL-3.0. It covers original work only. Vendored MIT
+  code from re-nanocore (dfu.js, and firmware-lite.js with one line changed) keeps its MIT notice, and the NOTICE file records
+  re-nanocore's narrower licence scope for vendor-derived material.
+distribution: patch-your-own
+requires_stock: "1.2 for the custom effect; any version for amp and cabinet slots"
+install_notes: >-
+  Run the Python tools with mido and python-rtmidi, and serve the webusb folder from localhost for Chrome or Edge. Quit
+  ToneCommand first. Take the read-only OS backup and dump the existing slots before writing anything. The flash page
+  refuses to write unless the live partition equals the backup and it leaves the last partial sector, which holds device and
+  preset data, untouched. A failed write leaves the pedal in its update bootloader, and the README gives recovery as a
+  full-partition write of the owner's own readback or Livtra's official .fmu through the vendor updater.
+brick_risk: false
+tags: [cli, patch, nam, amp-modeling, fx, web, usb-midi, research]
+versions:
+  - version: main @ 62b2315
+    date: 2026-11-14
+    url: https://github.com/soficis/nanocore-toolkit/commit/62b231567654cef75d39a4ba825e98067a00b3b4
+    notes: No tagged releases; this is the latest commit.

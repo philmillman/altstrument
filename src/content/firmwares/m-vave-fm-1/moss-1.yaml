@@ -8,8 +8,8 @@ description: >-
   DRIFT (pads and bells on loops of different lengths). The keys play along in key, a CHORDS page steers the harmony, and
   what is played loops by itself, with a loop library, a studio view and a picture view of each scene. The ALGORITHM encoder
   picks one of several reverb and delay spaces, a MOTION page varies the echoes over time and the FILM knob adds tape wear.
-  Built on fm1-base. Releases include a .rfm1 build for RemoteFM1 as well as the .fwsc. The author marks every release as a
-  beta.
+  Built on fm1-base. Releases include a .rfm1 build for RemoteFM1 as well as the .fwsc. Releases before 1.0 are marked
+  beta; 1.0 is the first without that mark.
 status: active
 authors:
 - name: theowecker
@@ -22,7 +22,7 @@ homepage: https://theowecker.github.io/fm1-moss/manual/
 based_on: m-vave-fm-1/fm1-base
 distribution: download
 install_notes: >-
-  Install moss-X.Y-beta.fwsc from the release with fm1-base's tools/fm1_install.py over USB, or build it with build.sh. The
+  Install moss-X.Y.fwsc (moss-X.Y-beta.fwsc before 1.0) from the release with fm1-base's tools/fm1_install.py over USB, or build it with build.sh. The
   manual ends with a section on going back to the stock firmware and points to the Firmware Hub's rescue page.
 brick_risk: false
 tags: [ambient, generative, looper, synth-engine, fx, reverb, delay, drums, emulator]
@@ -33,6 +33,10 @@ image:
   source_url: https://github.com/theowecker/fm1-moss/blob/main/app/docs/MANUAL.md
   first_party: true
 versions:
+- version: '1.0'
+  date: 2026-11-14
+  url: https://github.com/theowecker/fm1-moss/releases/tag/v1.0
+  notes: First release not marked beta; the release page has only a changelog link. The one commit since 0.7.2-beta gives loop layers their own voice, adds five voices and lets EVOLVE come home. Ships moss-1.0.fwsc and a .rfm1 build.
 - version: 0.7.2-beta
   date: 2026-11-10
   url: https://github.com/theowecker/fm1-moss/releases/tag/v0.7.2-beta

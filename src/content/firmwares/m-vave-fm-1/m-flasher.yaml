@@ -41,6 +41,10 @@ image:
   source_url: https://github.com/jvitkauskas/m-flasher
   first_party: true
 versions:
+- version: 0.12.0
+  date: 2026-11-13
+  url: https://github.com/jvitkauskas/m-flasher/releases/tag/v0.12.0
+  notes: Installing firmware now always keeps the unit's own bootloader, so the stock-bootloader checkbox and --with-bootloader are gone; putting M-VAVE's stock bootloader back is done with Flash bootloader and an official package. Installs m-bootloader 2.4, adds a hint to load the sg driver on Linux and a clearer error on Windows when the unit refuses commands. Tested on Windows 11, Linux and macOS; not tested on an FM-1 with the new chip.
 - version: 0.11.0
   date: 2026-11-10
   url: https://github.com/jvitkauskas/m-flasher/releases/tag/v0.11.0

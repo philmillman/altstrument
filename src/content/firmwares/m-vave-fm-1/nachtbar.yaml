@@ -1,0 +1,53 @@
+device: m-vave-fm-1
+name: NACHTBAR
+kind: firmware
+summary: >-
+  Backing-band firmware for playing a saxophone line over: strings, a high piano, brushed drums and a tenor sax on the
+  keys, around 21 chord progressions that play themselves.
+description: >-
+  Rights warning: twelve of the 21 tunes follow the chord progressions of commercial pieces (works by Vangelis, Kenny
+  G, Sade, Carlos Santana, David A. Stewart and Antonio Carlos Jobim), under the author's own tune names. The README
+  says the chords were read from charts and MIDI files that are not in the repository, that no melodies are included
+  and that the project is not connected with the artists.
+
+  The FM-1 plays the band by itself and the keys play the tenor saxophone, whose samples the author recorded. The
+  other layers are strings, a piano that drops in sparse notes, and a drummer with brushes, a rimshot and a ride. The
+  other nine tunes are plain progressions of their styles (Dorian, blues, waltz, suspended) and two of them walk through
+  chords on their own. Five of the commercial-style tunes use a bossa rhythm and a jazz
+  bent, and a Chords page edits the chord shown on screen. The firmware descends from FM-1 TENOR SAX and the
+  FM-1 Hybrid Piano, both by FartyPants, which come from NACHTFAHRT. The project site has a browser emulator and a
+  manual. The README calls it an early test build and says the source will be published with version 1.0, until then
+  on request; the repository holds the documents and screenshots, and the build is served from its project site.
+status: active
+authors:
+- name: FartyPants
+  url: https://github.com/FartyPants
+source: https://github.com/FartyPants/fm1-nachtbar
+source_status: binary-only
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md and the LICENSE file give GPL-3.0-only, inherited from NACHTFAHRT, AMB-1, DUB-1 and Felucca, and say the
+  source will be published in the repository with version 1.0 and is available on request until then. The saxophone and
+  drum samples are the author's own recordings, distributed under the same licence. The piano is two notes of a CC0
+  grand piano sample, the QOA and SEA codecs are MIT, and the touch sensing comes from fm1-monk (GPL-3.0-only).
+homepage: https://fartypants.github.io/fm1-nachtbar/
+based_on: m-vave-fm-1/nachtfahrt
+distribution: browser-installer
+requires_stock: V15 or Felucca
+install_notes: >-
+  Web installer on the project site's nightly page, in Chrome or Edge with the FM-1 on USB. SAVE writes the flash area
+  where other FM-1 firmwares keep their saved settings, so those may be lost. The installer's Back to the stock firmware
+  option, or M-VAVE's M-UPGRADE updater, restores M-VAVE's firmware.
+brick_risk: false
+tags: [generative, chords, jazz, sampler, voice, emulator, web]
+image:
+  url: https://raw.githubusercontent.com/FartyPants/fm1-nachtbar/main/docs/img/screen-home.png
+  alt: "NACHTBAR's home screen playing Nightcap: a pink neon NACHT BAR sign, the key Eb major, the next chord Ebmaj7 at bar 6, a row of pad dots and TONE, REL, VEL and REVB knobs at the foot"
+  credit: FartyPants
+  source_url: https://github.com/FartyPants/fm1-nachtbar
+  first_party: true
+versions:
+- version: main @ db16426
+  date: 2026-11-13
+  url: https://github.com/FartyPants/fm1-nachtbar/commit/db16426719b9cd436b8696093e7a4386fcf41231
+  notes: No tagged releases; this is the latest commit. The installer page serves the 0.9.99 nightly build.

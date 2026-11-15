@@ -1,0 +1,42 @@
+device: elektron-tonverk
+name: Tonverk Merger
+kind: tool
+summary: >-
+  Local browser app, run from Python, that copies patterns between Tonverk projects with their kits, sequences,
+  parameter locks and samples, reorganises banks and exports a project to the SD card. Built on a reverse-engineered
+  project format.
+description: >-
+  A Tonverk project is a RocksDB database. The tool reads it, copies selected patterns from one project or card into
+  another with the ids remapped, and carries the kit, sequence data, parameter locks, sample mappings and the audio files
+  with them, including .eldrum and .elmulti definitions. Samples are de-duplicated by content, so two different
+  recordings with the same path both survive. It can also move, duplicate and rename patterns, undo a merge, keep
+  timestamped backups, print a set list and report orphan samples and broken references on each card. Originals are not
+  modified; output goes to separate folders, and an export to the card never overwrites a file already there. The
+  repository includes written specifications of the project schema and the preset parameter map. It was tested against
+  Tonverk OS 1.3.3 and needs RocksDB installed; on macOS it builds a small app wrapper. Nothing is flashed.
+status: active
+authors:
+  - name: romainguerif
+    url: https://github.com/romainguerif
+source: https://github.com/romainguerif/tonverk-merger
+source_status: open
+license: MIT
+license_notes: Stated in the README and in the LICENSE file.
+distribution: source-only
+requires_stock: OS 1.3.3 (tested)
+install_notes: >-
+  Install RocksDB (brew install rocksdb), run python3 tonverk/make_app.py on macOS or python3 tonverk/app.py elsewhere,
+  and put copies of the project folders or whole SD cards in the repository folder. Work on copies and keep a backup of the card.
+brick_risk: false
+tags: [editor, sampler, sequencer, utility, python, web]
+image:
+  url: https://raw.githubusercontent.com/romainguerif/tonverk-merger/master/docs/screenshot.png
+  alt: Tonverk Merger on a black page, source and destination projects as 16 by 8 pattern grids, a track step view for one pattern and sample lists below.
+  credit: romainguerif
+  source_url: https://github.com/romainguerif/tonverk-merger#readme
+  first_party: true
+versions:
+  - version: master @ ab56be8
+    date: 2026-08-05
+    url: https://github.com/romainguerif/tonverk-merger/commit/ab56be8
+    notes: No tagged releases; this is the latest commit.

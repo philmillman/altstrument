@@ -12,8 +12,8 @@ description: >-
   the shift deck and the Web Studio come from Pocket GammaWave. The README's later notes (v1.5 to v1.7) add a new
   power-on screen, CPU mode and visualizer-quality settings, a smooth random LFO wave, polyphonic aftertouch as a
   modulation source and a 200-sound library. The commits after that add a two-band Punch-in FX keyboard with latched mutes, flash and loader hardening, and a rebuilt project portal, Web Studio and emulator. Version 1.8.9 made the master EQ round instead of truncate, which fixes a DC offset and a shallow 20 Hz cut, and the repository gained a verified flash-backup tool and a restore tool that needs an external programmer. Version 1.9.0 is the first tagged release: a signed package that the installer checks against a pinned key. The release notes say a power cut during the app erase may leave the unit unable to boot and that recovery needs the chip's ROM mode and an external full-dump tool. Many of the newer commits are authored by
-  google-labs-jules[bot] and merged by the owner. The status document lists host, installer and web tests; the 3.1.1 notes add an owner-reported install on two FM-1 units, which
-  that environment did not observe. Like the parent it keeps songs and the FM6 user bank in the user
+  google-labs-jules[bot] and merged by the owner. The status document lists host, installer and web tests; the 3.1.1 notes add an owner-reported install on two FM-1 units, and the 3.4.0 notes report three real units, one with the newer UC25HQ80 flash chip, with a document listing what was not tested; the 3.1.1 notes
+  say that environment did not observe that install. Like the parent it keeps songs and the FM6 user bank in the user
   sample flash, so user samples are lost.
 status: active
 authors:
@@ -36,6 +36,22 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, sequencer, generative, fx, filter, editor, emulator, fork]
 versions:
+- version: 4.0.0
+  date: 2026-11-15
+  url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v4.0.0
+  notes: The installer page now boots the firmware's own WebAssembly build and draws the panel's splash, LED sweep and home screen, and a division-free colour mix speeds up the screen render sweep from 79 to 26 seconds with unchanged pixels. The notes are in Spanish.
+- version: 3.5.0
+  date: 2026-11-15
+  url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v3.5.0
+  notes: Re-lays out the screens with a shorter top bar and taller knob cards, drops the knob strip from HOME screens 3 to 5, colours the HOME planets from the chosen theme, and retires the AMBER, ICE and VIOLET themes (saved ones map to the nearest remaining theme). The notes are in Spanish.
+- version: 3.4.0
+  date: 2026-11-15
+  url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v3.4.0
+  notes: Records testing on three real FM-1 units, one of them with the newer UC25HQ80 flash chip, with a hardware validation document that lists what was not tested, and brings the documentation and screenshots up to date. The package is unsigned, checked by SHA-256 and a build record. The notes are in Spanish.
+- version: 3.3.0
+  date: 2026-11-15
+  url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v3.3.0
+  notes: Shares the voice pool fairly between parts when stealing voices, so one track cannot take it all, steals a freshly pressed key last, keeps the header still when a preset loads, and removes the falling particles from the visualizer. Builds 3.2.2 to 3.2.7 and 3.1.5 to 3.1.6, not listed separately, were interface and graphics patches. The notes are in Spanish.
 - version: 3.1.4
   date: 2026-11-14
   url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v3.1.4

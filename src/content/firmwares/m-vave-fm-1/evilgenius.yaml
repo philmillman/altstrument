@@ -1,0 +1,56 @@
+device: m-vave-fm-1
+name: EVILGENIUS
+summary: >-
+  Rights warning: bundles the unlicensed SAM speech code. SID-chip groovebox for the FM-1 with six tracks, step locks, a speech
+  synthesizer and a Commodore 64 game look, built on FIZZ.
+description: >-
+  Rights warning: the Software Automatic Mouth (SAM) speech code under core/voice/sam/ is Sebastian Macke's C port of a 1982
+  program, and LICENSING.md says the port has no licence and that the original's rights are SoftVoice, Inc.'s; the author
+  includes it outside the project's MPL-2.0. The firmware is FIZZ's sequencer and controls with a C64 SID model for each
+  voice. Six tracks play eight voices across the FM-1's two cores, each with three oscillators with pulse width, ring
+  modulation and sync, three envelopes, an LFO and the chip's filter. VOX sounds speak words that SAM renders on the unit,
+  through the SID's volume register and optionally its filter, with 54 built-in words or text you type. Any step can hold its
+  own sound, word, level, pan and effect sends, with chance, conditions, ratchets, micro-timing, slides and per-track MIDI
+  effects. Eight effects (chorus, echo, room, crush, robot, warp, glitch and TV) each have a send per track. There are 95
+  factory sounds, PAL arpeggios that play a chord's notes one per frame on a single voice, USB and Bluetooth MIDI, USB audio, USB
+  host for a MIDI keyboard, four projects and 128 user presets. The screens use the look of a C64 game about an evil genius's
+  tower, with original art and spoken lines. A browser emulator, an install page and a manager for backing up projects and
+  presets are on the project site.
+status: active
+authors:
+- name: Quixotic7
+  url: https://github.com/Quixotic7
+source: https://github.com/Quixotic7/evilgenius
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  Read from LICENSING.md and LICENSE. The SAM code in core/voice/sam/ has no licence and is outside the MPL-2.0. The SID model
+  is BSD-2-Clause, from Joakim Eriksson's fm1-sid. Parts of ChoralRoot and RemoteFM1 code were relicensed MPL-2.0 by their
+  author, and the Felucca-derived parts were rewritten clean-room. Test oracles that build ChoralRoot's GPL-3.0-only tree are
+  for development only and are not in the firmware. plutovg is MIT with FreeType License parts, and the fonts are SIL OFL 1.1.
+  Each package carries JieLi AC79 SDK files, Apache-2.0.
+homepage: https://quixotic7.github.io/evilgenius/
+based_on: m-vave-fm-1/fizz
+distribution: browser-installer
+install_notes: >-
+  Install from the page at quixotic7.github.io/evilgenius/install/ in Chrome or Edge over USB, from The Firmware Hub, or
+  with fm1_install.py; the .fwsc carries the firmware's data, so one install is enough. It uses flash at 0x97000-0xAEFFF where
+  other firmwares keep projects and samples, so back those up first. The README says M-VAVE's firmware can be put back from the
+  install page. The release also carries an .rfm1 build for RemoteFM1.
+brick_risk: false
+tags: [groovebox, sequencer, synth-engine, speech, chiptune, fx, midi, emulator]
+image:
+  url: https://raw.githubusercontent.com/Quixotic7/evilgenius/main/site/img/00c-idle-title.png
+  alt: "The EVILGENIUS title screen on the FM-1 in Commodore 64 style, showing a brain with an angry face in a green tank between two monitors and the words EVIL GENIUS in red and white pixel letters"
+  credit: Quixotic7
+  source_url: https://github.com/Quixotic7/evilgenius
+  first_party: true
+versions:
+- version: 0.1.1
+  date: 2026-11-15
+  url: https://github.com/Quixotic7/evilgenius/releases/tag/v0.1.1
+  notes: The same firmware as 0.1.0, released again so that RemoteFM1's nightly update takes it instead of keeping a beta.
+- version: 0.1.0
+  date: 2026-11-15
+  url: https://github.com/Quixotic7/evilgenius/releases/tag/v0.1.0
+  notes: First stable release, the same firmware as 0.1.0-beta.4, with a RemoteFM1 build.

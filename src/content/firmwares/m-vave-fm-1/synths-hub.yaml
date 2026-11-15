@@ -1,0 +1,27 @@
+device: m-vave-fm-1
+name: Synths Hub
+kind: tool
+summary: >-
+  Nix flake that builds browser emulators of FM-1 firmwares from pinned source and serves them as one site, with a postMessage protocol for embedding them in other pages.
+description: >-
+  Each engine is a manifest naming a source repository and a builder. The FM-1 emulator builder compiles a firmware's web emulator to WebAssembly with Emscripten and runs the repository's own sound test, which fails if the output is silent. The site lists the engines and serves each at its own path, with an embed script that adds mute, volume and an audio tap that streams the engine's sound to the host page. It currently carries DUB-1 and NACHTFAHRT. The hub's files are MIT and each engine keeps its own licence.
+status: active
+authors:
+- name: ericsharma
+  url: https://github.com/ericsharma
+source: https://github.com/ericsharma/synths
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE covers the hub's own files. The engines it builds, DUB-1 and NACHTFAHRT, are GPL-3.0-only and the site links each to its exact source commit.
+homepage: https://synths.ericsharma.xyz
+distribution: source-only
+install_notes: >-
+  Run nix build to build the site and serve the result folder with any static server. Nothing is installed on an FM-1.
+brick_risk: false
+tags: [emulator, synth-engine, web]
+versions:
+- version: main @ 345014c
+  date: 2026-11-14
+  url: https://github.com/ericsharma/synths/commit/345014cf847b75a668ba006c3f7b62eede5c2dd0
+  notes: No tagged releases; this is the latest commit, which adds the embed audio tap.

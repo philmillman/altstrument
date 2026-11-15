@@ -6,7 +6,7 @@ description: >-
   Keeps SLOOP's engines, 64-step sequencer, song mode, punch-in effects and MIDI map, and sends USB audio on eight channels (the master, then each of the six tracks separately), and adds the MUUG engine, a
   Minimoog-style voice with up to eight voices, a 24 dB ladder filter and its own edit pages on the FM-1's panel, and a
   LITE track that plays only the DIGITAL, PHASE, LOFI, SAMPLE and VOICE engines so a fourth synth part costs little CPU. Since 2.8-kitten.8 there is also a second drum track with its own kit, pattern,
-  mixer settings and MIDI channel 11, and the screens and web editor show six tracks. Seven SLOOP sounds and four visualisers were removed to free program
+  mixer settings and MIDI channel 11, and the screens and web editor show six tracks. Since 2.8-kitten.9 it also accepts FM-1s with the UC25HQ80 flash chip, untested on one, and the web editor has drum pattern templates. Seven SLOOP sounds and four visualisers were removed to free program
   memory, which the notes say is almost full. The repository holds no copy of SLOOP: a GitHub Actions workflow downloads a
   pinned SLOOP commit and applies the patch files. The documentation is in Spanish, the credits say development was assisted
   by Claude, and the README calls it a beta tested on one real FM-1.
@@ -35,6 +35,22 @@ image:
   source_url: https://github.com/BlackKittenDevices/Kitten-Synths
   first_party: true
 versions:
+- version: 2.8-kitten.12
+  date: 2026-11-15
+  url: https://github.com/BlackKittenDevices/Kitten-Synths/releases/tag/v2.8-kitten.12
+  notes: Marked pre-release. Redraws the track, envelope and filter screens with rounded cards, a six-colour track palette and a kitten sitting on the header roofline, and compiles drawing and start-up code for size to free flash.
+- version: 2.8-kitten.11
+  date: 2026-11-15
+  url: https://github.com/BlackKittenDevices/Kitten-Synths/releases/tag/v2.8-kitten.11
+  notes: Marked pre-release. Adds a Halloween look of rooftops and a cobweb to the screens.
+- version: 2.8-kitten.10
+  date: 2026-11-15
+  url: https://github.com/BlackKittenDevices/Kitten-Synths/releases/tag/v2.8-kitten.10
+  notes: Marked pre-release. Web editor only, with pattern templates for the drum grids, with 12 styles of two variations each.
+- version: 2.8-kitten.9
+  date: 2026-11-15
+  url: https://github.com/BlackKittenDevices/Kitten-Synths/releases/tag/v2.8-kitten.9
+  notes: Marked pre-release. Recognises FM-1s with the newer UC25HQ80 flash chip so projects save and the update loader installs; the release says this was not tested on such a unit.
 - version: 2.8-kitten.8
   date: 2026-11-02
   url: https://github.com/BlackKittenDevices/Kitten-Synths/releases/tag/v2.8-kitten.8

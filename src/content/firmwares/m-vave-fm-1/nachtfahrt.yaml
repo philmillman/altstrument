@@ -30,8 +30,8 @@ distribution: browser-installer
 requires_stock: V15 or Felucca
 install_notes: >-
   Web installer in Chrome or Edge over USB (also Chrome on Android with a USB-OTG adapter), or tools/fm1_install.py
-  with nachtfahrt-1.0.0.fwsc from the release. The installer's Back to the stock firmware option and M-VAVE's
-  M-UPGRADE both restore V15. If NACHTFAHRT fails to start twice it starts in a safe mode from which the installer
+  with nachtfahrt-1.0.2.fwsc from the release. The installer's Back to the stock firmware option restores V15 or V16, and M-VAVE's
+  M-UPGRADE restores M-VAVE's firmware too. A newer FM-1 with the UC25HQ80 flash chip that still runs 1.0.0 or earlier must go back to stock once through the chip's update mode before installing 1.0.1 or later; the installer page has the steps. If NACHTFAHRT fails to start twice it starts in a safe mode from which the installer
   still works.
 brick_risk: false
 tags: [generative, ambient, sequencer, synth-engine, fx, reverb, delay, emulator]
@@ -42,6 +42,14 @@ image:
   source_url: https://github.com/FartyPants/fm1-nachtfahrt
   first_party: true
 versions:
+- version: 1.0.2
+  date: 2026-11-15
+  url: https://github.com/FartyPants/fm1-nachtfahrt/releases/tag/v1.0.2
+  notes: Adds a Lead in setting of Off, so the Lead plays only what you play on the white keys or over MIDI, and shows a second arc on knobs the music moves. Saved settings are kept.
+- version: 1.0.1
+  date: 2026-11-15
+  url: https://github.com/FartyPants/fm1-nachtfahrt/releases/tag/v1.0.1
+  notes: Supports the UC25HQ80 flash chip of newer FM-1 units, which 1.0.0 could not save to or update over USB, answers M-UPGRADE 3.11 again, adds M-VAVE's V16 as a stock firmware to return to, and adds an Unbricking section to the installer page. Not yet tried on a newer unit, per the release notes.
 - version: 1.0.0
   date: 2026-11-01
   url: https://github.com/FartyPants/fm1-nachtfahrt/releases/tag/v1.0.0

@@ -1,0 +1,39 @@
+device: m-vave-fm-1
+name: Riffsmith
+summary: >-
+  M-PYRE fork that adds a synthesised six-string guitar engine, indie and reggae amps, ten synthesised guitar sounds and a drum
+  kit built from CC0 samples.
+description: >-
+  Imported from M-PYRE 1.0.3, it adds a GUITAR engine of six modelled strings in fixed point with pick position, palm mutes, a
+  reggae finger choke, drift and a tone control, so guitars play without M-PYRE's sample pack. It takes the slot of the physical
+  model engine, and M-PYRE's strum, chord, bend, vibrato, pedal, amp and cabinet controls work with it. Two amps are added, JANGL for
+  indie chime and SKANK for thin reggae chops, and ten presets cover indie, metal and reggae guitars and a direct string. A
+  public build makes the built-in drum kit from a CC0 kit in the tree, since M-PYRE's own drum recordings and cabinet impulse
+  responses are not in its public repository, and uses a filter-based cabinet instead. The README says it has not been flashed on a device,
+  and that the boot picture, amp wordmarks, USB name and package identity are still M-PYRE's.
+status: active
+authors:
+- name: pedronogueiranunes
+  url: https://github.com/pedronogueiranunes
+source: https://github.com/pedronogueiranunes/riffsmith-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states GPL-3.0-only for the code, and LICENSE is the GPL v3 text. M-PYRE's guitar and bass samples, cabinet
+  impulse responses and artwork are CC BY 4.0 and the drum samples CC0, per its LICENSING.md. The repository carries M-PYRE's
+  sound pack, docs/firmware/soundpack.bin, which is not a stock M-VAVE image.
+homepage: https://pedronogueiranunes.github.io/riffsmith-fm1/
+based_on: m-vave-fm-1/m-pyre
+distribution: source-only
+requires_stock: V15 or another firmware with the update loader
+install_notes: >-
+  Run tools/prep_riffsmith_kit.py and ./build.sh to make the package, then install it with tools/fm1_install.py. The README says to
+  keep M-VAVE's M-UPGRADE with official V15 at hand to go back, and the rescue path inherited from M-PYRE is holding OCT- alone at
+  power-on. Projects saved by SLOOP 2.6 to 2.8 do not open. The sound pack is optional and installs with the editor.
+brick_risk: false
+tags: [guitar, synth-engine, physical-modeling, sequencer, drums, fx, fork]
+versions:
+- version: main @ 1286b52
+  date: 2026-11-14
+  url: https://github.com/pedronogueiranunes/riffsmith-fm1/commit/1286b52e6bdddcd821eb15244cb994583579a37a
+  notes: No tagged releases; this is the latest commit.

@@ -14,6 +14,11 @@ description: >-
   an interrupted save cannot lose the saved project. Release 1.1 keeps audio and
   the sequencer running while knobs, menus, kit loading and SD card saves are in
   use, and release 1.2 adds a DJ filter with resonance on the performance page.
+  Release 1.3 adds a step arp with chord and direction settings, faster knobs
+  with SHIFT held, LFOs that modulate whole-unit settings, and pattern pages with
+  names and patterns loaded from other projects. Release 1.4 reworks the song
+  page, adds repeat entries to songs and shows a pattern name only when one was
+  given in the save dialog.
   Since 0.1 it renames the
   unit on the start-up screen and as the USB-MIDI device, which means DAW
   mappings that use the old port name need to be set up again. Kits, patterns,
@@ -35,7 +40,7 @@ license_notes: >-
 distribution: download
 requires_stock: LXR-02 with the stock bootloader
 install_notes: >-
-  Copy LXR_OpenElixir-02_V1.2.img from the release to the top folder of the SD
+  Copy LXR_OpenElixir-02_V1.4.img from the release to the top folder of the SD
   card, delete any other LXR*.img files, then hold the encoder button while
   switching the unit on until LXR Updater appears. The bootloader is not
   touched, so an interrupted update can be repeated. Installing an official
@@ -46,6 +51,14 @@ install_notes: >-
 brick_risk: false
 tags: [drums, fork, open-source]
 versions:
+  - version: "1.4"
+    date: 2026-11-15
+    url: https://github.com/tunefish777/openelixir-02/releases/tag/v1.4
+    notes: Reworks the song page to show two rows with pattern names, adds REP x01 to REP x32 entries that repeat the previous pattern in a song, and shows a pattern name only when one was given in the save dialog. Songs that use REP end at that entry on the stock firmware.
+  - version: "1.3"
+    date: 2026-11-14
+    url: https://github.com/tunefish777/openelixir-02/releases/tag/v1.3
+    notes: Adds a step arp (chord and direction per step), SHIFT + knob for bigger steps, LFOs on whole-unit settings, named patterns, and kits and patterns loaded from other projects that stay temporary until saved. Fixes a voice that could stay silent after a filter blow-up, and shows MIDI note names with note 60 as C4.
   - version: "1.2"
     date: 2026-10-31
     url: https://github.com/tunefish777/openelixir-02/releases/tag/v1.2

@@ -1,0 +1,34 @@
+device: m-vave-smk-37
+name: LiveGomezSynth
+summary: >-
+  Live-performance firmware for the SMK-37 Pro built on SMKSYNTH, with 444 patches in 15 categories, favourite and performance banks with layers, splits and solo sounds, and a browser simulator and installer.
+description: >-
+  Sounds come from several engines: an analog-style OberVave voice core, two- and four-operator FM, a six-operator FM core adapted from the Android music synthesizer, a drawbar organ, a sampler, a vowel engine for choir sounds and five drum kits. Sixteen pads load favourites, and eight banks of performances combine two layers split by octave range with two solo sounds. Four knobs tweak the sound, four faders set chorus, delay, distortion and reverb sends, and there is no sequencer or song mode. The browser simulator runs the firmware's C code compiled to WebAssembly. The README says the code was written with AI assistants, that the sounds were authored from parameters and never judged by ear on hardware, and that the firmware has never run on a real keyboard. The release is an update package only: the keyboard must already run SMKSYNTH or LiveGomezSynth, and a first-install package for stock firmware is not built.
+status: active
+authors:
+- name: agomezss
+  url: https://github.com/agomezss
+source: https://github.com/agomezss/livegomezsynth
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Stated in the README and LICENSE. src/THIRD_PARTY.md and PROVENANCE.md keep the GPL-3.0-only notices of SMKSYNTH, OberVave, JIANT, Felucca, SLOOP and Clipper, and the Apache-2.0 notice of the msfa FM core. The committed package is the project's own build, not one of M-VAVE's licensed images, and the JieLi SDK boot files are read from your own checkout at build time.
+homepage: https://agomezss.github.io/livegomezsynth/
+based_on: m-vave-smk-37/smksynth
+distribution: browser-installer
+requires_stock: SMK-37 Pro already running SMKSYNTH 1.x or LiveGomezSynth
+install_notes: >-
+  Use the installer page in desktop Chrome or Edge over HTTPS; it reads the keyboard's identity, refuses firmware it does not know, asks you to save an identity record and the package of your current firmware, then writes and resumes an interrupted transfer. The first start re-initialises the user-data bank, so back up SMKSYNTH banks first. The firmware never writes the calibration area, and the update loader is SMKSYNTH's unchanged. Return to stock with M-VAVE's M-UPGRADE and the factory package, or hold OCTAVE- at power-on to start only the loader.
+brick_risk: false
+tags: [synth-engine, performance, fm, drums, sampler, emulator, fork]
+image:
+  url: https://raw.githubusercontent.com/agomezss/livegomezsynth/main/DOCs/img/simulator.png
+  alt: Browser simulator showing the SMK-37 Pro panel with a screen, eight knobs, two wheels, a grid of coloured pads, four faders and the keys
+  credit: agomezss
+  source_url: https://github.com/agomezss/livegomezsynth#readme
+  first_party: true
+versions:
+- version: v0.1.5
+  date: 2026-11-15
+  url: https://github.com/agomezss/livegomezsynth/releases/tag/v0.1.5
+  notes: Adds a vowel engine with eight choir patches and replaces the sampled brass with six-operator FM presets. The release notes say it is not tested on hardware.

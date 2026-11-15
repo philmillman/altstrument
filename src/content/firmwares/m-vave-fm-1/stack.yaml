@@ -1,0 +1,45 @@
+device: m-vave-fm-1
+name: STACK
+summary: >-
+  Eight-track rave, dub and acid groovebox on fm1-base with 36 synthesised sounds, a locking sequencer and an on-screen sound
+  system that gains a speaker cabinet for every track with steps.
+description: >-
+  Each track with steps adds a cabinet to the screen, with subs at the bottom, mids in the middle and tops above, and the speaker
+  cones move with each hit. The 36 presets are synthesised and use no samples: analogue-style drums including 808, 909 and gabber
+  kits, acid, sub, reese and FM basses, hoover and rave leads, FM keys and bells, chord pads and effect sounds. The sequencer
+  has 1 to 64 steps per track, polymeter, per-step probability, ratchet, micro-timing, conditions and parameter locks, 16
+  patterns with chains and a song mode, and scales. The master bus has a synced ping-pong dub delay, reverb, kick-driven pump,
+  compressor and DJ filter. USB MIDI carries notes, clock and start and stop, and projects can be exported and imported as files.
+  A browser emulator runs the same code. The README is in Spanish and English and says it has been tested in a simulator and emulator
+  only.
+status: active
+authors:
+- name: alwaro777
+  url: https://github.com/alwaro777
+source: https://github.com/alwaro777/stack-fm1
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The README and THIRD_PARTY.md state GPL-3.0-or-later for STACK's own code, and LICENSE is the GPL v3 text. fm1-base and
+  felucca-bsp are MPL-2.0 submodules that are not modified, and three JieLi SDK files (Apache-2.0) are added to each package at
+  build time. THIRD_PARTY.md says M-VAVE's closed engine library is not used.
+homepage: https://github.com/alwaro777/stack-fm1
+distribution: download
+install_notes: >-
+  Install stack-X.Y.fwsc from the release with base/tools/fm1_install.py, or from the project's web installer in Chrome or Edge.
+  The README says the build never touches the bootloader or update loader, and that holding REC at power-on enters the chip's
+  update mode for reinstalling STACK, another firmware or M-VAVE's official one. Two failed starts in a row enter a safe mode. The
+  usual OCT- rescue of other firmwares is not present.
+brick_risk: false
+tags: [groovebox, sequencer, drums, acid, synth-engine, fx, midi, emulator]
+image:
+  url: https://raw.githubusercontent.com/alwaro777/stack-fm1/main/docs/img/stack.png
+  alt: A pixel-art stack of orange speaker cabinets numbered 1 to 7 under the banner STACK HI-FI at 138 BPM, with a row of step cells and the label 1 909 PUNCH at the bottom
+  credit: alwaro777
+  source_url: https://github.com/alwaro777/stack-fm1
+  first_party: true
+versions:
+- version: 0.1-beta
+  date: 2026-11-14
+  url: https://github.com/alwaro777/stack-fm1/releases/tag/v0.1-beta
+  notes: First beta release; tested in the simulator and emulator, not yet on a real FM-1.

@@ -1,0 +1,28 @@
+device: m-vave-fm-1
+name: Open Panel
+kind: tool
+summary: >-
+  C module that lets an app on the computer read the FM-1 panel over USB MIDI SysEx, with patches that add it to SLOOP 2.8.5, Skiff 2.6 and Carnac OS 0.9.6.
+description: >-
+  After the computer sends a hello message, the firmware identifies itself and reports each button and key press and release and each knob turn with a timestamp in audio frames, plus the held state and running knob totals twice a second. It sends nothing before that hello, never waits on the SysEx queue, stops five seconds after the last hello and writes nothing to flash. The module is two files, panelmsg.c and panelmsg.h, and the patches hook it into the panel scan interrupt and main loop of each firmware. The author's FM-1 jam page at les.audio reads it. Each firmware has a build switch that turns the module off and gives back the maker's own build byte for byte, according to the README, which lists size and RAM costs for each build.
+status: active
+authors:
+- name: Bitbazooka LLC
+  url: https://github.com/les-audio
+source: https://github.com/les-audio/fm1-open-panel
+source_status: open
+license: MIT
+license_notes: >-
+  The module in src/ is MIT OR MPL-2.0 at your option (LICENSE-MIT and LICENSE-MPL-2.0). The patches in firmwares/ change GPL-3.0-only code and are GPL-3.0-only (firmwares/LICENSE); each patched firmware keeps its maker's licence.
+homepage: https://les.audio/jam
+distribution: patch-your-own
+requires_stock: M-VAVE FM-1 V15 or later
+install_notes: >-
+  Clone the firmware at the tag the patch names, apply the patch, copy panelmsg.c and panelmsg.h into the tree and build with that firmware's own JieLi toolchain scripts. The resulting package installs like the firmware it patches; see that firmware's entry for recovery. Skiff's patch applies to the FM-1 build only.
+brick_risk: false
+tags: [midi, sysex, usb-midi, library, controller-mode]
+versions:
+- version: main @ 661a719
+  date: 2026-11-15
+  url: https://github.com/les-audio/fm1-open-panel/commit/661a7198f129af85765ede6618d15e190ca66fa2
+  notes: No tagged releases; this is the latest commit.

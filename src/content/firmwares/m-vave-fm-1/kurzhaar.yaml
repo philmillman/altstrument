@@ -1,0 +1,50 @@
+device: m-vave-fm-1
+name: Kurzhaar, der Basshund
+summary: >-
+  Monophonic analog-style bass synth and step sequencer for the FM-1, fork of Dinghy, with 16 presets, DAW clock sync and
+  recording over USB audio.
+description: >-
+  Two oscillators (saw, pulse with PWM, triangle), a sub oscillator one or two octaves down and noise run at four times the
+  sample rate into a nonlinear four-pole ladder filter with self-oscillation, keytracking and bass compensation. Two
+  LFOs with six shapes and seven destinations, filter and amp envelopes, accent, velocity and glide, drive, saturation, analog
+  drift and a reverb that keeps the low end dry complete the voice. There are 16 factory patches and 32 patch slots. The sequencer
+  holds 16 patterns of up to four bars of 16 steps, each step with accent, slide, tie and gate, entered in step or live
+  record in a chosen scale, and an Ideas function that mutates a pattern or generates a new bassline in the key. It follows
+  a DAW's MIDI clock and song position, takes notes, program changes and filter CCs over USB and appears as a USB audio
+  input. A timing offset lines it up with the DAW grid. It is a fork of Dinghy, with the app, engine, sequencer, clock and
+  patches new, and it carries Felucca's platform code. Named for the author's dog, a German Shorthaired Pointer.
+status: active
+authors:
+- name: JazzMasterT
+  url: https://github.com/kurzhaar168
+source: https://github.com/kurzhaar168/kurzhaar
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Read from LICENSING.md, which states GPL-3.0-only and credits Felucca's platform code (Leo Kuroshita, Hügelton
+  Instruments), the SMK-37 layer, SLOOP and Dinghy (zvenson). Terminus and Audiowide fonts are SIL OFL 1.1. Each
+  package carries three unmodified JieLi AC79 SDK files, Apache-2.0, with the licence attached to the release.
+distribution: download
+install_notes: >-
+  Download the .fwsc from the release and install it over USB with tools/fm1_install.py, which asks before it writes (needs
+  mido and python-rtmidi). The README says to install at your own risk and that if Kurzhaar will not start, holding OCT-
+  while switching on starts the FM-1's USB rescue, where any firmware can be installed. To return to the official firmware
+  use the Firmware Hub in Chrome or Edge. Kurzhaar keeps its own patches, patterns and settings, which other firmwares can
+  overwrite.
+brick_risk: false
+tags: [synth, bass, sequencer, midi, usb-audio, fork]
+image:
+  url: https://raw.githubusercontent.com/kurzhaar168/kurzhaar/main/docs/img/sequencer.png
+  alt: "The FM-1 screen on Kurzhaar's sequencer page: pattern P01 in A minor at 120.0 BPM with orange step blocks, the message NEW BASSLINE (HOME: UNDO) and four parameter boxes"
+  credit: JazzMasterT
+  source_url: https://github.com/kurzhaar168/kurzhaar
+  first_party: true
+versions:
+- version: "1.1"
+  date: 2026-11-14
+  url: https://github.com/kurzhaar168/kurzhaar/releases/tag/v1.1
+  notes: Release page lists only the changelog link to v1.0.
+- version: "1.0"
+  date: 2026-11-14
+  url: https://github.com/kurzhaar168/kurzhaar/releases/tag/v1.0
+  notes: First GitHub release.

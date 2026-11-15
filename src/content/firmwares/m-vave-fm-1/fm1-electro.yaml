@@ -27,13 +27,17 @@ license_notes: >-
   .fwsc files in firmware/ are the author's own builds, not stock images.
 distribution: download
 install_notes: >-
-  Back up projects and samples first, since they are lost on the switch. Send firmware/FM1_ELECTRO_PLATTFORM.fwsc (or the older FM1_ELECTRO.fwsc) with a flasher
+  Back up projects and samples first, since they are lost on the switch. Send FM1_ELECTRO-0.5.2-alpha.fwsc from the release, or firmware/FM1_ELECTRO_PLATTFORM.fwsc (or the older FM1_ELECTRO.fwsc), with a flasher
   that accepts custom packages (fm-static, M-Flasher or tools/fm1_install.py). The original firmware can be put back
   with M-VAVE's tools, and the bootloader's download mode or FM-1 Transporter covers a unit that will not start.
 brick_risk: false
 tags: [groovebox, drums, sequencer, synth-engine, arpeggiator, fx]
 versions:
+- version: 0.5.2-alpha
+  date: 2026-11-14
+  url: https://github.com/robtron-byte/FM1-Electro-one/releases/tag/v0.5.2-alpha
+  notes: Pre-release, and the first with a version number instead of a build count (it is the 52nd test build); built by GitHub Actions on the project's own platform, with package ID FM-1_965. Adds a single drum kit shared by all four pattern slots, faintly lit beats 1, 5, 9 and 13 in BEAT, per-area INIT sounds, STRINGS and BASS takes that start with the first key, pattern chains, a RHYTHM chord that follows the sound, fills over the whole bar, saving your own sounds with GLO and SAVE and a green PLAY light. The notes are in German.
 - version: main @ 7517acb
   date: 2026-11-12
   url: https://github.com/robtron-byte/FM1-Electro-one/commit/7517acb80411b39f92d08a854bc2f8a1025add39
-  notes: No tagged releases; this is the latest commit. Since the previous row the repository adds the platform-based package, whose drum voices and PO-12 kit use less processing time, and the automatic save waits for STOP while the groove plays. Commits since then, up to the project's 52nd test build, add a compressor mix control, a distortion send lock, a faster screen refresh, an accent row on a black key, a start with an empty pattern and a random kit, a chord board for STRINGS, live takes with held lengths for STRINGS and BASS, saving your own sounds with GLO and SAVE, a green PLAY light, fills that build over the whole bar and a longer beat that copies the pattern, and chaining of patterns. The latest test builds make the RHYTHM chord follow the sound, give each area its own INIT sound, let a STRINGS or BASS take start with the first key, light beats 1, 5, 9 and 13 faintly in BEAT and share one kit across all slots.
+  notes: Git commit; the 52nd test build, before the project started numbering releases. Since the previous row the repository adds the platform-based package, whose drum voices and PO-12 kit use less processing time, and the automatic save waits for STOP while the groove plays.

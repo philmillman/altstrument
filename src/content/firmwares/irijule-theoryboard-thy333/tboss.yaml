@@ -7,8 +7,8 @@ description: >-
   a piano keyboard in a web editor, and separate MIDI channels for chords and melody. Pad pressure can be sent as
   aftertouch or as a controller such as mod wheel or filter. The editor also backs up settings and makes a
   verified copy of the board's 16 MB memory chip. Later versions add recordable chord progressions, user-typed chord sets, a Modes chord set, external MIDI control,
-  a chord grid, an eight-lane, eight-pattern step sequencer with songs, four MIDI effects, a bass layout, Program Change in both directions, MPE, a Turing-pattern arpeggiator
-  and chained progressions. From 2.0 the web editor has its own USB port, so a DAW can keep playing while it is connected. TRS MIDI out and the
+  a chord grid, an eight-lane, eight-pattern step sequencer with songs, four MIDI effects, a bass layout, Program Change in both directions, MPE, a Turing-pattern arpeggiator,
+  chained progressions, CC lanes in the step sequencer and chord pads played from another controller's MIDI notes. From 2.0 the web editor has its own USB port, so a DAW can keep playing while it is connected. TRS MIDI out and the
   sustain pedal are confirmed on a board; the pedal's other modes, scale lock and progressions started from a DAW are not yet, and the
   author asks for test reports. Releases up to 1.6 carried a beta label, and 1.7 and later do not. The
   author is not affiliated with the board's makers.
@@ -34,6 +34,18 @@ install_notes: >-
 brick_risk: false
 tags: [controller-mode, chords, scales, arpeggiator, midi, editor]
 versions:
+  - version: 2.6.5
+    date: 2026-11-14
+    url: https://github.com/armandhammer/TBOSS/releases/tag/v2.6.5
+    notes: Fixes web editor Sequencer tab edits that could be lost on the way to the board, stops the editor putting the board's older steps over an unsent edit, and adds a Clear pattern button.
+  - version: 2.6.4
+    date: 2026-11-14
+    url: https://github.com/armandhammer/TBOSS/releases/tag/v2.6.4
+    notes: Adds step sequencer lanes of kind CC that send a controller value per step, and step bends in tenths of a semitone instead of eighths.
+  - version: 2.6.2
+    date: 2026-11-14
+    url: https://github.com/armandhammer/TBOSS/releases/tag/v2.6.2
+    notes: Adds playing the chord pads from the notes of another MIDI controller over USB, and marks a step's pitch bend so DAWs draw it as a clean step instead of a slide.
   - version: "2.6"
     date: 2026-11-14
     url: https://github.com/armandhammer/TBOSS/releases/tag/v2.6

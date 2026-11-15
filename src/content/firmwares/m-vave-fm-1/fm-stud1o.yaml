@@ -11,7 +11,7 @@ description: >-
   and solo. Effects include sidechain ducking from other tracks, a four-band master EQ and held-key performance
   effects, and the GROWL engine for FM basses is this fork's own. Notes on MIDI channel 10 can strike the eight lanes of a drum track in order, and CC 117, 118 and 119 from a controller
   start, stop and arm recording. According to its latest commits, notes from MIDI in can step-enter into an armed, stopped sequencer, a controller's arpeggiator can write its chord into a step, CC 74 to 77 move HOME's four knobs with
-  pickup, and a LIVE mode, switched by holding PLAY, uses the keys to choose the pattern and to mute or set each track's level at the
+  pickup, the MIDI pitch wheel can be recorded into patterns, and a LIVE mode, switched by holding PLAY, uses the keys to choose the pattern and to mute or set each track's level at the
   start of the pattern. Part of the rendering can run on the chip's second
   core. A browser emulator builds from the sources and starts with a demo song. The repository has no tagged releases and no web installer for this fork: the package is built locally and
   installed with the bundled Python script, and the author notes the public Felucca installer installs upstream Felucca.
@@ -44,7 +44,7 @@ image:
   source_url: https://github.com/MPASTEAU/FM-Stud1o-FM-1-Firmware#readme
   first_party: true
 versions:
-- version: main @ 4659e40
-  date: 2026-11-12
-  url: https://github.com/MPASTEAU/FM-Stud1o-FM-1-Firmware/commit/4659e4037060bf65447d95d537d91e60f2d00b82
-  notes: No tagged releases; this is the latest commit. Since the previous row, a pattern keeps its own arpeggiator settings, LIVE mode lets the white keys choose the pattern of every track and queues a pattern to start at the end of the selected track's pattern, pattern length offers 16 to 256 steps, and quantize is one setting for all tracks at 50 % by default. Later commits add a count-in that waits for the first note, live recording that keeps the keys as played in every voice mode, an 8-voice GRAIN, and a REC arm that follows the selected track; the LFO draw page is removed. The latest commits add volume-fade and filter-fade keys in LIVE mode, a count-in row set to off, on or note, removal of a drum lane's hits by holding its key while recording, and a pickup that takes a MIDI-turned HOME knob at 0 or 127.
+- version: main @ 242640c
+  date: 2026-11-14
+  url: https://github.com/MPASTEAU/FM-Stud1o-FM-1-Firmware/commit/242640c9548e8ea96430480539f84100ec3f6a1b
+  notes: No tagged releases; this is the latest commit. Since the previous row, a pattern keeps its own arpeggiator settings, LIVE mode lets the white keys choose the pattern of every track and queues a pattern to start at the end of the selected track's pattern, pattern length offers 16 to 256 steps, and quantize is one setting for all tracks at 50 % by default. Later commits add a count-in that waits for the first note, live recording that keeps the keys as played in every voice mode, an 8-voice GRAIN, and a REC arm that follows the selected track; the LFO draw page is removed. The latest commits add volume-fade and filter-fade keys in LIVE mode, a count-in row set to off, on or note, removal of a drum lane's hits by holding its key while recording, and a pickup that takes a MIDI-turned HOME knob at 0 or 127. The newest commits record the MIDI pitch wheel into the pattern (while a key is held or the wheel is off centre), stop knob moves from recording as automation outside the AUTOMATION page, clear a drum lane with OCT- and a key or pad, and change how REC REPLACE ends held keys at the loop point.

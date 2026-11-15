@@ -1,0 +1,25 @@
+device: elektron-tonverk
+name: tv7-js
+kind: tool
+summary: Browser version of tv7. It renders a DX7 SysEx patch into a Tonverk multisample and downloads a zip with the .elmulti file and WAV.
+description: >-
+  Written in JavaScript, it loads a DX7 bank, previews the patches and exports a multisample across a MIDI note range. The
+  repository ships a page that redirects to tv7.html and package files for a local server. It is the starting point of the
+  OP-XY and Tonverk variant dx7-opxy. Nothing is sent to the sampler.
+status: dormant
+authors:
+  - name: Tyler Neely
+    url: https://github.com/spacejam
+source: https://github.com/spacejam/tv7-js
+source_status: open
+license: MIT
+license_notes: package.json states MIT; the repository has no LICENSE file.
+distribution: source-only
+install_notes: Open tv7.html from a local web server (npm run dev), choose a patch and download the zip, then copy it to User/Multi-sampled Instruments on the Tonverk.
+brick_risk: false
+tags: [sampler, samples, converter, dx7, fm, web]
+versions:
+  - version: main @ e68233a
+    date: 2025-10-06
+    url: https://github.com/spacejam/tv7-js/commit/e68233a
+    notes: No tagged releases; this is the latest commit.

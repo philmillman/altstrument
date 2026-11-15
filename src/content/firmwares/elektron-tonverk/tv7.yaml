@@ -1,0 +1,28 @@
+device: elektron-tonverk
+name: tv7
+kind: tool
+summary: Rust command-line tool that renders a patch from a DX7 SysEx bank into a Tonverk multisample, a WAV file plus an .elmulti mapping, ready to copy into the Multi-sampled Instruments folder.
+description: >-
+  tv7 list shows the patch names in a DX7 bank, and tv7 generate renders one patch with a software DX7 engine across a
+  chosen MIDI note range and step, with a configurable key-on length, and writes a folder with the WAV and the .elmulti
+  file. Characters the Tonverk does not accept are stripped from the name. The author says it has worked for them but
+  makes no promise it will work for everyone. It is published on crates.io as version 0.0.7. Nothing is sent to the sampler.
+status: dormant
+authors:
+  - name: Tyler Neely
+    url: https://github.com/spacejam
+source: https://github.com/spacejam/tv7
+source_status: open
+license: MIT
+license_notes: Cargo.toml states MIT; the repository has no separate LICENSE file.
+distribution: source-only
+install_notes: >-
+  Install with cargo install tv7, generate a multisample, and copy the folder to User/Multi-sampled Instruments on the
+  Tonverk's storage.
+brick_risk: false
+tags: [sampler, samples, converter, dx7, fm, rust]
+versions:
+  - version: main @ 4af031d
+    date: 2025-10-04
+    url: https://github.com/spacejam/tv7/commit/4af031d
+    notes: No tagged releases; this is the latest commit.

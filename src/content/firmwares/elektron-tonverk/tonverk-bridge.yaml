@@ -1,0 +1,35 @@
+device: elektron-tonverk
+name: Tonverk Bridge
+kind: tool
+summary: Android app that streams the phone's media audio to the Tonverk over USB as a class-compliant 48 kHz 24-bit stream, and can record the Tonverk's USB audio output to WAV on the phone. No root needed.
+description: >-
+  The app captures the phone's system media audio and sends it to the Tonverk's isochronous USB output through its own
+  userspace USB audio class 2 driver built on libusb, following the device's feedback endpoint and resampling to keep
+  the buffer steady. A second mode reads the Tonverk's USB audio output and writes it to a WAV file without resampling,
+  splitting long takes before the 4 GiB limit, with a level meter and a recording gain. The two modes cannot run at the
+  same time. Apps that opt out of audio capture, such as Spotify, stay silent. It needs Android 10 or later. The README says
+  the code was largely written with an AI assistant and tested on real Tonverk hardware. Nothing is written to the device.
+status: active
+authors:
+  - name: Ma94xx
+    url: https://github.com/Ma94xx
+source: https://github.com/Ma94xx/TonverkBridge
+source_status: open
+license: GPL-3.0-only
+license_notes: The README and the LICENSE file state GPL-3.0; the bundled libusb is LGPL-2.1.
+distribution: source-only
+install_notes: >-
+  Build with Android Studio (Gradle 8.7, NDK 26) or gradle assembleDebug on JDK 17 or later, install on an Android 10+
+  phone, connect the Tonverk in audio mode and press Start.
+brick_risk: false
+tags: [usb-audio, utility, android]
+versions:
+  - version: v1.3
+    date: 2026-10-23
+    url: https://github.com/Ma94xx/TonverkBridge/releases/tag/v1.3
+  - version: v1.2
+    date: 2026-10-23
+    url: https://github.com/Ma94xx/TonverkBridge/releases/tag/v1.2
+  - version: v1.1
+    date: 2026-10-22
+    url: https://github.com/Ma94xx/TonverkBridge/releases/tag/v1.1

@@ -1,0 +1,48 @@
+device: akai-mpc-sample
+name: RHYTHMER OS
+summary: >-
+  Groovebox environment for the MPC Sample built on Melodee and started from the microSD card, with a 20-entry plug-in picker, 36 drum kits, a generator for patterns and a break engine.
+description: >-
+  Rights warning: the repository includes the MPC Sample wordmark, drawn from the vector outlines on the cover of inMusic's user guide. assets/device/NOTICE.md says inMusic keeps its trademark and copyright rights in it and that public redistribution rights are still under review. The project's THIRD_PARTY_NOTICES.md and CREDITS_AUDIT.md say the combination of licences has not been fully cleared.
+
+  RHYTHMER OS is a fork of keremimo's Melodee for the MPC Sample, with the sampler, sequencer, mixer, effects and recovery path kept. It adds a Rhythmer Kit that fills 16 pads from 36 kit presets, and a plug-in picker with 20 entries: native ports of FM-1 and Schwung synths and drum engines such as Elixir, Hortator, Dexed, Plaits, Braids, Hera, OberVave, S1Vave and FMini-1, plus an acid line, a break engine and the original sample kit. A GEN page, taken from the author's FM-1 Rhythmer firmware, drafts patterns for a group of four tracks, and the break engine slices a loop you supply, since no break recordings are bundled. The engine ports are kept in a second repository, mpc-sample-engine-ports, which holds the adapters and pinned copies of each original source. Releases are pre-releases; the README says builds and host tests pass and that testing on a physical MPC Sample is still pending.
+status: active
+authors:
+- name: Jazzy Rhythmer
+  url: https://github.com/JazzyRhythmer
+source: https://github.com/jazzyrhythmer/mpc-sample-rhythmer-os
+source_status: open
+license: AGPL-3.0-only
+license_notes: >-
+  The root LICENSE is the AGPL-3.0 and THIRD_PARTY_NOTICES.md states AGPL-3.0-only for Melodee and the host code. Each bundled engine keeps its own licence (GPL-3.0 for most of the FM-1 and Schwung ports, MIT for Sophie and the Open MPC wrapper, MPL-2.0, Apache-2.0 and CC0 for parts). The Prophet and Elixir factory banks are left out because redistribution permission was not established, and no stock firmware is included.
+homepage: https://jazzyrhythmer.github.io/mpc-sample/
+based_on: akai-mpc-sample/melodee-sample
+distribution: download
+requires_stock: "1.3.0.12"
+install_notes: >-
+  Back up the whole microSD card, then copy the autorun, Rhythmer and Samples folders from the full SD zip to the top of the card; the stock app starts first and the launcher takes over. UPDATE.zip updates an existing install and is not a first-install package. It runs only on MPC Sample firmware 1.3.0.12. To return to the stock app, power off, remove the card and move the autorun folder off it. Nothing is written to the device's flash.
+brick_risk: false
+tags: [groovebox, sequencer, sampler, synth-engine, drums, generative, fork]
+image:
+  url: https://raw.githubusercontent.com/jazzyrhythmer/jazzyrhythmer/main/assets/mpc-sample.png
+  alt: White outline lettering reading MPC SAMPLE and RHYTHMER OS by JAZZY RHYTHMER on a black background with faint wireframe boxes, above four small wireframe shapes
+  credit: Jazzy Rhythmer
+  source_url: https://github.com/jazzyrhythmer/jazzyrhythmer#readme
+  first_party: true
+versions:
+- version: v0.4.0-beta.3-r2
+  date: 2026-11-15
+  url: https://github.com/jazzyrhythmer/mpc-sample-rhythmer-os/releases/tag/v0.4.0-beta.3-r2
+  notes: Pre-release. Shift with the encoder cancels confirmation dialogs, GEN Back follows one hierarchy and the track screen opens when every track is empty.
+- version: v0.4.0-beta.3-r1
+  date: 2026-11-15
+  url: https://github.com/jazzyrhythmer/mpc-sample-rhythmer-os/releases/tag/v0.4.0-beta.3-r1
+  notes: Pre-release with workflow and Kit updates.
+- version: v0.4.0-beta.3
+  date: 2026-11-15
+  url: https://github.com/jazzyrhythmer/mpc-sample-rhythmer-os/releases/tag/v0.4.0-beta.3
+  notes: Pre-release.
+- version: v0.4.0-beta.1
+  date: 2026-11-14
+  url: https://github.com/jazzyrhythmer/mpc-sample-rhythmer-os/releases/tag/v0.4.0-beta.1
+  notes: First public pre-release, with SD, update and source archives.

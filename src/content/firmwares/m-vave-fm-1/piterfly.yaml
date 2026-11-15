@@ -2,9 +2,9 @@ device: m-vave-fm-1
 name: piterfly
 kind: firmware
 summary: >-
-  SLOOP 2.8.5 modified to store 24 patterns, arrange songs of 128 positions and show every step of a track on the main screens; it gives up one of the four user sample banks.
+  SLOOP 2.8.5 modified to store 24 patterns, arrange songs of 128 positions and show every step of a track on the main screens, with six synth tracks and two drum tracks in the 1.2.0 release; it gives up its user sample banks for pattern and song storage.
 description: >-
-  Based on SLOOP and Felucca. Patterns go from four (A to D) to 24 in six banks of four, and the song order from 16 entries to 128, each one to 64 bars long. Track overviews show all steps in rows of 16, page navigation is a row of dots, and each track has a MIDI THRU switch. A store shows PENDING until the flash write finishes and SAVED after. The fourth user sample bank is reused for patterns, so there are three. The 1.0.0 notes also mention live granular effects for synth and sample tracks and a browser editor with audio preview. The repository is a cleaned copy of the author's private tree with a new history, and leaves out SLOOP's inherited artwork. The README says the build has not been validated on a physical FM-1, while the release notes say it was tested on one.
+  Based on SLOOP and Felucca. Patterns go from four (A to D) to 24 in six banks of four, and the song order from 16 entries to 128, each one to 64 bars long. Track overviews show all steps in rows of 16, page navigation is a row of dots, and each track has a MIDI THRU switch. A store shows PENDING until the flash write finishes and SAVED after. In 1.0.0 and 1.1.0 the fourth user sample bank is reused for patterns, so there are three; from 1.2.0 all four are reclaimed for a shared pattern and song pool. Release 1.2.0 splits the eight tracks into six synths sharing eight voices and two independent 16-lane drum parts, adds eight named song slots, and does not migrate projects from older versions. The 1.0.0 notes also mention live granular effects for synth and sample tracks and a browser editor with audio preview. The repository is a cleaned copy of the author's private tree with a new history, and leaves out SLOOP's inherited artwork. The README says the build has not been validated on a physical FM-1, while the release notes say it was tested on one.
 status: active
 authors:
 - name: piotrwozniak
@@ -17,7 +17,7 @@ license_notes: >-
 homepage: https://piotrwozniak.github.io/piterfly/
 distribution: browser-installer
 install_notes: >-
-  Use the installer page in Chrome or Edge with the FM-1 on USB, or download piterfly-1.0.1.fwsc from the release, which also carries the source archive and SHA256SUMS. The README says to back up first: the fourth sample bank is repurposed and importing a song file replaces all pattern slots, empty ones too. Recovery is the same as for SLOOP: hold OCT- while powering on for USB rescue.
+  Use the installer page in Chrome or Edge with the FM-1 on USB, or download piterfly-1.2.0.fwsc from the release, which also carries the source archive and SHA256SUMS. The README says to back up first: the user sample banks are repurposed (all four from 1.2.0, which does not import older projects, so export a backup with the matching older editor first) and importing a song file replaces all pattern slots, empty ones too. Recovery is the same as for SLOOP: hold OCT- while powering on for USB rescue.
 brick_risk: false
 tags: [groovebox, sequencer, sampler, synth-engine, fx, editor, fork]
 image:
@@ -27,6 +27,10 @@ image:
   source_url: https://github.com/piotrwozniak/piterfly#readme
   first_party: true
 versions:
+- version: 1.2.0
+  date: 2026-11-14
+  url: https://github.com/piotrwozniak/piterfly/releases/tag/1.2.0
+  notes: Changes the tracks to six synths sharing eight voices plus two independent 16-lane drum parts that both duck the synths, adds eight named song slots, and reclaims all four user sample banks for a shared 352 KiB pattern and song pool. Does not migrate older projects, so back up first and use the matching 1.2.0 editor. The release says physical FM-1 validation of the 6+2 layout was still pending.
 - version: 1.1.0
   date: 2026-11-13
   url: https://github.com/piotrwozniak/piterfly/releases/tag/1.1.0

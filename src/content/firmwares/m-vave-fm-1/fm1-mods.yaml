@@ -1,14 +1,14 @@
 device: m-vave-fm-1
 name: FM1-Mods
 summary: >-
-  Fork of Felucca 1.9 that adds three analog-model engines (POLYSIX, JUNO106 and POLIVOKS), a sampler span kit with
+  Fork of Felucca 1.9 that adds three analog-model engines (POLYSIX, JUNO106 and POLIVOKS) and a WAVTBL wavetable engine, a sampler span kit with
   looping, and an INIT shortcut, with the upstream engines and updates merged in.
 description: >-
   Tracks upstream Felucca closely, merging its 1.8 and 1.9 releases and keeping the plugin engine system. The added
-  engines are single-precision float ports of existing plugin DSP, whose sources the headers name as a CLAP plugin, a GPL-3 Juno port and a JUCE plugin: a six-voice model of the Korg Polysix, a
-  six-voice model of the Roland Juno-106 and a two-voice model of the Formanta Polivoks, and the Juno presets are generated from the GPL port's hand-made patches. Other changes are
+  analog-model engines are single-precision float ports of existing plugin DSP, whose sources the headers name as a CLAP plugin, a GPL-3 Juno port and a JUCE plugin: a six-voice model of the Korg Polysix, a
+  six-voice model of the Roland Juno-106 and a two-voice model of the Formanta Polivoks, and the Juno presets are generated from the GPL port's hand-made patches. WAVTBL, added after 1.9.0, is described in its commit as a Microwave I-style wavetable engine with 16 original synthesized tables. Other changes are
   a sampler span kit with a LOOP setting, an INIT tap and hold, favourites for the new engines and a compact EDIT
-  page that fits all 17 engines. Saved engine numbers were shifted on load to keep old saves working. The README is
+  page that fits all the engines. Saved engine numbers were shifted on load to keep old saves working. The README is
   still upstream's, and none of the changes is described there. No hardware test is recorded in the commit messages.
 status: active
 authors:
@@ -22,15 +22,15 @@ license_notes: >-
   and the engines, board layer, ported DSP and fonts keep the licences listed in the upstream LICENSING.md, which has
   not been updated for the added engines. The Hügelton Sample Pack is CC0 1.0. A 352,940-byte out.wav render is
   committed in the root.
-distribution: source-only
+distribution: download
 install_notes: >-
-  No release. The build follows Felucca's BUILDING.md with submodules for the engines and felucca-bsp, JieLi's
+  Download felucca.fwsc from the v1.9.1 release and install it with a flasher that accepts custom packages, or build it following Felucca's BUILDING.md with submodules for the engines and felucca-bsp, JieLi's
   toolchain and the AC79 SDK. Upstream's web installer in the README installs upstream Felucca, not this fork. Back up
   projects first, and keep M-VAVE's updater or the installer's return to official V15 ready.
 brick_risk: false
 tags: [synth-engine, virtual-analog, polyphonic, sampler, fork]
 versions:
-- version: main @ 1dfff28
-  date: 2026-11-04
-  url: https://github.com/ipf/synth/commit/1dfff283324bd03ac94ebf96bc1f983c7c0baae5
-  notes: No tagged releases; this is the latest commit, on top of upstream Felucca 1.9.0 and a later README change.
+- version: 1.9.1
+  date: 2026-11-15
+  url: https://github.com/ipf/synth/releases/tag/v1.9.1
+  notes: First release of the fork, named for the Felucca line it follows. The notes say the firmware is unchanged apart from the version string and that it fixes CI by moving the engines submodule to the author's fork, pinning golden renders to baseline x86-64 and bumping actions. The release holds felucca.fwsc and felucca.bin. Since 1.9.0 the fork also adds a WAVTBL wavetable engine and merges several upstream fixes.

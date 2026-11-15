@@ -1,0 +1,33 @@
+device: m-vave-blackbox
+kind: tool
+name: ESP32-S3 Blackbox MIDI Controller
+summary: ESP-IDF firmware for a homemade ESP32-S3 footswitch controller that selects presets and effect blocks on the M-VAVE Blackbox by USB MIDI, with an OLED, 80 presets and an optional USB device mode.
+description: >-
+  The firmware runs on a separate ESP32-S3 board with ten buttons, four navigation and edit buttons and an SSD1306 OLED, built
+  by the author for the Blackbox. By default it acts as a USB host and sends MIDI to the pedal; holding a button at power-on
+  switches it to USB device mode, and the choice is stored in flash. It organises 80 presets as eight pages of ten, and each
+  preset has its own effect page with buttons for the FX, MOD, delay, reverb, amp, cab and tuner blocks and for stepping to the
+  previous or next preset. Long presses navigate between pages, and a battery monitor circuit and power-saving modes are included.
+  The repository contains the ESP-IDF project, a manual in Portuguese and a README with the battery circuit. It does not
+  modify the pedal's own firmware.
+status: active
+authors:
+  - name: helgadb
+    url: https://github.com/helgadb
+source: https://github.com/helgadb/ESP32-S3-M-VAVE-Blackbox-MIDI-Controller
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and the README states no license. It bundles the ssd1306 component and Espressif's
+  esp_tinyusb under their own licences.
+distribution: source-only
+install_notes: >-
+  Build the ESP-IDF project and flash it to your own ESP32-S3 board wired as described in MANUAL.md and the README. The pedal is
+  not flashed or changed.
+brick_risk: false
+tags: [controller, footswitch, esp32, usb-midi, midi, presets, diy, hardware]
+versions:
+  - version: main @ bbee63f
+    date: 2026-11-15
+    url: https://github.com/helgadb/ESP32-S3-M-VAVE-Blackbox-MIDI-Controller/commit/bbee63fe904b5bce670cc64ec7b0c448544dceb5
+    notes: No tagged releases; this is the latest commit.

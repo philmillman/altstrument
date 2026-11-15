@@ -5,9 +5,9 @@ description: >-
   The author describes a smaller, curated take on Modded Cycles, with mods that
   declare what they touch so that compatible combinations can be worked out
   rather than listed by hand. The web flasher builds the OS in your browser from
-  your own official file and sends it over USB. The README lists sixteen cards, the sixteenth being SOLID, a machine for struck sounds such as strings, bars and bells:
-  the SAMPLE machine from the author's Cycles One-Shot, a one-shot sampler for
-  samples on the +Drive, Control All Config, two delay effects (Digital Delay
+  your own official file and sends it over USB. The README lists seventeen cards, among them SOLID, a machine for struck sounds such as strings, bars and bells,
+  and Perform Kit, a mode in which a pattern change keeps the current sounds. The others are the SAMPLE machine
+  from the author's Cycles One-Shot, a one-shot sampler for samples on the +Drive, Control All Config, two delay effects (Digital Delay
   and POTS), trig conditions that put A:B before the percentages, drumkilla's
   trig preview, five Track FX (Samples, which puts SAMPLE's filter on any
   track, Crush, Ring, Reso and EQ), a CPU page in SETTINGS, RESAMPLE, which
@@ -57,6 +57,10 @@ install_notes: >-
   MIDI IN.
 tags: [machines, sampler, fork, flasher, usb-audio]
 versions:
+  - version: main @ df06c55
+    date: 2026-11-15
+    url: https://github.com/durchgemacht/model27/commit/df06c55c1854048a44e704cb51641837b7ee7e04
+    notes: No tagged releases in the original repository; this is the latest commit (release 0.65 is the last one named in the commit messages). Since 0.62 it adds the Perform Kit card, where a pattern change keeps the sounds (SETTINGS + PATTERN), tested on a Model:Cycles in 0.63, gives SOLID and SAMPLE their own cards and icons, and starts every card ticked in the flasher. The latest commit speeds up the tool that generates the reference tables and changes no firmware byte.
   - version: main @ 7f62956
     date: 2026-11-13
     url: https://github.com/durchgemacht/model27/commit/7f6295648ffab8ef239607f9aa36b31826006f1c

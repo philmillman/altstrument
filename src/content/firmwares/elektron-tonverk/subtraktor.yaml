@@ -1,0 +1,36 @@
+device: elektron-tonverk
+name: Subtraktor
+kind: tool
+summary: Offline browser tool that builds Subtrack drum kits for the Tonverk. It transcodes audio to 48 kHz 16-bit stereo WAV, trims it, maps eight slots and exports a zip with the .eldrum file.
+description: >-
+  Samples in common formats are decoded in the browser, resampled and written as WAV. Each of eight slots covers one of
+  the Subtrack's trigger notes with a category, velocity and forward, reverse or ping-pong playback, and a waveform view sets
+  start and end trims. Peak normalisation to -1 dBFS is optional. An existing .eldrum file can be loaded to inspect its layout.
+  The workspace is kept in the browser's IndexedDB and nothing is uploaded. The zip folder is copied to User/Drum Sets
+  on the card, with a folder name matching the .eldrum file. Nothing is sent to the sampler.
+status: active
+authors:
+  - name: Grandsummoner
+    url: https://github.com/Grandsummoner
+source: https://github.com/Grandsummoner/subtraktor
+source_status: open
+license: unspecified
+license_notes: No LICENSE file and no licence statement in the README or the page.
+homepage: https://grandsummoner.github.io/subtraktor/Subtraktor.html
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page, build a kit and download the zip, extract it and copy the folder to User/Drum Sets on the card, then load
+  a Subtrack machine and pick the kit.
+brick_risk: false
+tags: [sampler, samples, converter, editor, web]
+image:
+  url: https://raw.githubusercontent.com/Grandsummoner/subtraktor/main/res/Subtraktor.png
+  alt: Subtraktor with a sample list on the left, eight kit slots with category menus and waveform trimmers in the middle, and an .eldrum viewer on the right.
+  credit: Grandsummoner
+  source_url: https://github.com/Grandsummoner/subtraktor#readme
+  first_party: true
+versions:
+  - version: main @ c633af2
+    date: 2026-07-08
+    url: https://github.com/Grandsummoner/subtraktor/commit/c633af2
+    notes: No tagged releases; this is the latest commit.

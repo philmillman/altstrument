@@ -1,0 +1,46 @@
+device: m-vave-fm-1
+name: Golf
+summary: >-
+  Wavetable synthesizer with a 32-step sequencer for the FM-1: two oscillators morphing through 130 wavetables, a ladder
+  filter, a modulation matrix, effects and 168 presets.
+description: >-
+  Each of the two oscillators morphs through a wavetable, with 130 tables built in and room for 32 of your own, up to
+  seven unison voices and a warp (sync, bend, asym, PWM, fold or FM). A sub oscillator and noise feed a filter with
+  ladder 24 dB, 12 dB, band, high and acid modes, its own envelope and key tracking. Two envelopes, two LFOs and six
+  modulation routes cover sources such as velocity, key pressure, mod wheel and pitch. The sequencer has 32 steps with up
+  to four notes each, velocity, gate with ties, swing, and a wavetable position and filter offset per step, and an
+  arpeggiator can play its chords. Effects are drive, three-band compression, chorus, delay and reverb. Eight voices are
+  spread over the FM-1's two processor cores, and 16 slots hold your own presets. The sound engine was written from
+  scratch for the FM-1's chip. It uses the wavetables and 96 presets of the author's Golf plug-in, with the presets
+  converted and fitted against recordings of the plug-in. The wavetables are stored as harmonics, with no recorded audio.
+  A script packs your own wavetable WAV files into a bank and sends it over USB MIDI. The README is in English, with
+  a Dutch version and some Dutch documentation files.
+status: active
+authors:
+- name: barnierg76
+  url: https://github.com/barnierg76
+source: https://github.com/barnierg76/golf-fm1
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  Read from the LICENSE file. Built on fm1-base and felucca-bsp. TABELLEN.md credits the wavetables as the plug-in's
+  own and as resyntheses of CC0 and CC BY sources.
+homepage: https://barnir-fm1.pages.dev/golf/
+distribution: browser-installer
+install_notes: >-
+  Install from the page at barnir-fm1.pages.dev/golf/install/ in Chrome or Edge over USB, or download the .fwsc from the
+  release and install it with fm1-base's tools/fm1_install.py. The README says the install page has a button to put the
+  stock firmware back. Building needs fm1-base and its Docker toolchain.
+brick_risk: false
+tags: [synth, wavetable, sequencer, arpeggiator, fx, presets, midi]
+image:
+  url: https://raw.githubusercontent.com/barnierg76/golf-fm1/main/screen.png
+  alt: "The FM-1 screen on Golf's PLAY page, showing preset 044 SUPERZAAG, a wavetable plot named Basic Shapes, a ladder filter curve and four parameter bars: morph A 85, morph B 85, cutoff 100 and reso 20"
+  credit: barnierg76
+  source_url: https://github.com/barnierg76/golf-fm1
+  first_party: true
+versions:
+- version: "1.0"
+  date: 2026-11-14
+  url: https://github.com/barnierg76/golf-fm1/releases/tag/v1.0
+  notes: First release, with the .fwsc package.

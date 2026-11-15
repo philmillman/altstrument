@@ -1,0 +1,48 @@
+device: m-vave-fm-1
+name: FM-1 Chimera Vocal
+summary: >-
+  Physically modelled human voice for the FM-1, a port of Jameson Hodge's CHIMERA: each key sings the next syllable of a line, with a vowel mode and a web Studio for the words.
+description: >-
+  The sound comes from a simulated airway of lungs, vocal folds, throat, mouth and nose, with no samples. In WORDS mode each
+  key sings the next syllable of a line at the key's pitch, with consonants on the press, the vowel while held and the ending on
+  release, and PLAY speaks the whole line. In VOWEL mode the keys play pitch while the knobs move the mouth through CHIMERA's
+  vowel space, and twelve vowel snapshots can be recalled. Five knob pages cover singing, shape, mouth, source and play, and
+  eight voice presets are provided. The screen shows CHIMERA's flat view of the head as it moves. Words are prepared in a web
+  Studio with the CMU Pronouncing Dictionary, tried on an emulated FM-1 and sent over USB; typing them on the unit is
+  not yet possible. The FM-1 uses a lighter waveguide tract than CHIMERA's full airflow model, which the author measured at about
+  twice what the chip can run, and only an adult male voice is included. It uses both processor cores, with the sound
+  rendered on one and the control on the other. The project is unofficial, and uses CHIMERA's name and head with its author's
+  permission.
+status: active
+authors:
+- name: shan-sherif
+  url: https://github.com/shan-sherif
+- name: Jameson Hodge
+  url: https://github.com/jamesondh
+source: https://github.com/shan-sherif/fm-1-chimera-vocal
+source_status: open
+license: MIT
+license_notes: >-
+  A mixed licence, read from the LICENSE file and README. The port of CHIMERA's voice (engine/ and app/dsp/voice_male.h) is MIT with
+  Jameson Hodge's copyright, and the project's own Studio, site, tools and lab are MIT. The files started from fm1-base's
+  template (app/app.c and app/app.h) are MPL-2.0, and the firmware package is MPL-2.0 AND MIT. The CMU Pronouncing Dictionary
+  entries keep Carnegie Mellon's BSD-style licence, and each package carries JieLi AC79 SDK files under Apache-2.0.
+homepage: https://shan-sherif.github.io/fm-1-chimera-vocal/
+distribution: browser-installer
+install_notes: >-
+  Use the install page in Chrome or Edge with the FM-1 on USB; the README says it can put M-VAVE's own firmware back. The release
+  also holds the .fwsc and the .bin image with SHA256SUMS. Both FM-1 flash chips (Puya P25Q80 and UC25HQ80) are accepted, but the
+  README says the newer chip has not been tested with this firmware on a unit. Install at your own risk.
+brick_risk: false
+tags: [synth, voice, speech, vocal, physical-modelling, editor, emulator, port]
+image:
+  url: https://raw.githubusercontent.com/shan-sherif/fm-1-chimera-vocal/main/app/site/img/preview-words.gif
+  alt: "The FM-1 screen in WORDS mode: a blue head in profile with its vocal tract, the NOW and NEXT syllables, the line HELLO THERE and bars for vibrato 35, rate 6.0, breathy 15% and ring 0%"
+  credit: shan-sherif
+  source_url: https://github.com/shan-sherif/fm-1-chimera-vocal
+  first_party: true
+versions:
+- version: 0.4.0
+  date: 2026-11-14
+  url: https://github.com/shan-sherif/fm-1-chimera-vocal/releases/tag/v0.4.0
+  notes: First public release.

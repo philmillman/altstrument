@@ -1,0 +1,26 @@
+device: m-vave-fm-1
+name: FM-1 Arduino Rescue
+kind: tool
+summary: >-
+  Arduino Uno or Nano sketch and wiring guide that puts a stuck FM-1 into its chip's ROM boot mode, so a separate tool can restore the firmware.
+description: >-
+  The sketch sends the slow JieLi boot key on the USB data lines at power-on, using two resistor dividers to bring the board's 5 V outputs to about 3 V, and then imitates the start-of-frame pulses. After it reports a response, the FM-1's cable is moved to a computer without switching the unit off, where it appears as a WL82 UBOOT disk. FM1 Recovery, MvaveFM1Unbricker or M-Flasher then back up the flash and rewrite the official V15. The sketch writes nothing to the FM-1. It is an AVR port of the key timing in the Flipper FM-1 Recovery project. The README, in French, reports one successful recovery on 14 November 2026 with a 0x856014 flash and an Uno clone, says the newer 0xB36014 flash is untested and notes that a damaged boot area at 0x0000 to 0x3FFF cannot be recovered this way. It also records a Windows Defender controlled folder access setting that blocked the restore tool.
+status: active
+authors:
+- name: JimR74
+  url: https://github.com/JimR74
+source: https://github.com/JimR74/fm1-arduino-rescue
+source_status: open
+license: Unlicense
+license_notes: Stated in the LICENSE file and the README.
+based_on: m-vave-fm-1/flipper-fm1-recovery
+distribution: source-only
+install_notes: >-
+  Upload the sketch to an Uno, or a Nano with the old bootloader, wire a cut USB-C cable as docs/cablage.html shows, send g in the serial monitor at 115200 baud and power the FM-1 within 15 seconds. Do not omit the resistor dividers. The restore itself is done by one of the tools the README names, which is where the flash backup happens.
+brick_risk: false
+tags: [recovery, flasher, utility, usb-midi]
+versions:
+- version: main @ 846c224
+  date: 2026-11-14
+  url: https://github.com/JimR74/fm1-arduino-rescue/commit/846c224eb6e342d161266cffbc924868cd4b42ae
+  notes: No tagged releases; this is the latest commit.

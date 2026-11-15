@@ -1,0 +1,29 @@
+device: teenage-engineering-op-xy
+also_devices: [elektron-tonverk]
+name: dx7-opxy
+kind: tool
+summary: Browser tool that renders DX7 SysEx patches into multisamples for the OP-XY (.preset folder with WAVs and patch.json) or the Tonverk (.elmulti plus WAV), with a retro DX7-style interface.
+description: >-
+  Extends tv7-js with an OP-XY export. It loads a DX7 bank or one of about 50 bundled banks, renders the chosen patch
+  across a MIDI note range with an engine ported from the Plaits DX7 code, previews it on an on-screen keyboard and downloads
+  a zip. The OP-XY output trims silence and writes a patch.json with key mapping, loop and envelope fields. A hosted page
+  is available. Nothing is sent to either device.
+status: active
+authors:
+  - name: Chad Furrow
+    url: https://github.com/cfurrow7
+source: https://github.com/cfurrow7/dx7-opxy
+source_status: open
+license: MIT
+license_notes: The README states MIT and refers to the original tv7-js; the repository has no LICENSE file.
+homepage: https://cfurrow7.github.io/dx7-opxy/tv7.html
+distribution: browser-installer
+install_notes: Open the hosted page or run npm start, pick a patch and format, download the zip and copy it to the device's preset or multisample folder.
+brick_risk: false
+tags: [sampler, presets, converter, dx7, fm, web]
+based_on: elektron-tonverk/tv7-js
+versions:
+  - version: main @ d174a08
+    date: 2026-01-28
+    url: https://github.com/cfurrow7/dx7-opxy/commit/d174a08
+    notes: No tagged releases; this is the latest commit.

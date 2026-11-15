@@ -9,7 +9,7 @@ description: >-
   My Bloody Valentine records and voiced differently by each patch, and the note names show on the photo in a colour per note.
   Each patch has a quiet beat with fills, an auto bass and an amount sent into the reverse reverb. MIDI works over USB in and out
   and over TRS in. The sound runs on two cores with twelve voices, and falls back to one core with eight voices on a unit whose
-  second core misbehaves. Earlier builds had Bluetooth MIDI, including linking two FM-1s; the latest commit removes it. The repository has a manual and a project site with a browser emulator and an installer page.
+  second core misbehaves. Earlier builds had Bluetooth MIDI, including linking two FM-1s; a later commit removed it. The latest commits show the battery charge in a corner and switch to one core on a low battery. The repository has a manual and a project site with a browser emulator and an installer page.
 status: active
 authors:
 - name: joshbartlettband-web
@@ -35,7 +35,7 @@ image:
   source_url: https://joshbartlettband-web.github.io/album-fm1/
   first_party: true
 versions:
-- version: main @ 088038a
-  date: 2026-11-12
-  url: https://github.com/joshbartlettband-web/album-fm1/commit/088038a5c068dbce581bb798f227db306fe782e6
-  notes: No tagged releases; this is the latest commit. Since the previous row, the second core starts from fm1-base's code at power-on, two cores and twelve voices are the default with one core as the fallback, and Bluetooth is removed. The pull request says it had not yet been run on an FM-1.
+- version: main @ 7ab9b61
+  date: 2026-11-15
+  url: https://github.com/joshbartlettband-web/album-fm1/commit/7ab9b61e7d654d8b03f6e4997dc9ecaf42bfdde3
+  notes: No tagged releases; this is the latest commit. Since the previous row, two cores start with eight voices and the largest voice count is a setting, the battery charge shows in the corner with a warning when it runs low, and a low battery drops the rest of the session to one core.

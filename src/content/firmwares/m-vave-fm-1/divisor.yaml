@@ -1,0 +1,38 @@
+device: m-vave-fm-1
+name: Divisor
+kind: firmware
+summary: >-
+  Felucca 1.8.2 fork that adds a DIVISOR engine modelled on a subharmonic polyrhythm synth, with two oscillators, four
+  subharmonic dividers, a ladder filter and two four-step sequencers.
+description: >-
+  Divisor is planned to start as one more engine inside Felucca and end as its own instrument. The DIVISOR engine has two
+  oscillators, four subharmonic oscillators that divide their cycles by 1 to 16, a six-channel mixer, a ladder-style filter
+  with an attack and decay envelope, a second envelope on the amplifier and eight presets. A quantizer can snap the second
+  oscillator's interval through four modes: off, 12-tone equal temperament, a just-intonation mode and an eight-step equal division. A sequencer for DIVISOR
+  tracks has four rhythm dividers that can each advance either or both of two four-step pitch sequencers, which route to an
+  oscillator and its subs over a range of one, two or five octaves. It runs on the song tempo or MIDI clock, and the other
+  Felucca engines, parts and pages remain. The README says the project is at its early phases with nothing to install yet,
+  and the repository's tests render the engine on a computer; no hardware run is documented.
+status: active
+authors:
+- name: ReplicantTech
+  url: https://github.com/ReplicantTech
+source: https://github.com/ReplicantTech/fm1-divisor
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  README and LICENSING.md give GPL-3.0-only, as Felucca. The engines are MIT, the hardware layer is MPL-2.0 and the bundled
+  sample pack is CC0.
+based_on: m-vave-fm-1/felucca
+distribution: source-only
+requires_stock: V15 or Felucca
+install_notes: >-
+  No package is published. Building follows Felucca's BUILDING.md, which needs JieLi's PI32v2 clang toolchain. The README
+  advises keeping the official V15 firmware and a recovery tool at hand; Felucca's installer offers a return to V15.
+brick_risk: false
+tags: [synth-engine, oscillator, filter, sequencer, generative, fork]
+versions:
+- version: main @ 3f08296
+  date: 2026-11-14
+  url: https://github.com/ReplicantTech/fm1-divisor/commit/3f08296bc54ed7125b154d2ecdbc3c0f2b8842b2
+  notes: No tagged releases; this is the latest commit.

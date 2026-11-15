@@ -1,0 +1,44 @@
+device: m-vave-fm-1
+name: Mini-Grain
+summary: >-
+  Granular synth on the Mini-Tone platform: two granular parts plus a drone and a pad, each with filter, LFOs and a step sequencer,
+  shared delay and reverb, seven sample generators and samples sent over USB.
+description: >-
+  The granular engine, parameters and screen design are rewritten in fixed point from a Granular Synth for ESP32-S3, with the
+  FM-1's four knobs per page. Parts 1 and 2 are granular and parts 3 and 4 are wavetable drone and pad parts modelled on a Sonicware
+  ambient synth's manual, with their own wave tables. Each part has a filter, two LFOs of 24 shapes and its own pattern of up
+  to 64 steps with parameter locks, ratchets and gliding locks. Sounds come from the generators (wavetable, drums, bowed and wind
+  models, dust and others) or from seven flash slots filled by a browser page or a command-line tool. It has 16 presets, USB and TRS
+  MIDI with clock, and USB audio. The README says it has not yet run on a real FM-1 and that CPU load is unmeasured.
+status: active
+authors:
+- name: Stéphane Schmitz (eldontyrellcorp)
+  url: https://github.com/eldontyrellcorp
+source: https://github.com/eldontyrellcorp/Mini-Grain
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Stated in LICENSING.md and the repository's LICENSE (GPL v3 text). The hardware layer, USB, update loader and tools come
+  from Felucca and Mini-Tone by Leo Kuroshita, and the engine is a fixed-point rewrite of the Granular Synth for ESP32-S3.
+  Inter Tight is SIL OFL 1.1, and three JieLi SDK files (Apache-2.0) are added to the package at build time.
+homepage: https://github.com/eldontyrellcorp/Mini-Grain
+based_on: m-vave-fm-1/mini-tone
+distribution: download
+install_notes: >-
+  Download mini-grain.fwsc from the release and write it over USB with the repository's flash.sh, which runs tools/fm1_install.py;
+  BUILDING.md covers building it. Samples are sent from web/index.html in Chrome or Edge or with tools/grain_sample.py. The
+  M-UPGRADE update entry stays, and holding OCT- and OCT+ for five seconds enters update mode. Mini-Tone's CDC console and web
+  editor are removed. Back up first.
+brick_risk: false
+tags: [granular, synth-engine, sequencer, fx, sampler, midi, usb-audio, fork]
+image:
+  url: https://raw.githubusercontent.com/eldontyrellcorp/Mini-Grain/main/docs/hub-card.png
+  alt: "Three FM-1 screens on a dark background: the Grain page with a stippled waveform and knobs for position, size, density and spread, the Filter and LFO page, and the Steps page with a piano roll"
+  credit: Stéphane Schmitz (eldontyrellcorp)
+  source_url: https://github.com/eldontyrellcorp/Mini-Grain
+  first_party: true
+versions:
+- version: mini-grain-1.0.0
+  date: 2026-11-15
+  url: https://github.com/eldontyrellcorp/Mini-Grain/releases/tag/mini-grain-1.0.0
+  notes: First release, with mini-grain.fwsc.

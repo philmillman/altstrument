@@ -1,0 +1,45 @@
+device: m5stack-cardputer
+name: cardputer-fm1
+kind: firmware
+summary: >-
+  Six-operator FM synth for the Cardputer ADV: a port of the msfa FM engine, with the FM-1's factory voices, DX7 SysEx and an effects chain, so far built but not run on a device.
+description: >-
+  The engine is an integer-C port of msfa, the FM core of Google's music-synthesizer-for-android, checked on a computer
+  for bit-exact output against the original (32 algorithms, all feedback settings, the six LFO waveforms, pitch envelope and
+  pitch bend). It carries the 128 factory voices that M-VAVE publishes for the FM-1 and reads and writes DX7 SysEx and the
+  FM-1's single-parameter messages. The ESP-IDF app has audio output through the ES8311 codec, keypad input through the
+  TCA8418 and a 240 by 135 screen with nine pages, and its tests cover an effects chain with distortion, chorus, phaser,
+  delay and reverb. The status page says the codec, display and keypad code has never run on hardware, the sequencer,
+  arpeggiator, USB, BLE and UART MIDI and saved settings are not started, and the 12-voice target is an estimate until the
+  built-in benchmark has been read off a real unit. The project does not run on an M-VAVE FM-1; it reuses that
+  instrument's voices and panel conventions.
+status: active
+authors:
+- name: NaustudentX18
+  url: https://github.com/NaustudentX18
+source: https://github.com/NaustudentX18/cardputer-fm1
+source_status: open
+license: Apache-2.0
+license_notes: >-
+  The repository has no LICENSE file; the README and the SPDX headers in the source say Apache-2.0, as msfa is. The factory
+  bank in fm_bank_data.c is M-VAVE's FM-1 V15 bank from m-vave/fm1_open, which the README says is Apache-2.0 and
+  checks against the hash M-VAVE publishes.
+homepage: https://naustudentx18.github.io/cardputer-fm1/
+distribution: source-only
+install_notes: >-
+  No package is published. The firmware builds with ESP-IDF (idf.py set-target esp32s3, then idf.py build) into a
+  306 KB image, and the engine tests run on a computer with tools/run_host_tests.sh after tools/fetch_msfa.sh. It targets
+  the Cardputer ADV; the status page says nothing has been flashed to one yet.
+brick_risk: false
+tags: [fm, synth-engine, midi, sysex, fx, presets]
+image:
+  url: https://raw.githubusercontent.com/NaustudentX18/cardputer-fm1/main/docs/screens/home.png
+  alt: "Rendered home page of the synth on a dark blue screen: the patch name PIANO 1, a green waveform trace, a row of twelve voice indicators with three lit, ALG 5, FB 6 and TRNSP 24"
+  credit: NaustudentX18
+  source_url: https://naustudentx18.github.io/cardputer-fm1/
+  first_party: true
+versions:
+- version: main @ 11429e0
+  date: 2026-11-14
+  url: https://github.com/NaustudentX18/cardputer-fm1/commit/11429e0235bc20bd7f553e1dbb8730830dd85be9
+  notes: No tagged releases; this is the latest commit.

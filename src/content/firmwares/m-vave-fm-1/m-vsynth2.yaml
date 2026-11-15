@@ -1,0 +1,38 @@
+device: m-vave-fm-1
+name: M-Vsynth2
+summary: >-
+  Fixed-point port of Synth2, an open recreation of Synth1, for the FM-1: eight voices, Synth1's 99 parameters, .sy1 patch files
+  in and out, effects, arpeggiator and 1,024 user slots.
+description: >-
+  The engine is rewritten from Synth2's floating-point code in C99 fixed point for the chip's lack of an FPU and is compared with
+  Synth2's own engine in 379 cases. It has two oscillators with a sub oscillator, five filters, two LFOs, three envelopes,
+  unison, distortion, delay and chorus effects, an arpeggiator and MIDI in, with eight voices rendered on both cores. Banks of 128
+  programs are one read-only factory bank and eight user banks in flash. A browser patch library page reads, sends and reads back
+  .sy1 files and Synth1 bank folders, and the screens use six colour themes. It builds on Dinghy's platform layer as M-vance does. The
+  README says the check on a real FM-1 is still to be done, and gives no release yet.
+status: active
+authors:
+- name: Kris (bk40-home)
+  url: https://github.com/bk40-home
+source: https://github.com/bk40-home/M-Vsynth2
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and LICENSING.md state GPL-3.0-only, and LICENSE is the GPL v3 text. The engine is ported from Synth2 by Francois
+  Chabloz (MIT), which recreates Synth1 from measurements of its sound; the README says no Synth1 code, binary or artwork is used.
+  The factory bank is Synth2's, shipped under MIT with its author's permission as LICENSING.md records. The USB audio files are
+  MPL-2.0 from felucca-bsp, and the platform parts carry their authors' notices.
+homepage: https://github.com/bk40-home/M-Vsynth2
+based_on: m-vave-fm-1/dinghy
+distribution: source-only
+install_notes: >-
+  Build with ./build.sh (the toolchain and SDK are those of M-vance) and install build/mvsynth2.fwsc with tools/fm1_install.py
+  over USB. The README says a failed start can be fixed by holding OCT- while switching on for the USB rescue. Patches are sent
+  from docs/library.html in Chrome or Edge or with tools/sy1_xfer.py.
+brick_risk: false
+tags: [synth-engine, virtual-analog, polyphonic, arpeggiator, fx, usb-midi, editor, port, fork]
+versions:
+- version: main @ 3786205
+  date: 2026-11-14
+  url: https://github.com/bk40-home/M-Vsynth2/commit/37862059752e4bc533f4cc301de6dc36d0d46977
+  notes: No tagged releases; this is the latest commit.

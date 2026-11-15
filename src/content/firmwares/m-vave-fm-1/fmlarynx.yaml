@@ -4,12 +4,13 @@ summary: >-
   Formant synth firmware with a 16-step 303-style sequencer: a saw wave through a three-formant vowel filter, a
   resonant low-pass, drive and a ping-pong delay, with a screen that draws a throat opening.
 description: >-
-  A port of the FormantSynth VST3 plugin, built on Dinghy. A Tongue and Jaw plane blends between the vowels i, e, a,
+  A port of the FormantSynth VST3 plugin, built on fm1-base since 0.4 and on Dinghy before. A Tongue and Jaw plane blends between the vowels i, e, a,
   o and u, Voice and Size move the formants from adult male to child or giant, and an envelope with accent opens the
   cutoff and formant size. The sequencer has vowel, accent and slide per step, a randomizer with root and scale, and
-  16 stored patterns; it follows MIDI clock, and notes arrive over USB MIDI. The FM-1 also appears as a stereo USB
-  audio input. It stores patterns and settings in the settings sector that Felucca, SLOOP and Dinghy use, so it
-  starts from defaults after one of them has run and the reverse. Its README credits MouthTowel for the formant
+  16 stored patterns; it follows MIDI clock, and notes arrive over USB MIDI or Bluetooth MIDI, and from 0.4 a Connections page can
+  also make the USB port a host for another MIDI device. The FM-1 also appears as a stereo USB audio input. It
+  stores patterns and settings in fm1-base's store, which other fm1-base firmwares share, so it may start from
+  defaults after one of them has run and the reverse; patterns from 0.1.x do not carry over to 0.4. Its README credits MouthTowel for the formant
   filter design.
 status: active
 authors:
@@ -19,7 +20,7 @@ source: https://github.com/ejtb76/FMLarynx
 source_status: open
 license: GPL-3.0-only
 license_notes: >-
-  LICENSING.md covers the Dinghy and Felucca platform code it builds on. The logo in assets/ is a designburg signet and
+  LICENSING.md covers the fm1-base and felucca-bsp platform code it builds on (MPL-2.0 file by file, kept inside the GPL-3.0 firmware); versions 0.1 to 0.3 were built on Dinghy (GPL-3.0-only). The logo in assets/ is a designburg signet and
   is not under the GPL.
 homepage: https://github.com/ejtb76/FMLarynx
 distribution: download
@@ -29,9 +30,9 @@ install_notes: >-
   The release notes report installs from official V15, Dinghy and Unholy Union. Hold OCT- while switching on for USB
   rescue mode, which the firmware also enters after two crashes at boot.
 brick_risk: false
-tags: [synth-engine, sequencer, voice, fx, usb-audio, usb-midi]
+tags: [synth-engine, sequencer, voice, fx, usb-audio, usb-midi, ble-midi]
 image:
-  url: https://raw.githubusercontent.com/ejtb76/FMLarynx/formantsynth/docs/screen.png
+  url: https://raw.githubusercontent.com/ejtb76/FMLarynx/main/docs/screen.png
   alt: >-
     FMLarynx's screen: pink rings drawn as a throat with the note G4 in the opening, a step strip with vowel letters, a
     keyboard with one key lit and the label FMLARYNX v0.1 with octave +0.
@@ -39,6 +40,18 @@ image:
   source_url: https://github.com/ejtb76/FMLarynx#readme
   first_party: true
 versions:
+- version: 0.4.2
+  date: 2026-11-15
+  url: https://github.com/ejtb76/FMLarynx/releases/tag/v0.4.2
+  notes: Keeps the MIDI clock in step when a Bluetooth message arrives with a badly off time stamp, always stops on a Stop from the leading device, and no longer starts playing at power-on when a computer sends Start without a clock.
+- version: 0.4.1
+  date: 2026-11-14
+  url: https://github.com/ejtb76/FMLarynx/releases/tag/v0.4.1
+  notes: A fresh start with no saved settings now loads a demo acid pattern, so PLAY sounds at once.
+- version: '0.4'
+  date: 2026-11-14
+  url: https://github.com/ejtb76/FMLarynx/releases/tag/v0.4
+  notes: Moves FMLarynx onto fm1-base. Adds Bluetooth MIDI in both directions, a Connections page for Bluetooth devices and the USB port as device or host, tighter MIDI clock sync, MIDI thru, a delay that follows the playing tempo, hold-a-button help panels and a start screen with the version. The USB name becomes FMLARYNX FM-1, and patterns saved with 0.1.x do not carry over.
 - version: 0.1.1
   date: 2026-10-30
   url: https://github.com/ejtb76/FMLarynx/releases/tag/v0.1.1

@@ -1,0 +1,49 @@
+device: m-vave-fm-1
+name: MT-4OX
+summary: >-
+  Felucca 1.8 fork that adds a Casio MT-40 style accompaniment engine: six rhythms with the Sleng Teng ROCK pattern, a four-track
+  drum part, chord-following bass, FILL and A/B variation.
+description: >-
+  A separate project from the catalogued MT-40X by the same author, with its own engine rather than the converted SLOOP Dub
+  riddim bank. The engine in firmware/src/mt40 plays six two-bar rhythms (ROCK at 82 BPM, POPS, SWING, SLOWROCK, SAMBA and
+  WALTZ) on four drum tracks, a bass line and chord pads, with swing, a FILL key, an A/B variation and rhythm select on the FX
+  layer's black keys. Playing a chord on the keys in chord mode transposes the bass to its root, as on the machine's bass
+  keyboard, and the accompaniment goes through Felucca's effects. Only ROCK is described as checked; the other five are drafts
+  to be tuned by ear. The keys still play Felucca's synth engines, and the sequencer, projects, web editor and USB audio and
+  MIDI stay. The repository includes a browser emulator, based on the FM-1+VA emulator, with a page of 38 riddims from a
+  published riddim book that can be auditioned and written to the sequencer. The README is in French, and the release notes say
+  it has not been tested on a real FM-1.
+status: active
+authors:
+- name: altessproduction
+  url: https://github.com/altessproduction
+source: https://github.com/altessproduction/MT-4OX
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README, LICENSING.md and LICENSE state GPL-3.0-only, as Felucca. Felucca-Engines (MIT) and felucca-bsp (MPL-2.0) are
+  vendored with their texts in LICENSES/, and the SDK files in the package are Apache-2.0. The README says the Casio ROCK
+  pattern is credited to its original author and that no data from the machine is included. The repository holds its own built
+  .fwsc for the browser emulator, not a stock image.
+homepage: https://altessproduction.github.io/MT-4OX/
+based_on: m-vave-fm-1/felucca
+distribution: download
+requires_stock: V15 or another firmware with the update loader
+install_notes: >-
+  The pre-release attaches the .fwsc, the application .bin and SHA256SUMS. Install the package with Felucca's web installer by
+  loading the local file, or with tools/fm1_install.py over USB. The README says that if the install fails, restoration goes
+  through FM-1-transporter, and that newer units with the UC25HQ80 flash chip need a Felucca 1.8.2 base. Reflashing V15 or
+  Felucca takes the unit back; back up projects first.
+brick_risk: false
+tags: [sequencer, drums, performance, midi, emulator, fork]
+image:
+  url: https://raw.githubusercontent.com/altessproduction/MT-4OX/main/assets/affiche_mt40x.png
+  alt: "Cream poster titled MT-40X with a green display reading SLENG TENG, ROCK, 82 BPM, a drawing of a Casiotone MT-40 keyboard and three captions on rhythms, riddim and Felucca"
+  credit: altessproduction
+  source_url: https://github.com/altessproduction/MT-4OX
+  first_party: true
+versions:
+- version: 0.1.0-alpha
+  date: 2026-11-15
+  url: https://github.com/altessproduction/MT-4OX/releases/tag/v0.1.0-alpha
+  notes: First pre-release. Felucca 1.8 with the six-rhythm engine, FILL and variation keys and chord-following bass; not tested on a real FM-1.

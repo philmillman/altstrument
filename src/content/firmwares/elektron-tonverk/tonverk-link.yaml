@@ -1,0 +1,26 @@
+device: elektron-tonverk
+name: tonverk-link
+kind: tool
+summary: Python terminal app that lists the projects on a Tonverk SD card, user and factory, with sorting by name, size, date and type. It reads the card and writes nothing.
+description: >-
+  Built on the Textual library, it scans a mounted card for project folders, reads the project database for pattern and
+  song counts and the samples, drum sets and multisamples each project refers to, and shows them in a sortable table
+  with user and factory filters. Launchers are included for macOS, Windows and Linux. The repository has a short README
+  and no tests or releases.
+status: active
+authors:
+  - name: enshtein
+    url: https://github.com/enshtein
+source: https://github.com/enshtein/tonverk-link
+source_status: open
+license: unspecified
+license_notes: No LICENSE file and no licence statement in the repository.
+distribution: source-only
+install_notes: Run python tonverk_link.py (Python 3.11 or later, Textual 8.2.7 or later), or pip install . and run tonverk-link.
+brick_risk: false
+tags: [utility, python]
+versions:
+  - version: main @ 7fe2397
+    date: 2026-05-23
+    url: https://github.com/enshtein/tonverk-link/commit/7fe2397
+    notes: No tagged releases; this is the latest commit.

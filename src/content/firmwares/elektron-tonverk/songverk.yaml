@@ -1,0 +1,31 @@
+device: elektron-tonverk
+name: Songverk
+kind: tool
+summary: Web MIDI song mode for the Tonverk, installable as a phone app. It chains patterns by Program Change, mutes tracks over CC and draws CC and NRPN automation curves per row. The README is in French.
+description: >-
+  The Tonverk has no song mode of its own, so this page acts as an external one. A song is a list of rows, each pointing
+  at a bank and pattern slot with a repeat count, optional per-row tempo, mutes, jump rules and automation lanes drawn as
+  curves and sent as 7-bit CC or 14-bit NRPN. It can be the clock master or follow the Tonverk's clock, and measures
+  timing from the Program Change messages the machine sends back to tune its lead time. It embeds a database of 896
+  Tonverk parameters generated from the Pencil Research MIDI charts. Songs are JSON files and can be synced through a
+  Cloudflare Pages function with KV storage or committed to a GitHub repository. It is meant for a phone with USB OTG
+  and Chrome. Nothing is flashed.
+status: active
+authors:
+  - name: romainguerif
+    url: https://github.com/romainguerif
+source: https://github.com/romainguerif/songverk
+source_status: open
+license: unspecified
+license_notes: No LICENSE file and no licence statement in the repository.
+distribution: browser-installer
+install_notes: >-
+  Serve the folder over HTTPS or localhost (Web MIDI needs a secure context), open it in Chrome and add it to the home
+  screen. On the Tonverk, enable Program Change receive and the clock and transport settings in MIDI CONFIG.
+brick_risk: false
+tags: [web-midi, sequencer, midi, utility, web]
+versions:
+  - version: main @ d47d9c9
+    date: 2026-08-19
+    url: https://github.com/romainguerif/songverk/commit/d47d9c9
+    notes: No tagged releases; this is the latest commit.

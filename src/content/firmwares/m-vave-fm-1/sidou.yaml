@@ -27,13 +27,17 @@ license_notes: >-
   (Apache-2.0) in each package (LICENSING.md).
 distribution: download
 install_notes: >-
-  Install the .fwsc from the releases page with Felucca's installer (fm1_install.py sidou-1.9.0.fwsc); the README
+  Install the .fwsc from the releases page with Felucca's installer (fm1_install.py sidou-1.10.0.fwsc); the README
   says to read docs/flash-day.md first and keep the way back ready. To return to stock, install M-VAVE's official
   FM-1.fwsc the same way. If the unit does not boot, hold OCT- at power-on for the chip's ROM boot mode and restore
   with the unbricker. The 1.0.0 release notes list long 48 kHz USB audio recordings as untested on a real FM-1.
 brick_risk: false
 tags: [synth-engine, fx, midi, emulator, research]
 versions:
+- version: 1.10.0
+  date: 2026-11-14
+  url: https://github.com/dsablic/sidou/releases/tag/v1.10.0
+  notes: Adds a text song format that a model or a person can write and the site's Library page previews, sends to the FM-1 or opens in the editor, and a Library button that reads the sixteen USER sounds back from the FM-1 as patches. On the FM-1 the SysEx GET command can read the USER sounds file; nothing else changes, and sounds, songs and settings from 1.9 load unchanged.
 - version: 1.9.0
   date: 2026-11-08
   url: https://github.com/dsablic/sidou/releases/tag/v1.9.0

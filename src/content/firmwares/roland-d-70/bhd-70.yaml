@@ -1,0 +1,46 @@
+device: roland-d-70
+kind: tool
+name: BHD-70
+summary: macOS AUv3 plug-in and standalone app that runs the D-70's original firmware in a patched MAME build from dumps of your own unit, with the firmware's own display, panel editing and MIDI learn.
+description: >-
+  The engine is MAME with a D-70 driver patch and custom-chip emulation from the gearmulator project, so the sound comes from the
+  unit's own program rather than a model of it. On first launch the app asks for two firmware EPROM dumps (versions 1.10, 1.12,
+  1.14, 1.16 or 1.19), the six PCM wave ROMs and, optionally, a SysEx bulk dump of sounds, recognises each by size and checksum and
+  keeps them on the computer. It has 30 voices and six parts, the Tone Palette sliders, a 240 by 64 pixel display drawn by the
+  firmware, a SysEx loader, patch memory that persists between sessions and a MIDI learn function that the hardware lacks. Start-up
+  takes about 20 seconds, as on the unit, and offline bounce is silent because the engine runs in real time. The repository holds
+  the app and plug-in code in Swift, the engine bridge, the MAME patch against a named upstream commit and a build script; the
+  README and some docs are partly in Polish. The README says the project contains no Roland code or data. It requires macOS 13 or
+  later.
+status: active
+authors:
+  - name: Bronisław Hońca
+    url: https://github.com/Bronislavus
+source: https://github.com/Bronislavus/BHD-70
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL version 3 text with no "or later" statement, and the README places the project under GPL-3.0 because
+  of the chip emulation it uses. The photograph in Zasoby/hero.jpg and the app icon are excluded: all rights reserved by the
+  author. The 1 kB display font in Zasoby is a substitute, not Roland's character ROM.
+homepage: https://www.bronislawhonca.pl
+distribution: download
+requires_stock: Dumps from your own D-70 (firmware 1.10, 1.12, 1.14, 1.16 or 1.19, plus the six wave ROMs)
+install_notes: >-
+  Download note: the free beta build is signed and notarised and is sent on request by e-mail to the address in the README;
+  the repository has no releases. It can also be built with Xcode, XcodeGen and a MAME build, following build.sh and
+  mame/README.md. Take the EPROM and wave ROM dumps with a programmer and send a SysEx bulk dump of your sounds if you want
+  them. The app writes nothing to the D-70.
+brick_risk: false
+tags: [emulator, plugin, au, macos, synth-engine, sysex, midi-learn, research]
+image:
+  url: https://raw.githubusercontent.com/Bronislavus/BHD-70/main/zrzuty/01-panel-EN.png
+  alt: BHD-70 window with a dark D-70 panel, the firmware's amber LCD showing the User Set page for I:46 Ghosties, four Tone Palette sliders and a keypad with a value dial
+  credit: Bronisław Hońca
+  source_url: https://github.com/Bronislavus/BHD-70#readme
+  first_party: true
+versions:
+  - version: main @ fb2a59a
+    date: 2026-11-15
+    url: https://github.com/Bronislavus/BHD-70/commit/fb2a59aa18ba212f99511c6d5cc4276913137497
+    notes: No tagged releases; this is the latest commit.

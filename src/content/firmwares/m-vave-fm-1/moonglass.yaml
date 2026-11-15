@@ -1,0 +1,39 @@
+device: m-vave-fm-1
+name: Moonglass
+summary: >-
+  SLOOP-based dream pop groovebox: eight instruments with 123 sounds, vintage-style drum kits with drum-bus and variation tools, and
+  one-finger chord pads.
+description: >-
+  Distributed as 23 patches on top of SLOOP 2.8.5 plus a build script that clones SLOOP, applies them and builds the package. It
+  offers eight instruments (organ, lead, bass, FM keys, strings, synth, choir and granular cloud) while keeping SLOOP's other
+  engines compiled in so older projects open. The drum track gains kits, a RHYTHM page, a drum bus with punch, compression and
+  ducking, feel and motion settings, a gated reverb on snares, and VARY and MUTATE modes that change patterns from bar to bar.
+  Chord PADS mode follows ChoralRoot FM-1: one root key plus quality and extension keys, with the chord named on screen. A new look
+  adds pearl steps, a moon transport and visualisers. HAZE, TAPE, RHYTHM and PADS settings are not saved in projects yet, and the
+  README says the chord pads and the 0.3 drum features are untested on a real FM-1.
+status: active
+authors:
+- name: killerboof
+  url: https://github.com/killerboof
+source: https://github.com/killerboof/moonglass-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states GPL-3.0, the same as SLOOP and ChoralRoot FM-1, and LICENSE is the GPL v3 text with no later-version
+  statement. The patches apply to SLOOP, which is cloned at build time.
+homepage: https://github.com/killerboof/moonglass-fm1
+based_on: m-vave-fm-1/sloop
+distribution: source-only
+requires_stock: SLOOP 2.8.5 source (commit bac9c05) to patch
+install_notes: >-
+  Run build-moonglass.sh (macOS with Docker) to build moonglass-0.3.23.fwsc and open a local installer, or install the package
+  with SLOOP's tools/fm1_install.py. The README says there is no hosted installer and that the recovery paths, taken from SLOOP,
+  are untested with Moonglass: press INSTALL again after an interrupted install, or hold OCT- alone at power-on for the USB rescue.
+  Going back means installing a SLOOP package or using M-VAVE's M-UPGRADE. Back up projects, presets and samples first.
+brick_risk: false
+tags: [groovebox, sequencer, drums, chords, synth-engine, fx, organ, fork]
+versions:
+- version: main @ 27a33f7
+  date: 2026-11-15
+  url: https://github.com/killerboof/moonglass-fm1/commit/27a33f7efc509490471032c359c24fc5f9616723
+  notes: No tagged releases; this is the latest commit.

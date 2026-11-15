@@ -20,13 +20,15 @@ source_status: open
 license: MIT
 license_notes: >-
   The LICENSE is Polyend's "MIT License with Wholesale Commercial Clone Restriction", so the complete firmware and .ptf builds
-  cannot be sold. The precompiled synth libraries stay Polyend's proprietary code. The files in core/mods carry MIT
+  cannot be sold. The precompiled factory .psyn synth plugins, which the release's Synths zip carries, stay Polyend's proprietary code under their own licence file. The files in core/mods carry MIT
   identifiers.
-distribution: source-only
+distribution: download
 install_notes: >-
-  No prebuilt firmware is published; the mods live on the modular branch, and main is an unchanged copy of Polyend's repository.
-  Build the Tracker+ target, copy the resulting .ptf to /Firmware/ on the microSD card and run Config > Firmware > Firmware
-  update. Back up first: saving a project on Community Edition firmware moves its patterns to a format older firmware cannot
+  Download TrackerPlus_MT_CE_20261113.ptf and PolyendTracker_CE_Synths.zip from the release. Copy the Synths folder from the
+  zip to the card's root, since CE's synth engines are plugins loaded from it, then copy the .ptf to /Firmware/ on the
+  microSD card and run Config > Firmware > Firmware update. PolyendTracker_CE_Effects.zip is optional and holds CE's Sample
+  Editor effects. The mods live on the modular branch, and main is an unchanged copy of Polyend's repository, so the Tracker+
+  target can also be built from source. Back up first: saving a project on Community Edition firmware moves its patterns to a format older firmware cannot
   read. Recovery follows Polyend's route, with a known-good .ptf and the recessed reset button.
   The repository README says the bootloader sits in a protected region below the application, apart from the
   .ptf. Polyend's tracker-ce README documents the recessed reset button as an emergency bootloader that flashes
@@ -34,6 +36,10 @@ install_notes: >-
 brick_risk: false
 tags: [fork, platform, midi, sequencer, tracker]
 versions:
+  - version: CE_20261113
+    date: 2026-11-14
+    url: https://github.com/FatRodzianko/Modular-Trackular-Plus/releases/tag/CE_20261113
+    notes: First GitHub release, for the Tracker+ only and based on Polyend's Tracker CE main at 9cb0964. CE's engines are now .psyn plugins loaded from the card's Synths folder, as are WAVE and PHASE. Synth FX works on every engine, and a Synth FX plugin that exceeds CE's synth time limit is bypassed. The release carries the .ptf, a Synths zip and an optional Effects zip.
   - version: modular @ d7a853c
     date: 2026-11-13
     url: https://github.com/FatRodzianko/Modular-Trackular-Plus/commit/d7a853ce3fc9c3b12a3764137f8ba75c559365bc

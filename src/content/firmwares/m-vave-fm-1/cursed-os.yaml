@@ -1,0 +1,48 @@
+device: m-vave-fm-1
+name: cursed os
+summary: >-
+  JIANT FM fork that makes the FM-1 a six-track groovebox with an Elektron-style interface, quick-start loops, generators and
+  Elektron Syntakt clock and pattern following.
+description: >-
+  Built on JIANT FM V10.19 with its history kept. One button per mode with pages as tabs, the white keys as 16 trigs and four
+  knobs per page, in a black, white and red screen. SAVE > START builds a complete loop in a chosen style (hypno, acid, dub, bleeps or
+  random), GEN makes 303-style lines, dub chord stabs, held atmospheres, modular-style bleeps and Euclidean rhythms with undo,
+  and holding SCL while tapping a key moves every synth track to that key on the next bar. The six power-on tracks are a drum kit,
+  kick, acid, bass, pad and voice, over JIANT's other engines. The sequencer has up to 64 steps with parameter locks, trig
+  conditions and slides. A GLO > SYNTAKT mode follows an Elektron Syntakt's clock, start and stop, and patterns, and the master has
+  a look-ahead limiter, optional soft clipper and dither. A browser emulator and sound editor are included, and the README says
+  it has run on few units.
+status: active
+authors:
+- name: cursedsound
+  url: https://github.com/cursedsound-music
+source: https://github.com/cursedsound-music/CS_FM1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and LICENSING.md state GPL-3.0-only as for JIANT FM and Felucca, and LICENSE is the GPL v3 text. The author's own
+  files are also offered under MIT. Parts keep their own licences: the X0X files (GPL-3.0-only, Open303 parts MIT), the FM6 port
+  (Apache-2.0), tables after Erica Synths' LXR firmware (GPL-3.0-only), the clock probe (MIT) and fonts (SIL OFL 1.1).
+homepage: https://github.com/cursedsound-music/CS_FM1
+based_on: m-vave-fm-1/jiant
+distribution: download
+requires_stock: Official V15, JIANT FM or cursed os
+install_notes: >-
+  Download cursed-os-X.Y.Z.fwsc and the installer files from the release. Install with the web installer served from your own
+  computer in Chrome or Edge, or with tools/fm1_install.py; both accept only official V15, JIANT FM or cursed os as the
+  starting firmware. The installer's Return to official V15 takes a full backup first and writes M-VAVE's FM-1.fwsc, which you
+  download yourself. tools/fm1_uboot.py can write the package through the chip's boot mode, backing up the whole flash first and
+  writing only the app area.
+brick_risk: false
+tags: [groovebox, sequencer, synth-engine, drums, acid, generative, midi, emulator, editor, fork]
+image:
+  url: https://raw.githubusercontent.com/cursedsound-music/CS_FM1/main/docs/guide/04_device_playing.png
+  alt: "Rendering of the FM-1 panel running cursed os: the screen shows six tracks (drum, kick, acid, bass, pad, bell) with step rows, four knob readouts and a row of step cells"
+  credit: cursedsound
+  source_url: https://github.com/cursedsound-music/CS_FM1
+  first_party: true
+versions:
+- version: 0.18.5
+  date: 2026-11-15
+  url: https://github.com/cursedsound-music/CS_FM1/releases/tag/v0.18.5
+  notes: Gives cursed os its own USB identity, FM-1_420, and adds the Firmware Hub card file and licensing text; nothing changes for an install.

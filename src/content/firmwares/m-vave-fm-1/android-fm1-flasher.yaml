@@ -5,8 +5,8 @@ summary: >-
   Android app that browses The Firmware Hub's catalogue, downloads firmware packages and installs them on an FM-1 over
   USB MIDI, with an experimental chip detection, backup and ROM-recovery path.
 description: >-
-  Needs Android 14 or newer and a phone with USB host support, and works on one FM-1 chosen from the ports on a hub. The catalogue tab lists the
-  Hub's entries with favourites, filters and update marks, and keeps downloaded packages for offline use. Before writing, the app checks the
+  Needs Android 14 or newer and a phone with USB host support. It can manage several FM-1s on a hub, installing to them one after another from a queue. The
+  catalogue tab lists The Firmware Hub's entries, and optionally awesome-fm1, a GitHub repository's releases or a direct package link, with favourites, filters and update marks, and keeps downloaded packages for offline use. Before writing, the app checks the
   catalogue's SHA-256, the package header and the file CRCs, then runs the two-step update and checks the unit's identity after each restart. The only
   package it pins is M-VAVE's official V15. An experimental switch in Settings turns on a multi-port MIDI logger, flash chip detection through the
   chip's USB download mode, and a recovery that backs up the whole flash and rewrites only the firmware region from the V15 package. The app has
@@ -33,6 +33,10 @@ install_notes: >-
 brick_risk: false
 tags: [flasher, usb-midi, recovery, backup]
 versions:
+- version: 0.9.2
+  date: 2026-11-15
+  url: https://github.com/ekim-pl/android-fm1-flasher/releases/tag/v0.9.2
+  notes: "Stable release rebuilt on Kotlin Multiplatform, with an iOS host still under development; the download is the Android app. Adds a full-screen settings page, catalogue providers (The Firmware Hub, awesome-fm1, a GitHub repository URL or a direct .fwsc URL), HTTP authentication for catalogue sources, and a sequential install queue for several FM-1s on an OTG hub. The notes say the native iOS app and production OAuth sign-in still need verification."
 - version: 0.7.0-experimental
   date: 2026-11-14
   url: https://github.com/ekim-pl/android-fm1-flasher/releases/tag/v0.7.0-experimental

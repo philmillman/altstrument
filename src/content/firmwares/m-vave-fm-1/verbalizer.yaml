@@ -1,0 +1,41 @@
+device: m-vave-fm-1
+name: Verbalizer
+kind: firmware
+summary: >-
+  Port of The Verbalizer, a Propeller vocal-tract instrument, to a voice that plays phonemes from the keys beside the stock sound in M-VAVE's open FM-1 firmware.
+description: >-
+  The engine is the Propeller original's vocal-tract model translated to portable integer C, with its output checked
+  sample for sample against the original assembly run in an emulator. It runs at 20 kHz and is resampled to the FM-1's
+  44.1 kHz. Each key moves through trigger, sustain and release phases with a phoneme for each, in a words mode, a
+  trigger-sustain-release mode and a formants mode that exposes the 13 tract parameters. MIDI notes with velocity, pitch
+  bend, the sustain pedal and controllers 102 to 119 are handled. The first FM-1 build patches five files of M-VAVE's
+  open V14 firmware so the Verbalizer plays beside the stock instrument, adds a page opened with the SCL button and cuts
+  the stock DX7 factory library from 128 voices to 6 to make room. The README says that build compiles and packages and
+  also runs in the SDK's browser simulator, but has never been run on an FM-1; patch storage and the original's stereo
+  spatializer are not done.
+status: active
+authors:
+- name: Dan Ray
+  url: https://github.com/antfriend
+source: https://github.com/antfriend/MVAVE-FM1-Verbalizer
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is MIT. The vocal tract derives from Chip Gracey's VocalTract, which Parallax also released under MIT.
+  The README says a built firmware is a modified version of M-VAVE's GPL-3.0 application, so firmware builds and
+  firmware/fm1_open.patch are GPL-3.0, while the engine and the glue files stay MIT.
+based_on: m-vave-fm-1/fm1-open
+distribution: source-only
+requires_stock: V14 open firmware sources
+install_notes: >-
+  No package is published. firmware/install.py copies the engine into a checkout of m-vave/fm1_open at commit 4c7496d,
+  applies the patch and trims the factory bank, then the SDK's Build.ps1 needs JieLi's Windows PI32v2 toolchain 2.5.3 and
+  writes FM1_OFFICIAL_OPEN.fwsc. The README says to have a recovery method and the official firmware file ready before
+  flashing, because the build still reports itself as the official V14.
+brick_risk: false
+tags: [voice, synth-engine, speech, midi, emulator]
+versions:
+- version: main @ 82c7ff9
+  date: 2026-11-14
+  url: https://github.com/antfriend/MVAVE-FM1-Verbalizer/commit/82c7ff9c90b624ef1f5e0ce08af921f2b8d73253
+  notes: No tagged releases; this is the latest commit.

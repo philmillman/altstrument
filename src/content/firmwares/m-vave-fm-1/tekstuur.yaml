@@ -1,0 +1,45 @@
+device: m-vave-fm-1
+name: Tekstuur
+summary: >-
+  Four-layer instrument for long, slowly moving sound on the FM-1: recorded sources played as loops, grains, stretches or
+  resonating strings, mixed by a self-moving vector point, with shimmer reverb and freeze.
+description: >-
+  Four layers (A to D) each play a source in one of four ways. LOOP runs three play heads per note over different
+  lengths, GRAIN plays a cloud of short grains around one place in the source, STRETCH pulls the source out until it
+  almost stands still, and RESON strikes three tuned strings with it. Nine sources are built in (strings, cello, horn,
+  organ, glass, psaltery, vibes, reed and noise), and you can send up to eight recordings of your own, 8.5 seconds in
+  all, with a script that reads anything ffmpeg reads. Each layer has its own filter. A vector point mixes the four layers,
+  and Evolve moves that point, the position in the source and the filter on its own. Chorus, delay and a reverb with
+  shimmer and freeze follow. There are 56 presets and 16 slots for your own. MIDI over USB and the TRS input carries notes,
+  sustain, mod wheel on Evolve and program change. Version 2.0 is the author's own engine on fm1-base; the repository keeps
+  the first version, an engine inside Felucca, for reference. The README is in English, with a Dutch version.
+status: active
+authors:
+- name: barnierg76
+  url: https://github.com/barnierg76
+source: https://github.com/barnierg76/tekstuur-fm1
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The LICENSE file is MPL-2.0 and the README applies it to the code in eigen/. The patches on Felucca kept under firmware/
+  for the first version follow Felucca's GPL-3.0. Built on fm1-base and felucca-bsp. The built-in sources are CC0, from
+  VSCO-2 Community Edition and the Versilian Community Sample Library.
+homepage: https://barnir-fm1.pages.dev/tekstuur/
+distribution: browser-installer
+install_notes: >-
+  Install from the page at barnir-fm1.pages.dev/tekstuur/ in Chrome or Edge over USB, or download the .fwsc from the
+  release and install it with fm1-base's tools/fm1_install.py. The README says to install at your own risk. Your own
+  recordings go over USB MIDI with eigen/tools/tekstuur_samples.py, need mido and ffmpeg, and survive a firmware update.
+brick_risk: false
+tags: [synth, ambient, granular, sampler, fx, presets, midi]
+image:
+  url: https://raw.githubusercontent.com/barnierg76/tekstuur-fm1/main/screen.png
+  alt: "The FM-1 screen on Tekstuur's PLAY page: preset 03 KATHEDRAAL, layers A to D (organ, organ, horn, strings), a vector pad and bars for vector X, vector Y, evolve and time"
+  credit: barnierg76
+  source_url: https://github.com/barnierg76/tekstuur-fm1
+  first_party: true
+versions:
+- version: "2.0"
+  date: 2026-11-14
+  url: https://github.com/barnierg76/tekstuur-fm1/releases/tag/v2.0
+  notes: First GitHub release, with the .fwsc package.

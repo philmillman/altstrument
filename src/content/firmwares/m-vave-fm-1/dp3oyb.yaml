@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: DP3OYB
+summary: >-
+  Six-track performance groovebox forked from Felucca 1.9.0, adding per-track note hold, envelope retrigger, envelope
+  destinations in the mod matrix, ADSR-shaped drums and a MIXER-first HOME button.
+description: >-
+  The repository is a copy of Felucca's source with its full history, plus a CHANGES_CUSTOM.md that lists the changes to
+  1.9.0. Double-tapping OCT+ holds notes on the selected track after the keys are released, and double-tapping OCT-
+  turns on envelope retrigger, which restarts the attack each time the envelope falls to silence while a note is gated
+  and sustain is zero. Attack, decay, sustain and release can be mod matrix destinations, the drum engine now runs
+  through the ADSR, and HOME opens the MIXER page before the HOME screen. The source sets six parts where upstream sets
+  four. The README is still Felucca's own, and the author's description calls the box a performance groovebox. A browser
+  demo is linked from the hub card, but its page was not live when checked.
+status: active
+authors:
+- name: DP3OYB
+  url: https://github.com/DP3OYB
+source: https://github.com/DP3OYB/DP3OYB
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is Felucca's GPL-3.0 text and LICENSING.md states GPL-3.0-only, as upstream. The engines (MIT), board support
+  layer (MPL-2.0), ported DSP, fonts and CC0 samples keep their own licences. The release felucca.fwsc is the author's
+  build, not an M-VAVE stock image. The repository also holds a 1 MiB felucca_flash.bin that is mostly erased flash.
+based_on: m-vave-fm-1/felucca
+distribution: download
+install_notes: >-
+  Download felucca.fwsc from the v0.9.0 release and send it with a flasher that accepts custom packages (Felucca's
+  tools/fm1_install.py is in the repository). Upstream Felucca's hosted installer installs only upstream's release.
+  Felucca's Return to official V15 or M-VAVE's updater goes back to stock.
+brick_risk: false
+tags: [groovebox, sequencer, synth-engine, performance, fork]
+versions:
+- version: 0.9.0
+  date: 2026-11-16
+  url: https://github.com/DP3OYB/DP3OYB/releases/tag/v0.9.0
+  notes: Initial release, built on Felucca 1.9.0.

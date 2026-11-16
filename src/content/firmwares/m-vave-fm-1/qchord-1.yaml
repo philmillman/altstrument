@@ -1,0 +1,49 @@
+device: m-vave-fm-1
+name: QChord-1
+summary: >-
+  Q Chord-style chord harp built on FoMni-1: the white keys are a strum plate and the black keys chord buttons, with EZ
+  Play, Auto Chord and Chord Plus modes, 70 voices, chord sets, rhythms and a spring-back pitch bend.
+description: >-
+  Extends FoMni-1's Omnichord layout with the three play modes of the Suzuki QC-1: EZ Play (chords and strum plate
+  only), Auto Chord and Chord Plus, which adds a rhythm-specific figure or, played by hand, the chord an octave up and
+  the bass. The strum plate, the chord and Chord Plus each choose from 70 voices (piano, organs, guitars, strings, winds,
+  synths, two sung vowels and two experimental sounds) with separate sustain, and Vibrato and Reverb switch on from the
+  panel. PRESETS picks a chord set: each button's own chord, or every button as one type such as major, minor, 7th or
+  blues, with roots along the circle of fifths. Thirteen rhythms are included, three of them added by this project.
+  Notes arrive over USB and TRS MIDI, the chord can be played from a keyboard on channel 2, and the screen is described
+  to the FM-1 Screen Reader. Both releases are betas.
+status: active
+authors:
+- name: Cyder465
+  url: https://github.com/Cyder465
+source: https://github.com/Cyder465/fm1-qchord
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md, inherited from FoMni, states GPL-3.0-only and LICENSE is the GPL-3.0 text. Rhythm patterns, waves and
+  drum sounds come from Chordian by Jan125 (CC0); a few files from fm1-base are MPL-2.0; the Barlow and Terminus fonts
+  are SIL OFL 1.1. The release .fwsc files are the project's own builds, not M-VAVE stock images.
+based_on: m-vave-fm-1/fomni-1
+distribution: download
+install_notes: >-
+  Download qchord-0.2-beta.fwsc from the release and install it with the FM1 Manager page named in the README (Chrome or
+  Edge, once it lists QChord-1) or with tools/fm1_install.py. FoMni's own installer installs only FoMni. The README says
+  the FM1 Manager or FoMni's installer can put M-VAVE's firmware back, and that an FM-1 that keeps crashing starts in a
+  safe mode.
+brick_risk: false
+tags: [chords, synth-engine, performance, drums, fork]
+image:
+  url: https://raw.githubusercontent.com/Cyder465/fm1-qchord/main/docs/img/qchord-ez.png
+  alt: "QChord-1 Play page in EZ Play mode showing the C chord, an AUTO and REV tag lit, a strum plate of lines above a row of chord buttons from F to A7, and Strum Omni 1, Chord Omni 1, Plus Piano, Bend 0.0"
+  credit: Cyder465
+  source_url: https://github.com/Cyder465/fm1-qchord
+  first_party: true
+versions:
+- version: 0.2-beta
+  date: 2026-11-16
+  url: https://github.com/Cyder465/fm1-qchord/releases/tag/v0.2-beta
+  notes: Pre-release; adds the Disco 2, New Age and House rhythms, moves tempo to SELECT and chord sets to PRESETS, and puts the sustains on a GLO page.
+- version: 0.1-beta
+  date: 2026-11-16
+  url: https://github.com/Cyder465/fm1-qchord/releases/tag/v0.1-beta
+  notes: Pre-release; first public beta with EZ Play, Auto Chord, Chord Plus, 70 voices and chord sets.

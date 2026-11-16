@@ -14,33 +14,36 @@ description: >-
   reports itself as version 750, live transpose alone as 751 and both together as 752, all below the stock 800, so that
   Novation Components should offer to reinstall stock; the README says this has not been tried yet. The repository
   also holds a drive overlay, added after the README's quick start was written, that widens the Overdrive and
-  Distortion range so the effect reaches full strength at full Level; it is tuned by ear and not yet described there. The README says the work was
-  done with Claude Code.
+  Distortion range so the effect reaches full strength at full Level, and the README now describes it. The README also links a
+  flasher page in the browser (Firefox) that builds the modded firmware from the stock file you choose and sends it to the unit. Releases
+  take even build numbers from 750 up and the build in testing takes the odd number after the latest release; the page offers both.
+  Mutate can also be held to repeat, once a loop on steps and once a beat on the patch. The README says the work was done with Claude Code.
 status: active
 authors:
   - name: matozoid
     url: https://github.com/matozoid
-source: https://github.com/matozoid/novation_circuit_monostation_reverse_engineering
+source: https://github.com/matozoid/monostation-hacks
 source_status: open
 license: unspecified
 license_notes: >-
   The repository has no LICENSE file and the README makes no license statement.
-homepage: https://github.com/matozoid/novation_circuit_monostation_reverse_engineering#readme
-distribution: source-only
+homepage: https://matozoid.github.io/monostation-hacks/
+distribution: browser-installer
 requires_stock: "1.2 (build 800)"
 install_notes: >-
-  Needs Linux or macOS, Python 3 and arm-none-eabi-gcc. Unpack the stock 1.2 update, monostation-firmware-800.syx, from
-  Novation Components 1.72.5 into firmware/, run the four build commands in the README to produce randomise-750.syx
-  (or the three for mods-752.syx, which holds both mods), then run tools/flash.py with the Mono Station off and Scales + Note + Velocity held while switching it on. The
+  The easy route is the flasher page (Firefox): choose the stock 1.2 update file, monostation-firmware-800.syx, which
+  ships inside Novation Components 1.72.5, and the page builds the modded firmware from it. To build it yourself you need Linux or macOS, Python 3 and
+  arm-none-eabi-gcc: put the stock file into private/firmware/, run the build commands in the README to produce mods-751.syx,
+  then run tools/flash.py with the Mono Station off and Scales + Note + Velocity held while switching it on. The
   bootloader is never touched. To go back, flash the stock file the same way or accept the update in Novation
   Components. Back up your patches and sessions first.
 brick_risk: false
 tags: [sequencer, generative, flasher, python]
 versions:
-  - version: main @ 261bfc5
-    date: 2026-11-14
-    url: https://github.com/matozoid/novation_circuit_monostation_reverse_engineering/commit/261bfc5ea5fbb64ddaf569ab213084a2c1c44a63
-    notes: No tagged releases; this is the latest commit. The toolchain fetcher now reads the pinned compiler archives from a private vendor folder, and Novation's PDFs moved to a private docs folder.
+  - version: main @ a1bc5c3
+    date: 2026-11-16
+    url: https://github.com/matozoid/monostation-hacks/commit/a1bc5c30047a11d35382f831775d4b9fda4daddb
+    notes: No tagged releases; this is the latest commit. The repository was renamed monostation-hacks and now has a browser flasher page and numbered builds, with firmware 750 as the first release build.
   - version: main @ 5ab0e7c
     date: 2026-11-12
     url: https://github.com/matozoid/novation_circuit_monostation_reverse_engineering/commit/5ab0e7c8038208cee54ffe096e4ad6a0b2a1696f

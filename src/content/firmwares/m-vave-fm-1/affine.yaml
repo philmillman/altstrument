@@ -1,0 +1,47 @@
+device: m-vave-fm-1
+name: AFFINE
+summary: >-
+  PS1-era jungle break chopper built on LOAF BREAKER: Amen breaks in sixteen slices on the keys, performance effects
+  on the black keys and a five-stage console sound chip, with a browser version.
+description: >-
+  Breaks are royalty-free Amen loops cut into sixteen slices on the white keys. Eleven black keys are held for
+  performance effects (rolls, reverse, half speed, vinyl break, freeze, skip, verb throw, crush, filter), and the four
+  HOME knobs set filter, crush, redux and verb. After the break the sound passes through five stages named after a 1990s
+  console's audio hardware: a codec with ADPCM or CD-style grit, nine reverbs at 22.05 kHz, crush, redux and skip. The
+  screen draws a floor of sixteen lanes in perspective with a low-poly gem, in five skins. Settings, patterns and imported
+  breaks use the same data area as LOAF BREAKER and CHOPPAH, and a store without AFFINE's mark is left unread. The
+  project site runs the firmware itself in WebAssembly and hosts the installer. The README calls 0.1 a beta that has not
+  yet run on an FM-1.
+status: active
+authors:
+- name: InigoHernandez
+  url: https://github.com/InigoHernandez
+source: https://github.com/InigoHernandez/affine
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSE is the MPL-2.0 text, as in LOAF BREAKER and CHOPPAH. The pixel font is an adaptation of Elektron Pixel Font
+  (CC BY-SA 3.0, with the adaptation under CC BY-SA 4.0) and Inter Tight is SIL OFL 1.1. The breaks are royalty-free Amen
+  loops by Cyberworm. The release .fwsc is the project's own build, not an M-VAVE stock image.
+homepage: https://inigohernandez.github.io/affine/
+based_on: m-vave-fm-1/loaf-breaker
+distribution: browser-installer
+requires_stock: M-VAVE stock firmware or another fm1-base / Felucca build
+install_notes: >-
+  Use the installer on the project site in Chrome or Edge over USB, or install affine-0.1.fwsc from the release. The
+  first SAVE writes over the data area that LOAF BREAKER and CHOPPAH also use (0x97000 to 0xDFFFF, settings at 0xFC000),
+  so back up what another firmware keeps first. Installing another firmware or the installer's M-VAVE restore leaves
+  it, and after two failed starts it comes up in a silent safe mode with USB on.
+brick_risk: false
+tags: [sampler, drums, fx, performance, emulator, fork]
+image:
+  url: https://raw.githubusercontent.com/InigoHernandez/affine/main/web/screens/home.png
+  alt: "AFFINE HOME screen: break OLDSKOO at 160 BPM, a red polygon gem over a perspective floor of lanes, and FILTER, CRUSH, REDUX and VERB all reading OFF"
+  credit: InigoHernandez
+  source_url: https://inigohernandez.github.io/affine/
+  first_party: true
+versions:
+- version: '0.1'
+  date: 2026-11-16
+  url: https://github.com/InigoHernandez/affine/releases/tag/v0.1
+  notes: First release, a beta not yet run on an FM-1.

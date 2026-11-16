@@ -1,0 +1,73 @@
+device: m-vave-fm-1
+name: 'Atl-Atl: The Atltuner'
+summary: >-
+  Turns the FM-1 into a USB audio sink that tunes the computer's audio to the key you hold, with a three-second sampler that plays back
+  at the pitch of the key.
+description: >-
+  The computer plays into the FM-1 as a class-compliant USB audio device and a phase-synchronous granular shifter moves the detected pitch
+  to the held note, folded to the octave nearest the input. Four knobs set speed, mix, correction and octave, SELECT sets the tempo
+  (USB-MIDI clock overrides it), ARP passes sound only while a key is held and FX latches the target. Holding REC records up to three
+  seconds of the USB input unaltered, which plays once, loops to a note length that fits the tempo, or is retriggered at each key's pitch in
+  play-note mode. USB-MIDI notes act as a second keyboard. The screen is a pixel-art panel with battery state. It is a single-app build
+  with no module picker, and the README says the tuner is still a work in progress and the first listen should be treated as a bench
+  test. The tuner follows a single note, so a full mix is not a reliable input, and the FM-1 has no analog input. GitHub lists the repository as a fork of fm1-dock,
+  but the README says it is not fm1-dock and is a fork of FM1_AudioBase, carrying over the tuner DSP and UI that were first built as an fm1-dock module.
+status: active
+authors:
+- name: Jason Scheirer (jasonbot)
+  url: https://github.com/jasonbot
+source: https://github.com/jasonbot/atl-atl
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md and the repository's LICENSE give GPL-3.0-only. The platform comes from FM1_AudioBase, MOOD_FM1, GATOR, ORBIT and Leo Kuroshita's Felucca, and the
+  pitch shifter follows Autotalent / TalentedHack (GPL-3.0). Three JieLi AC79 SDK files (Apache-2.0) are committed under tools/sdk and
+  added to each package. The release package is a new GPL build, not M-VAVE's stock image.
+based_on: m-vave-fm-1/fm1-audiobase
+distribution: download
+install_notes: >-
+  Download atlatl-0.8.fwsc from the release and write it over USB with tools/fm1_install.py from the repository, from the stock firmware or
+  any FM-1 firmware that answers the installer. The README says the Felucca update loader is kept, so an interrupted install can be
+  resumed and two failed boots open the USB rescue (or hold OCT- at power-on), and that the way back to M-VAVE's firmware is the
+  official V15 package and its installer. The author states that installing firmware is at your own risk.
+brick_risk: false
+tags: [usb-audio, fx, sampler, utility, fork]
+image:
+  url: https://raw.githubusercontent.com/jasonbot/atl-atl/main/docs/card.png
+  alt: "Atl-Atl screen: a TUNE panel showing note C4, playback at BPM 120, a sample panel of 0.4 s on note A4, and a bottom row with SPEED 20, MIX 100%, CORRECTION 100% and OCTAVE 0"
+  credit: Jason Scheirer (jasonbot)
+  source_url: https://github.com/jasonbot/atl-atl
+  first_party: true
+versions:
+- version: '0.8'
+  date: 2026-11-15
+  url: https://github.com/jasonbot/atl-atl/releases/tag/v0.8
+  notes: Adds a pixel-art screen with state indicators, a beat-pulsing BPM light and a battery charge gauge.
+- version: '0.7'
+  date: 2026-11-15
+  url: https://github.com/jasonbot/atl-atl/releases/tag/v0.7
+  notes: GLO becomes a play-note mode that retunes the sample to each key pressed, and the large type changes to Geist Sans.
+- version: '0.6'
+  date: 2026-11-15
+  url: https://github.com/jasonbot/atl-atl/releases/tag/v0.6
+  notes: The sample is recorded unaltered and its recorded note becomes the root, so it plays up and down the keys.
+- version: '0.5'
+  date: 2026-11-15
+  url: https://github.com/jasonbot/atl-atl/releases/tag/v0.5
+  notes: New screen fonts with antialiasing; the sound engine is unchanged.
+- version: '0.4'
+  date: 2026-11-15
+  url: https://github.com/jasonbot/atl-atl/releases/tag/v0.4
+  notes: Turning the FX latch off releases the last note.
+- version: '0.3'
+  date: 2026-11-15
+  url: https://github.com/jasonbot/atl-atl/releases/tag/v0.3
+  notes: New screen drawn from a 240 by 240 design; the sound engine is as in 0.2.
+- version: '0.2'
+  date: 2026-11-14
+  url: https://github.com/jasonbot/atl-atl/releases/tag/v0.2
+  notes: Adds a three-second sampler, tempo that follows the loop length, the ARP mask and better MIDI key handling.
+- version: '0.1'
+  date: 2026-11-14
+  url: https://github.com/jasonbot/atl-atl/releases/tag/v0.1
+  notes: First release, with the USB sink and the key-targeted tuner.

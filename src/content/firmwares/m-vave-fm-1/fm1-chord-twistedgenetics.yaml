@@ -1,0 +1,41 @@
+device: m-vave-fm-1
+name: FM1-Chord (TwistedGenetics)
+summary: >-
+  Chord-set player after the Roland J-6 and Captain Chords: a chord on each of the 27 keys, a ten-voice chord synth,
+  strum, arpeggiator and latch, with a web editor that suggests what to play next.
+description: >-
+  Each key plays a chord that is set by root, one of 22 chord types or custom notes, inversion, voicing, slash bass and
+  octave, and LEARN captures a chord from played notes. Factory content is 18 chord sets, among them thirteen in F
+  built on Phrygian progressions, plus 20 empty user slots and eleven starting sounds. The synth has two oscillators, a
+  sub and FM, a 12 dB filter, a chorus and a reverb, and notes go to the built-in synth, to MIDI out or to both. The web
+  editor works without an FM-1, previews sets with a JavaScript copy of the player, rates next-chord suggestions as
+  strong, OK or far, records progressions to MIDI files and exchanges sets with the FM-1; an iPad build of it is a rolling
+  pre-release. The release notes call it a beta that has not been tried on a real FM-1. It is a separate project from
+  math0ne's fm1-chord.
+status: active
+authors:
+- name: TwistedGenetics
+  url: https://github.com/TwistedGenetics
+source: https://github.com/TwistedGenetics/FM1-Chord
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states GPL-3.0-only and LICENSE is the GPL-3.0 text. docs/UPSTREAM.md credits X0X (as a pinned submodule),
+  Felucca and DREADNOUGHT for the platform, build tools, flasher and iPad wrapper, and lists the OFL-licensed Barlow font.
+homepage: https://twistedgenetics.github.io/FM1-Chord/editor/
+distribution: browser-installer
+install_notes: >-
+  Back up the FM-1, open the project's web flasher in Chrome or Edge with the unit on USB and pick a release, or
+  download FM1-Chord-0.2.fwsc from the release. Read docs/RECOVERY.md first. The update loader writes the app header
+  last, so an install cut off part-way comes back in update mode.
+brick_risk: false
+tags: [chords, synth-engine, performance, arpeggiator, editor, flasher, web-midi]
+versions:
+- version: '0.2'
+  date: 2026-11-16
+  url: https://github.com/TwistedGenetics/FM1-Chord/releases/tag/v0.2
+  notes: Adds thirteen factory sets in F on Phrygian progressions and three sounds (void pad, dub chord, bell stab).
+- version: '0.1'
+  date: 2026-11-16
+  url: https://github.com/TwistedGenetics/FM1-Chord/releases/tag/v0.1
+  notes: First beta, not yet tried on a real FM-1; five factory sets, 20 user slots, the chord synth and the web editor.

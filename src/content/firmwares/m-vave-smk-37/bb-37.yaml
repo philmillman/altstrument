@@ -34,7 +34,7 @@ distribution: browser-installer
 install_notes: >-
   The installer at thebigbeat.app/elite/install/ runs in current desktop Chrome or Edge over WebMIDI with SysEx permission. Connect the keyboard
   directly with a USB data cable and keep it connected until the page reports the restart. The installer asks the connected unit for its model
-  and sends the matching SMK-37 Pro, SMK-37 Elite or MKE-P37 package; the three packages it serves are identical to the v1.0.0 release assets.
+  and sends the matching SMK-37 Pro, SMK-37 Elite or MKE-P37 package; at v1.0.0 the three packages it served were identical to that release's assets, and v1.0.1 re-issues them with separate Firmware Hub identities.
   It installs from the stock firmware by feeding the package to the keyboard's own SysEx update loader in two stages, as M-VAVE's updater does,
   and makes no backup. The device's mask-ROM rescue and M-VAVE's updater remain the recovery route (see the device notes). The author reports
   testing build 800 on an Elite, including a return to build 797 and a reinstall; the issue thread names no test on the Pro or MKE-P37.
@@ -47,6 +47,10 @@ image:
   source_url: https://github.com/TexasRADIO/smk37-elite-firmware
   first_party: true
 versions:
+- version: v1.0.1
+  date: 2026-11-15
+  url: https://github.com/TexasRADIO/smk37-elite-firmware/releases/tag/v1.0.1
+  notes: Firmware Hub compatibility release. The Pro, Elite and MKE-P37 packages now carry separate Hub-visible identities (FM-1_92370001, FM-1_92370002, FM-1_92370003) and keep their own board stubs and stock return routes. Still build 800.
 - version: v1.0.0
   date: 2026-11-11
   url: https://github.com/TexasRADIO/smk37-elite-firmware/releases/tag/v1.0.0

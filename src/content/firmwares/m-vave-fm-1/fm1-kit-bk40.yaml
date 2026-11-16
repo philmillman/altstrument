@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+kind: tool
+name: fm1-kit (bk40-home)
+summary: >-
+  Shared web code for one author's FM-1 firmwares: a patch-library page that edits banks and sends them to the unit, a Web MIDI
+  firmware installer page, and the common themes.
+description: >-
+  The library page opens .sy1 files, folders, zip banks and exported libraries, searches by category, tag, colour and bank, and shows each
+  bank whole. Patches are dragged onto slots, moved or copied inside a bank, taken from the device, edited in new banks of
+  the user's own, and undone. Send writes only the slots that changed, with each write acknowledged and read back, and Restore puts a
+  bank back as it was before the first send. A firmware supplies an adapter and a mock device, and the page refuses a unit
+  running another firmware. The firmware page is a line-for-line ES module port of Felucca's fm1_install.py, with a page that
+  finds the unit, picks the latest release or a .fwsc file, installs it and explains failures, tested against a pretend FM-1.
+  A build script produces one self-contained HTML file per firmware. The README says the folder is meant to
+  become a submodule in M-Vsynth2 and M-vance and still holds a screen kit that has not been split out.
+status: active
+authors:
+- name: Kris (bk40-home)
+  url: https://github.com/bk40-home
+source: https://github.com/bk40-home/fm1-kit
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README says GPL-3.0-only and LICENSE is the GPL v3 text. The install code follows Felucca's installer, which is also
+  GPL-3.0. No firmware image is in the repository.
+distribution: source-only
+install_notes: >-
+  It is a library, not a standalone app: a firmware copies the web files into its own pages and builds the library page with
+  tools/build_library.py. The pages that use it are published with M-Vsynth2 and M-vance. The library page writes patch banks over MIDI; the
+  firmware page installs only the package the user chooses.
+brick_risk: false
+tags: [librarian, editor, flasher, web-midi, library, usb-midi]
+versions:
+- version: main @ a629464
+  date: 2026-11-15
+  url: https://github.com/bk40-home/fm1-kit/commit/a629464796b41463875daae54d7783207e754d76
+  notes: No tagged releases; this is the latest commit. The VERSION file reads 0.3.0, which adds editable source banks, Hold and layer controls.

@@ -11,7 +11,8 @@ description: >-
   read-only, and includes a limited 16-step project editor. The README says
   recognising a model does not allow writes, and that automated tests use a
   fake device and do not prove writes are safe on hardware. Visuals shows waveform,
-  spectrum and meters from a chosen audio input. The README is in Russian. The
+  spectrum and meters from a chosen audio input. An FX-MIC Studio app, new in the latest commits, works offline on the microphone's
+  presets and has a guarded USB hardware trial. The README is in Russian. The
   repository states that it has no licence file.
 status: active
 authors:
@@ -32,10 +33,10 @@ install_notes: >-
 brick_risk: false
 tags: [librarian, sample-transfer, web-midi, sysex, samples, web]
 versions:
-  - version: main @ b87c367
-    date: 2026-11-15
-    url: https://github.com/Zatumanen/Ko-tool/commit/b87c367144881ed375f6235b77b1a4f1f31d2db1
-    notes: No tagged releases; this is the latest commit. The two commits since the previous entry change the Pages build and CI, documentation and agent configuration only.
+  - version: main @ 90064ce
+    date: 2026-11-16
+    url: https://github.com/Zatumanen/Ko-tool/commit/90064cee67548030ca8883d9210c3f3936171fe7
+    notes: No tagged releases; this is the latest commit. Since the previous entry it checks that uploaded PCM is verified before samples are marked written, and adds an FX-MIC Studio with a USB hardware trial, with fixes for reading stock 1.1.2 presets and connecting to its Live REPL.
   - version: main @ 7e89fdd
     date: 2026-11-14
     url: https://github.com/Zatumanen/Ko-tool/commit/7e89fdd2b5e6772905a8ee0a44106f4007a2a7e4

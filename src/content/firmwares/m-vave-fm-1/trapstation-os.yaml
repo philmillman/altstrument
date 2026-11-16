@@ -1,0 +1,52 @@
+device: m-vave-fm-1
+name: TRAPSTATION OS
+summary: >-
+  Trap and phonk groovebox with six tracks of 808, FM and sampler machines, drum, hat, bass and chord generators, a piano roll, a
+  slicing sampler, a live performance page and a browser installer.
+description: >-
+  Each track has its own machine, sound, 64-step pattern and mix. The machines are 808 drum kits with glide and sub, an 808 bass,
+  an FM synth, a mono synth, a digital engine and a sampler for up to 32 samples of about 11 seconds in total, which can be cut
+  into slices played from the white keys. Four generators (LUCKY DRUMS, ACE HATS, LOW ROLLER and GOLDEN CHORDS) create drums, hats,
+  bass lines and chords from one knob, and the result is ordinary notes that can be edited in the piano roll. A performance page puts
+  track mutes and eight effect throws on the keys, and the master section has tape, VHS and vinyl colouring. From 1.1.0.0 the FM synth is
+  a six-operator engine with 32 algorithms and twelve sound pages, and OCT- tapped twice undoes the last change. It is a fork of BBL JAM BOX,
+  which is built on Felucca. A companion desktop app, Trap Station Desktop, converts audio into samples, edits the FM sounds and exports to
+  Ableton Live.
+status: active
+authors:
+- name: Schlensog Audio Lab
+  url: https://github.com/sog-maker
+source: https://github.com/sog-maker/trapstation-os
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only, with copyright lines for Leo Kuroshita (Felucca), Blair (the BBL JAM BOX changes) and the project's
+  contributors. The TRAPSTATION name, logo and artwork are all rights reserved and not under the GPL. The FM6 core (msfa) is Apache-2.0, the engine
+  interface and icon font from Hügelton Instruments are MIT and the fonts are SIL OFL 1.1. LICENSING.md says all sounds are synthesised or made
+  by the author and that no M-VAVE material is included; the installer's Return to official V15 checks a file you download yourself.
+homepage: https://sog-maker.github.io/trapstation-os/
+based_on: m-vave-fm-1/bbl-jam-box
+distribution: browser-installer
+install_notes: >-
+  Use the installer page in Chrome or Edge over a USB data cable (no hub), or install trapstation-os-1.1.0.0.fwsc with tools/fm1_install.py,
+  or from the FM-1 Firmware Hub. Back up in the installer first: samples, user sounds and kits stay on the device, but 1.1.0.0 does not
+  load the last jam of 1.0.0.0. The package carries its update loader, so the installer's Return to official V15 (with M-VAVE's FM-1_015.fwsc
+  that you supply) or another firmware's installer takes over from it, and INSTALL.md says an interrupted update resumes when Install is pressed
+  again. The README says that if an install fails and the FM-1 no longer starts, recovery needs the FM-1-transporter hardware.
+brick_risk: false
+tags: [groovebox, sequencer, drums, sampler, synth-engine, fm, chords, fx, midi, editor, fork]
+image:
+  url: https://raw.githubusercontent.com/sog-maker/trapstation-os/main/docs/img/screens.png
+  alt: "Six TRAPSTATION screens in red and grey: the start menu, the sequencer grid, the piano roll, the LUCKY DRUMS generator, the PERFORMANCE page and a cassette tape effect"
+  credit: Schlensog Audio Lab
+  source_url: https://github.com/sog-maker/trapstation-os
+  first_party: true
+versions:
+- version: 1.1.0.0
+  date: 2026-11-16
+  url: https://github.com/sog-maker/trapstation-os/releases/tag/v1.1.0.0
+  notes: Replaces the four-operator FM synth with a six-operator engine, reworks the 22 synth presets, adds twelve FM sound pages and undo.
+- version: 1.0.0.0
+  date: 2026-11-15
+  url: https://github.com/sog-maker/trapstation-os/releases/tag/v1.0.0.0
+  notes: First public release.

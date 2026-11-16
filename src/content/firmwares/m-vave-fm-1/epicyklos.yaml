@@ -8,7 +8,7 @@ description: >-
   a kick, metallic hats, a clap or snare, a toms and percussion engine, a dub-techno chord voice with selectable
   chord tables (Plaits Palette), a sustaining drone with drift and a second voice, and a bass track that is still a
   placeholder. Views cover orbit, mix, effects, flow and mod, with pattern slots, tempo, a delay with throw and
-  freeze, a master filter, undo, eight scenes with eight locks each with a per-scene fade, and in the latest commit a reverb with PLACA (after Plateau) and NUBE (a granular cloud) types and a shimmer, a MACRO voice on track 4 with six synthesis models, and a boot screen with a turning galaxy.
+  freeze, a master filter, undo, eight scenes with eight locks each with a per-scene fade, in recent commits a per-track step source (EUCLID, SEQ or a TURING loop), and a reverb with PLACA (after Plateau) and NUBE (a granular cloud) types and a shimmer, a MACRO voice on track 4 with six synthesis models, and a boot screen with a turning galaxy.
   It is built on charlesvestal's fm1-base with Felucca's board support code underneath. The README still says phase 0 and
   warns not to flash it, and the manual says nothing has been tested on a real FM-1; it has been run only in the host
   simulator and the browser emulator. The CI workflow compiles a development .fwsc but publishes it only as a build
@@ -33,7 +33,7 @@ install_notes: >-
 brick_risk: false
 tags: [sequencer, drums, synth-engine, generative, emulator]
 versions:
-- version: main @ 4c5e36f
-  date: 2026-11-13
-  url: https://github.com/JavierIng/fm1-epicyklos/commit/4c5e36f02e0eccde4b03bb90cf47f95ee04baf4a
-  notes: No tagged releases; this is the latest commit. A saved pattern now gets a name drawn from what was saved, and the repository gains a desktop build of the sound core as a VST3 and AU plugin and a standalone macOS app, which is not firmware. Before that, the commits add the NUBE granular cloud and PLACA plate reverb types with pre-delay, size, diffusion, low cut, freeze and shimmer pages, a CPU meter on HOME, a release workflow for the installer site, a boot-screen galaxy and a MACRO voice with six synthesis models, and remove STUTTER to save memory. The README still says nothing has been installed on an FM-1 and not to flash it.
+- version: main @ 2ab04f3
+  date: 2026-11-16
+  url: https://github.com/JavierIng/fm1-epicyklos/commit/2ab04f35f8a3a203e56edfb677c012432b5373ca
+  notes: No tagged releases; this is the latest commit. Each track now takes a step source of EUCLID, SEQ or a TURING loop, with rhythm and notes from one loop moved by the evolution page; the acid lines are loops, and the pattern random deals sources. Before that, a saved pattern now gets a name drawn from what was saved, and the repository gains a desktop build of the sound core as a VST3 and AU plugin and a standalone macOS app, which is not firmware. Before that, the commits add the NUBE granular cloud and PLACA plate reverb types with pre-delay, size, diffusion, low cut, freeze and shimmer pages, a CPU meter on HOME, a release workflow for the installer site, a boot-screen galaxy and a MACRO voice with six synthesis models, and remove STUTTER to save memory. The README still says nothing has been installed on an FM-1 and not to flash it.

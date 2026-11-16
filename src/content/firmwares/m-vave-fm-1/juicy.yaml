@@ -1,0 +1,47 @@
+device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
+name: Juicy
+summary: >-
+  Step-sequencer groovebox for jamming: five tracks (drums, bass, arpeggiator, pad, lead), eight patterns and a chain, with key lighting
+  that shows which notes fit the song's key and a demo song that plays on power-up.
+description: >-
+  Each track has one to four bars of 16 steps, and a pattern lasts as long as its longest track while the shorter ones repeat. The
+  arpeggiator follows the chords of the pad. The melodic tracks have named sounds, a page of knobs to shape them and two user slots, and
+  the mixer gives every track level, pan, a tempo-synced echo and a reverb send, with a limiter and a separate mix for each pattern.
+  Starting aids include drum grooves, chord progressions, bass lines and song styles, a hint on every empty track, undo and redo, three
+  demo songs, eight song slots and a library of 16 patterns. MIDI clock is followed and sent over USB and TRS. The README says the
+  firmware has been tested on an FM-1 since 2026-11-11 and that an update which changes the song format starts over with the demo
+  song until a 1.0. The release also has packages for the SMK-37 Pro, SMK-37 Elite and MKE-P37, which the README says nobody has
+  tried yet.
+status: active
+authors:
+- name: Daniel Gilbert (DanielGilbert)
+  url: https://github.com/DanielGilbert
+source: https://github.com/DanielGilbert/Juicy
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md and the repository's LICENSE (GPL v3 text) give GPL-3.0-only. The platform code is Leo Kuroshita's Felucca with SLOOP's
+  changes, the app base is zvenson's Dinghy and the SMK-37 layer is M. Geisler's. Terminus is SIL OFL 1.1, and three JieLi SDK files
+  (Apache-2.0) are added to each package at build time. The designburg logo that marks Dinghy is not under the GPL and Juicy does not
+  use it. No M-VAVE firmware image is in the repository.
+based_on: m-vave-fm-1/dinghy
+distribution: download
+install_notes: >-
+  Download juicy-0.1.fwsc from the release (the SMK-37 packages have their own files) and write it over USB with the repository's
+  tools/fm1_install.py (needs Python with mido and python-rtmidi); it asks before it writes and restarts into Juicy. The FM-1 Firmware
+  Hub in Chrome or Edge is the way back to another firmware or the official one. Holding OCT- at power-on starts the USB rescue
+  mode, where any firmware installs. The author states that installing firmware is at your own risk.
+brick_risk: false
+tags: [groovebox, sequencer, drums, arpeggiator, chords, synth-engine, fx, midi, usb-audio, fork]
+image:
+  url: https://raw.githubusercontent.com/DanielGilbert/Juicy/main/docs/juicy-home.png
+  alt: "Juicy home screen: an orange fruit logo and the name JUICY, a chain of pattern slots A B C D C C A, and values for tempo 130, reverb 30, swing 50 and key A MIN"
+  credit: Daniel Gilbert
+  source_url: https://github.com/DanielGilbert/Juicy
+  first_party: true
+versions:
+- version: '0.1'
+  date: 2026-11-15
+  url: https://github.com/DanielGilbert/Juicy/releases/tag/v0.1
+  notes: First release, with packages for the FM-1 and the SMK-37 models.

@@ -1,0 +1,47 @@
+device: m-vave-fm-1
+kind: tool
+name: FM1 Emulator for Android
+summary: >-
+  Android app that runs FM-1 firmware packages unchanged on an emulated FM-1, lists and downloads Firmware Hub entries,
+  and installs a package on a real FM-1 over USB.
+description: >-
+  The emulation is Joakim Eriksson's fm1-emu library, built for Android without changes. Any .fwsc package plays on it
+  with the screen, twelve buttons, eight knobs and a key strip on a sideways display, with MIDI from USB, Bluetooth or the
+  unit's own keys going into the emulated MIDI input and MIDI learn for the knobs. Each firmware version keeps its own
+  flash. The firmware list is read from The Firmware Hub's catalogue, and a package is downloaded from its maker's GitHub
+  release and kept only if its SHA-256 matches the hub's. A GitHub repository can also be added by name, which takes its
+  newest release with a .fwsc and is not checked by anyone. A second part talks to a real FM-1 with Felucca's update
+  protocol: it installs a package, finishes an interrupted update and returns the unit to M-VAVE's V15, downloaded from
+  M-VAVE's own repository and checked against its hash. ObsSynth FM-1 is built into the app. The app started as ObsLoader,
+  the name of its first two releases.
+status: active
+authors:
+- name: orianbsilva
+  url: https://github.com/orianbsilva
+source: https://github.com/orianbsilva/fm1-emulator
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL v3 text and the README says GPL-3.0, with no "or later" statement. The bundled fm1-emu library is MIT
+  and its licence text ships in the app. The only firmware committed is ObsSynth FM-1 0.2.0, the author's own GPL-3.0 build;
+  no M-VAVE image is in the repository.
+distribution: download
+install_notes: >-
+  Needs Android 8 or newer, 64-bit. Download FM1-Emulator-VERSION.apk from the releases page and allow installs from that source; each version installs
+  over the last. Playing in the emulator writes nothing to a real unit. Installing to the FM-1 follows Felucca's update
+  protocol, and the README offers the way back to M-VAVE's V15 and finishing an interrupted update from the same screen.
+brick_risk: false
+tags: [android, emulator, flasher, midi, usb-midi]
+versions:
+- version: 0.3.0
+  date: 2026-11-16
+  url: https://github.com/orianbsilva/fm1-emulator/releases/tag/v0.3.0
+  notes: First build under the FM1 Emulator name; plays any .fwsc on the emulated FM-1.
+- version: 0.2.0
+  date: 2026-11-16
+  url: https://github.com/orianbsilva/fm1-emulator/releases/tag/v0.2.0
+  notes: Published as ObsLoader.
+- version: 0.1.0
+  date: 2026-11-16
+  url: https://github.com/orianbsilva/fm1-emulator/releases/tag/v0.1.0
+  notes: First release, published as ObsLoader.

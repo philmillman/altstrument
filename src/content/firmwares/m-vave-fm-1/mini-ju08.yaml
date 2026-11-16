@@ -1,0 +1,39 @@
+device: m-vave-fm-1
+name: Mini-Ju08
+summary: >-
+  Jupiter-8 style synth on the Mini-Tone platform: eight voices in two parts, two oscillators per voice, a ladder filter, 64 patches, 17
+  chorus and effect types, a piano-roll sequencer with song mode and USB and TRS MIDI.
+description: >-
+  The synth and panel are a fixed-point port of the author's jupiter8_esp32 project, which replaces Mini-Tone's sequencer, tracks, engines
+  and screens. The two parts can be played as one eight-voice patch, as dual or split layers, or as two parts with their own patterns. Each
+  voice has two oscillators with sync and cross modulation, a high-pass and a 12 or 24 dB ladder filter, two envelopes and an LFO, with solo, unison
+  and polyphonic modes, an arpeggiator, portamento, pitch bend and mod wheel. Chorus and effects, a delay and a reverb follow the ESP32
+  version. The sequencer has a pattern per part of up to 64 steps with ties, chords, velocity, probability, ratchets and parameter lanes,
+  a song list, tools to copy and transpose, eight project slots and MIDI out. It runs on both FM-1 flash chips. The README gives CPU
+  figures as static counts, not measurements, and says the chip's real speed under this load is not known yet.
+status: active
+authors:
+- name: Stéphane Schmitz (eldontyrellcorp)
+  url: https://github.com/eldontyrellcorp
+source: https://github.com/eldontyrellcorp/Mini-Ju08
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and LICENSING.md give GPL-3.0-only, and the repository's LICENSE is the GPL v3 text. The platform code is Mini-Tone's, which
+  comes from Leo Kuroshita's Felucca, and the synth is the author's own port of jupiter8_esp32, also GPL-3.0-only. Inter Tight is SIL OFL 1.1.
+  No M-VAVE firmware image is in the repository.
+homepage: https://github.com/eldontyrellcorp/Mini-Ju08
+based_on: m-vave-fm-1/mini-tone
+distribution: download
+install_notes: >-
+  Download mini-ju08-1.00.fwsc from the release and install it over USB with the repository's flash.sh, which runs tools/fm1_install.py.
+  It replaces whatever FM-1 firmware is installed, so back up first. The README says a first build from before 2026-11-10 had no update
+  entry and needs the chip's boot mode (OCT- and OCT+ held for 5 seconds) plus a flashing script or the FM-1-transporter hardware,
+  while the current package can be updated over USB, and that installing firmware is at your own risk.
+brick_risk: false
+tags: [synth-engine, oscillator, sequencer, arpeggiator, fx, chorus, delay, reverb, midi, usb-audio, fork]
+versions:
+- version: mini-ju08-1.00
+  date: 2026-11-11
+  url: https://github.com/eldontyrellcorp/Mini-Ju08/releases/tag/mini-ju08-1.00
+  notes: First release, with mini-ju08-1.00.fwsc.

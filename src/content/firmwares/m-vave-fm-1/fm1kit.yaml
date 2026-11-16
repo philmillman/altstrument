@@ -12,7 +12,7 @@ description: >-
   mode (needs root) to back up, restore and write the whole flash. It includes a simulated FM-1 for tests and
   the iOS Simulator and an fm1probe command-line tool. The author's FM-SWITCH app is built on it. The README
   says it has been tried on one FM-1 from a Mac. M-VAVE's firmware is not bundled; the package recognises V15, V16
-  and the open firmware V12 by size and checksum or identity. From 0.6.0 it also identifies the flash chip, including the newer UC25HQ80, and warns before putting m-bootloader on it. From 0.7.0 it can also drive the FM-1 Transporter's data port without that device's web app, check a package before release, compare two packages or backups, and publish the simulated FM-1 as virtual CoreMIDI ports.
+  and the open firmware V12 by size and checksum or identity. From 0.6.0 it also identifies the flash chip, including the newer UC25HQ80, and warns before putting m-bootloader on it. From 0.8.0 it also writes a firmware package's resources such as samples. From 0.7.0 it can also drive the FM-1 Transporter's data port without that device's web app, check a package before release, compare two packages or backups, and publish the simulated FM-1 as virtual CoreMIDI ports.
 status: active
 authors:
 - name: Drew Robinson (ocean)
@@ -29,6 +29,10 @@ install_notes: >-
 brick_risk: true
 tags: [sdk, flasher, utility, usb-midi]
 versions:
+- version: 0.8.0
+  date: 2026-11-16
+  url: https://github.com/ocean/FM1Kit/releases/tag/0.8.0
+  notes: Installs a firmware's resources, such as samples, along with the firmware, through the update loader, in download mode, or by the new firmware once it runs (fm1probe write-resources). Colours fm1probe's terminal output and fixes a 0.7.x bug where an install lost the FM-1 when it restarted. The API changes, since CoreMIDITransport is now created on the main actor and two new UpdateEvent cases need handling. Tested on hardware.
 - version: 0.7.1
   date: 2026-11-14
   url: https://github.com/ocean/FM1Kit/releases/tag/0.7.1

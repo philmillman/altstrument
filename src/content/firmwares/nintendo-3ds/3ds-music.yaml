@@ -1,0 +1,37 @@
+device: nintendo-3ds
+name: 3ds-music
+summary: Two Nintendo 3DS homebrew apps, an OSC controller and a Euclidean sequencer with a touchscreen modular synth, that send OSC over Wi-Fi.
+description: >-
+  3ds-music holds two apps written in C with libctru and citro2d. osc3ds turns the 3DS into a wireless OSC controller,
+  sending buttons, sticks, an XY pad, faders, drum pads and the motion sensors over UDP. eucseq is a polyrhythmic
+  Euclidean sequencer with five shape tracks that orbit a ring on the stereoscopic top screen. Each pulse is sent as an
+  OSC message, and it can also trigger patches built on the touchscreen from oscillators, noise and envelopes, with
+  patches and patterns saved to eight slots on the SD card. Both apps work with any OSC host. The code was written with
+  an AI assistant, and the repository lists the prompts used. The repository has no licence file or licence statement.
+status: active
+authors:
+  - name: ogbabydiesal
+    url: https://github.com/ogbabydiesal
+source: https://github.com/ogbabydiesal/3ds-music
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and the README makes no licence statement.
+distribution: download
+install_notes: >-
+  Needs a 3DS with custom firmware and the Homebrew Launcher. Copy osc3ds.3dsx and eucseq.3dsx from the release to
+  /3ds/ on the SD card and launch them from the launcher. The eucseq synth also needs sdmc:/3ds/dspfirm.cdc, which the
+  DSP1 homebrew creates. OSC output is off by default and is enabled in Settings with the host IP and port. These are
+  homebrew apps that run from the SD card and write nothing to the console's system firmware.
+brick_risk: false
+tags: [osc, controller, sequencer, euclidean, synth, modular, touch, homebrew]
+image:
+  url: https://raw.githubusercontent.com/ogbabydiesal/3ds-music/main/docs/screenshots/synth-3-two-instruments.png
+  alt: eucseq SYNTH page showing a node graph with noise, oscillator and envelope boxes wired together, buttons for save, load and song along the top, and a 120 BPM tempo control with a stop button below
+  credit: ogbabydiesal
+  source_url: https://github.com/ogbabydiesal/3ds-music#screenshots
+  first_party: true
+versions:
+  - version: v0.1.0
+    date: 2026-11-16
+    url: https://github.com/ogbabydiesal/3ds-music/releases/tag/v0.1.0
+    notes: First release with osc3ds.3dsx and eucseq.3dsx.

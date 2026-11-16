@@ -6,7 +6,7 @@ description: >-
   Synfact is the Syntakt part of elekloader with its own core firmware. The core adds a hook bus, extra settings, optional
   machine banks (.smz4 files that can be changed without reinstalling the firmware), long-sample storage and a project sample
   pool. The mods are the SP sample machines ONE SHOT, WERP, REPITCH and SLICE, the SY FM DTONE machine, an audio recorder, a
-  third LFO per track, a Digitone-style arpeggiator, POLY for polyphonic play, a system information page, and a sample
+  third LFO per track, a Digitone-style arpeggiator, POLY for polyphonic play, a chorus, Playhead for the step order of each track, a system information page, and a sample
   manager. The site reads the official OS 1.41 file you supply, checks its hash, then patches and verifies it in the browser
   tab; nothing is uploaded. It offers the build as a download or sends it with a built-in transfer page that also browses the
   unit's projects, sounds and samples. SY FM DTONE also needs your own Digitone OS 1.44 file, because its sound engine is
@@ -37,10 +37,10 @@ install_notes: >-
 brick_risk: false
 tags: [machines, loader, flasher, sampler, fm, lfo, arpeggiator, web, web-midi, sdk]
 versions:
-  - version: main @ fcbc288
-    date: 2026-11-14
-    url: https://github.com/GSM1980/synfact-dev/commit/fcbc288269caa0794a0ae4ade449095707a1a239
-    notes: No tagged releases; this is the latest commit of the source repository. The commits since the previous entry optimize the MAIN code paths across the core and the optional mods and consolidate the changelogs for those releases.
+  - version: main @ 84ec2db
+    date: 2026-11-16
+    url: https://github.com/GSM1980/synfact-dev/commit/84ec2db545c4ca876e8fef73358c0d79ab3aced6
+    notes: No tagged releases; this is the latest commit of the source repository. The commits since the previous entry add the Chorus 1.2 mod and Playhead 1.0, which sets the step order per track (reverse, pendulum, random, walk), fix TRIG and ARP mute navigation and generate changelogs for ARP 1.10.4 and core 1.8.2.
   - version: main @ e4af43a
     date: 2026-11-11
     url: https://github.com/GSM1980/synfact-dev/commit/e4af43a3a522846aba224a181d5813e42f5dd827

@@ -1,0 +1,45 @@
+device: m-vave-smk-37
+name: WASWAN Synth
+kind: tool
+summary: >-
+  Browser build of SMKSYNTH's simulator, with its DSP compiled to WebAssembly, that plays from an SMK-37 Pro over Web MIDI and adds a
+  MIDI-learn profile, finer knob control, up to 256 voices and DSP and MIDI diagnostics.
+description: >-
+  The repository pins the SMKSYNTH firmware repository as a submodule, builds its simulator with the original script, and
+  leaves the firmware, DSP and interface intact, with a switch back to the original panel. Around it are a new
+  performance page with eight knobs and four part levels, MIDI Learn per control, a Normal or Fine mode for the K1 to K4 mappings,
+  and a live MIDI diagnostic that records control changes to a local server for export. The voice allocator was extended in steps from 8 to
+  128 and then to a shared pool of 256, with POLY, MONO, DUAL and UNISON modes, and an optional DSP monitor shows processing
+  time. Notes from the keyboard are played by the browser's own audio, and the README says no change was sent to the
+  keyboard. It is built from source on Ubuntu with Zig and Binaryen and served on localhost, and the README is in Portuguese.
+status: active
+authors:
+- name: verner-becker
+  url: https://github.com/verner-becker
+source: https://github.com/verner-becker/waswan-synth
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL v3 text and the README says GPL-3.0-only for the code and adaptations. The submodule keeps SMKSYNTH's own
+  credits and component licences. No firmware image is in the repository.
+based_on: m-vave-smk-37/smksynth
+distribution: source-only
+install_notes: >-
+  Clone with submodules, run the setup and build scripts, and open the local simulator in Chrome or Chromium with Web Audio and
+  Web MIDI. The README advises keeping the tab in focus, because the original code drops notes in hidden tabs. It writes nothing
+  to the keyboard.
+brick_risk: false
+tags: [emulator, simulator, midi, web-midi, synth-engine, polyphony]
+versions:
+- version: main @ b3c9eaa
+  date: 2026-11-16
+  url: https://github.com/verner-becker/waswan-synth/commit/b3c9eaa82b7535083c5eea5a93ed3abdca466f4c
+  notes: Latest commit, after the UI foundation, the 256-voice pool, fine knob control and the diagnostics were merged.
+- version: v0.6.0
+  date: 2026-11-15
+  url: https://github.com/verner-becker/waswan-synth/tree/v0.6.0
+  notes: Git tag; no GitHub release page. Raises the voice limit to 64.
+- version: v0.1.0
+  date: 2026-11-15
+  url: https://github.com/verner-becker/waswan-synth/tree/v0.1.0
+  notes: Git tag; no GitHub release page. First validated run of the simulator with the SMK-37 Pro.

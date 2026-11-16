@@ -1,0 +1,41 @@
+device: m-vave-fm-1
+also_devices: [m-vave-smc-pad, m-vave-smc-pad-pocket]
+name: FM-1 Swapper
+kind: tool
+summary: >-
+  iPhone and iPad app that swaps FM-1 firmware over USB with backup and restore of each firmware's data, plus a library, an emulator
+  with tutorials, SMC-PAD play and a slice sampler.
+description: >-
+  An install first backs up what the running firmware keeps and then restores the new firmware's own saved settings, and an interrupted
+  install can be resumed. The library records every downloaded firmware with notes, a rating and an install log. Firmware comes
+  from a featured list, M-VAVE's official releases and the community catalogue of the FM-1 Firmware Collection. A firmware can
+  be played in the fm1-emu emulator, loaded in a web view from the emulator's hosted page, before installing, with guided
+  tutorials. An SMC-PAD or SMC-PAD Pocket plays the FM-1 or the emulator from its pads with learnable layouts and pad lights, and the
+  slice sampler cuts an imported or recorded sample at its hits for the pads. Official V15 and V16 packages are read from
+  M-VAVE's Workbench release at run time and recognised by digest. A beta web version for Chrome and Edge is in the repository.
+  The protocol code is a Swift port of Felucca's installer, tested against a simulated FM-1, and the README calls
+  real-hardware testing in progress.
+status: active
+authors:
+- name: prone
+  url: https://github.com/prone
+source: https://github.com/prone/fm1-swapper
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL v3 text and the README says GPL-3.0-only, because the FM1Kit package contains a Swift port of parts
+  of Felucca. THIRD_PARTY.md lists FM1 Open, smc-pad (Apache-2.0), open-smc-pad and fm1-emu (MIT). No firmware binary is in
+  the repository.
+distribution: download
+install_notes: >-
+  Needs iOS 18 or later. Download the unsigned .ipa from the releases page and sign it with AltStore, SideStore or Sideloadly using your own Apple ID;
+  a free account must re-sign every 7 days. Connect the FM-1 by USB-C, or by Lightning with Apple's camera adapter; the
+  SMC-PAD pairs over Bluetooth. The release is marked a beta. The README tells the reader to keep M-VAVE's official firmware in
+  the library to go back, and to keep the cable connected during an install.
+brick_risk: false
+tags: [ios, flasher, backup, emulator, midi, usb-midi, sampler]
+versions:
+- version: 0.9.0
+  date: 2026-11-16
+  url: https://github.com/prone/fm1-swapper/releases/tag/v0.9.0
+  notes: Beta, published as a pre-release; the only release so far. Firmware install and backup are tested against a simulated FM-1.

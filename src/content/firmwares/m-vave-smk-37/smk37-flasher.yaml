@@ -1,0 +1,41 @@
+device: m-vave-smk-37
+also_devices: [m-vave-fm-1]
+name: SMK-37 Web Flasher
+kind: tool
+summary: >-
+  Browser page that writes a firmware package of your choice to an SMK-37 Pro, SMK-37 Elite, MKE-P37, Starrykey 37 Play or FM-1
+  over USB-MIDI, with package checks and a model rule.
+description: >-
+  The page reads a .fwsc file you drop on it, shows the model and version it carries, checks the header and the CRCs of the
+  files the keyboard writes, and then answers the unit's own read requests through the two-step update protocol of the Felucca
+  family. It hosts no firmware: the file is either a community build or M-VAVE's own package for going back to stock. A package must match
+  the keyboard's model name unless a switch, confirmed by typing a phrase, allows a package for another name of the same hardware; an
+  FM-1 package is never sent to an SMK-37 and the reverse. An update that is cut off can be finished by installing the same file
+  again when the running loader belongs to the Felucca family, while an unfinished M-VAVE update is finished with M-UPGRADE. It
+  also runs offline from a downloaded copy of the repository, and the protocol code has tests against a simulated keyboard. The
+  protocol and package parsing are ported from OberVave's installer.
+status: active
+authors:
+- name: moonsafarian
+  url: https://github.com/moonsafarian
+source: https://github.com/moonsafarian/smk37-flasher
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL v3 text and the README says GPL-3.0-only. The protocol, package parsing and identity rules are ported from
+  OberVave's tools/fm1_install.py, with its copyright notices (Leo Kuroshita, and M. Geisler for the SMK-37 parts). No firmware
+  file is in the repository.
+homepage: https://moonsafarian.github.io/smk37-flasher/
+distribution: browser-installer
+install_notes: >-
+  Open the page in Chrome or Edge, close other MIDI software, connect the unit with a data cable and press Connect. The README
+  advises a full flash backup before installing anything other than M-VAVE's own firmware. The model switch means the unit may
+  report the package's model afterwards, so M-UPGRADE may refuse the official file for the real model; installing that official
+  file through this page restores it.
+brick_risk: false
+tags: [flasher, web-midi, usb-midi]
+versions:
+- version: main @ 1eed775
+  date: 2026-11-16
+  url: https://github.com/moonsafarian/smk37-flasher/commit/1eed775aeb9142a487a726390977fc70cf723737
+  notes: No tagged releases; this is the latest commit.

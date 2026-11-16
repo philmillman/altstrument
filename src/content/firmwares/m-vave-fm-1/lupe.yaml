@@ -1,0 +1,48 @@
+device: m-vave-fm-1
+kind: tool
+name: Lupe
+summary: >-
+  Android, iPad and iPhone companion app for an FM-1 running Skiff: it shows and edits all six tracks, shapes sounds,
+  records samples and arranges songs over USB MIDI, and can install Skiff-Lupe or M-VAVE's V15.
+description: >-
+  The FM-1 keeps making the sound and storing the patterns, and the app is a larger window onto it. It is written from
+  Skiff's published editor protocol and talks to Skiff 2.5.1 and 2.6. Until 2026-11-15 it also spoke SLOOP; the SLOOP
+  support was removed and is kept at a tag. Pages cover a six-track sequencer view, sound shaping, sample recording and
+  arranging each track's patterns into a song, with a one-screen-at-a-time layout on phones and a demo FM-1 for trying it
+  without a unit. The repository also holds a small screen-link patch for Skiff, built as Skiff-Lupe 2.5.1 and 2.2 and
+  published as release packages, so the app can follow the unit's current page, step cursor, levels and scope. The app
+  downloads the package, checks its SHA-256 and installs it over USB, and can put M-VAVE's V15 back. Skiff-Lupe's source
+  is in the author's Skiff fork. The iPad and iPhone app has no store build and is built in Xcode; the Android app
+  is an APK on the releases page.
+status: active
+authors:
+- name: sgerstl
+  url: https://github.com/sgerstl
+source: https://github.com/sgerstl/fm1-ipad
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL v3 text and the README says GPL-3.0, with no "or later" statement. The files under vendor/ are
+  SLOOP's own under its licence. The committed FM-1_015.fwsc matches M-VAVE's licensed V15 image
+  (blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd, Apache-2.0). The other .fwsc files are builds of Skiff and SLOOP with
+  the screen link, or stock SLOOP 2.8.4 kept as a test fixture, and none is a stock M-VAVE image.
+distribution: source-only
+requires_stock: Skiff 2.5.1 or 2.6
+install_notes: >-
+  On Android, download the APK from the releases page and allow installs from that source. On iPad or iPhone there is no
+  store build: it is built with Xcode and a free Apple ID, and the signature lapses after 7 days. Back up the unit first, in
+  Skiff's installer or web editor. The README says the in-app install of Skiff-Lupe was tested on a Pixel 7 with a real
+  FM-1, including finishing a cut-off install, and gives Skiff's tools/fm1_install.py as the computer route. The way
+  back to official firmware is Skiff's documented return to V15, or Lupe's own V15 install, which refuses a unit that
+  has run V16.
+brick_risk: false
+tags: [android, ios, editor, sequencer, flasher, midi, usb-midi]
+versions:
+- version: 0.2.1 (Android)
+  date: 2026-11-16
+  url: https://github.com/sgerstl/fm1-ipad/releases/tag/lupe-android-0.2.1
+  notes: Accepts Skiff 2.6, explains the Skiff-Lupe offer on 2.6, and fixes cut-off firmware buttons.
+- version: 0.1 (Android)
+  date: 2026-11-16
+  url: https://github.com/sgerstl/fm1-ipad/releases/tag/lupe-android-0.1
+  notes: First Android build, marked work in progress; needs Skiff 2.5.1.

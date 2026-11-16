@@ -1,0 +1,43 @@
+device: m-vave-smk-37
+name: Polly SMK-37 (SergioBlaster)
+summary: >-
+  Polly arranger for the SMK-37 Pro that starts from genkigenki's port and puts the keyboard's own button names on the
+  screen, adds help cards, three screen themes, a browser emulator of the SMK-37 and a local installer, with a Portuguese guide.
+description: >-
+  Starts from the smk37 branch of genkigenki's fm1-polly fork (Polly 0.4.1) and changes only the SMK-37 build, which sits behind
+  the BOARD_SMK37 switch. The screen uses the labels printed on the keyboard (PATCH, SCALE, PARA, NOTE REPEAT, CHORD, GLOBE, BT, SEQ PLAY,
+  SEQ REC, K2 to K8) instead of the FM-1's. Each knob column names its knob, holding KNOB BANK, FADER BANK or the arrow buttons for a
+  second shows a help card, and there are light, dark and neon themes that are saved with the project. The repository adds an
+  emulator that draws the SMK-37 panel and runs the same firmware in WebAssembly, a GitHub Actions workflow that builds and tests both
+  boards, and a Windows launcher for a local web installer. The release package covers the Pro and the Starrykey 37 Play only; there is
+  no Elite or MKE-P37 build and no QY70 style import. The README and guide are in Portuguese, with the English Polly README below.
+status: active
+authors:
+- name: SergioBlaster
+  url: https://github.com/SergioBlaster
+- name: genkigenki
+  url: https://github.com/genkigenki
+- name: Charles Vestal (Polly)
+  url: https://github.com/charlesvestal
+source: https://github.com/SergioBlaster/polly-smk37
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only, as Polly. It also covers the Sonivox EAS synth (Apache-2.0), the Groove MIDI Dataset drum
+  performances (CC BY 4.0) and the fonts (OFL 1.1). The repository commits its own built package, polly-smk37.fwsc (650,984
+  bytes, git blob 180ad4643f5cefaa7892aa3a6c35b1581509fbb3), twice under smk37-extras; it is not an M-VAVE image, and the licensed
+  SMK-37 Pro V16 file is not involved.
+based_on: m-vave-smk-37/polly-smk37
+distribution: download
+install_notes: >-
+  The release notes say genkigenki's web installer only writes the firmware in its own catalog, so this package goes in with the
+  repository's local installer (smk37-extras on Windows, needs Python 3, in Chrome or Edge) or with tools/fm1_install.py. Turn Bluetooth
+  off on the computer, unpair the SMK-37, and use a USB data cable. The README says the firmware never writes the calibration or
+  Bluetooth areas and that M-UPGRADE with M-VAVE's SMK-37 Pro 016 package returns to stock. Unofficial and experimental; install at your own risk.
+brick_risk: false
+tags: [sequencer, chords, midi, usb-midi, ui, emulator, fork, port]
+versions:
+- version: v0.4.1-smk37.1
+  date: 2026-11-16
+  url: https://github.com/SergioBlaster/polly-smk37/releases/tag/v0.4.1-smk37.1
+  notes: First release; SMK-37 button names, help cards and three themes on genkigenki's Polly 0.4.1 port.

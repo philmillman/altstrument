@@ -1,0 +1,44 @@
+device: m-vave-fm-1
+name: Capy
+summary: >-
+  Keyboard instrument for a child of five to seven: nine named instruments, twelve animals on the keys, a band that
+  follows chords the child picks, seven levelled games and four recordable songs.
+description: >-
+  The screen names every note and chord played. PRESETS picks piano, organ, bells, guitar, bass, strings, brass, flute,
+  a drum kit or ANIMALS, which puts an animal with its call, picture and name on each key. SEQ steps through a metronome
+  and four bands (pop, blues, waltz, lullaby) that start with drums alone; one of the seven lowest white keys picks the
+  chord and the bass and chords follow. SEL opens seven games (tunes, find the note, copy me, high or low, chords, join in
+  and tap the rhythm) that make up their questions and move up a level after five right answers. Four songs can be
+  recorded in layers, and the home screen is a pond of capybaras. Holding HOME for three seconds sets a quieter volume
+  for grown-ups. The README says it has run on one FM-1, installed over another community firmware, and that installing it
+  over M-VAVE's own firmware has not been tried.
+status: active
+authors:
+- name: trapperl
+  url: https://github.com/trapperl
+source: https://github.com/trapperl/capy-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL-3.0 text and LICENSING.md states GPL-3.0-only for the app (firmware/src/capy.c) and everything it
+  inherits from Dinghy. The tunes are traditional melodies written out in the source. The committed capy.fwsc is the
+  project's own build, not an M-VAVE stock image.
+based_on: m-vave-fm-1/dinghy
+distribution: download
+install_notes: >-
+  Download the repository, install Python 3 with mido and python-rtmidi, connect the FM-1 by USB data cable and run
+  python tools/fm1_install.py capy.fwsc. The installer shows the unit it found and asks before writing. The manual covers
+  going back to M-VAVE's firmware and what to set before handing the unit to a child.
+brick_risk: false
+tags: [performance, chords, drums, sequencer, game, looper]
+image:
+  url: https://raw.githubusercontent.com/trapperl/capy-fm1/main/docs/screen-chord.png
+  alt: "Capy screen playing a piano chord: C MAJOR with the held notes C E G, a pixel capybara and baby at the top, a keyboard whose keys carry letters, and ECHO, LENGTH, WOBBLE and TONE knob bars"
+  credit: trapperl
+  source_url: https://github.com/trapperl/capy-fm1
+  first_party: true
+versions:
+- version: main @ 8abbb49
+  date: 2026-11-16
+  url: https://github.com/trapperl/capy-fm1/commit/8abbb495ae1cd517f2b7027d633bdceee1edd55d
+  notes: No tagged releases; this is the latest commit.

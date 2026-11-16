@@ -1,0 +1,40 @@
+device: m-vave-fm-1
+name: Luka
+kind: tool
+summary: >-
+  Browser player that runs community FM-1 firmwares in an emulator with the device's screen, keys and knobs, up to four at once, with MIDI
+  controller learn.
+description: >-
+  The page lists 20 community firmwares, downloads each author's published build and plays it on an emulated FM-1 screen, with up to four
+  loaded together and one chosen screen driven by an on-screen panel, the computer keyboard or a MIDI controller that it learns. Screens can
+  be muted or stopped and started, and what a firmware saves is kept in the browser. It is built on Joakim Eriksson's fm1-emu and has a web
+  client, a small local server and a Tauri desktop app. No firmware is distributed with it and nothing is written to a device. The repository
+  has no tagged releases, and its notes say it is independent and not endorsed by M-VAVE or the firmware authors.
+status: active
+authors:
+- name: kamil-in
+  url: https://github.com/kamil-in
+source: https://github.com/kamil-in/luka
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  README and the workspace manifest give GPL-3.0-only, and the repository's LICENSE is the GPL v3 text. The fm1-emu parts are MIT (THIRD-PARTY.md
+  keeps the notice). The community firmwares it plays stay under their authors' licences and are not included.
+homepage: https://kamil-in.github.io/luka/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Edge and load a firmware from the list. Nothing is installed or written to an FM-1. The README
+  also covers building the web and desktop versions from source.
+brick_risk: false
+tags: [emulator, web, midi, utility]
+image:
+  url: https://raw.githubusercontent.com/kamil-in/luka/master/docs/banner.png
+  alt: "Luka page with four emulated FM-1 screens in a row (nachtfahrt, frasil, niagara drift and monk-1) above a panel of eight knobs, 14 labelled buttons and a piano keyboard"
+  credit: kamil-in
+  source_url: https://github.com/kamil-in/luka
+  first_party: true
+versions:
+- version: master @ ac0c900
+  date: 2026-11-16
+  url: https://github.com/kamil-in/luka/commit/ac0c9001eb0769d2f26e5532e75d65f86660e38a
+  notes: No tagged releases; this is the latest commit.

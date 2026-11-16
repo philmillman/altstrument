@@ -1,0 +1,46 @@
+device: m-vave-fm-1
+name: Bad Gear OS
+summary: >-
+  Meme fan firmware for the FM-1 built on Felucca: a glitch logo, a four-track intro tune that loops until stopped,
+  eight voice clips with pixel-art animations, a box-ticking checklist and a verdict screen, themed on the Bad Gear video series.
+description: >-
+  Rights warning: the firmware plays voice clips and shows a logo taken from AudioPilz's Bad Gear videos, plus a pixel-art
+  likeness of the presenter, and the README says they are used under CC BY with the presenter's permission. They sit in
+  the repository next to the GPL code. At power-on the FM-1 shows the logo and waits. PLAY starts the tune (lead, bass,
+  drums and the voice) and the FX to ARP buttons or the white keys trigger the clips, which wait for the next eighth
+  note while the tune plays and duck the music. Further pages are a checklist of nine boxes that ticks as you use the
+  firmware, a hate screen, a finale and a verdict, and REC on the tune page picks random sounds. HOME returns to normal Felucca.
+  The clips have to be loaded into the user sample slots USR1 and USR2 with a script after flashing, or they stay silent.
+  The README says the project has nothing to do with M-VAVE and that Felucca's author does not support it.
+status: active
+authors:
+- name: alibros
+  url: https://github.com/alibros
+source: https://github.com/alibros/badgear-os
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL-3.0 text and the README says GPL-3.0-only, as Felucca; the bundled LICENSING.md is
+  Felucca's own and does not list the Bad Gear material. The voice clips (assets/bgos/clips) and the logo come from
+  AudioPilz's videos and the README credits them as CC BY with the presenter's permission, so they are not under
+  the GPL. Felucca-Engines is MIT and felucca-bsp is MPL-2.0. The repository holds no firmware package.
+based_on: m-vave-fm-1/felucca
+distribution: source-only
+install_notes: >-
+  No release package: the README has you build build/felucca.fwsc (BUILDING.md, with the JieLi toolchain in Docker),
+  install it with tools/fm1_install.py over USB, then run tools/bgos_upload_clips.sh to load the voice clips. Back up
+  first. The README says Felucca's tools return the unit to the official V15 or V16 firmware, and that flashing custom
+  firmware is at your own risk.
+brick_risk: false
+tags: [fork, sequencer, sampler, ui]
+image:
+  url: https://raw.githubusercontent.com/alibros/badgear-os/main/docs/badgear/screens.png
+  alt: "Six Bad Gear OS screens: a gear logo reading BAD GEAR, the INTRO TUNE track list, a pixel-art bald man with glasses shouting WORLD'S MOST HATED, a checklist, ticked boxes and a red verdict"
+  credit: alibros
+  source_url: https://github.com/alibros/badgear-os
+  first_party: true
+versions:
+- version: main @ 5241b10
+  date: 2026-11-15
+  url: https://github.com/alibros/badgear-os/commit/5241b1015cd55d2e95746685416244602f31b3e1
+  notes: No tagged releases; this is the latest commit.

@@ -40,21 +40,22 @@ source_status: open
 license: GPL-3.0-or-later
 license_notes: >-
   LICENSE file is GPL version 3; the patch applies to upstream sources whose
-  headers grant version 3 or any later version. The repository holds the patch
-  and the built .bin, not the full source tree.
+  headers grant version 3 or any later version. Since v1.32 the repository also
+  holds the full source as a submodule pinned to the build commit, and the
+  release carries a source tarball.
 distribution: download
 install_notes: >-
-  Copy the .bin from the repository's firmware folder to the SD card root,
+  Copy the .bin from the release or the repository's firmware folder to the SD card root,
   remove any other .bin files there, then hold Shift while powering on. Install
   an official firmware the same way to go back. Optional Cycles and LXR kit
   presets are copied into KITS folders on the card. Back up the SD card first.
 brick_risk: false
 tags: [fork, drums, synth-engine, sequencer, fx, sampler, swing]
 versions:
-  - version: main @ 7f620e5
-    date: 2026-11-15
-    url: https://github.com/thisisbribery/deluge-bribes-v1/commit/7f620e59fa2259687f562476af9fff2eda476734
-    notes: No tagged releases; this is the latest commit, which the commit message calls v1.32. Since v1.29 it adds a pan spread for poly notes, the BRUNO106 Juno-style engine with 199 presets, the BRIBELUGE COMPANION, ULTRAKIK and XIA on a single row, the 303 as a synth type, Affect all on any kit, DX7 always on and 26 more LXR kits.
+  - version: v1.32
+    date: 2026-11-16
+    url: https://github.com/thisisbribery/deluge-bribes-v1/releases/tag/v1.32
+    notes: First GitHub release, with the .bin and a GPL source tarball. Since v1.29 it adds a pan spread for poly notes, the BRUNO106 Juno-style engine with 199 presets, the BRIBELUGE COMPANION, ULTRAKIK and XIA on a single row, the 303 as a synth type, Affect all on any kit, DX7 always on and 26 more LXR kits.
   - version: main @ f371ca1
     date: 2026-11-14
     url: https://github.com/thisisbribery/deluge-bribes-v1/commit/f371ca103d1d1e0a4314583772bf9929adcf0538

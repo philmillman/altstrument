@@ -33,7 +33,7 @@ license_notes: >-
 homepage: https://inigohernandez.github.io/demake-synth/
 distribution: browser-installer
 install_notes: >-
-  Install page in Chrome or Edge over USB, or from the FM-1 Firmware Hub, or flash demake-0.4.24.fwsc from the
+  Install page in Chrome or Edge over USB, or from the FM-1 Firmware Hub, or flash demake-0.4.25.fwsc from the
   release. The package carries Felucca's update loader and always has identity FM-1_969. The README says to back up
   what the FM-1 holds first, that other firmwares install straight over it, and that holding OCT- while switching on
   starts the update loader only. Demake never reads other firmwares' projects or samples.
@@ -46,6 +46,10 @@ image:
   source_url: https://github.com/InigoHernandez/demake-synth
   first_party: true
 versions:
+- version: 0.4.25
+  date: 2026-11-15
+  url: https://github.com/InigoHernandez/demake-synth/releases/tag/v0.4.25
+  notes: "Adds support for the newer FM-1 flash chip 0xB36014, which 0.4.24 and earlier took for an unknown chip, losing songs at power-off and refusing every update. Saves and updates wait longer for slower chips, and an unknown chip is now reported at power-on and left unwritten. A unit stuck on 0.4.24 or earlier with the newer chip needs 0.4.25 installed once through the chip's download mode. Songs and sounds from earlier versions open as before."
 - version: 0.4.24
   date: 2026-10-28
   url: https://github.com/InigoHernandez/demake-synth/releases/tag/v0.4.24

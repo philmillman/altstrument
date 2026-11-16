@@ -1,0 +1,58 @@
+device: polyend-tracker-plus
+name: PolyTracker
+summary: ProTracker 2.3D style firmware for the Tracker+, derived from Tracker CE, that boots into a four-channel, 64-row editor, reads and writes Amiga .mod files, exports WAV and keeps the stock sample editor.
+description: >-
+  Rights note: the repository carries Tracker CE's licence unchanged, including
+  its clone restriction, and the precompiled PolySynth and PolyDSP libraries,
+  which keep Polyend's own terms.
+
+  The build is for the Tracker+ only. Support for the Tracker and Tracker Mini
+  was removed, along with the stock pattern, song, instrument, performance and
+  project screens. What remains is a pattern editor with live recording, an
+  order list of up to 128 slots, a file screen with an SD browser, the sample
+  loader, editor, parameter and recorder screens, and the Config and Master
+  screens. Songs are Amiga .mod files in /Mod on the card: it reads M.K., M!K!,
+  FLT4, 4CHN and N.T. modules, refuses six and eight channel ones, and writes
+  M.K. The replayer is ported from pt2-clone and follows ProTracker 2.3D
+  behaviour, including its period tables, funk repeat and the E0x filter. Files
+  are limited to 31 eight-bit samples, 64 rows and 29 effects. Export WAV
+  renders a song to a stereo file. Module memory comes out of the stock sample
+  memory, which shrinks by about 2.1 MB. The author calls it a beta that has run
+  on a real Tracker+ and says the work was done with AI assistance.
+status: active
+authors:
+  - name: hannibalpeck
+    url: https://github.com/hannibalpeck
+source: https://github.com/hannibalpeck/PolyTracker
+source_status: open
+license: MIT
+license_notes: >-
+  GitHub reports no licence for this repository, but LICENSE is Polyend's Tracker
+  CE text, MIT with a Wholesale Commercial Clone Restriction. It bars selling
+  firmware builds, commercial clone hardware and a paid port or substantially
+  unmodified derivative of the complete application, and allows commercial
+  music made with it. synth/lib/libPolySynth.a and libPolyDSP.a are Polyend's
+  proprietary binaries, free for use on Polyend hardware and in personal or DIY
+  projects. The ported pt2-clone replayer is BSD-3-Clause, per NOTICE.md.
+based_on: polyend-tracker/tracker-ce
+distribution: download
+requires_stock: Polyend Tracker+
+install_notes: >-
+  Copy the .ptf from the release to /Firmware/ on the microSD card and run
+  Config > Firmware > Firmware update. The firmware replaces the stock screens,
+  so keep a known-good .ptf for the Tracker+ on the card. The README documents
+  recovery from a build that fails to boot: put that .ptf in /Firmware/ and press
+  the recessed reset button on the bottom of the unit, which flashes it from the
+  card. The bootloader sits in a protected flash region that application builds do
+  not touch.
+brick_risk: false
+tags: [tracker, mod, sampler, fork, ui, protracker]
+versions:
+  - version: PolyTracker0.9.5
+    date: 2026-11-09
+    url: https://github.com/hannibalpeck/PolyTracker/releases/tag/PolyTracker0.9.5
+    notes: Adds VU meters in the second effect lane and octave up and down in the sample editor; the attached file is TrackerPlus_PT_0.9.5.ptf.
+  - version: PolyTracker
+    date: 2026-11-08
+    url: https://github.com/hannibalpeck/PolyTracker/releases/tag/PolyTracker
+    notes: First release, build 0.9.0b.

@@ -1,0 +1,46 @@
+device: m-vave-smk-37
+name: Arctic Scream SMK-37
+summary: >-
+  PolarPatch's Arctic Scream drone and feedback-howl firmware on the SMK-37 Pro, Elite and MKE-P37: the whole FM-1
+  engine on 37 keys, 16 pads, eight knobs, four faders and two wheels, with a browser demo.
+description: >-
+  The FM-1 firmware's 2.1.1 release carried over to the SMK-37 with its sounds, screens, pieces and manual, which still apply.
+  The screen keeps the FM-1's control names and the README and SMK37.md map them to the keyboard's: K5 to K8 are the four
+  knobs, K2 to K4 are select, algorithm and presets, and the keys outside the FM-1's 27 play notes below and above on the selected
+  track. The engine includes the Holvut feedback-loop voice, a drone page of slow random walks, a timed self-playing piece, ice
+  sounds, pure tunings and 38 factory sounds with pictures. The release has one package for each of the three model names. Both the
+  README and the release notes say it has not yet run on an SMK-37 and is for testing, with the first unit expected in December 2026.
+  The project site runs the same code in a browser with an editor and a cheat sheet.
+status: active
+authors:
+- name: PolarPatch
+  url: https://github.com/PolarPatch
+source: https://github.com/PolarPatch/Arctic-Scream-SMK-37
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Same terms as the FM-1 entry: GPL-3.0-only for GR!MM and PolarPatch's changes, GR!MM's msfa file Apache-2.0, its DaisySP and
+  Rings files MIT, and the PolarPatch logo outside the GPL. The SMK-37 board layer is genkigenki's port of Felucca (GPL-3.0). The
+  repository holds a test data file, tests/data/a1.2-saves.bin, and no firmware package.
+homepage: https://polarpatch.github.io/Arctic-Scream-SMK-37/
+based_on: m-vave-fm-1/arctic-scream
+distribution: download
+install_notes: >-
+  Download the package for your model from the release (Pro and Starrykey 37 Play, Elite, or MKE-P37) and install it with
+  tools/fm1_install.py over USB (needs mido and python-rtmidi); a package for another model is refused. SMK37.md asks for a full flash
+  backup first, checking that the text trimdat sits at 0xC1224 in the dump. It says the firmware never writes the calibration,
+  Bluetooth pairing or the chip's key data, that holding OCTAVE- at power-on enters USB rescue, and that M-VAVE's updater (M-UPGRADE)
+  returns the unit to stock.
+brick_risk: false
+tags: [synth-engine, sequencer, fx, reverb, delay, ambient, drone, chords, arpeggiator, editor, emulator, port]
+image:
+  url: https://raw.githubusercontent.com/PolarPatch/Arctic-Scream-SMK-37/main/docs/screens/demo.png
+  alt: "Arctic Scream browser demo with an FM-1 panel layout: knobs, a screen on the HOME page with track 1 ICE WRAITH and volume, cutoff, resonance and FX values, and a 16-key keyboard"
+  credit: PolarPatch
+  source_url: https://github.com/PolarPatch/Arctic-Scream-SMK-37
+  first_party: true
+versions:
+- version: 2.1.1
+  date: 2026-11-15
+  url: https://github.com/PolarPatch/Arctic-Scream-SMK-37/releases/tag/v2.1.1
+  notes: First SMK-37 build, the FM-1 firmware's 2.1.1 engine; packages for SMK-37 Pro, Elite and MKE-P37, for testing.

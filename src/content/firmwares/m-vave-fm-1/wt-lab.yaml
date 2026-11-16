@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+name: WT Lab
+summary: >-
+  Wavetable synthesizer for the FM-1 with FM Lab's controls: eight voices of two oscillators, fourteen morphing tables,
+  two LFOs, filters, effects, an arpeggiator, a phrase looper and 256 user slots.
+description: >-
+  A derivative of FM Lab that replaces the DX7 engine with wavetable oscillators and keeps its screens, four-knob editors,
+  MIDI assignments and storage conventions. Each voice has two interpolated oscillators with table crossfades,
+  amplitude and motion or filter envelopes and a filter. Fourteen tables of eight frames hold the original eight (sine-saw, odd,
+  pulse, formant, organ, glass, hollow and a vocal cycle) and six more cut from CC0 Adventure Kid cycles (strings, reed,
+  e-piano, pluck, chip and grit). Effects are chorus, phaser, delay and reverb. There are eight factory presets, 256 user
+  slots, A/B comparison, mute and solo, USB audio and MIDI, and sixteen MIDI assignments with learn. Audio rendering is
+  split across the FM-1's second core with a fallback to the first. The README says its author tested the 0.5.0-waves
+  build on hardware and that the published 1.0.0 package was rebuilt with a new version label and not re-flashed, and
+  that long-term and worst-case qualification is incomplete. Cross-flashing between FM Lab, WT Lab and stock firmware
+  can overwrite saved sounds and settings.
+status: active
+authors:
+- name: Jake Smith
+  url: https://github.com/jsmith13
+source: https://github.com/jsmith13/wt_lab
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only for WT Lab and for FM Lab, from which it derives. The DX7 core is Apache-2.0 AND
+  GPL-3.0-only, the wavetable interpolation adapted from Braids is MIT AND GPL-3.0-only, the added tables come from
+  CC0 AKWF cycles whose sources and hashes are kept in assets/wavetables/akwf, and the Terminus font is SIL OFL 1.1. The
+  repository holds no firmware package; the release carries the package and a source ZIP.
+based_on: m-vave-fm-1/fm-lab
+distribution: download
+install_notes: >-
+  Download wtlab-1.0.0.fwsc from the release and install it with tools/fm1_install.py over USB (needs mido and
+  python-rtmidi); the installer asks before it writes, and the README says to check that the running identity is
+  FM-1_922 first and not to force an identity mismatch. Mute the output and use stable power. Rolling back does not
+  restore sounds and settings, and older WT builds may reject banks that use the new tables, so keep a backup of anything you need.
+brick_risk: false
+tags: [synth-engine, wavetable, oscillator, lfo, filter, fx, arpeggiator, looper, fork]
+versions:
+- version: 1.0.0
+  date: 2026-11-15
+  url: https://github.com/jsmith13/wt_lab/releases/tag/v1.0.0
+  notes: First public release, with fourteen tables, guarded second-core rendering and 256 user slots.

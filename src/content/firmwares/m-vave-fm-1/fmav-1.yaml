@@ -1,0 +1,56 @@
+device: m-vave-fm-1
+name: FMav-1
+summary: >-
+  Semi-modular monophonic synth with a patchbay of 12 inputs and their normals, a self-oscillating ladder filter, wave folder, sample and
+  hold, four tracks, 90 programs and the MIDI clock as a patch source.
+description: >-
+  Each track has one oscillator with pulse width modulation, a four-pole ladder filter that self-oscillates, an LFO, an ADSR, a VCA, a wave
+  folder, a sample and hold on white noise, a two-channel mixer, an attenuator and a noise source, wired through a patchbay where
+  an input can take any source and a dummy plug breaks its normal. The MIDI clock from USB, TRS or the internal tempo can sync the LFO,
+  drive the arpeggiator and a tempo-synced delay, or be patched into any input as a clock output. Chorus, delay and a plate reverb are shared
+  sends. There is no sequencer; the four tracks answer on MIDI channels, with a CC for every parameter, the cables included, and NRPN.
+  It is built on OberVave 3.3.2, with the ladder filter and the knob decoder following FMini-1. The README says it comes with no warranty
+  and the full guide is in Italian.
+status: active
+authors:
+- name: wootr0p
+  url: https://github.com/wootr0p
+source: https://github.com/wootr0p/fmav1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  README and LICENSING.md give GPL-3.0-only, and the repository's LICENSE is the GPL v3 text. The platform is Leo Kuroshita's Felucca with
+  SLOOP's changes, the base is zvenson's OberVave and Dinghy, and the ladder model and encoder decoder follow Ruppert's FMini-1 (GPL-3.0). The
+  Terminus font is SIL OFL 1.1.
+based_on: m-vave-fm-1/obervave
+distribution: browser-installer
+install_notes: >-
+  Install from the FM-1 Firmware Hub in Chrome or Edge, or write the release's fmav1-0.4.1.fwsc over USB with tools/fm1_install.py. The
+  README says it installs over most Felucca, SLOOP and OberVave based firmwares and keeps their stored programs, and that an FM-1 which
+  does not start comes back by holding OCT- at power-on (update mode) and running the installer again. DISCLAIMER.md says installing is
+  at your own risk.
+brick_risk: false
+tags: [synth-engine, synth, oscillator, fx, chorus, delay, reverb, midi, usb-midi, fork]
+image:
+  url: https://raw.githubusercontent.com/wootr0p/fmav1/main/docs/card.png
+  alt: "FMAV-1 title card: the name FMAV-1 in white on black with a yellow patch cable plugged into a VCA OUT jack and a red light, above the words FM-1 and SEMI-MODULAR - 4 TRACKS"
+  credit: wootr0p
+  source_url: https://github.com/wootr0p/fmav1
+  first_party: true
+versions:
+- version: 0.4.1
+  date: 2026-11-14
+  url: https://github.com/wootr0p/fmav1/releases/tag/v0.4.1
+  notes: Adds a GLOBAL CLOCK source setting (internal, USB or TRS) so a clock sent on both ports is no longer doubled.
+- version: '0.4'
+  date: 2026-11-14
+  url: https://github.com/wootr0p/fmav1/releases/tag/v0.4
+  notes: Adds a white noise generator and patchbay output, and the sample and hold samples the noise when its input has no cable.
+- version: 0.3.1
+  date: 2026-11-14
+  url: https://github.com/wootr0p/fmav1/releases/tag/v0.3.1
+  notes: DUMMY becomes the last choice in each input's list, MIDI channel 1 is the default, and SEQ shows the patchbay and the inputs.
+- version: '0.3'
+  date: 2026-11-13
+  url: https://github.com/wootr0p/fmav1/releases/tag/v0.3
+  notes: Takes the name FMav-1 and its own identity, and adds the MIDI clock as a patch source and REC to switch effects.

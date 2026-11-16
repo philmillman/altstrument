@@ -1,0 +1,49 @@
+device: m-vave-fm-1
+kind: tool
+name: Trap Station Desktop
+summary: >-
+  Windows app for TRAPSTATION OS: FM6 sound editor with live audio, sample converter and sampler, live screen view, and
+  Ableton Live export of the unit's last jam.
+description: >-
+  The editor lists the factory sounds of TRAPSTATION OS 1.1.0.0 with the unit's twelve pages and plays them through the
+  firmware's own sound engine compiled for the computer, so a change is heard at once. The FM-1's keys can play the sound
+  being edited, and DX7 voices and 32-voice banks can be imported and a voice exported. Edited sounds stay on the computer,
+  because the firmware has no transfer for single sounds yet. The converter turns audio files into sample data and the sampler writes
+  them to slots S01 to S32 after reading the unit's sample memory first. The app also mirrors the screen, shows the
+  four scenes of the last jam, and exports an Ableton Live project or one MIDI file per scene. It does not install or
+  back up the firmware; the firmware's browser installer does that.
+status: active
+authors:
+- name: Schlensog Audio Lab
+  url: https://github.com/sog-maker
+source: https://github.com/sog-maker/trapstation-desktop
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states GPL-3.0-only and LICENSE is the GPL v3 text. The FM6 core compiled into the editor's engine is msfa
+  under Apache-2.0, and the web/ modules come from TRAPSTATION OS, which builds on BBL JAM BOX and Felucca, with their
+  notices kept. The repository commits two Windows helper programs, built from the sources named in the README, and the
+  Ableton template. No M-VAVE firmware is included.
+distribution: download
+requires_stock: TRAPSTATION OS 1.1.0.0
+install_notes: >-
+  Run the Windows installer from the releases page (Windows may warn that it is unsigned) or use the zip with the
+  included install script. The README says the only write to the device is the sample memory, after reading it first so
+  the other samples stay, and that the editor writes nothing. The converter needs ffmpeg and the Ableton export needs
+  Python 3.10 or newer. Windows 10 and 11 only.
+brick_risk: false
+tags: [editor, sampler, midi, usb-midi, fm, windows]
+image:
+  url: https://raw.githubusercontent.com/sog-maker/trapstation-desktop/main/renderer/assets/trapstation-logo.png
+  alt: "Trap Station start screen: a four-by-four grid of pads in red, grey and orange above the word TRAPSTATION, the line SAMPLING WORKSTATION and a red progress bar"
+  credit: Schlensog Audio Lab
+  source_url: https://github.com/sog-maker/trapstation-desktop
+  first_party: true
+versions:
+- version: 0.2.0
+  date: 2026-11-16
+  url: https://github.com/sog-maker/trapstation-desktop/releases/tag/v0.2.0
+  notes: Adds the FM6 sound editor for TRAPSTATION OS 1.1.0.0, FM-1 keys playing the editor, DX7 import and export, and Ableton export of 1.1 jams.
+- version: 0.1.1
+  date: 2026-11-15
+  url: https://github.com/sog-maker/trapstation-desktop/releases/tag/v0.1.1

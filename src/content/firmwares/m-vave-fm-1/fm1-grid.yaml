@@ -1,5 +1,5 @@
 device: m-vave-fm-1
-name: FM-1 Grid
+name: FM-1 Firmware Zoo
 kind: tool
 summary: >-
   Desktop app (Rust) that runs up to four emulated FM-1s side by side with any community firmware, shares a MIDI
@@ -16,7 +16,7 @@ description: >-
   For live units, the app probes FM-1-named MIDI ports, and now SMK-37 and Starrykey port names too, with the M-UPGRADE handshake, shows which firmware is running,
   switches their clock and flashes a chosen package. A unit in ROM download mode is also listed, and with Rescue switched on it can be given the m-bootloader, on Linux, macOS (needs sudo) and Windows (needs administrator rights). An About tab shows the release history and licences. The repository also builds fm1-tty, a terminal version of the
   library, flashing, keyboard, metronome and MIDI routing. The emulated panes accept MIDI in only. The author calls it a local tool,
-  not a distributed binary.
+  not a distributed binary, but since v0.1.1 the releases attach Windows, Linux and Flatpak builds.
 status: active
 authors:
 - name: jasonbot
@@ -29,9 +29,9 @@ license_notes: >-
   firmware README says the Rust application code is MIT, so the declarations conflict. The emulator crates are MIT;
   the firmware packages keep their authors' licences (GPL-3.0 for those from the Hub, Apache-2.0 for M-VAVE's stock
   V16 as the README records it, proprietary for FM-1+VA), recorded in firmware/README.md.
-distribution: source-only
+distribution: download
 install_notes: >-
-  Build with Rust 1.91 or newer using cargo run --release; Linux needs ALSA and X11 or Wayland development
+  Since v0.1.1 the release page offers Windows and Linux builds and Flatpaks, so a build is optional. To build, use Rust 1.91 or newer with cargo run --release; Linux needs ALSA and X11 or Wayland development
   packages. The first build downloads any missing firmware packages listed in fm1-performer/firmware/firmwares.json and checks
   their hashes; scripts/firmware.sh edits the list. Flashing a connected unit uses the same update path as other
   installers, so back up first and follow the brick-risk notes on the FM-1 device page. The Rescue option writes a replacement bootloader through the chip's ROM download mode, which the build fetches from the m-bootloader release and checks by hash.
@@ -39,12 +39,16 @@ brick_risk: true
 tags: [emulator, midi, flasher, utility]
 image:
   url: https://raw.githubusercontent.com/jasonbot/fm1-grid/main/screenshot/emulator.png
-  alt: "FM-1 Grid emulator tab: four emulated FM-1 screens in a 2 by 2 grid, an enlarged view of one running SLOOP 2.8.5, the on-screen FM-1 panel and keys, and a MIDI clock bar"
+  alt: "FM-1 Firmware Zoo emulator tab: four emulated FM-1 screens in a 2 by 2 grid, an enlarged view of one running SLOOP 2.8.5, the on-screen FM-1 panel and keys, and a MIDI clock bar"
   credit: jasonbot
   source_url: https://github.com/jasonbot/fm1-grid
   first_party: true
 versions:
-- version: main @ 50b331b
-  date: 2026-11-14
-  url: https://github.com/jasonbot/fm1-grid/commit/50b331bf9d668afcfb3a0b2bae73efa1fcf16ee7
-  notes: No tagged releases; this is the latest commit, which accepts truncated version strings in the identity read back after a flash. The commits before it add an hourly update check with a title-bar update pill, updates through the Windows Store for packaged builds and hosted MSIX and Flatpak backends, shrub.audio as a default firmware feed and a library scroll indicator in fm1-tty. Before that, since the previous row the macOS ROM-download recovery goes through the system's SCSI task client instead of libusb, the devices pane lists units in ROM download mode and, with Rescue on, can write m-bootloader to them, and an About tab shows release history and licences. Earlier, the graphical and terminal apps share one saved record for tempo, Download All and the library device checkboxes, flashing treats Donner Starrykey 37 Play and SMK-37 packages as interchangeable, Esc clears the terminal filter, navigation keys move from the filter into the library, the terminal flash picker shows USB paths to tell identical units apart, and the sidebar screen scales to 3x and 6x. The panel's key LED windows are redrawn.
+- version: v0.1.1
+  date: 2026-11-15
+  url: https://github.com/jasonbot/fm1-grid/releases/tag/v0.1.1
+  notes: First GitHub release page. It attaches Windows x64 and ARM64 executables for the app and the terminal version, Linux x86_64 and aarch64 archives and Flatpaks, and a checksum file; the release is titled Synth Firmware Zoo. Includes an hourly update check, updates through the Windows Store and hosted MSIX and Flatpak backends, shrub.audio as a default firmware feed, an About tab with release history and licences, and Rescue writing of m-bootloader to units in ROM download mode.
+- version: v0.1.0
+  date: 2026-11-15
+  url: https://github.com/jasonbot/fm1-grid/tree/v0.1.0
+  notes: Git tag; no GitHub release page.

@@ -1,6 +1,6 @@
 device: elektron-analog-rytm
 name: Sidecar | Expander
-summary: Raspberry Pi 4B or Pi 5 voice and effects expander for the Analog Rytm MKII, driven from the Rytm through a patched OS 1.74 or 1.73 that you build from your own stock file; the Analog Four MKII has a separate mod.
+summary: Raspberry Pi 4B or Pi 5 voice and effects expander for the Analog Rytm MKII, driven from the Rytm through a patched OS 1.74 (1.73 up to release 0.4.4) that you build from your own stock file; the Analog Four MKII has a separate mod.
 description: >-
   The Pi sits on the Rytm's USB port and plays extra machines on the Rytm's tracks, among them Plaits, DaisySP, JUNO,
   6-operator FM, multisample, wavetable, granular and a sample chopper, along with send and insert effects, master FX, LFOs, a
@@ -24,9 +24,9 @@ license_notes: >-
   under the GPL. No Elektron firmware is included.
 homepage: https://trigcondition.github.io/sidecar-expander/
 distribution: patch-your-own
-requires_stock: Analog Rytm MKII OS 1.74 or 1.73
+requires_stock: Analog Rytm MKII OS 1.74 (1.73 up to release 0.4.4)
 install_notes: >-
-  Build the Rytm firmware from your own stock Analog-Rytm_MKII_OS1.74.syx or OS1.73 file with elekloader or the browser
+  Build the Rytm firmware from your own stock Analog-Rytm_MKII_OS1.74.syx file (OS1.73 for releases up to 0.4.4) with elekloader or the browser
   patcher, send it with Transfer, then set up the Pi from the release's SD card image and set the Rytm's USB CONFIG to
   Overbridge. Back up projects first. To go back, send the stock file of the OS you want the same way. A Rytm that does not
   boot recovers from the startup menu: hold FUNC at power on, press TRIG 4 (OS UPGRADE) and send the stock file over DIN MIDI,
@@ -34,6 +34,10 @@ install_notes: >-
 brick_risk: false
 tags: [expander, synth-engine, effects, sequencer, mutable-instruments-port, raspberry-pi, patcher, overbridge]
 versions:
+  - version: v0.5.0
+    date: 2026-11-16
+    url: https://github.com/trigcondition/sidecar-firmware/releases/tag/v0.5.0
+    notes: Adds the SAMPLER machine, a reworked CHOP, SAMPLE EDIT, FILL, the MIST user machine, the Rytm's own parameters on the XY pad and MIDI learn, two more LFOs per track, user send effects, a new web page with updating from it, and ready-made SD card images. Sidecar voices play about 9 dB lower to stop clipping. Comes with Rytm firmware 0.5.0, which needs OS 1.74.
   - version: v0.4.4
     date: 2026-11-10
     url: https://github.com/trigcondition/sidecar-firmware/releases/tag/v0.4.4

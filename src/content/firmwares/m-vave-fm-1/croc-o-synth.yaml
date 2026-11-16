@@ -7,10 +7,11 @@ description: >-
   Written for a child, the firmware maps synth ideas to a crocodile: EDIT is Teeth (wave shape, unison rows and detune), ENV
   is Open, Relax, Hold and Close, LFO is the tail wag, the ALGORITHM knob is the filter, and OCT selects one of three
   sizes. Five presets and a saved My Croc sound are chosen with the PRESETS knob, the croc is named on first start, and up to
-  four notes play at once. The effects and sequencer lessons are not built yet in the firmware. The code is new, written
+  four notes play at once. FX has swamp echo and cave reverb knobs, and a SEQ page plays eight lily pads with a note on each. The code is new, written
   against fm1-base's interface, and the PROVENANCE file lists what was read from Felucca for hardware facts only. A browser
-  prototype of the panel is included. The changelog reports builds 1 to 4 installed on a real FM-1 and build 5 not yet reported.
-  Builds are produced by a GitHub Actions workflow rather than releases.
+  prototype of the panel is included. The changelog reports builds 1 to 6 installed on a real FM-1 and builds 7 and 8 not yet
+  reported. A GitHub Actions workflow builds each main commit and replaces one rolling release named latest, which holds the
+  installer package.
 status: active
 authors:
 - name: goose
@@ -22,10 +23,11 @@ license_notes: >-
   The README states PolyForm Noncommercial 1.0.0 for the code (LICENSE.md) and CC BY-NC-SA 4.0 for art, screens, names and text
   (LICENSE-ART.md). The fm1-base submodule and the files adapted from its template are MPL-2.0.
 homepage: https://github.com/Goosegoosegoosegoosegoose/croc-o-synth
-distribution: source-only
+distribution: download
 install_notes: >-
-  Build with ./build.sh, or download the package from a run of the Build firmware workflow in the Actions tab, then follow
-  docs/FLASHING.md. The changelog says every build reports the same development identity, FM-1_5800.
+  Download croc-o-synth-install.zip from the rolling latest release, or take the package from a run of the Build firmware
+  workflow in the Actions tab, or build with ./build.sh, then follow docs/FLASHING.md; on Windows tools/update-croc.bat
+  fetches the latest release and runs the installer. The changelog says every build reports the same development identity, FM-1_5800.
 brick_risk: false
 tags: [synth-engine, education, kids, fork]
 image:
@@ -35,7 +37,7 @@ image:
   source_url: https://github.com/Goosegoosegoosegoosegoose/croc-o-synth
   first_party: true
 versions:
-- version: main @ a4bcdea
+- version: main @ 1bb9a8d
   date: 2026-11-15
-  url: https://github.com/Goosegoosegoosegoosegoose/croc-o-synth/commit/a4bcdead70a45925b5681b337c7bf1b0e3b93255
+  url: https://github.com/Goosegoosegoosegoosegoose/croc-o-synth/commit/1bb9a8d32a37df79538becd0a30edb2ed3bf6c90
   notes: No tagged releases; this is the latest commit.

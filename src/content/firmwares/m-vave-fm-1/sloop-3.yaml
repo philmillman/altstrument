@@ -1,0 +1,52 @@
+device: m-vave-fm-1
+name: SLOOP 3
+summary: >-
+  Public beta of a from-scratch rewrite of the SLOOP groovebox: five tracks, 13 engines in 32-bit float, 153 sounds, 46 drum
+  kits, a 128-step sequencer with piano roll, 27 punch-in effects, USB audio and a web editor; installs through m-bootloader.
+description: >-
+  A separate line from SLOOP 2.8, with its own repository, installer and releases. The author says almost every line is
+  new: the sound engine, the sequencer and the interface were rewritten, while the values of the 153 factory sounds, kits and
+  presets come from SLOOP 2.8.5. Audio runs in 64-sample blocks on both cores, with 32 voices plus 8 for releases. The
+  engines are analog, digital, phase, lo-fi, trio, wheel, voice, noise, sample, grain, six-operator FM, physical models
+  and a new slice engine that cuts a break into slices, one per key. The sequencer has five tracks, up to 128 steps and 8
+  patterns per track, step conditions, parameter locks, eight levels of undo, a note editor and a song mode. It adds per-track
+  inserts, a battery line, six visualisers, USB audio and MIDI, and a web editor that can turn a dropped breakbeat into slices
+  or a drum kit. At first start it reads SLOOP 2.8's projects, presets, samples and settings without writing them. It builds
+  with the pi32v2 LLVM toolchain and needs nothing from JieLi's SDK. The releases are flagged as a public beta that is still being tested on real units.
+status: active
+authors:
+- name: isod89
+  url: https://github.com/isod89
+source: https://github.com/isod89/sloop3-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL-3.0 text and the README says GPL-3.0. The README states the code is new, written for this
+  project, with SLOOP 2.8.5's values for the factory material. The factory sample bank is CC0 (VCSL, VSCO-2 Community Edition and
+  Sonic Pi samples) and the screen fonts are Inter under SIL OFL 1.1. The repository holds that sample bank (assets/samples.bin) and no firmware package.
+homepage: https://isod89.github.io/sloop3-fm1/
+based_on: m-vave-fm-1/sloop
+distribution: browser-installer
+install_notes: >-
+  Installs only through m-bootloader's MIDI mode, so m-bootloader must be on the unit first: the installer page walks through
+  installing it with M-Flasher (USB download mode, full flash backup, then fm1-uboot.boot), or with fm1-uboot.fwsc in M-VAVE's
+  M-UPGRADE on a unit still on stock. The page then connects, backs up the whole 1 MB flash and installs, reading and checking the
+  package before it erases anything. Going back to SLOOP 2.8 means restoring that backup with M-Flasher. The README says
+  m-bootloader opens a recovery menu if an install is interrupted, and USB download mode remains as a fallback.
+brick_risk: true
+tags: [sequencer, synth-engine, drums, sampler, fx, performance, usb-audio, midi, fm, physical-modeling, editor]
+image:
+  url: https://raw.githubusercontent.com/isod89/sloop3-fm1/main/docs/screens.png
+  alt: "Six SLOOP 3 screens: a five-track list with four knobs, a PLUCK sound grid, a drum step grid, a piano roll, a punch-in effects grid and a spectrum display"
+  credit: isod89
+  source_url: https://github.com/isod89/sloop3-fm1
+  first_party: true
+versions:
+- version: 3.3.7-beta
+  date: 2026-11-16
+  url: https://github.com/isod89/sloop3-fm1/releases/tag/v3.3.7-beta
+  notes: Pre-release. Makes all tracks start a new pattern together, stops recorded loops from stacking chords, records on the steps by default and accepts the UC25HQ80 flash chip of newer FM-1s (not yet tried on such a unit).
+- version: 3.3.6-beta
+  date: 2026-11-16
+  url: https://github.com/isod89/sloop3-fm1/releases/tag/v3.3.6-beta
+  notes: Pre-release. Adds the breakbeat slicer in the web editor, key lights that guide menus, six visualisers and a guided installer page.

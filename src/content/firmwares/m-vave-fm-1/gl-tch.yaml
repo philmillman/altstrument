@@ -1,0 +1,53 @@
+device: m-vave-fm-1
+name: GL!TCH
+summary: >-
+  Neon-noir groovebox derived from GR!MM: four tracks on seven sources, 44 factory sounds, 16 scales including Japanese and whole-tone modes,
+  tape and reverb effects, a 64-step sequencer per track and a browser emulator and editor.
+description: >-
+  The engine, sequencer, song mode, arpeggiator, one-key chords, generate mode, tape, grain, delay and MIDI are GR!MM's, and GL!TCH changes
+  the sound set and look. The seven sources are a detuned virtual analog voice, an FM voice with metallic feedback, a sample source with
+  acid-rain and telemetry recordings, a three-band formant voice, tonewheel drones, a Karplus-Strong resonator and phase distortion. The keys
+  snap to one of 16 scales, and the 44 factory sounds sit in nine categories with sci-fi names. The reverb has six combs, three allpass
+  filters and an infinite freeze, and the screens are a pixel-art glitched landscape. The project page runs the real firmware in the browser, and
+  its editor works on sounds and samples. The README says 2.0 was tested on a real FM-1, installed from another firmware and back, and
+  that 2.0.2 had not yet been tested on a unit.
+status: active
+authors:
+- name: saulofilho
+  url: https://github.com/saulofilho
+source: https://github.com/saulofilho/glitch
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only, kept from GR!MM, Dinghy, Felucca and SLOOP. msfa is Apache-2.0, the DaisySP and Rings parts are MIT, the
+  four factory samples are CC0 1.0 from GR!MM, the choir wavetables come from VocalSet (CC BY 4.0) and the fonts are SIL OFL 1.1. No
+  M-VAVE firmware image is in the repository.
+homepage: https://saulofilho.github.io/glitch/
+based_on: m-vave-fm-1/grimm
+distribution: download
+install_notes: >-
+  Download glitch-2.0.2.fwsc from the release and install it over USB with tools/fm1_install.py (needs mido and python-rtmidi); the
+  installer asks before it writes. docs/BUILDING.md covers building it. The README says 2.0 installed from COQUÍ, left again and installed back
+  on a real FM-1, and that an interrupted update, the official V15 and the screens and sound were not tested. From 2.0.2 it has its own
+  identity and accepts the newer FM-1 flash chip. The author states that installing firmware is at your own risk.
+brick_risk: false
+tags: [groovebox, synth-engine, sequencer, sampler, fx, reverb, delay, chords, arpeggiator, editor, emulator, midi, fork]
+image:
+  url: https://raw.githubusercontent.com/saulofilho/glitch/main/docs/screens/home.png
+  alt: "GL!TCH HOME screen in pixel art: a glitched landscape of mint, lemon and violet bands over navy hills with track markers 1 to 4, above four track tiles T1 to T4 showing VA, level bars and 079"
+  credit: saulofilho
+  source_url: https://github.com/saulofilho/glitch
+  first_party: true
+versions:
+- version: 2.0.2
+  date: 2026-11-15
+  url: https://github.com/saulofilho/glitch/releases/tag/v2.0.2
+  notes: Gives the firmware its own identity and accepts the newer FM-1 flash chip.
+- version: 2.0.1
+  date: 2026-11-15
+  url: https://github.com/saulofilho/glitch/releases/tag/v2.0.1
+  notes: The changelog says this tag was set one commit early and its package is 2.0's code under another number.
+- version: '2.0'
+  date: 2026-11-15
+  url: https://github.com/saulofilho/glitch/releases/tag/v2.0
+  notes: New landscape look, a project hub with an emulator and editor, and a manual.

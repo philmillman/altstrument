@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+also_devices: [m5stack-cardputer, m5stack-sticks3]
+name: FM-1 Flip
+kind: tool
+summary: >-
+  Firmware for M5Stack StickS3, Cardputer and Cardputer ADV that browses Firmware Hub listings, downloads packages and installs them
+  on an FM-1 over USB without a computer, with optional full-flash backups.
+description: >-
+  The handheld keeps a bundled snapshot of The Firmware Hub's catalogue, refreshed over Wi-Fi at most once a day, with search,
+  filters and sorting by popularity. A package is downloaded from its maker's release and checked for structure and hashes,
+  then installed after a long-press confirmation. The writer refuses an unknown FM-1 or unknown compatibility, preserves the
+  boot and calibration sectors, writes only changed application sectors and reads them back. A backup of the full 1 MiB
+  flash is a separate action and is not required for an install; a restore makes a rollback copy first and
+  is not a bootloader replacement. If the FM-1 does not enumerate over USB, the unit is switched off and on to use the chip's
+  ROM boot-key route, with USB code adapted from the Synth Rescue project. A local web page served from the handheld manages
+  files and backups. StickS3 uses internal storage and the Cardputers a microSD card. The README calls it a development
+  build whose USB, power, backup and install paths still need hardware validation.
+status: active
+authors:
+- name: chrisdiana
+  url: https://github.com/chrisdiana
+source: https://github.com/chrisdiana/fm1-flip
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL v3 text and the README says project code is GPL-3.0-only. The USB transport is MIT code copied from
+  jvitkauskas/cardputer-synth-rescue, kept under third_party/ with its notices, and the package and handshake code follows
+  fm1buddy (GPL-3.0-only). That folder also holds the rescue project's two 16 KiB boot images, which are m-bootloader
+  builds and not M-VAVE firmware, and the repository bundles no M-VAVE package.
+distribution: download
+install_notes: >-
+  Download the -m5launcher.bin for your exact board from the releases page and install it with M5Launcher, or flash the
+  -factory.bin at offset 0x0. The release is marked a development prerelease and StickC models are unsupported. The README
+  says to use a verified data cable and power arrangement, and that the StickS3 needs measured USB power first. An install
+  leaves the boot and calibration sectors alone and makes no backup unless Create backup is run first.
+brick_risk: false
+tags: [flasher, backup, handheld, usb-host, m5stack]
+versions:
+- version: 0.1.0
+  date: 2026-11-16
+  url: https://github.com/chrisdiana/fm1-flip/releases/tag/v0.1.0
+  notes: Development prerelease and the only release so far; builds for StickS3, Cardputer and Cardputer ADV.

@@ -1,0 +1,43 @@
+device: rossum-electro-music-assimil8or
+name: A8M (Assimil8or Machines)
+summary: Replacement Assimil8or firmware that lets any channel run a DSP drum or synth voice instead of a sample, and adds Tallent Edition effects, two extra reverbs and a calibration editor.
+description: >-
+  A8M keeps the stock sampler and its preset format, so existing presets load unchanged. Each channel of a preset can
+  be a sampler or a voice picked from the TRX, EFM, PI, GND or MNM families, which give Machinedrum-style drum voices
+  and voices ported from the MNMD project, with pitch, level, pan, bit depth, an envelope and CV routes. The effects
+  from the Tallent Edition (EQ, filter, compressor, sends, reverb, delay, grain and Time Lock) are built in, with two
+  more reverb engines and a start delay per channel. The firmware also adds an editable calibration table, linked
+  stereo pairs and an audio health screen with a log. MIDI over the Locutus link and stock's card utilities are not
+  supported yet, and gate-to-sound latency is about 1.5 ms where stock is about 0.2 ms. The project states it is
+  independent of Rossum and contains none of Rossum's code.
+status: active
+authors:
+  - name: delstardotstar
+    url: https://github.com/delstardotstar
+source: https://github.com/delstardotstar/a8m
+source_status: open
+license: MIT
+license_notes: >-
+  LICENSE is the MIT license for the project's own code. Vendored code keeps its own terms: mdkit (CC0), OP-XY-MNMD and
+  open-xy headers (MIT), the Tallent Edition DSP by Brandon Tallent (MIT) and FatFs (its BSD-style licence). GitHub
+  reports no licence for the repository because of these mixed files.
+based_on: rossum-electro-music-assimil8or/tallent-edition
+distribution: download
+install_notes: >-
+  Copy the release's app file to the root of the front microSD card and run Utility > Load Software on the stock
+  firmware, then reboot as the screen asks. Later updates use the firmware's own Load Software, which verifies the file,
+  keeps the previous version as app.bak on the module's internal card and restarts by itself. To return to stock, load
+  Rossum's app file from the card the same way; Load Software recognises stock builds.
+brick_risk: false
+tags: [sampler, drums, synth-engine, reverb, calibration, eurorack, cv]
+image:
+  url: https://raw.githubusercontent.com/delstardotstar/a8m/main/docs/images/gallery.png
+  alt: Eight A8M screens on black, showing a channel list with TRX, EFM and PI voices, a voice family picker, a model list, a pitch page, two reverb pages, a calibration table and an audio health page
+  credit: delstardotstar
+  source_url: https://github.com/delstardotstar/a8m#readme
+  first_party: true
+versions:
+  - version: v2026.4.0
+    date: 2026-11-15
+    url: https://github.com/delstardotstar/a8m/releases/tag/v2026.4.0
+    notes: First public release; the attached file is app.

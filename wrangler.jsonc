@@ -19,9 +19,20 @@
     "GITHUB_REPO": "philmillman/altstrument",
     // Frontend hostnames Turnstile's siteverify may report. Never localhost here;
     // local development overrides this in .dev.vars.
-    "TURNSTILE_HOSTNAMES": "altstrument.org"
+    "TURNSTILE_HOSTNAMES": "altstrument.org",
+    // Sender for private requests ("Email private request" on /request).
+    "REQUEST_EMAIL_FROM": "requests@altstrument.org"
   },
-  // Secrets (wrangler secret put): GITHUB_ISSUES_TOKEN, TURNSTILE_SECRET. See .dev.vars.example.
+  // Secrets (wrangler secret put): GITHUB_ISSUES_TOKEN, TURNSTILE_SECRET, and
+  // PRIVATE_REQUEST_TO, the inbox private requests go to. It must be a verified
+  // Email Routing destination, and stays a secret so it isn't published here.
+  // See .dev.vars.example.
+  "send_email": [
+    {
+      "name": "REQUEST_EMAIL",
+      "allowed_sender_addresses": ["requests@altstrument.org"]
+    }
+  ],
   "ratelimits": [
     {
       // Request form submissions: 5 a minute per client IP.

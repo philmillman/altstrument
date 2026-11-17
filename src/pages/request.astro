@@ -19,8 +19,8 @@ const field = 'mt-1 w-full rounded border border-line-strong bg-surface px-3 py-
       by email.
     </p>
     <p class="text-sm text-muted">
-      Everything you write here is posted publicly on GitHub, unless you use "Email private request", which sends it to{' '}
-      <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> instead. You can manually create a GitHub issue{' '}
+      Everything you write here is posted publicly on GitHub, unless you use "Email private request", which sends it
+      privately to the maintainer instead. You can also write to <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. You can manually create a GitHub issue{' '}
       <a id="github-fallback" href={`${REPO_URL}/issues/new/choose`} rel="noopener">here</a> if you prefer.
     </p>
   </div>
@@ -86,6 +86,12 @@ const field = 'mt-1 w-full rounded border border-line-strong bg-surface px-3 py-
       <input id="contact" name="contact" type="text" maxlength="200" class={field} placeholder="A name, handle, Discord or forum profile" />
     </div>
 
+    <div>
+      <label for="email" class="block text-sm font-medium">Your email <span class="font-normal text-muted">(optional, private)</span></label>
+      <input id="email" name="email" type="email" maxlength="200" autocomplete="email" class={field} placeholder="you@example.com" />
+      <p class="mt-1 text-sm text-muted">Only sent with "Email private request", so the maintainer can reply. Never posted publicly.</p>
+    </div>
+
     <!-- Honeypot: hidden from people and screen readers; bots tend to fill it. -->
     <div aria-hidden="true" class="absolute -left-[10000px] h-px w-px overflow-hidden">
       <label for="website">Website</label>
@@ -96,7 +102,7 @@ const field = 'mt-1 w-full rounded border border-line-strong bg-surface px-3 py-
 
     <div class="flex flex-wrap items-center gap-3">
       <button type="submit" class="rounded bg-accent px-4 py-2 font-medium text-bg hover:bg-accent-hover disabled:opacity-60">Open public request</button>
-      <a id="email-request" href={`mailto:${CONTACT_EMAIL}`} class="rounded border border-line-strong bg-surface px-4 py-2 font-medium text-fg no-underline hover:bg-surface-2 hover:text-fg">Email private request</a>
+      <button type="button" id="email-request" class="rounded border border-line-strong bg-surface px-4 py-2 font-medium text-fg hover:bg-surface-2 disabled:opacity-60">Email private request</button>
     </div>
     <p id="request-status" class="min-h-[1.5em]" role="status" aria-live="polite"></p>
   </form>
@@ -106,7 +112,7 @@ const field = 'mt-1 w-full rounded border border-line-strong bg-surface px-3 py-
       var form = document.getElementById('request-form');
       var status = document.getElementById('request-status');
       var fallback = document.getElementById('github-fallback');
-      var button = form.querySelector('button[type=submit]');
+      var buttons = form.querySelectorAll('button');
       var widgetId = null;
 
       function type() { return form.querySelector('input[name=type]:checked').value; }
@@ -145,7 +151,6 @@ const field = 'mt-1 w-full rounded border border-line-strong bg-surface px-3 py-
           if (links.length) p.set('links', links.join('\n'));
         }
         fallback.href = REPO_URL + '/issues/new?' + p.toString();
-        updateEmail();
       }
 
       // ?type=update&entry=https://altstrument.org/... from the links on entry pages.
@@ -167,8 +172,6 @@ const field = 'mt-1 w-full rounded border border-line-strong bg-surface px-3 py-
         else status.appendChild(msg);
       }
 
-      var TYPE_TITLES = { add: 'New', update: 'Update', remove: 'Remove' };
-
       // Problems a request must not have, whichever way it is sent.
       function problem() {
         var t = type();
@@ -178,61 +181,23 @@ const field = 'mt-1 w-full rounded border border-line-strong bg-surface px-3 py-
         return '';
       }
 
-      // Same title the Worker gives the GitHub issue (worker/index.ts entryName).
-      function title() {
-        var t = type();
-        var name;
-        if (t === 'add') name = [val('project'), val('device') && 'for ' + val('device')].filter(Boolean).join(' ') || 'new entry';
-        else {
-          try { name = new URL(val('entry')).pathname.split('/').filter(Boolean).slice(1).join('/') || val('entry'); }
-          catch (e) { name = val('entry'); }
-        }
-        return '[' + TYPE_TITLES[t] + ']: ' + name;
-      }
-
-      // Plain-text version of the issue body, for the private email.
-      function emailBody() {
-        var t = type();
-        var parts = [];
-        function add(h, v) { if (v) parts.push(h + ':\n' + v); }
-        if (t !== 'add') add('altstrument page', val('entry'));
-        if (t === 'add') { add('Device', val('device')); add('Firmware or tool', val('project')); }
-        add('Details', val('details'));
-        add('Links', val('links').split(/\s+/).filter(Boolean).join('\n'));
-        if (t === 'remove') add('Exclude permanently', form.elements.namedItem('exclude').checked ? 'Yes' : 'No');
-        add('Author', form.elements.namedItem('author').checked ? 'Yes, I am one of the authors.' : 'No');
-        add('Contact', val('contact'));
-        return parts.join('\n\n') + '\n\n--\nSent from the request form on altstrument.org';
-      }
-
-      // A real mailto link, kept in step with the form, so it also works from a context menu.
-      var emailLink = document.getElementById('email-request');
-      function updateEmail() {
-        emailLink.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(title()) + '&body=' + encodeURIComponent(emailBody());
-      }
-      emailLink.addEventListener('click', function (ev) {
-        var p = problem();
-        if (p) {
-          ev.preventDefault();
-          return setStatus(p, 'error');
-        }
-        updateEmail();
-        setStatus('Your email app should open with the request filled in. If nothing happens, write to ' + EMAIL + '.', 'ok');
-      });
-
       window.onTurnstileLoad = function () {
         widgetId = window.turnstile.render('#turnstile', { sitekey: SITEKEY, action: 'request', theme: 'auto' });
       };
 
-      form.addEventListener('submit', function (ev) {
-        ev.preventDefault();
+      // channel: 'issue' (public GitHub issue) or 'email' (private email to the maintainer).
+      function send(channel) {
         var t = type();
         var p = problem();
         if (p) return setStatus(p, 'error');
+        if (channel === 'email' && val('email') && !form.elements.namedItem('email').checkValidity()) {
+          return setStatus('Your email address does not look right.', 'error');
+        }
         var token = widgetId !== null && window.turnstile ? window.turnstile.getResponse(widgetId) : '';
         if (!token) return setStatus('Please wait for the spam check above to finish, then send again.', 'error');
 
         var body = {
+          channel: channel,
           type: t,
           entry: t === 'add' ? '' : val('entry'),
           device: t === 'add' ? val('device') : '',
@@ -242,10 +207,12 @@ const field = 'mt-1 w-full rounded border border-line-strong bg-surface px-3 py-
           author: form.elements.namedItem('author').checked,
           exclude: t === 'remove' && form.elements.namedItem('exclude').checked,
           contact: val('contact'),
+          // The private address only ever travels with a private request.
+          email: channel === 'email' ? val('email') : '',
           website: val('website'),
           token: token,
         };
-        button.disabled = true;
+        buttons.forEach(function (b) { b.disabled = true; });
         setStatus('Sending…');
         fetch('/api/request', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
           .then(function (res) {
@@ -262,9 +229,18 @@ const field = 'mt-1 w-full rounded border border-line-strong bg-surface px-3 py-
               setStatus(frag, 'ok');
               form.reset();
               showFor();
+            } else if (r.res.ok && r.data.emailed) {
+              setStatus(
+                'Thanks! Your request was sent privately' +
+                  (body.email ? '; replies will go to ' + body.email + '.' : '. Without an email address there is no way to reply to you.'),
+                'ok',
+              );
+              form.reset();
+              showFor();
             } else if (r.res.ok && r.data.dryRun) {
-              setStatus('Dry run: the issue was not created. "' + r.data.issue.title + '"', 'ok');
-              window.lastDryRun = r.data.issue;
+              var what = r.data.issue ? 'the issue was not created. "' + r.data.issue.title + '"' : 'the email was not sent. "' + r.data.email.subject + '"';
+              setStatus('Dry run: ' + what, 'ok');
+              window.lastDryRun = r.data.issue || r.data.email;
             } else if (r.res.ok) {
               setStatus('Thanks, your request was sent.', 'ok');
             } else {
@@ -272,14 +248,20 @@ const field = 'mt-1 w-full rounded border border-line-strong bg-surface px-3 py-
             }
           })
           .catch(function () {
-            setStatus('Not sent: the network request failed. Try again, or use "Email private request".', 'error');
+            setStatus('Not sent: the network request failed. Try again, or write to ' + EMAIL + '.', 'error');
           })
           .finally(function () {
-            button.disabled = false;
+            buttons.forEach(function (b) { b.disabled = false; });
             // Tokens are single-use: get a fresh one for any retry or new request.
             if (widgetId !== null && window.turnstile) window.turnstile.reset(widgetId);
           });
+      }
+
+      form.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        send('issue');
       });
+      document.getElementById('email-request').addEventListener('click', function () { send('email'); });
 
       // Last, once every helper above is defined.
       showFor();

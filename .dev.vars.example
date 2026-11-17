@@ -8,8 +8,14 @@ TURNSTILE_SECRET=1x0000000000000000000000000000000AA
 TURNSTILE_ALLOW_TEST_KEYS=1
 TURNSTILE_HOSTNAMES=example.com,localhost,127.0.0.1
 
-# 1 = return the issue the form would create instead of posting it to GitHub.
+# 1 = return the issue or email the form would create instead of sending it.
+# With it unset, `wrangler dev` still doesn't send real mail: it simulates the
+# send_email binding and writes the message to a local file.
 REQUEST_DRY_RUN=1
+
+# Inbox for "Email private request". In production this is a secret holding a
+# verified Email Routing destination address.
+PRIVATE_REQUEST_TO=you@example.com
 
 # Only needed with REQUEST_DRY_RUN unset: a fine-grained token for this
 # repository with Issues read/write. Prefer a throwaway test repository

@@ -3,8 +3,9 @@
  * `run_worker_first` in wrangler.jsonc). Everything else is served from dist/
  * without running this code.
  *
- * /api/request turns the request form (src/pages/request.astro) into a GitHub
- * issue, so people without a GitHub account can ask for an entry to be added,
+ * /api/request turns the request form (src/pages/request.astro) into a public
+ * GitHub issue or, with `channel: "email"`, a private email to the maintainer,
+ * so people without a GitHub account can ask for an entry to be added,
  * updated or removed. In order:
  *   1. POST with a same-origin Origin header, JSON body under MAX_BODY bytes;
  *   2. per-IP rate limit (REQUEST_LIMITER binding);
@@ -12,11 +13,16 @@
  *   4. Turnstile siteverify: success, action "request", and a hostname in
  *      TURNSTILE_HOSTNAMES. Results from Cloudflare's testing keys are refused
  *      unless TURNSTILE_ALLOW_TEST_KEYS=1 (local development only);
- *   5. POST /repos/{GITHUB_REPO}/issues with GITHUB_ISSUES_TOKEN.
- * REQUEST_DRY_RUN=1 stops before step 5 and returns the issue it would create.
+ *   5. issue: POST /repos/{GITHUB_REPO}/issues with GITHUB_ISSUES_TOKEN;
+ *      email: send through the REQUEST_EMAIL binding (Cloudflare Email Service)
+ *      from REQUEST_EMAIL_FROM to PRIVATE_REQUEST_TO, with the requester's
+ *      address, if given, as Reply-To. The recipient only ever comes from that
+ *      secret, never from the request, so the form can't be used as a relay.
+ * REQUEST_DRY_RUN=1 stops before step 5 and returns what it would create or send.
  *
  * Secrets: GITHUB_ISSUES_TOKEN (fine-grained PAT, this repository only, Issues:
- * read and write), TURNSTILE_SECRET. See .dev.vars.example.
+ * read and write), TURNSTILE_SECRET, PRIVATE_REQUEST_TO (a verified Email
+ * Routing destination; kept out of this public repository). See .dev.vars.example.
  */
 
 interface Env {
@@ -28,7 +34,14 @@ interface Env {
   TURNSTILE_SECRET?: string;
   TURNSTILE_ALLOW_TEST_KEYS?: string;
   REQUEST_DRY_RUN?: string;
+  REQUEST_EMAIL?: SendEmail;
+  REQUEST_EMAIL_FROM: string;
+  PRIVATE_REQUEST_TO?: string;
 }
+
+const CHANNELS = ['issue', 'email'] as const;
+type Channel = (typeof CHANNELS)[number];
+const EMAIL_RE = /^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]+$/;
 
 const ROUTE = '/api/request';
 const MAX_BODY = 16 * 1024;
@@ -61,6 +74,10 @@ interface RequestFields {
   exclude: boolean;
   /** How to reach the requester; shown publicly on the issue. */
   contact?: string;
+  /** Where the request goes: a public GitHub issue or a private email. */
+  channel: Channel;
+  /** Requester's email for Reply-To (email channel only; never posted publicly). */
+  email?: string;
 }
 
 class HttpError extends Error {
@@ -118,6 +135,10 @@ function parseFields(body: unknown): RequestFields {
   const details = optionalText(b.details, 'Details', 5000);
   if (!details || details.length < 10) throw new HttpError(400, 'please describe the request in a sentence or two');
   const contact = optionalText(b.contact, 'Contact', 200);
+  const channel = (b.channel ?? 'issue') as string;
+  if (!(CHANNELS as readonly string[]).includes(channel)) throw new HttpError(400, 'channel must be issue or email');
+  const email = channel === 'email' ? optionalText(b.email, 'Your email', 200) : undefined;
+  if (email && !EMAIL_RE.test(email)) throw new HttpError(400, 'your email address does not look right');
 
   if (type === 'add' && !device && !project) throw new HttpError(400, 'name the device or the firmware to add');
   if (type !== 'add' && !entry) throw new HttpError(400, 'link the altstrument page this is about');
@@ -132,6 +153,8 @@ function parseFields(body: unknown): RequestFields {
     author: b.author === true,
     exclude: type === 'remove' && b.exclude === true,
     contact,
+    channel: channel as Channel,
+    email,
   };
 }
 
@@ -256,6 +279,52 @@ async function createIssue(env: Env, issue: ReturnType<typeof buildIssue>): Prom
   return { number: data.number, url: data.html_url };
 }
 
+// ---- private email -----------------------------------------------------------------------
+
+/** Plain-text version of the request. No markdown or HTML, so nothing to neutralize but line breaks in the subject. */
+function buildEmail(f: RequestFields): { subject: string; text: string; replyTo?: string } {
+  const flat = (s: string) => s.replace(/[\r\n\t]+/g, ' ').trim();
+  const subject = `[Private ${TYPE_INFO[f.type].title.toLowerCase()}]: ${flat(entryName(f)).slice(0, 100)}`;
+  const parts: string[] = [];
+  const add = (heading: string, text: string | undefined) => {
+    if (text) parts.push(`${heading}:\n${text}`);
+  };
+  add('Request', TYPE_INFO[f.type].title);
+  add('altstrument page', f.entry);
+  add('Device', f.device);
+  add('Firmware or tool', f.project);
+  add('Details', f.details);
+  add('Links', f.links.join('\n'));
+  if (f.type === 'remove') add('Exclude permanently', f.exclude ? 'Yes: add it to src/data/exclusions.yaml.' : 'No: remove the entry only.');
+  add('Author', f.author ? 'Says they are one of the authors.' : 'Not an author.');
+  add('Contact', f.contact);
+  add('Reply to', f.email ?? 'No email given; reply is not possible.');
+  parts.push('--\nSent privately through the request form on altstrument.org. Nothing was posted to GitHub.');
+  return { subject, text: parts.join('\n\n'), replyTo: f.email };
+}
+
+async function sendEmail(env: Env, mail: ReturnType<typeof buildEmail>): Promise<void> {
+  if (!env.REQUEST_EMAIL || !env.PRIVATE_REQUEST_TO || !env.REQUEST_EMAIL_FROM) {
+    throw new HttpError(503, 'private requests are not configured yet; please email hello@altstrument.org');
+  }
+  try {
+    await env.REQUEST_EMAIL.send({
+      from: { email: env.REQUEST_EMAIL_FROM, name: 'altstrument request form' },
+      to: env.PRIVATE_REQUEST_TO,
+      subject: mail.subject,
+      text: mail.text,
+      ...(mail.replyTo ? { replyTo: mail.replyTo } : {}),
+    });
+  } catch (e) {
+    const code = (e as { code?: string }).code ?? (e as Error).name;
+    console.error(`Request email failed: ${code} ${(e as Error).message}`);
+    if (code === 'E_RATE_LIMIT_EXCEEDED' || code === 'E_DAILY_LIMIT_EXCEEDED') {
+      throw new HttpError(429, 'too many emails right now; please try again later or email hello@altstrument.org');
+    }
+    throw new HttpError(502, 'the email could not be sent; please email hello@altstrument.org directly');
+  }
+}
+
 // ---- handler --------------------------------------------------------------------------
 
 async function handleRequest(request: Request, env: Env): Promise<Response> {
@@ -284,6 +353,12 @@ async function handleRequest(request: Request, env: Env): Promise<Response> {
   if (typeof body.website === 'string' && body.website.trim()) return json(200, { ok: true });
 
   await verifyTurnstile(env, body.token, ip);
+  if (fields.channel === 'email') {
+    const mail = buildEmail(fields);
+    if (env.REQUEST_DRY_RUN === '1') return json(200, { ok: true, dryRun: true, email: mail });
+    await sendEmail(env, mail);
+    return json(200, { ok: true, emailed: true });
+  }
   const issue = buildIssue(fields);
   if (env.REQUEST_DRY_RUN === '1') return json(200, { ok: true, dryRun: true, issue });
   const created = await createIssue(env, issue);

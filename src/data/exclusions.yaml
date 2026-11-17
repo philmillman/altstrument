@@ -1,0 +1,22 @@
+# Projects, authors and sites that asked not to be listed on altstrument.
+#
+# An entry here is permanent:
+#   - pnpm validate fails if any catalog entry links to it (source, homepage,
+#     authors, image, video), so it can't be re-added by accident;
+#   - the /discover gather never suggests it again;
+#   - the fetchers (src/lib/polite-fetch.ts) and the WebFetch hook refuse to
+#     request it at all.
+#
+# Matching (src/lib/url-match.ts):
+#   url: https://github.com/jane/fw   one repository (and everything under it)
+#   url: https://github.com/jane      every repository of an owner
+#   url: https://example.com/fw       a page and everything below it
+#   url: example.com                  a whole site, including its subdomains
+#
+# Fields: url (required), reason, date (YYYY-MM-DD), issue (link to the request),
+# except (URLs under `url` that may still be listed or fetched).
+#
+# Removal requests come in through https://altstrument.org/request ("Exclude
+# permanently") or by email; see CONTRIBUTING.md.
+
+exclusions: []

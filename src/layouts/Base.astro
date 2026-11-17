@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Logo from '../components/Logo.astro';
+import { REPO_URL, REQUEST_PATH } from '../lib/contact';
 
 interface Props {
   title: string;
@@ -23,7 +24,7 @@ interface Props {
 }
 const { title, description, home = false, image, editPath, editUrl, editLabel, noindex = false } = Astro.props;
 const SITE = 'altstrument';
-const REPO = 'https://github.com/philmillman/altstrument';
+const REPO = REPO_URL;
 // Pages generated from the whole catalog (home, recent) have no single file; they link to the repo.
 const edit = editUrl
   ? { href: editUrl, label: editLabel ?? 'Edit this on GitHub' }
@@ -33,6 +34,10 @@ const edit = editUrl
 const fullTitle = home ? title : `${title} · ${SITE}`;
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
 const canonical = Astro.site ? new URL(path, Astro.site).href : undefined;
+// Device and firmware pages link to the request form, prefilled with the page.
+const isEntry = path.startsWith('/devices/') || path.startsWith('/firmware/');
+const requestHref = (type: 'update' | 'remove') =>
+  `${REQUEST_PATH}?${new URLSearchParams({ type, entry: canonical ?? path })}`;
 
 const social = image ?? { src: `/og${path === '/' ? '/index' : path}.png`, alt: fullTitle };
 const imageUrl = social ? (Astro.site ? new URL(social.src, Astro.site).href : social.src) : undefined;
@@ -41,6 +46,7 @@ const nav = [
   { href: '/', label: 'devices', match: (p: string) => p === '/' || p.startsWith('/devices') || p.startsWith('/firmware') || p.startsWith('/manufacturers') },
   { href: '/recent', label: 'recent', match: (p: string) => p === '/recent' },
   { href: '/about', label: 'about', match: (p: string) => p === '/about' },
+  { href: REQUEST_PATH, label: 'request', match: (p: string) => p === REQUEST_PATH },
   { href: '/feed.xml', label: 'rss', match: () => false },
 ];
 ---
@@ -140,7 +146,18 @@ const nav = [
     <footer class="border-t border-line bg-surface text-sm text-muted">
       <div class="mx-auto flex w-full max-w-[72rem] flex-col gap-1 px-4 py-4 sm:flex-row sm:flex-wrap sm:justify-between">
         <p>Catalog data <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC-BY-4.0</a>. Site code <a href="https://spdx.org/licenses/MIT.html" rel="noopener">MIT</a>. <a href="/about/quality">How quality ratings work</a>.</p>
-        <p><a href={edit.href} rel="noopener">{edit.label}</a></p>
+        <p class="flex flex-wrap gap-x-3 gap-y-1">
+          {isEntry ? (
+            <>
+              <a href={requestHref('update')}>Request an update</a>
+              <a href={requestHref('remove')}>Ask to remove</a>
+            </>
+          ) : (
+            <a href={REQUEST_PATH}>Request a change</a>
+          )}
+          <a href="/about#contact">Contact</a>
+          <a href={edit.href} rel="noopener">{edit.label}</a>
+        </p>
       </div>
     </footer>
     <script is:inline>

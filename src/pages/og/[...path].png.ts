@@ -32,11 +32,15 @@ export async function getStaticPaths() {
     }),
     card('about', {
       title: 'About',
-      summary: 'What altstrument lists, what it does not, how to read the badges, and how to contribute.',
+      summary: 'What altstrument lists, how to reach the maintainer, how data is gathered, and how to contribute.',
     }),
     card('recent', {
       title: 'Recent versions',
       summary: 'The 50 most recent dated firmware versions across the catalog.',
+    }),
+    card('request', {
+      title: 'Request a change',
+      summary: 'Ask for a device or firmware to be added, an entry to be corrected, or your work to be removed. No GitHub account needed.',
     }),
     ...devices.map((d) =>
       card(d.url.slice(1), {

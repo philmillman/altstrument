@@ -1,0 +1,18 @@
+# Local settings for `wrangler dev` (copy to .dev.vars, which git ignores).
+# Production values are set with `wrangler secret put` / wrangler.jsonc vars.
+
+# Cloudflare's always-pass Turnstile testing secret. It reports hostname
+# example.com and no action, so local runs must opt in to it explicitly.
+# Production must never set TURNSTILE_ALLOW_TEST_KEYS.
+TURNSTILE_SECRET=1x0000000000000000000000000000000AA
+TURNSTILE_ALLOW_TEST_KEYS=1
+TURNSTILE_HOSTNAMES=example.com,localhost,127.0.0.1
+
+# 1 = return the issue the form would create instead of posting it to GitHub.
+REQUEST_DRY_RUN=1
+
+# Only needed with REQUEST_DRY_RUN unset: a fine-grained token for this
+# repository with Issues read/write. Prefer a throwaway test repository
+# (set GITHUB_REPO here) over creating test issues on the real one.
+# GITHUB_ISSUES_TOKEN=
+# GITHUB_REPO=you/altstrument-form-test

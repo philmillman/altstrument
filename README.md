@@ -63,15 +63,19 @@ src/
     schema.ts                 Zod schemas and allowed values (the field reference)
   content.config.ts           Astro content collections
   data/repo-metrics.lock.json which GitHub metrics snapshot (a `metrics` release asset) the quality scores use
+  data/exclusions.yaml        projects and sites that opted out; enforced by the validator and every fetcher
+  lib/polite-fetch.ts         the only way the project requests other sites (robots.txt, Crawl-delay, exclusions)
   loaders/                    content loaders for entries fetched at build time
-  pages/                      Astro pages and endpoints (/api/*.json, /feed.xml, /robots.txt, /.well-known/api-catalog)
+  pages/                      Astro pages and endpoints (/api/*.json, /feed.xml, /robots.txt, /.well-known/api-catalog, /request)
+worker/index.ts               Worker for POST /api/request: Turnstile check, then a GitHub issue
 public/                       favicons, device images, and Cloudflare _headers (Link headers) and _redirects
 scripts/
   validate.ts                 catalog validator (runs before build and in CI)
+  robots-check.ts             `pnpm robots:check <url>`, and the WebFetch hook in .claude/settings.json
   build-icons.ts              rasterizes the favicon (`pnpm icons`)
   metrics/                    GitHub metrics fetch, publish, report and based_on proposals
 .github/
-  ISSUE_TEMPLATE/             issue forms: bug report, new entry, entry update
+  ISSUE_TEMPLATE/             issue forms: bug report, new entry, entry update, removal request
   workflows/ci.yml            validate, type check and build on every push and PR
   workflows/metrics-*.yml     metrics top-up for new entries, and the weekly metrics refresh PR
 .claude/skills/discover/      /discover skill: gather script, config and prompt
@@ -96,13 +100,15 @@ Builds need `SITE_URL` set to the public base URL the site is deployed to (for e
 
 ## Deployment
 
-The site is a static build served by Cloudflare Workers at [altstrument.org](https://altstrument.org). Workers Builds runs `pnpm run build` on every push to `main`, then `wrangler deploy` uploads `dist/` as static assets (see `wrangler.jsonc`). `SITE_URL` is set in the Workers Builds environment.
+The site is a static build served by Cloudflare Workers at [altstrument.org](https://altstrument.org). Workers Builds runs `pnpm run build` on every push to `main`, then `wrangler deploy` uploads `dist/` as static assets and bundles one small Worker (see `wrangler.jsonc`). `SITE_URL` and `PUBLIC_TURNSTILE_SITEKEY` are set in the Workers Builds environment.
+
+The Worker (`worker/index.ts`) only answers `POST /api/request`, the [request form](https://altstrument.org/request): it checks Cloudflare Turnstile and opens a GitHub issue, so people without a GitHub account can ask for changes. Every other path is served from `dist/` without running it. It needs two secrets, set with `wrangler secret put`: `GITHUB_ISSUES_TOKEN` (a fine-grained token for this repository with Issues read/write) and `TURNSTILE_SECRET`. To try it locally, copy `.dev.vars.example` to `.dev.vars` (Turnstile testing keys, dry run), then `pnpm build && npx wrangler dev`.
 
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add a device or firmware, the field reference, and the pull request checklist.
 
-Not writing YAML? [Open an issue](https://github.com/philmillman/altstrument/issues/new/choose) to suggest a new device or firmware, request an update to an existing entry, or report a bug on the site.
+Not writing YAML? Use the [request form](https://altstrument.org/request) (no GitHub account needed), email [hello@altstrument.org](mailto:hello@altstrument.org), or [open an issue](https://github.com/philmillman/altstrument/issues/new/choose) to suggest a new device or firmware, request an update or removal, or report a bug on the site.
 
 To look for firmware and devices not yet in the catalog, run the `/discover` skill in Claude Code (see CONTRIBUTING.md, "Finding new entries").
 
@@ -115,7 +121,12 @@ Each firmware's own code is governed by the license recorded in its entry, not b
 
 ## Prior art and thanks
 
-- [Lapin/awesome-music-gear-firmware](https://github.com/Lapin/awesome-music-gear-firmware)
-- [aroum/fm1-custom-fw](https://github.com/aroum/fm1-custom-fw)
-- [Maxhodges/noise-engineering-firmware-index](https://github.com/Maxhodges/noise-engineering-firmware-index)
+- [Lapin/awesome-music-gear-firmware](https://github.com/Lapin/awesome-music-gear-firmware): a long-running list across many devices
 - [Mutable Instruments third-party firmware](https://pichenettes.github.io/mutable-instruments-documentation/third_party_firmware/)
+- [Maxhodges/noise-engineering-firmware-index](https://github.com/Maxhodges/noise-engineering-firmware-index): Noise Engineering alternate firmware
+- [KORG logue SDK unit index](https://korginc.github.io/logue-sdk/unit-index/) and the logue-sdk community: prologue, minilogue xd, NTS-1 and drumlogue units
+- [The FM-1 Firmware Hub](https://thefirmwarehub.com/) and [aroum/fm1-custom-fw](https://github.com/aroum/fm1-custom-fw): M-VAVE FM-1 and SMK-37 firmware
+- [Schwung module catalog](https://github.com/charlesvestal/schwung): Ableton Move modules
+- [Music Thing Modular Workshop Computer](https://github.com/TomWhitwell/Workshop_Computer): program cards, synced at build time (see CONTRIBUTING.md)
+- [themanro/ZoomMultistompZDL](https://github.com/themanro/ZoomMultistompZDL): Zoom MultiStomp tools
+- [M5Stack M5Burner firmware catalog](https://m5burner-api.m5stack.com/api/firmware) (JSON): Cardputer music apps

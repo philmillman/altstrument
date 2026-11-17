@@ -5,9 +5,6 @@
 # Default lookback window in days for feeds, GitHub searches and prior-art commits.
 since_days: 14
 
-# Sent on every feed request. lines (llllllll.co) refuses non-browser agents.
-user_agent: "Mozilla/5.0 (compatible; altstrument-discover/0.1; +https://altstrument.org)"
-
 # Case-insensitive substrings. A feed item is kept when its title or summary
 # contains one of these, or names a device in the catalog. Deliberately narrow:
 # "mod" and "hack" alone match too much modular-synth news.
@@ -28,6 +25,15 @@ keywords:
 
 # RSS or Atom feeds. `prefiltered: true` means every item already matches
 # (a search feed), so the keyword filter is skipped.
+#
+# Feeds are fetched through src/lib/polite-fetch.ts: one honest user agent,
+# robots.txt (including the ClaudeBot / anthropic-ai groups and Content-Signal
+# ai-input, since the /discover agent reads the results), Crawl-delay, and the
+# exclusion list. A feed whose site refuses that is dropped, never disguised.
+# Dropped on 2026-11-17 for that reason (philmillman/altstrument#32):
+#   lines (llllllll.co/latest.rss): refuses non-browser user agents
+#   MOD WIGGLER (modwiggler.com/forum/feed.php): robots.txt disallows ClaudeBot
+#   r/synthesizers, r/synthdiy, r/eurorack search feeds: reddit's robots.txt disallows all
 feeds:
   - label: CDM
     url: https://cdm.link/feed/
@@ -41,19 +47,6 @@ feeds:
     url: https://synthanatomy.com/feed
   - label: Elektronauts
     url: https://www.elektronauts.com/latest.rss
-  - label: lines
-    url: https://llllllll.co/latest.rss
-  - label: MOD WIGGLER
-    url: https://modwiggler.com/forum/feed.php
-  - label: r/synthesizers (firmware search)
-    url: https://www.reddit.com/r/synthesizers/search.rss?q=firmware&sort=new&restrict_sr=on
-    prefiltered: true
-  - label: r/synthdiy (firmware search)
-    url: https://www.reddit.com/r/synthdiy/search.rss?q=firmware&sort=new&restrict_sr=on
-    prefiltered: true
-  - label: r/eurorack (firmware search)
-    url: https://www.reddit.com/r/eurorack/search.rss?q=firmware&sort=new&restrict_sr=on
-    prefiltered: true
 
 # GitHub repository search queries. The script appends `fork:false pushed:>DATE`.
 github_queries:

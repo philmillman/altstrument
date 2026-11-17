@@ -5,10 +5,11 @@ import SourceBadge from '@/components/SourceBadge.astro';
 import LicenseBadge from '@/components/LicenseBadge.astro';
 import { STATUSES, SOURCE_STATUSES } from '@/content/schema';
 import { STATUS_INFO, SOURCE_INFO, LICENSE_SENTINELS } from '@/lib/labels';
+import { BOT_USER_AGENT, CONTACT_EMAIL, REPO_URL, REQUEST_PATH } from '@/lib/contact';
 ---
 <Base
   title="About"
-  description="What altstrument lists, what it does not, how to read the badges, and how to contribute."
+  description="What altstrument lists, how to reach the maintainer, how data is gathered, how to read the badges, and how to contribute."
   editPath="src/pages/about.astro"
 >
   <h1 class="text-2xl">About</h1>
@@ -20,6 +21,24 @@ import { STATUS_INFO, SOURCE_INFO, LICENSE_SENTINELS } from '@/lib/labels';
         altstrument is a directory of custom firmware and tools for music hardware. Entries are grouped by
         device and then by firmware project. Each one records the authors, where the source lives, the license, and the
         version history, so you can tell who made something, whether you can read it, and how recently it was touched.
+      </p>
+    </section>
+
+    <section aria-labelledby="contact">
+      <h2 id="contact">Contact and requests</h2>
+      <p>
+        Corrections from the people who make this work are the most useful thing the catalog gets. If you wrote something
+        listed here, you can ask for it to be updated, removed, or left out for good,
+        and you don't need a GitHub account or a reason to do it.
+      </p>
+      <ul class="mt-2 list-disc pl-5">
+        <li><a href={REQUEST_PATH}>Request form</a>: add, correct or remove an entry. It opens a public issue for you.</li>
+        <li>Email: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>, for anything you'd rather not post publicly.</li>
+        <li><a href={`${REPO_URL}/issues/new/choose`} rel="noopener">GitHub issues</a> or a pull request, if you already use GitHub.</li>
+      </ul>
+      <p class="mt-3">
+        Every device and firmware page also has "Request an update" and "Ask to remove" links at the bottom, which fill in
+        the form for that page.
       </p>
     </section>
 
@@ -42,6 +61,39 @@ import { STATUS_INFO, SOURCE_INFO, LICENSE_SENTINELS } from '@/lib/labels';
         Entries carrying a brick-risk flag have a known, documented risk of damaging the device. Flashing third-party
         firmware may void your warranty, and doing so is at your own risk. Read the project's own notes before you
         start, and keep a way back to stock where one exists.
+      </p>
+    </section>
+
+    <section aria-labelledby="crawling">
+      <h2 id="crawling">How we gather data</h2>
+      <p>
+        Entries are researched and written by hand, with help from scripts and an AI agent that look for new projects and
+        releases. The catalog links to where each project lives; it does not copy READMEs, mirror downloads or host
+        firmware. Requests that leave this site are deliberately few and identify themselves as:
+      </p>
+      <p class="mt-2"><code class="break-all">{BOT_USER_AGENT}</code></p>
+      <ul class="mt-2 list-disc pl-5">
+        <li>
+          <strong>robots.txt is honoured.</strong> A group for <code>altstrument</code> (or <code>altstrument-bot</code>)
+          applies if you write one, otherwise <code>*</code>. When an AI agent will read the page, groups for{' '}
+          <code>ClaudeBot</code>, <code>Claude-User</code> and <code>anthropic-ai</code> are obeyed too, and so is{' '}
+          <code>Content-Signal: ai-input=no</code>.
+        </li>
+        <li><strong>Crawl-delay is honoured</strong>, and requests to one site are spaced out regardless.</li>
+        <li>
+          <strong>A refusal is final.</strong> If a site blocks automated requests, we don't retry with a different user
+          agent, a cache or an archive; that source is simply left out.
+        </li>
+        <li>
+          <strong>Opting out.</strong> Anything you ask to be excluded goes on a permanent{' '}
+          <a href={`${REPO_URL}/blob/main/src/data/exclusions.yaml`} rel="noopener">exclusion list</a>: it is removed, the
+          build refuses to list it again, and its pages are never requested.
+        </li>
+      </ul>
+      <p class="mt-3">
+        What is fetched: a handful of synth news and forum RSS feeds, GitHub's API for repository and release details, and
+        each hotlinked image or YouTube video on a daily schedule and when the site is rebuilt, to catch broken links. GitHub's API is used under GitHub's API
+        terms rather than robots.txt.
       </p>
     </section>
 
@@ -82,9 +134,10 @@ import { STATUS_INFO, SOURCE_INFO, LICENSE_SENTINELS } from '@/lib/labels';
     <section aria-labelledby="contribute">
       <h2 id="contribute">Contributing</h2>
       <p>
-        The catalog is plain YAML. To add or correct an entry, open a pull request that adds or edits a file under
-        <code>src/content</code>: one file per device in <code>devices/</code>, and one per firmware project in
-        <code>firmwares/&lt;device&gt;/</code>. A validator checks the schema on every build. See
+        Not a git user? The <a href={REQUEST_PATH}>request form</a> or an email is all it takes. The catalog itself is
+        plain YAML. To add or correct an entry yourself, open a pull request that adds or edits a file under{' '}
+        <code>src/content</code>: one file per device in <code>devices/</code>, and one per firmware project in{' '}
+        <code>firmwares/&lt;device&gt;/</code>. A validator checks the schema on every build. See{' '}
         <code>CONTRIBUTING.md</code> in the repository for the field reference and the rules about omitting dates
         rather than guessing them.
       </p>
@@ -104,19 +157,27 @@ import { STATUS_INFO, SOURCE_INFO, LICENSE_SENTINELS } from '@/lib/labels';
 
     <section aria-labelledby="thanks">
       <h2 id="thanks">Prior art and thanks</h2>
-      <p>This site builds on lists others have kept for years:</p>
+      <p>
+        This site builds on lists and hubs that communities have kept, often for years. If you find something here,
+        these are the places that track it most closely:
+      </p>
       <ul class="mt-2 list-disc pl-5">
-        <li><code>Lapin/awesome-music-gear-firmware</code></li>
-        <li><code>aroum/fm1-custom-fw</code></li>
-        <li><code>Maxhodges/noise-engineering-firmware-index</code></li>
-        <li>Mutable Instruments' third-party firmware page</li>
+        <li><a href="https://github.com/Lapin/awesome-music-gear-firmware" rel="noopener">Lapin/awesome-music-gear-firmware</a>: a long-running list across many devices</li>
+        <li><a href="https://pichenettes.github.io/mutable-instruments-documentation/third_party_firmware/" rel="noopener">Mutable Instruments' third-party firmware page</a></li>
+        <li><a href="https://github.com/Maxhodges/noise-engineering-firmware-index" rel="noopener">Maxhodges/noise-engineering-firmware-index</a>: Noise Engineering alternate firmware</li>
+        <li><a href="https://korginc.github.io/logue-sdk/unit-index/" rel="noopener">KORG's logue SDK unit index</a> and the logue-sdk community: units for the prologue, minilogue xd, NTS-1 and drumlogue</li>
+        <li><a href="https://thefirmwarehub.com/" rel="noopener">The FM-1 Firmware Hub</a> and <a href="https://github.com/aroum/fm1-custom-fw" rel="noopener">aroum/fm1-custom-fw</a>: M-VAVE FM-1 and SMK-37 firmware</li>
+        <li><a href="https://github.com/charlesvestal/schwung" rel="noopener">Schwung's module catalog</a>: modules for Ableton Move</li>
+        <li><a href="https://github.com/TomWhitwell/Workshop_Computer" rel="noopener">Music Thing Modular's Workshop Computer cards</a>, synced into this catalog on every build</li>
+        <li><a href="https://github.com/themanro/ZoomMultistompZDL" rel="noopener">themanro/ZoomMultistompZDL</a>: tools for Zoom MultiStomp pedals</li>
+        <li><a href="https://m5burner-api.m5stack.com/api/firmware" rel="noopener">M5Stack's M5Burner firmware catalog</a> (JSON): music apps for the Cardputer</li>
       </ul>
     </section>
 
     <section aria-labelledby="license">
       <h2 id="license">Licensing</h2>
       <p>
-        The site code is released under the MIT license. The catalog data is released under
+        The site code is released under the MIT license. The catalog data is released under{' '}
         <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC-BY-4.0</a>; reuse it with attribution.
         A full JSON export is listed under <a href="#api">Data and API</a>.
       </p>
@@ -125,7 +186,8 @@ import { STATUS_INFO, SOURCE_INFO, LICENSE_SENTINELS } from '@/lib/labels';
         where they are published. They remain the property of their owners and are not covered by the catalog's
         CC-BY-4.0 license. Where no product image is available, the manufacturer's logo is shown instead; those are
         public-domain wordmarks or brand assets used with permission, and remain trademarks of their owners. If you
-        own an image or mark shown here and want it changed or removed, open an issue.
+        own an image or mark shown here and want it changed or removed, use the <a href={REQUEST_PATH}>request form</a> or
+        email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
       </p>
     </section>
   </div>

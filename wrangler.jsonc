@@ -1,17 +1,37 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  // Static site: Workers Builds runs `pnpm run build`, then `wrangler deploy`
-  // uploads dist/ as assets. No Worker script, no adapter, no bindings.
+  // Static site plus one small Worker. Workers Builds runs `pnpm run build`, then
+  // `wrangler deploy` uploads dist/ as assets and bundles worker/index.ts.
   "name": "altstrument",
   "compatibility_date": "2026-10-14",
+  // Only POST /api/request (the request form, src/pages/request.astro) runs this
+  // script; every other path is served straight from dist/ without invoking it.
+  "main": "./worker/index.ts",
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
     // Serve /path from dist/path/index.html without redirecting to /path/, matching
     // Astro's trailingSlash: 'never' and the canonical URLs it emits.
-    "html_handling": "drop-trailing-slash"
+    "html_handling": "drop-trailing-slash",
+    "run_worker_first": ["/api/request"]
   },
+  "vars": {
+    "GITHUB_REPO": "philmillman/altstrument",
+    // Frontend hostnames Turnstile's siteverify may report. Never localhost here;
+    // local development overrides this in .dev.vars.
+    "TURNSTILE_HOSTNAMES": "altstrument.org"
+  },
+  // Secrets (wrangler secret put): GITHUB_ISSUES_TOKEN, TURNSTILE_SECRET. See .dev.vars.example.
+  "ratelimits": [
+    {
+      // Request form submissions: 5 a minute per client IP.
+      "name": "REQUEST_LIMITER",
+      "namespace_id": "1001",
+      "simple": { "limit": 5, "period": 60 }
+    }
+  ],
   "routes": [{ "pattern": "altstrument.org", "custom_domain": true }],
   // Workers Builds runs `wrangler preview` for non-production branches, which
-  // needs this block. Empty: the site has no bindings for previews to override.
+  // needs this block. Empty: previews use the same bindings.
   "previews": {}
 }

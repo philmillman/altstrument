@@ -38,6 +38,8 @@ import type { DataEntry } from 'astro:content';
 import { parse } from 'yaml';
 import { LICENSES, type License } from '../content/schema';
 import { youtubeId, youtubeOembedUrl } from '../lib/media';
+import { politeFetch, SkippedError } from '../lib/polite-fetch';
+import { excludedBy } from '../lib/exclusions';
 
 export const DEVICE = 'music-thing-workshop-computer';
 const ID_PREFIX = `${DEVICE}/`;
@@ -74,25 +76,23 @@ function slugify(name: string): string {
     .replace(/(^-|-$)+/g, '');
 }
 
-async function fetchRaw(url: string, headers: Record<string, string> = {}): Promise<{ status: number; body: string; etag?: string }> {
-  let lastErr: unknown;
-  for (let attempt = 0; attempt < 3; attempt++) {
-    if (attempt > 0) await new Promise((r) => setTimeout(r, 500 * 2 ** attempt));
-    try {
-      const res = await fetch(url, {
-        headers: { 'User-Agent': 'altstrument-loader', ...headers },
-        signal: AbortSignal.timeout(30_000),
-      });
-      if (res.status >= 500 || res.status === 429) {
-        lastErr = new Error(`HTTP ${res.status}`);
-        continue;
-      }
-      return { status: res.status, body: await res.text(), etag: res.headers.get('etag') ?? undefined };
-    } catch (e) {
-      lastErr = e;
-    }
+/**
+ * GET through src/lib/polite-fetch.ts (robots.txt, Crawl-delay, exclusion list).
+ * `api: true` is for the GitHub REST listing, which is an API used as one and so
+ * skips robots.txt (never the exclusion list). A refused URL throws SkippedError.
+ */
+async function fetchRaw(
+  url: string,
+  headers: Record<string, string> = {},
+  opts: { api?: boolean } = {},
+): Promise<{ status: number; body: string; etag?: string }> {
+  try {
+    const res = await politeFetch(url, { headers, timeoutMs: 30_000, robots: !opts.api });
+    return { status: res.status, body: await res.text(), etag: res.headers.get('etag') ?? undefined };
+  } catch (e) {
+    if (e instanceof SkippedError) throw e;
+    throw new NetworkError(`${url}: ${(e as Error)?.message ?? e}`);
   }
-  throw new NetworkError(`${url}: ${(lastErr as Error)?.message ?? lastErr}`);
 }
 
 async function pool<T, R>(items: T[], limit: number, fn: (item: T) => Promise<R>): Promise<R[]> {
@@ -392,7 +392,7 @@ async function listCardDirs(prevEtag?: string): Promise<Listing> {
   const headers: Record<string, string> = { Accept: 'application/vnd.github+json' };
   if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
   if (prevEtag) headers['If-None-Match'] = prevEtag;
-  const res = await fetchRaw(LIST_URL, headers);
+  const res = await fetchRaw(LIST_URL, headers, { api: true });
   if (res.status === 304) return { dirs: [], etag: prevEtag, notModified: true };
   if (res.status !== 200) throw new NetworkError(`${LIST_URL}: HTTP ${res.status} ${res.body.slice(0, 200)}`);
   let json: unknown;
@@ -464,6 +464,8 @@ export async function loadWorkshopComputerCards(ctx: LoaderContext, cached: Data
     try {
       ({ status, body } = await fetchRaw(url));
     } catch (e) {
+      // Excluded or refused by robots.txt: leave the card out, like a missing info.yaml.
+      if (e instanceof SkippedError) return { ...base, info: null, parseError: `not fetched, ${e.reason}` };
       if (!(e instanceof NetworkError)) throw e;
       return { ...base, info: null, fetchError: e.message };
     }
@@ -507,6 +509,14 @@ export async function loadWorkshopComputerCards(ctx: LoaderContext, cached: Data
     const built = buildEntry(card, now);
     if ('skip' in built) {
       skipped.push(`${card.dir}: ${built.skip}`);
+      continue;
+    }
+    // Same rule as scripts/validate.ts for file entries: nothing on the opt-out list is listed.
+    const excludedUrl = [built.entry.source, built.entry.homepage, built.entry.generated_from].find(
+      (u) => typeof u === 'string' && excludedBy(u),
+    );
+    if (excludedUrl) {
+      skipped.push(`${card.dir}: on the exclusion list (${excludedUrl})`);
       continue;
     }
     if (built.unmappedLicense) {

@@ -14,6 +14,12 @@
  *   - release sweep: GitHub releases, branch heads or tags of catalogued entries
  *     that are newer than the entry's top version (updates, not new entries)
  *
+ * Feeds go through src/lib/polite-fetch.ts, which honours robots.txt (including the
+ * AI-crawler groups and Content-Signal ai-input, since the /discover agent reads the
+ * results), Crawl-delay and the exclusion list (src/data/exclusions.yaml); a refused
+ * feed is reported as skipped. Entries on the exclusion list are also dropped from
+ * every result, like the `ignore` list.
+ *
  * GitHub is reached through the `gh` CLI, so there is no token plumbing; it
  * must be installed and authenticated. Repository searches are batched into GraphQL
  * requests (REST search is capped at 30 a minute and trips a secondary limit even
@@ -46,6 +52,9 @@ import {
   type GqlResult,
   type Obj,
 } from '../../../scripts/lib/github.ts';
+import { politeFetch, SkippedError } from '../../../src/lib/polite-fetch.ts';
+import { hostOf, makeUrlMatcher, repoKey } from '../../../src/lib/url-match.ts';
+import { loadExclusions } from '../../../src/lib/exclusions.ts';
 
 const ROOT = new URL('../../../', import.meta.url).pathname;
 const DEFAULT_CONFIG = new URL('./config.yaml', import.meta.url).pathname;
@@ -57,8 +66,8 @@ const CATALOG_DIRS = ['src/content/devices', 'src/content/firmwares', 'src/conte
 const DAY_MS = 24 * 60 * 60 * 1000;
 const FEED_CONCURRENCY = 4;
 const FEED_TIMEOUT_MS = 20_000;
+/** Minimum gap between feed requests to one host; a longer robots.txt Crawl-delay wins. */
 const SAME_HOST_DELAY_MS = 2000;
-const MAX_RATE_WAIT_S = 60;
 const SEARCH_DELAY_MS = 1000;
 const SEARCH_BATCH = 10;
 // Searches go out SEARCH_BATCH at a time in one GraphQL request. If GitHub still answers
@@ -163,7 +172,6 @@ interface Report {
 
 const configSchema = z.object({
   since_days: z.number().int().positive().default(14),
-  user_agent: z.string().min(1),
   keywords: z.array(z.string().min(1)).default([]),
   feeds: z
     .array(z.object({ label: z.string().min(1), url: z.url(), prefiltered: z.boolean().default(false) }))
@@ -236,37 +244,7 @@ const isoDay = (d: Date | string) => (typeof d === 'string' ? d : d.toISOString(
 
 // ---- repo keys -------------------------------------------------------------------
 
-const GIT_HOSTS = new Set(['github.com', 'codeberg.org', 'gitlab.com']);
-/** First path segments on github.com that are not owners. */
-const NOT_OWNERS = new Set(['orgs', 'sponsors', 'topics', 'users', 'settings', 'marketplace', 'features', 'about']);
-
-function hostOf(url: string): string | undefined {
-  try {
-    return new URL(url).hostname.toLowerCase().replace(/^www\./, '');
-  } catch {
-    return undefined;
-  }
-}
-
-/**
- * `owner/repo` (lowercase) for github.com URLs, `host/owner/repo` for codeberg.org and
- * gitlab.com, undefined for anything else (including gist.github.com and bare owners).
- */
-function repoKey(url: string): string | undefined {
-  let u: URL;
-  try {
-    u = new URL(url);
-  } catch {
-    return undefined;
-  }
-  const host = u.hostname.toLowerCase().replace(/^www\./, '');
-  if (!GIT_HOSTS.has(host)) return undefined;
-  const [owner, repoRaw] = u.pathname.split('/').filter(Boolean);
-  if (!owner || !repoRaw) return undefined;
-  if (host === 'github.com' && NOT_OWNERS.has(owner.toLowerCase())) return undefined;
-  const key = `${owner}/${repoRaw.replace(/\.git$/i, '')}`.toLowerCase();
-  return host === 'github.com' ? key : `${host}/${key}`;
-}
+// hostOf and repoKey live in src/lib/url-match.ts, shared with the exclusion list.
 
 const URL_RE = /https?:\/\/[^\s"'<>()[\]{}\\^`|]+/g;
 const trimUrl = (u: string) => u.replace(/[.,;:!?]+$/, '');
@@ -422,24 +400,10 @@ function matchKeywords(text: string, keywords: string[]): string[] {
 
 // ---- ignore list ---------------------------------------------------------------------
 
-const normUrl = (u: string) => u.trim().toLowerCase().replace(/\/+$/, '');
-
+/** The maintainer's `ignore` list plus the opt-out list (src/data/exclusions.yaml). */
 function makeIgnore(entries: Config['ignore']): (url: string) => boolean {
-  const prep = (u: string) => ({ norm: normUrl(u), key: repoKey(u) });
-  const prepared = entries.map((e) => ({ ...prep(e.url), except: e.except.map(prep) }));
-  // A GitHub repo ignore matches its repo; any other URL (including a bare github.com/<owner>)
-  // matches itself and everything below it (path boundary, so ignoring .../foo does not hide
-  // .../foobar).
-  const matches = (p: { norm: string; key?: string }, norm: string, key?: string) =>
-    (p.key !== undefined && p.key === key) ||
-    norm === p.norm ||
-    norm.startsWith(p.norm.endsWith('/') ? p.norm : `${p.norm}/`) ||
-    norm.startsWith(`${p.norm}?`);
-  return (url) => {
-    const norm = normUrl(url);
-    const key = repoKey(url);
-    return prepared.some((p) => matches(p, norm, key) && !p.except.some((x) => matches(x, norm, key)));
-  };
+  const match = makeUrlMatcher([...entries, ...loadExclusions()]);
+  return (url) => match(url) !== undefined;
 }
 
 // ---- feeds ---------------------------------------------------------------------------
@@ -559,41 +523,18 @@ function parseFeed(xml: string): FeedItem[] {
   return out;
 }
 
-async function fetchText(url: string, userAgent: string): Promise<string> {
-  let lastErr: unknown;
-  let waitMs = 0;
-  for (let attempt = 0; attempt < 3; attempt++) {
-    if (attempt > 0) await sleep(waitMs || 500 * 2 ** attempt);
-    waitMs = 0;
-    try {
-      const res = await fetch(url, {
-        redirect: 'follow',
-        headers: {
-          'User-Agent': userAgent,
-          Accept: 'application/rss+xml, application/atom+xml, application/xml;q=0.9, text/xml;q=0.8, */*;q=0.5',
-        },
-        signal: AbortSignal.timeout(FEED_TIMEOUT_MS),
-      });
-      if (res.status >= 500 || res.status === 429) {
-        lastErr = new Error(`HTTP ${res.status}`);
-        // Reddit allows about one unauthenticated request a minute and says when the
-        // window reopens; wait for it (up to a minute) instead of failing the feed.
-        const reset = Number(res.headers.get('retry-after') ?? res.headers.get('x-ratelimit-reset'));
-        if (res.status === 429 && reset > 0 && reset <= MAX_RATE_WAIT_S) waitMs = (reset + 1) * 1000;
-        await res.body?.cancel();
-        continue;
-      }
-      if (!res.ok) {
-        await res.body?.cancel();
-        throw Object.assign(new Error(`HTTP ${res.status}`), { final: true });
-      }
-      return await res.text();
-    } catch (e) {
-      if ((e as { final?: boolean }).final) throw e;
-      lastErr = e;
-    }
+async function fetchText(url: string): Promise<string> {
+  const res = await politeFetch(url, {
+    forAI: true,
+    minIntervalMs: SAME_HOST_DELAY_MS,
+    timeoutMs: FEED_TIMEOUT_MS,
+    headers: { Accept: 'application/rss+xml, application/atom+xml, application/xml;q=0.9, text/xml;q=0.8, */*;q=0.5' },
+  });
+  if (!res.ok) {
+    await res.body?.cancel();
+    throw new Error(`HTTP ${res.status}`);
   }
-  throw lastErr instanceof Error ? lastErr : new Error(String(lastErr));
+  return await res.text();
 }
 
 interface FeedResult {
@@ -617,9 +558,10 @@ async function gatherNews(
   const one = async (feed: Config['feeds'][number]): Promise<FeedResult> => {
     let items: FeedItem[];
     try {
-      items = parseFeed(await fetchText(feed.url, config.user_agent));
+      items = parseFeed(await fetchText(feed.url));
     } catch (e) {
-      problems.push(`feed ${feed.label} (${feed.url}): ${(e as Error).message}`);
+      const msg = e instanceof SkippedError ? `skipped, ${e.reason}` : (e as Error).message;
+      problems.push(`feed ${feed.label} (${feed.url}): ${msg}`);
       return { ok: false, seen: 0, news: [] };
     }
     const feedHost = hostOf(feed.url);
@@ -656,8 +598,8 @@ async function gatherNews(
     return { ok: true, seen: items.length, news };
   };
 
-  // Feeds on the same host (the reddit searches) run one after another, spaced out,
-  // or the host answers 429. Different hosts run FEED_CONCURRENCY at a time.
+  // Feeds on the same host run one after another (politeFetch spaces them by
+  // SAME_HOST_DELAY_MS or the site's Crawl-delay). Different hosts run FEED_CONCURRENCY at a time.
   const groups = new Map<string, Config['feeds']>();
   for (const feed of config.feeds) {
     const host = hostOf(feed.url) ?? feed.url;
@@ -665,8 +607,7 @@ async function gatherNews(
   }
   const grouped = await pool([...groups.values()], FEED_CONCURRENCY, async (feeds) => {
     const results: FeedResult[] = [];
-    for (const [i, feed] of feeds.entries()) {
-      if (i > 0) await sleep(SAME_HOST_DELAY_MS);
+    for (const feed of feeds) {
       results.push(await one(feed));
     }
     return results;

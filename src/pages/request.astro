@@ -1,0 +1,289 @@
+---
+import Base from '@/layouts/Base.astro';
+import { CONTACT_EMAIL, REPO_URL, TURNSTILE_SITEKEY, TURNSTILE_TEST_SITEKEY } from '@/lib/contact';
+
+// The sitekey is public. `astro dev` uses Cloudflare's testing key; PUBLIC_TURNSTILE_SITEKEY overrides both.
+const SITEKEY = import.meta.env.PUBLIC_TURNSTILE_SITEKEY || (import.meta.env.DEV ? TURNSTILE_TEST_SITEKEY : TURNSTILE_SITEKEY);
+const field = 'mt-1 w-full rounded border border-line-strong bg-surface px-3 py-2 text-base text-fg placeholder:text-muted';
+---
+<Base
+  title="Request a change"
+  description="Ask for a device or firmware to be added, an entry to be corrected, or your work to be removed. No GitHub account needed."
+  editPath="src/pages/request.astro"
+>
+  <h1 class="text-2xl">Request a change</h1>
+  <div class="mt-3 max-w-[68ch] space-y-3">
+    <p>
+      Ask for a device or firmware to be added, an entry to be corrected, or your own work to be removed or left out for
+      good. You don't need a GitHub account: the form opens a public issue for you, or sends the same request privately
+      by email.
+    </p>
+    <p class="text-sm text-muted">
+      Everything you write here is posted publicly on GitHub, unless you use "Email private request", which sends it to{' '}
+      <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> instead. You can manually create a GitHub issue{' '}
+      <a id="github-fallback" href={`${REPO_URL}/issues/new/choose`} rel="noopener">here</a> if you prefer.
+    </p>
+  </div>
+
+  <noscript>
+    <p class="mt-6 max-w-[68ch] rounded border border-[var(--amber-bd)] bg-[var(--amber-bg)] p-3 text-[var(--amber-fg)]">
+      This form needs JavaScript for its spam check. You can email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+      or <a href={`${REPO_URL}/issues/new/choose`}>open an issue on GitHub</a> instead.
+    </p>
+  </noscript>
+
+  <form id="request-form" class="mt-6 flex max-w-[44rem] flex-col gap-5" novalidate>
+    <fieldset>
+      <legend class="text-sm font-medium">What would you like?</legend>
+      <div class="mt-2 flex flex-col gap-2 sm:flex-row sm:gap-6">
+        <label class="inline-flex items-center gap-2"><input type="radio" name="type" value="add" checked /> Add something missing</label>
+        <label class="inline-flex items-center gap-2"><input type="radio" name="type" value="update" /> Correct or update an entry</label>
+        <label class="inline-flex items-center gap-2"><input type="radio" name="type" value="remove" /> Remove an entry</label>
+      </div>
+    </fieldset>
+
+    <div data-for="update remove">
+      <label for="entry" class="block text-sm font-medium">altstrument page</label>
+      <input id="entry" name="entry" type="url" inputmode="url" class={field} placeholder="https://altstrument.org/firmware/elektron-digitakt/examplefw" />
+      <p class="mt-1 text-sm text-muted">The device or firmware page this is about.</p>
+    </div>
+
+    <div data-for="add" class="grid gap-5 sm:grid-cols-2">
+      <div>
+        <label for="device" class="block text-sm font-medium">Device</label>
+        <input id="device" name="device" type="text" maxlength="200" class={field} placeholder="Elektron Digitakt" />
+      </div>
+      <div>
+        <label for="project" class="block text-sm font-medium">Firmware or tool <span class="font-normal text-muted">(if any)</span></label>
+        <input id="project" name="project" type="text" maxlength="200" class={field} placeholder="ExampleFW" />
+      </div>
+    </div>
+
+    <div>
+      <label for="details" class="block text-sm font-medium">Details</label>
+      <textarea id="details" name="details" rows="6" maxlength="5000" required class={field}></textarea>
+      <p class="mt-1 text-sm text-muted" data-hint="add">What it is and what it does, in your own words.</p>
+      <p class="mt-1 text-sm text-muted" data-hint="update" hidden>What's there now, and what it should be.</p>
+      <p class="mt-1 text-sm text-muted" data-hint="remove" hidden>Why it should go. Authors don't need to give a reason.</p>
+    </div>
+
+    <div>
+      <label for="links" class="block text-sm font-medium">Links <span class="font-normal text-muted">(optional)</span></label>
+      <textarea id="links" name="links" rows="3" maxlength="2000" class={field} placeholder="https://github.com/janedoe/examplefw"></textarea>
+      <p class="mt-1 text-sm text-muted">Source, homepage, release page or anything that backs this up. One per line.</p>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <label class="inline-flex items-start gap-2"><input type="checkbox" name="author" class="mt-1" /> I'm one of the authors of this work</label>
+      <label class="inline-flex items-start gap-2" data-for="remove">
+        <input type="checkbox" name="exclude" class="mt-1" />
+        <span>Exclude it permanently: never list it again, and don't fetch its pages</span>
+      </label>
+    </div>
+
+    <div>
+      <label for="contact" class="block text-sm font-medium">How to reach you <span class="font-normal text-muted">(optional, shown publicly)</span></label>
+      <input id="contact" name="contact" type="text" maxlength="200" class={field} placeholder="A name, handle, Discord or forum profile" />
+    </div>
+
+    <!-- Honeypot: hidden from people and screen readers; bots tend to fill it. -->
+    <div aria-hidden="true" class="absolute -left-[10000px] h-px w-px overflow-hidden">
+      <label for="website">Website</label>
+      <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+    </div>
+
+    <div id="turnstile" class="min-h-[65px]"></div>
+
+    <div class="flex flex-wrap items-center gap-3">
+      <button type="submit" class="rounded bg-accent px-4 py-2 font-medium text-bg hover:bg-accent-hover disabled:opacity-60">Open public request</button>
+      <a id="email-request" href={`mailto:${CONTACT_EMAIL}`} class="rounded border border-line-strong bg-surface px-4 py-2 font-medium text-fg no-underline hover:bg-surface-2 hover:text-fg">Email private request</a>
+    </div>
+    <p id="request-status" class="min-h-[1.5em]" role="status" aria-live="polite"></p>
+  </form>
+
+  <script is:inline define:vars={{ SITEKEY, REPO_URL, EMAIL: CONTACT_EMAIL }}>
+    (function () {
+      var form = document.getElementById('request-form');
+      var status = document.getElementById('request-status');
+      var fallback = document.getElementById('github-fallback');
+      var button = form.querySelector('button[type=submit]');
+      var widgetId = null;
+
+      function type() { return form.querySelector('input[name=type]:checked').value; }
+      function val(name) { var el = form.elements.namedItem(name); return el ? el.value.trim() : ''; }
+
+      function showFor() {
+        var t = type();
+        form.querySelectorAll('[data-for]').forEach(function (el) {
+          el.hidden = el.getAttribute('data-for').split(' ').indexOf(t) === -1;
+        });
+        form.querySelectorAll('[data-hint]').forEach(function (el) { el.hidden = el.getAttribute('data-hint') !== t; });
+        updateFallback();
+      }
+
+      // Prefilled GitHub issue form, using the field ids in .github/ISSUE_TEMPLATE.
+      function updateFallback() {
+        var t = type();
+        var links = val('links').split(/\s+/).filter(Boolean);
+        var p = new URLSearchParams();
+        if (t === 'add') {
+          p.set('template', 'new-entry.yml');
+          if (val('device')) p.set('device', val('device'));
+          if (val('project')) p.set('name', val('project'));
+          if (links[0]) p.set('source', links[0]);
+          if (links[1]) p.set('homepage', links[1]);
+          if (val('details')) p.set('summary', val('details'));
+        } else if (t === 'update') {
+          p.set('template', 'entry-update.yml');
+          if (val('entry')) p.set('url', val('entry'));
+          if (val('details')) p.set('details', val('details'));
+          if (links[0]) p.set('evidence', links[0]);
+        } else {
+          p.set('template', 'removal-request.yml');
+          if (val('entry')) p.set('url', val('entry'));
+          if (val('details')) p.set('details', val('details'));
+          if (links.length) p.set('links', links.join('\n'));
+        }
+        fallback.href = REPO_URL + '/issues/new?' + p.toString();
+        updateEmail();
+      }
+
+      // ?type=update&entry=https://altstrument.org/... from the links on entry pages.
+      try {
+        var q = new URLSearchParams(location.search);
+        var qt = q.get('type');
+        if (qt === 'add' || qt === 'update' || qt === 'remove') form.querySelector('input[name=type][value=' + qt + ']').checked = true;
+        var qe = q.get('entry');
+        if (qe) form.elements.namedItem('entry').value = qe.charAt(0) === '/' ? location.origin + qe : qe;
+      } catch (e) {}
+
+      form.addEventListener('change', showFor);
+      form.addEventListener('input', updateFallback);
+
+      function setStatus(msg, kind) {
+        status.textContent = '';
+        status.className = 'min-h-[1.5em] ' + (kind === 'error' ? 'text-[var(--red-fg)]' : kind === 'ok' ? 'text-[var(--green-fg)]' : 'text-muted');
+        if (typeof msg === 'string') status.textContent = msg;
+        else status.appendChild(msg);
+      }
+
+      var TYPE_TITLES = { add: 'New', update: 'Update', remove: 'Remove' };
+
+      // Problems a request must not have, whichever way it is sent.
+      function problem() {
+        var t = type();
+        if (t === 'add' && !val('device') && !val('project')) return 'Name the device or the firmware to add.';
+        if (t !== 'add' && !val('entry')) return 'Link the altstrument page this is about.';
+        if (val('details').length < 10) return 'Please describe the request in a sentence or two.';
+        return '';
+      }
+
+      // Same title the Worker gives the GitHub issue (worker/index.ts entryName).
+      function title() {
+        var t = type();
+        var name;
+        if (t === 'add') name = [val('project'), val('device') && 'for ' + val('device')].filter(Boolean).join(' ') || 'new entry';
+        else {
+          try { name = new URL(val('entry')).pathname.split('/').filter(Boolean).slice(1).join('/') || val('entry'); }
+          catch (e) { name = val('entry'); }
+        }
+        return '[' + TYPE_TITLES[t] + ']: ' + name;
+      }
+
+      // Plain-text version of the issue body, for the private email.
+      function emailBody() {
+        var t = type();
+        var parts = [];
+        function add(h, v) { if (v) parts.push(h + ':\n' + v); }
+        if (t !== 'add') add('altstrument page', val('entry'));
+        if (t === 'add') { add('Device', val('device')); add('Firmware or tool', val('project')); }
+        add('Details', val('details'));
+        add('Links', val('links').split(/\s+/).filter(Boolean).join('\n'));
+        if (t === 'remove') add('Exclude permanently', form.elements.namedItem('exclude').checked ? 'Yes' : 'No');
+        add('Author', form.elements.namedItem('author').checked ? 'Yes, I am one of the authors.' : 'No');
+        add('Contact', val('contact'));
+        return parts.join('\n\n') + '\n\n--\nSent from the request form on altstrument.org';
+      }
+
+      // A real mailto link, kept in step with the form, so it also works from a context menu.
+      var emailLink = document.getElementById('email-request');
+      function updateEmail() {
+        emailLink.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(title()) + '&body=' + encodeURIComponent(emailBody());
+      }
+      emailLink.addEventListener('click', function (ev) {
+        var p = problem();
+        if (p) {
+          ev.preventDefault();
+          return setStatus(p, 'error');
+        }
+        updateEmail();
+        setStatus('Your email app should open with the request filled in. If nothing happens, write to ' + EMAIL + '.', 'ok');
+      });
+
+      window.onTurnstileLoad = function () {
+        widgetId = window.turnstile.render('#turnstile', { sitekey: SITEKEY, action: 'request', theme: 'auto' });
+      };
+
+      form.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        var t = type();
+        var p = problem();
+        if (p) return setStatus(p, 'error');
+        var token = widgetId !== null && window.turnstile ? window.turnstile.getResponse(widgetId) : '';
+        if (!token) return setStatus('Please wait for the spam check above to finish, then send again.', 'error');
+
+        var body = {
+          type: t,
+          entry: t === 'add' ? '' : val('entry'),
+          device: t === 'add' ? val('device') : '',
+          project: t === 'add' ? val('project') : '',
+          links: val('links'),
+          details: val('details'),
+          author: form.elements.namedItem('author').checked,
+          exclude: t === 'remove' && form.elements.namedItem('exclude').checked,
+          contact: val('contact'),
+          website: val('website'),
+          token: token,
+        };
+        button.disabled = true;
+        setStatus('Sending…');
+        fetch('/api/request', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+          .then(function (res) {
+            return res.json().catch(function () { return {}; }).then(function (data) { return { res: res, data: data }; });
+          })
+          .then(function (r) {
+            if (r.res.ok && r.data.url) {
+              var frag = document.createDocumentFragment();
+              frag.append('Thanks! Your request is ');
+              var a = document.createElement('a');
+              a.href = r.data.url;
+              a.textContent = 'issue #' + r.data.number;
+              frag.append(a, '. You can follow it there.');
+              setStatus(frag, 'ok');
+              form.reset();
+              showFor();
+            } else if (r.res.ok && r.data.dryRun) {
+              setStatus('Dry run: the issue was not created. "' + r.data.issue.title + '"', 'ok');
+              window.lastDryRun = r.data.issue;
+            } else if (r.res.ok) {
+              setStatus('Thanks, your request was sent.', 'ok');
+            } else {
+              setStatus('Not sent: ' + (r.data.error || 'HTTP ' + r.res.status) + '.', 'error');
+            }
+          })
+          .catch(function () {
+            setStatus('Not sent: the network request failed. Try again, or use "Email private request".', 'error');
+          })
+          .finally(function () {
+            button.disabled = false;
+            // Tokens are single-use: get a fresh one for any retry or new request.
+            if (widgetId !== null && window.turnstile) window.turnstile.reset(widgetId);
+          });
+      });
+
+      // Last, once every helper above is defined.
+      showFor();
+    })();
+  </script>
+  <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onTurnstileLoad" async defer></script>
+</Base>

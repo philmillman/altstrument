@@ -2,7 +2,7 @@
 
 Thanks for adding to the catalog. Every entry is a YAML file checked against the schema in `src/content/schema.ts` by `scripts/validate.ts`. The templates below use placeholder values that pass the schema; replace them with real ones.
 
-Not writing YAML? [Open an issue](https://github.com/philmillman/altstrument/issues/new/choose) instead: there are forms for suggesting a new device or firmware, requesting an update to an existing entry, and reporting a bug on the site.
+Not writing YAML? Use the [request form](https://altstrument.org/request), which needs no GitHub account, or email [hello@altstrument.org](mailto:hello@altstrument.org). If you use GitHub, [open an issue](https://github.com/philmillman/altstrument/issues/new/choose): there are forms for suggesting a new device or firmware, requesting an update or removal, and reporting a bug on the site.
 
 ## Adding a device
 
@@ -40,6 +40,17 @@ The repository ships a Claude Code skill, `/discover`, that looks for custom fir
 4. stops without committing, so you review the files like any other change.
 
 Feeds, search queries, keywords and the list of rejected candidates live in `.claude/skills/discover/config.yaml`. Rejected candidates are recorded under `ignore` with a reason so they are not shown again; edit that list by hand to un-reject one. `pnpm discover:candidates --help` lists the gather script's flags for running it on its own.
+
+## Exclusions and fetching
+
+`src/data/exclusions.yaml` lists projects, authors and sites that asked not to be listed. An entry there is permanent:
+
+- `pnpm validate` fails if any catalog file links to it (any http(s) URL in a device, manufacturer or firmware file), so it can't come back through a new entry, an author link or a hotlinked image;
+- the `/discover` gather drops it from every result, and its pages are never fetched (see below).
+
+A removal request with "Exclude permanently" ticked (request form, email, or the removal issue form) ends with the entry's files deleted, a 301 for its page in `public/_redirects`, and an `exclusions:` item with `url`, `reason`, `date` and `issue`. `url` can be one repository (`https://github.com/jane/fw`), a whole GitHub owner (`https://github.com/jane`), a URL prefix, or a bare domain (`example.com`, which covers its subdomains too). The comment at the top of the file has the details.
+
+Every request this project makes to other sites goes through `src/lib/polite-fetch.ts`: one identifying user agent, robots.txt (including the AI-crawler groups and `Content-Signal: ai-input=no` when an AI agent will read the page), Crawl-delay, and the exclusion list. The `/discover` agent's own WebFetch calls are checked by the same rules through a hook in `.claude/settings.json`. Check a URL by hand with `pnpm robots:check <url>`. GitHub's API (and the `gh` CLI) is exempt: it is an API governed by its own terms. The public explanation is on [the About page](https://altstrument.org/about#crawling).
 
 ## Device template
 

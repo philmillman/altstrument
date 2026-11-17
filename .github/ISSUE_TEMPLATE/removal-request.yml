@@ -1,0 +1,47 @@
+name: Removal or opt-out request
+description: Remove an entry, or ask for your work, account or site never to be listed or fetched.
+title: "[Remove]: "
+labels: [removal request]
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Authors don't need to give a reason. A permanent exclusion goes into
+        `src/data/exclusions.yaml`: the entry is removed, the validator refuses to
+        list it again, and our fetchers stop requesting its pages. Prefer not to post
+        publicly? Email hello@altstrument.org or use https://altstrument.org/request.
+
+  - type: input
+    id: url
+    attributes:
+      label: Entry URL
+      description: The altstrument page, or the repository, account or site to leave out.
+      placeholder: https://altstrument.org/firmware/elektron-digitakt/examplefw
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: What should go, and anything else that should stay out with it (other repositories, a whole account or domain).
+    validations:
+      required: false
+
+  - type: textarea
+    id: links
+    attributes:
+      label: Links
+      description: Other URLs this covers, one per line.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope
+      options:
+        - label: Exclude it permanently (never list it again, and don't fetch its pages).
+          required: false
+        - label: I'm one of the authors of this work.
+          required: false

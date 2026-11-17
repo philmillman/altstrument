@@ -23,6 +23,8 @@
  *   - the metrics lock names an asset that loads and matches its sha256; in CI
  *     (CI set) it must also be on the `metrics` release, locally that is a
  *     warning (`pnpm metrics:publish`)
+ *   - no file links to anything on the opt-out list (src/data/exclusions.yaml):
+ *     every http(s) URL in every device, manufacturer and firmware file is checked
  *   - every hotlinked `video` / `videos` / `image` still resolves (network; see below),
  *     or only those in the files a pull request changes (ALTSTRUMENT_CHANGED_FILES)
  *
@@ -43,6 +45,9 @@ import { deviceSchema, firmwareBaseSchema, manufacturerSchema, refineFirmware } 
 import { slugify } from '../src/lib/slug';
 import { youtubeOembedUrl } from '../src/lib/media';
 import { isStale, newestDate } from '../src/lib/stale';
+import { makeUrlMatcher } from '../src/lib/url-match';
+import { EXCLUSIONS_FILE, loadExclusions, type Exclusion } from '../src/lib/exclusions';
+import { politeFetch, SkippedError } from '../src/lib/polite-fetch';
 import { assetPublished, LOCK_FILE, loadSnapshotForLock, parseGithubSource, readLock, METRICS_TAG, type MetricsSnapshot } from '../src/lib/repo-metrics';
 import { z } from 'astro/zod';
 
@@ -94,12 +99,43 @@ function listYaml(dir: string): string[] {
 const ASTRO_YAML: ParseOptions & SchemaOptions = { customTags: ['timestamp'], merge: true, schema: 'core' };
 
 function loadYaml(file: string): unknown {
+  let data: unknown;
   try {
-    return parse(readFileSync(file, 'utf8'), ASTRO_YAML);
+    data = parse(readFileSync(file, 'utf8'), ASTRO_YAML);
   } catch (e) {
     fail(file, `YAML parse error: ${(e as Error).message}`);
     return undefined;
   }
+  checkExclusions(file, data);
+  return data;
+}
+
+// ---- exclusion list ----------------------------------------------------------
+//
+// Projects, authors and sites that asked not to be listed. Any http(s) URL
+// anywhere in a catalog file that falls under an entry is an error, so an
+// excluded project can't come back through a new entry, an author link or a
+// hotlinked image.
+
+let excludedBy: (url: string) => Exclusion | undefined = () => undefined;
+try {
+  excludedBy = makeUrlMatcher(loadExclusions());
+} catch (e) {
+  errors.push((e as Error).message);
+}
+
+function checkExclusions(file: string, data: unknown) {
+  const seen = new Set<string>();
+  const walk = (v: unknown) => {
+    if (typeof v === 'string') {
+      if (!/^https?:\/\//i.test(v) || seen.has(v)) return;
+      seen.add(v);
+      const ex = excludedBy(v);
+      if (ex) fail(file, `links to ${v}, which is on the exclusion list (${EXCLUSIONS_FILE}: ${ex.url}${ex.reason ? `, ${ex.reason}` : ''})`);
+    } else if (Array.isArray(v)) v.forEach(walk);
+    else if (v && typeof v === 'object' && !(v instanceof Date)) Object.values(v).forEach(walk);
+  };
+  walk(data);
 }
 
 // ---- symlinks --------------------------------------------------------------
@@ -485,27 +521,12 @@ function changedFiles(): Set<string> | undefined {
 }
 const REMOTE_CONCURRENCY = 8;
 
-async function request(url: string, method: 'GET' | 'HEAD'): Promise<Response> {
-  let lastErr: unknown;
-  for (let attempt = 0; attempt < 3; attempt++) {
-    if (attempt > 0) await new Promise((r) => setTimeout(r, 500 * 2 ** attempt));
-    try {
-      const res = await fetch(url, {
-        method,
-        redirect: 'follow',
-        headers: { 'User-Agent': 'altstrument-validate' },
-        signal: AbortSignal.timeout(15_000),
-      });
-      if (res.status >= 500 || res.status === 429) {
-        lastErr = new Error(`HTTP ${res.status}`);
-        continue;
-      }
-      return res;
-    } catch (e) {
-      lastErr = e;
-    }
-  }
-  throw lastErr;
+/** Media the site asked us not to request (robots.txt) or that is on the exclusion list, with the reason. */
+const mediaSkipped = new Map<string, string>();
+
+/** One media request through src/lib/polite-fetch.ts (robots.txt, Crawl-delay, exclusion list). */
+function request(url: string, method: 'GET' | 'HEAD'): Promise<Response> {
+  return politeFetch(url, { method, timeoutMs: 15_000 });
 }
 
 /** undefined when fine, otherwise [definitive?, message]. */
@@ -529,11 +550,16 @@ async function checkRemote(kind: 'video' | 'image', url: string): Promise<[boole
     if (!type.startsWith('image/')) return [true, `image ${url} is served as "${type || 'no content-type'}", not an image`];
     return undefined;
   } catch (e) {
+    // The site's robots.txt (or the exclusion list) says not to request it: not a broken link.
+    if (e instanceof SkippedError) {
+      mediaSkipped.set(url, e.reason);
+      return undefined;
+    }
     return [false, `${kind} ${url} could not be checked: ${(e as Error).message}`];
   }
 }
 
-const { mode: mediaCheckMode, skipped: mediaSkipped } = mediaMode();
+const { mode: mediaCheckMode, skipped: mediaCheckSkipped } = mediaMode();
 let remoteNote = '';
 let unchangedNote = '';
 let mediaOkLine = '';
@@ -545,7 +571,7 @@ if (changed) {
   unchangedNote = ` (${total - remoteChecks.length} in unchanged files not checked)`;
 }
 if (mediaCheckMode === 'off') {
-  const why = mediaSkipped ? 'ALTSTRUMENT_SKIP_REMOTE' : 'media check off';
+  const why = mediaCheckSkipped ? 'ALTSTRUMENT_SKIP_REMOTE' : 'media check off';
   remoteNote = `, ${remoteChecks.length} hotlinked media not checked (${why})`;
   mediaOkLine = `${remoteChecks.length} hotlinked media not checked (${why}).`;
 } else if (remoteChecks.length) {
@@ -572,6 +598,13 @@ if (mediaCheckMode === 'off') {
       ? `, ${remoteChecks.length - broken}/${remoteChecks.length} hotlinked media OK (${broken} broken, see warnings)${unchangedNote}`
       : `, ${remoteChecks.length - broken}/${remoteChecks.length} hotlinked media OK${unchangedNote}`;
   mediaOkLine = `All ${remoteChecks.length} hotlinked media OK.`;
+  if (mediaSkipped.size) {
+    // Counted as OK: the link may well work, we just may not ask.
+    const note = ` (${mediaSkipped.size} not requested: the site's robots.txt or the exclusion list)`;
+    remoteNote += note;
+    mediaOkLine = mediaOkLine.replace(/\.$/, `${note}.`);
+    for (const [u, why] of mediaSkipped) warnings.push(`hotlinked media not checked: ${u} (${why})`);
+  }
 } else if (changed) {
   remoteNote = `, no hotlinked media in changed files${unchangedNote}`;
   mediaOkLine = `No hotlinked media in changed files${unchangedNote}.`;
@@ -592,7 +625,7 @@ function writeStepSummary() {
   const path = process.env.GITHUB_STEP_SUMMARY;
   // Off means another step reports media (CI's build step re-runs validate after the validate step).
   if (!path || mediaCheckMode === 'off') return;
-  let md = `### Hotlinked media\n\nMode: \`${mediaCheckMode}\`${mediaSkipped ? ' (ALTSTRUMENT_SKIP_REMOTE)' : ''}\n\n`;
+  let md = `### Hotlinked media\n\nMode: \`${mediaCheckMode}\`${mediaCheckSkipped ? ' (ALTSTRUMENT_SKIP_REMOTE)' : ''}\n\n`;
   if (mediaProblems.length) {
     md += `${mediaProblems.length} of ${mediaChecked} hotlinked media have problems.\n\n`;
     md += '| File | Kind | URL | Problem | Level |\n| --- | --- | --- | --- | --- |\n';

@@ -3,7 +3,7 @@ name: Classic Tabby
 summary: >-
   Fork of M-VAVE's SMK37 Open for the SMK-37 Pro that adds song mode, MIDI file import and per-row program and control change events, with a hosted workbench. It drops the sampler and the DX7 user library to make room.
 description: >-
-  Songs hold up to 128 rows, each pointing to one 64-step block per track, with up to four notes per step, probability, retrigger, per-row length and repeat counts, per-track output channels, queued jumps and loops. 16 songs are stored in the flash that held samples. The workbench imports Standard MIDI files (type 0 or 1) into songs, edits rows and blocks, and exports a .tabby file. Rows can carry program changes, bank selects and control changes that fire when the row starts, and the workbench holds definitions for fifteen external devices, including the FM-1 under Skiff, Melodee and Orange Cat, and a built-in rig profile, so presets can be picked by name. Version 3.0 keeps the start offset and length of each imported note in 480ths of a step, adds a track launch page that lets each of the eight tracks loop one of the song's patterns, a lead time per channel for program changes, and moves Bluetooth settings from the device to the workbench. Version 3.2 adds importer output channels taken from the file and a generated MIDI authoring guide. Version 3.3 is a diagnostic build that adds a full backup and restore of projects, songs and device settings, timing counters and a MIDI monitor script for the computer. Version 4.0 moves the storage boundary to make the user region 64 KiB smaller, removes the stock step editor and recording pages, refuses flash writes while the transport plays and keeps the timing counters in the normal build. Version 4.1 limits the 10 ms control pass to a 6 ms budget so MIDI sends and song scheduling are not delayed by screen drawing, renames the panel controls by their printed numbers and makes the update page retry a failed query. Version 4.2 turns fast MIDI on at power-up and adds a remote-control command over USB. Version 4.3.1 follows an external MIDI clock in song mode, with Start, Continue, Stop and Song Position Pointer from the master, and fixes the missing USB replies with CLOCK set to MIDI; its notes report checks on one SMK-37 Pro. Version 4.4 sends MIDI from a 0.5 ms hardware timer so notes leave within a few milliseconds. Version 4.5 plays larger clips, with any number of notes per step and rows of up to 128 steps, 4.6 stores songs as scenes and clips with a master cycle, and 4.7 adds a CLIPS page that launches clips from the pads; the 4.5.1 to 4.7 notes report tests by remote command on one SMK-37 Pro. It was built on Linux with a reproducible toolchain, byte-identical to the Windows toolchain under Wine. The release notes for 2.0 through 3.3 say it has been tested on the host and in the browser simulator only and is not yet validated on hardware, those for 4.0 say the storage layout was checked on a device with a separate probe build but 4.0 itself has not been installed on one, those for 4.1 say it has not been installed on a device yet, those for 4.2 list a known issue in which the device sends no USB replies while CLOCK is set to MIDI, which the 4.3.1 notes trace to the SDK and fix, and 4.0 warns that old sample and DX7 data is erased after confirmation. Release 1.0 is SMK37 Open V01 unmodified. Written with Claude.
+  Songs hold up to 128 rows, each pointing to one 64-step block per track, with up to four notes per step, probability, retrigger, per-row length and repeat counts, per-track output channels, queued jumps and loops. 16 songs are stored in the flash that held samples. The workbench imports Standard MIDI files (type 0 or 1) into songs, edits rows and blocks, and exports a .tabby file. Rows can carry program changes, bank selects and control changes that fire when the row starts, and the workbench holds definitions for fifteen external devices, including the FM-1 under Skiff, Melodee and Orange Cat, and a built-in rig profile, so presets can be picked by name. Version 3.0 keeps the start offset and length of each imported note in 480ths of a step, adds a track launch page that lets each of the eight tracks loop one of the song's patterns, a lead time per channel for program changes, and moves Bluetooth settings from the device to the workbench. Version 3.2 adds importer output channels taken from the file and a generated MIDI authoring guide. Version 3.3 is a diagnostic build that adds a full backup and restore of projects, songs and device settings, timing counters and a MIDI monitor script for the computer. Version 4.0 moves the storage boundary to make the user region 64 KiB smaller, removes the stock step editor and recording pages, refuses flash writes while the transport plays and keeps the timing counters in the normal build. Version 4.1 limits the 10 ms control pass to a 6 ms budget so MIDI sends and song scheduling are not delayed by screen drawing, renames the panel controls by their printed numbers and makes the update page retry a failed query. Version 4.2 turns fast MIDI on at power-up and adds a remote-control command over USB. Version 4.3.1 follows an external MIDI clock in song mode, with Start, Continue, Stop and Song Position Pointer from the master, and fixes the missing USB replies with CLOCK set to MIDI; its notes report checks on one SMK-37 Pro. Version 4.4 sends MIDI from a 0.5 ms hardware timer so notes leave within a few milliseconds. Version 4.5 plays larger clips, with any number of notes per step and rows of up to 128 steps, 4.6 stores songs as scenes and clips with a master cycle, and 4.7 adds a CLIPS page that launches clips from the pads. Versions 4.8 to 4.13 add a STEP page that edits a clip's notes on the pads, real-time recording from the keys and MIDI in, a panel clip workflow with new clips, lengths, copies, a click and count-in, clip chains, a scene chain, a program and bank per clip and four recorded controller knobs; the 4.5.1 to 4.13 notes report tests by remote command on one SMK-37 Pro, and 4.11 and 4.11.1 were not installed because of a workbench backup fault fixed in 4.11.2. It was built on Linux with a reproducible toolchain, byte-identical to the Windows toolchain under Wine. The release notes for 2.0 through 3.3 say it has been tested on the host and in the browser simulator only and is not yet validated on hardware, those for 4.0 say the storage layout was checked on a device with a separate probe build but 4.0 itself has not been installed on one, those for 4.1 say it has not been installed on a device yet, those for 4.2 list a known issue in which the device sends no USB replies while CLOCK is set to MIDI, which the 4.3.1 notes trace to the SDK and fix, and 4.0 warns that old sample and DX7 data is erased after confirmation. Release 1.0 is SMK37 Open V01 unmodified. Written with Claude.
 status: active
 authors:
 - name: seattleuser0
@@ -17,10 +17,58 @@ homepage: https://seattleuser0.github.io/classic-tabby/
 distribution: browser-installer
 requires_stock: SMK-37 Pro (V16 factory firmware or an installed SMK37 Open); not the Elite
 install_notes: >-
-  Open the workbench in desktop Chrome or Edge with MIDI and SysEx permission, check the Device update tab shows the build number printed in the release notes (0d191b58095bef25 for tabby-v04.7), and confirm the device identity reads SMK-37 Pro_016 or SMK-37 Pro_8000001 before continuing. Make a full backup in the workbench first and keep the file, because tabby-v04.0 moves the storage and every project, song and device setting stays unreadable until you restore it; updating from v04.0 or later needs no restore. Back up DX7 voices too, because sample and DX7 data is erased once you confirm on first boot, and export songs as .tabby before using Restore factory V16, which overwrites the last part of song storage. The workbench has a Restore factory V16 option. An offline copy of the workbench is in the release.
+  Open the workbench in desktop Chrome or Edge with MIDI and SysEx permission, check the Device update tab shows the build number printed in the release notes (9c6c2806e46ffae0 for tabby-v04.13), and confirm the device identity reads SMK-37 Pro_016 or SMK-37 Pro_8000001 before continuing. Make a full backup in the workbench first and keep the file, because tabby-v04.0 moves the storage and every project, song and device setting stays unreadable until you restore it; updating from v04.0 or later needs no restore. Back up DX7 voices too, because sample and DX7 data is erased once you confirm on first boot, and export songs as .tabby before using Restore factory V16, which overwrites the last part of song storage. The workbench has a Restore factory V16 option. An offline copy of the workbench is in the release.
 brick_risk: false
 tags: [sequencer, tracker, midi, fork, editor]
 versions:
+- version: tabby-v04.13
+  date: 2026-11-17
+  url: https://github.com/SeattleUser0/classic-tabby/releases/tag/tabby-v04.13
+  notes: Adds PROGRAM, BANK MSB and BANK LSB per clip, sent when the track enters the clip, and four controller knobs (K1 to K4 on CLIPS, controllers 74, 71, 1 and 11) that a take records. Same storage layout; full backup first.
+- version: tabby-v04.12
+  date: 2026-11-17
+  url: https://github.com/SeattleUser0/classic-tabby/releases/tag/tabby-v04.12
+  notes: Adds the scene chain on the SCENES page, which sets how many times a scene plays, whether the next follows or it stays, and a hold, with a scene pad pressed while stopped reserving the start. Same storage layout; full backup first.
+- version: tabby-v04.11.2
+  date: 2026-11-17
+  url: https://github.com/SeattleUser0/classic-tabby/releases/tag/tabby-v04.11.2
+  notes: Fixes the workbench page, whose full backup, verify and restore stopped on a song with a scene stored on the panel. The firmware is tabby-v04.11's. Use this page instead of those of v04.10, v04.11 and v04.11.1.
+- version: tabby-v04.11.1
+  date: 2026-11-17
+  url: https://github.com/SeattleUser0/classic-tabby/releases/tag/tabby-v04.11.1
+  notes: First attempt at the workbench backup fix for songs with a panel-stored scene; the notes say a second reader was still faulty and tabby-v04.11.2 corrects both. The firmware is tabby-v04.11's.
+- version: tabby-v04.11
+  date: 2026-11-17
+  url: https://github.com/SeattleUser0/classic-tabby/releases/tag/tabby-v04.11
+  notes: Adds clip chains in CLIP SETTING (next clip or stop, after a clip end or 1 to 512 steps, repeat count) and ends the count-in exactly on the beat. Same storage layout; full backup first. The notes say it was not installed on a device because the backup page fault found afterwards.
+- version: tabby-v04.10
+  date: 2026-11-17
+  url: https://github.com/SeattleUser0/classic-tabby/releases/tag/tabby-v04.10
+  notes: Adds a panel clip workflow with new clips from an empty pad, a clip length, copy to pad, a click and count-in, and scenes stored from the panel. Songs changed on the device are saved in a form older firmware does not read; full backup first. The workbench page of this release cannot back up songs with a stored scene.
+- version: tabby-v04.9.3
+  date: 2026-11-17
+  url: https://github.com/SeattleUser0/classic-tabby/releases/tag/tabby-v04.9.3
+  notes: Diagnostics shows the flash chip's JEDEC ID and size as a report only; the notes say nothing checks it. Otherwise tabby-v04.9.2.
+- version: tabby-v04.9.2
+  date: 2026-11-16
+  url: https://github.com/SeattleUser0/classic-tabby/releases/tag/tabby-v04.9.2
+  notes: Fixes the CLIPS page after a stop, where a launched clip kept a green pad and could not be reserved for the next play. Hardware tested on one SMK-37 Pro by remote keys and MIDI in.
+- version: tabby-v04.9.1
+  date: 2026-11-16
+  url: https://github.com/SeattleUser0/classic-tabby/releases/tag/tabby-v04.9.1
+  notes: Fixes HOME on the STEP page, which did nothing while a clip was open in v04.8 and v04.9. Installed and tested on one SMK-37 Pro.
+- version: tabby-v04.9
+  date: 2026-11-16
+  url: https://github.com/SeattleUser0/classic-tabby/releases/tag/tabby-v04.9
+  notes: Adds real-time recording into the selected clip from the keys, pads or MIDI in, with input quantize, thinned controllers, overdub and one undo level per take. Same storage layout; full backup first.
+- version: tabby-v04.8
+  date: 2026-11-16
+  url: https://github.com/SeattleUser0/classic-tabby/releases/tag/tabby-v04.8
+  notes: Adds the STEP page, which edits a clip's notes on the pads and keys with velocity, start, length and probability, four undo levels and unsaved-clip playback. A clip edited on the device is stored in the v3 clip format, which needs v04.5 or later. Same storage layout; full backup first.
+- version: tabby-v04.7.1
+  date: 2026-11-16
+  url: https://github.com/SeattleUser0/classic-tabby/releases/tag/tabby-v04.7.1
+  notes: A clip pad pressed while the song is stopped reserves its clip for PLAY, as on the MC-707, and the two mutes (all outputs and internal sound only) look different. Same storage layout; full backup first.
 - version: tabby-v04.7
   date: 2026-11-14
   url: https://github.com/SeattleUser0/classic-tabby/releases/tag/tabby-v04.7

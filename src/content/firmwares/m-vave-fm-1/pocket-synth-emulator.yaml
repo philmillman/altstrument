@@ -1,6 +1,6 @@
 device: m-vave-fm-1
 kind: tool
-name: FM1 Emulator for Android
+name: Pocket Synth Emulator
 summary: >-
   Android app that runs FM-1 firmware packages unchanged on an emulated FM-1, lists and downloads Firmware Hub entries,
   and installs a package on a real FM-1 over USB.
@@ -12,13 +12,14 @@ description: >-
   release and kept only if its SHA-256 matches the hub's. A GitHub repository can also be added by name, which takes its
   newest release with a .fwsc and is not checked by anyone. A second part talks to a real FM-1 with Felucca's update
   protocol: it installs a package, finishes an interrupted update and returns the unit to M-VAVE's V15, downloaded from
-  M-VAVE's own repository and checked against its hash. ObsSynth FM-1 is built into the app. The app started as ObsLoader,
-  the name of its first two releases.
+  M-VAVE's own repository and checked against its hash. ObsSynth FM-1 is built into the app. The app began as ObsLoader (0.1.0 and 0.2.0),
+  became FM1 Emulator (0.3.0 and 0.3.1), then FM-1 Pocket (0.3.2), and has been called Pocket Synth Emulator since 0.4.0,
+  the name it takes on Google Play. The repository is now orianbsilva/fm1-pocket and is not the same project as Prado-Design's FM-1 Pocket web app.
 status: active
 authors:
 - name: orianbsilva
   url: https://github.com/orianbsilva
-source: https://github.com/orianbsilva/fm1-emulator
+source: https://github.com/orianbsilva/fm1-pocket
 source_status: open
 license: GPL-3.0-only
 license_notes: >-
@@ -27,21 +28,33 @@ license_notes: >-
   no M-VAVE image is in the repository.
 distribution: download
 install_notes: >-
-  Needs Android 8 or newer, 64-bit. Download FM1-Emulator-VERSION.apk from the releases page and allow installs from that source; each version installs
-  over the last. Playing in the emulator writes nothing to a real unit. Installing to the FM-1 follows Felucca's update
+  Needs Android 8 or newer, 64-bit. Download Pocket-Synth-Emulator-VERSION.apk from the releases page and allow installs from that source; each version up to 0.3.2 installs
+  over the last, while 0.4.0 has a new app id and installs beside the earlier builds, which can then be uninstalled. Playing in the emulator writes nothing to a real unit. Installing to the FM-1 follows Felucca's update
   protocol, and the README offers the way back to M-VAVE's V15 and finishing an interrupted update from the same screen.
 brick_risk: false
 tags: [android, emulator, flasher, midi, usb-midi]
 versions:
+- version: 0.4.0
+  date: 2026-11-16
+  url: https://github.com/orianbsilva/fm1-pocket/releases/tag/v0.4.0
+  notes: Renamed Pocket Synth Emulator, with a new app id (io.github.orianbsilva.fm1pocket) so it installs beside 0.3.x. The release notes list no other changes and add a privacy policy page.
+- version: 0.3.2
+  date: 2026-11-16
+  url: https://github.com/orianbsilva/fm1-pocket/releases/tag/v0.3.2
+  notes: Renamed FM-1 Pocket; installs over the earlier builds.
+- version: 0.3.1
+  date: 2026-11-16
+  url: https://github.com/orianbsilva/fm1-pocket/releases/tag/v0.3.1
+  notes: Runs the emulated FM-1 on its own thread with a short buffer ahead of the sound, so heavy moments no longer leave clicks, and finds firmwares and repositories through GitHub's public release pages instead of its rate-limited API.
 - version: 0.3.0
   date: 2026-11-16
-  url: https://github.com/orianbsilva/fm1-emulator/releases/tag/v0.3.0
+  url: https://github.com/orianbsilva/fm1-pocket/releases/tag/v0.3.0
   notes: First build under the FM1 Emulator name; plays any .fwsc on the emulated FM-1.
 - version: 0.2.0
   date: 2026-11-16
-  url: https://github.com/orianbsilva/fm1-emulator/releases/tag/v0.2.0
+  url: https://github.com/orianbsilva/fm1-pocket/releases/tag/v0.2.0
   notes: Published as ObsLoader.
 - version: 0.1.0
   date: 2026-11-16
-  url: https://github.com/orianbsilva/fm1-emulator/releases/tag/v0.1.0
+  url: https://github.com/orianbsilva/fm1-pocket/releases/tag/v0.1.0
   notes: First release, published as ObsLoader.

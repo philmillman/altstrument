@@ -1,0 +1,49 @@
+device: m-vave-fm-1
+name: CONDUCTOR
+summary: >-
+  Orchestral groovebox with strings, woodwinds, brass and percussion parts, written on a piano roll or as sheet music,
+  with articulations, dynamics curves, a hall reverb and a song arranger.
+description: >-
+  The orchestra is laid out as a conductor sees it, with high and low parts for strings (violins, cellos), woodwinds
+  (oboes, bassoons) and brass (trumpets, horns), plus a percussion part of eight drums chosen from bass drum, cymbals,
+  triangle, snares, toms and timpani. The README says the string, wind and brass sounds were measured from recordings of
+  real instruments. Each melodic part plays up to three notes at once and can be set to tutti, solo or tacet. Every part
+  has ten patterns, A to J, entered on a piano roll or in notation, or recorded live, and each pattern keeps its own
+  expression, player count, vibrato, balance and con sordino setting. Articulations include staccato, accent, legato,
+  marcato, trill, and pizzicato and tremolo for strings, and a pattern can carry a crescendo or diminuendo curve. The
+  Composer chains patterns into ten pieces. Other features are eight time signatures, swing, humanise, tap tempo, key
+  signatures with scale lock, four hall settings, a metronome with count-in, four save slots, MIDI in over USB or the TRS
+  jack, and USB audio. A short overture is loaded at first start. The platform layer is Dinghy, and the notation code
+  comes from QUARTET. The repository also carries an SMK-37 board layer from Dinghy, and its docs/SMK37.md describes how
+  Dinghy builds for the SMK-37; the release has an FM-1 package only.
+status: active
+authors:
+- name: MammothCheese
+  url: https://github.com/MammothCheese
+source: https://github.com/MammothCheese/conductor
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states GPL-3.0-only. The platform parts carry the copyright of Leo Kuroshita, genkigenki, zvenson and others as
+  listed in LICENSING.md. The serif lettering is DejaVu Serif Bold (Bitstream Vera licence) and the music symbols are from
+  Noto Music (SIL OFL 1.1). No M-VAVE stock image is in the repository.
+homepage: https://mammothcheese.github.io/conductor/
+based_on: m-vave-fm-1/dinghy
+distribution: download
+install_notes: >-
+  Install conductor-1.0.fwsc from the release with M-Flasher, after backing up the whole flash, or with tools/fm1_install.py
+  over USB-MIDI. The unit then reports itself as FM-1_1812. To go back, restore the M-Flasher backup or install M-VAVE's
+  official firmware. Holding OCT- while switching on starts a USB rescue mode. The README says installing is at your own risk.
+brick_risk: false
+tags: [groovebox, sequencer, synth-engine, notation, orchestral, emulator]
+image:
+  url: https://raw.githubusercontent.com/MammothCheese/conductor/main/docs/guide/home.png
+  alt: "CONDUCTOR orchestra page on cream, with the percussion row on top and high and low brass, winds and strings below, each with a pattern letter and seven key shapes; strings high is red"
+  credit: MammothCheese
+  source_url: https://github.com/MammothCheese/conductor
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-17
+  url: https://github.com/MammothCheese/conductor/releases/tag/v1.0
+  notes: First release.

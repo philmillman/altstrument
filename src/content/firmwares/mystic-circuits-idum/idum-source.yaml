@@ -1,0 +1,35 @@
+device: mystic-circuits-idum
+name: IDUM (official source)
+summary: The IDUM module's stock firmware as an Arduino sketch by Eli Pechman, published by Mystic Circuits with its earlier versions and hardware files. The repository's newest sketch is dated 17 August 2026.
+description: >-
+  The mysticcircuits/IDUM repository holds the firmware that ships on the IDUM Eurorack module as zipped Arduino
+  sketches: v.90, v.95, v.99 (which added a split mode and looper improvements) and a later v.99.5 package. It also
+  holds the CC BY-SA 4.0 licence text, the front-panel artwork and a list of compatible sequencers. The sketch is
+  split into numbered files for variables, input reading, edge detection, looping, mode selection and display. The
+  author writes that it is meant to be easy to read and modify, and warns that changing pin assignments can damage the
+  module. ID00M and Alt-DUM are community derivatives of v.99.
+status: maintained
+authors:
+  - name: Eli Pechman
+    url: https://github.com/mysticcircuits
+source: https://github.com/mysticcircuits/IDUM
+source_status: open
+license: CC-BY-SA-4.0
+license_notes: >-
+  The sketch header states a Creative Commons Attribution-ShareAlike 4.0 licence, and the repository includes the
+  licence text as a PDF. There is no LICENSE file. The firmware is distributed as zip archives of source, not as
+  compiled images.
+homepage: https://www.mysticcircuits.com/product/idum
+distribution: source-only
+install_notes: >-
+  Unzip a package, open the sketch in the Arduino IDE with the Arduino megaAVR Boards package and the Arduino Nano
+  Every board (ATMEGA4809 registers), and upload over USB. The manufacturer's video on its repository README covers
+  the steps. The onboard programmer can be unreliable, so a failed upload is retried. Uploading replaces only the
+  sketch on the Nano Every, and an earlier package can be uploaded again to go back.
+brick_risk: false
+tags: [official, open-source, sequencer, trigger, eurorack, clock]
+versions:
+  - version: main @ 169ef9d
+    date: 2026-08-23
+    url: https://github.com/mysticcircuits/IDUM/commit/169ef9dd6e645d52de9a65fc9310c9744fedbe63
+    notes: No tagged releases; this is the latest commit.

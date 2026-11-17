@@ -10,7 +10,7 @@ description: >-
   console's audio hardware: a codec with ADPCM or CD-style grit, nine reverbs at 22.05 kHz, crush, redux and skip. The
   screen draws a floor of sixteen lanes in perspective with a low-poly gem, in five skins. Settings, patterns and imported
   breaks use the same data area as LOAF BREAKER and CHOPPAH, and a store without AFFINE's mark is left unread. The
-  project site runs the firmware itself in WebAssembly and hosts the installer. The README calls 0.1 a beta that has not
+  project site runs the firmware itself in WebAssembly and hosts the installer. The release notes call 0.3 a beta that has not
   yet run on an FM-1.
 status: active
 authors:
@@ -28,7 +28,7 @@ based_on: m-vave-fm-1/loaf-breaker
 distribution: browser-installer
 requires_stock: M-VAVE stock firmware or another fm1-base / Felucca build
 install_notes: >-
-  Use the installer on the project site in Chrome or Edge over USB, or install affine-0.1.fwsc from the release. The
+  Use the installer on the project site in Chrome or Edge over USB, or install affine-0.3.fwsc from the release. The
   first SAVE writes over the data area that LOAF BREAKER and CHOPPAH also use (0x97000 to 0xDFFFF, settings at 0xFC000),
   so back up what another firmware keeps first. Installing another firmware or the installer's M-VAVE restore leaves
   it, and after two failed starts it comes up in a silent safe mode with USB on.
@@ -41,6 +41,14 @@ image:
   source_url: https://inigohernandez.github.io/affine/
   first_party: true
 versions:
+- version: '0.3'
+  date: 2026-11-17
+  url: https://github.com/InigoHernandez/affine/releases/tag/v0.3
+  notes: Makes the controls one map, with the same encoders on every page and every effect under FX, adds an INIT shortcut and a tutorial of 28 steps, and a question before the pattern is cleared. Still a beta not run on an FM-1.
+- version: '0.2'
+  date: 2026-11-16
+  url: https://github.com/InigoHernandez/affine/releases/tag/v0.2
+  notes: Adds PSX COLOR, a degraded colour over the whole mix, three rows of black keys for performing and smoother reverb size changes. Still a beta not run on an FM-1.
 - version: '0.1'
   date: 2026-11-16
   url: https://github.com/InigoHernandez/affine/releases/tag/v0.1

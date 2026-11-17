@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+name: FM1-NTT Firmware Pack
+kind: tool
+summary: >-
+  Separate repository holding unmodified copies of Felucca 1.8.2, FoMni-1 0.4.1 and Jangada 1.0.1 with their complete source,
+  license texts and provenance, for use with FM1-NTT.
+description: >-
+  Created so that the GPL firmware that FM1-NTT can run stays out of that project's MIT repository. Each folder has the .fwsc,
+  the source archive, the license texts, the author's own licensing notes, a SOURCES.md and a NOTICE, and MANIFEST.tsv records
+  hashes, sizes, licenses and the commit each was built from. A checker script enforces an allowlist of licenses and the rule
+  that every firmware ships with its source, a weekly workflow watches the authors' releases, and a script builds a Debian
+  package for the R36S. SLOOP 2.8.5, Melodee and X0X are left out, with reasons. The README says the firmware were booted only
+  in FM1-NTT's emulator.
+status: active
+authors:
+- name: ANSI Apps
+  url: https://github.com/joashchee
+source: https://github.com/joashchee/FM1-NTT-Firmware-Pack
+source_status: open
+license: MIT
+license_notes: >-
+  The MIT LICENSE covers the scripts, documents and packaging only. The firmware keeps its authors' licenses: Felucca (Leo
+  Kuroshita), FoMni-1 (Charles Vestal) and Jangada (zednaked) are GPL-3.0-only with permissive parts. The three committed
+  .fwsc files are community builds of about 610 KB and none matches a licensed M-VAVE blob.
+distribution: download
+install_notes: >-
+  Use it through FM1-NTT, or take a .fwsc from a folder and install it with any FM-1 installer. The package for the R36S is
+  built with build-deb.sh in Docker. The README says nothing here was flashed to a real FM-1 by the project.
+brick_risk: false
+tags: [library, utility, research]
+versions:
+- version: main @ 887e23d
+  date: 2026-11-16
+  url: https://github.com/joashchee/FM1-NTT-Firmware-Pack/commit/887e23dd087ca3d5345fdb34ef1058e9ae75011b
+  notes: No tagged releases; this is the latest commit, which creates the pack.

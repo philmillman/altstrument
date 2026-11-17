@@ -17,17 +17,20 @@ source: https://github.com/dferreiramarques/volca-sample-loader
 source_status: open
 license: MIT
 license_notes: The LICENSE file is the MIT text, copyright 2026 David Marques / monco.io.
-homepage: http://volca.monco.io/
+homepage: https://volca.monco.io/
 distribution: browser-installer
 install_notes: >-
   Use Chrome or Edge on a computer, or Chrome on Android with a USB OTG cable, and connect the volca sample2 by its micro-USB
-  cable. Allow MIDI with SysEx access when asked. The hosted copy is served over plain HTTP, which browsers may treat as an
-  insecure page for MIDI; if the unit cannot be reached, download index.html from the repository and open it from disk or host
-  it over HTTPS. Back up all samples first. Very long samples can make the volca stop answering, and switching it off and on
+  cable. Allow MIDI with SysEx access when asked. The hosted copy is served over HTTPS since 2026-11-16; if the unit
+  cannot be reached, download index.html from the repository and open it from disk or host it yourself. Back up all samples first. Very long samples can make the volca stop answering, and switching it off and on
   recovers it with the memory intact.
 brick_risk: false
 tags: [sample-transfer, librarian, web-midi, sysex, usb-midi, samples, web]
 versions:
+  - version: main @ 4436d18
+    date: 2026-11-16
+    url: https://github.com/dferreiramarques/volca-sample-loader/commit/4436d18277a159cd0b8fdaf115b07e23848cb477
+    notes: No tagged releases; this is the latest commit. The commits since the previous entry only add and remove the site's CNAME file, and the hosted copy at volca.monco.io is now served over HTTPS.
   - version: main @ b909268
     date: 2026-11-16
     url: https://github.com/dferreiramarques/volca-sample-loader/commit/b909268d64149be57189c7dbb46793f823870aa2

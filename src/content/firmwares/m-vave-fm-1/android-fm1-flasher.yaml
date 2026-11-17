@@ -9,9 +9,9 @@ description: >-
   catalogue tab lists The Firmware Hub's entries, and optionally awesome-fm1, a GitHub repository's releases or a direct package link, with favourites, filters and update marks, and keeps downloaded packages for offline use. Before writing, the app checks the
   catalogue's SHA-256, the package header and the file CRCs, then runs the two-step update and checks the unit's identity after each restart. The only
   package it pins is M-VAVE's official V15. An experimental switch in Settings turns on a multi-port MIDI logger, flash chip detection through the
-  chip's USB download mode, and a recovery that backs up the whole flash and rewrites only the firmware region from the V15 package. The app has
+  chip's USB download mode, and a recovery that backs up the whole flash and rewrites only the firmware region from the V15 package. From 0.10.1 the same switch also enables sector-level flash maps, backup import and restore to the same unit, installing compatible firmware over ROM and, as options, installing m-bootloader 2.4 or restoring the stock V15 bootloader, each from a reviewed plan with a pre-write backup. The app has
   English, Polish and Simplified Chinese interfaces. The README calls it experimental, says one user has flashed a real FM-1 with an earlier build and
-  lists physical USB recovery and automatic reconnection as untested.
+  lists physical USB recovery and automatic reconnection as untested; the 0.10.1 notes say physical acceptance of the newly enabled writes is still outstanding.
 status: active
 authors:
 - name: ekim-pl
@@ -27,12 +27,22 @@ homepage: https://ekim-pl.github.io/android-fm1-flasher/
 distribution: download
 requires_stock: A firmware with a compatible USB updater, such as M-VAVE's V15
 install_notes: >-
-  Releases carry a debug-signed APK with a SHA-256 file, meant for testing. The app writes only the firmware region and leaves the boot area alone; its
-  recovery refuses a unit whose boot area is not a recognised stock one, and downloading is separate from writing. It does not install
-  m-bootloader or rewrite the bootloader. Keep M-UPGRADE or another rescue route ready, since a power loss while writing can need a USB rescue.
-brick_risk: false
+  Release 0.10.1 carries an F-Droid APK and a developer APK with SHA-256 files; earlier builds were debug-signed APKs meant for testing. Normal installs and the V15 recovery write only the firmware region and leave the boot area alone; the recovery refuses a unit whose boot area is not a recognised stock one, and downloading is separate from writing. From 0.10.1, with Experimental features on, the app can also install m-bootloader 2.4 or restore the stock V15 bootloader, which are opt-in choices that need a reviewed plan and a pre-write backup, and a backup restore keeps the unit's own bootloader unless told otherwise. Keep M-UPGRADE or another rescue route ready, since a power loss while writing can need a USB rescue.
+brick_risk: true
 tags: [flasher, usb-midi, recovery, backup]
 versions:
+- version: 0.10.1
+  date: 2026-11-17
+  url: https://github.com/ekim-pl/android-fm1-flasher/releases/tag/v0.10.1
+  notes: "Stable release, published as an F-Droid APK and a developer APK. With Settings, Experimental features on, adds a sector-level flash map, import of app ZIP backups or M-Flasher BIN and JSON files, installing the bundled m-bootloader 2.4 or restoring the stock V15 bootloader, installing compatible downloaded firmware over ROM, and restoring a verified backup to the same instrument, each from a reviewed plan with a pre-write backup. The notes say physical acceptance of these writes is still outstanding and automated tests use simulated flash. The F-Droid APK is signed with a different key from the debug builds and cannot update over them."
+- version: 0.10.0-experimental.40
+  date: 2026-11-16
+  url: https://github.com/ekim-pl/android-fm1-flasher/releases/tag/v0.10.0-experimental.40
+  notes: "Pre-release build 40. Shows the measured flash ID, chip key and capacity, adds a flash map for full backups and MBOOT MIDI diagnostics, and previews m-bootloader 2.4 installation, stock V15 boot restoration and backup restoration. The new write operations are disabled in this build and no physical flashing was performed."
+- version: 0.10.0-experimental.39
+  date: 2026-11-16
+  url: https://github.com/ekim-pl/android-fm1-flasher/releases/tag/v0.10.0-experimental.39
+  notes: "Pre-release build 39. Source check intervals can be set from 1 to 168 hours, with manual checks in experimental mode skipping the interval except for The Firmware Hub, which keeps a 24-hour minimum. The notes say no physical flashing was performed."
 - version: 0.10.0-experimental.38
   date: 2026-11-16
   url: https://github.com/ekim-pl/android-fm1-flasher/releases/tag/v0.10.0-experimental.38

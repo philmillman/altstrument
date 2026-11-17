@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+name: MAMA firmware mirror
+kind: tool
+summary: >-
+  Mirror of 327 community FM-1 firmware packages pinned by SHA-256 for the MAMA Android app, with the source of each copyleft
+  one, kept as release assets next to a manifest.
+description: >-
+  The repository holds a README table, a manifest.json and a list of what is not mirrored, while the packages and source
+  archives sit in two release pages. Each package is a byte-identical copy of the author's release, named after its Hub
+  id, so that an install the app verified keeps working after the author or The Firmware Hub moves to a newer version. Only
+  firmware with a redistribution-friendly license is mirrored; for GPL, LGPL, AGPL and MPL firmware the source of that exact
+  version is taken from the author's tag or commit. Firmware with no stated license or with proprietary terms is listed as
+  not mirrored. No M-VAVE image appears in the manifest. The maintainer offers takedown by issue.
+status: active
+authors:
+- name: f00br
+  url: https://github.com/f00br
+source: https://github.com/f00br/mama-firmware
+source_status: binary-only
+license: unspecified
+license_notes: >-
+  The repository has no license file. The README says each mirrored file keeps its author's license and nothing is relicensed.
+  The manifest lists 269 GPL-3.0, 45 MPL-2.0, nine MIT, one Apache-2.0 and a few GPL-2.0 or -only packages.
+homepage: https://github.com/f00br/mama-firmware/releases/tag/packages
+distribution: download
+install_notes: >-
+  Download a .fwsc from the packages release, check it against the sha256 in manifest.json and install it with an FM-1
+  installer of your choice. The packages are other people's firmware, so read each one's own notes first.
+brick_risk: false
+tags: [library, utility]
+versions:
+- version: main @ f7171e3
+  date: 2026-11-16
+  url: https://github.com/f00br/mama-firmware/commit/f7171e307c794ceb25dd2fa40a01bfb7af6de4ba
+  notes: No tagged releases; this is the latest commit. The packages and sources releases are rolling pages.

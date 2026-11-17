@@ -1,0 +1,37 @@
+device: valeton-gp-5
+kind: firmware
+name: NAM Loader
+summary: Firmware for the Valeton GP-5 that plays Neural Amp Modeler A2-Lite captures on the pedal, split across its two processors, with 12 capture slots. Built on OpenGP5.
+description: >-
+  NAM Loader runs the A2-Lite part of Neural Amp Modeler A2 captures on the pedal itself. The first layers of the network
+  run on the control processor and the remaining layers and the output run on the DSP, in fixed point. The pedal keeps up to
+  12 captures, browsed with the PARA knob, with the foot switch as bypass and the volume knob as output level; the playing
+  slot is remembered across power-off. Captures are converted from .nam files and written to slots with OpenGP5 Launchpad's
+  Tones page, and older A1 captures cannot be played. A built-in capture from NeuralAmpModelerCore's example A2 model plays
+  while the bank is empty. Cab impulse responses are not included yet. Installing it wipes the storage of the firmware that
+  was on the pedal before. The README states it is alpha and not affiliated with Valeton or the Neural Amp Modeler project.
+status: active
+authors:
+  - name: the NAM Loader contributors
+    url: https://github.com/OpenGP5
+source: https://github.com/OpenGP5/NAM-Loader
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT License. The built-in capture is NeuralAmpModelerCore's example A2 model, MIT-licensed with
+  copyright held by Steven Atkinson, and its notice is in CAPTURE-LICENSE.txt. The README states that "Valeton" and "GP-5"
+  are Valeton's trademarks.
+distribution: download
+install_notes: >-
+  Flash GP-5_nam-player.bin from the release with OpenGP5 Launchpad, or run gp5tool.py flash with --sections all from the
+  opengp5 submodule; it can also be built with build.sh. Back up the pedal's storage first, as the install wipes it. Read
+  OpenGP5's getting-started guide before flashing, especially its recovery section: the factory loader cannot be overwritten
+  over USB, and in some cases, such as a stalled DSP update, recovery needs an FT232H adapter wired to the pedal's debug pads.
+brick_risk: true
+tags: [fx, nam, amp-modeler, neural, platform]
+based_on: valeton-gp-5/opengp5
+versions:
+  - version: 1.0.0
+    date: 2026-11-16
+    url: https://github.com/OpenGP5/NAM-Loader/releases/tag/v1.0.0
+    notes: First release, on OpenGP5 0.5.5-alpha.

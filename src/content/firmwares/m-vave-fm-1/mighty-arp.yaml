@@ -1,13 +1,13 @@
 device: m-vave-fm-1
 name: Mighty Arp
-summary: 4-operator FM and subtractive synth built around a chance arpeggiator with 13 modes, plus a 32-step sequencer, 50 sounds, a random sound maker, 16 user presets and MIDI over USB and TRS.
+summary: 4-operator FM and subtractive synth built around a chance arpeggiator with 13 modes, plus a 32-step sequencer, 50 sounds, a random sound maker, 16 user presets and MIDI over USB, TRS and Bluetooth.
 description: >-
   You hold a chord and a CHANCE control sets how likely each arpeggiator step is to play. The arpeggiator can build chords
   in a chosen key and scale, strum them, and add swing, humanize, octave jumps and velocity spread. The sequencer writes
   steps from the keys, transposes them live and uses the same chance. Sounds come from a 4-operator engine with analog-style
   waves, a filter and its envelope, followed by chorus, ping-pong delay and a reverb with shimmer. MIDI runs in and out with
   clock either way, and over USB it is also a sound card. It is built on fm1-base and felucca-bsp. The first commit landed on
-  2026-11-04 and 1.0 followed the same day. It keeps its own settings and presets and does not read other firmwares' projects
+  2026-11-04 and 1.0 followed the same day. Version 1.5 adds a generative GEN mode, in which the arpeggiator plays the chosen key and scale with no keys held, and Bluetooth MIDI in and out. It keeps its own settings and presets and does not read other firmwares' projects
   or samples. The project site has a browser emulator, an installer and a manual.
 status: active
 authors:
@@ -27,6 +27,10 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, fm, arpeggiator, sequencer, generative, midi, usb-midi, fx]
 versions:
+- version: '1.5'
+  date: 2026-11-16
+  url: https://github.com/NickCulbertson/FM1-Mighty-Arp/releases/tag/v1.5
+  notes: Adds GEN, a generative mode in which the arp plays the key and scale by itself, and Bluetooth MIDI, switched on under GLO with notes and clock both ways. Settings and user presets carry over from 1.4.
 - version: '1.4'
   date: 2026-11-10
   url: https://github.com/NickCulbertson/FM1-Mighty-Arp/releases/tag/v1.4

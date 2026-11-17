@@ -1,0 +1,42 @@
+device: bastl-instruments-kastle-2
+also_devices: [bastl-instruments-citadel]
+name: Kastle 2 framework (official source)
+kind: tool
+summary: Bastl's open C++ framework, toolchain and documentation for writing Kastle 2 and Citadel apps, with the FX Wizard and Wave Bard firmwares, schematics and a list of app IDs.
+description: >-
+  The kastle2 repository is the development base for the Kastle 2 family. It holds the C++ code for the RP2040
+  hardware (audio, knobs, pins, MIDI, USB, calibration and test mode), a Nix shell and manual install guides, a coding
+  style guide, a glossary with examples, generated code documentation, MIDI mappings and a script that scaffolds a
+  new app. It also has the schematics and case outlines, and an app list that reserves ID ranges for official and
+  community apps. Citadel runs the same builds as the Kastle 2. Bastl keeps the Alchemist app, the board layout and
+  the full panel and case files closed.
+status: active
+authors:
+  - name: Bastl Instruments
+    url: https://github.com/bastl-instruments
+  - name: Václav Mach
+    url: https://github.com/xx0x
+  - name: Marek Mach
+    url: https://github.com/machmar
+source: https://github.com/bastl-instruments/kastle2
+source_status: open
+license: MIT
+license_notes: >-
+  Code is MIT (LICENSE). Schematics, documentation, templates and printable 3D files are CC BY SA 4.0. Voice
+  recordings are CC0. Panel graphics, case artwork and the Wave Bard factory samples are all rights reserved.
+homepage: https://github.com/bastl-instruments/kastle2
+community:
+  - label: Bastl Instruments Discord
+    url: https://discord.com/invite/C4RXRjgYJ6
+distribution: source-only
+install_notes: >-
+  Clone the repository, set up the toolchain with the Nix shell or the manual guide, and run make in code/build to build
+  all apps, or make <app-name> for one. Copy the .uf2 to the unit while it is in its SHIFT-at-power-on USB drive mode.
+  The RP2040 ROM provides that mode, so a bad build is replaced the same way.
+brick_risk: false
+tags: [official, open-source, sdk, library, toolchain, rp2040]
+versions:
+  - version: main @ a4a7a04
+    date: 2026-08-14
+    url: https://github.com/bastl-instruments/kastle2/commit/a4a7a0451038bc4ed4719f46573c3eff92e7c7ce
+    notes: No tagged releases; this is the latest commit.

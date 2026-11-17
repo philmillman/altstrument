@@ -1,0 +1,37 @@
+device: sonic-potions-lxr
+kind: tool
+name: LXR VST3
+summary: Work-in-progress C++17 port of the LXR 0.37 drum engine to a VST3 plugin, with the voices, filter, envelopes, modulation and mixer ported from the original C and the plugin shell and sequencer still in progress.
+description: >-
+  LXR VST3 re-implements the sound engine of Sonic Potions' LXR firmware 0.37 as an iPlug2-based plugin, keeping the original
+  constants, integer and float types and known quirks. The README lists the filter, parameter mappings, oscillators and
+  envelopes as ported and tested against the original C, and the phase log marks the drum, snare, cymbal and hi-hat voices,
+  LFOs and modulation, mixer and a reference-vector test harness as done. The plugin shell with 227 parameters and MIDI
+  input is still in progress, and the sequencer port, a panel layout and the user interface are not started. Data tables
+  exported from the firmware are in the repository. It deliberately follows the original 0.37 code and not the Catalyst
+  fork. The repository includes agent instruction files and prompts, and the phase log says the port was written with local
+  language models. It is not affiliated with Sonic Potions.
+status: active
+authors:
+  - name: vlndv
+    url: https://github.com/vlndv
+source: https://github.com/vlndv/lxr-vst3
+source_status: open
+license: proprietary
+license_notes: >-
+  LICENSE-LXR.txt is Julian Schmidt's LXR licence, and the README says it applies to everything derived from the firmware,
+  including the exported data tables: the code may not be sold or used in a commercial product or activity, modified
+  redistributions must include their complete source, and the copyright notice must be kept. The bundled iPlug2 framework is
+  MIT. The README calls this a non-commercial hobby port.
+distribution: source-only
+install_notes: >-
+  Build it from source with the iPlug2 framework in vendor/ and load the VST3 in a host. Nothing is flashed to the LXR, and
+  the plugin does not read the synth's SD card or firmware image.
+brick_risk: false
+tags: [vst3, emulator, drums, synth-engine, port]
+based_on: sonic-potions-lxr/lxr-firmware
+versions:
+  - version: main @ a73f310
+    date: 2026-10-11
+    url: https://github.com/vlndv/lxr-vst3/commit/a73f310fda98fcf8d09c1d4ece0e6f8ff0abde6a
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,52 @@
+device: m-vave-fm-1
+name: Blues Box
+summary: >-
+  Standalone 12-bar blues backing band: drums, bass and comping keys follow a major or minor blues form while the 27 keys
+  play a four-voice lead synth.
+description: >-
+  Blues Box plays a 12-bar or 8-bar blues form with 14 groove presets, 12 drum kits, 14 bass engines in 10 bass line
+  styles, and 18 keyboard tones in 10 rhythm styles. Bass, keys and drums each have Fullness and Variation controls, and
+  higher variation adds extended chords, chromatic bass walk-ups, diminished passing chords and tritone substitutions in
+  the turnaround. The keys play a four-voice lead from 14 voices with four play styles, and the key lights show the
+  current chord root and the active blues scale. Live controls switch between major and minor blues, trigger a stop-time
+  break or a vamp, cue a turnaround and arm one of four endings. Four screens show the lead sheet, band mixer, band
+  style and band feel, and 16 preset slots are saved to flash. It is built on Dinghy. The README says it was built and
+  tested on the FM-1; the release also carries SMK-37 packages, which the README does not describe.
+status: active
+authors:
+- name: provostprovost
+  url: https://github.com/provostprovost
+source: https://github.com/provostprovost/blues
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only, with the Blues Box engine and UI credited to its author and the platform code to Leo
+  Kuroshita, genkigenki, zvenson and others. The Terminus font is SIL OFL 1.1. The package in docs/ is Blues Box's own
+  build, not an M-VAVE image, and no JieLi SDK files are in the tree.
+homepage: https://provostprovost.github.io/blues/
+based_on: m-vave-fm-1/dinghy
+distribution: browser-installer
+install_notes: >-
+  Browser WebMIDI installer in Chrome, Edge or Opera, or tools/fm1_install.py with the release's bluesbox-X.Y.fwsc. The
+  README suggests backing up patterns and presets with M-VAVE's tool first and says installing is at your own risk. Hold
+  OCT- while switching on for the USB updater, then reflash Blues Box or restore stock with M-VAVE's updater or a backup
+  package.
+brick_risk: false
+tags: [groovebox, sequencer, drums, synth-engine, chords, blues, editor]
+image:
+  url: https://raw.githubusercontent.com/provostprovost/blues/main/assets/screenshots/screen1.jpg
+  alt: "Photo of the FM-1 screen on the Blues Box lead sheet: Jazz Shuffle with the Jazz Club kit, key E minor, 98 BPM, twelve chord boxes (Em7, Am7, C7, B7), Talk-Box and Vibraphone below"
+  credit: provostprovost
+  source_url: https://github.com/provostprovost/blues
+  first_party: true
+versions:
+- version: '1.2'
+  date: 2026-11-16
+  url: https://github.com/provostprovost/blues/releases/tag/v1.2
+- version: '1.1'
+  date: 2026-11-16
+  url: https://github.com/provostprovost/blues/releases/tag/v1.1
+- version: '1.0'
+  date: 2026-11-16
+  url: https://github.com/provostprovost/blues/releases/tag/v1.0
+  notes: First release.

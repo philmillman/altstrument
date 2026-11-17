@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+name: watchy-cart
+kind: tool
+summary: >-
+  Arduino sketch that turns a Watchy v3 e-ink watch into an FM-1 firmware cartridge: plug the watch into the FM-1 by USB,
+  pick a package and the watch writes it.
+description: >-
+  The watch acts as a USB host and runs the FM-1's two-step update protocol, a C++ reimplementation that follows Drew
+  Robinson's FM1Kit. Up to eight .fwsc packages, about 4.9 MB, are loaded over Wi-Fi through a small web page on the watch, in
+  direct mode or through a home router, and can be refetched from a registered URL. The menu is rewritten for two buttons. The
+  README calls v0.36 a test version tested on one FM-1 with one Watchy: writing from a Modular One to V15 and to Dub-1 worked,
+  an FM-1 on the official firmware could not be reached yet, and firmware built on M-VAVE Open is refused by design. The page
+  has no login. No firmware is included.
+status: active
+authors:
+- name: Kevin66hz
+  url: https://github.com/Kevin66hz
+source: https://github.com/Kevin66hz/watchy-cart
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text. THIRD_PARTY.md lists the Watchy library's watch face files (MIT) and a DSEG font bitmap
+  (SIL OFL 1.1), and credits FM1Kit and FM-SWITCH as references. No firmware package is in the repository.
+distribution: source-only
+install_notes: >-
+  Build the sketch in the Arduino IDE for an ESP32S3 Dev Module with 8 MB flash and the included partition table, then load
+  packages over the watch's Wi-Fi page. The README warns that a failed write can leave the FM-1 needing recovery from a
+  computer, so keep a computer-side installer ready. The router password is stored unencrypted on the watch.
+brick_risk: false
+tags: [flasher, usb-midi, utility, handheld]
+versions:
+- version: main @ dd23466
+  date: 2026-11-16
+  url: https://github.com/Kevin66hz/watchy-cart/commit/dd2346637eb69635404083334f2870be61f3dc19
+  notes: No tagged releases; this is the latest commit, v0.36 test version.

@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
+name: OpenLive VirtualAnalog
+kind: tool
+summary: Portable C99 synth core behind the OpenLive FM-1 and SMK-37 firmwares, with a virtual analog engine, a drum engine, a modulation matrix and a Live Core for loops, capture and scenes. Also runs on a desktop.
+description: >-
+  The library holds the DSP blocks (oscillators, filter, envelopes, LFOs, delay, chorus and phaser), a virtual analog
+  engine and an 808-style drum engine, a modulation matrix with four slots per sound and tempo-locked LFOs, and the Live
+  Core with its clock, tracks, recording, capture, undo, scenes, morph, Creative Engine, projects and MIDI. It uses
+  no malloc and no C library on the device. A shared app layer with the instrument's screen and controls, a simple
+  C API, a desktop app played from a computer keyboard or MIDI keyboard, a PC simulator and Daisy and Teensy
+  templates are included. OpenLive FM-1 and OpenLive SMK-37 include it as their va/ git submodule. The documentation
+  has a guide to writing an engine and a forking guide, in English and French. The README says it is not a flashable
+  image on its own.
+status: active
+authors:
+  - name: Tom-Rfid
+    url: https://github.com/Tom-Rfid
+source: https://github.com/Tom-Rfid/OpenLive_VirtualAnalog
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text. The docs list the firmware repositories' other components separately: fm1-base and
+  felucca-bsp (MPL-2.0), three JieLi SDK files (Apache-2.0) fetched at build time, and miniaudio (public domain or
+  MIT-0, vendored for the desktop app). The sister SMK-37 repository is GPL-3.0.
+distribution: source-only
+install_notes: >-
+  A library, not a flashable image. make builds an engine simulator and make demo renders a WAV file, and make
+  desktop builds a desktop app for playing the instrument. The firmwares that use it are OpenLive FM-1 and OpenLive
+  SMK-37, which carry their own installers.
+brick_risk: false
+tags: [synth-engine, library, sdk, looper, drums, open-source, emulator, desktop]
+versions:
+  - version: main @ 8eefce4
+    date: 2026-11-17
+    url: https://github.com/Tom-Rfid/OpenLive_VirtualAnalog/commit/8eefce4339f1c7f2843c64632a6fd23e39737e30
+    notes: No tagged releases; this is the latest commit.

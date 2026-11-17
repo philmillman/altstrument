@@ -1,0 +1,46 @@
+device: m-vave-fm-1
+name: BGIRL FM-1
+summary: >-
+  Electro edition of Felucca with six full tracks, a sample-fed vocoder, a vocal chop bank, ten original electro sounds and
+  an arp-driven dancer page; for now a browser build only, with no hardware package.
+description: >-
+  BGIRL is an independent derivative of Felucca v1.8.1, imported with its history, and not an official Hügelton build. It
+  extends the shared eight-voice budget to six tracks, adds a bounded project save format, and ships an electro starting
+  arrangement with a sample-fed vocoder on track four, a bundled vocal recording and its chops, ten original factory
+  sounds (subs, kick, snare, clap, hats, stab, chord and chirp), and an arp page that steps through twelve dance poses. A
+  CIRCUIT colour style is available on the panel. The README labels it a browser development milestone, says not to
+  install it on hardware and that no hardware firmware, installer or release is published, and lists device validation as
+  a follow-up. It runs as an emulated FM-1 panel in the browser through a GitHub Pages demo, with host and browser tests in
+  CI. Old project formats are not migrated.
+status: active
+authors:
+- name: track-forge
+  url: https://github.com/track-forge
+source: https://github.com/track-forge/bgirl-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states a GPL-3.0-only combined derivative (LICENSE); Felucca's engines stay MIT and its board support
+  package MPL-2.0, with fonts and other assets under their own notices (felucca/LICENSING.md). The graffiti wordmark in
+  assets/branding is not covered by the repository licence. The bundled vocal recording is described as authorised for
+  public redistribution. No M-VAVE stock image is in the repository.
+homepage: https://track-forge.github.io/bgirl-fm1/
+based_on: m-vave-fm-1/felucca
+distribution: source-only
+install_notes: >-
+  Nothing flashable is published and the README says not to install it on hardware. The browser preview runs at the
+  homepage, and ./build.sh --web builds it locally with Emscripten 6.0.10. The imported Felucca release and installer
+  workflows are kept inactive.
+brick_risk: false
+tags: [groovebox, sequencer, synth-engine, drums, vocoder, sampler, emulator, fork]
+image:
+  url: https://raw.githubusercontent.com/track-forge/bgirl-fm1/main/docs/img/browser.png
+  alt: "Early BGIRL browser build: an emulated FM-1 panel with knobs, buttons and a TIGHT KIT screen at 120 BPM above 27 slider keys, with Load electro demo and Blank electro template buttons"
+  credit: track-forge
+  source_url: https://github.com/track-forge/bgirl-fm1
+  first_party: true
+versions:
+- version: main @ 4c76284
+  date: 2026-11-17
+  url: https://github.com/track-forge/bgirl-fm1/commit/4c7628420b8dd8db7eb2ff81759105794ec80650
+  notes: No tagged releases; this is the latest commit. It merges the six-track work.

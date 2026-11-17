@@ -1,0 +1,43 @@
+device: zoom-livetrak-l6max
+also_devices: [zoom-livetrak-l6]
+kind: tool
+name: L6 / L6max Emulator
+summary: Emulator, firmware package tools and patch builder for the LiveTrak L6 and L6max. It runs Zoom's 1.10 firmware in a custom QEMU machine and repacks patched images, including a knob value display and a MIDI state sync request.
+description: >-
+  The project runs a firmware package you supply in a custom QEMU machine with a native mixer window that shows the
+  firmware's display, indicator lights and controls. Audio processing and USB audio are not emulated; USB MIDI is bridged
+  to the host. A package tool unpacks and repacks the L6 and L6max 1.10 packages and can recompute the checksum after
+  edits. A patch builder compiles Rust patches into the main image, validates the original hashes first and writes a new
+  update package. The two patches are a timed on-screen value popup when a channel encoder turns, for the L6max, and a
+  MIDI request that makes the mixer send back its full state as Control Change messages, for both models. The patches
+  run in the emulator and the knob patch has been tried on an L6max; the L6 patch has not been tested on hardware. Zoom
+  firmware is not included in the repository or the release, and the project is not affiliated with Zoom.
+status: active
+authors:
+  - name: derekstavis
+    url: https://github.com/derekstavis
+source: https://github.com/derekstavis/zoom-l6-hacks
+source_status: open
+license: GPL-3.0-or-later
+license_notes: The QEMU board model under emulator/qemu is GPL-2.0-or-later, and bundled icons keep their own licenses (see NOTICE.md).
+homepage: http://l6-patches.stavis.me/
+distribution: patch-your-own
+requires_stock: "1.10"
+install_notes: >-
+  Supply your own L6.BIN or L6max.bin from Zoom's 1.10 release. Build a patched package with the l6patch tool or the
+  browser patcher on the project page, copy it to the SD card and install it through the mixer's normal update
+  prompt. The release also has a macOS (Apple silicon) emulator app. The project notes that acceptance of arbitrary
+  modified packages by the physical bootloader is unverified, so use only the supported patches on the 1.10 image.
+brick_risk: false
+tags: [emulator, qemu, patcher, sysex, midi, research, mixer]
+image:
+  url: https://raw.githubusercontent.com/derekstavis/zoom-l6-hacks/main/docs/images/emulator.png
+  alt: L6max Emulator window showing the mixer panel with eight channel knobs, a blue button strip, sound pads, scene buttons and the Date and Time setup screen on the display
+  credit: derekstavis
+  source_url: https://github.com/derekstavis/zoom-l6-hacks#readme
+  first_party: true
+versions:
+  - version: v1.0.0
+    date: 2026-11-11
+    url: https://github.com/derekstavis/zoom-l6-hacks/releases/tag/v1.0.0
+    notes: First release; Apple silicon emulator app and source archive.

@@ -14,7 +14,7 @@ description: >-
   Since alpha 7 the pedal's knobs work (MASTER sets the volume) and the footswitches default to a layout
   like the factory one, with A to D picking presets, B and C together for Live mode and Scenes as an
   option. Effects and presets are edited from a web control page in Chrome or Edge over USB, or an Android
-  app over Bluetooth. Alpha 9 also runs on the Tank-B bass pedal and adds a bass EQ, a graphic EQ and crossover splits. Alpha 11 adds stereo headphone output for chorus, delay, reverbs and the doubler, a Rotary speaker effect, a Wah voice in the Envelope Filter, a Tone Bender model in the Fuzz Face, a seven-band bass EQ, preset export and import as files, and Bluetooth that only accepts a paired phone. A desktop editor app for Windows and macOS, published as the pre-release editor-0.1.0, opens the same control page in its own window. It is an alpha, and the author says to expect bugs and to use it at your own risk.
+  app over Bluetooth. Alpha 9 also runs on the Tank-B bass pedal and adds a bass EQ, a graphic EQ and crossover splits. Alpha 11 adds stereo headphone output for chorus, delay, reverbs and the doubler, a Rotary speaker effect, a Wah voice in the Envelope Filter, a Tone Bender model in the Fuzz Face, a seven-band bass EQ, preset export and import as files, and Bluetooth that only accepts a paired phone. Alpha 13 adds Bluetooth music from a phone through the pedal, a USB sound card (UltraRig Audio, stereo 24-bit), four delays, more fuzz and chorus models, low and high cut on the Cab IR, stereo parallel branches, double-tap preset changes and more room for effects, and drops the Spectral reverb. A desktop editor app for Windows and macOS, published as the pre-release editor-0.1.0,  opens the same control page in its own window. It is an alpha, and the author says to expect bugs and to use it at your own risk.
   The source code is not published.
 status: active
 authors:
@@ -28,7 +28,7 @@ license_notes: >-
   personal use, and selling the firmware or pedals with it installed is not allowed. Only binaries are
   published. NOTICE.md lists the bundled third-party parts, including JieLi's Apache-2.0 SDK with four
   modified files, a default capture derived from NeuralAmpModelerCore's MIT-licensed A2.nam, the
-  MIT-licensed jl-uboot-tool and JieLi's unlicensed wl82loader.bin loader.
+  MIT-licensed jl-uboot-tool and JieLi's unlicensed wl82loader.bin loader. The alpha 13 release notes say UltraRig now uses PolyForm Strict 1.0.0 and that versions up to alpha 11 keep their licence; the repository's LICENSE.md still showed PolyForm Noncommercial on 2026-11-17, so that is what is recorded here.
 homepage: https://ultrarig.app/
 distribution: download
 requires_stock: Tank-G factory firmware 97 or 98; 96 and older need M-UPGRADE first. Tank-B factory firmware 100
@@ -44,6 +44,10 @@ install_notes: >-
 brick_risk: false
 tags: [fx, amp-sim, nam, ir, editor, android]
 versions:
+- version: alpha13
+  date: 2026-11-17
+  url: https://github.com/manuaguirre9/ultrarig/releases/tag/alpha13
+  notes: Includes everything planned for alpha 12, which was never published on its own. Adds Bluetooth music from a phone, a USB sound card, Ping-Pong, Dual, Reverse and Vintage delays, new fuzz and chorus models, Cab IR low and high cut, stereo parallel branches, double-tap preset changes and more room for effects, and removes the Spectral reverb. The notes say the licence is now PolyForm Strict 1.0.0.
 - version: alpha11
   date: 2026-11-12
   url: https://github.com/manuaguirre9/ultrarig/releases/tag/alpha11

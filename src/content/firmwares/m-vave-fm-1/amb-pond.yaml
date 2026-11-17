@@ -1,0 +1,44 @@
+device: m-vave-fm-1
+name: POND
+summary: >-
+  Generative garden pond for the FM-1, derived from AMB-1: it plays itself with breathing voices, drops, a gliding bass
+  and drips, in nine pieces from a quiet pond to thunder, which the player tends instead of performs.
+description: >-
+  The firmware starts playing at power-on, with voices, drops on loops of unequal length, a bass and quiet drips through
+  a tape echo and a plate reverb. PRESETS steps through nine pieces named Pond, Lily, Reeds, Dragonfly, Evening, Rain,
+  Moss, Still and Thunder, each with its own scale. Keys add or remove scale notes, PLAY grows or rests the piece,
+  REC freezes it and EDIT brings the next chord on the next bar. The screen is a pixel-art pond with flowers, koi, rain
+  and lightning that follow the piece, and the knob menu hides after three seconds. SAVE held stores all nine pieces
+  and, held longer, returns a piece to its recipe. The repository builds a browser emulator and a stand-alone web page
+  that runs the engine for phones and desktop browsers.
+status: active
+authors:
+- name: superxor
+  url: https://github.com/superxor
+source: https://github.com/superxor/amb-pond
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSING.md states MPL-2.0 file by file, with AMB-1's notices kept on the files that came from it. AMB-1 0.9 and
+  earlier were GPL-3.0-only; its author relicensed the code POND uses, which now rests on fm1-base and felucca-bsp.
+based_on: m-vave-fm-1/amb-1
+distribution: download
+install_notes: >-
+  Install pond-X.Y.Z.fwsc from a release with tools/fm1_install.py over USB, or any installer that takes a .fwsc. The
+  README says installing firmware is at your own risk, and BUILDING.md says holding OCT- and OCT+ for five seconds
+  enters update mode.
+brick_risk: false
+tags: [generative, ambient, synth-engine, emulator, fork]
+image:
+  url: https://raw.githubusercontent.com/superxor/amb-pond/main/docs/img/screen-pond.png
+  alt: "POND's pond screen on the FM-1: a pixel-art pond with lily pads, white and yellow flowers and ruins, under a header reading Pond, D Dorian"
+  credit: superxor
+  source_url: https://github.com/superxor/amb-pond
+  first_party: true
+versions:
+- version: 0.1.2
+  date: 2026-11-17
+  url: https://github.com/superxor/amb-pond/releases/tag/v0.1.2
+- version: 0.1.1
+  date: 2026-11-17
+  url: https://github.com/superxor/amb-pond/releases/tag/v0.1.1

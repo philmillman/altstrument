@@ -1,0 +1,46 @@
+device: bastl-instruments-kastle-2
+also_devices: [bastl-instruments-citadel]
+name: FX Wizard (official source)
+summary: Bastl's own FX Wizard effects firmware for the Kastle 2 and Citadel, published with source in the kastle2 repository. It has nine time-based effects and takes custom rhythms through a file format.
+description: >-
+  The FX Wizard app in Bastl's kastle2 repository is the firmware sold on the FX Wizard version of the Kastle 2 and
+  Citadel. It has nine time-based effects controlled by Time, Feedback and Amount, with a DJ-style low-pass and
+  high-pass filter, an LFO and a pattern generator. The app folder documents a file format for loading custom rhythms,
+  and Bastl's FX Wizard Chamber web app builds a firmware image with them. It uses the same framework as the other
+  Kastle 2 apps, with its own app ID (0xB1). The repository README labels it experimental. Community variants such as
+  Sungam's FX Wizard Plus for Citadel start from this code.
+status: active
+authors:
+  - name: Bastl Instruments
+    url: https://github.com/bastl-instruments
+  - name: Václav Mach
+    url: https://github.com/xx0x
+  - name: Marek Mach
+    url: https://github.com/machmar
+source: https://github.com/bastl-instruments/kastle2/tree/main/code/src/apps/FxWizard
+source_status: open
+license: MIT
+license_notes: >-
+  The code is MIT (LICENSE). The repository README keeps Bastl's panel graphics, case artwork and sample banks under
+  all rights reserved, and releases schematics, documentation and printable files under CC BY SA 4.0. The FX Wizard
+  app folder contains no sample data.
+homepage: https://bastl-instruments.com/instruments/kastle2-fx-wizard
+distribution: source-only
+requires_stock: Any Kastle 2 or Citadel
+install_notes: >-
+  Build with the repository's CMake toolchain (make fx-wizard in code/build, or the Nix shell) to get a .uf2. Hold
+  SHIFT while powering on so the unit appears as a USB drive, then copy the .uf2 onto it. The RP2040 boots from ROM
+  into that mode, so a bad build is replaced the same way; Bastl's official .uf2 files on its website put the unit back.
+brick_risk: false
+tags: [official, open-source, fx, delay, reverb, chorus, phaser, distortion, pitch-shifter, filter]
+image:
+  url: https://raw.githubusercontent.com/bastl-instruments/kastle2/main/images/readme/kastle2-fx-wizard.webp
+  alt: Rendered Kastle 2 FX Wizard, a black box seen from above at an angle with six knobs, patch pin headers, a SHIFT button and an FX MODE button, labelled with white and gold graphics
+  credit: Bastl Instruments
+  source_url: https://github.com/bastl-instruments/kastle2
+  first_party: true
+versions:
+  - version: main @ a4a7a04
+    date: 2026-08-14
+    url: https://github.com/bastl-instruments/kastle2/commit/a4a7a0451038bc4ed4719f46573c3eff92e7c7ce
+    notes: No tagged releases; this is the latest commit.

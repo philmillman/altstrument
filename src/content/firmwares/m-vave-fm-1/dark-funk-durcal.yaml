@@ -1,0 +1,48 @@
+device: m-vave-fm-1
+name: Dark Funk Durcal Synt
+summary: >-
+  Felucca 1.8.2 with a groovebox layer for acid, breaks and rave: two blended styles fill all four tracks, a melody maker
+  keeps notes in key, dice re-roll parts, plus time-stretch, a tape echo and an eye that reacts to the music.
+description: >-
+  Every sound and feature of Felucca stays. RITUAL blends two of eleven styles with FUSION and CHAOS and writes drums or
+  a chopped break, acid, bass and melody into the four tracks. MELODY writes tunes in a chosen scale and key by shape and
+  density, DICE re-rolls one part or all of them, and STRETCH time-stretches granularly to the tempo with a pitch
+  shift of up to 12 semitones. A three-head tape echo sits on the delay, and the eye on the home page changes with
+  tempo, density and distortion. There are ten acid, bass and pad presets on the analog engine and a 32-voice FM bank,
+  also provided as a DX7 sysex bank. The repository adds a web groovebox, a web page that writes MIDI files into the
+  FM-1 tracks and saves them back as .mid files, a pack of MIDI sequences, a bilingual English and Spanish manual and
+  the complete firmware source with a patch against Felucca 1.8.2. The package has its own identity, FM-1_946, and keeps
+  Felucca's update loader.
+status: active
+authors:
+- name: Polaris Sound Lab
+  url: https://github.com/drophlex
+source: https://github.com/drophlex/dark-funk-durcal-synt-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL-3.0 text; firmware-src/LICENSING.md keeps Felucca's terms: GPL-3.0-only overall, with the
+  Felucca-Engines files MIT, felucca-bsp MPL-2.0, the FM6 engine from msfa Apache-2.0, a DaisySP port MIT and the
+  Inter Tight font SIL OFL 1.1. The README says the VSCO-2 CE and VCSL samples kept from Felucca are CC0.
+homepage: https://drophlex.github.io/dark-funk-durcal-synt-fm1/web/DarkFunkDurcalSynt.html
+based_on: m-vave-fm-1/felucca
+distribution: browser-installer
+requires_stock: Any FM-1 firmware; the installer writes the package over it
+install_notes: >-
+  Open install/DarkFunkDurcal-Installer.html in Chrome or Edge with the FM-1 on a direct USB cable and press Install; the
+  installer first saves a backup of the music. The same package is in install/ as a .fwsc for Felucca's tools. The
+  installer can return to M-VAVE's official firmware (V15 or V16) from the official package. The README says to install
+  at your own risk.
+brick_risk: false
+tags: [groovebox, generative, drums, synth-engine, fx, sequencer, midi, fork, emulator]
+image:
+  url: https://raw.githubusercontent.com/drophlex/dark-funk-durcal-synt-fm1/main/docs/images/dfd_pages.png
+  alt: "Four FM-1 screens in a row: RITUAL blending ACID with DRILL N BASS, MELODY, DICE and STRETCH, each with a line-drawn eye"
+  credit: Polaris Sound Lab
+  source_url: https://github.com/drophlex/dark-funk-durcal-synt-fm1
+  first_party: true
+versions:
+- version: main @ 512ca12
+  date: 2026-11-17
+  url: https://github.com/drophlex/dark-funk-durcal-synt-fm1/commit/512ca126709437de9470887ddae89fcdd9106966
+  notes: No tagged releases; this is the latest commit. It builds package 1.8.2-dfd5.

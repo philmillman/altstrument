@@ -1,0 +1,38 @@
+device: m-vave-fm-1
+name: cardbuddy
+kind: tool
+summary: >-
+  fm1buddy for the M5Stack Cardputer ADV: swaps, backs up and recovers FM-1 firmware and manages its sounds, samples and
+  songs from the Cardputer's keyboard, as an app for M5 Launcher.
+description: >-
+  A port of fm1buddy that runs its core library on the Cardputer, so an SD card works in either device. It lists .fwsc
+  packages on the card and in the mutant.cloud catalogue, downloads them over Wi-Fi and installs them on the FM-1 through the
+  USB-C port. It backs up the whole flash to the card and brings back an FM-1 that does not start from a firmware or a backup,
+  sends .syx sounds, backs up and restores SLOOP projects, songs and samples, routes MIDI between connected devices and Bluetooth
+  MIDI, and turns the keyboard into a MIDI controller or the SD card into a USB drive. Because the Cardputer has no PSRAM,
+  large buffers go through files. The v0.1.1 release is described as tested on a Cardputer ADV for start-up, Wi-Fi, the hub
+  list, downloads, installs and USB disk. No firmware is bundled.
+status: active
+authors:
+- name: David Konsumer (konsumer)
+  url: https://github.com/konsumer
+source: https://github.com/konsumer/cardbuddy
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL-3.0 text and the README says GPL-3.0-only, as fm1buddy, whose core library it builds against.
+  No M-VAVE image is in the repository.
+homepage: https://konsumer.js.org/cardbuddy/
+based_on: m-vave-fm-1/fm1buddy
+distribution: browser-installer
+install_notes: >-
+  Install from the project page in Chrome or Edge, or put cardbuddy.bin from the releases on the SD card for M5 Launcher.
+  The FM-1 connects to the Cardputer's USB-C port through a powered hub, or directly for recovery. Back up first; the README
+  says the FM-1 is brought back from a backup or a firmware in recovery mode.
+brick_risk: false
+tags: [flasher, usb-midi, midi, utility]
+versions:
+- version: 0.1.1
+  date: 2026-11-17
+  url: https://github.com/konsumer/cardbuddy/releases/tag/v0.1.1
+  notes: Reported as tested on a Cardputer ADV; the release holds cardbuddy.bin for M5 Launcher.

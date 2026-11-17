@@ -1,0 +1,37 @@
+device: m-vave-smk-37
+name: FMini SMK-37 VST3
+kind: tool
+summary: >-
+  Windows x64 VST3 instrument that runs the FMini-1 SMK-37 firmware natively with a drawn SMK-37 panel, so the synth plays
+  inside a DAW without a unit or a browser.
+description: >-
+  The plugin is the FMini-1 SMK-37 browser emulator's WebAssembly firmware module compiled to C with wasm2c and wrapped as a
+  VST3, with a native panel of 37 keys, 16 pads, eight encoders, four faders, 18 buttons, wheels and the firmware's own
+  display. It takes MIDI from the host, the computer keyboard or the mouse, exposes output level and the four faders to host
+  automation and stores the engine state with the project. The README lists Windows x64 only, no MIDI output, SysEx or
+  hardware flashing, no host tempo sync, and says Reason is a target but not a tested host. Releases are built by CI on every
+  push to main and carry the complete source.
+status: active
+authors:
+- name: kederiku
+  url: https://github.com/kederiku
+source: https://github.com/kederiku/fmini-smk37-vst3
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL-3.0 text and the README says GPL-3.0-only. THIRD_PARTY_NOTICES.md credits FMini-1 (Guilherme
+  Ruppert, from Felucca), the SMK panel (Chance Roth) and the hardware port (M. Geisler), and lists Felucca-Engines, DaisySP,
+  Rings, Fukiai and the VST3 interfaces (MIT), msfa and WABT (Apache-2.0) and two SIL OFL fonts. No M-VAVE image is in the
+  repository.
+based_on: m-vave-fm-1/fmini-1
+distribution: download
+install_notes: >-
+  Download the Windows x64 ZIP from the releases page, copy the VST3 bundle into a VST3 folder and rescan plugins. SAVIHost
+  can host it without a DAW and is downloaded separately under its own license. The plugin writes nothing to a real unit.
+brick_risk: false
+tags: [emulator, vst, midi]
+versions:
+- version: 0.1.0-build.2
+  date: 2026-11-17
+  url: https://github.com/kederiku/fmini-smk37-vst3/releases/tag/v0.1.0-build.2
+  notes: Automatic build of the initial Windows VST3 port, with sources and checksums.

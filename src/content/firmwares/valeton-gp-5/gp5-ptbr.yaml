@@ -1,0 +1,38 @@
+device: valeton-gp-5
+kind: firmware
+name: GP-5 PT-BR
+summary: Script that swaps 25 system screen texts in Valeton's official GP-5 V1.0.6 firmware for Brazilian Portuguese, using the slot of the Chinese language entry.
+description: >-
+  GP-5 PT-BR is a Python script that reads the official V1.0.6 image you download from Valeton, checks its version,
+  replaces 25 menu, tuner, bypass and factory-reset strings with Portuguese text, and recalculates the checksums of the
+  changed sections. The new language appears as PT-BR in the pedal's language menu where Chinese was, and English stays
+  selectable. The texts have no accents because the pedal's font does not cover them. Presets, SnapTones, IRs and sound are
+  unchanged. No patched or stock image is in the repository; the README gives SHA-256 values for the official input and
+  the patched result so they can be compared. The README is in Portuguese, English and Spanish. The repository bundles
+  the gp5tool.py flasher from OpenGP5.
+status: active
+authors:
+  - name: pagueobaixista-afk
+    url: https://github.com/pagueobaixista-afk
+source: https://github.com/pagueobaixista-afk/valeton-gp5-ptbr
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT License for the translation script. The bundled gravar/ flasher is OpenGP5's, also MIT, with
+  its licence text in gravar/LICENSE-OpenGP5. Valeton and GP-5 are Valeton's trademarks, and the project is not affiliated
+  with Valeton.
+distribution: patch-your-own
+requires_stock: V1.0.6
+install_notes: >-
+  Download the official GP-5 V1.0.6 .bin from Valeton, run traduzir_ptbr.py on it, then flash the result with
+  gravar/gp5tool.py flash <file> --sections app. The first run may only switch the pedal into update mode, so run it a
+  second time. The README advises backing up presets in Valeton Suite first. Recovery: power on while holding the foot
+  switch and the PARA knob, which enters update mode that USB cannot erase, and flash the official file again. Picking
+  English in the language menu also reverts the screen without flashing.
+brick_risk: false
+tags: [patch, python, cli, localization]
+versions:
+  - version: v1.0.6-ptbr.1
+    date: 2026-11-17
+    url: https://github.com/pagueobaixista-afk/valeton-gp5-ptbr/releases/tag/v1.0.6-ptbr.1
+    notes: First release, for official firmware V1.0.6.

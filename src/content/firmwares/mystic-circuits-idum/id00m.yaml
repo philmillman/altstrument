@@ -1,0 +1,56 @@
+device: mystic-circuits-idum
+name: ID00M
+summary: Community firmware for the IDUM based on the stock v.99, adding per-channel clock multiply and divide, a merge option that layers modes over the triggers, linear drumming, a second break bank and bug fixes.
+description: >-
+  ID00M is a derivative of Eli Pechman's v.99 sketch made by 00 Modular. Each of the four channels gets its own
+  multiply or divide setting for bursts and bouncing balls. A MERGE option lets a mode add to or subtract from the
+  incoming triggers instead of replacing them. Other changes are an optional one-voice-at-a-time filter called linear
+  drumming, a reworked delay, a second bank of break patterns, a break speed multiplier, a factory reset, a menu
+  toggle for freezing PARAM in split mode, and a boot indicator that shows ID00M is running. Version 1.0.4 supports
+  both LED ring orders found on different IDUM hardware revisions. The repository also holds a browser updater, a
+  user manual and the unmodified v.99 source. It is not affiliated with Mystic Circuits.
+status: active
+authors:
+  - name: 00 Modular
+    url: https://github.com/Mr-V1ct0r
+source: https://github.com/Mr-V1ct0r/id00m
+source_status: open
+license: CC-BY-SA-4.0
+license_notes: >-
+  CC BY-SA 4.0 (LICENSE), the same licence as the v.99 source it derives from, with the changes listed in the
+  changelog. The repository also commits idum_stock_v99.hex and idum_stock_v99.5.hex so users can revert. These are
+  builds of Mystic Circuits' stock firmware, which is itself published as open source under CC BY-SA 4.0, so
+  including them is not redistribution of closed firmware.
+homepage: https://00modular.com/id00m/resources/
+based_on: mystic-circuits-idum/idum-source
+distribution: browser-installer
+requires_stock: v.99
+install_notes: >-
+  Open the 00 Modular resources page in a Chromium-based desktop browser with the IDUM connected by USB, choose ID00M
+  or stock v.99 and press update. The updater retries the unreliable onboard programmer and asks for an unplug and
+  replug only when stuck. The same hex files can be flashed with avrdude, or the sketch built in the Arduino IDE for
+  the Nano Every. Stock v.99 can be flashed back the same way. Version 1.0.4 resets saved settings to defaults on
+  first start; holding LOOP at power-on switches the LED ring order.
+brick_risk: false
+tags: [open-source, sequencer, trigger, eurorack, clock, drums, browser-flasher]
+versions:
+  - version: v1.0.4
+    date: 2026-08-06
+    url: https://github.com/Mr-V1ct0r/id00m/tree/v1.0.4
+    notes: Git tag; no GitHub release page.
+  - version: v1.0.3
+    date: 2026-07-28
+    url: https://github.com/Mr-V1ct0r/id00m/tree/v1.0.3
+    notes: Git tag; no GitHub release page.
+  - version: v1.0.2
+    date: 2026-07-24
+    url: https://github.com/Mr-V1ct0r/id00m/tree/v1.0.2
+    notes: Git tag; no GitHub release page.
+  - version: v1.0.1
+    date: 2026-07-21
+    url: https://github.com/Mr-V1ct0r/id00m/tree/v1.0.1
+    notes: Git tag; no GitHub release page.
+  - version: v1.0.0
+    date: 2026-07-17
+    url: https://github.com/Mr-V1ct0r/id00m/tree/v1.0.0
+    notes: Git tag; no GitHub release page.

@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
+name: Cardputer FM-1 Flasher
+kind: tool
+summary: >-
+  M5Stack Cardputer ADV firmware that browses The Firmware Hub over Wi-Fi, downloads packages to an SD card and flashes them
+  to an FM-1, with SD-card flashing and a guided rescue, including units with the newer UC25HQ80 flash chip.
+description: >-
+  Built on the Cardputer ADV rescue app of jvitkauskas, whose history it keeps, and adding a Wi-Fi hub, a flasher and a menu.
+  The hub view indexes thefirmwarehub.com's catalogue with search and a chip filter and downloads .fwsc files with SHA-256
+  checks. The SD flasher writes .fwsc or .bin files after a mandatory 1 MiB backup, keeps the bootloader and the factory
+  calibration and key_mac sectors, and verifies the write. It enters download mode with a USB-MIDI SysEx message on a powered
+  FM-1 or with the JieLi USB key pulses on a dead one, and recognises the B36014, 856014 and SMK-37 EB6014 flash IDs. The
+  guided rescue writes a fresh m-bootloader and erases the old firmware. The repository holds the two m-bootloader boot images
+  of the base project, which carry a flash header and chip-key record taken from M-VAVE packages, and no stock firmware.
+status: active
+authors:
+- name: nasonliu
+  url: https://github.com/nasonliu
+- name: Julius Vitkauskas (jvitkauskas)
+  url: https://github.com/jvitkauskas
+source: https://github.com/nasonliu/cardputer-fm1-flasher
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text, copyright 2026 Julius Vitkauskas, carried over from the base project. THIRD-PARTY.md
+  lists M-Flasher's loader and protocol code (MIT), the restart program (MIT-0), DejaVu fonts and the Arduino-ESP32 and
+  M5Stack libraries. The rescue images are m-bootloader boot areas, byte-identical to those in cardputer-synth-rescue.
+based_on: m-vave-fm-1/cardputer-synth-rescue
+distribution: download
+install_notes: >-
+  Download firmware.factory.bin from the release and write it at 0x0 with esptool, or copy it to a FAT32 card and install
+  it with M5 Launcher. Connect the FM-1 to the Cardputer's USB-C port, powered on for the SysEx route or off for the key-pulse
+  route. The rescue option replaces the bootloader and erases the firmware area, so it is the one write that needs care; the
+  README does not say whether the Wi-Fi flasher was tested on a unit.
+brick_risk: true
+tags: [flasher, loader, backup, utility]
+versions:
+- version: v0.3.0
+  date: 2026-11-17
+  url: https://github.com/nasonliu/cardputer-fm1-flasher/releases/tag/v0.3.0
+  notes: Adds the Wi-Fi Firmware Hub, the SD flasher, support for the UC25HQ80 flash chip and the icon menu.

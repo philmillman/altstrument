@@ -1,0 +1,34 @@
+name: IDUM
+manufacturer: Mystic Circuits
+category: eurorack
+added: 2026-11-17
+tagline: Gate-processing Eurorack module that turns incoming triggers into IDM-style patterns
+description: >-
+  IDUM is a Eurorack module from Mystic Circuits that works as an effects processor for gates and clocks. It takes a
+  clock and four trigger inputs and passes them through eight modes: hold, burst, multiply and divide, bouncing ball,
+  rotate, delay, break patterns and skip. Chance and length sliders and an eight-step looper shape the result. It runs
+  on an Arduino Nano Every (ATmega4809), and the manufacturer publishes the firmware source and hardware files under
+  CC BY-SA 4.0.
+platform: ATmega4809 (Arduino Nano Every)
+stock_firmware: v.99.5
+links:
+  manufacturer: https://www.mysticcircuits.com/product/idum
+  community:
+    - label: Mystic Circuits on GitHub (IDUM firmware, hardware and sequencer list)
+      url: https://github.com/mysticcircuits/IDUM
+notes: >-
+  The stock firmware is itself open source (CC BY-SA 4.0), so the official source and its community derivatives are
+  catalogued here. Firmware is uploaded to the Nano Every through the Arduino IDE or a browser updater; the project's
+  documentation says the onboard programmer can be unreliable and that an upload is simply retried. Reassigning pins
+  in the source can damage the module.
+image:
+  src: /images/devices/mystic-circuits-idum.webp
+  style: photo
+  alt: Front panel of the purple IDUM Eurorack module with a large mode knob ringed by eight coloured LEDs, chance and length sliders, a loop button, a param knob and clock and trigger jacks in two rows
+  width: 487
+  height: 1200
+  credit: Mystic Circuits
+  license: manufacturer product image
+  source_url: https://www.mysticcircuits.com/product/idum
+  original_url: https://cdn.prod.website-files.com/5bdb6772c4a02b64b266b7f7/631929f9414dc6e0439b2808_IDUM%20product%20photo%20normalized.png
+pinned: [idum-source]

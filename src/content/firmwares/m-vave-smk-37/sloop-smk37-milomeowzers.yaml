@@ -1,0 +1,55 @@
+device: m-vave-smk-37
+name: SLOOP SMK-37 (multichannel audio and Mewcoder)
+summary: >-
+  SLOOP for the SMK-37 in two builds: one sends six stems to the DAW over USB audio with punch-in effects on each, the
+  other adds a 20-channel vocoder and routed USB audio inputs.
+description: >-
+  This is a GitHub fork of isod89's sloop-fm1 that ports SLOOP to the SMK-37 Pro, Elite and MKE-P37, using genkigenki's
+  SMK-37 board layer, and adds two builds of its own. The multichannel build is SLOOP 2.8.1 as a USB audio interface with
+  six mono 24-bit channels (drums in four groups, the synths, the effects return), stem layouts, punch-in effects and
+  sequencer effects (flip, loop back, ramp) on every stem, and a DAW mode with an editable CC map. Mewcoder, for the
+  Elite only, is SLOOP 2.8.4 with a 20-channel vocoder modelled on the Sennheiser VSM201 and two routed USB audio
+  inputs; to make room it drops the built-in samples and several engines. A pre-release, Mewcoder + Harmoniser, adds a
+  three-voice harmoniser modelled on the Eventide H949 and is marked as early testing. The releases say the builds were
+  tested on an SMK-37 Elite only. It is a separate line from the Snoop37 and SLOOP Pro entries.
+status: active
+authors:
+- name: MiloMeowzers
+  url: https://github.com/MiloMeowzers
+source: https://github.com/MiloMeowzers/sloop-smk37
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states GPL-3.0-only (LICENSE, LICENSING.md), as upstream SLOOP. It lists msfa (Apache-2.0) and the Terminus
+  font among third-party parts. The repository holds docs/firmware/sloop-2.8.1.fwsc, which is this project's own SLOOP
+  build, not an M-VAVE image, and says no vendor material is included.
+homepage: https://milomeowzers.github.io/sloop-smk37/
+distribution: browser-installer
+install_notes: >-
+  Browser installer in Chrome or Edge over USB, where you pick your model and the matching package is written, or
+  tools/fm1_install.py. The project asks for a full flash backup first, taken over the chip's mask-ROM UBOOT mode,
+  because the calibration, Bluetooth pairing and key_mac are unique to each unit. The firmware and its loader write only an
+  allow-list of flash ranges that excludes them. After two failed starts SLOOP opens a USB recovery screen where the
+  installer can write a package again, and a third drops into UBOOT. M-VAVE's updater (M-UPGRADE) returns the keyboard to
+  stock. Installing is at your own risk.
+brick_risk: false
+tags: [sequencer, synth-engine, drums, sampler, fx, usb-audio, vocoder, performance, midi, editor, fork]
+image:
+  url: https://raw.githubusercontent.com/MiloMeowzers/sloop-smk37/ci/assets/screens/smk37-stems-screens.png
+  alt: "Three SMK-37 screens: a stem punch-in page with coloured effect pads, and the HOME USB and PUNCH menu pages showing USB layout DRUMS+RET, 48 kHz stem rate and stem FX PUNCH"
+  credit: MiloMeowzers
+  source_url: https://github.com/MiloMeowzers/sloop-smk37
+  first_party: true
+versions:
+- version: mewcoder+harmoniser-v0.2-pre
+  date: 2026-11-16
+  url: https://github.com/MiloMeowzers/sloop-smk37/releases/tag/mewcoder+harmoniser-v0.2-pre
+  notes: Pre-release for the SMK-37 Elite, marked early testing; adds a three-voice harmoniser to Mewcoder's vocoder.
+- version: mewcoder-v0.1
+  date: 2026-11-11
+  url: https://github.com/MiloMeowzers/sloop-smk37/releases/tag/mewcoder-v0.1
+  notes: Mewcoder, SLOOP 2.8.4 with a 20-channel vocoder and two routed USB audio inputs, for the SMK-37 Elite.
+- version: 2.8.1-smk37.1
+  date: 2026-10-28
+  url: https://github.com/MiloMeowzers/sloop-smk37/releases/tag/v2.8.1-smk37.1
+  notes: First public build, SLOOP 2.8.1 with six-channel USB audio stems and punch-ins on every stem, for the SMK-37 Pro, Elite and MKE-P37.

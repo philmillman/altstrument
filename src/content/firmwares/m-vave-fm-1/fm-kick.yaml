@@ -1,0 +1,50 @@
+device: m-vave-fm-1
+name: FM-KICK
+summary: >-
+  Kick drum synthesizer with a sequencer of up to 32 steps for the FM-1: seven kick types, 48 parameters, live effects
+  held on the keys, parameter locks on any step and generators, LFOs and user kicks.
+description: >-
+  The kick comes in seven types: 808, 909, 606, ANALOG, FM, a waveshaper with its own curve and a punch type with its
+  own rumble. Each has 48 parameters. Twelve effects play while keys are held and a master chain follows them. The
+  sequencer has up to 32 steps, three banks of sixteen patterns, four projects, parameter locks of any parameter on
+  any step (recorded from the knobs with REC), a condition and a chance per step, nine generators and four LFOs. Notes
+  can be recorded from the keys or from MIDI, and 32 user kicks can be stored. A new hit does not cut the previous
+  one, which fades over 6 ms under it. The repository carries a browser player, a screen mirror page, a cheat sheet
+  and a backup and restore of everything as an .fmkbak file. The README calls it beta software written by one person.
+  The package runs on both flash chips the FM-1 has been sold with.
+status: active
+authors:
+- name: David Amo
+  url: https://github.com/davidamomusic
+source: https://github.com/davidamomusic/fm-kick
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The LICENSE file is the MPL-2.0 text. LICENSING.md says the platform code comes from fm1-base (MPL-2.0), felucca-bsp
+  and a few Apache-2.0 and BSD-2-Clause parts of the Bluetooth stack that keep their own licences.
+homepage: https://davidamomusic.github.io/fm-kick/kick/docs/play/
+based_on: m-vave-fm-1/fm1-base
+distribution: download
+install_notes: >-
+  Install the .fwsc package from a release with The Firmware Hub installer or M-UPGRADE. M-UPGRADE sees only the
+  identity (FM-1_222 from 0.5.0), so it will not replace one FM-KICK with another; update with The Firmware Hub or
+  install another firmware first. The README warns that installing writes the FM-1's flash, that the cable must stay
+  connected while it writes, and that leaving FM-KICK means installing another firmware. Building needs the JieLi
+  toolchain and AC79 SDK.
+brick_risk: false
+tags: [drums, synth-engine, sequencer, fx, generative, emulator, midi]
+video:
+  url: https://youtu.be/smdPkJn-GyA
+  title: FM KICK for M-VAVE FM-1 firmware 0.5.0
+  credit: David Amo
+  first_party: true
+  found_via: https://github.com/davidamomusic/fm-kick#readme
+  version: 0.5.0
+versions:
+- version: 0.5.0
+  date: 2026-11-17
+  url: https://github.com/davidamomusic/fm-kick/releases/tag/v0.5.0
+  notes: Gives every version from here on one package identity, FM-1_222; earlier versions took the version's digits.
+- version: 0.4.9
+  date: 2026-11-17
+  url: https://github.com/davidamomusic/fm-kick/releases/tag/v0.4.9

@@ -2,7 +2,7 @@ device: m-vave-smk-37
 name: AISLING SMK-37 Elite
 summary: >-
   Port of the AISLING generative Irish ambient instrument to the SMK-37 Elite, with a board layer for its 37 keys,
-  pads and faders. Version 1.3.1 ships a package that the author tested on one Elite.
+  pads and faders. Version 1.4.1 ships a package that the author played on one Elite.
 description: >-
   Same engine, eight pieces and screens as the FM-1 version, with the FM-1 build left byte for byte unchanged and one
   compile switch selecting the Elite. A board layer covers the Elite's pins, key and button matrix, lights, display and
@@ -10,9 +10,7 @@ description: >-
   The middle 27 of the 37 keys (F3 to G5) play as the FM-1's keys do, the buttons and knobs take the FM-1's jobs, the
   16 pads act as PERFORM's effects while held, with latch and lights, and the four faders set the mix. The Elite's USB
   MIDI works; TRS MIDI is off. The firmware never writes the first 16 KiB, the Bluetooth pairings, the per-unit key
-  calibration or the stock resources. The release notes say the 1.3.1 package was installed over M-VAVE's V016, removed
-  again with M-VAVE's own package, installed again, and every control checked by hand on one Elite, with an hour's run
-  without dropouts. The web installer has not been tried on an Elite. It is for the Elite only, not the Pro or
+  calibration or the stock resources. The release notes say the 1.3.1 package was installed over M-VAVE's V016, removed again with M-VAVE's own package, installed again, and every control checked by hand on one Elite, with an hour's run without dropouts. The 1.4.1 package, which brings the FM-1's 1.4 journey, day and weather and a dark or light screen to the Elite, was installed over 1.3.1 on one Elite and played and checked by hand, without the removal and reinstall of 1.3.1. The web installer has not been tried on an Elite. It is for the Elite only, not the Pro or
   MKE-P37.
 status: active
 authors:
@@ -31,7 +29,7 @@ based_on: m-vave-fm-1/aisling
 distribution: download
 requires_stock: SMK-37 Elite on M-VAVE V016
 install_notes: >-
-  Take a full flash backup first, then install the release's aisling-smk37-elite-1.3.1.fwsc with the repository's
+  Take a full flash backup first, then install the release's aisling-smk37-elite-1.4.1.fwsc with the repository's
   tools/fm1_install.py and the port named SMK-37 Elite. The tools check the Elite by its USB name and refuse an FM-1
   package. They also include a rescue tool that writes only the app area from your own M-VAVE SMK-37 Elite V016
   package after checking the flash chip and that your backup holds the key calibration. docs/SMK37.md section 11
@@ -40,6 +38,10 @@ install_notes: >-
 brick_risk: false
 tags: [generative, ambient, sequencer, synth-engine, fx, fork, emulator]
 versions:
+- version: v1.4.1
+  date: 2026-11-16
+  url: https://github.com/stephencummins/smk37-aisling/releases/tag/v1.4.1
+  notes: Brings the FM-1's 1.4 and 1.4.1 to the Elite. Adds the journey, which walks through the pieces on a 5 to 40 minute stay, a slow day and weather layer, an effect's CC value as its amount, a dark or light screen and a clearer main page, with a shorter identity. Installed over 1.3.1 and played on one Elite; the 1.3.2 pre-release is not listed.
 - version: v1.3.1
   date: 2026-11-13
   url: https://github.com/stephencummins/smk37-aisling/releases/tag/v1.3.1

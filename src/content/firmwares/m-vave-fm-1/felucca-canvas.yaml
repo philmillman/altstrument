@@ -4,14 +4,16 @@ summary: >-
   Felucca fork with CANVAS, a granular performance engine where each key runs its own grain stream with its own
   position, size, density and pitch, and the black keys hold glitch effects.
 description: >-
-  CANVAS is engine 15 beside Felucca's other engines, which are unchanged. Tapping a white key starts a stream of grains
-  that keeps sounding (LATCH) or sounds while held (HOLD), and several blend together; holding a key and turning knobs 1
-  to 4 changes that grain's position, size, density and pitch. Black keys hold glitches such as beat repeat, reverse,
-  freeze, tape stop, scatter, jump, burst, crush and octave shifts. Material comes from built-in piano, flute and sax
-  samples or three user slots, and there are factory presets with their own grain sets. Three key layouts (16 grains plus
-  effects, 27 grains, or 8 grains plus controls) are published as three builds, each with track 1 starting as CANVAS, and
-  a combined build lets the layout be switched. Projects that use a CANVAS track will not load in upstream Felucca. The
-  source patches Felucca 1.8.x, and the repository's README is Felucca's with a notice at the top.
+  CANVAS is a granular performance engine. Tapping a white key starts a stream of grains that keeps sounding (LATCH) or
+  sounds while held (HOLD), and several blend together; holding a key and turning knobs 1 to 4 changes that grain's
+  position, size, density and pitch, and the GRAINS page draws a fractal that reacts to the sounding grains. Black keys
+  hold glitches such as beat repeat, reverse, freeze, tape stop, scatter, jump, burst, crush and octave shifts. Since
+  17 November 2026 the three published builds are granular only: all four tracks are CANVAS, PRESETS offers only CANVAS
+  sounds, HOME returns to the GRAINS page, and the source material is synthesized at build time (nature, dream and
+  glitch sets, 17 factory sounds) in place of the earlier piano, flute and sax samples. Three key layouts (16 grains
+  plus effects, 27 grains, or 8 grains plus controls) are the three builds. A build made without the layout option
+  keeps every Felucca engine. Projects that use a CANVAS track will not load in upstream Felucca. The source patches
+  Felucca 1.8.x, and the repository's README is Felucca's with a notice at the top.
 status: active
 authors:
 - name: Mojotechnical
@@ -21,7 +23,7 @@ source_status: open
 license: GPL-3.0-only
 license_notes: >-
   LICENSE is the GPL-3.0 text and LICENSING.md states GPL-3.0-only, as upstream Felucca. The engines (MIT), board support
-  layer (MPL-2.0), ported DSP, fonts and CC0 samples keep their own licences.
+  layer (MPL-2.0), ported DSP and fonts keep their own licences.
 homepage: https://mojotechnical.github.io/felucca-canvas/
 based_on: m-vave-fm-1/felucca
 distribution: browser-installer
@@ -39,7 +41,7 @@ image:
   source_url: https://mojotechnical.github.io/felucca-canvas/
   first_party: true
 versions:
-- version: main @ 8bfac6f
-  date: 2026-11-16
-  url: https://github.com/Mojotechnical/felucca-canvas/commit/8bfac6f2d7b969c27f3c5479cba9f6c9cfc0c73d
-  notes: No tagged releases; this is the latest commit.
+- version: main @ bf5fd0f
+  date: 2026-11-17
+  url: https://github.com/Mojotechnical/felucca-canvas/commit/bf5fd0f0b26eb6eb94a294ef6cd3253aace3ea95
+  notes: No tagged releases; this is the latest commit. The newest commits make the three builds granular only, with synthesized source material and 17 sounds, boot into the GRAINS page with a CANVAS track selected, add a reactive Julia-set fractal to that page and a dark neon site theme, and redirect the old single-installer address to the firmware list.

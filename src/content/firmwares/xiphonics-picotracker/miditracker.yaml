@@ -8,15 +8,19 @@ description: >-
   and can run synced to MIDI clock or transport. The built-in multitimbral synth, called pariSynth, can be played
   over MIDI or used to audition files, and the interface colours are editable through a theme screen. It is a
   separate PlatformIO project for the RP2040 and not a picoTracker fork. The README states that the code was written
-  with the help of an AI model and that testing is still in progress, and all releases are marked as pre-releases.
+  with the help of an AI model. Releases up to 0.5.1 are marked as pre-releases and v1.0.0 is the first full release.
+  Version 1.0 adds MP3, FLAC and AIFF playback, a converter for audio, MIDI and module files, play modes, .it playback,
+  a USB drive mode for the SD card, a screensaver and a new interface look.
 status: active
 authors:
   - name: Dan (roge-rm)
     url: https://github.com/roge-rm
 source: https://github.com/roge-rm/midiTracker
 source_status: open
-license: unspecified
-license_notes: The repository has no LICENSE file and the README states no license.
+license: MIT
+license_notes: >-
+  The README states the MIT licence and the repository has a LICENSE file. The bundled Helix MP3 decoder stays under
+  the RealNetworks Public Source License 1.0, dr_flac under its own licence and the fonts under the SIL Open Font License.
 homepage: https://github.com/roge-rm/midiTracker
 distribution: download
 requires_stock: picoTracker v2 PCB
@@ -27,6 +31,10 @@ install_notes: >-
 brick_risk: false
 tags: [midi, sysex, looper, recorder, synth-engine, tracker, open-source]
 versions:
+  - version: v1.0.0
+    date: 2026-11-17
+    url: https://github.com/roge-rm/midiTracker/releases/tag/v1.0.0
+    notes: First full release. Adds MP3, FLAC and AIFF playback with seek, a converter from audio, MIDI files and modules to WAV, Once, Repeat and Folder play modes, .it playback, a USB drive mode, a screensaver and a redesigned interface. Settings, loops, banks and themes carry over.
   - version: v0.5.1
     date: 2026-08-27
     url: https://github.com/roge-rm/midiTracker/releases/tag/v0.5.1

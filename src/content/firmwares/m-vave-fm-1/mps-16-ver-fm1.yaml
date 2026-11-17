@@ -1,10 +1,9 @@
 device: m-vave-fm-1
 name: MPS-16 ver FM1
 summary: >-
-  Chord and phrase player for the FM-1 with 16 chord pads on the white keys, scale degrees on the black keys, a chord library, strum, arp, humanize and
-  inversion effects, and MIDI file slicing.
+  MIDI phrase sampler and chord player for the FM-1: a loaded MIDI file plays on 16 A pads on the white keys, the first seven black keys play bass and lead, the last four change key, with strum, arp, humanize and MIDI out on a channel per pad group.
 description: >-
-  The white keys play the chords of the chosen key and scale and the black keys play its scale degrees, lighting up with each chord's root. MIDI files can be copied
+  A loaded MIDI file is spread over the 16 A pads on the white keys in its own key. The B pads, the first seven black keys, play bass and lead in the key, the C pads, the last four, change key for a bridge, and MUTATE varies repeated chords. Each pad group sends MIDI on its own channel. MIDI files can be copied
   onto the FM-1 as on a USB drive or recorded into it, then cut into slices that go on pads. The README calls it early test builds by BeatSmith (originally published as ChordSmith FM) and
   the hardware version of MPS-16 ver WEB and groundwork for MPS-16. It is built on fm1-base and felucca-bsp with Felucca-Engines voices. The project site has
   a browser emulator that runs the same code, a browser installer that can put M-VAVE's own firmware back, and a .fwsc download for the command-line installer.
@@ -36,7 +35,7 @@ image:
   source_url: https://brentwalker.github.io/MPS-16-fm1/
   first_party: true
 versions:
-- version: main @ d69b409
-  date: 2026-11-15
-  url: https://github.com/BrentWalker/MPS-16-fm1/commit/d69b409ac7c08264f4e41927e19d7ebf180cd7d5
-  notes: No tagged releases; this is the latest commit. The repository and project were renamed from ChordSmith FM to MPS-16 ver FM1 on this date; the site calls this build 0.16.0.
+- version: main @ 5fd6ab2
+  date: 2026-11-16
+  url: https://github.com/BrentWalker/MPS-16-fm1/commit/5fd6ab285e7d221bc9c8d86c078572cda94adf02
+  notes: No tagged releases; this is the latest commit, and the README calls the build 0.23.1. The repository and project were renamed from ChordSmith FM to MPS-16 ver FM1 on 15 November, when the site called the build 0.16.0. Commits since then add big text on every screen, A, B and C pad groups with a MIDI channel for each, ANALYZE and PROBE views, a single SURFACE home screen with the tools opened from it, and a site that keeps every version at its own address for testing.

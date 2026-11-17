@@ -1,0 +1,36 @@
+device: m-vave-chocolate
+name: footctrl
+summary: Patch builder for the original Chocolate's FootCtrl 051 firmware that lights the two-digit display segments from incoming CC 20 to 23 on channel 1, so apps such as Loopy Pro can show control state on the pedal.
+description: >-
+  The script patches your copy of M-VAVE's stock FootCtrl 051 package, checking it by SHA-256, and writes a new .fwsc file
+  reported as FootCtrl 101. In Manufacturer Control mode the four switches still send CC 20 to 23 on channel 1, and the
+  display starts blank and shows only what comes back: each incoming CC with a value of 64 or more lights one segment of the
+  two digits, and a lower value clears it. Other modes behave as stock. Feedback is read over USB MIDI only, while the
+  switches send over USB and Bluetooth. A hook in the USB MIDI receive path scans the packets before the original parser
+  runs, and the assembly source, linker script and notes are included. The author tested it over USB with Loopy Pro on iOS
+  and from macOS. It is for the original Chocolate, not the Chocolate Plus, and uses the container tool from
+  chocolate-plus-re. No M-VAVE firmware is in the repository.
+status: active
+authors:
+  - name: dsrw
+    url: https://github.com/dsrw
+source: https://github.com/dsrw/footctrl
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT License, and the README says it covers the code and notes in the repository and that M-VAVE's
+  firmware is not included and remains theirs.
+distribution: patch-your-own
+requires_stock: "051"
+install_notes: >-
+  Download FootCtrl_051.fwsc from M-VAVE, get fwsctool.py from dtnprt/chocolate-plus-re, run build.py to produce
+  FootCtrl_101.fwsc and flash it over Bluetooth with M-VAVE's SincoOTA app, keeping the file name. The update resets the
+  pedal's settings, so select Manufacturer Control again in CubeSuite. To return to stock, flash the original 051 file the
+  same way; if the app hangs while the pedal shows a dim dash, wait or restart the app, as the pedal is in its update loader.
+brick_risk: false
+tags: [patch, midi, display, feedback]
+versions:
+  - version: main @ 19b4994
+    date: 2026-11-16
+    url: https://github.com/dsrw/footctrl/commit/19b4994846fe8ccb08f8e157ad0d6a347df094fb
+    notes: No tagged releases; this is the latest commit.

@@ -11,7 +11,7 @@ description: >-
   crunch, and MIDI uses Monomachine-style channels and CC numbers. The core also runs in a browser emulator and in
   a desktop test harness. The README gives the FM-1 build as released since 1.0, installed from the project's
   installer page or the FM-1 Firmware Hub, and keeps one project of 64 patterns in its own storage area. Each track keeps its own arpeggiator
-  notes and hold. The repository also releases the same core as a MONO2K module for the Ableton Move (a Schwung module with
+  notes and hold. Since 1.11 a POLY mode lets one track play chords through the tracks after it. The repository also releases the same core as a MONO2K module for the Ableton Move (a Schwung module with
   its own releases); this entry lists the FM-1 builds only.
 status: active
 authors:
@@ -26,13 +26,21 @@ license_notes: >-
 homepage: https://inigohernandez.github.io/mono2k/
 distribution: download
 install_notes: >-
-  Download mono2k-1.9.1.fwsc (identity FM-1_980) from the releases page, or install it from the project's installer
+  Download mono2k-<version>.fwsc (identity FM-1_980) from the releases page, or install it from the project's installer
   page or the FM-1 Firmware Hub over USB in Chrome or Edge. Back up what the FM-1 holds first. Installing another
   firmware replaces it, and holding OCT- while switching on reaches the updater. The repository also holds the
   sound and sequencer core, a browser emulator (web/build.sh) and a host harness.
 brick_risk: false
 tags: [sequencer, synth-engine, fx, lfo, emulator, midi]
 versions:
+- version: '1.11'
+  date: 2026-11-17
+  url: https://github.com/InigoHernandez/mono2k/releases/tag/v1.11
+  notes: Adds POLY, which plays chords on one track by using the tracks after it as voices, with a quick switch on GLO and the black keys. When the CPU is full the guard now gives way a step at a time, starting with screen frames, then ringing tails, then one chord note, and only then a whole track, and GLO > PLAY can name which track rests first. PERFORM stays on over every page and an effect can be latched on. A pattern saved with POLY on does not open on 1.10.
+- version: '1.10'
+  date: 2026-11-16
+  url: https://github.com/InigoHernandez/mono2k/releases/tag/v1.10
+  notes: The amp and filter envelopes become ADSR, with a sustain level held for the note's length and a release when it ends; HOLD moves to AMP 3. A sustain of 0 keeps the earlier envelope, so existing patterns and sounds play as in 1.9.3.
 - version: 1.9.3
   date: 2026-11-16
   url: https://github.com/InigoHernandez/mono2k/releases/tag/v1.9.3

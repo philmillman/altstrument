@@ -1,0 +1,40 @@
+device: modal-electronics-argon8
+also_devices: [modal-electronics-cobalt8, modal-electronics-carbon8]
+name: all8 tools
+kind: tool
+summary: Python tools that build Argon8 firmware with custom wavetables, rename the boot screen, convert firmware .syx files to raw images and back, and patch a copy of MODALapp.
+description: >-
+  all8 is a set of command-line tools for the Modal Argon8, Cobalt8 and Carbon8
+  that work on official firmware files the user supplies. argon_wavetables.py
+  replaces the twelve user-replaceable wavetable banks of Argon8 3.2 with banks
+  built from WAV files. boot_screen.py changes the model name, suffix and
+  subtitle shown at start-up on any of the three models. modal_fw.py decodes
+  firmware .syx files to raw images (optionally ELF) and encodes edited images
+  back. modalapp_patch_macos.py writes a patched copy of the installed MODALapp
+  so it can edit the Iron build. The same repository holds the Iron firmware
+  builder, which has its own entry under the Carbon8. Built sets are flashed with
+  crossflash-8.
+status: active
+authors:
+  - name: Víctor Villena
+    url: https://github.com/victorvillena
+source: https://github.com/victorvillena/all8
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and no licence statement.
+distribution: patch-your-own
+requires_stock: Argon8 3.2, Cobalt8 2.1 and Carbon8 1.1 official firmware (the tools accept only these versions)
+install_notes: >-
+  The tools need Python 3.8 or newer and the user's own official .syx files;
+  none are shipped. They write a new firmware set to a folder, which is then
+  flashed with crossflash-8 in update mode. The README says the bootloader is
+  never written and a bad flash is recovered by flashing again. The MODALapp
+  patcher needs an Apple Silicon Mac and MODALapp 3.0 (build 51), and leaves the
+  stock app unchanged.
+brick_risk: false
+tags: [wavetable, sysex, python, patcher, editor]
+versions:
+  - version: main @ b03d6a8
+    date: 2026-11-12
+    url: https://github.com/victorvillena/all8/commit/b03d6a8650b815935a984b3c45b5c79330ea4a56
+    notes: No tagged releases; this is the latest commit.

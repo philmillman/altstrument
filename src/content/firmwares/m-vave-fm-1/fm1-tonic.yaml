@@ -1,0 +1,47 @@
+device: m-vave-fm-1
+name: FM1 Tonic
+summary: >-
+  Drum machine for the FM-1 with eight synthesised drum voices, a sequencer of up to 64 steps with accents, fills, chance
+  and parameter locks, patterns chained into songs, an 8-track mixer and effects.
+description: >-
+  Each of the eight tracks has an oscillator, pitch modulation, a noise source with its own filter and envelope,
+  distortion, EQ, level and pan. The sequencer has accents, fills at 2x, 4x and 8x, chance per step, 16 patterns per
+  preset, chains and a song mode. The mixer has sends, low and high cuts, choke groups, a sidechain, reverb, delay and a
+  master compressor, and there are performance, mute and solo pages, copy and paste, undo and redo and 40 project
+  slots. Presets use the .mtpreset format. The unit is a MIDI device and an audio input over USB. It is inspired by
+  Sonic Charge's Microtonic with its own sound engine, which the README says is not the same engine. The code grew from
+  X0X, with a drum synthesis starting point from libpo32 (MIT), a 909 voice and cymbal samples ported from 9W9 and ER-99
+  (GPL-3.0), and a break generator used with its author's permission. A browser emulator runs the same code, with a backup
+  page for projects. The README says to use it at your own risk and describes a safe mode for an FM-1 that keeps
+  crashing, and says that a very dense pattern can push the FM-1 to its limit.
+status: active
+authors:
+- name: Luigi Rossi
+  url: https://github.com/luigirossi-music
+source: https://github.com/luigirossi-music/fm1-tonic
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL-3.0 text and LICENSING.md says GPL-3.0-only. It lists the ER-99 cymbal samples as
+  GPL-3.0, the break generator as GPL-3.0-only by its author's permission, and the unbuilt Bluetooth stack parts under
+  MPL-2.0, Apache-2.0 and BSD-2-Clause.
+homepage: https://luigirossi-music.github.io/fm1-tonic/emu/
+based_on: m-vave-fm-1/x0x
+distribution: browser-installer
+install_notes: >-
+  Use the web installer page in Chrome or Edge with the FM-1 on USB, or build with the JieLi toolchain and install the
+  package with tools/fm1_install.py. The README says the web installer can put M-VAVE's firmware back. The repository has
+  no releases or committed package.
+brick_risk: false
+tags: [drums, sequencer, synth-engine, fx, usb-midi, usb-audio, emulator, fork]
+image:
+  url: https://raw.githubusercontent.com/luigirossi-music/fm1-tonic/main/docs/card.png
+  alt: "FM1 Tonic's TRACK 1 MIX page with OSC mix and EQ frequency sliders and DIST and EQ GAIN dials"
+  credit: Luigi Rossi
+  source_url: https://github.com/luigirossi-music/fm1-tonic
+  first_party: true
+versions:
+- version: main @ 195a528
+  date: 2026-11-17
+  url: https://github.com/luigirossi-music/fm1-tonic/commit/195a528e5f15294ac73d62c30a4546ad496711a7
+  notes: No tagged releases; this is the latest commit. The VERSION file reads 1.1.

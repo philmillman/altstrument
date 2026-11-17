@@ -1,0 +1,46 @@
+device: m-vave-smk-37
+name: SLOOP 3 (SMK-37 port with piano)
+summary: >-
+  Port of the SLOOP 3 groovebox to the SMK-37's keys, pads, faders and wheels, with a sampled grand piano engine from
+  Erik37, keyboard layers and a split. Not yet run on a real unit.
+description: >-
+  This is a port of isod89's SLOOP 3 to the SMK-37 Pro, Elite and MKE-P37, kept in a repository of its own next to the
+  unchanged FM-1 build. The 37 keys play with velocity from the unit's factory curves, the 16 pads act as a control surface
+  (eight user sound slots, sound and page navigation, solo, layer, split and tap) or as drum pads, and four faders in two
+  banks set level, filter, reverb and delay. It adds a PIANO engine from genkigenki's Erik37, a second synth track that
+  every key also plays, and a keyboard split. A settings page and a panel test page show the keyboard's raw readings. The
+  README states plainly that it passes SLOOP 3's tests and a simulated SMK-37 but has not run on a real unit, and asks for a
+  full flash backup first. Like SLOOP 3 it installs only through m-bootloader.
+status: active
+authors:
+- name: RafaelFunchal
+  url: https://github.com/RafaelFunchal
+source: https://github.com/RafaelFunchal/smk37
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL-3.0 text, as upstream SLOOP 3, and the README says GPL-3.0. The factory sample bank
+  (assets/samples.bin) is CC0 recordings listed in assets/CREDITS-SAMPLES.txt, and the screen fonts are Inter under SIL OFL
+  1.1. The repository holds no firmware package and no M-VAVE image.
+based_on: m-vave-fm-1/sloop-3
+distribution: source-only
+requires_stock: m-bootloader installed on the unit
+install_notes: >-
+  No package is published. Build with the pi32v2 LLVM toolchain and open the installer page it produces in Chrome or Edge.
+  The unit needs m-bootloader first, installed with M-Flasher after a full flash backup; the page then reads the model from
+  flash, refuses an FM-1, backs up the flash and installs. The way back is restoring the backup with M-Flasher or running
+  M-VAVE's M-UPGRADE, which puts the stock firmware and bootloader back. Holding OCTAVE- at power-on opens RESCUE, and
+  holding SEQ PLAY opens m-bootloader's menu.
+brick_risk: true
+tags: [sequencer, synth-engine, drums, sampler, fx, performance, usb-audio, midi, fork]
+image:
+  url: https://raw.githubusercontent.com/RafaelFunchal/smk37/main/docs/screens.png
+  alt: "Six SLOOP 3 screens, as on the FM-1 panel: a five-track list with four knobs, a PLUCK sound grid, a drum step grid, a piano roll, a punch-in effects grid and a spectrum display"
+  credit: RafaelFunchal
+  source_url: https://github.com/RafaelFunchal/smk37
+  first_party: true
+versions:
+- version: main @ 9fc2174
+  date: 2026-11-17
+  url: https://github.com/RafaelFunchal/smk37/commit/9fc2174c4164eaded90ed097857f9e60a5a2db5e
+  notes: No tagged releases; this is the latest commit.

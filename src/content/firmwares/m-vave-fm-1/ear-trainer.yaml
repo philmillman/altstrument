@@ -1,10 +1,10 @@
 device: m-vave-fm-1
 name: FM-1 Ear Trainer
 summary: >-
-  Ear-training game for the FM-1, a Melodee fork: hear a short C major or A minor phrase, then play the hidden notes on the keys, with scoring and extra practice on missed degrees.
+  Ear-training game for the FM-1, a Melodee fork: hear a short C major or A minor phrase, then play the hidden notes on the keys, with scoring and extra practice on missed degrees, plus a metronome and rhythm games from 0.0.16.
 description: >-
   Rights warning: the repository vendors the whole Melodee source tree, which includes the Casio CZ-1 factory tones and the Sequential Prophet-5/10 factory programs as SysEx sound data; Melodee's licensing file says the rights to them stay with Casio and Sequential. It is not checked whether the Ear Trainer package compiles them in.
-  Holding HOME and tapping PLAY opens the game. Each question plays one to four notes on the factory TINE EP sound by default (0.0.13 lets PRESETS pick other sounds), with a chosen number of the last notes hidden, and the player repeats them in order; the keys and display light the notes that are known, and wrong answers replay the same question. Settings cover the scale, the number of notes, how many are hidden and the gap between onsets. Scores weight later questions toward the scale degrees that were missed. Game settings are saved, and from 0.0.15 so are the current and best ratings for each scale, complexity and range. Entering the game replaces track 1's in-memory sound with TINE EP. A browser emulator and a web installer are published with it. The author reported 0.0.8 installed and working on one FM-1 from V15 and from another firmware, and the 0.0.13 notes say it was untested on hardware; the 0.0.15 notes do not say it was tried on hardware, and the two flash-chip revisions and audio timing under load are not checked on hardware.
+  Holding HOME and tapping PLAY opens the training menu; from 0.0.16 it also holds a metronome (tap tempo, 22 meter grids, four user presets) and rhythm games that report hits, misses, mean error and early or late bias, chosen with SELECT or K1, and the pitch game described here is one activity in it. Each question plays one to four notes on the factory TINE EP sound by default (0.0.13 lets PRESETS pick other sounds), with a chosen number of the last notes hidden, and the player repeats them in order; the keys and display light the notes that are known, and wrong answers replay the same question. Settings cover the scale, the number of notes, how many are hidden and the gap between onsets. Scores weight later questions toward the scale degrees that were missed. Game settings are saved, and from 0.0.15 so are the current and best ratings for each scale, complexity and range. Entering the game replaces track 1's in-memory sound with TINE EP. A browser emulator and a web installer are published with it. The author reported 0.0.8 installed and working on one FM-1 from V15 and from another firmware, and the 0.0.13 notes say it was untested on hardware; the 0.0.15 and 0.0.16 notes do not say they were tried on hardware, and the two flash-chip revisions and audio timing under load are not checked on hardware.
 status: active
 authors:
 - name: copych
@@ -21,6 +21,10 @@ install_notes: >-
 brick_risk: false
 tags: [game, synth-engine, fork, emulator, web]
 versions:
+- version: 0.0.16
+  date: 2026-11-17
+  url: https://github.com/copych/FM1-Ear-Trainer/releases/tag/v0.0.16
+  notes: Adds a metronome with tap tempo, 22 meter grids and four user presets, and rhythm games with timing results, to the same training menu as the pitch game. Both share shrinking green and red feedback circles, and settings and progress now save when an activity is left. Older preferences migrate automatically.
 - version: 0.0.15
   date: 2026-11-14
   url: https://github.com/copych/FM1-Ear-Trainer/releases/tag/v0.0.15

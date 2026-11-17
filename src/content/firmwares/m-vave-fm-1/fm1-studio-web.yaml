@@ -6,8 +6,7 @@ summary: >-
 description: >-
   Everything runs in the page: clang as WebAssembly in a worker compiles a project written against an fm1.h API, and the module plays on an AudioWorklet next to a
   panel with the 240 x 240 screen, 27 keys, buttons, encoders and the master pot. Web MIDI input is supported. A gallery fetches the source of nine community firmwares at fixed tags or commits,
-  compiles them and runs them with their own browser emulators. The README says programs written against fm1.h run in the simulator only, since the adapter for a real FM-1 does not exist yet.
-  It does not install anything on a unit. The gallery needs the first load to download about 60 MB of compiler. Not the same project as thingsapart's Android FM-1 Studio.
+  compiles them and runs them with their own browser emulators. A FIRMWARE button compiles a project for the FM-1's own processor with a second in-page compiler (about 52 MB, loaded on first use) and downloads a .fwsc package, and an INSTALL button writes it to an FM-1 over USB MIDI in Chrome or Edge using fm1-base's installer; it installs fm1.h projects and three gallery firmwares (AURORA, CS-1, FM-106). The package's update loader writes only the program area, not the boot loader, and the install dialog does not offer M-VAVE's own firmware, which the README says to put back with another tool. The README says it was tested on one FM-1 with the newer flash chip and m-bootloader 2.4, and not on the first chip or under the boot loader of V15 or V16. Code that runs in the simulator is not guaranteed to run on a real FM-1. The first load downloads about 60 MB of compiler. Not the same project as thingsapart's Android FM-1 Studio.
 status: active
 authors:
 - name: Tim Samshuijzen
@@ -21,11 +20,11 @@ license_notes: >-
 homepage: https://fm1studio.com
 distribution: browser-installer
 install_notes: >-
-  Open fm1studio.com in a browser, or serve the src folder with any static server. The page keeps nothing between visits, so SAVE a project as a zip before closing it. The tool writes nothing to a physical FM-1.
+  Open fm1studio.com in a browser, or serve the src folder with any static server. The page keeps nothing between visits, so SAVE a project as a zip before closing it. Simulating writes nothing to an FM-1. To install, press FIRMWARE or INSTALL in Chrome or Edge with the FM-1 on USB and follow the dialog; the README advises making a whole-flash backup and installing m-bootloader with M-Flasher first, and keeping M-VAVE's FM-1.fwsc to put the stock firmware back with fm1_install.py or M-UPGRADE.
 brick_risk: false
-tags: [emulator, web, sdk, synth-engine]
+tags: [emulator, web, sdk, synth-engine, flasher]
 versions:
-- version: main @ a0a4286
-  date: 2026-11-15
-  url: https://github.com/TimSamshuijzen/fm1studiocom/commit/a0a4286fe81a048e21838e585f9dd9cfb0a86935
-  notes: No tagged releases; this is the latest commit.
+- version: main @ 30d27fe
+  date: 2026-11-16
+  url: https://github.com/TimSamshuijzen/fm1studiocom/commit/30d27fe682acf4abe5c6f9a8cca519a20261a3f0
+  notes: No tagged releases; this is the latest commit. Recent commits add two demo projects, take the return to M-VAVE's firmware out of the INSTALL dialog and add the README's report of a test on a real FM-1.

@@ -8,7 +8,7 @@ description: >-
   USB-MIDI, the colour screen, the foot switch, knobs, LEDs and the link between the two processors. The releases up to
   0.2.1-alpha shipped a tremolo, a granular delay with micro-looper and a pass-through build. 0.3.0-alpha removes the
   two example effects, adds a pass-through template with a tutorial for a first tremolo, a strobe tuner demo, an audio
-  link that lets the two processors exchange data after every audio block and smooth text in any font. The repository has a command line flasher, a
+  link that lets the two processors exchange data after every audio block and smooth text in any font. From 0.5.4-alpha it adds file storage read directly from flash, live settings changes from a computer over USB and maths functions on both processors. The repository has a command line flasher, a
   browser flasher and tools that run an effect on a WAV file or boot the DSP image in an emulator. The author states that it
   contains no Valeton code or data and no chip vendor SDK code. It is alpha and has been tested on one pedal.
 status: active
@@ -37,6 +37,10 @@ image:
   source_url: https://github.com/OpenGP5/OpenGP5#readme
   first_party: true
 versions:
+  - version: 0.5.5-alpha
+    date: 2026-11-16
+    url: https://github.com/OpenGP5/OpenGP5/releases/tag/v0.5.5-alpha
+    notes: Pre-release. Fixes clicks about every ten seconds while a computer talks to the pedal, by queueing serial answers between audio blocks. Carries the 0.5.4 additions of file storage read straight from flash, storage tied to the installed firmware, live settings and control readout over USB, and maths functions on both processors. Firmwares need a rebuild for the fix.
   - version: 0.3.0-alpha
     date: 2026-11-13
     url: https://github.com/OpenGP5/OpenGP5/releases/tag/v0.3.0-alpha

@@ -28,7 +28,7 @@ homepage: https://sog-maker.github.io/trapstation-os/
 based_on: m-vave-fm-1/bbl-jam-box
 distribution: browser-installer
 install_notes: >-
-  Use the installer page in Chrome or Edge over a USB data cable (no hub), or install trapstation-os-1.1.0.0.fwsc with tools/fm1_install.py,
+  Use the installer page in Chrome or Edge over a USB data cable (no hub), or install trapstation-os-1.1.0.2.fwsc with tools/fm1_install.py,
   or from the FM-1 Firmware Hub. Back up in the installer first: samples, user sounds and kits stay on the device, but 1.1.0.0 does not
   load the last jam of 1.0.0.0. The package carries its update loader, so the installer's Return to official V15 (with M-VAVE's FM-1_015.fwsc
   that you supply) or another firmware's installer takes over from it, and INSTALL.md says an interrupted update resumes when Install is pressed
@@ -42,6 +42,14 @@ image:
   source_url: https://github.com/sog-maker/trapstation-os
   first_party: true
 versions:
+- version: 1.1.0.2
+  date: 2026-11-16
+  url: https://github.com/sog-maker/trapstation-os/releases/tag/v1.1.0.2
+  notes: Kits and sound slots save and load again with FM6 tracks, which 1.1.0.0 and 1.1.0.1 blocked. A kit keeps each track's FM6 preset but not the changes made on the twelve FM6 pages, and KIT LOADED shows only when a kit was loaded. Package identity FM-1_511.
+- version: 1.1.0.1
+  date: 2026-11-16
+  url: https://github.com/sog-maker/trapstation-os/releases/tag/v1.1.0.1
+  notes: Stores the last jam packed, which fixes 1.1.0.0 showing LAST JAM FULL after little more than a bar of steps per track. A jam saved by 1.1.0.0 is converted at the next save, and going back to 1.1.0.0 starts a fresh jam.
 - version: 1.1.0.0
   date: 2026-11-16
   url: https://github.com/sog-maker/trapstation-os/releases/tag/v1.1.0.0

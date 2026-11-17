@@ -1,0 +1,51 @@
+device: m-vave-fm-1
+name: Stack Trace CFW
+summary: >-
+  Custom firmware on M-VAVE's FM-1 Open base that adds VA poly, TR-909, C64 SID and granular engines, a 128-step
+  sequencer with probability and ratchets, eight scenes, grit and punch effects and a zero-wear slicer, with a browser workstation.
+description: >-
+  Rights warning: the firmware carries demo songs that include a MIDI arrangement of the 20th Century Fox fanfare, and the
+  repository and release hold rendered demo audio of it and of other songs. The README and the web workstation name a
+  256-instrument sound bank after the Kurzweil K250 and a sample bank ships with the release, but the project does not say where
+  those samples come from.
+  Built on M-VAVE's FM-1 Open sources and SDK, copied into the repository rather than forked. It adds four engines to
+  the stock DX7, 808 and sampler tracks: a dual-oscillator supersaw VA poly, a TR-909 kit, a C64 SID voice with an
+  arpeggiator and a granular cloud. The sequencer has two 64-step banks with per-step probability, conditions and one to
+  four ratchets, Euclidean and 303-style acid pattern generators, and eight scenes that store mutes, banks, engines,
+  lengths and tempo. Live effects are overdrive, bitcrusher, phaser, sidechain pump and punch effects such as stutter and
+  tape stop. The slicer cuts a flash sample slot into two, four or eight pads without writing flash. MIDI CC learn maps
+  controllers to the sound and effect parameters, and the demo songs play from compact MIDI data on the device. A separate
+  single-file browser workstation auditions 256 presets and exports audio and MIDI. The release package is built from the
+  repository's tools.
+status: active
+authors:
+- name: Stack Trace
+  url: https://github.com/jonludwig1234
+source: https://github.com/jonludwig1234/fm1-stacktrace-cfw
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE.md and THIRD_PARTY.md, copied from M-VAVE's fm1_open: the application sources are GPL-3.0-only with an FM1 SDK
+  linking exception, and the SDK's engine library is M-VAVE's, redistributable for the FM-1 only. The licensed FM-1 V15 image
+  (sdk/firmware/FM-1_015.fwsc, blob ce49cc15..., Apache-2.0 in m-vave/fm1_open) is committed unchanged, as are the SDK's boot and update
+  files. The Kurzweil-named sound bank, the sample bank and the demo songs have no licence statement.
+based_on: m-vave-fm-1/fm1-open
+distribution: download
+requires_stock: FM1 Open V14 base; the README says V14 or V15 stock can be restored
+install_notes: >-
+  Back up projects, samples and DX7 banks in M-VAVE's FM-1 Workbench, download FM1_K250_STACKTRACE.fwsc and SHA256SUMS.txt
+  from the release, check the checksum, then choose Firmware Update, Local File in the Workbench and keep the FM-1 connected
+  until the splash appears. The README says the Workbench's restore option returns the official V14 or V15 firmware at any time.
+brick_risk: false
+tags: [synth-engine, sequencer, sampler, fx, chiptune, granular, editor]
+image:
+  url: https://raw.githubusercontent.com/jonludwig1234/fm1-stacktrace-cfw/main/screenshots/05_dx7_va_sid_engines.png
+  alt: "The Stack Trace web workstation: demo jukebox, track tabs, a 16-step matrix, DX7, VA poly, C64 SID and granular panels, TR-909 pads and a keyboard"
+  credit: Stack Trace
+  source_url: https://github.com/jonludwig1234/fm1-stacktrace-cfw
+  first_party: true
+versions:
+- version: v1.0.0-stacktrace
+  date: 2026-11-16
+  url: https://github.com/jonludwig1234/fm1-stacktrace-cfw/releases/tag/v1.0.0-stacktrace
+  notes: First release; firmware package, web workstation, demo audio and videos, with checksums.

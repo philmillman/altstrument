@@ -1,0 +1,48 @@
+device: m-vave-fm-1
+name: Hookology
+summary: >-
+  Melodee 1.6.1 reworked for catching ideas on the FM-1: six sound tracks and two MIDI tracks, HERA's chord sets, a
+  sections-based song builder, per-track insert effects, an overload limit and a web editor.
+description: >-
+  Rights warning: the repository bundles Casio's 64 CZ-1 factory tones and Sequential's Prophet-5 factory programs as
+  sound data, and its own notes say no licence for them is granted by the project; the CZ-1 tones were assembled from
+  an archived web page and a third-party preset download.
+  A derivative of Melodee 1.6.1 that is not a GitHub fork. The FM-1 starts on a TRACKS page showing every lane, with a
+  vertical mixer beside it. Six tracks are full sound tracks and two are MIDI tracks. The chord page gains the 100
+  chord sets of HERA, strums with a slop setting, a two-octave range, slash-chord names, voice leading and twelve arp
+  patterns. Songs are built from sections A to H, with a build mode, song looping and a free first take that sets the
+  tempo and loop length. The sound engines are Prophet, a six-operator FM voice with DX7 patches, CZ-1, SID and six
+  drum kits, each with a half-rate light quality mode, and an ECO setting applies it to every track. Up to three insert
+  effects per track (drive, crush, gate, stutter and others) sit beside shared reverb and delay. Bluetooth is switched
+  off in this build. A web editor in the same style has a live page, a song page, a piano roll and MIDI file import
+  and export. The repository lists every difference from Melodee version by version and credits Melodee, Felucca,
+  SLOOP, HERA and ChoralRoot for what it builds on.
+status: active
+authors:
+- name: bendawsonjr
+  url: https://github.com/bendawsonjr
+source: https://github.com/bendawsonjr/hookology
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE (GNU GPL v3.0 only) and the README; LICENSING.md lists the parts under MIT, Apache-2.0, BSD-3-Clause, MPL-2.0,
+  SIL OFL 1.1 and CC0. The Casio CZ-1 and Sequential Prophet-5 factory data are not covered by the project licence.
+  The repository does not commit an M-VAVE stock image; it carries JieLi's wl82loader.bin recovery helper
+  (Apache-2.0), which the recovery tool checks by digest and loads into RAM only.
+homepage: https://bendawsonjr.github.io/hookology/
+based_on: m-vave-fm-1/melodee
+distribution: browser-installer
+install_notes: >-
+  Open the installer page in Chrome or Edge with the FM-1 connected and press Install; it saves a full backup first. The
+  same page can return the FM-1 to the official V15 or install another custom firmware. The release files are named
+  melodee-1.0 because Hookology keeps Melodee's update tools. The docs describe a boot stub that never writes
+  0x00000-0x03FFF, three key-light flashes at power-on when the USB update loader starts after an interrupted
+  update (install the same package again), and OCT- held at power-on to request update mode. BUILDING.md has a ROM
+  USB recovery for a black screen. The author states that use is at your own risk.
+brick_risk: false
+tags: [synth-engine, sequencer, chords, fm, fx, usb-midi, editor]
+versions:
+- version: '1.0'
+  date: 2026-11-17
+  url: https://github.com/bendawsonjr/hookology/releases/tag/v1.0
+  notes: First release; package, resources and app images with SHA256SUMS.

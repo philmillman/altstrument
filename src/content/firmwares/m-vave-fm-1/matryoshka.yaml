@@ -32,10 +32,22 @@ install_notes: >-
   from a release. Return to official V15 first if the FM-1 runs Felucca, SLOOP or another build. Returning to V15 can
   fail with "update failed -5" on a unit that M-VAVE's FM1 Open set up, because its boot code differs; the README
   lists MvaveFM1Unbricker as the way back in that case. Save Felucca data first, since the first start erases its
-  flash sectors.
+  flash sectors. Since 1.18 the install has two steps, the firmware and then the factory sounds, which the editor installs by default.
 brick_risk: false
 tags: [synth-engine, modular, editor, emulator, patch, sequencer, arpeggiator, fork]
 versions:
+- version: 1.18.2
+  date: 2026-11-17
+  url: https://github.com/glvno/matryoshka/releases/tag/v1.18.2
+  notes: Web editor only; the firmware stays at 1.18.0. Mutate, Randomize and Make candidates leave pitch alone unless a Mutate pitch option is on, change about one row in four, and can breed from snapshots marked keep. Each card shows its share of the FM-1's CPU budget.
+- version: 1.18.1
+  date: 2026-11-17
+  url: https://github.com/glvno/matryoshka/releases/tag/v1.18.1
+  notes: Web editor only; the firmware stays at 1.18.0. Snapshots replace the A/B switch, with rank and cut of mutated candidates, test phrases, WAV export and listening to a single signal.
+- version: 1.18.0
+  date: 2026-11-16
+  url: https://github.com/glvno/matryoshka/releases/tag/v1.18.0
+  notes: Setup takes two steps, the firmware and then the factory sounds, which frees about 44 KB of firmware; without the factory sounds the FM-1 plays its built-in instruments and says FACTORY SOUNDS MISSING. Rings and tails of resonators, filters, reverb and delay now fade to silence on the FM-1, Shush 101 follows the SH-101 more closely, and the 808 and 909 kits play fill-ins while FILL is held.
 - version: 1.17.0
   date: 2026-11-16
   url: https://github.com/glvno/matryoshka/releases/tag/v1.17.0

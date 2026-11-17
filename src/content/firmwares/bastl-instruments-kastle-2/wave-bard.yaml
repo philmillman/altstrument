@@ -1,0 +1,41 @@
+device: bastl-instruments-kastle-2
+also_devices: [bastl-instruments-citadel]
+name: Wave Bard (official source)
+summary: Bastl's own Wave Bard sample player firmware for the Kastle 2 and Citadel, published with source in the kastle2 repository. The factory sample bank is all rights reserved.
+description: >-
+  Rights warning: the factory sample bank (SAMPLES.bin) in the repository is marked all rights reserved and may not be
+  distributed commercially, alone or inside a custom firmware. Wave Bard is a sample player with Sample, Pitch and
+  Length controls and a bank button, and by default holds six banks of eight samples. The app folder documents the
+  packed format for samples, scales and rhythms, and Bastl's Wave Bard Sample Loader web app generates a new bank.
+  Running make wave-bard builds the app alone, and make wave-bard-with-samples appends the sample bank to give the
+  complete official image. The app ID is 0xB3.
+status: active
+authors:
+  - name: Bastl Instruments
+    url: https://github.com/bastl-instruments
+  - name: Václav Mach
+    url: https://github.com/xx0x
+  - name: Marek Mach
+    url: https://github.com/machmar
+source: https://github.com/bastl-instruments/kastle2/tree/main/code/src/apps/WaveBard
+source_status: open
+license: MIT
+license_notes: >-
+  The code is MIT (LICENSE). SAMPLES.bin, the factory samples by Oliver Torr for Bastl Instruments, is all rights
+  reserved, and the README says it must not be commercially distributed as part of a custom firmware. Panel graphics
+  and case artwork are also all rights reserved; schematics and documentation are CC BY SA 4.0. The sample bank is
+  Bastl's own file in its own repository, so linking to the repository is not redistribution by this catalog.
+homepage: https://bastl-instruments.com/instruments/kastle-2-wave-bard
+distribution: source-only
+requires_stock: Any Kastle 2 or Citadel
+install_notes: >-
+  Build with the repository's CMake toolchain, using make wave-bard-with-samples for the full image, then hold SHIFT
+  while powering on so the unit appears as a USB drive and copy the .uf2 onto it. The RP2040 boots from ROM into that
+  mode, so a bad build is replaced the same way; Bastl's official .uf2 files on its website put the unit back.
+brick_risk: false
+tags: [official, open-source, sampler, sample-player]
+versions:
+  - version: main @ a4a7a04
+    date: 2026-08-14
+    url: https://github.com/bastl-instruments/kastle2/commit/a4a7a0451038bc4ed4719f46573c3eff92e7c7ce
+    notes: No tagged releases; this is the latest commit.

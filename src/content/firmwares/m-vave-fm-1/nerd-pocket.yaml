@@ -1,0 +1,46 @@
+device: m-vave-fm-1
+name: Nerd Pocket
+summary: >-
+  Virtual analog synth for the FM-1 with two oscillators (FM, sync, ring), a multimode filter, three envelopes, two LFOs,
+  an arpeggiator, a 16-step sequencer, effects and 99 presets. The synth engine is closed source.
+description: >-
+  The two oscillators offer saw, pulse, triangle, sine or noise, with linear FM from the second into the first, hard
+  sync and ring modulation. The filter has 12 and 24 dB low-pass, high-pass, band-pass and notch modes with drive. Amp,
+  filter and modulation envelopes, two LFOs, eight voices in poly, mono or legato with unison and portamento, and a morph
+  control on the mod wheel position complete the voice. An arpeggiator and a 16-step sequencer that is saved with each preset
+  sit beside drive, chorus, delay and reverb. MIDI covers notes, mod wheel, pitch bend, program change and clock over USB and
+  TRS. The repository holds the screen, controls, MIDI, sequencer and saving code on fm1-base; the synth engine, taken from the
+  author's Nerd Lead plugin, is not published and is compiled into the release packages, so the firmware cannot be built from
+  the repository alone. The code notes are in Spanish. The README says it uses the second core, which is beta in
+  felucca-bsp and misbehaves on some units (the synth then keeps running on one core with fewer voices), and that it has been tested on one FM-1.
+status: active
+authors:
+- name: Jorge Conde (jconde007)
+  url: https://github.com/jconde007
+source: https://github.com/jconde007/nerd-pocket
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSE (MPL-2.0) covers the FM-1 app in firmware/, like fm1-base and felucca-bsp underneath it; three files of JieLi's SDK
+  (Apache-2.0) and the Barlow font (SIL OFL 1.1) keep their own licences. The synth engine (motor/) is not in the repository: its
+  README says it is not open source, and the release notes call it closed source, free to use with this firmware.
+homepage: https://jconde007.github.io/nerd-pocket/
+distribution: browser-installer
+install_notes: >-
+  Open the install page in Chrome or Edge with the FM-1 connected by USB, or install the release's nerdpocket .fwsc with fm1-base's
+  tools/fm1_install.py. If the FM-1 runs a custom firmware the installer does not recognise, put M-VAVE's firmware back first with the
+  installer's stock option or M-UPGRADE. The README warns that a failed install can leave the FM-1 unable to start and names
+  felucca-bsp's fm1_rescue (macOS, Linux) as the way to put the stock firmware back. Installing replaces what another firmware saved.
+brick_risk: false
+tags: [synth-engine, sequencer, arpeggiator, fx, midi, emulator]
+image:
+  url: https://raw.githubusercontent.com/jconde007/nerd-pocket/main/docs/pantallas/resumen.png
+  alt: "Six Nerd Pocket screens: the home page with a cutoff curve and effect toggles, an oscillator page, a filter page and a step sequencer, each with four knobs below"
+  credit: Jorge Conde
+  source_url: https://github.com/jconde007/nerd-pocket
+  first_party: true
+versions:
+- version: 0.5.1
+  date: 2026-11-16
+  url: https://github.com/jconde007/nerd-pocket/releases/tag/v0.5.1
+  notes: First public release, with the package and a browser emulator.

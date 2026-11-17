@@ -21,6 +21,9 @@ description: >-
   engine files (engine ABI 3), loads any engine file that passes its checks, adds engine-defined controls and a cycle
   meter, and ships fm.dse 2.0.0, which replaces 1.0.0; the firmware refuses the old file, so the pack plays samples until
   it is replaced.
+  Version 0.3.2 lets an engine file declare its own config page, makes Shift and Track 8 open the same three pages for every
+  engine, and adds formant and Rings-based engine files besides fm.dse 2.1.0. Its notes say the shipped firmware build had not
+  yet run on a unit.
   The devkit build adds a DSP load meter and module tools and has no synth. Both
   fix parameter locks so that a step without a lock returns to the knob's value,
   and limit how long the unit waits for the sound processor before flagging a
@@ -58,6 +61,10 @@ install_notes: >-
 brick_risk: false
 tags: [synth, chords, scales, sequencer, parameter-locks, modules]
 versions:
+  - version: v0.3.2
+    date: 2026-11-17
+    url: https://github.com/llcoolkm/arrhythmia/releases/tag/v0.3.2
+    notes: Engine files can declare their own config page, and Shift with Track 8 opens engine, scale and arpeggiator pages for every engine. Adds formant and physical-model engine files besides fm.dse 2.1.0, and fixes a possible silence after a pack switch. The notes say the shipped firmware build had not yet run on a unit.
   - version: v0.3.1
     date: 2026-11-11
     url: https://github.com/llcoolkm/arrhythmia/releases/tag/v0.3.1

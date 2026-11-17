@@ -1,0 +1,43 @@
+device: designburg-vibe-fm-mk1
+name: ECHOFIELD
+summary: >-
+  Granular instrument built with the VIBE FM SDK, ported from the FM-1 ECHOFIELD, with six modes, live audio input
+  granulation, 16 pads and a stage view; it runs in the VIBE FM Playground and plugin today.
+description: >-
+  It reads small grains from a sample or from the live input, up to 48 at once, and overlaps them into a continuous sound.
+  The six modes are CLOUD, DUST, TAPE, BLOOM, PULSE and DRIFT, and the keys play the cloud at any pitch, with an ORACLE that
+  picks notes in a chosen key, held performance effects, RANDOM with locks, RESAMPLE and a filter, delay, reverb and tape
+  section. Compared with the FM-1 version it adds a live ring of up to 8 seconds fed from IN 1 and IN 2, recording into 16
+  slots of up to 16 seconds, 16 pads, WAV loading and export, MIDI out for PULSE and a 480 x 320 screen view. A larger stage
+  view and automatable parameters appear in the Playground and plugin. It is one WebAssembly file that runs in the browser
+  Playground and the VST3, AU and CLAP plugin, and the README says the same zip will run on the VIBE hardware, which has not
+  shipped. Hardware use is therefore untested.
+status: active
+authors:
+  - name: Philip-Bos
+    url: https://github.com/Philip-Bos
+source: https://github.com/Philip-Bos/echofield-vibe
+source_status: open
+license: MIT
+license_notes: >-
+  LICENSING.md says the firmware, engine, tools and page are MIT, the factory sounds are CC0-1.0, and the VIBE FM SDK,
+  a pinned submodule, is Apache-2.0 with its fonts under SIL OFL 1.1. The release carries THIRD-PARTY-LICENSES.txt.
+homepage: https://philip-bos.github.io/echofield-vibe/
+based_on: m-vave-fm-1/echofield
+distribution: browser-installer
+install_notes: >-
+  Drop echofield.wasm onto the VIBE FM Playground in Chrome or Edge, or echofield.zip onto the VIBE FM plugin window. There
+  is no install on hardware yet, because the VIBE FM Mk1 has not shipped.
+brick_risk: false
+tags: [granular, sampler, fx, reverb, delay, tape, performance, sdk, web]
+image:
+  url: https://raw.githubusercontent.com/Philip-Bos/echofield-vibe/main/docs/img/stage-cloud.png
+  alt: "ECHOFIELD stage in CLOUD mode: mode tabs on top, a grey sample waveform with a grain window, an XY pad, four dials, a 4 by 4 pad grid and a row of buttons"
+  credit: Philip-Bos
+  source_url: https://github.com/Philip-Bos/echofield-vibe
+  first_party: true
+versions:
+  - version: v1.0.0
+    date: 2026-11-14
+    url: https://github.com/Philip-Bos/echofield-vibe/releases/tag/v1.0.0
+    notes: The first release; it carries echofield.wasm, echofield.zip, two screenshots and a third-party licence file.

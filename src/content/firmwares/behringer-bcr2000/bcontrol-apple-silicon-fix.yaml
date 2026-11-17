@@ -1,0 +1,39 @@
+device: behringer-bcr2000
+also_devices: [behringer-bcf2000]
+kind: firmware
+name: B-Control Apple Silicon Fix
+summary: Python patcher that corrects the USB bulk endpoint size in Behringer's official BCR2000 and BCF2000 1.10 firmware so USB MIDI input works on Apple silicon Macs.
+description: >-
+  On Apple silicon Macs the BCR2000 and BCF2000 send MIDI over USB but receive none, because the firmware's USB descriptor
+  declares a bulk OUT packet size of 4 bytes, a value full-speed USB does not allow. The script reads Behringer's official
+  1.10 SysEx update file for either model, checks its SHA-256, decodes it, changes the declared size from 4 to 8 in the four
+  descriptor sets used by USB modes U-1 to U-4 and writes a new .syx file. It verifies that exactly four bytes changed. The
+  device still reports firmware 1.10. The patched file cannot be sent over USB from an Apple silicon Mac, so the README
+  flashes it with BC Manager over DIN MIDI in S-4 mode or from a computer where USB output already works. The README says
+  the BCR2000 patch was tested on one unit and the BCF2000 patch on none, and that the code and the README were generated
+  with Claude Code. The firmware container code is a Python 3 port from the BCR2000-dev kit. No Behringer firmware is in
+  the repository.
+status: active
+authors:
+  - name: Teufeuleu
+    url: https://github.com/Teufeuleu
+source: https://github.com/Teufeuleu/bcontrol-apple-silicon-fix
+source_status: open
+license: GPL-2.0-or-later
+license_notes: >-
+  The LICENSE file is the GNU GPL version 2 and the README states "GPL v2 or later", because the container format code
+  derives from bcfwconvert.py in BCR2000-dev.
+distribution: patch-your-own
+requires_stock: "1.10"
+install_notes: >-
+  Download Behringer's official bcf2000_1-10.zip, run patch_bc2000_usb.py on the .syx for your model, then send the
+  -usbfix.syx file with BC Manager over DIN MIDI with the unit in S-4 mode (EDIT + STORE, turn encoder 1 to S-4). Switch
+  back to a USB mode afterwards. Recovery: updates write only the OS area, so power on while holding STORE and LEARN to
+  reach the bootloader's load mode, then send the original .syx through DIN MIDI IN; rescue mode does not work over USB.
+brick_risk: false
+tags: [patch, python, cli, usb-midi, macos, sysex]
+versions:
+  - version: main @ 618c0a2
+    date: 2026-11-17
+    url: https://github.com/Teufeuleu/bcontrol-apple-silicon-fix/commit/618c0a2
+    notes: No tagged releases; this is the latest commit.

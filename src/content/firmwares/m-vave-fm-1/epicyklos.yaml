@@ -9,10 +9,12 @@ description: >-
   chord tables (Plaits Palette), a sustaining drone with drift and a second voice, and a bass track that is still a
   placeholder. Views cover orbit, mix, effects, flow and mod, with pattern slots, tempo, a delay with throw and
   freeze, a master filter, undo, eight scenes with eight locks each with a per-scene fade, in recent commits a per-track step source (EUCLID, SEQ or a TURING loop), and a reverb with PLACA (after Plateau) and NUBE (a granular cloud) types and a shimmer, a MACRO voice on track 4 with six synthesis models, and a boot screen with a turning galaxy.
-  It is built on charlesvestal's fm1-base with Felucca's board support code underneath. The README still says phase 0 and
-  warns not to flash it, and the manual says nothing has been tested on a real FM-1; it has been run only in the host
-  simulator and the browser emulator. The CI workflow compiles a development .fwsc but publishes it only as a build
-  artifact, not as a release. The manual is in English and Spanish and the on-screen labels are Spanish for now.
+  It is built on charlesvestal's fm1-base with Felucca's board support code underneath. The README still says phase 0
+  and warns not to flash it, but the English manual calls the build test version 0.1.17 and says it has run on a real
+  FM-1 since 0.1.7, with a CPU profile measured on the device in FLOW; several functions, such as external clock sync and
+  Bluetooth audio, are marked as pending on the device. The CI workflow compiles a development .fwsc, and a manually
+  started site workflow packages a private test build and installer page, but no release is published. The manual is in
+  English and Spanish and the on-screen labels are Spanish for now.
 status: active
 authors:
 - name: JavierIng
@@ -28,11 +30,15 @@ distribution: source-only
 install_notes: >-
   No package is published. Clone with --recursive and build with ./build.sh, which needs the JieLi toolchain and AC79 SDK
   (see fm1-base's README), or run the browser emulator and host simulator with ./build.sh --web and ./build.sh --host.
-  The README says not to flash it yet, and the project's licence notice says installing other firmware on an FM-1 is at
-  your own risk.
+  The README still says not to flash it yet, and the project's licence notice says installing other firmware on an FM-1 is
+  at your own risk.
 brick_risk: false
 tags: [sequencer, drums, synth-engine, generative, emulator]
 versions:
+- version: main @ 15d7720
+  date: 2026-11-17
+  url: https://github.com/JavierIng/fm1-epicyklos/commit/15d7720b9d6a21e9fdd16b3d5fec387571c1a942
+  notes: No tagged releases; this is the latest commit. Today's commits let the delay and reverb returns join the master at any point in FLOW, add a GLOBAL view with clock source, a channel per track, Bluetooth MIDI on/off and audio to a speaker, a CPU profile of each part on the device, clean chords with a PAD mode, banks by style, opt-in note changes and HOME plus OCT transposition, and cut CPU use in the sends and the MAREA stage. The README still says phase 0 and not to flash.
 - version: main @ 2ab04f3
   date: 2026-11-16
   url: https://github.com/JavierIng/fm1-epicyklos/commit/2ab04f35f8a3a203e56edfb677c012432b5373ca

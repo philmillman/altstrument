@@ -8,8 +8,10 @@ description: >-
   update from Novation Components yourself and build locally with arm-none-eabi-gcc. The Randomise mod
   changes Mutate on the Osc 1 and Osc 2 tracks so that in the Velocity, Gate, Glide and Expand views it randomises
   only that property of steps that already hold a note, leaving the rhythm alone. Pressing Mutate in the Patches view
-  takes a small random step from the current patch, within playable ranges. The Note and Pattern Settings views
-  and the Mod Seq track behave as stock. A second mod, live transpose, moves both Osc patterns by scale degrees when
+  takes a small random step from the current patch, within playable ranges. The latest commit also makes Mutate work
+  in the dual Osc view and on the Mod Seq track, where it moves levels on steps that have one, and live transpose
+  works in the dual view with each keyboard moving its own Osc track. The Note and Pattern Settings views
+  behave as stock. A second mod, live transpose, moves both Osc patterns by scale degrees when
   Shift is held and a key is tapped in the Note or Expand view, without changing the pattern. The Randomise build
   reports itself as version 750, live transpose alone as 751 and both together as 752, all below the stock 800, so that
   Novation Components should offer to reinstall stock; the README says this has not been tried yet. The repository
@@ -40,6 +42,10 @@ install_notes: >-
 brick_risk: false
 tags: [sequencer, generative, flasher, python]
 versions:
+  - version: main @ a24e9a6
+    date: 2026-11-16
+    url: https://github.com/matozoid/monostation-hacks/commit/a24e9a6d20e8dbcef259d0387fa27969ce02c87b
+    notes: No tagged releases; this is the latest commit. Mutate now works on every track and in the dual Osc view, Expand keeps notes within the octaves the pattern uses, and transpose works per track in the dual view.
   - version: main @ a1bc5c3
     date: 2026-11-16
     url: https://github.com/matozoid/monostation-hacks/commit/a1bc5c30047a11d35382f831775d4b9fda4daddb

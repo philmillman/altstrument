@@ -1,0 +1,40 @@
+device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
+name: ORRERY
+summary: >-
+  fm1-dock module that plays the synths of a 1970s electronic record together: string ensemble, ARP 2600 lead and
+  sequenced bass, Mini Pops drums, tape echo, effects box and reverb, in seventeen setups.
+description: >-
+  A module for fm1-dock, which runs one module at a time, so the band's parts live inside one. The strings model the
+  Eminent 310 string ensemble through a Small Stone phaser, with Caravel's ensemble pads as a second voice. The lead is
+  an ARP 2600 with ten patches, and a second 2600 with its 1601 sequencer plays the bass in eight sixteen-step
+  sequences. The drums model the Korg Mini Pops 7. A tape echo is fed by the strings and the lead, an effects box
+  holds thirteen background sounds and a wind, and a reverb of the module's own has eight halls up to a nine-second
+  tail. A chord follows each link of the bass pattern. PRESETS steps through seventeen ambient and band setups to play a
+  lead over, and on an SMK-37 or any controller the pads on channel 10 mute parts, start the band and trigger the
+  effects box. The ARP 2600, Eminent and Mini Pops engines are copies of the author's own fm1-dock modules. The
+  release is marked a preview: an earlier state ran on an SMK-37 Pro with fm1-dock 0.9, and the release notes say
+  this build has not been on a device and no state of it on an FM-1. It takes most of an FM-1's room for add-ons.
+status: active
+authors:
+- name: Joakim Eriksson (joakimeriksson)
+  url: https://github.com/joakimeriksson
+source: https://github.com/joakimeriksson/orrery-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE and LICENSING.md: GPL-3.0-only. The ensemble pads are ported from Caravel's ENSEMBLE by bonszaimusic
+  (GPL-3.0-only) with DSP blocks from Felucca-Engines (MIT). The file says no recording or sample of anyone's is in
+  it and that every sound is synthesized. The instrument names belong to their owners.
+homepage: https://joakimeriksson.github.io/fm1-dock/
+distribution: download
+install_notes: >-
+  Add orrery-0.1.0.dock from the release to a running fm1-dock from its project page, or with the dock's
+  tools/dock.py deploy; fm1-dock 0.8 or later is needed. A module is not a firmware, so the dock's USB rescue and updater stay in place.
+brick_risk: false
+tags: [synth-engine, fx, sequencer, arpeggiator, reverb, platform]
+versions:
+- version: 0.1.0
+  date: 2026-11-16
+  url: https://github.com/joakimeriksson/orrery-fm1/releases/tag/v0.1.0
+  notes: First release, marked a preview; the orrery.dock module for fm1-dock.

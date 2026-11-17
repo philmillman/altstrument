@@ -2,17 +2,18 @@ device: m-vave-fm-1
 name: Verbalizer
 kind: firmware
 summary: >-
-  Port of The Verbalizer, a Propeller vocal-tract instrument, to a voice that plays phonemes from the keys beside the stock sound in M-VAVE's open FM-1 firmware.
+  Port of The Verbalizer, a Propeller vocal-tract instrument, to a voice that plays phonemes from the keys beside the stock sound in M-VAVE's open FM-1 firmware, or as the whole instrument in a second build.
 description: >-
   The engine is the Propeller original's vocal-tract model translated to portable integer C, with its output checked
   sample for sample against the original assembly run in an emulator. It runs at 20 kHz and is resampled to the FM-1's
   44.1 kHz. Each key moves through trigger, sustain and release phases with a phoneme for each, in a words mode, a
   trigger-sustain-release mode and a formants mode that exposes the 13 tract parameters. MIDI notes with velocity, pitch
-  bend, the sustain pedal and controllers 102 to 119 are handled. The first FM-1 build patches five files of M-VAVE's
-  open V14 firmware so the Verbalizer plays beside the stock instrument, adds a page opened with the SCL button and cuts
-  the stock DX7 factory library from 128 voices to 6 to make room. The README says that build compiles and packages and
-  also runs in the SDK's browser simulator, but has never been run on an FM-1; patch storage and the original's stereo
-  spatializer are not done.
+  bend, the sustain pedal and controllers 102 to 119 are handled. The combined FM-1 build patches five files of M-VAVE's
+  open V14 firmware so the Verbalizer plays beside the stock instrument, adds a page opened with the SCL button, keeps the knobs
+  across restarts with SAVE and cuts the stock DX7 factory library from 128 voices to 4 to make room. A second build removes
+  the stock instrument and screens and leaves the Verbalizer as the whole instrument, with sixteen added words and fourteen
+  consonants. The README says both build and package and also run in the SDK's browser simulator, but neither has been run on an FM-1;
+  storing more than one sound and the original's stereo spatializer are not done.
 status: active
 authors:
 - name: Dan Ray
@@ -35,7 +36,7 @@ install_notes: >-
 brick_risk: false
 tags: [voice, synth-engine, speech, midi, emulator]
 versions:
-- version: main @ 82c7ff9
-  date: 2026-11-14
-  url: https://github.com/antfriend/MVAVE-FM1-Verbalizer/commit/82c7ff9c90b624ef1f5e0ce08af921f2b8d73253
-  notes: No tagged releases; this is the latest commit.
+- version: main @ 878388d
+  date: 2026-11-17
+  url: https://github.com/antfriend/MVAVE-FM1-Verbalizer/commit/878388d473117e2b43f93ac0466308a332ecda1a
+  notes: No tagged releases; this is the latest commit. Since 82c7ff9 it adds a second test build in which the Verbalizer is the whole instrument, SAVE for the Verbalizer's knobs, sixteen added words and fourteen consonants and a smaller stock DX7 library in the combined build.

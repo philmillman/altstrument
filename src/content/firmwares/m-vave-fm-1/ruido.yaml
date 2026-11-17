@@ -1,0 +1,44 @@
+device: m-vave-fm-1
+name: Ruido
+summary: >-
+  Four-oscillator drone synthesizer modelled on Schmitt-trigger oscillators, with a filter pair per oscillator, a
+  scope on the screen and three pressure-keyboard layouts, meant as a sound source for pedals and modular systems.
+description: >-
+  Each of the four oscillators is a 4x oversampled Schmitt-trigger model with band-limited edges, capacitor tilt,
+  thermal drift and a shared supply threshold, followed by its own 12 dB high-pass and 12 dB low-pass zero-delay filter
+  pair in an MS-20 style. Knobs 1 to 4 map to oscillators 1 to 4, and the SEL button with SELECT switches between three
+  keyboard layouts called Live Mixer, Circuit Lab and Rhythm Lab that use the key pressure sensors and LEDs. The engine
+  also has eight LFOs, four stored scenes, a configuration menu, MIDI clock and transport input, and a live oscilloscope
+  on the screen. The C++ engine is platform independent, with a macOS and WebAssembly simulator, headless tests and a
+  separate FM-1 target built in Docker on Dinghy and felucca-bsp. The roadmap ticks the on-device bring-up work but
+  leaves the final check on a physical FM-1 unticked, and Bluetooth MIDI is planned for later versions.
+status: active
+authors:
+- name: Miguel Hernández Domenech
+  url: https://github.com/miguelhd
+source: https://github.com/miguelhd/ruido
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  THIRD_PARTY_NOTICES.md states GPL-3.0-only for the firmware, which links the Dinghy platform layer, itself built on
+  Felucca, SLOOP and Skiff code. Terminus font is SIL OFL 1.1. Three unmodified JieLi bootloader and EQ blobs from the
+  Apache-2.0 AC79 SDK are read at packaging time and are not stored in the repository.
+distribution: source-only
+requires_stock: V15
+install_notes: >-
+  Build build/fm1/ruido.fwsc with the Docker toolchain (make targets in the Makefile), then install it over USB with
+  platforms/fm1/flash_fm1.py, which checks the package identity, size and flash chip before opening a MIDI port. The
+  platform layer provides the Hold OCT- USB rescue mode, and make fm1-check runs the image in an emulator first.
+brick_risk: false
+tags: [synth-engine, oscillator, filter, lfo, fx, performance, midi, emulator, drone]
+image:
+  url: https://raw.githubusercontent.com/miguelhd/ruido/main/docs/assets/screens/240x240/01-idle-caustic-scope.png
+  alt: "Ruido's idle screen: a black 240 by 240 display filled with overlapping grey oscilloscope traces of the four oscillators, with a small level meter in the top right corner"
+  credit: Miguel Hernández Domenech
+  source_url: https://github.com/miguelhd/ruido
+  first_party: true
+versions:
+- version: v0.1.0
+  date: 2026-11-14
+  url: https://github.com/miguelhd/ruido/tree/v0.1.0
+  notes: Git tag; no GitHub release page.

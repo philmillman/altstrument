@@ -1,0 +1,41 @@
+device: elektron-syntakt
+name: Syntakt Performance Mods
+summary: Browser and desktop builder that adds a CDJ-style JOG page and a PERFORM DJ filter to your own Syntakt OS 1.41 or 1.42 file, alone or on top of a Syntakt MAX build.
+description: >-
+  The builder reads the official Syntakt OS file you download from Elektron, recognises it by SHA-256, applies guarded patches
+  and writes a new .syx on your own disk. Holding TEMPO opens a JOG page with a platter that turns once a bar, a jog that
+  nudges and brakes with a selectable weight, pitch that follows the nudge, a phrase counter and tempo memories. RIGHT from
+  there opens a PERFORM page with a DJ filter over the whole mix on the analog FX block, with resonance, drive and a spectrum
+  display. The same builder runs in a browser tab, where the OS file stays local and the page hosts no firmware, and as a
+  Python and Tk program for Windows. An add-on script merges the mods into someone else's Syntakt MAX manifest. The
+  repository holds no Elektron firmware and says so in LEGAL.md. The README marks the package experimental, and the newest
+  screen changes had not run on a real unit when it was written.
+status: active
+authors:
+  - name: GHNMrec
+    url: https://github.com/GHNMrec
+source: https://github.com/GHNMrec/SyntaktPerformanceMods
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT License, with a note that it does not cover Elektron's firmware or the third-party parts listed
+  in THIRD_PARTY_NOTICES.md. LEGAL.md still says the repository has no licence of its own yet and that the jog mod's code is
+  all rights reserved, which contradicts the LICENSE file; this entry follows the LICENSE file. The mod-area loader, splash
+  and parameter hooks come from SyntHack (MIT), and the SY CHORD bank and Deja Vu shapes from Syntakt Firmware Workbench (MIT).
+homepage: https://ghnmrec.github.io/SyntaktPerformanceMods/
+based_on: elektron-syntakt/syntakt-max
+distribution: browser-installer
+requires_stock: 1.41 or 1.42
+install_notes: >-
+  Download Syntakt OS 1.41 or 1.42 from Elektron, open the builder page, drop the file, tick the mods and build, then send
+  the result with Elektron Transfer. The desktop builder needs elektron-firmware-tool.exe copied into builder/resources.
+  Back up projects and samples first. Recovery: the tools never touch the bootstrap, whose OS upgrade menu is reached by
+  holding FUNC at power-on, then TRIG 4, and the stock .syx is sent over MIDI DIN (USB does not work there). Avoid TRIG 2 and
+  TRIG 3, which erase data.
+brick_risk: false
+tags: [patch, dj, jog, filter, performance, web, wasm]
+versions:
+  - version: main @ c24e2aa
+    date: 2026-11-17
+    url: https://github.com/GHNMrec/SyntaktPerformanceMods/commit/c24e2aa017b0c4604d837e0737dd62bd1cc73850
+    notes: No tagged releases; this is the latest commit.

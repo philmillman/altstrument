@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: ESQ-1 for the FM-1
+summary: >-
+  Ensoniq ESQ-1 and SQ-80 style synth engine as an fm1-dock module: eight voices of three wavetable oscillators with a
+  four-pole filter, forty programs, eight MIDI parts and a sequencer that plays ESQ-1 and SQ-80 sequence files.
+description: >-
+  A separate project from the SQ-80 entry, which is a different code base. This engine models the ESQ-1's voice in
+  integer C: three wavetable oscillators with hard sync and amplitude modulation, an analog-style four-pole filter, four
+  envelopes, three LFOs and fifteen modulation sources, with poly, mono, split and layer modes and eight parts that share
+  the voices. It has forty programs of its own and forty more that hold programs sent as ESQ-1 SysEx, shown as pages on the
+  FM-1's knobs. The waves are computed stand-ins, and with ROM dumps of your own ESQ-1 or SQ-80 supplied at build time or sent from
+  the module's page it uses the real waves; a module built with them is for your own device only. The sequencer plays ESQ-1 and
+  SQ-80 sequence files and a song with its programs can be sent from the project's page, and the built-in demo is a Scott Joplin rag.
+  It does not record. The README says the filter resonance and some envelope times are estimates and compares the engine with a real
+  ESQ-1 only through recordings of factory programs. The release notes report it played on an FM-1 with fm1-dock 0.9.0.
+status: active
+authors:
+- name: Joakim Eriksson (joakimeriksson)
+  url: https://github.com/joakimeriksson
+source: https://github.com/joakimeriksson/fm1-esq
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL-3.0 text. No Ensoniq ROM, disk or program is committed: rom/README.md says the wave ROM dumps are Ensoniq's, are
+  supplied by the user and are kept out of the repository.
+homepage: https://joakimeriksson.github.io/fm1-dock/
+distribution: download
+install_notes: >-
+  Deploy esq1-0.1.0.dock from the release to a running fm1-dock with its tools/dock.py deploy, then pick ESQ-1 from the dock's list. A module
+  is not a firmware, so the dock's USB rescue and updater stay in place. Building needs a fm1-dock checkout and its JieLi toolchain.
+brick_risk: false
+tags: [synth-engine, wavetable, sequencer, sysex, port, platform]
+versions:
+- version: 0.1.0
+  date: 2026-11-16
+  url: https://github.com/joakimeriksson/fm1-esq/releases/tag/v0.1.0
+  notes: First release; the esq1.dock module for fm1-dock.

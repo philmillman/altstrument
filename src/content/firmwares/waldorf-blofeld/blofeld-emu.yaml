@@ -1,0 +1,35 @@
+device: waldorf-blofeld
+kind: tool
+name: blofeld-emu
+summary: In-development emulator that runs the unchanged original Blofeld Desktop SL firmware, which you supply, by translating its HC12 and DSP56300 code to native code, with headless live and offline WAV rendering modes.
+description: >-
+  blofeld-emu executes Waldorf's original firmware on a host machine instead of modelling the sound engine again. The
+  control processor code is translated by the author's cpu12 core and the DSP code by the author's dsp56300 core, both
+  generic instruction-set translators that hold no Blofeld knowledge, and the repository supplies the board, peripherals and
+  scheduling around them. It can run live with host audio and an external MIDI keyboard, with a separate display viewer, or
+  render a MIDI file to a WAV file offline. The user provides the original update archive, boot ROM words, code catalogues
+  and device and sample images through a profile file, and none of these are in the repository. The acceptance table lists
+  more than a hundred checks, and nearly all are still marked pending, so it is an early development target. It builds on
+  macOS ARM64 and Linux x86-64 with LLVM 19.
+status: active
+authors:
+  - name: Weichwolf
+    url: https://github.com/Weichwolf
+source: https://github.com/Weichwolf/blofeld-emu
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GNU GPL version 3, and THIRD_PARTY.txt says the original emulator code is GPL-3.0-only, as are the
+  cpu12 and dsp56300 cores it links. Manufacturer firmware and documentation keep their owners' rights and are not included.
+distribution: source-only
+requires_stock: "1.25"
+install_notes: >-
+  Build with CMake, Ninja and LLVM 19 against pinned checkouts of cpu12 and dsp56300, then supply your own original firmware
+  and device images in a profile file. Nothing is flashed to a Blofeld, and the project does not write to a real instrument.
+brick_risk: false
+tags: [emulator, headless, cpu-emulation]
+versions:
+  - version: main @ 55c989e
+    date: 2026-11-17
+    url: https://github.com/Weichwolf/blofeld-emu/commit/55c989ea0c00f92e5abdf9ddbf806536b7516777
+    notes: No tagged releases; this is the latest commit.

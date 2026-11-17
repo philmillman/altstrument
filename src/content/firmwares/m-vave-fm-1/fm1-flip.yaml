@@ -14,7 +14,7 @@ description: >-
   is not a bootloader replacement. If the FM-1 does not enumerate over USB, the unit is switched off and on to use the chip's
   ROM boot-key route, with USB code adapted from the Synth Rescue project. A local web page served from the handheld manages
   files and backups. StickS3 uses internal storage and the Cardputers a microSD card. The README calls it a development
-  build whose USB, power, backup and install paths still need hardware validation.
+  build whose USB, power, backup and install paths still need hardware validation; the 0.1.2 notes confirm only that a StickS3 connects to an FM-1 running Patchwerk.
 status: active
 authors:
 - name: chrisdiana
@@ -36,7 +36,15 @@ install_notes: >-
 brick_risk: false
 tags: [flasher, backup, handheld, usb-host, m5stack]
 versions:
+- version: 0.1.2
+  date: 2026-11-17
+  url: https://github.com/chrisdiana/fm1-flip/releases/tag/v0.1.2
+  notes: Development prerelease. Rebuilds the USB stack with a 1024-byte control-transfer limit so FM-1 firmware with a composite USB audio and MIDI descriptor enumerates; the author confirms a StickS3 now connects to an FM-1 running Patchwerk. An attached device that fails enumeration no longer gets automatic boot-key recovery pulses.
+- version: 0.1.1
+  date: 2026-11-16
+  url: https://github.com/chrisdiana/fm1-flip/releases/tag/v0.1.1
+  notes: Development prerelease. One Cardputer image for both the original and the ADV model; the release says physical installs and FM-1 workflows still need hardware validation.
 - version: 0.1.0
   date: 2026-11-16
   url: https://github.com/chrisdiana/fm1-flip/releases/tag/v0.1.0
-  notes: Development prerelease and the only release so far; builds for StickS3, Cardputer and Cardputer ADV.
+  notes: Development prerelease; builds for StickS3, Cardputer and Cardputer ADV.

@@ -1,16 +1,16 @@
 device: m-vave-fm-1
 name: SY1
 summary: >-
-  Polysynth that plays Synth1 (.sy1) patches under Synth1's own parameter numbers, with 500 community presets built
-  in, a patch manager for loading 1,024 more over USB, and a browser emulator.
+  Polysynth that plays Synth1 (.sy1) patches under Synth1's own parameter numbers, with 256 community presets built
+  in, a two-part bitimbral mode, a patch manager for arranging 1,024 user slots over USB, and a browser emulator.
 description: >-
   The engine has two oscillators and a sub with FM, ring and sync, four filter types, three envelopes, two LFOs, an
   arpeggiator, unison, ten effects, an EQ, a tempo delay and a chorus. It is a lighter reimplementation with parameter
   laws taken from published measurements of Synth1, not a bit-exact copy, and the README lists the differences (about
-  seven voices on one core, shorter delay times, simplified filters). Five hundred presets from redistributable
-  community banks are stored in program flash as a read-only FACTORY bank, and the 1,024 user slots stay free. A web
+  seven voices on one core, shorter delay times, simplified filters). Since 0.4.0 it also has a bitimbral mode that plays two parts, L and R, each with its own patch, arpeggiator and effects, as a layer, split to the two outputs or on MIDI channels 3 and 4; part R runs on the second core. A read-only FACTORY bank of 256 presets from redistributable
+  community banks, sorted into eight categories (500 before 0.4.1), is stored in program flash, and the 1,024 user slots stay free. A web
   Patch Manager lists 3,174 hosted presets from 27 banks, imports your own .sy1 files and bank ZIPs locally, previews
-  them in the browser and sends a selection over USB. Three screen styles are included. The README calls the project
+  them in the browser, arranges the user slots and sends a selection over USB. Three screen styles are included. The README calls the project
   early and says the sound has not yet been judged on the FM-1 or against Synth1.
 status: active
 authors:
@@ -20,15 +20,15 @@ source: https://github.com/fenderberg/fm1-sy1
 source_status: open
 license: MIT
 license_notes: >-
-  LICENSE is the MIT text. The preset banks and the 500 bundled presets are separate from it: each bank keeps its
+  LICENSE is the MIT text. The preset banks and the bundled presets are separate from it: each bank keeps its
   author's own terms, only banks whose notes allow redistribution are hosted, and some authors forbid sale or inclusion
   in a paid library (THIRD_PARTY.md, app/presets/CREDITS.txt). The engine's tables come from oxo_synth2 (MIT) and the
   firmware builds on fm1-base and felucca-bsp (MPL-2.0). The repository has no M-VAVE stock image; the bank ZIPs are preset data.
 homepage: https://fenderberg.github.io/fm1-sy1/
 distribution: download
 install_notes: >-
-  Install sy1-0.3.1.fwsc from the release with a flasher that accepts custom packages, or from the FM-1 Firmware Hub
-  card (package identity FM-1_51000301). SY1 does not read other firmwares' projects or samples, and switching
+  Install sy1-<version>.fwsc from the release with a flasher that accepts custom packages, or from the FM-1 Firmware Hub
+  card. SY1 does not read other firmwares' projects or samples, and switching
   firmwares can overwrite their storage, so back up first. The install guide is on the project site.
 brick_risk: false
 tags: [synth-engine, synth, virtual-analog, polyphonic, presets, fx, arpeggiator, emulator, editor, web-midi]
@@ -39,6 +39,18 @@ image:
   source_url: https://github.com/fenderberg/fm1-sy1
   first_party: true
 versions:
+- version: 0.4.2
+  date: 2026-11-17
+  url: https://github.com/fenderberg/fm1-sy1/releases/tag/v0.4.2
+  notes: Presents bitimbral mode for any setup, not only the Novation Circuit Tracks, with layer, split and two-track MIDI use. The patch's voice settings move from GLO to PLAY, and GLO becomes GLOBAL, holding only what is not stored in the patch.
+- version: 0.4.1
+  date: 2026-11-17
+  url: https://github.com/fenderberg/fm1-sy1/releases/tag/v0.4.1
+  notes: The factory bank shrinks from 500 to 256 presets, F001 to F256, sorted into eight categories with about the same number in each, and a preset is kept only when its name and sound agree on the category. The notes say this package had not been installed on hardware.
+- version: 0.4.0
+  date: 2026-11-17
+  url: https://github.com/fenderberg/fm1-sy1/releases/tag/v0.4.0
+  notes: Adds bitimbral mode, two parts L and R with their own patches, arpeggiators and effects, switched with OCT- and OCT+ together, and a SPLIT, STEREO or DOUBLE output; part R renders on the second core. The Patch Manager arranges all 1,024 user slots with staged edits and a single sync. Settings grow from 16 to 24 bytes and older ones load.
 - version: 0.3.1
   date: 2026-11-16
   url: https://github.com/fenderberg/fm1-sy1/releases/tag/v0.3.1

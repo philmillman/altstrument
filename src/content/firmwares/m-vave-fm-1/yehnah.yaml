@@ -1,0 +1,48 @@
+device: m-vave-fm-1
+name: Yehnah
+summary: >-
+  Six-track synth, drum machine and song sequencer with 25 synthesis engines, one-key chord layouts, generative IDEAS, a
+  browser installer and editor, and an emulator that runs the firmware in the browser.
+description: >-
+  Yehnah has six tracks (four by default) sharing a budget of eight voices, over 700 factory sounds and 32 user presets in
+  one list, and no samples. The engines include analog, FM6, phase, lo-fi, voice, a Minimoog model, a Plaits port and
+  several drum machines with two morphable sides. The sequencer has 64 steps per track with chords, parameter locks,
+  ratchets and probability, and songs are built from sections and scenes. One-key chord pages play like an Omnichord or a
+  guitar. SWARM, TRACE and XYZ move parameters from dots on screen, and IDEAS writes a pattern, sound, LFO, effect or
+  texture for the selected track. USB carries MIDI, stereo audio, eight-channel stems and audio in. The README describes
+  it as a development release, tested on a real FM-1 from official V15 and from JIANT FM. It is built on JIANT FM and
+  credits many other FM-1 projects. The author says the code, tests and documentation are developed with AI agents.
+status: active
+authors:
+- name: Mello-D
+  url: https://github.com/Mello-D
+source: https://github.com/Mello-D/yehnah
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Stated in the README and LICENSE. The fonts and the ported DSP keep their own licences (LICENSES/, LICENSING.md),
+  including SIL OFL 1.1 fonts and msfa (Apache-2.0). No M-VAVE stock image is in the repository.
+homepage: https://mello-d.github.io/yehnah/
+based_on: m-vave-fm-1/jiant
+distribution: browser-installer
+requires_stock: M-VAVE V15, or JIANT FM or Yehnah already installed
+install_notes: >-
+  Browser installer in Chrome or Edge, or tools/fm1_install.py offline. The installer backs up the unit first and its
+  Return to official V15 option goes back to stock. The README says to return to official V15 before moving from another
+  custom firmware, because writing straight over one has bricked an FM-1, and the installer writes only over V15 or
+  Yehnah. If the unit stays black after an interrupted update, it appears as WL80UBOOT (USB 4C4A:8057), the chip's boot
+  mode, and running the installer again recovers it; FM-1 Transporter with an RP2040 is the fallback. Holding REC at
+  power-on starts one-core mode. Installing is at your own risk.
+brick_risk: false
+tags: [groovebox, synth-engine, sequencer, drums, generative, chords, fx, editor, emulator, usb-audio, midi]
+image:
+  url: https://raw.githubusercontent.com/Mello-D/yehnah/main/docs/img/hero.png
+  alt: "Six Yehnah screens: a pixel-art robot on a city street with four knobs, a track list, a sound list, a chord keyboard, an LFO page and an XYZ pad with coloured dots"
+  credit: Mello-D
+  source_url: https://github.com/Mello-D/yehnah
+  first_party: true
+versions:
+- version: 0.1.0
+  date: 2026-11-16
+  url: https://github.com/Mello-D/yehnah/releases/tag/v0.1.0
+  notes: First public development release, published as a GitHub pre-release.

@@ -1,0 +1,44 @@
+device: modal-electronics-argon8
+also_devices: [modal-electronics-cobalt8, modal-electronics-carbon8]
+name: crossflash-8
+kind: tool
+summary: Patcher and USB-MIDI flasher for Modal 8-series firmware files, including running one model's official firmware on another model's hardware.
+description: >-
+  crossflash-8 applies a small byte-level patch to the user's own official
+  firmware files and sends them to the synth's bootloader over MIDI. Besides
+  flashing a model's own firmware, it can make Carbon8 1.1 firmware run on a
+  Cobalt8 or Argon8, and Argon8 3.2 firmware run on a Cobalt8, by changing the
+  model byte and one model-check instruction in the panel component. It also
+  rewrites the packet framing between the older 165-byte and newer 167-byte
+  formats where needed. A mode for custom Carbon8-derived builds, such as Iron
+  from all8, locates the model check by code signature instead of file hash.
+  The flasher has an ALSA backend for Linux and a mido backend for macOS and
+  Windows. This repository is a GitHub fork of cliffordmanasseh/crossflash-8 and
+  adds the Carbon8-on-Argon8 patch, the custom-build patch and the macOS
+  backend.
+status: active
+authors:
+  - name: Víctor Villena
+    url: https://github.com/victorvillena
+source: https://github.com/victorvillena/crossflash-8
+source_status: open
+license: MIT
+license_notes: MIT, read in the repository's LICENSE file ("crossflash-8 contributors"). The repository ships no Modal firmware and its patches check the SHA-256 of the user's official files.
+distribution: patch-your-own
+requires_stock: Official Modal firmware .syx files for the source model (Carbon8 1.1, Argon8 3.2), or a custom Carbon8-derived build
+install_notes: >-
+  Patch the files with crossflash8.patcher, put the synth into update mode (power
+  on while holding Shift/Init, then hold the knob left of the screen to choose
+  UPDATE), and run the flasher; the flash takes a few minutes. The bootloader is
+  never modified, and flashing the unit's own unmodified official files in
+  update mode restores stock. The README warns that an interrupted flash can
+  leave the unit unusable until it is flashed again, and that cross-flashing may
+  affect vendor support. While cross-flashed firmware is running, the unit
+  reports itself as the other model.
+brick_risk: false
+tags: [flasher, patcher, sysex, midi, python]
+versions:
+  - version: main @ c402274
+    date: 2026-11-03
+    url: https://github.com/victorvillena/crossflash-8/commit/c402274434edd0bd9a411dd3f806d6d3073cc708
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,44 @@
+device: mutable-instruments-stages
+name: BRIBESTAGES
+summary: Stages firmware built on qiemem's bipolar v1.3.0 that adds button-set segment linking, envelope follower segments and clock-locked sync LFO segments.
+description: >-
+  BRIBESTAGES, formerly named Qiemem Bribery Edition, keeps everything in qiemem's bipolar multi-mode firmware and adds
+  three things. Segment linking lets the buttons decide which segments form an envelope group instead of the gate jacks, so
+  patching a cable does not change the groups. Follow segments turn a segment into an envelope follower for audio patched
+  into its CV jack, with release on the slider, attack on the pot and a selectable input gain. Sync LFO segments, once
+  linked, each run their own LFO locked to one clock in the first segment's gate, with a clock division or multiple,
+  waveform shape and phase per segment. Linking and the new segment types work in the three segment generator modes with
+  one module. Settings from qiemem's firmware carry over, and releases come as a normal and a flipped image for an
+  upside-down module. The repository holds the source for qiemem's code plus these changes, the Mutable library code it
+  needs, a script that turns a firmware binary into an update WAV and host tests.
+status: active
+authors:
+  - name: thisisbribery
+    url: https://github.com/thisisbribery
+source: https://github.com/thisisbribery/bribestages
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT License, with copyright credited to Émilie Gillet (Mutable Instruments) for 2012-2018, to
+  joeSeggiola and qiemem for the multi-mode and bipolar changes and to Bribery for the linking and follow changes. It
+  adds that this is an unofficial firmware not made or supported by Mutable Instruments.
+homepage: https://www.thisisbribery.com/bribestages/
+based_on: mutable-instruments-stages/qiemem-multimode
+distribution: download
+requires_stock: Any Stages firmware; settings reset when coming from stock, and are kept from qiemem v1.3.0
+install_notes: >-
+  Power off, patch an audio output into the rightmost segment's CV input, hold the rightmost button while powering on, and
+  play the WAV from the start at a level where three or four button lights are lit. The load takes about 80 seconds. Use
+  the flipped file for an upside-down module. Recovery: the built-in audio updater cannot be damaged by a failed attempt, so
+  the update can be repeated; qiemem's v1.3.0 WAV restores that firmware the same way.
+brick_risk: false
+tags: [lfo, envelopes, follower, clock-sync, synth-engine]
+versions:
+  - version: v1.1
+    date: 2026-11-17
+    url: https://github.com/thisisbribery/bribestages/releases/tag/v1.1
+    notes: Adds sync LFO segments and renames the project from Qiemem Bribery Edition to BRIBESTAGES.
+  - version: v1.0
+    date: 2026-11-01
+    url: https://github.com/thisisbribery/bribestages/releases/tag/v1.0
+    notes: Segment linking and follow segments on qiemem v1.3.0.

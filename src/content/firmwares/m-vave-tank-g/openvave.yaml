@@ -1,0 +1,32 @@
+device: m-vave-tank-g
+name: openvave
+kind: tool
+summary: Python library and command-line tool that talks to a Tank-G over Bluetooth LE, identifies it and reads its current preset, global settings and status as decoded fields.
+description: >-
+  The project documents the pedal's Bluetooth protocol and ships a library plus an openvave command. The info command
+  identifies the pedal and its firmware, preset dump prints the 21 bytes of the loaded preset with each byte named,
+  ranged and marked confirmed, observed or hypothesis, and watch polls the pedal and prints every byte that changes
+  while a control is moved, which is how the byte map was built. Captures of those sessions from firmware 96 are
+  committed to the repository. The released 0.2.0 only sends the handshake and region reads. The source also holds an
+  unreleased, restricted set of writes to the live edit buffer (block switches, the knob block, the footswitch LED
+  colour and preset select), with no erase or save of stored presets. It has been tested on macOS with firmware 96;
+  Linux and Windows are untested. The project says it is not affiliated with M-VAVE.
+status: active
+authors:
+  - name: Gustavo Marques
+    url: https://github.com/gustavolima00
+source: https://github.com/gustavolima00/openvave
+source_status: open
+license: MIT
+distribution: source-only
+install_notes: >-
+  Needs Python 3.11 or newer and a Bluetooth adapter. Install with uv or pip from the GitHub repository, close the
+  M-VAVE phone app first because the pedal accepts one BLE connection at a time, and on macOS allow Bluetooth for the
+  terminal app. Firmware versions other than 96 print a warning.
+brick_risk: false
+tags: [research, ble, protocol, python, cli, library, presets]
+versions:
+  - version: main @ 3af9166
+    date: 2026-11-17
+    url: https://github.com/gustavolima00/openvave/commit/3af9166e95065ff761b0b9ccf7464711787f1fce
+    notes: No tagged releases; this is the latest commit. The changelog lists 0.2.0.

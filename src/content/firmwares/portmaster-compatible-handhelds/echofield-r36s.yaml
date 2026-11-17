@@ -1,0 +1,47 @@
+device: portmaster-compatible-handhelds
+name: ECHOFIELD for R36S
+summary: >-
+  Granular sampler for the R36S handheld on ArkOS and PortMaster: six scenes, the sticks as effects, a sample editor and
+  four visualisers, written in native C with SDL2.
+description: >-
+  A PortMaster package that reads small grains from a sample, up to 96 at once with 40 as the default, and overlaps them
+  into a continuous sound. The six scenes are CLOUD, DUST, TAPE, BLOOM, PULSE and DRIFT, the left stick sets tone and
+  reverb, the right stick sets echo and shimmer, and a dice button rolls a new sound that an undo button takes back. A
+  DRIFT ORACLE wanders through a chosen key and scale, a sample editor trims, reverses and normalizes a region and renders
+  it as a new WAV file, and four visualisers show the grains as an orbit, a dot matrix, a spectrum or a scope. It ships 14
+  factory samples and loads WAV files from the SD card, and the session is restored on the next start. The README says
+  the package was tested on a real R36S and that recording from a USB audio input does not work yet. This is a separate
+  build from the author's FM-1 ECHOFIELD, with the engine rewritten for the handheld; the ARM64 binary is compiled with
+  clang against stub libraries rather than a full sysroot.
+status: active
+authors:
+- name: Philip-Bos
+  url: https://github.com/Philip-Bos
+source: https://github.com/Philip-Bos/echofield-r36s
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text with a closing paragraph about third-party material, which is why GitHub reports no
+  licence. It says the factory samples are synthesized by tools/gen_samples.py and are CC0, the DejaVu fonts use the
+  Bitstream Vera licence and Poppins is SIL OFL 1.1; the README names JetBrains Mono (OFL) instead of Poppins. SDL2 and
+  ALSA are not bundled.
+homepage: https://github.com/Philip-Bos/echofield-r36s
+distribution: download
+requires_stock: R36S on ArkOS with PortMaster installed (64-bit ARM, glibc 2.17 or newer, SDL2)
+install_notes: >-
+  Extract ECHOFIELD_R36S_PortMaster.zip from the release into the ports folder of the SD card (roms/ports, or roms2/ports
+  with two cards), restart EmulationStation and start ECHOFIELD from the Ports menu. Nothing is flashed; samples, sounds
+  and projects live in ports/echofield/userdata, which an update never overwrites.
+brick_risk: false
+tags: [granular, sampler, fx, reverb, delay, tape, performance, generative, editor]
+image:
+  url: https://raw.githubusercontent.com/Philip-Bos/echofield-r36s/main/docs/img/screens/main-orbit.png
+  alt: "ECHOFIELD in CLOUD scene on the R36S: a ring of coloured grain lines around the word CLOUD, with stick indicators at the sides and four dials SIZE, DENSITY, SCATTER and PITCH below"
+  credit: Philip-Bos
+  source_url: https://github.com/Philip-Bos/echofield-r36s
+  first_party: true
+versions:
+- version: v2.0.0
+  date: 2026-11-14
+  url: https://github.com/Philip-Bos/echofield-r36s/releases/tag/v2.0.0
+  notes: The release page repeats the README and holds ECHOFIELD_R36S_PortMaster.zip.

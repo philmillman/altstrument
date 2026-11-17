@@ -1,0 +1,39 @@
+device: clavia-nord-lead-a1
+kind: tool
+name: lead-a1-emu
+summary: Early-development emulator for the Nord Lead A1 that is meant to run the unchanged OS 1.36 you supply; it checks the firmware images and shows a parameter table, but cannot run the firmware yet.
+description: >-
+  lead-a1-emu aims to execute Clavia's original OS 1.36 on a host machine, with a model of the board and the original MIDI and
+  audio paths. Today it parses and checks the update images, decodes their compressed sections and runs the ARM and SHARC
+  DSP code in small reference cases with fixed inputs, backed by a large set of self-tests. It also has a GTK4 window that
+  lists parameter values for parts A to D, which stays empty until a producer feeds it. The README says that a complete
+  boot, MIDI, audio and the link from firmware to that window are still pending, and that running the firmware prints an
+  error because it is not implemented, so nothing can be played. You supply the official updater archive yourself, or the
+  repository can download it on request, and no Clavia files are in the repository. The author also keeps a separate
+  private project for reconstructing the firmware.
+status: active
+authors:
+  - name: Weichwolf
+    url: https://github.com/Weichwolf
+source: https://github.com/Weichwolf/lead-a1-emu
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README says the original code is GPL-3.0-only and THIRD_PARTY.txt lists adapted parts of the author's blofeld-emu,
+  also GPL-3.0-only. Third-party code carries its own licences (LZO under GPL-2.0-or-later, Ghidra's SLEIGH files under
+  Apache-2.0, zlib). The README states that manufacturer firmware and documentation keep their owners' rights and are not
+  included; the repository holds only a JSON file that records the download address, sizes and checksums of the official
+  OS 1.36 archive.
+distribution: source-only
+requires_stock: "1.36"
+install_notes: >-
+  Nothing is installed on a Nord Lead A1 and the firmware does not run in the emulator yet. A Linux build needs LLVM 19,
+  CMake, Ninja, Python 3.11 or newer and a Ghidra 12.1.2 checkout, and the OS 1.36 updater archive comes from Clavia.
+  Building gives an image inspector and the parameter window only.
+brick_risk: false
+tags: [emulator, cpu-emulation, research]
+versions:
+  - version: main @ 612f355
+    date: 2026-10-26
+    url: https://github.com/Weichwolf/lead-a1-emu/commit/612f355bc02600f93d667b61f141fbec12e4cc75
+    notes: No tagged releases; this is the latest commit.

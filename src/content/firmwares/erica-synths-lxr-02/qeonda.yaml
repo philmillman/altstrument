@@ -11,10 +11,7 @@ description: >-
   controls under the knobs. The main stereo output gets separate high-pass and
   low-pass filters and a compressor with automatic makeup gain, saved with the
   project. Shift and a knob change the same control on all seven tracks, and the
-  fork fixes a number of synthesis, MIDI and save problems. Older firmware
-  ignores the extra compressor data in a project. The author calls version 0.1
-  feature-frozen and notes that USB MIDI clock can drop during project saves and
-  loads. It credits OpenElixir-02 for work on audio scheduling and save-time
+  fork fixes a number of synthesis, MIDI and save problems. Version 0.2 stores each project as a single file, /projNN/project.qpr, in a new format that stock and older multi-file firmware cannot load, with no importer. The README warns that Save Project can replace a slot's legacy files, so a separate card is advised, and says the latest navigation changes still need hardware acceptance. The author noted that USB MIDI clock can drop during project saves and loads in version 0.1. It credits OpenElixir-02 for work on audio scheduling and save-time
   stability. It is not an Erica Synths release.
 status: active
 authors:
@@ -30,7 +27,7 @@ license_notes: >-
 distribution: download
 requires_stock: LXR-02 with the stock bootloader
 install_notes: >-
-  Copy LXR_QEONDA_V0.1.img from the release to the top folder of a FAT32 SD
+  Copy LXR_QEONDA_V0.2.img from the release to the top folder of a FAT32 SD
   card, keep no other LXR*.img files there, then hold the encoder button while
   switching the unit on until LXR Updater appears and reports Update OK. The
   update does not replace the bootloader. The README says recovery from an
@@ -39,6 +36,10 @@ install_notes: >-
 brick_risk: false
 tags: [drums, fork, open-source, sequencer, performance]
 versions:
+  - version: v0.2-build.7
+    date: 2026-11-17
+    url: https://github.com/MalgAmoe/LXR02-QEONDA/releases/tag/v0.2-build.7
+    notes: Adds single-file project storage in a new format that stock and older firmware cannot load, with no importer, so keep original projects on an untouched card. The README adds float32 audio with padded 24-bit output, linking Save Kit to the active pattern and better navigation. Host tests and the ARM build passed; the notes say CI is not hardware acceptance.
   - version: v0.1-build.5
     date: 2026-11-02
     url: https://github.com/MalgAmoe/LXR02-QEONDA/releases/tag/v0.1-build.5

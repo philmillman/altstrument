@@ -1,0 +1,48 @@
+device: m-vave-fm-1
+name: FM ARCAVE
+summary: >-
+  A music game for the FM-1 played with the knobs and keys: roll through a cave, mend a jukebox with a song of your own,
+  then play three arcade machines and a jukebox.
+description: >-
+  FM ARCAVE is based on the Mystic Arcave installation. An intro platformer hands over to a cave hub, where three glass
+  rings are turned until light gets out, a dish is spun to set the tempo and two bars played on the keys become the
+  first song. Free play then offers three machines, MYSTIC RUN, THE LIGHT TABLE (an instrument) and NIGHT BLOOM, and the
+  ALGORITHM knob changes the tune. The text is in English, German, Danish, French and Spanish, and a Link page keeps
+  several FM-1s in time. The game uses whole numbers throughout because the chip has no floating point. It is built on
+  the Dinghy platform and has a browser emulator that runs the firmware's own code. The README says version 0.1 was
+  installed and played on a newer FM-1 and that 0.2 is tested in the browser build and in scripted runs but not yet on the
+  device.
+status: active
+authors:
+- name: benjamuels
+  url: https://github.com/mystic-arcave
+source: https://github.com/mystic-arcave/FM-Arcave
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only and lists who wrote each part. The platform files come from Felucca through SLOOP
+  and Dinghy, the SMK-37 board layer from genkigenki, and the Terminus font is SIL OFL 1.1. Dinghy's logo is kept in the
+  tree under all rights reserved, but FM ARCAVE does not use it.
+homepage: https://mystic-arcave.github.io/FM-Arcave/
+based_on: m-vave-fm-1/dinghy
+distribution: browser-installer
+install_notes: >-
+  Install with the web installer page over USB from Chrome or Edge, or write the .fwsc from a release. The package
+  identity is FM-1_96N. The README says to install at your own risk and names the ways back: any other firmware's
+  installer, or OCT- held at power-on for the USB rescue.
+brick_risk: false
+tags: [game, emulator, synth-engine, usb-midi]
+image:
+  url: https://raw.githubusercontent.com/mystic-arcave/FM-Arcave/main/docs/screen.png
+  alt: "FM ARCAVE title screen on the FM-1 showing a wizard's hat with one eye above the name and the language prompt"
+  credit: benjamuels
+  source_url: https://github.com/mystic-arcave/FM-Arcave
+  first_party: true
+versions:
+- version: "0.2"
+  date: 2026-11-17
+  url: https://github.com/mystic-arcave/FM-Arcave/releases/tag/v0.2
+  notes: Adds text sizes, a green light on PLAY and NIGHT BLOOM's rings arriving one by one.
+- version: "0.1"
+  date: 2026-11-17
+  url: https://github.com/mystic-arcave/FM-Arcave/releases/tag/v0.1

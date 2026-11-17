@@ -1,0 +1,48 @@
+device: m-vave-fm-1
+name: SAMSARA
+summary: >-
+  Self-playing ambient piece after Brian Eno's Reflection, built on AMB-1 with a conductor that drifts mood, density,
+  harmony and loudness over hours; four named pieces and a Hold setting.
+description: >-
+  SAMSARA keeps AMB-1's pad, bells, bass, tape echo and plate reverb, its pages and its platform, and adds its own
+  conductor over them. The conductor moves tone, harmony and density on slow cycles, lets the whole piece ebb almost to
+  silence and return, runs a loudness governor and adds a rare low ground layer. Four knobs on the first page set Mood,
+  Density, Drift and Space, and Drift turned fully down holds the current moment. The presets are four pieces named
+  Samsara, Maranasati, Anatta and Nirvana, the keys add or remove notes of the scale, and a pad colour built from
+  harmonic amplitudes of CC0 single-cycle waveforms was added after the first version. The screen draws an eight-spoked
+  wheel in code. The repository holds fm1-base and felucca-bsp as plain folders, and UPSTREAM.md records the AMB-1 1.3.2
+  commit it started from. The project has an emulator build, a host renderer that produces audio and screenshots from
+  scripts, and a manual; it has no web installer of its own yet and installs from the command line. The source still
+  calls the project TIDE in comments and in ARCHITECTURE.md, its working name.
+status: active
+authors:
+- name: Tomorrow's Man
+  url: https://github.com/tomorrowsman
+source: https://github.com/tomorrowsman/fm1-samsara
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  Stated in LICENSE and LICENSING.md, file by file as for AMB-1, with changed files carrying both copyright lines. The
+  Choir pad colour embeds harmonic amplitudes derived from three Adventure Kid Waveforms single cycles, which their
+  author dedicated to the public domain (CC0 1.0). fm1-base and felucca-bsp are MPL-2.0.
+based_on: m-vave-fm-1/amb-1
+distribution: source-only
+requires_stock: V15
+install_notes: >-
+  No release package exists yet. Build app/build/samsara.fwsc with ./build.sh on Linux or in GitHub Actions, then install it
+  over USB with base/tools/fm1_install.py; AMB-1's browser installer also works with a built package. The manual says
+  SAMSARA keeps its data in its own area, that an FM-1 failing to start twice comes up in safe mode, that OCT- and OCT+
+  held for five seconds enter update mode, and that M-VAVE's firmware can be put back with the rescue script.
+brick_risk: false
+tags: [generative, ambient, synth-engine, reverb, delay, performance, emulator, fork]
+image:
+  url: https://raw.githubusercontent.com/tomorrowsman/fm1-samsara/main/docs/img/screen-tide.png
+  alt: "SAMSARA's first page: preset Samsara, key D Dorian, chord Dm7 and a gold eight-spoked wheel in a ring of dots, above four dials MOOD, DENSITY, DRIFT and SPACE"
+  credit: Tomorrow's Man
+  source_url: https://github.com/tomorrowsman/fm1-samsara
+  first_party: true
+versions:
+- version: main @ ac1bb98
+  date: 2026-11-16
+  url: https://github.com/tomorrowsman/fm1-samsara/commit/ac1bb980a1edb1eef7f9e514d4a1515606486fbf
+  notes: No tagged releases; this is the latest commit.

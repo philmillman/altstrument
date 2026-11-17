@@ -1,0 +1,40 @@
+device: modal-electronics-carbon8
+name: Iron
+kind: firmware
+summary: Carbon8 firmware build that adds the Cobalt8 and Argon8 oscillators and filters, Argon8 OscMod, Spread and Distortion, and a two-part Multi mode.
+description: >-
+  Iron is built by a Python script from the user's own official Carbon8, Cobalt8
+  and Argon8 firmware files; none are shipped. The result is a Carbon8 1.1
+  firmware set that boots as IRON8. It adds Cobalt8's 40 oscillator algorithms
+  and Argon8's 36 wavetable banks as extra oscillator cores, a second parameter
+  per oscillator, Argon8's oscillator modulation modes, Spread and tuning ratios,
+  eight more filter types and a Distortion control. A Multi mode plays two patches
+  on four voices each and replaces the sequencer; a build option keeps the
+  sequencer instead. A patched copy of MODALapp, made from the user's own
+  installed app, edits the new parameters and converts Cobalt8 and Argon8 patches.
+status: active
+authors:
+  - name: Víctor Villena
+    url: https://github.com/victorvillena
+source: https://github.com/victorvillena/all8
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and no licence statement.
+distribution: patch-your-own
+requires_stock: Carbon8 1.1, Cobalt8 2.1 and Argon8 3.2 official firmware (panel, master and slave .syx files for each)
+install_notes: >-
+  Build the set with tools/iron.py from your own official files, then flash it
+  with the crossflash-8 flasher after putting the synth into update mode (power
+  on while holding Shift/Init). The flash takes about eight and a half minutes.
+  The README says the bootloader is never written, so a failed flash is
+  recovered by flashing again, and flashing the unmodified official files goes
+  back to stock. The MODALapp copy needs an Apple Silicon Mac with MODALapp 3.0
+  (build 51). Patches saved on Iron lose some settings when loaded on stock
+  Carbon8.
+brick_risk: false
+tags: [oscillator, filter, wavetable, multitimbral, sysex, python]
+versions:
+  - version: main @ b03d6a8
+    date: 2026-11-12
+    url: https://github.com/victorvillena/all8/commit/b03d6a8650b815935a984b3c45b5c79330ea4a56
+    notes: No tagged releases; this is the latest commit.

@@ -1,14 +1,15 @@
 device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
 name: JamesOS
 summary: >-
   Seven-track groovebox with three instrument tracks of Plaits and Braids synth engines and four drum lanes, a 64-step
-  conditional sequencer, 64 presets, MIDI in on the jack and USB, and a browser installer.
+  conditional sequencer, 128 starting sounds, MIDI in on the jack and USB, and a browser installer.
 description: >-
   Rights warning: the repository's releases/ folder commits build packages labelled "from V15" that combine the JamesOS
   application with a boot area and loader taken from M-VAVE's V14 firmware; the README says the redistribution terms for
   that material remain to be confirmed. The application-only packages contain none of it. JamesOS is built on Dinghy and
   the Felucca platform with SLOOP changes and adds Emilie Gillet's Plaits (24 engines) and Braids as synth voices, with
-  synthesized drum kits, eleven patterns per project, a mixer, LFOs and external clock from either MIDI input. The
+  synthesized drum kits, eleven patterns per project, a song arranger, a mixer, LFOs and external clock from either MIDI input. Release 1.0b also builds JamesOS-K, a version for the SMK-37 Pro with its own manual, which the notes call new. The
   author, who also publishes it through the Gjelly site as a pay-what-you-want release, tested it on one FM-1 and lists other
   hardware, interrupted updates and long MIDI workloads as unverified.
 status: active
@@ -40,6 +41,10 @@ image:
   source_url: https://github.com/aarongrando/JamesOS
   first_party: true
 versions:
+- version: 1.0b
+  date: 2026-11-17
+  url: https://github.com/aarongrando/JamesOS/releases/tag/v1.0b
+  notes: First GitHub release. Redraws every screen with pictures of each setting, adds an arranger (songs of up to 64 blocks), 128 starting sounds, polyphony on the synth tracks, new filters, a shared reverb and a master limiter, and a JamesOS-K build for the SMK-37 Pro. Projects saved with 1.0a show as OLD FORMAT and must be converted in the online Editor; saving over such a slot replaces the old project.
 - version: 1.0a-2108
   date: 2026-11-10
   url: https://github.com/aarongrando/JamesOS/tree/v1.0a-2108

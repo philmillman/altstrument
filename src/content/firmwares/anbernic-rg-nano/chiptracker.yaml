@@ -1,0 +1,37 @@
+device: anbernic-rg-nano
+name: Chiptracker
+summary: Tracker module player for the RG Nano's FunKey-OS, built on libopenmpt, with a scrolling pattern view, VU meters, fullscreen visualizers and a screen lock that keeps the music playing.
+description: >-
+  Chiptracker plays XM, IT, MOD, S3M, MO3 and about thirty other tracker module formats through libopenmpt. It is a
+  player and not a chip emulator, so console formats such as NSF, SPC, VGM and SID are not supported. The 240 by
+  240 screen shows three channels per page of the pattern with hex effects, VU meters and a spectrum, with eight
+  fullscreen visualizers, six colour themes, a library with shuffle, repeat and resume, and a screen lock that
+  dims the panel while playback continues. It ships as an OPK for the RG Nano's FunKey-OS. The repository
+  contains no music; the README points to the keygenmusic.tk and Mod Archive sites as places to find modules, and
+  the rights in whatever modules are loaded rest with their authors.
+status: active
+authors:
+  - name: TemmieDola
+    url: https://github.com/TemmieDola
+source: https://github.com/TemmieDola/chiptracker
+source_status: open
+license: MIT
+license_notes: Read from the LICENSE file. The bundled libopenmpt is BSD-3-Clause and libmpg123, for MO3 files, ships with its own licence text in the OPK sources.
+distribution: download
+install_notes: >-
+  Copy chiptracker-1.0.opk from the release to the SD card, into the Native games folder for RetroFE or into a
+  first-level folder that holds an apps subfolder for GMenu2X, then launch it from the menu. On first start, choose
+  the folder that holds your modules. It runs as an app and does not change the system image.
+brick_risk: false
+tags: [tracker, player, visualizer, open-source]
+image:
+  url: https://raw.githubusercontent.com/TemmieDola/chiptracker/main/docs/screenshot-player.png
+  alt: Chiptracker player screen with three tracker pattern columns of notes and effects, a highlighted current row, VU meters at the right and a spectrum strip above the time bar
+  credit: TemmieDola
+  source_url: https://github.com/TemmieDola/chiptracker
+  first_party: true
+versions:
+  - version: v1.0
+    date: 2026-11-17
+    url: https://github.com/TemmieDola/chiptracker/releases/tag/v1.0
+    notes: First release, with libopenmpt 0.8.10, eight fullscreen visualizers, six themes and the screen lock.

@@ -8,7 +8,7 @@ description: >-
   1.9.0. Double-tapping OCT+ holds notes on the selected track after the keys are released, and double-tapping OCT-
   turns on envelope retrigger, which restarts the attack each time the envelope falls to silence while a note is gated
   and sustain is zero. Attack, decay, sustain and release can be mod matrix destinations, the drum engine now runs
-  through the ADSR, and HOME opens the MIXER page before the HOME screen. The source sets six parts where upstream sets
+  through the ADSR, and HOME opens the MIXER page before the HOME screen. The 1.0.0 release adds a start-phase parameter on the LFO pages, a keyboard view and scale LED filtering on the SCL page, and a TRIGS page graph of both LFOs. The source sets six parts where upstream sets
   four. The README is still Felucca's own, and the author's description calls the box a performance groovebox. A browser
   demo is linked from the hub card, but its page was not live when checked.
 status: active
@@ -25,12 +25,23 @@ license_notes: >-
 based_on: m-vave-fm-1/felucca
 distribution: download
 install_notes: >-
-  Download felucca.fwsc from the v0.9.0 release and send it with a flasher that accepts custom packages (Felucca's
+  Download felucca.fwsc from the latest release and send it with a flasher that accepts custom packages (Felucca's
   tools/fm1_install.py is in the repository). Upstream Felucca's hosted installer installs only upstream's release.
   Felucca's Return to official V15 or M-VAVE's updater goes back to stock.
 brick_risk: false
 tags: [groovebox, sequencer, synth-engine, performance, fork]
 versions:
+- version: 1.0.2
+  date: 2026-11-18
+  url: https://github.com/DP3OYB/DP3OYB/releases/tag/v1.0.2
+  notes: Scale LEDs now always show on the SCL page while editing ROOT and SCALE.
+- version: 1.0.1
+  date: 2026-11-18
+  url: https://github.com/DP3OYB/DP3OYB/releases/tag/v1.0.1
+- version: 1.0.0
+  date: 2026-11-18
+  url: https://github.com/DP3OYB/DP3OYB/releases/tag/v1.0.0
+  notes: Adds a start-phase parameter to the 1LFO and 2LFO pages, a two-octave keyboard view on the SCL page, scale LED filtering for non-chromatic scales and a TRIGS page graph of both LFO waveforms.
 - version: 0.9.0
   date: 2026-11-16
   url: https://github.com/DP3OYB/DP3OYB/releases/tag/v0.9.0

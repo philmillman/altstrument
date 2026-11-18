@@ -1,0 +1,29 @@
+device: m-vave-fm-1
+name: FM1Drums
+summary: >-
+  Two drum machines for the FM-1: a LinnDrum-style sampler and sequencer with 16 voices and a 48 PPQ grid, and a CR-78-style rhythm machine with 34 preset rhythms and fills.
+description: >-
+  Rights warning: Linn mode plays sounds that the README credits to Greg Marshall as recreations of the LinnDrum's, kept as samples in the source and in a zip file; the repository states no licence for them.
+  Linn mode has 16 voices of 8-bit mu-law samples with per-voice tuning, shuffle, quantize, patterns of 1 to 8 bars, step entry, real-time recording and a mixer. CR-78 mode uses triggered resonators and filtered noise
+  with fill-in, break and rolling fills, four user patterns, fade, swing and velocity. Both show red seven-segment displays and holding HOME explains a control. The README says the CR-78 preset rhythms are draft data written in the style of
+  each name, not transcribed. It builds on fm1-base and has a host simulator and browser emulator.
+status: active
+authors:
+- name: zgtc
+  url: https://github.com/zgtc
+source: https://github.com/zgtc/fm1drums
+based_on: m-vave-fm-1/fm1-base
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The README and LICENSE give MPL-2.0, as fm1-base and felucca-bsp. The Linn sample set is not covered by a stated licence.
+distribution: source-only
+install_notes: >-
+  Build with ./build.sh, which needs JieLi's toolchain and the AC79 SDK; every push to main also builds fm1drums.fwsc in GitHub Actions as an artifact, and a vX.Y tag makes a release. The README gives no install or recovery steps of its own.
+brick_risk: false
+tags: [drums, sequencer, sampler, synth-engine, emulator]
+versions:
+- version: main @ 2ecb5c1
+  date: 2026-11-18
+  url: https://github.com/zgtc/fm1drums/commit/2ecb5c1
+  notes: No tagged releases; this is the latest commit.

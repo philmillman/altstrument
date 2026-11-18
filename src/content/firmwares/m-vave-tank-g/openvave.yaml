@@ -1,16 +1,17 @@
 device: m-vave-tank-g
 name: openvave
 kind: tool
-summary: Python library and command-line tool that talks to a Tank-G over Bluetooth LE, identifies it and reads its current preset, global settings and status as decoded fields.
+summary: Python library and command-line tool that talks to a Tank-G over Bluetooth LE, identifies it, reads its current preset, global settings and status as decoded fields, backs up the stored presets and writes single fields to the edit buffer.
 description: >-
   The project documents the pedal's Bluetooth protocol and ships a library plus an openvave command. The info command
   identifies the pedal and its firmware, preset dump prints the 21 bytes of the loaded preset with each byte named,
   ranged and marked confirmed, observed or hypothesis, and watch polls the pedal and prints every byte that changes
   while a control is moved, which is how the byte map was built. Captures of those sessions from firmware 96 are
-  committed to the repository. The released 0.2.0 only sends the handshake and region reads. The source also holds an
-  unreleased, restricted set of writes to the live edit buffer (block switches, the knob block, the footswitch LED
-  colour and preset select), with no erase or save of stored presets. It has been tested on macOS with firmware 96;
-  Linux and Windows are untested. The project says it is not affiliated with M-VAVE.
+  committed to the repository. Release 0.3.0 adds a backup command for the 36 stored presets and a restricted set of
+  writes to the live edit buffer (set for the knob block, block switches and the footswitch LED colour, and preset
+  select), each with a dry-run option and a read-back check, and with no erase or save of stored presets. The block
+  switches and LED colour are marked observed rather than confirmed, so they need an experimental flag. It has been
+  tested on macOS with firmware 96; Linux and Windows are untested. The project says it is not affiliated with M-VAVE.
 status: active
 authors:
   - name: Gustavo Marques
@@ -26,7 +27,7 @@ install_notes: >-
 brick_risk: false
 tags: [research, ble, protocol, python, cli, library, presets]
 versions:
-  - version: main @ 3af9166
+  - version: v0.3.0
     date: 2026-11-17
-    url: https://github.com/gustavolima00/openvave/commit/3af9166e95065ff761b0b9ccf7464711787f1fce
-    notes: No tagged releases; this is the latest commit. The changelog lists 0.2.0.
+    url: https://github.com/gustavolima00/openvave/releases/tag/v0.3.0
+    notes: First release that writes to the pedal, and only to the edit buffer. Adds preset backup of the 36 stored presets, set for one field at a time, preset select and a dry-run option, and never saves or erases a stored preset.

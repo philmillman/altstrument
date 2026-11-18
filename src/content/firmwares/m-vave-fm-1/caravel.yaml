@@ -1,17 +1,22 @@
 device: m-vave-fm-1
 name: Caravel
 summary: >-
-  Independent continuation of Felucca 1.6.1 for the FM-1, adding SEM, HADES, DRONE, DRUM-X and ENSEMBLE engines, a second LFO,
-  a per-track filter and a menu layout that shows two parameter groups per screen.
+  Independent continuation of Felucca 1.6.1 for the FM-1, adding SEM, HADES, DRONE and ENSEMBLE engines, a second LFO,
+  a per-track filter and a menu layout that shows two parameter groups per screen. The 0.x line was frozen as Classic and
+  1.0 starts a new, narrower line.
 description: >-
-  Carries on from the last Felucca release after its author stepped back from development. It keeps Felucca's
+  Carries on from the last Felucca release after its author stepped back from development. 1.0.0 starts a new line
+  with six engines (ANALOG, PHYS, SEM, HADES, DRONE and ENSEMBLE), a PLAY and BUILD split, a CAPTURE looper for live keys and
+  MIDI input, chord-extension sources, a track-local FX filter and an AFTERBURNER long reverb tail; it drops the SAMPLE, GRAIN, LOFI,
+  FM6, PHASE, VOICE, TRIO, NOISE, WHEEL and DRUM engines and Song/Chain, and it does not import pre-1.0 backups or projects.
+  Classic 0.13.0 is frozen and gets no further fixes. The rest of this description covers the Classic 0.x line. It keeps Felucca's
   storage formats, so projects and presets saved by Felucca open in Caravel; projects that use Caravel-only
   parameters need Caravel to open, and projects saved by 0.3.0 or later do not open on 0.2.0 or earlier, projects saved by 0.7.1 or later do not open on 0.7.0, and projects saved by 0.8.0 do not open on 0.7.x or earlier, and projects saved by 0.9.0 (new project format 3) do not open on 0.8.0. Added
   features include a latch for held keys, a button to clear the step under the cursor, per-track voice reservations
   and a MORE page for spread and morph; 0.6.0 adds a STASIS hold with ADD and BLEND, and leaves out ROOM, SPRING
-  and the SLICE engine; 0.8.0 adds a Morph Journey bank that chains the four Random Morph snapshots into a hands-free loop; 0.9.0 makes Random Morph and Morph Journey per track and retires the SAX sample set; 0.10.0 adds the ENSEMBLE strings, choir and dark-texture engine with fourteen factory presets; 0.11.0 makes ENSEMBLE stereo, with the track's SPREAD setting as its width; 0.12.0 adds a HARMONY chord progression that tracks follow, LINK between tracks and the newer UC25HQ80 flash chip, and shows as empty on 0.11.0 and earlier any project it saved. 0.13.0 adds ELASTIC, a bank of temporary springs on HOME controls, trims the PIANO and FLUTE sample sets, and saves projects with a new HOME capsule version that 0.12.0 cannot read. DRUM-X, MORPH and the BYTE and FLOAT waves in LOFI are adapted from the
+  and the SLICE engine; 0.8.0 adds a Morph Journey bank that chains the four Random Morph snapshots into a hands-free loop; 0.9.0 makes Random Morph and Morph Journey per track and retires the SAX sample set; 0.10.0 adds the ENSEMBLE strings, choir and dark-texture engine with fourteen factory presets; 0.11.0 makes ENSEMBLE stereo, with the track's SPREAD setting as its width; 0.12.0 adds a HARMONY chord progression that tracks follow, LINK between tracks and the newer UC25HQ80 flash chip, and shows as empty on 0.11.0 and earlier any project it saved. 0.13.0 adds ELASTIC, a bank of temporary springs on HOME controls, trims the PIANO and FLUTE sample sets, and saves projects with a new HOME capsule version that 0.12.0 cannot read. In Classic, DRUM-X, MORPH and the BYTE and FLOAT waves in LOFI are adapted from the
   JIANT FM fork. A web installer, editor and browser emulator are published on the project site. The README says
-  hardware acceptance on a real FM-1 is still pending (the 0.10.0 notes say only an earlier test build was installed on a unit; the 0.11.0 notes say the maintainer checked a release-candidate build on an FM-1 without recording per-item findings, and the 0.12.0 notes say the later fixes were not tried on a device), and that the firmware uses USB test IDs that the pid.codes
+  hardware acceptance on a real FM-1 is still pending (the 0.10.0 notes say only an earlier test build was installed on a unit; the 0.11.0 notes say the maintainer checked a release-candidate build on an FM-1 without recording per-item findings, the 0.12.0 notes say the later fixes were not tried on a device, and the 1.0.0 notes say a complete FM-1 acceptance is not documented), and that the firmware uses USB test IDs that the pid.codes
   policy does not allow on devices that are shared or sold. Not affiliated with Hügelton Instruments or M-VAVE.
 status: active
 authors:
@@ -25,6 +30,7 @@ license_notes: >-
   submodule is MIT, and ported DSP and fonts carry MIT, Apache-2.0 and SIL OFL texts. The USB IDs 1209:0001 and
   1209:0002 are pid.codes test IDs.
 homepage: https://bonszaimusic.github.io/caravel/webapp/installer/
+based_on: m-vave-fm-1/felucca
 distribution: browser-installer
 install_notes: >-
   Web installer in Chrome or Edge over USB, which installs the newest release and saves a backup before returning to
@@ -46,6 +52,10 @@ videos:
     first_party: true
     found_via: https://github.com/bonszaimusic/caravel#readme
 versions:
+- version: 1.0.0
+  date: 2026-11-18
+  url: https://github.com/bonszaimusic/caravel/releases/tag/v1.0.0
+  notes: "New line with six engines (ANALOG, PHYS, SEM, HADES, DRONE, ENSEMBLE), a PLAY and BUILD split, CAPTURE looping of live panel and MIDI notes, chord-extension sources, a track-local persistent FX filter and AFTERBURNER, a long reverb tail. Projects use a new FUNW format and pre-1.0 backups are not imported, so back up with the matching tool first. Classic 0.13.0 is frozen with no further fixes. The notes say automated checks passed but a complete FM-1 audio, load, update and restore acceptance is not documented."
 - version: 0.13.0
   date: 2026-11-13
   url: https://github.com/bonszaimusic/caravel/releases/tag/v0.13.0

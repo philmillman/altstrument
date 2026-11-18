@@ -12,7 +12,7 @@ description: >-
   Tweak pages mutate phrases and build sections, and a modulation matrix routes any source to any destination.
   Version 2.0 played three engines (FM6, TRIO and DRUM), dropping the SID, PHYS, CZ-1 and Prophet engines and their
   sound banks (PHYS returned in 3.2); projects saved by 1.x do not load. Version 3.0 adds ORACLE, a polyphonic analogue-style voice with
-  sounds of its own, and draws every screen in one ink on black with its own 5 x 7 font and nine colours. Version 3.1 adds a USB host mode for one USB-MIDI device, a fixed MIDI CC map and NRPN control of every parameter, untested on a device at release. Version 3.2 brings back the PHYS physical-modelling engine, 3.2.1 adds tunings loaded from Scala files and 3.2.2 adds Snap to scale. Version 3.3 adds long-form structure (CHAIN, ENTRIES and PIECE), macros and CC out from mods, and version 3.5 adds modular-style mod buses, pattern directions and a light screen theme. Version 3.6 adds a harmonizer, more mod destinations, a quantize setting per track and a LANDSCAPE page that draws a place for each project, and 3.7 lets the generators take a phrase played on the keys as their seed. The README calls it experimental. A browser
+  sounds of its own, and draws every screen in one ink on black with its own 5 x 7 font and nine colours. Version 3.1 adds a USB host mode for one USB-MIDI device, a fixed MIDI CC map and NRPN control of every parameter, untested on a device at release. Version 3.2 brings back the PHYS physical-modelling engine, 3.2.1 adds tunings loaded from Scala files and 3.2.2 adds Snap to scale. Version 3.3 adds long-form structure (CHAIN, ENTRIES and PIECE), macros and CC out from mods, and version 3.5 adds modular-style mod buses, pattern directions and a light screen theme. Version 3.6 adds a harmonizer, more mod destinations, a quantize setting per track and a LANDSCAPE page that draws a place for each project, and 3.7 lets the generators take a phrase played on the keys as their seed. Version 3.7.1 adds a DRIVE soft-clip effect with a wavefolder control. The README calls it experimental. A browser
   simulator, installer and editor are included.
 status: active
 authors:
@@ -27,6 +27,7 @@ license_notes: >-
   data, with the rights staying with Casio and Sequential; those banks were removed in 2.0 and were no longer in the
   repository on 2026-10-23.
 homepage: https://rastapopolix.github.io/tessera/webapp/sim/
+based_on: m-vave-fm-1/melodee
 distribution: browser-installer
 install_notes: >-
   Browser installer in Chrome or Edge over USB, which also offers a way back to official V15 with a backup
@@ -41,6 +42,10 @@ image:
   source_url: https://github.com/Rastapopolix/tessera
   first_party: true
 versions:
+- version: 3.7.1
+  date: 2026-11-18
+  url: https://github.com/Rastapopolix/tessera/releases/tag/v3.7.1
+  notes: Adds a DRIVE effect, a soft clip with RATE as the drive, CHAR that folds the peaks back and MIX, usable in FX1 or as a send, and a readability pass on the manual. Projects from 3.7 load and play the same; a project using DRIVE plays that slot as a FILTER on 3.7 and older. The identity stays FM-1_837.
 - version: '3.7'
   date: 2026-11-17
   url: https://github.com/Rastapopolix/tessera/releases/tag/v3.7

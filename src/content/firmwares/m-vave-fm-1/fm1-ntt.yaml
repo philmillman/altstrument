@@ -9,8 +9,8 @@ description: >-
   host, a web shell and an R36S package around them. A carousel of panels shows the machine, a file list, CPU and memory
   views, a console, MIDI, sound and a tools menu, and a pad or keyboard plays the keys, buttons and knobs. A screenshot,
   a device report and a benchmark can be written from the command line. Five MIT-licensed Haunted FM-1 packages ship with
-  it. Firmware under the GPL lives in a separate repository, FM1-NTT Firmware Pack, which holds unmodified copies of
-  Felucca 1.8.2, FoMni-1 0.4.1 and Jangada 1.0.1 with their source and licence texts, so that the MIT app never carries
+  it. Firmware under the GPL or MPL lives in a separate repository, FM1-NTT Firmware Pack, which holds unmodified copies of
+  nine firmwares, among them Felucca 1.8.2, FoMni-1 0.4.1 and Jangada 1.0.1, with their source and licence texts, so that the MIT app never carries
   them. Closed or unclear firmware is bring-your-own. The README calls it early days and says nothing has run on a real R36S.
 status: active
 authors:
@@ -22,8 +22,8 @@ license: MIT
 license_notes: >-
   LICENSE is MIT, and the vendored fm1-emu crates are MIT as well (NOTICE). The five Haunted FM-1 packages in
   bundled-firmware/ are David Ryan's unmodified release files, each keeping its own licence (MIT, on MPL-2.0 and Apache-2.0
-  parts). The companion repository joashchee/FM1-NTT-Firmware-Pack is MIT for its scripts only; its three firmwares keep
-  GPL-3.0-only, each shipped with its source. No M-VAVE image is in either repository, and none of the committed .fwsc
+  parts). The companion repository joashchee/FM1-NTT-Firmware-Pack is MIT for its scripts only; its nine firmwares keep
+  their own GPL-3.0-only or MPL-2.0 licences, each shipped with its source. No M-VAVE image is in either repository, and none of the committed .fwsc
   files matches a licensed stock blob.
 distribution: source-only
 install_notes: >-
@@ -32,7 +32,7 @@ install_notes: >-
 brick_risk: false
 tags: [emulator, research, handheld]
 versions:
-- version: main @ 2641dd3
-  date: 2026-11-16
-  url: https://github.com/joashchee/FM1-NTT/commit/2641dd32b34fc2c1868504fbb9f77f7aaece2beb
-  notes: No tagged releases; this is the latest commit, which makes the 3 dB output gain the master volume. The newest commits add a WebAssembly build of the web shell, a faster AArch64 JIT turned on by default, a firmware extractor, a 6-operator msfa engine port and a model of Felucca's FM6 tuning, and record R36S speed measurements of about 0.24x at best.
+- version: main @ 2b706d1
+  date: 2026-11-18
+  url: https://github.com/joashchee/FM1-NTT/commit/2b706d1bef41323c46e92d612efdb3f688340a45
+  notes: No tagged releases; this is the latest commit, which fixes a CI smoke-test failure. The commits since the previous row add a MONITOR panel that shows the host machine (JIT blocks, USB products, pad names, macOS battery), a firmware showcase with background demos and a player, and notes on stock firmware's MIDI and SysEx behaviour tried in the emulator. Before that, the commits add a WebAssembly build of the web shell, a faster AArch64 JIT turned on by default, a firmware extractor, a 6-operator msfa engine port and a model of Felucca's FM6 tuning, and record R36S speed measurements of about 0.24x at best.

@@ -1,13 +1,13 @@
 device: elektron-syntakt
 name: Synfact
 summary: >-
-  Custom firmware core and a bank of mods for Syntakt OS 1.42 (source build) or 1.41 (browser build at synfact.app), made from your own OS file. Mods include sample machines, an FM machine, an audio recorder, a third LFO, an arpeggiator and polyphony.
+  Custom firmware core and a bank of mods for Syntakt OS 1.42, built at synfact.app or from source out of your own OS file. Mods include sample machines, an FM machine, an audio recorder, a third LFO, an arpeggiator and polyphony.
 description: >-
   Synfact is the Syntakt part of elekloader with its own core firmware. The core adds a hook bus, extra settings, optional
   machine banks (.smz4 files that can be changed without reinstalling the firmware), long-sample storage and a project sample
   pool. The mods are the SP sample machines ONE SHOT, WERP, REPITCH and SLICE, the SY FM DTONE machine, an audio recorder, a
   third LFO per track, a Digitone-style arpeggiator, POLY for polyphonic play, a chorus, Playhead for the step order of each track, a system information page, and a sample
-  manager. The repository's source build now targets OS 1.42 (core 2.0), while the website builder still asks for the official OS 1.41 file. The site reads the OS file you supply, checks its hash, then patches and verifies it in the browser
+  manager. Both the website builder and the repository's source build target OS 1.42 (core 2.0); the site asked for OS 1.41 until 2026-11-18. The site reads the OS file you supply, checks its hash, then patches and verifies it in the browser
   tab; nothing is uploaded. It offers the build as a download or sends it with a built-in transfer page that also browses the
   unit's projects, sounds and samples. SY FM DTONE also needs your own Digitone OS 1.44 file, because its sound engine is
   rebuilt from that file by a recipe and no Digitone bytes are kept in the repository. The author says builds keep the
@@ -28,15 +28,19 @@ license_notes: >-
   Elektron's bytes, and the site asks for your own Digitone OS file to rebuild them. The site's licenses.txt lists the licences.
 homepage: https://synfact.app
 distribution: browser-installer
-requires_stock: 1.41 for the browser build, 1.42 for the source build
+requires_stock: "1.42"
 install_notes: >-
-  Open synfact.app in Chrome or Edge, drop in your official Syntakt OS 1.41 file (the source build takes 1.42), tick the mods, build, then install the
+  Open synfact.app in Chrome or Edge, drop in your official Syntakt OS 1.42 file, tick the mods, build, then install the
   resulting .syx like an OS update and send the .smz4 bank through the transfer page. Back up projects, sounds and samples
   first and read the site's recovery instructions. Mods are changed later by sending a new bank only. Source builds follow
   docs/SYNTAKT-BUILD.md in the repository.
 brick_risk: false
 tags: [machines, loader, flasher, sampler, fm, lfo, arpeggiator, web, web-midi, sdk]
 versions:
+  - version: main @ 6bcf23b
+    date: 2026-11-18
+    url: https://github.com/GSM1980/synfact-dev/commit/6bcf23b32f381d6aa77072d8aa132c6be38830f6
+    notes: No tagged releases; this is the latest commit of the source repository. The commits since the previous entry move the browser builder to Syntakt OS 1.42 with Playhead (synfact.app asks for the 1.42 file as of 2026-11-18), add ARP 1.10.6 and POLY 1.7 (digital slaves keep their own Sounds) and core 2.0.2, which keeps the native interest filters with the full Playhead bank and has its MAIN CPU recovery checked on hardware, and fix ARP encoder edits under the mute and Chorus popup labels.
   - version: main @ eae3159
     date: 2026-11-17
     url: https://github.com/GSM1980/synfact-dev/commit/eae315956956686838687dd5f89e564665894a92

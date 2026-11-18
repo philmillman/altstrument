@@ -1,0 +1,43 @@
+device: m-vave-fm-1
+name: Textura
+summary: >-
+  Physical-modelling synthesizer for the sounds of nature on the FM-1: rain, streams, fire, wind, insects and birds computed live from four lanes, with no samples, 103 sounds in ten landscapes and an effects chain.
+description: >-
+  Each sound plays as a cloud of small events, such as drops, crackles, grains and chirps, that are calculated as they sound. The black keys pick one of four lanes and the white keys
+  set how many sources the lane plays and how often they sound. The effects, in signal order, are a compressor, drive, high-pass and low-pass filter,
+  grain delay and reverb, with a PERFORM page for playing them live. Eight LFOs, two envelopes, two envelope followers and a 16-slot mod matrix add movement, and
+  PLAY mode turns the keys into a pitched keyboard. It has 100 factory presets, 16 user slots, MIDI over USB and TRS, and audio over USB. The README says it is a beta
+  that grew from the same author's Frodhes firmware and platform; there is a browser version of the firmware with the FM-1's screen, knobs and keys.
+status: active
+authors:
+- name: Leonardo Mirabal
+  url: https://github.com/leonardoMirabal
+source: https://github.com/leonardoMirabal/textura
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README gives GPL-3.0 and the LICENSE file is the GPL version 3 text with no later-version statement. The fonts are SIL OFL 1.1.
+  The platform comes from Dinghy, Felucca and SLOOP.
+homepage: https://leonardomirabal.github.io/textura/
+based_on: m-vave-fm-1/frodhes
+distribution: browser-installer
+install_notes: >-
+  Install from the emulator page in Chrome or Edge, or download the newest .fwsc from a release and install it with tools/tx_install.py or FM-1 Loader. It replaces the firmware on the unit,
+  including Frodhes. Holding OCT- at power-on opens the USB rescue, and going back uses the other firmware's installer, the Firmware Hub or M-VAVE's own. Saves sit apart from the stock firmware and Frodhes.
+brick_risk: false
+tags: [synth-engine, physical-modeling, generative, ambient, fx, lfo, midi, usb-audio, emulator]
+image:
+  url: https://raw.githubusercontent.com/leonardoMirabal/textura/main/docs/img/landscape.png
+  alt: "Textura LANDSCAPE page: four lanes headed LANE 1 to LANE 4 with sounds named Rain on water, Lake lapping, Water drops and Cave drips, each with MANY and ACTIVE meters and a volume"
+  credit: Leonardo Mirabal
+  source_url: https://github.com/leonardoMirabal/textura
+  first_party: true
+versions:
+- version: 0.2.8
+  date: 2026-11-17
+  url: https://github.com/leonardoMirabal/textura/releases/tag/textura-v0.2.8
+  notes: Release made public with the browser emulator; the page offers installing from it. The sound and controls are unchanged from 0.2.7.
+- version: 0.2.5
+  date: 2026-11-16
+  url: https://github.com/leonardoMirabal/textura/releases/tag/textura-v0.2.5
+  notes: Settings and scenes survive a power-off, a power cut during a save keeps the last good copy, and the store moved clear of the stock firmware and Frodhes.

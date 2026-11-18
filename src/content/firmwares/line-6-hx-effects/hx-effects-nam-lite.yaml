@@ -2,7 +2,7 @@ device: line-6-hx-effects
 name: NAM A2 Lite for HX Effects
 summary: >-
   A port of NAM A2 Lite to the HX Effects that patches stock firmware 3.80.0 so Neural Amp Modeler captures run on the
-  pedal's SHARC DSP. Three builds add Click, the 111 HX Stomp amps already in the firmware, and original effects (Geiger, Commander, Corrupt, Ottobit, Doom Chug).
+  pedal's SHARC DSP. Three builds add Click, the HX Stomp's 111 amps and 112 preamps already in the firmware, and original effects.
 description: >-
   The HX Effects has no amp blocks. The NAM block sits under Distortion > Mono in place of the mono
   Regal Bass DI, so a cab IR can follow it. It takes three blocks per preset in the NAM and NAM + Amps builds and two in the full build. The knobs are Model, Input, Bass, Mid, Treble, Presence, Ch Vol and Polarity, and captures
@@ -15,8 +15,8 @@ description: >-
   with a Time knob synced to tap tempo, beats per bar, accent, three sounds, level and subdivision. Geiger is a bit crusher with
   16 shaping curves that takes over the mono Megaphone. Commander (octave fuzz), Corrupt (tracking square synth), Ottobit (sequenced
   bit crusher with random stutters) and Doom Chug (low drone generator) take over other fuzz and crusher blocks, and the
-  stock Line 6 amps are a separate list. The README's amps build lists the 111 HX Stomp amps (94 guitar, 17 bass) under Distortion > Amps,
-  up to three per preset, without replacing a stock block, and adds a small USB diagnostic interface for reading the unit's log.
+  stock Line 6 amps are a separate list. The README's amps build lists the 111 HX Stomp amps (94 guitar, 17 bass) under Distortion > Amps
+  and the 112 preamps under EQ > Preamps, up to three amps and preamps per preset, without replacing a stock block, and adds a small USB diagnostic interface for reading the unit's log.
   build.py makes three images: nam (NAM and Click), amps (adds the amps) and full (adds Geiger, Commander, Corrupt, Ottobit and Doom Chug). The author reports the
   all-in-one image running on their unit on 2026-11-11. A tools/flash.py script repeats the Line 6 Updater update over USB and checks that the unit boots.
 
@@ -47,10 +47,14 @@ install_notes: >-
 brick_risk: false
 tags: [nam, amp-modeling, patch]
 versions:
+  - version: main @ be3ced3
+    date: 2026-11-18
+    url: https://github.com/scottlynn73/hx-effects-nam-lite/commit/be3ced3059abfa6cc0f8729d3e2d9cb2b0a29100
+    notes: No tagged releases; this is the latest commit. Since the previous entry the commits add the HX Stomp's 112 preamps in an EQ > Preamps list for the amps and full builds, and five more overlay effects (Pure Whitey, Greasy Strangler, Drum Chapel, Bethblahem, Puggy Puncher), and make Doom Chug an overlay with a Fuzz knob.
   - version: main @ 0e59a43
     date: 2026-11-17
     url: https://github.com/scottlynn73/hx-effects-nam-lite/commit/0e59a43d37166223c4ebf04ac41dca032db35783
-    notes: No tagged releases; this is the latest commit. Since the previous entry the commits add Line 6's 111 HX Stomp amps under Distortion > Amps, give build.py a third build (nam, amps, full) and shorten the README.
+    notes: No tagged releases. Since the previous entry the commits add Line 6's 111 HX Stomp amps under Distortion > Amps, give build.py a third build (nam, amps, full) and shorten the README.
   - version: main @ 9476ace
     date: 2026-11-13
     url: https://github.com/scottlynn73/hx-effects-nam-lite/commit/9476ace5aea5eccef7fe34c56ba3a58ee1df6e50

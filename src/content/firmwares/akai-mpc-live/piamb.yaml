@@ -1,0 +1,49 @@
+device: akai-mpc-live
+also_devices: [akai-force]
+name: πAMB
+summary: Generative ambient instrument plugin for MPC and Force, a port of the AMB-1 engine from the M-VAVE FM-1 with a touch screen view and eight built-in pieces.
+description: >-
+  πAMB runs as an external plugin on the MPC and Force through Akai's plugin SDK. It plays by itself, using a pad
+  voice, bells on four tape loops of different lengths, a gliding bass and a soft Euclidean pulse that share one
+  scale and one slowly changing chord, through a tape echo and a plate reverb. Eight pieces are available as
+  presets, the touch screen shows the current chord and a ring of the twelve notes that can be edited, and
+  seven pages of four controls each map to the Q-Links.
+
+  The music engine is Charles Vestal's AMB-1, which the repository includes unchanged at a pinned commit. The
+  project adds the MPC adapter, the screen and the packaging. It is tested on a first-generation Force. The
+  64-bit package for second-generation units has not been tried on hardware, only one instance can sound at a time,
+  and the tempo is not synced to the host.
+status: active
+authors:
+  - name: timomacquis
+    url: https://github.com/timomacquis
+  - name: Charles Vestal
+    url: https://github.com/charlesvestal
+source: https://github.com/timomacquis/piAMB-MPC
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  Read from the LICENSE file and THIRD-PARTY.md. The MPC wrapper code is MIT and the bundled Titillium Web font is
+  SIL OFL 1.1.
+based_on: m-vave-fm-1/amb-1
+distribution: download
+requires_stock: MPC OS 3.10.1 or later with Enhancements and External Plugin Support enabled
+install_notes: >-
+  Unzip the release package and copy the folder Timo - VST - πAMB into a folder named VST2 Plugins at the root of a
+  drive, such as /sdcard/VST2 Plugins on the internal memory, then restart MPC. The README gives no root access or
+  installer script as a requirement. Removable drives mounted noexec cannot run plugins. To remove it, delete the
+  folder and restart. A plugin from an earlier catalogue package that was installed with an install script has to
+  be removed with its own uninstall script first, or the plugin is listed twice.
+brick_risk: false
+tags: [synth-engine, synth, ambient, generative, port]
+image:
+  url: https://raw.githubusercontent.com/timomacquis/piAMB-MPC/main/docs/images/garden-force.png
+  alt: "πAMB screen on the Force, Garden preset: a ring of twelve notes around the chord Bm7b5, level bars, four bell loop sliders and tempo, evolve, motion and drift knobs"
+  credit: timomacquis
+  source_url: https://github.com/timomacquis/piAMB-MPC
+  first_party: true
+versions:
+  - version: v0.1.0
+    date: 2026-11-17
+    url: https://github.com/timomacquis/piAMB-MPC/releases/tag/v0.1.0
+    notes: First release, with eight pieces, seven control pages and scale editing from the screen or MIDI notes.

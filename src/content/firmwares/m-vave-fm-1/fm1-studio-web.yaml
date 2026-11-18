@@ -6,7 +6,7 @@ summary: >-
 description: >-
   Everything runs in the page: clang as WebAssembly in a worker compiles a project written against an fm1.h API, and the module plays on an AudioWorklet next to a
   panel with the 240 x 240 screen, 27 keys, buttons, encoders and the master pot. Web MIDI input is supported. A gallery fetches the source of nine community firmwares at fixed tags or commits,
-  compiles them and runs them with their own browser emulators. A FIRMWARE button compiles a project for the FM-1's own processor with a second in-page compiler (about 52 MB, loaded on first use) and downloads a .fwsc package, and an INSTALL button writes it to an FM-1 over USB MIDI in Chrome or Edge using fm1-base's installer; it installs fm1.h projects and three gallery firmwares (AURORA, CS-1, FM-106). The package's update loader writes only the program area, not the boot loader, and the install dialog does not offer M-VAVE's own firmware, which the README says to put back with another tool. The README says it was tested on one FM-1 with the newer flash chip and m-bootloader 2.4, and not on the first chip or under the boot loader of V15 or V16. Code that runs in the simulator is not guaranteed to run on a real FM-1. The first load downloads about 60 MB of compiler. Not the same project as thingsapart's Android FM-1 Studio.
+  compiles them and runs them with their own browser emulators. A FIRMWARE button compiles a project for the FM-1's own processor with a second in-page compiler (about 52 MB, loaded on first use) and downloads a .fwsc package, and an INSTALL button writes it to an FM-1 over USB MIDI in Chrome or Edge using fm1-base's installer; it installs fm1.h projects and, per the README, the nine gallery firmwares that the page can build for the FM-1 (CS-1, FM-106, AURORA, FMINI-1, GR!MM, Felucca, SLOOP, Skiff and JIANT). The package's update loader writes only the program area, not the boot loader, and the install dialog does not offer M-VAVE's own firmware, which the README says to put back with another tool. The README says it was tested, with all its features, on one FM-1 with the newer flash chip and m-bootloader 2.4, and not on the first chip or under the boot loader of V15 or V16. Code that runs in the simulator is not guaranteed to run on a real FM-1. The first load downloads about 60 MB of compiler. Not the same project as thingsapart's Android FM-1 Studio.
 status: active
 authors:
 - name: Tim Samshuijzen
@@ -24,7 +24,7 @@ install_notes: >-
 brick_risk: false
 tags: [emulator, web, sdk, synth-engine, flasher]
 versions:
-- version: main @ 30d27fe
-  date: 2026-11-16
-  url: https://github.com/TimSamshuijzen/fm1studiocom/commit/30d27fe682acf4abe5c6f9a8cca519a20261a3f0
-  notes: No tagged releases; this is the latest commit. Recent commits add two demo projects, take the return to M-VAVE's firmware out of the INSTALL dialog and add the README's report of a test on a real FM-1.
+- version: main @ b47522d
+  date: 2026-11-17
+  url: https://github.com/TimSamshuijzen/fm1studiocom/commit/b47522d718fe5bf2840786611d3e25b4b1dec734
+  notes: No tagged releases; this is the latest commit, one of fifteen commits on 17 November that are all titled update; they rewrite the README and the page, which now says the nine gallery firmwares install and were tested on a real FM-1. Earlier commits add two demo projects, take the return to M-VAVE's firmware out of the INSTALL dialog and add the README's report of a test on a real FM-1.

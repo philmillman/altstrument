@@ -1,0 +1,28 @@
+device: m-vave-fm-1
+name: fm1-chiptest
+kind: tool
+summary: >-
+  Command-line test that runs a custom FM-1 .fwsc in an emulator against both flash chips, the Puya P25Q80 and the newer UC25HQ80, and checks boot, save to flash and survival of the save after a reboot.
+description: >-
+  Newer FM-1 units carry a flash chip with a different JEDEC ID, and a firmware that only knows the Puya ID can boot but keep its saves in RAM. The tool runs the package unchanged in Joakim Eriksson's fm1-emu, once per chip,
+  and reports pass or fail for boot, for the erase and program sequence on SAVE and for a byte-identical save after a power cycle. It can write a JSON report, test one chip, and exits non-zero on failure so it can run in CI.
+  It tests Mutable Dreams 2.3 by default. The release archives bundle the emulator for macOS arm64, Linux and Windows. It needs Python 3 and does not touch an FM-1.
+status: active
+authors:
+- name: Kid Bunka (kidbee85-beep)
+  url: https://github.com/kidbee85-beep
+source: https://github.com/kidbee85-beep/fm1-chiptest
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file gives MIT. The bundled emulator, fm1-emu by Joakim Eriksson, is MIT.
+distribution: download
+install_notes: >-
+  Download the archive for your platform from the release, or run ./fm1-chiptest from a clone; the source archive fetches the emulator on first run. Use --firmware to test your own .fwsc.
+brick_risk: false
+tags: [emulator, utility, research]
+versions:
+- version: 1.0.0
+  date: 2026-11-18
+  url: https://github.com/kidbee85-beep/fm1-chiptest/releases/tag/v1.0.0
+  notes: First release, with the bundled emulator for four platforms and SHA256SUMS.

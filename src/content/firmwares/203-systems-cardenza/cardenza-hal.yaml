@@ -1,0 +1,37 @@
+device: 203-systems-cardenza
+name: CardenzaHAL
+kind: tool
+summary: Official ESP-IDF hardware layer and SDK for writing Cardenza firmware, covering keys, key LEDs, screen, audio, microphone, SD card and USB, with a browser simulator.
+description: >-
+  CardenzaHAL is the ESP-IDF component that every Cardenza firmware uses to reach the hardware, including the
+  stock CardenzaSynth. It initialises and exposes the 56-key matrix, the per-key LEDs, the 240 by 135 ST7789
+  display, the audio codec for output, the PDM microphone, the SD card and the USB device (MIDI, audio, HID and a
+  system channel), and adds the system menu that opens on the HOME key. The application keeps its own rendering,
+  key mapping, audio processing and main loop. The repository also holds a firmware project template, a build tool
+  that checks the environment first, host tests, example projects and a web target that compiles a firmware to a
+  WebAssembly simulator. Developer documents cover project layout, the 203.json file, forks and publishing to the
+  203 community.
+status: active
+authors:
+  - name: 203 Systems
+    url: https://github.com/203-Systems
+source: https://github.com/203-Systems/CardenzaHAL
+source_status: open
+license: unspecified
+license_notes: >-
+  No LICENSE file for the repository itself; the licenses folder only holds the notices for the bundled 203
+  Launcher code (MIT) and HarmonyOS Sans bitmaps. The readme states no licence for the HAL.
+homepage: https://cardenza.203.io/community/develop
+distribution: source-only
+install_notes: >-
+  Needs ESP-IDF 5.3.5 or later and, for publishing and flashing, 203-CLI. The readme gives 203c new to start a
+  project with the HAL as a Git submodule, tools/cardenza.py build to build it, and 203c flash to install it on a
+  Cardenza through the 203 Launcher. Never run idf.py flash on a Cardenza, which erases the Launcher and every
+  firmware it installed.
+brick_risk: false
+tags: [official, sdk, library, esp32, simulator, cli]
+versions:
+  - version: main @ 79e551d
+    date: 2026-11-18
+    url: https://github.com/203-Systems/CardenzaHAL/commit/79e551d
+    notes: No tagged releases; this is the latest commit.

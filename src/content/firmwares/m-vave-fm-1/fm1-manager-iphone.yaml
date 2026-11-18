@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+name: FM-1 Manager for iPhone
+kind: tool
+summary: Unofficial iPhone app that supplies the Web MIDI the FM-1 Firmware Hub and fm1-dock installers need, over USB, and adds a local library of firmware and module files, module sets and a touch performance screen.
+description: >-
+  Safari on iOS has no Web MIDI, so the app loads thefirmwarehub.com and the fm1-dock installer page inside its own
+  browser view and provides Web MIDI to them through CoreMIDI over a USB cable. It also keeps .fwsc and .dock files
+  in an app library, installs a library file with an offline page that uses fm1-dock's installer code, and has
+  experimental Rigs (named sets of fm1-dock modules that are compared with what is on the unit and applied step by
+  step, with resume after an interrupted cable) and Hands (an XY pad and touch keyboard that sends MIDI). The
+  README says it is not made or endorsed by M-VAVE, the Hub or fm1-dock.
+
+  The README states that most features have only been run against a simulated FM-1 in tests, and that the author has
+  used one iPhone with one FM-1. It has not been tried on an iPad, an older flash chip or an SMK-37. The repository
+  holds no firmware files. It includes unmodified fm1-dock and Hügelton Instruments installer scripts under the same
+  GPL, and the README says whether these may go through the App Store is still being discussed with their authors.
+status: active
+authors:
+  - name: KonradHerman
+    url: https://github.com/KonradHerman
+source: https://github.com/KonradHerman/fm1-manager
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Read from the README, which names GPL-3.0-only, and the LICENSE file. The bundled dock.js, fm1install.js, ports.js
+  and fm1ota.js come from fm1-dock and Felucca under the same licence. An FM1_DOCK=NO build leaves them out.
+distribution: source-only
+requires_stock: A firmware with a compatible USB updater; tested on fm1-dock 0.9.0
+install_notes: >-
+  No App Store or TestFlight release is linked in the README, so the app has to be built. It needs a Mac with Xcode
+  26, XcodeGen and an Apple developer account (a free one runs it on your own phone), iOS 17 or later, with your own
+  team ID and bundle identifier set in project.yml. It writes firmware or modules to the unit through the installers
+  it loads, so the README warns that a cut cable or flat battery can leave the FM-1 in update mode. It lists
+  fm1-dock's safety nets (OCT+ at power-on for a safe start, OCT- for the USB rescue) and M-Flasher on a computer as
+  the way back to stock; the FM-1's mask-ROM boot mode cannot be overwritten.
+brick_risk: false
+tags: [flasher, librarian, ios, usb-midi, web-midi]
+versions:
+  - version: main @ a49d12b
+    date: 2026-11-18
+    url: https://github.com/KonradHerman/fm1-manager/commit/a49d12b
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,46 @@
+device: m-vave-fm-1
+name: MORSE
+summary: >-
+  Morse code trainer and keyer: key on the piano keys, learn letters by sound with spaced-repetition cards, drill press lengths and send keying to Vail over USB or Bluetooth MIDI.
+description: >-
+  This replaces the FM-1's synth firmware and is not a music firmware, though it works with rhythm and tone. PRACTICE runs flash cards in Koch order with Leitner boxes and judges a keyed answer by its rhythm, LISTEN plays groups, words and practice conversations, KEY shows what was sent as text, code or timing, RHYTHM drills short and long presses against a target length, TYPE turns the keys into letters or CW phrases, and CHART shows the course and lets it be edited. It accepts a straight key or iambic paddles on the keys, plays a sidetone, and sends keying as MIDI note 0 on channel 1 in the Vail adapter's format over USB or Bluetooth. A web page reads what the unit sends and backs up and restores progress. Progress and settings take about 300 bytes at 0xDA000. The firmware is a C app on fm1-base with a host simulator and tests, and all sounds are generated in code.
+status: active
+authors:
+- name: Da-Wei Lee
+  url: https://github.com/daviddwlee84
+source: https://github.com/daviddwlee84/fm1-morse
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The README and LICENSE give GPL-3.0-or-later; versions up to commit 57ea786 were published under MIT. The common/ folder is MIT and fm1-base, included as a submodule, is MPL-2.0. The Koch order is credited to LCWO. No samples are used and no M-VAVE stock image is in the repository.
+homepage: https://daviddwlee84.github.io/fm1-morse/web/
+based_on: m-vave-fm-1/fm1-base
+distribution: download
+install_notes: >-
+  Back up the unit's flash first. Download morse-X.Y.fwsc from the release and install it with M-Flasher or with fm1-base's tools/fm1_install.py over USB MIDI. The package carries fm1-base's update loader, so another firmware can be installed from it afterwards. Going back to stock V15 does not keep the saved progress, and the README advises backing it up from the web page before switching. A browser emulator at the web page's try/ address runs it without a unit.
+brick_risk: false
+tags: [education, utility, midi, usb-midi, ble-midi, emulator]
+image:
+  url: https://raw.githubusercontent.com/daviddwlee84/fm1-morse/main/docs/screen.png
+  alt: "FM-1 KEY page: the letters K P A R I S C Q across the screen, each over the dots and dashes that were keyed, with the header showing send speed 10 WPM and a line reading DAH:DIT 3.0 GAP 1.0"
+  credit: Da-Wei Lee
+  source_url: https://github.com/daviddwlee84/fm1-morse
+  first_party: true
+versions:
+- version: '0.8'
+  date: 2026-11-18
+  url: https://github.com/daviddwlee84/fm1-morse/releases/tag/v0.8
+  notes: SAVE writes settings at once; a lit SAVE button and an asterisk mark unsaved changes.
+- version: '0.7'
+  date: 2026-11-18
+  url: https://github.com/daviddwlee84/fm1-morse/releases/tag/v0.7
+- version: '0.6'
+  date: 2026-11-18
+  url: https://github.com/daviddwlee84/fm1-morse/releases/tag/v0.6
+- version: '0.5'
+  date: 2026-11-18
+  url: https://github.com/daviddwlee84/fm1-morse/releases/tag/v0.5
+  notes: Adds Bluetooth MIDI.
+- version: '0.3'
+  date: 2026-11-17
+  url: https://github.com/daviddwlee84/fm1-morse/releases/tag/v0.3

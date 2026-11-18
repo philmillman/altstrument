@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: h1
+summary: >-
+  Fourteen instruments for the FM-1 that are each a full-screen animated picture you play, drawn in one ink colour, with a loop and step recorder; source only, no release yet.
+description: >-
+  The instruments are COZY lo-fi keys, ORBIT space synths, KOI struck metal and wood, HAUNT ambient, TIDE analog pad, PIP chiptune, BONK drums, URCHIN FM, TWANG plucked strings,
+  LAVA wavefolder bass, KNOT additive bells, INK gliding lead, BARD medieval and TURBO eighties synths, each with eight algorithms and four knobs. Settings pages cover FX, selection, envelope, LFO, global and arpeggiator,
+  and there is loop and step recording with a metronome. It takes MIDI in over USB and TRS, saves on both flash chips and works with a screen reader. The firmware core is portable C99 with no libc, built on fm1-base,
+  and the same core runs in a browser simulator, which is catalogued separately. The README says the first release, 0.1.0, waits for a checklist to pass on a real FM-1.
+status: active
+authors:
+- name: Jake Handy
+  url: https://github.com/jakehandy
+source: https://github.com/jakehandy/h1
+based_on: m-vave-fm-1/fm1-base
+source_status: open
+license: MIT
+license_notes: >-
+  The README gives MIT. The package also carries fm1-base by Charles Vestal and felucca-bsp from Felucca, both MPL-2.0 and unchanged, as a git submodule. dist/h1.rfm1 is the project's own WebAssembly build for the simulator.
+distribution: source-only
+install_notes: >-
+  No release yet. Build with ./build.sh, which needs JieLi's toolchain and the AC79 SDK, then install with base/tools/fm1_install.py or, once listed, the Firmware Hub. The README describes SAFE MODE after two failed starts, the Hub's rescue page,
+  and the chip's mask-ROM update mode (hold REC while switching on), and says to back up first. Going back uses the Hub's Back to official V15.
+brick_risk: false
+tags: [synth-engine, looper, sequencer, fx, midi, emulator, ui]
+image:
+  url: https://raw.githubusercontent.com/jakehandy/h1/main/docs/img/koi.png
+  alt: "KOI instrument screen: two green koi fish swimming among lily pads and ripples on a black background"
+  credit: Jake Handy
+  source_url: https://github.com/jakehandy/h1
+  first_party: true
+versions:
+- version: main @ 3784e0c
+  date: 2026-11-18
+  url: https://github.com/jakehandy/h1/commit/3784e0c
+  notes: No tagged releases; this is the latest commit. The README says the first release, 0.1.0, ships after a real-FM-1 checklist.

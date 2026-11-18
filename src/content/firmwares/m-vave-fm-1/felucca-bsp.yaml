@@ -34,6 +34,10 @@ install_notes: >-
 brick_risk: false
 tags: [platform, sdk, usb-midi]
 versions:
+- version: main @ 2a5af3d
+  date: 2026-11-18
+  url: https://github.com/hugelton/felucca-bsp/commit/2a5af3dfc8bccb92e37d48a3e7e0bf9a5827e51f
+  notes: No tagged releases; this is the latest commit. Since the previous row, the USB host treats a bulk MIDI endpoint that declares a high-speed size as 64 bytes at full speed and resets a device that does not answer, both for an Elektron Digitone II. The device side gains an optional USB serial number, drops MIDI IN data to a host that does not read, and gets UI LED levels in fm1_input, a per-board update staging area and record name in ota.c, an SD card definition for the LCD's SPI1 and a faster disk mode.
 - version: main @ fbc254d
   date: 2026-11-16
   url: https://github.com/hugelton/felucca-bsp/commit/fbc254dc4b1cbe88dafd3d6437821fe2393ef23b

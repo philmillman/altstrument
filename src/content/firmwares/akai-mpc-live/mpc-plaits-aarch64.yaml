@@ -1,0 +1,31 @@
+device: akai-mpc-live
+also_devices: [akai-force, akai-mpc-sample]
+name: MPC Plaits (aarch64 and Melodee)
+summary: keremimo's fork of poloq's MPC Plaits that adds an aarch64 build for second-generation MPC OS devices and the MPC Sample's Melodee, slide and tie from a sequencer, a page in Melodee's look and 25 factory sounds.
+description: >-
+  The sound engine, voices, modulation and parameter positions are poloq's MPC Plaits, so projects saved with poloq's 1.0.x open with this build. The fork adds an aarch64 build next to the armv7 one, with a separate zip for Melodee on the MPC Sample, Slide and Tie driven by CC 84 and CC 68 as Melodee sends them, an eight-tab page whose Q-Links come in groups of three for Melodee's K1 to K3 rows, and 25 factory sounds in the preset menu. The two MODEL arrow buttons are removed, and a fix stops the FM attenuverter taking a note below C0 where the Waveshaping model read past the end of a table. The 1.1.0 release notes say it was not yet tested on an MPC OS device or the MPC Sample and the factory sounds were not checked by ear.
+status: active
+authors:
+  - name: keremimo
+    url: https://github.com/keremimo
+  - name: poloq
+    url: https://github.com/poloq-instruments
+  - name: Emilie Gillet
+    url: https://github.com/pichenettes
+source: https://github.com/keremimo/mpc-vst-plaits
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is MIT with copyright to poloq and to Kerem Kilic (Ellic Studio) for the fork's additions, and lists the vendored third-party components, including Plaits (MIT, Emilie Gillet). The Rubik font is under the SIL Open Font License.
+homepage: https://github.com/keremimo/mpc-vst-plaits#readme
+distribution: download
+requires_stock: MPC OS 3.x standalone device or Force with root SSH access, or an MPC Sample running Melodee
+install_notes: >-
+  On MPC OS, download the armv7 zip for first-generation devices and Force or the aarch64 zip for second-generation ones, copy the folder to the device and run install.sh as root over SSH; this needs a modded unit. For Melodee, unzip the mpc-sample zip and copy the poloq - VST - MPC Plaits folder into Plugins at the top of the SD card. Installing plugins this way is unofficial.
+brick_risk: false
+tags: [synth-engine, synth, mutable-instruments-port, wavetable]
+versions:
+  - version: v1.1.0
+    date: 2026-11-12
+    url: https://github.com/keremimo/mpc-vst-plaits/releases/tag/v1.1.0
+    notes: Adds the aarch64 build, Slide and Tie, the Melodee page and 25 factory sounds.

@@ -14,7 +14,7 @@ description: >-
   moves between performance controls, favourites and chord pads. The chord pads can record and hold chords, and the
   sequencer is kept while the arpeggiator is removed. Since 0.3.0-mm1f a MIDI mode makes the synth and the controller
   exclusive: the controller sends no internal audio and has USB and TRS output, four editable key maps, banks A and B,
-  pad colours, velocity, pitch bend, modulation, sustain and a panic function. The screen has light, dark and zoomed looks. The reverb is adapted
+  pad colours, velocity, pitch bend, modulation, sustain and a panic function. Since 0.3.0-ml1 pad bank B selects MIDI channels 1 to 16 for layering instead of sending notes. The screen has light, dark and zoomed looks. The reverb is adapted
   from OberVave. The README says ChatGPT and Codex helped write the adaptations, web pages and documentation under the
   author's direction, and that native builds and simulator checks passed but no physical test is claimed for the
   V016-only installer. The site, simulator and installer are in Portuguese and English.
@@ -32,13 +32,14 @@ license_notes: >-
   MkII set. The committed packages are SMKTRON's own builds (651,266 bytes) and match none of M-VAVE's licensed
   images; the installer asks for your own V016 file and the project does not redistribute it.
 homepage: https://4t59m4f784-creator.github.io/SMKTRON/
+based_on: m-vave-smk-37/fmel-smk37
 distribution: browser-installer
 requires_stock: SMK-37 Pro official V016 (identity SMK-37 Pro_016)
 install_notes: >-
   A first-install package for an SMK-37 Pro running M-VAVE's official V016 only; the installer checks the file you select
   and the model, and refuses other models and firmware. Use M-UPGRADE to return to V016 first, then the browser installer
   in Chrome or Edge on desktop over HTTPS with a USB data cable, with other MIDI software closed, and look for the
-  version name, such as 0.3.0-mm1h, at boot. Earlier SMKTRON builds update directly, and mm1f stays available for
+  version name, such as 0.3.0-ml1, at boot. Earlier SMKTRON builds update directly, and mm1h stays available for
   rollback. Note your settings first, since new records use a format the earlier AT2 version cannot read.
 brick_risk: false
 tags: [synth-engine, sampler, tape, granular, fx, sequencer, chords, performance, emulator, fork]
@@ -49,6 +50,10 @@ image:
   source_url: https://github.com/4t59m4f784-creator/SMKTRON
   first_party: true
 versions:
+- version: 0.3.0-ml1
+  date: 2026-11-18
+  url: https://github.com/4t59m4f784-creator/SMKTRON/releases/tag/v0.3.0-ml1
+  notes: Adds MIDI layers, where pad bank B selects channels 1 to 16, a single tap picks one channel and holding adds pads to send to several at once. Note Off, sustain, pitch bend and modulation follow the set, and the setting is temporary. The release says the author approved it on the instrument and that 0.3.0-mm1h remains available for rollback.
 - version: 0.3.0-mm1h
   date: 2026-11-14
   url: https://github.com/4t59m4f784-creator/SMKTRON/releases/tag/v0.3.0-mm1h

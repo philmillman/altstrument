@@ -19,17 +19,17 @@ description: >-
   Distortion range so the effect reaches full strength at full Level, and the README now describes it. The README also links a
   flasher page in the browser (Firefox) that builds the modded firmware from the stock file you choose and sends it to the unit. Releases
   take even build numbers from 750 up and the build in testing takes the odd number after the latest release; the page offers both.
-  Mutate can also be held to repeat, once a loop on steps and once a beat on the patch. The README says the work was done with Claude Code.
+  A sequences overlay plays patterns in any order, with a chain of up to 32 units per track, like the Circuit's Pattern Chain Sequences. Mutate can also be held to repeat, once a loop on steps and once a beat on the patch. The README says the work was done with Claude Code.
 status: active
 authors:
   - name: matozoid
     url: https://github.com/matozoid
-source: https://github.com/matozoid/monostation-hacks
+source: https://github.com/meukmachine/monostation-hacks
 source_status: open
 license: unspecified
 license_notes: >-
   The repository has no LICENSE file and the README makes no license statement.
-homepage: https://matozoid.github.io/monostation-hacks/
+homepage: https://meukmachine.github.io/monostation-hacks/
 distribution: browser-installer
 requires_stock: "1.2 (build 800)"
 install_notes: >-
@@ -42,10 +42,14 @@ install_notes: >-
 brick_risk: false
 tags: [sequencer, generative, flasher, python]
 versions:
+  - version: main @ 98cc90b
+    date: 2026-11-17
+    url: https://github.com/meukmachine/monostation-hacks/commit/98cc90b5e57e97a9ccacdacc4904d5110d3eef89
+    notes: No tagged releases; this is the latest commit. The repository moved to the meukmachine organisation, a sequences overlay adds pattern chains per track, and the flasher page drops its manual bootloader checkbox.
   - version: main @ a24e9a6
     date: 2026-11-16
     url: https://github.com/matozoid/monostation-hacks/commit/a24e9a6d20e8dbcef259d0387fa27969ce02c87b
-    notes: No tagged releases; this is the latest commit. Mutate now works on every track and in the dual Osc view, Expand keeps notes within the octaves the pattern uses, and transpose works per track in the dual view.
+    notes: No tagged releases. Mutate now works on every track and in the dual Osc view, Expand keeps notes within the octaves the pattern uses, and transpose works per track in the dual view.
   - version: main @ a1bc5c3
     date: 2026-11-16
     url: https://github.com/matozoid/monostation-hacks/commit/a1bc5c30047a11d35382f831775d4b9fda4daddb

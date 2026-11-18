@@ -1,0 +1,39 @@
+device: ableton-move
+name: DubStarMooniCon
+summary: >-
+  Schwung sound generator with two oscillators that each add two subharmonic taps on 3-limit dividers, five band-limited waveforms, a resonant multimode filter and aftertouch-aware envelopes, with a four-voice first oscillator and a monophonic second.
+description: >-
+  Each oscillator has a core and two taps that divide its pitch by chosen ratios from 1:2 to 1:12 (3-limit only), and the taps read the core's phase so they stay locked to it. The first oscillator is polyphonic with four voices, and the second is monophonic to hold the low end. Waveform, octave and tap division are stepped selectors, so no pitch needs to be set by ear. The signal goes through a resonant filter with several modes and an envelope, then an amplitude envelope. The module has 25 parameters over root, Osc 1, Osc 2, Filter and Tune pages. The repository's tests build the engine without a Schwung checkout or a device.
+status: active
+authors:
+  - name: elliotmross-max
+    url: https://github.com/elliotmross-max
+source: https://github.com/elliotmross-max/dubstarmoonicon
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file names elliotmross-max. Schwung's plugin API header is vendored unchanged under vendor/schwung (MIT).
+homepage: https://github.com/elliotmross-max/dubstarmoonicon#readme
+distribution: download
+requires_stock: Schwung installed on the Move
+install_notes: >-
+  Needs Schwung. Install DubStarMooniCon from Schwung's module store, or extract dubstarmoonicon-module.tar.gz from a release into the Move's schwung/modules/sound_generators folder, reboot, and add it to a Signal Chain slot.
+brick_risk: false
+tags: [synth-engine, synth]
+versions:
+  - version: v1.1.6
+    date: 2026-11-14
+    url: https://github.com/elliotmross-max/dubstarmoonicon/releases/tag/v1.1.6
+  - version: v1.1.5
+    date: 2026-11-04
+    url: https://github.com/elliotmross-max/dubstarmoonicon/releases/tag/v1.1.5
+  - version: v1.1.4
+    date: 2026-11-03
+    url: https://github.com/elliotmross-max/dubstarmoonicon/releases/tag/v1.1.4
+  - version: v1.1.3
+    date: 2026-11-03
+    url: https://github.com/elliotmross-max/dubstarmoonicon/releases/tag/v1.1.3
+  - version: v1.1.2
+    date: 2026-10-25
+    url: https://github.com/elliotmross-max/dubstarmoonicon/releases/tag/v1.1.2
+    notes: Repackages the module tarball so it extracts to its own folder.

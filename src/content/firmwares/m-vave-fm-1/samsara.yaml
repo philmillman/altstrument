@@ -12,7 +12,7 @@ description: >-
   harmonic amplitudes of CC0 single-cycle waveforms was added after the first version. The screen draws an eight-spoked
   wheel in code. The repository holds fm1-base and felucca-bsp as plain folders, and UPSTREAM.md records the AMB-1 1.3.2
   commit it started from. The project has an emulator build, a host renderer that produces audio and screenshots from
-  scripts, and a manual; it has no web installer of its own yet and installs from the command line. The source still
+  scripts, and a manual; the 1.0.0 release is installed with the project site's web installer or from the command line, and the notes report an eight-hour run on a real FM-1. The source still
   calls the project TIDE in comments and in ARCHITECTURE.md, its working name.
 status: active
 authors:
@@ -26,11 +26,12 @@ license_notes: >-
   Choir pad colour embeds harmonic amplitudes derived from three Adventure Kid Waveforms single cycles, which their
   author dedicated to the public domain (CC0 1.0). fm1-base and felucca-bsp are MPL-2.0.
 based_on: m-vave-fm-1/amb-1
-distribution: source-only
+homepage: https://tomorrowsman.github.io/fm1-samsara/
+distribution: browser-installer
 requires_stock: V15
 install_notes: >-
-  No release package exists yet. Build app/build/samsara.fwsc with ./build.sh on Linux or in GitHub Actions, then install it
-  over USB with base/tools/fm1_install.py; AMB-1's browser installer also works with a built package. The manual says
+  Use the web installer on the project site, or install samsara-1.0.0.fwsc (identity FM-1_108010000) from the release over USB
+  with base/tools/fm1_install.py. To build it yourself, run ./build.sh on Linux or in GitHub Actions. AMB-1's browser installer also works with a built package. The manual says
   SAMSARA keeps its data in its own area, that an FM-1 failing to start twice comes up in safe mode, that OCT- and OCT+
   held for five seconds enter update mode, and that M-VAVE's firmware can be put back with the rescue script.
 brick_risk: false
@@ -42,7 +43,7 @@ image:
   source_url: https://github.com/tomorrowsman/fm1-samsara
   first_party: true
 versions:
-- version: main @ ac1bb98
-  date: 2026-11-16
-  url: https://github.com/tomorrowsman/fm1-samsara/commit/ac1bb980a1edb1eef7f9e514d4a1515606486fbf
-  notes: No tagged releases; this is the latest commit.
+- version: 1.0.0
+  date: 2026-11-17
+  url: https://github.com/tomorrowsman/fm1-samsara/releases/tag/v1.0.0
+  notes: First release, package identity FM-1_108010000, built by the shared FM-1 builder with build provenance. It carries the update loader, keeps its pieces in its own save slot and, per the notes, ran 8 hours on a real FM-1 with no dropouts. A later commit adds the Firmware Hub card.

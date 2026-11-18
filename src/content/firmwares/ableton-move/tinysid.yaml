@@ -1,0 +1,30 @@
+device: ableton-move
+name: TinySID
+summary: >-
+  Schwung sound generator that plays Commodore 64 .sid tunes on an emulated 6502 and SID chip locked to the Move's clock, with Timbre Lock, per-voice MIDI output to other tracks, AutoTune, loops and pad control.
+description: >-
+  TinySID runs a PSID tune's own player code on a built-in 6502 and SID emulation, with 6581 and 8580 chip models. Timbre Lock freezes each voice's waveform, pulse width, envelope and the filter so a different tune plays through the first tune's sounds. Notes Out sends each of the three voices as MIDI with pitch bend to instruments on other Move tracks. Further controls cover subtunes, AutoTune, host-locked or free timing, loop capture over up to eight bars, a voice filter, ducking effects, and pads that mute voices, transpose, fire the tune's sound effects or play its instruments. Only single-SID PSID files work, and sampled digi sounds do not play. The repository bundles only an original demo tune made by its own script, and the README says users supply their own .sid files, which are copyrighted by their authors. It is not derived from Tammo Hinrichs' TinySID player.
+status: active
+authors:
+  - name: fleshinachair
+    url: https://github.com/fleshinachair
+source: https://github.com/fleshinachair/TinySID
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file, added in v0.9.1, names fleshinachair. The repository ignores .sid files, and the release build never bundles a copyrighted tune.
+homepage: https://github.com/fleshinachair/TinySID#readme
+distribution: download
+requires_stock: Schwung installed on the Move
+install_notes: >-
+  Needs Schwung. Install TinySID.tar.gz from a release with Schwung's module manager, or unpack it into the Move's schwung/modules/sound_generators/tinysid folder, copy your own .sid files into the module's sids folder, then load it in a track slot and pick a tune with SID File.
+brick_risk: false
+tags: [emulator, synth-engine, midi, performance]
+versions:
+  - version: v0.9.1
+    date: 2026-11-16
+    url: https://github.com/fleshinachair/TinySID/releases/tag/v0.9.1
+    notes: Adds the MIT licence file; no code changes.
+  - version: v0.9.0
+    date: 2026-11-03
+    url: https://github.com/fleshinachair/TinySID/releases/tag/v0.9.0

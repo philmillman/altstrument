@@ -14,7 +14,7 @@ description: >-
   is not a bootloader replacement. If the FM-1 does not enumerate over USB, the unit is switched off and on to use the chip's
   ROM boot-key route, with USB code adapted from the Synth Rescue project. A local web page served from the handheld manages
   files and backups. StickS3 uses internal storage and the Cardputers a microSD card. The README calls it a development
-  build whose USB, power, backup and install paths still need hardware validation; the 0.1.2 notes confirm only that a StickS3 connects to an FM-1 running Patchwerk.
+  build whose USB, power, backup and install paths still need hardware validation; the 0.1.3 notes list a StickS3 connecting to an FM-1 running Patchwerk and a Cardputer ADV booting from Launcher as the hardware results so far.
 status: active
 authors:
 - name: chrisdiana
@@ -29,13 +29,18 @@ license_notes: >-
   builds and not M-VAVE firmware, and the repository bundles no M-VAVE package.
 distribution: download
 install_notes: >-
-  Download the -m5launcher.bin for your exact board from the releases page and install it with M5Launcher, or flash the
-  -factory.bin at offset 0x0. The release is marked a development prerelease and StickC models are unsupported. The README
+  Download fm1-flip-cardputer.bin (original Cardputer and Cardputer ADV) or fm1-flip-sticks3.bin from the releases page and
+  install it with M5Launcher, or flash the matching merged image at offset 0x0, which replaces Launcher and resets its settings.
+  Releases before 0.1.3 had a -m5launcher.bin and a -factory.bin for each board. The release is marked a development prerelease and StickC models are unsupported. The README
   says to use a verified data cable and power arrangement, and that the StickS3 needs measured USB power first. An install
   leaves the boot and calibration sectors alone and makes no backup unless Create backup is run first.
 brick_risk: false
 tags: [flasher, backup, handheld, usb-host, m5stack]
 versions:
+- version: 0.1.3
+  date: 2026-11-17
+  url: https://github.com/chrisdiana/fm1-flip/releases/tag/v0.1.3
+  notes: Development prerelease. Fixes the Cardputer's first-frame crash, switches it to landscape and cuts its TLS memory use. Adds saved Wi-Fi radio and hotspot controls, password visibility toggles, cancellation of an install or restore after the current sector is verified, and deletion of any saved backup. Downloads work without a Content-Length header. Publishes two universal binaries, one for the Cardputer and Cardputer ADV and one for the StickS3; the release says the latest radio and short-write fixes need a device retry and that backup, install and restore on a real FM-1 still need physical validation.
 - version: 0.1.2
   date: 2026-11-17
   url: https://github.com/chrisdiana/fm1-flip/releases/tag/v0.1.2

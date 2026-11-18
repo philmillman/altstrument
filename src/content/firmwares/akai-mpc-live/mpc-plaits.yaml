@@ -1,0 +1,39 @@
+device: akai-mpc-live
+also_devices: [akai-force]
+name: MPC Plaits
+summary: Native VST2 instrument for first-generation MPC OS devices and Force that runs all 24 Mutable Instruments Plaits models with up to eight voices, LFOs, envelopes, two modulation matrices and a six-page touchscreen skin.
+description: >-
+  MPC Plaits is a port of Plaits to MPC OS's VST2 plugin host. It has mono, poly and legato voices with unison, detune and spread, four low-pass gate behaviours (gate, ping, envelope and drone), two LFOs, two ADSRs, a cycling envelope and a random source. A fixed 4 x 4 matrix and an assignable one route them, including velocity, aftertouch and the mod wheel, and tempo sync follows the MPC. Q-Links follow the page on the touchscreen. The bridge to the Plaits engine is vendored from handcraftedcc's MrHyde for Ableton Move, and the wrapper and skin tooling come from sd88me's mpc-vst-plugins. The skin artwork is derived from Mutable Instruments' panel and stays CC-BY-SA 3.0. Tested by its author on an MPC One running MPC OS 3.9.1. keremimo's fork of this plugin adds an aarch64 build and a Melodee page.
+status: active
+authors:
+  - name: poloq
+    url: https://github.com/poloq-instruments
+  - name: Emilie Gillet
+    url: https://github.com/pichenettes
+source: https://github.com/poloq-instruments/mpc-vst-plaits
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is MIT with copyright to poloq, and lists the vendored third-party components: the MrHyde bridge (MIT, move-anything contributors) and Plaits (MIT, Emilie Gillet). The skin artwork derived from Mutable Instruments' panel is CC-BY-SA 3.0, per the README.
+homepage: https://github.com/poloq-instruments/mpc-vst-plaits#readme
+based_on: mutable-instruments-plaits/plaits-source
+distribution: download
+requires_stock: First-generation (32-bit ARM) MPC OS standalone device or Force, with root SSH access
+install_notes: >-
+  Needs root SSH access, so it is meant for modded units. Download the armv7 release zip, copy the folder to the device and run install.sh as root; it stops MPC, backs up MPC.settings, registers the plugin and restarts MPC. On MPC One and Live the SD card is mounted noexec, so install into a folder on internal storage listed under SynthContentLocations in MPC.settings. Installing plugins this way is unofficial.
+brick_risk: false
+tags: [synth-engine, synth, mutable-instruments-port, wavetable]
+image:
+  url: https://raw.githubusercontent.com/poloq-instruments/mpc-vst-plaits/main/docs/screenshots/plaits.png
+  alt: MPC OS screen titled MPC Plaits, a light panel with frequency, harmonics, timbre and morph knobs, a row of model icons with one lit LED, a Virtual Analog selector, three attenuverters and page tabs
+  credit: poloq
+  source_url: https://github.com/poloq-instruments/mpc-vst-plaits
+  first_party: true
+versions:
+  - version: v1.0.1
+    date: 2026-10-05
+    url: https://github.com/poloq-instruments/mpc-vst-plaits/releases/tag/v1.0.1
+    notes: Builds for the Cortex-A17, using about 12% less CPU on average.
+  - version: v1.0.0
+    date: 2026-09-30
+    url: https://github.com/poloq-instruments/mpc-vst-plaits/releases/tag/v1.0.0

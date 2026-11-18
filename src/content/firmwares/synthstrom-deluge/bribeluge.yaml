@@ -30,12 +30,13 @@ description: >-
   v1.32 add a pan spread that gives each poly note its own place in the stereo
   field, BRUNO106, a Juno-style engine with its IR3109 filter, HPF and chorus,
   and a BRIBELUGE COMPANION, with ULTRAKIK and XIA on a single row, the 303 as a
-  synth type and Affect all on any kit.
+  synth type and Affect all on any kit. v1.33 adds init synths to the synth browser and DX7 as a browsable type with 288 presets.
 status: active
 authors:
   - name: thisisbribery
     url: https://github.com/thisisbribery
 source: https://github.com/thisisbribery/deluge-bribes-v1
+based_on: synthstrom-deluge/deluge-community-firmware
 source_status: open
 license: GPL-3.0-or-later
 license_notes: >-
@@ -52,6 +53,10 @@ install_notes: >-
 brick_risk: false
 tags: [fork, drums, synth-engine, sequencer, fx, sampler, swing]
 versions:
+  - version: v1.33
+    date: 2026-11-18
+    url: https://github.com/thisisbribery/deluge-bribes-v1/releases/tag/v1.33
+    notes: The synth browser always has something to audition, with an init synth per type and your own inits read from SYNTHS/INIT. DX7 becomes a type like the others, with 288 presets in six categories, and the 99 WAVE presets are rebuilt under new names, so delete the old ones first.
   - version: v1.32
     date: 2026-11-16
     url: https://github.com/thisisbribery/deluge-bribes-v1/releases/tag/v1.32

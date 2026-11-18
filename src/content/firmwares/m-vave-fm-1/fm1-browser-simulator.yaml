@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+name: FM-1 Browser Simulator
+kind: tool
+summary: >-
+  Browser host that plays FM-1 firmwares built as .rfm1 WebAssembly files, with the 240x240 screen, sound, keys, encoders and buttons; opens on h1 and keeps each firmware's saved state.
+description: >-
+  Drop in an .rfm1 file, paste a link or use the built-in h1 and the firmware runs from its own code at 44.1 kHz with the device's frame timing. It supports MIDI in, a toggle between sliders and knobs,
+  a power cycle with saved state per firmware, and a meter that estimates how long a screen update would take on the FM-1's panel link. The .rfm1 format and fm1core ABI come from RemoteFM1 and FM1VST, and the project
+  adds an optional extension that lets a firmware report what each encoder controls. It cannot run a firmware's .fwsc package. Other firmwares are loaded by the user, such as those on the RemoteFM1FW release.
+status: active
+authors:
+- name: Jake Handy
+  url: https://github.com/jakehandy
+source: https://github.com/jakehandy/fm1-browser-simulator
+source_status: open
+license: MIT
+license_notes: >-
+  The README gives MIT for the simulator; every firmware loaded keeps its own licence. The repository holds only firmware/h1.rfm1, built from h1.
+homepage: https://jakehandy.github.io/fm1-browser-simulator/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page, or open dist/fm1-simulator.html offline, or serve the repository with npm run serve. It does not touch an FM-1.
+brick_risk: false
+tags: [emulator, web, ui]
+image:
+  url: https://raw.githubusercontent.com/jakehandy/fm1-browser-simulator/main/docs/img/sliders.png
+  alt: "Simulator panel running h1: a purple looping line drawing on the screen, sliders for presets, algorithm and tempo on the left, four knob sliders and buttons on the right, a piano keyboard below"
+  credit: Jake Handy
+  source_url: https://github.com/jakehandy/fm1-browser-simulator
+  first_party: true
+versions:
+- version: main @ a84ad37
+  date: 2026-11-18
+  url: https://github.com/jakehandy/fm1-browser-simulator/commit/a84ad37
+  notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: DAYV-X
+summary: >-
+  Felucca 1.8.2 with a drifting two-oscillator DRIFT engine, an AGE tape stage on the master, a dusty DUST drum kit with GRIT bit reduction, new FM and acid presets and a power-on setup of bass, pad, bell and drums.
+description: >-
+  Every Felucca sound and feature stays. DRIFT is a new engine with two oscillators, a sub and a low-pass filter, where each note starts a few cents off and each voice has its own detune LFO, plus wow and flutter per part; it has ten presets including two resonant acid basses. AGE is a master tape stage with WEAR and HISS controls that adds wow, flutter, saturation and treble roll-off. The DRUM engine gains a soft DUST kit and a GRIT control that holds each drum at a lower sample rate and bit depth, which replaces the KICK knob, so the round kick moves to MIDI note 35. FM6 gets bell, music box, chime and slap bass presets, four phrases are added under SAVE, PHRASES, and the display has a DAYV-X colour palette. The README says it has run on a real FM-1 with all four parts playing at about 55 percent CPU. It has its own host tests with golden renders for DRIFT and AGE.
+status: active
+authors:
+- name: halfman73
+  url: https://github.com/halfman73
+source: https://github.com/halfman73/dayv-x
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and LICENSE give GPL-3.0-only, as Felucca; LICENSING.md and LICENSES/ keep the notices of Felucca-Engines (MIT), felucca-bsp (MPL-2.0), msfa (Apache-2.0), DaisySP and Rings ports (MIT), snes_spc (LGPL-2.1) and the Fukiai and Inter Tight fonts. The additions are credited to halfman73. No M-VAVE stock image is in the repository.
+homepage: https://github.com/halfman73/dayv-x
+distribution: download
+requires_stock: Flashes over official V15 or another FM-1 firmware
+install_notes: >-
+  Download dayv-x.fwsc from the release and install it with Felucca's tools/fm1_install.py, which needs mido and python-rtmidi. The README says to charge the unit and keep M-VAVE's official V15 package to hand. If the unit does not start, hold OCT- while switching it on and install again, and M-VAVE's updater returns it to the official firmware. Installing is at the user's own risk.
+brick_risk: false
+tags: [synth-engine, fx, drums, sampler, lo-fi, fork]
+image:
+  url: https://raw.githubusercontent.com/halfman73/dayv-x/dayvx/docs/dayvx-card.png
+  alt: "FM-1 screen on a dark green background showing the DRIFT engine with preset ACID SAW: knobs CUT 355 Hz, DRFT 5 percent, RATE 30 and REL 8.8 ms above an empty flat waveform line"
+  credit: halfman73
+  source_url: https://github.com/halfman73/dayv-x
+  first_party: true
+versions:
+- version: v0.1.1
+  date: 2026-11-12
+  url: https://github.com/halfman73/dayv-x/releases/tag/v0.1.1
+  notes: Own identity FM-1_938XXYYZZ and the Hub manifest.
+- version: v0.1
+  date: 2026-11-12
+  url: https://github.com/halfman73/dayv-x/releases/tag/v0.1

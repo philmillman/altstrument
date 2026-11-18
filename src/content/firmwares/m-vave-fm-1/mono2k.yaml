@@ -7,7 +7,7 @@ description: >-
   Each track has one machine (among them sine and noise, 8-bit SID-style, FM, wave, digital wave and vocal
   machines) written without floating point, with amplitude, filter, effects, distortion and
   three LFOs per track. The sequencer has 64 steps per track with accents, slides, parameter locks, trig
-  conditions, ratchets, swing and live recording; a Grids drum-pattern generator can fill tracks, and PERFORM has two banks of live effects. Each track can loop at its own length, and the sound library holds 96 sounds. The bus adds a reverb, beat repeat and ADPCM
+  conditions, ratchets, swing and live recording; a Grids drum-pattern generator can fill tracks, and PERFORM has three banks of live effects. Each track can loop at its own length, and the sound library holds 96 sounds. The bus adds a reverb, beat repeat and ADPCM
   crunch, and MIDI uses Monomachine-style channels and CC numbers. The core also runs in a browser emulator and in
   a desktop test harness. The README gives the FM-1 build as released since 1.0, installed from the project's
   installer page or the FM-1 Firmware Hub, and keeps one project of 64 patterns in its own storage area. Each track keeps its own arpeggiator
@@ -33,6 +33,10 @@ install_notes: >-
 brick_risk: false
 tags: [sequencer, synth-engine, fx, lfo, emulator, midi]
 versions:
+- version: '1.12'
+  date: 2026-11-18
+  url: https://github.com/InigoHernandez/mono2k/releases/tag/v1.12
+  notes: Adds a third PERFORM bank, reached by holding FX and pressing OCT+ twice, with four effects, SKIP (a skipping CD), CONSOLE (a darkened mono TV-speaker sound), DUCK (a sidechain-style dip on each beat) and LO-FI (an 11 kHz, 10-bit converter). Existing patterns play as in 1.11.
 - version: '1.11'
   date: 2026-11-17
   url: https://github.com/InigoHernandez/mono2k/releases/tag/v1.11

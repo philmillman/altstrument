@@ -24,10 +24,10 @@ license_notes: >-
   LICENSE is the MIT text, and the README says code and documentation are MIT. Artwork and sounds are CC BY 4.0
   (LICENSE-ASSETS.md). Dependencies keep their own licences, such as MIT for the M5Stack libraries.
 homepage: https://m0rg0t.github.io/catputer/
-distribution: download
+distribution: browser-installer
 requires_stock: Cardputer ADV
 install_notes: >-
-  The project site offers a development zip with the application .bin, install notes and checksums. Install it
+  The project site has a USB installer for desktop Chrome or Edge that puts the standalone image on a Cardputer ADV; the README says it still needs a physical test. The site also offers a development zip with the application .bin, install notes and checksums, which installs
   with M5Apps and its Installer from the SD card. Building from source uses PlatformIO and CMake, and the build
   scripts never flash the device. Optional microSD storage keeps settings and favorites; without it they stay in
   RAM until restart. The README says the Bluetooth chip cannot stream audio to headphones directly, so use the 3.5
@@ -41,10 +41,14 @@ image:
   source_url: https://github.com/m0rg0t/catputer
   first_party: true
 versions:
+  - version: main @ 769a215
+    date: 2026-11-18
+    url: https://github.com/m0rg0t/catputer/commit/769a21555525b0b4717e0d25806eae23f82b0e1f
+    notes: No tagged releases; this is the latest commit. Adds a USB installer page to the project site for the Cardputer ADV, which the README says still needs a physical test.
   - version: main @ a264c4e
     date: 2026-11-13
     url: https://github.com/m0rg0t/catputer/commit/a264c4e8629001a2161de41a8ff79025c9a11f53
-    notes: No tagged releases; this is the latest commit. Version 0.1.13-dev lets the original Cardputer start the app, labeled untested, and records a check on the ADV.
+    notes: No tagged releases. Version 0.1.13-dev lets the original Cardputer start the app, labeled untested, and records a check on the ADV.
   - version: main @ ca008c7
     date: 2026-11-11
     url: https://github.com/m0rg0t/catputer/commit/ca008c746b728c6cb6c0d821d9dff9543816343a

@@ -1,6 +1,6 @@
 device: polyend-play
 name: play-envyu
-summary: Patch for Polyend's Play 1.6.0 update file (Rev A, Kinetis K66) that adds USB audio in and out with recording to the SD card, per-track MIDI effects including an arpeggiator and echo, a note-in-scale randomizer and USB file transfer.
+summary: Patch for Polyend's Play 1.6.0 update file (Rev A, Kinetis K66) that adds USB audio in and out with recording to the SD card, per-track MIDI effects including an arpeggiator and echo, a beat slicer, randomize options and USB file transfer.
 description: >-
   A Python script, or a patcher page in the browser, takes your own copy of
   Polyend's 1.6.0 update file, refuses anything but that exact file, appends the
@@ -8,8 +8,8 @@ description: >-
   code to it and writes a .ppf only if the result matches the tested build byte
   for byte. The mod adds stereo and multitrack USB audio output and computer audio
   input, which can be recorded to the SD card by holding Live Rec, MIDI effects
-  with an arpeggiator and echo, a randomize option that keeps notes in a scale,
-  and file transfer and firmware upload over USB. The README says it has been
+  with an arpeggiator and echo, randomize options including one that keeps notes in a scale,
+  a beat slicer for sample tracks, tap tempo, and file transfer and firmware upload over USB. The README says it has been
   tested on one Rev A unit and that testing is in progress; the Rev B part of the
   image is left stock and untested, and the Play+ is not supported. The
   repository holds host-side tests that run the mod code in an emulator. The
@@ -37,8 +37,23 @@ install_notes: >-
   press of the reset button during a hang started the emergency flash. The README calls the build beta and at your own risk.
 brick_risk: false
 tags: [groovebox, usb-audio, midi, arpeggiator, fx, recording]
+video:
+  url: https://youtu.be/DHh3lllCfoM
+  title: I added a Beat Slicer to the Polyend Play (free mod)
+  credit: envyū
+  first_party: true
+  found_via: https://github.com/envyuu/play-envyu/releases/tag/v0.2.0-beta
+  version: v0.2.0-beta
 versions:
+  - version: main @ 2199e43
+    date: 2026-11-17
+    url: https://github.com/envyuu/play-envyu/commit/2199e43be9f53e59f730db024fe856e93b961ed2
+    notes: No tagged releases beyond the 0.2.0 pre-release; this is the latest commit. Adds visit counting to the project website and a workflow that saves the repository's traffic statistics; the firmware is unchanged.
+  - version: v0.2.0-beta
+    date: 2026-11-17
+    url: https://github.com/envyuu/play-envyu/releases/tag/v0.2.0-beta
+    notes: Pre-release. Adds a beat slicer with grid or beat-detected slices, recording of computer audio over USB with Wait For Signal and Pause On Silence, tap tempo, more randomize types, a colour mode for colour blindness and USB audio detection on Windows, and falls back to stock behaviour if the mod's code is damaged. A browser page can update from 0.1 over USB. No firmware file is attached; the patcher builds it from Polyend's 1.6.0 file.
   - version: main @ a77328b
     date: 2026-11-06
     url: https://github.com/envyuu/play-envyu/commit/a77328b
-    notes: No tagged releases; this is the latest commit. The manifest names the mod 0.1.1-beta.
+    notes: No tagged releases. The manifest names the mod 0.1.1-beta.

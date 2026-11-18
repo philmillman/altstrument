@@ -4,7 +4,7 @@ kind: firmware
 summary: >-
   Christmas carol memory game: the FM-1 plays the opening of a carol and you replay it on the keys, with three more notes each level up to the whole 32-note song.
 description: >-
-  Four carols (Jingle Bells, Deck the Halls, Ding Dong Merrily on High and O Christmas Tree) are chosen with SONG on the home screen. Level 1 asks for three notes and each level adds three, so level 11 is the whole song. Notes score points, a clean level adds a bonus and three misses start Grump Mode, where a recorded jeer plays before a retry. Keys sound as a sampled piano by default or as the voice picked with EDIT, and each key also goes out over MIDI. Best scores, mode and sound are saved. It is an app on the fm1-base platform with a browser emulator, an install page and a manual.
+  Four carols (Jingle Bells, Deck the Halls, Ding Dong Merrily on High and O Christmas Tree) are chosen with SONG on the home screen. Level 1 asks for three notes and each level adds three, so level 11 is the whole song. Notes score points, a clean level adds a bonus and three misses start Grump Mode, where a recorded jeer plays before a retry. Keys sound as a sampled piano by default or as the voice picked with EDIT, and each key also goes out over MIDI. Since 0.13 notes sent from a phone over Bluetooth MIDI play and count. Best scores, mode and sound are saved. It is an app on the fm1-base platform with a browser emulator, an install page and a manual.
 status: active
 authors:
 - name: doohinkus
@@ -17,8 +17,8 @@ license_notes: >-
 homepage: https://doohinkus.github.io/kris-jangle/
 distribution: browser-installer
 install_notes: >-
-  Use the install page in Chrome or Edge with the FM-1 on USB, or download kris-jangle-0.12.fwsc from the release. The README says to back up first because firmwares share the settings sectors. The install page can also write Julius Vitkauskas's m-bootloader, which replaces M-VAVE's bootloader; that step is optional.
-brick_risk: true
+  Use the install page in Chrome or Edge with the FM-1 on USB, or download kris-jangle-0.14.fwsc from the release. The README says to back up first because firmwares share the settings sectors. The install page can also write Julius Vitkauskas's m-bootloader, which replaces M-VAVE's bootloader; that step is optional.
+brick_risk: false
 tags: [game, sampler, synth-engine, midi, emulator]
 image:
   url: https://raw.githubusercontent.com/doohinkus/kris-jangle/main/kris-jangle/docs/img/screen-title.png
@@ -27,6 +27,14 @@ image:
   source_url: https://github.com/doohinkus/kris-jangle#readme
   first_party: true
 versions:
+- version: v0.14
+  date: 2026-11-18
+  url: https://github.com/doohinkus/kris-jangle/releases/tag/v0.14
+  notes: The release page has no notes. The commits since 0.12, shared with 0.13, make notes a phone sends over Bluetooth MIDI play and count, fix BLE-MIDI SysEx and timestamp handling, add a modal and a corner card to the MIDI mode, draw the panels as wooden boxes with rolling snow and recolour the home screen.
+- version: v0.13
+  date: 2026-11-18
+  url: https://github.com/doohinkus/kris-jangle/releases/tag/v0.13
+  notes: The release page has no notes; see 0.14 for the commits since 0.12.
 - version: v0.12
   date: 2026-11-12
   url: https://github.com/doohinkus/kris-jangle/releases/tag/v0.12

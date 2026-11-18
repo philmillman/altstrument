@@ -1,0 +1,41 @@
+device: m-vave-fm-1
+name: BAILE Tracker
+summary: >-
+  Six-track funk tracker for the FM-1 forked from KAWA, with a Portuguese, English or Spanish screen, painted-tile themes and a macaw mascot. Version 0.1 is an identity and interface release; the funk kits and breaks are planned.
+description: >-
+  A separate project from the catalogued BAILE by arrastao, which shares the name. This one is a tracker aimed at Brazilian funk:
+  each row is a step and each column a track, with six tracks that use pulse, 4-bit wave, noise, six-operator FM, drum kit or sliced
+  sample engines, up to two effects per cell, tables, per-step groove, 64 live effects in four banks, an eleven-type filter and a song
+  chain of patterns of 16, 32 or 64 steps. It inherits the whole engine from KAWA and adds the identity, three themes, the Portuguese
+  interface, a mascot and boot mosaic, a hub page, a manual and a browser emulator page. The README says the kits, breaks and grooves
+  of funk come in later phases (PLAN.md) and that it has not been tested on an FM-1. It was created on 2026-11-18.
+status: active
+authors:
+- name: saulofilho
+  url: https://github.com/saulofilho
+source: https://github.com/saulofilho/baile-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md and the LICENSE file give GPL-3.0-only, kept from KAWA. msfa is Apache-2.0 and the fonts are SIL OFL 1.1; JieLi SDK files
+  are read from the user's own checkout at build time. The committed baile-0.1.fwsc is a build of this project (package FM-1_971, 610,280 bytes), not a stock image.
+homepage: https://saulofilho.github.io/baile-fm1/
+based_on: m-vave-fm-1/kawa
+distribution: browser-installer
+install_notes: >-
+  Install from the hub page in Chrome, Edge or Opera over USB, or run the INSTALL launcher for Windows, macOS or Linux (Python 3), which
+  installs install/baile-0.1.fwsc. The package is checked before anything is erased and an interrupted install resumes. The README
+  says BAILE projects are lost when going back, which needs M-VAVE's M-UPGRADE with V15, and that holding OCT- at power-on opens the USB rescue. Not yet tried on hardware.
+brick_risk: false
+tags: [tracker, sequencer, chiptune, drums, synth-engine, fx, emulator, fork]
+image:
+  url: https://raw.githubusercontent.com/saulofilho/baile-fm1/main/docs/boot.png
+  alt: "BAILE boot screen: a grid of hand-painted tiles in red, orange, yellow, green, turquoise and blue around the words BAILE and FUNK TRACKER, with a BETA tag and V0.1"
+  credit: saulofilho
+  source_url: https://github.com/saulofilho/baile-fm1
+  first_party: true
+versions:
+- version: main @ bc46ebe
+  date: 2026-11-18
+  url: https://github.com/saulofilho/baile-fm1/commit/bc46ebe
+  notes: No tagged releases; this is the latest commit. The committed package is labelled 0.1 and the README marks the project as beta.

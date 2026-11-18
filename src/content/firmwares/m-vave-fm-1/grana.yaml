@@ -7,7 +7,7 @@ description: >-
   Rights warning: the rescue/ folder holds jl-uboot-tool unchanged, including a 24 KB binary JieLi USB loader
   (wl82loader.bin); the tool's own notes do not say where that blob comes from.
 
-  Up to four layers play together or split across the keyboard, each with its own pitch, start, area and pan. Grain
+  Four granulation engines are selectable: Classic, Stretch, Formants and a Karplus-Strong Resonator. Up to four layers play together or split across the keyboard, each with its own pitch, start, area and pan. Grain
   size, density, spray, jitter and direction are adjustable, with a multimode filter, chorus, flanger, phaser, ring
   modulator and frequency shifter, tape echo, a plate reverb with shimmer, a compressor, two LFOs and key scales. The
   firmware holds eight synthesised stock sounds as its factory bank and has a separate 276 KB user bank that the
@@ -27,13 +27,17 @@ license_notes: >-
   Three JieLi SDK files (Apache-2.0) are read from the builder's SDK checkout and are not in the repository.
 distribution: browser-installer
 install_notes: >-
-  Download grana-editor-1.7.1.html from the release and open it in Chrome or Edge, which need Web MIDI and WebUSB, then
+  Download grana-editor-1.8.1.html from the release and open it in Chrome or Edge, which need Web MIDI and WebUSB, then
   press Installa with the FM-1 on USB. The page has a simulator and a Bluetooth checkbox. The .fwsc packages in the
   release hold the stock sounds, for other installers. Holding OCT- at power-on starts only the USB updater, and rescue/
   has tools for worse cases. To go back, reinstall M-VAVE's firmware with its updater or the FM-1 Firmware Hub.
 brick_risk: false
 tags: [granular, sampler, sequencer, arpeggiator, fx, reverb, lfo, midi, editor, web, fork]
 versions:
+- version: 1.8.1
+  date: 2026-11-18
+  url: https://github.com/mongio/grana-fm1/releases/tag/v1.8.1
+  notes: Includes 1.8, which was never released separately. ALGORITHM picks a granulation engine (Classic, Stretch, Formants or Resonator, each with four knobs), the screen shows a battery icon, and six factory presets are new. The Classic engine gains RHYTHM (grains on a tempo grid), CHAOS, INTERVALS and GLISSANDO knobs, which do nothing at zero so old sounds are unchanged. The notes say the new engines were tried in the simulator and chip emulator, not on a real FM-1.
 - version: 1.7.1
   date: 2026-11-11
   url: https://github.com/mongio/grana-fm1/releases/tag/v1.7.1

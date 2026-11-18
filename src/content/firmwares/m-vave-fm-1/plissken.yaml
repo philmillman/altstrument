@@ -3,10 +3,10 @@ name: Plissken
 summary: >-
   Early seven-part soundtrack sketch on fm1-base: Juno-style synth, piano, Pro One-style line, guitar, bass, LM-1 drum samples and a CS-50 voice on one clock, with a chord mode and a phrase recorder.
 description: >-
-  Rights warning: the 0.1 release package embedded a MIDI arrangement of an Escape from New York piece, and 0.11 switches its playback off without saying whether the data is gone. The CREDITS file says the project owner confirmed authorization to embed it and that no composer or arranger credit came with the file. The 13 drum samples are Rossf's Linn LM-1 set under Creative Commons Sampling+ 1.0, and the screen art includes user-supplied pictures and an AI-adapted splash.
+  Rights warning: the 0.1 release package embedded a MIDI arrangement of an Escape from New York piece, and 0.11 switches its playback off; from 0.12 a reduced four-voice transcription of it is the built-in song Escape From Firmware. The CREDITS file says the project owner confirmed authorization to embed it and that no composer or arranger credit came with the file. The 13 drum samples are Rossf's Linn LM-1 set under Creative Commons Sampling+ 1.0, and the screen art includes user-supplied pictures and an AI-adapted splash.
 
 
-  Seven parts play together on a shared clock: an eight-voice Juno-style synth with chord stabs and chorus, piano, a Pro One-style line, power-chord guitar, electric bass, the LM-1 kick, snare and hi-hat, and a CS-50-style line. The keys play the sound chosen with SELECT, which also includes a chord mode with eight chord types and a ten-patch CS-80-inspired voice family. Version 0.11 adds guitar riffs and bass samples that are the owner's own recordings, function buttons, a four-track drum sequencer and knob-based sound switching. Guitar and bass have drive, chorus, modulation and delay, and drums have chorus, reverb, compression and bass boost. REC records one phrase of up to 16 seconds and loops it. The seven-part backing arrangement and the MIDI song are disabled in 0.11 because their mix distorted, so PLAY and EDIT with PLAY start nothing. The README calls it a concurrency and resource-budget prototype and says the synthesis is deliberately simple and needs more listening on a real unit. A separate emulator-only build exists and the README says never to install it on an FM-1.
+  Seven parts play together on a shared clock: an eight-voice Juno-style synth with chord stabs and chorus, piano, a Pro One-style line, power-chord guitar, electric bass, the LM-1 kick, snare and hi-hat, and a CS-50-style line. The keys play the sound chosen with SELECT, which also includes a chord mode with eight chord types and a ten-patch CS-80-inspired voice family. Version 0.11 adds guitar riffs and bass samples that are the owner's own recordings, function buttons, a four-track drum sequencer and knob-based sound switching. Guitar and bass have drive, chorus, modulation and delay, and drums have chorus, reverb, compression and bass boost. REC records one phrase of up to 16 seconds and loops it. The seven-part backing arrangement and the MIDI song are disabled in 0.11 because their mix distorted. Version 0.12 adds a visual five-track sequencer with four pitched lanes and an LM-1 drum lane, and a saved-song screen with 16 user slots, which PLAY now opens, plus the built-in song Escape From Firmware; the backing arrangement stays disabled. The README says build 012 was tested on an FM-1. The README calls it a concurrency and resource-budget prototype and says the synthesis is deliberately simple and needs more listening on a real unit. A separate emulator-only build exists and the README says never to install it on an FM-1.
 status: active
 authors:
 - name: dustekin
@@ -19,10 +19,14 @@ license_notes: >-
 distribution: download
 requires_stock: Flashes over official V15 or another FM-1 firmware
 install_notes: >-
-  Download plissken-0.11.fwsc from the release and install it with an FM-1 installer such as fm1-base's tools/fm1_install.py. Do not install the emulator-only package from the --emulator-only build. The README gives no recovery steps of its own and points to the fm1-base documentation for the build. It says to follow the install procedure in The Firmware Hub's knowledge base, to use a bootloader, and never to install on the 47-key model without converting because that damages its hardware calibration.
+  Download plissken-0.12.fwsc from the release and install it with an FM-1 installer such as fm1-base's tools/fm1_install.py. Do not install the emulator-only package from the --emulator-only build. The README gives no recovery steps of its own and points to the fm1-base documentation for the build. It says to follow the install procedure in The Firmware Hub's knowledge base, to use a bootloader, and never to install on the 47-key model without converting because that damages its hardware calibration.
 brick_risk: false
 tags: [synth-engine, sequencer, drums, fx, sampler, performance]
 versions:
+- version: '0.12'
+  date: 2026-11-17
+  url: https://github.com/dustekin/plissken/releases/tag/v0.12
+  notes: The release page has no notes. The commits and README add a visual five-track sequencer, a saved-song playback screen with 16 user slots and a built-in four-voice song, and help on the main, playback and sequencer screens.
 - version: '0.11'
   date: 2026-11-15
   url: https://github.com/dustekin/plissken/releases/tag/v0.11

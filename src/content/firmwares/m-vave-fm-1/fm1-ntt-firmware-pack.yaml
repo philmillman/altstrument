@@ -2,15 +2,15 @@ device: m-vave-fm-1
 name: FM1-NTT Firmware Pack
 kind: tool
 summary: >-
-  Separate repository holding unmodified copies of Felucca 1.8.2, FoMni-1 0.4.1 and Jangada 1.0.1 with their complete source,
-  license texts and provenance, for use with FM1-NTT.
+  Separate repository holding unmodified copies of nine community firmwares, among them Felucca 1.8.2, FoMni-1 0.4.1, Jangada 1.0.1, Skiff 2.6, FRASIL 3.3.1 and J6 1.4.0,
+  with their complete source, license texts and provenance, for use with FM1-NTT.
 description: >-
-  Created so that the GPL firmware that FM1-NTT can run stays out of that project's MIT repository. Each folder has the .fwsc,
+  Created so that the GPL and MPL firmware that FM1-NTT can run stays out of that project's MIT repository. Each folder has the .fwsc,
   the source archive, the license texts, the author's own licensing notes, a SOURCES.md and a NOTICE, and MANIFEST.tsv records
   hashes, sizes, licenses and the commit each was built from. A checker script enforces an allowlist of licenses and the rule
   that every firmware ships with its source, a weekly workflow watches the authors' releases, and a script builds a Debian
-  package for the R36S. SLOOP 2.8.5, Melodee and X0X are left out, with reasons. The README says the firmware were booted only
-  in FM1-NTT's emulator.
+  package for the R36S. SLOOP 2.8.5, Melodee and X0X are left out, with reasons. The README says the nine firmware were booted only
+  in FM1-NTT's emulator on a Mac.
 status: active
 authors:
 - name: ANSI Apps
@@ -20,8 +20,8 @@ source_status: open
 license: MIT
 license_notes: >-
   The MIT LICENSE covers the scripts, documents and packaging only. The firmware keeps its authors' licenses: Felucca (Leo
-  Kuroshita), FoMni-1 (Charles Vestal) and Jangada (zednaked) are GPL-3.0-only with permissive parts. The three committed
-  .fwsc files are community builds of about 610 KB and none matches a licensed M-VAVE blob.
+  Kuroshita), FoMni-1 (Charles Vestal), Jangada (zednaked) and Skiff (illuminus5) are GPL-3.0-only with permissive parts; FRASIL, MIDIMON, MODELAR, J6 and TRIO
+  are MPL-2.0 with permissive parts. The committed .fwsc files are community builds of about 610 KB and none matches a licensed M-VAVE blob.
 distribution: download
 install_notes: >-
   Use it through FM1-NTT, or take a .fwsc from a folder and install it with any FM-1 installer. The package for the R36S is
@@ -29,7 +29,7 @@ install_notes: >-
 brick_risk: false
 tags: [library, utility, research]
 versions:
-- version: main @ 887e23d
-  date: 2026-11-16
-  url: https://github.com/joashchee/FM1-NTT-Firmware-Pack/commit/887e23dd087ca3d5345fdb34ef1058e9ae75011b
-  notes: No tagged releases; this is the latest commit, which creates the pack.
+- version: main @ a2c9717
+  date: 2026-11-18
+  url: https://github.com/joashchee/FM1-NTT-Firmware-Pack/commit/a2c971763d224e4757ab2c9acec87e30c286422d
+  notes: No tagged releases; this is the latest commit, which adds FRASIL 3.3.1, MIDIMON 0.5, MODELAR 0.3, J6 1.4.0 and TRIO 0.1.1, all MPL-2.0. The commits since the pack was created also add Skiff 2.6 and make the checker refuse an instrument package with a non-permissive licence.

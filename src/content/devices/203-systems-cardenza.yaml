@@ -1,0 +1,47 @@
+name: Cardenza
+manufacturer: 203 Systems
+category: groovebox
+added: 2026-11-18
+tagline: Card-sized ESP32-S3 synthesiser and four-track groovebox with 56 lit keys, running CardenzaSynth, whose source is public
+description: >-
+  Cardenza (鸣片) is a card-sized synthesiser and groovebox from 203 Systems. It is built around an ESP32-S3 and has a
+  240 by 135 colour screen, 56 keys with an LED under each, a speaker, an on-board microphone, a microSD card slot,
+  an infrared transmitter, an I2C expansion port, Bluetooth and Wi-Fi, and a USB-C port that also carries USB MIDI
+  and audio. It needs an external power source. The stock firmware is CardenzaSynth, a four-track groovebox with DX7,
+  Juno, sampler and drum sources, a pattern sequencer, real-time recording, chords, arpeggios and effects, and the
+  source code is public. A system menu called the 203 Launcher installs and switches firmware on the device itself,
+  including firmware published by the community through the 203 Systems website.
+
+  The 203 Systems shop page lists a limited first batch that ships worldwide from late November 2026, so units are
+  only starting to reach buyers.
+platform: ESP32-S3
+stock_firmware: CardenzaSynth 0.2.1
+links:
+  manufacturer: https://203.io/products/cardenza-mini-synthsiser
+  community:
+    - label: Cardenza manuals and tutorials
+      url: https://cardenza.203.io/
+    - label: 203 community firmware
+      url: https://cardenza.203.io/community
+    - label: Cardenza-Hardware schematics
+      url: https://github.com/203-Systems/Cardenza-Hardware
+    - label: 203 Systems Discord
+      url: https://discord.gg/rRVCBHHPfw
+notes: >-
+  Custom firmware is built on CardenzaHAL and installed through the 203 Launcher, not by flashing the chip directly.
+  The CardenzaHAL documentation warns that idf.py flash erases the Launcher and the firmware it installed, and
+  points to the 203c flash command instead. Holding the side HOME key while plugging in USB or at a reset enters the
+  ESP32-S3 ROM download mode. The shop page says Cardputer V1.0 and V1.1 firmware can run on the Cardenza through
+  the Launcher; the CardenzaSynth readme says the reverse does not apply, and its firmware is built only for the
+  Cardenza. The shop page lists 8 MB of flash while the CardenzaHAL readme lists 16 MB.
+image:
+  src: /images/devices/203-systems-cardenza.webp
+  style: photo
+  alt: Render of the Cardenza on white under the title Card-sized Synthesizer, a white board with a microSD slot, a small colour screen showing a Juno lead, USB-C and four rows of black key switches
+  width: 1200
+  height: 1200
+  credit: 203 Systems
+  license: manufacturer product image
+  source_url: https://203.io/products/cardenza-mini-synthsiser
+  original_url: https://203.io/cdn/shop/files/Cardenza_EN_01_white_1440x1440_5972390f-1b27-4c15-90e1-f66c2883dc9c.jpg
+pinned: [cardenza-synth]

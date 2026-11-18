@@ -1,0 +1,38 @@
+device: 203-systems-mystrix
+also_devices: [203-systems-mystrix-pro, 203-systems-nullperator, 203-systems-cardenza]
+name: 203-CLI
+kind: tool
+summary: Command line tool and developer guides from 203 Systems for making, installing and publishing firmware for its Cardenza, NullPerator and Mystrix devices on the 203 community site.
+description: >-
+  203-CLI holds 203c, a dependency-free Node.js command line that signs in to the 203 community, starts or forks a
+  firmware project, installs a build onto a device over USB through the 203 Launcher, reads the device log and
+  publishes versions from a laptop or from CI. The repository also carries a development guide for each 203
+  Systems product, a hardware reference, and an Agent Skill for coding assistants such as Claude Code and Codex.
+
+  Most of the commands apply to the Cardenza, 203 Systems' pocket synthesiser. Its firmware is built on the CardenzaHAL ESP-IDF library, and 203c flash
+  installs through the Launcher rather than writing the whole chip. The NullPerator guide is marked a developer preview. For the
+  Mystrix, the guide says firmware is a downloadable UF2 file that is copied to the device in update mode and is
+  not installed by the Launcher, so 203c is used there for the community side only.
+status: active
+authors:
+  - name: 203 Systems
+    url: https://github.com/203-Systems
+source: https://github.com/203-Systems/203-CLI
+source_status: open
+license: MIT
+license_notes: Read from the LICENSE file in the repository.
+homepage: https://cardenza.203.io/community/develop
+distribution: source-only
+install_notes: >-
+  Needs Node.js 18 or later. Install with npm install -g github:203-Systems/203-CLI, then run 203c skill install to
+  add the Agent Skill. The USB commands (flash, log) work on macOS and Linux; on Windows the community website does
+  the install from Chrome or Edge. The CardenzaHAL documentation warns against idf.py flash on a Cardenza, which
+  erases the Launcher and the firmware it installed, and points to 203c flash instead. The CLI also has a
+  devices recover command that rebuilds a device's factory files with esptool.
+brick_risk: false
+tags: [official, cli, esp32, publishing, agent-skill]
+versions:
+  - version: main @ bbc5c35
+    date: 2026-11-18
+    url: https://github.com/203-Systems/203-CLI/commit/bbc5c35
+    notes: No tagged releases; this is the latest commit.

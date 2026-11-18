@@ -1,0 +1,43 @@
+device: 203-systems-cardenza
+name: CardenzaSynth
+summary: Official four-track groovebox firmware for the 203 Systems Cardenza with public source and no stated licence, with DX7, Juno, sampler and drum sources, a pattern sequencer, real-time recording and song arrangement.
+description: >-
+  CardenzaSynth is the stock firmware of the Cardenza. It is a C++ ESP-IDF project built on CardenzaHAL and runs
+  four tracks, each with its own sound source: a DX7-style FM voice, a Juno-style voice, a sampler or a drum kit.
+  Every track except the drum track has its own chord and arpeggiator settings. Patterns run from 1 to 256 steps and
+  can be recorded live, switched while playing and arranged into a song, and the mixer has per-track effects, delay
+  and reverb sends and bus effects. Projects, sounds, samples and autosaves are stored on the microSD card. The
+  synthesis engine is a 203 Systems fork of the AMY library. The repository also builds a desktop simulator and a
+  browser simulator from the same code, and includes an interactive tutorial and the user manual.
+status: active
+authors:
+  - name: 203 Systems
+    url: https://github.com/203-Systems
+source: https://github.com/203-Systems/CardenzaSynth
+source_status: open
+license: unspecified
+license_notes: No LICENSE file and no licence statement in the repository or its readme.
+homepage: https://203.io/products/cardenza-mini-synthsiser
+based_on: 203-systems-cardenza/cardenza-hal
+distribution: download
+install_notes: >-
+  The Cardenza ships with it. New versions are published to the 203 community, and the 203 Launcher on the device
+  installs and updates them; the GitHub releases carry the same .bin file. To build from source, initialise the
+  Git submodules and run make DEVICE=Cardenza build in an ESP-IDF 5.3.5 shell, then install the build with 203c
+  flash from 203-CLI, which goes through the Launcher. Do not use idf.py flash, which erases the Launcher. With no
+  microSD card inserted at start-up nothing is saved for that run, and the card must be inserted before a restart.
+  Holding HOME at a reset enters the ESP32-S3 ROM download mode, and the 203-CLI devices recover command rebuilds
+  the factory files.
+brick_risk: false
+community:
+  - label: 203 community firmware page
+    url: https://cardenza.203.io/community/F6FUZZ
+tags: [official, groovebox, sequencer, synth, dx7, sampler, esp32, simulator]
+versions:
+  - version: v0.2.1
+    date: 2026-11-18
+    url: https://github.com/203-Systems/CardenzaSynth/releases/tag/v0.2.1
+    notes: Adds a HOME system menu, a HITS step setting, project renaming and LIGHT and RETRO screen themes.
+  - version: v0.2.0
+    date: 2026-11-06
+    url: https://github.com/203-Systems/CardenzaSynth/releases/tag/v0.2.0

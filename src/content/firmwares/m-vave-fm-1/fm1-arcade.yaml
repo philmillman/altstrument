@@ -1,0 +1,30 @@
+device: m-vave-fm-1
+name: FM-1 Arcade
+summary: >-
+  Rights warning: eight-game arcade firmware for the FM-1 (Snake, Tetris, Arkanoid, OutRun, Synth Hero, Frogger, Galaga, Pac-Man) built on Dinghy, with chiptune music and high scores saved to flash.
+description: >-
+  Rights warning: the README names OutRun's tracks Magical Sound Shower, Passing Breeze and Splash Wave as the in-game radio and as the songs Synth Hero is synced to; those compositions belong to Sega and the repository states no permission, and the games copy commercial titles.
+  The firmware replaces the FM-1's own, so the unit plays games instead of music apart from the game audio. Snake has a 19 by 17 grid with progressive speed, Tetris plays a two-voice Korobeiniki,
+  Arkanoid uses a knob paddle, and Synth Hero is a rhythm game played on the keys in base and high modes. HOME returns to the menu from any game. It is built on Dinghy but is not a GitHub fork of it.
+status: active
+authors:
+- name: gaskb
+  url: https://github.com/gaskb
+source: https://github.com/gaskb/fm1-snake
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and LICENSING.md give GPL-3.0-only; LICENSING.md is Dinghy's text and its logo exclusion, for the designburg signet, does not apply here. The platform code is Felucca's with changes by SLOOP and Dinghy.
+  Game and music content is not covered by any statement in the repository.
+based_on: m-vave-fm-1/dinghy
+distribution: source-only
+install_notes: >-
+  Build with ./build.sh --release 0.3, which needs Docker or Linux x86-64, JieLi's toolchain and the AC79 SDK, and produces build/fm1-snake-0.3.fwsc (identity FM-1_963). The repository carries Dinghy's update loader and USB rescue, but
+  the README gives no install or recovery steps of its own.
+brick_risk: false
+tags: [game, chiptune, platform, fork]
+versions:
+- version: main @ 585b321
+  date: 2026-11-17
+  url: https://github.com/gaskb/fm1-snake/commit/585b321
+  notes: No tagged releases; this is the latest commit. The README refers to a 0.3 build.

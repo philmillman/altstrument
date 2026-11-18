@@ -20,6 +20,7 @@ authors:
 - name: MPASTEAU
   url: https://github.com/MPASTEAU
 source: https://github.com/MPASTEAU/FM-Stud1o-FM-1-Firmware
+based_on: m-vave-fm-1/felucca
 source_status: open
 license: GPL-3.0-only
 license_notes: >-
@@ -44,7 +45,7 @@ image:
   source_url: https://github.com/MPASTEAU/FM-Stud1o-FM-1-Firmware#readme
   first_party: true
 versions:
-- version: main @ b3de334
-  date: 2026-11-16
-  url: https://github.com/MPASTEAU/FM-Stud1o-FM-1-Firmware/commit/b3de334d90c1e68813b993ff468e632f55023070
-  notes: No tagged releases; this is the latest commit. The newest commits add a click output choice of sound, visual or both and a live click, flute and sax samples, and an Android app with a sampler that records, cleans and sends a take to a user slot, plus a hub that forwards USB MIDI controllers to the FM-1. Before those, Since the previous row, a pattern keeps its own arpeggiator settings, LIVE mode lets the white keys choose the pattern of every track and queues a pattern to start at the end of the selected track's pattern, pattern length offers 16 to 256 steps, and quantize is one setting for all tracks at 50 % by default. Later commits add a count-in that waits for the first note, live recording that keeps the keys as played in every voice mode, an 8-voice GRAIN, and a REC arm that follows the selected track; the LFO draw page is removed. The latest commits add volume-fade and filter-fade keys in LIVE mode, a count-in row set to off, on or note, removal of a drum lane's hits by holding its key while recording, and a pickup that takes a MIDI-turned HOME knob at 0 or 127. The newest commits record the MIDI pitch wheel into the pattern (while a key is held or the wheel is off centre), stop knob moves from recording as automation outside the AUTOMATION page, clear a drum lane with OCT- and a key or pad, and change how REC REPLACE ends held keys at the loop point.
+- version: main @ e95c6bf
+  date: 2026-11-17
+  url: https://github.com/MPASTEAU/FM-Stud1o-FM-1-Firmware/commit/e95c6bf26f9d65ab7030d71a8109da819df7afa7
+  notes: No tagged releases; this is the latest commit. The newest commits drop the master limiter in favour of the soft clip alone, give USB audio a 1024-frame ring and 48 kHz packets, let a note held over the loop end play on in live recording, add a ruler on HOME for the longest pattern, MIDI IN CC1 vibrato and a spring-back joystick that closes the low pass and throws to delay and reverb. Before those, commits add a click output choice of sound, visual or both and a live click, flute and sax samples, and an Android app with a sampler that records, cleans and sends a take to a user slot, plus a hub that forwards USB MIDI controllers to the FM-1. Before those, Since the previous row, a pattern keeps its own arpeggiator settings, LIVE mode lets the white keys choose the pattern of every track and queues a pattern to start at the end of the selected track's pattern, pattern length offers 16 to 256 steps, and quantize is one setting for all tracks at 50 % by default. Later commits add a count-in that waits for the first note, live recording that keeps the keys as played in every voice mode, an 8-voice GRAIN, and a REC arm that follows the selected track; the LFO draw page is removed. The latest commits add volume-fade and filter-fade keys in LIVE mode, a count-in row set to off, on or note, removal of a drum lane's hits by holding its key while recording, and a pickup that takes a MIDI-turned HOME knob at 0 or 127. The newest commits record the MIDI pitch wheel into the pattern (while a key is held or the wheel is off centre), stop knob moves from recording as automation outside the AUTOMATION page, clear a drum lane with OCT- and a key or pad, and change how REC REPLACE ends held keys at the loop point.

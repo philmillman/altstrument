@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: ANDROMEDA FM-1
+summary: >-
+  Felucca 1.8.2 with six ambient pages: a mood generator that writes four tracks in key, an AUTO page that keeps varying your pattern, key snapping, a sky macro page, a three-head tape echo and four drawn visions, with an English and Spanish screen.
+description: >-
+  Every sound and feature of Felucca stays. ALIGN picks one of 13 moods and a key and writes all four tracks at once, with a beat or texture, bass, chord pad and bells or a melody. AUTO changes one part every two, four or eight bars from the player's own pattern, with an ENERGY control for how many parts sound. KEYS snaps or shifts played notes to a scale, and with SHIFT a note outside the scale moves the whole song to the nearest scale on the next beat. SKY has drift, haze, bloom and gravity controls and an eclipse action. SPACE TAPE is a three-head echo with spring in 12 modes and a freeze. VISION draws cymatics, a harmonograph, an attractor or an orrery from the music. Six analog presets and a 32-voice FM bank are added, and the screen can be switched to Spanish. The repository holds the firmware source with a patch against Felucca, a bilingual manual and a browser installer. It is a separate release line from the same authors' Dark Funk Durcal Synt, whose design it credits.
+status: active
+authors:
+- name: Polaris Sound Lab
+  url: https://github.com/drophlex
+source: https://github.com/drophlex/ANDROMEDAFM1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README gives GPL-3.0 and the LICENSE file is the GPL-3.0 text; firmware-src/LICENSING.md keeps Felucca's terms: GPL-3.0-only overall, with the Felucca-Engines files MIT, felucca-bsp MPL-2.0, the FM6 engine from msfa Apache-2.0, a DaisySP port MIT and the Inter Tight font SIL OFL 1.1. The README says the VSCO-2 CE and VCSL samples are CC0. No M-VAVE stock image is in the repository; the installer's return-to-official function asks for the user's own official package.
+homepage: https://drophlex.github.io/ANDROMEDA/fm1/
+based_on: m-vave-fm-1/felucca
+distribution: browser-installer
+requires_stock: Any FM-1 firmware; the installer writes the package over it
+install_notes: >-
+  Open the installer in Chrome or Edge with the FM-1 on a direct USB-C data cable and press Install; writing takes about five minutes and the unit must not be unplugged meanwhile. The same package is in install/ as a .fwsc for Felucca's tools. The installer can return to M-VAVE's official firmware (V15 or V16) from an official FM-1.fwsc that the user supplies, saving the music, banks, samples and settings first. The README says to install at your own risk and follow the manual.
+brick_risk: false
+tags: [generative, groovebox, sequencer, synth-engine, fx, fork]
+image:
+  url: https://raw.githubusercontent.com/drophlex/ANDROMEDAFM1/main/docs/images/fm1_pages.png
+  alt: "Six FM-1 screens in a grid on a dark brown background: ALIGN with mood GLASS, AUTO, KEYS, SKY, SPACE TAPE and VISION, each with four knob values and a small line drawing"
+  credit: Polaris Sound Lab
+  source_url: https://github.com/drophlex/ANDROMEDAFM1
+  first_party: true
+versions:
+- version: 1.8.2-an2-r5
+  date: 2026-11-17
+  url: https://github.com/drophlex/ANDROMEDAFM1/releases/tag/v1.8.2-an2-r5
+  notes: Latest release; assets are ANDROMEDA-FM1.fwsc, the browser installer and PDF manuals.
+- version: 1.8.2-an1-r4
+  date: 2026-11-17
+  url: https://github.com/drophlex/ANDROMEDAFM1/releases/tag/v1.8.2-an1-r4

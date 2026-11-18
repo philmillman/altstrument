@@ -1,0 +1,43 @@
+device: m-vave-fm-1
+name: FM1 DECK
+kind: tool
+summary: >-
+  Rights warning: Android groovebox app that runs 28 community FM-1 firmwares as instruments, up to four at once in a rack with a touch panel, master bus and Ableton Link sync.
+description: >-
+  Rights warning: the repository commits fwbuild/hal/shrub/shrub.wasm, which its THIRD_PARTY_LICENSES.md says was extracted from a user-supplied Shrub.vst3 by Steve Duda of Xfer Records (freeware, proprietary) and is translated locally; no permission to redistribute it is stated.
+  The app hosts firmwares such as Felucca, JIANT FM, SLOOP, Hortator, ATEK303, Mutable Dreams, AMB-1 and CHOPPAH, built from their authors' sources, on a 27-key panel with the 240 by 240 firmware display. Each slot has level, mute and solo,
+  and sessions save the rack. A master bus has saturation, a limiter and a clipper. Ableton Link shares tempo and beat with Live over Wi-Fi but no audio or MIDI. It needs Android 10 on a 64-bit ARM phone and does not touch an FM-1.
+status: active
+authors:
+- name: TonalPAK
+  url: https://github.com/TonalPAK
+source: https://github.com/TonalPAK/FM1-DECK
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README gives GPL-3.0-only for the app. THIRD_PARTY_LICENSES.md lists each hosted firmware under its own licence, mostly GPL-3.0-only with some MPL-2.0 and MIT, plus Ableton Link (GPL-2.0-or-later), Oboe, WAMR and others.
+  The SHRUB module is the exception, as above.
+distribution: download
+install_notes: >-
+  Download the signed arm64 APK from a release and install it on an Android 10 or later phone, or build with Gradle after running tools/fwgen/fwgen.py all. It writes nothing to an FM-1.
+brick_risk: false
+tags: [groovebox, performance, android, emulator, sequencer, fx]
+image:
+  url: https://raw.githubusercontent.com/TonalPAK/FM1-DECK/main/docs/images/hero.png
+  alt: "FM1 DECK touch panel on an Android phone"
+  credit: TonalPAK
+  source_url: https://github.com/TonalPAK/FM1-DECK
+  first_party: true
+versions:
+- version: 0.2.1
+  date: 2026-11-18
+  url: https://github.com/TonalPAK/FM1-DECK/releases/tag/v0.2.1
+  notes: Library of 28 instruments including SHRUB 1.05, a four-slot rack with a picker, improved rack clock and Ableton Link start and stop, live encoder labels and a Maschine MK3 bridge.
+- version: 0.2.0
+  date: 2026-10-13
+  url: https://github.com/TonalPAK/FM1-DECK/releases/tag/v0.2.0
+  notes: Rack of up to three firmwares playing into one master bus, with a drawer to switch, mute and solo.
+- version: 0.1.0
+  date: 2026-10-13
+  url: https://github.com/TonalPAK/FM1-DECK/releases/tag/v0.1.0
+  notes: First public preview with Felucca, JIANT FM and SLOOP.

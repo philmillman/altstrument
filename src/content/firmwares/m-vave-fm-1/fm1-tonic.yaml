@@ -30,8 +30,8 @@ based_on: m-vave-fm-1/x0x
 distribution: browser-installer
 install_notes: >-
   Use the web installer page in Chrome or Edge with the FM-1 on USB, or build with the JieLi toolchain and install the
-  package with tools/fm1_install.py. The README says the web installer can put M-VAVE's firmware back. The repository has
-  no releases or committed package.
+  package with tools/fm1_install.py. The README says the web installer can put M-VAVE's firmware back. Each release carries one .fwsc
+  package, and the repository commits none.
 brick_risk: false
 tags: [drums, sequencer, synth-engine, fx, usb-midi, usb-audio, emulator, fork]
 image:
@@ -41,7 +41,15 @@ image:
   source_url: https://github.com/luigirossi-music/fm1-tonic
   first_party: true
 versions:
-- version: main @ 195a528
-  date: 2026-11-17
-  url: https://github.com/luigirossi-music/fm1-tonic/commit/195a528e5f15294ac73d62c30a4546ad496711a7
-  notes: No tagged releases; this is the latest commit. The VERSION file reads 1.1.
+- version: '1.6'
+  date: 2026-11-18
+  url: https://github.com/luigirossi-music/fm1-tonic/releases/tag/v1.6
+  notes: The commit is titled zero samples. The release page only points to the web installer.
+- version: '1.5'
+  date: 2026-11-18
+  url: https://github.com/luigirossi-music/fm1-tonic/releases/tag/v1.5
+  notes: The commit is titled own identity. The release page only points to the web installer.
+- version: '1.4'
+  date: 2026-11-18
+  url: https://github.com/luigirossi-music/fm1-tonic/releases/tag/v1.4
+  notes: First release; the commit is titled out of beta. The release page only points to the web installer.

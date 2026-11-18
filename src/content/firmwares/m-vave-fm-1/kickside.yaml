@@ -1,0 +1,31 @@
+device: m-vave-fm-1
+name: KickSide
+summary: >-
+  Play-along firmware for the FM-1: a band plays drums, bass, harmony and melody, you mute one layer and the screen shows that part as chords, keys, ukulele or bass tab. Includes 15 songs, 42 backtracks and a synth mode. Beta.
+description: >-
+  SONG LEARN plays a song with its parts at levels from simple to detailed and shows the muted part on the screen. BACKTRACK offers chord loops in many styles to play or sing over, and SYNTH
+  plays the FM-1 with presets, an arpeggiator, chorus and delay. Sound comes from a General MIDI set built into the firmware. The starter library of public-domain tunes and the project's own arrangements is
+  inside the firmware, and songs made on a laptop from MIDI files are sent over USB with tools/fm1song.sh, whose send, delete and wipe commands write to the song area. The README says it was tested on one unit with the Puya flash chip and that the UC25HQ80 chip and V16 units are covered only by code and the emulator.
+  Much of the code was written with an AI coding assistant.
+status: active
+authors:
+- name: kjs4discovery
+  url: https://github.com/kjs4discovery
+source: https://github.com/kjs4discovery/kicksidesidekick
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The README gives code under GPL-3.0-or-later (the LICENSE file is the GPL version 3 text); songs, backtracks and docs are CC BY-SA 4.0. The name KickSide, logo and mascot are reserved (TRADEMARKS.md).
+  Vendored code keeps its licences: fm1-base and felucca-bsp MPL-2.0, Sonivox EAS and its General MIDI sound set Apache-2.0, Felucca-Engines MIT, fonts SIL OFL. The vendored fm1-uboot-1.2.fwsc is the m-bootloader package from fm1-base, not a stock image.
+homepage: https://kicksidesidekick.com
+distribution: browser-installer
+install_notes: >-
+  Download the .fwsc from the release and install it from The Firmware Hub in Chrome or Edge, or on Linux with python3 firmware/vendor/fm1-base/bsp/tools/fm1_install.py. Back up first, because it replaces the running firmware and may read songs and presets differently.
+  Do not update to V16 before installing it. To go back use the Hub's Back to official V15, or hold OCT- while switching on for the USB rescue; two failed starts open a safe mode.
+brick_risk: false
+tags: [performance, tracker, chords, synth-engine, arpeggiator, midi, editor]
+versions:
+- version: 0.10.6
+  date: 2026-11-18
+  url: https://github.com/kjs4discovery/kicksidesidekick/releases/tag/v0.10.6
+  notes: Pre-release, package FM-1_58001006. Changes the identity prefix to FM-1_58 and is otherwise identical to 0.10.5.

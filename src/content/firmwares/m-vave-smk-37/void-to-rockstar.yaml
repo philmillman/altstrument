@@ -1,0 +1,39 @@
+device: m-vave-smk-37
+name: Void to Rockstar (SMK Trainer kit)
+kind: tool
+summary: Kit for the SMK-37 Elite and Ableton Live 12 with a Max for Live keyboard trainer, an Ableton control surface script for its knobs, faders and pads, and a Windows Bluetooth MIDI guide with a bridge starter.
+description: >-
+  Licence note: the kit is source-available under the PolyForm Noncommercial licence and any use for revenue needs a
+  separate licence from the author.
+
+  The kit has four parts. SMK Trainer is a Max for Live device that listens to the notes played on a track and
+  teaches the keyboard through lessons, free play in many styles, coaching and a scored verdict; its texts are in
+  Russian and English. The Ableton script maps encoders K1 to K8 to the selected device's parameters, faders 1 to 4
+  to the volume of tracks 1 to 4 and the sixteen pads to the visible pads of a Drum Rack, and moves the keys and mod
+  wheel to MIDI channel 4. A guide and a PowerShell starter set up Bluetooth MIDI on Windows through loopMIDI and
+  MIDIberry. The trainer and the script do not send firmware or configuration to the keyboard. The README says the
+  controller numbers were measured on one unit and the playing lessons have not been tried on other keyboards. The
+  repository holds no copy of M-VAVE's Midi Suite.
+status: active
+authors:
+  - name: yukurguz
+    url: https://github.com/yukurguz
+source: https://github.com/yukurguz/void-to-rockstar
+source_status: open
+license: PolyForm-Noncommercial-1.0.0
+license_notes: >-
+  Read from LICENSE.md and COMMERCIAL.md. Installing, changing and redistributing for noncommercial purposes is
+  free. Revenue use needs a separate licence from the author. Animation frames come from the MIT-licensed pixelfx
+  library (THIRD_PARTY_NOTICES.md).
+distribution: download
+requires_stock: Stock SMK-37 Elite firmware; Ableton Live 12
+install_notes: >-
+  Download smk37-kit-0.11.0.zip from the release and follow INSTALL.en.md, which covers the Max for Live device, the
+  control surface folder and the Bluetooth bridge. Nothing is written to the keyboard's firmware.
+brick_risk: false
+tags: [ableton, trainer, controller-mode, bluetooth, max-for-live]
+versions:
+  - version: v0.11.0
+    date: 2026-11-18
+    url: https://github.com/yukurguz/void-to-rockstar/releases/tag/v0.11.0
+    notes: Adds English texts to the trainer and sixteen jazz, soul and jazz-rock styles to free play.

@@ -1,0 +1,44 @@
+device: m-vave-fm-1
+name: fm1-zero
+kind: tool
+summary: Python app for the M5Stack CardputerZero that browses The Firmware Hub, downloads packages from their makers, backs up the FM-1's flash and installs or restores over one USB cable, with no computer needed.
+description: >-
+  fm1-zero is a Python program for the CardputerZero, a small Linux computer built on a Raspberry Pi CM0, and not
+  firmware for the FM-1. It lists The Firmware Hub's firmwares as a list or a grid with search, sorting and
+  favourites, downloads a package from its maker's GitHub release and checks its size and SHA-256, and also accepts
+  .fwsc files copied on by hand. Through the FM-1's flash download mode it reads the whole 1 MiB flash twice and
+  compares the reads for a backup, installs a package or restores a backup, reads each sector back, shows sector
+  progress on both screens and retries an interrupted install up to three times. It reports which bootloader the unit
+  has and whether it would be recoverable, and holds Enter for two seconds to confirm a write.
+
+  The README says it was run on one real FM-1, where backup matched M-Flasher's byte for byte and a real install
+  worked. SMK-37 keyboards, the newer flash chip, the recovery paths and a partly finished install are untested.
+  The CardputerZero itself had not reached general sale when this entry was written; M5Stack's documentation lists it
+  with a Kickstarter edition. The bundled flash loader is fm1buddy's build of m-bootloader's loader, under the MIT
+  licence of its author.
+status: active
+authors:
+  - name: Clinteastman
+    url: https://github.com/Clinteastman
+source: https://github.com/Clinteastman/fm1-zero
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Read from the README, which names GPL-3.0-only, and the LICENSE file. fm1zero/data/mflr-loader.bin, a small flash
+  loader built from m-bootloader, carries its own MIT licence file.
+distribution: source-only
+requires_stock: Any FM-1 firmware that answers the download-mode message, or an m-bootloader unit held at REC on power-up
+install_notes: >-
+  Copy the folder to a CardputerZero and run setup-on-zero.sh, which installs Pillow, numpy, evdev and pyusb and a udev
+  rule. A .deb can be built on the device with packaging/build-deb.sh. The README says the tool never writes the bootloader and
+  refuses writes below 0x4000 and from 0xFF000 up, which hold the boot area and the chip key and MAC. The FM-1's
+  mask-ROM download mode cannot be overwritten, and the README advises installing M-Flasher first as the recovery
+  tool and making a backup before the first install. On a stock bootloader, a failed install can need a USB_KEY
+  dongle, so the app stops on a "No easy way back" screen before it asks.
+brick_risk: false
+tags: [flasher, backup, librarian, usb-midi, cardputer]
+versions:
+  - version: main @ a65be86
+    date: 2026-11-17
+    url: https://github.com/Clinteastman/fm1-zero/commit/a65be86
+    notes: No tagged releases; this is the latest commit.

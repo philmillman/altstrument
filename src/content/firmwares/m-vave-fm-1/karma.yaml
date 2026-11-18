@@ -43,6 +43,10 @@ image:
   source_url: https://github.com/eatyourgreensstudio-dotcom/karma-fm1#readme
   first_party: true
 versions:
+  - version: 3.1.5
+    date: 2026-11-17
+    url: https://github.com/eatyourgreensstudio-dotcom/karma-fm1/releases/tag/v3.1.5
+    notes: Cuts dropouts in the six-stem USB audio (on a heavy loop about 28 a second in 3.1.4, none in two minutes in 3.1.5) by keeping the audio and its timer in faster memory, with about 2 ms more delay on the stems. Runs the effects while the first core waits for the second, which cuts late-render crackle on heavy patches, and no longer gives back trimmed CLOUD grains and drum voices in the first ten seconds of a stop, so PLAY starts clean. ACID GEN remembers its settings for each synth track and each track keeps its own envelope steps.
   - version: 3.1.4
     date: 2026-11-15
     url: https://github.com/eatyourgreensstudio-dotcom/karma-fm1/releases/tag/v3.1.4

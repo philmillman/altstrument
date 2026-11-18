@@ -1,0 +1,27 @@
+device: ableton-move
+name: Crest FX
+based_on: ableton-move/crest
+summary: >-
+  Schwung audio effect module with distortion, chorus, tempo-synced delay and reverb in parallel or any serial order, eight presets and bit-exact passthrough when the effects are off, taken from the Crest synth.
+description: >-
+  Crest FX is the effects chain of the Crest synth as a separate module for an audio FX slot, for example behind a Line In module to process an outside instrument, behind another sound generator, or as a Master FX. Distortion has soft, hard, fold and crush modes, chorus has two types and an ensemble, delay is free or follows the Move's tempo in stereo, ping-pong or mono, and reverb has room, hall and plate. Chorus, delay and reverb run in parallel or in any serial order with dry and wet levels, and the first knob page holds one level per effect plus a Wet control. Eight presets cover the Init, room, hall, plate, slapback, dotted echo, ping pong and wash settings. With Wet at zero the output equals the input. The README says the effects were adapted from Crest and Amino, both by the same author.
+status: active
+authors:
+  - name: klaine
+    url: https://github.com/klaine
+source: https://github.com/klaine/crest-fx
+source_status: open
+license: MIT
+license_notes: >-
+  The Schwung plugin API headers are copied from Schwung (MIT), as THIRD_PARTY_NOTICES.md states.
+homepage: https://github.com/klaine/crest-fx#readme
+distribution: download
+requires_stock: Schwung installed on the Move
+install_notes: >-
+  Needs Schwung. Download crest-fx-module.tar.gz from a release, install it through Schwung Manager or extract it into /data/UserData/schwung/modules/audio_fx/, then rescan modules or restart Schwung. It appears in the audio FX list as CRFX.
+brick_risk: false
+tags: [fx, reverb, performance]
+versions:
+  - version: v1.0.0
+    date: 2026-11-04
+    url: https://github.com/klaine/crest-fx/releases/tag/v1.0.0

@@ -1,0 +1,36 @@
+device: ableton-move
+name: FlukeDrums
+based_on: ableton-move/mrdrums
+summary: >-
+  Schwung sound generator that fills the 16 drum pads with random samples from a folder tree, with per-pad lock, single-pad reroll, 32-level undo, a kit mode that looks for kick, snare and hat names, and a Save Kit action.
+description: >-
+  FlukeDrums draws samples at random from the Move's own sample folders or Ableton's core library, including subfolders to a configurable depth. Roll replaces every unlocked pad, Roll Pad replaces one, and Undo puts back what the last roll changed while leaving pads locked or edited since. Kit Mode rolls the bottom two pad rows by sample name, as kick, snare, clap, hats, cymbal and tom, and leaves the top two rows fully random. A maximum-length filter keeps long loops out of the pool, and Save Kit copies the 16 files and a manifest into the Samples folder so Move's browser can load them. The per-pad volume, pan, tune, start, envelope and choke controls and the loading of Move .ablpreset kits come from MrDrums, which the repository builds on. The README says it was developed with AI assistance.
+status: active
+authors:
+  - name: Andy Tanguay
+    url: https://github.com/aTanguay
+source: https://github.com/aTanguay/Schwung_FlukeDrums
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file credits Handcrafted Media for MrDrums and Andy Tanguay for the FlukeDrums additions.
+homepage: https://github.com/aTanguay/Schwung_FlukeDrums#readme
+distribution: download
+requires_stock: Schwung installed on the Move
+install_notes: >-
+  Needs Schwung. Install FlukeDrums from Schwung's module store, or download flukedrums-module.tar.gz from a release and upload it with Install Custom Module in Schwung Manager at move.local:7700, then restart Schwung. Point a Move track's MIDI output at the slot's channel to play it.
+brick_risk: false
+tags: [drums, sampler, performance]
+versions:
+  - version: v1.0.0
+    date: 2026-11-06
+    url: https://github.com/aTanguay/Schwung_FlukeDrums/releases/tag/v1.0.0
+    notes: Adds Folder Depth, Kit Mode and a Kit Parts readout, and makes Roll Pad keep the pad's part.
+  - version: v0.4.1
+    date: 2026-11-02
+    url: https://github.com/aTanguay/Schwung_FlukeDrums/releases/tag/v0.4.1
+    notes: Undo puts back only pads the last roll changed and skips pads locked or replaced since.
+  - version: release
+    date: 2026-11-01
+    url: https://github.com/aTanguay/Schwung_FlukeDrums/releases/tag/release
+    notes: First release, tagged "release" and titled Test version.

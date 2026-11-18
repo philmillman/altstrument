@@ -4,7 +4,7 @@ kind: firmware
 summary: >-
   SLOOP 2.8.5 modified to store 24 patterns, arrange songs of 128 positions and show every step of a track on the main screens, with six synth tracks and two drum tracks in the 1.2.0 release; it gives up its user sample banks for pattern and song storage.
 description: >-
-  Based on SLOOP and Felucca. Patterns go from four (A to D) to 24 in six banks of four, and the song order from 16 entries to 128, each one to 64 bars long. Track overviews show all steps in rows of 16, page navigation is a row of dots, and each track has a MIDI THRU switch. A store shows PENDING until the flash write finishes and SAVED after. In 1.0.0 and 1.1.0 the fourth user sample bank is reused for patterns, so there are three; from 1.2.0 all four are reclaimed for a shared pattern and song pool. Release 1.2.0 splits the eight tracks into six synths sharing eight voices and two independent 16-lane drum parts, adds eight named song slots, and does not migrate projects from older versions. The 1.0.0 notes also mention live granular effects for synth and sample tracks and a browser editor with audio preview. The repository is a cleaned copy of the author's private tree with a new history, and leaves out SLOOP's inherited artwork. The README says the build has not been validated on a physical FM-1, while the release notes say it was tested on one.
+  Based on SLOOP and Felucca. Patterns go from four (A to D) to 24 in six banks of four, and the song order from 16 entries to 128, each one to 64 bars long. Track overviews show all steps in rows of 16, page navigation is a row of dots, and each track has a MIDI THRU switch. A store shows PENDING until the flash write finishes and SAVED after. In 1.0.0 and 1.1.0 the fourth user sample bank is reused for patterns, so there are three; from 1.2.0 all four are reclaimed for a shared pattern and song pool. Release 1.2.0 splits the eight tracks into six synths sharing eight voices and two independent 16-lane drum parts, adds eight named song slots, and does not migrate projects from older versions. Releases 1.2.2 to 1.2.5 change only the HOME screen and track and pattern recall: 1.2.2 added an instrument strip that compressed the track rows, 1.2.4 restored the original layout, and 1.2.5 shows the sound name and number on every track. The 1.0.0 notes also mention live granular effects for synth and sample tracks and a browser editor with audio preview. The repository is a cleaned copy of the author's private tree with a new history, and leaves out SLOOP's inherited artwork. The README says the build has not been validated on a physical FM-1, while the release notes say it was tested on one.
 status: active
 authors:
 - name: piotrwozniak
@@ -15,9 +15,10 @@ license: GPL-3.0-only
 license_notes: >-
   LICENSING.md gives GPL-3.0-only for the code, as SLOOP and Felucca. Third-party parts keep their licences (msfa Apache-2.0, DaisySP, Rings and Fukiai MIT, Terminus SIL OFL 1.1, JieLi SDK Apache-2.0, some CC0 and CC-BY-3.0 material). The 86 device icons are new GPL-3.0-only work; SLOOP's icon atlas and screenshots are excluded because their terms were not established.
 homepage: https://piotrwozniak.github.io/piterfly/
+based_on: m-vave-fm-1/sloop
 distribution: browser-installer
 install_notes: >-
-  Use the installer page in Chrome or Edge with the FM-1 on USB, or download piterfly-1.2.0.fwsc from the release, which also carries the source archive and SHA256SUMS. The README says to back up first: the user sample banks are repurposed (all four from 1.2.0, which does not import older projects, so export a backup with the matching older editor first) and importing a song file replaces all pattern slots, empty ones too. Recovery is the same as for SLOOP: hold OCT- while powering on for USB rescue.
+  Use the installer page in Chrome or Edge with the FM-1 on USB, or download piterfly-1.2.5.fwsc from the release, which also carries the source archive and SHA256SUMS. The README says to back up first: the user sample banks are repurposed (all four from 1.2.0, which does not import older projects, so export a backup with the matching older editor first) and importing a song file replaces all pattern slots, empty ones too. Recovery is the same as for SLOOP: hold OCT- while powering on for USB rescue.
 brick_risk: false
 tags: [groovebox, sequencer, sampler, synth-engine, fx, editor, fork]
 image:
@@ -27,6 +28,22 @@ image:
   source_url: https://github.com/piotrwozniak/piterfly#readme
   first_party: true
 versions:
+- version: 1.2.5
+  date: 2026-11-17
+  url: https://github.com/piotrwozniak/piterfly/releases/tag/1.2.5
+  notes: HOME shows each track's sound name, engine and a number starting at #001, also for inactive tracks, with no change to track sizes or the step grid. Projects from 1.2.0 to 1.2.4 stay compatible.
+- version: 1.2.4
+  date: 2026-11-17
+  url: https://github.com/piotrwozniak/piterfly/releases/tag/1.2.4
+  notes: Fixes the HOME layout regression of 1.2.2 and 1.2.3 by restoring the 1.2.0 track rows and keeping only a thin position line in the header. The release says physical FM-1 testing was still pending.
+- version: 1.2.3
+  date: 2026-11-17
+  url: https://github.com/piotrwozniak/piterfly/releases/tag/1.2.3
+  notes: Replaces the grey outline on HOME with a thin position line. It keeps the layout regression of 1.2.2, and the release page points to 1.2.4.
+- version: 1.2.2
+  date: 2026-11-17
+  url: https://github.com/piotrwozniak/piterfly/releases/tag/1.2.2
+  notes: Keeps LEVEL, STEPS and PAN when changing patterns, waits for the longest LEN/DIV loop before a live switch, and shows the selected engine, sound name and position on HOME. The release page warns that it compresses the track rows and points to 1.2.4.
 - version: 1.2.0
   date: 2026-11-14
   url: https://github.com/piotrwozniak/piterfly/releases/tag/1.2.0

@@ -35,13 +35,17 @@ distribution: browser-installer
 install_notes: >-
   Open the installer page in Chrome or Edge with the FM-1 connected and press Install; it saves a full backup first. The
   same page can return the FM-1 to the official V15 or install another custom firmware. The release files are named
-  melodee-1.0 because Hookology keeps Melodee's update tools. The docs describe a boot stub that never writes
+  melodee-1.1 (melodee-1.0 for the first release) because Hookology keeps Melodee's update tools. The docs describe a boot stub that never writes
   0x00000-0x03FFF, three key-light flashes at power-on when the USB update loader starts after an interrupted
   update (install the same package again), and OCT- held at power-on to request update mode. BUILDING.md has a ROM
   USB recovery for a black screen. The author states that use is at your own risk.
 brick_risk: false
 tags: [synth-engine, sequencer, chords, fm, fx, usb-midi, editor]
 versions:
+- version: '1.1'
+  date: 2026-11-17
+  url: https://github.com/bendawsonjr/hookology/releases/tag/v1.1
+  notes: The 909 drums stop ringing once they have faded 80 dB down instead of 100 dB, so kick, toms, rim, clap, hats and cymbals ring about a fifth less time per hit; the notes say the difference is not audible.
 - version: '1.0'
   date: 2026-11-17
   url: https://github.com/bendawsonjr/hookology/releases/tag/v1.0

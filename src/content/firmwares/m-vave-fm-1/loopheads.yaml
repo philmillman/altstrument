@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: LOOPHEADS
+summary: >-
+  Four-tape note looper for the FM-1: each tape loops at its own length and plays through its own Karplus-Strong string, tube or blow voice, with scales, an arpeggiator, delay, hall and snapshots.
+description: >-
+  Each of the four tapes records notes, takes overdubs and has its own length, volume, pan and mute, so the loops drift in and out of alignment. The voices are Karplus-Strong physical models in string, tube and blow types with selectable pings, an envelope and an LFO per tape. A global scale can be changed after recording, momentary transposition and one-shot strums are available, and Memory Leak fades recorded notes away one by one. A 12-bit, 20 kHz delay and a hall reverb are built in, and snapshots recall whole states during playback. The release notes say version 0.1.2 passed the host tests and simulated installer checks but has not been installed on a physical FM-1. It is built on Dinghy and takes its tape timing from the earlier LOOPHEAD engine.
+status: active
+authors:
+- name: Eric St-Jacques
+  url: https://github.com/jaak-stjaaques
+source: https://github.com/jaak-stjaaques/LOOPHEADS-public
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and LICENSE give GPL-3.0-only, with upstream notices retained in LICENSING.md. The IBM Plex Mono and Terminus fonts are SIL OFL 1.1. The package is LOOPHEADS' own build, not an M-VAVE image.
+homepage: https://github.com/jaak-stjaaques/LOOPHEADS-public
+based_on: m-vave-fm-1/dinghy
+distribution: download
+install_notes: >-
+  Install loopheads_0.1.2.fwsc from the release with M-Flasher, leaving the bootloader option unchecked, or with tools/fm1_install.py over USB. BUILDING.md says to make a full recovery backup first and check that the recovery tool can open it. Installation and recovery on a physical FM-1 are unverified.
+brick_risk: false
+tags: [looper, synth-engine, physical-modeling, arpeggiator, scales, fx, delay, reverb]
+image:
+  url: https://raw.githubusercontent.com/jaak-stjaaques/LOOPHEADS-public/main/docs/screenshots/tape-loops.png
+  alt: "LOOPHEADS Tape Loops screen: four numbered tapes with lengths of 08s, 13s, 05s and 21s, STRETCH on tapes 1 and 3, KEEP on 2 and 4, tape 4 muted, and tick marks showing recorded notes"
+  credit: Eric St-Jacques
+  source_url: https://github.com/jaak-stjaaques/LOOPHEADS-public
+  first_party: true
+versions:
+- version: v0.1.2
+  date: 2026-11-19
+  url: https://github.com/jaak-stjaaques/LOOPHEADS-public/releases/tag/v0.1.2
+  notes: Pre-release; adds a battery indicator and the TAPE LOOPS header, and expands the scale page title.

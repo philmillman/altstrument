@@ -32,7 +32,7 @@ install_notes: >-
 brick_risk: false
 tags: [emulator, research, handheld]
 versions:
-- version: main @ 2b706d1
-  date: 2026-11-18
-  url: https://github.com/joashchee/FM1-NTT/commit/2b706d1bef41323c46e92d612efdb3f688340a45
-  notes: No tagged releases; this is the latest commit, which fixes a CI smoke-test failure. The commits since the previous row add a MONITOR panel that shows the host machine (JIT blocks, USB products, pad names, macOS battery), a firmware showcase with background demos and a player, and notes on stock firmware's MIDI and SysEx behaviour tried in the emulator. Before that, the commits add a WebAssembly build of the web shell, a faster AArch64 JIT turned on by default, a firmware extractor, a 6-operator msfa engine port and a model of Felucca's FM6 tuning, and record R36S speed measurements of about 0.24x at best.
+- version: main @ 4a7b3f2
+  date: 2026-11-19
+  url: https://github.com/joashchee/FM1-NTT/commit/4a7b3f23bb3eaf17bd946c72386875a43506329d
+  notes: No tagged releases; this is the latest commit, which fixes clippy warnings in the core. The commits since the previous row add a 4-operator FM engine fitted to OPERATOR 0.7 and Mighty Arp 1.5, filter, distortion and phaser effects, an arpeggiator and a 16 by 16 step sequencer, an instrument editor with a widened .fm1i package, MIDI clock sync and USB MIDI input, and emulation on its own thread so a firmware slower than real time no longer leaves the device dry. They also add a docs file compiled by Gemini that the repository marks unverified, and a stock-firmware regression test. Before that, a commit fixed a CI smoke-test failure, and the commits before it add a MONITOR panel that shows the host machine (JIT blocks, USB products, pad names, macOS battery), a firmware showcase with background demos and a player, and notes on stock firmware's MIDI and SysEx behaviour tried in the emulator. Before that, the commits add a WebAssembly build of the web shell, a faster AArch64 JIT turned on by default, a firmware extractor, a 6-operator msfa engine port and a model of Felucca's FM6 tuning, and record R36S speed measurements of about 0.24x at best.

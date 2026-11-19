@@ -1,0 +1,31 @@
+device: m-vave-fm-1
+name: U0U
+summary: >-
+  Drum machine for the FM-1: the 16 white keys are steps, the 11 black keys are drums, and each effect on the master bus has its own 16-step pattern.
+description: >-
+  U0U has nine synthesised drum kits, per-step timing, roll, chance and pitch, and 16 patterns of 16 or 32 steps that chain into a song. Every effect on the master bus is sequenced on its own steps, so it lands only on the beats chosen. Two LFOs act on volume and pan, an envelope ducks the mix from one drum, and the arpeggiator page makes Euclidean rhythms with mutation. The FM-1 can follow the computer's MIDI clock over USB. Nothing is sampled. A browser emulator runs the same code as the instrument. The README says the code was largely written with Claude as the coding assistant and checked by an emulator test suite and use on one FM-1. It builds on Felucca.
+status: active
+authors:
+- name: youlisse
+  url: https://github.com/youlisse
+source: https://github.com/youlisse/U0U
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and LICENSE give GPL-3.0-only. It builds on Felucca, and the hardware layer, drum voices, DSP and package tools keep their authors' licences (LICENSING.md, LICENSES/). The package in the repository is U0U's own build, not an M-VAVE image.
+homepage: https://youlisse.github.io/U0U/
+based_on: m-vave-fm-1/felucca
+distribution: browser-installer
+install_notes: >-
+  Open the install page in Chrome or Edge with a USB data cable, or run tools/fm1_install.py with the release's .fwsc. FLASHING.md says to keep M-VAVE's official package first. The first save overwrites the flash areas that Felucca's store uses. If an install is cut, the FM-1 stays in update mode and the install can be repeated; holding OCT- and OCT+ for 5 seconds enters the bootloader, and the mask-ROM USB boot mode is the last resort.
+brick_risk: false
+tags: [drums, sequencer, fx, synth-engine, euclidean, emulator, web]
+versions:
+- version: v0.2
+  date: 2026-11-19
+  url: https://github.com/youlisse/U0U/releases/tag/v0.2
+  notes: Pre-release; one sound shared across all patterns, tracks that double to two sections, and OCT used to switch sections.
+- version: v0.1
+  date: 2026-11-18
+  url: https://github.com/youlisse/U0U/releases/tag/v0.1
+  notes: Pre-release; first release.

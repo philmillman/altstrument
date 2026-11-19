@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: Vallée
+summary: >-
+  Skiff-based firmware that writes a song in one press, then lets you perform it: a twelve-style song generator, a keyboard mode that plays the song's sections, a master effects chain, new sounds and its own look. Alpha.
+description: >-
+  Vallée keeps Skiff 2.6's engines, sequencer, editor and saves. GEN writes all six tracks in one of twelve styles from a style, a vibe and a seed, and in SONG mode a full arrangement with intro, verses, choruses, bridge and outro; the same settings give the same song. THE SPELL turns the keyboard into the song: white keys jump to sections on the next bar, spare keys hold effects, and black keys ask for a new take of a part or record the order played as a new arrangement. ALEMBIC is a master chain of drive, motion, space and grain stages, each with a blend knob. New sounds include Moog, Oberheim and Juno filters for the analog engine with 21 presets, three drum kits and SUMMON, an ambient engine that plays in the song's chords. Two screen themes and an opening animation are included. The SLICE engine is left out to fit in the FM-1's memory, so a SLICE track or preset becomes an FM6 sound. Skiff cannot open projects that use SUMMON.
+status: active
+authors:
+- name: tammygucci
+  url: https://github.com/tammygucci
+source: https://github.com/tammygucci/valee
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL-3.0 text and the README says GPL-3.0-only, as Skiff and Felucca are. LICENSING.md lists the bundled fonts and DSP that keep their own licences.
+homepage: https://tammygucci.github.io/valee/try/
+based_on: m-vave-fm-1/skiff
+distribution: browser-installer
+requires_stock: Any FM-1 firmware (V15 or V16 stock)
+install_notes: >-
+  Open the installer at https://tammygucci.github.io/valee/webapp/installer/ in Chrome or Edge with the FM-1 on a direct USB cable and follow the page, or use vallee-0.9-alpha.fwsc from the release. The installer saves a full backup of the music first. The README documents going back to M-VAVE's firmware from the same page or with M-VAVE's updater, going back to Skiff, Skiff's recovery steps, and a fallback where two crashes within 30 seconds of power-on make the next start enter the chip's boot mode so it can be written again.
+brick_risk: false
+tags: [groovebox, generative, sequencer, synth-engine, drums, fx, performance, editor, emulator, fork]
+image:
+  url: https://raw.githubusercontent.com/tammygucci/valee/main/web/brand/xeno_home.png
+  alt: "Vallée XENO HOME screen: two tape reels with green pentagrams, 101 BPM, a green creature, and six coloured track rows from Pick Bass to Perc Kit"
+  credit: tammygucci
+  source_url: https://github.com/tammygucci/valee
+  first_party: true
+versions:
+- version: 0.9-alpha
+  date: 2026-11-19
+  url: https://github.com/tammygucci/valee/releases/tag/v0.9-alpha
+  notes: First public test version, published as a pre-release.

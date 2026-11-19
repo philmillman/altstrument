@@ -1,0 +1,53 @@
+device: m-vave-fm-1
+name: OpenVALive FM-1
+summary: >-
+  Live-first groovebox firmware for the FM-1: four synth or drum tracks with their own loops, a CAPTURE button that turns
+  what was just played into a loop, loop editing, undo, scenes with a morph knob, hold-to-play effects and a Creative Engine.
+description: >-
+  Each of the four tracks has its own loop length for polymeter, with a sample-accurate clock, swing and MIDI clock in
+  and out. CAPTURE turns the last phrase played into a loop in time, even with the transport stopped, LOOP EDIT
+  changes it note by note, and eight steps of undo and redo cover takes, captures, edits and creative changes. The
+  Creative Engine mutates, humanizes, fills, simplifies, rotates, reverses and adds Euclidean patterns to a loop, and
+  shows the amount before it is applied. Eight scenes store every sound and mute and one knob morphs between two of
+  them. Stutter, filter, delay throw and drive effects last while a key is held. The sound is a virtual analog engine
+  and a synthesised drum engine, with 29 presets in seven families including five drum kits, and the drum keys follow
+  either the original tom layout or the General MIDI map. A CONTROL MAP menu assigns the knobs, and a SOUND EDIT page
+  reaches every parameter, the modulation matrix and tempo-locked LFOs. MIDI comes in over USB and TRS and goes out over
+  USB, with a controller mode and USB audio. The synth itself lives in the OpenVALive CORE repository (listed
+  separately) and the target is built on fm1-base and felucca-bsp; a browser emulator runs the whole firmware. The
+  project was called OpenLive until 19 November 2026, when it moved to new repositories and its release numbers
+  restarted at 0.0.3. The README says it is not affiliated with M-VAVE.
+status: active
+authors:
+- name: Tom-Rfid
+  url: https://github.com/Tom-Rfid
+source: https://github.com/Tom-Rfid/OpenVALive_FM-1
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text. The CORE repository's licence page says the firmware also contains fm1-base and
+  felucca-bsp files (MPL-2.0) and three JieLi SDK files (Apache-2.0) that are downloaded at build time and not
+  committed.
+homepage: https://tom-rfid.github.io/OpenVALive_FM-1/
+based_on: m-vave-fm-1/fm1-base
+distribution: browser-installer
+requires_stock: Any FM-1 firmware; the installer writes the package over it
+install_notes: >-
+  Use the project's browser installer in Chrome or Edge, or download the zip from a release and run FLASH-FM1.bat on
+  Windows, or run fm1_install.py with the .fwsc. The browser installer can also write m-bootloader after the firmware,
+  as an unticked option. The docs say to back up presets and projects first and to go back to M-VAVE's firmware with
+  the Felucca web installer. For a unit that no longer starts, the README points to the author's jieli-usbkey-unbrick
+  scripts, which open the chip's factory loader from a Raspberry Pi over the USB cable without opening the case.
+brick_risk: false
+tags: [groovebox, looper, sequencer, drums, synth-engine, performance, generative, emulator, controller-mode, usb-midi, usb-audio]
+image:
+  url: https://raw.githubusercontent.com/Tom-Rfid/OpenVALive_FM-1/main/docs/img/fm1-screens.png
+  alt: "Four FM-1 screens: CAPTURE LOOP, MUTATE 87%, T4 F3 DRUMS 808 and the ENERGY macro, each with an oscilloscope, four loop lanes and four knobs"
+  credit: Tom-Rfid
+  source_url: https://github.com/Tom-Rfid/OpenVALive_FM-1
+  first_party: true
+versions:
+- version: 0.0.3
+  date: 2026-11-19
+  url: https://github.com/Tom-Rfid/OpenVALive_FM-1/releases/tag/v0.0.3
+  notes: First release under the OpenVALive name, as package FM-1_023. Adds sound families, LOOP EDIT, a choice of drum key maps and recovery scripts.

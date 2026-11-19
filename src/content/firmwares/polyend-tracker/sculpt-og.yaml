@@ -1,0 +1,46 @@
+device: polyend-tracker
+name: SCULPT OG
+summary: >-
+  Unofficial four-track sampling workstation firmware for the original Polyend Tracker: WAV loops with granular, resonator, colour and shared delay and reverb stages, slow modulation, macros and performance pages. Binary release plus an English manual.
+description: >-
+  Rights warning: the firmware is a compiled .ptf image built on BULUT, whose catalog entry records a GPL-3.0 combined
+  work, but the repository publishes only a manual, screenshots and the release files; it has no source and no
+  licence file. The release zip is described as containing licence notices, which were not opened.
+
+  Each of the four tracks holds a stereo WAV of about 11.9 seconds, set to a source tempo and played back stretched,
+  sliced or at a changed speed. A chain of MATERIAL, GRAIN, FILTER, RING, COLOR and SPACE pages shapes the sound, with
+  delay and reverb on two shared buses, LFOs and random sources mapped to parameters, eight macros, scenes and a
+  Performance page. The manual covers installation and return to stock, panel shortcuts, project handling and CPU
+  load, and the screenshots were taken in the author's desktop simulator. The README credits BULUT as the code base,
+  OpenTracker for the hardware layer and Retrack as a reference for a four-track looper.
+status: active
+authors:
+  - name: jayveechen1984
+    url: https://github.com/jayveechen1984
+source_status: binary-only
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file, and the README and manual state no licence for SCULPT itself. The manual says
+  each upstream component keeps its own licence and attribution.
+homepage: https://github.com/jayveechen1984/sculpt-og-manual
+based_on: polyend-tracker/bulut
+distribution: download
+requires_stock: Original Polyend Tracker (OG) running stock or OpenTracker firmware; Tracker+ and Tracker Mini are not supported
+install_notes: >-
+  Back up the SD card, copy PolyendTrackerSC0019.ptf to /Firmware keeping its filename, and choose it under Config,
+  Firmware Update; keep the Tracker powered until it restarts. The manual says to keep a stock OG image on the card
+  and to return to stock from Config, Firmware in SCULPT. Polyend's tracker-ce README describes the recessed reset
+  button as an emergency bootloader that installs a known-good .ptf from /Firmware.
+brick_risk: false
+tags: [sampler, granular, fx, performance, modulation, fork]
+image:
+  url: https://raw.githubusercontent.com/jayveechen1984/sculpt-og-manual/main/01-material.png
+  alt: SCULPT MATERIAL page in the simulator with four track cards, page tabs, a waveform of 02-hit.wav, an importing message and eight parameter controls
+  credit: jayveechen1984
+  source_url: https://github.com/jayveechen1984/sculpt-og-manual
+  first_party: true
+versions:
+  - version: v0.19.0
+    date: 2026-11-19
+    url: https://github.com/jayveechen1984/sculpt-og-manual/releases/tag/v0.19.0
+    notes: SC0019 firmware bundle and standalone .ptf; reworks the METAL resonator, MATERIAL block reads and the cap on STRETCH search work.

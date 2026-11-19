@@ -1,0 +1,50 @@
+device: m-vave-blackbox
+also_devices: [donner-pocket-x]
+name: ettorebox
+summary: >-
+  Guitar firmware for the Blackbox built on OpenPocket, adding Bluetooth music from a phone, a Bluetooth footswitch,
+  scenes, a two-job expression pedal and effects of its own.
+description: >-
+  It began as OpenPocket's Bluetooth test image and keeps OpenPocket's engine, screen, controls and web editor. It adds
+  A2DP music from a phone mixed with the guitar, with the pairing remembered, and a Bluetooth MIDI footswitch link for
+  the M-VAVE Chocolate, which can also connect over USB. The web editor works over Bluetooth, for example from MIDIWeb
+  on an iPhone. Controls are learned on the pedal, four named scenes per preset recall from the footswitch or the
+  Chocolate, and an expression pedal acts as volume while an effect is off and as that effect's setting while it is on.
+  Own effects include LOW OCTAVE, SYN PAD, TREBLE BOOST, WAH and TAPE FLUTE, stereo output and USB audio routing are
+  added, and a GUITAR TONE setting models pickup loading. To fit the Bluetooth stack it keeps four of the twelve
+  factory neural amp models, limits delay times to 780 ms and drops lowercase letters on the screen. It is a beta, and
+  the README says the Donner Pocket X package is built but untried. It says it is not affiliated with M-VAVE, Donner
+  or OpenPocket.
+status: active
+authors:
+- name: steponme82
+  url: https://github.com/steponme82
+source: https://github.com/steponme82/ettorebox
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL-3.0 text and NOTICE.md lists the parts with their own licences: felucca-bsp and its loader under
+  MPL-2.0, tools adapted from Felucca under GPL-3.0, JieLi AC79 SDK binaries (Bluetooth controller and host, drivers and
+  boot files) under Apache-2.0, the Inter font under OFL-1.1 and loops cut from Guitar-TECHS under CC-BY-4.0. The
+  repository holds no M-VAVE firmware image.
+homepage: https://steponme82.github.io/ettorebox/
+based_on: donner-pocket-x/openpocket
+distribution: browser-installer
+requires_stock: Blackbox on M-VAVE firmware V20 or older (the installer refuses V22 and later)
+install_notes: >-
+  Open the installer page in Chrome or Edge on a computer, connect the pedal over USB with a data cable, press Connect and
+  then Install. The README warns against V22 or later, whose boot loader runs into the old flash layout; the page and the
+  update loader refuse those pedals before writing, and docs/RESCUE.md describes bringing back a pedal that went dark
+  after OpenPocket over V22 or later through the chip's ROM USB mode, which is the route a reported case was recovered
+  by. Keep M-VAVE's own firmware file to go back.
+brick_risk: false
+tags: [fx, amp-sim, presets, bluetooth, ble-midi, usb-audio, usb-midi, editor, web, controller, fork]
+versions:
+- version: beta-52
+  date: 2026-11-18
+  url: https://github.com/steponme82/ettorebox/releases/tag/beta-52
+  notes: Pre-release. The start-up screen and Bluetooth name read ETTOREBOX, the web editor names the firmware, and the repository gains a manual.
+- version: beta-51
+  date: 2026-11-18
+  url: https://github.com/steponme82/ettorebox/releases/tag/beta-51
+  notes: Pre-release; the first public beta.

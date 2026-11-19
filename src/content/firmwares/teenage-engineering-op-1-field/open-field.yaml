@@ -1,0 +1,41 @@
+device: teenage-engineering-op-1-field
+name: open-field
+summary: >-
+  Unofficial patcher that adds a loader to the OP-1 Field's own OS 1.7.0 file, then loads feature packs from the unit's disk at each start. Packs add tape tracks 5 to 8, an effects train, LFOs and sidechain. Tested on one unit.
+description: >-
+  A browser install page takes the OS 1.7.0 file copied off the owner's own unit and builds a changed file that
+  contains a small loader and a shared base pack. The loader reads pack files from the unit at every start, so a
+  feature is added by copying a file and removed by deleting it. The listed packs add tape tracks 5 to 8 that
+  the original firmware can still read, up to four effects per instrument with presets, four LFOs on a synth
+  sound, and sidechain ducking between tape tracks or from the beat. The sources of the loader, the base and the
+  features are in the repository, together with guides for writing packs. The README says no firmware is stored
+  there and that the install has been made on one unit, from a Windows computer, with the way back from a unit that
+  does not start not yet rehearsed. A later official update overwrites open-field, and units on a later OS cannot
+  use it.
+status: active
+authors:
+  - name: LaP0573
+    url: https://github.com/LaP0573
+source: https://github.com/LaP0573/open-field
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text. THIRD-PARTY.md names reused code from Ferret and open-xy, both MIT, with their
+  licence texts kept in builder/. No Teenage Engineering code or firmware is stored; the builder works from the owner's
+  own file, and a pre-commit check refuses files that contain firmware bytes.
+homepage: https://lap0573.github.io/open-field/
+distribution: browser-installer
+requires_stock: OP-1 Field OS 1.7.0 with bootloader 1000.1.1; other versions are refused
+install_notes: >-
+  Use Chrome or Edge on a desktop. The install page, with a helper script, reads the unit's firmware file, checks that it
+  is the exact OS 1.7.0 file, builds the new one and writes it through the bootloader's developer menu. Keep a copy
+  of the file you copy off the unit: it is the way back, by writing it again through the same page. The project says
+  an interrupted write can leave a unit unable to start, that the bootloader should still show its menu, and that
+  recovery from that state has not been tried. Holding the help key at power-on starts the unit without packs.
+brick_risk: true
+tags: [patcher, installer, sequencer, fx, modulation, research, open-source]
+versions:
+  - version: main @ b6501e4
+    date: 2026-11-19
+    url: https://github.com/LaP0573/open-field/commit/b6501e4b4351c9a9f35898dab7b38d4fe5121da9
+    notes: No tagged releases; this is the latest commit.

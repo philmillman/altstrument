@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: DFD ACID ENGINE
+summary: >-
+  Acid pattern generator and sequencer on Felucca 1.8.2's drivers: a monophonic acid voice with a ladder filter, ten styles, DNA lock and a DIRTY page. It plays the patterns of its browser app, which also runs as a plug-in.
+description: >-
+  The repository holds one acid engine written as a single C++ header and used in three places: a browser app, a VST3 and AU plug-in in beta, and an FM-1 firmware. The voice is a band-limited saw and square with a sub, noise and a four-pole resonant ladder filter, with accent, slide, tie and drive. A generator writes patterns in one of ten styles and a chosen key and scale, and DNA lock keeps the notes, rhythm, accents or slides while the rest is regenerated. On the FM-1, PRESETS picks the style, ALGORITHM the sound, OCT+ generates, OCT- mutates and a DIRTY page on FX sets filth, pump, zap and width, and the firmware plays the web generator's own patterns note for note. The browser app adds a sequencer of up to 256 steps, nine tempo-synced effects, MIDI and WAV export and a TB-3 link over USB MIDI. The FM-1 build uses Felucca 1.8.2's drivers and update loader and is documented in English and Spanish manuals.
+status: active
+authors:
+- name: Polaris Sound Lab
+  url: https://github.com/drophlex
+source: https://github.com/drophlex/DFD-ACID-ENGINE
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL-3.0 text and the README says GPL-3.0. The engine header is marked GPL-3.0-or-later; the FM-1 tree under fm1/firmware/firmware-src carries Felucca's terms (GPL-3.0-only overall, with its engines, board layer and ported DSP under their own licences, in its LICENSING.md), so the FM-1 firmware is GPL-3.0-only.
+homepage: https://drophlex.github.io/DFD-ACID-ENGINE/
+based_on: m-vave-fm-1/felucca
+community:
+- label: Polaris Sound Lab on YouTube
+  url: https://www.youtube.com/@PolarisSoundLab
+distribution: browser-installer
+requires_stock: Any FM-1 firmware; the installer writes the package over it
+install_notes: >-
+  Open the installer at https://drophlex.github.io/DFD-ACID-ENGINE/fm1/install/ in Chrome or Edge with the FM-1 on a direct USB cable and press Install, after backing up the music. The release also carries the package as a .fwsc. The README says the installer can always return the FM-1 to M-VAVE's official firmware, which is the documented recovery. The installer page embeds only the DFD package; no stock image is committed to the repository.
+brick_risk: false
+tags: [groovebox, generative, sequencer, synth-engine, fx, midi, editor, fork]
+image:
+  url: https://raw.githubusercontent.com/drophlex/DFD-ACID-ENGINE/main/docs/images/w_web_easy.jpg
+  alt: "DFD ACID ENGINE browser app on a dark background: green and white title, transport bar at 132 BPM, an ACID HOUSE generator panel and a 16-step matrix of notes"
+  credit: Polaris Sound Lab
+  source_url: https://github.com/drophlex/DFD-ACID-ENGINE
+  first_party: true
+versions:
+- version: 1.8.2-da1
+  date: 2026-11-19
+  url: https://github.com/drophlex/DFD-ACID-ENGINE/releases/tag/fm1-v1.8.2-da1-r6
+  notes: First FM-1 package, tested on hardware by its author on 2026-11-18. Releases r2 to r5 of the same package came earlier the same day, r2 to r4 as pre-releases, and are not listed.

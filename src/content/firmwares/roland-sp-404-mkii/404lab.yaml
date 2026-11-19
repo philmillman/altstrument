@@ -1,0 +1,40 @@
+device: roland-sp-404-mkii
+kind: tool
+name: 404Lab
+summary: >-
+  Python research base and workbench for SP-404MKII firmware mods. It holds evidence-labelled facts about the stock firmware and other mods and tools that build a mod onto your own image, check it and run it on an emulator.
+description: >-
+  Two parts in one repository. The knowledge base records hardware, stock firmware and other mods as facts, each marked
+  as read from the bytes of a named image, seen on the emulator, reported from a unit, taken from a document or a
+  hypothesis, and byte facts can be rechecked against your own image. The tools identify known firmware by hash (stock
+  3.02 to 5.52, DOOM OS 0.6 to 0.7.4 and Tampal builds), read, disassemble and search an image, build a C mod onto an
+  identified base, tie the result to its base and sources, and refuse known loader-erasing routines and oversized
+  images. An optional packaging route runs the firmware on the separate DM-404 emulator. Two small example mods are
+  included. The README says no package built by these tools has been tested on a unit and that most hardware facts come
+  from one unit. The project ships no firmware, so you supply your own SP404MKII_APP1.bin, and it does not flash the
+  unit.
+status: active
+authors:
+  - name: jjjadeRRR
+    url: https://github.com/jjjadeRRR
+source: https://github.com/jjjadeRRR/404Lab
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text and covers the project's own code and text only. It gives no rights to Roland
+  firmware or to other people's mods; the README warns that a mod built on a DOOM OS image is a change to DOOM OS,
+  whose licence restricts it. The repository stores only hashes of known images.
+distribution: source-only
+requires_stock: Your own SP404MKII_APP1.bin; the build examples target stock 5.52 and DOOM OS 0.7.3
+install_notes: >-
+  Needs Python 3.10 or newer, with clang for building. Install requirements.txt in a virtual environment and run
+  python -m lab404 doctor to see what is missing. The tools only prepare a file and instructions; flashing is left to
+  you. docs/SAFETY.md lists known hazards, including that SP404MKII_APP1W.bin can overwrite the loader and that a
+  recovery procedure for APP0 is not documented, and the tools refuse those file names.
+brick_risk: false
+tags: [research, emulator, reverse-engineering, ai, utility]
+versions:
+  - version: main @ 70bb16a
+    date: 2026-11-19
+    url: https://github.com/jjjadeRRR/404Lab/commit/70bb16a82fb64cab82c38f2dc72e373fc79541b3
+    notes: No tagged releases; this is the latest commit.

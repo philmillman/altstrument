@@ -1,0 +1,32 @@
+device: nintendo-3ds
+name: Bard Beats
+summary: >-
+  Homebrew loop maker for the 3DS with a 16-step, four-track sequencer, eight built-in instruments, live play on the buttons and circle pad, and saved loops with Standard MIDI export.
+description: >-
+  A 3DS homebrew app that runs without a computer. It has a one-bar 16-step grid with drum, bass, melody and harmony
+  tracks, eight synthesised instruments on the console's audio engine, a pad view and a rendered instrument view for
+  playing live, and a jam mode that quantises played notes onto the grid with undo. Loops are saved by name to the SD
+  card and can be exported as Standard MIDI files. The README lists song mode and microphone vocal recording as the
+  next stage; only the first stage is built. Binaries come from the repository's CI and there are no releases, so it
+  is built from source.
+status: active
+authors:
+  - name: Kiyoshi
+    url: https://github.com/kiyoshithekidd
+source: https://github.com/kiyoshithekidd/Bard-Beats
+source_status: open
+license: MIT
+license_notes: The LICENSE file is the MIT text, copyright 2026 Kiyoshi.
+distribution: source-only
+requires_stock: A 3DS with custom firmware and the Homebrew Launcher (.3dsx), or a build installed as a .cia
+install_notes: >-
+  Build with devkitPro (devkitARM, libctru and citro2d) using the Makefile: make produces BardBeats.3dsx for the
+  Homebrew Launcher, and make cia produces a .cia and needs bannertool and makerom. The repository's GitHub Actions
+  workflow builds both on every push. It runs as a normal homebrew app and writes only loops to the SD card.
+brick_risk: false
+tags: [sequencer, looper, synth-engine, handheld, homebrew, midi, open-source]
+versions:
+  - version: main @ 528d1a1
+    date: 2026-11-19
+    url: https://github.com/kiyoshithekidd/Bard-Beats/commit/528d1a132439d3617111647c20edcc163236b7a4
+    notes: No tagged releases; this is the latest commit.

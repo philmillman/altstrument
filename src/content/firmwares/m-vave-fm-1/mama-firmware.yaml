@@ -2,15 +2,18 @@ device: m-vave-fm-1
 name: MAMA firmware mirror
 kind: tool
 summary: >-
-  Mirror of 322 community FM-1 firmware packages pinned by SHA-256 for the MAMA Android app, with the source of each copyleft
+  Mirror of 289 community FM-1 firmware packages pinned by SHA-256 for the MAMA Android app, with the source of each copyleft
   one, kept as release assets next to a manifest.
 description: >-
+  Rights warning: the mirror also carries open projects whose authors state no license, which the owner decided to include on 2026-11-18, and takes them down on request.
+
   The repository holds a README table, a manifest.json and a list of what is not mirrored, while the packages and source
   archives sit in two release pages. Each package is a byte-identical copy of the author's release, named after its Hub
-  id, so that an install the app verified keeps working after the author or The Firmware Hub moves to a newer version. Only
-  firmware with a redistribution-friendly license is mirrored; for GPL, LGPL, AGPL and MPL firmware the source of that exact
-  version is taken from the author's tag or commit. Firmware with no stated license or with proprietary terms is listed as
-  not mirrored. No M-VAVE image appears in the manifest. The maintainer offers takedown by issue.
+  id, so that an install the app verified keeps working after the author or The Firmware Hub moves to a newer version. For GPL,
+  LGPL, AGPL and MPL firmware the source of that exact version is taken from the author's tag or commit. Since 2026-11-18 every
+  firmware in the MAMA library is mirrored, including seven open projects with no stated license, which the owner decided to
+  include, and the 43 firmwares that send no USB audio to the phone have been removed; the list of firmware not mirrored is
+  empty. No M-VAVE image appears in the manifest. The maintainer offers takedown by issue.
 status: active
 authors:
 - name: f00br
@@ -20,7 +23,7 @@ source_status: binary-only
 license: unspecified
 license_notes: >-
   The repository has no license file. The README says each mirrored file keeps its author's license and nothing is relicensed.
-  The manifest lists 269 GPL-3.0, 45 MPL-2.0, nine MIT, one Apache-2.0 and a few GPL-2.0 or -only packages.
+  The manifest lists 233 GPL-3.0, 40 MPL-2.0, eight MIT, one Apache-2.0 and seven with no stated license.
 homepage: https://github.com/f00br/mama-firmware/releases/tag/packages
 distribution: download
 install_notes: >-
@@ -29,7 +32,7 @@ install_notes: >-
 brick_risk: false
 tags: [library, utility]
 versions:
-- version: main @ 091fd61
+- version: main @ 91465ba
   date: 2026-11-18
-  url: https://github.com/f00br/mama-firmware/commit/091fd61d061bd08c535ffaa3e7214fc6b2c7e657
-  notes: No tagged releases; this is the latest commit. The packages and sources releases are rolling pages.
+  url: https://github.com/f00br/mama-firmware/commit/91465baf900b0f594a5640f4fe1ea69709ee33a7
+  notes: No tagged releases; this is the latest commit. The latest commit mirrors every firmware of the MAMA library (289), adding eight whose authors state no license, removes the 43 that send no USB audio, and adds each firmware's note-to-sound delay to the manifest. The packages and sources releases are rolling pages.

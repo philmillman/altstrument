@@ -5,7 +5,7 @@ summary: >-
 description: >-
   Rights warning: the repository includes the Mirage boot ROM and the OS 3.2 disk image with its sounds, which are Ensoniq's. LICENSE.md says no licence is granted for them and that they are kept for preservation, to be removed if a rights holder objects.
 
-  The emulator is a C port of the author's mirage-remake. It models the 6809 CPU, the 6522 timers and keypad, the 6850 MIDI port, the WD1772 floppy controller, the ES5503 sound chip and the eight CEM3328 filters. The keys play the Mirage with velocity, OCT- and OCT+ move octaves, K1 and K2 edit parameters, and EDIT turns the keys into the Mirage keypad, with the display shown as its two digits. The built-in OS 3.2 disk is packed into flash and read-only, giving six sounds. The README calls it early, says the host simulator runs it and that it has not been tried on an FM-1. It is built on fm1-base. The commit for 0.2.0 moves the analog section to the second core.
+  The emulator is a C port of the author's mirage-remake. It models the 6809 CPU, the 6522 timers and keypad, the 6850 MIDI port, the WD1772 floppy controller, the ES5503 sound chip and the eight CEM3328 filters. The keys play the Mirage with velocity, OCT- and OCT+ move octaves, K1 and K2 edit parameters, and EDIT turns the keys into the Mirage keypad, with the display shown as its two digits. The built-in OS 3.2 disk is packed into flash and read-only, giving six sounds. The README calls it early and says the host simulator runs it. On the FM-1, 0.1.0 used 228 % of the audio interrupt's time and the author's unit stopped responding; the 0.2.0 commit moves the analog section to the second core, and 0.3.0 adds a CPU-load guard and a safe start, with docs/SAFETY.md to read before installing. It is built on fm1-base.
 status: active
 authors:
 - name: leonardolopezchavira
@@ -19,7 +19,7 @@ based_on: m-vave-fm-1/fm1-base
 distribution: source-only
 requires_stock: M-VAVE FM-1 V15 or later
 install_notes: >-
-  Build with fm1-base's tools/build.py, which the repository's firmware workflow runs with JieLi's toolchain; there is no release or installer page yet. Use M-VAVE's updater or the platform's USB rescue to return to other firmware; the project gives no recovery steps of its own.
+  Build with fm1-base's tools/build.py, which the repository's firmware workflow runs with JieLi's toolchain; there is no release or installer page yet. Use M-VAVE's updater or the platform's USB rescue to return to other firmware; the project gives no recovery steps of its own, but its SAFETY.md says the build writes no flash and describes the safe start (hold HOME at power-on).
 brick_risk: false
 tags: [sampler, emulator, synth-engine, wavetable]
 image:
@@ -29,6 +29,10 @@ image:
   source_url: https://github.com/leonardolopezchavira/mirage-fm1#readme
   first_party: true
 versions:
+- version: main @ dd91152
+  date: 2026-11-18
+  url: https://github.com/leonardolopezchavira/mirage-fm1/commit/dd91152a449526b6f0c1bf97944757305b498e0c
+  notes: No tagged releases; this is the latest commit, which reads 0.3.0 in app/VERSION. Since the previous row it adds a CPU-load guard that pauses the emulation when it runs short of audio time and turns the sound off after three trips, and a safe start in which holding HOME at power-on keeps the sound off. The commit message says the author's FM-1 went dark after 0.1.0 measured 228 % of the audio interrupt's time, and points to docs/SAFETY.md.
 - version: main @ 5a66fd9
   date: 2026-11-15
   url: https://github.com/leonardolopezchavira/mirage-fm1/commit/5a66fd974c03ef74e461ba83d8691e322e06445c

@@ -1,0 +1,27 @@
+device: m-vave-fm-1
+name: Harmonica
+summary: >-
+  Ten-hole diatonic harmonica for the FM-1: ten keys are the holes, one key is draw, three keys bend the note, with 29 built-in licks in four tunings.
+description: >-
+  White keys 1 to 10 blow holes 1 to 10, key 11 turns the breath to draw, and keys 12 to 14 bend by a half step, a whole step or a step and a half where the hole allows it. Neighbouring keys played together make a chord of up to four holes. PRESET picks the harmonica's key, ALGORITHM picks one of four tunings, SELECT and PLAY choose and loop a lick, and EDIT switches between blues, folk, Chicago and FM sounds. The four knobs set tone, breath, vibrato and drive, and ARP and SEQ held give wah and hand tremolo. The 29 licks are checked at build time against what a real harmonica can play. The sound uses samples from the FluidR3_GM SoundFont, and a browser emulator is included. It is built on fm1-base and has no release yet.
+status: active
+authors:
+- name: jsopdebeeck
+  url: https://github.com/jsopdebeeck
+source: https://github.com/jsopdebeeck/fm1-harmonica
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The README and LICENSE give MPL-2.0 for the code, as fm1-base. The harmonica samples come from the FluidR3_GM SoundFont under its own MIT licence (LICENSES/FluidR3-MIT.txt).
+homepage: https://github.com/jsopdebeeck/fm1-harmonica
+based_on: m-vave-fm-1/fm1-base
+distribution: source-only
+install_notes: >-
+  Clone with submodules and run build.sh --release 0.5 with the JieLi toolchain to get a .fwsc, then install it as with other fm1-base firmwares. The firmware keeps only its own settings, in its own area of the FM-1's flash. The README gives no recovery notes; the chip's ROM boot mode is the fallback for a failed install.
+brick_risk: false
+tags: [synth-engine, sampler, emulator, presets]
+versions:
+- version: main @ 7c6d3c4
+  date: 2026-11-19
+  url: https://github.com/jsopdebeeck/fm1-harmonica/commit/7c6d3c40c096cdc10e6f008762d86765d2f908c7
+  notes: No tagged releases; this is the latest commit.

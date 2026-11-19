@@ -1,0 +1,40 @@
+device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
+name: jieli-usbkey-unbrick
+kind: tool
+summary: >-
+  Shell scripts that bring back an FM-1 or SMK-37 that no longer starts, by sending the JieLi USB key from a Raspberry
+  Pi through the unit's own USB cable, with no need to open the case.
+description: >-
+  The chip's mask ROM starts its factory USB loader when it sees a 16-bit key on the USB data lines while it powers up.
+  The Raspberry Pi sends that key on two GPIO pins wired to D+ and D- of a cut-open USB cable, the unit is switched on,
+  and the Pi then sees the loader as a UBOOT device. A menu script (English and French versions) installs M-Flasher and
+  the jl-uboot-tool, backs up the whole flash first, and writes a .fwsc package with M-Flasher, which leaves the
+  bootloader, the key calibration and the Bluetooth pairings alone. It can fetch an OpenVALive package or take one you
+  supply. The README reports a full recovery of an SMK-37 Elite from a Raspberry Pi 5; the FM-1, the SMK-37 Pro and the
+  Raspberry Pi 4 are listed as expected to work but not tested, and sending the key from a Pico is prepared but untested.
+  The project says it is not affiliated with M-VAVE or JieLi.
+status: active
+authors:
+- name: Tom-Rfid
+  url: https://github.com/Tom-Rfid
+source: https://github.com/Tom-Rfid/jieli-usbkey-unbrick
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text. The scripts download M-Flasher and jl-uboot-tool; neither is stored in the
+  repository, and it holds no M-VAVE firmware.
+distribution: source-only
+install_notes: >-
+  Needs a Raspberry Pi 4 or 5, a USB-A to USB-C data cable with three wires added to D+, D- and ground (the README
+  shows the wiring and warns never to put the 5 V line on a GPIO pin) and a package that matches the model. Run
+  rescue-en.sh, send the key with the unit switched off, switch it on, back up the flash and then flash. Keep the
+  backup, since the key calibration differs per unit and another unit's backup must not be restored. Only the SMK-37
+  Elite is reported as tested.
+brick_risk: false
+tags: [flasher, loader, utility, backup]
+versions:
+- version: main @ 473d6cc
+  date: 2026-11-19
+  url: https://github.com/Tom-Rfid/jieli-usbkey-unbrick/commit/473d6cc950d5360e1130d46f70ab9996daace693
+  notes: No tagged releases; this is the latest commit.

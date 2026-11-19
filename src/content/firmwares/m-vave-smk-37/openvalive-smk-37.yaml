@@ -1,0 +1,44 @@
+device: m-vave-smk-37
+name: OpenVALive SMK-37
+summary: >-
+  The OpenVALive live-first groovebox on the SMK-37 Elite and Pro: loops, CAPTURE, scenes and morph on a virtual analog synth
+  and drum engine, with pressure pads, faders, wheels and the MIDI OUT jack.
+description: >-
+  The firmware runs the same four-track app as OpenVALive FM-1 on M-VAVE's smk37_open SDK, with 24 synth sounds and
+  five drum kits. All 37 keys play with the factory velocity calibration, which the code reads and never writes. The
+  16 pressure-sensitive pads have PERFORM, PLAY and SCENES layers: effects whose depth follows pressure, notes and
+  drums with pressure rolls, and scene recall. The four faders set track levels, macros or targets chosen in the
+  CONTROL MAP, and the TRS MIDI OUT jack sends clock and notes so a Roland T-8 can follow. The firmware is built without
+  M-VAVE's Bluetooth stack, and the Bluetooth button taps the tempo and opens the CONTROL MAP. The app and synth come
+  from the MIT OpenVALive CORE repository as a git submodule. The README says the firmware runs on an SMK-37 Elite in
+  first tests and that the Pro build is untested. The project was called OpenLive until 19 November 2026; the
+  repository so far has only a preview-dev pre-release with Elite and Pro packages.
+status: active
+authors:
+- name: Tom-Rfid
+  url: https://github.com/Tom-Rfid
+source: https://github.com/Tom-Rfid/OpenVALive_SMK-37
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  COPYING.md states GPL-3.0-only with the linking exception of M-VAVE's smk37_open SDK, whose terms are copied in
+  targets/smk37/LICENSE.md. The va/ submodule is MIT and the fm1-base files used by the build are MPL-2.0. The SDK
+  binaries are not in the repository; CI fetches smk37_open at a pinned commit.
+based_on: m-vave-fm-1/openvalive-fm-1
+distribution: source-only
+requires_stock: M-VAVE's SMK-37 Open firmware tools are used to go back; one package per model, Elite or Pro
+install_notes: >-
+  Download the package for your model from a release or the preview-dev pre-release, or build it with the repository's
+  recipe, which needs the pinned smk37_open checkout, fm1-base and the JieLi toolchain. Install it with FLASH-SMK37.bat
+  on Windows or fm1_install.py --port SMK --force --no-resources. An interrupted install leaves the keyboard in update
+  mode, where running the same command resumes it. OpenVALive keeps its data in Open's project slots 6 to 16 and
+  leaves slots 1 to 5, settings and samples alone. The way back is the Restore factory V16 option of M-VAVE's SMK37
+  OPEN web workbench, which can also reinstall from update mode. For a unit that no longer starts, the README points
+  to the author's jieli-usbkey-unbrick scripts.
+brick_risk: false
+tags: [groovebox, looper, sequencer, drums, synth-engine, performance, generative, usb-midi]
+versions:
+- version: main @ c3debcd
+  date: 2026-11-19
+  url: https://github.com/Tom-Rfid/OpenVALive_SMK-37/commit/c3debcd68144ba3d563a803c6617dde7f2b34e5f
+  notes: No tagged releases; this is the latest commit.

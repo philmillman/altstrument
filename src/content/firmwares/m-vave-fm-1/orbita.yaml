@@ -1,0 +1,41 @@
+device: m-vave-fm-1
+name: ÓRBITA
+summary: >-
+  Generative FM instrument: three FM voices play euclidean rhythms over a scale while a phase plot draws each voice as an orbit. FM-1 firmware in beta, plus a voices-only installer, a browser version and a Mac plug-in.
+description: >-
+  Three FM voices, a sub bass, a prism and a crystal, play euclidean rhythms over a chosen scale, and each voice is drawn as an orbit on a phase plane. Density sets how many hits fall in 16 steps, phase where they fall and FM ratio moves the sound from warm to metallic. The FM-1 firmware plays the four scenes with the phase plane on the screen, using the browser app's patterns note for note and its own three voices; PLAY starts it, PRESETS and OCT change scene, knobs 1 to 4 set density, phase, FM ratio and scale, and EDIT switches between English and Spanish. A separate voices-only installer writes 32 DX7-format voices into an FM-1 running the official firmware, ANDROMEDA, Dark Funk Durcal or Felucca, and can remove them again. The repository also holds a browser app, a Mac plug-in in VST3, AU and app form, the source of a module for fm1-dock, and illustrated manuals in English and Spanish. The README says the firmware was tested on a computer but not yet on a physical FM-1.
+status: active
+authors:
+- name: Polaris Sound Lab
+  url: https://github.com/drophlex
+source: https://github.com/drophlex/ORBITA
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL-3.0 text and the README says GPL-3.0, with JUCE keeping its own terms. The FM-1 firmware tree under firmware/firmware-src carries Felucca's licensing (GPL-3.0-only overall, with its engines, board layer and ported DSP under their own licences), so the firmware is GPL-3.0-only. The tree commits .syx voice files and two small zip packages of the installers.
+homepage: https://drophlex.github.io/ORBITA/
+based_on: m-vave-fm-1/felucca
+community:
+- label: Polaris Sound Lab on YouTube
+  url: https://www.youtube.com/@PolarisSoundLab
+distribution: browser-installer
+requires_stock: Any FM-1 firmware; the firmware installer writes the package over it
+install_notes: >-
+  Open the firmware installer at https://drophlex.github.io/ORBITA/firmware/ in Chrome or Edge with the FM-1 on USB and press Install; the release carries the package as ORBITA-FM1.fwsc. The README says the installer saves a backup and can return the FM-1 to the official firmware, which is the documented recovery. The voices-only installer at https://drophlex.github.io/ORBITA/fm1/ writes only voice data.
+brick_risk: false
+tags: [generative, sequencer, synth-engine, fm, midi, editor, fork]
+image:
+  url: https://raw.githubusercontent.com/drophlex/ORBITA/main/docs/img/web-en.jpg
+  alt: "ÓRBITA browser app: a dark phase-plane plot of three coloured orbit curves, a scene panel named Mérida Ring with density, phase and FM ratio sliders, and a three-row step sequencer"
+  credit: Polaris Sound Lab
+  source_url: https://github.com/drophlex/ORBITA
+  first_party: true
+versions:
+- version: 1.8.2-or1
+  date: 2026-11-18
+  url: https://github.com/drophlex/ORBITA/releases/tag/fm1-v1.8.2-or1-r7
+  notes: First FM-1 firmware package, still in beta and not yet tried on a physical FM-1. Releases r5 and r6 of the same package came earlier the same day and are not listed.
+- version: 0.1.6
+  date: 2026-11-18
+  url: https://github.com/drophlex/ORBITA/releases/tag/v0.1.6
+  notes: Mac plug-in and the voices-only FM-1 installer; versions 0.1.1 to 0.1.5 were published the same day and are not listed.

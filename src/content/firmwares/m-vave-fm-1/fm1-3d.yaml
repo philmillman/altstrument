@@ -1,0 +1,43 @@
+device: m-vave-fm-1
+name: FM-1 3D
+kind: tool
+summary: >-
+  A three.js model of the FM-1 in the browser that runs firmware packages on the fm1-emu core, with working keys,
+  knobs and LEDs.
+description: >-
+  The page is a front end for fm1-emu, whose built emulator core is copied into the repository unmodified. It boots a
+  firmware from The Firmware Hub catalog or a .fwsc file that you open or drop on it, and none are stored in the
+  repository. The keys, buttons and knobs respond to mouse, touch, computer keyboard and Web MIDI, the backlights follow
+  the firmware's LED output, and what a firmware saves stays in the browser. There are overview, top, screen, keys, rear
+  and bottom views, a Player view for phones and five colourways. The model is built from product photos, so its
+  proportions are approximate, and the SMK-37 and the DX7 bank loading of fm1-emu's own page are not in it. The README
+  says it is unofficial and not affiliated with M-VAVE.
+status: active
+authors:
+- name: taylorRichie
+  url: https://github.com/taylorRichie
+source: https://github.com/taylorRichie/fm1-3d
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text. The emulator core in core/ is fm1-emu (MIT), and three.js (MIT) is in vendor/. The
+  README says firmwares are fetched from their authors' hosts when picked and are not kept in the repository.
+homepage: https://taylorrichie.github.io/fm1-3d/
+distribution: browser-installer
+install_notes: >-
+  Open the page, or serve the folder with any static file server, for example python3 -m http.server. Nothing is
+  installed on a device.
+brick_risk: false
+tags: [emulator, web]
+image:
+  url: https://raw.githubusercontent.com/taylorRichie/fm1-3d/main/docs/screenshot.jpg
+  alt: The 3D FM-1 model on an orange background, seen from above, with Felucca 1.8.2 selected, a sine wave on its screen and the bottom bar of view buttons
+  credit: taylorRichie
+  source_url: https://github.com/taylorRichie/fm1-3d
+  first_party: true
+based_on: m-vave-fm-1/fm1-emu
+versions:
+- version: main @ 2f6c011
+  date: 2026-11-19
+  url: https://github.com/taylorRichie/fm1-3d/commit/2f6c01149a31f3bb3f78686d53fa18a65460b7ac
+  notes: No tagged releases; this is the latest commit.

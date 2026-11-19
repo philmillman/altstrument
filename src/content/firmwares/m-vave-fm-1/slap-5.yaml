@@ -1,0 +1,26 @@
+device: m-vave-fm-1
+name: SLAP-5
+summary: >-
+  Five-track groovebox for the FM-1 with 128 factory patches, two-note melodic steps, six drum lanes, a harmony engine and a browser studio editor. Engineering test build; not yet tried on hardware.
+description: >-
+  Tracks one to four are melodic and track five is a drum sequencer with four kits and six fixed lanes. Each melodic step holds two notes, patterns run up to 64 steps with swing and hit probability, and a harmony engine spreads chords across voices. FX pages cover filter, slicer, insert, reverb, tempo delay, chorus and drive, and USB MIDI channels one to five address the tracks. SLAP STUDIO is a browser editor that shares the C DSP through WebAssembly, and a browser instrument emulator and a SLAP FLASH installer page are in the same site. The README says physical timing, flash compatibility and update recovery are unverified, and that the package should be kept off physical hardware. The latest build adds quantized overdub. It builds on fm1-base and shares its author and some code with AQUORA and KIRA-9.
+status: active
+authors:
+- name: CodingSlapfu
+  url: https://github.com/CodingSlapfu
+source: https://github.com/CodingSlapfu/SLAP-5
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The LICENSE file is the MPL-2.0 text. The vendored fm1-base and felucca-bsp licences stay in vendor/. The repository contains fm1-base's own community bootloader package under vendor/, and no M-VAVE firmware image.
+based_on: m-vave-fm-1/fm1-base
+distribution: browser-installer
+install_notes: >-
+  The release has a .fwsc update package, loader and application binaries, and checksums. The README says the SLAP FLASH page has no approved release manifest, so installing from it is disabled, and the release notes say physical installation is pending a supervised preflight. The app-only loader writes 0x4000 to 0x93000 and leaves the boot area alone. The notes warn against interrupting an update on an only unit and tell testers to keep a verified backup and known-good package; only the original 856014 flash chip is accepted.
+brick_risk: false
+tags: [groovebox, sequencer, drums, synth-engine, fx, chords, editor, emulator, web]
+versions:
+- version: v0.1.3-testing
+  date: 2026-11-19
+  url: https://github.com/CodingSlapfu/SLAP-5/releases/tag/v0.1.3-testing
+  notes: Pre-release engineering build; adds REC-armed overdub quantized to steps. Physical installation is pending.

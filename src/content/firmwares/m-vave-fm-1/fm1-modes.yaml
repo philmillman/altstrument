@@ -1,0 +1,27 @@
+device: m-vave-fm-1
+name: FM-1 Modes (FM1 Open)
+summary: >-
+  Extra instrument modes added to M-VAVE's FM1 Open firmware: a tekno performance mode, CR-78 and rhythm-box drum machines, a bass player, a six-voice synth, an effects rack, a loop deck and a small game. Browser emulator only so far.
+description: >-
+  The repository is a copy of M-VAVE's FM1 Open V14 kit with a launcher added, opened with HOME and ARP. M-VAVE's own engine and sequencer stay as they are and the new modes take over the panel while open. TEKNO is a live 90s tekno mode with kick, tom, hat and clap layers, an acid line with Devil Fish-style controls, a drone engine, effects locked to the bars and scenes. CR-78 is a 16-step drum machine with ratchets and swing, RHYTHM BOX holds 101 rhythms on two kits, and BASS PLAYER writes bass lines that follow played chords. The rest are a subtractive synth, a shared effects rack, a loop deck, a four-track groovebox experiment and STARFALL, a key game. Many sounds are ports from the author's own fantasy console. The README says it has been developed and tested in the browser emulator only and has not run on a real FM-1.
+status: active
+authors:
+- name: Nikki Koole
+  url: https://github.com/NikkiKoole
+source: https://github.com/NikkiKoole/fm1-modes
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE.md gives GPL-3.0-only for the application source with M-VAVE's additional permission to link the binary SDK, inherited from FM1 Open. The engine library sdk/lib/libfm1_engine.a is proprietary, with redistribution in binary form permitted for FM-1 devices by THIRD_PARTY.md. The bundled sdk/firmware/FM-1_015.fwsc is M-VAVE's licensed V15 image (Apache-2.0, blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd, matching m-vave/fm1_open). Third-party code such as Open303 keeps its licence.
+homepage: https://github.com/NikkiKoole/fm1-modes
+based_on: m-vave-fm-1/fm1-open
+distribution: source-only
+install_notes: >-
+  Nothing is released. The browser emulator builds on macOS or Linux with tools/build_web_mac.py and WASI SDK 27, and the firmware itself needs M-VAVE's JieLi toolchain on Windows (build.bat). Back up projects and samples before flashing; FM1 Open's bundled V15 image returns the unit to stock.
+brick_risk: false
+tags: [sequencer, drums, synth-engine, fx, looper, game, emulator, fork]
+versions:
+- version: main @ 27f8bc0
+  date: 2026-11-19
+  url: https://github.com/NikkiKoole/fm1-modes/commit/27f8bc0b6a2fb61353e508e63773a1573948ebe3
+  notes: No tagged releases; this is the latest commit.

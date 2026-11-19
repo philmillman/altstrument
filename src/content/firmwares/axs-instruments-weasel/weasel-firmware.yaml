@@ -4,8 +4,8 @@ kind: firmware
 summary: >-
   The maker's open source firmware for the WEASEL west coast synth, an Arduino sketch for the Daisy Seed. It has a complex oscillator with wavefolder, a modulation oscillator, low pass gates, an envelope, a pulsar, random voltage, a five-step sequencer and a patch bay.
 description: >-
-  Version 0.1 reads 32 pots through two multiplexers and two button matrices. The README lists every pot function and button position, the MIDI implementation (notes trigger the sequencer, pulsar and random source and can set the oscillator pitch)
-  and the Arduino setup with DaisyDuino. The repository also has KiCad files and design drawings. The web flasher repository holds a newer 0.2 source with a USB editor link.
+  Version 1.0 reads 32 pots through two multiplexers and two button matrices. The README lists every pot function and button position, the MIDI implementation (notes trigger the sequencer, pulsar and random source and can set the oscillator pitch)
+  and the Arduino setup with DaisyDuino. The repository also has KiCad files and design drawings. The README links the web flasher and editor, whose USB editor link (WeaselEditor.h) lives in the Weasel-Flasher repository, and has build options for the LED wiring and the sequencer step switches.
 status: active
 authors:
   - name: Joe Bowyer
@@ -17,10 +17,14 @@ license_notes: The LICENSE file and README say MIT, Copyright (c) 2024 .axs inst
 homepage: https://github.com/joebmz98/Weasel-West-Coast-Synthesiser
 distribution: source-only
 install_notes: >-
-  Install DaisyDuino and the MIDI library in the Arduino IDE, open weasel.ino, select the Daisy Seed board and upload.
+  Install DaisyDuino and the MIDI library in the Arduino IDE, open src/WEASEL_FW/WEASEL_FW.ino, select the Daisy Seed board and upload, or export the compiled binary and flash it with the web flasher.
 brick_risk: false
 tags: [official, open-source, synth-engine, sequencer, midi, daisy, lpg, platform]
 versions:
+  - version: main @ d929ae6
+    date: 2026-11-19
+    url: https://github.com/joebmz98/Weasel-West-Coast-Synthesiser/commit/d929ae6a466808775111d47d504b3f46a31631f2
+    notes: No tagged releases; this is the latest commit. The README now gives firmware 1.0 and hardware 1.0, and the sketch moved to src/WEASEL_FW with a wavefolder source file. The commits since the previous entry also drive the panel LEDs through AW9523 constant-current drivers, with a build option for the prototype wiring, and rework the PCB files.
   - version: main @ 177d437
     date: 2026-10-20
     url: https://github.com/joebmz98/Weasel-West-Coast-Synthesiser/commit/177d437f299f4327e63559053905dba09494ece8

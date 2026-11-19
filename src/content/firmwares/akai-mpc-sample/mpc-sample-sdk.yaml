@@ -1,0 +1,47 @@
+device: akai-mpc-sample
+name: mpc-sample-sdk
+kind: tool
+summary: Rust SDK for writing MPC Sample mods for firmware 1.3.0.12, which load from the SD card as a preload library and hook the stock app's buttons, pads, MIDI, screen, audio and sample objects.
+description: >-
+  A mod is a Rust cdylib built against the crate, which finds the running app, checks it against fingerprints of firmware
+  1.3.0.12 and patches 22 hook sites in memory, so nothing on the unit's flash is changed. The SDK gives typed events for
+  buttons, pads, the encoder, knobs and MIDI notes, typed access to the Sample page's selection, samples, pads, slices,
+  trim, WAV files and the Extract command, drawing through the app's own graphics calls, taps on the four ALSA audio
+  streams, a one-shot worker thread and virtual folders in the stock file browser. A build script cross-compiles the
+  mod, checks its symbols and glibc use and packs the SD card autorun zip. The documentation has one short page per
+  topic with a code example and covers an emulator loop for testing. The author's MPC Sample MiniMod is built on it.
+status: active
+authors:
+- name: ioma8
+  url: https://github.com/ioma8
+source: https://github.com/ioma8/mpc-sample-sdk
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text. The repository holds no Akai firmware; the SDK reads the stock app already running on
+  the unit.
+distribution: source-only
+requires_stock: "1.3.0.12 only"
+install_notes: >-
+  Add the crate from crates.io (mpc-sample-sdk 0.7) to a Rust cdylib, then run build-mod.sh with --pack and the firmware
+  hash to produce the autorun zip for the SD card. The loader refuses to start on another firmware or when a hook site
+  cannot be patched. Deleting the autorun folder returns the unit to stock.
+brick_risk: false
+tags: [sdk, library, rust, mod, open-source]
+versions:
+- version: 0.7.4
+  date: 2026-11-17
+  url: https://github.com/ioma8/mpc-sample-sdk/releases/tag/v0.7.4
+  notes: Adds hooks for the stock Save Project paint and text editor and the Sample Record button.
+- version: 0.7.3
+  date: 2026-11-17
+  url: https://github.com/ioma8/mpc-sample-sdk/releases/tag/v0.7.3
+  notes: Keeps a control button's press and release together when a mod callback is briefly unavailable.
+- version: 0.7.2
+  date: 2026-11-17
+  url: https://github.com/ioma8/mpc-sample-sdk/releases/tag/v0.7.2
+  notes: Adds virtual folders and files in the stock file browser.
+- version: 0.7.0
+  date: 2026-11-16
+  url: https://github.com/ioma8/mpc-sample-sdk/releases/tag/v0.7.0
+  notes: Adds exact slice snapshots and corrects the pad API.

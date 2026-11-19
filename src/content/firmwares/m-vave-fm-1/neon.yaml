@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: NEON
+summary: >-
+  Felucca fork for synthwave: Juno-style, unison-saw and string-machine engines, about 220 presets, 80s drum kits, and songwriting tools that follow one chord progression, with a sunset-and-grid look.
+description: >-
+  NEON adds sound engines to Felucca: a Juno-106-style voice, a stacked unison oscillator engine for leads, brass and basses, a string machine with an ensemble chorus, and a supersaw and PWM voice with slow drift. About 220 presets are sorted into bass, lead, pad, arp, key and drums, many converted from patches for other synths, and ten 80s drum kits are included. HARMONY lets one chord progression drive every melodic track, WRITE creates a one-bar part for a track's sound, VARY turns a bar into a four-bar phrase, and chords move by voice leading. Patterns run to 64 steps per track, and any track can take a tempo-synced sidechain duck and a stereo chorus. The screens use a sunset palette, role colours for each kind of track and a visualizer page tied to the tempo. Felucca's own engines stay in the firmware but are not listed, and projects that use NEON's engines do not load on Felucca. The package has its own identity, FM-1_1984. The README says it was developed with the help of AI coding tools.
+status: active
+authors:
+- name: Neon Summers
+  url: https://github.com/LotionOnTheSkin
+source: https://github.com/LotionOnTheSkin/NEON
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README says GPL-3.0, and the LICENSE file is the GPL-3.0 text. LICENSING.md keeps Felucca's terms: GPL-3.0-only overall, with Felucca-Engines MIT, felucca-bsp MPL-2.0 and some ported DSP under its own licences. The README says NEON's own engines are MIT.
+homepage: https://github.com/LotionOnTheSkin/NEON#readme
+distribution: download
+requires_stock: Any FM-1 firmware
+install_notes: >-
+  Download neon.fwsc from the release and install it with the FM-1 Firmware Hub or another FM-1 installer that takes a .fwsc file; the README says to back up projects and presets first and that M-VAVE's own updater returns the FM-1 to the official firmware, which is the documented recovery. The package can be tried without an FM-1 in the browser emulator at joakimeriksson.github.io/fm1-emu.
+brick_risk: false
+tags: [groovebox, synth-engine, sequencer, drums, fx, fork]
+image:
+  url: https://raw.githubusercontent.com/LotionOnTheSkin/NEON/main/docs/card.png
+  alt: "NEON card: the word NEON over the line SYNTHWAVE GROOVEBOX, a striped pink and orange sun above a magenta perspective grid, and the text NEON 0.1 on Felucca neon"
+  credit: Neon Summers
+  source_url: https://github.com/LotionOnTheSkin/NEON
+  first_party: true
+versions:
+- version: '0.1'
+  date: 2026-11-19
+  url: https://github.com/LotionOnTheSkin/NEON/releases/tag/v0.1
+  notes: First release, tested on a real FM-1 according to the README. A rolling neon-latest pre-release is not listed.

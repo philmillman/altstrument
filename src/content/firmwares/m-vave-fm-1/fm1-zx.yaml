@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: FM-1 ZX
+summary: >-
+  ZX Spectrum 48K emulator as the FM-1's firmware: Spectrum games play on the keys and knobs, and the beeper's music is replaced with FM-synthesised instruments.
+description: >-
+  Built-in games are five freely licensed Spectrum titles plus test programs, each with its own mapping from the FM-1's keys, buttons and encoders to Spectrum keys or a Kempston joystick. A HOME menu offers resume, reset, an on-screen Spectrum keyboard, pause and four screen scaling modes. In the default FM mode the firmware recognises a game's music routine, reads the notes from the game's memory and plays them as FM voices, and where it cannot it falls back to the original beeper. A pack builder makes packages with the user's own 48K games, and a browser page runs the same firmware in an FM-1 emulator. The README says it was made with AI coding assistants, runs on a real FM-1, and builds on Z80 and Felucca code. The Spectrum 48K ROM is included under Amstrad's permission to distribute it unmodified with emulators.
+status: active
+authors:
+- name: Orest Kulik
+  url: https://github.com/okulik
+source: https://github.com/okulik/fm1-zx
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  README and LICENSING.md give GPL-3.0-or-later for the project's own code, while LICENSE holds the GPL text. Components keep their licences: the Z80 emulator is LGPL-3.0-or-later, felucca-bsp is MPL-2.0, the three JieLi SDK files in the package are Apache-2.0, and the bundled Spectrum games have their own free licences. The ROM is under Amstrad's permission and the package has no M-VAVE firmware image.
+homepage: https://dev-gh.nisdom.com/fm1-zx/
+based_on: m-vave-fm-1/felucca
+distribution: browser-installer
+install_notes: >-
+  Flash fmzx.fwsc from the release with M-Flasher, felucca-bsp's fm1_install.py, or the FM-1 Firmware Hub, which finds the unit over USB when the firmware is running. The install guide marks one route, starting from the stock firmware, as unverified. The loader writes from 0x4000 and leaves the unit's bootloader alone, an interrupted install resumes when started again, and OCT- held for one second at power-on enters the update mode. The install guide describes the way back to stock by restoring an M-Flasher backup.
+brick_risk: false
+tags: [emulator, game, fx, synth-engine, usb-midi]
+image:
+  url: https://raw.githubusercontent.com/okulik/fm1-zx/main/docs/images/fm1-zx.jpg
+  alt: "Photo of a pink FM-1 whose screen shows a ZX Spectrum platform game level named Central Cavern, with the purple keys and buttons below"
+  credit: Orest Kulik
+  source_url: https://github.com/okulik/fm1-zx
+  first_party: true
+versions:
+- version: v1.1.0
+  date: 2026-11-19
+  url: https://github.com/okulik/fm1-zx/releases/tag/v1.1.0
+  notes: The firmware shows up as a USB-MIDI device named FM-1 ZX, so the Firmware Hub can install other firmwares from it.
+- version: v1.0.0
+  date: 2026-11-18
+  url: https://github.com/okulik/fm1-zx/releases/tag/v1.0.0
+  notes: First release.

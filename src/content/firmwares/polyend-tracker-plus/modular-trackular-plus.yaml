@@ -24,7 +24,7 @@ license_notes: >-
   identifiers.
 distribution: download
 install_notes: >-
-  Download TrackerPlus_MT_synths-1.1.ptf and PolyendTracker_CE_Synths.zip from the release. Copy the Synths folder from the
+  Download TrackerPlus_MT_modular-1.2.ptf and PolyendTracker_CE_Synths.zip from the latest release, or the CE_20261118 .ptf with PolyendTracker_CE_Words.zip, whose Words folder goes to the card's root as well. Copy the Synths folder from the
   zip to the card's root, since CE's synth engines are plugins loaded from it, and delete Synths/GRAIN.psyn if an older release
   left it there, then copy the .ptf to /Firmware/ on the
   microSD card and run Config > Firmware > Firmware update. PolyendTracker_CE_Effects.zip is optional and holds CE's Sample
@@ -37,6 +37,14 @@ install_notes: >-
 brick_risk: false
 tags: [fork, platform, midi, sequencer, tracker]
 versions:
+  - version: modular-1.2
+    date: 2026-11-19
+    url: https://github.com/FatRodzianko/Modular-Trackular-Plus/releases/tag/modular-1.2
+    notes: No new features. Moves 1 KB from CE's heap to the fast memory the mods use, to make room for later mods, and the notes report a lowest free heap of about 60 KB on a Tracker+. Based on Tracker CE main at f25fb89.
+  - version: CE_20261118
+    date: 2026-11-19
+    url: https://github.com/FatRodzianko/Modular-Trackular-Plus/releases/tag/CE_20261118
+    notes: Rebased on Polyend's Tracker CE main at 922bba0, which plays mono samples on one voice channel, adds a Note display setting, takes Auto Name words from /Words on the card, lets the Sample Recorder pick the line-in channel and adds a Convolution Reverb sample effect. The mods are unchanged and a Words zip joins the release.
   - version: synths-1.1
     date: 2026-11-18
     url: https://github.com/FatRodzianko/Modular-Trackular-Plus/releases/tag/synths-1.1

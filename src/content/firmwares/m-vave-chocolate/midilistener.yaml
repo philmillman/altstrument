@@ -1,0 +1,36 @@
+device: m-vave-chocolate
+name: midilistener
+kind: tool
+summary: >-
+  ESP32-S3 firmware that listens to a Chocolate Plus over Bluetooth MIDI and lights an LED strip with the on or off
+  state of each switch, which the footswitch does not show by itself.
+description: >-
+  The program runs on a separate ESP32-S3 board with a short WS2812B strip. It connects to the footswitch as a BLE MIDI
+  client and treats a control change value of 64 or more as on and less as off, so the LED logic keeps no state of its
+  own. The footswitch sends nothing when its bank changes, so the board learns banks: a setup mode, entered by pressing
+  switch 1 six times, records the four controller keys of a bank and stores up to eight in flash, and a change of
+  bank is recognised when a packet carries a key of another learned bank. The strip shows connection and bank-change
+  states. The mapping in the source is set for the author's own pedal and the README says to change it to fit yours. The
+  repository holds a PlatformIO project, a short README with the wiring and a handoff note with the test findings. It does
+  not change the footswitch's own firmware, and the phone must be disconnected while the board is connected.
+status: active
+authors:
+- name: TeoTzeShuen
+  url: https://github.com/TeoTzeShuen
+source: https://github.com/TeoTzeShuen/midilistener
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and the README states no license.
+distribution: source-only
+install_notes: >-
+  Build the PlatformIO project and flash it to your own ESP32-S3 board with an 8-LED WS2812B strip wired 5V to VCC, GND to
+  GND and GPIO14 to the data input. On some DevKitC clones the LED and IN to OUT pads must be bridged. Nothing is written
+  to the Chocolate Plus.
+brick_risk: false
+tags: [controller, midi, ble-midi, bluetooth, esp32, led, utility]
+versions:
+- version: main @ 07e1e80
+  date: 2026-11-19
+  url: https://github.com/TeoTzeShuen/midilistener/commit/07e1e8070a809d0bbead83eeb3357f492c7a9d40
+  notes: No tagged releases; this is the latest commit. Adds learnable banks with a setup mode.

@@ -1,0 +1,65 @@
+device: erica-synths-perkons-hd-01
+name: Perkons Mod Matrix Desktop
+kind: tool
+summary: Desktop app for macOS and Windows that runs the perkons-re Mod Matrix with its own Python and Arm compiler, so a modded Pērkons image can be built from the official 1.3.0 firmware without installing a toolchain.
+description: >-
+  The Mod Matrix for the Erica Synths Pērkons HD-01, as a desktop app for Mac and Windows. Load your official
+  firmware, tick the mods you want, and get a modded firmware file to flash. Read each mod's user guide in the app,
+  advice and calculator for managing processor usage, what's new section and troubleshooting guide. No Git, Python,
+  compiler or terminal needed.
+status: active
+authors:
+  - name: remixed123
+    url: https://github.com/remixed123
+source: https://github.com/remixed123/modmatrix-desktop
+source_status: open
+license: MIT
+license_notes: >-
+  The MIT License covers the launcher and build scripts. The app bundles the Arm GNU Toolchain (GPL-3.0, with its
+  source attached to each release), unicorn (GPL-2.0) and Python (PSF licence); licenses/THIRD_PARTY.md lists them.
+  perkons-re and the mods are downloaded at run time, not bundled. No Erica Synths firmware is included; users supply
+  the official update image.
+based_on: erica-synths-perkons-hd-01/perkons-re
+distribution: patch-your-own
+requires_stock: Official Pērkons firmware 1.3.0 (perkons_v1.3.0-0-force.img)
+install_notes: >-
+  Download the build for Apple Silicon Macs (macOS 11.3 or later), Intel Macs (macOS 12 or later) or 64-bit Windows
+  10 and 11 from the releases page. The Windows build is unsigned, so Windows may ask before running it. The first
+  start needs an internet connection: on each start the app fetches the newest perkons-re and the mod list, and it
+  falls back to the last copy when offline. Drop the official 1.3.0 image in, choose the mod repositories you trust,
+  tick mods, press Patch It and download the new image. Copy it to the root of the SD card, power off, hold all four
+  voice trigger keys and power on. To go back, install the official image the same way.
+brick_risk: false
+tags: [patcher, desktop, open-source]
+versions:
+  - version: "0.6.0"
+    date: 2026-11-15
+    url: https://github.com/remixed123/modmatrix-desktop/releases/tag/v0.6.0
+    notes: Adds a Processor & Memory tab with engine load ratings and a kit planner, and an Intel Mac build.
+  - version: "0.5.2"
+    date: 2026-11-14
+    url: https://github.com/remixed123/modmatrix-desktop/releases/tag/v0.5.2
+    notes: The update check always shows the app's own version and links a newer download.
+  - version: "0.5.1"
+    date: 2026-11-14
+    url: https://github.com/remixed123/modmatrix-desktop/releases/tag/v0.5.1
+    notes: The update indicator stays lit until cleared.
+  - version: "0.5.0"
+    date: 2026-11-14
+    url: https://github.com/remixed123/modmatrix-desktop/releases/tag/v0.5.0
+    notes: Adds a manual and hourly check for a newer Mod Matrix, changed mods and a newer app.
+  - version: "0.4.0"
+    date: 2026-11-12
+    url: https://github.com/remixed123/modmatrix-desktop/releases/tag/v0.4.0
+    notes: User guides can be printed, copied and refreshed.
+  - version: "0.3.0"
+    date: 2026-11-12
+    url: https://github.com/remixed123/modmatrix-desktop/releases/tag/v0.3.0
+    notes: Renamed Perkons Mod Matrix Desktop, with its own icon.
+  - version: "0.2.0"
+    date: 2026-11-11
+    url: https://github.com/remixed123/modmatrix-desktop/releases/tag/v0.2.0
+    notes: Adds a User Guides tab for every mod and engine.
+  - version: "0.1.0"
+    date: 2026-11-11
+    url: https://github.com/remixed123/modmatrix-desktop/releases/tag/v0.1.0

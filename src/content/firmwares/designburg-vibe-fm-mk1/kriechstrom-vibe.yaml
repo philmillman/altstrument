@@ -1,0 +1,59 @@
+device: designburg-vibe-fm-mk1
+name: KRIECHSTROM for VIBE FM
+summary: >-
+  Dark industrial and EBM groovebox for VIBE FM, ported from the FM-1 KRIECHSTROM: four tracks, 171 sounds, a 64-step
+  sequencer per track, audio input, MIDI and CV out, and a display that wears with the master.
+description: >-
+  A native VIBE FM build made with the VIBE FM SDK. The sound engine is the FM-1 KRIECHSTROM code from a git
+  submodule, and at 44.1 kHz its output matches the FM-1 build bit for bit, which the repository's tests check; at
+  other sample rates it is resampled. The screen, controls, audio input, MIDI out, CV and gate out, storage and DAW
+  parameters are new for this port. The 480 x 320 display has SOUND, ENV, LFO, ARP, FX and SEQ pages, a piano roll or
+  drum grid on the pads, four tracks with the DICE pattern generator in eight moods, hold effects and the master chain.
+  IN 1 and IN 2 can feed a guitar, voice or drum machine through the master, and can stand in for the INFECT sidechain.
+  A 960 x 540 stage view shows the four patterns at once and can be clicked and dragged. Storage covers an automatic
+  session, four project slots that SONG plays as a chain and 32 user sounds, and version 0.3 adds a demo song. The
+  firmware runs in the VIBE FM Playground and the VIBE FM VST; the Mk1 hardware has not shipped, so use on it is untested.
+  The README credits Felucca and Glitchbox, and says VIBE FM is a trademark of Sven Trogus.
+status: active
+authors:
+- name: Grigorii Bezborodov (Xforsa)
+  url: https://github.com/Xforsa
+source: https://github.com/Xforsa/kriechstrom-vibe
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is GPL-3.0 and the README says it is GPL-3.0-only like KRIECHSTROM and Felucca. LICENSING.md and
+  CREDITS.md carry the licences of the parts it builds on, and the VIBE FM SDK files under sdk/ keep their Apache-2.0
+  licence. The release files contain no M-VAVE firmware.
+homepage: https://xforsa.github.io/kriechstrom-vibe/
+based_on: m-vave-fm-1/kriechstrom
+distribution: browser-installer
+install_notes: >-
+  Download kriechstrom.wasm from a release and drop it onto the VIBE FM Playground in the browser, or drop
+  kriechstrom.zip onto the VIBE FM VST window. To build it you need Zig 0.13.0, Python 3 with Pillow and fontTools, a C
+  compiler and Node.js 18 or newer, then run sh tools/build.sh from a recursive clone. Nothing is flashed to a device.
+brick_risk: false
+tags: [groovebox, sequencer, synth-engine, drums, fx, distortion, generative, performance, midi, cv, sdk, web, fork]
+image:
+  url: https://raw.githubusercontent.com/Xforsa/kriechstrom-vibe/main/docs/sound.png
+  alt: KRIECHSTROM on the VIBE FM display, SOUND page with four track headers, FUZZ BASS selected in a list, a bar spectrum and four values, over a branching red mark
+  credit: Grigorii Bezborodov
+  source_url: https://github.com/Xforsa/kriechstrom-vibe
+  first_party: true
+versions:
+- version: '0.4'
+  date: 2026-11-19
+  url: https://github.com/Xforsa/kriechstrom-vibe/releases/tag/v0.4
+  notes: The start asks whether to open where you left off, the demo song or an empty project; a tapped SHIFT holds for the next control; the pages slide and the display animates with the sound; screen wear is gentle by default and set under MENU > DISPLAY.
+- version: '0.3'
+  date: 2026-11-19
+  url: https://github.com/Xforsa/kriechstrom-vibe/releases/tag/v0.3
+  notes: Adds a demo song of four project slots in E minor at 100 BPM, with a SONG over them.
+- version: '0.2'
+  date: 2026-11-19
+  url: https://github.com/Xforsa/kriechstrom-vibe/releases/tag/v0.2
+  notes: Adds SONG, AUTOMATION, FM6 operator pages and 32 user sounds, redraws the creep figure and drops the sample-based sounds.
+- version: '0.1'
+  date: 2026-11-19
+  url: https://github.com/Xforsa/kriechstrom-vibe/releases/tag/v0.1
+  notes: First release, KRIECHSTROM 0.5.1 as a native VIBE FM build.

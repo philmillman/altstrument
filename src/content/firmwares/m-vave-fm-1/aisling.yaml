@@ -13,7 +13,7 @@ description: >-
   and for the harper Turlough O'Carolan. Three of the black-key effects are renamed Ceo, Macalla and Fras, and
   there is a green triskele launch screen. From 0.4, notes received over USB or TRS MIDI play the Lead. From 0.5, a web editor shows every setting of a piece
   and works the FM-1 over USB, and holding HOME with OCT- or OCT+ undoes and redoes the last 16 changes. A separate one-file browser visualiser reads the FM-1's MIDI out and
-  paints it as a landscape. From 0.5.1, units with the newer UC25HQ80 flash chip can save and update. From 1.0, the audio is computed one block ahead to remove crackle. From 1.1, a sleep timer fades the sound out and blanks the screen, and MIDI program changes 0 to 7 pick the piece. From 1.2, MIDI controllers turn the knobs and Evolve can be set to land on the bar line. From 1.3, the PERFORM page plays effects: each of its 27 keys holds an effect over the music, with twelve new effects, a Chorus knob and a MIDI controller for each effect. From 1.4, the pieces can walk on in a journey, a day-and-weather layer shapes the mix, and an effect's controller value sets its amount. From 1.4.1, the screen can be dark or light. AISLING saves its eight pieces in the same flash location as NACHTFAHRT, DUB-1 and
+  paints it as a landscape. From 0.5.1, units with the newer UC25HQ80 flash chip can save and update. From 1.0, the audio is computed one block ahead to remove crackle. From 1.1, a sleep timer fades the sound out and blanks the screen, and MIDI program changes 0 to 7 pick the piece. From 1.2, MIDI controllers turn the knobs and Evolve can be set to land on the bar line. From 1.3, the PERFORM page plays effects: each of its 27 keys holds an effect over the music, with twelve new effects, a Chorus knob and a MIDI controller for each effect. From 1.4, the pieces can walk on in a journey, a day-and-weather layer shapes the mix, and an effect's controller value sets its amount. From 1.4.1, the screen can be dark or light. From 1.5, sound packs add eight more pieces at a time beside the built-in eight, installed and removed over USB, with a first pack, Saints & Sinners, of chant and Delta blues, and the screen can follow the piece automatically. AISLING saves its eight pieces in the same flash location as NACHTFAHRT, DUB-1 and
   AMB-1, so installing one of them can overwrite another's saves.
 status: active
 authors:
@@ -27,11 +27,12 @@ license_notes: >-
   Terminus fonts are SIL OFL 1.1, the harp's string follows MIT-licensed code from M-VAVE's fm1_open, and the JieLi
   AC79 SDK files are read from your SDK checkout at build time.
 homepage: https://stephencummins.github.io/fm1-aisling/
+based_on: m-vave-fm-1/nachtfahrt
 distribution: browser-installer
 requires_stock: V15, V16 or NACHTFAHRT
 install_notes: >-
   Web installer in Chrome or Edge over USB (also Chrome on Android or a Chromebook), or tools/fm1_install.py with
-  the .fwsc from the release (aisling-1.4.1.fwsc). The release notes report installs on a real FM-1 from V15, V16 and NACHTFAHRT
+  the .fwsc from the release (aisling-1.5.fwsc). The release notes report installs on a real FM-1 from V15, V16 and NACHTFAHRT
   0.9.5, and a return to stock with M-VAVE's M-UPGRADE, which shows AISLING as v14. They also say an install
   interrupted by pulling the cable carries on when it is reconnected. Installing is at your own risk.
 brick_risk: false
@@ -43,6 +44,10 @@ image:
   source_url: https://github.com/stephencummins/fm1-aisling
   first_party: true
 versions:
+- version: "1.5"
+  date: 2026-11-19
+  url: https://github.com/stephencummins/fm1-aisling/releases/tag/v1.5
+  notes: Adds sound packs, eight more pieces kept on the FM-1 beside the built-in eight and installed or removed over USB, with Saints & Sinners as the first pack. Adds an Auto screen setting that follows the piece, a Blues scale, a Slide for the Lead and Lead rhythms in threes. With no pack installed the sound and saved pieces are 1.4.1's. The release notes say it was tried on an FM-1 with the first chip and not on a newer one.
 - version: 1.4.1
   date: 2026-11-16
   url: https://github.com/stephencummins/fm1-aisling/releases/tag/v1.4.1

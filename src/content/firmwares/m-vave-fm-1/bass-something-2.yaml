@@ -1,8 +1,7 @@
 device: m-vave-fm-1
 name: Bass Something 2
 summary: >-
-  Bass Station II-style monosynth with arpeggiator, sequencer, effects and patch SysEx, plus from 0.7 Drum Something, a
-  13-voice Drumtraks-style drum machine, from 0.8 an electric piano and a tape echo, a RemoteFM1 iOS build and remote pages for Cyma Forma's RND Synth.
+  Bass Station II-style monosynth with arpeggiator, sequencer, effects and patch SysEx, plus a Drumtraks-style drum machine, an electric piano, a tape echo and from 0.9 a tonewheel organ, a RemoteFM1 iOS build and remote pages for Cyma Forma's RND Synth.
 description: >-
   Each page draws a section of the Bass Station II panel with its knobs, switches and LEDs, with the extras the original
   lacks on separate plates. The voice has the BS2's LFO routing, envelope triggering modes, oscillator filter mod,
@@ -13,7 +12,7 @@ description: >-
   From 0.7 a second instrument, Drum Something, runs beside the bass: thirteen synthesized drum voices with their own
   volume and tuning, patterns and songs of up to 99 steps, and drum MIDI out, with HOME switching between the two. From 0.8 the unit also holds Piano Something 368X, an electric piano, and Space
   Something 201, a tape echo with a spring reverb that every instrument sends into; from 0.8.1 the sound can also play
-  through Bluetooth headphones or a speaker. Releases also include a build in the .rfm1 format for Quixotic7's RemoteFM1 on iPhone and iPad.
+  through Bluetooth headphones or a speaker. From 0.9 the unit also holds Organ Something B3, a tonewheel organ inspired by the Hammond B-3 and its Leslie 122, with nine drawbars, two manuals and 32 presets. Releases also include a build in the .rfm1 format for Quixotic7's RemoteFM1 on iPhone and iPad.
   The author says parts of the arpeggiator and sequencer follow the Bass Station II user guide and have not been
   compared with a real unit. Releases 0.1 and 0.2 shipped a factory bank taken from a third-party patch pack, which 0.3
   replaces with its own patches. It builds on fm1-base and needs local platform patches, two of them open as upstream pull
@@ -43,6 +42,26 @@ image:
   source_url: https://github.com/imijes/bass-something-2/blob/main/docs/MANUAL.md
   first_party: true
 versions:
+- version: 0.9.4
+  date: 2026-11-19
+  url: https://github.com/imijes/bass-something-2/releases/tag/v0.9.4
+  notes: Fixes restoring and saving with the organ's rotor noise on, where the Leslie's constant wind was counted as playing and blocked a restore with STOP FIRST. The organ now counts as playing only while keys are held, and a refused restore says what is playing.
+- version: 0.9.3
+  date: 2026-11-19
+  url: https://github.com/imijes/bass-something-2/releases/tag/v0.9.3
+  notes: Fixes installing and restoring. A restore no longer waits for the Space Echo's tail, the Space Echo starts at mode 7 on a first start or reset, and the installer page asks the FM-1 for its identity again while its first start settles.
+- version: 0.9.2
+  date: 2026-11-19
+  url: https://github.com/imijes/bass-something-2/releases/tag/v0.9.2
+  notes: Adds an OFF setting to GLOBAL KEYS' velocity, which plays every key at velocity 100.
+- version: 0.9.1
+  date: 2026-11-19
+  url: https://github.com/imijes/bass-something-2/releases/tag/v0.9.1
+  notes: Points the FM-1 Screen Reader at Bass Something 2's own words instead of the template site's, and adds manual links to the piano, organ and echo sections.
+- version: "0.9"
+  date: 2026-11-19
+  url: https://github.com/imijes/bass-something-2/releases/tag/v0.9
+  notes: Adds Organ Something B3, a tonewheel organ with 91 tonewheels, nine drawbars, two manuals, a Leslie with horn and drum rotors, key click, percussion, vibrato and chorus, and 32 presets. HOME now goes round bass, drums, piano, organ and echo, and the release adds global CC channels and motion settings, aftertouch knobs and a Bass Station II-style SAVE. Audio blocks shrink to 2.9 ms, which brings MIDI note-to-sound latency from about 10.2 to 5.6 ms, and an overload guard thins the quietest voices instead of crackling. Package 531,252 bytes.
 - version: 0.8.2
   date: 2026-11-11
   url: https://github.com/imijes/bass-something-2/releases/tag/v0.8.2

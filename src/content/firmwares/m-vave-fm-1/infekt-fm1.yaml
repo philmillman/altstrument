@@ -1,0 +1,32 @@
+device: m-vave-fm-1
+name: InfeKt-FM1
+summary: >-
+  Virtual analog polysynth for the FM-1 with three oscillators and two multimode filters per voice, a modulation matrix, effects, a sequencer, a drum machine and Virus patch compatibility. Binary-only; the engine's source is not published.
+description: >-
+  Each of up to 16 voices has three oscillators that morph from sine through saw to pulse, a sub oscillator, noise, a ring modulator, sync and FM, and user-replaceable wavetables. Two multimode filters run in four routings, three LFOs feed a six-slot modulation matrix, and two parts can be layered or split. Effects include distortion, chorus, phaser, equalizer, tempo-synced delay and reverb, and a shimmer reverb. The arpeggiator, a hybrid sequencer and an 11-instrument drum machine are built in, and MIDI runs over USB, Bluetooth and TRS. The author says it reads Virus patches. A browser page installs the firmware, edits and backs up banks, and plays patches without the FM-1. Only the MPL-2.0 platform parts built on fm1-base and felucca-bsp are published as source, and the author says the engine's source will follow later. It runs on both FM-1 flash chip versions. Factory banks are by Manuel Schleis, Alan Marcero and Sete.
+status: active
+authors:
+- name: J0KERPACK
+  url: https://github.com/j0kerpack
+source_status: binary-only
+license: unspecified
+license_notes: >-
+  The synthesizer engine and application have no licence statement. The platform layer is MPL-2.0 (fm1-base and felucca-bsp, with their changes published as source in downloads/), the installer page is MPL-2.0, and the font is SIL OFL 1.1. The Apache-2.0 JieLi SDK files are in the package, and the optional m-bootloader is MIT (downloads/CREDITS.txt). The package has no M-VAVE firmware image.
+homepage: https://j0kerpack.github.io/InfeKt-FM1/
+based_on: m-vave-fm-1/fm1-base
+distribution: browser-installer
+install_notes: >-
+  Open the install page in Chrome or Edge, or unzip the installer package and open infekt-fm1.html, with a USB data cable. Back up banks first; the factory-banks option overwrites banks A and B. An interrupted install can be repeated. The installer can also install m-bootloader, which it refuses on units with the newer UC25HQ80 flash. The package includes rescue scripts for a unit that no longer starts; they write only the firmware area and leave the bootloader and device data alone. The stock firmware can be restored from the installer's first tab.
+brick_risk: false
+tags: [synth-engine, oscillator, filter, wavetable, lfo, fx, arpeggiator, sequencer, drums, ble-midi, editor, presets]
+image:
+  url: https://raw.githubusercontent.com/j0kerpack/InfeKt-FM1/main/img/screen-sequencer.png
+  alt: "InfeKt-FM1 sequencer screen: a red LENGTH 2/16 header over a piano roll from C3 to C5 with notes at C4, one step outlined and steps 2 to 9 numbered below"
+  credit: J0KERPACK
+  source_url: https://j0kerpack.github.io/InfeKt-FM1/
+  first_party: true
+versions:
+- version: '1.19'
+  date: 2026-11-18
+  url: https://github.com/j0kerpack/InfeKt-FM1/commit/23f05fb09aee3296a4ae22105aa6fc74ec1cb772
+  notes: No GitHub release page; the downloads folder has this version, first committed here.

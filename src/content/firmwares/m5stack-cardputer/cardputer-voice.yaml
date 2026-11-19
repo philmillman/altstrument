@@ -1,0 +1,45 @@
+device: m5stack-cardputer
+name: Cardputer Voice
+summary: >-
+  Turns the Cardputer-Adv into a monophonic USB-MIDI instrument that sings Japanese kana. The keyboard plays five vowels, and a Mac tool sends lyrics and melodies that the built-in vocal tract model sings.
+description: >-
+  A PlatformIO firmware for the Cardputer-Adv with a vocal tract model tuned to the five Japanese vowels. On the
+  device the bottom keyboard row plays a C major scale and the number keys switch the vowel, while the screen draws
+  the mouth and tongue shape and the output waveform. Over USB-MIDI, each note advances one mora of a lyric sent as
+  SysEx, CC20 selects the vowel, and velocity, expression, pitch bend and vibrato are mapped. Sound comes from the
+  built-in speaker or the 3.5 mm output. The release zip adds macOS command-line tools that send lyrics and play four
+  bundled demo songs, plus the sources. The vowel values and mouth poses come from the author's Japanese port of
+  Jameson Hodge's CHIMERA vocal synth, which the README credits as the starting point. The README says it was flashed
+  and played on one Cardputer-Adv.
+status: active
+authors:
+  - name: UMEBOSHIISAN
+    url: https://github.com/UMEBOSHIISAN
+source: https://github.com/UMEBOSHIISAN/cardputer-voice
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file. THIRD_PARTY.md says no open-source license has been chosen for the project's
+  own code and assets, and that each dependency, font and source keeps its own terms; the license texts are in
+  licenses/.
+distribution: download
+requires_stock: Cardputer-Adv (ESP32-S3, 8 MB flash); the original Cardputer is not supported
+install_notes: >-
+  Unzip the release, then flash firmware/Cardputer-Voice-Adv.bin at address 0x0 with Espressif's browser ESP Tool
+  after putting the unit in download mode with G0 and RST. Alternatively, write the four bundled files with esptool
+  after saving the whole 8 MB flash. The write replaces the current app and partition table. Writing the saved
+  backup back at 0x0 restores the previous state, and the ESP32-S3 ROM download mode stays available if the new
+  image does not start. The Mac tools are for macOS 13 or later and are ad-hoc signed, not notarised.
+brick_risk: false
+tags: [synth, voice, vocal, midi, usb-midi, open-source]
+image:
+  url: https://raw.githubusercontent.com/UMEBOSHIISAN/cardputer-voice/main/docs/images/vowel-keys.gif
+  alt: Vowel-key diagram showing the bottom keyboard row with Japanese note names, the vowel あ selected, a side view of mouth and tongue, and a 10 ms waveform at 261.6 Hz
+  credit: UMEBOSHIISAN
+  source_url: https://github.com/UMEBOSHIISAN/cardputer-voice
+  first_party: true
+versions:
+  - version: v1.0.0
+    date: 2026-11-19
+    url: https://github.com/UMEBOSHIISAN/cardputer-voice/releases/tag/v1.0.0
+    notes: First release, with the Cardputer-Adv firmware, Mac playback tools, four demo songs, sources and checksums.

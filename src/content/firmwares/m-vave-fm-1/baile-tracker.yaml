@@ -1,14 +1,14 @@
 device: m-vave-fm-1
 name: BAILE Tracker
 summary: >-
-  Six-track funk tracker for the FM-1 forked from KAWA, with a Portuguese, English or Spanish screen, painted-tile themes and a macaw mascot. Version 0.1 is an identity and interface release; the funk kits and breaks are planned.
+  Six-track funk tracker for the FM-1 forked from KAWA, with a Portuguese, English or Spanish screen, painted-tile themes and a macaw mascot. Version 0.1 adds eight funk kits, six breaks, groove presets and funk live effects to KAWA's engine.
 description: >-
   A separate project from the catalogued BAILE by arrastao, which shares the name. This one is a tracker aimed at Brazilian funk:
   each row is a step and each column a track, with six tracks that use pulse, 4-bit wave, noise, six-operator FM, drum kit or sliced
   sample engines, up to two effects per cell, tables, per-step groove, 64 live effects in four banks, an eleven-type filter and a song
   chain of patterns of 16, 32 or 64 steps. It inherits the whole engine from KAWA and adds the identity, three themes, the Portuguese
-  interface, a mascot and boot mosaic, a hub page, a manual and a browser emulator page. The README says the kits, breaks and grooves
-  of funk come in later phases (PLAN.md) and that it has not been tested on an FM-1. It was created on 2026-11-18.
+  interface, a mascot and boot mosaic, a hub page, a manual and a browser emulator page. The README still says the kits, breaks and grooves
+  of funk come in later phases (PLAN.md), but commits on 2026-11-18 add eight funk kits (VOLT, TAMBOR, 150, MANDELA, BREGA and others), six funk breaks, groove presets, a BEAT FUNK tool, funk sounds and two banks of live effects. A test log in docs records one install of the 0.1 package on a real FM-1 from another community firmware, ending with the FM-1 running the new package; the on-device checks of sound, saving and rescue are marked as still to do. It was created on 2026-11-18.
 status: active
 authors:
 - name: saulofilho
@@ -25,7 +25,7 @@ distribution: browser-installer
 install_notes: >-
   Install from the hub page in Chrome, Edge or Opera over USB, or run the INSTALL launcher for Windows, macOS or Linux (Python 3), which
   installs install/baile-0.1.fwsc. The package is checked before anything is erased and an interrupted install resumes. The README
-  says BAILE projects are lost when going back, which needs M-VAVE's M-UPGRADE with V15, and that holding OCT- at power-on opens the USB rescue. Not yet tried on hardware.
+  says BAILE projects are lost when going back, which needs M-VAVE's M-UPGRADE with V15, and that holding OCT- at power-on opens the USB rescue. The test log records one install on hardware; other checks are still to do.
 brick_risk: false
 tags: [tracker, sequencer, chiptune, drums, synth-engine, fx, emulator, fork]
 image:
@@ -35,7 +35,7 @@ image:
   source_url: https://github.com/saulofilho/baile-fm1
   first_party: true
 versions:
-- version: main @ bc46ebe
+- version: main @ c7f9442
   date: 2026-11-18
-  url: https://github.com/saulofilho/baile-fm1/commit/bc46ebe
-  notes: No tagged releases; this is the latest commit. The committed package is labelled 0.1 and the README marks the project as beta.
+  url: https://github.com/saulofilho/baile-fm1/commit/c7f9442860d62c6ca1ef904f43726693b9cfba05
+  notes: No tagged releases; this is the latest commit. Since the previous row a test log records a first install on a real FM-1, and the site gets one Portuguese menu on every page. The committed package is labelled 0.1 and the README marks the project as beta.

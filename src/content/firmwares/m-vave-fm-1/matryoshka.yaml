@@ -36,6 +36,18 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, modular, editor, emulator, patch, sequencer, arpeggiator, fork]
 versions:
+- version: 1.20.2
+  date: 2026-11-19
+  url: https://github.com/glvno/matryoshka/releases/tag/v1.20.2
+  notes: Web editor and factory content only; the firmware stays at 1.20.0. New factory sounds give Algo Four eight voices and Cassia 1 five on an FM-1 with 1.20.0 firmware, and Elvira 2 gains eleven filter types, a longer delay with reverb, LFO sync and a per-voice sequence. Saved slots keep the old sounds until FACTORY RESET, which replaces every saved slot.
+- version: 1.20.1
+  date: 2026-11-18
+  url: https://github.com/glvno/matryoshka/releases/tag/v1.20.1
+  notes: Web editor and factory content only; the firmware stays at 1.20.0. Adds Quick patch, a keyboard-driven way to build a patch from the canvas, free panning and zooming of the canvas, velocity and aftertouch on 8 Lire's plates, and a 500 Hz LFO on Oracle V. No factory patch makes sound the moment it is selected.
+- version: 1.20.0
+  date: 2026-11-18
+  url: https://github.com/glvno/matryoshka/releases/tag/v1.20.0
+  notes: Polyphonic synths with effects stop dropping voices, because filters and effects now run on the floating-point unit and the load is split between both cores. Oracle V plays five voices and Hera 6 six. Adds ratchets and micro timing for Steps notes, a Euclid module, bar-length arpeggios with swing, and a global time signature. Patches that use the new sequencer features need this firmware (patch format 63); others still play on 1.19.
 - version: 1.19.0
   date: 2026-11-18
   url: https://github.com/glvno/matryoshka/releases/tag/v1.19.0

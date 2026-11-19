@@ -1,0 +1,49 @@
+device: m-vave-blackbox
+name: blackbox-fm1
+summary: >-
+  Experimental port of Felucca to the M-VAVE Blackbox pedal, with a V17-profile package that has booted on one unit,
+  a remote-panel protocol and guarded USB development tools.
+description: >-
+  Rights warning: the release package for the Blackbox keeps boot and configuration material from an exact stock
+  donor, and the project says its GPL licence does not cover those bytes or settle their redistribution terms. The
+  repository does not hold the stock file. It ports Felucca's sequencer, engines and effects to the Blackbox, whose
+  two footswitches and PARA knob stand in for the FM-1 panel, and it also ships a loader and a remote-panel protocol
+  so that an Android phone acting as USB host can show the full FM-1 panel. Profiles exist for stock V17, V20 and V23,
+  and only V17 has been run on hardware, on one unit, where the UI, PARA control and sound were confirmed. The release
+  notes say the CI-built files were not flashed, screen capture fails, saving of projects, settings and samples is
+  turned off, installing overwrites part of the stock sound bank, and a full restore of the stock flash is untested.
+  Automatic repeat flashing is disarmed. The README says it is not supported by Felucca or M-VAVE.
+status: active
+authors:
+- name: guysoft
+  url: https://github.com/guysoft
+source: https://github.com/guysoft/blackbox-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is GPL-3.0 and LICENSING.md calls the repository an independent GPL-3.0-only port with the
+  upstream Felucca licences kept (felucca-bsp MPL-2.0, Felucca-Engines MIT, others under LICENSES/). The release
+  package keeps vendor boot and configuration bytes that the GPL does not relicense.
+based_on: m-vave-fm-1/felucca
+distribution: download
+requires_stock: A Blackbox on stock V17 for the V17 package; V20 and V23 are build-tested only
+install_notes: >-
+  The project warns against installing an FM-1 package or the wrong profile on a Blackbox, asks for a full backup first
+  and has no initial-install command in its own command line tool yet, so the first install uses the upstream Felucca
+  installer under supervision. Its tools can read the flash twice over the chip's USB ROM mode without writing, and the
+  profile writes only application sectors from 0x4000 and an OTA staging area in the stock sound bank, leaving the
+  first 0x4000 bytes and the final key sector alone. The docs say not to assume the USB ROM route works after a hung
+  application.
+brick_risk: false
+tags: [synth-engine, sequencer, drums, fx, performance, experimental, fork]
+image:
+  url: https://raw.githubusercontent.com/guysoft/blackbox-fm1/blackbox-fm1/docs/blackbox-controls.png
+  alt: Dark button cheat sheet titled Blackbox to Felucca with three panels on the PARA knob, the page buttons FX, AMP, MOD, DLY, REV, CAB and HOME, and the footswitches with OCT- and OCT+
+  credit: guysoft
+  source_url: https://github.com/guysoft/blackbox-fm1
+  first_party: true
+versions:
+- version: 0.1.0-alpha.1
+  date: 2026-11-18
+  url: https://github.com/guysoft/blackbox-fm1/releases/tag/v0.1.0-alpha.1
+  notes: First experimental release, the V17-profile package with source, licence notices and checksums. The CI-built files had not been flashed when it was published.

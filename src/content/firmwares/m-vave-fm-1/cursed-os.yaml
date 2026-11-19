@@ -9,7 +9,7 @@ description: >-
   random), GEN makes 303-style lines, dub chord stabs, held atmospheres, modular-style bleeps and Euclidean rhythms with undo,
   and holding SCL while tapping a key moves every synth track to that key on the next bar. The six power-on tracks are a drum kit,
   kick, acid, bass, pad and voice, over JIANT's other engines. The sequencer has up to 64 steps with parameter locks, trig
-  conditions and slides. A GLO > SYNTAKT mode follows an Elektron Syntakt's clock, start and stop, and patterns, and the master has
+  conditions and slides. A GLO > SYNTAKT mode follows an Elektron Syntakt's clock, start and stop, and patterns, and from 0.19 can use the FM-1 as an extra voice for the Syntakt, with 32 sounds the Syntakt picks by program change, and the master has
   a look-ahead limiter, optional soft clipper and dither. A browser emulator and sound editor are included, and the README says
   it has run on few units.
 status: active
@@ -42,6 +42,10 @@ image:
   source_url: https://github.com/cursedsound-music/CS_FM1
   first_party: true
 versions:
+- version: 0.19.0
+  date: 2026-11-18
+  url: https://github.com/cursedsound-music/CS_FM1/releases/tag/v0.19.0
+  notes: Adds a MODAL set of struck-sound modes in the ADD engine (marimba, kalimba, steel, tube, log and glass) with eight presets, and a set of 32 voices in eight groups that a Syntakt MIDI track picks with program changes. A new GLO > SYNTAKT 2 page sets how programs, following, held notes and touch behave, and tracks can be handed back to the FM-1 by hand. A note sent right after a program change now waits for the new sound to load. Saved projects, sounds, kits, favourites and settings from 0.18.x load unchanged.
 - version: 0.18.5
   date: 2026-11-15
   url: https://github.com/cursedsound-music/CS_FM1/releases/tag/v0.18.5

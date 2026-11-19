@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: ZENITH-1
+summary: >-
+  Generative ambient firmware built on AMB-1 that plays itself on power-up: breathing pads, tape-loop bells, bass, Euclidean percussion and air, travelling through eight worlds, with an FX menu on the keys and moving full-screen pictures.
+description: >-
+  ZENITH-1 keeps AMB-1's engine and controls and extends them. Pads bloom and fade on cycles of unequal length, bells play from tape loops of 13, 17, 23 and 29 beats, and a gliding bass, soft Euclidean percussion, a texture of air and an occasional lead voice sit around them. Everything runs through a tape echo, a long tape loop and a plate reverb. Left alone, it moves through the parts of a world, from era to era with new loops, sounds and key, and from one of eight worlds into another. An FX menu puts 27 effects on the keys, and they can also play by themselves; the keys can also strum the chord or play the lead. The Garden page shows the state of the music, and full-screen pictures change shape and colour with it. The journey, FX menu and picture follow the design of HADAL-1. A manual, a browser emulator and an install page come with it.
+status: active
+authors:
+- name: sparky480v
+  url: https://github.com/sparky480v
+source: https://github.com/sparky480v/zenith-1
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The LICENSE file is the MPL-2.0 text and LICENSING.md says MPL-2.0 file by file. Files that came from AMB-1 keep Charles Vestal's copyright line. The base/ platform is fm1-base and felucca-bsp, both MPL-2.0, and the fonts are SIL OFL 1.1. The tree commits m-bootloader 1.2's installer package (base/web/m-bootloader/fm1-uboot-1.2.fwsc, MIT).
+homepage: https://sparky480v.github.io/zenith-1/install/
+based_on: m-vave-fm-1/amb-1
+distribution: browser-installer
+requires_stock: Any FM-1 firmware
+install_notes: >-
+  Open the install page in Chrome or Edge with the FM-1 on a USB data cable and press Install, or build the package with build.sh from BUILDING.md; the release also carries zenith-1.0.fwsc. The manual says that "Back to the stock firmware" at the bottom of the install page returns the FM-1 to M-VAVE's firmware, that the FM-1 starts in a safe mode the installer can reach if the firmware fails to start twice, and that update mode opens with OCT- and OCT+ held for 5 seconds. The m-bootloader that the manual mentions is an optional extra of the installer.
+brick_risk: false
+tags: [generative, ambient, synth-engine, fx, emulator, fork]
+image:
+  url: https://raw.githubusercontent.com/sparky480v/zenith-1/main/docs/img/screen-garden.png
+  alt: "ZENITH-1 Garden screen: the world Warm Space in D Lydian at tempo 66, a purple landscape of peaks over a low sun, and four knobs for tempo, evolve, motion and drift"
+  credit: sparky480v
+  source_url: https://github.com/sparky480v/zenith-1
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-18
+  url: https://github.com/sparky480v/zenith-1/releases/tag/v1.0

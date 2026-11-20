@@ -1,0 +1,40 @@
+device: m-vave-fm-1
+name: FM-1 Instrument
+kind: tool
+summary: >-
+  Android companion app for FM-1s running Windjammer: the phone runs the Skiff 2.5.1 sequencer, extra synth engines and
+  project storage, and the FM-1 serves as its keys, knobs and display.
+description: >-
+  The app connects to the FM-1's USB MIDI port and runs the sequencer, the synth engines and the project files on the
+  phone, while Windjammer on the FM-1 shows the app's screens and sends back the panel controls. Audio can play through
+  the phone, through Android's shared USB audio, or directly to the FM-1's output with the MASTER knob in a synth-only
+  mode. External USB MIDI input and output and the FM-1's TRS MIDI input can feed the engines. A playback service keeps
+  a session running with the screen off and shows a notification with a stop button. The README says USB routing,
+  disconnects, interruptions and screen-off operation need to be checked on the phone before pocket use. The source
+  started from the instrument-v0.7.0 tag of the LOOM groovebox repository.
+status: active
+authors:
+  - name: osleg
+    url: https://github.com/osleg
+  - name: Daniel Miller (Co-oscillator)
+    url: https://github.com/Co-oscillator
+source: https://github.com/osleg/FM-1-Instrument
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE.md is the GPL version 3 text with a notice naming R Daniel Miller; GitHub reports it as NOASSERTION. The
+  engines under instrument-demo/src/main/cpp/engines keep their own notices, among them GPL-3.0, MIT, BSD, Apache-2.0
+  and CC-BY licences.
+distribution: download
+requires_stock: Windjammer
+install_notes: >-
+  Install the signed APK from the release on an Android phone, flash Windjammer v0.9.0 on the FM-1, connect them with a
+  USB data cable and pick the FM-1's MIDI endpoint in the app. An earlier development APK signed with the debug key must
+  be uninstalled first, so back up projects and recordings. The app writes nothing to the FM-1.
+brick_risk: false
+tags: [android, sequencer, synth-engine, midi, usb-audio]
+versions:
+  - version: v0.7.0
+    date: 2026-11-19
+    url: https://github.com/osleg/FM-1-Instrument/releases/tag/v0.7.0
+    notes: Signed APK that reuses the package name and signature of the original 0.7.0 build.

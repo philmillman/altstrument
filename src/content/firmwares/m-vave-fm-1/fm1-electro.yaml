@@ -27,12 +27,20 @@ license_notes: >-
   .fwsc files in firmware/ are the author's own builds, not stock images.
 distribution: download
 install_notes: >-
-  Back up projects and samples first, since they are lost on the switch. Send FM1_ELECTRO-0.5.2-alpha.fwsc from the release, or firmware/FM1_ELECTRO_PLATTFORM.fwsc (or the older FM1_ELECTRO.fwsc), with a flasher
+  Back up projects and samples first, since they are lost on the switch. Send FM1_ELECTRO-0.5.4-alpha.fwsc from the release, or firmware/FM1_ELECTRO_PLATTFORM.fwsc (or the older FM1_ELECTRO.fwsc), with a flasher
   that accepts custom packages (fm-static, M-Flasher or tools/fm1_install.py). The original firmware can be put back
   with M-VAVE's tools, and the bootloader's download mode or FM-1 Transporter covers a unit that will not start.
 brick_risk: false
 tags: [groovebox, drums, sequencer, synth-engine, arpeggiator, fx]
 versions:
+- version: 0.5.4-alpha
+  date: 2026-11-20
+  url: https://github.com/robtron-byte/FM1-Electro-one/releases/tag/v0.5.4-alpha
+  notes: Pre-release. Adds holding REC for a second to clear the pattern and record again, a transpose that moves RHYTHM, STRINGS and BASS together and is saved, single notes only in BASS, INIT+ sounds, and saving everything before an installer update. The notes are in German.
+- version: 0.5.3-alpha
+  date: 2026-11-20
+  url: https://github.com/robtron-byte/FM1-Electro-one/releases/tag/v0.5.3-alpha
+  notes: Pre-release, the 53rd build. Fixes an unsteady tempo on an external MIDI clock, where steps fired only at the start of each audio block, by following the clock with a smoothing loop. The notes are in German.
 - version: 0.5.2-alpha
   date: 2026-11-14
   url: https://github.com/robtron-byte/FM1-Electro-one/releases/tag/v0.5.2-alpha

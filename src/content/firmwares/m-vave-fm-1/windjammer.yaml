@@ -1,0 +1,39 @@
+device: m-vave-fm-1
+name: Windjammer
+summary: >-
+  Skiff-derived FM-1 firmware that turns the unit into a native controller and display for a phone or computer app,
+  which runs the sequencer and synth engines over USB MIDI and an open protocol.
+description: >-
+  Windjammer keeps Skiff's page layouts, performance gestures and 12 function buttons, but the FM-1 no longer runs
+  the sound engines. A connected app sends labels, values, graphs and edit targets over USB MIDI SysEx, the firmware
+  draws them on the screen and LEDs, and reports keys, encoders and buttons back. The app owns the engines, patterns
+  and project files, and can return audio over USB to the FM-1's output. Notes and clock from the TRS MIDI input can be
+  forwarded to the app. The FM-1 waits for a compatible app at start-up, and HOME opens the device settings while
+  disconnected. The protocol is documented in the repository. The FM-1 Instrument Android app is the reference
+  companion, and a LOOM fork is named as a second one.
+status: active
+authors:
+  - name: osleg
+    url: https://github.com/osleg
+source: https://github.com/osleg/Windjammer
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Stated in LICENSING.md: Skiff, Felucca and the Windjammer changes are GPL-3.0-only. Ported DSP (DaisySP and Rings, MIT;
+  msfa, Apache-2.0), the fm1-clk320-probe files (MIT), fonts (OFL) and the Apache-2.0 JieLi SDK boot files keep their own
+  licences (LICENSES/).
+homepage: https://osleg.github.io/Windjammer/
+based_on: m-vave-fm-1/skiff
+distribution: browser-installer
+install_notes: >-
+  Open the web installer in Chrome or Edge over USB, or install the release .fwsc with tools/fm1_install.py. Back up
+  projects and samples with your current firmware's tools first. Once Windjammer is installed, the FM-1 works only with
+  a companion app. The device keeps the FM-1_700 package identity. For a unit that does not boot to USB, the build guide
+  points to the FM-1-transporter recovery project.
+brick_risk: false
+tags: [controller, midi, usb-audio, display, platform]
+versions:
+  - version: v0.9.0
+    date: 2026-11-19
+    url: https://github.com/osleg/Windjammer/releases/tag/v0.9.0
+    notes: First release.

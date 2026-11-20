@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+also_devices:
+  - m-vave-smk-37
+name: Vostok
+kind: firmware
+summary: >-
+  Felucca-based firmware for the FM-1 and SMK-37 that adds a VOSTOK sound engine with 68 factory sounds, a Soviet space-programme theme, a pseudo-Cyrillic interface and a browser emulator.
+description: >-
+  Vostok builds from one source tree for both devices. It adds a VOSTOK engine (eng_vostok.c) aimed at minimal wave, coldwave, post-punk and darkwave sounds on the 6-operator FM voice, with 68 factory sounds. The interface is German or English and draws some Latin capitals as Cyrillic look-alikes, with a VOSTOK colour palette and a start screen. The SMK-37 build uses the porting kit's pad and fader layout, with four tracks, a 16-pad sequencer and extra SPUR and CHORD keys. The handbook is in German, English and Russian. The README's status table lists the baseline FM-1 build, missions and a broadcast studio as open. The repository has no release, and the project site hosts a browser emulator.
+status: active
+authors:
+  - name: g0rst
+    url: https://github.com/g0rst
+source: https://github.com/g0rst/VostockFM-1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL-3.0 text and the README says GPL-3.0-only, as Felucca. LICENSING.md and LICENSES/ keep the licences of the parts it carries: Felucca-Engines, Rings and DaisySP (MIT), msfa (Apache-2.0) and the OFL fonts.
+homepage: https://g0rst.github.io/VostockFM-1/
+based_on: m-vave-fm-1/felucca
+distribution: source-only
+install_notes: >-
+  Build it with build.sh, which needs the JieLi toolchain, Docker on macOS, the AC79 SDK and a clone with submodules (BUILDING.md); BOARD=smk37 selects the SMK-37, with MODEL=elite or mke for the other models. The README says to make a full flash backup of an SMK-37 first and never to write its protected ranges, which hold calibration and keys, and that the way back to the stock firmware stays open. The browser emulator needs no install.
+brick_risk: false
+tags: [synth-engine, fm, theme, emulator]
+image:
+  url: https://raw.githubusercontent.com/g0rst/VostockFM-1/main/docs/bilder/edit_vostok.png
+  alt: "Vostok's VOSTOK sound page on the FM-1 screen: four parameter tiles at the top, a red waveform below and the sound name VOSTOK-1 at the bottom, with some letters drawn in pseudo-Cyrillic"
+  credit: g0rst
+  source_url: https://g0rst.github.io/VostockFM-1/
+  first_party: true
+versions:
+  - version: main @ cffed0d
+    date: 2026-11-20
+    url: https://github.com/g0rst/VostockFM-1/commit/cffed0d8c53a4b96edd1de341581ae57494147a0
+    notes: No tagged releases; this is the latest commit.

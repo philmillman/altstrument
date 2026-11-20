@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+name: Clair Piano
+summary: >-
+  Physical-modelled concert grand piano with a virtual pianist that steps through 87 public-domain pieces as the keys are tapped, a one-finger chord keyboard and a four-slot song recorder; no samples.
+description: >-
+  Every sound is computed in real time across both cores of the chip, with stiff-string partials, three-string beating and a three-stage decay, a soundboard and bridge model, damper and hammer noise, sympathetic strings and a reverb hall, and the package contains no samples, wavetables or SoundFonts. The keys can be played as a velocity and pressure sensitive piano, with FX as a sustain pedal and the octave buttons reaching all 88 keys, or in Tap Pianist mode, where any key steps chord by chord through one of the built-in pieces with the player's own timing and finger velocity. The built-in library holds 87 public-domain pieces by composers from Bach to Debussy and Joplin, taken from the Mutopia Project and Humdrum encodings, plus recordings made in four user slots. A chord mode turns the lowest keys into modifiers such as sus2, sus4, 7 and dim and voices chords on the rest, closed, open or rolled. Decks on the HOME, SEL, ENV and LFO buttons shape the pianist, the body, the hall and the keys, and EDIT cycles pixel-art views of the stage, the strings and a tape recorder. It supports Bluetooth MIDI controllers, and a browser emulator and a manual are published with it. The firmware is a C app on fm1-base and felucca-bsp, and the repository is named fm1-claire-piano.
+status: active
+authors:
+- name: Simon Tokumine
+  url: https://github.com/tokumine
+source: https://github.com/tokumine/fm1-claire-piano
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSE and the README give MPL-2.0. LICENSING.md says the platform in base/ is fm1-base and felucca-bsp (MPL-2.0, with Apache-2.0 and BSD-2-Clause BLE parts) and that the JieLi SDK files are fetched at build time and not stored in the repository. The built-in scores are public domain. No M-VAVE stock image is in the repository.
+homepage: https://tokumine.github.io/fm1-claire-piano/
+based_on: m-vave-fm-1/fm1-base
+distribution: browser-installer
+install_notes: >-
+  Install it from The Firmware Hub or from the project's install page in Chrome or Edge over Web MIDI, or download clair_piano-X.Y.fwsc from the release. It supports both FM-1 flash revisions. It keeps its settings and four song slots in its own flash layout and does not read other firmwares' projects or samples, so the README advises backing up other firmwares' work first; going back to stock V15 or another custom firmware works through Web MIDI or M-Flasher.
+brick_risk: false
+tags: [synth-engine, physical-modeling, chords, generative, performance, midi, ble-midi, emulator, web]
+image:
+  url: https://raw.githubusercontent.com/tokumine/fm1-claire-piano/main/app/docs/img/scene_pianist.png
+  alt: "Clair Piano screen playing Clair de lune: a pixel-art pianist at a grand piano by a moonlit window, with a PIANIST deck of TEMPO, RUBATO, VOICE and PEDAL knobs below"
+  credit: Simon Tokumine
+  source_url: https://github.com/tokumine/fm1-claire-piano
+  first_party: true
+versions:
+- version: 1.0.1
+  date: 2026-11-20
+  url: https://github.com/tokumine/fm1-claire-piano/releases/tag/v1.0.1
+- version: '1.0'
+  date: 2026-11-20
+  url: https://github.com/tokumine/fm1-claire-piano/releases/tag/v1.0

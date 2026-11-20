@@ -1,0 +1,32 @@
+device: m-vave-fm-1
+name: Mighty Arcade
+summary: >-
+  Eighteen casual games for the FM-1 that each double as a generative sequencer, from chess, solitaire and pinball to golf, pool and a worm, using Mighty Arp's sound engine, with a browser emulator.
+description: >-
+  The menu has two pages of nine games: DRIFT, BOUNCE, SWARM, CHESS, DICE SYNTH, SOLITAIRE, WORM, CUBES, DEFUSE, GOLF, PINBALL, DODGE, DARK, DROP, POOL, ROWS, 2048 and CHECKERS. In the sequencer games the board, cards or captured pieces become notes that a playhead plays in time, with drums that enter as play progresses. DICE SYNTH rolls a new FM sound for the keys. The lowest keys act as a game pad and F5 selects. PRESET sets a scale and ALGORITHM a key shared by all games, and the four knobs set tempo, note chance, sound and effects level. CHESS, CHECKERS and ROWS play against the computer or a second player. The sound engine comes from the same author's Mighty Arp and the chord voicings from the author's Macro MIDI Pad. It is built on fm1-base and passes its words to the FM-1 Screen Reader. The README says it was developed with AI assistance.
+status: active
+authors:
+- name: NickCulbertson
+  url: https://github.com/NickCulbertson
+source: https://github.com/NickCulbertson/FM1-Mighty-Arcade
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSING.md gives MPL-2.0 file by file, with fm1-base and felucca-bsp under MPL-2.0 in base/ and the Barlow Semi Condensed and Terminus fonts under SIL OFL 1.1.
+homepage: https://nickculbertson.github.io/FM1-Mighty-Arcade/
+distribution: browser-installer
+install_notes: >-
+  Use the installer on the project site in Chrome or Edge with the FM-1 on USB, or build with build.sh and write app/build/mightyarcade.fwsc with base/tools/fm1_install.py. The README says fm1-base's installer can put M-VAVE's firmware back and that an FM-1 that fails to start twice comes up in a safe mode the installer can reach. Installing is at your own risk.
+brick_risk: false
+tags: [game, sequencer, generative, synth-engine, emulator, midi]
+image:
+  url: https://raw.githubusercontent.com/NickCulbertson/FM1-Mighty-Arcade/main/app/docs/img/menu.png
+  alt: "Mighty Arcade menu on the FM-1 screen: the title in pink and blue, a 1P switch, a 3 by 3 grid of game icons from DRIFT, BOUNCE and SWARM down to WORM, CUBES and DEFUSE, and a G PENTA label"
+  credit: Nick Culbertson
+  source_url: https://github.com/NickCulbertson/FM1-Mighty-Arcade
+  first_party: true
+versions:
+- version: main @ 7c09f46
+  date: 2026-11-20
+  url: https://github.com/NickCulbertson/FM1-Mighty-Arcade/commit/7c09f46e212ac862b73b19967138a59e97118e91
+  notes: No tagged releases; this is the latest commit.

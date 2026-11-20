@@ -1,0 +1,26 @@
+device: m-vave-fm-1
+name: Burger Studio
+kind: tool
+summary: >-
+  Android groovebox app built to play alongside the FM-1 over USB MIDI, with a step sequencer for samples, drum pads, bass and analog synth parts, a vocal channel, song parts and mix recording.
+description: >-
+  The app is written in Kotlin for Android 6 and later, with screens for tracks, steps, pads, synth, voice, mixer, effects, song parts and a sample library. A MIDI link talks to the FM-1 over USB through Android's MIDI service: it can send MIDI clock as master or follow the FM-1's clock as follower, and incoming notes play the pads. The README is short and says only that the app is made to play together with the FM-1. The repository builds a debug APK on each push and attaches it to a GitHub release, and its releases are all marked pre-release. The release notes describe three app lines that can be installed side by side: FM1 Burger 1.x, Burger Studio 2.x and Burger Studio Lab 3.x, which is experimental. The package name stays com.example.fm1burger so that updates install over older ones.
+status: active
+authors:
+  - name: perawoga2-coder
+    url: https://github.com/perawoga2-coder
+source: https://github.com/perawoga2-coder/fm1burger
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and the README gives no licence statement.
+distribution: download
+install_notes: >-
+  Download the debug APK from the latest release (burgerstudio-lab-v3.20-debug.apk) and install it on an Android phone; a new version installs over the old one and keeps your work. To use it with an FM-1, connect the FM-1 to the phone over USB. Nothing is written to the FM-1.
+brick_risk: false
+tags: [groovebox, sequencer, drums, synth-engine, midi, usb-midi, android]
+versions:
+  - version: v3.20-lab
+    date: 2026-11-20
+    url: https://github.com/perawoga2-coder/fm1burger/releases/tag/v3.20-lab
+    notes: Pre-release with a debug APK, one of the lab builds that carry the redesign.

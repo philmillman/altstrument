@@ -1,0 +1,43 @@
+device: m-vave-fm-1
+name: KEY ASSIST
+summary: >-
+  FM1 Open with a per-track scale lock and one-finger chords: hold SCL to pick a root, scale, chord type and key
+  mapping, and the 27 keys then play in key.
+description: >-
+  KEY ASSIST is a modified copy of M-VAVE's FM1 Open firmware. Holding SCL for 600 ms opens a page on the 240x240 screen
+  where four knobs set the root note, one of eight scales, a chord type (single note, triad, seventh or power chord) and a
+  key mapping, either snapping off-scale keys to the nearest lower scale tone or making the white keys consecutive scale
+  degrees. Settings are kept per track, drum tracks are left alone, and the assisted notes pass through the normal MIDI
+  path, so step recording captures the chords. Three differences from stock are listed by the author: SCL now acts on
+  release so a tap still opens the operator-scaling page, the settings live in RAM and reset at power-off, and the startup
+  logo, the DX7 algorithm diagram and the voice-rename screen were removed to fit the size limit. The author states that
+  the firmware is verified in a host simulator and an FM-1 emulator and has not been run on a physical FM-1. A browser
+  replay and play-along page runs the packaged firmware in an emulator.
+status: active
+authors:
+  - name: chathuraed
+    url: https://github.com/chathuraed
+source: https://github.com/chathuraed/fm1-key-assist
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Follows FM1 Open: LICENSE.md is GPL-3.0-only with an additional permission to link the proprietary engine library,
+  which the GitHub licence detector reports as NOASSERTION. The engine library and other SDK binaries keep M-VAVE's terms
+  in THIRD_PARTY.md, which allow redistribution for FM-1 devices. The repository's sdk/firmware/FM-1_015.fwsc is git blob
+  ce49cc1595b67347c68a3ac7463017f9fa8c19dd, the V15 image M-VAVE licenses for redistribution under Apache-2.0 in
+  m-vave/fm1_open.
+based_on: m-vave-fm-1/fm1-open
+distribution: download
+requires_stock: V15 or FM1 Open
+install_notes: >-
+  Download fm1_key_assist.fwsc from the project's GitHub Pages site (the README gives its SHA-256) or build it with the
+  GitHub Actions workflow, which needs Windows and JieLi's toolchain. The README says the build has not been flashed to a
+  real unit; its hardware test plan rolls back to M-VAVE's V15 image. The official updater rejects SDK-based packages
+  on units running other third-party firmware, so return those to V15 first.
+brick_risk: false
+tags: [sequencer, sdk, scales, chords, emulator]
+versions:
+  - version: main @ 5401ddd
+    date: 2026-11-19
+    url: https://github.com/chathuraed/fm1-key-assist/commit/5401ddd1844ba99254e52af47bb20121af2df21e
+    notes: No tagged releases; this is the latest commit.

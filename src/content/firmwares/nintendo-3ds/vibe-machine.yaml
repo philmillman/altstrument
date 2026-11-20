@@ -1,0 +1,42 @@
+device: nintendo-3ds
+name: Vibe Machine
+summary: >-
+  Homebrew pocket synth and groovebox for the 3DS built on the AMY library, with Juno-6 and DX7 patch banks, original engines, a 16-step sequencer, performance effects and a four-track tape recorder.
+description: >-
+  A 3DS homebrew app that plays sound through AMY, a fixed-point synthesis library. The buttons and touchscreen play
+  256 Juno-6 and DX7 style patches and eight original engines, one of which plays back a short recording from the
+  console's microphone, with chords, a drum map and an XY pad for two macro parameters per sound. A 16-step sequencer
+  has eight pattern slots, song chaining, swing, accents and live recording. Four performance effects, a four-track
+  tape recorder with reverse and varispeed, and nine colour themes complete the app. State is saved to the SD card, and
+  tape tracks and the microphone take are written as WAV files. The README calls it an early prototype. Binaries come
+  from the repository's CI, so it is built from source.
+status: active
+authors:
+  - name: Ronald Noble
+    url: https://github.com/noble1911
+source: https://github.com/noble1911/vibe-machine
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text, copyright "the Vibe Machine authors". It bundles AMY (MIT, Brian Whitman and
+  contributors) as a submodule.
+distribution: source-only
+requires_stock: A 3DS with custom firmware (Luma3DS) and the Homebrew Launcher, plus a DSP firmware dump (dspfirm.cdc) from the user's own console
+install_notes: >-
+  Build with devkitPro and the 3ds-dev packages (clone with --recursive, then make) and copy vibe-machine.3dsx to
+  sdmc:/3ds/. Sound needs dspfirm.cdc on the SD card, dumped from the user's own console with the DSP1 homebrew. It
+  runs as a normal homebrew app and writes only to its own folder on the SD card. The README also describes running it
+  in the Azahar emulator with an emulator-only placeholder firmware file.
+brick_risk: false
+tags: [synth, groovebox, sequencer, synth-engine, sampler, fx, tape, touch, handheld, homebrew, open-source]
+image:
+  url: https://raw.githubusercontent.com/noble1911/vibe-machine/main/docs/themes.png
+  alt: Contact sheet of the app's top and bottom screens in an emulator across nine colour themes, each with triangle patterns above and four sliders over a row of coloured keys below
+  credit: Vibe Machine authors
+  source_url: https://github.com/noble1911/vibe-machine#readme
+  first_party: true
+versions:
+  - version: main @ cffe751
+    date: 2026-11-20
+    url: https://github.com/noble1911/vibe-machine/commit/cffe7517103d3a2b64c1b1814e3875a505e64e37
+    notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,42 @@
+device: m-vave-blackbox
+name: Blackbox Companion App
+kind: tool
+summary: >-
+  Android remote panel for the blackbox-fm1 firmware: a 27-key keyboard, 14 buttons and seven encoders that send
+  MIDI over BLE or USB to the pedal, which does the sound.
+description: >-
+  The app is a controller for the community Felucca port on the Blackbox and does not run a synth itself, so audio
+  comes from the pedal's wired output. It connects over Bluetooth LE MIDI or USB MIDI from a phone acting as host, and
+  needs the community BLE-capable V17 firmware rather than M-VAVE's stock protocol. Holding a layer button sends that
+  layer's panel keys, and a MASTER slider sets a ceiling below the physical knob. The README lists what is missing:
+  no parameter or display feedback, no Q mini routing, no Bluetooth audio and no firmware update. It labels the
+  builds as experimental development-signed APKs and reports tests on one Android phone. A release page and a tag
+  have not been published yet.
+status: active
+authors:
+  - name: guysoft
+    url: https://github.com/guysoft
+source: https://github.com/guysoft/blackbox-companion-app
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Stated in the README ("GPL-3.0-only") and the LICENSE file; GitHub reports GPL-3.0.
+distribution: source-only
+requires_stock: blackbox-fm1 BLE firmware
+install_notes: >-
+  Build with Gradle and install with adb, or take a test APK from the repository's CI artifacts until a release is
+  tagged. The app installs as Blackbox Panel on Android 8 or later. It writes nothing to the pedal. Its REC plus F3
+  gesture clears the selected track's sequence on the pedal.
+brick_risk: false
+tags: [android, controller, ble-midi, usb-midi, midi]
+image:
+  url: https://raw.githubusercontent.com/guysoft/blackbox-companion-app/main/docs/app-screenshot.png
+  alt: "Blackbox Panel app connected over BLE: seven rotary encoders, 14 labelled panel buttons, a MASTER ceiling slider and a 27-key keyboard from F3 to G5"
+  credit: guysoft
+  source_url: https://github.com/guysoft/blackbox-companion-app
+  first_party: true
+versions:
+  - version: main @ c3bee33
+    date: 2026-11-19
+    url: https://github.com/guysoft/blackbox-companion-app/commit/c3bee33074b0b6fc73d8342d0a5347bd57181b1b
+    notes: No tagged releases; this is the latest commit.

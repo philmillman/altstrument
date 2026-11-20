@@ -31,6 +31,7 @@ license: MIT
 license_notes: >-
   Covers the project's own tools, patches and documentation. It does not cover Novation's firmware, which is not
   included, or third-party dependencies (Capstone).
+based_on: novation-circuit-tracks/circuit-hacks
 distribution: browser-installer
 requires_stock: "5706 (2.0.1)"
 install_notes: >-
@@ -44,6 +45,10 @@ install_notes: >-
 brick_risk: false
 tags: [sampler, sequencer, drums, fx, midi, arpeggiator, performance]
 versions:
+  - version: alpha-0.16
+    date: 2026-11-20
+    url: https://github.com/Ghillermo/CIRCUIT-REMIX/releases/tag/alpha-0.16
+    notes: Pre-release, built on alpha-0.15, with an alpha-0.16S variant. Fixes loading a project overwriting the synth and FM sound saved with the project being loaded in alpha-0.12 to 0.15, and the FX track being lost when scene 1 is saved or cleared. Adds an FM algorithm map with custom algorithms, sub and noise on the virtual-analog OSC 1, extra automation lanes, a knob hold setting and input gain, and drops Easy Start USB storage mode to free memory. The release notes say it was checked in emulation only, not on the device.
   - version: alpha-0.15
     date: 2026-11-13
     url: https://github.com/Ghillermo/CIRCUIT-REMIX/releases/tag/alpha-0.15

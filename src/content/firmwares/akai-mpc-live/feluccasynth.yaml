@@ -1,0 +1,38 @@
+device: akai-mpc-live
+name: FeluccaSynth
+summary: VST2 plugin for MPC OS 3.10.1 and later that ports the six Felucca synthesis engines to one eight-voice stereo instrument with a custom touchscreen skin, eight programs, a stereo delay and a room reverb.
+description: >-
+  FeluccaSynth uses the six engines of Felucca-Engines, the library extracted from the M-VAVE FM-1 firmware Felucca:
+  analog, lofi chip, three-oscillator trio, tonewheel organ, noise and phase distortion. Each plugin instance plays one
+  engine at a time with eight voices, MIDI velocity, sustain and pitch bend, a global ADSR, and a delay and reverb
+  written for the plugin. All six engine pages stay editable while one is selected. Settings are stored with the MPC
+  project. The README lists what is left out of Felucca: its four-part sequencing, song mode, web editor, modulation
+  matrix, the lofi arpeggio and the sample engine. The repository includes compiled ARM32, ARM64 and macOS builds of the
+  plugin in its build folder, built from the source in src, and no tagged releases.
+status: active
+authors:
+  - name: Erich (ErichHeinemann)
+    url: https://github.com/ErichHeinemann
+  - name: Leo Kuroshita (@kurogedelic), Hügelton Instruments
+    url: https://github.com/kurogedelic
+source: https://github.com/ErichHeinemann/FeluccaSynth
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text, copyright "Erich". The copied Felucca-Engines code in src/felucca keeps its own MIT
+  licence (licenses/Felucca-Engines-MIT.txt). The README notes that the Felucca firmware itself is GPL-3.0 and is not
+  part of this plugin.
+based_on: m-vave-fm-1/felucca-engines
+distribution: download
+requires_stock: MPC OS 3.10.1 or later with Enable Enhancements and External Plugin Support turned on
+install_notes: >-
+  Copy the plugin folder from build (named FeluccaMPC - VST - Felucca Synth) into the VST2 Plugins folder of a drive, or
+  rebuild it with the MPC Plugin Builder SDK's tools/build.py. Turn on Enable Enhancements and External Plugin Support
+  under Preferences, Enhancements. The README says it was checked with a host simulator and that CPU use depends on the MPC model and settings. Remove the folder from the drive to uninstall.
+brick_risk: false
+tags: [synth, synth-engine, fx, platform, chiptune, organ, felucca]
+versions:
+  - version: main @ 47780a7
+    date: 2026-11-19
+    url: https://github.com/ErichHeinemann/FeluccaSynth/commit/47780a713693b22293eca9ead68e3b97177099ad
+    notes: No tagged releases; this is the latest commit.

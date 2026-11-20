@@ -2,10 +2,10 @@ device: m-vave-fm-1
 name: QUARTZ
 summary: >-
   Four-track groovebox firmware with 24 sound models and a 16-pad drum kit per track, and pattern sources that write notes as
-  they play: a drum map, Game of Life, polymetric lanes, chord progressions, a Tonnetz walk, orbiting moons and an improviser.
+  they play: a drum map, Game of Life, polymetric lanes, chord progressions, a Tonnetz walk, orbiting moons, an improviser and bytebeat formulas.
 description: >-
   Each track has eight patterns and one sound, either one of 24 models (21 synths and 3 drums, built on Mutable Instruments
-  Plaits code) or a kit of 16 drum pads. A pattern takes its notes from a 64-step grid you write, or from one of eight generators.
+  Plaits code) or a kit of 16 drum pads. A pattern takes its notes from a 64-step grid you write, or from one of nine generators. Four projects can be saved and loaded.
   Every page shows an animated scene that moves with the sound, and each domain is one button on the panel, in the manner of the
   OP-Z. Scenes group the four patterns and the mutes, a song is a list of scenes, and a project holds eight scenes, the tempo, the
   scale and the effects. Per-step parameter locks, punch-in effects, an arpeggiator with latch, an envelope and LFO per track, and a
@@ -38,6 +38,14 @@ image:
   source_url: https://f0nski.github.io/quartz/
   first_party: true
 versions:
+- version: '0.9'
+  date: 2026-11-20
+  url: https://github.com/F0nski/quartz/releases/tag/v0.9
+  notes: Adds four projects (hold SAVE and press black key 2 to 5 twice to load one), backup and restore over USB, copy and paste of patterns and track sounds, undo and redo for CLEAR, draw and paste, FILL and !FILL trig conditions, and a LEN setting of 1 to 32 steps on ATLAS. Releases 0.8, 0.8.1 and 0.8.2 came earlier the same day.
+- version: '0.8'
+  date: 2026-11-20
+  url: https://github.com/F0nski/quartz/releases/tag/v0.8
+  notes: Adds CIPHER, a pattern source that uses bytebeat formulas (32 of them in four families) to decide each step's play, accent and note, and lets ATLAS play a chosen pad per part on a kit. Projects saved by earlier versions are not kept. Releases 0.8.1 and 0.8.2 only changed the online manual and the version number and are not listed.
 - version: '0.7'
   date: 2026-11-18
   url: https://github.com/F0nski/quartz/releases/tag/v0.7

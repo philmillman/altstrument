@@ -2,7 +2,7 @@ device: m-vave-fm-1
 name: MF-1 Modes
 kind: firmware
 summary: >-
-  One FM-1 firmware that runs the MF-1 emulator's synth modes, iScream, Almanac, Woof, Phase and Piano, on fm1-base, each keeping its own settings and chosen by holding a piano key at power-on.
+  One FM-1 firmware that runs the MF-1 emulator's synth modes, iScream, Almanac, Woof, Phase, Piano and Arpeggi, on fm1-base, each keeping its own settings and chosen by holding a piano key at power-on.
 description: >-
   The firmware ports the MF-1 emulator's extra modes to the FM-1 as a real app. Until 1.5.0 the repository built iScream on its own;
   it now builds one firmware, fm1-modes, that starts the last mode used and shows a chooser when a piano key is held at
@@ -10,7 +10,7 @@ description: >-
   store. In iScream, flavors are the sounds, with scoops, a cone
   filter and five toppings acting as effects, and it uses only what the FM-1 has, so the flavors export as a standard DX7 bank.
   The engine is a C port of the MF-1 engine, and a parity test checks that it renders the same samples. The README says it has run on one unit, where it boots, plays and has logged no crash, and that CPU
-  load, dropouts and output level have not been measured. Phase, a mode for slowly shifting process music with a ring-shaped score, was added in 1.7.0 and played on hardware at about 31 to 33 frames a second by 1.8.0. Piano, a grand piano played back from measurements, came in 1.10.0 as a fifth mode, and the README says it has run on one FM-1 with its CPU load not yet measured. No firmware package is attached to a release.
+  load, dropouts and output level have not been measured. Phase, a mode for slowly shifting process music with a ring-shaped score, was added in 1.7.0 and played on hardware at about 31 to 33 frames a second by 1.8.0. Piano, a grand piano played back from measurements, came in 1.10.0 as a fifth mode, and the README says it has run on one FM-1 with its CPU load not yet measured. Arpeggi, two arpeggiators playing one pool of notes, joined in 1.11.0 as a sixth mode chosen with D at power-on; the release says it has run on one FM-1 with its CPU load not measured. No firmware package is attached to a release.
 status: active
 authors:
 - name: Ian Butterworth
@@ -35,7 +35,7 @@ image:
   source_url: https://github.com/IanButterworth/mf-1
   first_party: true
 versions:
-- version: main @ c4d373f
-  date: 2026-11-10
-  url: https://github.com/IanButterworth/mf-1/commit/c4d373f2f8650e3a81149df2da8b40617186bcbb
-  notes: No firmware package is attached to any release; this is the latest commit that changed the firmware, shortly before the v1.10.0 release. It makes Piano louder, with a limiter that spares the FM-1's speaker its deepest bass, after Piano joined the modes firmware as a fifth mode, held with C at power-on.
+- version: main @ 3c0f5d0
+  date: 2026-11-20
+  url: https://github.com/IanButterworth/mf-1/commit/3c0f5d0f584cb69cfa74592348abd63ffb1cddaf
+  notes: No firmware package is attached to any release; this is the latest commit that changed the firmware, which went into the v1.11.0 release. It adds Arpeggi as the sixth mode, held with D at power-on, after Piano became the fifth mode, held with C.

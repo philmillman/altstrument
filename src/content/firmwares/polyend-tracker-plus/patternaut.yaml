@@ -12,7 +12,7 @@ description: >-
   effects it does not model. The file readers and writers live in a Swift package, PatternautCore, that
   builds without Xcode and is checked byte for byte against Polyend's tracker-lib and against projects
   written by the hardware. Version 1.1.0 adds an audio preview through the loaded samples, which leaves
-  out synth and MIDI instruments and several effects. The app does not touch the device's firmware. The
+  out synth and MIDI instruments and several effects. Version 1.1.1 imports projects saved on Tracker CE firmware. The app does not touch the device's firmware. The
   author states it was co-created with AI and tested the round trip on a Tracker+.
 status: active
 authors:
@@ -37,6 +37,10 @@ image:
   source_url: https://github.com/JarlLyng/patternaut#readme
   first_party: true
 versions:
+  - version: v1.1.1
+    date: 2026-11-19
+    url: https://github.com/JarlLyng/patternaut/releases/tag/v1.1.1
+    notes: Projects saved on Tracker CE firmware, which writes patterns in a newer format with a Volume and a Micro-move value on every step, now import; those values go into free effect lanes and the import reports any left out. Import takes the project folder instead of project.mt, and the preview moves a Micro-moved note the same distance as the Tracker. The notes say it is on the Mac App Store.
   - version: 1.1.0
     date: 2026-10-31
     url: https://github.com/JarlLyng/patternaut/commit/f8ea3543ea1d8e323fdfd7ee7098f3874e8305ea

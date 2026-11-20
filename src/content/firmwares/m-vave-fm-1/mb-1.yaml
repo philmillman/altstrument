@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: MB-1
+summary: >-
+  Minibrute-style monophonic synth for the FM-1 with Ultrasaw, PWM and Metalizer oscillators, a resonant multimode filter with Brute Factor, two ADSRs, an LFO, an arpeggiator and a browser emulator.
+description: >-
+  The voice engine is portable C written from scratch and calibrated against renders of Arturia's MiniBrute V plugin; the README says no Arturia code is used and that the unofficial project is not affiliated with Arturia. It mixes a sawtooth with Ultrasaw, a square with PWM and a triangle with Metalizer, plus a sub oscillator and noise, into a 12 dB low-pass, band-pass, high-pass or notch filter with key tracking and self-oscillation. Filter and amplifier ADSRs, a six-wave LFO to pitch, filter, PWM and amplifier, vibrato, glide, vintage drift, aftertouch and a mod wheel are included. An arpeggiator arrived in 0.8.0. It is built on fm1-base, and the repository's workflow builds the package, runs the host simulator tests and publishes a site with an installer, an emulator and a manual. The README says the measured Metalizer cycles used during development are not published.
+status: active
+authors:
+- name: leonardolopezchavira
+  url: https://github.com/leonardolopezchavira
+source: https://github.com/leonardolopezchavira/minibrute-fm1
+source_status: open
+license: MIT
+license_notes: >-
+  LICENSE is MIT, with fm1-base vendored under MPL-2.0 in fm1/base.
+homepage: https://leonardolopezchavira.github.io/minibrute-fm1/
+based_on: m-vave-fm-1/fm1-base
+distribution: browser-installer
+install_notes: >-
+  Use the installer on the project site in Chrome or Edge, or build with fm1-base's tools/build.py using JieLi's toolchain. The repository gives no recovery steps of its own, so M-VAVE's updater and the platform's USB rescue apply.
+brick_risk: false
+tags: [synth-engine, arpeggiator, emulator, ui]
+image:
+  url: https://raw.githubusercontent.com/leonardolopezchavira/minibrute-fm1/main/docs/img/screen-playing.png
+  alt: "MB-1 filter page on the FM-1 screen: patch 01 INIT at note C4, with CUTOFF 4.6 kHz, RESO 0%, BRUTE 0% and ENV AMT 0% bars, and a wheel, aftertouch, CPU and peak readout at the bottom"
+  credit: leonardolopezchavira
+  source_url: https://github.com/leonardolopezchavira/minibrute-fm1/blob/main/firmware.json
+  first_party: true
+versions:
+- version: main @ d02f0a7
+  date: 2026-11-20
+  url: https://github.com/leonardolopezchavira/minibrute-fm1/commit/d02f0a72208676d8a9819836731fea82f6a840bb
+  notes: No tagged releases; this is the latest commit, which reads 0.8.1 in app/VERSION.

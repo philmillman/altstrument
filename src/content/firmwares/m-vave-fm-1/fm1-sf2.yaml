@@ -10,7 +10,7 @@ description: >-
   The firmware itself is a sample player built on M-VAVE's FM1 Open code. A web page converts an .sf2 into an FM1B bank of
   presets, key and velocity zones, loops, envelopes, filter, LFOs and sends, in one of several sample codecs, and a second
   page installs the firmware and the bank over USB-MIDI. The bank lives in the 456 KB sample flash and is played in place.
-  There is one firmware, the one with a live cache that plays MP3-packed banks about twice as large; it has no MIDI file
+  There is one firmware, the one with a live cache that plays MP3-packed banks about twice as large and, since v1.2.0, lossless banks that use fewer bits per sound; it has no MIDI file
   player and plays no SEA or PCM banks, which a build without the live cache keeps. A CPU guard lowers the voice count
   instead of stuttering. A browser emulator and MIDI player on the project site run the firmware without a device. The
   firmware package has its own identity, FM-1_8320501. Since v1.0.0 the player runs at 44.1 kHz, and banks packed for the
@@ -45,6 +45,10 @@ image:
   source_url: https://github.com/mwedmark/fm1-sf2
   first_party: true
 versions:
+- version: v1.2.0
+  date: 2026-11-19
+  url: https://github.com/mwedmark/fm1-sf2/releases/tag/v1.2.0
+  notes: Plays sounds stored with fewer bits straight from flash, so a whole General MIDI bank fits without MP3, and the bundled starter bank is now such a lossless bank. Older firmware refuses these banks. The converter makes lossless banks by default, a program change on channel 10 chooses the percussion kit, and the reverb tail is longer at a lower default level.
 - version: v1.1.0
   date: 2026-11-14
   url: https://github.com/mwedmark/fm1-sf2/releases/tag/v1.1.0

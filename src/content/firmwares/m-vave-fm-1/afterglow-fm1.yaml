@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: Afterglow
+kind: tool
+summary: >-
+  Browser visualizer for any FM-1 that draws its audio, MIDI notes, clock and knob moves as falling panels of diagonal
+  lines, for the studio, the stage or an OBS overlay.
+description: >-
+  Afterglow runs in Chrome or Edge and combines three inputs: the audio from any input, including the FM-1's own USB audio
+  on Felucca-based firmwares, which supplies spectrum, waveform, level and kick, snare and hat onsets; MIDI notes, clock and
+  controller changes from any firmware that sends them; and an adapter for the GR!MM family (GR!MM, COQUI) that polls the
+  editor's SysEx a few times a second to show the selected track's knobs and effects by name. There are four views,
+  including a transparent band for use as an OBS browser source, six palettes and six line patterns, and every choice is
+  stored in the page address. A demo mode simulates an FM-1 without the device. The README says it was tested on a real FM-1
+  with COQUI and that the other firmwares' rows come from their code and are still to be checked on a unit. The interface
+  labels are partly in Portuguese. It is unofficial and not made by M-VAVE.
+status: active
+authors:
+  - name: saulofilho
+    url: https://github.com/saulofilho
+source: https://github.com/saulofilho/afterglow-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Stated in the LICENSE file and the README. The GR!MM-family adapter follows GR!MM's editor protocol and COQUI's
+  editor_core.js, which are GPL-3.0.
+homepage: https://saulofilho.github.io/afterglow-fm1/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page in Chrome or Edge and allow MIDI with SysEx and audio, or run it locally with npm. It only reads from the
+  FM-1 and writes nothing to it.
+brick_risk: false
+tags: [visualizer, midi, usb-midi, usb-audio, ui, open-source]
+versions:
+  - version: main @ ceaff11
+    date: 2026-11-19
+    url: https://github.com/saulofilho/afterglow-fm1/commit/ceaff118d8c93bffedcf9e175374a51decc890fe
+    notes: No tagged releases; this is the latest commit.

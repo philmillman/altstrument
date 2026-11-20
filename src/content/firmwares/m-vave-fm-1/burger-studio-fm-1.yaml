@@ -1,0 +1,41 @@
+device: m-vave-fm-1
+name: Burger Studio FM-1
+summary: >-
+  Sampling-first build of Felucca 1.8.2: a SAMPLE row on HOME opens a sample editor that trims and slices the three user slots, and one sample can span two or three slots, up to about 84 seconds.
+description: >-
+  The firmware is Felucca 1.8.2 with sampling changes, published from the repository Fm1sampa by Maker Hip, whose Android groovebox app is listed as Burger Studio. HOME lists the tracks as rows with an extra SAMPLE row that opens EDIT SAMPLE, where the three user sample slots are trimmed and sliced, and a sample can be spread over two or three slots. Later releases make EDIT SAMPLE play the slot on screen, raise the synth engines by 4 dB and give the build its own package identity, FM-1_4627, so the Firmware Hub does not confuse it with Felucca. The bundled sounds are a Rock Heavy drum kit that the project says was synthesized by its own script, the Hügelton Sample Pack and CC0 instrument samples from VSCO-2 Community Edition and VCSL. The project's site carries a sampling guide in eight pages and a PDF. The README in the repository is still Felucca's own, and the release notes say the build is untested on hardware.
+status: active
+authors:
+- name: perawoga2-coder
+  url: https://github.com/perawoga2-coder
+source: https://github.com/perawoga2-coder/Fm1sampa
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE and LICENSING.md are Felucca's, giving GPL-3.0-only with the copyright line of Leo Kuroshita, Hügelton Instruments. The MIT Felucca-Engines, the MPL-2.0 felucca-bsp, the Hügelton Sample Pack (CC0), the VSCO-2 CE and VCSL samples (CC0), ported DSP and the fonts keep their own licences, listed in LICENSING.md and LICENSES/. The repository has no M-VAVE stock image and no committed firmware package.
+homepage: https://perawoga2-coder.github.io/Fm1sampa/
+based_on: m-vave-fm-1/felucca
+distribution: download
+install_notes: >-
+  The release notes say the build is untested on hardware and tell you to back up the FM-1 first. Download felucca-X.Y.Z-bsN.fwsc from the release and install it with tools/fm1_install.py, or use the Firmware Hub card the project says it published. The package is a Felucca build, whose documented ways back to stock V15 are the web installer's return option and M-VAVE's updater; the project documents no recovery of its own.
+brick_risk: false
+tags: [sampler, drums, groovebox, sequencer, synth-engine, fork]
+image:
+  url: https://raw.githubusercontent.com/perawoga2-coder/Fm1sampa/ccr-94587bba-xqg4fh/docs/burger-home-sample.png
+  alt: "Four FM-1 screens at 124 BPM: the HOME track list with PIANO, FIREFLY and DRUM KIT rows and a SAMPLE row, the EDIT SAMPLE waveform view with a slice marker, and the same HOME list in a green theme"
+  credit: perawoga2-coder
+  source_url: https://github.com/perawoga2-coder/Fm1sampa
+  first_party: true
+versions:
+- version: 1.8.2-bs11
+  date: 2026-11-20
+  url: https://github.com/perawoga2-coder/Fm1sampa/releases/tag/v1.8.2-bs11
+  notes: Gives the build its own package identity, FM-1_4627, built by the Firmware Hub's shared release workflow.
+- version: 1.8.2-bs10
+  date: 2026-11-20
+  url: https://github.com/perawoga2-coder/Fm1sampa/releases/tag/v1.8.2-bs10
+  notes: A sample can span two or three slots, and the SAMPLE row reaches the slot's track.
+- version: 1.8.2-bs7
+  date: 2026-11-19
+  url: https://github.com/perawoga2-coder/Fm1sampa/releases/tag/fw-v1.8.2-bs7
+  notes: HOME shows rows with a SAMPLE row, and EDIT opens EDIT SAMPLE.

@@ -1,0 +1,38 @@
+device: m-vave-fm-1
+name: FM-1 STM32 Unbrick
+kind: tool
+summary: >-
+  STM32F4DISCOVERY firmware that puts an FM-1 that shows no USB device into its chip's ROM boot mode with USB cables only,
+  so a computer script can back up the flash and rewrite the firmware area with official V15.
+description: >-
+  A port of the ESP32-S3 unbrick tool to the STM32F407 board, which needs no soldering or extra modules. The board sends
+  the boot key and the ROM's calibration pulses on its USB pins, then acts as a USB host to the FM-1 and relays JieLi UBOOT
+  commands to the computer over SEGGER RTT through the on-board ST-LINK. A Python script drives MvaveFM1Unbricker's recovery:
+  it backs up the whole flash, analyses it, and rewrites only the firmware area from 0x4000 to 0x92FFF, never the boot head
+  or the unit's own data from 0x93000. The README reports one recovery from macOS on 2026-11-19, of a unit whose V15 update
+  was cut off, with 143 sectors rewritten and read back identical; Linux and Windows have not been run end to end. The
+  user supplies the official V15 package, and the JieLi loader is not committed but fetched and hash-checked by a script.
+status: active
+authors:
+  - name: Gary Kahn
+    url: https://github.com/GaryKahn
+source: https://github.com/GaryKahn/fm1-stm32-unbrick
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file also lists portions copyrighted by dag, from fm1-esp32-unbrick. Third-party code built into the
+  firmware (TinyUSB, SEGGER RTT) is listed in THIRD_PARTY_NOTICES.txt.
+distribution: source-only
+requires_stock: V15
+install_notes: >-
+  Build with the Arm GCC toolchain and flash an STM32F4DISCOVERY with OpenOCD, connect it to the FM-1 with a micro-USB to
+  USB-C cable, and run tools/stm32_recover.py with the official V15 package. The script stops if the boot head
+  differs from V15, because the tool never writes it. Never reset or flash the board while the FM-1 is connected, and keep the
+  FM-1 charged. The README says M-VAVE's site now serves V16, which the script refuses.
+brick_risk: false
+tags: [flasher, loader, utility, backup]
+versions:
+  - version: main @ 0306768
+    date: 2026-11-19
+    url: https://github.com/GaryKahn/fm1-stm32-unbrick/commit/0306768a448016d531644f464d029329798246ba
+    notes: No tagged releases; this is the latest commit.

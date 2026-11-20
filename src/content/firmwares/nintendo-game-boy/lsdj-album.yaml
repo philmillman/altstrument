@@ -1,0 +1,45 @@
+device: nintendo-game-boy
+name: lsdj-album
+kind: tool
+summary: Builds a stand-alone Game Boy album ROM from the songs in an LSDj save, with a custom logo, song names, a level-meter and waveform visualizer and next and previous song buttons.
+description: >-
+  lsdj-album records each song in a user's LSDj ROM and save with a fork of lsdpack, then builds an MBC5 ROM that
+  replays the recorded sound register writes. The ROM shows a logo converted from a PNG, the song name read from the
+  save, LED-style meters for the two pulse channels, wave and noise, and a scrolling waveform. A moves to the next song,
+  B to the previous one, and songs advance when they end. Each song needs an HFF command at its end, or a global length
+  limit can cut it. The README tests it with LSDj 9.3.9, which needed changes in lsdpack because LSDj 9 drives its
+  sound engine from the timer interrupt. The repository holds no LSDj ROM and no songs. The result runs on a Game Boy
+  flash cartridge or in an emulator, in DMG mode on Game Boy Color and Advance. The README credits Claude as a
+  co-author.
+status: active
+authors:
+  - name: M64GitHub
+    url: https://github.com/M64GitHub
+  - name: Johan Kotlinski
+    url: https://github.com/jkotlinski
+source: https://github.com/M64GitHub/lsdj-album
+source_status: open
+license: GPL-2.0-only
+license_notes: >-
+  The LICENSE file is the GPL version 2 text with no "or later" wording, although the README says
+  "GPL-2.0-or-later, like lsdpack". lsdpack's own license is GPL-2.0-only, so the file is followed here.
+based_on: nintendo-game-boy/lsdpack
+distribution: source-only
+requires_stock: LSDj ROM and save file, supplied by the user
+install_notes: >-
+  Needs RGBDS 1.0, CMake, a C++ compiler, Python 3 and make. Clone with --recursive and run make SAVE=path/to/lsdj,
+  which gives album.gb; flash it to a cartridge with the cartridge's own tool or play it in an emulator. The LSDj ROM
+  and save are never modified, because recording runs on copies. Nothing runs on the console except the finished ROM.
+brick_risk: false
+tags: [recorder, player, export, visualizer, album, lsdj, open-source]
+image:
+  url: https://raw.githubusercontent.com/M64GitHub/lsdj-album/main/docs/demo.gif
+  alt: Game Boy screen of a generated album ROM in an emulator, with a framed logo, the song title and a 01/02 counter, a scrolling waveform and four rows of level meters labelled PU1, PU2, WAV and NOI
+  credit: M64GitHub
+  source_url: https://github.com/M64GitHub/lsdj-album#readme
+  first_party: true
+versions:
+  - version: main @ e29a121
+    date: 2026-11-19
+    url: https://github.com/M64GitHub/lsdj-album/commit/e29a12111bf262760880dab94ddf310fc3951851
+    notes: No tagged releases; this is the latest commit.

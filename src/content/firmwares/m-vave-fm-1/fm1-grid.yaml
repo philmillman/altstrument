@@ -16,7 +16,7 @@ description: >-
   For live units, the app probes FM-1-named MIDI ports, and now SMK-37 and Starrykey port names too, with the M-UPGRADE handshake, shows which firmware is running,
   switches their clock and flashes a chosen package. A unit in ROM download mode is also listed, and with Rescue switched on it can be given the m-bootloader, on Linux, macOS (needs sudo) and Windows (needs administrator rights). An About tab shows the release history and licences. The repository also builds fm1-tty, a terminal version of the
   library, flashing, keyboard, metronome and MIDI routing. The emulated panes accept MIDI in only. The author calls it a local tool,
-  not a distributed binary, but since v0.1.1 the releases attach Windows, Linux and Flatpak builds.
+  not a distributed binary, but since v0.1.1 the releases attach Windows, Linux and Flatpak builds, and since v0.1.4 a macOS zip.
 status: active
 authors:
 - name: jasonbot
@@ -31,7 +31,7 @@ license_notes: >-
   V16 as the README records it, proprietary for FM-1+VA), recorded in firmware/README.md.
 distribution: download
 install_notes: >-
-  Since v0.1.1 the release page offers Windows and Linux builds and Flatpaks, so a build is optional. To build, use Rust 1.91 or newer with cargo run --release; Linux needs ALSA and X11 or Wayland development
+  Since v0.1.1 the release page offers Windows and Linux builds and Flatpaks, and a macOS zip since v0.1.4, so a build is optional. To build, use Rust 1.91 or newer with cargo run --release; Linux needs ALSA and X11 or Wayland development
   packages. The first build downloads any missing firmware packages listed in fm1-performer/firmware/firmwares.json and checks
   their hashes; scripts/firmware.sh edits the list. Flashing a connected unit uses the same update path as other
   installers, so back up first and follow the brick-risk notes on the FM-1 device page. The Rescue option writes a replacement bootloader through the chip's ROM download mode, which the build fetches from the m-bootloader release and checks by hash.
@@ -44,6 +44,10 @@ image:
   source_url: https://github.com/jasonbot/fm1-grid
   first_party: true
 versions:
+- version: v0.1.4
+  date: 2026-11-20
+  url: https://github.com/jasonbot/fm1-grid/releases/tag/v0.1.4
+  notes: The release notes only link the changelog. It adds a macOS arm64 build, a zip, to the attached Windows and Linux builds.
 - version: v0.1.3
   date: 2026-11-19
   url: https://github.com/jasonbot/fm1-grid/releases/tag/v0.1.3

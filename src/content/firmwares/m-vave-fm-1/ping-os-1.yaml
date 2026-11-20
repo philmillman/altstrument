@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: PING OS-1
+summary: >-
+  Four-track rhythm synthesis engine with 49 synthesized drum models, 20 synth models, 23 effects, a step sequencer with parameter locks, a line generator and an autopilot that varies a playing pattern.
+description: >-
+  Each of the four tracks holds one sound engine, four effect slots and its own level, pan, filter, modulators and pattern, and the tracks meet in a master chain of four more effects and a limiter. The sound models are 49 synthesized drums and 20 synths, including ports of Mutable Instruments Plaits models and engines from Felucca, plus a sampler and a granular engine that play up to eight WAV files sent from the browser. The sequencer has eight note lanes a track, parameter locks, ratchets, chance, ties and micro timing, sixteen patterns a project chained in song mode, and sixteen sound presets. A line generator writes bass lines and melodies in the chosen key, the autopilot keeps varying a playing pattern, and a key lock sets one key and scale for every track. The screen shows each effect drawn live, a performance mode and a 3D spectrum view. A VST3 plugin with the same engine and a browser page to try, install, load samples and record are in the same repository. The firmware is built on fm1-base, in a fork that adds a few platform functions, and the project is not made or endorsed by M-VAVE.
+status: active
+authors:
+- name: PING AUDIO
+  url: https://github.com/PINGAUDIO
+source: https://github.com/PINGAUDIO/PING-OS-1
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSE and the README give MPL-2.0. docs/THIRD_PARTY.md lists the ported parts: the Plaits-derived models, MIT engines from Felucca-Engines, the FM6 core after msfa (Apache-2.0) and two FM6 files used under Leo Kuroshita's MPL-2.0 grant. No M-VAVE stock image is in the repository.
+homepage: https://pingaudio.github.io/PING-OS-1/
+based_on: m-vave-fm-1/fm1-base
+distribution: browser-installer
+install_notes: >-
+  Connect the FM-1 by USB, open the PING OS-1 page in Chrome or Edge, accept the terms and press Install; do not unplug while it writes. The same page puts the stock firmware back. The README warns that the firmware keeps its projects, patterns, presets and samples in its own format in the FM-1's memory, that switching firmware in either direction can overwrite what the other stored, and advises backing up first. The repository's installer builder leaves out the m-bootloader offer, which would rewrite the boot area.
+brick_risk: false
+tags: [synth-engine, sequencer, drums, fx, generative, sampler, granular, groovebox, vst, emulator, web]
+image:
+  url: https://raw.githubusercontent.com/PINGAUDIO/PING-OS-1/main/docs/img/edit_synth.png
+  alt: "PING OS-1 EDIT page of a synth track: tempo 130 BPM, title SYNTH ANALOG, four knob tiles and four track rows from T1 KIT to T4 CHORD with step bars"
+  credit: PING AUDIO
+  source_url: https://github.com/PINGAUDIO/PING-OS-1
+  first_party: true
+versions:
+- version: 1.0.1
+  date: 2026-11-20
+  url: https://github.com/PINGAUDIO/PING-OS-1/releases/tag/v1.0.1
+  notes: Adds a KEY page where a played note sets the key, names the first SENDS knob after the selected track and adds a ONCE trigger to WOBBLE.
+- version: 1.0.0
+  date: 2026-11-19
+  url: https://github.com/PINGAUDIO/PING-OS-1/releases/tag/v1.0.0

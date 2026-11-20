@@ -1,0 +1,30 @@
+device: m-vave-fm-1
+name: DR1
+summary: >-
+  Drone instrument firmware for the FM-1 with three voices of six styles and free frequencies, links between the voices, shared noise, chop and ring disruptors, a mixer, delay, reverb and compressor.
+description: >-
+  Each voice has a style (FLOOR, REED, GLASS, GROWL, TIDE or PULSE), a frequency set by an encoder instead of notes, four knobs for tone, move, grit and link, and a link to the voice before it in a ring. A link can make the other voice's loudness open this voice's filter, run the other voice's sound through this voice's filter, or bend this voice's pitch with FM. Three disruptors on the FX button, NOISE, CHOP and RING, are shared sources that each voice takes in its own amount into its sound, pitch, cutoff or level. A mixer gives each voice level, pan and two pre or post sends into a delay and a reverb, followed by a compressor. The README calls the six styles and knob ranges a first estimate, says nothing is saved at power-off, and says it was tested on one FM-1 with a Puya P25Q80 flash, over a Felucca-family firmware and over DR1 itself but not over M-VAVE's stock firmware. It is built on felucca-bsp. The author's site has a page for the project.
+status: active
+authors:
+- name: Kevin Sint
+  url: https://github.com/kevinsint
+source: https://github.com/kevinsint/dr1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is GPL-3.0-only since V0.30. The README says V0.27 and earlier were published under MPL-2.0 and stay under it, and that tools/fm1img.py, tools/lz4blk.py and app/app.ld are MPL-2.0. A built package holds three files of JieLi's AC79 SDK under Apache-2.0, whose text ships with each release.
+homepage: https://kevinsint.live/apps/fm1-drone/
+distribution: download
+install_notes: >-
+  Clone with submodules, install the Python requirements, then run bsp/tools/fm1_install.py with the release's sint_fm1_dr1.fwsc after noting what the installer reports for the current firmware, and pass --port SINT_FM1 to install over DR1. The installer only replaces or leaves DR1 on units with a Puya P25Q80 or UC25HQ80 flash. To go back, install M-VAVE's V15 package from m-vave.com with the same tool; if the unit no longer starts, bsp/tools/fm1_rescue.py is the rescue tool, which the README documents.
+brick_risk: false
+tags: [drone, synth-engine, fx, performance]
+versions:
+- version: V0.30
+  date: 2026-11-20
+  url: https://github.com/kevinsint/dr1/releases/tag/v0.30
+  notes: Adds the NOISE, CHOP and RING disruptors on the FX button, an FM link between voices, an OWN control on THROUGH voices, and changes the licence to GPL-3.0-only.
+- version: V0.27
+  date: 2026-11-20
+  url: https://github.com/kevinsint/dr1/releases/tag/v0.27
+  notes: First release; three voices with six styles, FOLLOW and THROUGH links, a mixer and a delay, reverb and compressor chain. Published under MPL-2.0.

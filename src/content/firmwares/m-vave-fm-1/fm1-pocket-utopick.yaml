@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+kind: tool
+name: FM1.Pocket
+summary: >-
+  Offline-capable phone and computer web app built on fm1-emu that plays any Firmware Hub firmware on a touch FM-1, takes a MIDI keyboard, and installs firmware on a real FM-1 over USB after a backup and the m-bootloader protector.
+description: >-
+  FM1.Pocket is a fork of Joakim Eriksson's fm1-emu that adds one folder, pocket/, and leaves the emulator unchanged. The page draws the FM-1 for touch with several fingers at once, in the whole panel, bigger keys or top-only layouts, with piano keys, the colours the FM-1 is sold in and screen styles. A firmware list fetches community firmware from the Hub, keeps each offline with its author's manual, and can open a local file or load a DX7 voice bank. A MIDI keyboard plays it, with a drawing of the keyboard and a step-by-step map for its knobs and pads. The REAL FM-1 pane connects to a unit over Web MIDI in Chrome or Edge or on Android, saves a backup of everything on it, installs jvitkauskas' m-bootloader as a protector, which the page requires before any install, and then installs a chosen firmware through the protector's MIDI mode. It also installs Tether, which makes the real unit the panel of the page. The app can be installed as a home-screen app, has an English and Spanish interface, and the project publishes other Pocket apps beside it.
+status: active
+authors:
+- name: utopick
+  url: https://github.com/utopick
+source: https://github.com/utopick/fm1-pocket
+source_status: open
+license: MIT
+license_notes: >-
+  The app in pocket/ is MIT by utopick and fm1-emu is MIT by Joakim Eriksson, with a copy in pocket/vendor. The m-bootloader files bundled for the installer are MIT by jvitkauskas. Tether in pocket/firmware is GPL-3.0-only and has its own entry. Every other firmware belongs to its author, is fetched from the Hub and is not in the repository. The page does not bundle M-VAVE's firmware; to go back to stock the user opens the FM-1.fwsc they downloaded.
+homepage: https://utopick.github.io/fm1-pocket/pocket/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page; installing it as an app is under OPTIONS. Running firmware in the emulator writes nothing to a unit. The REAL FM-1 pane needs Chrome or Edge on a computer or an Android phone, not iPhone or iPad. Its steps are connect, backup, protector and install, and install stays locked until the backup and the protector are done. The protector writes m-bootloader to the unit's boot area, and every later install needs the unit in the protector's MIDI mode, reached by holding PLAY while powering on. The README says that holding PLAY at power-on still opens the protector if a firmware fails to start.
+brick_risk: false
+tags: [emulator, flasher, backup, midi, web, fork]
+image:
+  url: https://raw.githubusercontent.com/utopick/fm1-pocket/pocket/pocket/docs/tether-screen.png
+  alt: "FM1.Pocket showing the whole FM-1 front panel with dark controls, an FM1 logo, a screen reading TETHER 0.9 MIDI CONTROLLER and the keys along the bottom, four of them lit"
+  credit: utopick
+  source_url: https://github.com/utopick/fm1-pocket
+  first_party: true
+versions:
+- version: pocket @ 5f725de
+  date: 2026-11-20
+  url: https://github.com/utopick/fm1-pocket/commit/5f725deb53826c75841db1c55775bba2a8cf6b0a
+  notes: No tagged releases of the app; this is the latest commit of the pocket branch. The only release, tether-v1.0, is the Tether firmware.

@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: TastyWaves plugin
+kind: tool
+summary: >-
+  VST3 and CLAP plugin in Rust that runs the TastyWaves wavetable firmware's synth core in a DAW, with 22 automatable parameters and an interface drawn like the FM-1.
+description: >-
+  The repository compiles the unmodified TastyWaves firmware source (marksweiss/tastywaves at a pinned commit) into a native core and wraps it with nih-plug as a 12-voice VST3 and CLAP instrument. A replaced host layer supplies audio blocks, notes, MIDI, buttons, encoders and the screen. The plugin exposes 22 automatable parameters taken from the firmware's controllers, saves settings and patches in the host project, and draws the firmware's screen, seven encoders and 14 buttons in egui. CI builds Linux and Windows packages, checks that the sound matches a reference bench and runs pluginval at strictness level 5 without the interface tests. The README says the plugin code is not yet written and the project page says it is not yet published, which no longer matches the commits. There is no release, and the packages are only CI artifacts. The README and page are in French.
+status: active
+authors:
+  - name: Ninjathune
+    url: https://github.com/Ninjathune-Human
+source: https://github.com/Ninjathune-Human/fm1-plugins
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL-3.0 text and the README says GPL-3.0. The vendored firmware keeps its own licensing (GPL-3.0-only in tastywaves/vendor/LICENSING.md, derived from Dinghy, SLOOP and Felucca).
+homepage: https://ninjathune-human.github.io/fm1-plugins/
+based_on: m-vave-fm-1/tastywaves
+distribution: source-only
+install_notes: >-
+  Build with cargo xtask bundle tastywaves --release, which writes the VST3 and CLAP bundles to target/bundled. The Plugin workflow uploads the same bundles as Actions artifacts for Linux and Windows. It runs in a host on the computer and writes nothing to an FM-1.
+brick_risk: false
+tags: [plugin, vst3, clap, wavetable, emulator]
+image:
+  url: https://raw.githubusercontent.com/Ninjathune-Human/fm1-plugins/main/assets/banniere.png
+  alt: "Banner reading TastyWaves in black and green with the line VST3 and CLAP above it and, below, a French line describing a 12-voice wavetable synth taken from an open-source FM-1 firmware"
+  credit: Ninjathune
+  source_url: https://github.com/Ninjathune-Human/fm1-plugins
+  first_party: true
+versions:
+  - version: main @ d8db5a8
+    date: 2026-11-19
+    url: https://github.com/Ninjathune-Human/fm1-plugins/commit/d8db5a8dc3f0b3ca58d93750fd6e313d601b5038
+    notes: No tagged releases; this is the latest commit.

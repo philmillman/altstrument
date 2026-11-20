@@ -1,0 +1,48 @@
+device: m-vave-fm-1
+name: Castletunia
+summary: >-
+  Generative dungeon-synth and 16-bit RPG battle soundtrack instrument: phrases played on the keys become attacks by a three-member party against a boss on nine fantasy stages, with spells and status effects that reshape the music.
+description: >-
+  The project was published as Fantasia and is now Castletunia. A three-member party of two-operator FM voices (Fighter, Cleric and Sorceress) plays over backing chords and an FM percussion kit, with a room reverb and a soft clipper. A phrase of one to sixteen notes played on the 27 scale-quantized keys is committed on the next beat and becomes the active character's attack, and the generator weaves the phrases into a four-bar A, B, A, C arrangement. Nine stages, from the Crypt and Tavern to Coronation and Boss, each set a scale, tempo, chord progression, drum kit and per-character timbres, and each boss counts player turns before a three-beat drum-roll build-up and a one-bar musical curse. Spells (Haste, Mirror, Shatter, Resolve and Toll) and four status effects (Sloth slow, Poison, Berserk and Freeze, added in 1.1.0) change what the party plays, and macro encoders set intensity, drift, density, harmony, weave and tempo. The 240 by 240 screen shows a pixel-art battle scene with activity meters and status badges, after a skippable splash. It is built on Dinghy, and the release packages are still named dinghy-X.Y.Z.
+status: active
+authors:
+- name: provostprovost
+  url: https://github.com/provostprovost
+source: https://github.com/provostprovost/castletunia
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md, which is Dinghy's, gives GPL-3.0-only, while the README badge and text say GPL-3.0. The platform code is credited to Leo Kuroshita and others and the Terminus font is SIL OFL 1.1. The logo in assets/ is designburg's signet, all rights reserved and not under the GPL. The JieLi SDK files are read from the builder's own SDK checkout and are not in the tree. The only firmware package committed, docs/castletunia.fwsc, is the project's own build and is not an M-VAVE stock image.
+homepage: https://github.com/provostprovost/castletunia
+based_on: m-vave-fm-1/dinghy
+distribution: download
+install_notes: >-
+  The README advises backing up stock patterns and presets with M-VAVE's tool first. Download the .fwsc package from the release and install it with tools/fm1_install.py, or build it with the JieLi toolchain and SDK (build.sh). The README says to hold OCT- while powering on to enter USB rescue mode, to reflash with fm1_install.py, and to return to stock with M-VAVE's updater or a backup package. The releases also attach SMK-37 packages, but the README describes only the FM-1.
+brick_risk: false
+tags: [generative, ambient, synth-engine, fm, drums, fx, game]
+image:
+  url: https://raw.githubusercontent.com/provostprovost/castletunia/main/assets/screenshots/zone_0_crypt.png
+  alt: "Castletunia battle screen on the Crypt stage: a purple lich faces a knight and two mages in a stone hall, with FIGHTER, CLERIC and SORCERESS meters below and 92 BPM"
+  credit: provostprovost
+  source_url: https://github.com/provostprovost/castletunia
+  first_party: true
+versions:
+- version: 1.1.1
+  date: 2026-11-20
+  url: https://github.com/provostprovost/castletunia/releases/tag/v1.1.1
+  notes: Live phrase capture is aligned to the bar.
+- version: 1.1.0
+  date: 2026-11-20
+  url: https://github.com/provostprovost/castletunia/releases/tag/v1.1.0
+  notes: Adds the status effects Sloth slow, Poison, Berserk and Freeze, with a one-second preview before they take effect.
+- version: 1.0.2
+  date: 2026-11-20
+  url: https://github.com/provostprovost/castletunia/releases/tag/v1.0.2
+  notes: Anchors sixteenth notes, adds harmonic weave and removes swing, and changes the drums on the Sands, Spire and Tundra stages.
+- version: 1.0.1
+  date: 2026-11-20
+  url: https://github.com/provostprovost/castletunia/releases/tag/v1.0.1
+  notes: Directional stage scrolling and a new splash.
+- version: '1.0'
+  date: 2026-11-20
+  url: https://github.com/provostprovost/castletunia/releases/tag/v1.0

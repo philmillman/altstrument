@@ -1,0 +1,27 @@
+device: m-vave-fm-1
+name: fm1-rust
+kind: tool
+summary: >-
+  Bare-metal Rust board support crate for the FM-1 on embedded-hal 1.0, with no allocator and three example firmwares: a blinking LED, a colour test card and a square-wave tone.
+description: >-
+  The fm1 crate runs on the first core of the JieLi AC791N chip. A function passed to the entry macro receives exclusive ownership of the board: the PLAY LED and button, the switch and LED matrix, the 240 by 240 screen, a cycle counter with a delay timer, the headphone jack switch and, behind a feature, stereo audio output to the DAC. The README says all three examples were observed on an FM-1 running M-Bootloader. It builds on Julius Vitkauskas's Rust blink proof of concept from pi32v2-isa. Firmware builds need a patched Rust compiler, the pi32v2 LLVM tools and pi32v2-isa's packager, while host tests run on stable Rust.
+status: active
+authors:
+- name: FM-1 Rust Developers
+  url: https://github.com/fm1-rust
+source: https://github.com/fm1-rust/fm1-rust
+source_status: open
+license: MIT
+license_notes: >-
+  The repository and the fm1 crate are MIT. The README says the startup assembly, linker layout and pi32v2 target come from Julius Vitkauskas's MIT-0 example, and that the optional audio module ports an MPL-2.0 driver by Leo Kuroshita and Kerem Kilic.
+distribution: source-only
+requires_stock: M-Bootloader installed
+install_notes: >-
+  Build an example with fm1/scripts/build-example.sh, then hold REC while powering on an FM-1 that has M-Bootloader to enter USB download mode and flash the .fwsc with M-Flasher after taking a backup. The README says the package updates the application area and keeps the bootloader, and that holding PLAY for two seconds returns to download mode.
+brick_risk: false
+tags: [sdk, platform, rust, research]
+versions:
+- version: main @ ad37e0a
+  date: 2026-11-20
+  url: https://github.com/fm1-rust/fm1-rust/commit/ad37e0ac8127a02fd48f11f941ceb47b2f9abc81
+  notes: No tagged releases; this is the latest commit, which adds the board support implementation and the three examples.

@@ -5,7 +5,7 @@ summary: >-
 description: >-
   The instruments are COZY lo-fi keys, ORBIT space synths, KOI struck metal and wood, HAUNT ambient, TIDE analog pad, PIP chiptune, BONK drums, URCHIN FM, TWANG plucked strings,
   LAVA wavefolder bass, KNOT additive bells, INK gliding lead, BARD medieval and TURBO eighties synths, each with eight algorithms and four knobs. Settings pages cover FX, selection, envelope, LFO, global and arpeggiator,
-  and there is loop and step recording with a metronome. It takes MIDI in over USB and TRS, saves on both the original Puya P25Q80 (0x856014) and the newer UC25HQ80 (0xB36014) flash chips and works with a screen reader. The firmware core is portable C99 with no libc, built on fm1-base,
+  and there is loop and step recording with a metronome. It takes MIDI in over USB and TRS, sends MIDI out and the master as audio over USB, saves on both the original Puya P25Q80 (0x856014) and the newer UC25HQ80 (0xB36014) flash chips and works with a screen reader. The firmware core is portable C99 with no libc, built on fm1-base,
   and the same core runs in a browser simulator, which is catalogued separately.
 status: active
 authors:
@@ -32,6 +32,10 @@ image:
   source_url: https://github.com/jakehandy/h1
   first_party: true
 versions:
+- version: 0.2.2
+  date: 2026-11-19
+  url: https://github.com/jakehandy/h1/releases/tag/v0.2.2
+  notes: Adds a look-ahead limiter that stops chords from crackling, MIDI velocity for gain and brightness, a separate setting set for each loop layer, a loop that survives power-off, USB audio of the master output and USB MIDI out on channel 1. A downgrade to 0.2.1 or older loses the saved settings.
 - version: 0.2.1
   date: 2026-11-18
   url: https://github.com/jakehandy/h1/releases/latest

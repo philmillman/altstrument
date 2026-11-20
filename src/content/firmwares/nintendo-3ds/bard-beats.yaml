@@ -6,9 +6,10 @@ description: >-
   A 3DS homebrew app that runs without a computer. It has a one-bar 16-step grid with drum, bass, melody and harmony
   tracks, eight synthesised instruments on the console's audio engine, a pad view and a rendered instrument view for
   playing live, and a jam mode that quantises played notes onto the grid with undo. Loops are saved by name to the SD
-  card and can be exported as Standard MIDI files. The README lists song mode and microphone vocal recording as the
-  next stage; only the first stage is built. Binaries come from the repository's CI and there are no releases, so it
-  is built from source.
+  card and can be exported as Standard MIDI files. Later versions add song mode that chains saved loops
+  into songs with a song shelf and WAV bounce, a vocal layer recorded with the console's microphone, two-bar loops
+  with swing, a mix drawer and an optional Wi-Fi MIDI bridge script. Each release carries a .3dsx and a .cia, and
+  the repository's CI builds both on every push.
 status: active
 authors:
   - name: Kiyoshi
@@ -17,16 +18,36 @@ source: https://github.com/kiyoshithekidd/Bard-Beats
 source_status: open
 license: MIT
 license_notes: The LICENSE file is the MIT text, copyright 2026 Kiyoshi.
-distribution: source-only
+distribution: download
 requires_stock: A 3DS with custom firmware and the Homebrew Launcher (.3dsx), or a build installed as a .cia
 install_notes: >-
-  Build with devkitPro (devkitARM, libctru and citro2d) using the Makefile: make produces BardBeats.3dsx for the
+  Download BardBeats.3dsx for the Homebrew Launcher or BardBeats.cia for the HOME Menu from a release, or build with devkitPro (devkitARM, libctru and citro2d) using the Makefile: make produces BardBeats.3dsx for the
   Homebrew Launcher, and make cia produces a .cia and needs bannertool and makerom. The repository's GitHub Actions
   workflow builds both on every push. It runs as a normal homebrew app and writes only loops to the SD card.
 brick_risk: false
 tags: [sequencer, looper, synth-engine, handheld, homebrew, midi, open-source]
 versions:
-  - version: main @ 528d1a1
+  - version: v0.2.3
+    date: 2026-11-20
+    url: https://github.com/kiyoshithekidd/Bard-Beats/releases/tag/v0.2.3
+    notes: Adds a dedicated Upright Bass sprite and converts the HOME Menu banner sound to stereo 44.1 kHz PCM. The release page has no notes; this is from the tagged commit.
+  - version: v0.2.2
+    date: 2026-11-20
+    url: https://github.com/kiyoshithekidd/Bard-Beats/releases/tag/v0.2.2
+    notes: Fixes the .cia's HOME Menu banner and jingle. The release page has no notes; this is from the tagged commit.
+  - version: v0.2.1
+    date: 2026-11-20
+    url: https://github.com/kiyoshithekidd/Bard-Beats/releases/tag/v0.2.1
+    notes: Fixes the Dungeon Sub Bass showing the Ocarina sprite in the instrument view. The release page has no notes; this is from the tagged commit.
+  - version: v0.2.0
+    date: 2026-11-20
+    url: https://github.com/kiyoshithekidd/Bard-Beats/releases/tag/v0.2.0
+    notes: Adds WAV bounce of a song, a song shelf, 2-bar loops with swing, a mix drawer, bar-quantised cueing with stereoscopic 3D, OpenDSP audio, an optional Wi-Fi MIDI bridge and more starter loops and songs. The release page has no notes; this is from the tagged commit and the README.
+  - version: v0.1.1
+    date: 2026-11-20
+    url: https://github.com/kiyoshithekidd/Bard-Beats/releases/tag/v0.1.1
+    notes: Louder output and a README update. The release page has no notes; this is from the tagged commit.
+  - version: v0.1.0
     date: 2026-11-19
-    url: https://github.com/kiyoshithekidd/Bard-Beats/commit/528d1a132439d3617111647c20edcc163236b7a4
-    notes: No tagged releases; this is the latest commit.
+    url: https://github.com/kiyoshithekidd/Bard-Beats/releases/tag/v0.1.0
+    notes: First release, with a .3dsx and a .cia. Adds song mode, a microphone vocal layer, new instrument sprites, a reworked audio engine and a fix for audio underruns. The release page has no notes; this is from the tagged commit.

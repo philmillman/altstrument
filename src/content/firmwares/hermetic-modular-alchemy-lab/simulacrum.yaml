@@ -1,0 +1,36 @@
+device: hermetic-modular-alchemy-lab
+name: Simulacrum
+summary: Stereo accompaniment firmware for the Alchemy Lab V2 that runs a clock-synced tape delay, a 12-bit granular delay and an eight-voice sine and supersaw stack through a bipolar dual-notch filter.
+description: >-
+  Simulacrum was written to play beside a Moog Matriarch. The tape layer is a stereo delay synced to an external clock
+  with wow and flutter, a tone filter that compounds on every repeat, up to 105 percent feedback with saturation and a
+  microspeed control driven by V/Oct or a sub-sine. The grain layer records into a 12-bit, 24 kHz buffer and plays up to
+  36 grains with per-grain time stretch from one sixteenth to eight times at constant pitch and an envelope morph. The
+  stack plays up to eight ringing voices of quadrature sines and a supersaw from a gate on J6 and V/Oct on J4, through
+  a dual-notch filter whose cutoff sweeps in mono or stereo, with an option to send the grains through the notches.
+  Three main pages and several hidden pages hold the controls, and the USB link shows CPU and clock diagnostics. It is
+  built on the Alchemy SDK 0.13.0 and libDaisy. Hermetic Modular did not write or endorse it.
+status: active
+authors:
+  - name: araz4github
+    url: https://github.com/araz4github
+source: https://github.com/araz4github/simulacrum
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL version 3 text and the README says GPL-3.0 with no "or later" wording. It builds on the
+  MIT-licensed Alchemy SDK and libDaisy, which keep their own licenses.
+distribution: download
+requires_stock: Alchemy Lab V2 board
+install_notes: >-
+  Connect the front USB-C port, power on and press B3 while the rings show the warm-white comet, then load
+  simulacrum.bin with Hermetic Modular's web programmer or with dfu-util (make program-dfu). Run the board's CV
+  calibration once by holding B1 and B2 at power-on. Hermetic's bootloader is not touched, so the module can be put back
+  into update mode and reflashed.
+brick_risk: false
+tags: [delay, granular, fx, synth, filter, tape]
+versions:
+  - version: v1.0.0
+    date: 2026-11-19
+    url: https://github.com/araz4github/simulacrum/releases/tag/v1.0.0
+    notes: First release.

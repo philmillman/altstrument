@@ -8,42 +8,34 @@ description: >-
   Game Boy Color. Five logical tracks (two pulse, wave, noise and drums) share the four hardware sound channels, and the sample
   drums temporarily take the wave channel. It has a piano roll with note length and velocity, pattern pads, a mixer with pan and mute/solo, and
   drum kits with ten PCM rows and two noise voices. An Arduinoboy in mGB mode can play it from external MIDI gear.
-  The author's page runs the ROM in a browser emulator with a tutorial. The README calls version 1.0 stable and
-  says pattern-launch playback has been tested on physical hardware, while its development notes still list current
-  limitations, including timing measurements. On 2026-10-27 the author froze the public repository as the final free
-  demo, a build later than 1.0; the browser player and ROM download stay on that build and further development is
-  not published here. The build needs GBDK 4.5.0 and audio inputs
-  that are not in the repository. The GitHub owner is EvatechLTD and the README credits dpjpandone.
+  The author's site runs a demo in a browser emulator. The README called version 1.0 stable and said
+  pattern-launch playback had been tested on physical hardware. The author froze the public repository on 2026-10-27 as
+  a final free demo, and by 2026-11-20 the repository was gone. The site now sells the GAYBOY 1.0 ROM as a paid
+  download, keeps the free browser demo, and announces a GAYBOY 2.0 physical cartridge that cannot be ordered yet.
 status: active
 authors:
   - name: dpjpandone
-    url: https://github.com/EvatechLTD
-source: https://github.com/EvatechLTD/GAYBOY
-source_status: open
-license: unspecified
+    url: https://y2kcrisis.com/
+source_status: binary-only
+license: proprietary
 license_notes: >-
-  The README says there is currently no project-wide license granting reuse of the code or artwork. The bundled
-  SameBoy browser player is MIT and keeps its own license file.
+  The ROM is sold as a one-time purchase from the author's site. The removed public repository's README granted no
+  project-wide licence for the code or artwork.
 homepage: https://y2kcrisis.com/gayboy
-distribution: download
+distribution: commercial
 install_notes: >-
-  Download GAYBOY.gb from the project's site and load it on an emulator or an MBC5 flash cartridge with battery
-  save support. Back up saves, since the README warns that things will change. Playing it as a MIDI instrument needs
-  an Arduinoboy set to mGB mode.
+  Try the free browser demo on the project's site, or buy the ROM there and load GAYBOY.gb on an emulator or an MBC5
+  flash cartridge with battery save support. Playing it as a MIDI instrument needs an Arduinoboy set to mGB mode.
 brick_risk: false
 tags: [synth, sequencer, drum-machine, sampler, chiptune, midi, emulator]
 image:
-  url: https://raw.githubusercontent.com/EvatechLTD/GAYBOY/main/assets/screenshots/sequencer.png
+  url: https://y2kcrisis.com/apps/gayboy/images/sequencer.png
   alt: GAYBOY sequencer screen at 160 by 144 pixels in black and white, with a status bar across the top and a step grid whose rows are labelled KIK, SNR, CHH, OHH, CLP and other drum names
   credit: GAYBOY
-  source_url: https://github.com/EvatechLTD/GAYBOY
+  source_url: https://y2kcrisis.com/gayboy
   first_party: true
 versions:
-  - version: free-demo-final
-    date: 2026-10-27
-    url: https://github.com/EvatechLTD/GAYBOY/releases/tag/free-demo-final
-    notes: Final frozen public demo, a later engine than 1.0, shipped with a matching demo save file; the site's player and download use this build.
   - version: v1.0
     date: 2026-10-22
-    url: https://github.com/EvatechLTD/GAYBOY/releases/tag/v1.0
-    notes: Stable release; buffered quantized pattern launches, held-A retriggers on mixer pads and a fix for gated PCM restarts.
+    url: https://y2kcrisis.com/gayboy
+    notes: The release the site sells; its GitHub release page went with the repository.

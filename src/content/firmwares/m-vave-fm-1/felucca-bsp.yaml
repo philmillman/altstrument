@@ -34,6 +34,10 @@ install_notes: >-
 brick_risk: false
 tags: [platform, sdk, usb-midi]
 versions:
+- version: main @ cfaa97f
+  date: 2026-11-20
+  url: https://github.com/hugelton/felucca-bsp/commit/cfaa97ffbccdd380f7caedc8e8c564e762317461
+  notes: No tagged releases; this is the latest commit. Since the previous row, a USB host that does not read no longer loses SysEx answers, so the device keeps them and no longer flushes the MIDI IN FIFO every 50 ms, while notes, clock and mirror frames that wait are still dropped.
 - version: main @ 2a5af3d
   date: 2026-11-18
   url: https://github.com/hugelton/felucca-bsp/commit/2a5af3dfc8bccb92e37d48a3e7e0bf9a5827e51f

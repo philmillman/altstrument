@@ -1,0 +1,47 @@
+device: m-vave-fm-1
+name: POLY5
+summary: >-
+  Five-synth firmware on Dinghy: notes go round robin, at random, to all five or to one, with 24 factory patches, an
+  arpeggiator, a step sequencer, lofi tape effects and eight master effects.
+description: >-
+  POLY5 is a subtractive synth firmware, first written as a Web Audio page and ported to the FM-1 on top of the Dinghy
+  platform. Five synths with their own waves, envelopes, filters, noise and effects share the keyboard. Each note goes
+  to the next synth in turn, to a random synth, to all five in unison, or to a single synth. Any synth can be silenced
+  or skipped to change the rhythm of the rotation. The firmware has 24 factory patches that each carry a sequence,
+  32 user slots, an arpeggiator with several styles, a step sequencer, and eight master effects including saturation,
+  chorus, flanger and phaser, delay, reverb, bit reduction, a tape wow and flutter stage and a compressor. The
+  repository includes a project page that runs the firmware compiled to WebAssembly, and a video manual in eleven
+  chapters. It has no prebuilt package: the firmware is built with Docker, the JieLi toolchain and the AC79 SDK, and
+  installed with Dinghy's Python installer. The package id is FM-1_945.
+status: active
+authors:
+  - name: questron5000
+    url: https://github.com/questron5000
+source: https://github.com/questron5000/poly5
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The repository has no top-level LICENSE file. Its README says GPL-3.0 as Dinghy does, and dinghy/LICENSE and
+  dinghy/LICENSING.md state GPL-3.0-only. The Dinghy logo is all rights reserved by its designer and the Terminus font is
+  SIL OFL 1.1. No stock firmware or SDK binaries are committed; the toolchain and JieLi SDK files are fetched at build time.
+homepage: https://questron5000.github.io/poly5/
+based_on: m-vave-fm-1/dinghy
+distribution: source-only
+install_notes: >-
+  Build with `APP=poly5 ./build.sh` in the dinghy folder, which needs Docker, the JieLi toolchain and the AC79 SDK, then flash
+  build/dinghy.fwsc with `python3 tools/fm1_install.py`. The loader checks the flash chip and refuses an unknown one before
+  erasing anything; Dinghy's USB rescue (hold OCT- while switching on) restores a unit that does not start. Both the
+  Puya P25Q80 and UC25HQ80 chips are supported.
+brick_risk: false
+tags: [synth-engine, arpeggiator, sequencer, effects, lofi, emulator, platform]
+image:
+  url: https://raw.githubusercontent.com/questron5000/poly5/main/site/img/screen-home-chord.png
+  alt: "POLY5 home screen on a dark grid showing five coloured shapes numbered one to five, the play mode ROUND ROBIN and the patch name F01 KNUCKLES OF CHALK"
+  credit: questron5000
+  source_url: https://questron5000.github.io/poly5/
+  first_party: true
+versions:
+  - version: main @ 0430615
+    date: 2026-11-19
+    url: https://github.com/questron5000/poly5/commit/04306151283684595943b240f0733d6e08b2bbc9
+    notes: No tagged releases; this is the latest commit.

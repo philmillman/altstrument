@@ -2,15 +2,15 @@ device: m-vave-fm-1
 name: BLONDA ONE
 summary: >-
   BLONDA ONE, a polysynth module for fm1-dock with two sound engines, a three-oscillator one and BRIS, a six-voice
-  analog-style engine modelled on GS Music's Bree6, with 140 sounds, an arpeggiator, step sequences and a browser
+  analog-style engine modelled on GS Music's Bree6, with 160 sounds, an arpeggiator, step sequences and a browser
   emulator. Built by CI as a .dock file.
 description: >-
   A module for the dock firmware, not a firmware of its own: fm1-dock is installed once and the .dock file is dropped on
   its web console. The module began as BRIS alone; from 2.0 it is BLONDA ONE, which merges BRIS with a second engine of three oscillators per
-  voice, noise, drive and a self-oscillating ladder filter, and the engine changes with the sound (000 to 049 for the
+  voice, noise, drive and a self-oscillating ladder filter, and the engine changes with the sound (000 to 049 and 140 to 159 for the
   three-oscillator engine, 050 to 139 for BRIS). ONE adds an arpeggiator and step sequences of up to 64 steps recorded with REC, a reverb called RUM
-  and a ducking effect called PUMP; 2.1 draws the screen as a yellow dot display and adds a PRESSURE setting for the keys' aftertouch, and 2.2
-  removes denormal numbers that took 30 to 70 percent of the audio interrupt on the FM-1. BRIS has an oscillator with sub, a four-pole ladder filter, two ADSRs, an LFO, an ensemble and an
+  and a ducking effect called PUMP; 2.1 draws the screen as a yellow dot display and adds a PRESSURE setting for the keys' aftertouch, 2.2
+  removes denormal numbers that took 30 to 70 percent of the audio interrupt on the FM-1, 2.3 adds 20 three-oscillator sounds that carry their own reverb, PUMP and ERA settings, and 2.4 lowers the ERA tape noise by 14 dB. BRIS has an oscillator with sub, a four-pole ladder filter, two ADSRs, an LFO, an ensemble and an
   echo, rewritten for the FM-1's single-precision chip from the author's desktop engine blonda-motor and checked
   against it in the repository's tests. The Algorithm knob selects an ERA, with clean at zero, tape wear from 1 to 60 and
   lo-fi with fewer bits and a lower sample rate from 61, using a tape effect shared across modules. The tests report
@@ -35,7 +35,7 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, polyphonic, virtual-analog, lofi, tape, fx, emulator, presets]
 versions:
-- version: main @ b2c6c5c
+- version: main @ 25f15b3
   date: 2026-11-19
-  url: https://github.com/victorysvensson-dev/blonda-fm1/commit/b2c6c5cc28ee2de8bc79b785f21dbf5adca96863
-  notes: No tagged releases; this is the latest commit, which is BLONDA ONE 2.2. Since the previous row the BRIS module is folded into ONE with a three-oscillator engine, and ONE gains an arpeggiator, step sequences, a RUM reverb, PUMP ducking, a dot-matrix screen and a PRESSURE setting.
+  url: https://github.com/victorysvensson-dev/blonda-fm1/commit/25f15b35708b78fe54f54882fb0a907ece9a82c4
+  notes: No tagged releases; this is the latest commit, which is BLONDA ONE 2.4. It follows 2.3, which adds 20 three-oscillator sounds (140 to 159) with reverb, PUMP and ERA settings stored per sound, and 2.4 lowers the tape noise of the ERA knob by 14 dB. Before those, the BRIS module was folded into ONE with a three-oscillator engine, and ONE gained an arpeggiator, step sequences, a RUM reverb, PUMP ducking, a dot-matrix screen and a PRESSURE setting.

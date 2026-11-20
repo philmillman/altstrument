@@ -1,0 +1,28 @@
+device: m-vave-fm-1
+name: FMutate cartridges
+kind: tool
+summary: >-
+  Build pipeline and signed release feed that compile FM-1 Firmware Hub firmwares from their own source into native Android and iOS cartridges for the FMutate app.
+description: >-
+  FMutate can run an FM-1 firmware in an emulator or as a native cartridge, which is the firmware's own code compiled for the phone. This repository holds the pipeline that makes the cartridges. A daily GitHub Actions run reads the Firmware Hub's catalog.json, pins each firmware to a source commit, builds it for the CI runner and checks it against the emulator for matching level, spectrum and screen, then builds the Android (arm64-v8a, x86_64, armeabi-v7a) and iOS (device and simulator) libraries. Cartridges that pass are signed with Ed25519 and published as GitHub release assets, with an index.json on GitHub Pages that FMutate polls. At the time of writing the index lists 127 published cartridges and 142 firmwares that were tried and not published, each with a reason. Recipes, adapters, patches and dependency pins for every cartridge are in the repository. Firmwares without a licence are not published. The cartridges are for use inside FMutate and do not run on a physical FM-1.
+status: active
+authors:
+  - name: GenericJam
+    url: https://github.com/GenericJam
+source: https://github.com/GenericJam/fmutate-cartridges
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The pipeline in this repository is GPL-3.0 (LICENSE file, and the README). Each cartridge is a build of another author's firmware and keeps that firmware's licence, which the index records per firmware.
+homepage: https://genericjam.github.io/fmutate-cartridges/
+based_on: m-vave-fm-1/fmutate
+distribution: download
+install_notes: >-
+  There is nothing to install by hand: FMutate downloads the index and the cartridges it lists and refuses any that fail the signature check against the public key built into the app. To run the pipeline locally, build the engines with pipeline/engine.sh (Rust and a C compiler), fetch a firmware with pipeline/fetch.sh, then run pipeline/build.py and pipeline/verify.py; the Android targets need NDK r27c. Nothing is written to an FM-1.
+brick_risk: false
+tags: [emulator, ci, signed-builds, android, ios]
+versions:
+  - version: build-20261119-11.3
+    date: 2026-11-19
+    url: https://github.com/GenericJam/fmutate-cartridges/releases/tag/build-20261119-11.3
+    notes: Cartridges built by the 2026-11-19 run, each from its firmware's pinned source commit.

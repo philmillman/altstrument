@@ -14,7 +14,7 @@ description: >-
   A host session still takes the unit over as its panel. In that mode the device sends its input as plain MIDI and draws
   the screen from tiles sent back over USB SysEx, a vendor bulk interface or Bluetooth MIDI. A host program on macOS runs
   a firmware core such as ChoralRoot, Felucca or Melodee, using FM1VST's engine, and the sound plays on the computer. The
-  stock firmware cannot run this way. From 0.3.6 a Bluetooth session can instead play the sound on the FM-1 itself, at lower quality. Since 0.2 it is built on fm1-base and felucca-bsp and plays the computer's audio
+  stock firmware cannot run this way. From 0.3.6 a Bluetooth session can instead play the sound on the FM-1 itself, at lower quality. From 0.4 a separate Wi-Fi package connects the FM-1 to a Wi-Fi network so an Ableton Move running RemoteFM1 can use it as a panel. Since 0.2 it is built on fm1-base and felucca-bsp and plays the computer's audio
   through the FM-1's speaker or headphones over USB. It answers installers as itself (FM-1_52XXYYZZ); 0.1 and 0.1.1 were
   built on TransitFM1, which comes from Dinghy, and answered as V15. Any Felucca-family installer can write the next
   firmware over it.
@@ -34,7 +34,7 @@ homepage: https://quixotic7.github.io/RemoteFM1/
 distribution: browser-installer
 install_notes: >-
   Installer page in Chrome or Edge over USB, or tools/fm1_install.py with the .fwsc; releases carry a USB plus
-  Bluetooth package and a USB-only package. 0.2 answers as FM-1_52XXYYZZ, so an installer that does not know it
+  Bluetooth package, a USB-only package and, from 0.4, a Wi-Fi package (FM-1_729000400). 0.2 answers as FM-1_52XXYYZZ, so an installer that does not know it
   yet may refuse it; any Felucca-family installer can replace it. 0.3.1 saves in the flash area where ChoralRoot and
   FIZZ keep their saves, so back those up first. FM-1s sold from late 2026 carry a different flash chip, which only 0.3.3 and later accept for saving and for updating from within RemoteFM1. The host program is built with CMake on macOS
   and expects an FM1VST checkout. The README keeps the FM-1 Transporter and
@@ -42,6 +42,10 @@ install_notes: >-
 brick_risk: false
 tags: [platform, emulator, usb-midi, research, synth-engine, looper, arpeggiator, midi]
 versions:
+- version: 0.4.0
+  date: 2026-11-20
+  url: https://github.com/Quixotic7/RemoteFM1/releases/tag/v0.4.0
+  notes: Adds a Wi-Fi package that puts the FM-1 on a Wi-Fi network so an Ableton Move running RemoteFM1 can use it as its panel without a cable, with a WI-FI settings row that lists and joins networks. The Wi-Fi package drops Bluetooth and USB audio to fit in memory; the default USB and Bluetooth MIDI package and the USB-only package are as before. A Move also works over its USB-A port with any package.
 - version: 0.3.6
   date: 2026-11-09
   url: https://github.com/Quixotic7/RemoteFM1/releases/tag/v0.3.6

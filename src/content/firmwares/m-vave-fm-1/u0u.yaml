@@ -3,7 +3,7 @@ name: U0U
 summary: >-
   Drum machine for the FM-1: the 16 white keys are steps, the 11 black keys are drums, and each effect on the master bus has its own 16-step pattern.
 description: >-
-  U0U has nine synthesised drum kits, per-step timing, roll, chance and pitch, and 16 patterns of 16 or 32 steps that chain into a song. Every effect on the master bus is sequenced on its own steps, so it lands only on the beats chosen. Two LFOs act on volume and pan, an envelope ducks the mix from one drum, and the arpeggiator page makes Euclidean rhythms with mutation. The FM-1 can follow the computer's MIDI clock over USB. Nothing is sampled. A browser emulator runs the same code as the instrument. The README says the code was largely written with Claude as the coding assistant and checked by an emulator test suite and use on one FM-1. It builds on Felucca.
+  U0U has synthesised drum kits (nine up to 0.3, four from 0.4: 808, CLASSIC, FM and TIGHT), per-step timing, roll, chance and pitch, and 16 patterns of 16 or 32 steps that chain into a song. Every effect on the master bus is sequenced on its own steps, so it lands only on the beats chosen. Two LFOs act on volume and pan, an envelope ducks the mix from one drum, and the arpeggiator page makes Euclidean rhythms with mutation. The FM-1 can follow the computer's MIDI clock over USB. Nothing is sampled. A browser emulator runs the same code as the instrument. The README says the code was largely written with Claude as the coding assistant and checked by an emulator test suite and use on one FM-1. It builds on Felucca.
 status: active
 authors:
 - name: youlisse
@@ -21,6 +21,10 @@ install_notes: >-
 brick_risk: false
 tags: [drums, sequencer, fx, synth-engine, euclidean, emulator, web]
 versions:
+- version: v0.4
+  date: 2026-11-20
+  url: https://github.com/youlisse/U0U/releases/tag/v0.4
+  notes: Pre-release; the KIT knob offers four kits, 808, CLASSIC, FM and TIGHT, two of them ported from Mutable Instruments Peaks' drum models, and each lane gets a second page with EXTRA, ACCENT and model-specific knobs. A save made with a removed kit starts on CLASSIC.
 - version: v0.3
   date: 2026-11-19
   url: https://github.com/youlisse/U0U/releases/tag/v0.3

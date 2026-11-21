@@ -11,19 +11,19 @@ description: >-
   Elite only, is SLOOP 2.8.4 with a 20-channel vocoder modelled on the Sennheiser VSM201 and two routed USB audio
   inputs; to make room it drops the built-in samples and several engines. A pre-release, Mewcoder + Harmoniser, adds a
   three-voice harmoniser modelled on the Eventide H949 and is marked as early testing. The releases say the builds were
-  tested on an SMK-37 Elite only. It is a separate line from the Snoop37 and SLOOP Pro entries.
+  tested on an SMK-37 Elite only. It is a separate line from the Snoop37 and SLOOP Pro entries. The repository was renamed from sloop-smk37 to mewcoder-smk37.
 status: active
 authors:
 - name: MiloMeowzers
   url: https://github.com/MiloMeowzers
-source: https://github.com/MiloMeowzers/sloop-smk37
+source: https://github.com/MiloMeowzers/mewcoder-smk37
 source_status: open
 license: GPL-3.0-only
 license_notes: >-
   The README states GPL-3.0-only (LICENSE, LICENSING.md), as upstream SLOOP. It lists msfa (Apache-2.0) and the Terminus
   font among third-party parts. The repository holds docs/firmware/sloop-2.8.1.fwsc, which is this project's own SLOOP
   build, not an M-VAVE image, and says no vendor material is included.
-homepage: https://milomeowzers.github.io/sloop-smk37/
+homepage: https://milomeowzers.github.io/mewcoder-smk37/
 distribution: browser-installer
 install_notes: >-
   Browser installer in Chrome or Edge over USB, where you pick your model and the matching package is written, or
@@ -35,21 +35,29 @@ install_notes: >-
 brick_risk: false
 tags: [sequencer, synth-engine, drums, sampler, fx, usb-audio, vocoder, performance, midi, editor, fork]
 image:
-  url: https://raw.githubusercontent.com/MiloMeowzers/sloop-smk37/ci/assets/screens/smk37-stems-screens.png
+  url: https://raw.githubusercontent.com/MiloMeowzers/mewcoder-smk37/ci/assets/screens/smk37-stems-screens.png
   alt: "Three SMK-37 screens: a stem punch-in page with coloured effect pads, and the HOME USB and PUNCH menu pages showing USB layout DRUMS+RET, 48 kHz stem rate and stem FX PUNCH"
   credit: MiloMeowzers
-  source_url: https://github.com/MiloMeowzers/sloop-smk37
+  source_url: https://github.com/MiloMeowzers/mewcoder-smk37
   first_party: true
 versions:
+- version: mewcoder+harmoniser-v0.3-pre
+  date: 2026-11-21
+  url: https://github.com/MiloMeowzers/mewcoder-smk37/releases/tag/mewcoder%2Bharmoniser-v0.3-pre
+  notes: Pre-release for the SMK-37 Elite, marked early testing; gives the harmoniser lanes 6 dB of headroom and an input limiter, adds lane input meters on a fader bank, selectable punch-in effects with BEAT REPEAT, a STEM LEVEL setting and smoother vocoder envelopes.
+- version: mewcoder-v0.2
+  date: 2026-11-21
+  url: https://github.com/MiloMeowzers/mewcoder-smk37/releases/tag/mewcoder-v0.2
+  notes: Adds selectable punch-in effects with a per-track BEAT REPEAT, a STEM LEVEL setting of -18, -12 or -6 dB, smoother vocoder envelopes, a FULL HQ quality switch and a POLY CAP AUTO setting that limits FM6 to four voices while the vocoder runs. Leaves out the built-in samples and six engines, as v0.1 did.
 - version: mewcoder+harmoniser-v0.2-pre
   date: 2026-11-16
-  url: https://github.com/MiloMeowzers/sloop-smk37/releases/tag/mewcoder+harmoniser-v0.2-pre
+  url: https://github.com/MiloMeowzers/mewcoder-smk37/releases/tag/mewcoder+harmoniser-v0.2-pre
   notes: Pre-release for the SMK-37 Elite, marked early testing; adds a three-voice harmoniser to Mewcoder's vocoder.
 - version: mewcoder-v0.1
   date: 2026-11-11
-  url: https://github.com/MiloMeowzers/sloop-smk37/releases/tag/mewcoder-v0.1
+  url: https://github.com/MiloMeowzers/mewcoder-smk37/releases/tag/mewcoder-v0.1
   notes: Mewcoder, SLOOP 2.8.4 with a 20-channel vocoder and two routed USB audio inputs, for the SMK-37 Elite.
 - version: 2.8.1-smk37.1
   date: 2026-10-28
-  url: https://github.com/MiloMeowzers/sloop-smk37/releases/tag/v2.8.1-smk37.1
+  url: https://github.com/MiloMeowzers/mewcoder-smk37/releases/tag/v2.8.1-smk37.1
   notes: First public build, SLOOP 2.8.1 with six-channel USB audio stems and punch-ins on every stem, for the SMK-37 Pro, Elite and MKE-P37.

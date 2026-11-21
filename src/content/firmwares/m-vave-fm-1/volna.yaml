@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: Volna
+summary: >-
+  Wavetable synth for the FM-1 built on Dinghy: three oscillators per voice, two filters, four envelopes, a modulation matrix, effects and a step arpeggiator with its own pattern for every patch.
+description: >-
+  Each voice has three wavetable oscillators and two filters, with a modulation matrix and effects slots. The arpeggiator keeps a 16-step pattern, a step count and a shift depth per patch, and SAVE stores the sound, arpeggiator settings and steps together. The library holds 16 pattern templates and four user wavetable slots, and Volna Studio, the browser editor on the author's site, edits patches, backs up the 100 patch slots and installs the firmware. The repository is a copy of Dinghy (commit ea1b6bf) rather than a GitHub fork, with the app code rewritten as volna.c. The README and docs are in Russian. Version 1.1 changed the firmware identity from FM-1_946 to FM-1_3006, and the editor recognises both.
+status: active
+authors:
+- name: MaxMaximoff
+  url: https://github.com/MaxMaximoff
+source: https://github.com/MaxMaximoff/volna
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and LICENSING.md state GPL-3.0-only, the same as Dinghy. Fonts keep their SIL OFL 1.1 licences, one tool file is MPL-2.0, and the three JieLi SDK files that go into each package (Apache-2.0) are read from the builder's own SDK checkout and are not in the repository.
+homepage: https://soundplayground.twc1.net/fm1-firmwares/volna/
+based_on: m-vave-fm-1/dinghy
+distribution: browser-installer
+install_notes: >-
+  Use the web installer on the author's site in Chrome or Edge, after backing up patches and user tables, because Volna keeps its own storage in flash and another firmware may overwrite it. The release notes report a test on a real FM-1 of stock V15, then Volna 1.1, then stock V15 again, using the installer. For USB rescue, hold OCT- while switching the FM-1 on, and the computer sees a device waiting for an update.
+brick_risk: false
+tags: [synth-engine, wavetable, arpeggiator, modulation, fx, editor]
+image:
+  url: https://raw.githubusercontent.com/MaxMaximoff/volna/main/docs/card.png
+  alt: "Volna on the FM-1 screen: purple wavetable curves with the current one in white, labelled W20 > 27 LFO1 on the BASIC table, TABLE, WAVE, SEMI and FINE values above, and the SOFT PAD patch below"
+  credit: MaxMaximoff
+  source_url: https://github.com/MaxMaximoff/volna
+  first_party: true
+versions:
+- version: '1.1'
+  date: 2026-11-21
+  url: https://github.com/MaxMaximoff/volna/releases/tag/v1.1
+  notes: Firmware identity changes to FM-1_3006; the release notes report an install-and-restore test on a real FM-1.
+- version: '1.0'
+  date: 2026-11-21
+  url: https://github.com/MaxMaximoff/volna/releases/tag/v1.0
+  notes: First release; its notes say the full install-and-restore test of this package was still pending.

@@ -29,12 +29,25 @@ license_notes: >-
 homepage: https://github.com/Kayman18/FM1-NovationBassStation/releases/tag/RC1
 distribution: download
 install_notes: >-
-  The release has FM1-BassStation-RC1.fwsc, the package for normal updates, which updates the application region and keeps
-  the per-device user bank. The README gives no step-by-step install. A full M-Flasher image is not built by default,
-  because it would erase the user bank, and none is released. Back up and keep M-VAVE's updater at hand.
+  Download the .fwsc package from the release (FM1-BassStation-RC1.fwsc, later FM1-BassStation-1.0.fwsc) for normal updates, which
+  update the application region and keep the per-device user bank. The README gives no step-by-step install. From RC2 the
+  releases also attach a clean-install M-Flasher image that writes the full flash, including the user bank and settings,
+  and the notes keep it for clean installations or recovery. Back up and keep M-VAVE's updater at hand.
 brick_risk: false
 tags: [synth-engine, sequencer, generative, editor, usb-midi, midi]
 versions:
+- version: v1.0
+  date: 2026-11-20
+  url: https://github.com/Kayman18/FM1-NovationBassStation/releases/tag/v1.0
+  notes: Adds shaded knobs with position markers, cutoff in hertz on Home and Filter, and CC74 for cutoff and CC71 for resonance over USB or TRS MIDI, plus the Bass Station plug-in's CC105 and CC106. The release also attaches a clean-install M-Flasher image that writes the full flash, which erases the USER bank.
+- version: RC3
+  date: 2026-11-20
+  url: https://github.com/Kayman18/FM1-NovationBassStation/releases/tag/RC3
+  notes: Starts presets at 50% cutoff when recalled, shows cutoff and resonance below the page title when SELECT or ALGO turns, and shows cutoff as a percentage and in hertz. Attaches a clean-install M-Flasher image beside the .fwsc.
+- version: RC2
+  date: 2026-11-20
+  url: https://github.com/Kayman18/FM1-NovationBassStation/releases/tag/RC2
+  notes: Redraws Home with a header and a larger preset-name panel, opens Presets with SEL, and gives the sequencer's Generate, Mutate and piano-roll editors larger grids with live values. The notes say the build and simulator tests ran without a physical unit.
 - version: RC1
   date: 2026-11-06
   url: https://github.com/Kayman18/FM1-NovationBassStation/releases/tag/RC1

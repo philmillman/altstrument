@@ -1,15 +1,18 @@
 device: mutable-instruments-rings
 name: eurorack-mi-sgnir
-summary: Slim source tree for the Rings firmware at a pinned upstream commit, with frequency locking, octave snapping on the frequency knob and a stricter calibration gesture; a Schliere allpass-chain mode is planned.
+summary: Slim source tree and audio-update releases of Rings firmware at a pinned upstream commit, with frequency locking, octave snapping on the frequency knob, a stricter calibration gesture and Schliere, a third bank built on a long chain of allpass filters.
 description: >-
   A snapshot of only the folders the Rings firmware needs, with stmlib and the audio bootloader vendored, so a clone
   builds without submodules. It is not a GitHub fork of the upstream monorepo. Changes on top of the unmodified base
   are separate commits. Holding both buttons for a short time toggles frequency locking, and while locked the
   frequency knob becomes an octave switch; the idea comes from Lyle Mills's alternative firmware. Calibration now
   needs both buttons held for six seconds, and the CV zero points are applied only when calibration succeeds. The new
-  settings use formerly unused bytes, so settings saved by stock firmware are kept. The README says the build is not
-  yet tested on hardware and that Schliere, a chain of 61 second-order allpass filters with feedback ported from the
-  author's OWL patch, is still to come. The author's companion repository, sgnir-workbench, holds the planning notes,
+  settings use formerly unused bytes, so settings saved by stock firmware are kept. Schliere, a third bank, is a chain
+  of second-order allpass filters with feedback ported from the author's OWL patch, in a 61-stage variant S (48 kHz
+  or 96 kHz feedback path) and a 98-stage variant L, selected with the right button. The README still says the
+  differences from stock are not yet tested on hardware, and reports CPU load measured on a module on 2026-11-21.
+  Releases are built by GitHub Actions and include the WAV for the audio bootloader, a raw .bin for SWD and
+  checksums. The author's companion repository, sgnir-workbench, holds the planning notes,
   research on Rings forks and flashing options, the Schliere reference sources and Python tools for the audio
   bootloader's encoding; it is not a firmware itself. The name avoids the Mutable Instruments module name, as the
   company asked forks to do.
@@ -27,17 +30,23 @@ license_notes: >-
   bootloader, and to m9dfukc for the modifications. The workbench repository is MIT as well.
 homepage: https://github.com/m9dfukc/sgnir-workbench#readme
 based_on: mutable-instruments-rings/rings-source
-distribution: source-only
+distribution: download
 requires_stock: Stock Rings with the audio bootloader
 install_notes: >-
-  Build with an Arm GNU toolchain (the README used 12.2.Rel1) and the makefile's bin target, which gives
-  build/rings/rings.bin at address 0x08008000, then install it the usual Rings way as a WAV through the audio
-  bootloader. The build is not yet tested on hardware. The bootloader is not part of the application image, so a
-  failed install is retried by entering bootloader mode and playing the update again.
+  Play the release's sgnir-<version>.wav into the IN jack through the audio bootloader: hold the left button at
+  power-on, set FREQUENCY near noon and play the file from the start. The raw .bin is for SWD only. To build from
+  source, use an Arm GNU toolchain (the README used 12.2.Rel1) and the makefile's bin target, which gives
+  build/rings/rings.bin at address 0x08008000. The bootloader is not part of the application image, so a failed
+  install is retried by entering bootloader mode and playing the update again, and the official Rings WAV goes
+  back the same way.
 brick_risk: false
-tags: [physical-modeling, modes, performance, calibration, source-only, open-source]
+tags: [physical-modeling, modes, performance, calibration, allpass, open-source]
 versions:
-  - version: main @ 68906da
+  - version: v0.2.0
+    date: 2026-11-21
+    url: https://github.com/m9dfukc/eurorack-mi-sgnir/releases/tag/v0.2.0
+    notes: Adds Schliere L, a 98-stage chain as a second variant cycled with the right button, and cuts the Schliere processor load by about a quarter.
+  - version: v0.1.0
     date: 2026-11-20
-    url: https://github.com/m9dfukc/eurorack-mi-sgnir/commit/68906da28260b5d7cf5489a38b44e10e5167aaf4
-    notes: No tagged releases; this is the latest commit.
+    url: https://github.com/m9dfukc/eurorack-mi-sgnir/releases/tag/v0.1.0
+    notes: First release, with frequency locking, the stricter calibration and the Schliere bank as a third bank.

@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: Viber
+summary: >-
+  Six-track groovebox for the FM-1 derived from Skiff and Felucca, adding a wavetable engine, a two-page clips mode, round knob displays and a master level meter.
+description: >-
+  Viber keeps Skiff's fourteen synth and drum engines, 64-step sequencer, pattern pool and browser editor, and adds a wavetable engine (WAVE) with eight tables of sixteen single-cycle frames, scanned with a TABLE control and drawn on the screen as a 3D stack. A clips mode under SEQ shows each track's clips at double width over two pages and launches them one at a time or a whole column at once. Each page shows its four settings as round knobs, and a master VU meter sits in the header. It is not a GitHub fork: the repository starts from Skiff's tree and much of the README and the licensing file are still Skiff's text, including pages for the SMK-37 Pro. A build for the SMK-37 Pro can be compiled from the source with BOARD=smk37, but the releases ship only the FM-1 package.
+status: active
+authors:
+- name: ant25fr
+  url: https://github.com/ant25fr
+source: https://github.com/ant25fr/viber
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is GPL-3.0-only, as the README badge states. Ported DSP, fonts and the Apache-2.0 SDK files keep their own licences (LICENSES/). The bundled instrument samples are CC0 (Versilian Studios VSCO-2 CE and VCSL), as fmhub.json states.
+homepage: https://ant25fr.github.io/viber/
+based_on: m-vave-fm-1/skiff
+distribution: browser-installer
+install_notes: >-
+  Use the web installer on the project site in Chrome or Edge with the FM-1 on USB, or install viber-1.1.fwsc from the release with tools/fm1_install.py. The README says the installer also brings the official firmware back, taking a backup first, and that an install that is cut off resumes when the installer is run again. The README's install text is still Skiff's, so the Skiff installer it links is not Viber's.
+brick_risk: false
+tags: [synth-engine, sequencer, drums, wavetable, performance, editor, emulator]
+image:
+  url: https://raw.githubusercontent.com/ant25fr/viber/main/docs/img/viber_wavetable.png
+  alt: "Viber's WAVE page on the FM-1 screen: a 3D stack of wavetable frames with frame 7 of 16 highlighted in red, four round knobs TABLE, WAVE, SUB and DETUNE below, and the DIGI PAD sound on track 1"
+  credit: ant25fr
+  source_url: https://github.com/ant25fr/viber
+  first_party: true
+versions:
+- version: '1.1'
+  date: 2026-11-21
+  url: https://github.com/ant25fr/viber/releases/tag/v1.1
+  notes: Clips get a launch button, a stop square on empty slots and a progress line on the playing clip.
+- version: '1.0'
+  date: 2026-11-20
+  url: https://github.com/ant25fr/viber/releases/tag/v1.0

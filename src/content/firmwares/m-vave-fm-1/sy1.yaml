@@ -7,7 +7,7 @@ description: >-
   The engine has two oscillators and a sub with FM, ring and sync, four filter types, three envelopes, two LFOs, an
   arpeggiator, unison, ten effects, an EQ, a tempo delay and a chorus. It is a lighter reimplementation with parameter
   laws taken from published measurements of Synth1, not a bit-exact copy, and the README lists the differences (about
-  seven voices on one core, shorter delay times, simplified filters). Since 0.4.0 it also has a bitimbral mode that plays two parts, L and R, each with its own patch, arpeggiator and effects, as a layer, split to the two outputs or on MIDI channels 3 and 4; part R runs on the second core. A read-only FACTORY bank of 256 presets from redistributable
+  seven voices on one core, shorter delay times, simplified filters). Since 0.4.0 it also has a bitimbral mode that plays two parts, L and R, each with its own patch, arpeggiator and effects, as a layer, split to the two outputs or on MIDI channels 3 and 4; part R runs on the second core. Version 1.0 adds a QUAD mode with four sounds on MIDI channels 1 to 4, mapped to the Circuit Tracks' synth and MIDI tracks. A read-only FACTORY bank of 256 presets from redistributable
   community banks, sorted into eight categories (500 before 0.4.1), is stored in program flash, and the 1,024 user slots stay free. A web
   Patch Manager lists 3,174 hosted presets from 27 banks, imports your own .sy1 files and bank ZIPs locally, previews
   them in the browser, arranges the user slots and sends a selection over USB. Three screen styles are included. The README calls the project
@@ -39,6 +39,10 @@ image:
   source_url: https://github.com/fenderberg/fm1-sy1
   first_party: true
 versions:
+- version: 1.0.0
+  date: 2026-11-21
+  url: https://github.com/fenderberg/fm1-sy1/releases/tag/v1.0.0
+  notes: Adds a QUAD mode with four sounds on MIDI channels 1 to 4, made for the Circuit Tracks, with an optional split of parts 1 and 2 to the left output and parts 3 and 4 to the right. Every Circuit macro knob is mapped and the audio block halves to 128 frames for tighter timing. The Patch Manager handles QUAD slots.
 - version: 0.5.0
   date: 2026-11-18
   url: https://github.com/fenderberg/fm1-sy1/releases/tag/v0.5.0

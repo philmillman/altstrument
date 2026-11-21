@@ -34,6 +34,10 @@ install_notes: >-
 brick_risk: false
 tags: [platform, sdk, usb-midi]
 versions:
+- version: main @ 2600dc6
+  date: 2026-11-21
+  url: https://github.com/hugelton/felucca-bsp/commit/2600dc6e735e079f93426ec9073acb8bb3a09492
+  notes: No tagged releases; this is the latest commit. Since the previous row, the USB code gains a mirror pump that sends screen-mirror packets at the host's pace, an optional real-time MIDI path that sends clock ticks at once, a set of USB audio options that are off by default (host clock, 24-bit, capture and others) and a fix for a SETUP that arrives before a stall is serviced. The SD hardware header gains an SPI1 receive interrupt and a hard-driven clock option, the hardware test accepts the UC25HQ80 flash chip, and the rescue script still recognises a head whose isd_config.ini another tool rewrote.
 - version: main @ cfaa97f
   date: 2026-11-20
   url: https://github.com/hugelton/felucca-bsp/commit/cfaa97ffbccdd380f7caedc8e8c564e762317461

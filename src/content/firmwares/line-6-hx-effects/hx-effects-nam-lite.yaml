@@ -20,6 +20,8 @@ description: >-
   build.py makes three images: nam (NAM and Click), amps (adds the amps) and full (adds Geiger, Commander, Corrupt, Ottobit and Doom Chug). The author reports the
   all-in-one image running on their unit on 2026-11-11. A tools/flash.py script repeats the Line 6 Updater update over USB and checks that the unit boots.
 
+  A setup page, scottlynn73.github.io/hx-effects-nam-lite, makes the three images in Chrome or Edge from your own 3.80.0 file, checks them against the tested build, installs them over USB, converts and sends NAM captures to the unit's User IR slots and lists, renames, copies and deletes those slots; nothing is uploaded. The page warns that freezes and DAW crackle can still happen when the DSP is overloaded. Since the IR slot work, tools/ir_upload.py does the same from the command line.
+
   The repository includes demo captures that its author made, already converted to .wav. Its author warns that this is for
   people comfortable with command line tools and with recovering the unit themselves.
 status: active
@@ -35,10 +37,13 @@ license_notes: >-
   The README states GPL-3.0-or-later, as upstream. The repository holds no Line 6 code or data, and .gitignore keeps firmware/,
   build/ and every .hxf out of it. The README says the built file is a derivative of Line 6's firmware and must not be shared.
   The author releases the demo captures for free use.
+homepage: https://scottlynn73.github.io/hx-effects-nam-lite/
 distribution: patch-your-own
 requires_stock: 3.80.0 (HX_Effects_v3.80.0_0xd97239907.hxf; the build checks the MD5 and refuses any other)
 install_notes: >-
-  Put the stock file in firmware/, then run build_effects.py (Python 3.10 or newer with numpy). Back up in HX Edit,
+  The easy route is the setup page in Chrome or Edge on a Mac or Windows computer: drop in the stock 3.80.0 file, pick a
+  build and install over USB; its Rescue section puts Line 6's firmware back. The manual route is to put the stock file in
+  firmware/, then run build.py (Python 3.10 or newer with numpy). Back up in HX Edit,
   close it, and pick the built .hxf with Choose File in Line 6 Updater, on a unit already on 3.80.0. The author notes a
   flash may report a problem and work on a second try. If it shows Boot Failure or stops at the splash, hold the >
   button at power on and reinstall the stock file. Do not edit the MD5 check: a later firmware needs its offsets
@@ -47,6 +52,10 @@ install_notes: >-
 brick_risk: false
 tags: [nam, amp-modeling, patch]
 versions:
+  - version: main @ 91cd9f5
+    date: 2026-11-21
+    url: https://github.com/scottlynn73/hx-effects-nam-lite/commit/91cd9f56cb28d79f99e998a51a294e88364c2eec
+    notes: No tagged releases; this is the latest commit. Since the previous entry the commits add a setup page that builds the firmware in the browser and installs it over USB, then add user IR slot handling over USB (send, list, rename, copy and delete captures, from the page and from tools/ir_upload.py), tuner sharps, per-effect DSP cost figures, new effect names, a Rescue section on the page, the Drum Chapel groove and sample data, and a fix for building with newer Apple clang.
   - version: main @ 33c300d
     date: 2026-11-18
     url: https://github.com/scottlynn73/hx-effects-nam-lite/commit/33c300d7a215c55887e098d825c3f185ce36f216

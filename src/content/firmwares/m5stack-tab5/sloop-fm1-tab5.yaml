@@ -1,0 +1,39 @@
+device: m5stack-tab5
+name: sloop-fm1-tab5
+summary: >-
+  Port of the SLOOP groovebox engine to the Tab5 with a touchscreen UI and Tab5 Keyboard input, in development on the
+  dev branch of the repository, with a planned companion mode for an FM-1 over USB.
+description: >-
+  The default branch holds only a bare ESP-IDF skeleton, and the work is on the dev branch. It vendors a trimmed copy
+  of isod89's SLOOP (2.8.5, pinned commit) as the sound engine and sequencer, and adds Tab5 components for the display, ES8388 audio,
+  the 70-key Tab5 Keyboard on its own I2C bus, and a LVGL touch interface with Play, Tracks, Step, Transport,
+  Global, FX, Analog, FM6 and Sample pages. The project documents say the engine renders hash-identical to the upstream host
+  build on 182 regression cases, and that the build, flash, screenshot and serial-injection checks pass on one device, while
+  several listening and keyboard checks are still to be done by hand. It is a different project from SLOOP Tab5 by zircothc,
+  which wraps the unmodified FM-1 firmware. The build targets early ESP32-P4 revision 1.x chips, which the author's unit
+  has, and a production Tab5 needs the chip revision settings changed. Preset storage, the remaining
+  SLOOP pages and the planned companion mode that mirrors an FM-1 over USB-MIDI are listed as later phases. The documents are in Chinese and there is no README.
+status: active
+authors:
+- name: kennx
+  url: https://github.com/kennx
+source: https://github.com/kennx/sloop-fm1-tab5
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL-3.0 text, and the project's AGENTS.md and upstream licence notes say the derived firmware is distributed as
+  GPL-3.0-only, matching SLOOP. The vendored SLOOP tree keeps its Apache-2.0 notice for the FM6 engine, its MIT notices
+  for the physical-modelling code and its CC0 and CC BY sample credits.
+based_on: m-vave-fm-1/sloop
+distribution: source-only
+install_notes: >-
+  Build from the dev branch with ESP-IDF using scripts/build.sh and flash a Tab5 over USB-C with scripts/flash.sh. The
+  layout is a single factory app with no OTA slots, and the project says the way back is to flash again with esptool.
+  No prebuilt binary is published, and the default settings only suit early ESP32-P4 revision 1.x units.
+brick_risk: false
+tags: [groovebox, sequencer, synth-engine, drums, sampler, fx, midi, performance, touchscreen, keyboard, port]
+versions:
+- version: dev @ 908090d
+  date: 2026-11-21
+  url: https://github.com/kennx/sloop-fm1-tab5/commit/908090df51764a6c38f476425a7b73e871498daf
+  notes: No tagged releases; this is the latest commit on the dev branch, whose firmware passes the project's own device checks through phase 4A. The default branch is still the skeleton.

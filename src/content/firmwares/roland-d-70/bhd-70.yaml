@@ -27,10 +27,10 @@ homepage: https://www.bronislawhonca.pl
 distribution: download
 requires_stock: Dumps from your own D-70 (firmware 1.10, 1.12, 1.14, 1.16 or 1.19, plus the six wave ROMs)
 install_notes: >-
-  Download note: the free beta build is signed and notarised and is sent on request by e-mail to the address in the README;
-  the repository has no releases. It can also be built with Xcode, XcodeGen and a MAME build, following build.sh and
-  mame/README.md. Take the EPROM and wave ROM dumps with a programmer and send a SysEx bulk dump of your sounds if you want
-  them. The app writes nothing to the D-70.
+  Download BHD-70-0.9.dmg from the v0.9 release (signed and notarised, Apple Silicon and Intel), drag it to Applications and
+  launch it once so your DAW sees the Audio Unit. The release also carries a zip of the source. It can be built with Xcode,
+  XcodeGen and a MAME build, following build.sh and mame/README.md. Take the EPROM and wave ROM dumps with a programmer and send
+  a SysEx bulk dump of your sounds if you want them. The app writes nothing to the D-70. The author calls the release a beta.
 brick_risk: false
 tags: [emulator, plugin, au, macos, synth-engine, sysex, midi-learn, research]
 image:
@@ -40,6 +40,10 @@ image:
   source_url: https://github.com/Bronislavus/BHD-70#readme
   first_party: true
 versions:
+  - version: v0.9
+    date: 2026-11-21
+    url: https://github.com/Bronislavus/BHD-70/releases/tag/v0.9
+    notes: Pre-release and first GitHub release, which the author calls a beta. It carries a signed and notarised macOS disk image for Apple Silicon and Intel and a zip of the full source, and needs macOS 13 or later and dumps from your own D-70.
   - version: main @ fb2a59a
     date: 2026-11-15
     url: https://github.com/Bronislavus/BHD-70/commit/fb2a59aa18ba212f99511c6d5cc4276913137497

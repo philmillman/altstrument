@@ -27,12 +27,16 @@ license_notes: >-
   .fwsc files in firmware/ are the author's own builds, not stock images.
 distribution: download
 install_notes: >-
-  Back up projects and samples first, since they are lost on the switch. Send FM1_ELECTRO-0.5.4-alpha.fwsc from the release, or firmware/FM1_ELECTRO_PLATTFORM.fwsc (or the older FM1_ELECTRO.fwsc), with a flasher
+  Back up projects and samples first, since they are lost on the switch. Send FM1_ELECTRO-0.5.5-alpha.fwsc from the release, or firmware/FM1_ELECTRO_PLATTFORM.fwsc (or the older FM1_ELECTRO.fwsc), with a flasher
   that accepts custom packages (fm-static, M-Flasher or tools/fm1_install.py). The original firmware can be put back
   with M-VAVE's tools, and the bootloader's download mode or FM-1 Transporter covers a unit that will not start.
 brick_risk: false
 tags: [groovebox, drums, sequencer, synth-engine, arpeggiator, fx]
 versions:
+- version: 0.5.5-alpha
+  date: 2026-11-20
+  url: https://github.com/robtron-byte/FM1-Electro-one/releases/tag/v0.5.5-alpha
+  notes: Pre-release. Fixes live recording of held chords in STRINGS, which kept only the last key pressed; keys pressed together in one step are now stored as a chord (major, minor, seventh, suspended and others) when no chord is selected. Also fixes notes recorded under transpose losing their length. The notes are in German.
 - version: 0.5.4-alpha
   date: 2026-11-20
   url: https://github.com/robtron-byte/FM1-Electro-one/releases/tag/v0.5.4-alpha

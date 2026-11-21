@@ -11,8 +11,8 @@ description: >-
   and the Pi then sees the loader as a UBOOT device. A menu script (English and French versions) installs M-Flasher and
   the jl-uboot-tool, backs up the whole flash first, and writes a .fwsc package with M-Flasher, which leaves the
   bootloader, the key calibration and the Bluetooth pairings alone. It can fetch an OpenVALive package or take one you
-  supply. The README reports a full recovery of an SMK-37 Elite from a Raspberry Pi 5; the FM-1, the SMK-37 Pro and the
-  Raspberry Pi 4 are listed as expected to work but not tested, and sending the key from a Pico is prepared but untested.
+  supply. The README reports a full recovery of an SMK-37 Elite and of an FM-1 (latest board) from a Raspberry Pi 5; the
+  SMK-37 Pro and the Raspberry Pi 4 are listed as expected to work but not tested, and sending the key from a Pico is prepared but untested.
   The project says it is not affiliated with M-VAVE or JieLi.
 status: active
 authors:
@@ -30,11 +30,11 @@ install_notes: >-
   shows the wiring and warns never to put the 5 V line on a GPIO pin) and a package that matches the model. Run
   rescue-en.sh, send the key with the unit switched off, switch it on, back up the flash and then flash. Keep the
   backup, since the key calibration differs per unit and another unit's backup must not be restored. Only the SMK-37
-  Elite is reported as tested.
+  Elite and the latest FM-1 board are reported as tested.
 brick_risk: false
 tags: [flasher, loader, utility, backup]
 versions:
-- version: main @ 9dd11d2
-  date: 2026-11-19
-  url: https://github.com/Tom-Rfid/jieli-usbkey-unbrick/commit/9dd11d2d4be0a5416163f6bae2da73d0ac597b75
-  notes: No tagged releases; this is the latest commit, which links the project page from the README.
+- version: 1.0.0
+  date: 2026-11-20
+  url: https://github.com/Tom-Rfid/jieli-usbkey-unbrick/releases/tag/v1.0.0
+  notes: First release. Reports the whole rescue (key, backup, firmware written, unit back) as tested on an SMK-37 Elite and an FM-1 of the latest board, both from a Raspberry Pi 5, with the SMK-37 Pro and the Raspberry Pi 4 and 3 expected to work but untested. The release says to answer no if M-Flasher offers to install m-bootloader.

@@ -4,7 +4,7 @@ summary: >-
   SLOOP fork that adds a reggae and dub layer: a siren, ten 64-step riddims on four tracks, skank chords, dub sound presets and a four-band isolator, with a browser emulator.
 description: >-
   The additions live in separate dub source files and are off until switched on from new pages in the HOME menu. The siren has five waves,
-  five sweep shapes and a delay send. A four-track dub sequencer (bass, skank, melody, drums) plays riddims (ten in 1.0, 28 by 1.4) that can be loaded whole or one
+  five sweep shapes and a delay send. A four-track dub sequencer (bass, skank, melody, drums) plays riddims (ten in 1.0, 28 by 1.4, 75 in 1.8) that can be loaded whole or one
   line at a time, using the existing SLOOP engines for its sounds, and a one-key skank plays eight chord types. A DUB ISOLATOR splits the
   mix into four bands with a mute and gain on each. Everything else is SLOOP's. Version 1.0 rebuilt the isolator's crossover so each band mutes properly and added tape-style bending of a looping delay by its TIME knob. The project site has a browser installer for the 1.0 package and an emulator that runs the dub build.
 status: active
@@ -17,12 +17,17 @@ license: GPL-3.0-only
 license_notes: >-
   README and LICENSE give GPL-3.0-only, as SLOOP; the icon atlas and panel image are separate assets (LICENSING.md).
 homepage: https://altessproduction.github.io/sloop-dub-fm1/dub/
+based_on: m-vave-fm-1/sloop
 distribution: browser-installer
 install_notes: >-
   Open the project's web installer in Chrome or Edge with the FM-1 on USB; it checks the package's SHA-256 before writing. The .fwsc is also attached to the release for another installer. Projects, presets, samples and settings stay on update. Going back to the base SLOOP or to M-VAVE's own firmware is described in the README, and holding OCT- while switching on starts the USB rescue.
 brick_risk: false
 tags: [sequencer, synth-engine, drums, fx, performance, emulator, fork]
 versions:
+- version: '1.8'
+  date: 2026-11-20
+  url: https://github.com/altessproduction/sloop-dub-fm1/releases/tag/v1.8
+  notes: The bank holds all 75 riddims of the author's Riddim Collection page, each a 64-step loop with bass, skank, one more instrument and drums, stored compressed and expanded at load. The 27 riddims of 1.7 play as before, and the boot splash has new artwork. Projects, presets, samples and settings carry over. The release notes are in English.
 - version: '1.7'
   date: 2026-11-14
   url: https://github.com/altessproduction/sloop-dub-fm1/releases/tag/v1.7

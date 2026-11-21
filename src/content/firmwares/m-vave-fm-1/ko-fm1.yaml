@@ -1,0 +1,27 @@
+device: m-vave-fm-1
+kind: tool
+name: KO FM-1 player
+summary: >-
+  GitHub Pages browser player and Web MIDI installer for the KO firmwares: runs each of the fifteen as WebAssembly with an on-screen FM-1 and installs its package on a connected unit from Chrome or Edge.
+description: >-
+  The page holds one WebAssembly build and one .fwsc package for each KO firmware: the twelve genre firmwares, KO BASS, KO KIT and KO JET. It draws the FM-1 with its keys, buttons and screen and plays the chosen firmware in the browser through an audio worklet. With an FM-1 connected over Web MIDI with SysEx, it detects the unit and installs the chosen package through the Dinghy and Felucca update loader, then checks that the unit reports the new package identity. The page can also offer a stock restore when the matching file is listed in its inventory; the inventory has none today. The emulator and page source are in the web/ folder of the KO firmware repositories; this repository holds the built site.
+status: active
+authors:
+  - name: kosmar
+    url: https://github.com/kosmar
+source: https://github.com/kosmar/ko-fm1
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no license file and no README. The KO firmware repositories that hold the emulator source in web/emu are GPL-3.0 according to their LICENSE files. The packages and WebAssembly files in this repository are the project's own builds of those firmwares; no M-VAVE stock image is committed.
+homepage: https://kosmar.github.io/ko-fm1/
+distribution: browser-installer
+install_notes: >-
+  Open the page; running a firmware in the emulator writes nothing to a unit. Installing needs Chrome or Edge with Web MIDI and SysEx. The page sends the unit's own upgrade command and then writes through the Dinghy update loader, and the unit must report the same model as the package. Holding OCT- while switching on enters Dinghy's USB rescue if a firmware does not start. The page does not back up the unit first.
+brick_risk: false
+tags: [emulator, flasher, web, webassembly, midi]
+versions:
+  - version: main @ 6a88219
+    date: 2026-11-20
+    url: https://github.com/kosmar/ko-fm1/commit/6a88219a1148c20d4747953be079455f1dcdd1fc
+    notes: No tagged releases; this is the latest commit.

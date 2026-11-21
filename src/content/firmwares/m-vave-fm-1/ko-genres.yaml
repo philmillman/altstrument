@@ -1,0 +1,27 @@
+device: m-vave-fm-1
+name: KO genre firmwares
+summary: >-
+  Twelve genre firmwares for the FM-1 built on one shared engine and Dinghy: DUB, HOUSE, HVYPSY, JAZZ, IDM, HIPHOP, POP, FUNK, TECHNO, TRIPHOP, SOUL and XCRASH, each with its own plates and installed as its own package.
+description: >-
+  The KO family is a set of groovebox firmwares for the FM-1 by kosmar, built on Dinghy. The twelve genre firmwares share one app, fm_app.c, and one plate pack format, and each build adds that genre's own configuration, plate data, sound code and screen code, so the sources differ by more than presets. Each one installs as a separate firmware with a fixed package identity, FM-1_56401 to FM-1_56412 and FM-1_56414, so the installer can tell them apart. The list is KO DUB, KO HOUSE, KO HVYPSY, KO JAZZ, KO IDM, KO HIPHOP, KO POP, KO FUNK, KO TECHNO, KO TRIPHOP, KO SOUL and KO XCRASH, whose package is named snowcrash. The project's descriptions give each its eras, for example six dub eras with SKANK presets for DUB, 60 TRAX for HOUSE, and sparse automatic fills for JAZZ. The firmwares keep Dinghy's USB update, USB rescue, USB MIDI and USB audio. Each genre has its own GitHub repository holding the same source tree and one 0.1 package in dist/, and the browser player at kosmar.github.io/ko-fm1 runs every one of them as WebAssembly. KO BASS, KO KIT and KO JET come from the same source tree and have their own entries. The README says the 0.1 files are not a fresh device pass of every genre.
+status: active
+authors:
+  - name: kosmar
+    url: https://github.com/kosmar
+source: https://github.com/kosmar/ko-dub
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Each repository has its own LICENSE file with the GNU GPL version 3 text and a LICENSING.md that says the platform is GPL-3.0-only. The platform code is by Leo Kuroshita (Hügelton Instruments, Felucca) with the changes of SLOOP by isod89, Dinghy's app and wiring are by zvenson, and the KO apps are by kosmar. The Terminus font is SIL OFL 1.1. The logo of Dinghy, designburg's and not under the GPL, is in assets/ and is not part of the license. The JieLi SDK blobs that go into a package are read from the builder's SDK checkout and are not committed. The committed .fwsc files are the project's own builds, 610,131 bytes each, and are not M-VAVE stock images; restore-stock-v15.sh downloads M-VAVE's own V15 image from its file host and checks its SHA-256 before installing. The other genre repositories are ko-house, ko-hvypsy, ko-jazz, ko-idm, ko-hiphop, ko-pop, ko-funk, ko-techno, ko-triphop, ko-soul and ko-xcrash under github.com/kosmar. The GitHub license field shows GPL-3.0 and the README says GPL-3.0.
+homepage: https://kosmar.github.io/ko-fm1/
+based_on: m-vave-fm-1/dinghy
+distribution: download
+install_notes: >-
+  Pick a genre in the browser player and install it from Chrome or Edge over Web MIDI with SysEx, or clone a genre repository and run python3 tools/fm1_install.py dist/fm_jazz-0.1.fwsc with the package of that genre; the installer asks before it writes. The installer accepts Felucca-style packages and the stock V15 file, and the unit restarts into the new firmware. If a firmware will not start, hold OCT- while switching on for Dinghy's USB rescue, which has no sound and only the updater, and install another package from there; two crashes at boot enter it on their own. To go back to stock, each repository's restore-stock-v15.sh downloads M-VAVE's FM-1 V15 image, checks its SHA-256 and installs it. The README says installing firmware is at your own risk.
+brick_risk: false
+tags: [groovebox, genre-packs, sequencer, plates, usb-midi, usb-audio, emulator]
+versions:
+  - version: main @ 21f182a
+    date: 2026-11-20
+    url: https://github.com/kosmar/ko-dub/commit/21f182a7a41331e0a0d1814545de026569a5ad4f
+    notes: No tagged releases; this is the latest commit of ko-dub. Each genre repository carries its own 0.1 package in dist/.

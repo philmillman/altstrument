@@ -3,7 +3,7 @@ name: Castletunia
 summary: >-
   Generative dungeon-synth and 16-bit RPG battle soundtrack instrument: phrases played on the keys become attacks by a three-member party against a boss on nine fantasy stages, with spells and status effects that reshape the music.
 description: >-
-  The project was published as Fantasia and is now Castletunia. A three-member party of two-operator FM voices (Fighter, Cleric and Sorceress) plays over backing chords and an FM percussion kit, with a room reverb and a soft clipper. A phrase of one to sixteen notes played on the 27 scale-quantized keys is committed on the next beat and becomes the active character's attack, and the generator weaves the phrases into a four-bar A, B, A, C arrangement. Nine stages, from the Crypt and Tavern to Coronation and Boss, each set a scale, tempo, chord progression, drum kit and per-character timbres, and each boss counts player turns before a three-beat drum-roll build-up and a one-bar musical curse. Spells (Haste, Mirror, Shatter, Resolve and Toll) and four status effects (Sloth slow, Poison, Berserk and Freeze, added in 1.1.0) change what the party plays, and macro encoders set intensity, drift, density, harmony, weave and tempo. The 240 by 240 screen shows a pixel-art battle scene with activity meters and status badges, after a skippable splash. It is built on Dinghy, and the release packages are still named dinghy-X.Y.Z.
+  The project was published as Fantasia and is now Castletunia. A three-member party of two-operator FM voices (Fighter, Cleric and Sorceress) plays over backing chords and an FM percussion kit, with a room reverb and a soft clipper. A phrase of one to sixteen notes played on the 27 scale-quantized keys is committed on the next beat and becomes the active character's attack, and the generator weaves the phrases into a four-bar A, B, A, C arrangement. Nine stages, from the Crypt and Tavern to Coronation and Boss, each set a scale, tempo, chord progression, drum kit and per-character timbres, and each boss counts player turns before a three-beat drum-roll build-up and a one-bar musical curse. Spells (Haste, Mirror, Shatter, Resolve and Toll) and four status effects (Sloth slow, Poison, Berserk and Freeze, added in 1.1.0) change what the party plays, and macro encoders set intensity, drift, density, harmony, weave and tempo. The 240 by 240 screen shows a pixel-art battle scene with activity meters and status badges, after a skippable splash. It is built on Dinghy. Release packages were named dinghy-X.Y.Z up to 1.2.0; 1.3.0 attaches a castletunia-1.3.0.fwsc beside them and 1.4.0 only a castletunia package. Version 1.3.0 adds six backing-pad modes and five party voice engines, all synthesized without samples, and 1.4.0 adds auto-advancing realms, a boss-defeat animation and a stage lock.
 status: active
 authors:
 - name: provostprovost
@@ -17,7 +17,7 @@ homepage: https://github.com/provostprovost/castletunia
 based_on: m-vave-fm-1/dinghy
 distribution: download
 install_notes: >-
-  The README advises backing up stock patterns and presets with M-VAVE's tool first. Download the .fwsc package from the release and install it with tools/fm1_install.py, or build it with the JieLi toolchain and SDK (build.sh). The README says to hold OCT- while powering on to enter USB rescue mode, to reflash with fm1_install.py, and to return to stock with M-VAVE's updater or a backup package. The releases also attach SMK-37 packages, but the README describes only the FM-1.
+  The README advises backing up stock patterns and presets with M-VAVE's tool first. Download the .fwsc package from the release (castletunia-X.Y.Z.fwsc from 1.3.0) and install it with tools/fm1_install.py, or build it with the JieLi toolchain and SDK (build.sh). The README says to hold OCT- while powering on to enter USB rescue mode, to reflash with fm1_install.py, and to return to stock with M-VAVE's updater or a backup package. Releases up to 1.3.0 also attach SMK-37 packages, but the README describes only the FM-1.
 brick_risk: false
 tags: [generative, ambient, synth-engine, fm, drums, fx, game]
 image:
@@ -27,6 +27,14 @@ image:
   source_url: https://github.com/provostprovost/castletunia
   first_party: true
 versions:
+- version: 1.4.0
+  date: 2026-11-20
+  url: https://github.com/provostprovost/castletunia/releases/tag/v1.4.0
+  notes: Realms advance on their own after a number of turns, with a boss-defeat animation and a one-bar victory fanfare. SAVE toggles a stage lock, the starting realm is random and three realms are renamed.
+- version: 1.3.0
+  date: 2026-11-20
+  url: https://github.com/provostprovost/castletunia/releases/tag/v1.3.0
+  notes: Adds six synthesized backing-pad modes and five party voice engines, with no samples.
 - version: 1.1.1
   date: 2026-11-20
   url: https://github.com/provostprovost/castletunia/releases/tag/v1.1.1

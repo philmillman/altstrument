@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: Floop Studio
+kind: tool
+summary: >-
+  FL Studio plugin (VST3 and AU, macOS) with a four-track MIDI step sequencer and a live editor for an FM-1 running SLOOP: pattern, sounds, sample upload, MIDI map and two-way clock.
+description: >-
+  The plugin makes no sound itself; its sequencer sends MIDI to the instruments chosen in FL Studio, with three synth tracks and a drum track of up to 64 steps each. The live link uses the same SysEx protocol as the SLOOP Editor web app to read and write the FM-1's pattern, edit engine and drum parameters, load and save its 32 user presets, and upload instrument and drum-kit samples to the four user slots in SLOOP's sample format. The clock can run free, follow FL Studio or drive it, and a controller script lets the FM-1's PLAY start FL. The FM-1 is optional for the sequencer, and the interface is in Spanish. The plugin's credits name HeyFresco as its creator, and the build is not notarised for macOS. The empty repository allxs/floop-studio is a copy with the same description and no content.
+status: active
+authors:
+- name: eyfresco
+  url: https://github.com/eyfresco
+source: https://github.com/eyfresco/floop-studio
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL-3.0 text and the release notes say GPL-3.0. It uses SLOOP's protocol, sample format and editor design, and is built with JUCE 8.
+distribution: download
+requires_stock: SLOOP firmware for the live editor
+install_notes: >-
+  Download Floop-Studio-v0.1-macOS.zip from the release, copy Floop Studio.vst3 to ~/Library/Audio/Plug-Ins/VST3 and Floop Studio.component to ~/Library/Audio/Plug-Ins/Components, then rescan plugins in FL Studio. macOS may block the unnotarised build; the zip includes instructions. The plugin talks to the FM-1 over USB MIDI and writes patterns, presets and samples to a unit running SLOOP, not firmware.
+brick_risk: false
+tags: [editor, sequencer, midi, sysex, sampler, vst, macos]
+image:
+  url: https://raw.githubusercontent.com/eyfresco/floop-studio/main/docs/ui-drums.png
+  alt: "Floop Studio pattern tab: tracks synth 1 to 3 and drums, a sixteen-step drum grid with kick, snare, clap and hat steps lit in orange, and clock and FM-1 live controls"
+  credit: eyfresco
+  source_url: https://github.com/eyfresco/floop-studio
+  first_party: true
+versions:
+- version: '0.1'
+  date: 2026-11-20
+  url: https://github.com/eyfresco/floop-studio/releases/tag/v0.1
+  notes: First release.

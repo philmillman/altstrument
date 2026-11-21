@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: Sillage
+summary: >-
+  Eight-track groovebox for the FM-1 derived from Skiff and Felucca, with 448 presets sorted by family, a 64-step sequencer with SONG, scenes and PERFORM modes, a 4-band EQ per track and a stereo master stage.
+description: >-
+  Each of the eight tracks holds a synth or a drum kit. The sequencer has bar copy, paste, duplicate and clear within a pattern, a live mixer, and a USB editor and a browser demo on the project site. A final master stage adds gain, a peak ceiling and stereo widening. The repository carries the whole Skiff source tree with its changes, and the README, guides and the interface are in French. The README says the firmware was checked on a physical FM-1, while the installer page on the project site still calls the 2.2 package a beta whose installation on a physical FM-1 is pending. Skiff's web installer is kept in the repository and the package is also committed as downloads/Sillage.fwsc, which is the project's own build and not a stock image.
+status: active
+authors:
+- name: lelacnoir-lab
+  url: https://github.com/lelacnoir-lab
+source: https://github.com/lelacnoir-lab/Sillage
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE and LICENSING.md state GPL-3.0-only, carried over from Skiff. Ported DSP, fonts and the three JieLi SDK files that go into each package (Apache-2.0) keep their own licences. Skiff's LICENSING.md notes that the SMK-37 hardware notes it was checked against are CC-BY-NC-4.0 and used as credit only.
+homepage: https://lelacnoir-lab.github.io/Sillage/
+based_on: m-vave-fm-1/skiff
+distribution: browser-installer
+install_notes: >-
+  Open the installer page on the project site in Chrome or Edge with one FM-1 on USB, after backing up projects and presets and keeping a copy of the current firmware, or install Sillage.fwsc from the release with Skiff's tools. The repository's manual points to FM-1 Transporter for recovery. The package carries the identity FM-1_946220.
+brick_risk: false
+tags: [synth-engine, sequencer, drums, performance, mixer, fx, editor, emulator]
+image:
+  url: https://raw.githubusercontent.com/lelacnoir-lab/Sillage/main/docs/images/sillage-banniere.svg
+  alt: "Sillage banner: a gold outline triangle and the word SILLAGE in gold capitals on a dark blue background, with a line below saying it is an eight-track groovebox for the M-VAVE FM-1"
+  credit: lelacnoir-lab
+  source_url: https://github.com/lelacnoir-lab/Sillage
+  first_party: true
+versions:
+- version: 2.2.0
+  date: 2026-11-18
+  url: https://github.com/lelacnoir-lab/Sillage/releases/tag/v2.2.0
+  notes: Eight tracks, 16-voice polyphony, 448 presets, a 64-step sequencer, a 4-band EQ per track and master processing with stereo widening.

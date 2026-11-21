@@ -12,10 +12,8 @@ description: >-
   Bluetooth MIDI controller image can only be built by the user, because JieLi's Bluetooth files cannot be shipped.
   It descends from Felucca, then X0X, then genkigenki's SMK-37 port, and keeps Felucca's hardware layer, update loader and
   web installer. FM-1 builds exist in source, but the public packages are for the SMK-37 only. The README calls it beta
-  software and says 0.0.25.1 has been software-checked and tested by the owner on an Elite, with no full hardware
-  sign-off and the Pro package untested on a device. A 0.0.26 package was briefly offered on the separate nightly
-  installer (the nightly repository, now gobbajogger/DnBOX-nightly) and withdrawn after a black-screen boot; the README says not to
-  install it and to restore stock firmware if it is already on a unit.
+  software; the 0.0.26 release notes say the owner tested the Elite and Pro packages, startup and restart included. An earlier 0.0.26 package offered on the separate nightly
+  installer (now gobbajogger/DnBOX-nightly) was withdrawn after a black-screen boot, and the release replaces it with a build that carries a boot-guard correction.
 status: active
 authors:
 - name: gobbajogger
@@ -38,6 +36,10 @@ install_notes: >-
 brick_risk: false
 tags: [groovebox, drums, sequencer, synth-engine, usb-audio, usb-midi, performance, fork]
 versions:
+- version: 0.0.26
+  date: 2026-11-21
+  url: https://github.com/gobbajogger/DnBOX/releases/tag/v0.0.26
+  notes: Adds a Drone (String Machine) engine, a Juno engine with a shared chorus and held-key chords on the polyphonic synth slots, and clearer SMK-37 Elite and Pro names over USB and Bluetooth. Includes a boot-guard correction for the startup and restart problems of an earlier 0.0.26 package that was withdrawn, and sample-import integrity fixes. The notes say the owner tested it on an SMK-37 Elite and Pro.
 - version: 0.0.25.1
   date: 2026-11-13
   url: https://github.com/gobbajogger/DnBOX/releases/tag/v0.0.25.1

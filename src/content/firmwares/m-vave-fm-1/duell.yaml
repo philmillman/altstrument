@@ -1,4 +1,5 @@
 device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
 name: DUELL
 summary: >-
   Bi-timbral synth built on Felucca: two simultaneous sound parts with their own engines, patches, effects,
@@ -7,7 +8,7 @@ description: >-
   Developed emulator-first. The 1.1 and 1.2 release notes say it has run on two FM-1 units, both the author's, and that more than
   100 people have installed it through the Firmware Hub; the earlier notes reported the return to official V15 working
   about three times on one unit. 1.1 redraws every page and adds chord STRUM, chained MORPH rolls with undo, parameter
-  locks recorded from knob turns and pattern transpose and shift. 1.2 shares one pool of up to 16 voices a part across both cores and accepts the newer UC25HQ80 flash chip. Recovery notes in docs/RECOVERY.md.
+  locks recorded from knob turns and pattern transpose and shift. 1.2 shares one pool of up to 16 voices a part across both cores and accepts the newer UC25HQ80 flash chip. Since 1.3.5 the same release carries SMK-37 Pro, Elite and MKE-P37 packages, where both parts show on one screen and the keys split at F#4. Recovery notes in docs/RECOVERY.md.
 status: active
 authors:
 - name: OSCILL/R
@@ -18,10 +19,19 @@ license: GPL-3.0-only
 homepage: https://oscillr.github.io/DUELL/emu/
 based_on: m-vave-fm-1/felucca
 distribution: browser-installer
-install_notes: Installer page at oscillr.github.io/DUELL/install/ and docs/INSTALL.md.
+install_notes: >-
+  Installer page at oscillr.github.io/DUELL/install/ and docs/INSTALL.md. From 1.3.5 the page picks the package for the FM-1 or for the SMK-37 Pro, Elite or MKE-P37 that you connect. The release notes give the way back to official firmware for the SMK-37 and docs/RECOVERY.md has recovery notes.
 brick_risk: false
 tags: [synth-engine, performance, fx, midi]
 versions:
+- version: 1.3.6
+  date: 2026-11-20
+  url: https://github.com/oscillr/DUELL/releases/tag/v1.3.6
+  notes: GitHub now builds and signs every package from the release's source. The notes say nothing changes on the unit.
+- version: 1.3.5
+  date: 2026-11-20
+  url: https://github.com/oscillr/DUELL/releases/tag/v1.3.5
+  notes: Adds builds for the SMK-37 Pro, Elite and MKE-P37, with both parts on one screen, the faders for level and morph, the pads as PERFORM effects, a keyboard split at F#4 and a start-up guide. On both devices PAN shows L 100 to R 100 and PERFORM DRIVE is never louder than the dry sound.
 - version: 1.3.3
   date: 2026-11-20
   url: https://github.com/oscillr/DUELL/releases/tag/v1.3.3

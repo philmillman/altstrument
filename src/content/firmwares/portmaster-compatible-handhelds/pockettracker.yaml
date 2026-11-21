@@ -4,7 +4,7 @@ name: PocketTracker
 summary: Tracker for small screens with a sampler, SoundFont player, effects and stem export, packaged as a PortMaster zip, an OnionOS port for the Miyoo Mini and an Android app.
 description: >-
   PocketTracker is a tracker in the style of LSDj and LGPT with eight stereo tracks, a sampler that loads common audio
-  formats, a SoundFont player, a sample editor with slicing and time stretch, send effects, a mixer and WAV or stem
+  formats, a SoundFont player, a MACRO instrument with the 47 models of Mutable Instruments' Braids, a sample editor with slicing and time stretch, send effects, a mixer and WAV or stem
   export. One code base and one 640x480 interface serve Android, Linux handhelds, Linux desktop and Windows. On Linux
   handhelds it installs as a PortMaster port for aarch64 firmwares such as ArkOS, muOS, JELOS, Knulli and ROCKNIX, and
   the Miyoo Mini and Mini Plus get a separate 32-bit package for OnionOS. The README states that the project was
@@ -33,6 +33,10 @@ image:
   source_url: https://github.com/conanizer/pockettracker#readme
   first_party: true
 versions:
+  - version: v0.9.9.3
+    date: 2026-11-21
+    url: https://github.com/conanizer/pockettracker/releases/tag/v0.9.9.3
+    notes: Adds the MACRO instrument type with 47 Braids models, millisecond envelopes with a curve row, more modulation sources, three new filters, font and letter case choices, a hints strip and play-from-cursor on CHAIN. DRIVE and DETUNE behave differently, and reverb and delay sends now come before the instrument's VOL, so existing songs may sound different.
   - version: v0.9.9.2
     date: 2026-11-10
     url: https://github.com/conanizer/pockettracker/releases/tag/v0.9.9.2

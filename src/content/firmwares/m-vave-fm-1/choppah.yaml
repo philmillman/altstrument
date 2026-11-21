@@ -20,8 +20,8 @@ description: >-
   view, and MB COMP has a page of its own. Since 0.32 the firmware has 16 patterns with a step sequencer and recording: 32 break steps, plus
   kick, snare and hat lanes of 16 steps each, with MIDI notes for the slices and drums, and from 1.2.1 MIDI notes 64 to 74 press the black-key pads. The kick is a four-layer
   synthesized gabber kick; the snare and hat have their own design page. A MIXER page sets the levels, and ENV is a
-  full-screen tap tempo with a metronome click. MIDI clock in and out and Bluetooth MIDI are included, as is Bluetooth
-  audio out to headphones or a speaker, which the README says runs 150 to 300 ms late and is for listening. The README
+  full-screen tap tempo with a metronome click. MIDI clock in and out and Bluetooth MIDI are included, as was Bluetooth
+  audio out to headphones or a speaker, which the README says ran 150 to 300 ms late and was for listening, until 1.5 removed it to make room for the split of two breaks in one loop. The README
   calls it an early 0.x release: the looper and a song mode are next, and the breaks are built in, so you cannot load
   your own. Left alone, the screen runs a demo of animated scenes. Units sold since late 2026 carry a UC25HQ80 flash
   chip instead of the Puya P25Q80, and from 0.69 the firmware accepts both. The 0.86 notes report an install on a real
@@ -57,6 +57,14 @@ image:
   source_url: https://github.com/profikid/fm1-break-choppah
   first_party: true
 versions:
+- version: 1.5.1
+  date: 2026-11-21
+  url: https://github.com/profikid/fm1-break-choppah/releases/tag/v1.5.1
+  notes: "Moves the split to HOME as its third part, after PERFORM and the GENERATOR; GLOBAL goes back to MIDI, PITCH and CHANNEL. Saved settings and patterns from 1.5 load as they were."
+- version: '1.5'
+  date: 2026-11-21
+  url: https://github.com/profikid/fm1-break-choppah/releases/tag/v1.5
+  notes: "Adds a split that plays one bar of break A and one of break B, repitched to A's bar, with white keys 1 to 8 for A's slices and 9 to 16 for B's. Bluetooth audio out is removed to make room; Bluetooth MIDI stays."
 - version: 1.4.1
   date: 2026-11-14
   url: https://github.com/profikid/fm1-break-choppah/releases/tag/v1.4.1

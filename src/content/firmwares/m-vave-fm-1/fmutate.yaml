@@ -4,14 +4,14 @@ kind: tool
 summary: >-
   Android app that runs FM-1 community firmwares on a phone, with a multitouch panel you can rearrange, a firmware library fed by the FM-1 Firmware Hub catalogue and a virtual MIDI port.
 description: >-
-  Firmwares run in two ways. Native cartridges are firmwares built from source for the phone, and this build ships OberVave 3.3.2 and Shine On 3.0.1.
+  Firmwares run in two ways. Native cartridges are firmwares built from source for the phone: OberVave and Shine On are built in, and 0.2.0 downloads native builds of Hub firmwares from FMutate cartridges.
   Any other firmware's update package (.fwsc), binary-only ones included, runs in fm1-emu. Each firmware runs in its own process, so a crash
   restarts only that instance, and one that crashes twice in a minute is quarantined until you choose to run it anyway. The library downloads
   from the Firmware Hub catalogue, imports your own .fwsc files (M-VAVE's stock firmware is bring-your-own) and switches with one tap
   and undo. The panel starts as a classic FM-1 layout and can be edited into any arrangement of keys, knobs, pads, sliders and pages, saved per
   firmware. Keys take velocity from where they are struck, and with OberVave a held note's level follows the finger. Audio goes out through AAudio, and there
   is a virtual MIDI port, USB and Bluetooth MIDI devices and MIDI clock in and out. Controls can also be bound to motion sensors (tilt, twist,
-  shake, proximity), and master adds MIDI learn with automap profiles for two MPK mini models. The README calls it early: Android only, tested on two Moto G Power phones and Android 17 emulators.
+  shake, proximity), and MIDI learn with automap profiles covers two MPK mini models. The README calls it early: Android only, tested on two Moto G Power phones and Android 17 emulators.
 status: active
 authors:
 - name: GenericJam
@@ -25,8 +25,8 @@ license_notes: >-
   A 1 KB test fixture .fwsc in the repository is not a stock image.
 distribution: download
 install_notes: >-
-  Download fmutate-0.1.0.apk from the release and open it on an Android 9 or later phone, or run adb install; the release is signed with the
-  project's key, and a copy built from source has to be uninstalled first because it uses a debug key. To build it yourself, use mise (Erlang, Elixir, Java, Zig and Rust at the pinned versions), the Android SDK with NDK 27.2 and adb, then deploy with mix mob.deploy to a
+  Download FMutate.apk (the same file as fmutate-0.2.0.apk) from the release and open it on an Android 9 or later phone, or run adb install; the release is signed with the
+  project's key, which changed in 0.2.0, so 0.1.0 has to be uninstalled first, and a copy built from source has to be uninstalled first because it uses a debug key. To build it yourself, use mise (Erlang, Elixir, Java, Zig and Rust at the pinned versions), the Android SDK with NDK 27.2 and adb, then deploy with mix mob.deploy to a
   phone with USB debugging on. The app writes nothing to a physical FM-1.
 brick_risk: false
 tags: [emulator, performance, midi, usb-midi, ui]
@@ -37,10 +37,14 @@ image:
   source_url: https://github.com/GenericJam/fmutate
   first_party: true
 versions:
-- version: master @ 7991d3a
+- version: master @ 98e6d4c
+  date: 2026-11-21
+  url: https://github.com/GenericJam/fmutate/commit/98e6d4cb5699c2c807f1dfca5374388394cad34e
+  notes: Latest commit on the master branch, after v0.2.0. The newest commits add an iOS build 6 with a velocity fix and poly-aftertouch fixes for OberVave, and a CI tests workflow for Elixir, Android and Swift.
+- version: 0.2.0
   date: 2026-11-20
-  url: https://github.com/GenericJam/fmutate/commit/7991d3a6d59dc9892cb91395c1ec3369e7e37e4f
-  notes: Latest commit on the master branch, after v0.1.0. Since the previous row it adds a quit action on the FMutate is playing notification, a keep-alive session that outlives restarts of the background service, a pairing module and an iOS build 4 with strike velocity, per-note level and MIDI controller mapping. Before that, it added MIDI learn, which binds a hardware control to a layout control from the editor, and automap profiles for the MPK mini mk2 and mk3, and a corner box that keeps a motion tile engaged until it is tapped again.
+  url: https://github.com/GenericJam/fmutate/releases/tag/v0.2.0
+  notes: Signed with a new release key, so 0.1.0 must be uninstalled first, which removes its saved data. Adds native builds of Hub firmwares (130 at release, from FMutate cartridges), a page for each firmware with its README, MIDI learn and automap profiles for the MPK mini mk2 and mk3, velocity from the strike position and per-note level on by default, a quit action on the notification and pairing with sibling apps by QR code.
 - version: 0.1.0
   date: 2026-11-13
   url: https://github.com/GenericJam/fmutate/releases/tag/v0.1.0

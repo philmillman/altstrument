@@ -1,0 +1,49 @@
+device: m-vave-fm-1
+name: KALK
+summary: >-
+  Beat composer for the FM-1 after the workflow of Limelite: five synthesised drum and tone voices, a three-lane sequence in four patterns, looping side lanes, 127 remix variations, an XY effect with recorded motion and a delay.
+description: >-
+  The screen is a ring-per-lane view in which each lane is cut into as many wedges as it has steps, so lanes of different lengths drift against each other. Kick, snare, hat, tie (FM tone) and pod (struck tone) each have sixteen synthesised variants and eight sample slots, with filter, shape, mod and extra pages, grain and speed on samples, and a random-kit button. Effects run in seven groups: XY effects with motion recording, TORSION distortion, filter, delay, reverb, a pulp stage and a master EQ with output stage. It follows MIDI clock and keeps eight project slots. The project says no Limelite code, samples or artwork are used, and all samples are synthesised in the repository and released as CC0. Every release is marked a pre-release that has not been tested on an FM-1.
+status: active
+authors:
+- name: ShadyBaklawa
+  url: https://github.com/ShadyBaklawa
+source: https://github.com/ShadyBaklawa/kalk-fm1
+based_on: m-vave-fm-1/dinghy
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only and LICENSE is the GPL-3.0 text. The platform files come from Felucca (Leo Kuroshita) with SLOOP's changes, genkigenki's SMK-37 layer, OberVave and Dinghy, each credited there. The sample banks are CC0 and the Terminus font is OFL 1.1.
+homepage: https://github.com/ShadyBaklawa/kalk-fm1#readme
+distribution: download
+install_notes: >-
+  Download kalk-0.7.fwsc from the release (or the dev build from an Actions run) and install it with a web installer that takes a file, or with tools/fm1_install.py. Keep stock V15, or the Firmware Hub's Return to official V15, ready. If it does not start, hold OCT- while switching on for the USB rescue and install another firmware. The releases say it has been played in the browser emulator but not yet installed on an FM-1.
+brick_risk: false
+tags: [drums, sequencer, groovebox, synth-engine, fx, performance, generative, midi]
+image:
+  url: https://raw.githubusercontent.com/ShadyBaklawa/kalk-fm1/main/docs/screen.png
+  alt: "KALK kick sound page on the FM-1: concentric rings of coloured step wedges, one ring per lane, around a central letter A, with TUNE, DECAY, WAV and GAIN values along the bottom"
+  credit: ShadyBaklawa
+  source_url: https://github.com/ShadyBaklawa/kalk-fm1
+  first_party: true
+versions:
+- version: '0.7'
+  date: 2026-11-21
+  url: https://github.com/ShadyBaklawa/kalk-fm1/releases/tag/v0.7
+  notes: Replaces the sample bank with 40 synthesised dark, techno and glitch sounds and gives each empty project slot its own kit.
+- version: '0.6'
+  date: 2026-11-21
+  url: https://github.com/ShadyBaklawa/kalk-fm1/releases/tag/v0.6
+  notes: Adds per-slot starting kits and a random-kit button with undo.
+- version: '0.5'
+  date: 2026-11-21
+  url: https://github.com/ShadyBaklawa/kalk-fm1/releases/tag/v0.5
+  notes: Reworks the panel, with the knobs along the bottom of the screen and effects in seven groups.
+- version: '0.4'
+  date: 2026-11-21
+  url: https://github.com/ShadyBaklawa/kalk-fm1/releases/tag/v0.4
+  notes: Adds TORSION, an animated distortion with crush, filter and step-animation pages.
+- version: '0.3'
+  date: 2026-11-20
+  url: https://github.com/ShadyBaklawa/kalk-fm1/releases/tag/v0.3
+  notes: Adds reverb, reson delay, glitch remix, glitch XFX, grain, follow and pulp effects, an 808 hat and an FM drum.

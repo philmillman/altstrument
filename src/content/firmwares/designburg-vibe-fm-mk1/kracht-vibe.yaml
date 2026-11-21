@@ -1,0 +1,41 @@
+device: designburg-vibe-fm-mk1
+name: KRACHT
+summary: >-
+  Hard techno drum machine built with the VIBE FM SDK: a synthesised kick designer with seven presets, a rumble made from the
+  kick, hats, clap and a 16-step sequencer; no samples. It runs in the VIBE FM player and plugin today.
+description: >-
+  The KICK page designs the kick with a body sweep, amp, click, four drive shapers at 4x oversampling, a sub tail, low cut and
+  tone, and all 30 values are plugin parameters. RUMBLE runs the kick through a 2.6 second dark hall, baked per kick by FFT
+  convolution and ducked by the kick. Closed hat, open hat and clap are synthesised, and the SEQ page has 16 steps on four
+  lanes with a pattern book per lane, swing, and mutes and pattern changes that land on the next bar. IN 1 and IN 2 are mixed
+  in and ducked by the kick, and every kick fires GATE OUT for 10 ms. In a DAW it follows the transport and tempo. It is
+  built from C sources with the VIBE FM SDK and Zig 0.13.0 into a WebAssembly file and a plugin zip, was made for the VIBE Box
+  Challenge on The Firmware Hub, and was tested in the player and in the VIBE FM VST. The VIBE FM Mk1 has not shipped, so use
+  on the hardware is untested.
+status: active
+authors:
+  - name: Kracht
+    url: https://github.com/Kracht
+source: https://github.com/Kracht/kracht-vibe
+source_status: open
+license: GPL-3.0-or-later
+license_notes: The README says GPL-3.0-or-later and the LICENSE file is the GNU GPL version 3.
+homepage: https://sponde.de/kracht-vibe/
+distribution: browser-installer
+install_notes: >-
+  Drop kracht.wasm onto the device in the VIBE FM player in the browser, or drop kracht.zip onto the VIBE FM plugin window.
+  There is no install on hardware yet, because the VIBE FM Mk1 has not shipped. To build it you need the VIBE FM SDK next to
+  the folder and Zig 0.13.0, then run sh build.sh.
+brick_risk: false
+tags: [drums, kick, sequencer, synth-engine, hard-techno, sidechain, reverb, sdk, web]
+image:
+  url: https://raw.githubusercontent.com/Kracht/kracht-vibe/main/docs/screens/06.png
+  alt: "KRACHT SEQ page on the VIBE FM display: an orange kick panel showing ZAP at 165 BPM, a 16-step grid with KICK, HAT, OPEN and CLAP lanes, and Tempo, Swing and Hat values"
+  credit: Kracht
+  source_url: https://github.com/Kracht/kracht-vibe#readme
+  first_party: true
+versions:
+  - version: v0.3.1
+    date: 2026-11-21
+    url: https://github.com/Kracht/kracht-vibe/releases/tag/v0.3.1
+    notes: Kick and rumble are made in small portions so turning a knob no longer interrupts the audio.

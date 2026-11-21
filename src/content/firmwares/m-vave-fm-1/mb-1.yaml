@@ -3,7 +3,7 @@ name: MB-1
 summary: >-
   Minibrute-style monophonic synth for the FM-1 with Ultrasaw, PWM and Metalizer oscillators, a resonant multimode filter with Brute Factor, two ADSRs, an LFO, an arpeggiator and a browser emulator.
 description: >-
-  The voice engine is portable C written from scratch and calibrated against renders of Arturia's MiniBrute V plugin; the README says no Arturia code is used and that the unofficial project is not affiliated with Arturia. It mixes a sawtooth with Ultrasaw, a square with PWM and a triangle with Metalizer, plus a sub oscillator and noise, into a 12 dB low-pass, band-pass, high-pass or notch filter with key tracking and self-oscillation. Filter and amplifier ADSRs, a six-wave LFO to pitch, filter, PWM and amplifier, vibrato, glide, vintage drift, aftertouch and a mod wheel are included. An arpeggiator arrived in 0.8.0. It is built on fm1-base, and the repository's workflow builds the package, runs the host simulator tests and publishes a site with an installer, an emulator and a manual. The README says the measured Metalizer cycles used during development are not published.
+  The voice engine is portable C written from scratch and calibrated against renders of Arturia's MiniBrute V plugin; the README says no Arturia code is used and that the unofficial project is not affiliated with Arturia. It mixes a sawtooth with Ultrasaw, a square with PWM and a triangle with Metalizer, plus a sub oscillator and noise, into a 12 dB low-pass, band-pass, high-pass or notch filter with key tracking and self-oscillation. Filter and amplifier ADSRs, a six-wave LFO to pitch, filter, PWM and amplifier, vibrato, glide, vintage drift, aftertouch and a mod wheel are included. An arpeggiator arrived in 0.8.0, and 0.9 to 0.14 added a 64-step sequencer, delay, reverb, distortion, chorus and compressor effects, 128 patch slots and random patches. It is built on fm1-base, and the repository's workflow builds the package, runs the host simulator tests and publishes a site with an installer, an emulator and a manual. The README says the measured Metalizer cycles used during development are not published.
 status: active
 authors:
 - name: leonardolopezchavira
@@ -27,7 +27,7 @@ image:
   source_url: https://github.com/leonardolopezchavira/minibrute-fm1/blob/main/firmware.json
   first_party: true
 versions:
-- version: main @ d02f0a7
-  date: 2026-11-20
-  url: https://github.com/leonardolopezchavira/minibrute-fm1/commit/d02f0a72208676d8a9819836731fea82f6a840bb
-  notes: No tagged releases; this is the latest commit, which reads 0.8.1 in app/VERSION.
+- version: main @ f636d78
+  date: 2026-11-21
+  url: https://github.com/leonardolopezchavira/minibrute-fm1/commit/f636d78dc645233e902763216cfdf290d0305b73
+  notes: No tagged releases; this is the latest commit, which adds a scale beside every fader of the patch editor. app/VERSION reads 0.14.1, up from 0.8.1 in the previous row, with a 64-step sequencer, a stereo delay and plate reverb, distortion, Juno-6 chorus and compressor, 128 patch slots in four banks, saving to any slot with naming, and random patches.

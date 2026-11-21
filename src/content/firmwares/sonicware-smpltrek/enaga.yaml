@@ -1,0 +1,39 @@
+device: sonicware-smpltrek
+also_devices: [sonicware-lofi-12-xt, sonicware-cydrums]
+name: Enaga
+summary: Unofficial replacement firmware for the SmplTrek that runs apps written in C++ from the SD card, with a DSP library, file, MIDI and clock services and a synth example. Update files are also built for the Lofi-12 XT and CyDrums but untested there.
+description: >-
+  Enaga replaces the system software and starts an app from the SD card, handing it the pads, keys, encoders, the 128 x 128
+  grey display, a real-time audio callback, MIDI over DIN and USB, a tempo clock and SD card access. An app is a C++20 program
+  built with a TI C6000 cross-compiler; a crash or a stuck call is caught by a watchdog and the Enaga menu stays available.
+  The menu switches between installed apps and holds volume, brightness, pad sensitivity, auto-off and speaker settings. The
+  repository includes a DSP library with oscillators, filters, envelopes, delay, chorus and reverb, a minimal tone example and
+  an eight-voice virtual analogue synth example. The Lofi-12 XT and CyDrums are described as the same board with different
+  panels, and the build makes an update file for each, but the README says it has only run on a SmplTrek and the other two
+  files are untested. The app interface is provisional until 1.0. The author states that the project contains no Sonicware code
+  and does not modify the bootloader or the original sounds in flash. Hardware facts come from the author's separate
+  smpltrek-re project.
+status: active
+authors:
+  - name: seawaffle
+    url: https://github.com/seawaffle
+source: https://github.com/seawaffle/enaga
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT License. FatFs (ChaN, BSD-style licence) and TinyUSB (hathach and contributors, MIT) are bundled
+  under their own licences, and the toolchain patches fall under binutils' GPL, as the README states.
+distribution: download
+install_notes: >-
+  Copy the update file for your device to the root of the SD card, keeping its name, put an app package at
+  /ENAGA/APPS/<NAME>/APP.ENA, hold the fourth key of the upper function row (F4) while switching on to reach BOOT MODE and
+  choose SYSTEM UPDATE. F1 + POWER opens the Enaga menu. The README says the Lofi-12 XT and CyDrums files are untested and
+  should only be tried by someone prepared to restore the unit with its official update. To go back, install an official
+  system update the same way.
+brick_risk: false
+tags: [app-platform, sdk, dsp, synth, sampler, midi, cpp]
+versions:
+  - version: 0.1.0
+    date: 2026-11-20
+    url: https://github.com/seawaffle/enaga/releases/tag/v0.1.0
+    notes: Update files for the SmplTrek, Lofi-12 XT and CyDrums; only the SmplTrek has been tested.

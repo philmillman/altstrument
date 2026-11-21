@@ -2,9 +2,9 @@ device: m-vave-fm-1
 name: FM-1 Pocket for macOS
 kind: tool
 summary: >-
-  Native Mac app that plays FM-1 firmware builds as .rfm1 files on an on-screen faceplate, with a Finder-style library that downloads firmware from FM-1 Pocket Player's catalogue.
+  Native Mac app that plays FM-1 firmware, as .rfm1 builds or original .fwsc packages, on an on-screen faceplate, with a Finder-style library that downloads firmware from FM-1 Pocket Player's catalogue.
 description: >-
-  The firmware runs in the wasm3 WebAssembly interpreter inside a SwiftUI app, with sound through Core Audio and no browser or web view. The library window syncs the catalogue that the web player FM-1 Pocket Player publishes, checks each download by SHA-256, keeps the current and previous build of each firmware and works offline afterwards. The player draws the FM-1's screen, knobs, twelve buttons and 27 keys, accepts computer-keyboard and MIDI input, and keeps saved settings per firmware build. Firmware that is downloadable but not confirmed is listed as experimental with a note on how it was checked. The C host is a port of Jake Handy's browser simulator, and the app bundles h1 unchanged as its built-in firmware. It is an emulator and writes nothing to a real FM-1. The app is not notarised, and the README builds it on GitHub Actions and points to a page on opening it past macOS's block.
+  Firmware runs in a SwiftUI app with sound through Core Audio and no browser or web view: .rfm1 builds in the wasm3 WebAssembly interpreter, and makers' original .fwsc packages in the fm1-emu emulator, with the app recommending an engine for each firmware. The library window syncs the catalogue that the web player FM-1 Pocket Player publishes, checks each download by SHA-256, keeps the current and previous build of each firmware and works offline afterwards. The player draws the FM-1's screen, knobs, twelve buttons and 27 keys, accepts computer-keyboard and MIDI input, and keeps saved settings per firmware build. Firmware that is downloadable but not confirmed is listed as experimental with a note on how it was checked. The C host is a port of Jake Handy's browser simulator, and the app bundles h1 unchanged as its built-in firmware. It is an emulator and writes nothing to a real FM-1. The app is not notarised, and the README builds it on GitHub Actions and points to a page on opening it past macOS's block.
 status: active
 authors:
 - name: slowphase
@@ -13,14 +13,14 @@ source: https://github.com/slowphase/fm1-pocket-mac
 source_status: open
 license: MIT
 license_notes: >-
-  LICENSE is MIT. wasm3 and h1 (Jake Handy) are MIT, and the firmware host is a port of Jake Handy's MIT simulator code, as THIRD-PARTY-NOTICES.md lists. Other firmware is downloaded on request from FM-1 Pocket Player and stays under its authors' licences.
-distribution: source-only
+  LICENSE is MIT. wasm3, fm1-emu (Joakim Eriksson) and h1 (Jake Handy) are MIT, and the firmware host is a port of Jake Handy's MIT simulator code, as THIRD-PARTY-NOTICES.md lists. Other firmware is downloaded on request from FM-1 Pocket Player and stays under its authors' licences.
+distribution: download
 install_notes: >-
-  Download the DMG from the repository's Build Mac app workflow run on GitHub Actions, or from a release once one is published, and drag the app to Applications. macOS blocks it the first time because it is not notarised; docs/If the app will not open.txt in the repository explains the one-time steps. Nothing is flashed to a device.
+  Download FM1-Pocket-0.9.0.zip from the release (Apple silicon, macOS 14 or later), unzip it and drag the app to Applications. macOS blocks it the first time because it is not notarised; docs/If the app will not open.txt in the repository explains the one-time steps. Nothing is flashed to a device.
 brick_risk: false
 tags: [emulator, ui, library, macos]
 versions:
-- version: main @ ee3c0eb
-  date: 2026-11-20
-  url: https://github.com/slowphase/fm1-pocket-mac/commit/ee3c0eb7881ce14127058df90698223ded85d592
-  notes: No tagged releases; this is the latest commit.
+- version: 0.9.0
+  date: 2026-11-21
+  url: https://github.com/slowphase/fm1-pocket-mac/releases/tag/v0.9.0
+  notes: First release, a zipped app for Apple silicon Macs on macOS 14 or later. It adds the fm1-emu engine, which runs makers' original .fwsc packages, beside the .rfm1 player, with a recommended engine for each firmware, favourites, recently played and a compatibility note on each firmware. The app is not notarised.

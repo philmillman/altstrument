@@ -24,13 +24,17 @@ license_notes: >-
 homepage: https://cardenza.203.io/community/develop
 distribution: source-only
 install_notes: >-
-  Needs ESP-IDF 5.3.5 or later and, for publishing and flashing, 203-CLI. The readme gives 203c new to start a
-  project with the HAL as a Git submodule, tools/cardenza.py build to build it, and 203c flash to install it on a
+  Needs ESP-IDF 5.3.5 or later and, for publishing and flashing, 203-CLI. The readme gives 203cli new to start a
+  project with the HAL as a Git submodule, tools/cardenza.py build to build it, and 203cli flash to install it on a
   Cardenza through the 203 Launcher. Never run idf.py flash on a Cardenza, which erases the Launcher and every
   firmware it installed.
 brick_risk: false
 tags: [official, sdk, library, esp32, simulator, cli]
 versions:
+  - version: main @ 9597136
+    date: 2026-11-20
+    url: https://github.com/203-Systems/CardenzaHAL/commit/959713699428c5eee01a009b2b70b7f54a80bd10
+    notes: No tagged releases; this is the latest commit. Since the previous entry the commits rename the 203c tool to 203cli in the build check, cardenza.py, the publish action and every document, and make the web simulator save screenshots of the screen alone and answer screenshot messages.
   - version: main @ 354f452
     date: 2026-11-20
     url: https://github.com/203-Systems/CardenzaHAL/commit/354f452960ffed04596b99287cab876ec6b7c29c

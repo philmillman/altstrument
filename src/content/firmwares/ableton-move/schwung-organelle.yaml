@@ -6,7 +6,7 @@ summary: >-
 description: >-
   The module embeds libpd and loads patch folders that contain a main.pd from a patches directory on the
   Move, translating the Organelle's four knobs, encoder, aux button, foot switch and 128 by 64 screen to Move
-  controls and passing keyboard notes through from the slot's MIDI input. Six patches ship with it, five from
+  controls and passing keyboard notes through from the slot's MIDI input. Seven patches ship with it, six from
   Critter & Guitari's BSD-licensed patch repository, and others can be copied over SFTP. The README says the
   first version supports only vanilla Pure Data objects with no externals, and it describes the project as in
   development. An OSC compatibility bridge is planned in a design document.
@@ -18,7 +18,7 @@ source: https://github.com/charlesvestal/schwung-organelle
 source_status: open
 license: MIT
 license_notes: >-
-  The module is MIT. libpd and Pure Data are BSD-style, the 5x8 font and the six bundled Critter & Guitari patches
+  The module is MIT. libpd and Pure Data are BSD-style, the 5x8 font and the bundled Critter & Guitari patches
   are BSD-3-Clause, with a LICENSE.txt in each patch folder.
 homepage: https://github.com/charlesvestal/schwung-organelle#readme
 distribution: source-only
@@ -30,6 +30,10 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, emulator, scripting, sdk]
 versions:
+  - version: main @ 1f82ade
+    date: 2026-11-20
+    url: https://github.com/charlesvestal/schwung-organelle/commit/1f82adebed3480de6668d504bb780c0ea97767ed
+    notes: No tagged releases; this is the latest commit. Since the previous entry the commits bundle the Critter & Guitari Basic Poly patch with its local Pd library, add minimal patch menu support, keep the slot non-silent so Move does not throttle rendering, make slot entry land on the browser with the loaded patch marked, and let CZZ-Multi's envelopes redraw live.
   - version: main @ e29dd3d
     date: 2026-05-15
     url: https://github.com/charlesvestal/schwung-organelle/commit/e29dd3d5896ddfe12b1e64b11a99183b2754ef74

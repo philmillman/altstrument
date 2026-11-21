@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+name: Loom CAFA
+kind: tool
+summary: >-
+  Experimental fork of the Android app LOOM Groovebox that uses an FM-1 running Windjammer as its controller, display and USB audio output, with the eight LOOM tracks selectable from the FM-1.
+description: >-
+  The phone keeps running LOOM's synth engines, sampler, effects and sequencer, and the FM-1 shows the active tracks and sounds and plays and edits them from its panel. The FM1 LINK screen in the app selects the FM-1's USB MIDI endpoint and its USB audio output, and the link uses a session with acknowledged state and a lease that mutes the sound when the connection fails. The ALGORITHM encoder picks tracks 1 to 8, the keys play the selected engine, and white keys toggle steps in the selected 16-step bank. The README calls it a prototype that does not yet reproduce Skiff's native screens, so recording, arpeggiator, sample, effect and preset work stays on the phone. The app installs next to ordinary LOOM. This is a different project from Loom FM-1, the firmware by the same upstream author. The FM-1 side of the work lives on the release tag and the cafa/ branches, while the default branch still matches upstream LOOM.
+status: active
+authors:
+- name: osleg
+  url: https://github.com/osleg
+- name: Daniel Miller (Co-oscillator)
+  url: https://github.com/Co-oscillator
+source: https://github.com/osleg/loom-groovebox
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE.md is the GPL version 3 text with a notice naming R Daniel Miller, and the FM-1 companion files carry a GPL-3.0-only SPDX header; GitHub reports the repository as NOASSERTION. Engines under instrument-demo keep their own notices, among them GPL-3.0, MIT, BSD, Apache-2.0 and CC-BY licences.
+distribution: download
+requires_stock: Windjammer
+install_notes: >-
+  Install the signed APK from the release on an Android 8.0 or newer phone. For the FM-1 link, flash Windjammer v0.9.0 on the FM-1 with its web installer and connect the phone by a USB data cable. An older development build of the same app must be uninstalled first, which removes its data, so copy projects and recordings out first. The app writes nothing to the FM-1.
+brick_risk: false
+tags: [android, sequencer, synth-engine, sampler, midi, usb-audio]
+image:
+  url: https://raw.githubusercontent.com/osleg/loom-groovebox/dev/assets/Play_Screen_Melodic.png
+  alt: "LOOM's play screen on a tablet: eight track strips from subtractive to MIDI on the left, four granular sliders, four knobs, a 4x4 note pad grid and BPM, swing and record controls on the right"
+  credit: Daniel Miller
+  source_url: https://github.com/osleg/loom-groovebox
+  first_party: true
+versions:
+- version: loom-v3.2.19-cafa.5
+  date: 2026-11-19
+  url: https://github.com/osleg/loom-groovebox/releases/tag/loom-v3.2.19-cafa.5
+  notes: Adds the Windjammer connection for the FM-1 in the FM1 LINK screen; the APK uses a dedicated release signing key.

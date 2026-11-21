@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+name: FM-1 Pocket Player
+kind: tool
+summary: >-
+  Browser player that runs FM-1 community firmware on an on-screen panel, with a searchable library of firmware from The Firmware Hub, original .fwsc packages on an FM-1 chip emulator and .rfm1 builds on a simulator, and your own files.
+description: >-
+  Picking a firmware from the library starts it with its screen, sound, knobs, keys and buttons on the page, played with the mouse, touch, the computer keyboard or MIDI in. The library lists firmware with a picture and description, searches and filters by category, sorts by latest release or name, marks new additions and keeps favourites and per-firmware settings in the browser. Original .fwsc packages run on the fm1-emu chip emulator and .rfm1 builds run on the simulator the player is built on, and the player recommends one engine per firmware from its own compatibility checks and lets you switch when both work. Each firmware's details say how it was checked, and most have passed only automated start-up and sound checks. Files opened from disk stay in the browser. It is a GitHub fork of Jake Handy's FM-1 Browser Simulator that adds the catalogue, emulator engine and discovery features. It is an emulator and writes nothing to a real FM-1. FM-1 Pocket for macOS is the same library as a native app.
+status: active
+authors:
+- name: slowphase
+  url: https://github.com/slowphase
+- name: Jake Handy
+  url: https://github.com/jakehandy
+source: https://github.com/slowphase/fm1-pocket-player
+source_status: open
+license: MIT
+license_notes: >-
+  LICENSE is MIT, with the copyright line of Jake Handy, whose simulator it forks. fm1-emu is MIT. Firmware shown in the library keeps its makers' licences, and the repository holds only firmware/h1.rfm1. Packages of community firmware are published as assets of the repository's pocket-packages release.
+homepage: https://slowphase.github.io/fm1-pocket-player/
+distribution: browser-installer
+install_notes: >-
+  Open the hosted page; nothing is installed and nothing is flashed to a device. Original .fwsc packages or .rfm1 builds can be opened from the computer or dropped onto the page.
+brick_risk: false
+tags: [emulator, web, library, ui]
+image:
+  url: https://raw.githubusercontent.com/slowphase/fm1-pocket-player/main/docs/img/pocket-player.png
+  alt: "FM-1 Pocket Player running h1 with the firmware library open: a search box, filter buttons and a list of firmware with pictures, versions, authors and categories, from AMB-1 to Chipbox"
+  credit: slowphase
+  source_url: https://github.com/slowphase/fm1-pocket-player
+  first_party: true
+versions:
+- version: main @ cd39859
+  date: 2026-11-21
+  url: https://github.com/slowphase/fm1-pocket-player/commit/cd39859843446ea1e2f67dab2022e924492d763f
+  notes: No tagged releases; this is the latest commit.

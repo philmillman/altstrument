@@ -2,11 +2,16 @@ device: m-vave-chocolate
 name: mvave-chocolate-tui
 kind: tool
 summary: >-
-  Linux terminal UI that writes Chocolate switch configuration with SysEx via amidi: 16-switch grid (4
-  banks of 4), mode switching, real-time MIDI monitor, auto-detection.
+  Linux terminal UI for the Chocolate and Chocolate Plus footswitches that reads the pedal's configuration, edits its switch
+  messages and writes them back with SysEx via amidi, with mode switching, backup and compare, and auto-detection.
 description: >-
-  Needs Go and alsa-utils, with the Chocolate in USB (U) mode rather than HOST. Written so a Windows VM
-  or Wine is not needed to change footswitch assignments.
+  Needs alsa-utils, with the Chocolate in USB (U) mode rather than HOST; Go is needed only to build from source. Written so a
+  Windows VM or Wine is not needed to change footswitch assignments. Connecting only reads the pedal. Writes need the
+  --write flag, are shown byte by byte, must be acknowledged and are read back. Besides the switch table the app draws the four
+  switches as on the pedal, with banks, groups and message lists. The README says the Chocolate Plus was checked against a
+  real pedal and the original Advanced Custom mode is built from the same decoder but untested on hardware. It also
+  backs up every readable byte, restores a backup and compares two reads. Since v0.1.0 the repository publishes Linux
+  builds for amd64 and arm64, with an install script from v0.2.0, and a documentation site.
 status: active
 authors:
 - name: WilsonNet
@@ -14,11 +19,32 @@ authors:
 source: https://github.com/WilsonNet/mvave-chocolate-tui
 source_status: open
 license: GPL-3.0-or-later
-distribution: source-only
-install_notes: go run . on Linux with alsa-utils installed.
+license_notes: The README's License section states GPL-3.0-or-later and the repository has a LICENSE file.
+homepage: https://wilsonnet.github.io/mvave-chocolate-tui/
+distribution: download
+install_notes: >-
+  On Linux, run the install script from the latest release page (it checks the release checksum and installs to
+  ~/.local/bin), or unpack the amd64 or arm64 tarball, with alsa-utils installed and the pedal in USB mode. Add --write
+  only when you want to send configuration. Building from source needs Go and `go run .`.
 tags: [config-tool, midi]
 versions:
-- version: main
-  date: 2026-06-15
-  url: https://github.com/WilsonNet/mvave-chocolate-tui
-  notes: No tagged releases; date is the last commit.
+- version: v0.2.2
+  date: 2026-11-21
+  url: https://github.com/WilsonNet/mvave-chocolate-tui/releases/tag/v0.2.2
+  notes: Adds a README warning for a Plus that is recognised as the original and makes the install script retry transient network errors.
+- version: v0.2.1
+  date: 2026-11-21
+  url: https://github.com/WilsonNet/mvave-chocolate-tui/releases/tag/v0.2.1
+  notes: The release build now fails when a checksum is missing.
+- version: v0.2.0
+  date: 2026-11-21
+  url: https://github.com/WilsonNet/mvave-chocolate-tui/releases/tag/v0.2.0
+  notes: Adds the documentation site, a development guide and the release install script.
+- version: v0.1.1
+  date: 2026-11-21
+  url: https://github.com/WilsonNet/mvave-chocolate-tui/releases/tag/v0.1.1
+  notes: Fixes the checksum check when checksums.txt uses ./ paths.
+- version: v0.1.0
+  date: 2026-11-21
+  url: https://github.com/WilsonNet/mvave-chocolate-tui/releases/tag/v0.1.0
+  notes: First tagged release. Adds Chocolate Plus support, a pedal screen and mode switching, decodes the packed 7-bit configuration dump, writes to both RAM and flash, no longer overwrites the pedal when connecting and fixes the checksum of the 09 49 message.

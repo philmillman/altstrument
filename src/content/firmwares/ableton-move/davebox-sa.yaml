@@ -1,7 +1,7 @@
 device: ableton-move
 name: dAVEBOx SA
 summary: >-
-  Standalone successor to dAVEBOx: an eight-track MIDI sequencer that restarts Move under its own fork of the
+  Standalone successor to dAVEBOx: an eight-track sequencer for MIDI, audio and sliced samples that restarts Move under its own fork of the
   Schwung host, with a browser editor, note effects, automation and project export to Live.
 description: >-
   dAVEBOx SA is not a module that runs inside Schwung. Launching it restarts Move under a build of the
@@ -13,7 +13,9 @@ description: >-
   and projects can be exported to an Ableton Live set or as MIDI files. The README names it the successor to
   dAVEBOx, which is now frozen as dAVEBOx Legacy, and says the two projects are kept separate and do not
   open each other's files. Version 1.0.0 is the first full release; earlier
-  releases were marked as test builds.
+  releases were marked as test builds. Version 2.0 adds Audio tracks that record
+  from the Move's inputs and play warped samples, and Slicer tracks that chop one
+  sample across the pads.
 status: active
 authors:
   - name: legsmechanical
@@ -42,6 +44,10 @@ video:
   first_party: true
   found_via: https://github.com/legsmechanical/dbxhost#readme
 versions:
+  - version: v2.0.1
+    date: 2026-11-20
+    url: https://github.com/legsmechanical/dbxhost/releases/tag/v2.0.1
+    notes: Lists everything new since 1.1.3, as 2.0.0 was a test release. Adds Audio tracks that record from the Move's microphone or line input and play, warp and loop samples up to 30 minutes long, and Slicer tracks that chop a sample across the pads into up to 128 slices and can convert them to a Move drum rack.
   - version: v2.0.0
     date: 2026-11-16
     url: https://github.com/legsmechanical/dbxhost/releases/tag/v2.0.0

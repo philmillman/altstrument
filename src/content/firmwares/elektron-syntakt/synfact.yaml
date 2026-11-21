@@ -1,12 +1,12 @@
 device: elektron-syntakt
 name: Synfact
 summary: >-
-  Custom firmware core and a bank of mods for Syntakt OS 1.42, built at synfact.app or from source out of your own OS file. Mods include sample machines, an FM machine, an audio recorder, a third LFO, an arpeggiator and polyphony.
+  Custom firmware core and a bank of mods for Syntakt OS 1.42, built at synfact.app or from source out of your own OS file. Mods include sample machines, an FM machine, an audio recorder, a third LFO, an arpeggiator, a compressor on the FX bus and polyphony.
 description: >-
   Synfact is the Syntakt part of elekloader with its own core firmware. The core adds a hook bus, extra settings, optional
   machine banks (.smz4 files that can be changed without reinstalling the firmware), long-sample storage and a project sample
   pool. The mods are the SP sample machines ONE SHOT, WERP, REPITCH and SLICE, the SY FM DTONE machine, an audio recorder, a
-  third LFO per track, a Digitone-style arpeggiator, POLY for polyphonic play, a chorus, Playhead for the step order of each track, a system information page, and a sample
+  third LFO per track, a Digitone-style arpeggiator, POLY for polyphonic play, a chorus, COMP, a compressor on the FX bus with Digitakt-style controls, parallel mix and a gain-reduction meter, Playhead for the step order of each track, a system information page, and a sample
   manager. Both the website builder and the repository's source build target OS 1.42 (core 2.0); the site asked for OS 1.41 until 2026-11-18. The site reads the OS file you supply, checks its hash, then patches and verifies it in the browser
   tab; nothing is uploaded. It offers the build as a download or sends it with a built-in transfer page that also browses the
   unit's projects, sounds and samples. SY FM DTONE also needs your own Digitone OS 1.44 file, because its sound engine is
@@ -37,6 +37,10 @@ install_notes: >-
 brick_risk: false
 tags: [machines, loader, flasher, sampler, fm, lfo, arpeggiator, web, web-midi, sdk]
 versions:
+  - version: main @ 48e870a
+    date: 2026-11-20
+    url: https://github.com/GSM1980/synfact-dev/commit/48e870a19a8bcc857b3a72ee6d5a263dc7c09bcc
+    notes: No tagged releases; this is the latest commit of the source repository. The commits since the previous entry add the COMP mod (0.2.0), a compressor on the FX bus with Digitakt controls, parallel MIX, Kit persistence and a gain-reduction meter, and core 2.4.0, which shares the FX and Kit hooks with Chorus and the third LFO; the commit message says the owner reports correct operation. They also add a recipe for profiling the real core and bank in an emulator.
   - version: main @ ce91a3b
     date: 2026-11-19
     url: https://github.com/GSM1980/synfact-dev/commit/ce91a3bb811de41bc28d5ccf9bf1a91452b065cf

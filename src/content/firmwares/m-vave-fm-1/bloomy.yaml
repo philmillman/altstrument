@@ -1,0 +1,48 @@
+device: m-vave-fm-1
+name: Bloomy
+kind: firmware
+summary: >-
+  Groovebox firmware for the FM-1 derived from LOOM-8, with five project slots, per-track generator, evolver and Turing
+  functions, Knit and Jacquard engines with a chorus, and Italian-language offline tools for backup, song transfer and audio export.
+description: >-
+  Source note: the code cannot be browsed on GitHub, because the repository commits it only as zip archives (sorgenti-1.3.5.zip is the
+  current one); the zip holds the app, fm1-base, its board support code, the tests and a build.sh, and the page text
+  says two native builds came out byte-identical, but no workflow builds the published package from it. Bloomy is a
+  derivative of LOOM-8 and fm1-base by Charles Vestal, not a GitHub fork, and the source still names LOOM-8 in comments. The licence
+  files and the source carry the MPL-2.0 firmware without LOOM-8's GPL-3.0 acid and 909 files. Release 1.3.5 runs
+  sixteen voices over five project slots; the Projects page under Global lists the five slot titles, and SELECT asks for confirmation before
+  loading or creating a project in an empty slot. The Knit engine has Osc1, Osc2 and Sub with separate filters and envelopes,
+  and Knit and Jacquard tracks get a per-track chorus ahead of delay and shimmer. The repository's pages carry eight browser tools
+  in Italian and English: direct install, backup and restore, song load, song save with title and notes, a converter,
+  sets and slots, offline MP3 and WAV export, and replacing a single track while keeping the destination's other tracks and
+  master settings. A packaged copy of the tools works offline on Mac and in an iOS MIDI browser, and a PDF manual and a
+  browser emulator are provided. The README says release 1.3.5 has not yet had a documented hardware test, while the earlier 1.2.0
+  was tested on a device. The repository has no GitHub releases or tags.
+status: active
+authors:
+- name: gfcalvi
+  url: https://github.com/gfcalvi
+source: https://github.com/gfcalvi/bloomy-fm1
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSE-firmware.txt is the MPL-2.0 text and the source files in sorgenti-1.3.5.zip carry MPL-2.0 SPDX headers, with MIT headers on
+  a few files and fm1-base's own LICENSING.md covering its Apache-2.0, BSD-2-Clause and MIT parts. GitHub reports the repository's licence as
+  unrecognised because it has no root LICENSE file. The page credits list a GPL-3.0 hi-hat model (ER-99, through 9W9), which
+  no file in the source zip contains. The tools bundle LZFSE (BSD-3-Clause) and LAME (LGPL) under their own licence files.
+homepage: https://gfcalvi.github.io/bloomy-fm1/
+based_on: m-vave-fm-1/loom-8
+distribution: browser-installer
+install_notes: >-
+  Open the installer page in Chrome or Edge with the FM-1 on USB and press Install; it writes only the firmware, with no
+  song read-out and no automatic restore. Backup and restore are separate optional tools, and the page offers a way back to M-VAVE's
+  stock firmware from a file the user supplies and an optional m-bootloader install. On iPhone or iPad the repository says to use the
+  MIDIWeb Browser with the HTTPS site, and Mac and Windows users can open the offline package's index.html. Projects
+  saved in the new format should not be opened with older tools or firmware.
+brick_risk: false
+tags: [groovebox, sequencer, synth-engine, sampler, drums, fx, chords, emulator, midi]
+versions:
+- version: main @ cb4c0cb
+  date: 2026-11-21
+  url: https://github.com/gfcalvi/bloomy-fm1/commit/cb4c0cbb20e0684309cb5b9fa2d86e263ff9d7d1
+  notes: No tagged releases; this is the latest commit. It builds Bloomy 1.3.5 with tools 2.3.5, which load or create projects directly from the Global Projects page.

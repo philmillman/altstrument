@@ -1,6 +1,6 @@
 device: mutable-instruments-beads
 name: Beads Tuneup
-summary: The released Beads source with safer settings saves and start-up, fixes for frozen-delay and grain edge cases, and faster grain code, keeping the stock controls, settings and sound.
+summary: The released Beads source with safer settings saves and start-up, a one-frame-later audio output aimed at the left-channel click, fixes for frozen-delay and grain edge cases, and faster grain and reverb code, keeping the stock controls, settings and sound.
 description: >-
   A base build from the Drizzlet author for people who want the stock Beads
   behaviour with fixes. It starts from the released Mutable Instruments source
@@ -10,23 +10,25 @@ description: >-
   at start-up. It also bounds frozen delay slices, fixes undefined reads in
   background grains and at the end of the wavetable, and fades the output
   around quality and mode changes that restart the converter. Builds with GCC 9
-  and reworked grain mixing lower the peak audio load, from 91 percent to about
-  77 percent in the author's granular test patch, while the reference audio
-  tests stay identical. The author tested installing, playback and the quality
+  and reworked grain mixing and reverb lower the peak audio load, from 91 percent to about
+  76 percent in the author's granular test patch, while the reference audio
+  tests stay identical. The 2026.11.20 release moves the audio output one frame
+  later, which the notes give as the likely fix for the historical left-channel click
+  at the cost of 21 microseconds of latency at 48 kHz. The author tested installing, playback and the quality
   button on one 2021 module. Stock settings and calibration stay compatible. It
   does not come from Mutable Instruments.
 status: active
 authors:
   - name: Insolent Construct
     url: https://github.com/insolentconstruct
-source: https://github.com/insolentconstruct/eurorack/tree/beads-tuneup-2026.11.09/beads
+source: https://github.com/insolentconstruct/eurorack/tree/beads-tuneup-2026.11.20/beads
 source_status: open
 license: MIT
 license_notes: >-
   Beads source files carry the Mutable Instruments MIT notice; the release ships
   a NOTICE.txt with the collected licences. The fork has no top-level LICENSE
   file.
-homepage: https://github.com/insolentconstruct/eurorack/releases/tag/beads-tuneup-2026.11.09
+homepage: https://github.com/insolentconstruct/eurorack/releases/tag/beads-tuneup-2026.11.20
 distribution: download
 install_notes: >-
   Install by audio like any Beads update: unplug all CV cables, patch the audio
@@ -39,6 +41,10 @@ install_notes: >-
 brick_risk: false
 tags: [granular, fx, bugfixes]
 versions:
+  - version: beads-tuneup-2026.11.20
+    date: 2026-11-21
+    url: https://github.com/insolentconstruct/eurorack/releases/tag/beads-tuneup-2026.11.20
+    notes: Pre-release on GitHub. Moves the audio output one frame later to address the historical left-channel click, makes the reverb cheaper with identical sound and notes a manual-gain erratum. The notes say it was tested on one 2021 module and that storage repair is covered by software tests only.
   - version: beads-tuneup-2026.11.09
     date: 2026-11-10
     url: https://github.com/insolentconstruct/eurorack/releases/tag/beads-tuneup-2026.11.09

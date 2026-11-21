@@ -31,7 +31,7 @@ install_notes: >-
 brick_risk: false
 tags: [research, sdk, reference, compiler, platform]
 versions:
-- version: main @ 701a76f
-  date: 2026-11-15
-  url: https://github.com/jvitkauskas/pi32v2-isa/commit/701a76faf103d1889d9bdf67987b872899c27257
-  notes: No tagged releases; this is the latest commit, which adds hardware records of two probes, one of exception handling with misaligned accesses, divide by zero and the repeat instruction. Before it, a hardware record shows the Rust example built with rustc 1.100.0 running on an FM-1, and the FM-1 blink example moved to rustc 1.100.0 on the same LLVM 23.1.5 fork.
+- version: main @ 058b89b
+  date: 2026-11-21
+  url: https://github.com/jvitkauskas/pi32v2-isa/commit/058b89bb835d12b194a9f13f51ec153c1d6cc24b
+  notes: No tagged releases; this is the latest commit, a merge of two pull requests. One makes the LLVM tools generate the hardware instruction forms that the LLVM assembler warns about, and the other makes the runtime's __sync_* functions use only the low bytes of a sub-word operand.

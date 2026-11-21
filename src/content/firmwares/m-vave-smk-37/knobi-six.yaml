@@ -1,0 +1,28 @@
+device: m-vave-smk-37
+name: KNOBI-SIX
+summary: >-
+  Standalone OB-6-inspired polysynth for the SMK-37 Pro: six voices, two oscillators, a state-variable filter, the front panel's 12 knobs, patch memory, an arpeggiator and clock, distortion and a step sequencer.
+description: >-
+  It builds on smk37-base, the SMK-37 layer of Dinghy, and adds a synth engine drawn on the keyboard's own screen. Beyond the voices it has tap tempo and ten divisions, MIDI clock in and out, and a per-program sequencer of up to 64 steps of up to six notes, stored with the program in a power-safe log. Elite and MKE-P37 packages are built too but the README says only a Pro has run it. The README lists an optional second-core build that is off by default. The repository ships empty banks and does not include the OB-6 factory programs: a build script converts Sequential's own download into a local bank the user must not share. The project's phases 2 and 3 sit on branches that the README describes as built and tested on the keyboard in part.
+status: active
+authors:
+- name: jhortale
+  url: https://github.com/jhortale
+source: https://github.com/jhortale/knobi-six
+based_on: m-vave-smk-37/smk37-base
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only and LICENSE is the GPL-3.0 text. The second-core files are MPL-2.0 from felucca-bsp and Melodee, kept under their own headers, and the platform parts are credited there to Felucca, SLOOP, genkigenki, OberVave, Dinghy and smk37-base. The OB-6 programs belong to Sequential and are not in the repository.
+homepage: https://github.com/jhortale/knobi-six#readme
+distribution: download
+requires_stock: SMK-37 Pro (Elite and MKE-P37 builds untested)
+install_notes: >-
+  Download knobi-six-0.1.fwsc (or the -elite or -mke package) from the release and install it with the project's browser installer or tools/fm1_install.py. Back up the keyboard's flash first with the repository's backup guide: two ranges (Bluetooth pairing and pad calibration, and key_mac) are unique to each unit. The installer writes the firmware area through the update loader and the ROM bootloader cannot be overwritten. The README calls the project a beta and the install at your own risk.
+brick_risk: false
+tags: [synth-engine, synth, polyphonic, arpeggiator, sequencer, midi, platform]
+versions:
+- version: '0.1'
+  date: 2026-11-21
+  url: https://github.com/jhortale/knobi-six/releases/tag/knobi-six-v0.1
+  notes: First release, with the standalone synth, clock and arpeggiator, distortion, step sequencer and a browser installer, as Pro, Elite and MKE-P37 packages.

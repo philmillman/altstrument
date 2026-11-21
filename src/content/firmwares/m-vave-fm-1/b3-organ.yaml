@@ -20,9 +20,10 @@ license: GPL-3.0-only
 license_notes: >-
   Stated in the README and LICENSING.md. The setBfree-derived tables and programs are GPL-2.0-or-later, and the
   Terminus font is SIL OFL 1.1. The designburg logo in assets/ is all rights reserved and not under the GPL.
+based_on: m-vave-fm-1/dinghy
 distribution: browser-installer
 install_notes: >-
-  Download b3organ-0.5.1.fwsc from the release and install it through the FM-1 Firmware Hub in Chrome or Edge, or
+  Download b3organ-0.6.fwsc from the release and install it through the FM-1 Firmware Hub in Chrome or Edge, or
   with tools/fm1_install.py over USB. Hold OCT- while switching on for the USB rescue. The official firmware can
   be put back the usual way.
 brick_risk: false
@@ -34,6 +35,10 @@ image:
   source_url: https://github.com/R-Jeb/setBfree-fm1
   first_party: true
 versions:
+- version: '0.6'
+  date: 2026-11-20
+  url: https://github.com/R-Jeb/setBfree-fm1/releases/tag/v0.6
+  notes: "Adds an output equalizer with bass, middle and treble bands, on the pedal screen and in the web editor, and recalibrates the overdrive against setBfree, so the drive range is now 0 to 20 and settings and programs 112 to 127 from 0.5.x are converted on the first start. The web editor gets a MIDI file player."
 - version: '0.5.1'
   date: 2026-11-17
   url: https://github.com/R-Jeb/setBfree-fm1/releases/tag/v0.5.1

@@ -1,0 +1,27 @@
+device: m-vave-fm-1
+name: FM1-RDX
+summary: >-
+  Four-operator FM synth for the FM-1 inspired by the Yamaha Reface DX: 33 sounds, twelve algorithms, up to eight adaptive voices, two of seven effects and Reface-style SysEx, with a browser emulator.
+description: >-
+  Rights warning: the repository commits SysEx files of the Yamaha reface DX factory voices (DigiChord, WobbleBass, LegendEP and the rest of the factory banks) and a reface DX dump, with no statement that Yamaha allows it. It has no licence file, and its own notes say the licensing of the original RDX code and its voices is not established. It is a port of the author's ESP32 RDX synth onto fm1-base. The sounds are four banks of eight plus an init voice, editable per operator with envelopes, LFO and pitch envelope, and the FX button opens two slots chosen from distortion, touch wah, chorus, flanger, phaser, delay and reverb. Polyphony starts at four voices and rises while the measured processing headroom allows. It takes MIDI on USB and TRS with optional Reface FM control changes, records over USB audio and answers Soundmondo's SysEx to load a voice into the edit buffer. Edits are temporary: saving patches is not implemented. The author calls it an experimental preview and says the latest fixes still need a hardware retest.
+status: active
+authors:
+- name: copych
+  url: https://github.com/copych
+source: https://github.com/copych/FM1-RDX
+source_status: open
+license: unspecified
+license_notes: >-
+  There is no LICENSE file for the project's own code. The development notes say the original RDX and voice licensing is unverified and that no release licence is invented. The pinned fm1-base and felucca-bsp sources are MPL-2.0, and the vendored USB MIDI libraries carry their own licence files.
+homepage: https://copych.github.io/FM1-RDX/
+distribution: browser-installer
+requires_stock: V15 or another custom firmware
+install_notes: >-
+  Install from the project's web installer in Chrome or Edge with a USB data cable, and back up whatever you want to keep with your current firmware's tools first. The installer includes a way back to M-VAVE's stock firmware and does not offer a bootloader replacement. Close the installer tab before opening a DAW or MIDI app, since it can hold the MIDI port. The current build is a site preview (Preview 2026.11.21-12, identity FM-1_9900) with no GitHub release or tag.
+brick_risk: false
+tags: [synth-engine, fm, fx, midi, sysex, usb-audio, emulator, port]
+versions:
+- version: main @ 3f4dc46
+  date: 2026-11-21
+  url: https://github.com/copych/FM1-RDX/commit/3f4dc46bc20ea6937ab777499f6e6a0c0104939a
+  notes: No tagged releases; this is the latest commit.

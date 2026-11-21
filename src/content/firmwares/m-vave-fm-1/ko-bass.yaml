@@ -1,0 +1,27 @@
+device: m-vave-fm-1
+name: KO BASS
+summary: >-
+  Bass-line firmware for the FM-1: the KO genre engine narrowed to bass, with Acid, Sub, Reese, FM, Fold and Sync eras, LINE presets with user plates, and tempo and clock tools.
+description: >-
+  KO BASS uses the same engine as the KO genre firmwares, narrowed to bass lines. Its source adds bass_*.h files for the synth, envelopes, modulation, sequencer and screens. The project describes six eras (Acid, Sub, Reese, FM, Fold and Sync), LINE presets that can be edited into user plates, and tempo and clock tools. It is a full FM-1 firmware with its own package identity, FM-1_56410, built on Dinghy, with USB MIDI and USB audio. The repository has the whole KO source tree, a 0.1 package in dist/ and tests for the bass code, and the browser player at kosmar.github.io/ko-fm1 runs it as WebAssembly. The README says the 0.1 files are not a fresh device pass of every firmware.
+status: active
+authors:
+  - name: kosmar
+    url: https://github.com/kosmar
+source: https://github.com/kosmar/ko-bass
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Each repository has its own LICENSE file with the GNU GPL version 3 text and a LICENSING.md that says the platform is GPL-3.0-only. The platform code is by Leo Kuroshita (Hügelton Instruments, Felucca) with the changes of SLOOP by isod89, Dinghy's app and wiring are by zvenson, and the KO apps are by kosmar. The Terminus font is SIL OFL 1.1. The logo of Dinghy, designburg's and not under the GPL, is in assets/ and is not part of the license. The JieLi SDK blobs that go into a package are read from the builder's SDK checkout and are not committed. The committed .fwsc files are the project's own builds, 610,131 bytes each, and are not M-VAVE stock images; restore-stock-v15.sh downloads M-VAVE's own V15 image from its file host and checks its SHA-256 before installing.
+homepage: https://kosmar.github.io/ko-fm1/?app=bass
+based_on: m-vave-fm-1/dinghy
+distribution: download
+install_notes: >-
+  Install it from the browser player in Chrome or Edge over Web MIDI with SysEx, or run python3 tools/fm1_install.py dist/fm_bass-0.1.fwsc from a clone; the installer asks before it writes. If it will not start, hold OCT- while switching on for Dinghy's USB rescue and install another package from there. restore-stock-v15.sh downloads M-VAVE's FM-1 V15 image, checks its SHA-256 and installs it. The README says installing firmware is at your own risk.
+brick_risk: false
+tags: [bass, bassline, synth-engine, sequencer, usb-midi, usb-audio, emulator]
+versions:
+  - version: main @ a14f088
+    date: 2026-11-20
+    url: https://github.com/kosmar/ko-bass/commit/a14f088f01cb5bc5765091c99ac47e228d9e5cfc
+    notes: No tagged releases; this is the latest commit. It ships the 0.1 package dist/fm_bass-0.1.fwsc.

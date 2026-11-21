@@ -19,7 +19,7 @@ description: >-
   Distortion range so the effect reaches full strength at full Level, and the README now describes it. The README also links a
   flasher page in the browser (Firefox) that builds the modded firmware from the stock file you choose and sends it to the unit. Releases
   take even build numbers from 750 up and the build in testing takes the odd number after the latest release; the page offers both.
-  A sequences overlay plays patterns in any order, with a chain of up to 32 units per track, like the Circuit's Pattern Chain Sequences. Mutate can also be held to repeat, once a loop on steps and once a beat on the patch. The README says the work was done with Claude Code.
+  A sequences overlay plays patterns in any order, with a chain of up to 32 units per track, like the Circuit's Pattern Chain Sequences. Mutate can also be held to repeat, once a loop on steps and once a beat on the patch. The flasher page also backs up the unit to a .monostationpack file and can send a pack's patches to it through the bootloader, with an app layout of tabs and Packs views. The README says the work was done with Claude Code.
 status: active
 authors:
   - name: matozoid
@@ -42,6 +42,10 @@ install_notes: >-
 brick_risk: false
 tags: [sequencer, generative, flasher, python]
 versions:
+  - version: main @ 77567da
+    date: 2026-11-21
+    url: https://github.com/meukmachine/monostation-hacks/commit/77567da19a0695afa887819d0ef4a5ddfbf21039
+    notes: No tagged releases; this is the latest commit. Since the previous entry the flasher page can back up the unit to a .monostationpack file, which was tried in Firefox, and send a pack's patches through the bootloader, and the app layout gains tabs, Packs views and a backup step before upload.
   - version: main @ 98cc90b
     date: 2026-11-17
     url: https://github.com/meukmachine/monostation-hacks/commit/98cc90b5e57e97a9ccacdacc4904d5110d3eef89

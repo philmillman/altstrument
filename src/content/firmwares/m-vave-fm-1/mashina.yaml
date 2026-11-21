@@ -3,7 +3,7 @@ name: MASHINA
 summary: >-
   Live sound-module firmware for the FM-1 that follows JIANT LIVE DRUMS: six tracks on their own MIDI channels with keyboard zones, 32 MIDI CC macros, two 12-sound drum engines, extra synth engines and no song sequencer.
 description: >-
-  Each of six tracks takes its own MIDI receive channel, and tracks may share one to layer sounds. Every track has a note and velocity zone for splits, a transpose of minus 36 to plus 36 semitones and fine tuning of minus 50 to plus 50 cents. MIDI LEARN binds an incoming controller to a track's parameter as one of 32 project macros, with a range or toggle, reverse and bypass. DRUM-X has 12 independent sounds and DRUM-LAB has 12 editable synthesized pads. ATMOS, BRASS and INDUSTRIAL sit beside JIANT's synth engines, a three-band EQ comes before the effects, and eight voices are shared across all tracks. The sequencer is disabled, its buttons open live pages for macros, drum mapping and performance settings, project slots recall during play, and a panic command silences everything. The repository is the renamed continuation of the author's JIANT LIVE DRUMS, which stays online as a separate repository. The README says the build was flashed and functionally checked on a physical FM-1 without exhaustive endurance or recovery testing, and the web editor does not yet expose every new control. The project site has a browser emulator, a web installer, a web editor and a manual.
+  Each of six tracks takes its own MIDI receive channel, and tracks may share one to layer sounds. Every track has a note and velocity zone for splits, a transpose of minus 36 to plus 36 semitones and fine tuning of minus 50 to plus 50 cents. MIDI LEARN binds an incoming controller to a track's parameter as one of 32 project macros, with a range or toggle, reverse and bypass. DRUM-X has 12 independent sounds and DRUM-LAB has 12 editable synthesized pads. ATMOS, BRASS and INDUSTRIAL sit beside JIANT's synth engines, a three-band EQ comes before the effects, and eight voices are shared across all tracks. The sequencer is disabled, its buttons open live pages for macros, drum mapping and performance settings, project slots recall during play, and a panic command silences everything. The repository continues the author's JIANT LIVE DRUMS, a JIANT derivative whose repository was taken down in November 2026. The README says the build was flashed and functionally checked on a physical FM-1 without exhaustive endurance or recovery testing, and the web editor does not yet expose every new control. The project site has a browser emulator, a web installer, a web editor and a manual.
 status: active
 authors:
 - name: Misha Mashina (MishaMashinaMM)
@@ -14,7 +14,7 @@ license: GPL-3.0-only
 license_notes: >-
   README and LICENSING.md give GPL-3.0-only, as JIANT and Felucca, with upstream credits kept in the file headers. LICENSING.md lists the Apache-2.0, MIT, BSD-2-Clause and SIL OFL parts that keep their own licences.
 homepage: https://mishamashinamm.github.io/mashina-fm1-fw/
-based_on: m-vave-fm-1/jiant-live-drums
+based_on: m-vave-fm-1/jiant
 distribution: browser-installer
 install_notes: >-
   Use the installer on the project site in a supported desktop browser, or build as BUILDING.md describes. The README says to back up projects, user presets and settings first, to keep a known-working recovery firmware at hand, and that projects saved by newer firmware may not load in older versions.
@@ -27,7 +27,7 @@ image:
   source_url: https://github.com/MishaMashinaMM/mashina-fm1-fw
   first_party: true
 versions:
-- version: main @ bcdff1c
-  date: 2026-11-20
-  url: https://github.com/MishaMashinaMM/mashina-fm1-fw/commit/bcdff1cc598257b1e2f8527179a6712659ad0499
-  notes: No tagged releases; this is the latest commit. The README calls the tree v0.9, package identity FM-1_909.
+- version: main @ 94d1195
+  date: 2026-11-21
+  url: https://github.com/MishaMashinaMM/mashina-fm1-fw/commit/94d1195b3e4d33bb58c31b299120d8c6f80fd8b2
+  notes: No tagged releases; this is the latest commit, a merge that adds MIDI CC 85, 86 and 87 to vary the current sound on all melodic engines, with CI workflow changes around it.

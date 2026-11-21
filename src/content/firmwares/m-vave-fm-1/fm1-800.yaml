@@ -1,0 +1,31 @@
+device: m-vave-fm-1
+name: FM1-800
+summary: >-
+  Fan-made Korg Poly-800 for the FM-1 with its 64 factory programs plus 64 user slots, Poly-800 style editing, chorus and a 256-note step sequencer, and an added phaser, tape echo, high-pass and MIDI clock in. Rights warning: the factory programs reproduce Korg's.
+description: >-
+  Rights warning: the 64 factory programs, with their names and 47 parameters each, are Korg's Poly-800 programs, read from a web prototype that the author built from Korg's circuit diagrams, and the repository includes them as generated data. The README calls the project a fan tribute not endorsed by Korg and does not discuss the programs' rights. The firmware replaces Felucca's engines with a Poly-800 voice model whose sound the author checked against that prototype by rendered measurements. PRESETS turns through bank A, the factory programs, and bank B, which starts as 64 INIT programs, and SELECT with KNOB 1 edits parameters the Poly-800 way. FX opens a phaser and a tape echo, and GLO opens global settings and a high-pass filter that the original lacks. REC records a sequence of up to 256 notes, and the sequencer runs on its own tempo or follows MIDI clock. The screen shows a sunset scene with the program name. It is a GitHub fork of Felucca that uses Felucca's hardware, display, MIDI, sequencer timing and update code, and the repository's default branch is fm1-800. The only release is marked as a pre-release.
+status: active
+authors:
+- name: morbious22
+  url: https://github.com/morbious22
+source: https://github.com/morbious22/FM1-800
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and LICENSE state GPL-3.0-only, as Felucca. Parts keep their own licences, listed in CREDITS.md and LICENSING.md: felucca-bsp is MPL-2.0 and the packages hold three Apache-2.0 JieLi SDK files. The licence does not cover Korg's Poly-800 programs, names or trademarks.
+distribution: browser-installer
+install_notes: >-
+  Connect the FM-1 by USB and open the FM1-800 web installer in Chrome or Edge, then press Install; the README does not link the installer's address, and the package felucca.fwsc is attached to the release. The installer has a way back to M-VAVE's official V15 or V16, and programs and sequences saved in FM1-800 may be lost when going back.
+brick_risk: false
+tags: [synth-engine, sequencer, fx, midi, emulation]
+image:
+  url: https://raw.githubusercontent.com/morbious22/FM1-800/fm1-800/fmhub.png
+  alt: "FM1-800 home screen: program A11 named STRINGS, mode DOUBLE, OCT 0 and a battery icon, over a purple synthwave scene with a striped yellow-pink sun, a skyline and a magenta grid"
+  credit: morbious22
+  source_url: https://github.com/morbious22/FM1-800
+  first_party: true
+versions:
+- version: 0.12.5
+  date: 2026-11-20
+  url: https://github.com/morbious22/FM1-800/releases/tag/v0.12.5
+  notes: Gets its own firmware identity FM-1_80086 and includes the high-pass in the public build. Marked as a pre-release.

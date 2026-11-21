@@ -4,7 +4,7 @@ kind: firmware
 summary: >-
   The maker's open source firmware for the WEASEL west coast synth, an Arduino sketch for the Daisy Seed. It has a complex oscillator with wavefolder, a modulation oscillator, low pass gates, an envelope, a pulsar, random voltage, a five-step sequencer and a patch bay.
 description: >-
-  Version 1.0 reads 32 pots through two multiplexers and two button matrices. The README lists every pot function and button position, the MIDI implementation (notes trigger the sequencer, pulsar and random source and can set the oscillator pitch)
+  The README gives firmware 1.0, and the sketch in the repository reports 1.1.1, which adds panel memory that powers up with the last button modes and sequencer clock reporting to the web editor. It reads 32 pots through two multiplexers and two button matrices. The README lists every pot function and button position, the MIDI implementation (notes trigger the sequencer, pulsar and random source and can set the oscillator pitch)
   and the Arduino setup with DaisyDuino. The repository also has KiCad files and design drawings. The README links the web flasher and editor, whose USB editor link (WeaselEditor.h) lives in the Weasel-Flasher repository, and has build options for the LED wiring and the sequencer step switches.
 status: active
 authors:
@@ -21,6 +21,10 @@ install_notes: >-
 brick_risk: false
 tags: [official, open-source, synth-engine, sequencer, midi, daisy, lpg, platform]
 versions:
+  - version: main @ 134f9a5
+    date: 2026-11-20
+    url: https://github.com/joebmz98/Weasel-West-Coast-Synthesiser/commit/134f9a58b48086635fccf72191be1f623f6e5f43
+    notes: No tagged releases; this is the latest commit. Since the previous entry the commits take the sketch to firmware 1.1.1, with panel memory that powers up with the last button modes and sequencer clock reporting to the web editor, fix ghost notes and MIDI handling, and rebuild the main board and panel PCB files and gerbers.
   - version: main @ c65f247
     date: 2026-11-19
     url: https://github.com/joebmz98/Weasel-West-Coast-Synthesiser/commit/c65f24735811fccc967de563a5f29e0586f34a0e

@@ -8,7 +8,7 @@ description: >-
   The additions in the repository's v1.4-QG notes are ten voices in place of eight (twelve voices, six tracks and eight engines in the 2.4.0 release) with a voice-stealing rule that
   prefers quiet release tails, reworked drive types (TAPE, HEARTH, PLASMA, FLUX) in place of the older wave-shapers,
   fixed-point biquad peak and notch filters, a diagnostics window, and an installer with a SHA-256 check, a
-  verify-only mode and an automatic backup, and later commits make it refuse any package without a signed build record. Version 2.6.0 removed the Ed25519 signature check, and the 2.7.1 release is unsigned, checked by SHA-256 and size and a build record only. The synth engines, the 49-genre song generator, the TAKES reel,
+  verify-only mode and an automatic backup, and later commits make it refuse any package without a signed build record. The release numbers are not one sequence: 1.9.0 (8 November) was followed by 2.x, 3.x and 4.x releases, and 1.0.0 of 16 November republished the 4.x tree so that public numbering restarts, which is why 1.5 and 1.6 are newer than 4.1.0. In the older line, 2.6.0 removed the Ed25519 signature check, and the 2.7.1 release is unsigned, checked by SHA-256 and size and a build record only. The synth engines, the 49-genre song generator, the TAKES reel,
   the shift deck and the Web Studio come from Pocket GammaWave. The README's later notes (v1.5 to v1.7) add a new
   power-on screen, CPU mode and visualizer-quality settings, a smooth random LFO wave, polyphonic aftertouch as a
   modulation source and a 200-sound library. The commits after that add a two-band Punch-in FX keyboard with latched mutes, flash and loader hardening, and a rebuilt project portal, Web Studio and emulator. Version 1.8.9 made the master EQ round instead of truncate, which fixes a DC offset and a shallow 20 Hz cut, and the repository gained a verified flash-backup tool and a restore tool that needs an external programmer. Version 1.9.0 is the first tagged release: a signed package that the installer checks against a pinned key. The release notes say a power cut during the app erase may leave the unit unable to boot and that recovery needs the chip's ROM mode and an external full-dump tool. Many of the newer commits are authored by
@@ -31,15 +31,27 @@ based_on: m-vave-fm-1/pocket-gammawave
 distribution: browser-installer
 install_notes: >-
   Web installer in Chrome, Edge or Opera over USB. From another custom firmware, use its return-to-V15 option first,
-  which also backs up flash. From an official V16 unit, the installer since 1.5.9 asks for a full 1 MiB flash copy of that unit taken with M-Flasher and a confirmation that you know how to restore it before it sends anything. The v1.9.0 release carried a signed package; since 2.6.0 the packages are unsigned, and the installer checks the SHA-256, size and build record before it enables INSTALL. Back up
+  which also backs up flash. From an official V16 unit, the installer since 1.5.9 asks for a full 1 MiB flash copy of that unit taken with M-Flasher and a confirmation that you know how to restore it before it sends anything; since 1.5.29 it wants the record of that dump, with its SHA-256 computed in the browser, and since 1.5.26 it reads M-Flasher's JSON record and checks the copy against it. The v1.9.0 release carried a signed package; since 2.6.0 the packages are unsigned, and the installer checks the SHA-256, size and build record before it enables INSTALL. Back up
   any user samples before flashing.
 brick_risk: false
 tags: [synth-engine, sequencer, generative, fx, filter, editor, emulator, fork]
 versions:
+- version: 1.6.0
+  date: 2026-11-21
+  url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v1.6.0
+  notes: Gathers eight stages of work into one package. Adds a SYNC wave as the eighth PHASE wave, PEDAL and ALBERTI arpeggiator modes, HIJAZ and HUNG MINOR scales, dotted LFO divisions up to 1/64, a CHANCE view of the whole pattern's probability and a MOD MAP band showing where routes land, and fixes the audio test harness. The notes say installing from an official V16 unit is documented and tested as far as software can test it. The notes are in Spanish.
+- version: 1.5.29
+  date: 2026-11-21
+  url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v1.5.29
+  notes: Fixes the web installer rejecting every package published since 1.5.26 as damaged, because it looked for a fixed file name instead of the one in the build record. Installing from an official V16 unit now asks for the record of the 1 MiB dump with its SHA-256, and artifact names are checked as plain relative paths. Latest of a run of patch releases from 1.5.22 to 1.5.29 over two days, not listed separately, that include the installer reading M-Flasher's JSON record (1.5.26), a Web Studio EXPORT .MID of the generated song (1.5.27) and a larger text-ramp cache that stops frames rebuilding ramps (1.5.28). All the notes say no FM-1 was available, and they are in Spanish.
+- version: 1.5.24
+  date: 2026-11-20
+  url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v1.5.24
+  notes: Adds a PLUK LFO shape that falls as a pulse within each cycle, filter resonance as a modulation destination and NOTCH and SHELF filter types, without new parameter ids; saved presets load as before. The notes say it costs 196 bytes of image, were not tried on a unit, and are in Spanish.
 - version: 1.5.21
   date: 2026-11-20
   url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v1.5.21
-  notes: Installing from an official V16 unit now ties the required 1 MiB flash copy to the unit it came from, the installer's chip messages say whether the unit answered, and the Web Studio's sound lists match the firmware again. Latest of a run of patch releases from 1.5.5 to 1.5.21 over two days, not listed separately, that include a fix for GLO MONITOR rows overrunning their buffer (1.5.13), a six-track, twelve-voice load test with a fix for a load governor that cut release tails (1.5.17), and three new wavetable sounds with level matching of 11 factory presets (1.5.19). The notes are in Spanish.
+  notes: Installing from an official V16 unit now ties the required 1 MiB flash copy to the unit it came from, the installer's chip messages say whether the unit answered, and the Web Studio's sound lists match the firmware again. Last listed of a run of patch releases from 1.5.5 to 1.5.21 over two days (1.5.22 to 1.5.29 follow, see 1.5.29), not listed separately, that include a fix for GLO MONITOR rows overrunning their buffer (1.5.13), a six-track, twelve-voice load test with a fix for a load governor that cut release tails (1.5.17), and three new wavetable sounds with level matching of 11 factory presets (1.5.19). The notes are in Spanish.
 - version: 1.5.18
   date: 2026-11-20
   url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v1.5.18
@@ -47,7 +59,7 @@ versions:
 - version: 1.5.4
   date: 2026-11-19
   url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v1.5.4
-  notes: Brings the 10 kHz timer interrupt back within its static budget, which had stopped the public site from being published since 18 November. The notes, in Spanish, say this work first went out as v1.6.0 and v1.6.1 and was renumbered 1.5.4 so the latest-version selection stays on one line; the 1.6.x tags remain on GitHub. Latest of a run of patch releases from 1.5.0 to 1.5.4 over a day.
+  notes: Brings the 10 kHz timer interrupt back within its static budget, which had stopped the public site from being published since 18 November. The notes, in Spanish, say this work first went out as v1.6.0 and v1.6.1 and was renumbered 1.5.4 so the latest-version selection stays on one line; a different v1.6.0 release, dated 2026-11-21, now exists and is listed above. Latest of a run of patch releases from 1.5.0 to 1.5.4 over a day.
 - version: 1.5.0
   date: 2026-11-19
   url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v1.5.0

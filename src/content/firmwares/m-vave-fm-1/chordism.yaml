@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: Chordism
+summary: >-
+  Chord synth for the FM-1, a port of the Chordism Schwung module: each key plays a four-voice chord with morphing levels and pans, FM, a pressure-controlled filter, lo-fi, delay, plate reverb and an arpeggiator.
+description: >-
+  Chords come from sixteen chord types, your own intervals or a chord per scale degree, and the Voicing page spreads, rotates and detunes them. The sound engine is the Schwung module's C code ported to the FM-1 and checked against the original, with the delay and reverb changed to suit the chip, half the voices on the second core and a guard that fades the oldest tail when processing runs short. Velocity and key pressure are used. It carries the module's 57 sounds, 16 slots for your own, an arpeggiator with Euclidean rhythms, MIDI in and out over USB and Bluetooth, TRS MIDI in and USB audio recording. Each page is drawn with a picture of what it changes. A browser emulator and manual are published beside the installer.
+status: active
+authors:
+- name: Charles Vestal
+  url: https://github.com/charlesvestal
+source: https://github.com/charlesvestal/fm1-chordism
+based_on: ableton-move/schwung-chordism
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSE is MPL-2.0. The README says the engine in app/dsp is the MIT-licensed Chordism module for Schwung ported to C, and the original is vendored as an MIT-licensed reference for tests. It builds on fm1-base and felucca-bsp, and the Barlow font is OFL 1.1.
+homepage: https://charlesvestal.github.io/fm1-chordism/
+distribution: browser-installer
+install_notes: >-
+  Install from the project's web installer in Chrome or Edge, or run base/tools/fm1_install.py on the .fwsc from the release from a clone with submodules. The manual describes a way back to M-VAVE's own firmware in the installer. Releases are built and attested by the shared fm1-build workflow. It supports both the Puya P25Q80 and UC25HQ80 flash chips.
+brick_risk: false
+tags: [synth-engine, synth, chords, arpeggiator, fx, reverb, delay, ble-midi, usb-audio, midi, port]
+image:
+  url: https://raw.githubusercontent.com/charlesvestal/fm1-chordism/main/app/docs/img/screen-chord.png
+  alt: "Chordism chord page on the FM-1 playing C Maj9 on the sound Lush Pad: the chord name at the top, four note labels under coloured curtains of light, and knobs for chord, spread, width and volume"
+  credit: Charles Vestal
+  source_url: https://github.com/charlesvestal/fm1-chordism
+  first_party: true
+versions:
+- version: '0.9'
+  date: 2026-11-20
+  url: https://github.com/charlesvestal/fm1-chordism/releases/tag/v0.9
+  notes: First release for the FM-1, with the module's 57 sounds, 16 user slots, an arpeggiator, pressure and Bluetooth MIDI.

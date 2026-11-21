@@ -121,7 +121,33 @@ Link rot: an error, or a "host refused the checker" warning, on a `video`, `vide
 - With no replacement, remove the dead `video`, `videos` entry or `image`. When the old `video` goes and `videos` is not empty, move the newest of `videos` up into `video`.
 - Read the repo's recent commits and releases too. Dead media is often the first sign of a release, rename or move that the sweep missed.
 
-## 5. Record rejections
+## 5. Garden what the run changed
+
+Every run ends with a gardening pass over the files it touched. It catches wrong kinds, duplicates and missing crosslinks while the run's research is still fresh. Run it once every entry is written, the sweep rows are done and any removals are made:
+
+```sh
+pnpm garden:scan --changed
+```
+
+`--changed` compares the working tree with `HEAD`, so run it before anything is committed. In headless mode, run it before the first commit, or pass `--base origin/main`. It limits the scan to the devices whose catalog files changed, and it keeps only findings that involve a changed file. It writes `garden-findings.json` and never moves the `/garden` cursor. The rotating slice review stays with `/garden`, which runs only when the maintainer asks for it.
+
+Work through the findings with `.claude/skills/garden/SKILL.md` sections 2 and 3 (the kind rules, duplicates and ports, crosslinks), limited to this list:
+- Apply the clear fixes after glancing at each pair:
+  - `related-asymmetric`;
+  - `related-from-also-devices` (clear rows);
+  - `kind-pseudo-device`;
+  - `based-on-proposal` (clear rows), only when the entry's prose supports it and the repo is not a GitHub fork of the parent.
+- Some `related-asymmetric` rows come from older links that an edited device file only brought to the surface. Mirror those only when the two devices share firmware or hardware. Leave a link that only says "same maker" or "similar product", and list it in the report.
+- Treat suspects as hints. Fix only what is plainly wrong in an entry this run wrote or updated:
+  - a kind that breaks the kind rules;
+  - a `based_on` that the prose states;
+  - an `also_devices` the project itself claims for the same build.
+
+  Leave the rest. Most suspects are known noise: `kind-suspect` on firmware that ships a flasher, and "built on fm1-base" where precedent is split.
+- A duplicate group that includes a new entry gets resolved now: merge it, or keep the files separate under CONTRIBUTING's "One project, several devices". Never merge two entries that existed before the run; list them for `/garden`.
+- Edit YAML as text, the way `/garden` does: change only the lines involved. Then run `ALTSTRUMENT_SKIP_REMOTE=1 pnpm validate` again.
+
+## 6. Record rejections
 
 Append each rejected candidate to `ignore` in `.claude/skills/discover/config.yaml`:
 
@@ -133,7 +159,7 @@ Append each rejected candidate to `ignore` in `.claude/skills/discover/config.ya
 
 Use the repository URL for GitHub candidates and the article or project URL otherwise. When most of a GitHub owner's repositories are noise (plugin forks, data, site code), ignore the owner as `https://github.com/<owner>` and list the repositories worth seeing again under `except:`. Do not record news items that were merely uninteresting this week; only things that should never come back. Keep `ignore: []` syntax valid when adding the first item (replace `[]` with a list).
 
-## 6. Report and stop
+## 7. Report and stop
 
 Before the report, run `pnpm metrics:fetch --missing --publish` once, so the new entries get quality scores. It fetches only the repos the snapshot lacks, uploads the new snapshot to the `metrics` release and changes `src/data/repo-metrics.lock.json`. The lock change belongs with the new entries: leave it in the working tree for the maintainer, or in headless mode commit it with them.
 
@@ -143,6 +169,7 @@ End with a short report:
 - Updates to existing entries, with the file path and the version added (from news items and the release sweep), plus sweep rows skipped and why.
 - Link rot fixed: each file path with the dead URL and what replaced it (or that it was removed), plus refused links you checked by hand and left in place.
 - For each new device, the image source used (and which tier from section 4), or why it has no image.
+- Garden fixes from section 5, each with the file and the check, plus the findings left for the maintainer or `/garden`.
 - Rejected candidates with their one-line reasons.
 - Open questions the maintainer must settle, for example an unclear license, a device that might belong to an existing family, or a video whose first-party status is uncertain.
 - The validator's final summary line.

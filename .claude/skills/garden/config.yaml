@@ -1,0 +1,174 @@
+# Configuration for the /garden skill and its scan script
+# (.claude/skills/garden/scan.ts). Reviewed data: edit by hand, commit changes
+# like any other catalog change.
+
+# Device directories deep-reviewed per invocation. Around 280 entries, so a
+# full pass over the catalog takes about ten invocations.
+slice_size: 45
+
+# Last device slug deep-reviewed. The next slice starts after it in
+# alphabetical order and wraps at the end. null starts from the beginning.
+cursor: arturia-minilab-3
+
+# Date the cursor last wrapped past the final device (a full pass finished).
+last_full_pass: null
+
+# Devices that are not one product. One-way `related` links to and from them
+# are deliberate, and scan.ts skips them in the symmetry check.
+pseudo_devices:
+  - behringer-tools
+  - elektron-tools
+  - korg-logue-tools
+  - monome-tools
+  - multi-brand-tools
+  - mutable-instruments-tools
+  - roland-tools
+  - portmaster-compatible-handhelds
+  - spin-fv-1
+
+# Phrases (case-insensitive substrings of name, summary and description) and
+# tags that suggest a host-side tool. A firmware entry matching these and no
+# firmware signal is a kind suspect.
+tool_signals:
+  # Narrow on purpose. Left out after a dry run on 2026-11-15 because on-device
+  # entries use them for their own features: tags emulator, editor, sdk, vst,
+  # plugin (Schwung modules, on-device editors, 303 emulations) and phrases
+  # "editor for", "vst", "simulator for", "runs in the browser", "toolchain",
+  # "on a computer". Tag `research` dropped after the first run (2026-11-16):
+  # every hit was a loader, patch kit or boot hook that runs on the device.
+  tags: [librarian, flasher, converter, desktop, documentation]
+  phrases:
+    - patch editor
+    - librarian
+    - flasher
+    - firmware updater
+    - flashing tool
+    - desktop emulator
+    - emulator for macos
+    - emulator for windows
+    - emulator for linux
+    - in qemu
+    - desktop simulator
+    - desktop app
+    - command-line tool
+    - python library
+    - browser-based editor
+    - browser-based tool
+    - web app
+    - sdk for
+    - reverse-engineering notes
+
+# Phrases that suggest the entry runs on the device. A tool entry matching
+# these and no tool signal is a kind suspect; a firmware entry matching these
+# is not one.
+firmware_signals:
+  phrases:
+    - replaces the stock
+    - replacement firmware
+    - alternative firmware
+    - custom firmware
+    - firmware for the
+    - runs on the
+    - on the device
+    - flashed to
+    - installs on
+    - patch for the
+    - patched firmware
+    - os for the
+
+# Findings the maintainer ruled fine. scan.ts drops a finding whose `check`
+# and `key` match an item here. Keys are printed in the scan report.
+accepted:
+  - check: duplicate-source
+    key: https://github.com/mqtthiqs/parasites
+    reason: real per-device ports (CONTRIBUTING names Parasites for Clouds and Warps as the example)
+    date: 2026-11-15
+  - check: duplicate-source
+    key: https://github.com/quixotic7/choralrootfm1
+    reason: real per-device ports for FM-1 and SMK-37 (CONTRIBUTING example)
+    date: 2026-11-15
+  - check: duplicate-source
+    key: https://codeberg.org/nitroustracker/nitroustracker
+    reason: separate DS and 3DS builds (CONTRIBUTING example)
+    date: 2026-11-15
+  # First /garden run (2026-11-16), slice 1010music-bitbox-micro .. arturia-minilab-3
+  - check: duplicate-source
+    key: https://github.com/orbitator/luxr
+    reason: Schwung module for Move and a separate FM-1 firmware build of the same engine
+    date: 2026-11-16
+  - check: duplicate-source
+    key: https://github.com/boourns/eurorack
+    reason: one multi-module repo; Monsoon, Braids, Elements and Rings entries are different modules and builds
+    date: 2026-11-16
+  - check: duplicate-source
+    key: https://github.com/uadvanced/openmmt-8
+    reason: two ROMs from one repo, the OpenMMT-8 replacement OS and the JAM-8 loop player
+    date: 2026-11-16
+  - check: duplicate-source
+    key: https://github.com/megus/chipnomad-tracker
+    reason: per-device release zips with different install routes and requires_stock
+    date: 2026-11-16
+  - check: duplicate-source
+    key: https://github.com/djdiskmachine/littlegptracker
+    reason: per-platform builds (Garlic, Miyoo, PSP) with different install steps and MIDI support
+    date: 2026-11-16
+  - check: duplicate-homepage
+    key: https://littlepiggytracker.github.io
+    reason: shared project site of the per-platform LGPT builds above
+    date: 2026-11-16
+  - check: duplicate-homepage
+    key: https://schwung.dev
+    reason: Schwung (on-device framework) and Schwung Installer (desktop app) are separate repos
+    date: 2026-11-16
+  - check: duplicate-homepage
+    key: https://github.com/federico-pepe/ableton-push-hack
+    reason: Push Hack framework plus modules, each with its own repo and install steps
+    date: 2026-11-16
+  - check: duplicate-homepage
+    key: https://open-mpc.github.io
+    reason: Open MPC plugin catalog and its on-device plugin manager are separate repos
+    date: 2026-11-16
+  - check: duplicate-name
+    key: portkit
+    reason: separate builds for Bitbox Micro (stock) and Blackbox (on JOEBOX 1), separate repos
+    date: 2026-11-16
+  - check: duplicate-name
+    key: belt
+    reason: Schwung module and Alchemy Lab port by one author, separate repos
+    date: 2026-11-16
+  - check: duplicate-name
+    key: frodhes
+    reason: Schwung port and FM-1 firmware of one project, different builds
+    date: 2026-11-16
+  - check: duplicate-name
+    key: machinemodule
+    reason: Schwung module and native MPC VST, separate repos and builds
+    date: 2026-11-16
+  - check: duplicate-name
+    key: mark
+    reason: different projects by one author (Move looper, Alchemy Lab synth)
+    date: 2026-11-16
+  - check: duplicate-name
+    key: mono2k
+    reason: Schwung port and FM-1 firmware of one project, different builds
+    date: 2026-11-16
+  - check: duplicate-name
+    key: smack
+    reason: separate ports for Move, Alchemy Lab and Versio, each with its own repo
+    date: 2026-11-16
+  - check: duplicate-name
+    key: push hack
+    reason: Push Hack framework and its Braids module are different projects
+    date: 2026-11-16
+  - check: duplicate-name
+    key: melodee
+    reason: MPC Sample app and FM-1 firmware, separate repos
+    date: 2026-11-16
+  - check: duplicate-name
+    key: rosetta os
+    reason: per-device Rosetta OS builds with device-specific summaries
+    date: 2026-11-16
+  - check: based-on-proposal
+    key: miyoo-miyoo-flip/cirmolo
+    reason: only a theme is based on Stame; the firmware is not derived from it
+    date: 2026-11-16

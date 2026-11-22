@@ -1,12 +1,12 @@
 device: m-vave-fm-1
 name: FM1-Electro
 summary: >-
-  Electro groovebox built on FM1 Open: a TR-808 style drum machine and a PO-12 kit, plus MKS-50 and JP-6 style synth engines in rhythm,
+  Electro groovebox built on FM1 Open: a TR-808 style drum machine and a PO-12 kit, plus JX-8P and JP-6 style synth engines in rhythm,
   strings and bass sections, with arpeggiator, step sequencers, effects and a mix bus.
 description: >-
   Four sections run on one clock, each with four pattern slots A to D. BEAT is the drum machine, built from the
   808's circuit with resonators and a trigger-height accent, and a 16-sound PO-12 kit that is synthesised, not sampled.
-  RHYTHM, STRINGS and BASS use the MKS-50 or JP-6 engine with a note or chord sequencer. The mix chain has a drum bus
+  RHYTHM, STRINGS and BASS use the JX-8P engine (the MKS-50 one before 0.5.6-alpha) or the JP-6 one with a note or chord sequencer. The mix chain has a drum bus
   compressor, kick ducking, gated reverb and a master limiter. The README is in German. Two packages are in firmware/. The older one is
   inserted into a copy of M-VAVE's FM1 Open, which the build script patches; its notes say the first build restarted in a
   loop on a real FM-1 because of a divide by zero, and that the fix and later measuring builds ran too slowly with the
@@ -27,12 +27,16 @@ license_notes: >-
   .fwsc files in firmware/ are the author's own builds, not stock images.
 distribution: download
 install_notes: >-
-  Back up projects and samples first, since they are lost on the switch. Send FM1_ELECTRO-0.5.5-alpha.fwsc from the release, or firmware/FM1_ELECTRO_PLATTFORM.fwsc (or the older FM1_ELECTRO.fwsc), with a flasher
+  Back up projects and samples first, since they are lost on the switch. Send FM1_ELECTRO-0.5.6-alpha.fwsc from the release, or firmware/FM1_ELECTRO_PLATTFORM.fwsc (or the older FM1_ELECTRO.fwsc), with a flasher
   that accepts custom packages (fm-static, M-Flasher or tools/fm1_install.py). The original firmware can be put back
   with M-VAVE's tools, and the bootloader's download mode or FM-1 Transporter covers a unit that will not start.
 brick_risk: false
 tags: [groovebox, drums, sequencer, synth-engine, arpeggiator, fx]
 versions:
+- version: 0.5.6-alpha
+  date: 2026-11-21
+  url: https://github.com/robtron-byte/FM1-Electro-one/releases/tag/v0.5.6-alpha
+  notes: Pre-release. Replaces the MKS-50 engine in RHYTHM, STRINGS and BASS with a JX-8P engine from fm1-synths, with 64 factory sounds by range and new INIT sounds, and drops the MKS-50 sounds and the extra MKS sounds from 0.5.4. The JP-6 sounds stay. Saves are now version 29, which 0.5.5-alpha and earlier cannot read; older grooves load, with an MKS-50 sound becoming the area's start sound. The notes are in German.
 - version: 0.5.5-alpha
   date: 2026-11-20
   url: https://github.com/robtron-byte/FM1-Electro-one/releases/tag/v0.5.5-alpha

@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+name: fm1-forge
+kind: tool
+summary: >-
+  Starter kit for building FM-1 firmware with an AI coding agent: one fm1 command for toolchain setup, builds, host and emulator
+  tests and USB install, with fm1-base as the platform, a starter synth and documentation written for LLMs.
+description: >-
+  The kit sets up the JieLi toolchain, builds .fwsc packages, runs a host simulator with scripted tests, runs the package in the
+  fm1-emu emulator for panel screenshots, audio and CPU load, installs over USB after asking, and can put M-VAVE's V15
+  back. It includes an 8-voice starter synth, a CLAUDE.md file, two Claude skills and platform, audio, UI, testing, flashing
+  and recovery notes. fm1-base is a submodule and the emulator and the V15 package are downloaded by the setup and stock commands.
+  The flashing notes say the installer never writes the bootloader or the per-chip key sector, and list recovery routes
+  including the chip's mask-ROM tools.
+status: active
+authors:
+- name: Max Gramser (MaxGramser)
+  url: https://github.com/MaxGramser
+source: https://github.com/MaxGramser/fm1-forge
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The LICENSE file is MPL-2.0 and the README says the kit's own files use it. fm1-base (MPL-2.0) is a submodule, and fm1-emu
+  (MIT) and M-VAVE's V15 package from m-vave/fm1_open are fetched by script rather than committed.
+distribution: source-only
+requires_stock: V15
+install_notes: >-
+  Clone with submodules, run ./fm1 setup and ./fm1 check starter, which needs Docker or podman on macOS and ARM Linux. ./fm1 flash
+  installs a build over USB after a checklist and ./fm1 stock restores V15. The docs say to give an agent the commands to run
+  rather than letting it flash unasked, and that a crashing fm1-base firmware starts in safe mode.
+brick_risk: false
+tags: [sdk, platform, emulator, flasher, utility]
+image:
+  url: https://raw.githubusercontent.com/MaxGramser/fm1-forge/main/docs/img/starter.png
+  alt: "The starter synth in the emulator: a screen reading STARTER FILTER with four orange readouts for cutoff, resonance, envelope amount and volume."
+  credit: Max Gramser
+  source_url: https://github.com/MaxGramser/fm1-forge#readme
+  first_party: true
+versions:
+- version: main @ e23e6b3
+  date: 2026-11-21
+  url: https://github.com/MaxGramser/fm1-forge/commit/e23e6b3e07dece0ea40938555e688b4cef3f53c8
+  notes: No tagged releases; this is the latest commit.

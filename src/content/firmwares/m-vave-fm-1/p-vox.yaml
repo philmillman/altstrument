@@ -1,0 +1,31 @@
+device: m-vave-fm-1
+name: P-Vox
+summary: >-
+  Polivoks-style synth: two generators, a two-op-amp filter, Bass Support, a sequencer, a drum generator with 12-pattern packs and effects on the second core. The release is a compiled package without firmware source.
+description: >-
+  It imitates the Soviet Polivoks with two generators and a two-op-amp filter, a sequencer with live transpose from the keys, and a drum generator with 12-pattern packs for house, dubstep, drum and bass and techno at 130 BPM. The selected drum pattern is saved across power cycles. Effects run on the second core. The repository holds the compiled .fwsc as a release asset, a single-page web flash helper and a copy of the Felucca update loader source, but not the firmware source. The release notes say the author flashed and tested it on a real FM-1. The author also makes FORM.
+status: active
+authors:
+- name: HanzVolt
+  url: https://github.com/HanzVolt
+source: https://github.com/HanzVolt/P-Vox
+source_status: binary-only
+license: GPL-3.0-only
+license_notes: >-
+  The repository's LICENSE is the GPL-3.0 text, added after the first release. The firmware source is not in the repository, so the corresponding source for the released package is not yet available; the loader file carries Leo Kuroshita's GPL-3.0-only header.
+distribution: download
+install_notes: >-
+  Flash the .fwsc from the release with the web flash page attached to it, in a browser with Web MIDI. The release notes give the package's SHA-256. The loader accepts both FM-1 flash chips. No recovery steps are documented in the repository; M-VAVE's own V15 package and updater put the stock firmware back.
+brick_risk: false
+tags: [synth-engine, oscillator, filter, sequencer, drums, fx]
+image:
+  url: https://raw.githubusercontent.com/HanzVolt/P-Vox/main/IMG_6362.jpg
+  alt: Collage that dissolves from the FM-1's panel into a Polivoks synthesizer with its Cyrillic logo, knobs and keyboard
+  credit: HanzVolt
+  source_url: https://github.com/HanzVolt/P-Vox
+  first_party: true
+versions:
+- version: v2026.11.21-drums12-transpose
+  date: 2026-11-22
+  url: https://github.com/HanzVolt/P-Vox/releases/tag/v2026.11.21-drums12-transpose
+  notes: Adds 12-pattern drum packs, sequencer transpose from the keys and a drum pattern that is kept across power cycles.

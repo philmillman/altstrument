@@ -10,7 +10,7 @@ description: >-
   descriptor sets used by USB modes U-1 to U-4 and writes a new .syx file. It verifies that exactly four bytes changed. The
   device still reports firmware 1.10. The patched file cannot be sent over USB from an Apple silicon Mac, so the README
   flashes it with BC Manager over DIN MIDI in S-4 mode or from a computer where USB output already works. The README says
-  the BCR2000 patch was tested on one unit and the BCF2000 patch on none, and that the code and the README were generated
+  the BCR2000 patch was tested on a real unit and a user confirmed the BCF2000 patch on one, and that the code and the README were generated
   with Claude Code. The firmware container code is a Python 3 port from the BCR2000-dev kit. No Behringer firmware is in
   the repository.
 status: active
@@ -33,6 +33,10 @@ install_notes: >-
 brick_risk: false
 tags: [patch, python, cli, usb-midi, macos, sysex]
 versions:
+  - version: main @ f6ecb3b
+    date: 2026-11-22
+    url: https://github.com/Teufeuleu/bcontrol-apple-silicon-fix/commit/f6ecb3b2f2bdb3f69e818f6fa3438bf099bf0ab3
+    notes: No tagged releases; this is the latest commit. Since the previous entry the README records that a user confirmed the BCF2000 patch works on a real unit.
   - version: main @ 618c0a2
     date: 2026-11-17
     url: https://github.com/Teufeuleu/bcontrol-apple-silicon-fix/commit/618c0a2

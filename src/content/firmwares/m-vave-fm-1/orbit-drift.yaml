@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+name: ORBIT DRIFT
+summary: >-
+  Polymetric FM synth and FM drum machine on one clock, sharing a twin delay and a reverb, with a morph pad, song chain,
+  MIDI in and a mix page, built from the author's ORBITAL, Scenedrift and FM-16 firmwares.
+description: >-
+  The synth side has eight polymetric lanes of FM voices with a contour filter, per-step locks and trig conditions, and
+  the drum side has five FM tracks with pitch sweeps and mod envelopes. An XY puck morphs between four stored sounds,
+  and its path can be recorded and played back. Other features are a song chain of banks, snapshots, a transpose
+  sequence, a four-tap echo field, unison, an LFO, a step modulator, held notes from the keys, MIDI note input, undo and
+  a MIX page with meters and a limiter light. The README says it takes ideas from three HTML toys (ORBITAL, Scenedrift
+  and FM-16) and adds fractional ratios and noise types from Fors FMS. It is built with the foma framework and ships a
+  browser emulator and installer page.
+status: active
+authors:
+- name: sunjaculley
+  url: https://github.com/sunjaculley
+source: https://github.com/sunjaculley/orbit-drift-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md lists the parts it builds on: the platform code is Felucca's with changes by SLOOP, Dinghy and X0X (GPL-3.0-only), Bluetooth parts are GPL-3.0-only OR MPL-2.0 (used under GPL-3.0-only), felucca-bsp parts are MPL-2.0 and Apache-2.0, platform/mvave comes from M-VAVE's FM1 Open kit (GPLv3 with M-VAVE's SDK linking exception, plus the binary engine library libfm1_engine.a under M-VAVE's terms for FM-1 devices only), and the Terminus font is SIL OFL 1.1. bigscreen/ is MIT. No stock firmware image is committed.
+homepage: https://sunjaculley.github.io/orbit-drift-fm1/
+distribution: browser-installer
+install_notes: >-
+  Open the project page in Chrome or Edge with the FM-1 on USB and install from it; or build with Docker (./fm1 build),
+  which writes build/orbit-drift-VERSION.fwsc. The README says to back up the FM-1 first, and that if the firmware does
+  not start, holding OCT- while switching on gives the USB rescue, from which you install again.
+brick_risk: false
+tags: [synth-engine, sequencer, drums, fm, fx, midi, generative, emulator]
+versions:
+- version: main @ 4522271
+  date: 2026-11-22
+  url: https://github.com/sunjaculley/orbit-drift-fm1/commit/4522271683488176f7b559ff9c2510921fa3ba1b
+  notes: No tagged releases; this is the latest commit. firmware.json reads version 0.9, which adds the MIX page.

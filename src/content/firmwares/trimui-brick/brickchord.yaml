@@ -1,0 +1,52 @@
+device: trimui-brick
+also_devices: [portmaster-compatible-handhelds]
+name: Brickchord
+summary: >-
+  Alpha chord-machine apps for the TrimUI Brick Pro on Knulli, written in Python: Brickchord plays diatonic chords from the buttons over a synth and drum engine, Bricklab adds a groovebox and looper, and Brickglide is an ambient glide machine.
+description: >-
+  Brickchord maps seven chord buttons to the diatonic chords of a chosen key, with modifiers for sevenths, sus4 and ninths, left-stick chord bends and right-stick reverb, delay and filter. It has 23 sounds across analog-style, FM, plucked, organ and vocal engines, a sound editor, a stackable effects rack, 15 play styles with strums, harps, arpeggiators and repeats, a drum machine with 27 beats, a synth bass and a six-track pattern recorder with a song page. Bricklab is the groovebox edition on the same engine, with a layered looper, sixteen patterns of six tracks that each hold a chord, lead, bass, drone or sample machine, per-track effects, a step-grid drum machine and sample playback from WAV files. Brickglide is an ambient machine in which chord voices slide into the next chord over seconds, with scrubbing, melody over the changes, USB MIDI input and texture beds.
+
+  Each app runs as a Ports entry on Knulli, using a bundled NumPy and pygame, and also ships as PortMaster packages for NextUI, muOS, ROCKNIX and ArkOS and as an R36 build. The README marks the project alpha and says it was tested on a Brick Pro with a Knulli beta build. It reports the other firmwares and the R36 package as untested on hardware. The project is not affiliated with TrimUI, Knulli or the makers of the chord instruments that inspired it.
+status: active
+authors:
+  - name: Michael Tietjen
+    url: https://github.com/michaeltietjen
+source: https://github.com/michaeltietjen/brickchord
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is MIT. Release zips bundle NumPy (BSD-3-Clause) and, for some packages, pygame, and the Inter font is included under its own license file.
+homepage: https://michaeltietjen.github.io/brickchord/
+distribution: download
+requires_stock: Knulli beta build for the Brick Pro (tested on knulli-a133-trimui-brick-pro-beta-20260921)
+install_notes: >-
+  Download the Knulli zip for the app you want from the release page, copy its folder, launcher script and images folder into roms/ports on the SD card, then choose Update Gamelists and start it from Ports. On first launch press each button and push each stick once so the app learns the controls. Nothing is written to the console's internal firmware. The optional factory_render.py pre-renders the stock sounds on a computer, about 355 MB, so they open instantly.
+brick_risk: false
+tags: [chords, groovebox, synth-engine, drum-machine, looper, sampler, ambient, fx, handheld, python]
+image:
+  url: https://raw.githubusercontent.com/michaeltietjen/brickchord/main/docs/brickchord-lockup.png
+  alt: Brickchord logo lockup, two rows of black chord pads labelled I, ii, iii, IV, V, vi, 7 and vii with the 7 pad in orange, beside the word brickchord and the line pocket chord machine
+  credit: Michael Tietjen
+  source_url: https://github.com/michaeltietjen/brickchord
+  first_party: true
+versions:
+  - version: v0.4.1-r36
+    date: 2026-11-22
+    url: https://github.com/michaeltietjen/brickchord/releases/tag/v0.4.1-r36
+    notes: R36 package now bundles NumPy and pygame for Python 3.13 next to the older ones; the apps are the same as in v0.4.0-beta.
+  - version: v0.4.0-beta
+    date: 2026-11-06
+    url: https://github.com/michaeltietjen/brickchord/releases/tag/v0.4.0-beta
+    notes: Adds the first release of the new Brickglide with progression play, strum and arp on the left stick, USB MIDI input, user samples, scrubbing and moves, alongside Brickchord and Bricklab.
+  - version: v0.3.0
+    date: 2026-11-04
+    url: https://github.com/michaeltietjen/brickchord/releases/tag/v0.3.0
+    notes: Adds Bricklab as a full pocket groovebox with looper, machines per track, a macro oscillator and a granular Cloud effect.
+  - version: v0.2.0-alpha
+    date: 2026-11-01
+    url: https://github.com/michaeltietjen/brickchord/releases/tag/v0.2.0-alpha
+    notes: Adds synth bass, four-octave arpeggiators, 27 beats, eight reverbs and six delays, a redesigned right stick and near-instant sound loading.
+  - version: v0.1.0-alpha
+    date: 2026-10-31
+    url: https://github.com/michaeltietjen/brickchord/releases/tag/v0.1.0-alpha
+    notes: First public alpha with chord buttons, analog-style synth, strums and arps, drum beats and reverb and delay.

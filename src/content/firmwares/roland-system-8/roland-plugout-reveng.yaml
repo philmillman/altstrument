@@ -1,0 +1,53 @@
+device: roland-system-8
+also_devices: [roland-system-1]
+name: Roland Plug-Out reverse engineering and DSP SDK
+kind: firmware
+summary: >-
+  Reverse-engineered PLUG-OUT format, DSP microcode toolchain, C-to-DSP compiler and emulator, plus own synth engines that run on the SYSTEM-8 and SYSTEM-1. The repository commits Roland-derived binaries.
+description: >-
+  Rights warning: the repository commits material derived from Roland's firmware. base-engine/ holds decompressed
+  images of Roland's SYSTEM-8 1.32 updater (the base engine and the Jupiter-8, Juno-106 and JX-3P PLUG-OUT regions) as
+  .bin and as ELF files with full disassembly listings, plus the encrypted OS image from that updater. web/Code1.Dat is
+  a complete Roland PLUG-OUT image (described in the project docs as the SH-101), and os_dump.bin at the root holds 238 bytes
+  of ARM machine code, by its name a dump from the OS. The SDK examples for the TB-03 and Jupiter-8 Boutique voices hold Roland's voice programs
+  translated to C and Roland's parameter tables, and one release zip is a TB-03 build of that. None of this is covered
+  by the MIT licence, and the project says its Roland files are kept for analysis only. The project's own clean-room
+  directory holds only hashes, headers and preset names, no firmware code.
+
+
+  The repository reverse-engineers the PLUG-OUT system of the Roland SYSTEM-8 and SYSTEM-1 and documents it in seven
+  volumes. Its tools unpack and rebuild the Code*.Dat PLUG-OUT containers and the SYSTEM-8 updater and install them over
+  USB MIDI (a Python command line and a browser installer). They include an assembler and disassembler for the
+  DSP microcode, a scheduler, a bit-exact DSP emulator and s1cc, a compiler that turns C or C++ voices into DSP
+  microcode. Own engines built with it ran on real hardware: an eight-voice sawtooth engine on both devices, a
+  six-voice and eight-voice SYSTEM-1 synth, a Mutable Instruments CSAW voice and live wavetables. The README lists
+  other builds, among them a Casio CZ kernel and a JX-3P port, as emulator-only or not yet working. Seven zips of
+  ready-made SYSTEM-1 PLUG-OUT images (Code1.Dat) are committed under releases/. The README reports hardware tests on a
+  SYSTEM-8 with firmware 1.32 and on a SYSTEM-1. The install tool also accepts the Eurorack SYSTEM-1m, which is not
+  claimed as tested.
+status: active
+authors:
+  - name: Emilio Norrmann
+    url: https://github.com/enorrmann
+source: https://github.com/enorrmann/roland-plugout-reveng
+source_status: open
+license: MIT
+license_notes: >-
+  The MIT licence (copyright Emilio Norrmann) covers the author's own code and documents. It cannot cover the Roland-derived
+  binaries, disassembly and voice programs the repository commits, which remain Roland's.
+distribution: source-only
+requires_stock: SYSTEM-8 1.32 (tested); SYSTEM-1 1.30 or later
+install_notes: >-
+  Needs Python 3.8 or later and python-rtmidi on Windows and macOS. python3 tools/plugout_tool.py install <plugout folder> --slot N
+  sends a PLUG-OUT to one slot and overwrites what is in it; the SYSTEM-1 has one slot, so a custom build replaces the
+  Roland PLUG-OUT there. The tools write only PLUG-OUT slots and never the OS, bootloader or updater. The project's way
+  back is to reinstall Roland's PLUG-OUT into the slot, so brick_risk is false. A heavy wavetable can need a power cycle, and the
+  author lists an experimental JX-3P build for the SYSTEM-1 as one that still hangs the device. Building s1cc needs LLVM 19. Only
+  one program may use the MIDI port at a time.
+brick_risk: false
+tags: [sdk, synth-engine, research, emulator, compiler, usb-midi]
+versions:
+  - version: main @ 83ead8f
+    date: 2026-11-21
+    url: https://github.com/enorrmann/roland-plugout-reveng/commit/83ead8f92d3f9cf5fedfbb57a543dadcc9cc11c2
+    notes: No tagged releases; this is the latest commit.

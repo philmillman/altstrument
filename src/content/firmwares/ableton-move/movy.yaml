@@ -10,7 +10,7 @@ description: >-
   live and step recording and automation, where each track hosts its own module chain and the tracks are
   arranged in four groups of four. The README calls it an early, experimental prototype that works on real
   hardware but has rough edges, and says it only drives Schwung modules, not Move's native instruments. It
-  credits dAVEBOx for the sequencer approach. Since 0.36.0 it runs as a standalone
+  credits dAVEBOx for the sequencer approach. Since 0.38.0 it can generate parts from a clip (Smart Quantize, Variation, New Clip and Smart Double), freeze a track into loops and join an Ableton Link session. Since 0.36.0 it runs as a standalone
   Schwung tool that takes over the whole device while open, can be chosen in the
   boot picker and keeps its own Sets.
 status: active
@@ -20,16 +20,21 @@ authors:
 source: https://github.com/DimaDake/schwung-movy
 source_status: open
 license: MIT
+license_notes: The 0.38.0 release adds a helper, movy-link, that THIRD_PARTY_LICENSES.md lists as GPL-2.0-or-later because it links the Ableton Link SDK.
 homepage: https://github.com/DimaDake/schwung-movy#readme
 distribution: download
 requires_stock: Schwung 1.6.0 or later
 install_notes: >-
   Needs Schwung. Install the Movy module from Schwung's module store or Schwung Manager, or build it with
   the Rust toolchain and an aarch64 cross compiler and run the deploy script against a Move at move.local,
-  as the README describes. Open Movy from the Tools menu. Release 0.33.0 added set backups.
+  as the README describes. Open Movy from the Tools menu. Release 0.33.0 added set backups. Since 0.38.0 the website's Install page also builds a one-line command that installs the Schwung version Movy is tested with, Movy and a choice of sounds.
 brick_risk: false
 tags: [sequencer, ui, performance, midi]
 versions:
+  - version: v0.38.0
+    date: 2026-11-22
+    url: https://github.com/DimaDake/schwung-movy/releases/tag/v0.38.0
+    notes: Adds four generators (Smart Quantize, Variation, New Clip and Smart Double) that preview before anything is kept, track freeze, Ableton Link with Link Audio into Live, sidechain for audio effects, a speaker EQ and a one-command installer. Built against Schwung 1.9.4.
   - version: v0.37.0
     date: 2026-10-19
     url: https://github.com/DimaDake/schwung-movy/releases/tag/v0.37.0

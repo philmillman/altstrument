@@ -1,0 +1,51 @@
+device: anbernic-rg35xx
+name: Genvolve
+summary: >-
+  Eight-track generative MIDI step sequencer for the Anbernic RG40XX V on Knulli, written to drive an M-VAVE FM-1
+  running Felucca over USB, with scale-aware pattern generators, slow pattern evolution, a piano roll and drum tracks.
+description: >-
+  Genvolve, called seq4h until November 2026, runs as a Knulli port on the RG40XX V and sends notes, MIDI clock and start and stop
+  to a USB MIDI device. Eight tracks of up to 32 steps each have their own channel and length, and steps carry note, velocity, gate,
+  probability, a micro-timing offset, held notes, ratchets, trig conditions and a lock. Tracks can be mono or polyphonic, with chords
+  on a step, and drum tracks have an eight-lane drum grid and a drum map. Thirteen generators (Euclidean, random walk, Markov,
+  logistic map, cellular automata, weighted, follow, arpeggio, Turing-style shift register, motif, drone, drift and
+  bell) and a chord generator write into the step grid, and an evolve setting changes unlocked steps every 1 to 64 bars, with anchors that
+  pull drifted steps back, density limits, swells and rests. Each track has eight pattern slots that
+  can be chained or morphed into each other, and pages for harmony progressions, performance (mute, solo, density, fills), arranging
+  scenes into songs, four LFOs driving MIDI CC destinations, and device presets for the FM-1, Digitone and Blackbox 2. The state is saved to a plain text file. Its defaults put tracks 1
+  to 4 on MIDI channels 1 to 4, which match Felucca's CH1-4 input mode. It is inspired by SEQ-4 but shares no code
+  with it. The folder's README says the engine and interface are tested on desktop Linux and that the Knulli build has been run on an
+  RG40XX V driving an FM-1, while its state note still says nothing has run on the handheld; whether the handheld powers the FM-1
+  over its single USB-C port is listed as unverified. The source, desktop binary and saved files keep the seq4h name. It lives in the
+  sequencer folder of the SlowMorph repository, whose main project is a browser sample-morphing instrument. Commit messages credit
+  Claude as a co-author.
+status: active
+authors:
+  - name: r7819smith-oss
+    url: https://github.com/r7819smith-oss
+source: https://github.com/r7819smith-oss/slowmorph/tree/main/sequencer
+source_status: open
+license: GPL-3.0-only
+license_notes: The repository README says GPL-3.0 only, and LICENSE is the GPL-3.0 text.
+distribution: source-only
+requires_stock: Knulli
+install_notes: >-
+  Run sequencer/knulli/build.sh (it needs Docker) to cross-compile the aarch64 build, then unzip
+  dist/genvolve-knulli-aarch64.zip into /userdata/roms/ports/ and refresh the game list. The zip adds GENVOLVE.sh and SHOW-BUTTONS and
+  USB-MIDI-CHECK helpers to the Ports menu. Connect the FM-1 to the handheld's USB-C port, set the FM-1's MIDI IN to
+  CH1-4 and its clock source to USB. Nothing is flashed to the handheld.
+brick_risk: false
+tags: [sequencer, midi, generative]
+versions:
+  - version: main @ 0d12ced
+    date: 2026-11-22
+    url: https://github.com/r7819smith-oss/slowmorph/commit/0d12ced6e16b07ba16674dfba62be9427c3d785b
+    notes: No tagged releases; this is the latest commit. Since the previous entry the commits rename the app to Genvolve and add tracks 5 to 8, polyphonic tracks, device presets, four LFOs with CC learn, Euclidean drum lanes, ratchets and trig conditions, harmony progressions, PERFORM and ARRANGE pages, whole-session songs, multi-step undo and a help page.
+  - version: main @ 7aa1582
+    date: 2026-11-21
+    url: https://github.com/r7819smith-oss/slowmorph/commit/7aa1582850d62262229ebc96c3f0d595f3d40a8a
+    notes: No tagged releases; this is the latest commit. Since the previous entry the commits add a piano roll, drum tracks with an eight-lane drum grid and a drum map, live shuffle with a never-on-grid setting, spread and evolve offset, a MIDI output page for picking the port, stepping through steps while editing, and a 20-test hardware sheet for build 133.
+  - version: main @ d2abab2
+    date: 2026-11-20
+    url: https://github.com/r7819smith-oss/slowmorph/commit/d2abab267e6c6b2a226fc3ed8781748b9ac2fa26
+    notes: No tagged releases; this is the latest commit. Adds held-note bars on the grid and per-step offsets.

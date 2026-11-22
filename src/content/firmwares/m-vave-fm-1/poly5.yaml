@@ -11,8 +11,8 @@ description: >-
   32 user slots, an arpeggiator with several styles, a step sequencer, and eight master effects including saturation,
   chorus, flanger and phaser, delay, reverb, bit reduction, a tape wow and flutter stage and a compressor. The
   repository includes a project page that runs the firmware compiled to WebAssembly, and a video manual in eleven
-  chapters. It has no prebuilt package: the firmware is built with Docker, the JieLi toolchain and the AC79 SDK, and
-  installed with Dinghy's Python installer. The package id is FM-1_945.
+  chapters. Releases carry a prebuilt .fwsc, which a browser installer page puts on the FM-1; it can also be built with
+  Docker, the JieLi toolchain and the AC79 SDK and installed with Dinghy's Python installer. The package id is FM-1_945.
 status: active
 authors:
   - name: questron5000
@@ -26,9 +26,10 @@ license_notes: >-
   SIL OFL 1.1. No stock firmware or SDK binaries are committed; the toolchain and JieLi SDK files are fetched at build time.
 homepage: https://questron5000.github.io/poly5/
 based_on: m-vave-fm-1/dinghy
-distribution: source-only
+distribution: browser-installer
 install_notes: >-
-  Build with `APP=poly5 ./build.sh` in the dinghy folder, which needs Docker, the JieLi toolchain and the AC79 SDK, then flash
+  Use the install page in Chrome or Edge with the FM-1 on USB, or take poly5-1.2.fwsc from the release and install it with Dinghy's
+  tools/fm1_install.py. To build it yourself, run `APP=poly5 ./build.sh` in the dinghy folder, which needs Docker, the JieLi toolchain and the AC79 SDK, then flash
   build/dinghy.fwsc with `python3 tools/fm1_install.py`. The loader checks the flash chip and refuses an unknown one before
   erasing anything; Dinghy's USB rescue (hold OCT- while switching on) restores a unit that does not start. Both the
   Puya P25Q80 and UC25HQ80 chips are supported.
@@ -41,7 +42,19 @@ image:
   source_url: https://questron5000.github.io/poly5/
   first_party: true
 versions:
+  - version: v1.2
+    date: 2026-11-21
+    url: https://github.com/questron5000/poly5/releases/tag/v1.2
+    notes: LENGTH becomes an effects page after FILTER, one dial with the five tails under it, and sits on KNOB 2 of the playable panel. The install page records each step of an install and can copy a report, and Try again after a stopped install looks first for an FM-1 waiting in update mode.
+  - version: v1.1
+    date: 2026-11-21
+    url: https://github.com/questron5000/poly5/releases/tag/v1.1
+    notes: The release page repeats the feature list and attaches poly5-1.1.fwsc and a screen picture.
+  - version: v1.0
+    date: 2026-11-21
+    url: https://github.com/questron5000/poly5/releases/tag/v1.0
+    notes: First release, with poly5-1.0.fwsc attached.
   - version: main @ 086b107
     date: 2026-11-21
     url: https://github.com/questron5000/poly5/commit/086b10723d4cbeb7894f9cad254b1d3c262e949d
-    notes: No tagged releases; this is the latest commit, which remakes the project page's screens and loops from the current firmware. Since the previous row ALGORITHM turns a synth's pages and PRESETS its noise, LENGTH sits on KNOB 2 of PLAY, patches can be named at random, from words or on the keys, USB audio gets a deeper ring against clicks in recordings, the USB name is POLY5, and a patch can be read off the device over MIDI.
+    notes: Commit on main before the first release, which remakes the project page's screens and loops from the current firmware. Since the previous row ALGORITHM turns a synth's pages and PRESETS its noise, LENGTH sits on KNOB 2 of PLAY, patches can be named at random, from words or on the keys, USB audio gets a deeper ring against clicks in recordings, the USB name is POLY5, and a patch can be read off the device over MIDI.

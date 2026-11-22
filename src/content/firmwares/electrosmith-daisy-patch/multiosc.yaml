@@ -1,16 +1,19 @@
 device: electrosmith-daisy-patch
 name: MultiOsc
-summary: Boot-selectable voice firmware for a Patch.Init() with an OLED, hosting a four-operator FM voice, an interval dual oscillator, a scanned-synthesis voice and a plain oscillator behind one shared panel layout.
+summary: Multi-engine voice firmware for a Patch.Init() with an OLED, hosting a four-operator FM voice, an interval dual oscillator, a scanned-synthesis voice and a plain oscillator behind one shared panel layout, with the engine stepped by holding a button.
 description: >-
-  A chooser on the OLED appears at power-on and the TUNE knob picks an engine. A short press of the button cycles an engine's
-  algorithm or waveform, a long press toggles between a play page and an edit page, and holding it for three seconds returns
-  to the chooser without a power cycle. The OLED shows what the three modulation knobs do in the current engine. The engines
-  are FM4OP, a four-operator FM voice with parallel, stacked and feedback algorithms, INTVL, a port of Nick Donaldson's dual
-  oscillator with quantised interval offset, SCAN, a scanned-synthesis voice from the author, and WAVES, a basic oscillator. The
-  panel design is written up in the repository's docs, and the sources live in sibling folders of a shared repository that
-  also holds the author's released modules. The README reports hardware checks of FM4OP, INTVL and SCAN on the author's
-  hand-built Patch.Init with an OLED, says WAVES has been built but not bench tested, and says the hold-to-chooser gesture
-  was installed from the SD card on 2026-11-01. There is no release or prebuilt file for it.
+  The firmware starts in the engine it was left in. Holding the button B7 for two seconds without turning a knob steps to the
+  next engine, and the engine's name shows large on the OLED. Pot 1 picks what the engine makes, pots 2 to 4 shape it with the
+  MOD jacks below them, V/OCT sets the pitch with C3 at 0 V, and the first gate ends an initial continuous drone and hands over
+  to attack and decay. Holding B7 while turning a knob reaches a second bank (volume, attack and decay). The engines are FM4OP,
+  a four-operator FM voice with eight algorithms, INTVL, a port of Nick Donaldson's dual oscillator with quantised interval
+  offset, SCAN, a scanned-synthesis voice from the author, and WAVES, a basic oscillator. Holding B7 at power-up runs a V/OCT
+  calibration that is stored once per module in QSPI flash and shared with the author's other Patch.Init apps. The design is
+  written up in the repository's docs, and the sources live in sibling folders of a shared repository that also holds the
+  author's released modules. The README says v2.0 of this interface, a redesign of 2026-11-22, was flashed and calibrated well
+  but its button did nothing because a press was read as a release, and that v2.1 fixes this and is built but not yet flashed.
+  Before the redesign FM4OP, INTVL and SCAN were checked on hardware, and WAVES was never bench tested. There is no release or
+  prebuilt file.
 status: active
 authors:
   - name: David Baghurst (Eight4aWish)
@@ -26,12 +29,16 @@ homepage: https://eight4awish.com/modules/
 distribution: source-only
 requires_stock: Daisy Patch.Init() hardware with an SSD1306 OLED and the Daisy bootloader
 install_notes: >-
-  Build with make in daisy_multiosc after initialising the repository's submodules, as a QSPI boot-type app. Flash with
+  Build with make in daisy_multiosc after initialising the repository's submodules, as a boot-SRAM app, which lets it save the calibration. Flash with
   make program-dfu during the bootloader's grace period, or copy build/daisy_multiosc.bin to the root of a FAT32 SD card
   and power-cycle. The folder's own docs describe a Patch.Init modified with the OLED in place of the toggle switch.
 brick_risk: false
 tags: [synth-engine, oscillator, fm, ui, open-source]
 versions:
+  - version: main @ 30c59b4
+    date: 2026-11-22
+    url: https://github.com/Eight4aWish/eurorack_daisy_patch_init/commit/30c59b4443be0e2d32dd0b3b7e5b32a4a07c8dba
+    notes: No tagged releases; this is the latest commit. Since the previous entry the commits redesign MultiOsc's panel (v2.0) so that B7 held for two seconds steps through the engines and pot 1 picks within one, add a power-up V/OCT calibration with a FAIL result, and fix B7 holds being read as taps (v2.1). The message says v2.1 is built but not yet flashed.
   - version: main @ c04d61c
     date: 2026-11-21
     url: https://github.com/Eight4aWish/eurorack_daisy_patch_init/commit/c04d61cc2646eda10e4cc93cee102f150449ce4a

@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+name: M-VAVE FM-1 Studio
+kind: tool
+summary: >-
+  Desktop app (Tauri, React and WebAssembly) that runs the Felucca v1.8.2 firmware inside an interactive FM-1 faceplate, with
+  computer keyboard, mouse and Web MIDI input, backup import and export, and an optional tether mode for a hardware FM-1.
+description: >-
+  The audio engine is Felucca's C firmware compiled to WebAssembly and run in an AudioWorklet, with the 1 MiB flash image
+  persisted between sessions. The faceplate has dark and lavender colourways and overlays showing stock labels, Felucca
+  remaps or keyboard shortcuts. It imports and exports Felucca web editor JSON backups, DX7 sysex banks for the FM6 engine and
+  raw flash dumps. The project also defines an open FM1-Tether protocol, with a C header, that lets a connected FM-1 running a
+  compatible firmware act as a locked controller for the app. The README gives Windows installers; other systems run
+  it from source. It states that no M-VAVE code, ROM images or vendor firmware are included.
+status: active
+authors:
+- name: mrtreyw07-lab
+  url: https://github.com/mrtreyw07-lab
+source: https://github.com/mrtreyw07-lab/mvave-fm1-studio
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is GPL-3.0 and CREDITS.md states GPL-3.0-only for the app. It embeds Felucca (GPL-3.0-only), Felucca-Engines
+  (MIT) and felucca-bsp (MPL-2.0) through a submodule, and the tether header is MPL-2.0. Instrument samples and fonts under
+  CC0 and SIL OFL are listed there.
+distribution: download
+install_notes: >-
+  Download the Windows installer or portable executable from the release, or run it from source with Node.js (npm run dev:web
+  for a browser preview, npm run dev for the desktop window). The app runs the firmware in emulation and writes nothing to a
+  hardware FM-1 unless tether mode is used with a firmware that supports it.
+brick_risk: false
+tags: [emulator, ui, editor, backup, dx7, midi]
+image:
+  url: https://raw.githubusercontent.com/mrtreyw07-lab/mvave-fm1-studio/main/docs/screenshots/dark.png
+  alt: "The app's dark FM-1 faceplate: a small screen with a 120 BPM header and four parameter readouts, knobs and buttons around it, and two rows of keys."
+  credit: mrtreyw07-lab
+  source_url: https://github.com/mrtreyw07-lab/mvave-fm1-studio#readme
+  first_party: true
+versions:
+- version: 0.1.0
+  date: 2026-11-21
+  url: https://github.com/mrtreyw07-lab/mvave-fm1-studio/releases/tag/v0.1.0
+  notes: First release, with Felucca v1.8.2 built into the emulator.

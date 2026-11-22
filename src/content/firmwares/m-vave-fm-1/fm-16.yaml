@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: FM-16
+summary: >-
+  2-op FM groovebox with five tracks (kick, snare, hat, perc and a filtered-noise clap), sixteen steps with per-step
+  parameter locks, eight pattern banks and a song chain.
+description: >-
+  Four tracks are 2-operator FM voices and the clap is filtered noise. Holding a step and turning a knob locks that
+  value to the step, and other pages cover envelopes, accent, probability, echo, tempo, swing and song mode. Patterns
+  can be copied, pasted, randomised and cleared, tracks muted or soloed, and hits recorded live while playing. Banks A
+  to H switch at the next bar, and the song page chains banks. Sync follows MIDI clock from USB or the TRS jack, and the
+  FM-1 always sends its own clock over USB. It is built with the foma framework and ships a browser emulator and
+  installer page.
+status: active
+authors:
+- name: sunjaculley
+  url: https://github.com/sunjaculley
+source: https://github.com/sunjaculley/fm16-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md lists the parts it builds on: the platform code is Felucca's with changes by SLOOP, Dinghy and X0X (GPL-3.0-only), Bluetooth parts are GPL-3.0-only OR MPL-2.0 (used under GPL-3.0-only), felucca-bsp parts are MPL-2.0 and Apache-2.0, platform/mvave comes from M-VAVE's FM1 Open kit (GPLv3 with M-VAVE's SDK linking exception, plus the binary engine library libfm1_engine.a under M-VAVE's terms for FM-1 devices only), and the Terminus font is SIL OFL 1.1. bigscreen/ is MIT. No stock firmware image is committed.
+homepage: https://sunjaculley.github.io/fm16-fm1/
+distribution: browser-installer
+install_notes: >-
+  Open the project page in Chrome or Edge with the FM-1 on USB and install from it; or build with Docker (./fm1 build).
+  The README says to back up the FM-1 first, and that if the firmware does not start, holding OCT- while switching on
+  gives the USB rescue, from which you install again.
+brick_risk: false
+tags: [groovebox, sequencer, drums, fm, midi, emulator]
+versions:
+- version: main @ a8be5dd
+  date: 2026-11-21
+  url: https://github.com/sunjaculley/fm16-fm1/commit/a8be5dd1f6115cead3a0410cc8ac8a289b6f6cce
+  notes: No tagged releases; this is the latest commit. firmware.json reads version 0.1.

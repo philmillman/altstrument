@@ -6,7 +6,7 @@ description: >-
   rather than patched into a stock file. Which mods are on is saved with each project, Config > Mods holds the defaults for
   new projects, and a project with no mod data opens with every mod off. Humanize adds small random changes to the
   micro-move and volume of the selected notes, Global Swing makes every take and pattern start use the project's swing
-  amount, Color Song colours song blocks by their content, Song Loop repeats a block of song positions, and Variable Track Length gives each track of a pattern its own length, looping a short track until the pattern ends. Master FX replaces CE's reverb and delay, and adds a limiter slot, with plugins from /MasterFX/ on the card (Freeverb, plate, spring, shimmer, gated or reverse reverb; tape or BBD delay; a Compressor, and a Glue bus compressor that can work on chosen tracks, with ducking of chosen tracks), chosen on the Master screen, and Copy to New on page 3 of the Pattern screen copies the current pattern into the next empty one. Synths adds three synth models to the picker, WAVE (wavetable), PHASE (phase distortion) and, since synths-1.1, DCO6 (a Juno-106-style virtual analog with Unison), each with a chorus, flanger or phaser and a distortion page, and Synth FX gives each synth part two effect slots, on Community Edition's seven engines as well as WAVE and PHASE, that load plugins from /SynthFX/ on the card; the firmware writes a default pack of overdrive, distortion, bit crusher, chorus, flanger and phaser there and the repository holds an SDK for building more. The earlier Chords mod was retired because Community Edition
+  amount, Color Song colours song blocks by their content, Song Loop repeats a block of song positions, and Variable Track Length gives each track of a pattern its own length, looping a short track until the pattern ends. Master FX replaces CE's reverb and delay, and adds a limiter slot, with plugins from /MasterFX/ on the card (Freeverb, plate, spring, shimmer, gated or reverse reverb; tape or BBD delay; a Compressor, and a Glue bus compressor that can work on chosen tracks, with ducking of chosen tracks), chosen on the Master screen, and Copy to New on page 3 of the Pattern screen copies the current pattern into the next empty one. Synths adds three synth models to the picker, WAVE (wavetable), PHASE (phase distortion) and, since synths-1.1, DCO6 (a Juno-106-style virtual analog with Unison), each with a chorus, flanger or phaser and a distortion page, and Resample, since resample-1.0, adds Trk Audio and Trk Record buttons to the Sample Recorder so the tracker's own sound can be heard and recorded with Line In or a mic, and Synth FX gives each synth part two effect slots, on Community Edition's seven engines as well as WAVE and PHASE, that load plugins from /SynthFX/ on the card; the firmware writes a default pack of overdrive, distortion, bit crusher, chorus, flanger and phaser there and the repository holds an SDK for building more. The earlier Chords mod was retired because Community Edition
   now has those chord inversions itself. The mods get 1 MiB of sample memory, so the longest stereo recording is slightly
   shorter. A script copies a project saved on Community Edition into a form 1.2.0 can open. Commits report each step
   tested on hardware. Builds name themselves 1.0.0 MT in Config, Original Tracker and Tracker Mini builds stay plain
@@ -24,7 +24,7 @@ license_notes: >-
   identifiers.
 distribution: download
 install_notes: >-
-  Download TrackerPlus_MT_modular-1.2.ptf and PolyendTracker_CE_Synths.zip from the latest release, or the CE_20261120 .ptf with PolyendTracker_CE_Words.zip (needed from CE_20261118 on), whose Words folder goes to the card's root as well. Copy the Synths folder from the
+  Download TrackerPlus_MT_resample-1.0.ptf and PolyendTracker_CE_Synths.zip from the latest release, or TrackerPlus_MT_modular-1.2.ptf, or the CE_20261120 .ptf, with PolyendTracker_CE_Words.zip (needed from CE_20261118 on, also with resample-1.0), whose Words folder goes to the card's root as well. Copy the Synths folder from the
   zip to the card's root, since CE's synth engines are plugins loaded from it, and delete Synths/GRAIN.psyn if an older release
   left it there, then copy the .ptf to /Firmware/ on the
   microSD card and run Config > Firmware > Firmware update. PolyendTracker_CE_Effects.zip is optional and holds CE's Sample
@@ -37,6 +37,10 @@ install_notes: >-
 brick_risk: false
 tags: [fork, platform, midi, sequencer, tracker]
 versions:
+  - version: resample-1.0
+    date: 2026-11-21
+    url: https://github.com/FatRodzianko/Modular-Trackular-Plus/releases/tag/resample-1.0
+    notes: Adds the Resample mod, switched on in Config > Project Settings > Mods. With Line In or a mic as the Sample Recorder's source, Trk Audio lets you hear the tracker while the recorder is open and start the pattern with the take, and Trk Record (stereo Line In only) records the tracker's sound together with the input, without the metronome. Based on Tracker CE main at cf8bd7b. The notes list Trk Audio with a mic or mono Line In, switching to Radio or USB, and Song Loop or Synth FX running while recording as not yet checked on a Tracker+.
   - version: CE_20261120
     date: 2026-11-20
     url: https://github.com/FatRodzianko/Modular-Trackular-Plus/releases/tag/CE_20261120

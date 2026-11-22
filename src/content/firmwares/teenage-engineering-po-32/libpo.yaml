@@ -16,11 +16,10 @@ description: >-
   PO-35 speak and PO-137 Rick and Morty, with speech analysis and synthesis. It
   also renders the PO-32 drum voice locally, so sounds can be previewed without
   the hardware. Version 2.0.0 removes the Go module that earlier versions
-  carried and keeps the C library and native tools. The core uses caller-owned memory and no libc runtime, file I/O
+  carried and keeps the C library and native tools. Version 2.1.0 adds lossless state and pattern codecs, sample-pool inspection and edits for the PO-33 and PO-133, transactional speech and table replacement for the PO-35 and PO-137, and command-line tools for comparing frames and verifying transfers. The core uses caller-owned memory and no libc runtime, file I/O
   or audio APIs. The repository's example programs include a command-line
   pattern editor and tools that dump or rebuild packets from a transfer
-  recording. The README says only selected rebuilt PO-33 backups and a sample
-  replacement have been accepted on hardware, and that the PO-133 hardware and
+  recording. The README and the 2.1.0 notes say only selected rebuilt PO-33 backups, sample edits and a PO-35 scale-only edit have been accepted on hardware, and that the PO-133 hardware and
   generated PO-35 and PO-137 speech are not established. It is not a replacement
   for the device's firmware.
 status: active
@@ -37,6 +36,10 @@ install_notes: >-
   audio and play it into the PO-32 while it is in its receive mode.
 tags: [sdk, drums, synth-engine, converter]
 versions:
+  - version: 2.1.0
+    date: 2026-11-21
+    url: https://github.com/ericlewis/libpo/releases/tag/2.1.0
+    notes: Adds lossless PO-32 state and pattern codecs, PO-33 and PO-133 sample-pool inspection and edits, PO-35 and PO-137 speech and table replacement with typed pattern controls, and command-line frame inspection and transfer readback checks. PO-35 and PO-137 speech analysis changes how new encodes fit coefficients, and decoders recover the first valid transfer after an interrupted attempt. The notes say selected PO-33 sample edits and a PO-35 scale-only edit were accepted on hardware, while generated PO-35 key edits and arbitrary speech are not validated.
   - version: 2.0.0
     date: 2026-11-05
     url: https://github.com/ericlewis/libpo/releases/tag/2.0.0

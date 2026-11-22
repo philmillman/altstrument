@@ -31,19 +31,23 @@ license_notes: >-
   MIT-licensed jl-uboot-tool and JieLi's unlicensed wl82loader.bin loader. The alpha 13 release notes say UltraRig now uses PolyForm Strict 1.0.0 and that versions up to alpha 11 keep their licence; the repository's LICENSE.md still showed PolyForm Noncommercial on 2026-11-17, so that is what is recorded here.
 homepage: https://ultrarig.app/
 distribution: download
-requires_stock: Tank-G factory firmware 97 or 98; 96 and older need M-UPGRADE first. Tank-B factory firmware 100. Black Box factory firmware 017 or 020 (016 and 019 untested, 022 and 023 not supported)
+requires_stock: Tank-G factory firmware 97 or 98 (99 on a v2 only, from alpha 13.1); 96 and older need M-UPGRADE first. Tank-B factory firmware 100. Black Box factory firmware 017 or 020 (016 and 019 untested, 022 and 023 not supported)
 install_notes: >-
-  Windows 10 or 11 only, with a USB data cable straight to the computer and M-EFCS closed. Run the read-only UltraRig
+  Windows 10 or 11 (alpha 13 and later also ship a Mac installer, and alpha 13.1 a first Linux installer for testing), with a USB data cable straight to the computer and M-EFCS closed. Run the read-only UltraRig
   Check from the check1 release first. Download the package for your board (v1 or v2), run UltraRig-Installer.exe (as
   administrator on the v1) and click Cancel if Windows offers to format a disk. The installer reads the full 1 MiB flash
   twice as a backup, leaves the bootloader alone and writes only the application area. Keep the backup_<date> folder in
   Documents\tankg_installer and never share it: restoring it, with the installer's "Go back to the factory firmware"
-  option, is the way back to the factory firmware. Alpha 6 and later accept factory firmware 98; to move a pedal already
+  option, is the way back to the factory firmware. Alpha 13.1 also updates a pedal that already has UltraRig from the same installer, keeping presets, and tells you if you picked the v1 package for a v2 or the other way round. Alpha 6 and later accept factory firmware 98; to move a pedal already
   on UltraRig to 98, go back to the factory firmware first, update with M-UPGRADE and install again, and keep both
   backups. The Black Box build (alpha 13.1) has its own Windows installer package, which reads the pedal and checks it before writing and stops if it does not match; the release offers Back to factory firmware, and a Black Box already on the earlier tester version should export its presets from the editor first.
 brick_risk: false
 tags: [fx, amp-sim, nam, ir, editor, android]
 versions:
+- version: alpha13.1
+  date: 2026-11-21
+  url: https://github.com/manuaguirre9/ultrarig/releases/tag/alpha13.1
+  notes: Supports factory firmware 99 on the Tank-G v2 (a v1 on 99 is refused without writing), updates a pedal already on UltraRig with presets kept, resumes a stalled backup, makes the tuner work on heavy presets and fixes the battery reading and the scene double tap. Packages for v1 and v2 on Windows and Mac, an Android APK and a first Linux installer for testing.
 - version: alpha13.1-blackbox
   date: 2026-11-20
   url: https://github.com/manuaguirre9/ultrarig/releases/tag/alpha13.1-blackbox

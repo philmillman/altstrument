@@ -1,0 +1,27 @@
+device: m-vave-fm-1
+name: mvane yard
+summary: >-
+  Performance firmware: a 12-voice synth or Clipper's sounds played as notes, MPE or chords from eight pitch-class sets with voice leading, MPE out over USB, and an always-on recorder whose takes leave as MIDI files.
+description: >-
+  Keys play single notes or chords built from one of eight pitch-class sets, with a separate bass and voice leading between chords. MIDI in over USB and TRS is read as MPE, with per-note bend, slide and pressure, and MPE goes out over USB. The sound is either the firmware's own band-limited saw voice with a key-tracked low-pass or one of Clipper's factory sounds, whose synth core is vendored from Clipper. A recorder is always running, so a take can be kept after it was played; takes are saved in eight slots, replayed, and moved to a computer as MIDI files by a web page or a command-line tool, which can also send a MIDI file back as a take. The chord mode follows Coral Flower's design (chord qualities on the black keys, hold, quantise) without using its code. It is built on fm1-base. The release is marked as a beta.
+status: active
+authors:
+- name: Enkerli
+  url: https://github.com/Enkerli
+source: https://github.com/Enkerli/mvane-yard
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states GPL-3.0-only, matching the LICENSE file, and says it is compatible with Clipper's and Coral Flower's GPL-3.0. fm1-base and felucca-bsp stay MPL-2.0, and the vendored Clipper core carries msfa (Apache-2.0) and ports of DaisySP and Rings code under their own licences (CREDITS.md). No JieLi closed libraries are linked.
+homepage: https://enkerli.github.io/mvane-yard/
+based_on: m-vave-fm-1/clipper
+distribution: download
+install_notes: >-
+  Install the .fwsc from the release with M-Patcher or fm1-base's tools/fm1_install.py; the README says to back up the current firmware first. The browser page and tools/yard.py handle takes and settings over USB, and the firmware refuses files while a take is playing.
+brick_risk: false
+tags: [performance, chords, midi, usb-midi, synth-engine, sequencer, looper, editor, web, fork]
+versions:
+- version: 0.9-beta
+  date: 2026-11-22
+  url: https://github.com/Enkerli/mvane-yard/releases/tag/v0.9-beta
+  notes: Pre-release with the .fwsc, .rfm1, firmware.json and checksums.

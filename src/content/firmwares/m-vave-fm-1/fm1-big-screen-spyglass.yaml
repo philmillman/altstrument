@@ -1,17 +1,17 @@
 device: m-vave-fm-1
-name: FM-1 Mirror + Spyglass
+name: FM-1 Big Screen + Spyglass
 kind: tool
 summary: >-
   Android app that shows the FM-1's screen on a tablet or phone over USB or Bluetooth MIDI, plays the unit from a USB
   keyboard, shows the played notes and chords in a spyglass overlay, and installs the Big Screen firmware.
 description: >-
-  This is the Android counterpart of FM-1 Mirror and merges it with the author's Synth Spyglass note display, because
+  This is the Android counterpart of FM-1 Big Screen (called FM-1 Mirror until 1.3.14) and merges it with the author's Synth Spyglass note display, because
   Android lets only one app use the FM-1 at a time. It reads the screen from the Big Screen build of M-VAVE's open-source
   firmware, plays notes from a USB keyboard on a chosen channel, passes MIDI clock through and never forwards SysEx. The
   spyglass names the note or chord, draws it on a grand staff and shows key velocity, and can show the FM-1's own keys and the
   sound name when the firmware reports it. The app installs and updates the firmware by a port of M-VAVE's updater and can
   finish an interrupted install. It needs a USB hub to connect both the FM-1 and a keyboard. The repository carries the Big Screen
-  firmware package it installs.
+  firmware package it installs. From 1.6.4 the app is called FM-1 Big Screen + Spyglass, and from 1.6.7 it also reads the screen mirror that Charles Vestal's fm1-base has, so firmware built on fm1-base with that mirror turned on shows without a Big Screen build.
 status: active
 authors:
 - name: pfkellogg
@@ -36,6 +36,22 @@ video:
   first_party: true
   found_via: https://github.com/pfkellogg/fm1-mirror-spyglass-android#readme
 versions:
+- version: 1.6.7
+  date: 2026-11-21
+  url: https://github.com/pfkellogg/fm1-mirror-spyglass-android/releases/tag/v1.6.7
+  notes: Understands the screen mirror built into fm1-base, with its own protocol, so firmware built on fm1-base with that mirror on (Polly, LOOM-8, Ocarina and others the notes name) shows big with nothing else to install. Tested on a real FM-1 with Polly 0.6.4 on a Fire TV Stick.
+- version: 1.6.6
+  date: 2026-11-21
+  url: https://github.com/pfkellogg/fm1-mirror-spyglass-android/releases/tag/v1.6.6
+  notes: Bright color still lifts dim text and lines on a dark background but leaves pictures, panels and dotted backgrounds in their own colours.
+- version: 1.6.5
+  date: 2026-11-21
+  url: https://github.com/pfkellogg/fm1-mirror-spyglass-android/releases/tag/v1.6.5
+  notes: Names LIkst4's Skiff Atlatl as itself; from 1.2 it has the Big Screen part in its own release, so it shows big with nothing else to install.
+- version: 1.6.4
+  date: 2026-11-21
+  url: https://github.com/pfkellogg/fm1-mirror-spyglass-android/releases/tag/v1.6.4
+  notes: Renames the app from FM-1 Mirror + Spyglass to FM-1 Big Screen + Spyglass; it installs over the earlier version and keeps its settings. Draws the screen at a whole number of times its size so dotted pictures are not streaky, and on Fire TV and Google TV hides the button bar after 5 seconds so a 1080p screen shows it at 4 times.
 - version: 1.6.3
   date: 2026-11-17
   url: https://github.com/pfkellogg/fm1-mirror-spyglass-android/releases/tag/v1.6.3

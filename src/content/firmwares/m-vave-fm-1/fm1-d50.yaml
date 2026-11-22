@@ -1,0 +1,32 @@
+device: m-vave-fm-1
+name: fm1-d50
+summary: >-
+  Roland D-50 emulation: PicoFaceD5's LA engine on fm1-base, with 16 voices, every key mode, reverb, chorus, 384 patches from your own banks and D-50 SysEx. You build it from your own ROM dumps.
+description: >-
+  The sound engine is Michi71's PicoFaceD5, used with its author's agreement, running at 32 kHz and resampled to the FM-1's 44.1 kHz on 16 voices. Whole, Dual, Split and Separate key modes and their solo variants work, with the D-50's reverb, chorus and EQ, Chase Play, portamento, hold, velocity and aftertouch from the keys. The firmware reads and answers the D-50's DT1 and RQ1 SysEx for the current patch and the bank in RAM, so D-50 editors and librarians can work with it. HOME steps through the FM-1 screen and the D-50's 2 by 40 character LCD at true size or folded, in green, amber or blue. The PCM wave data and patch banks are Roland's and are not in the repository: the build makes them from your own ROM dump and .syx banks, and a package built with them is for your own use. The repository began as a copy of fm1-sf2 and moved to fm1-base. The README calls it a work in progress.
+status: active
+authors:
+- name: mwedmark
+  url: https://github.com/mwedmark
+source: https://github.com/mwedmark/fm1-d50
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states GPL-3.0 for the firmware and the LICENSE file is M-VAVE's FM1 APP licence, GPL-3.0 only with a linking exception for the binary FM1 SDK. PicoFaceD5 is GPL-3.0, fm1-base and felucca-bsp are MPL-2.0. The D-50's PCM ROM and patch data are Roland's, are not in the repository and must not be distributed. The repository holds M-VAVE's licensed V15 recovery image rescue_tools/FM-1_015.fwsc (Apache-2.0, git blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd, 699,956 bytes, the same file as in m-vave/fm1_open).
+based_on: m-vave-fm-1/fm1-base
+distribution: source-only
+install_notes: >-
+  Build it with fm1-base's tools from the fm1base folder after making the data from your own ROM dump and banks, then install over USB with fm1-base's installer (FM1-BASE.md). rescue_tools/ holds a script and M-VAVE's V15 package for putting stock firmware back onto a unit that does not start.
+brick_risk: false
+tags: [synth-engine, emulator, sysex, midi, usb-midi, fork]
+image:
+  url: https://raw.githubusercontent.com/mwedmark/fm1-d50/main/docs/img/lcd_folded_green.png
+  alt: Green LCD of the folded D-50 view showing patch I-11 Fantasia, DUAL mode, split point C4, balance 78, upper tone Fantasynth and lower tone FantasyPCM
+  credit: mwedmark
+  source_url: https://github.com/mwedmark/fm1-d50
+  first_party: true
+versions:
+- version: main @ 6316e20
+  date: 2026-11-22
+  url: https://github.com/mwedmark/fm1-d50/commit/6316e20f9c8c4ff748fe16906c000f70dd36072b
+  notes: No tagged releases; this is the latest commit.

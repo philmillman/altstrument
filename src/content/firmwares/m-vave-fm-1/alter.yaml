@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+name: ALTER
+summary: >-
+  Felucca fork that replaces the groovebox with three euclidean rhythm circles, seven percussive engines, dice and CHAOS, a mixer per circle, 48 scenes and a browser companion page, aimed at industrial techno and texture work.
+description: >-
+  Keeps Felucca's hardware layer, effects and installer and puts a new instrument on top. Three circles each play a euclidean rhythm or a Turing loop through their own sound, envelope, effects and mixer channel. The seven engines include ALTER, a noise and metal voice that the README says takes its idea from Noise Engineering's Basimilus Iteritas Alter, and PHYS, NOISE, RESO, PLATE, CORDE and RING. Dice redraw a circle's pattern, velocity, chance and length, CHAOS does it for all three at once, and locks keep what must stay. Held fills (dub delay, dub reverb, destroy, rolls), scales and chord progressions, a console per circle with EQ and compressor, a master filter, a delay with a tape mode, reverb, three LFOs and a modulation matrix add to the playing. A song chains three rhythm slots A, B and C, and 48 scenes keep everything the dice drew. MIDI comes in over USB and TRS with MIDI learn and clock. The browser companion page shows every setting, and a browser build runs the firmware without an FM-1. The README says it was developed with an AI coding assistant and tested on a real FM-1 with the UC25HQ80 flash chip, and that MIDI learn is not yet tried with a hardware controller.
+status: active
+authors:
+- name: Forban5929
+  url: https://github.com/Forban5929
+source: https://github.com/Forban5929/Alter-FM1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and LICENSE state GPL-3.0-only, as Felucca. The engines in firmware/engines are MIT, the hardware layer felucca-bsp is MPL-2.0, and fonts and ported DSP code keep their own licences (LICENSING.md). The repository holds JieLi's unmodified wl82loader.bin (Apache-2.0), a RAM helper its recovery tool loads and does not install in flash.
+homepage: https://forban5929.github.io/Alter-FM1/
+distribution: browser-installer
+install_notes: >-
+  Install page on the project site in Chrome or Edge over USB, or the .fwsc from the release. The README says to go back to M-VAVE's firmware with Back to official V15 on The Firmware Hub, and that a failed update leaves the FM-1 able to enter update mode (OCT- and OCT+ held 5 seconds). A Windows rescue kit on the install page writes the firmware again from that mode, after a full backup; its notes say it has not been tried on a UC25HQ80 unit.
+brick_risk: false
+tags: [drums, sequencer, generative, synth-engine, fx, performance, editor, emulator, usb-audio, midi, fork]
+image:
+  url: https://raw.githubusercontent.com/Forban5929/Alter-FM1/main/assets/fmhub.png
+  alt: "ALTER screen: a red ring with diamond markers around concentric circles and a triangle, a KICK banner, step 132 with engines ALTER and PERC, and four knob slots MRPH, SPRD, HARM and RUMBLE"
+  credit: Forban5929
+  source_url: https://github.com/Forban5929/Alter-FM1
+  first_party: true
+versions:
+- version: '1.01'
+  date: 2026-11-21
+  url: https://github.com/Forban5929/Alter-FM1/releases/tag/v1.01
+  notes: Gives the package a new identity, FM-1_956, because v1.0's number belonged to another firmware on The Firmware Hub; nothing else changes.
+- version: '1.0'
+  date: 2026-11-21
+  url: https://github.com/Forban5929/Alter-FM1/releases/tag/v1.0

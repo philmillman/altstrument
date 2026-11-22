@@ -3,7 +3,7 @@ also_devices: [valeton-gp-5]
 kind: tool
 name: Universal MIDI Controller
 summary: >-
-  Next.js PWA that turns a browser into a pedalboard controller with preset and FX pads. It has built-in profiles for the Sonicake Pocket Master, with CC numbers and tap delay by SysEx, and the Valeton GP-5, plus a looper, songbook and setlists.
+  Next.js PWA that turns a browser into a pedalboard controller with preset and FX pads. It has built-in profiles for the Sonicake Pocket Master, with CC numbers and tap delay by SysEx, the Pocket Master CFW and the Valeton GP-5, plus a looper, songbook and setlists.
 description: >-
   Rights warning: docs/ holds two PDF MIDI tables, one for the Pocket Master and one for the Valeton GP-5, which look like
   the makers' own documents.
@@ -12,7 +12,7 @@ description: >-
   that toggle effects on and off. A setup wizard fills the pads from the chosen pedalboard profile. The Pocket Master
   profile maps the effect blocks, tuner, looper and drum to CC numbers, and its tap delay sends SysEx using data from
   suckyble's PocketEdit research, stored as a delay table. Other parts are a looper timed from the page, a songbook with
-  chord sheets and setlists, keyboard bindings and JSON export. It can drive other devices with generic messages.
+  chord sheets and setlists, keyboard bindings and JSON export. It can drive other devices with generic messages. A separate Pocket Master CFW profile, for a pedal running the community custom firmware with its MIDI map left on Stock, sends the tap delay's tempo and note by CC instead of SysEx, adds shortcuts for Freeze, Global EQ, Drum play and DLY Sync, keeps a tempo per preset pad and gives each preset Solo, Scenes and STOMP modes.
 status: active
 authors:
   - name: hitaloose
@@ -29,6 +29,10 @@ install_notes: >-
 brick_risk: false
 tags: [controller, web-midi, usb-midi, midi, looper, setlist, web]
 versions:
+  - version: main @ 14e95f5
+    date: 2026-11-22
+    url: https://github.com/hitaloose/universal-midi-controller/commit/14e95f529fba4fd140c21432e79404301459b410
+    notes: No tagged releases; this is the latest commit. Since the previous entry the app gains a Pocket Master CFW profile with CC tempo tap delay, a tempo stored per preset, per-preset Solo, Scenes and STOMP modes, and a full-screen preset editor.
   - version: main @ 6d910f7
     date: 2026-11-13
     url: https://github.com/hitaloose/universal-midi-controller/commit/6d910f7c0842dd6b6574210c66c181cd72ac6661

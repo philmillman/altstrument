@@ -1,0 +1,30 @@
+device: m-vave-fm-1
+name: FM-1 Library
+kind: tool
+summary: >-
+  Spanish-language web catalog of FM-1 community firmwares built from The Firmware Hub's catalog.json, with search, filters,
+  popularity rankings, CSV export and links to each author's release.
+description: >-
+  A scheduled GitHub Actions job reads the Hub's catalog once a day, normalises it, records version and SHA-256 changes and
+  commits the result, and Netlify serves a framework-free page from it. It lists 282 records as of 2026-11-21 with category,
+  release date, author, flash type and stars. It links to the author's GitHub release for each package and shows a direct
+  download only where an asset can be verified. For JIANT FM it checks the author's Pages manifest against the Hub's hash. The
+  README says it hosts no .fwsc files, and the catalog data is credited to the Hub under CC BY 4.0.
+status: active
+authors:
+- name: Raúl Cámara Carreón (raulcamaracarreon)
+  url: https://github.com/raulcamaracarreon
+source: https://github.com/raulcamaracarreon/fm1-library
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file. The README states that the listing it reuses is CC BY 4.0 from The Firmware Hub and that
+  firmware code belongs to its authors; it makes no statement about the site's own code.
+homepage: https://fm1-library.netlify.app/
+distribution: source-only
+tags: [directory, librarian, web]
+versions:
+- version: main @ 5aa4edf
+  date: 2026-11-21
+  url: https://github.com/raulcamaracarreon/fm1-library/commit/5aa4edf
+  notes: No tagged releases; this is the latest commit.

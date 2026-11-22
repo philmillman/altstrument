@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: OP dream
+summary: >-
+  Skiff fork for the FM-1 that records what you play onto a six-track tape without a step grid, adds a two-wave sound designer on EDIT, and reworks the save pages, the FX list and the themes.
+description: >-
+  Built on Skiff 2.6 and so on Felucca, and described by its README as an OP-1-style way of working. HOME shows a tape: what is played is kept as played, with its timing, chords and note lengths, on six tracks that run one after another or are layered. Holding PLAY loops, holding REC clears the selected track and holding SAVE takes that back. EDIT opens a sound designer with two waves, each picked from a family of shapes and morphed with one knob, plus a sub, noise and a filter, and every screen says in words what the knob does. SAVE has three pages for the whole project, one sound and the list of sounds, FX opens on a list of the track's effects, and five themes are new. The sequencer, sounds, effects, arpeggiator and songs are Skiff's. To make room, the FM-1 build drops the SLICE sound type and some Skiff pages, keeps the tapes in the slot Skiff uses for its third user sample set, and Skiff's editor does not know the designer's WAVE type. The README says its changes were written with an AI assistant and marked in the sources. It has its own package identity, FM-1_673.
+status: active
+authors:
+- name: James (bertrandhustle2)
+  url: https://github.com/bertrandhustle2
+source: https://github.com/bertrandhustle2/skiff
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and LICENSE state GPL-3.0-only, as Skiff and Felucca. LICENSING.md lists what else the firmware carries, including bundled fonts, ported DSP code and the CC0 samples and Hügelton Sample Pack kept from Skiff.
+homepage: https://bertrandhustle2.github.io/skiff/
+distribution: browser-installer
+install_notes: >-
+  Browser installer in Chrome or Edge over USB, or the .fwsc from the release with any FM-1 installer. The firmware keeps Felucca's update loader, so any FM-1 installer can put another firmware over it, and holding OCT- and OCT+ for five seconds enters update mode. The release notes record an install on a real FM-1 from official V15, then Skiff, and back.
+brick_risk: false
+tags: [sequencer, looper, synth-engine, wavetable, performance, groovebox, emulator, fork]
+image:
+  url: https://raw.githubusercontent.com/bertrandhustle2/skiff/main/docs/hub-card.png
+  alt: "OP dream HOME screen: a tape reel reading 0:00.0 with REC ADDS A LAYER above six track lanes (ACID, PAD, PULSE LD, DRUM KIT, PIANO, DRUM KIT) and four readouts at the top"
+  credit: bertrandhustle2
+  source_url: https://github.com/bertrandhustle2/skiff
+  first_party: true
+versions:
+- version: 1.2.3
+  date: 2026-11-18
+  url: https://github.com/bertrandhustle2/skiff/releases/tag/v1.2.3
+  notes: Gives the package its own identity, FM-1_67310203, and makes the wave pictures on EDIT follow the family picked.
+- version: 2.6-dream5
+  date: 2026-11-15
+  url: https://github.com/bertrandhustle2/skiff/releases/tag/v2.6-dream5
+  notes: Build 5 on Skiff 2.6, with the build's own name and splash.

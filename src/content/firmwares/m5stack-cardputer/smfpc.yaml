@@ -1,0 +1,33 @@
+device: m5stack-cardputer
+name: smfPC
+summary: >-
+  Standard MIDI File player for the Cardputer and Cardputer-Adv that plays .mid files from the microSD card to an M5Stack Unit-Synth MIDI module, with a keyboard-driven file browser.
+description: >-
+  smfPC is an Arduino sketch built with the M5Cardputer, M5UnitSynth, MD_MIDIFile and SdFat libraries. It lists .mid files on a FAT32 microSD card, lets you move through folders with the cursor keys and starts or stops playback with the space key, and the M key shows help. MIDI goes out over the Grove port, with GPIO1 and GPIO2 as UART, to a Unit-Synth module, so the Cardputer's own speaker is not used. On the original Cardputer the Grove 5V switch has to be set to output to power the module. Version 0.3 adds Cardputer-Adv support from the same source, and the README says playback was confirmed on both models. It lists limits of 255 files per folder, a directory depth under 10 and a path length under 255.
+
+  The README links M5Burner share codes for v0.3 and the earlier v0.2, and a GitHub Actions workflow builds the sketch. It notes that the MD_MIDIFile 2.6.0 library needs a one-line type fix to compile with Arduino core 3.2.2.
+status: active
+authors:
+  - name: Layer812
+    url: https://github.com/Layer812
+source: https://github.com/Layer812/smfPC
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE.txt file is the GNU GPL version 3 text with no "or later" statement in the README or the sketch.
+distribution: download
+install_notes: >-
+  Install v0.3 from M5Burner with share code ytA202BfCmxyVRkZ, or compile smfPC.ino in the Arduino IDE for the M5Cardputer board. Connect an M5Stack Unit-Synth to the Grove port and put .mid files on a FAT32 microSD card. M5Burner replaces the app image over USB, and any other image can be flashed the same way.
+brick_risk: false
+tags: [player, midi, sd-card, esp32-s3, arduino, open-source]
+image:
+  url: https://github.com/user-attachments/assets/43961a28-a456-451b-917d-3326e87eaf99
+  alt: A Cardputer showing the smfPC 0.2 file list on its screen, with a white M5Stack Unit-Synth MIDI module connected by cable below it
+  credit: Layer812
+  source_url: https://github.com/Layer812/smfPC
+  first_party: true
+versions:
+  - version: main @ cadce1b
+    date: 2026-11-21
+    url: https://github.com/Layer812/smfPC/commit/cadce1bc553f894d5cfaaa2d59c5494e37edb806
+    notes: No tagged releases; this is the latest commit. The README's version history lists v0.3 as the current version and v0.2 as the first.

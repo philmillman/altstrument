@@ -1,0 +1,26 @@
+device: m-vave-fm-1
+name: MiniTraxFM
+summary: >-
+  Cut-down LOOM-8 shaped like a Novation Circuit Tracks: four polyphonic synth tracks and four sample drum tracks, playing songs converted from Circuit Tracks packs.
+description: >-
+  The four synth tracks stand in for Synth 1, Synth 2, MIDI 1 and MIDI 2, with up to six voices each and sixteen in all. The four drum tracks stand in for Drum 1 to 4, each a kit of up to eleven samples with one hit at a time. A converted pack's song plays from PLAY, and each part restarts every track from step 1, as a Circuit scene does. LOOM-8's factory sounds and breaks are removed, so the sample bank holds only the pack's samples. A tool in tools/ct2mtx turns a .circuittrackspack file into a backup holding up to three projects and their samples. The README calls the project early: it runs in the host simulator, where converted songs play note for note, and has not yet been built for or run on an FM-1. Its package identity is a placeholder, and some inherited test scenarios fail.
+status: active
+authors:
+- name: GuinanNo1
+  url: https://github.com/GuinanNo1
+source: https://github.com/GuinanNo1/fm1-minitrax
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Inherited from LOOM-8: LICENSING.md states that the firmware as a whole is GPL-3.0-only (COPYING), because the acid engine and 909 kit models are GPL-3.0-only, while most other files are MPL-2.0 file by file (LICENSE). Braids ports are MIT and fonts are SIL OFL 1.1.
+based_on: m-vave-fm-1/loom-8
+distribution: source-only
+install_notes: >-
+  Build it with fm1-base's tools (BUILDING.md) and install the package over USB with fm1-base's installer. No release is published and the README says it has not yet run on a real FM-1.
+brick_risk: false
+tags: [groovebox, sequencer, sampler, synth-engine, drums, emulator, fork]
+versions:
+- version: main @ 9dc1085
+  date: 2026-11-22
+  url: https://github.com/GuinanNo1/fm1-minitrax/commit/9dc1085d611daf078fedc61724c82dcc7b159fea
+  notes: No tagged releases; this is the latest commit.

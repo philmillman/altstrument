@@ -1,0 +1,37 @@
+device: donner-pocket-x
+also_devices: [m-vave-blackbox]
+name: POCKET SYNTH
+summary: >-
+  Guitar synthesizer firmware for the Donner Pocket X and M-VAVE BlackBox, built on OpenPocket, with a pitch-tracking mono mode, a polyphonic band-split mode and 128 sounds, installed from a browser page.
+description: >-
+  POCKET SYNTH is an alternative firmware on OpenPocket's base firmware, exported from the OpenPocket repository. It plays a synthesizer from the plain guitar signal in three ways. MONO tracks the pitch to the cent and drives two oscillators of ten kinds, a sub-octave, noise, up to four chord notes, an arpeggiator and glide. POLY splits the guitar into 24 bands, each driving a synthesizer wave, so chords sound without tracking. DRY runs the guitar itself through the synthesizer's filter, envelopes and effects. The rest of the engine is a ladder or state-variable filter, envelopes, an LFO, a ring modulator, a chorus, a stereo delay and a reverb, with 128 sounds in 14 families, a HOLD footswitch, and MIDI program changes, 51 control changes and clock for the arpeggiator, LFO and delay.
+
+  The installer page checks the package in the browser before sending it and the pedal checks it again before writing. It works over the official firmware, over OpenPocket or over another firmware on OpenPocket's base, and OpenPocket presets, NAM models and cabinet IRs stay on the pedal. The release notes and README say version 1 has not been run on a pedal yet; the BlackBox package is built from the same source, and a BlackBox on M-VAVE firmware V22 or later is refused. The project is independent of Donner and M-VAVE.
+status: active
+authors:
+  - name: isod89
+    url: https://github.com/isod89
+source: https://github.com/isod89/pocket-synth
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  GPL-3.0-only for the project. The chip support and update loader come from felucca-bsp (MPL-2.0), the installer and packaging tools are adapted from Felucca (GPL-3.0), screen fonts are SIL OFL 1.1, and the repository holds a few binary files taken as-is from JieLi's Apache-2.0 AC79 SDK and test guitar loops under CC BY 4.0. It commits no Donner or M-VAVE firmware.
+homepage: https://isod89.github.io/pocket-synth/
+based_on: donner-pocket-x/openpocket
+distribution: browser-installer
+requires_stock: Donner Pocket X official firmware, or OpenPocket; on the BlackBox, M-VAVE firmware older than V22
+install_notes: >-
+  Open the installer page in Chrome or Edge on a computer, plug the pedal in over USB, press Connect and then Install, and keep it plugged in for a minute or two. Put it first in the signal chain so the tracker hears a clean guitar. Keep your backup or the official firmware file at hand. To go back, use OpenPocket's installer (Back to OpenPocket) or step 3 of this installer with the official file from Donner or M-VAVE. A pedal that restarts in a loop can be recovered with the installer's rescue mode or OpenPocket's USB rescue.
+brick_risk: false
+tags: [synth-engine, guitar, arpeggiator, filter, oscillator, presets, tuner, web, usb-midi, open-source]
+image:
+  url: https://raw.githubusercontent.com/isod89/pocket-synth/main/docs/synth/play.png
+  alt: POCKET SYNTH PLAY page on the pedal's screen showing sound 001 SOLO SAW, a sawtooth waveform, the detected note A3 with a pitch meter at +0 cents, and HOLD and ON buttons
+  credit: isod89
+  source_url: https://github.com/isod89/pocket-synth#readme
+  first_party: true
+versions:
+  - version: v1
+    date: 2026-11-21
+    url: https://github.com/isod89/pocket-synth/releases/tag/v1
+    notes: First release with MONO, POLY and DRY modes and 128 sounds. Not yet run on a pedal.

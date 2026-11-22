@@ -1,0 +1,30 @@
+device: elektron-digitone-ii
+name: DigiGlide
+summary: >-
+  Beta modification of Digitone II OS 1.12 that plays a whole chord from one key or trig and glides its voices into the next chord along shaped paths, made on your computer from your own copy of the official OS file.
+description: >-
+  DigiGlide adds four pages after a synth track's own SYN pages, on FM TONE, WAVETONE, FM DRUM and SWARMER tracks. One key or one trig plays a chord set by type, extension, key and voicing, and when the next chord arrives its voices glide to it instead of jumping. Per track settings cover glide time, path, timing, voice order, moves such as Bloom, Cascade and Spiral, drift, vibrato and scrubbing. It is a port of the glide engine of Brickglide, which is part of the catalogued brickchord project. The manual describes play modes, bass patterns, pure tuning, ten DigiDrone sounds, two DigiGlide tracks at once and a boot splash.
+
+  The repository holds no Elektron firmware. A Python patcher (Python 3.10 or newer, nothing else) checks that the file you give it is the official Digitone_II_OS1.12.syx by hash, applies DigiGlide's compiled patch and writes the image only when it is byte for byte the tested result. The author asks that the resulting image is not shared, since it contains Elektron's firmware. The README marks it as beta, played on one unit with most checks run in emulators, and says settings and storage formats can still change between builds. It is unofficial and not endorsed by Elektron. The credits name dnfw, digihealth, digiemu, digikit, digitone-2-modding-skill and Digiwerk as sources of the loader, emulator tooling and notes.
+status: active
+authors:
+  - name: Michael Tietjen
+    url: https://github.com/michaeltietjen
+source: https://github.com/michaeltietjen/digiglide
+source_status: open
+license: AGPL-3.0-or-later
+license_notes: >-
+  The LICENSE file is AGPL-3.0 and the NOTICE file grants the terms of the AGPL "at your option any later version". Elektron's firmware is not included and is not covered. install/vendor holds a copy of the dnfw firmware container code by angellinares (AGPL-3.0-or-later), and the notice lists further third-party tooling.
+based_on: trimui-brick/brickchord
+homepage: https://michaeltietjen.github.io/digiglide/
+distribution: patch-your-own
+requires_stock: "1.12"
+install_notes: >-
+  Back up the +Drive with Elektron Transfer and keep the official Digitone_II_OS1.12.syx. Download the repository, run python3 install/digiglide_patch.py on your own copy of that file, and send the DN2_1.12_DIGIGLIDE_35.syx it writes to the unit with Transfer, as for an OS update. If the unit starts but misbehaves, send the official OS file the same way. If it does not start, hold FUNC while powering on, press TRIG 4 (OS UPGRADE) and send the official file to the MIDI IN socket through a DIN MIDI interface, which takes 12 to 15 minutes and does not use USB. A DIN MIDI interface is needed for that route.
+brick_risk: false
+tags: [chords, glide, patcher, performance, ambient, drone, synth-engine]
+versions:
+  - version: beta-35
+    date: 2026-11-22
+    url: https://github.com/michaeltietjen/digiglide/releases/tag/beta-35
+    notes: Image 35 for OS 1.12, installed through the source patcher; no firmware is attached to the release.

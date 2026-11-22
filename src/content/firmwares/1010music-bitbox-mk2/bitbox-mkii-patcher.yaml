@@ -1,6 +1,6 @@
 device: 1010music-bitbox-mk2
-name: Bitbox MkII patcher (2.3.4+c10)
-summary: Browser patcher that turns your own official 2.3.4 image into 2.3.4+c10, adding a per-pad pattern generator, pitch-preserving sample speed, vertical waveform zoom, extra modulation sources and a screen saver with MIDI or CV wake.
+name: Bitbox MkII patcher (2.3.4+c11)
+summary: Browser patcher that turns your own official 2.3.4 image into 2.3.4+c11, adding a per-pad pattern generator, pitch-preserving sample speed, vertical waveform zoom, extra modulation sources and a screen saver with MIDI or CV wake.
 description: >-
   Licence note: the repository has no licence file or licence statement, only an
   "as is" disclaimer from the author, so the terms for reuse are not stated. A
@@ -9,12 +9,12 @@ description: >-
 
   The page checks your 2.3.4 image by SHA-256, applies a binary delta held in the
   repository, checks the result again and offers it as BITBOXMK2.bin to copy to
-  the card; the module identifies itself as 2.3.4+c10. Changes include vertical
+  the card; the module identifies itself as 2.3.4+c11. Changes include vertical
   waveform zoom, an optional screen saver with a MIDI or CV trigger wake, Sample
   Speed from 50 to 200 percent that keeps pitch and can combine with native
   Pitch, double-tap dial defaults, a clocked pattern generator for each of the 16
   pads, extra per-pad modulation sources, a modulated master filter sweep and
-  extra delay and distortion controls, plus live-input filter, tone and dry-level processing with a persistent Input FX pad. The repository holds the static site, the
+  extra delay and distortion controls, a Fog reverb on FX3, plus live-input filter, tone and dry-level processing with a persistent Input FX pad. The repository holds the static site, the
   delta and reference PDFs, not 1010music's firmware or the patched firmware; the
   source of the changes is not published. The page says it is an independent
   customization and not an official release.
@@ -48,6 +48,10 @@ video:
   first_party: true
   found_via: https://github.com/vwal/bitbox-mkii-patcher#readme
 versions:
+  - version: 2.3.4+c11
+    date: 2026-11-22
+    url: https://github.com/vwal/bitbox-mkii-patcher/releases/tag/2.3.4%2Bc11
+    notes: Adds a Fog reverb type on FX3 that can sit beside a different reverb on FX2, fades the Codec delay's dropouts to reduce crackle, and adds a Loop Fade control on Pos to soften GEN retriggers. Fixes the FX overview showing and editing the FX3 send.
   - version: 2.3.4+c10
     date: 2026-11-18
     url: https://github.com/vwal/bitbox-mkii-patcher/releases/tag/2.3.4%2Bc10

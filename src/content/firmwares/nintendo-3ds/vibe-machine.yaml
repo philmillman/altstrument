@@ -12,7 +12,7 @@ description: >-
   chaining, swing, accents and live recording. A mixer gives every part drive, crush, tone, pan and echo and reverb
   sends, four performance effects are played on the touchscreen, and a four-track tape recorder has reverse and
   varispeed, with nine colour themes. State is saved to the SD card, and tape tracks, the microphone take and the
-  mixdown are written as WAV files. Binaries come from the repository's CI, so it is built from source.
+  mixdown are written as WAV files. Releases carry a .3dsx for the Homebrew Launcher and a .cia for the HOME Menu, built by the repository's CI.
 status: active
 authors:
   - name: Ronald Noble
@@ -23,13 +23,14 @@ license: MIT
 license_notes: >-
   The LICENSE file is the MIT text, copyright "the Vibe Machine authors". It bundles AMY (MIT, Brian Whitman and
   contributors) as a submodule.
-distribution: source-only
+distribution: download
 requires_stock: A 3DS with custom firmware (Luma3DS) and the Homebrew Launcher, plus a DSP firmware dump (dspfirm.cdc) from the user's own console
 install_notes: >-
-  Build with devkitPro and the 3ds-dev packages (clone with --recursive, then make) and copy vibe-machine.3dsx to
-  sdmc:/3ds/. Sound needs dspfirm.cdc on the SD card, dumped from the user's own console with the DSP1 homebrew. It
-  runs as a normal homebrew app and writes only to its own folder on the SD card. The README also describes running it
-  in the Azahar emulator with an emulator-only placeholder firmware file.
+  Download vibe-machine.3dsx for the Homebrew Launcher (copy it to sdmc:/3ds/) or vibe-machine.cia for the HOME Menu
+  (install it with FBI) from a release, or build with devkitPro and the 3ds-dev packages (clone with --recursive, then
+  make, or make cia). Sound needs dspfirm.cdc on the SD card, dumped from the user's own console with the DSP1 homebrew.
+  It runs as a normal homebrew app and writes only to its own folder on the SD card. The README also describes running
+  it in the Azahar emulator with an emulator-only placeholder firmware file.
 brick_risk: false
 tags: [synth, groovebox, sequencer, synth-engine, sampler, fx, tape, touch, handheld, homebrew, open-source]
 image:
@@ -39,6 +40,14 @@ image:
   source_url: https://github.com/noble1911/vibe-machine#readme
   first_party: true
 versions:
+  - version: v0.1.2
+    date: 2026-11-21
+    url: https://github.com/noble1911/vibe-machine/releases/tag/v0.1.2
+    notes: The release page has no notes. Since v0.1.0 the commits map video memory read-only in the .cia so the keyboard no longer crashes it, and add box art and a link to Discussions.
+  - version: v0.1.0
+    date: 2026-11-21
+    url: https://github.com/noble1911/vibe-machine/releases/tag/v0.1.0
+    notes: First release, with the .3dsx and a .cia installer built by CI. The release page has no notes.
   - version: main @ d0b01d0
     date: 2026-11-20
     url: https://github.com/noble1911/vibe-machine/commit/d0b01d0043cfef645c4e7b081f97b193cd61b223

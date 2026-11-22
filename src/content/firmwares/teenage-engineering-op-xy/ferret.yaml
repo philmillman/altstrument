@@ -14,7 +14,7 @@ description: >-
   way to read the setting back, so the unit's screen is the confirmation, and that
   the dev menu has destructive items such as a factory reset and writing the OS
   to the boot partition. The OP-1 Field page is marked as confirmed on hardware.
-  The OP-1 original is not covered.
+  The OP-1 original is not covered. The README says the OP-XY dev mode works only on firmware 1.2.1 and earlier, since 1.2.5 removed it, and names OP-1 Field 1.7.3+1 as the latest confirmed firmware.
 status: active
 authors:
   - name: Bag of Waffles
@@ -30,9 +30,14 @@ install_notes: >-
   and connect USB so it stays on the te-boot menu, then follow the wizard on the
   OP-XY or OP-1 Field page. Do not press track 1 for upload firmware, which drops
   the MIDI port. Turn dev mode off from the same page.
+requires_stock: "OP-XY firmware 1.2.1 or earlier; OP-1 Field up to 1.7.3+1"
 brick_risk: false
 tags: [research, web-midi, sysex, usb-midi, utility, web]
 versions:
+  - version: main @ b6ca2cc
+    date: 2026-11-21
+    url: https://github.com/bagofwaffles/ferret/commit/b6ca2cc1f63ac8d3345860cbb1252fd24b728694
+    notes: No tagged releases; this is the latest commit. Adds firmware compatibility notes to the README and each page. The OP-XY dev mode works on firmware 1.2.1 and earlier only, the OP-1 Field is confirmed up to 1.7.3+1, and the TX-6 reader up to 1.3.3.
   - version: main @ 99d30a2
     date: 2026-10-21
     url: https://github.com/bagofwaffles/ferret/commit/99d30a2

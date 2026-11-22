@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: 7F
+summary: >-
+  Unofficial adaptation of Fors' FMS Game Boy Advance FM groovebox: four 2-op FM tracks and a noise track in which every
+  step carries its own sound, with note echo, a transpose sequence, step modulators and pattern slots.
+description: >-
+  Each of the sixteen steps holds a note, level, pan, portamento, condition, chord and a complete FM patch, so there are
+  no instruments or presets, and a new step copies the last one touched. The FM tracks use a self-feeding modulator into
+  a carrier with fractional ratios, an additive mode, amp and mod envelopes and a pitch sweep. The noise track offers
+  five noise types. Chords take up to three offsets per step, and the screen shows all steps, a per-step setting graph
+  and the four knob values. The README says the firmware uses none of FMS's code. It is built with the foma framework
+  and ships a browser emulator and installer page.
+status: active
+authors:
+- name: sunjaculley
+  url: https://github.com/sunjaculley
+source: https://github.com/sunjaculley/7f-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md lists the parts it builds on: the platform code is Felucca's with changes by SLOOP, Dinghy and X0X (GPL-3.0-only), Bluetooth parts are GPL-3.0-only OR MPL-2.0 (used under GPL-3.0-only), felucca-bsp parts are MPL-2.0 and Apache-2.0, platform/mvave comes from M-VAVE's FM1 Open kit (GPLv3 with M-VAVE's SDK linking exception, plus the binary engine library libfm1_engine.a under M-VAVE's terms for FM-1 devices only), and the Terminus font is SIL OFL 1.1. bigscreen/ is MIT. No stock firmware image is committed.
+homepage: https://sunjaculley.github.io/7f-fm1/
+distribution: browser-installer
+install_notes: >-
+  Open the project page in Chrome or Edge with the FM-1 on USB and install from it; or build with Docker (./fm1 build).
+  The README says to back up the FM-1 first, and that if the firmware does not start, holding OCT- while switching on
+  gives the USB rescue, from which you install again.
+brick_risk: false
+tags: [groovebox, sequencer, fm, synth-engine, drums, midi, emulator]
+versions:
+- version: main @ bfb0e7f
+  date: 2026-11-22
+  url: https://github.com/sunjaculley/7f-fm1/commit/bfb0e7f99af16431fa6f74e049f9700b013610fb
+  notes: No tagged releases; this is the latest commit. firmware.json reads version 0.1.2.

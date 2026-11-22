@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: SCENEDRIFT
+summary: >-
+  Polyrhythmic saw and FM synth sequencer with four lanes of different lengths, per-step locks and trig conditions, a
+  twin delay and an XY pad that morphs between four stored sounds.
+description: >-
+  The lanes (lead, bass, pluck and air) share one detuned-saw engine with light FM and each loops at its own length
+  against one clock. Steps take locks for pitch, level, send and hold, and a trig condition from percentages to ratios
+  such as 1:2. The XY puck blends 20 sound settings between four scenes, which can be jumped to from the keys. The
+  README says the polyphony, unison width and delays were reduced from the HTML toy it was ported from to fit the chip,
+  with a CPU guard that thins the unison under load. MIDI clock sync is on the system page. It is built with the foma
+  framework and ships a browser emulator and installer page.
+status: active
+authors:
+- name: sunjaculley
+  url: https://github.com/sunjaculley
+source: https://github.com/sunjaculley/scenedrift-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md lists the parts it builds on: the platform code is Felucca's with changes by SLOOP, Dinghy and X0X (GPL-3.0-only), Bluetooth parts are GPL-3.0-only OR MPL-2.0 (used under GPL-3.0-only), felucca-bsp parts are MPL-2.0 and Apache-2.0, platform/mvave comes from M-VAVE's FM1 Open kit (GPLv3 with M-VAVE's SDK linking exception, plus the binary engine library libfm1_engine.a under M-VAVE's terms for FM-1 devices only), and the Terminus font is SIL OFL 1.1. bigscreen/ is MIT. No stock firmware image is committed.
+homepage: https://sunjaculley.github.io/scenedrift-fm1/
+distribution: browser-installer
+install_notes: >-
+  Open the project page in Chrome or Edge with the FM-1 on USB and install from it; or build with Docker (./fm1 build).
+  The README says to back up the FM-1 first, and that if the firmware does not start, holding OCT- while switching on
+  gives the USB rescue, from which you install again.
+brick_risk: false
+tags: [synth-engine, sequencer, delay, generative, midi, emulator]
+versions:
+- version: main @ 0cc3698
+  date: 2026-11-21
+  url: https://github.com/sunjaculley/scenedrift-fm1/commit/0cc3698b460c915a7ddd4990538d06e2a5b8738e
+  notes: No tagged releases; this is the latest commit. firmware.json reads version 0.1.

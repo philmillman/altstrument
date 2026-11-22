@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: D-FIDDY
+summary: >-
+  D-50 style LA synth: PicoFaceD5's engine on fm1-base with two tones, four partials, chorus and reverb, arp, sequencer and XY pages, D-50 SysEx and a librarian page. You build it from your own ROM dumps.
+description: >-
+  The engine is Michi71's PicoFaceD5, run on both cores at 32 kHz: 8 held notes in Dual and 16 in Whole. Two banks of 64 patches come from your own .syx files, and up to 24 edited patches are saved in flash. Pages show a D-50 style LCD, an arpeggiator, a 64-step sequencer recorded from the keys and an XY pad for the D-50's joystick, and the arpeggiator and sequencer follow MIDI clock over USB or TRS. The firmware answers the D-50's DT1 and RQ1 SysEx, and a companion page in Chrome works as a librarian and a PG-1000 style editor. The project says it is not affiliated with Roland, ships no ROMs and releases no firmware binaries, because every build embeds data converted from Roland's ROMs; the README asks that built packages not be shared and does not say where to find the dumps.
+status: active
+authors:
+- name: lewhomusic
+  url: https://github.com/lewhomusic
+source: https://github.com/lewhomusic/d-fiddy
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  NOTICE and the README state GPL-3.0-or-later and the LICENSE file is the GPL-3.0 text. PicoFaceD5 is GPL-3.0-or-later with the project's changes in patches/pvsc-fm1.patch, fm1-base is MPL-2.0, and the fonts are SIL OFL 1.1 and public domain. No Roland data is in the repository; a built .fwsc contains Roland's data and must not be redistributed.
+homepage: https://github.com/lewhomusic/d-fiddy
+based_on: m-vave-fm-1/fm1-base
+distribution: source-only
+install_notes: >-
+  Put your own ROM dumps and patch banks in roms/, run ./run.sh gen and ./run.sh device, then ./run.sh install over USB. Building for the FM-1 needs JieLi's toolchain and three AC79 SDK files, and on macOS Docker. The README says installing replaces the firmware at your own risk and points to fm1-base for its installer and recovery.
+brick_risk: false
+tags: [synth-engine, sequencer, arpeggiator, sysex, midi, editor, librarian, web]
+image:
+  url: https://raw.githubusercontent.com/lewhomusic/d-fiddy/main/assets/d-fiddy/cover.png
+  alt: D-FIDDY cover card with the name and the words Two-tone synthesizer for FM-1, beside a drawing of the screen showing patch I-11 in Dual mode with balance 78 and sliders
+  credit: lewhomusic
+  source_url: https://github.com/lewhomusic/d-fiddy
+  first_party: true
+versions:
+- version: main @ 4235a46
+  date: 2026-11-22
+  url: https://github.com/lewhomusic/d-fiddy/commit/4235a46df0649a5f6e578c225b89f21840f1dded
+  notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,37 @@
+device: donner-pocket-x
+also_devices: [m-vave-blackbox]
+name: POCKET METAL
+summary: >-
+  Metal-focused firmware for the Donner Pocket X and M-VAVE BlackBox, built on OpenPocket, with 60 sounds across metal styles, ten fitted high-gain amps and five pedals, cent-accurate down-tuning and a riff gate, installed from a browser page.
+description: >-
+  POCKET METAL is an alternative firmware on OpenPocket's base firmware, exported from the OpenPocket repository. It carries sixty presets covering metal styles from NWOBHM and thrash to death, black, doom, djent and metalcore, plus cleans and leads, matched in loudness. Ten high-gain amps and five drive pedals are fitted to captures of real gear and sit beside OpenPocket's own models; it uses no neural amp models. The chain runs on the pedal's second core and the delay and reverb on the first. Other features are a DOWN TUNE page that shifts the guitar from E to F# standard or an octave down to the cent, with an octaver, harmonizer, whammy and detune, a gate tuned for palm-muted riffs, a stereo WIDTH control, black and blood-red screens, a tuner on both footswitches, and MIDI program and control changes.
+
+  The installer page checks the package in the browser before sending it and the pedal checks it again before writing. It works over the official firmware, over OpenPocket or over another firmware on OpenPocket's base, and OpenPocket presets, NAM models and cabinet IRs stay on the pedal. The release notes and README say version 2 has not been run on a pedal yet and ask for reports; the BlackBox package is built from the same source, and a BlackBox on M-VAVE firmware V22 or later is refused. The project is independent of Donner and M-VAVE.
+status: active
+authors:
+  - name: isod89
+    url: https://github.com/isod89
+source: https://github.com/isod89/pocket-metal
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  GPL-3.0-only for the project. The chip support and update loader come from felucca-bsp (MPL-2.0), the installer and packaging tools are adapted from Felucca (GPL-3.0), screen fonts are SIL OFL 1.1, and the repository holds a few binary files taken as-is from JieLi's Apache-2.0 AC79 SDK and test guitar loops under CC BY 4.0. It commits no Donner or M-VAVE firmware.
+homepage: https://isod89.github.io/pocket-metal/
+based_on: donner-pocket-x/openpocket
+distribution: browser-installer
+requires_stock: Donner Pocket X official firmware, or OpenPocket; on the BlackBox, M-VAVE firmware older than V22
+install_notes: >-
+  Open the installer page in Chrome or Edge on a computer, plug the pedal in over USB, press Connect and then Install, and keep it plugged in for a minute or two. Keep your backup or the official firmware file at hand. To go back, use OpenPocket's installer (Back to OpenPocket) or step 3 of this installer with the official file from Donner or M-VAVE. A pedal that restarts in a loop can be recovered with the installer's rescue mode or OpenPocket's USB rescue.
+brick_risk: false
+tags: [fx, amp-sim, guitar, presets, tuner, pitch-shift, web, usb-midi, open-source]
+image:
+  url: https://raw.githubusercontent.com/isod89/pocket-metal/main/docs/metal/play.png
+  alt: POCKET METAL PLAY page on the pedal's screen showing sound 01 HEAVY ANTHEM, E STANDARD tuning, a JCM900 with TS9 and 4x12 V30 chain, WIDTH 45, a row of block buttons and VOL 80
+  credit: isod89
+  source_url: https://github.com/isod89/pocket-metal#readme
+  first_party: true
+versions:
+  - version: v2
+    date: 2026-11-22
+    url: https://github.com/isod89/pocket-metal/releases/tag/v2
+    notes: First release on its own repository; runs the chain on two cores, adds down-tuning, the riff gate and stereo width. Not yet run on a pedal.

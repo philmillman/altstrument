@@ -11,7 +11,7 @@ description: >-
   sequencer has 16 patterns per track of up to 128 bars, with parameter locks, ratchets and trig conditions, plus
   scenes, chains and a song arrangement that exports a WAV mix, stems or a MIDI file. There are 41 effects on track
   chains, four send buses and the master, a four-loop looper and MIDI clock and MTC sync. The plug-in host loads
-  aarch64 Linux VST3, VST2, LV2 and CLAP builds and Open MPC plug-ins, and runs 32-bit ARM plug-ins through a bridge. Its own
+  aarch64 Linux VST3, VST2, LV2 and CLAP builds and Open MPC plug-ins, and runs 32-bit ARM plug-ins through a bridge. Songs from stock MPC Sample projects, jam capture and Ableton Live Set export arrived in the 0.6 line. Its own
   synths moved out into three separate plug-ins at 0.1.0: Melodee Poly, Melodee PD and Melodee Chip.
 status: active
 authors:
@@ -42,6 +42,22 @@ image:
   source_url: https://github.com/keremimo/melodee-sample#readme
   first_party: true
 versions:
+  - version: v0.6.5
+    date: 2026-11-22
+    url: https://github.com/keremimo/melodee-sample/releases/tag/v0.6.5
+    notes: A sequence now keeps its own pattern for each track, and SEQ with STOP turns the selected track off instead of stopping the transport. Opening a stock MPC Sample project turns its song into Song, and a jam capture records the patterns, mutes, tempo and sequences launched between PLAY and STOP. Requires MPC Sample firmware 1.3.0.12.
+  - version: v0.6.4
+    date: 2026-11-21
+    url: https://github.com/keremimo/melodee-sample/releases/tag/v0.6.4
+    notes: Fixes chop hits from MPC Sample projects playing the whole sample. Adds Ableton Live Set export from Song, which writes an .als file with a copy of every sample for Live 12.1 or later, and a MIDI Config setting that plays the project's scale on a keyboard's white keys. Requires MPC Sample firmware 1.3.0.12.
+  - version: v0.6.3
+    date: 2026-11-21
+    url: https://github.com/keremimo/melodee-sample/releases/tag/v0.6.3
+    notes: Fixes keygroup programs saved by the MPC software playing every key too high, because a root note of 0 was read as C-1 instead of using the root stored in the WAV file. Requires MPC Sample firmware 1.3.0.12.
+  - version: v0.6.2
+    date: 2026-11-21
+    url: https://github.com/keremimo/melodee-sample/releases/tag/v0.6.2
+    notes: Adds a setting to turn Autosave off, with a SAVE button on Projects and a REVERT to the saved file. The engine, model and file formats move to a separate MIT-licensed repository, ellic-core, with no change in how Melodee plays. Requires MPC Sample firmware 1.3.0.12.
   - version: v0.6.1
     date: 2026-11-21
     url: https://github.com/keremimo/melodee-sample/releases/tag/v0.6.1

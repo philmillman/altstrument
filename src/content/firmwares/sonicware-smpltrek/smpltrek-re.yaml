@@ -1,0 +1,28 @@
+device: sonicware-smpltrek
+also_devices: [sonicware-lofi-12-xt, sonicware-cydrums]
+name: smpltrek-re
+kind: tool
+summary: >-
+  Reverse-engineering toolkit for the SmplTrek, Lofi-12 XT and CyDrums, with an update-container resealer, a palette-swap tool that rewraps one product's firmware for another, a C6748 board emulator and recovered symbols and documentation.
+description: >-
+  The three products are described as one board built around a TI C6748 DSP running SYS/BIOS, with a separate panel microcontroller. The repository holds the recovered facts: update container layout and its seeded CRC-32 integrity fields, symbol files for several releases, bootloader notes, a register-level hardware write-up and an open-questions list with evidence levels. Tools parse and reseal update files, patch sections, and rewrap a system image from one of the three products for another. The README reports that a Lofi-12 XT image and a CyDrums 1.1.84 image, each with its settings writer disabled first, have installed, booted and run on a SmplTrek, and that a unit stuck on a bad image was recovered through BOOT MODE with an official file from the card. Other directions are checked offline only. A C6748 emulator boots the stock SmplTrek firmware to its user interface with display, panel, SD card, USB and audio models, and can load user-supplied DSP programs. The repository contains no Sonicware binaries, manuals or content, so the update files must come from Sonicware. The same author's Enaga firmware builds on these findings. Not affiliated with Sonicware.
+status: active
+authors:
+  - name: seawaffle
+    url: https://github.com/seawaffle
+source: https://github.com/seawaffle/smpltrek-re
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT License. FatFs under emulator/third_party/fatfs keeps its own licence, and the binutils patch under tools/toolchain/patches is GPL-3.0-or-later, as the LICENSE file and README state.
+distribution: source-only
+requires_stock: Sonicware's official update files for the products, obtained from Sonicware and placed in the firmware/ folder; the repository does not include them.
+install_notes: >-
+  Run the Python tools from the repository root (Python 3.10 or later; gcc and g++ for the emulator). The tools write new files only. Installing a rewrapped file is a manual step from BOOT MODE with the file on the SD card; docs/13-palette-swap-howto.md describes it, including restoring official firmware. SAFETY.md says HOME + power reaches BOOT MODE and installs an official file, and that nothing here writes the bootloader. It also states that no recovery path is known if the bootloader itself were damaged.
+brick_risk: false
+tags: [reverse-engineering, emulator, converter, dsp, research]
+versions:
+  - version: main @ 11ac9a0
+    date: 2026-11-22
+    url: https://github.com/seawaffle/smpltrek-re/commit/11ac9a0ae1fb5126728950792504c9e304257101
+    notes: No tagged releases; this is the latest commit.

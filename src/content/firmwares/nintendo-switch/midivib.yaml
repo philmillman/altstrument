@@ -1,0 +1,27 @@
+device: nintendo-switch
+name: midivib
+summary: >-
+  Homebrew MIDI file player for the Nintendo Switch that drives Joy-Con and Pro Controller HD rumble from note events, with pitch setting the vibration frequency and velocity the amplitude.
+description: >-
+  midivib is an .nro app that browses the SD card for .mid and .midi files and plays them as vibration rather than sound. Note pitch from A0 to C8 maps logarithmically onto 41.7 to 626 Hz, within the HD rumble range that libnx documents, and velocity maps to amplitude, with note-off or the end of the note setting the amplitude to zero. It reads MIDI formats 0, 1 and 2, follows tempo changes in the middle of a file, handles SMPTE time bases and running status, and gives notes with no matching note-off a 0.3 second length. RIFF RMID files are not supported. Controls are the directional pad to browse, A to enter a folder or play, B to go back and plus to quit. The interface is in Chinese and uses the Switch's shared system font.
+
+  There is no release. The repository holds the C source, a Makefile and a GitHub Actions workflow that builds the .nro with devkitPro and publishes it as a build artifact.
+status: active
+authors:
+  - name: qq541885
+    url: https://github.com/qq541885
+source: https://github.com/qq541885/midivib
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and the README does not state a license.
+distribution: source-only
+install_notes: >-
+  Build with devkitPro and the portlibs listed in the README, or take the .nro from the GitHub Actions build artifact, copy it to /switch/midivib.nro on the SD card and start it from the Homebrew Menu. This needs a console with custom firmware, which this catalog does not cover. Copy .mid files to any folder on the SD card.
+brick_risk: false
+tags: [player, midi, homebrew, nro, handheld]
+versions:
+  - version: main @ 34dea7f
+    date: 2026-11-22
+    url: https://github.com/qq541885/midivib/commit/34dea7f0f0d54abb27ef941088777cfb69fd7834
+    notes: No tagged releases; this is the latest commit.

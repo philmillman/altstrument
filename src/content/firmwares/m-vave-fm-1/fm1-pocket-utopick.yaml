@@ -4,7 +4,7 @@ name: FM1.Pocket
 summary: >-
   Offline-capable phone and computer web app built on fm1-emu that plays any Firmware Hub firmware on a touch FM-1, takes a MIDI keyboard, and installs firmware on a real FM-1 over USB after a backup and the m-bootloader protector.
 description: >-
-  FM1.Pocket is a fork of Joakim Eriksson's fm1-emu that adds one folder, pocket/, and leaves the emulator unchanged. The page draws the FM-1 for touch with several fingers at once, in the whole panel, bigger keys or top-only layouts, with piano keys, the colours the FM-1 is sold in and screen styles. A firmware list fetches community firmware from the Hub, keeps each offline with its author's manual, and can open a local file or load a DX7 voice bank. A MIDI keyboard plays it, with a drawing of the keyboard and a step-by-step map for its knobs and pads. The REAL FM-1 pane connects to a unit over Web MIDI in Chrome or Edge or on Android, saves a backup of everything on it, installs jvitkauskas' m-bootloader as a protector, which the page requires before any install, and then installs a chosen firmware through the protector's MIDI mode. It also installs Tether, which makes the real unit the panel of the page. The app can be installed as a home-screen app, has an English and Spanish interface, and the project publishes other Pocket apps beside it.
+  FM1.Pocket is a fork of Joakim Eriksson's fm1-emu that adds one folder, pocket/, and leaves the emulator unchanged. The page draws the FM-1 for touch with several fingers at once, in the whole panel, bigger keys or top-only layouts, with piano keys, the colours the FM-1 is sold in and screen styles. A firmware list fetches community firmware from the Hub, keeps each offline with its author's manual, and can open a local file or load a DX7 voice bank. A MIDI keyboard plays it, with a drawing of the keyboard and a step-by-step map for its knobs and pads. The REAL FM-1 pane connects to a unit over Web MIDI in Chrome or Edge or on Android, saves a backup of everything on it, installs jvitkauskas' m-bootloader as a protector, which the page requires before any install, and then installs a chosen firmware through the protector's MIDI mode. It also installs Tether, which makes the real unit the panel of the page. The app can be installed as a home-screen app, and since android-v1.0 an Android APK runs the emulator as native code, has an English and Spanish interface, and the project publishes other Pocket apps beside it.
 status: active
 authors:
 - name: utopick
@@ -27,7 +27,11 @@ image:
   source_url: https://github.com/utopick/fm1-pocket
   first_party: true
 versions:
+- version: android-v1.0
+  date: 2026-11-22
+  url: https://github.com/utopick/fm1-pocket/releases/tag/android-v1.0
+  notes: First release of FM1.Pocket as an Android app, the same app as the page with the emulator running as native code. The notes say it plays 386DX at the FM-1's 240 MHz on a Galaxy S23, runs the second FM-1 core on a second phone core and starts at 240 MHz. Tether is built in and listed first, and an UPDATE FIRMWARES button reloads the firmware list. MIDI keyboards and a real FM-1 work over USB. The APK is attached to the release.
 - version: pocket @ c4c1520
   date: 2026-11-21
   url: https://github.com/utopick/fm1-pocket/commit/c4c15209c2bd9cc601074db556ea066c117b7d22
-  notes: No tagged releases of the app; this is the latest commit of the pocket branch, which puts the published page and WebAssembly back to an earlier build because the newer one fails on phones, while the source keeps the newer work. Before it, commits add emulator speed work (a WebAssembly JIT that compiles more instructions inline) and an Android app, a WebView wrapper around a native core with a workflow that builds the APK. The only release, tether-v1.0, is the Tether firmware.
+  notes: Git commit of the pocket branch, the latest commit before the Android release, which puts the published page and WebAssembly back to an earlier build because the newer one fails on phones, while the source keeps the newer work. Before it, commits add emulator speed work (a WebAssembly JIT that compiles more instructions inline) and an Android app, a WebView wrapper around a native core with a workflow that builds the APK. The release tether-v1.0 is the Tether firmware.

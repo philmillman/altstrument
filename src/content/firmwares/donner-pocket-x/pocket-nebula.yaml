@@ -1,0 +1,37 @@
+device: donner-pocket-x
+also_devices: [m-vave-blackbox]
+name: NEBULA
+summary: >-
+  Granular processor firmware for the Donner Pocket X and M-VAVE BlackBox, built on OpenPocket, that plays up to 32 grains from a 5.9 second memory of the guitar, with 40 soundscapes and a freeze footswitch, installed from a browser page.
+description: >-
+  NEBULA is an alternative firmware on OpenPocket's base firmware, exported from the OpenPocket repository. The guitar is recorded continuously into a 5.9 second memory and up to 32 grains play small pieces of it back, each with its own position in the past, length, pitch, direction and stereo place. The cloud passes through a tone filter and an eight-line space, part of it feeds back into the memory, and it joins the dry guitar in stereo. FREEZE stops the recording so the cloud lives on what it holds. There are forty soundscapes, pitch from minus to plus 24 semitones with grains optionally on octaves, fifths or scales, reversed grains, glide, a rhythm control that locks to MIDI clock, trails when bypassed, an onboard amp section, a live drawing of the cloud on the screen, and MIDI program changes, 23 control changes and clock.
+
+  The installer page checks the package in the browser before sending it and the pedal checks it again before writing. It works over the official firmware, over OpenPocket or over another firmware on OpenPocket's base, and OpenPocket presets, NAM models and cabinet IRs stay on the pedal. The release notes and README say version 1 has not been run on a pedal yet; the BlackBox package is built from the same source, and a BlackBox on M-VAVE firmware V22 or later is refused. The project is independent of Donner and M-VAVE.
+status: active
+authors:
+  - name: isod89
+    url: https://github.com/isod89
+source: https://github.com/isod89/pocket-nebula
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  GPL-3.0-only for the project. The chip support and update loader come from felucca-bsp (MPL-2.0), the installer and packaging tools are adapted from Felucca (GPL-3.0), screen fonts are SIL OFL 1.1, and the repository holds a few binary files taken as-is from JieLi's Apache-2.0 AC79 SDK and test guitar loops under CC BY 4.0. It commits no Donner or M-VAVE firmware.
+homepage: https://isod89.github.io/pocket-nebula/
+based_on: donner-pocket-x/openpocket
+distribution: browser-installer
+requires_stock: Donner Pocket X official firmware, or OpenPocket; on the BlackBox, M-VAVE firmware older than V22
+install_notes: >-
+  Open the installer page in Chrome or Edge on a computer, plug the pedal in over USB, press Connect and then Install, and keep it plugged in for a minute or two. Keep your backup or the official firmware file at hand. To go back, use OpenPocket's installer (Back to OpenPocket) or step 3 of this installer with the official file from Donner or M-VAVE. A pedal that restarts in a loop can be recovered with the installer's rescue mode or OpenPocket's USB rescue.
+brick_risk: false
+tags: [granular, drone, ambient, fx, guitar, presets, tuner, web, usb-midi, open-source]
+image:
+  url: https://raw.githubusercontent.com/isod89/pocket-nebula/main/docs/nebula/play.png
+  alt: NEBULA PLAY page on the pedal's screen showing soundscape 01 NEBULA of type CLOUD, a purple dust display of the grain memory, SIZE 251 MS, PITCH 0 and MIX 55%, and FREEZE and ON buttons
+  credit: isod89
+  source_url: https://github.com/isod89/pocket-nebula#readme
+  first_party: true
+versions:
+  - version: v1
+    date: 2026-11-21
+    url: https://github.com/isod89/pocket-nebula/releases/tag/v1
+    notes: First release with 40 soundscapes, freeze, pitch on scales and a live cloud display. Not yet run on a pedal.

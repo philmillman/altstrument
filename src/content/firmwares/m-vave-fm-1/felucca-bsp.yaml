@@ -34,6 +34,10 @@ install_notes: >-
 brick_risk: false
 tags: [platform, sdk, usb-midi]
 versions:
+- version: main @ 2bd9dbe
+  date: 2026-11-22
+  url: https://github.com/hugelton/felucca-bsp/commit/2bd9dbe1fcbb8c67ba6721b2435f3fb0597a202a
+  notes: No tagged releases; this is the latest commit. Since the previous row, the loader lets a firmware move the end of its app area up to 0xE0000 (FL_APP_END) with a slot switch and steps, with the defaults unchanged. The flash code gains an optional sector erase done in short windows so that a long erase no longer holds the CPU, off by default, and an install test now reads the flash only after the loader has exited.
 - version: main @ 2600dc6
   date: 2026-11-21
   url: https://github.com/hugelton/felucca-bsp/commit/2600dc6e735e079f93426ec9073acb8bb3a09492

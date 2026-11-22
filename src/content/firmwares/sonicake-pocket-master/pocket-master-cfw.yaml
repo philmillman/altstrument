@@ -1,0 +1,25 @@
+device: sonicake-pocket-master
+name: Pocket Master CFW
+summary: >-
+  Rights warning: unofficial firmware for the Pocket Master built from Sonicake's 1.3.3 code, with scenes, a STOMP mode, extra delays, reverbs, Clone and IR slots and MIDI maps. Binary only, with no named author.
+description: >-
+  Rights warning: the images are Sonicake's V1.3.3 firmware with changes made by the community, the page says, and no source is published. The firmware adds scenes, a STOMP mode, ten Clone and ten User IR slots, further delays and reverbs, a global EQ, a screen saver, themes and configurable MIDI maps, including drum and delay tempo sync. The site also hosts a browser editor that can be installed as an app, built on SonicMaster, with Windows and Android versions, a manual and a NAM converter. The page does not name the author, who says the firmware was made from October 2026 and tested on one unit, and that it may not work on every unit. It is credited to Sonicake's own code plus the SonicMaster, interoperability guide, gp150-htfw and Linux flash projects. The page asks that derived builds credit the site and link to it. The project says it is not affiliated with Sonicake.
+status: active
+authors:
+  - name: guitar-training-generator.com
+    url: https://guitar-training-generator.com/
+source_status: binary-only
+license: proprietary
+license_notes: >-
+  No licence is stated. The firmware contains Sonicake's code, which stays under Sonicake's rights, and the page provides it as is, without warranty.
+homepage: https://pocketmaster-cfw.guitar-training-generator.com/
+distribution: download
+requires_stock: Sonicake firmware V1.3.3 (the pedal shows V1.3.3-CFW1.0 in Settings, About, after the update)
+install_notes: >-
+  Use a USB cable and Chrome, Edge or Opera, with Sonicake Manager closed. Flash the .bin through the Sonicake CFW app's firmware update or through Sonicake Manager's firmware update, after checking its SHA-256 against the release notes. The project recommends first backing up the MCU flash with a CH341A programmer, because the bootloader is not part of the update file. Moving from stock deletes user IRs and Clones on the first start, while presets and settings are kept, so keep the .wav, .nam and .clo files. To go back, set the tuner to MUTE and flash Sonicake's V1.3.3 with Sonicake Manager. If the pedal does not start, power it on while holding footswitch 1, footswitch 2 and VOL/VALUE to enter update mode.
+brick_risk: false
+tags: [multi-effects, guitar, midi, ir, web-midi, ui, scenes]
+versions:
+  - version: V1.3.3-CFW1.0
+    url: https://pocketmaster-cfw.guitar-training-generator.com/
+    notes: Only version listed, marked stable and tested on the author's own unit. The page gives no release date; it says the firmware has been made since October 2026.

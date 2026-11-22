@@ -1,0 +1,28 @@
+device: m-vave-fm-1
+name: FM-1 Battle
+summary: >-
+  SLOOP 2.8.5 with a battle mode for timed online beat competitions: the editor's SysEx protocol gains commands to arm, lock, run, submit and score a battle, with the player's own song left untouched.
+description: >-
+  The battle mode adds SysEx commands 100 to 111 to SLOOP's editor protocol, screens for the waiting room and the submit step, and locks that hold the pack's three synth sounds, the kit and the tempo while a battle runs. During a battle the player's song is not written to flash: the battle plays in RAM, uses one spare flash sector for its record, and the song is read back at the end. PLAY held for two seconds opens the submit screen, and a battle can be left from the waiting screens. The repository also carries a simulated FM-1 and a renderer that the site uses to render a submitted song. Everything else, including the README and guides, is SLOOP's. The repository is not a GitHub fork, its default branch is battle, and the changes are a few days of commits on top of SLOOP 2.8.5.
+status: active
+authors:
+- name: MetaCorp
+  url: https://github.com/MetaCorp
+- name: isod89
+  url: https://github.com/isod89
+source: https://github.com/MetaCorp/fm1-battle-firmware
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Code is GPL-3.0-only; the icon atlas and panel image are separate assets (LICENSING.md). Includes msfa (Apache-2.0) for the FM6 engine. The repository commits docs/firmware/sloop-2.8.5.fwsc, a SLOOP package rather than M-VAVE's stock firmware.
+based_on: m-vave-fm-1/sloop
+distribution: download
+install_notes: >-
+  The README is SLOOP's: install over USB from SLOOP's browser installer, and go back to M-VAVE's firmware with M-UPGRADE and the official V16 package. The battle mode is built in with BATTLE_MODE, and docs/BATTLE_PROTOCOL.md describes the commands. The repository publishes no releases.
+brick_risk: false
+tags: [groovebox, sequencer, game, sysex, midi, fork]
+versions:
+- version: battle @ e3d1afe
+  date: 2026-11-22
+  url: https://github.com/MetaCorp/fm1-battle-firmware/commit/e3d1afe81c4d5e23c842f8f3e993448d3a1666a6
+  notes: No tagged releases; this is the latest commit.

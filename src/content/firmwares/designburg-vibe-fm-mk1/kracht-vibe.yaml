@@ -8,7 +8,7 @@ description: >-
   tone, and all 30 values are plugin parameters. RUMBLE runs the kick through a 2.6 second dark hall, baked per kick by FFT
   convolution and ducked by the kick. Closed hat, open hat and clap are synthesised, and the SEQ page has 16 steps on four
   lanes with a pattern book per lane, swing, and mutes and pattern changes that land on the next bar. IN 1 and IN 2 are mixed
-  in and ducked by the kick, and every kick fires GATE OUT for 10 ms. In a DAW it follows the transport and tempo. It is
+  in and ducked by the kick, and every kick fires GATE OUT for 10 ms. Since v0.5.0 the pads carry 16 held or latched performance effects, and the player adds note repeat, overdub, quantize, fills, six scenes, polymeter per lane, a kick tuned to a key and MIDI in and out, with settings saved. In a DAW it follows the transport and tempo. It is
   built from C sources with the VIBE FM SDK and Zig 0.13.0 into a WebAssembly file and a plugin zip, was made for the VIBE Box
   Challenge on The Firmware Hub, and was tested in the player and in the VIBE FM VST. The VIBE FM Mk1 has not shipped, so use
   on the hardware is untested.
@@ -35,6 +35,10 @@ image:
   source_url: https://github.com/Kracht/kracht-vibe#readme
   first_party: true
 versions:
+  - version: v0.5.0
+    date: 2026-11-22
+    url: https://github.com/Kracht/kracht-vibe/releases/tag/v0.5.0
+    notes: Adds 16 performance effects on the pads (beat repeat, tape stop, pitch shifts, reverse, sweeps, delay and hall throws and others), note repeat, overdub, quantize, fills, six scenes, polymeter per lane, the kick tuned to a key, MIDI in and out with clock, and saved settings.
   - version: v0.3.1
     date: 2026-11-21
     url: https://github.com/Kracht/kracht-vibe/releases/tag/v0.3.1

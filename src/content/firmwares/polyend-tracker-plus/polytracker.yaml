@@ -10,8 +10,7 @@ description: >-
   was removed, along with the stock pattern, song, instrument, performance and
   project screens. What remains is a pattern editor with live recording, an
   order list of up to 128 slots, a file screen with an SD browser, the sample
-  loader, editor, parameter and recorder screens, and the Config and Master
-  screens. Songs are Amiga .mod files in /Mod on the card: it reads M.K., M!K!,
+  loader, editor, parameter and recorder screens, and a Config screen and a Master screen that holds only volume since 0.9.15. Songs are Amiga .mod files in /Mod on the card: it reads M.K., M!K!,
   FLT4, 4CHN and N.T. modules, refuses six and eight channel ones, and writes
   M.K. The replayer is ported from pt2-clone and follows ProTracker 2.3D
   behaviour, including its period tables, funk repeat and the E0x filter. Files
@@ -48,6 +47,10 @@ install_notes: >-
 brick_risk: false
 tags: [tracker, mod, sampler, fork, ui, protracker]
 versions:
+  - version: PolyTracker0.9.30
+    date: 2026-11-22
+    url: https://github.com/hannibalpeck/PolyTracker/releases/tag/PolyTracker0.9.30
+    notes: The release page has no notes; the commits since 0.9.14 cut the Master screen down to volume only and fix the Extras file-extension check so .ptextra programs are listed. They add a Saving song message and a File > Info screen with file size and editable sample names, save patterns that are not in the order list, stop pattern switches from changing the order list, and make a pattern switch while playing continue at the same row.
   - version: PolyTracker0.9.14
     date: 2026-11-18
     url: https://github.com/hannibalpeck/PolyTracker/releases/tag/PolyTracker0.9.14

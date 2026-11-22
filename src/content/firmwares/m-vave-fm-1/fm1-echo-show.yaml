@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+name: FM-1 on Echo Show 8
+kind: tool
+summary: >-
+  Port of the fm1-emu emulator to an Amazon Echo Show 8 (2nd gen) running Alpine Linux, which turns the unit into a
+  touch-screen FM-1 with multi-touch chords that plays community firmwares through its own speaker.
+description: >-
+  The repository holds patches to fm1-emu v0.5.1, mainly ARM64 JIT and two-thread changes that bring 12 tested firmwares above
+  real time on the Echo's MediaTek SoC, plus a touch reader, a desktop launcher, a settings page and the scripts that bundle and
+  push the files over a USB serial console. It starts after the Echo's bootloader has been unlocked and Alpine installed, which it
+  does not cover. No firmwares are included. Limitations listed are no MIDI, no network, fixed touch velocity and one tested
+  unit. The author says the repository is not affiliated with Amazon or M-VAVE.
+status: active
+authors:
+- name: weasel79
+  url: https://github.com/weasel79
+source: https://github.com/weasel79/fm1-echo-show
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is MIT, and the README says the emulator patches are MIT as upstream fm1-emu is. Bundles you build contain
+  glibc, ALSA and X11 libraries under their own licences.
+based_on: m-vave-fm-1/fm1-emu
+distribution: source-only
+install_notes: >-
+  Needs an Echo Show 8 2nd gen with an unlocked bootloader, the TECHO5 kernel and an Alpine root with a USB serial console,
+  none of which the repository provides; it then builds the fm1-live bundle with Rust and zig and pushes it with the included
+  scripts. The README warns that unlocking and flashing an Echo can brick it and end its use as an Alexa device, and to back up
+  every partition first; that step is outside this project and touches the Echo, not an FM-1.
+brick_risk: false
+tags: [emulator, port, ui]
+image:
+  url: https://raw.githubusercontent.com/weasel79/fm1-echo-show/main/docs/screenshots/shrub-wavetable.png
+  alt: The FM-1 panel on a landscape screen showing a green wavetable plot labelled PWM, four knob dials, a level meter and the keys below.
+  credit: weasel79
+  source_url: https://github.com/weasel79/fm1-echo-show#readme
+  first_party: true
+versions:
+- version: main @ 753cba1
+  date: 2026-11-21
+  url: https://github.com/weasel79/fm1-echo-show/commit/753cba1
+  notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+name: FM-1 Big Screen for iPad and iPhone
+kind: tool
+summary: >-
+  iPad and iPhone app that shows the FM-1's screen large over USB or Bluetooth MIDI, with a spyglass that names the
+  played note or chord, draws it on a staff and shows key velocity; the iOS version of the author's FM-1 Big Screen.
+description: >-
+  The app was called FM-1 Mirror until 2026-11-21. It reads the screen from a Big Screen build of the firmware or from
+  firmware built on fm1-base with its own screen mirror turned on, and the spyglass works with any firmware. A USB
+  keyboard connected to the iPad or iPhone can play the FM-1 on channel 1, and the display can be enlarged with a smoothing
+  filter and shown in five colour looks. It is a SwiftUI and CoreMIDI app that builds with XcodeGen, needs iOS or iPadOS 17,
+  and includes a recorded screen stream as a test demo. The README lists the waveform and installing the Big Screen
+  firmware as not yet in this version, so the app writes nothing to the unit. It has no App Store release.
+status: active
+authors:
+- name: pfkellogg
+  url: https://github.com/pfkellogg
+source: https://github.com/pfkellogg/fm1-mirror-ios
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and the README makes no license statement. The Resources/Demo/erik37.syx file is a
+  recorded screen stream, not firmware.
+distribution: source-only
+install_notes: >-
+  Install XcodeGen, run xcodegen generate and open the generated project in Xcode to run it on an iPad or iPhone. The
+  simulator cannot see USB or Bluetooth MIDI devices, so it only runs the demos. For the spyglass to see the FM-1's own
+  keys, turn on KEY OUT on the FM-1 (SEQ, page 6/8 MIDI TRACK, K4). The FM-1 takes one Bluetooth connection at a time.
+brick_risk: false
+tags: [ios, usb-midi, ble-midi, midi, ui, chords]
+versions:
+- version: main @ 5a57fe6
+  date: 2026-11-21
+  url: https://github.com/pfkellogg/fm1-mirror-ios/commit/5a57fe61fc0048049ff313670a53ba1fe2f2dd1c
+  notes: No tagged releases; this is the latest commit. It also shows the screen mirror that fm1-base firmware carries.

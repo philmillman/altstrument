@@ -3,7 +3,7 @@ name: op1-sdk
 kind: tool
 summary: SDK for adding synth engines, effects and sequencer features to the original OP-1 firmware R246, written in C or assembly, with simulator tests and a composer that patches your own official image.
 description: >-
-  Rights warning: the v0.2.0 release page carries a prebuilt op1plus image, which is built from Teenage Engineering's
+  Rights warning: the v0.2.0 and v0.3.0 release pages each carry a prebuilt image, which is built from Teenage Engineering's
   R246 firmware and so probably contains their code, although the README tells users not to redistribute built
   images and the repository itself holds none. Features are self-contained folders with a manifest, sources and tests, hooked
   into the stock firmware at declared addresses. The build tools check the SHA-256
@@ -12,7 +12,7 @@ description: >-
   op1plus recipe into one image: the LOFI, WHEEL, WARP and TRIO synth engines,
   RESO, SHIMMER and FX MIX effects, a drum step sequencer, a take requantizer,
   a chord keyboard and extra parameters for the stock engines. Features can be
-  packed as zip files and shared. The README reports that the features were played
+  packed as zip files and shared. A tape screen called PLAY, added in v0.3.0 and labelled experimental, keeps a song as notes and sound settings instead of audio, with a tracker view, sixteen song slots, demo songs and up to six sounding tracks, and an op1play recipe composes it into the image. The README reports that the features were played
   on a real OP-1. The bootloader is not modified, and no TE firmware is committed to the repository.
 status: active
 authors:
@@ -24,13 +24,17 @@ license: MIT
 distribution: download
 requires_stock: R246
 install_notes: >-
-  Either flash the prebuilt image attached to the release (see the rights warning), or build the bfin-elf toolchain described in the docs, compose an image from
+  Either flash a prebuilt image attached to a release (op1play in v0.3.0; see the rights warning), or build the bfin-elf toolchain described in the docs, compose an image from
   your own official op1_246.op1, then flash it with the included script through
   the Firmware Upload option (hold COM at power-on). Built images contain TE
   firmware and should not be shared. Flashing the original file restores stock.
 brick_risk: false
 tags: [sdk, synth-engine, fx, sequencer, patch]
 versions:
+  - version: v0.3.0
+    date: 2026-11-21
+    url: https://github.com/BertBrandstifter/op1-sdk/releases/tag/v0.3.0
+    notes: Adds PLAY, a tape screen that stores a song as editable notes and sound settings, with a tracker, 16 song slots and four demo songs, built into a prebuilt op1play image that is the release's only asset. The release page itself has only a short title.
   - version: v0.2.0
     date: 2026-11-07
     url: https://github.com/BertBrandstifter/op1-sdk/releases/tag/v0.2.0

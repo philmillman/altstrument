@@ -25,7 +25,7 @@ license_notes: >-
   A 1 KB test fixture .fwsc in the repository is not a stock image.
 distribution: download
 install_notes: >-
-  Download FMutate.apk (the same file as fmutate-0.2.0.apk) from the release and open it on an Android 9 or later phone, or run adb install; the release is signed with the
+  Download FMutate.apk (the same file as fmutate-0.2.1.apk) from the release and open it on an Android 9 or later phone, or run adb install; the release is signed with the
   project's key, which changed in 0.2.0, so 0.1.0 has to be uninstalled first, and a copy built from source has to be uninstalled first because it uses a debug key. To build it yourself, use mise (Erlang, Elixir, Java, Zig and Rust at the pinned versions), the Android SDK with NDK 27.2 and adb, then deploy with mix mob.deploy to a
   phone with USB debugging on. The app writes nothing to a physical FM-1.
 brick_risk: false
@@ -37,10 +37,14 @@ image:
   source_url: https://github.com/GenericJam/fmutate
   first_party: true
 versions:
+- version: 0.2.1
+  date: 2026-11-22
+  url: https://github.com/GenericJam/fmutate/releases/tag/v0.2.1
+  notes: Installs over 0.2.0 and keeps layouts and saves. With OberVave a strike at the top of a key is now clearly quieter than one at the bottom (about 20 dB at the softest default), held and arpeggiated notes keep their key's level, the Opling menu button has larger eyes, quitting saves a firmware's settings more reliably and bundled libraries get security updates. Signed with the same release key as 0.2.0.
 - version: master @ 98e6d4c
   date: 2026-11-21
   url: https://github.com/GenericJam/fmutate/commit/98e6d4cb5699c2c807f1dfca5374388394cad34e
-  notes: Latest commit on the master branch, after v0.2.0. The newest commits add an iOS build 6 with a velocity fix and poly-aftertouch fixes for OberVave, and a CI tests workflow for Elixir, Android and Swift.
+  notes: Commit on the master branch after v0.2.0 and before 0.2.1. The newest commits add an iOS build 6 with a velocity fix and poly-aftertouch fixes for OberVave, and a CI tests workflow for Elixir, Android and Swift.
 - version: 0.2.0
   date: 2026-11-20
   url: https://github.com/GenericJam/fmutate/releases/tag/v0.2.0

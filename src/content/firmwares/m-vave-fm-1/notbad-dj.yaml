@@ -1,0 +1,39 @@
+device: m-vave-fm-1
+name: NotBad DJ for FM1
+summary: >-
+  DJ controller firmware for the FM-1 that sends headphone cue audio over USB Audio and controls over USB MIDI, paired with
+  a two-deck browser mixer; the firmware installer is blocked in the app pending hardware tests.
+description: >-
+  The browser app decodes and mixes local WAV, MP3 and FLAC tracks on two decks, with beat grids, sync, loops, key detection
+  and an equal-power crossfader. The FM-1 acts as the controller and, through a separate USB Audio output, as the
+  headphone cue device. The web part is derived from Wincha's Mini DJ, and the firmware is built on Charles Vestal's
+  fm1-base. The v0.1.0 release notes and the acceptance report say the package built and checked by hash, that tests ran
+  against a host simulator, and that installing on a physical FM-1, the separate cue output and a 60-minute run were
+  not yet tested. The in-app Firmware tab only inspects the package, compares two flash dumps and reads the MIDI identity;
+  it blocks installation. The documentation is in English and Russian.
+status: active
+authors:
+- name: Teutonick
+  url: https://github.com/Teutonick
+source: https://github.com/Teutonick/NotBad-DJ-for-FM1
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is MIT with Wincha's copyright for Mini DJ, which the web app includes. The README and docs/UPSTREAM.md
+  give the firmware source and the vendored fm1-base installer modules as MPL-2.0; font and SDK licence texts are in
+  firmware/licenses. Demo tracks are CC0-1.0. No stock firmware image is committed.
+homepage: https://teutonick.github.io/NotBad-DJ-for-FM1/
+distribution: source-only
+requires_stock: V15
+install_notes: >-
+  The release has fm1-dj-0.1.0.fwsc, but the project's installer is blocked until hardware validation and the README gives
+  no flashing steps; the firmware can be built with firmware/build.sh. The safety document says only a Puya P25Q80H
+  unit with m-bootloader 2.3 was tested, lists steps to take two matching full flash dumps and download the stock package
+  first, and describes recovery paths for each failure state.
+brick_risk: false
+tags: [controller-mode, usb-audio, usb-midi, web, mixer, performance]
+versions:
+- version: 0.1.0
+  date: 2026-11-22
+  url: https://github.com/Teutonick/NotBad-DJ-for-FM1/releases/tag/v0.1.0
+  notes: First FM-1 DJ build for hardware testing; installation and separate cue output on a physical FM-1 were not yet verified.

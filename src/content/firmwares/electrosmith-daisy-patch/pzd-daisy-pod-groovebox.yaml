@@ -12,7 +12,7 @@ description: >-
   player and a sliced drum kit that start on their own MIDI channels and can import OP-1 drum and instrument packs you supply. All engines play at the
   same time, each on its own MIDI channel, and share a plate reverb and delay. Since v4.0.0 there are eight MIDI
   tracks with patterns, chains and an arpeggiator, 16 scenes and a song mode, and v4.0.1 adds a Supersaw engine as the
-  eighth. Presets, performances and samples
+  eighth. v4.0.5 adds a Global:Duck sidechain and v4.0.6 sixteen live performance effects over the whole mix. Presets, performances and samples
   live on the SD card. From v1.6.0 the app runs from QSPI flash behind a separate Daisy bootloader, which each Pod
   needs flashed once. v3.0.0 renamed the SD card folders, so cards from v2.x need their folders renamed.
 status: active
@@ -45,6 +45,18 @@ image:
   source_url: https://github.com/Peteranthony1st/PZD-Daisy-Pod-Groovebox
   first_party: true
 versions:
+  - version: v4.0.7
+    date: 2026-11-22
+    url: https://github.com/Peteranthony1st/PZD-Daisy-Pod-Groovebox/releases/tag/v4.0.7
+    notes: Knobs that move a cursor or choose from a list act as soon as they are turned on arriving at a page, and the pickup on other knobs also catches a fast turn that sweeps past the on-screen value.
+  - version: v4.0.6
+    date: 2026-11-21
+    url: https://github.com/Peteranthony1st/PZD-Daisy-Pod-Groovebox/releases/tag/v4.0.6
+    notes: Adds Live FX, sixteen performance effects over the whole mix (repeats, stutter, reverse, tape stop, scratch, sweeps, crush, gate and throws) that can be held or latched and are captured by Live and Song export.
+  - version: v4.0.5
+    date: 2026-11-21
+    url: https://github.com/Peteranthony1st/PZD-Daisy-Pod-Groovebox/releases/tag/v4.0.5
+    notes: Adds Global:Duck, a sidechain in which a MIDI track, engine, audio track or the input ducks any mix of channels by an amount each, with hold and release in milliseconds or tempo-synced. Adds a second demo song, and the drum grid shows pad 1 on the bottom row.
   - version: v4.0.4
     date: 2026-11-21
     url: https://github.com/Peteranthony1st/PZD-Daisy-Pod-Groovebox/releases/tag/v4.0.4

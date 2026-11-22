@@ -8,7 +8,7 @@ description: >-
   The app connects to the FM-1's USB MIDI port and runs the sequencer, the synth engines and the project files on the
   phone, while Windjammer on the FM-1 shows the app's screens and sends back the panel controls. Audio can play through
   the phone, through Android's shared USB audio, or directly to the FM-1's output with the MASTER knob in a synth-only
-  mode. External USB MIDI input and output and the FM-1's TRS MIDI input can feed the engines. A playback service keeps
+  mode. External USB MIDI input and output and the FM-1's TRS MIDI input can feed the engines. From 0.8.0 an optional demo runs a firmware package that the user imports on a 64-bit phone and uses the FM-1 as its display and controls; the README says performance varies. A playback service keeps
   a session running with the screen off and shows a notification with a stop button. The README says USB routing,
   disconnects, interruptions and screen-off operation need to be checked on the phone before pocket use. The source
   started from the instrument-v0.7.0 tag of the LOOM groovebox repository.
@@ -34,6 +34,10 @@ install_notes: >-
 brick_risk: false
 tags: [android, sequencer, synth-engine, midi, usb-audio]
 versions:
+  - version: v0.8.0
+    date: 2026-11-22
+    url: https://github.com/osleg/FM-1-Instrument/releases/tag/v0.8.0
+    notes: Adds an optional firmware emulation demo for Windjammer's Remote UI profile. On a 64-bit Android phone, a .fwsc you import yourself runs in the app, with the FM-1's display, LEDs and controls; the notes name Windjammer v0.9.2 for it and say Melodee 1.6.1 missed audio deadlines on the test phone. Windjammer with instruments stays the default Skiff-based mode, and the APK updates v0.7.0 in place.
   - version: v0.7.0
     date: 2026-11-19
     url: https://github.com/osleg/FM-1-Instrument/releases/tag/v0.7.0

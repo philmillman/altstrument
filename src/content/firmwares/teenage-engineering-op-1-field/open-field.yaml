@@ -1,11 +1,11 @@
 device: teenage-engineering-op-1-field
 name: open-field
 summary: >-
-  Unofficial patcher that adds a loader to the OP-1 Field's own OS 1.7.3 file, then loads feature packs from the unit's disk at each start. Packs add tape tracks 5 to 8, an effects train, LFOs and sidechain. Installed on several units by their owners.
+  Unofficial patcher that adds a loader to the OP-1 Field's own OS 1.7.3 file, then loads feature packs from the unit's disk at each start. The four packs (tape tracks 5 to 8, effects train, LFOs, sidechain) now live in open-field-packs. Installed on several units by their owners.
 description: >-
   A browser install page takes the OS 1.7.3 file copied off the owner's own unit and builds a changed file that
   contains a small loader and a shared base pack. The loader reads pack files from the unit at every start, so a
-  feature is added by copying a file and removed by deleting it. The listed packs add tape tracks 5 to 8 that
+  feature is added by copying a file and removed by deleting it. As of open-field 0.12 the four feature packs, with their sources, are in a separate repository, open-field-packs, and can be built there with this repository's tools; this repository keeps the loader, the base pack, the examples, the install page and the listing. Those four packs add tape tracks 5 to 8 that
   the original firmware can still read, up to four effects per instrument with presets, four LFOs on a synth
   sound, and sidechain ducking between tape tracks or from the beat. The sources of the loader, the base and the
   features are in the repository, together with guides for writing packs. The README says no firmware is stored
@@ -35,6 +35,10 @@ install_notes: >-
 brick_risk: true
 tags: [patcher, installer, sequencer, fx, modulation, research, open-source]
 versions:
+  - version: main @ f43697a
+    date: 2026-11-22
+    url: https://github.com/LaP0573/open-field/commit/f43697a863988c033d1633dd592db03e362cff2e
+    notes: No tagged releases; this is the latest commit, a merge. Since the previous entry the README names open-field 0.12 for OS 1.7.3, with base pack 30, new levels in the base for pack authors, examples and an install page with a packs section. The four feature packs and their sources move to the open-field-packs repository, and a pack build fix and a cost-ceiling change to the effects train listing are merged.
   - version: main @ 468b132
     date: 2026-11-19
     url: https://github.com/LaP0573/open-field/commit/468b132c20727df650a808dc78b3853bf3ae56d9

@@ -1,0 +1,38 @@
+device: m-vave-fm-1
+name: FM-1 XIAO Wi-Fi Recovery
+kind: tool
+summary: >-
+  Adaptation of the ESP32-S3 FM-1 unbrick tool for a battery-powered XIAO ESP32-S3 Sense that reaches the FM-1's chip ROM
+  through its USB pads and takes commands from a Python client over Wi-Fi, to restore stock V15 on a unit that no longer shows on USB.
+description: >-
+  The ESP32-S3 sends the ROM boot key on the native USB pins, becomes a USB host to the FM-1 and passes JieLi loader commands
+  that a computer script sends over an authenticated TCP link instead of a serial cable. The workflow makes two matching full
+  reads and an independent copy before an offline plan is reviewed, then writes only the application area of V15 and verifies
+  it. Head writes, OTA cleanup, factory reset and V16 restoration are not offered. The README reports one restoration on 2026-11-21
+  and says it is a single hardware case, not a guarantee, and gives wiring with no VBUS connection. It builds on dagnazty's
+  ESP32 port, FM-1 Transporter, MvaveFM1Unbricker and jl-uboot-tool, and the repository is not a GitHub fork.
+status: active
+authors:
+- name: SenseOfHumor
+  url: https://github.com/SenseOfHumor
+source: https://github.com/SenseOfHumor/fm1-xiao-esp32s3-unbrick-over-wifi
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is MIT with copyright lines for the adaptation and for portions taken from dag, kurogedelic's FM-1
+  Transporter, MvaveFM1Unbricker and jl-uboot-tool. The JieLi loader blob is fetched by script from jl-uboot-tool and checked by
+  SHA-256; the docs call it proprietary third-party material that is not committed. No stock firmware image is committed.
+based_on: m-vave-fm-1/fm1-esp32-unbrick
+distribution: source-only
+requires_stock: V15
+install_notes: >-
+  Build with ESP-IDF 5.4.1 and flash the XIAO, wire only D+, D- and ground to a USB-C breakout, and run the Python client
+  after reading docs/WIRING.md and docs/RECOVERY_SAFETY.md. The README tells the user to start read-only, keep two matching
+  original reads, and to supply the stock V15 package. The tool does not write the boot head or data above the application.
+brick_risk: false
+tags: [recovery, flasher, loader, backup, utility]
+versions:
+- version: main @ 02094e2
+  date: 2026-11-21
+  url: https://github.com/SenseOfHumor/fm1-xiao-esp32s3-unbrick-over-wifi/commit/02094e2
+  notes: No tagged releases; this is the latest commit.

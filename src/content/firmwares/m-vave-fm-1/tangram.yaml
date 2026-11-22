@@ -1,0 +1,32 @@
+device: m-vave-fm-1
+name: Tangram
+summary: >-
+  Generative MIDI sequencer and composer for the FM-1, a Berlinan fork with a Composer that shapes a performance into sections, a drum voice, MIDI delay, factory presets and USB and Bluetooth MIDI. It makes no sound itself.
+description: >-
+  Extends the Berlinan firmware and its musical engine with seven voice roles (two plucks, bass, pad, lead, drone and a heartbeat drum voice) on their own MIDI channels, ARP and MOTIF generators, and three starting templates. The Composer moves a performance through intro, A, development, B, breakdown, return and outro with activity ramps and tension, and respects locked voices and manual edits. Per-voice MIDI delay, density and ratcheting, a MIDI CC LFO for each voice, six snapshot slots, ten named performance presets with four factory ones and six display themes round it out. The FM-1 plays other instruments: it sends USB and Bluetooth MIDI, and the clock can run from USB, TRS or Bluetooth. The README says that the Bluetooth MIDI path was accepted on an FM-1 and that long soak tests and clock-jitter figures are not part of that. It is a GitHub fork of Berlinan with 229 commits of its own, and a browser emulator is on the project site. It builds on fm1-base and felucca-bsp.
+status: active
+authors:
+- name: Mr-Roboto
+  url: https://github.com/Mr-Roboto
+source: https://github.com/Mr-Roboto/fm1-tangram
+source_status: open
+license: GPL-2.0-or-later
+license_notes: >-
+  The LICENSE file still carries Berlinan's header for macOS and states GPL-2.0-or-later, and the README says Tangram is GPL-2.0-or-later. fm1-base (MPL-2.0), felucca-bsp and Berkeley SoftFloat keep their own licences.
+homepage: https://mr-roboto.github.io/fm1-tangram/
+distribution: download
+install_notes: >-
+  Install the .fwsc from the release with the repository's tools/install_firmware.py, which uses the fm1-base update protocol over USB MIDI, or with a web installer built from the site sources; the README says flashing is at your own risk and does not describe a way back. The FM-1's ROM boot mode applies.
+brick_risk: false
+tags: [sequencer, generative, midi, usb-midi, ble-midi, drums, emulator, fork]
+image:
+  url: https://raw.githubusercontent.com/Mr-Roboto/fm1-tangram/main/docs/img/tangram-home.png
+  alt: "Tangram HOME screen: String Trio in natural minor at 90 BPM, lanes for Pluck 1, Pluck 2 and Bass with MIDI channels, and knobs for track, generator, root and scale"
+  credit: Mr-Roboto
+  source_url: https://github.com/Mr-Roboto/fm1-tangram
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-21
+  url: https://github.com/Mr-Roboto/fm1-tangram/releases/tag/v1.0
+  notes: First public release, with USB and BLE MIDI, the Composer, four factory presets, independent MIDI clock output and per-voice MIDI CC controls.

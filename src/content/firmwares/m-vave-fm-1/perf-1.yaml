@@ -1,14 +1,14 @@
 device: m-vave-fm-1
 name: PERF-1
 summary: >-
-  Live-performance groovebox for the FM-1: nineteen genres of self-playing pieces you steer live, in song or loop form, with an auto-DJ, a drum sequencer, an acid line that answers itself, your own chord progressions and bass lines, a shared piece library and your own DX7 voices.
+  Live-performance groovebox for the FM-1: twenty-two genres and 220 self-playing pieces that play like tracks, with builds, breakdowns and fills, an auto-DJ, a drum sequencer, a 303-style acid line, DX7 voices, phrase and gesture recorders and a web studio.
 description: >-
   A fork of RedtailWorks' HYP-1. The pad, bass, acid line, pluck and drums play
   by themselves from power-on; one button breaks the music down, builds it and drops
   it, and an auto-DJ can run that whole arc, bring in the next piece and follow the
-  chords. There are nineteen genres (hypnotic techno, lofi, house, dubstep,
+  chords. There are twenty-two genres (hypnotic techno, lofi, house, dubstep,
   dub, DnB, breaks, garage, electro, trap, disco, funk, reggae, synthwave, amapiano,
-  trip-hop, industrial, psytrance, dark forest), each with its own kits, patterns, effects, compressor and harmony: the chord
+  trip-hop, industrial, psytrance, dark forest, hip-hop, trance, ambient), each with its own kits, patterns, effects, compressor and harmony: the chord
   changes every so many bars by genre, minor keys get a real dominant, and most genres loop
   a progression that starts from home, or plays your own (8 chord slots from the scale). Any piece can be stored, and a set list of 16 pieces from any genre is stepped through by hand or by the auto-DJ. A set page gives a piece
   several auto-DJ rounds with a tempo ramp, and an intro brings the parts in one by one for
@@ -16,12 +16,12 @@ description: >-
   lengths for polymeter, a density control, a source pattern per lane, drum drift, a steps
   page (ratchets, push, ghost and accent on every step) and a phrase page (pattern chains,
   slices, half and double time, conditions). The acid line answers itself and can be edited
-  step by step and frozen; the bass can play as a line with nine named figures; the pluck can
+  step by step and frozen; the bass can play as a line with thirteen named figures; the pluck can
   remember and repeat itself (deja vu), its loop can be frozen and written step by step, and it
   plays out on MIDI. The saw pads sweep a resonant filter with every breath and stab. The pluck
-  can be one of 30 DX7 voices from public-domain banks (or a built-in set of 30) or up to 16 of
-  your own loaded from a .syx file. The home screen shows the chord as a turning sigil with an
-  eye that follows the section. There are four banks of effects (every effect has a page
+  can be one of 60 DX7 voices from public-domain banks or up to 16 of
+  your own loaded from a .syx file. The Console screen shows each part as a channel strip, with its notes
+  drawn as rolls and the drums as a grid. There are four banks of effects (every effect has a page
   that draws it), beat FX, 27 Flex Beat patterns and DJ snips, scenes, undo, a mood macro,
   a JAM page (with accents), punch-in filter, delay and phaser on chosen tracks, filter types for the pad, bass and acid,
   a stereo compressor and look-ahead limiter, a settings menu with a SCREAM page that pushes the acid and bass filters
@@ -31,7 +31,7 @@ description: >-
   core renders the reverb, pad and DX voices, with load shedding and a USB status log. The
   project site has the installer (with backup and restore), a browser emulator with sound,
   a parameter and DX7 voice editor, and a manual that opens with a beginner's guide, with
-  printable PDFs. Version 0.17.0 adds a song form (a piece moves through its own drum patterns with fills), secondary dominants and borrowed chords in the genres that use them, a 16-step bass line that follows the chords, filter and SCREAM settings saved with each piece, a start where you left off, and a public library of pieces on the project site. Beta test builds for the SMK-37 Pro, with a board layer credited to genkigenki, are published from a separate repository (deamonSLINKY/PERF-1-SMK) with its own installer page; they have no release yet.
+  printable PDFs. Version 1.0.0 is the first finished release: the Console screen, song mode arranged like a track (set-list slots with exact bars, parts left out, a pattern and an energy; builds, breakdowns and fills), twenty-two genres with a role for each piece and one loudness, 21 drum kits and your own sample kits, phrase and gesture recorders, a diode-ladder 303 filter, CHORUS, RESONATOR, MIDI chord follow, track codes, two FM-1s linked as one band, and a web Studio; the save formats are locked for 1.x. Beta test builds for the SMK-37 Pro, with a board layer credited to genkigenki, are published from a separate repository (deamonSLINKY/PERF-1-SMK) with its own installer page; they have no release yet.
 status: active
 authors:
   - name: deamonSLINKY
@@ -51,7 +51,7 @@ install_notes: >-
   and an FM-1 that fails to start twice comes up in a safe mode the installer can
   reach. On a unit updated to V16 the installer can put V15's startup code back, since V16's
   runs the whole unit about 12% slower. A boot stub that returns a unit whose install was cut
-  off to the update loader is marked experimental. The README says installing is at your own risk.
+  off to the update loader was tested on the bench for 1.0, with the cable pulled at every stage. The README says installing is at your own risk.
 brick_risk: false
 tags: [generative, sequencer, drums, synth-engine, fx, performance, emulator, midi, dx7, editor]
 video:
@@ -61,12 +61,16 @@ video:
   first_party: true
   found_via: https://github.com/deamonSLINKY/PERF-1
 image:
-  url: https://raw.githubusercontent.com/deamonSLINKY/PERF-1/main/docs/img/perf-screen-home.png
-  alt: "PERF-1's home screen on the FM-1: the chord drawn as a turning sigil with an eye, the level bars and drum pattern at the sides"
+  url: https://raw.githubusercontent.com/deamonSLINKY/PERF-1/main/docs/img/perf-screen-perform.png
+  alt: "PERF-1's Perform screen on the FM-1: a channel strip with a level meter for each part, the scenes, a mood fader and the FX knobs"
   credit: "deamonSLINKY"
   source_url: https://github.com/deamonSLINKY/PERF-1
   first_party: true
 versions:
+  - version: 1.0.0
+    date: 2026-11-22
+    url: https://github.com/deamonSLINKY/PERF-1/releases/tag/v1.0.0
+    notes: The first finished release. The Console screen, song mode arranged like a track, HIPHOP, TRANCE and AMBIENT (22 genres, 220 pieces at one loudness), 21 drum kits and your own sample kits, phrase and gesture recorders, Capture, a diode-ladder 303 filter, the wub, 60 DX7 voices, CHORUS, RESONATOR, remade DJ snips, MIDI chord follow, track codes, two FM-1s as one band, the web Studio, installs tested with the cable pulled, and save formats locked for 1.x.
   - version: 0.17.0
     date: 2026-11-07
     url: https://github.com/deamonSLINKY/PERF-1/releases/tag/v0.17.0

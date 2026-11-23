@@ -1,0 +1,27 @@
+device: m-vave-fm-1
+kind: tool
+name: FM-1 Felucca on Raspberry Pi
+summary: >-
+  Terminal guide and scripts for flashing Felucca onto the FM-1 from a Raspberry Pi running Home Assistant, with a fix for the USB drop-outs the audio container causes and a small server that plays melodies on the FM-1 from automations.
+description: >-
+  The guide is in Japanese with an English summary. It installs a Felucca package with Felucca's own tools/fm1_install.py over USB MIDI instead of the browser installer, checks the package hash first, and lists how to return to the official V15 firmware and what the chip's boot mode looks like if a write fails. On Home Assistant OS the audio container held the FM-1's sound card open and the unit disconnected every few minutes, so scripts switch the card's audio profile off, watch the USB bus for drops, and a udev rule and systemd service repeat that automatically. A second part measures what the stock firmware and Felucca send over USB MIDI, and fm1_play.py and fm1_server.py play short melodies on the FM-1 when Home Assistant calls a local HTTP endpoint, as in an example that plays a rain melody. AI_INSTRUCTIONS.md is a script for an AI assistant to carry out the installation step by step. It downloads Felucca from its own repository and does not include any M-VAVE firmware.
+status: active
+authors:
+- name: bey-jp
+  url: https://github.com/bey-jp
+source: https://github.com/bey-jp/fm1-felucca-pi
+source_status: open
+license: MIT
+license_notes: >-
+  LICENSE is MIT. Felucca, which the guide installs, is GPL-3.0-only and is fetched from its own repository, not included here.
+homepage: https://bey.jp/
+distribution: source-only
+install_notes: >-
+  Needs pip install mido python-rtmidi, then follow the README to fetch fm1_install.py and a Felucca .fwsc from the Felucca repository and run it over USB. The guide says to turn the FM-1's audio profile off first on Home Assistant OS or Supervised so the USB connection does not drop mid-write. If a write fails, the README says to run the installer again, and the chip's boot mode shows up on the computer as WL80UBOOT.
+brick_risk: false
+tags: [flasher, midi, usb-midi, utility, research]
+versions:
+- version: main @ 36d9da7
+  date: 2026-11-23
+  url: https://github.com/bey-jp/fm1-felucca-pi/commit/36d9da740447a89f35ee20046e87516298cfa76c
+  notes: No tagged releases; this is the latest commit.

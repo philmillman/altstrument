@@ -3,7 +3,7 @@ name: Viber
 summary: >-
   Six-track groovebox for the FM-1 derived from Skiff and Felucca, adding a wavetable engine, a two-page clips mode, round knob displays and a master level meter.
 description: >-
-  Viber keeps Skiff's fourteen synth and drum engines, 64-step sequencer, pattern pool and browser editor, and adds a wavetable engine (WAVE) with eight tables of sixteen single-cycle frames, scanned with a TABLE control and drawn on the screen as a 3D stack. A clips mode under SEQ shows each track's clips at double width over two pages and launches them one at a time or a whole column at once. Each page shows its four settings as round knobs, and a master VU meter sits in the header. It is not a GitHub fork: the repository starts from Skiff's tree and much of the README and the licensing file are still Skiff's text, including pages for the SMK-37 Pro. A build for the SMK-37 Pro can be compiled from the source with BOARD=smk37, but the releases ship only the FM-1 package.
+  Viber keeps Skiff's fourteen synth and drum engines, 64-step sequencer, pattern pool and browser editor, and adds a wavetable engine (WAVE) with eight tables of sixteen single-cycle frames, scanned with a TABLE control and drawn on the screen as a 3D stack. A clips mode under SEQ shows each track's clips at double width over two pages and launches them one at a time or a whole column at once. Each page shows its four settings as round knobs, and a master VU meter sits in the header. Version 1.2 adds an arrangement timeline as a third HOME view, with a matching Song tab in the web editor. It is not a GitHub fork: the repository starts from Skiff's tree and much of the README and the licensing file are still Skiff's text, including pages for the SMK-37 Pro. A build for the SMK-37 Pro can be compiled from the source with BOARD=smk37, but the releases ship only the FM-1 package.
 status: active
 authors:
 - name: ant25fr
@@ -17,7 +17,7 @@ homepage: https://ant25fr.github.io/viber/
 based_on: m-vave-fm-1/skiff
 distribution: browser-installer
 install_notes: >-
-  Use the web installer on the project site in Chrome or Edge with the FM-1 on USB, or install viber-1.1.fwsc from the release with tools/fm1_install.py. The README says the installer also brings the official firmware back, taking a backup first, and that an install that is cut off resumes when the installer is run again. The README's install text is still Skiff's, so the Skiff installer it links is not Viber's.
+  Use the web installer on the project site in Chrome or Edge with the FM-1 on USB, or install viber-1.2.fwsc from the release with tools/fm1_install.py. The README says the installer also brings the official firmware back, taking a backup first, and that an install that is cut off resumes when the installer is run again. The README's install text is still Skiff's, so the Skiff installer it links is not Viber's.
 brick_risk: false
 tags: [synth-engine, sequencer, drums, wavetable, performance, editor, emulator]
 image:
@@ -27,6 +27,10 @@ image:
   source_url: https://github.com/ant25fr/viber
   first_party: true
 versions:
+- version: '1.2'
+  date: 2026-11-22
+  url: https://github.com/ant25fr/viber/releases/tag/v1.2
+  notes: Adds an arrangement view, a third HOME view where patterns are placed on bars per track, up to 128 blocks over 255 bars, kept apart from the clips and saved with the project. The web editor's Song tab draws the same timeline with dragging, zoom and undo. The package identity is FM-1_2507010000.
 - version: '1.1'
   date: 2026-11-21
   url: https://github.com/ant25fr/viber/releases/tag/v1.1

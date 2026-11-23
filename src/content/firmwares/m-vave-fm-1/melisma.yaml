@@ -1,0 +1,49 @@
+device: m-vave-fm-1
+name: Melisma
+summary: >-
+  Band-in-a-box for the FM-1: dials labelled with moods, energies and styles make a four-part band of bass, chords,
+  melody and drums, and the keys offer only notes that fit.
+description: >-
+  Seven moods, five energies, twelve styles and five shapes feed a deterministic engine, so the same settings always
+  give the same music, and a whole piece is a 21-character code that can be typed in on the device. The synth has 94
+  instruments on two engines (FM with feedback, and an analogue-style voice), five drums, a chorus and five rooms. You
+  take any of the four seats and play along on one of four key layouts, from five always-fitting notes to a plain
+  keyboard. Mutes and fills happen on the bar line, and there are sections, eight scenes, eight ways for each part to
+  play and a looping phrase recorder with undo. It ships 64 pieces and a fourteen-step lesson on the instrument. It is
+  built on Dinghy, and the README says it was developed on one FM-1 with the newer UC25HQ80 flash chip and has not been
+  tried on the older Puya chip. The README also says an AI assistant helped write it.
+status: active
+authors:
+- name: Merlin Engines
+  url: https://github.com/joelio
+source: https://github.com/joelio/melisma-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Stated in LICENSING.md. The platform comes from Felucca by way of SLOOP and Dinghy, the SMK-37 board layer is from
+  genkigenki's SLOOP branch, and the update loader screen is from OberVave; all are GPL-3.0-only. The Terminus font is
+  SIL OFL 1.1, and JieLi SDK files (Apache-2.0) are read from your own SDK checkout at build time and are not in the
+  repository. All sounds are synthesised, with no samples.
+based_on: m-vave-fm-1/dinghy
+distribution: download
+requires_stock: V15 or earlier
+install_notes: >-
+  Take a backup in M-Flasher, put the FM-1 in download mode (hold REC while switching on, with m-bootloader) and
+  install the .fwsc from the release; the Firmware Hub's web installer and other .fwsc installers should also work, but
+  M-Flasher was the route tested. The install guide says to stay on M-VAVE's V15 or earlier, because V16 changes the
+  boot area. To go back, restore the backup or install M-VAVE's V15 package. Holding OCT- while switching on starts
+  the updater, which is separate from Melisma, and the chip's own download mode cannot be erased. Releases are built by
+  GitHub from the tag with a build attestation.
+brick_risk: false
+tags: [generative, groovebox, chords, drums, synth-engine, fm, reverb, performance]
+image:
+  url: https://raw.githubusercontent.com/joelio/melisma-fm1/v1.0/docs/images/hero.png
+  alt: "Merlin Engines logo of a fighter plane inside headphones, beside two Melisma screens listing mood, energy, style and shape, then bass, pad, lead and room"
+  credit: Merlin Engines
+  source_url: https://github.com/joelio/melisma-fm1
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-23
+  url: https://github.com/joelio/melisma-fm1/releases/tag/v1.0
+  notes: First public version.

@@ -21,6 +21,10 @@ install_notes: >-
 brick_risk: false
 tags: [sdk, platform, rust, research]
 versions:
+- version: main @ df583bc
+  date: 2026-11-23
+  url: https://github.com/fm1-rust/fm1-rust/commit/df583bc92fe4ed47e9dbddf735db35c43e1774b5
+  notes: Latest commit, which replaces the async channel that rticx-pi32v2 re-exports. Since the previous row the commits add fm1-usb and fm1-cli for host-side USB MIDI, guard against a USB receive DMA overrun, qualify MIDI activation, tighten rticx-pi32v2's task handoffs and dispatcher, and require documented unsafe operations; several are marked as breaking changes.
 - version: main @ 5227c96
   date: 2026-11-22
   url: https://github.com/fm1-rust/fm1-rust/commit/5227c9676d8db7c1660ebfbce5e009d92faf440c

@@ -1,0 +1,29 @@
+device: plinky-plinky12
+name: N3VE
+summary: A generative ambient panel for Plinky12 and the Chords faceplate, ported from the norns script NEVE. Snow plays low notes, tears answer with a melody, and a live keyboard stays in the chord.
+description: >-
+  Three voices each have their own sound, octave, mute and MIDI channel: snow plays low notes where flakes land, tears play a melody in one of three
+  styles, and a live keyboard on rows 9 to 14 always fits the current chord. Chords change at the end of the bar from the top row or run as
+  a progression, and the tears can learn a played phrase and answer it. There are 12 scales, per-voice MIDI out and song save and load, and sounds can
+  come from the system picker or from banks on the SD card. It ports the author's own norns script NEVE. Manuals in English and Italian are in
+  the repository, and the author labels this release a beta.
+status: active
+authors:
+  - name: VRCVS (Filippo Rieder)
+    url: https://github.com/vrcvs
+source: https://github.com/vrcvs/plinky12_n3ve
+source_status: open
+license: MIT
+license_notes: LICENSE in the repository, Copyright 2026 Filippo Rieder (VRCVS).
+distribution: browser-installer
+install_notes: >-
+  Open the maker's Plinky12 web IDE in Chrome, start a blank panel, paste the panel source, pick the faceplate, test it in the emulator, then connect the Plinky12 over USB and press Flash. Power on holding the bottom-row pad that the IDE diagram shows for the panel. Flash memory holds about 14 MB of samples for all loaded
+  sounds, so using three of your own banks at once needs the Bank Builder's "Banks loaded together: 3" setting. The README says custom firmware can be
+  restored from the Plinky12 firmware page.
+brick_risk: false
+tags: [generative, ambient, chords, midi, sampler]
+versions:
+  - version: 0.2 (beta)
+    date: 2026-11-22
+    url: https://github.com/vrcvs/plinky12_n3ve/commit/eadc63c3e4d517cded54070995ac99c329a0d04b
+    notes: Uses Plinky's system sound picker for your own banks, creates the song folder on first use and fixes playback after loading a song. Listed in CHANGELOG.md; the repository has no tags or releases.

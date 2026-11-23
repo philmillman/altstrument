@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+name: TRI-6 FM-1
+summary: >-
+  Six-voice polysynth in the style of the Sequential Trigon-6: three oscillators per voice with sync and poly mod, a ladder filter, a mod matrix, two effects, unison with chord memory, an arpeggiator and 128 factory patches. Pre-release, not yet tested on a real FM-1.
+description: >-
+  The engine is written from the Trigon-6's user guide and MIDI implementation, and the project says it holds no code or data from Sequential's firmware. Each voice has three oscillators with triangle, saw and pulse mixed together, hard sync from OSC 2 to OSC 1, noise, a feedback and drive knob and a two- or four-pole ladder filter with two envelopes and an LFO. Poly mod sends OSC 3 and the filter envelope to pitch, pulse width, feedback and cutoff, and an eight-slot mod matrix adds more routes. After the voices come distortion and two effects in series, chosen from delays, chorus, phasers, flangers, a ring modulator and four reverbs, with delays that sync to the clock. Unison stacks up to six voices, chord memory plays a stored chord from one key, and the arpeggiator has hold, ten divisions and MIDI clock sync. A MORPH macro on the ALGORITHM knob and on CC 16 is a mod matrix source. The second core renders voices four to six. The README says the sequencer, NRPN, MPE and alternative tunings are not done, and lists the Trigon-6's controller numbers it answers. The 0.4.1 release notes call it an unvalidated development build with known defects, among them SysEx that can crash the patch pages and stuck notes, and say a corrective 0.4.2 is being prepared. A browser player runs the package in the fm1-emu emulator. It is built on fm1-base.
+status: active
+authors:
+- name: fergroan-sketch
+  url: https://github.com/fergroan-sketch
+source: https://github.com/fergroan-sketch/tri6-fm1
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The LICENSE file is the MPL-2.0 text, the source files carry SPDX MPL-2.0 headers and firmware.json states MPL-2.0. The project is built on fm1-base and felucca-bsp, which are MPL-2.0.
+homepage: https://fergroan-sketch.github.io/tri6-fm1/
+based_on: m-vave-fm-1/fm1-base
+distribution: browser-installer
+requires_stock: Any FM-1 firmware; the installer writes the package over it
+install_notes: >-
+  Download the .fwsc from a release and install it with fm1-base's web installer in Chrome or Edge over USB; the site also has a player. The README says to back up first, not to unplug during the install, and that the installer can put M-VAVE's stock firmware back. Installing over the same author's JUNIPER FM-1 (listed as juniper-fm1) replaces its saved patches, because both keep them in the same flash location. The README says it has not been tested on a real FM-1.
+brick_risk: false
+tags: [synth-engine, oscillator, filter, lfo, fx, arpeggiator, presets, ble-midi, usb-audio, emulator]
+image:
+  url: https://raw.githubusercontent.com/fergroan-sketch/tri6-fm1/main/card.png
+  alt: "TRI-6 card: a striped triangle in orange, red and cream with six small triangles under it, the name TRI-6 and the words FM-1 POLYSYNTH above a row of piano keys"
+  credit: fergroan-sketch
+  source_url: https://github.com/fergroan-sketch/tri6-fm1
+  first_party: true
+versions:
+- version: 0.4.1
+  date: 2026-11-22
+  url: https://github.com/fergroan-sketch/tri6-fm1/releases/tag/v0.4.1
+  notes: Marked by its author as an unvalidated development build, not tested on a real FM-1, with a list of known defects and a corrective 0.4.2 in preparation. Banks saved by earlier versions get factory patches in their INIT slots.
+- version: "0.4"
+  date: 2026-11-22
+  url: https://github.com/fergroan-sketch/tri6-fm1/releases/tag/v0.4
+  notes: Adds MORPH as a mod matrix source, plus or minus ten patch steps with OCT held, and a full bank of 128 factory patches with a MORPH route each.
+- version: "0.3"
+  date: 2026-11-22
+  url: https://github.com/fergroan-sketch/tri6-fm1/releases/tag/v0.3
+  notes: Adds the eight-slot mod matrix with OSC 3 as a source.

@@ -1,0 +1,43 @@
+device: trimui-brick
+name: Grampus
+summary: >-
+  Free, closed-source ORCA-style grid sequencer for the TrimUI Brick on NextUI, paired with nine polyphonic synth engines, eight tracks, scenes, per-track LFOs and effects, and WAV recording.
+description: >-
+  Grampus runs a terminal-style grid where letter operators trigger notes and move values, with an operator set derived from Orca-c and its bOrca fork, plus a chord strum operator. Its nine polyphonic engines are a dual-oscillator analog voice, a wavetable engine, a six-operator FM voice, a Karplus string, a sample rompler with 17 kits, tape-replay instruments, a two-dimensional wavetable morpher, a drum synth and a SuperSaw. It has eight tracks with per-track filters including three Polivoks-inspired modes, drive, chorus and three LFOs, master delay, reverse delay and shimmer reverb, and eight scenes per project that switch on tick-quantised boundaries. Bundled demo projects and WAV recording are included, and a full manual is in the repository.
+
+  The TrimUI build is developed and tested only on the Brick; the README says other devices on the same platform may map the buttons wrongly and offers a script to remap the gamepad, with no support. Desktop builds for macOS, Linux and Windows are sold or shared separately on itch.io and are not covered here. This repository holds the manual, pak metadata and a screenshot, with no source code, and no licence is stated.
+status: active
+authors:
+  - name: boorch
+    url: https://github.com/boorch
+homepage: https://github.com/boorch/grampus-pak#readme
+source_status: binary-only
+license: unspecified
+license_notes: >-
+  The repository has no licence file and the README gives no licence statement; only the compiled pak is published. The MANUAL says the operator set derives from Orca-c and bOrca.
+distribution: download
+requires_stock: NextUI on the TrimUI Brick
+install_notes: >-
+  Install Grampus from NextUI's PAK Store with the Brick on Wi-Fi, or download Grampus.pak.zip from the release page and copy the Grampus.pak folder to Tools/tg5040 on the SD card. Projects, recordings and demo projects are kept in a Grampus folder at the card root; the bundled demos are refreshed on each launch and your own saves are not touched. Nothing is written to the console's internal firmware.
+brick_risk: false
+tags: [sequencer, generative, synth-engine, wavetable, fm, sampler, drums, fx, lfo, handheld]
+image:
+  url: https://raw.githubusercontent.com/boorch/grampus-pak/main/.github/screenshots/splash.jpg
+  alt: Grampus splash screen in coarse pixel art, the word GRAMPUS in white block letters over a pink and violet nebula with a white-suited astronaut seated in an orange chair
+  credit: boorch
+  source_url: https://github.com/boorch/grampus-pak
+  first_party: true
+versions:
+  - version: v1.2.0
+    date: 2026-05-31
+    url: https://github.com/boorch/grampus-pak/releases/tag/v1.2.0
+  - version: v1.1.0
+    date: 2026-05-02
+    url: https://github.com/boorch/grampus-pak/releases/tag/v1.1.0
+  - version: v1.0.0
+    date: 2026-05-01
+    url: https://github.com/boorch/grampus-pak/releases/tag/v1.0.0
+  - version: v0.7.0
+    date: 2026-04-28
+    url: https://github.com/boorch/grampus-pak/releases/tag/v0.7.0
+    notes: Adds the BoneSaw SuperSaw engine.

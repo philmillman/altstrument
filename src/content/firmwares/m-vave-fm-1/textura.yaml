@@ -5,7 +5,7 @@ summary: >-
 description: >-
   Each sound plays as a cloud of small events, such as drops, crackles, grains and chirps, that are calculated as they sound. The black keys pick one of four lanes and the white keys
   set how many sources the lane plays and how often they sound. The effects, in signal order, are a compressor, drive, high-pass and low-pass filter,
-  grain delay and reverb, with a PERFORM page for playing them live. Eight LFOs, two envelopes, two envelope followers and a 16-slot mod matrix add movement, and
+  grain delay, reverb and, from 0.3.0, a mid/side stage with width and mono controls ahead of the limiter, with a PERFORM page for playing them live. Eight LFOs, two envelopes, two envelope followers and a 16-slot mod matrix add movement, and
   PLAY mode turns the keys into a pitched keyboard. It has 100 factory presets, 16 user slots, MIDI over USB and TRS, and audio over USB. The README says it is a beta
   that grew from the same author's Frodhes firmware and platform; there is a browser version of the firmware with the FM-1's screen, knobs and keys.
 status: active
@@ -33,6 +33,10 @@ image:
   source_url: https://github.com/leonardoMirabal/textura
   first_party: true
 versions:
+- version: 0.3.0
+  date: 2026-11-23
+  url: https://github.com/leonardoMirabal/textura/releases/tag/textura-v0.3.0
+  notes: Adds a mid/side page after the reverb as the last effect, with MID and SIDE levels, WIDTH from 0 to 200 percent and a MONO switch, ahead of the limiter. Older presets load it neutral, and it has MIDI CCs 25 to 28, NRPN control and two matrix targets. The release also attaches desktop plugin builds.
 - version: 0.2.9
   date: 2026-11-18
   url: https://github.com/leonardoMirabal/textura/releases/tag/textura-v0.2.9

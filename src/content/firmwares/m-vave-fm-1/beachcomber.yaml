@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: BEACHCOMBER
+summary: >-
+  Random arpeggiator and four-track looper for the FM-1: a Turing-Machine-style loop of sixteen dice feeds four Karplus-Strong tracks, with 43 scales, delay, hall and chorus.
+description: >-
+  The ARP is a loop of sixteen random choices that can be locked, left to drift or thrown again, with controls for how often it changes, its length, range and density, and the white keys choose which notes it may use. REC keeps what the arpeggiator plays on one of four tracks of up to 16 steps, each with its own length and speed, PUNCH IN replaces part of a track, and a track can be shifted up or down the scale. The scale is applied last, so a new scale or key changes the recordings straight away. There are 43 scales, and a random one is picked at power-on. The sound comes from four ringing engines (pluck, blow, hit and tube) that are excited by noise, waves or a chord, with delay, hall and chorus in parallel, an envelope and an LFO per track, a mixer, and MIDI in and out with clock. Nothing is saved between sessions. The sound engine, delay and hall come from the same author's LOOPHEADS, and the project is built on Dinghy. The README says version 0.2.8 passed the host tests and simulated installer checks and plays in the online FM-1 emulator, but has not been installed on a physical FM-1.
+status: active
+authors:
+- name: Eric St-Jacques
+  url: https://github.com/jaak-stjaaques
+source: https://github.com/jaak-stjaaques/Beachcomber
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and LICENSE give GPL-3.0-only, with upstream notices retained in LICENSING.md. The Terminus and IBM Plex Mono fonts are SIL OFL 1.1. The JieLi AC79 SDK files are read from the builder's own checkout at build time and are not in the repository.
+homepage: https://github.com/jaak-stjaaques/Beachcomber
+based_on: m-vave-fm-1/dinghy
+distribution: source-only
+install_notes: >-
+  Build with sh build.sh (JieLi toolchain and AC79 SDK, a Linux container on macOS), then install build/beachcomber_0.2.8.fwsc with M-Flasher, leaving the bootloader option unchecked, or with tools/fm1_install.py over USB. docs/BUILDING.md says to make a full recovery backup first and check that the recovery tool can open it, and that holding OCT- at power-on enters the USB rescue mode. Installation on a physical FM-1 is unverified.
+brick_risk: false
+tags: [arpeggiator, looper, generative, synth-engine, physical-modeling, scales, fx, delay, reverb]
+image:
+  url: https://raw.githubusercontent.com/jaak-stjaaques/Beachcomber/main/docs/screenshots/seq.png
+  alt: "BEACHCOMBER SEQ page: four numbered tracks drawn as bars of different lengths, track 2 boxed, SHIFT values 0, +2, 0 and 0, and NOTE CHANCE 70%"
+  credit: Eric St-Jacques
+  source_url: https://github.com/jaak-stjaaques/Beachcomber
+  first_party: true
+versions:
+- version: main @ c632800
+  date: 2026-11-22
+  url: https://github.com/jaak-stjaaques/Beachcomber/commit/c63280061c90df1e2d4c0c0ec3bad74b6342c1bb
+  notes: No tagged releases; this is the latest commit. The README names it version 0.2.8.

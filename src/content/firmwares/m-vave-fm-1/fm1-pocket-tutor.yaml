@@ -3,7 +3,7 @@ name: FM1 Pocket Tutor
 summary: >-
   Study firmware for the FM-1: a lessons page in Chrome sends notes over MIDI that light the keys where to play, while the FM-1 plays an FM6 six-operator sound.
 description: >-
-  The 27 keys light up to show where to play a note, scale, chord or chord progression, and a lessons page in Chrome guides each step as watch, play, check over Web MIDI. Guide notes go on MIDI channel 16 and only light the LEDs; the firmware does not play them. The page has an on-screen keyboard, a computer-keyboard mode, a catalogue of songs split into sections as chords only, and ChordPro import for the user's own songs. It is available in Portuguese, English and Spanish. The firmware is derived from fm1-dock and carries its FM6 six-operator module, with SAVE keeping 32 user presets. Release 0.1 has no Bluetooth MIDI. The release notes say it was tested on one FM-1 and in an emulator.
+  The 27 keys light up to show where to play a note, scale, chord or chord progression, and a lessons page in Chrome guides each step as watch, play, check over Web MIDI. Guide notes go on MIDI channel 16 and only light the LEDs; the firmware does not play them. The page has an on-screen keyboard, a computer-keyboard mode, a catalogue of songs split into sections as chords only, and ChordPro import for the user's own songs. It is available in Portuguese, English and Spanish. The firmware is derived from fm1-dock and carries its FM6 six-operator module, with SAVE keeping 32 user presets. The release notes of 0.2 say it was tested on one FM-1 and in an emulator. From 23 November 2026 (release 0.7) the lessons page is under a proprietary notice and the firmware and installer page stay GPL-3.0-only.
 status: active
 authors:
 - name: Wellington Saam
@@ -12,12 +12,12 @@ source: https://github.com/wellingtonsaam/fm1-pocket-tutor
 source_status: open
 license: GPL-3.0-only
 license_notes: >-
-  The README and LICENSE give GPL-3.0-only. Components keep their licences listed in LICENSING.md: the Bluetooth MIDI code from Optimist is GPL-3.0-only, the JieLi radio calibration is Apache-2.0, and the Terminus font is SIL OFL 1.1. No JieLi SDK files or M-VAVE firmware images are in the tree.
+  The README and LICENSE give GPL-3.0-only. Components keep their licences listed in LICENSING.md: the Bluetooth MIDI code from Optimist is GPL-3.0-only, the JieLi radio calibration is Apache-2.0, and the Terminus font is SIL OFL 1.1. No JieLi SDK files or M-VAVE firmware images are in the tree. From release 0.7 LICENSING.md splits the project: the firmware and the installer page are GPL-3.0-only, while the lessons web app (docs/prototipo-aulas.html and its song catalogue and design) is copyright Wellington Saam, all rights reserved, with copying, changing and redistribution needing permission; versions of it published before 23 November 2026 stay GPL-3.0.
 homepage: https://github.com/wellingtonsaam/fm1-pocket-tutor
 based_on: m-vave-fm-1/fm1-dock
 distribution: download
 install_notes: >-
-  Install fm1-pocket-tutor-0.2.fwsc from the release with the FM-1 Firmware Hub or tools/fm1_install.py over USB. The README says an FM-1 on factory firmware first needs a firmware that speaks the Felucca update protocol. The lessons page is docs/prototipo-aulas.html, opened in Chrome for Web MIDI.
+  Install fm1-pocket-tutor-0.7.fwsc from the release with the project's web installer page (Chrome or Edge, USB), the FM-1 Firmware Hub or tools/fm1_install.py. The release notes say M-VAVE's own updater takes the FM-1 back to the official firmware. The README says an FM-1 on factory firmware first needs a firmware that speaks the Felucca update protocol. The lessons page is docs/prototipo-aulas.html, opened in Chrome for Web MIDI.
 brick_risk: false
 tags: [trainer, chords, scales, midi, web-midi, fm, synth-engine]
 image:
@@ -27,6 +27,10 @@ image:
   source_url: https://github.com/wellingtonsaam/fm1-pocket-tutor
   first_party: true
 versions:
+- version: v0.7
+  date: 2026-11-23
+  url: https://github.com/wellingtonsaam/fm1-pocket-tutor/releases/tag/v0.7
+  notes: Package fm1-pocket-tutor-0.7.fwsc, the firmware that the project's web installer writes, with its complete source at this tag. Covers the untagged 0.3 changes, where the tutor screen redraws only what changed. Splits the licence by part, with the firmware and installer page under GPL-3.0-only and the lessons web app all rights reserved.
 - version: v0.2
   date: 2026-11-22
   url: https://github.com/wellingtonsaam/fm1-pocket-tutor/releases/tag/v0.2

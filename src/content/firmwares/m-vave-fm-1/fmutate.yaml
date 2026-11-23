@@ -10,7 +10,7 @@ description: >-
   from the Firmware Hub catalogue, imports your own .fwsc files (M-VAVE's stock firmware is bring-your-own) and switches with one tap
   and undo. The panel starts as a classic FM-1 layout and can be edited into any arrangement of keys, knobs, pads, sliders and pages, saved per
   firmware. Keys take velocity from where they are struck, and with OberVave a held note's level follows the finger. Audio goes out through AAudio, and there
-  is a virtual MIDI port, USB and Bluetooth MIDI devices and MIDI clock in and out. Controls can also be bound to motion sensors (tilt, twist,
+  is a virtual MIDI port, USB and Bluetooth MIDI devices and MIDI clock in and out. Layouts and sounds (a synth's whole memory) can be saved under a name, exported and imported as JSON files, with undo and redo for layout changes, and a balance knob sets the synth's stereo balance in FMutate's mixer. Controls can also be bound to motion sensors (tilt, twist,
   shake, proximity), and MIDI learn with automap profiles covers two MPK mini models. The README calls it early: Android only, tested on two Moto G Power phones and Android 17 emulators.
 status: active
 authors:
@@ -18,14 +18,14 @@ authors:
   url: https://github.com/GenericJam
 source: https://github.com/GenericJam/fmutate
 source_status: open
-license: GPL-3.0-only
+license: MIT
 license_notes: >-
-  The LICENSE file is GPL-3.0 and the README says it is GPLv3 because it compiles in GPL-3 firmwares. OberVave and Shine On are by zvenson
+  The LICENSE file is MIT and covers FMutate's own app code. The README says the shipped APK is not MIT-only, because the native build compiles GPL firmware into cartridges and distributing them needs GPL compliance. OberVave and Shine On are by zvenson
   (GPL-3.0), fm1-emu is MIT, and the Hub catalogue is CC BY 4.0. Every firmware belongs to its author and is downloaded from where they publish it.
   A 1 KB test fixture .fwsc in the repository is not a stock image.
 distribution: download
 install_notes: >-
-  Download FMutate.apk (the same file as fmutate-0.2.1.apk) from the release and open it on an Android 9 or later phone, or run adb install; the release is signed with the
+  Download FMutate.apk (the same file as fmutate-0.3.0.apk) from the release and open it on an Android 9 or later phone, or run adb install; the release is signed with the
   project's key, which changed in 0.2.0, so 0.1.0 has to be uninstalled first, and a copy built from source has to be uninstalled first because it uses a debug key. To build it yourself, use mise (Erlang, Elixir, Java, Zig and Rust at the pinned versions), the Android SDK with NDK 27.2 and adb, then deploy with mix mob.deploy to a
   phone with USB debugging on. The app writes nothing to a physical FM-1.
 brick_risk: false
@@ -37,6 +37,10 @@ image:
   source_url: https://github.com/GenericJam/fmutate
   first_party: true
 versions:
+- version: 0.3.0
+  date: 2026-11-23
+  url: https://github.com/GenericJam/fmutate/releases/tag/v0.3.0
+  notes: Installs over 0.2.x and keeps layouts and saves. Adds named layouts that can be saved, loaded, exported and imported as JSON, with undo and redo for layout changes, named sounds that save a synth's whole memory and load it back later, and a balance knob for the synth's stereo output in FMutate's mixer. The mixer's crossfade commands no longer race the audio thread. Signed with the same release key as 0.2.0.
 - version: 0.2.1
   date: 2026-11-22
   url: https://github.com/GenericJam/fmutate/releases/tag/v0.2.1

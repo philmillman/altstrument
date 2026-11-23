@@ -1,0 +1,31 @@
+device: trimui-brick
+name: PolyBrik
+summary: >-
+  Port of Polyend's open Tracker Community Edition firmware, built with the Tracker Mini feature set, to the TrimUI Brick and Brick Pro as a NextUI pak, with a button map, on-screen action list and Linux audio and display layer.
+description: >-
+  Licence note: PolyBrik follows the Tracker Community Edition licence, an MIT licence that bars selling the complete application, a port of it or firmware builds, while allowing commercial music made with it. The Polyend synth libraries it bundles are proprietary and free to redistribute unmodified.
+
+  PolyBrik runs the Tracker CE source, vendored in the repository with its changes listed in PATCHES.md, as the Tracker Mini variant with the ACD, FAT, VAP, WTFM, PERC, DIRT and CHIP synth engines, stereo samples, the sample editor and effects, export and render, and projects on the SD card. A new layer maps the Brick's buttons to the Tracker's keys, shows an action list in place of the Mini's eight screen keys and adds a legend strip naming each button. It ships with a factory sample pack and 82 synth presets from OpenTracker.
+
+  The README says it was tested on a Brick Pro with NextUI; the plain Brick has a key map but has not been tried on hardware. MIDI, USB audio, USB storage and audio input are not supported, so the sample recorder records silence. The project is not affiliated with Polyend or TrimUI. The 32-bit binary is built from source with the scripts in the repository.
+status: active
+authors:
+  - name: boorch
+    url: https://github.com/boorch
+source: https://github.com/boorch/polybrik-public
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file reproduces the Polyend Tracker Community Edition licence, titled MIT License with Wholesale Commercial Clone Restriction, for the vendored firmware and the PolyBrik platform code. It bars selling the application, a port of it as a whole or firmware builds and allows commercial music. libPolySynth.a and libPolyDSP.a stay under Polyend's proprietary library licence: free to redistribute unmodified, no fee for builds containing them, no decompiling. The factory samples have their own licence (free in music, not to be sold or repackaged), the OpenTracker presets are Apache-2.0, and statically linked SDL is zlib and alsa-lib and glibc are LGPL-2.1.
+based_on: polyend-tracker/tracker-ce
+distribution: download
+requires_stock: NextUI on the Brick or Brick Pro
+install_notes: >-
+  Install NextUI, unzip PolyBrik-1.0.0.zip at the root of the SD card so that Tools/tg5040/PolyBrik.pak exists, and start PolyBrik from the Tools menu. Projects, samples, patches and settings live in a PolyBrik folder at the card root and survive updates, except the app-owned Samples/PolyBrik Factory folder, which updates replace. Hold Select and Start for about two seconds to quit. Nothing is written to the console's internal firmware.
+brick_risk: false
+tags: [tracker, sampler, synth-engine, fx, ui, port, handheld]
+versions:
+  - version: v1.0.0
+    date: 2026-11-05
+    url: https://github.com/boorch/polybrik-public/releases/tag/v1.0.0
+    notes: First release, with the Tracker CE firmware for the Brick and Brick Pro on NextUI.

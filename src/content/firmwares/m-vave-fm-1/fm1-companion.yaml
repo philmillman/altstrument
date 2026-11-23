@@ -10,9 +10,10 @@ description: >-
   firmware's own web editor run offline, presets with DX7 voice import, samples and kits, Melodee project viewing and export,
   composing from MIDI files, and a MIDI tool. Its Studio page runs Melodee on the computer with the full device state from a
   backup. The firmware features target the Felucca family (Melodee, Skiff, SLOOP) and the official firmware. The interface, help
-  and documentation are in English from 2.4.0, with German as a translation and a kit for adding languages. The README says firmware changes, the return to stock, rescue stages 1 to 3 and writing back from
-  the Studio have only run against simulators so far; on hardware the author has used one Melodee update, backups, MIDI and
-  the Studio's basic functions, on one unit.
+  and documentation are in English from 2.4.0, with German as a translation and a kit for adding languages. From 2.7.0 the suite
+  bundles M-Flasher, m-bootloader 2.4 and the SLOOP 3 application area and drives them itself, with whole-flash backups and
+  write-backs onto the unit they came from, m-bootloader install and removal, firmware through download mode and SLOOP 3
+  installs. The 2.7.0 notes say most of this ran on a real earlier FM-1 and list what did not in docs/UNTESTED.md.
 status: active
 authors:
 - name: bit-wmike
@@ -27,11 +28,15 @@ license_notes: >-
 distribution: download
 install_notes: >-
   Runs on Raspberry Pi OS and other Debian or Ubuntu systems. Install from the release's .run assistant or .deb package, or
-  clone the repository and run install.sh, which asks for sudo to add system packages. Make a backup before using firmware
+  clone the repository and run install.sh, which asks for sudo to add system packages. From 2.7.0 every write is preceded by a whole-flash backup that cannot be skipped, and the suite offers a way back to a backup of the unit, SLOOP 3, a Felucca-family firmware or V15. Make a backup before using firmware
   installs or rescue, which the author marks as at your own risk.
 brick_risk: false
 tags: [backup, flasher, recovery, utility, editor, emulator, simulator, presets]
 versions:
+- version: v2.7.0
+  date: 2026-11-23
+  url: https://github.com/bit-wmike/fm1-companion/releases/tag/v2.7.0
+  notes: Bundles M-Flasher 0.12.1, m-bootloader 2.4 and SLOOP 3 3.4.0 and drives them from the app, with whole-flash backups and write-backs, m-bootloader install and removal, firmware through download mode and SLOOP 3 installs, each write behind a mandatory backup. Adds a Back to dialog, asks which FM-1 it is after units are swapped and recognises FM1 Open by its USB ID. The release page lists what was not tried on hardware.
 - version: v2.6.1
   date: 2026-11-19
   url: https://github.com/bit-wmike/fm1-companion/releases/tag/v2.6.1

@@ -14,9 +14,9 @@ license: GPL-3.0-only
 license_notes: >-
   The README states GPL-3.0 for the firmware and the LICENSE file is M-VAVE's FM1 APP licence, GPL-3.0 only with a linking exception for the binary FM1 SDK. PicoFaceD5 is GPL-3.0, fm1-base and felucca-bsp are MPL-2.0. The D-50's PCM ROM and patch data are Roland's, are not in the repository and must not be distributed. The repository holds M-VAVE's licensed V15 recovery image rescue_tools/FM-1_015.fwsc (Apache-2.0, git blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd, 699,956 bytes, the same file as in m-vave/fm1_open).
 based_on: m-vave-fm-1/fm1-base
-distribution: source-only
+distribution: browser-installer
 install_notes: >-
-  Build it with fm1-base's tools from the fm1base folder after making the data from your own ROM dump and banks, then install over USB with fm1-base's installer (FM1-BASE.md). rescue_tools/ holds a script and M-VAVE's V15 package for putting stock firmware back onto a unit that does not start.
+  From v0.9 the release carries the firmware package without any D-50 data, and the project's install page (Chrome or Edge, USB) writes it and then your own D-50 data file, made from your own ROM dump and bank dumps with the repository's tools (INSTALL.md). The page can also write only the data or only the firmware, and has a Back to the stock firmware step for which you download M-VAVE's FM-1.fwsc yourself. You can still build it with fm1-base's tools from the fm1base folder and install over USB with fm1-base's installer (FM1-BASE.md). rescue_tools/ holds a script and M-VAVE's V15 package for putting stock firmware back onto a unit that does not start.
 brick_risk: false
 tags: [synth-engine, emulator, sysex, midi, usb-midi, fork]
 image:
@@ -26,7 +26,7 @@ image:
   source_url: https://github.com/mwedmark/fm1-d50
   first_party: true
 versions:
-- version: main @ 6316e20
-  date: 2026-11-22
-  url: https://github.com/mwedmark/fm1-d50/commit/6316e20f9c8c4ff748fe16906c000f70dd36072b
-  notes: No tagged releases; this is the latest commit.
+- version: v0.9
+  date: 2026-11-23
+  url: https://github.com/mwedmark/fm1-d50/releases/tag/v0.9
+  notes: First release, built by the project's CI from a tag. Adds MIDI controls, aftertouch from the FM-1's keys, D-50 SysEx with a Data Transfer menu, Chase Play, six patch banks of 64 (384 patches), the D-50's LCD views, Output and Chase setup pages, K1 and K2 as the tone and partial balance, and an install page that writes your own D-50 data. The package holds no Roland data.

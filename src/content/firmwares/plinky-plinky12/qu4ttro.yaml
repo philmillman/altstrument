@@ -1,0 +1,28 @@
+device: plinky-plinky12
+name: QU4TTRO
+summary: A four-track polyrhythmic looper panel for Plinky12 and the Chords faceplate, with strings always in key, live and step looping, and a length, grid and direction per track.
+description: >-
+  Each of four tracks is an 8 by 6 sector of pads tuned in fifths and locked to a shared key and scale. Every track has its own live or step looper,
+  length from 1 to 256 steps, grid, direction and start point, so the loops drift against each other. The panel records pressure per step and glide
+  between pads, and it has a mixer with delay and reverb sends, sound editing, and song save and load. It is a new implementation inspired by the norns
+  script plonky and uses none of its code. Manuals in English and Italian are in the repository. The author notes that Claude helped write it.
+status: active
+authors:
+  - name: VRCVS (Filippo Rieder)
+    url: https://github.com/vrcvs
+source: https://github.com/vrcvs/plinky12_qu4ttro
+source_status: open
+license: MIT
+license_notes: LICENSE in the repository, Copyright 2026 Filippo Rieder (VRCVS).
+distribution: browser-installer
+install_notes: >-
+  Open the maker's Plinky12 web IDE in Chrome, start a blank panel, paste the panel source, pick the faceplate, test it in the emulator, then connect the Plinky12 over USB and press Flash. Power on holding the bottom-row pad that the IDE diagram shows for the panel. Flash memory holds about 14 MB of samples for all loaded
+  sounds, so using four of your own banks at once needs the Bank Builder's "Banks loaded together: 4" setting. The README says custom firmware can be
+  restored from the Plinky12 firmware page.
+brick_risk: false
+tags: [looper, sequencer, scales, midi, sampler]
+versions:
+  - version: "1.1"
+    date: 2026-11-22
+    url: https://github.com/vrcvs/plinky12_qu4ttro/commit/d2a186945135cd1ced8ce8db130f7105fc45409a
+    notes: Uses Plinky's system sound picker for your own banks, creates the song folder on first use and sets up playback after loading a song. Listed in CHANGELOG.md; the repository has no tags or releases.

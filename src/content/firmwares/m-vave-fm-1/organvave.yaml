@@ -1,10 +1,10 @@
 device: m-vave-fm-1
-name: OrganVave-1
+name: OrganVave
 summary: >-
   Tonewheel organ with nine drawbars, percussion, scanner vibrato, a rotary speaker, drive, effects and a
   lower manual and pedals over MIDI, ported from setBfree to integer C for the FM-1.
 description: >-
-  A fork of FMini-1, itself a fork of Felucca, that drops Felucca's other engines. The tone generator, key
+  A fork of FMini-1, itself a fork of Felucca, that drops Felucca's other engines. It was published as OrganVave-1 and the repository and product were renamed OrganVave on 2026-11-22. The tone generator, key
   click, crosstalk, percussion, scanner and Leslie model come from setBfree and are rewritten in C, integer at first and
   partly single-precision float since 0.11. It offers a bank of factory patches, upper, lower and pedal drawbar pages, two rotary models, reverb, delay, a
   three-band equaliser, an advanced page with setBfree's own tone-generator settings, split keyboard, and MIDI
@@ -18,26 +18,29 @@ status: active
 authors:
 - name: Guilherme Ruppert (ruppert)
   url: https://github.com/ruppert
-source: https://github.com/ruppert/organvave-1
+source: https://github.com/ruppert/organvave
 source_status: open
 license: GPL-3.0-only
 license_notes: >-
   Stated in the README, inherited from Felucca. The setBfree-derived files (GPL-2.0-or-later) keep their
   copyright notices (CREDITS.md); the MIT Felucca-Engines submodule and other bundled parts keep their own
   licences (LICENSES/).
-homepage: https://ruppert.github.io/organvave-1/
+homepage: https://ruppert.github.io/organvave/
 based_on: m-vave-fm-1/fmini-1
 distribution: browser-installer
 requires_stock: V15
 install_notes: >-
   Web installer on the project site in Chrome or Edge over USB, or the .fwsc package it offers. BUILDING.md
   explains recovery; the README advises against installing unless you know how to recover an FM-1. SMK-37: the
-  project site's smk.html page installs the package for the connected model (organvave-1-smk37-v0.9.45.fwsc for the
-  Pro, -elite- and -mke- for the others). The page warns that the keyboard's flash holds calibration and a key that
+  project site's smk.html page installs the package for the connected model (a separate package for the Pro, the Elite and the MKE-P37). The page warns that the keyboard's flash holds calibration and a key that
   cannot be downloaded again, advises a full flash backup first and says the firmware never writes those areas.
 brick_risk: false
 tags: [synth-engine, fork, editor, emulator, fx]
 versions:
+- version: main @ 472771e
+  date: 2026-11-23
+  url: https://github.com/ruppert/organvave/commit/472771e3160a7fc9eaa66bf6e2d091298cac83ca
+  notes: No tagged releases; this is the latest commit, on the renamed ruppert/organvave repository. Since the previous row the product is renamed OrganVave everywhere (the USB loader name included) and the FM-1 splash screen is new, the FM-1 emulator is rebuilt for v0.11.1, the project site shows the firmware's real screens and gains a browser emulator for the SMK-37 build, and on the SMK-37 turning K1 (MASTER) opens the MASTER VOLUME pop-up.
 - version: main @ 8d8606a
   date: 2026-11-19
   url: https://github.com/ruppert/organvave-1/commit/8d8606a6fdec907545c7a8ee970a6354ee328629

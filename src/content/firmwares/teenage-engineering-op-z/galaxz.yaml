@@ -1,0 +1,45 @@
+device: teenage-engineering-op-z
+name: Galax-z
+kind: tool
+summary: >-
+  Dot-matrix companion app for the OP-Z on Mac, iPad and iPhone that follows the unit over USB or Bluetooth and shows its tracks, effects, notes and load, with pages that play it, a sampler, backups and the installer hub for Galax-z OS.
+description: >-
+  The app follows the OP-Z over USB-C, or over Bluetooth on iPad and iPhone, and draws what it sends on a dot-matrix screen
+  with pages for tracks with animations, effects, played notes over a keyboard, a sky view with each track as an arm, a
+  sixteen by sixteen step grid, a mixer, song overview, a load meter and settings. Touching a control sends MIDI that changes the OP-Z the way
+  its own knob would. PLAY has pads with scales, chords and grooves, PERFORM has gates, sweeps and stops held on a pad, CHOPS
+  cuts a sound up for the module track and a sampler plays the OP-Z's USB audio through the device. The app learns MIDI
+  controllers, backs up projects by reading only, and on a Mac its hub installs Galax-z OS and writes TE's original back. A
+  demo OP-Z needs no hardware. The author calls it a work in progress; the status page says only volume and mute touch controls
+  have been seen on a real unit, iPad and iPhone builds have run on the author's own devices only, and the Mac test build is
+  not notarized by Apple. The code was written with Claude. It includes Swift ports of parts of OP-FREE.
+status: active
+authors:
+  - name: Luis Tosado
+    url: https://github.com/Luisga521
+source: https://github.com/Luisga521/Galax-z
+source_status: open
+license: MIT
+license_notes: >-
+  LICENSE is MIT, for what is Galax-z's own. OP-FREE parts are MIT, the piano sample pack is CC BY 3.0, and OWNERSHIP.md and
+  THIRD_PARTY.md list the notices.
+based_on: teenage-engineering-op-z/op-free
+distribution: download
+install_notes: >-
+  The Mac test build, Galax-z-mac.dmg, is on the releases page: drag it to Applications and allow it once under System
+  Settings, Privacy and Security, since it is not notarized. It needs macOS 15 or newer. iPad and iPhone builds are made
+  with Xcode following docs/BUILDING.md, and there is no App Store release. The app and its screens only read the unit; the
+  hub that installs Galax-z OS replaces the OS, which the Galax-z OS entry covers.
+brick_risk: false
+tags: [companion-app, visualizer, midi, sampler, backup, ios, mac, bluetooth]
+image:
+  url: https://raw.githubusercontent.com/Luisga521/Galax-z/main/docs/screens/perform.jpg
+  alt: Galax-z PERFORM page in demo mode on a black dot-matrix screen, with a four by four grid of coloured pads such as Gate 1/16, Stutter, Wash and Glitch, a side panel and a page bar
+  credit: Luis Tosado
+  source_url: https://github.com/Luisga521/Galax-z
+  first_party: true
+versions:
+  - version: app-mac-2026.11.22
+    date: 2026-11-23
+    url: https://github.com/Luisga521/Galax-z/releases/tag/app-mac-2026.11.22
+    notes: Mac test build, marked as a pre-release and not notarized; carries the app with the hub for installing Galax-z OS v13.

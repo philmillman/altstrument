@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: CLOCKBOX
+summary: >-
+  Port of the ClockBox v3 MIDI master clock to the FM-1: 24 PPQN clock over USB and Bluetooth MIDI, quantized restart, two follow modes, tap tempo, three tempo presets and a sync pulse on the audio output.
+description: >-
+  A port of ClockBox v3 firmware 3.55 from socialmidi.com onto fm1-base. The FM-1 sends clock over USB MIDI and Bluetooth MIDI, because it has no MIDI out jack. Quantized restart re-syncs other gear on the next downbeat while the music keeps running. The two follow modes take clock from the TRS MIDI input or from USB. SEQ is tap tempo, SELECT and ALGORITHM change the tempo by 1 and 5 BPM across 30 to 300, FX, SEL and ENV hold three presets that jump or fade to a tempo, and OCT- and OCT+ nudge the tempo by 7.5 percent while held. The ClockBox's CV jacks become pulses on the audio output, with clock on the left channel and reset on the right. The original Arduino firmware is by Andy Fischer, whose GitHub account also owns this port, and the tap-tempo algorithm is re-implemented from Damien Clarke's MIT-licensed TapTempo library. The repository has no releases yet, and its README says the release build still needs some fields in fm1.toml filled in.
+status: active
+authors:
+- name: andymann
+  url: https://github.com/andymann
+source: https://github.com/andymann/clockbox-v3-mvave-fm1
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSE is MPL-2.0, the same as its fm1-base submodule, and CREDITS.md lists the upstream ClockBox v3, TapTempo (MIT) and fm1-base with felucca-bsp.
+homepage: https://github.com/andymann/clockbox-v3-mvave-fm1
+based_on: m-vave-fm-1/fm1-base
+distribution: source-only
+install_notes: >-
+  Clone with --recursive, run make venv and make toolchain, then make fw builds app/build/clockbox.fwsc (on macOS this needs Docker) and make install, or python3 base/tools/fm1_install.py clockbox.fwsc, writes it over USB. The README says the FM-1's mask-ROM recovery mode exists and that fm1-base's installer can put M-VAVE's firmware back. make host runs the simulator checks without a device. The settings are kept at flash offset 0xFC000.
+brick_risk: false
+tags: [midi, utility, sync, ble-midi, usb-midi, port]
+image:
+  url: https://raw.githubusercontent.com/andymann/clockbox-v3-mvave-fm1/main/app/docs/img/screen-main.png
+  alt: "CLOCKBOX main screen: the title and BLE at the top, a large 120 in white digits, four empty beat boxes, QRS STOP START in orange and the preset values FX 80, SEL 100 and ENV 120"
+  credit: andymann
+  source_url: https://github.com/andymann/clockbox-v3-mvave-fm1
+  first_party: true
+versions:
+- version: main @ dc7f81b
+  date: 2026-11-22
+  url: https://github.com/andymann/clockbox-v3-mvave-fm1/commit/dc7f81b1d07ba57a5a09278793fede72f1c6a264
+  notes: No tagged releases; this is the latest commit.

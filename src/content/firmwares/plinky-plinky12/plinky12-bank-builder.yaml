@@ -1,0 +1,29 @@
+device: plinky-plinky12
+name: Plinky12 Bank Builder
+kind: tool
+summary: An unofficial offline web page that turns up to eight of your own note samples into a multisample bank for the Plinky12 SD card, sized so several banks can be loaded together.
+description: >-
+  The page takes samples named by note, sets a bank name and artist folder, and writes eight presets as a folder or ZIP to copy into PLINKY/BANKS on the
+  card. A setting chooses how many banks will be loaded at once, from one to four, which limits the audio per bank to fit the roughly 14 MB sample memory.
+  It supports one-shot and looping instrument types, and the samples are processed in the browser without upload. The README names QU4TTRO and N3VE as panels
+  that use the setting.
+status: active
+authors:
+  - name: VRCVS (Filippo Rieder)
+    url: https://github.com/vrcvs
+source: https://github.com/vrcvs/plinky12_bank_builder
+source_status: open
+license: CC-BY-NC-SA-4.0
+license_notes: >-
+  The repository has no LICENSE file. The README says the tape encoding uses prepkitchen.js and related modules from the maker's Plinky12 editor, which are
+  CC BY-NC-SA 4.0, and that this tool is non-commercial and share-alike.
+homepage: https://vrcvs.github.io/plinky12_bank_builder/
+install_notes: >-
+  Open the hosted page, drop the samples, create the bank and copy the artists folder into PLINKY/BANKS on the card. Back up the card first.
+brick_risk: false
+tags: [sampler, samples, web, utility]
+versions:
+  - version: main @ e5f4bc5
+    date: 2026-11-18
+    url: https://github.com/vrcvs/plinky12_bank_builder/commit/e5f4bc52882d6fec714e4307a4a6d3b10ed5156a
+    notes: No tagged releases; this is the latest commit.

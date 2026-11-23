@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+kind: tool
+name: fm1-orchestra
+summary: >-
+  Python tools for playing orchestral pieces on the FM-1 from a Mac over USB MIDI: DX7 patch loading, eight-part song modules, MusicXML score import, recording from the FM-1's USB audio and slide-show videos.
+description: >-
+  Rights warning: the repository bundles 228 DX7 voice banks, among them Yamaha's factory banks, taken from a collection that the source page calls public domain without giving a basis, and its SOURCE.md invites authors to ask for removal. The tool works with the stock V16 firmware, which has eight parts and 20 voices. The fm1ctl.py command loads patches into the unit, sends each instrument of a song to its own part, sets balance and effects and records the result, and the song modules are small Python files that name the parts, sounds, levels and phrasing. A score in MusicXML can be converted into a MIDI file with dynamics, and a video command builds slides over a recording. Four pieces are included as songs, Saint-Saëns' Aquarium, two Bach Brandenburg movements and an arrangement of Carol of the Bells, with MIDI files for Clair de Lune and the D minor Toccata and Fugue that have no song module yet. The author posted a video of the Aquarium rendition. It needs macOS, Python 3.12 and ffmpeg.
+status: active
+authors:
+- name: cmcguinness
+  url: https://github.com/cmcguinness
+source: https://github.com/cmcguinness/fm1-orchestra
+source_status: open
+license: CC0-1.0
+license_notes: >-
+  The README dedicates the software, song modules, arrangements and documentation to the public domain under CC0 1.0, and lists exceptions that keep their own terms. The Brandenburg 3 score and MIDI derive from Chris Sawer's Mutopia edition under CC BY 3.0, the Krueger Clair de Lune MIDI is CC BY-SA 3.0 Germany, and the other scores are public domain or public-domain dedications according to each song's CREDITS.md. The fm1-orchestra/sysex folder holds DX7 patches whose public-domain status is not established, including Yamaha factory banks.
+homepage: https://github.com/cmcguinness/fm1-orchestra
+distribution: source-only
+requires_stock: V16
+install_notes: >-
+  Clone the repository, create a Python 3.12 environment with uv, install requirements.txt and requirements-dev.txt and run brew install ffmpeg. docs/setup.md also covers the one-time channel and effect settings on the FM-1 and upgrading it to V16. fm1ctl.py load-bank writes DX7 voices into the unit's sound bank D and does not write firmware.
+brick_risk: false
+tags: [midi, sysex, dx7, librarian, editor, usb-audio, utility]
+video:
+  url: https://www.youtube.com/watch?v=cEGUEfn2RJw
+  title: "Saint-Saëns' \"Aquarium\" played by a $100 FM synth (M-VAVE FM-1)"
+  credit: Charles McGuinness
+  first_party: true
+  found_via: https://github.com/cmcguinness/fm1-orchestra#readme
+versions:
+- version: main @ e72c084
+  date: 2026-11-23
+  url: https://github.com/cmcguinness/fm1-orchestra/commit/e72c084ade36c6b16f80926fdb0d1636d748eb99
+  notes: No tagged releases; this is the latest commit.

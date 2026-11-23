@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: JUNIPER FM-1
+summary: >-
+  Six-voice polysynth inspired by the Roland Juno-106, with a DCO, resonant four-pole filter, stereo chorus, six voice modes, arpeggiator, Juno-106 SysEx and 128 patches, installed from a browser page. Formerly JUNO FM-1.
+description: >-
+  The engine is written from scratch from the Juno-106's published design, and the project says it holds no Roland or other emulation code. Each voice has one DCO with saw, pulse with PWM, sub and noise, a resonant four-pole low-pass that can self-oscillate, an ADSR and an LFO with delay, followed by a high-pass and the chorus modes I, II and I+II. Additions in the style of the superOS-106 firmware are poly, mono, chord, unison and dual voice modes, an arpeggiator, a second envelope for the filter, per-voice detune and drift, velocity routing, MIDI-clock LFO sync and an Arabic scale with user scales over SysEx. It reads and sends the Juno-106's own SysEx patch messages, so existing librarians can send patches, and answers the superOS-106 controller numbers. The bank has 128 factory patches, some with a stored arpeggio or chord. A browser player runs the package in the fm1-emu emulator, and a macOS launcher opens the installer offline. The repository's own review notes list a hardware checklist and corrective changes that are not implemented. It is built on fm1-base and was renamed from JUNO FM-1 at 0.5.1 with the same package identity.
+status: active
+authors:
+- name: fergroan-sketch
+  url: https://github.com/fergroan-sketch
+source: https://github.com/fergroan-sketch/juniper-fm1
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The LICENSE file is the MPL-2.0 text and firmware.json states MPL-2.0. The project is built on fm1-base and felucca-bsp, which are MPL-2.0, and the published package carries Apache-2.0 JieLi SDK files and a BSD-2-Clause micro-ecc notice.
+homepage: https://fergroan-sketch.github.io/juniper-fm1/
+based_on: m-vave-fm-1/fm1-base
+distribution: browser-installer
+requires_stock: Any FM-1 firmware; the installer writes the package over it
+install_notes: >-
+  Open the install page in Chrome or Edge with the FM-1 on USB and press Install, or run fm1-base's fm1_install.py on the .fwsc from the release. The README says to back up first because installing can lose saved patches, not to unplug during the write, and that the page can put M-VAVE's own firmware back. The install page can also add m-bootloader as an optional extra, which the project's checklist treats as a recovery aid. The review notes say it was tested only in fm1-base's host simulator, and the README does not claim a test on hardware.
+brick_risk: false
+tags: [synth-engine, oscillator, filter, chorus, arpeggiator, sysex, presets, ble-midi, usb-audio, emulator]
+image:
+  url: https://raw.githubusercontent.com/fergroan-sketch/juniper-fm1/main/home.png
+  alt: "JUNIPER FM-1 home screen showing patch A02 WARM PAD, sliders for FREQ, RES and VCF ENV with their values, and a CHORUS column with OFF, I, II and I+II, where II is selected"
+  credit: fergroan-sketch
+  source_url: https://fergroan-sketch.github.io/juniper-fm1/
+  first_party: true
+versions:
+- version: 0.5.1
+  date: 2026-11-23
+  url: https://github.com/fergroan-sketch/juniper-fm1/releases/tag/v0.5.1
+  notes: The only release, the first under the JUNIPER name. It installs over 0.5 with the same package identity and keeps what 0.5 saved.

@@ -1,0 +1,52 @@
+device: teenage-engineering-op-z
+name: Galax-z OS
+summary: >-
+  Patches for the OP-Z OS 1.2.45, built from the OS read off your own unit: boot animations, A/B bar colours, Tumbler, EUCLID and GROOVE pages, USB-host keyboards, a load meter, more live voices, and a piano and compressor engine.
+description: >-
+  Rights warning: the patch records carry the original bytes each edit replaces, 620 bytes of teenage engineering's OS
+  code in all (262 without repeats), so that a patch refuses an OS it was not made for, and the repository says that these
+  bytes are not licensed. No firmware image, dump or key of teenage engineering's is committed. The Mac app's hub, or the
+  Python tools in Firmware/, reads the OS from your own OP-Z, applies the ticked records, checks the SHA-256 of the result and
+  writes only /yaffs2/os.ldr and /yaffs2/os.crc32 in update mode, reading back every write. The thirteen versions add a longer
+  key debounce, sixteen boot animations with your own colours, white and purple playheads on odd and even patterns, a Tumbler
+  page where keys drop balls into a spinning hexagon, an EUCLID page of Euclidean rhythms, support for older USB keyboards as
+  host with a HOST and INSTRUMENT switch, a sustain pedal and mod wheel, presets that survive a restart, a load meter, more held
+  notes, a GROOVE page that plays kept keys through 69 grooves and 133 progressions, and two Quindar tones at power-on, with
+  quiet variants that omit the tones. A sampled grand piano engine, made from the Salamander Grand Piano, and OTT, a three-band
+  compressor, install as plugs without flashing. The author says the OS has only been run on one OP-Z, that the bootloader is
+  never written, that going back from an OS that does not start has never been tried, and that the code was written with
+  Claude and tried on that unit. It builds on OP-FREE's research, patch format and SDK.
+status: active
+authors:
+  - name: Luis Tosado
+    url: https://github.com/Luisga521
+source: https://github.com/Luisga521/Galax-z
+source_status: open
+license: MIT
+license_notes: >-
+  LICENSE is MIT, for what is Galax-z's own. The piano's sample pack is CC BY 3.0 (Salamander Grand Piano V3 by Alexander
+  Holm). Parts from OP-FREE are MIT. The expected-bytes values in the patch records are teenage engineering's and not
+  licensed here. OWNERSHIP.md lists the ownership file by file.
+based_on: teenage-engineering-op-z/op-free
+distribution: patch-your-own
+requires_stock: "1.2.45"
+install_notes: >-
+  Install needs OS 1.2.45 and refuses anything else. Back up twice first, with the app's BACK UP NOW and a copy of the whole
+  disk in content mode, keep the os.ldr that the hub reads off your unit and have TE's official 1.2.45 update file. Put the OP-Z
+  in update mode (hold SCREEN while switching on), then install from the Mac app's hub or with Firmware/flash. Do not unplug
+  during the write. To go back, switch off, hold SCREEN, switch on and write TE 1.2.45 from the hub; update mode belongs
+  to the bootloader, which the tools never write. TE's own .zfw procedure and a factory reset (SCREEN with STOP) are the
+  fallbacks and have not been tried from a broken OS.
+brick_risk: false
+tags: [patch, ui, sequencer, euclidean, groove, midi, usb-host, sampler, fx]
+image:
+  url: https://raw.githubusercontent.com/Luisga521/Galax-z/main/docs/screens/shortcuts.png
+  alt: Dark cheat sheet titled OP-Z Shortcuts with Galax-z OS, showing the Tumbler, EUCLID and GROOVE pages with their dials and boxes for shortcuts, switching on and recovery
+  credit: Luis Tosado
+  source_url: https://github.com/Luisga521/Galax-z
+  first_party: true
+versions:
+  - version: galaxz-v13
+    date: 2026-11-23
+    url: https://github.com/Luisga521/Galax-z/releases/tag/galaxz-v13
+    notes: Release of Galax-z OS v13 as a .galaxz patch file. Adds the GROOVE page, two Quindar tones at power-on in place of TE's start sound and messages that tell the app where the balls, rings and notes are. The author lists how v13 starts and the GROOVE colour as not yet confirmed.

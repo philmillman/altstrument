@@ -2,8 +2,8 @@ device: m-vave-fm-1
 name: CHOPPAH
 summary: >-
   Breakbeat chopper for the FM-1: eight classic breaks cut into sixteen slices, effect pads, 16 step-sequenced
-  patterns, a pattern generator, sixteen overlay effects, a four-slot master effects chain, synthesized kick, snare
-  and hat, and a DJ filter.
+  patterns, a pattern generator, sixteen overlay effects, a four-slot master effects chain, MATHCORE scenes and
+  macros, and a DJ filter.
 description: >-
   Rights warning: since 0.13 the firmware's eight breaks are two-bar cuts of commercial records, among them The Winstons'
   "Amen, Brother", James Brown's "Funky Drummer" and "Cold Sweat" and the Incredible Bongo Band's "Apache". The
@@ -18,8 +18,8 @@ description: >-
   flanger, ring modulator, tremolo, reverb, delay, EQ, tape saturation, multiband compressor and clipper), with further
   effects per slice. From 0.60 each effect has MAIN, MORE and MOD parts, with extra knobs and a modulator, and a live
   view, and MB COMP has a page of its own. Since 0.32 the firmware has 16 patterns with a step sequencer and recording: 32 break steps, plus
-  kick, snare and hat lanes of 16 steps each, with MIDI notes for the slices and drums, and from 1.2.1 MIDI notes 64 to 74 press the black-key pads. The kick is a four-layer
-  synthesized gabber kick; the snare and hat have their own design page. A MIXER page sets the levels, and ENV is a
+  kick, snare and hat lanes of 16 steps each, with MIDI notes for the slices and drums, and from 1.2.1 MIDI notes 64 to 74 press the black-key pads. Up to 1.5.4 the kick is a four-layer
+  synthesized gabber kick and the snare and hat have their own design page; from 1.5.5 the kick, snare and hat lanes play the break's own hits and the synthesised drums and their MIXER faders are gone. From 1.5.5 EDIT is MATHCORE, with eleven ready scenes on the black keys and four macros (DENSITY, MATH, SPEED, CHAOS), and from 1.5.6 it brings in and leaves the loop on the next bar without stopping. A MIXER page sets the levels, and ENV is a
   full-screen tap tempo with a metronome click. MIDI clock in and out and Bluetooth MIDI are included, as was Bluetooth
   audio out to headphones or a speaker, which the README says ran 150 to 300 ms late and was for listening, until 1.5 removed it to make room for the split of two breaks in one loop. The README
   calls it an early 0.x release: the looper and a song mode are next, and the breaks are built in, so you cannot load
@@ -57,6 +57,18 @@ image:
   source_url: https://github.com/profikid/fm1-break-choppah
   first_party: true
 versions:
+- version: 1.5.6
+  date: 2026-11-23
+  url: https://github.com/profikid/fm1-break-choppah/releases/tag/v1.5.6
+  notes: While playing, EDIT brings MATHCORE in on the next bar and HOME or SEQ brings the break's loop and pattern back on the next bar, with no stop between them. FX, the MIXER, ARP, GLOBAL and TAP leave a playing scene running, and HOME's GATE, the DJ filter and the pads act on MATHCORE's hits. Saved settings, patterns and scenes load as they were.
+- version: 1.5.5
+  date: 2026-11-23
+  url: https://github.com/profikid/fm1-break-choppah/releases/tag/v1.5.5
+  notes: EDIT becomes MATHCORE, with eleven ready scenes on the black keys (rollers, AMEN, snare grooves, fills, a riser and a drop) and four macros on K1 to K4 for density, polyrhythm, speed and random slices, with a ring display per lane. The kick, snare and hat lanes now play the break's own hits, found when a break loads, and the synthesised drums and the MIXER's KICK and PERC faders are removed. Saved settings and patterns load, but the kick's and snare's own sound settings are no longer used. 1.5.4 was never published.
+- version: 1.5.3
+  date: 2026-11-22
+  url: https://github.com/profikid/fm1-break-choppah/releases/tag/v1.5.3
+  notes: AMEN becomes bars 3 and 4 of the record in one piece, so the loop no longer stumbles or slows before it comes round, and every slice starts 1 ms before its hit. A pattern that plays AMEN's slices now plays those bars.
 - version: 1.5.2
   date: 2026-11-22
   url: https://github.com/profikid/fm1-break-choppah/releases/tag/v1.5.2

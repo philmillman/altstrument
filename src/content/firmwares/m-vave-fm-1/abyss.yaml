@@ -1,0 +1,38 @@
+device: m-vave-fm-1
+name: ABYSS
+summary: >-
+  Experimental noise synth firmware for the FM-1 with up to four voices of three oscillators, six noise types, FM, ring mod and sync, six drive types, two feedback delays, two LFOs and MIDI clock sync.
+description: >-
+  Inspired by the APTBS and Death By Audio synthesizer and not the same project as ABYSS ENGINE. Each voice has three oscillators with FM, cross modulation, ring modulation, hard sync and a CHAOS control, a sub oscillator, a mixable noise source with six types, a low-, band- or high-pass filter and an envelope. Two LFOs, a random sample-and-hold and the envelope can modulate any target, six drive types lead into two PT2399-style feedback delays, and stereo width is adjustable. One to four voices play with spread and glide. MIDI clock turns LFO rates and delay times into note divisions, and TRS and USB MIDI take notes, pitch bend, program change, sustain and CCs. It has 14 factory sounds and 10 user slots, and the last sound is remembered over power-off. A web emulator and cheat sheet are on the project site.
+status: active
+authors:
+- name: Tentacletunes
+  url: https://github.com/Tentacletunes
+source: https://github.com/Tentacletunes/abyss
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states GPL-3.0-only because it uses Felucca's build tools and update loader. felucca-bsp files keep MPL-2.0 and Inter Tight is SIL OFL 1.1.
+homepage: https://tentacletunes.github.io/abyss/emu/
+based_on: m-vave-fm-1/felucca-bsp
+distribution: download
+requires_stock: V15
+install_notes: >-
+  Download abyss.fwsc from the latest release and install it with felucca-bsp's fm1_install.py, as docs/INSTALL.md describes. The firmware keeps the update entry, so any other firmware, including M-VAVE's, can be installed over it. After three crashing starts it waits in update mode, which can also be entered by holding OCT- and OCT+ at power-on, and Felucca's rescue tool backs up the flash first. User data lives in flash 0xF0000 to 0xF3FFF, which another firmware may use, so back up first.
+brick_risk: false
+tags: [synth-engine, noise, experimental, fx, delay, midi, usb-midi, emulator, web]
+image:
+  url: https://raw.githubusercontent.com/Tentacletunes/abyss/master/docs/screens.png
+  alt: "Four ABYSS screens in white on black: preset 11/14 GHOST CHOIR on the OSC 1 page, the VOICE page with 4 voices, LFO 1 rate 2 BARS, and DELAY 1 time 1/2T, each with four parameters and a small waveform"
+  credit: Tentacletunes
+  source_url: https://github.com/Tentacletunes/abyss
+  first_party: true
+versions:
+- version: 1.0.1
+  date: 2026-11-22
+  url: https://github.com/Tentacletunes/abyss/releases/tag/v1.0.1
+  notes: Updates the install handshake to match current felucca-bsp, adds update mode by holding OCT- and OCT+ at power-on and a Firmware Hub card.
+- version: '1.0'
+  date: 2026-11-22
+  url: https://github.com/Tentacletunes/abyss/tree/v1.0
+  notes: Git tag; no GitHub release page.

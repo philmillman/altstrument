@@ -27,10 +27,11 @@ license_notes: >-
 homepage: https://github.com/keremimo/melodee-sample
 based_on: akai-mpc-sample/sample-base
 distribution: download
-requires_stock: "1.3.0.12"
+requires_stock: 1.3.0.12 or 1.4.0.7
 install_notes: >-
   Back up the microSD card and move any existing top-level autorun folder aside, then copy the release zip's autorun
-  folder to the top of the card. The stock app starts first and Melodee takes over a few seconds later. On any other
+  folder to the top of the card. The stock app starts first and Melodee takes over a few seconds later. On firmware 1.4.0.7 (since 0.6.6) turn on Developer Mode in the stock app's Settings, copy the autorun
+  folder and the autorun.sh file to the top of the card and press Yes each time the MPC asks to run the card's script; Screen Mirror is not available there and Melodee runs at 44.1 kHz only. On any other
   stock firmware it does not start. Nothing on the MPC itself changes: choose MPC APP on Melodee's exit screen, or
   delete the autorun folder, to get the stock app back. Plug-ins go in Melodee/Plugins on the card. Since 0.2.0 Melodee installs later releases from a zip copied to the card; 0.1.0 has to be replaced by hand.
 brick_risk: false
@@ -42,6 +43,26 @@ image:
   source_url: https://github.com/keremimo/melodee-sample#readme
   first_party: true
 versions:
+  - version: v0.7.0
+    date: 2026-11-23
+    url: https://github.com/keremimo/melodee-sample/releases/tag/v0.7.0
+    notes: >-
+      Plug-in parameters come in pages under B1 to B3, with page files for hand-set pages and skins and a way for CLAP and VST2 plug-ins to draw their own screen on the MPC Sample, including 32-bit ARM plug-ins. Fixes names with a # in sample and instrument files. Requires MPC Sample firmware 1.3.0.12 or 1.4.0.7.
+  - version: v0.6.8
+    date: 2026-11-22
+    url: https://github.com/keremimo/melodee-sample/releases/tag/v0.6.8
+    notes: >-
+      Finds a loop's exact tempo more often, makes Chop slices warp as their pad, stops a solo on an empty track silencing the others and lowers CPU use when a project is stopped or silent. Requires MPC Sample firmware 1.3.0.12 or 1.4.0.7.
+  - version: v0.6.7
+    date: 2026-11-22
+    url: https://github.com/keremimo/melodee-sample/releases/tag/v0.6.7
+    notes: >-
+      SHIFT with K1 on Patterns sets a length of 1 to 64 sixteenths, a Mute setting can stop new notes and let sounding ones ring out, and MUTE with a pad records the mute on a pad's lane. Requires MPC Sample firmware 1.3.0.12 or 1.4.0.7.
+  - version: v0.6.6
+    date: 2026-11-22
+    url: https://github.com/keremimo/melodee-sample/releases/tag/v0.6.6
+    notes: >-
+      Runs from the card on MPC Sample firmware 1.4.0.7 with Developer Mode on, at 44.1 kHz and without Screen Mirror. Adds a JAMS list on Song, with each PLAY to STOP run kept as its own jam, and a note preview in the pattern editors. Requires MPC Sample firmware 1.3.0.12 or 1.4.0.7.
   - version: v0.6.5
     date: 2026-11-22
     url: https://github.com/keremimo/melodee-sample/releases/tag/v0.6.5

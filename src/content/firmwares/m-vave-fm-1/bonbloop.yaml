@@ -1,0 +1,47 @@
+device: m-vave-fm-1
+name: BONBLOOP
+summary: >-
+  SLOOP 2.8.5 plus a synth mode: hold ENV and the selected track becomes a three-oscillator wavetable synth with its own
+  envelopes, LFOs, filter and a buildable effects chain.
+description: >-
+  Everything outside the synth mode is SLOOP, including its four tracks, sequencer, drums, projects and web editor.
+  Holding ENV for about 0.7 seconds switches the selected track to a new WAVE engine and its own pages, which stay until
+  ENV is held again. Each of the three oscillators picks a sine, triangle, saw, square, noise or one of ten wavetables,
+  with position, level, tuning and a reverse option, and has its own envelope and LFO. The synth has a filter and an
+  effects chain you build from drive, a transient shaper, phaser, DJ filter, chorus, delay and reverb, all off at the
+  start, and keeps sixteen sounds. Other additions are chord voicings (inversions, drop 2 and 3, spread, added bass) and
+  delay times of one half, one half triplet and a free value in milliseconds. The repository is a copy of SLOOP's
+  source with its history rather than a GitHub fork, and its main guide is in Portuguese.
+status: active
+authors:
+- name: henribon
+  url: https://github.com/henribon
+source: https://github.com/henribon/bonbloop
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is GPL-3.0-only, and LICENSING.md repeats Felucca's licence text: code is GPL-3.0-only, the icon atlas is a
+  separate Hügelton Instruments asset, and msfa for the FM6 engine is Apache-2.0. The repository commits its own
+  BONBLOOP package under docs/firmware (not M-VAVE's stock image).
+homepage: https://bonbap.com.br/bonbloop/
+based_on: m-vave-fm-1/sloop
+distribution: browser-installer
+install_notes: >-
+  Install from the project's page in Chrome or Edge with the FM-1 on a USB data cable, or with tools/fm1_install.py and
+  the .fwsc under docs/firmware. The README says projects, user presets, samples and settings are kept across updates.
+  Going back to an earlier SLOOP means installing its .fwsc, and going back to the official firmware uses M-VAVE's
+  M-UPGRADE. Holding OCT- alone while switching on starts the USB rescue, an interrupted install finishes when you
+  install again, and if the FM-1 no longer starts at all the README points to kurogedelic's FM-1-transporter.
+brick_risk: false
+tags: [synth-engine, wavetable, oscillator, sequencer, drums, fx, performance, midi, fork]
+image:
+  url: https://raw.githubusercontent.com/henribon/bonbloop/bonbloop/synth-mode/assets/promo/bonbloop-hero-1600x900.png
+  alt: "BONBLOOP promo card: synth mode, three oscillators, 16 waves and an effects list, beside three FM-1 screens showing the oscillator 1 wavetable page, the drive page and oscillator 3"
+  credit: henribon
+  source_url: https://github.com/henribon/bonbloop
+  first_party: true
+versions:
+- version: bonbloop/synth-mode @ f29de9e
+  date: 2026-11-23
+  url: https://github.com/henribon/bonbloop/commit/f29de9e0302565885e2b20df55842352648b54c3
+  notes: No tagged releases; this is the latest commit. The README names it BONBLOOP 1.3.1, built on SLOOP 2.8.5.

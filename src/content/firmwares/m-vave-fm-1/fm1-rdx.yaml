@@ -1,9 +1,9 @@
 device: m-vave-fm-1
 name: FM1-RDX
 summary: >-
-  Four-operator FM synth for the FM-1 inspired by the Yamaha Reface DX: 33 sounds, twelve algorithms, up to eight adaptive voices, two of seven effects and Reface-style SysEx, with a browser emulator.
+  Four-operator FM synth for the FM-1 inspired by the Yamaha Reface DX: 33 sounds, twelve algorithms, up to seven adaptive voices, two of seven effects and Reface-style SysEx, with a browser emulator.
 description: >-
-  Rights warning: the repository commits SysEx files of the Yamaha reface DX factory voices (DigiChord, WobbleBass, LegendEP and the rest of the factory banks) and a reface DX dump, with no statement that Yamaha allows it. It has no licence file, and its own notes say the licensing of the original RDX code and its voices is not established. It is a port of the author's ESP32 RDX synth onto fm1-base. The sounds are four banks of eight plus an init voice, editable per operator with envelopes, LFO and pitch envelope, and the FX button opens two slots chosen from distortion, touch wah, chorus, flanger, phaser, delay and reverb. Polyphony starts at four voices and rises while the measured processing headroom allows. It takes MIDI on USB and TRS with optional Reface FM control changes, records over USB audio and answers Soundmondo's SysEx to load a voice into the edit buffer. Edits are temporary: saving patches is not implemented. The author calls it an experimental preview and says the latest fixes still need a hardware retest.
+  Rights warning: the repository commits SysEx files of the Yamaha reface DX factory voices (DigiChord, WobbleBass, LegendEP and the rest of the factory banks) and a reface DX dump, with no statement that Yamaha allows it. It has no licence file, and its own notes say the licensing of the original RDX code and its voices is not established. It is a port of the author's ESP32 RDX synth onto fm1-base. The sounds are four banks of eight plus an init voice, editable per operator with envelopes, LFO and pitch envelope, and the FX button opens two slots chosen from distortion, touch wah, chorus, flanger, phaser, delay and reverb. Polyphony starts at four voices and rises while the measured processing headroom allows, to seven in 1.0.0 beta, where eight voices stay diagnostic-only. It takes MIDI on USB and TRS with optional Reface FM control changes, records over USB audio and answers Soundmondo's SysEx to load a voice into the edit buffer. Edits are temporary: saving patches is not implemented. The 1.0.0 beta notes say it is tested regularly on FM-1 hardware and that patch edits are temporary, with permanent saving and phrase looping not included yet.
 status: active
 authors:
 - name: copych
@@ -17,11 +17,11 @@ homepage: https://copych.github.io/FM1-RDX/
 distribution: browser-installer
 requires_stock: V15 or another custom firmware
 install_notes: >-
-  Install from the project's web installer in Chrome or Edge with a USB data cable, and back up whatever you want to keep with your current firmware's tools first. The installer includes a way back to M-VAVE's stock firmware and does not offer a bootloader replacement. Close the installer tab before opening a DAW or MIDI app, since it can hold the MIDI port. The current build is a site preview (Preview 2026.11.21-12, identity FM-1_9900) with no GitHub release or tag.
+  Install from the project's web installer in Chrome or Edge with a USB data cable, and back up whatever you want to keep with your current firmware's tools first. The installer includes a way back to M-VAVE's stock firmware and does not offer a bootloader replacement. Close the installer tab before opening a DAW or MIDI app, since it can hold the MIDI port. The release page offers FM1-RDX-v1.0.0-beta.fwsc and a web ZIP with the matching emulator and installer assets, and the project's install page writes the same build.
 brick_risk: false
 tags: [synth-engine, fm, fx, midi, sysex, usb-audio, emulator, port]
 versions:
-- version: main @ 2ff9f47
-  date: 2026-11-21
-  url: https://github.com/copych/FM1-RDX/commit/2ff9f47cb8c3b0f4f6379b350ca1446f27f41ddf
-  notes: No tagged releases; this is the latest commit, which compacts the FM routing and restores a checked RAM-resident DSP path, with a routing equivalence test.
+- version: 1.0.0-beta
+  date: 2026-11-22
+  url: https://github.com/copych/FM1-RDX/releases/tag/v1.0.0-beta
+  notes: Pre-release and the first GitHub release. Starts the second core's audio generation automatically with up to seven adaptive voices, opens the algorithm screen when ALGORITHM is turned, and attaches the firmware package, a web ZIP, SHA256SUMS and build evidence. The notes report a seven-voice sweep of 1,034 steady blocks with no underruns.

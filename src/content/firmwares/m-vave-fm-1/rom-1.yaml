@@ -1,0 +1,57 @@
+device: m-vave-fm-1
+name: ROM-1
+summary: >-
+  Sixteen-part multitimbral sound module that plays SoundFont (.sf2) files converted in the browser to fit the FM-1's
+  flash, with a filter, envelopes, reverb and chorus.
+description: >-
+  Each of sixteen parts answers on its own MIDI channel over USB or the TRS jack, with channel 10 as drums, and the keys
+  play the part shown on screen. About 740 KB is available for sounds, roughly 468 KB inside the firmware and 276 KB in
+  the data area. A converter on the project's Your sounds page keeps samples at 16 bits where there is room and steps
+  the largest down to 4-bit ADPCM and lower sample rates as needed, then installs the firmware and sends the rest over
+  USB. Several fonts can be loaded at once, with bank select choosing the font and program change the preset. The engine
+  has up to 32 voices, cubic interpolation, a resonant low-pass filter, the .sf2 envelopes and LFOs, four reverb types
+  and a chorus. Starter sounds made by synthesis are included, and your own .sf2 files are not part of the project. It is
+  built on SEQ-4, CRT-4, LCD-4, IND-1 and AMB-1, and the site has a browser emulator and a manual.
+status: active
+authors:
+- name: Roberto Vega (devrvega)
+  url: https://github.com/devrvega
+source: https://github.com/devrvega/ROM-1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Stated in LICENSING.md. The platform code is Felucca's with changes by X0X, FoMni, AMB-1 and the later firmwares in
+  this family, all GPL-3.0-only; the engine, converter and starter sounds are ROM-1's own. The Barlow Semi Condensed and
+  Terminus fonts are SIL OFL 1.1. JieLi SDK files (Apache-2.0) are read from your SDK checkout at build time and are
+  not in the repository. SoundFont files you load keep their own makers' licences.
+homepage: https://devrvega.github.io/ROM-1/
+based_on: m-vave-fm-1/seq-4
+distribution: browser-installer
+install_notes: >-
+  Use the web installer in Chrome or Edge over USB for the starter sounds, or the Your sounds page to install with your
+  own .sf2 files; from the command line, tools/fm1_install.py installs the release's .fwsc and tools/rom1_load.py loads
+  fonts. The installer's Back to the stock firmware option, or M-VAVE's M-UPGRADE, puts the stock firmware back, and
+  any other FM-1 firmware installs over ROM-1. An FM-1 that fails to start twice comes up in a safe mode the installer
+  can reach. Sounds that do not fit in the firmware go to the data area where some other firmwares keep samples,
+  patterns or songs, so loading fonts replaces what another firmware kept there.
+brick_risk: false
+tags: [sampler, synth-engine, midi, usb-midi, reverb, emulator, web]
+image:
+  url: https://raw.githubusercontent.com/devrvega/ROM-1/HEAD/docs/img/rom1.gif
+  alt: "ROM-1 screen with sixteen part level meters, the preset name Grand Piano in large dots, and the PART page showing volume 100, pan C, reverb 40 and chorus 0"
+  credit: devrvega
+  source_url: https://github.com/devrvega/ROM-1
+  first_party: true
+versions:
+- version: 1.0.0
+  date: 2026-11-22
+  url: https://github.com/devrvega/ROM-1/releases/tag/v1.0.0
+  notes: Marked ready for everyday use; no firmware changes since 0.1.1.
+- version: 0.1.1
+  date: 2026-10-17
+  url: https://github.com/devrvega/ROM-1/releases/tag/v0.1.1
+  notes: Makes the SETUP lights choice work, so Off is dark and Keys lights only held keys.
+- version: 0.1.0
+  date: 2026-10-17
+  url: https://github.com/devrvega/ROM-1/releases/tag/v0.1.0
+  notes: First release.

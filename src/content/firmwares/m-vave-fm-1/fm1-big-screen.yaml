@@ -13,7 +13,7 @@ description: >-
   port of M-VAVE's web updater, offers updates, and can finish an install that was cut off. It also finds ChoralRoot, JIANT FM
   and Skiff builds that carry the same screen messages, and with several other community firmware on the FM-1 it says that their regular
   release does not send the screen and links the Big Screen version's download page. The repository holds the prebuilt Big Screen package, a Rust
-  source tree and a simulated FM-1 script. An Android version is a separate project. The app was called FM-1 Mirror until 1.3.14, which renamed it FM-1 Big Screen; the download file names stayed. From 1.3.17 it also reads the screen mirror that Charles Vestal's fm1-base has, so firmware built on fm1-base with that mirror turned on shows without a Big Screen build.
+  source tree and a simulated FM-1 script. An Android version is a separate project. The app was called FM-1 Mirror until 1.3.14, which renamed it FM-1 Big Screen; the download file names stayed. From 1.3.17 it also reads the screen mirror that Charles Vestal's fm1-base has, so firmware built on fm1-base with that mirror turned on shows without a Big Screen build. From 1.3.18 it has a built-in Mellotron-style instrument (flute, strings and choir) that the FM-1's keys and a computer keyboard play through the computer's sound output, and from 1.3.20 each release comes as a Full build with the sounds included and a Lite build that downloads them.
 status: active
 authors:
 - name: pfkellogg
@@ -32,15 +32,26 @@ install_notes: >-
   either official firmware back. The builds are unsigned, so macOS and Windows ask for approval on first run.
 brick_risk: false
 tags: [usb-midi, midi, flasher, ui]
-image:
-  url: https://raw.githubusercontent.com/pfkellogg/fm1-mirror/master/docs/big-screen.png
-  alt: >-
-    The FM-1's sequencer screen enlarged on a computer, with eight coloured track rows of step blocks, a 130 BPM readout and
-    a level, source, step and BPM bar along the bottom.
-  credit: pfkellogg
-  source_url: https://github.com/pfkellogg/fm1-mirror#readme
+video:
+  url: https://www.youtube.com/watch?v=cDxFjoqrllY
+  title: "The Mellotron Comes to the Mac: FM-1 Big Screen Plays Flute, Strings & Choir (Windows and Linux too)"
+  credit: AIKellogg
   first_party: true
+  found_via: https://github.com/pfkellogg/fm1-mirror/releases/tag/v1.3.19
+  version: 1.3.19
 versions:
+- version: 1.3.20
+  date: 2026-11-23
+  url: https://github.com/pfkellogg/fm1-mirror/releases/tag/v1.3.20
+  notes: Ships Full builds with the Mellotron flute, strings and choir built in and smaller Lite builds that download Mellotron sounds from an online list. The app goes online only for that list and those downloads.
+- version: 1.3.19
+  date: 2026-11-22
+  url: https://github.com/pfkellogg/fm1-mirror/releases/tag/v1.3.19
+  notes: The spyglass header names who played the last Mellotron note, the FM-1 or the keyboard by name. The FM1_MELLOTRON_OUTPUT setting sends the Mellotron to a chosen output without changing the computer's sound settings.
+- version: 1.3.18
+  date: 2026-11-22
+  url: https://github.com/pfkellogg/fm1-mirror/releases/tag/v1.3.18
+  notes: Adds a built-in Mellotron-style instrument with flute, strings and choir, played by the FM-1's keys and by a keyboard plugged into the computer; its notes stay off the FM-1 while it is on. The sound comes out of the computer, not the FM-1's USB audio.
 - version: 1.3.17
   date: 2026-11-21
   url: https://github.com/pfkellogg/fm1-mirror/releases/tag/v1.3.17

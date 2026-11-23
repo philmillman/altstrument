@@ -9,7 +9,7 @@ description: >-
   screen shows the module's name, pages, knob values and a picture, the cables on a route screen and the patch list. The iPad's
   stereo output plays through the FM-1, with MASTER as the volume. An EDIT screen holds the MIDI channel, velocity, and whether Steckfeld
   opens its programmer when a module is picked on the unit, and a system setting chooses the theme. The control protocol is
-  published under CC0 so other apps can implement it. Each version goes with one Steckfeld SF1 version; 1.0 needs 1.4.0 and 1.1 needs 1.5.0 or newer. It
+  published under CC0 so other apps can implement it. Each version goes with one Steckfeld SF1 version; 1.0 needs 1.4.0, 1.1 needs 1.5.0 or newer and 1.2 needs 1.7.0 or newer. It
   is a fork of the author's Beiwagen, which descends from FM1_AudioBase, MOOD_FM1, GATOR, ORBIT and Felucca.
 status: active
 authors:
@@ -24,7 +24,7 @@ license_notes: >-
   Apache-2.0. No M-VAVE firmware is in the repository.
 based_on: m-vave-fm-1/beiwagen
 distribution: browser-installer
-requires_stock: Steckfeld SF1 1.4.0 for Fernbedienung 1.0, 1.5.0 or newer for 1.1
+requires_stock: Steckfeld SF1 1.4.0 for Fernbedienung 1.0, 1.5.0 or newer for 1.1, 1.7.0 or newer for 1.2
 install_notes: >-
   Install it from the FM-1 Firmware Hub, which also offers the way back to M-VAVE's official firmware, or write the .fwsc from the release with another
   FM-1 installer. It installs over M-VAVE's V15 and over other community firmware. The README warns that a failed or interrupted
@@ -38,6 +38,10 @@ image:
   source_url: https://github.com/DPangerl/fernbedienung
   first_party: true
 versions:
+- version: '1.2'
+  date: 2026-11-23
+  url: https://github.com/DPangerl/fernbedienung/releases/tag/v1.2
+  notes: Needs Steckfeld SF1 1.7.0 or newer. Gives the BUBEN, PRISE, KODAMA, MITSCHNITT and EMPFANG crews their own screens, labels KODAMA and MAGE in Japanese, and adds a macro that follows Steckfeld's (STORE, STEP on REC, SAVE), with the four encoders side by side and UNSAVED in place of the blinking ARMED.
 - version: '1.1'
   date: 2026-11-18
   url: https://github.com/DPangerl/fernbedienung/releases/tag/v1.1

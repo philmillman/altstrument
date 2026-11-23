@@ -1,0 +1,30 @@
+device: m-vave-tank-pro
+also_devices: [m-vave-tank-g]
+name: mvave-re
+kind: tool
+summary: >-
+  Reverse engineering notes and Python tools for the M-VAVE Tank-PRO and Tank-G: a firmware unpacker and repacker, a read-only USB-MIDI backup tool, and byte-level patches rebuilt from your own official .fwsc files.
+description: >-
+  The repository holds a long reverse engineering guide for the Tank-PRO, written from Ghidra analysis of firmware V38 and read-only tests on a pedal, with a shorter Tank-G v2 guide. The Tank-PRO guide covers the .fwsc update container, the flash layout, the USB-MIDI protocol (areas for the 120 presets, the active NAM A2-Lite model, drum data and the serial number), the effect model catalogue, the boot and safe-mode behaviour and V40 differences. tank_pro_tool.py unpacks and repacks firmware and backs up user data over USB-MIDI, and sends only identify, status and read commands. tank_g_tool.py is the smaller Tank-G counterpart.
+
+  No M-VAVE firmware is committed. tools/firmware.py imports the official files you supply, identifies them by SHA-256, and applies each patch as offsets, stock bytes and new bytes, then checks the result against a known hash. The patches are SAFEFIX and SAFEFIX2, which make the pedal's A+B safe mode able to take an update, and SAVEOK, which changes a display string, each marked verified on a device for V38, and a SAFEFIX2 build for V40. A Tank-G rename demo and a few test builds are also listed. The author notes that a boot-loader repack builds but was never flashed.
+status: active
+authors:
+  - name: unlikelytheorist
+    url: https://github.com/unlikelytheorist
+source: https://github.com/unlikelytheorist/mvave-re
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT License. The repository contains no M-VAVE firmware, images or dumps; CONTRIBUTING.md asks contributors not to commit them, and FIRMWARE.md lists the official files by tag and SHA-256 only.
+distribution: patch-your-own
+requires_stock: Official M-VAVE .fwsc update files for your pedal, listed in FIRMWARE.md by tag and SHA-256 (Tank-PRO TANK PRO_038 and TANK PRO_040, Tank-G 097 and Tank-G v2 099); the repository does not include them.
+install_notes: >-
+  Run tools/setup.sh once, import your .fwsc files with tools/firmware.py import, unpack them and run build-mods to write the patched images, then install one with M-UPGRADE. The device commands are read-only; take a backup with tank_pro_tool.py device backup first. The guide says safe mode (hold footswitches A and B at power-on) only accepts an update when SAFEFIX or SAFEFIX2 is already installed, so build any further patch on top of SAFEFIX2. Flashing a patched image is at your own risk.
+brick_risk: false
+tags: [reverse-engineering, usb-midi, firmware-patching, jieli, nam, research]
+versions:
+  - version: main @ e09e410
+    date: 2026-11-22
+    url: https://github.com/unlikelytheorist/mvave-re/commit/e09e4109bdf192529577d6fa2e14bb1d5dd6f217
+    notes: No tagged releases; this is the latest commit.

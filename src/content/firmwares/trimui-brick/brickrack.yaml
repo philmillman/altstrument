@@ -1,0 +1,35 @@
+device: trimui-brick
+name: BrickRack
+summary: >-
+  Open-source pocket modular synthesizer for the TrimUI Brick Pro on NextUI that patches 29 modules with cables, among them ports of Émilie Gillet's open Eurorack firmware such as Plaits, Braids, Rings, Clouds and Marbles. Not yet run on hardware.
+description: >-
+  BrickRack shows a rack of module panels on the 1024 by 768 screen and lets you connect jacks with virtual cables. Its 29 modules include oscillators, resonators, texture and modal synthesizers, random and segment generators, a drum sequencer, filters, VCAs and utilities, plus a step sequencer, a Brick Control module that turns the sticks and shoulder buttons into voltages and gates, and a microphone input. Most digital modules run the original Eurorack firmware DSP from pichenettes/eurorack, included as a submodule, at each module's own sample rate; the analog modules are digital models, and three 8-bit AVR modules are reimplemented. Panels use descriptive names rather than the Mutable Instruments names, and the README asks readers to treat it as unaffiliated. Patches autosave and example patches are installed on first launch.
+
+  The v0.1.0 notes and README say it builds and runs on desktop but has not been run on real hardware, and that the L2, R2, L3 and R3 mappings are unverified. It targets the Brick Pro's analog sticks; the original Brick can use the D-pad editing mode.
+status: active
+authors:
+  - name: andrewfrangella
+    url: https://github.com/andrewfrangella
+source: https://github.com/andrewfrangella/brickrack
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The README says BrickRack is GPL-3.0-or-later, and the LICENSE file is the GPL v3 text. The bundled Eurorack firmware is MIT for the STM32 code and GPL-3.0-or-later for the AVR code, and the hardware designs used as reference are CC-BY-SA-3.0. THIRD_PARTY_NOTICES lists these and the Barlow Condensed font (SIL OFL).
+based_on: https://github.com/pichenettes/eurorack
+distribution: download
+requires_stock: NextUI on the TrimUI Brick Pro
+install_notes: >-
+  Download BrickRack-tg5040.zip from the release page, copy Tools/tg5040/BrickRack.pak to /Tools/tg5040/ on the SD card and start BrickRack from the Tools menu. Patches are stored under /.userdata/tg5040/BrickRack/ and survive updates. A Docker script builds the device package. Nothing is written to the console's internal firmware.
+brick_risk: false
+tags: [modular, synth-engine, mutable-instruments-port, sequencer, fx, wavetable, physical-modeling, handheld]
+image:
+  url: https://raw.githubusercontent.com/andrewfrangella/brickrack/main/docs/screenshots/rack.png
+  alt: "BrickRack rack view: Brick Control, Step Seq and Macro Osc 2 panels with knobs and jacks joined by purple, yellow, blue and red patch cables, and a status bar below"
+  credit: andrewfrangella
+  source_url: https://github.com/andrewfrangella/brickrack
+  first_party: true
+versions:
+  - version: v0.1.0
+    date: 2026-11-08
+    url: https://github.com/andrewfrangella/brickrack/releases/tag/v0.1.0
+    notes: First build for the Brick Pro on NextUI, not yet run on real hardware.

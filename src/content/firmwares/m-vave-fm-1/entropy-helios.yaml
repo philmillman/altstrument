@@ -1,0 +1,38 @@
+device: m-vave-fm-1
+name: ENTROPY HELIOS
+summary: >-
+  Ambient drone and microtonal synth for the FM-1 with a generative ENTROPY mode and a hands-on PURE HW mode, two-core voices, 16 stackable effect cartridges and a browser installer and studio page.
+description: >-
+  Two modes are switched with SEL and REC. ENTROPY, the mode at power-on, runs a generative engine with three behaviours (DRIFT, CINEMA and WILD), 36 factory presets grouped as calm, lush and edge, and eight user slots. PURE HW removes the generative presets and leaves 16 blank hardware slots with no autonomous drift. The voices run on both cores: six swarm drone voices of five oscillators each and two melodic voices, through two modelled op-amp filters, with an eight-voice play mode that responds to velocity and per-key aftertouch. Sixteen effect cartridges can be stacked, each with its own level and tone, ahead of a three-spring tank, and external USB audio can be routed through the filters and effects. The screen is drawn as a hardware panel with five selectable finishes saved to flash. A WebMIDI studio page adds an 8x8 pin matrix, a two-axis joystick, a cartridge selector and JSON backup of the user slots, and can use the computer's webcam as a light sensor and a desk tap as a piezo input. It runs on both FM-1 flash chips and is built on fm1-base and felucca-bsp.
+status: active
+authors:
+- name: behn1220
+  url: https://github.com/behn1220
+source: https://github.com/behn1220/entropy-helios
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The LICENSE file is the MPL-2.0 text and the README states MPL-2.0. The README credits fm1-base (Charles Vestal), felucca-bsp (Leo Kuroshita, Hügelton Instruments), the dual flash chip support (Laurens, profikid) and the DSP helpers and build script template (Styves Goupil).
+homepage: https://behn1220.github.io/entropy-helios/
+based_on: m-vave-fm-1/fm1-base
+distribution: browser-installer
+requires_stock: Any FM-1 firmware; the installer writes the package over it
+install_notes: >-
+  Open the install page in Chrome or Edge, connect the FM-1 over USB-C and press Install; after the restart the screen shows HELIOS 1.1. The repository also holds the .fwsc package. The README describes no recovery path of its own, and the FM-1's ROM boot mode applies.
+brick_risk: false
+tags: [synth-engine, drone, ambient, generative, fx, reverb, filter, usb-audio, editor, web]
+image:
+  url: https://raw.githubusercontent.com/behn1220/entropy-helios/main/docs/entropy-helios-splash.jpg
+  alt: "Entropy Helios boot splash: a green waveform on a round dark oscilloscope screen set in an olive panel with corner screws, above the words ENTROPY HELIOS"
+  credit: behn1220
+  source_url: https://github.com/behn1220/entropy-helios
+  first_party: true
+versions:
+- version: 1.1.0
+  date: 2026-11-23
+  url: https://github.com/behn1220/entropy-helios/tree/v1.1.0
+  notes: Git tag; no GitHub release page. The README calls it v1.1 Beta, and the repository holds its installer page and package.
+- version: 1.0-beta
+  date: 2026-11-23
+  url: https://github.com/behn1220/entropy-helios/releases/tag/v1.0-beta
+  notes: First release, with the .fwsc package and the installer page attached.

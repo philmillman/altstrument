@@ -1,0 +1,26 @@
+device: sonicake-amphonix-2
+name: Amphonix 2 CFW
+summary: >-
+  Rights warning: unofficial firmware for the Amphonix 2 built from Sonicake's V1.0.2 code, with scenes on the A, B and C keys, a USB tuner, 10 + 10 IR and NAM slots and MIDI control. Binary only, with no named author.
+description: >-
+  Rights warning: the image is Sonicake's V1.0.2 firmware with changes made by the community, the page says, and no source is published. It is the Amphonix 2 version of the Pocket Master CFW and Smart Box CFW, from the same site and on the same platform. The firmware adds scenes (BASE, SC1 and SC2) that a held key steps through, a choice of three or five presets per A, B or C key with the key LED blinking for the scene, 10 + 10 User IR and NAM slots with 30-character names, the IR block after a NAM capture, a DSP load meter, a tuner that also works over USB, MIDI control over USB and Bluetooth with configurable maps, two STOMP groups switched by MIDI, tap tempo and tempo sync, Global EQ, MIDI expression pedals A to D, and the Pocket Master and Smart Box amps, delays, reverbs and modulations. The site also offers a manual and the Sonicake CFW app, shared with the other two units, which can update the firmware over USB and runs in the browser, on Windows and on Android. The page does not name the author, who says the firmware was tested on one unit only and may not work on other hardware revisions. It is credited to Sonicake's own code plus the SonicMaster, gp150-htfw and Linux flash projects. The page asks that derived builds credit the site and link to it. The project says it is not affiliated with Sonicake.
+status: active
+authors:
+  - name: guitar-training-generator.com
+    url: https://guitar-training-generator.com/
+source_status: binary-only
+license: proprietary
+license_notes: >-
+  No licence is stated. The page says the file is Sonicake's V1.0.2 firmware with community modifications, so it contains Sonicake code that stays under Sonicake's rights, and it is provided as is, without warranty.
+homepage: https://amphonix2-cfw.guitar-training-generator.com/
+distribution: download
+requires_stock: Sonicake firmware V1.0.2 (the Sonicake CFW app shows Amphonix 2 CFW 1.0 for the unit after the update, since the pedal has no display)
+install_notes: >-
+  Use a USB cable, not Bluetooth, and flash the .bin from Firmware update in the Sonicake CFW app (web, Windows or Android), or put the unit in update mode and load it in Sonicake Manager's firmware update, after checking its SHA-256 against the release notes. Update mode is entered by unplugging USB, then holding volume +, volume - and the power key until all lights are on and only the power key's LED stays on, white or light blue. Back up IRs and NAM captures first: on the first start the five of each move into the new 10 + 10 slots, and going back to stock shows the slots empty, though installing the CFW again brings the data back. To go back, flash Sonicake's V1.0.2 with Sonicake Manager in update mode. The page says update mode lives in the boot loader, so the same key combination recovers a unit whose image does not boot.
+brick_risk: false
+tags: [multi-effects, guitar, midi, ir, web-midi, ui, scenes]
+versions:
+  - version: "1.0.2"
+    date: 2026-11-16
+    url: https://amphonix2-cfw.guitar-training-generator.com/releases.json
+    notes: Only version listed (file Amphonix2_CFW1.0.2_base1.0.2.bin, built on stock 1.0.2), marked stable and tested on the author's own unit. The site calls the firmware CFW 1.0.

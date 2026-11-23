@@ -9,8 +9,8 @@ description: >-
   It has per-song effects with 16 punch-ins on the white keys, a loop station that layers up to 16 loops and records the
   performance as a song, a DJ mode with two decks, USB and TRS MIDI with clock, USB audio, and a MIDI controller mode. Songs
   and instruments are saved in the FM-1's flash and survive firmware updates. Songs, patterns and samples come from a demo disk
-  uploaded by the installer. The project site has a browser emulator, a manual and a beta web editor that imports tracker modules, MIDI
-  files and DX7 cartridges. The README says the firmware is being made lighter so more voices can play at once.
+  uploaded by the installer. The keys respond to velocity, and 16 automation slots record keys, buttons and knobs. The project site has a browser emulator, a manual and a web editor, out of beta since 1.0, that imports tracker modules, MIDI
+  files, DX7 cartridges and Juno-106 and Juno-60 banks. The README says the firmware is being made lighter so more voices can play at once.
 status: active
 authors:
 - name: Vasily Kazantsev (hitosu)
@@ -38,6 +38,10 @@ video:
   first_party: true
   found_via: https://github.com/hitosu/ptfm#readme
 versions:
+- version: '1.0'
+  date: 2026-11-23
+  url: https://github.com/hitosu/ptfm/releases/tag/v1.0
+  notes: Adds velocity-sensitive keys with a KEYS VELOCITY setting, ghost notes for voices that were pushed out, 16 AUTOMATIONS slots, LOOPS sets, CUT and MOVE, and a second core that takes a share of the voices at every VOICES setting. The editor leaves beta and reads Juno banks. Core supply voltages are raised at every start to the stock firmware's levels. Installing over a previous version keeps the data on the FM-1.
 - version: '0.27'
   date: 2026-11-08
   url: https://github.com/hitosu/ptfm/releases/tag/v0.27

@@ -1,0 +1,37 @@
+device: trimui-brick
+also_devices: [anbernic-rg35xx]
+name: GrainBrick
+summary: >-
+  Free, closed-source granular instrument for Knulli handhelds that makes ambient textures from samples or live input, with a rhythm slicer, a physical-modelling resonator, wavetable oscillators and MIDI. Beta.
+description: >-
+  GrainBrick turns samples, and with Beta 2.0 live audio input, into evolving textures, drones and generative sounds. It combines a granular engine with extra grain pages for pitch variation, timing, envelope and reverse playback, harmonic scale settings that limit pitch shifts, a resonator called ORBIX that models strings and metallic tones and can be excited by internal or external audio, and two wavetable oscillators in shape, synth and hybrid modes. A rhythm engine cuts a sample into 4 to 64 regions and plays them in patterns of up to 32 steps with four variations, swing and probability. Reverb, delay, shimmer, EQ, compression and tape-style processing follow, and global BPM, MIDI Learn, MIDI clock and transport sync, experimental Bluetooth LE MIDI and several visual modes are included. The author describes it as an instrument for exploring sound rather than a sequencer or multitrack tool.
+
+  The Beta 2.0 notes list the original TrimUI Brick and the Anbernic RG40XXV, both on Knulli, as the tested devices and call other handhelds unconfirmed. Hardware features such as USB audio, microphone input and Bluetooth MIDI depend on the device and firmware. The repository holds only a README; the application is distributed as a zip on the release page.
+status: active
+authors:
+  - name: ETRNLIAM
+    url: https://github.com/ETRNLIAM
+homepage: https://github.com/ETRNLIAM/GrainBrick#readme
+source_status: binary-only
+license: proprietary
+license_notes: >-
+  The README and release notes say GrainBrick is free to download but its original application code is not licensed as open source, and no licence file is published. Bundled third-party parts, including SoundTouch (LGPL) and code from Mutable Instruments Rings (MIT), have their own notices and source materials inside the release zip.
+distribution: download
+requires_stock: Knulli on a TrimUI Brick or Anbernic RG40XXV
+install_notes: >-
+  Download GrainBrick_BETA_2_0.zip from the release page, not GitHub's source archive, extract it into /userdata/roms/ports/ so that grainbrick-beta2/ and GrainBrick BETA 2.0.sh are both there, refresh the Ports list and start it. Beta 2.0 installs next to Beta 1.0.1 without replacing it, so back up your own projects and samples before deleting an older install. Nothing is written to the console's internal firmware. An earlier release note recommends setting the Brick's CPU clock to 1416 MHz.
+brick_risk: false
+tags: [granular, ambient, generative, sampler, synth-engine, wavetable, physical-modeling, fx, looper, midi, usb-audio, handheld]
+versions:
+  - version: v2.0.0-beta.2
+    date: 2026-11-17
+    url: https://github.com/ETRNLIAM/GrainBrick/releases/tag/v2.0.0-beta.2
+    notes: Adds live input processing, a rhythm slicer, an expanded ORBIX resonator, wavetable oscillators, global tempo, MIDI Learn and clock, and new visual modes.
+  - version: v1.0.1-beta.2
+    date: 2026-10-31
+    url: https://github.com/ETRNLIAM/GrainBrick/releases/tag/v1.0.1-beta.2
+    notes: Adaptive display resolution, wider Anbernic compatibility and automatic USB audio input detection with volume control.
+  - version: v1.0.0-beta.1
+    date: 2026-10-29
+    url: https://github.com/ETRNLIAM/GrainBrick/releases/tag/v1.0.0-beta.1
+    notes: First public beta, for the original TrimUI Brick on Knulli.

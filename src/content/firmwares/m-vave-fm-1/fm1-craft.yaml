@@ -1,0 +1,27 @@
+device: m-vave-fm-1
+name: FM-1 CRAFT
+summary: >-
+  Controller firmware that turns the FM-1 into a hardware panel for FigCraft, a Figma tool: keys send hotkeys, knobs send relative controllers, and the screen shows the selected layer and four values.
+description: >-
+  The FM-1 makes no sound in this firmware. Its 27 keys send notes on MIDI channel 16, the four knobs, SELECT, ALGORITHM and PRESETS send relative CCs, MASTER sends an absolute CC and the 14 buttons send CCs, with HOME, ENV, LFO and ARP switching between the POS, SIZE, STYLE and TEXT pages. A script on the computer, named fm1_figcraft.py in the README, talks to FigCraft and sends SysEx frames that fill the screen with the selected layer's name and four value cards; without frames for three seconds the header reads NO LINK. docs/PROTOCOL.md documents the messages. The companion script is not in this repository, and no repository for it was found on the author's account. It is built on fm1-base and felucca-bsp and has a host simulator test.
+status: active
+authors:
+- name: DmitryPham
+  url: https://github.com/DmitryPham
+source: https://github.com/DmitryPham/fm1-craft
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSE is MPL-2.0, as fm1-base. fm1.toml credits fm1-base by Charles Vestal and felucca-bsp by Leo Kuroshita (Hugelton Instruments).
+homepage: https://github.com/DmitryPham/fm1-craft
+based_on: m-vave-fm-1/fm1-base
+distribution: source-only
+install_notes: >-
+  Run the Build firmware workflow on GitHub (Actions, Run workflow) and take craft.fwsc from the run's packages artifact, or build locally with ./build.sh on Linux x86-64 or WSL2 with the JieLi toolchain and AC79 SDK. Install with python3 base/tools/fm1_install.py app/build/craft.fwsc. The README says M-VAVE's updater or the Felucca or CTL web installers put another firmware back. ./build.sh --host runs the host simulator.
+brick_risk: false
+tags: [controller, utility, midi, usb-midi, sysex]
+versions:
+- version: main @ 04325b3
+  date: 2026-11-23
+  url: https://github.com/DmitryPham/fm1-craft/commit/04325b34e524e730eb348ef792934ef9dacc4ce0
+  notes: No tagged releases; this is the latest commit.

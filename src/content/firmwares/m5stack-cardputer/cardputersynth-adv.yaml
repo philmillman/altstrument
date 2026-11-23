@@ -1,0 +1,42 @@
+device: m5stack-cardputer
+name: CardputerSynth
+summary: >-
+  Cardputer-ADV firmware with a six-voice Juno-106-style polysynth and an eight-voice DX7-style FM engine, played from a MIDI keyboard through the Unit MIDI or from the Cardputer keys, plus a second build on the AMY engine.
+description: >-
+  The main build holds two engines that you switch between with Tab. The Juno engine has a band-limited saw and pulse
+  oscillator with PWM, a sub-oscillator and noise, a resonant 24 dB ladder filter, an ADSR or gate VCA, a triangle LFO with
+  delay, the 106's four-position high-pass filter and a BBD-style chorus, with eight presets and eight user slots saved to
+  flash. The DX7 engine has six operators, all 32 algorithms, feedback, four-rate and four-level envelopes, pitch envelope,
+  LFO and key scaling, every voice parameter on editable pages, an added resonant low-pass filter and brightness, attack and
+  release macros. It loads 32-voice banks, 4096-byte files and single-voice dumps from a /dx7/ folder on a microSD card or
+  over MIDI SysEx, and keeps eight internal voices. MIDI comes from the M5Stack Unit MIDI on the Grove port, set to BYPASS,
+  and sound leaves through the speaker or the 3.5 mm jack as mono. A second firmware in the amy/ folder, CardputerAMY, runs
+  the AMY engine instead, with 128 Juno-6 patches, 128 DX7 patches, a modelled piano and pluck, wavetable and analog banks,
+  on both CPU cores. The README says the code was tested on a PC with rendered presets and fuzzing and had not yet been run on
+  a real Cardputer-ADV at the time of writing, with CPU load and audio latency the first things to check. The repository
+  has no licence file.
+status: active
+authors:
+  - name: neon-xx
+    url: https://github.com/neon-xx
+source: https://github.com/neon-xx/cardputer-synth
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and the README states no licence. The AMY build depends on the separate AMY library
+  (shorepine/amy), which carries its own licence.
+distribution: download
+requires_stock: Cardputer-ADV; M5Stack Unit MIDI (U187) for external MIDI
+install_notes: >-
+  The rolling release page offers CardputerSynth-app.bin, which loads from an SD-card launcher such as M5Launcher, and
+  CardputerSynth-full.bin, a full image written at 0x0 with esptool, M5Burner or a web flasher that replaces what is on the
+  flash. CardputerAMY has the same two files. To build, use the Arduino IDE with the M5Stack board package 3.2.2 or newer
+  or run pio run -t upload; hold G0 while plugging in USB if the board does not enter download mode. Set the Unit MIDI DIP
+  switch to BYPASS or the Cardputer receives no MIDI. The ESP32-S3 ROM download mode stays available for reflashing.
+brick_risk: false
+tags: [synth, synth-engine, midi, fm, filter, sd-card, open-source]
+versions:
+  - version: main @ e20b72c
+    date: 2026-11-23
+    url: https://github.com/neon-xx/cardputer-synth/commit/e20b72cccc92dfabd2c83ab627aa9587b7ce3b68
+    notes: No numbered releases; this is the latest commit. CI rebuilds a rolling "Latest build" release with the CardputerSynth and CardputerAMY app and full images on each push to main.

@@ -5,9 +5,9 @@ summary: >-
 description: >-
   Synfact is the Syntakt part of elekloader with its own core firmware. The core adds a hook bus, extra settings, optional
   machine banks (.smz4 files that can be changed without reinstalling the firmware), long-sample storage and a project sample
-  pool. The mods are the SP sample machines ONE SHOT, WERP, REPITCH and SLICE, the SY FM DTONE machine, an audio recorder, a
+  pool. The mods are the SP sample machines ONE SHOT, WERP, REPITCH and SLICE, the SY FM DTONE machine, an MD MACHINEDRUM machine with the Machinedrum's 30 voices, an audio recorder, a
   third LFO per track, a Digitone-style arpeggiator, POLY for polyphonic play, a chorus, COMP, a compressor on the FX bus with Digitakt-style controls, parallel mix and a gain-reduction meter, Playhead for the step order of each track, a system information page, and a sample
-  manager. Both the website builder and the repository's source build target OS 1.42 (core 2.0); the site asked for OS 1.41 until 2026-11-18. The site reads the OS file you supply, checks its hash, then patches and verifies it in the browser
+  manager. The source also has SY MnM, a Monomachine-style FM machine, which the web builder leaves out until it has a Monomachine donor recipe. Both the website builder and the repository's source build target OS 1.42 (core 2.0); the site asked for OS 1.41 until 2026-11-18. The site reads the OS file you supply, checks its hash, then patches and verifies it in the browser
   tab; nothing is uploaded. It offers the build as a download or sends it with a built-in transfer page that also browses the
   unit's projects, sounds and samples. SY FM DTONE also needs your own Digitone OS 1.44 file, because its sound engine is
   rebuilt from that file by a recipe and no Digitone bytes are kept in the repository. The author says builds keep the
@@ -37,6 +37,11 @@ install_notes: >-
 brick_risk: false
 tags: [machines, loader, flasher, sampler, fm, lfo, arpeggiator, web, web-midi, sdk]
 versions:
+  - version: main @ 5b2d637
+    date: 2026-11-23
+    url: https://github.com/GSM1980/synfact-dev/commit/5b2d637324e04e3c948fe1ff383d1bea806e3092
+    notes: >-
+      No tagged releases; this is the latest commit. The commits since the previous entry add the SY MnM Monomachine-style FM machine (called Digi Mono before 0.5.0, now at 0.8.0 with DigiPRO waves and DENS), an MD MACHINEDRUM machine with the Machinedrum's 30 voices, COMP 1.0.0 with attack and release in milliseconds, and core 2.6.0. The last commit keeps SY MnM out of the web catalog until a Monomachine donor recipe exists.
   - version: main @ a81bb0b
     date: 2026-11-21
     url: https://github.com/GSM1980/synfact-dev/commit/a81bb0bfa673de17a31e9b1e55cb90d25036dd7e

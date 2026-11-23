@@ -10,10 +10,10 @@ description: >-
   The repository description says synths only, with no SEQ or ARP and four sound banks. The nightly branch, which
   carries most of the work, names four banks (DX7, Prophet-5, Juno-106 and CZ/SID), a dual-layer and keyboard-split
   mode with a split point set from the keys, a DX7 voice bank compiled in from four 32-voice cartridge dumps, and
-  MIDI clock dropped at input. The README is still Melodee's. The one release, "synthesizer" (18 November 2026),
+  MIDI clock dropped at input. The README is still Melodee's. The release "synthesizer" (18 November 2026),
   lists six engine banks (DX7, Prophet-5, Juno-106, CZ-1/SID, Jupiter 08 Mini and Obervave), single, dual and split
   keyboard modes, an arpeggiator, three effect slots per layer, a mixer and USB and DIN MIDI, but carries no files;
-  the VintageS-green.zip committed in the repository is a source snapshot with no firmware image. A workflow builds
+  a second release, "VintageModule" (23 November 2026), carries the README text as its notes and no files; the VintageS-green.zip committed in the repository is a source snapshot with no firmware image. A workflow builds
   the .fwsc as a short-lived CI artifact. Commits are file uploads, and nothing says it has run on an FM-1.
 status: active
 authors:
@@ -36,6 +36,10 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, fm, performance]
 versions:
+- version: VintageModule
+  date: 2026-11-23
+  url: https://github.com/jazzfolderPARLA/VintageS/releases/tag/VintageModule
+  notes: Release page titled as a firmware update whose text is the README, describing a synthesizer module with no sequencer or arpeggiator, several engine banks, a two-track mixer and three insert effects per track. It attaches no files and sits on main.
 - version: nightly @ 816cc5b
   date: 2026-11-18
   url: https://github.com/jazzfolderPARLA/VintageS/commit/816cc5b

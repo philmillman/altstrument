@@ -1,0 +1,34 @@
+device: plinky-plinky12
+name: Ambiotica
+summary: A generative ambient panel for Plinky12 for the Chords faceplate. Played notes feed a looper, a granular cloud, a plate reverb and tuned resonators, with an 8-track drum machine underneath.
+description: >-
+  Ambiotica ports the author's ambiotica-plugin ambient engine to a Plinky12 panel. Plinky's own voices pass through a rolling loop bed, a scattered
+  grain cloud, a short delay that can freeze into a pad, a modulated plate reverb and a bank of resonators that sing a chord out of the wash.
+  The left half of the grid is a diatonic play surface, seven sliders set the stages' levels, and two macro gestures collapse the engine into a
+  drone or drain it back to silence. An 8-track step sequencer with Euclidean patterns, synthesised drums, sampled kits and sliced breaks
+  runs after the chain. The author notes that coding agents helped build the panel. The repository's latest release is an automatically built
+  single-file plinky_ambiotica.cpp for the IDE.
+status: dormant
+authors:
+  - name: Charles Vestal
+    url: https://github.com/charlesvestal
+source: https://github.com/charlesvestal/plinky-ambiotica
+source_status: open
+license: MIT
+license_notes: LICENSE in the repository, Copyright 2026 Charles Vestal.
+distribution: browser-installer
+install_notes: >-
+  Open the maker's Plinky12 web IDE in Chrome, start a blank panel, paste the panel source, pick the faceplate, test it in the emulator, then connect the Plinky12 over USB and press Flash. Panels are built together with Plinky's own firmware, so flashing a panel replaces the previous custom panel firmware. Use at your own risk.
+brick_risk: false
+tags: [ambient, generative, looper, granular, reverb, drums, sequencer, chords]
+video:
+  url: https://www.youtube.com/watch?v=Etwy-mc-HDs
+  title: The First Custom Panel for Plinky 12 is Here!
+  credit: Nathan Plante Synths
+  first_party: true
+  found_via: https://github.com/charlesvestal/plinky-ambiotica#readme
+versions:
+  - version: main @ 42a1ef2
+    date: 2026-08-17
+    url: https://github.com/charlesvestal/plinky-ambiotica/commit/42a1ef2ece653510b3045154315d34e1eff7aa49
+    notes: No numbered releases; this is the latest commit. A rolling "latest" release holds the single-file panel and is rebuilt on every push to main.

@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+name: RDPNO
+summary: >-
+  Roland MKS-20 and Rhodes MK-80 SA piano sounds on the FM-1, played by a cycle-exact emulation of their CPU-B board that reads ROM dumps you load yourself. Browser installer, ROM loader and live editor.
+description: >-
+  A port of the rdpiano board emulation, which runs the HD6301 CPU with Roland's program and the SA sound chip, inside the FM-1's audio interrupt on both cores, reading wave data straight from flash. The firmware holds no Roland data. The browser installer installs it and then writes the ROM pack you build in the page from your own dumps, one set at a time: MKS-20 voices 1 to 3, MKS-20 voices 4 to 8 or the MK-80's eight tones. A firmware update clears the ROMs, and the installer loads them again in the same go. The README gives six to eight clean notes for the 20 kHz voices and about six for the 32 kHz ones. The panel follows the MKS-20's front with HOME, FX and ENV pages for voice level, bass, middle and treble equaliser, tremolo, a Space-D or BBD style chorus and the voice count, and a web editor sets the same values live. MIDI in over USB and TRS plays notes, sustain and program changes. Equaliser, BBD chorus and tremolo are new integer approximations, not emulations of the original circuits. The project calls itself experimental. It is built on Dinghy.
+status: active
+authors:
+- name: R-Jeb
+  url: https://github.com/R-Jeb
+source: https://github.com/R-Jeb/rdpno-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  README and LICENSING.md state GPL-3.0-only. rdpiano is GPL-3.0 and its HD6301 core is MAME's (BSD-3-Clause). The platform parts are Felucca, SLOOP and Dinghy code, the web installer is fm1-base's (MPL-2.0), and the Terminus font is SIL OFL 1.1. The Roland ROMs are not in the repository or on the site; LICENSING.md says a build that contains them is not under the GPL and may not be shareable, and the release package has none.
+homepage: https://r-jeb.github.io/rdpno-fm1/
+based_on: m-vave-fm-1/dinghy
+distribution: browser-installer
+requires_stock: Any FM-1 firmware; the installer writes the package over it
+install_notes: >-
+  Open the install page in Chrome or Edge with the FM-1 on USB, install, then load your own ROM dumps on the load page; the installer can do both in one go. You need your own dumps of the MKS-20 or MK-80 ROMs, which the project does not supply. The README says to hold OCT- at power-on for the USB rescue, which shows no sound and only the installer, and to install another firmware from there. The install page can also write M-VAVE's own FM-1.fwsc, fetched from M-VAVE's server, and the README describes M-Flasher's download mode for a unit whose USB MIDI no longer answers.
+brick_risk: false
+tags: [synth-engine, emulator, sampler, fx, chorus, midi, editor, web]
+image:
+  url: https://raw.githubusercontent.com/R-Jeb/rdpno-fm1/main/site/img/rdpno.jpg
+  alt: Illustration of a stage piano seen at an angle, with the name RDPNO over a blue underline, a row of sliders, an amber PIANO display and a white and black keyboard
+  credit: R-Jeb
+  source_url: https://r-jeb.github.io/rdpno-fm1/
+  first_party: true
+versions:
+- version: 0.3.1
+  date: 2026-11-23
+  url: https://github.com/R-Jeb/rdpno-fm1/releases/tag/v0.3.1
+  notes: Adds a start picture and a screen saver on the FM-1's display, and a picture on the site's front page. The package has no ROMs inside.
+- version: "0.3"
+  date: 2026-11-23
+  url: https://github.com/R-Jeb/rdpno-fm1/releases/tag/v0.3
+  notes: Removes the Roland data from the firmware and adds the ROM loader page, the web installer and the editor. Tested on FM-1s with both flash chips.
+- version: "0.1"
+  date: 2026-11-15
+  url: https://github.com/R-Jeb/rdpno-fm1/releases/tag/v0.1
+  notes: Pre-release with no firmware files, because those builds contained the ROMs; it gave build instructions instead.

@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: MUMBLE
+summary: >-
+  Voice firmware for the FM-1 in which eight retro-game characters sing a typed line a syllable at a time from formant synthesis, with a choir on chords, an arpeggiator and a multitrack loop.
+description: >-
+  A line of text is typed on the keys and sung back by one of eight characters, each with its own voice, a face drawn from that voice and its own level in the choir. In SING mode the keys sing the next syllable and held keys make a chord shared across the choir; LOOP shows a lane per character and records what is sung; TYPE edits the line. Sound pages set the voice, feel, effects and style, and scale, auto-chord, arpeggiator and chord shape settings keep the keys in key. Voices are synthesized with no recordings, and a new voice can be rolled for one character or for all. The loop follows MIDI clock from USB or the TRS jack. The line, voices and loop are kept over power-off in the FM-1's flash, in an area other firmwares often use. The project site has a browser emulator and installer.
+status: active
+authors:
+- name: kdziamura
+  url: https://github.com/kdziamura
+source: https://github.com/kdziamura/fm1-mumble
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  NOTICE.md states GPL-3.0-only with the GPL-3.0 linking exception M-VAVE grants for FM1 Open code. app/paint.inc and parts of app/app.c are adapted from FM1 Open's panel code (GPL-3.0-only with the same exception); fm1-base stays MPL-2.0.
+homepage: https://kdziamura.github.io/fm1-mumble/
+based_on: m-vave-fm-1/fm1-base
+distribution: browser-installer
+install_notes: >-
+  Install from the project site in Chrome or Edge, or with any FM-1 installer that takes a .fwsc, such as M-Flasher or the Firmware Hub. The site's installer can put M-VAVE's firmware back, and the README says back up the FM-1 first. Other firmwares' saves are not read, and the first MUMBLE save overwrites what is at 0xFC000 and 0xDC000. The FM-1's ROM boot mode applies.
+brick_risk: false
+tags: [voice, speech, synth-engine, looper, arpeggiator, chords, midi, usb-midi, emulator, web]
+image:
+  url: https://raw.githubusercontent.com/kdziamura/fm1-mumble/main/app/site/img/screen-sing.png
+  alt: "MUMBLE SING screen: pixel-art character KID in a beanie above a row of the cast, the line being sung with the current syllable highlighted, the note A#3, and knobs Pitch, Tube, Mouth and Air"
+  credit: kdziamura
+  source_url: https://github.com/kdziamura/fm1-mumble
+  first_party: true
+versions:
+- version: 0.1.1
+  date: 2026-11-23
+  url: https://github.com/kdziamura/fm1-mumble/releases/tag/v0.1.1
+  notes: Release page has only a changelog link.
+- version: 0.1.0
+  date: 2026-11-23
+  url: https://github.com/kdziamura/fm1-mumble/releases/tag/v0.1.0
+  notes: First release; the release page has only a changelog link.

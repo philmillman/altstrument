@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: RhinoTiger
+summary: >-
+  Generative psytrance firmware for the FM-1, from dark psy to hi-tech, that plays itself on a sixteenth grid in eight worlds while four macro knobs, a mixer, one-shot keys and sixteen performance effects steer it.
+description: >-
+  A kick, a rolling FM bass, percussion, a repeating line, one-shot sounds and a held atmosphere play together in eight worlds, from 145 to 186 BPM, picked with the presets button. The four macro knobs on the main page are Energy, Detail, Dark and Drift, and further pages set the groove, breaks, builds and drops, each part's sound, a mixer with mutes, and an echo. The white keys throw one-shot sounds into the music, the black keys turn them into rhythms, and on the echo page the keys become sixteen effects played while held. REC loops what the keys throw for up to four bars. AUTO PLAY performs a whole set by itself, for a chosen number of minutes. The README says it reads nothing another firmware saved and advises backing up first. The project site has a browser emulator and installer, and the manual is in English and Japanese.
+status: active
+authors:
+- name: hacha
+  url: https://github.com/hacha
+source: https://github.com/hacha/rhinotiger
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Stated in LICENSING.md. build.sh and the release workflow come from MPL-2.0 projects by Charles Vestal, the base/ submodule is a fork of fm1-base on felucca-bsp (MPL-2.0), and the Barlow Semi Condensed font is SIL OFL 1.1.
+homepage: https://hacha.github.io/rhinotiger/
+based_on: m-vave-fm-1/fm1-base
+distribution: browser-installer
+install_notes: >-
+  Install from the project site in a WebMIDI browser, or with install.sh from a clone with submodules; releases attach .fwsc and .rfm1 packages and a firmware.json. The README does not describe a recovery path of its own; the FM-1's ROM boot mode applies. It advises backing up first, because projects, presets and samples from other firmwares are not read and may be gone when switching back.
+brick_risk: false
+tags: [generative, psytrance, drums, synth-engine, performance, looper, fx, emulator, web]
+image:
+  url: https://raw.githubusercontent.com/hacha/rhinotiger/main/app/docs/img/screen-main.png
+  alt: "RhinoTiger main page: world COLD SIGNAL at 152 BPM, rows of coloured hit marks for kick, bass, percussion, events, line and phrase, and macro knobs Energy, Detail, Dark and Drift at 50"
+  credit: hacha
+  source_url: https://github.com/hacha/rhinotiger
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-22
+  url: https://github.com/hacha/rhinotiger/releases/tag/v1.0
+  notes: First release; the release page has only a changelog link.

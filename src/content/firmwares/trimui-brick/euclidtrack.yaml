@@ -1,0 +1,60 @@
+device: trimui-brick
+name: EUCLIDTRACK
+summary: >-
+  Free, closed-source four-track euclidean synth workstation for the TrimUI Brick on NextUI, with a large set of synth, FM, physical-model, sample and drum engines, modulators, macros, per-track effects, a master looper and WAV recording.
+description: >-
+  EUCLIDTRACK gives each of four tracks its own synth voice, euclidean sequencer and effect chain. Euclidean patterns plus LFO pitch modulation are quantised to a global root and scale to turn rhythm into melody. Voices come from a long list of engines that includes virtual analog, FM, physical models, wavetables, sample romplers and drum machines, among them engines built on Plaits DSP through a Rust port. There are 64 scenes with quantised launching, four modulators per track, twelve performance macros, per-track flanger, filterbank, drive and a morphing delay and reverb with resonator and shimmer stages, ring sends between tracks, and a master-bus looper with overdub. Output records to WAV on the SD card, and a built-in help screen documents each view.
+
+  The author says it began as a sideloaded project for the Torso S-4 and moved to the Brick because that device is easy to buy. The README names the Brick and Brick Pro, and the same pak targets the Smart Pro platform. The repository holds the README manual, a third-party licence list and pak metadata, with no source code, and no licence is stated for EUCLIDTRACK itself.
+status: active
+authors:
+  - name: boorch
+    url: https://github.com/boorch
+homepage: https://github.com/boorch/euclidtrack-pak#readme
+source_status: binary-only
+license: unspecified
+license_notes: >-
+  The repository has no licence file and the README gives no licence for EUCLIDTRACK itself; only the compiled pak is published. THIRD_PARTY_LICENSES.md lists the components it builds on, including Mutable Instruments Plaits through mi-plaits-dsp-rs (MIT), SDL2 and a Nerd Font.
+community:
+  - label: User manual
+    url: https://euclidtrack.neocities.org
+distribution: download
+requires_stock: NextUI on the TrimUI Brick or Brick Pro
+install_notes: >-
+  On NextUI install EUCLIDTRACK from the PAK Store. On other firmware download EUCLIDTRACK.pak.zip from the release page and copy the EUCLIDTRACK.pak folder to Tools/tg5040 on the SD card. Projects live in a EUCLIDTRACK folder at the card root and survive updates. The README says two switches stand between a fresh install and sound, and the built-in HELP page explains them. Nothing is written to the console's internal firmware.
+brick_risk: false
+tags: [euclidean, sequencer, synth-engine, fx, looper, sampler, wavetable, physical-modeling, generative, performance, handheld]
+image:
+  url: https://raw.githubusercontent.com/boorch/euclidtrack-pak/main/.github/screenshots/04.png
+  alt: "EUCLIDTRACK EUCLID view in grayscale: scene 01, key D minor and tempo 60 on top, a row of eight step squares, and sliders for Steps, Triggers, Rate, Probability, Shift and more above page tabs"
+  credit: boorch
+  source_url: https://github.com/boorch/euclidtrack-pak
+  first_party: true
+versions:
+  - version: v2.2.2
+    date: 2026-09-26
+    url: https://github.com/boorch/euclidtrack-pak/releases/tag/v2.2.2
+    notes: Loudness fix for the River, Hamlin, Stratos and Felt sample engines.
+  - version: v2.2.0
+    date: 2026-09-10
+    url: https://github.com/boorch/euclidtrack-pak/releases/tag/v2.2.0
+    notes: Per-track filter choice between the ladder lowpass and the Polivoks-style filter.
+  - version: v2.1.0
+    date: 2026-09-08
+    url: https://github.com/boorch/euclidtrack-pak/releases/tag/v2.1.0
+    notes: Adds the Cupid drum engine and quality-of-life features.
+  - version: v2.0.0
+    date: 2026-09-07
+    url: https://github.com/boorch/euclidtrack-pak/releases/tag/v2.0.0
+    notes: Adds the Greed sample-based preset-rhythm drum machine engine.
+  - version: v1.9.0
+    date: 2026-08-18
+    url: https://github.com/boorch/euclidtrack-pak/releases/tag/v1.9.0
+    notes: Adds the WaveSurf dual wavetable engine.
+  - version: v1.7.0
+    date: 2026-08-16
+    url: https://github.com/boorch/euclidtrack-pak/releases/tag/v1.7.0
+    notes: New ladder-style lowpass voice filter.
+  - version: v1.0.0
+    date: 2026-07-18
+    url: https://github.com/boorch/euclidtrack-pak/releases/tag/v1.0.0

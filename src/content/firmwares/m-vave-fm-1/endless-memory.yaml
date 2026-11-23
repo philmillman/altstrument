@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: Endless Memory
+summary: >-
+  Shepard-tone synth for the FM-1 with a staircase sequencer: each note is eight partials that seem to rise or fall for ever, and a short phrase climbs one scale step per repeat.
+description: >-
+  Every note is a Shepard tone built from eight partials spaced by octaves, fifths, fourths, tritones, thirds or a stretched interval, under a moving bell of brightness, and CLIMB keeps them rising or falling without end. The staircase sequencer plays a phrase of up to eight notes that moves up or down by scale steps on each repeat, for a set number of repeats or endlessly. SEL freezes held notes like a sustain pedal that stays down, and a high-pass and a low-pass filter sit on the home page ahead of a parallel echo and a reverb called space. There are 26 scales with a root, an arpeggiator, an LFO, two envelopes, eight presets and MIDI in and out. The release notes say it has been tested on a computer and in the online FM-1 emulator only, and the README says installation and keeping settings across a power cycle still need checking on a physical FM-1. It is built on Dinghy.
+status: active
+authors:
+- name: Eric St-Jacques
+  url: https://github.com/jaak-stjaaques
+source: https://github.com/jaak-stjaaques/Endless-Memory
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and LICENSE give GPL-3.0-only, with upstream notices retained in LICENSING.md. The IBM Plex Mono font is SIL OFL 1.1. LICENSING.md says the designburg signet in assets/logo.png is all rights reserved and not under the GPL; it marks Dinghy itself. The releases are Endless Memory's own build, not an M-VAVE image.
+homepage: https://github.com/jaak-stjaaques/Endless-Memory
+based_on: m-vave-fm-1/dinghy
+distribution: download
+install_notes: >-
+  Install endless-memory-0.5.1.fwsc from the release with M-Flasher or the M-VAVE updater, or build it with sh build.sh --release 0.5.1 and install it with tools/fm1_install.py over USB. The releases carry a warning that the firmware is untested on a real FM-1 and that another firmware should be kept ready to flash back. docs/BUILDING.md says Dinghy's USB rescue path is included.
+brick_risk: false
+tags: [synth-engine, sequencer, generative, oscillator, filter, arpeggiator, scales, fx, lfo]
+image:
+  url: https://raw.githubusercontent.com/jaak-stjaaques/Endless-Memory/main/docs/screenshots/staircase.png
+  alt: "Endless Memory STAIRCASE page: a four-note phrase drawn as dashes on six rising steps, the notes F3 A3 C4 D4, and MOVE +1 UP, REPEATS ENDLESS, RATE 1/8 and GATE 70%"
+  credit: Eric St-Jacques
+  source_url: https://github.com/jaak-stjaaques/Endless-Memory
+  first_party: true
+versions:
+- version: v0.5.1
+  date: 2026-11-20
+  url: https://github.com/jaak-stjaaques/Endless-Memory/releases/tag/v0.5.1
+  notes: Pre-release; the release notes only repeat the untested-hardware warning.
+- version: v0.5
+  date: 2026-11-20
+  url: https://github.com/jaak-stjaaques/Endless-Memory/releases/tag/v0.5
+  notes: Pre-release, first published build.

@@ -1,0 +1,27 @@
+device: m-vave-fm-1
+kind: tool
+name: Jigantic
+summary: >-
+  Desktop interface for JIANT FM in the browser: clip timeline, piano roll, drum grid, mixer and generator that speak JIANT's own editor protocol over Web MIDI, with a built-in demo device.
+description: >-
+  A node serve.js server hosts a single page at localhost that needs Chrome or Edge for Web MIDI. The page is not an emulator or a fork: it sends JIANT's editor messages, so the sound, sequencer, songs and effects stay the firmware's. It lays out a browser for sounds, settings, presets and projects, a timeline of clips per track and chain row, a piano roll and an eight-lane drum grid with an automation lane, a six-strip mixer, a device page for every parameter and a side rail for the generator, parts, clips and song. With no FM-1 connected it falls back to a simulated device that answers every edit. The README says its parameter list was read from the running firmware, not from JIANT's documents, which disagree with the code. A path through a MIDI loopback to JIANT's desktop standalone is marked untested. JIANT's source is not copied into the repository, and BUILD.md shows how to fetch it. The code tests run with node test.js and node gen.test.js.
+status: active
+authors:
+- name: Larkin (larkindom)
+  url: https://github.com/larkindom
+source: https://github.com/larkindom/Jigantic
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is GPL-3.0 and the README says GPL-3.0-only, because the C tests include and link JIANT's core library and the demo's parameter tables are generated from the firmware's own replies, which makes it a derivative of JIANT.
+homepage: https://github.com/larkindom/Jigantic
+distribution: source-only
+install_notes: >-
+  Run node serve.js and open http://localhost:8777 in Chrome or Edge. Connect the FM-1 over USB and choose its ports in the top bar, or use the demo mode. The writes it sends are JIANT editor messages, not firmware.
+brick_risk: false
+tags: [editor, web-midi, sequencer, ui, web-ui]
+versions:
+- version: main @ d4eefac
+  date: 2026-11-23
+  url: https://github.com/larkindom/Jigantic/commit/d4eefaccb5b2b683bf94e8bf3c998937c2105e57
+  notes: No tagged releases; this is the latest commit.

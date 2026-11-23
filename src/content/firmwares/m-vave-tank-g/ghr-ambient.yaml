@@ -1,0 +1,42 @@
+device: m-vave-tank-g
+name: GHR AMBIENT
+summary: >-
+  Replacement firmware for the Tank-G v2 that turns it into an ambient instrument with a granular cloud that freezes or follows the guitar, a long reverb, a dark smear echo and tape warble. Windows installer; backs up the pedal first.
+description: >-
+  The firmware replaces the Tank-G's effects with one ambient engine and keeps the panel labels with new meanings. Footswitch A
+  freezes the last seconds into a granular cloud or, held, makes the cloud follow live playing, while a bender occasionally adds
+  half speed, reversed, double speed, tape stop or repeated clones. B sets a reverb from 1.5 seconds to a minute or, held, fades
+  out the dry signal, C is a dark echo that notes swell into, and D adds tape-style pitch drift. Knobs set cloud level, grain
+  size, drift, rot speed, pitch intervals, tone and input level, and a compressor, EQ and hiss reducer are always on. The
+  Windows installer, a set of scripts with its C# source, downloads JieLi's USB loader at a fixed commit and checks its hash,
+  reads the whole flash twice into a backup folder, writes only the firmware area and verifies every sector, and has scripts
+  to restore the factory firmware from that backup and to read a status report of levels and CPU load. The repository
+  holds only the project's own 24764-byte application, which the README says is built from the committed source, and none of M-VAVE's code.
+  Its USB-MIDI driver derives from Felucca. The author made it on one Tank-G v2 with factory firmware 097, calls it a
+  hobby project and says it is not affiliated with M-VAVE.
+status: active
+authors:
+  - name: GerbilHamster Records
+    url: https://github.com/daneguitarist
+source: https://github.com/daneguitarist/ghr-ambient-tank-g
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md and the README state GPL-3.0-only. The USB-MIDI files tg_usb.c and tg_usb_hw.h are Leo Kuroshita's, taken from
+  Felucca by way of MOTES and also GPL-3.0-only. JieLi's loader is downloaded, not included, and kagaimiq's notes and
+  jl-uboot-tool (MIT) were only used as references.
+distribution: download
+requires_stock: Tank-G v2, tested on factory firmware 097
+install_notes: >-
+  Windows 10 or 11 only. Download the repository ZIP, open the folder GHR AMBIENT 0.11 for Windows, connect the powered-on
+  pedal over USB and run 2_INSTALL.bat, which backs up the flash into a backup folder before writing and asks you to type
+  INSTALL. Keep that folder: 3_RESTORE_FACTORY.bat puts the factory firmware back from it. Only the firmware area
+  (0x4000 to 0x7AFFF) is written; the bootloader is never touched, so an interrupted install leaves the pedal in its USB
+  loader and the install or restore can be run again, and holding footswitch A while plugging in enters the loader by hand.
+brick_risk: false
+tags: [synth-engine, fx, granular, reverb, loader, flasher, windows]
+versions:
+  - version: main @ e59e7ad
+    date: 2026-11-22
+    url: https://github.com/daneguitarist/ghr-ambient-tank-g/commit/e59e7adeaa8c939edfa4d2c41ab1b2439c78eaa0
+    notes: No tagged releases; this is the latest commit. The project calls this state GHR AMBIENT 0.11.

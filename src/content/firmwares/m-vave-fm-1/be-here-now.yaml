@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+name: BE HERE NOW
+summary: >-
+  Sarod-inspired string instrument with a tanpura drone and sympathetic strings, plus a browser Coach that teaches
+  improvising in Western and Indian music alongside the FM-1.
+description: >-
+  Sarod mode plays one string, with a key pressed while another is held sliding (meend) instead of plucking again;
+  chord mode gives four strings and names the chord on screen. The sound is Karplus-Strong strings feeding eleven
+  sympathetic strings tuned to the chosen thaat, which ring only when a played note or harmonic matches. PRESETS picks
+  the thaat, ALGORITHM the home note, PLAY the tanpura drone, and REC plays the scale up and down while the keys
+  light. The Coach page runs in Chrome next to the FM-1 over USB MIDI, or listens to a guitar or piano through the
+  computer's microphone, with lessons, a jam room and a dictionary, and it shows the answer only when you ask for a
+  hint. From version 1.1 the Coach's backing beat and chords play on the FM-1 itself. It is built with the foma
+  framework and ships a browser emulator and installer.
+status: active
+authors:
+- name: mattrosica-gif
+  url: https://github.com/mattrosica-gif
+source: https://github.com/mattrosica-gif/be-here-now-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md lists the parts it builds on: the platform code is Felucca's with changes by SLOOP, Dinghy and X0X
+  (GPL-3.0-only), Bluetooth parts are GPL-3.0-only OR MPL-2.0 (used under GPL-3.0-only), felucca-bsp parts are MPL-2.0
+  and Apache-2.0, platform/mvave comes from M-VAVE's FM1 Open kit (GPLv3 with M-VAVE's SDK linking exception, plus the
+  binary engine library libfm1_engine.a under M-VAVE's terms for FM-1 devices only), and the Terminus font is SIL OFL
+  1.1. bigscreen/ is MIT. No stock firmware image is committed.
+homepage: https://mattrosica-gif.github.io/be-here-now-fm1/
+based_on: m-vave-fm-1/foma
+distribution: browser-installer
+install_notes: >-
+  Open the project page in Chrome or Edge with the FM-1 on a USB data cable and use its Install tab; the page also has
+  a Rescue tab. Holding OCT- while switching on gives the USB rescue, from which you install again, a firmware built
+  here that crashes twice at start goes there by itself, and the page can install M-VAVE's official firmware again. The
+  page says installing is at your own risk. The package identity in firmware.json, FM-1_86, is a placeholder.
+brick_risk: false
+tags: [physical-modeling, chords, scales, drone, midi, emulator, web]
+versions:
+- version: main @ a77e831
+  date: 2026-11-23
+  url: https://github.com/mattrosica-gif/be-here-now-fm1/commit/a77e831e572688b763e72795e69d150f5348aafe
+  notes: No tagged releases; this is the latest commit. firmware.json reads version 1.1.

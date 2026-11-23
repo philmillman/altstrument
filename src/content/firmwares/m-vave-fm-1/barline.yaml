@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+name: BARLINE
+summary: >-
+  Five-track clip sketchpad for techno that sends its projects to Ableton Live: whole-bar clips in eight scenes, with
+  each track's sound described by the parameters of a Live device.
+description: >-
+  The tracks are a 16-pad kit, bass, lead, pads and pluck, each on its own MIDI channel, and in Live the kit splits into
+  kick, snare, hats, ride and perc. Clips are one, two, four, eight or sixteen bars, launch on the next bar and keep
+  notes at 96 PPQN, with repeated bars stored once. Melodic tracks have step recording with rests, ties, accents and
+  slides, and live recording; eight projects and an automatic Restore Last are kept on the FM-1. Version 0.2 gave each
+  sound the parameters of a Live device (Simpler, Drift, and kit pads as Simplers), and a companion web page reads .als
+  sets and .adg racks and sends them to the FM-1. The same page pulls a project over MIDI and saves each clip or scene as
+  .mid files and a .barline backup. A Live Set export is listed as a later step. It is built with the foma framework and
+  ships a browser emulator and installer.
+status: active
+authors:
+- name: sunjaculley
+  url: https://github.com/sunjaculley
+source: https://github.com/sunjaculley/barline-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md lists the parts it builds on: the platform code is Felucca's with changes by SLOOP, Dinghy and X0X
+  (GPL-3.0-only), Bluetooth parts are GPL-3.0-only OR MPL-2.0 (used under GPL-3.0-only), felucca-bsp parts are MPL-2.0
+  and Apache-2.0, platform/mvave comes from M-VAVE's FM1 Open kit (GPLv3 with M-VAVE's SDK linking exception, plus the
+  binary engine library libfm1_engine.a under M-VAVE's terms for FM-1 devices only), and the Terminus font is SIL OFL
+  1.1. bigscreen/ is MIT. No stock firmware image is committed.
+homepage: https://sunjaculley.github.io/barline-fm1/
+based_on: m-vave-fm-1/foma
+distribution: browser-installer
+install_notes: >-
+  Open the project page in Chrome or Edge with the FM-1 on USB and install from it, or build with Docker (./fm1 build).
+  Projects are kept in the flash area where Felucca keeps its projects and samples, so installing overwrites anything
+  Felucca saved there; the README says to back that up with Felucca's web editor first and to take a full flash backup
+  with M-Flasher before the first install.
+brick_risk: false
+tags: [sequencer, midi, drums, synth-engine, editor, emulator, web]
+versions:
+- version: main @ 4d55c0e
+  date: 2026-11-22
+  url: https://github.com/sunjaculley/barline-fm1/commit/4d55c0ec6a8e27819ac9b0fbaeee0efa96ef09eb
+  notes: No tagged releases; this is the latest commit. firmware.json reads version 0.3.

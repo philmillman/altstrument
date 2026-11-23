@@ -1,0 +1,50 @@
+device: elektron-syntakt
+name: Syntakt Project
+summary: >-
+  Browser and source builder for Syntakt OS 1.41 mods built from your own official file. The main mod, DelayCtrl, turns MOD B into a freeze and repeat, adds a DJ filter type and a drive rectifier, and a mod SDK lets others write more.
+description: >-
+  Syntakt Project continues Synthack-OS as a patch-based toolchain. It stores patches that hold only the project's own
+  code and the SHA-256 of the Elektron bytes they replace, and nothing from Elektron is committed; a pre-commit hook
+  refuses firmware files. The builder page at bengleg.github.io/syntakt-project asks for your own Syntakt_OS1.41.syx, applies
+  the ticked mods in the browser tab without uploading the file, checks for overlapping patches and for enough boot room, and
+  offers the result as a download. The same build runs from Python tools on Linux or WSL. The project's own mod is DelayCtrl,
+  which takes over MOD B as an Octatrack-style freeze and repeat of everything going through the FX block, with four trig keys
+  that hold the loop at rates from 1/4 to 1/64 and a stock delay that stays silent while it is on. It also replaces the LP-Notch
+  entry in the FX filter type list with a one-knob DJ filter, mixes a full-wave rectifier into the FX block's Drive above 5, and
+  rearranges the FX SYN page. The older SyntHack mods (master compressor, readable values, beat repeat, a third send effect,
+  dual-mono input, splash) are carried over. A mod SDK compiles small C mods into patch files, flags clashes with taken
+  spots, and the repository documents the memory map, audio path and an emulator harness used for tests. The author says the
+  behaviour of the DJ, drive and all-features builds is not verified in an emulator or on hardware, and that a build from
+  the DelayCtrl baseline is the tested one. The project is not affiliated with Elektron and the author asks that built
+  files are not shared or sold.
+status: active
+authors:
+  - name: bengleg
+    url: https://github.com/bengleg
+  - name: Angelo Tedesco (Angelo-politek)
+    url: https://github.com/Angelo-politek
+source: https://github.com/bengleg/syntakt-project
+source_status: open
+license: MIT
+license_notes: >-
+  LICENSE (MIT) covers the repository's own code and documentation and grants no rights over Elektron firmware; GitHub
+  reports no recognised licence because of that closing sentence. The published builder page bundles GPL-3.0-or-later engine
+  code from GSM1980/synfact-dev, pinned at commit fcbc288 and not vendored in the repository (LEGAL.md). The upstream
+  SyntHack-OS work is MIT.
+homepage: https://bengleg.github.io/syntakt-project/
+based_on: elektron-syntakt/synthack-os
+distribution: patch-your-own
+requires_stock: "1.41"
+install_notes: >-
+  Download Syntakt OS 1.41 from elektron.se yourself (SHA-256 8e2488f4...ed19e), open the builder page, tick the mods and build,
+  or run tools/build/build.py on Linux or WSL. Back up projects with Elektron Transfer first, and flash the result through the
+  Transfer Drop page. The tools never modify the bootstrap, so if the OS does not start, RECOVERY.md describes holding FUNC at
+  power-on, choosing OS UPGRADE and sending the stock file over MIDI DIN, which USB cannot do at that point and which takes tens
+  of minutes. The author advises a dry run of that procedure with the stock file before the first flash.
+brick_risk: false
+tags: [fx, filter, sequencer, loader, sdk, emulator, patch, web, dj]
+versions:
+  - version: main @ 86d3c0a
+    date: 2026-11-23
+    url: https://github.com/bengleg/syntakt-project/commit/86d3c0a9fc5ef01a4abd796362480651613c0c14
+    notes: No tagged releases; this is the latest commit.

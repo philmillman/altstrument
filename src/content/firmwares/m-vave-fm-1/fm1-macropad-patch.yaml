@@ -6,8 +6,8 @@ summary: >-
 description: >-
   Does not turn the FM-1 into a macro pad by itself: a computer app must translate the notes into shortcuts.
   Screen and LEDs stay dark, the settings screen is unreachable after patching, and the MASTER knob still
-  sets volume without sending MIDI. The repository contains no M-VAVE firmware; docs/PATCHES.md lists
-  the original byte sequences for verification.
+  sets volume without sending MIDI. The repository holds no M-VAVE firmware file; docs/PATCHES.md lists
+  the original byte sequences for verification. From v1.1.0 the release carries the patched firmware, a modified copy of the V15 recovery image that M-VAVE publishes under Apache-2.0.
 status: active
 authors:
 - name: smememe
@@ -16,17 +16,21 @@ source: https://github.com/smememe/fm1-macropad-patch
 source_status: open
 license: MIT
 license_notes: >-
-  MIT covers the author's code only. M-VAVE firmware and the original byte sequences remain M-VAVE's.
+  MIT covers the author's code only. The firmware attached to the releases and the original byte sequences are a modified copy of M-VAVE's V15 recovery image and stay under Apache-2.0, with the licence text and a NOTICE attached; the release notes say the image is byte-identical to the one in m-vave/fm1_open.
 homepage: https://smememe.github.io/fm1-macropad-patch/
-distribution: patch-your-own
+distribution: download
 requires_stock: V15
 install_notes: >-
-  Download FM-1.fwsc (V15) from M-VAVE yourself, patch it in the browser (WebAssembly) or with fm1patch.py,
-  then flash with the usual update tools. The README states that no recovery method for this model is
-  known. Input monitor page included.
+  Download FM-1-macropad.fwsc from the release and flash it with M-UPGRADE, or make the same file by downloading FM-1.fwsc (V15)
+  from M-VAVE yourself and patching it in the browser (WebAssembly) or with fm1patch.py. The README states that no recovery method
+  for this model is known. Input monitor page included.
 brick_risk: false
 tags: [patch, controller-mode, usb-midi, midi]
 versions:
+- version: 1.1.0
+  date: 2026-11-22
+  url: https://github.com/smememe/fm1-macropad-patch/releases/tag/v1.1.0
+  notes: Attaches the patched firmware, FM-1-macropad.fwsc, ready to flash with M-UPGRADE, with the Apache-2.0 licence text and a NOTICE. The patch itself is unchanged from 1.0.0.
 - version: 1.0.0
   date: 2026-10-12
   url: https://github.com/smememe/fm1-macropad-patch/releases/tag/v1.0.0

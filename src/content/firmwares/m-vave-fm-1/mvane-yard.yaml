@@ -3,7 +3,7 @@ name: mvane yard
 summary: >-
   Performance firmware: a 12-voice synth or Clipper's sounds played as notes, MPE or chords from eight pitch-class sets with voice leading, MPE out over USB, and an always-on recorder whose takes leave as MIDI files.
 description: >-
-  Keys play single notes or chords built from one of eight pitch-class sets, with a separate bass and voice leading between chords. MIDI in over USB and TRS is read as MPE, with per-note bend, slide and pressure, and MPE goes out over USB. The sound is either the firmware's own band-limited saw voice with a key-tracked low-pass or one of Clipper's factory sounds, whose synth core is vendored from Clipper. A recorder is always running, so a take can be kept after it was played; takes are saved in eight slots, replayed, and moved to a computer as MIDI files by a web page or a command-line tool, which can also send a MIDI file back as a take. The chord mode follows Coral Flower's design (chord qualities on the black keys, hold, quantise) without using its code. It is built on fm1-base. The release is marked as a beta.
+  Keys play single notes or chords built from one of eight pitch-class sets, with a separate bass and voice leading between chords. MIDI in over USB and TRS is read as MPE, with per-note bend, slide and pressure, and MPE goes out over USB. The sound is either the firmware's own band-limited saw voice with a key-tracked low-pass or one of Clipper's factory sounds, whose synth core is vendored from Clipper. A recorder is always running, so a take can be kept after it was played; takes are saved in eight slots, replayed, and moved to a computer as MIDI files by a web page or a command-line tool, which can also send a MIDI file back as a take. The chord mode follows Coral Flower's design (chord qualities on the black keys, hold, quantise) without using its code. It is built on fm1-base. Since 0.13-beta the scale can be any pitch-class set, recordings loop and overdub and an arpeggiator is included. 0.15 is the first release not marked as a beta, and it also ships a native port for the VIBE FM plugin.
 status: active
 authors:
 - name: Enkerli
@@ -21,6 +21,18 @@ install_notes: >-
 brick_risk: false
 tags: [performance, chords, midi, usb-midi, synth-engine, sequencer, looper, editor, web, fork]
 versions:
+- version: v0.15
+  date: 2026-11-23
+  url: https://github.com/Enkerli/mvane-yard/releases/tag/v0.15
+  notes: First stable release, with the .fwsc. On the FM-1 it matches 0.14-beta. The release also attaches a native port of the same code for VIBE FM (mvane-yard-native.zip and .wasm), which plays notes and chords, YARD and Clipper's sounds, the recorder and the ARP in a DAW.
+- version: v0.14-beta
+  date: 2026-11-23
+  url: https://github.com/Enkerli/mvane-yard/releases/tag/v0.14-beta
+  notes: Pre-release. Overdubs from a wind controller land on their own channels and breath follows each line, the ARP gets two pages of settings, and scales are named by number from a list of 64 known ones with an editor on the project page. Listed here because the beta line between 0.9 and 0.15 is otherwise skipped.
+- version: v0.13-beta
+  date: 2026-11-22
+  url: https://github.com/Enkerli/mvane-yard/releases/tag/v0.13-beta
+  notes: Pre-release. The scale becomes any pitch-class set numbered 0 to 4095 with a list of 16 of your own, QUANT FULL snaps incoming notes to it, recordings follow key and scale changes and can loop and overdub, and an arpeggiator with eight modes arrives. Versions 0.10 to 0.12 beta are not listed separately.
 - version: 0.9-beta
   date: 2026-11-22
   url: https://github.com/Enkerli/mvane-yard/releases/tag/v0.9-beta

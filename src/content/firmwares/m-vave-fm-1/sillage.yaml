@@ -3,7 +3,7 @@ name: Sillage
 summary: >-
   Eight-track groovebox for the FM-1 derived from Skiff and Felucca, with 448 presets sorted by family, a 64-step sequencer with SONG, scenes and PERFORM modes, a 4-band EQ per track and a stereo master stage.
 description: >-
-  Each of the eight tracks holds a synth or a drum kit. The sequencer has bar copy, paste, duplicate and clear within a pattern, a live mixer, and a USB editor and a browser demo on the project site. A final master stage adds gain, a peak ceiling and stereo widening. The repository carries the whole Skiff source tree with its changes, and the README, guides and the interface are in French. The README says the firmware was checked on a physical FM-1, while the installer page on the project site still calls the 2.2 package a beta whose installation on a physical FM-1 is pending. Skiff's web installer is kept in the repository and the package is also committed as downloads/Sillage.fwsc, which is the project's own build and not a stock image.
+  Each of the eight tracks holds a synth or a drum kit. The sequencer has bar copy, paste, duplicate and clear within a pattern, a live mixer, and a USB editor and a browser demo on the project site. A final master stage adds gain, a peak ceiling and stereo widening. The repository carries the whole Skiff source tree with its changes, and the README, guides and the interface are in French. The README says the firmware was checked on a physical FM-1, while the installer page on the project site still calls the 2.2 package a beta whose installation on a physical FM-1 is pending. Skiff's web installer is kept in the repository and the package is also committed as downloads/Sillage.fwsc, which is the project's own build and not a stock image. The 2.2.1 notes say the package is the exact file the maintainer validated on a physical FM-1, and that it still reports itself internally as Sillage 2.2.1 FX test.
 status: active
 authors:
 - name: lelacnoir-lab
@@ -27,6 +27,10 @@ image:
   source_url: https://github.com/lelacnoir-lab/Sillage
   first_party: true
 versions:
+- version: 2.2.1
+  date: 2026-11-23
+  url: https://github.com/lelacnoir-lab/Sillage/releases/tag/v2.2.1
+  notes: Keeps the 2.2 reverb and adds long-press FX latching and a dry-only live filter that does not touch the reverb and delay returns. The web editor gets larger controls grouped by module, sound families with engine search and a temporary A/B comparison that never writes to flash. The package identity is FM-1_946221.
 - version: 2.2.0
   date: 2026-11-18
   url: https://github.com/lelacnoir-lab/Sillage/releases/tag/v2.2.0

@@ -1,0 +1,40 @@
+device: m-vave-fm-1
+name: FLAT-20
+summary: >-
+  Circuit-level Korg MS-20 model for the FM-1 with solved KORG35 filters, patch-panel cables, 26 presets, MIDI and USB audio, and a macOS app that shows the front panel live.
+description: >-
+  The engine is built from the schematic's parts rather than tuned by ear, and the KORG35 filters, the VCA and the envelopes are solved as circuits sample by sample at twice the output rate. A patch panel solves any two jacks as electrical nets, with eight cables set on a page of the firmware. Screen pages follow the MS-20's panel sections with printed knob scales, a live scope or envelope graph and the panel lamps. The ALGORITHM encoder is the mod wheel and REC the momentary switch. There are 26 presets: 16 technique presets and ten patches named for well-known records, made in the spirit of each rather than from samples. Notes, pitch bend and every panel knob are reachable over MIDI from USB and TRS, and USB audio is available. The README says it was tested on an FM-1 against the desktop build and contains no Korg code. It is built on Dinghy, and the SMK-37 is not supported. A macOS panel app in mac/ patches with the mouse.
+status: active
+authors:
+- name: Brandon Matthews
+  url: https://github.com/thenewwazoo
+source: https://github.com/thenewwazoo/FLAT-20
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only. The platform code is credited to Leo Kuroshita (Felucca), zvenson (Dinghy, OberVave) and others under their own terms, the fonts Terminus and Roboto Condensed are SIL OFL 1.1, and no JieLi SDK files are in the tree.
+based_on: m-vave-fm-1/dinghy
+distribution: browser-installer
+install_notes: >-
+  Build with build.sh and install with tools/fm1_install.py, or use the Firmware Hub's updater, which FLAT-20 answers; releases attach a .fwsc and checksums. Holding OCT- at power-on starts a USB rescue, and the firmware goes to the rescue by itself after two failed boots. The README says installing firmware is at your own risk.
+brick_risk: false
+tags: [synth-engine, analog-modeling, korg, filter, fx, midi, usb-audio, performance]
+image:
+  url: https://raw.githubusercontent.com/thenewwazoo/FLAT-20/main/docs/screen.png
+  alt: "FLAT-20 low-pass filter page: four knobs with 0 to 10 scales (Cutoff, Peak, MG/T.EXT, EG2/EXT), a scope of the filter's input and output on a sawtooth, and panel lamps below"
+  credit: Brandon Matthews
+  source_url: https://github.com/thenewwazoo/FLAT-20
+  first_party: true
+versions:
+- version: 0.3.2
+  date: 2026-11-22
+  url: https://github.com/thenewwazoo/FLAT-20/releases/tag/v0.3.2
+  notes: Release page has only a changelog link; gives the firmware the identity FM-1_1978.
+- version: 0.3.1
+  date: 2026-11-22
+  url: https://github.com/thenewwazoo/FLAT-20/releases/tag/v0.3.1
+  notes: Release page has only a changelog link; gives the firmware its own identity and a Firmware Hub card.
+- version: '0.3'
+  date: 2026-11-22
+  url: https://github.com/thenewwazoo/FLAT-20/tree/v0.3
+  notes: Git tag; no GitHub release page.

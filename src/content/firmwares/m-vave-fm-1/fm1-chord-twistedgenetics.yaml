@@ -10,7 +10,7 @@ description: >-
   sub and FM, a 12 dB filter, a chorus and a reverb, and since 0.6 and 0.7 adds more filter types, two LFOs, a mod matrix, wavetables and effects, and notes go to the built-in synth, to MIDI out or to both. The web
   editor works without an FM-1, previews sets with a JavaScript copy of the player, rates next-chord suggestions as
   strong, OK or far, records progressions to MIDI files and exchanges sets with the FM-1; an iPad build of it is a rolling
-  pre-release, and from 0.9 each release also carries a Max for Live MIDI effect for Ableton Live that plays the sets. The release notes call it a beta that has not been tried on a real FM-1. It is a separate project from
+  pre-release, and from 0.9 each release also carries a Max for Live MIDI effect for Ableton Live that plays the sets and, from 0.13, holds the whole editor. The release notes call it a beta that has not been tried on a real FM-1. It is a separate project from
   math0ne's fm1-chord.
 status: active
 authors:
@@ -26,11 +26,51 @@ homepage: https://twistedgenetics.github.io/FM1-Chord/editor/
 distribution: browser-installer
 install_notes: >-
   Back up the FM-1, open the project's web flasher in Chrome or Edge with the unit on USB and pick a release, or
-  download FM1-Chord-0.10.fwsc from the release. Read docs/RECOVERY.md first. The update loader writes the app header
+  download FM1-Chord-0.20.fwsc from the release. Read docs/RECOVERY.md first. The update loader writes the app header
   last, so an install cut off part-way comes back in update mode.
 brick_risk: false
 tags: [chords, synth-engine, performance, arpeggiator, editor, flasher, web-midi]
 versions:
+- version: '0.20'
+  date: 2026-11-22
+  url: https://github.com/TwistedGenetics/FM1-Chord/releases/tag/v0.20
+  notes: The Ableton device's strip gains controls for how a key plays (chord, strum or arpeggio, latch, voice lead and each mode's settings), and the editor window plays the keys from the computer keyboard laid out like Live's.
+- version: '0.19'
+  date: 2026-11-22
+  url: https://github.com/TwistedGenetics/FM1-Chord/releases/tag/v0.19
+  notes: Fixes the Ableton device's strip, whose set list and arrows did not reach the device.
+- version: '0.18'
+  date: 2026-11-22
+  url: https://github.com/TwistedGenetics/FM1-Chord/releases/tag/v0.18
+  notes: Adds a status line to the Ableton device's strip, a diagnostic step for set changes that were not arriving.
+- version: '0.17'
+  date: 2026-11-22
+  url: https://github.com/TwistedGenetics/FM1-Chord/releases/tag/v0.17
+  notes: Adds octave down and up to the Ableton device, and shows errors on its strip.
+- version: '0.16'
+  date: 2026-11-22
+  url: https://github.com/TwistedGenetics/FM1-Chord/releases/tag/v0.16
+  notes: Fixes the Ableton device's panel buttons, which did nothing, and adds diagnostics to its strip.
+- version: '0.15'
+  date: 2026-11-22
+  url: https://github.com/TwistedGenetics/FM1-Chord/releases/tag/v0.15
+  notes: Fixes choosing a set in the Ableton device, with a page-drawn list and a SET control on the panel.
+- version: '0.14'
+  date: 2026-11-22
+  url: https://github.com/TwistedGenetics/FM1-Chord/releases/tag/v0.14
+  notes: Fixes the Ableton device showing a blank box instead of its strip and editor.
+- version: '0.13'
+  date: 2026-11-22
+  url: https://github.com/TwistedGenetics/FM1-Chord/releases/tag/v0.13
+  notes: The Ableton device now includes the whole editor, with a strip on the track shows the set, the playing chord and the 27 keys, and an Editor button opens every set, chord editing and suggestions in a window. The zip holds four files that stay together.
+- version: '0.12'
+  date: 2026-11-22
+  url: https://github.com/TwistedGenetics/FM1-Chord/releases/tag/v0.12
+  notes: Cuts the synth's CPU load by about a quarter on average so new chords no longer break up over the tails of old ones, and has the CPU guard hold voices to what fits in 80 percent of the time.
+- version: '0.11'
+  date: 2026-11-22
+  url: https://github.com/TwistedGenetics/FM1-Chord/releases/tag/v0.11
+  notes: Fixes stutter from denormal numbers when the sound goes quiet, adds a CPU guard that drops the oldest voices before the sound breaks up, and shows CPU, peak and drops on GLOBAL 2.
 - version: '0.10'
   date: 2026-11-22
   url: https://github.com/TwistedGenetics/FM1-Chord/releases/tag/v0.10

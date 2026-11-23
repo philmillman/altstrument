@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+name: COLLAPSE
+summary: >-
+  Physics drum machine for the FM-1: six synthesized instruments hang in a web of springs so that every hit pushes the others, with eight patterns, a performance mode with live effects and MIDI clock sync.
+description: >-
+  Inspired by the Anukari physics synth, the six instruments (kick, snare, hats, glitch, perc and bass) are each a mass on springs, one per knob. A hit makes the struck instrument jump to new parameters and shoves the instruments tied to it, and the springs pull everything back to the set sound, so no two hits are alike. Two macros, MASS and CHAOS, set the inertia and how the instruments are tied together. Pages cover each instrument's engine effects, how it is struck (mallet, pluck, bow or brush), a slow motion modulator, the springs themselves, a master section and general settings. Eight patterns have a track length for each instrument, so tracks of different lengths drift against each other. ARP turns on a performance mode with sixteen pads, mutes, live effects and four knobs that mutate the pattern. MIDI clock from USB or TRS drives the steps, and notes 36 to 41 play the instruments. All sound is synthesized; the README states there are no samples.
+status: active
+authors:
+- name: swtdr34mz-afk
+  url: https://github.com/swtdr34mz-afk
+source: https://github.com/swtdr34mz-afk/COLLAPSE
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The LICENSE file and README state MPL-2.0. fm1-base and felucca-bsp are MPL-2.0 too, the pixel fonts are SIL OFL 1.1, and the package carries three Apache-2.0 JieLi SDK files (CREDITS.md).
+based_on: m-vave-fm-1/fm1-base
+distribution: download
+install_notes: >-
+  Download the .fwsc from the latest release and install it with an FM-1 .fwsc installer; the README gives no install steps of its own and describes no recovery path. The FM-1's ROM boot mode applies.
+brick_risk: false
+tags: [drums, synth-engine, sequencer, performance, fx, midi, usb-midi, glitch]
+image:
+  url: https://raw.githubusercontent.com/swtdr34mz-afk/COLLAPSE/main/site/img/screen-main.png
+  alt: "COLLAPSE main screen: tempo 128 BPM beside a live drawing of six masses tied by lines, instrument sliders KCK to BAS, MASS and CHAOS macros, and the pattern 01 MARBLE RUN"
+  credit: swtdr34mz-afk
+  source_url: https://github.com/swtdr34mz-afk/COLLAPSE
+  first_party: true
+versions:
+- version: 0.3.1
+  date: 2026-11-23
+  url: https://github.com/swtdr34mz-afk/COLLAPSE/releases/tag/v0.3.1
+  notes: Latest of two releases made on 23 November 2026, none with release notes.
+- version: 0.3.0
+  date: 2026-11-23
+  url: https://github.com/swtdr34mz-afk/COLLAPSE/releases/tag/v0.3.0

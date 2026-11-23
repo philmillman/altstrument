@@ -1,0 +1,46 @@
+device: m-vave-blackbox
+name: TBBR - The Big Black Rig
+summary: >-
+  Replacement firmware for the BlackBox with real-time NAM A2 Lite, cabinet impulse responses, modelled pedals and amps, a two-row block grid with scenes and 80 presets, plus a bilingual editor and a Windows installer that backs up the flash first.
+description: >-
+  The project, documented in French, replaces the BlackBox's firmware, written in C and pi32v2 assembly for its JieLi AC791N, and runs Neural Amp Modeler A2 Lite captures in real time on both cores at 396 MHz. Presets
+  are a grid of up to two rows of eight blocks, where blocks side by side on the second row form parallel sections, with
+  eight scenes per preset. The pedal stores 80 presets, 20 of them factory presets, and has a tuner, an LED level meter and a global
+  input noise gate. Version 0.8 added 11 factory cabinet impulse responses, four Vintage 30 captures from Jester's
+  Brutal Pack (CC0) and seven Orbit cabinets from Darwin's Cat (CC BY 4.0), and lets a preset load up to 115 percent of the
+  DSP budget. An editor in French and English runs in a browser or desktop app over USB MIDI, and a Windows installer
+  reads the whole 1 MiB flash twice into a backup before it will install, builds the image from your own backup, keeps
+  the bootloader and per-pedal data unchanged, and updates from small .tbbr packages that keep presets, IRs and captures.
+  A restore rewrites the flash from the M-VAVE backup, again without the bootloader. The repository holds no M-VAVE firmware,
+  and the README says it is independent of M-VAVE.
+status: active
+authors:
+  - name: mystery2312
+    url: https://github.com/mystery2312
+source: https://github.com/mystery2312/tbbr
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README says GPL-3.0 and LICENSE holds the GPL-3.0 text, with no or-later grant. THIRD_PARTY.md lists the bundled parts:
+  LLVM IR extracted from JieLi's AC79 SDK (Apache-2.0), JieLi's wl82loader.bin and loader protocol from jl-uboot-tool (MIT),
+  the CC0 and CC BY 4.0 cabinet impulse responses, and the Inter and JetBrains Mono fonts (OFL-1.1). It says UltraRig's code was
+  not used.
+homepage: https://mystery2312.github.io/tbbr/
+distribution: download
+install_notes: >-
+  Windows 10 or 11 only. Download BlackBox_TBBR_App.exe, or the installer alone, from the release, connect the pedal by
+  USB without a hub, switch it on and close M-UPGRADE. Choose Back up, which reads the flash twice and saves it, then
+  Install; installing is blocked without a backup. Writes cover the application and storage area from 0x4000 and never the first
+  16 KB, and the installer's Restore puts the M-VAVE flash back from the backup. Switch the pedal off and on afterwards and
+  do not unplug USB while writing. The mask ROM USB loader that the tools use is not affected by an install.
+brick_risk: false
+tags: [amp-sim, nam, ir, fx, editor, flasher, loader, windows, web-midi]
+versions:
+  - version: v0.8.0
+    date: 2026-11-22
+    url: https://github.com/mystery2312/tbbr/releases/tag/v0.8.0
+    notes: Adds 11 factory cabinet impulse responses for the 4x12 V30 and Combo blocks, rebalanced factory presets that use the global input gate, presets that can load up to 115 percent of the DSP budget, and an automatic app update.
+  - version: v0.7.0
+    date: 2026-11-22
+    url: https://github.com/mystery2312/tbbr/releases/tag/v0.7.0
+    notes: First public release with NAM A2 Lite, impulse responses, modelled pedals and amps, the block grid with scenes, 80 presets, a tuner, an LED meter and a global noise gate.

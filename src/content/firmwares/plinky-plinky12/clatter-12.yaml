@@ -1,0 +1,34 @@
+device: plinky-plinky12
+name: CLATTER 12
+summary: An experimental Plinky12 panel that runs the LXR-02 drum engine and CLATTER's generative sequencer, as one C++ file for the IDE. The author reports it as never run on a Plinky12.
+description: >-
+  CLATTER 12 brings CLATTER Pocket's embedded LXR-02 engine to Plinky12 as a custom panel. It has seven tracks with conditional steps, ratchets and
+  rolls, a sound page, generative pattern and kit tools, a mixer, its own delay and reverb, performance and repeat pages, 16 pattern slots with a
+  chain, and song save and load. tools/amalgamate.py joins the sources into a single file without includes. The README says the panel has been checked
+  only in host tests, its own simulator of the Plinky API, a browser demo built with WebAssembly, and a Cortex-M33 cross-compile. The first version
+  compiled and ran in the maker's IDE emulator, the current one has not been tried there, and nothing has been run on a Plinky12. MIDI and CV are not yet
+  implemented. The project is not endorsed by Erica Synths or Plinky.
+status: active
+authors:
+  - name: The CLATTER contributors
+    url: https://github.com/clickysteve
+source: https://github.com/clickysteve/clatter-12
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  NOTICE.md gives GPL-3.0-only with the additional terms of Erica Synths' LXR-02 firmware (GPL section 7): no rights in the Erica Synths, LXR and LXR-02
+  names, and modified versions must be marked as modified. The LXR engine reaches it through the clatter-pocket submodule. The notice adds that a firmware image
+  built by Plinky's IDE combines the panel with Plinky's own firmware, whose licence is not published.
+homepage: https://clickysteve.github.io/clatter-12/
+based_on: m-vave-fm-1/clatter-pocket
+distribution: browser-installer
+install_notes: >-
+  Build the single panel file with make as described in BUILDING.md, paste it into the maker's Plinky12 web IDE, then flash over USB. The project
+  warns that this is experimental and untested on hardware, and HARDWARE_TESTING.md lists the first-run checks.
+brick_risk: false
+tags: [drums, sequencer, generative, synth-engine, emulator, open-source]
+versions:
+  - version: main @ 0e99ea4
+    date: 2026-11-14
+    url: https://github.com/clickysteve/clatter-12/commit/0e99ea496bc79959b67535f1c07bf141b0a6a0e4
+    notes: No tagged releases; this is the latest commit. The VERSION file reads 0.0.7-exp.

@@ -1,0 +1,45 @@
+device: trimui-brick
+name: BRIXEQ
+summary: >-
+  Free, closed-source five-track step sequencer and groovebox for the TrimUI Brick on NextUI, in which every step carries its own full instrument snapshot, with eight synth and drum engines, scenes, song mode and WAV recording.
+description: >-
+  BRIXEQ has five tracks of sixteen patterns each, and each step stores its own engine, envelope, filter, chord stack of up to five voices, effect sends, probability and trigger logic, so neighbouring steps can sound like different instruments. Eight engines cover virtual analog, two-operator FM, a physical-model string, phase distortion, bass drum, snare, cymbal and noise. Sixteen scenes per project hold pattern pointers, scale, transpose strips and master effects, and a 128-row song mode references scenes with per-track overrides. The master bus has a tempo-synced ping-pong delay, a stereo reverb and a compressor with optional sidechain, and the master output records to 16-bit stereo WAV files on the SD card.
+
+  It is a NextUI pak that installs from the PAK Store or by copying the release's BRIXEQ.pak folder. The repository holds the manual, the pak metadata and a screenshot, with no source code, and the README does not state a licence.
+status: active
+authors:
+  - name: boorch
+    url: https://github.com/boorch
+homepage: https://github.com/boorch/brixeq-pak#readme
+source_status: binary-only
+license: unspecified
+license_notes: >-
+  The repository has no licence file and the README gives no licence statement; only the compiled pak is published.
+distribution: download
+requires_stock: NextUI on the TrimUI Brick
+install_notes: >-
+  Open PAK Store from NextUI's Tools menu with the Brick on Wi-Fi and install BRIXEQ, or download BRIXEQ.pak.zip from the release page and copy the BRIXEQ.pak folder to Tools/tg5040 on the SD card. Projects and WAV recordings are kept in a BRIXEQ folder at the root of the card, outside the pak, so updates leave them alone. Nothing is written to the console's internal firmware.
+brick_risk: false
+tags: [sequencer, groovebox, synth-engine, drums, fx, fm, chords, looper, handheld]
+image:
+  url: https://raw.githubusercontent.com/boorch/brixeq-pak/main/.github/screenshots/splash.png
+  alt: "BRIXEQ pattern screen with five track columns T1 to T5 of sixteen numbered rows, grey note blocks reading C 2, C 4 and C 8 on the first three tracks, and instrument icons down both sides"
+  credit: boorch
+  source_url: https://github.com/boorch/brixeq-pak
+  first_party: true
+versions:
+  - version: v1.9.0
+    date: 2026-07-17
+    url: https://github.com/boorch/brixeq-pak/releases/tag/v1.9.0
+  - version: v1.8.0
+    date: 2026-06-27
+    url: https://github.com/boorch/brixeq-pak/releases/tag/v1.8.0
+  - version: v1.7.0
+    date: 2026-06-17
+    url: https://github.com/boorch/brixeq-pak/releases/tag/v1.7.0
+  - version: v1.6.0
+    date: 2026-06-04
+    url: https://github.com/boorch/brixeq-pak/releases/tag/v1.6.0
+  - version: v1.0.0
+    date: 2026-05-29
+    url: https://github.com/boorch/brixeq-pak/releases/tag/v1.0.0

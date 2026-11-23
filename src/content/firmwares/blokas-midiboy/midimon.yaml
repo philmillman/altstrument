@@ -1,0 +1,32 @@
+device: blokas-midiboy
+name: Midimon
+summary: Official Blokas MIDI monitor sketch that lists incoming DIN and USB MIDI messages on the Midiboy screen, with a settings page for the display.
+description: >-
+  Midimon shows the MIDI messages that arrive at the Midiboy, one per line, as a debugging aid for other gear. The A
+  button opens a settings screen and B returns from it; any other button clears the list. The code is split into
+  display modes so that new ones can be added. The same code base also built the firmware for Blokas's separate
+  Midimon MIDI monitor, which used its own board definition.
+status: dormant
+authors:
+  - name: Blokas
+    url: https://github.com/BlokasLabs
+source: https://github.com/BlokasLabs/Midimon
+source_status: open
+license: GPL-2.0-only
+license_notes: Source headers grant GPL version 2 only, with no "or later" wording.
+homepage: https://patchstorage.com/midimon/
+distribution: source-only
+install_notes: >-
+  Install the Blokas board package (1.0.5 or later) in the Arduino IDE, select Midiboy as the board and USBasp as the
+  programmer, hold B while switching the Midiboy on, then upload the sketch.
+brick_risk: false
+tags: [official, midi, utility, arduino]
+versions:
+  - version: '1.1'
+    date: 2019-07-17
+    url: https://patchstorage.com/midimon/
+    notes: Patchstorage upload; no matching Git tag. Needs Blokas board package 1.0.5 or later.
+  - version: v1.0
+    date: 2019-05-03
+    url: https://github.com/BlokasLabs/Midimon/tree/v1.0
+    notes: Git tag; no GitHub release page.

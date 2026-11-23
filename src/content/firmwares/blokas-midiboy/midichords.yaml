@@ -1,0 +1,27 @@
+device: blokas-midiboy
+name: midichords
+summary: Official Blokas sketch that turns each incoming note into a chord of up to five notes and sends it to both the USB and DIN MIDI outputs.
+description: >-
+  Notes arriving over USB or DIN MIDI are expanded into chords built from the configured intervals, and note-off
+  messages release the whole chord. The output goes to both ports. One configuration can be stored in memory with A
+  and recalled with B.
+status: dormant
+authors:
+  - name: Blokas
+    url: https://github.com/BlokasLabs
+source: https://github.com/BlokasLabs/midichords
+source_status: open
+license: GPL-2.0-only
+license_notes: Source headers grant GPL version 2 only, with no "or later" wording.
+homepage: https://patchstorage.com/midichords/
+distribution: source-only
+install_notes: >-
+  Install the Blokas board package (1.0.5 or later) in the Arduino IDE, select Midiboy as the board and USBasp as the
+  programmer, hold B while switching the Midiboy on, then upload the sketch.
+brick_risk: false
+tags: [official, midi, chords, arduino]
+versions:
+  - version: master @ 80e7565
+    date: 2019-10-08
+    url: https://github.com/BlokasLabs/midichords/commit/80e7565
+    notes: No tagged releases; this is the latest commit.

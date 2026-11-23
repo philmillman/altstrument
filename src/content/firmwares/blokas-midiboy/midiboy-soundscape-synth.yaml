@@ -1,0 +1,37 @@
+device: blokas-midiboy
+name: Midiboy Soundscape Synth
+summary: Generative ambient synth sketch that makes 8-bit audio on the ATmega328P and sends it out of the MIDI OUT socket, with a drifting pad, wind, chimes and an echo.
+description: >-
+  The Midiboy has no audio output, so this sketch generates audio at about 15.6 kHz and drives it out of the MIDI OUT
+  socket, which connects to a line input through a DIN-to-jack adapter. On power-up it plays a pad that changes
+  chords on its own, wind noise and chimes with an echo. Eight scales and settings for density, drift, tone, wind,
+  echo and level are on the screen, A starts a new random scene and B holds the current chord. A melody mode loops a
+  tune on the bells, and a script in the repository converts a MIDI file into a melody for a custom build. It does
+  not respond to MIDI input, and settings are not saved.
+status: active
+authors:
+  - name: philguz
+    url: https://github.com/philguz
+source: https://github.com/philguz/midiboy-soundscape-synth
+source_status: open
+license: MIT
+license_notes: Parts derived from the Mozzi library remain under the LGPL, as the README states.
+homepage: https://patchstorage.com/midiboy-soundscape-synth/
+distribution: download
+install_notes: >-
+  Download the prebuilt .hex from Patchstorage, hold B while switching the Midiboy on, connect it over USB and write
+  the file with avrdude using the usbasp programmer. Building from source is described in the repository's
+  development notes.
+brick_risk: false
+tags: [synth-engine, generative, ambient, arduino]
+image:
+  url: https://raw.githubusercontent.com/philguz/midiboy-soundscape-synth/main/docs/images/screen.png
+  alt: Midiboy screen in SOUNDSCAPE mode with the DENSITY setting selected
+  credit: philguz
+  source_url: https://github.com/philguz/midiboy-soundscape-synth
+  first_party: true
+versions:
+  - version: main @ 0696324
+    date: 2026-11-18
+    url: https://github.com/philguz/midiboy-soundscape-synth/commit/0696324
+    notes: No tagged releases; this is the latest commit. Patchstorage lists the build as 1.0.

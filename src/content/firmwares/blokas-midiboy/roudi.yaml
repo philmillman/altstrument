@@ -1,0 +1,38 @@
+device: blokas-midiboy
+name: Roudi
+summary: DIN MIDI router sketch for using a keyboard with weak MIDI features as a master keyboard, with named channels, splits and layers, filters, velocity curves and a MIDI monitor.
+description: >-
+  Roudi was written to drive other instruments from a digital piano without a computer in between. It switches the
+  output channel and lets you name channels, sets up splits and layers, filters out unwanted message types, maps pitch
+  bend to channel aftertouch and applies an editable velocity curve. A monitor page shows incoming messages, and
+  settings are saved automatically. It works with DIN MIDI only, and it fills most of the program memory.
+status: dormant
+authors:
+  - name: Headphone Cairn
+    url: https://github.com/HeadphoneCairn
+source: https://github.com/HeadphoneCairn/Roudi
+source_status: open
+license: GPL-2.0-only
+license_notes: Source headers grant GPL version 2 of the License, with no "or later" wording.
+homepage: https://patchstorage.com/roudi/
+distribution: source-only
+install_notes: >-
+  Build and upload Roudi.ino from the Arduino IDE with the Blokas board package, after holding B while switching the
+  Midiboy on to enter the bootloader.
+brick_risk: false
+tags: [midi, router, utility, arduino]
+image:
+  url: https://raw.githubusercontent.com/HeadphoneCairn/Roudi/main/screenshots/ROUDI_x2.png
+  alt: Roudi splash screen on the Midiboy display
+  credit: Headphone Cairn
+  source_url: https://github.com/HeadphoneCairn/Roudi
+  first_party: true
+versions:
+  - version: v1.2.0
+    date: 2023-09-18
+    url: https://github.com/HeadphoneCairn/Roudi/releases/tag/v1.2.0
+    notes: The monitor shows pitch bend in a -64 to 63 range with the raw value beside it.
+  - version: v1.1.0
+    date: 2023-05-31
+    url: https://github.com/HeadphoneCairn/Roudi/releases/tag/v1.1.0
+    notes: First public release.

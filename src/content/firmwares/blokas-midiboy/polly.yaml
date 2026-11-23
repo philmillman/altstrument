@@ -1,0 +1,33 @@
+device: blokas-midiboy
+name: Polly
+summary: MIDI proxy sketch that lets a Korg Volca Sample 2 play polyphonically and multitimbrally from a MIDI keyboard, with up to nine channels split, layered or grouped.
+description: >-
+  Polly sits between a keyboard and a Volca Sample 2 set to multi-channel mode and spreads incoming notes across the
+  Volca's sample parts. Each of the nine channels has its own listen channel, key range, note offset, note stealing,
+  velocity handling and release time, and can map sample selection, lo-cut, pan and reverb to controls. The author
+  notes an occasional click when more than six or seven channels are active.
+status: dormant
+authors:
+  - name: Jacob Ulmert
+    url: https://github.com/ulmert
+source: https://github.com/ulmert/polly
+source_status: open
+license: BSD-3-Clause
+homepage: https://patchstorage.com/polly/
+distribution: source-only
+install_notes: >-
+  Build and upload polly.ino from the Arduino IDE with the Blokas board package. Set the Volca Sample 2 to its MIDI
+  multi-channel mode.
+brick_risk: false
+tags: [midi, polyphonic, volca, utility, arduino]
+video:
+  url: https://www.youtube.com/watch?v=oxSC8LzjMGI
+  title: Polly - Enriching the Korg Volca Sample 2 (Arduino)
+  credit: Jacob Ulmert
+  first_party: true
+  found_via: https://github.com/ulmert/polly
+versions:
+  - version: main @ 5e52648
+    date: 2023-05-10
+    url: https://github.com/ulmert/polly/commit/5e52648
+    notes: No tagged releases; this is the latest commit.

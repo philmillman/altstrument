@@ -1,0 +1,34 @@
+device: blokas-midiboy
+name: Orac Controller
+summary: Official Blokas sketch that makes the Midiboy a screen and button interface for the Orac modular synth running on a Raspberry Pi, through a bridge script on the Pi.
+description: >-
+  The sketch pairs with a Python bridge that runs on the Raspberry Pi next to Orac and MEC, TheTechnobear's
+  modular environment. With the Midiboy plugged into the Pi over USB, the screen lists Orac's modules and their
+  parameters. The direction buttons move through modules and parameter pages, A selects a parameter for editing,
+  and B switches between the module menu and the parameter screen.
+status: dormant
+authors:
+  - name: Blokas
+    url: https://github.com/BlokasLabs
+source: https://github.com/BlokasLabs/orac-controller
+source_status: open
+license: GPL-2.0-only
+license_notes: Source headers grant GPL version 2 only, with no "or later" wording.
+homepage: https://patchstorage.com/orac-controller/
+distribution: source-only
+install_notes: >-
+  Upload orac-controller.ino to the Midiboy from the Arduino IDE with the Blokas board package (1.0.2 or later), then
+  run install.sh from the repository on the Raspberry Pi to install the bridge. Orac and MEC must be running on the Pi.
+brick_risk: false
+tags: [official, controller, ui, raspberry-pi, arduino]
+image:
+  url: https://raw.githubusercontent.com/BlokasLabs/orac-controller/master/screens/orac.gif
+  alt: Animated Midiboy screen stepping through Orac module and parameter pages
+  credit: Blokas
+  source_url: https://github.com/BlokasLabs/orac-controller
+  first_party: true
+versions:
+  - version: master @ 2da9258
+    date: 2019-07-16
+    url: https://github.com/BlokasLabs/orac-controller/commit/2da9258
+    notes: No tagged releases; this is the latest commit.

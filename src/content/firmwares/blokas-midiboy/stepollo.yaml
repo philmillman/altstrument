@@ -1,0 +1,27 @@
+device: blokas-midiboy
+name: Stepollo
+summary: Multi-track MIDI step sequencer sketch with per-step lengths, loops and conditional triggers, and a song mode, fitted into the ATmega328P's 2 kB of RAM.
+description: >-
+  Stepollo has a grid view for editing steps and a track and song view for arranging. Steps can be muted, inserted,
+  deleted and given their own length, and conditions decide when a step fires. Because RAM is small, the number of
+  tracks and steps is set at build time in fixed pairs, from 3 tracks of 64 steps to 12 tracks of 16 steps.
+status: dormant
+authors:
+  - name: Jacob Ulmert
+    url: https://github.com/ulmert
+source: https://github.com/ulmert/stepollo
+source_status: open
+license: GPL-2.0-only
+license_notes: Source headers grant GPL version 2 only, with no "or later" wording.
+homepage: https://patchstorage.com/stepollo/
+distribution: source-only
+install_notes: >-
+  Build and upload stepollo.ino from the Arduino IDE with the Blokas board package, after holding B while switching
+  the Midiboy on to enter the bootloader.
+brick_risk: false
+tags: [sequencer, midi, arduino]
+versions:
+  - version: main @ cbcaf1b
+    date: 2021-03-30
+    url: https://github.com/ulmert/stepollo/commit/cbcaf1b
+    notes: No tagged releases; this is the latest commit.

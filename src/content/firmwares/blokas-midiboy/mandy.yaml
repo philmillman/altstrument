@@ -1,0 +1,32 @@
+device: blokas-midiboy
+name: Mandy
+summary: Experimental MIDI chord sequencer sketch that spreads three-note chords across tracks with their own patterns, lengths and tempo dividers, routed to several MIDI channels.
+description: >-
+  Chords are programmed in a step sequencer and their notes are assigned to tracks automatically. Each track plays
+  its notes with its own pattern, note length and tempo divider, partly at random, and can be routed to a fixed or
+  random MIDI channel to drive several mono synths at once. Mandy follows external MIDI clock, start and stop, and
+  can take a note offset from MIDI input.
+status: dormant
+authors:
+  - name: Jacob Ulmert
+    url: https://github.com/ulmert
+source: https://github.com/ulmert/mandy
+source_status: open
+license: BSD-3-Clause
+distribution: source-only
+install_notes: >-
+  Build and upload mandy.ino from the Arduino IDE with the Blokas board package, after holding B while switching the
+  Midiboy on to enter the bootloader.
+brick_risk: false
+tags: [sequencer, chords, generative, midi, arduino]
+video:
+  url: https://www.youtube.com/watch?v=PFX4NWRe-rE
+  title: A hardware MIDI chord sequencer - using Midiboy (Arduino)
+  credit: Jacob Ulmert
+  first_party: true
+  found_via: https://github.com/ulmert/mandy
+versions:
+  - version: main @ 486cb93
+    date: 2022-11-19
+    url: https://github.com/ulmert/mandy/commit/486cb93
+    notes: No tagged releases; this is the latest commit.

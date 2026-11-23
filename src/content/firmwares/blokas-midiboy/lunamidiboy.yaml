@@ -1,0 +1,27 @@
+device: blokas-midiboy
+name: lunamidiboy
+summary: Square-wave tone sequencer sketch modelled on the Lunamod, playing a 64-step loop of pitch and duration on the piezo speaker, with live recording of changes.
+description: >-
+  The sketch loops 64 steps, each with its own frequency and duration, as a pulse wave. Up and down change the
+  pitch, and left and right change the duration. Holding B records pitch changes into the steps as they play, and
+  holding A records duration changes. The screen shows a rough animation of the current values. It is based on the
+  lunaMod45 remix code and also runs on the Arduboy.
+status: dormant
+authors:
+  - name: poetaster
+    url: https://github.com/poetaster
+source: https://github.com/poetaster/lunamidiboy
+source_status: open
+license: unspecified
+license_notes: The repository has no license file or license statement.
+distribution: source-only
+install_notes: >-
+  Build and upload lunamidiboy.ino from the Arduino IDE with the Blokas board package, after holding B while
+  switching the Midiboy on to enter the bootloader.
+brick_risk: false
+tags: [sequencer, chiptune, arduino]
+versions:
+  - version: master @ 30abfd2
+    date: 2019-10-19
+    url: https://github.com/poetaster/lunamidiboy/commit/30abfd2
+    notes: No tagged releases; this is the latest commit.

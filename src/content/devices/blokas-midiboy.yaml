@@ -1,0 +1,37 @@
+name: Midiboy
+manufacturer: Blokas
+category: handheld
+added: 2026-11-23
+tagline: Arduino-compatible DIY handheld with an OLED screen and two DIN MIDI ports, running MIDI tools and games as sketches
+description: >-
+  Midiboy is a kit you assemble yourself: an ATmega328P microcontroller at 20 MHz, a 1.3 inch 128 by 64 OLED
+  screen, six buttons, a piezo speaker, DIN-5 MIDI in and out, and a USB-B port for power and programming. It also
+  runs from a 9 V battery. Programs are Arduino sketches, and one sketch runs at a time. Blokas and the community
+  have written MIDI utilities, sequencers and small synths for it, along with ports of Arduboy games.
+platform: ATmega328P (8-bit AVR, 20 MHz)
+links:
+  manufacturer: https://blokas.io/midiboy/
+  community:
+    - label: Blokas community forum (Midiboy)
+      url: https://community.blokas.io/c/midiboy
+    - label: Patchstorage Midiboy platform (sketches)
+      url: https://patchstorage.com/platform/midiboy/
+    - label: BlokasLabs on GitHub
+      url: https://github.com/BlokasLabs
+notes: >-
+  There is no stock app. The device ships with a USB bootloader that emulates a USBasp programmer
+  (BlokasLabs/Midiboy-Bootloader, a fork of USBaspLoader), and every sketch replaces whatever was loaded before.
+  Holding B while switching the power on enters the bootloader, so a sketch that misbehaves can always be
+  replaced from the Arduino IDE with the Blokas board package installed. Games ported from the Arduboy, such as
+  Flappy Ball, Dark & Under and Glove, are on Patchstorage but are not listed here.
+related: []
+image:
+  src: /images/devices/blokas-midiboy.webp
+  style: photo
+  alt: Assembled Midiboy with MIDI IN, USB and MIDI OUT labels on top, a small OLED screen showing the Blokas logo, four direction buttons and A and B buttons
+  width: 1200
+  height: 676
+  credit: Blokas
+  license: manufacturer product image
+  source_url: https://blokas.io/midiboy/
+  original_url: https://blokas.io/midiboy/images/midiboy-product.png

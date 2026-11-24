@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: FM1-Drydock
+kind: tool
+summary: >-
+  Standalone firmware loader that turns a Waveshare ESP32-S3 AMOLED touch board into a USB-C cartridge holding several FM-1 firmware packages, with a PC sync tool, a restore to M-VAVE's V15 and a rescue mode for an FM-1 that no longer starts.
+description: >-
+  The ESP-IDF firmware for the Waveshare ESP32-S3-Touch-AMOLED-1.8 shows a touchscreen list of stored .fwsc packages and flashes the chosen one to an FM-1 over USB-C, with the board acting as a USB host. Packages sit in a 12 MB flash partition. A PC command-line tool, drydock-sync, fills it: the board restarts as a USB drive, and the tool pulls the latest releases listed in a vessels.toml file from The Firmware Hub, from GitHub releases or from local files and writes a manifest with checksums. The firmware also has a rescue mode that talks to the JieLi chip's UBOOT1.00 download mode, with a read-only check before any write, and a button for restoring M-VAVE's stock V15, which the user supplies. The rescue documents say the flash header is never written and that each sector is read back. The project's own progress report, dated the day it was published, says the PC sync was tested on a real board but the MIDI flash path and the on-screen interface had not yet run on the FM-1.
+status: active
+authors:
+- name: rawmnr
+  url: https://github.com/rawmnr
+source: https://github.com/rawmnr/fm1-drydock
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL version 3 text and the README says GPL-3.0, with no later-version clause. The rescue notes credit fm1_rescue.py (GPL-3.0) and jl-uboot-tool (MIT) as references and name a helper loader taken from jl-uboot-tool by hash. The repository holds no firmware package.
+distribution: source-only
+requires_stock: Any FM-1 firmware, or a unit in its ROM download mode
+install_notes: >-
+  Build the firmware with ESP-IDF 5.5 or newer for the V1 or V2 revision of the Waveshare ESP32-S3-Touch-AMOLED-1.8 and flash it with idf.py, then install the Python companion with uv, copy vessels.example.toml to vessels.toml and run uv run drydock sync with the board in PC Sync mode. Powering the FM-1 from the board needs a battery or external 5 V, according to the hardware notes. The spec says the stock V15 file is supplied by the user, and the rescue notes say a rescue only writes the app area, so the ROM mode stays available.
+brick_risk: false
+tags: [flasher, utility, backup, esp32-s3, usb-host, standalone]
+image:
+  url: https://raw.githubusercontent.com/rawmnr/fm1-drydock/main/assets/banner.jpg
+  alt: "Illustration of an AMOLED touchscreen board standing on a desk and cabled to an FM-1, beside the title FM1-Drydock and the words standalone ESP32-S3 AMOLED firmware loader for the M-VAVE FM-1"
+  credit: rawmnr
+  source_url: https://github.com/rawmnr/fm1-drydock
+  first_party: true
+versions:
+- version: main @ b4b25ff
+  date: 2026-11-24
+  url: https://github.com/rawmnr/fm1-drydock/commit/b4b25ff81f25c27dabea382f3268641e5d918731
+  notes: No tagged releases; this is the latest commit, from the day the repository was published.

@@ -1,12 +1,12 @@
 device: m-vave-fm-1
 also_devices: [m-vave-smk-37]
-name: M-vance
+name: JT-80x0
 summary: >-
   Virtual analog synth that ports the author's JT-8000, a JP-8000-style engine, to the FM-1 in fixed point: Super Saw, a
   JP-style filter, multi-effects, delay, plate reverb, arpeggiator, two-track sequencer, split and dual layers and 64
   programs on eight voices.
 description: >-
-  The engine was rewritten from the floating-point JT-8000 for the FM-1's chip, which has no FPU, and the README says its
+  Formerly M-vance; the project was renamed to JT-80x0 on 23 November 2026, and the repository, its web addresses and the package identity stay the same. The engine was rewritten from the floating-point JT-8000 for the FM-1's chip, which has no FPU, and the README says its
   envelope times, LFO rates, modulation depths and filter laws were measured against the JP-8000's own firmware in an
   emulator. OSC 1 has Super Saw, triangle mod, noise, feedback, square, saw and triangle waves, OSC 2 syncs to it, and the
   filter has low, band and high pass at 12 or 24 dB. Effects are tone, a multi-effect (super chorus, flanger, phaser,
@@ -15,7 +15,7 @@ description: >-
   with a piano roll and twelve named clips in flash. Sound pages follow the JP-8080's sections, and the knobs send and
   receive its MODE2 controller numbers. A browser page loads and sends banks of JP-8000 or JP-8080 SysEx files to the
   unit. The 64 factory programs are the author's own. Builds on Dinghy's platform layer. Releases from 2.2 carry SMK-37 Pro, Elite
-  and MKE-P37 builds from the same source, which the README says have not been tested with M-vance.
+  and MKE-P37 builds from the same source, which the README says have not been tested with it.
 status: active
 authors:
 - name: Kris (bk40-home)
@@ -32,19 +32,23 @@ homepage: https://bk40-home.github.io/M-vance/
 based_on: m-vave-fm-1/dinghy
 distribution: download
 install_notes: >-
-  Install mvance-X.Y.fwsc from a release with tools/fm1_install.py over USB-MIDI, or from the FM-1 Firmware Hub once it is
-  listed there. The release files for the SMK-37 are mvance-X.Y-smk37.fwsc for the Pro, -smk37-elite and -smk37-mke. Holding OCT-
+  Install jt80x0-X.Y.fwsc (mvance-X.Y.fwsc before 3.0) from a release with tools/fm1_install.py over USB-MIDI, or from the FM-1 Firmware Hub once it is
+  listed there. The release files for the SMK-37 are jt80x0-X.Y-smk37.fwsc for the Pro, -smk37-elite and -smk37-mke. Holding OCT-
   while switching on starts a USB rescue mode in which a working build or another firmware can be installed. The README
   says to install at your own risk.
 brick_risk: false
 tags: [synth-engine, virtual-analog, supersaw, polyphonic, sequencer, arpeggiator, fx, reverb, usb-midi, usb-audio, port, fork]
 image:
   url: https://raw.githubusercontent.com/bk40-home/M-vance/main/docs/img/home.png
-  alt: M-vance home screen in orange on black, with program 08 SAW CROWN, four knob readouts for cutoff, resonance, delay and reverb, a voice strip and an oscilloscope trace
+  alt: JT-80x0 home screen in orange on black, with program 08 Pluck 08, POLY 8 and ARP OFF badges, an oscilloscope trace and four knob readouts for cutoff, resonance, delay and reverb
   credit: Kris (bk40-home)
   source_url: https://github.com/bk40-home/M-vance
   first_party: true
 versions:
+- version: '3.0'
+  date: 2026-11-23
+  url: https://github.com/bk40-home/M-vance/releases/tag/v3.0
+  notes: Renames M-vance to JT-80x0 in the firmware, simulator, library, docs and release files, and adds a firmware-rendered demo video tool with sample demos. The release page has no notes; FM-1 and SMK-37 Pro, Elite and MKE-P37 builds plus a .dock module are attached, now named jt80x0-3.0. An FM-1 running M-vance takes it as an ordinary update and keeps its programs.
 - version: '2.8.1'
   date: 2026-11-22
   url: https://github.com/bk40-home/M-vance/releases/tag/v2.8.1

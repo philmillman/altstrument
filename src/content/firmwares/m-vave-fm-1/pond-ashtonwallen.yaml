@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: POND (ashtonwallen)
+summary: >-
+  Self-playing ambient firmware for the FM-1 set in a pond of named fish that each sing a note, with seasons, friendships, a visiting heron and keys that drop food.
+description: >-
+  Each fish has a name, species, temperament and note, and the species sets its voice: round koi, soft goldfish, bright minnows and low carp. Fish that meet ring their notes together as a chord and the pad moves to one that holds both. Shy fish hide, greedy ones race for food, friends and rivals form over days, well-fed friends have fry in spring and summer and old fish drift off. Seasons turn every four days through Lydian, Ionian, Dorian and Aeolian, nights bring frogs and a heron sometimes lands and silences the pond. A key drops food along the pond and adds its note to the scale for 90 seconds, PRESETS follows one fish, and the pond saves itself about once an hour. This is a different project from the amb-pond entry.
+status: active
+authors:
+- name: ashtonwallen
+  url: https://github.com/ashtonwallen
+source: https://github.com/ashtonwallen/fm1-firmware/tree/main/pond
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The folder's LICENSING.md and LICENSE give MPL-2.0 file by file, with AMB-1's and fm1-base's notices kept on the files
+  that came from them. The Barlow Semi Condensed and Terminus fonts are SIL OFL 1.1 and the JieLi SDK files are read from
+  the builder's checkout.
+based_on: m-vave-fm-1/amb-1
+distribution: download
+install_notes: >-
+  Download the .fwsc from the release and write it with M-Flasher or the FM-1 Flasher in the same repository, which backs up the whole flash first and keeps the bootloader untouched. The release says it is built on fm1-base 3ae2a65, which supports both flash chips, and has not been played much on real hardware.
+brick_risk: false
+tags: [ambient, generative, synth-engine, game]
+image:
+  url: https://raw.githubusercontent.com/ashtonwallen/fm1-firmware/main/pond/docs/img/screen-pond.png
+  alt: "POND screen: Day 1, Spring Day, 08:40, a pixel-art pond with lily pads and koi, a banner reading Rue meets Moss, and knobs BUSY 50, TEMPO 66, SPACE 70 and TONE 30"
+  credit: ashtonwallen
+  source_url: https://github.com/ashtonwallen/fm1-firmware
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-24
+  url: https://github.com/ashtonwallen/fm1-firmware/releases/tag/pond-1.0
+  notes: First release; built on fm1-base 3ae2a65.

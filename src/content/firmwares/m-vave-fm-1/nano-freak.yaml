@@ -1,0 +1,46 @@
+device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
+name: Nano Freak
+summary: >-
+  uFreak-style synth with fifteen oscillator types, a state-variable or ladder filter, two LFOs, a five-source modulation matrix, a stereo widener, an arpeggiator and a 64-step sequencer; a fork of FMini-1.
+description: >-
+  Nano Freak runs integer-only versions of the oscillator and screen code from the author's Nano Freak browser test bed. Its fifteen
+  oscillator types each have four knobs and a picture of the sound, and the filter is either a state-variable or a Minimoog-style ladder.
+  Modulation comes from an envelope, a cycling envelope that loops like an LFO, two LFOs and a matrix of five sources against eight
+  destinations. Effects are reverb, delay and a Haas stereo widener. Impress and Chance add variation to the arpeggiator and
+  sequencer, which has 64 steps with random and mutate. There are 58 factory presets, user slots and about 70 MIDI CC numbers. The
+  README says it was built with Claude. The FM-1 build is tested, and the SMK-37 Pro, Elite and MKE-P37 builds are beta and untested on those units.
+status: active
+authors:
+- name: Virusiinstaller
+  url: https://github.com/Virusiinstaller
+source: https://github.com/Virusiinstaller/nano-freak-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE and LICENSING.md state GPL-3.0-only, inherited from FMini-1 (Guilherme Ruppert) and Felucca (Leo Kuroshita, Hügelton
+  Instruments). CREDITS.md lists the other parts, including oscillator ideas ported from Mutable Instruments Plaits (MIT), msfa
+  (Apache-2.0) and fonts under SIL OFL 1.1. The repository is a GitHub fork of ruppert/fmini-1, 90 commits ahead when checked.
+homepage: https://virusiinstaller.github.io/nano-freak-fm1/
+distribution: browser-installer
+install_notes: >-
+  Use the web installer on the project site, which supports FM-1s with the newer flash chip, or install a .fwsc from a release
+  with an installer such as The Firmware Hub. Install the package for your own model on the SMK-37, which has its own instructions in SMK37.md
+  and is untested. The project documents no recovery steps beyond the platform inherited from FMini-1.
+brick_risk: false
+tags: [fork, synth-engine, oscillator, filter, lfo, arpeggiator, sequencer, fx, emulator]
+image:
+  url: https://raw.githubusercontent.com/Virusiinstaller/nano-freak-fm1/main/assets/site/nf-matrix.png
+  alt: "Nano Freak MATRIX page: purple header, a grid of sources (CYC, ENV, LFO, LFO2, KEY) against destinations with dots marking four routes, and a SQUARE oscillator and BEND readout at the bottom"
+  credit: Virusiinstaller
+  source_url: https://github.com/Virusiinstaller/nano-freak-fm1
+  first_party: true
+versions:
+- version: 3.0.1
+  date: 2026-11-23
+  url: https://github.com/Virusiinstaller/nano-freak-fm1/releases/tag/Nano-Freak_V3.0.1
+  notes: Updates the firmware identity tag.
+- version: 3.0.0
+  date: 2026-11-23
+  url: https://github.com/Virusiinstaller/nano-freak-fm1/releases/tag/Nano-Freak_V3.0.0
+  notes: First release, tested on an FM-1, with SMK-37 Pro, Elite and MKE-P37 packages that are beta and untested.

@@ -8,7 +8,7 @@ description: >-
   The additions in the repository's v1.4-QG notes are ten voices in place of eight (twelve voices, six tracks and eight engines in the 2.4.0 release) with a voice-stealing rule that
   prefers quiet release tails, reworked drive types (TAPE, HEARTH, PLASMA, FLUX) in place of the older wave-shapers,
   fixed-point biquad peak and notch filters, a diagnostics window, and an installer with a SHA-256 check, a
-  verify-only mode and an automatic backup, and later commits make it refuse any package without a signed build record. The release numbers are not one sequence: 1.9.0 (8 November) was followed by 2.x, 3.x and 4.x releases, and 1.0.0 of 16 November republished the 4.x tree so that public numbering restarts, which is why 1.5 and 1.6 are newer than 4.1.0. After 1.12.18 the numbering moved again: 1.7.19, published on 22 November, is the 1.12.18 tree under a lower number, and 1.7.x then continued into 1.8.1 to 1.8.9 on 23 November. In the older line, 2.6.0 removed the Ed25519 signature check, and the 2.7.1 release is unsigned, checked by SHA-256 and size and a build record only. The synth engines, the 49-genre song generator, the TAKES reel,
+  verify-only mode and an automatic backup, and later commits make it refuse any package without a signed build record. The release numbers are not one sequence: 1.9.0 (8 November) was followed by 2.x, 3.x and 4.x releases, and 1.0.0 of 16 November republished the 4.x tree so that public numbering restarts, which is why 1.5 and 1.6 are newer than 4.1.0. After 1.12.18 the numbering moved again: 1.7.19, published on 22 November, is the 1.12.18 tree under a lower number, and 1.7.x then continued into 1.8.1 to 1.8.9 on 23 November, 1.13.0 followed on 24 November and a 2.0 and 2.1 line followed the same day. In the older line, 2.6.0 removed the Ed25519 signature check, and the 2.7.1 release is unsigned, checked by SHA-256 and size and a build record only. The synth engines, the 49-genre song generator, the TAKES reel,
   the shift deck and the Web Studio come from Pocket GammaWave. The README's later notes (v1.5 to v1.7) add a new
   power-on screen, CPU mode and visualizer-quality settings, a smooth random LFO wave, polyphonic aftertouch as a
   modulation source and a 200-sound library. The commits after that add a two-band Punch-in FX keyboard with latched mutes, flash and loader hardening, and a rebuilt project portal, Web Studio and emulator. Version 1.8.9 made the master EQ round instead of truncate, which fixes a DC offset and a shallow 20 Hz cut, and the repository gained a verified flash-backup tool and a restore tool that needs an external programmer. Version 1.9.0 is the first tagged release: a signed package that the installer checks against a pinned key. The release notes say a power cut during the app erase may leave the unit unable to boot and that recovery needs the chip's ROM mode and an external full-dump tool. Many of the newer commits are authored by
@@ -36,10 +36,22 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, sequencer, generative, fx, filter, editor, emulator, fork]
 versions:
+- version: 2.1.0
+  date: 2026-11-24
+  url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v2.1.0
+  notes: First release of the 2.1 line. Redraws the ENV, DLY, DLY 2, REVERB, REVERB 2, CHORUS, BUSES and SCL pages, with a delay shown as a tunnel of echoes, the reverb tail as stepped bars, a three-by-two BUSES console and a colour for each scale degree on the SCL keyboard. The notes say no parameter, key or audio sample changes (311 regression renders match), the image does not grow, and nothing was tried on a physical FM-1. Notes are in Spanish; 2.0.2 and 2.0.3 on the same day are not listed.
+- version: 2.0.1
+  date: 2026-11-24
+  url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v2.0.1
+  notes: Reworks the SCL page, with the keyboard fills the bottom of the page with note names under the black keys, the SCALE and CHORD panels lose a row, sounding notes are lit apart from chosen ones, and the mouse can play the chord. The notes say audio, tables, parameters and saving are unchanged. They are in Spanish.
+- version: 1.13.0
+  date: 2026-11-24
+  url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v1.13.0
+  notes: Presentation release, no DSP change. Marks the four ENV stages on the curve, draws the delay repeats, the reverb tail with its damping and the chorus, phaser and flanger LFO, and adds a limiter transfer graph on MASTER. The notes say nothing was tried on a physical FM-1. They are in Spanish.
 - version: 1.8.9
   date: 2026-11-23
   url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v1.8.9
-  notes: Latest of a run of releases from 1.8.1 to 1.8.9 on 23 November, mostly measured clean-up, of which only 1.8.5 is listed separately. It puts the chorus, delay and reverb buses to sleep once they have been silent for 8 seconds with nothing sent to them, and the notes say the rendered audio does not change. The notes are in Spanish.
+  notes: Last of a run of releases from 1.8.1 to 1.8.9 on 23 November, mostly measured clean-up, of which only 1.8.5 is listed separately. It puts the chorus, delay and reverb buses to sleep once they have been silent for 8 seconds with nothing sent to them, and the notes say the rendered audio does not change. The notes are in Spanish.
 - version: 1.8.5
   date: 2026-11-23
   url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v1.8.5

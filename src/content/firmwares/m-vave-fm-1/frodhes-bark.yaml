@@ -1,0 +1,44 @@
+device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
+name: Frodhes-Bark
+summary: >-
+  Fork of Frodhes that adds physically modelled Wurlitzer 140B and 200A reeds, recalibrated Rhodes bark, stereo effects and a six-point velocity curve editor, with date-numbered builds for the FM-1, SMK-37 and Akai MPC.
+description: >-
+  Frodhes-Bark keeps Frodhes' instruments, effects, arpeggiator and pattern recorder and changes the sound and playing
+  controls. Its eight instruments are four Rhodes types, two Wurlitzer reed models, a vibraphone and a marimba, all
+  computed live with no samples, and 31 factory presets include twelve Wurlitzer ones. New are a ping-pong stereo delay,
+  a true-stereo chorus, a stereo phaser, a smoother touch wah, a six-point velocity curve editor and a signed
+  velocity offset for the black keys. Builds run on both FM-1 cores with 14 voices and exist for the SMK-37 Pro, Elite and
+  MKE-P37 with 10 voices and for the Akai MPC with 16 voices. Releases are numbered by date, and the firmware keeps one
+  package identity across updates. The user manual and model notes are inherited from Frodhes.
+status: active
+authors:
+- name: areichow
+  url: https://github.com/areichow
+source: https://github.com/areichow/frodhes-bark
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states GPL-3.0-only, as Frodhes, Dinghy, Felucca and SLOOP, and LICENSING.md is inherited from Frodhes, which lists the
+  platform, the Frodhes app and engine by Leonardo Mirabal, and third-party fonts and plugin libraries. The repository is a GitHub fork of
+  leonardoMirabal/frodhes, 23 commits ahead and 133 behind when checked. No stock image is committed.
+homepage: https://github.com/areichow/frodhes-bark
+distribution: download
+install_notes: >-
+  Install the c1 .fwsc from a release with The Firmware Hub, the upstream Frodhes web installer or tools/fm1_install.py. If an install
+  goes wrong, holding OCT- while switching on starts the USB rescue loader. To return to stock, use The Firmware Hub's official
+  firmware section with M-VAVE's V15 file. Settings and user presets are kept across updates, and both flash chip types are supported.
+  SMK-37 and MPC packages are in the same release.
+brick_risk: false
+tags: [fork, synth-engine, physical-modeling, fx, sequencer, arpeggiator, chords, scales, midi, emulator]
+image:
+  url: https://raw.githubusercontent.com/areichow/frodhes-bark/main/docs/manual/img/velocity.png
+  alt: "Frodhes-Bark VELOCITY page on the FM-1: an orange six-point curve on a dark graph from ppp to fff, with POINT, IN, OUT and CURVE cards for point P3 set to custom"
+  credit: areichow
+  source_url: https://github.com/areichow/frodhes-bark
+  first_party: true
+versions:
+- version: "20261122.0"
+  date: 2026-11-23
+  url: https://github.com/areichow/frodhes-bark/releases/tag/v20261122.0
+  notes: Adds date-based versions and a permanent firmware identity, recalibrates the Rhodes and Wurlitzer models, adds the stereo effect upgrades, the velocity curve editor and the black-key velocity offset.

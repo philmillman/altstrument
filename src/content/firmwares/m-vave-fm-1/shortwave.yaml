@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: Shortwave
+summary: >-
+  Fictional ambient radio for the FM-1 with four continuously playing stations on a simulated 5 to 15 MHz dial, where
+  tuning between them blends the music with static and pitch drift.
+description: >-
+  Four ambient stations play at once, and turning SELECT to tune between them crossfades their music and adds soft hiss
+  and pitch drift. The screen shows the dial with a spectrum, a scrolling waterfall and a signal meter, all simulated.
+  PRESETS jumps to the previous or next station, HOME centres on the nearest one, and SEQ toggles an automatic scan
+  that holds a station for 40 seconds and then sweeps to the next over 18. KNOB 1 sets tuning noise, KNOB 2 sets pitch
+  drift, and SAVE stores the tuning, scan mode and both amounts, restoring the held tuning at power-on. The USB device
+  shows as SHORTWAVE FM-1 and sends audio to the computer, with MASTER setting both analog and USB level. It builds
+  directly on fm1-base and felucca-bsp rather than on AMB-1's engine.
+status: active
+authors:
+- name: ashtonwallen
+  url: https://github.com/ashtonwallen
+source: https://github.com/ashtonwallen/fm1-firmware/tree/main/shortwave
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The README states MPL-2.0 and the folder has its own LICENSE. It uses Charles Vestal's fm1-base and Leo Kuroshita's
+  felucca-bsp with their original notices.
+distribution: download
+install_notes: >-
+  Download the .fwsc from the release and write it with M-Flasher or the FM-1 Flasher in the same repository, which
+  backs up the whole flash first and keeps the bootloader untouched. The release says it is built on fm1-base 3ae2a65,
+  which supports both flash chips, and has not been played much on real hardware. The README says its tests include a
+  simulated update that checks the stock bootloader region stays intact.
+brick_risk: false
+tags: [ambient, generative, synth-engine, fx, usb-audio]
+versions:
+- version: '1.0'
+  date: 2026-11-24
+  url: https://github.com/ashtonwallen/fm1-firmware/releases/tag/shortwave-1.0
+  notes: First release; built on fm1-base 3ae2a65.

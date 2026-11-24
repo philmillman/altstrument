@@ -4,13 +4,13 @@ name: Enaga
 summary: Unofficial replacement firmware for the SmplTrek that runs apps written in C++ from the SD card, with a DSP library, file, MIDI and clock services and a synth example. Update files are also built for the Lofi-12 XT and CyDrums but untested there.
 description: >-
   Enaga replaces the system software and starts an app from the SD card, handing it the pads, keys, encoders, the 128 x 128
-  grey display, a real-time audio callback, MIDI over DIN and USB, a tempo clock and SD card access. Since 0.2.0 the apps can also take pad pressure, choose the audio input and use a small widget toolkit and icons for the menu, and the release carries an SDK zip and a prebuilt compiler toolchain for Linux so apps can be built without cloning the repository. An app is a C++20 program
+  grey display, a real-time audio callback, MIDI over DIN and USB, a tempo clock and SD card access. Since 0.3.0 the unit can also act as a USB drive for the SD card and as a USB audio device at 48 kHz, 16-bit stereo, and the firmware reads the battery level and has SYNC polarity settings. Since 0.2.0 the apps can also take pad pressure, choose the audio input and use a small widget toolkit and icons for the menu, and the release carries an SDK zip and a prebuilt compiler toolchain for Linux so apps can be built without cloning the repository. An app is a C++20 program
   built with a TI C6000 cross-compiler; a crash or a stuck call is caught by a watchdog and the Enaga menu stays available.
   The menu switches between installed apps and holds volume, brightness, pad sensitivity, auto-off and speaker settings. The
   repository includes a DSP library with oscillators, filters, envelopes, delay, chorus and reverb, a minimal tone example and
   an eight-voice virtual analogue synth example. The Lofi-12 XT and CyDrums are described as the same board with different
   panels, and the build makes an update file for each, but the README says it has only run on a SmplTrek and the other two
-  files are untested. The 0.2.0 notes say its new features, the MIDI, clock and USB among them, were tested on the emulator and the test suite only, not on a unit, and that apps need rebuilding for each version. The app interface is provisional until 1.0. The author states that the project contains no Sonicware code
+  files are untested. The 0.2.0 notes say its new features, the MIDI, clock and USB among them, were tested on the emulator and the test suite only, not on a unit, and that apps need rebuilding for each version. The 0.3.0 notes say USB drive, USB audio and USB MIDI were tested on a SmplTrek with a Windows 11 computer, while battery support, SYNC polarity and the new screens were tested on the emulator only; the USB drive writes at about 150 KiB/s. The app interface is provisional until 1.0. The author states that the project contains no Sonicware code
   and does not modify the bootloader or the original sounds in flash. Hardware facts come from the author's separate
   smpltrek-re project.
 status: active
@@ -33,6 +33,10 @@ install_notes: >-
 brick_risk: false
 tags: [app-platform, sdk, dsp, synth, sampler, midi, cpp]
 versions:
+  - version: 0.3.0
+    date: 2026-11-24
+    url: https://github.com/seawaffle/enaga/releases/tag/v0.3.0
+    notes: Adds a USB DRIVE mode that shows the SD card to a computer and USB audio in and out with no driver, plus battery support, SYNC polarity settings and more UI toolkit parts. USB drive, audio and MIDI were tested on a SmplTrek with Windows 11; battery, SYNC polarity and the new screens on the emulator only. USB now connects at full speed, and apps must be rebuilt for 0.3.0.
   - version: 0.2.0
     date: 2026-11-21
     url: https://github.com/seawaffle/enaga/releases/tag/v0.2.0

@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+name: GABBERKIX
+summary: >-
+  Hardcore kick designer: a synthesized 909 through two EQ and distortion stages, a punch layer and a sub, with a randomizer, 16 presets, resampling and MIDI clock.
+description: >-
+  A kick is built in three layers. The midbody is a synthesized 909 passed through four-peak EQs and two distortions
+  (tanh, hard clip or gabber), the punch is the first milliseconds of this or another preset's kick, and the sub is split
+  off the lows with a crossover. Group and total clippers press the layers into one kick, and PERF and ENV pages shape it
+  while it plays. The kick plays on every beat or pitched from the keys and MIDI. ARP throws a random gabber kick with undo,
+  sixteen presets sit on the white keys, and RESAMPLE uses a saved preset as the source of a new kick. It follows or sends
+  MIDI clock and works over USB, TRS and Bluetooth MIDI. A browser page reads the presets over USB and renders them to WAV
+  or AIFF with the firmware's own engine. Every sound is synthesized, with no samples. It runs on both the original and the newer flash chip.
+status: active
+authors:
+- name: Presethead
+  url: https://github.com/ejtb76
+source: https://github.com/ejtb76/gabberkix
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states GPL-3.0-only and LICENSE is the GPL v3 text. It builds on fm1-base and felucca-bsp from Felucca, and
+  the release carries the Apache-2.0 JieLi SDK licence text. No M-VAVE stock image is committed.
+homepage: https://ejtb76.github.io/gabberkix/
+distribution: browser-installer
+install_notes: >-
+  The project page installs in Chrome or Edge over USB, and the release also attaches gabberkix-1.0.0.fwsc for other
+  installers such as The Firmware Hub. An interrupted install carries on when you press Install again, and the page's
+  Back to the stock firmware option puts M-VAVE's firmware back. The 16 presets live outside the firmware area and
+  survive updates, but another firmware may erase them, so save a backup file from the render page first.
+brick_risk: false
+tags: [drums, synth-engine, fx, generative, midi, ble-midi, web]
+image:
+  url: https://raw.githubusercontent.com/ejtb76/gabberkix/main/app/site/img/screen.png
+  alt: "GABBERKIX 909 page on the FM-1 screen: sweep, switch time, hold and decay values above and a kick waveform below"
+  credit: Presethead
+  source_url: https://ejtb76.github.io/gabberkix/
+  first_party: true
+versions:
+- version: 1.0.0
+  date: 2026-11-23
+  url: https://github.com/ejtb76/gabberkix/releases/tag/v1.0.0
+  notes: First release with the three-layer kick, randomizer, 16 presets, resampling, MIDI clock and the render page.

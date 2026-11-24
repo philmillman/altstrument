@@ -22,8 +22,8 @@ description: >-
   synthesized gabber kick and the snare and hat have their own design page; from 1.5.5 the kick, snare and hat lanes play the break's own hits and the synthesised drums and their MIXER faders are gone. From 1.5.5 EDIT is MATHCORE, with eleven ready scenes on the black keys and four macros (DENSITY, MATH, SPEED, CHAOS), and from 1.5.6 it brings in and leaves the loop on the next bar without stopping. A MIXER page sets the levels, and ENV is a
   full-screen tap tempo with a metronome click. MIDI clock in and out and Bluetooth MIDI are included, as was Bluetooth
   audio out to headphones or a speaker, which the README says ran 150 to 300 ms late and was for listening, until 1.5 removed it to make room for the split of two breaks in one loop. The README
-  calls it an early 0.x release: the looper and a song mode are next, and the breaks are built in, so you cannot load
-  your own. Left alone, the screen runs a demo of animated scenes. Units sold since late 2026 carry a UC25HQ80 flash
+  calls it an early 0.x release: the looper and a song mode are next, and since 1.4 a web page sends breaks of your
+  own over USB, up to sixteen from 1.6 within about 344 KB of flash, listed ahead of the eight built in. Left alone, the screen runs a demo of animated scenes. Units sold since late 2026 carry a UC25HQ80 flash
   chip instead of the Puya P25Q80, and from 0.69 the firmware accepts both. The 0.86 notes report an install on a real
   FM-1 over the official V15 and over another firmware, with another firmware installing again afterwards. A browser
   emulator and a manual are published on the project site.
@@ -57,6 +57,10 @@ image:
   source_url: https://github.com/profikid/fm1-break-choppah
   first_party: true
 versions:
+- version: '1.6'
+  date: 2026-11-23
+  url: https://github.com/profikid/fm1-break-choppah/releases/tag/v1.6
+  notes: Lets you send a pack of up to sixteen breaks of your own from the site's Your breaks page, with 344 KB of flash across two banks (about ten breaks at 170 BPM, or all sixteen at 11.025 kHz). Your breaks come first on ALGORITHM, the page can read them back from the FM-1 and Export and Import save a pack as a .chb file. A break sent with 1.4 or 1.5 stays as a pack of one; saved settings, patterns and scenes load as they were.
 - version: 1.5.6
   date: 2026-11-23
   url: https://github.com/profikid/fm1-break-choppah/releases/tag/v1.5.6

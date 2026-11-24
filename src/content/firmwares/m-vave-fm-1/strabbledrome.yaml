@@ -1,0 +1,27 @@
+device: m-vave-fm-1
+name: STRABBLEDROME
+summary: >-
+  Experimental firmware that holds STRATA, PALINDROME and BabbleBeat in one install, switched from a menu opened with GLO.
+description: >-
+  Three instruments are built into one image: STRATA, a drone and rhythm synth; PALINDROME, a looping instrument that plays grains of recorded rings; and BabbleBeat, a speech instrument with a small robotic voice. Pressing GLO opens a system menu where the SELECT encoder picks an instrument or a help page and SEL confirms, and only one engine runs at a time. STRATA's buffers and PALINDROME's rings share one workspace that is cleared on every change, so PALINDROME's recorded rings are not kept when switching away. The instruments keep their own source and version lines in the repository, which lists STRABBLEDROME as a fourth project with its own strabbledrome- release tag prefix. The README gives the image as about 414 KB with package identity FM-1_61, and the release is marked as a pre-release. The release notes say hardware validation is pending and advise trying the emulator first.
+status: active
+authors:
+- name: Savageperson334
+  url: https://github.com/Savageperson334
+source: https://github.com/Savageperson334/strata-fm1/tree/main/instruments/strabbledrome
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The repository's README states MPL-2.0 and its LICENSE file is the MPL-2.0 text. It builds on fm1-base and felucca-bsp (MPL-2.0).
+homepage: https://savageperson334.github.io/strata-fm1/strabbledrome/
+based_on: m-vave-fm-1/fm1-base
+distribution: browser-installer
+install_notes: >-
+  Open the install page in Chrome or Edge, connect the FM-1 over USB and install; the release notes advise trying the emulator first. The release also attaches strabbledrome-1.0.fwsc. The README says the installer can put M-VAVE's firmware back, and that installing custom firmware is at your own risk. The project says it has not been run on hardware.
+brick_risk: false
+tags: [drone, granular, speech, synth-engine, sequencer, emulator, web]
+versions:
+- version: strabbledrome-v1.0
+  date: 2026-11-24
+  url: https://github.com/Savageperson334/strata-fm1/releases/tag/strabbledrome-v1.0
+  notes: Pre-release; STRATA, PALINDROME and BabbleBeat in one firmware behind the GLO menu, hardware validation pending.

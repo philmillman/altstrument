@@ -6,7 +6,7 @@ summary: >-
 description: >-
   A fork of WiggisModular's Modular-1, which is in turn built on Felucca's hardware layer. The editor has over 50 module
   types (oscillators, filters, envelopes, sequencers, an arpeggiator, granular, delay, reverb and others), 67 factory
-  assemblies, factory patches that model other synths, and a library for the FM-1's 64 patch slots. Patches too big
+  assemblies, factory patches that model other synths, and a library for the FM-1's bank of patch slots (48 since 1.26.0). Patches too big
   for the FM-1's CPU budget can still be edited and heard in the browser. Patches live in flash sectors that Felucca
   also uses, so a first start erases Felucca's projects and samples there; the README says to save them first.
   Patches stored by M-VAVE's own firmware are not touched. A browser emulator view runs the firmware itself. The FM-1 sends MIDI clock over USB and, since 1.8.3, works with an iPad as a MIDI and audio device. The README reports tests on
@@ -36,6 +36,18 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, modular, editor, emulator, patch, sequencer, arpeggiator, fork]
 versions:
+- version: 1.26.2
+  date: 2026-11-23
+  url: https://github.com/glvno/matryoshka/releases/tag/v1.26.2
+  notes: Editor update only; the firmware stays at 1.26.1 and nothing needs installing. Adding a sound to the palette now saves everything the FM-1 needs to play it, pressing ARP after deleting an Arpeggiator puts it back, and Library presets name Hera 6 and the drum kits correctly.
+- version: 1.26.1
+  date: 2026-11-23
+  url: https://github.com/glvno/matryoshka/releases/tag/v1.26.1
+  notes: Firmware patch release; patch format stays 65. Adds halving a pattern (hold SEQ and press OCT- on the SEQ page, or the ÷2 button on a Steps card) and fixes the palette overview and quick start leaving pieces on the screen.
+- version: 1.26.0
+  date: 2026-11-23
+  url: https://github.com/glvno/matryoshka/releases/tag/v1.26.0
+  notes: Firmware release; patch format stays 65. Adds a palette of up to 8 sounds to switch between from the black keys while HOME is held, a shared pattern store with loading and keeping copies of patterns, doubling a pattern, and a screen font installed as its own step after the firmware. The factory patterns and demo sets are removed, and the bank shrinks from 60 to 48 slots, which the first start moves patches into; going back to 1.25 or older warns first and offers a bank backup.
 - version: 1.25.0
   date: 2026-11-22
   url: https://github.com/glvno/matryoshka/releases/tag/v1.25.0

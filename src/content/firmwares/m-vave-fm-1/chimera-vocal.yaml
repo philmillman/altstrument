@@ -10,7 +10,7 @@ description: >-
   eight voice presets are provided. The screen shows CHIMERA's flat view of the head as it moves. Words are prepared in a web
   Studio with the CMU Pronouncing Dictionary, tried on an emulated FM-1 and sent over USB, and from 0.5.0 they can
   also be typed on the unit. The FM-1 uses a lighter waveguide tract than CHIMERA's full airflow model, which the author measured at about
-  twice what the chip can run, and from 0.5.0 ALGORITHM picks a male, female or child body. From 0.7.0 SEQ is a beatbox with a step sequencer and LFO plays a seal and a songbird, and from 0.8.0 ENV sings a word slot on one of six tunes. It uses both processor cores, with the sound
+  twice what the chip can run, and from 0.5.0 ALGORITHM picks a male, female or child body. From 0.7.0 SEQ is a beatbox with a step sequencer and LFO plays a seal and a songbird, from 0.8.0 ENV sings a word slot on one of six tunes, and from 1.0.0 the body can be blended between male, female and child and TONGUE mode places the tongue by hand. It uses both processor cores, with the sound
   rendered on one and the control on the other. The project is unofficial, and uses CHIMERA's name and head with its author's
   permission.
 status: active
@@ -42,6 +42,10 @@ image:
   source_url: https://github.com/shan-sherif/fm-1-chimera-vocal
   first_party: true
 versions:
+- version: 1.0.0
+  date: 2026-11-23
+  url: https://github.com/shan-sherif/fm-1-chimera-vocal/releases/tag/v1.0.0
+  notes: "No longer a beta. Adds blended bodies (hold SEL and turn PRESET for male to female, SELECT for adult to child, between CHIMERA's three bodies) and a TONGUE mode on ARP that places the tongue body and tip by hand while the keys play pitch. Presets from 0.9.0 carry over, each with its body, and the package works with both FM-1 flash chips."
 - version: 0.9.0
   date: 2026-11-21
   url: https://github.com/shan-sherif/fm-1-chimera-vocal/releases/tag/v0.9.0

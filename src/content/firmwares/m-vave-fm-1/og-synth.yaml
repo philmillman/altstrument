@@ -1,10 +1,10 @@
 device: m-vave-fm-1
 name: OG Synth
 summary: >-
-  Sound-design synth with 16 engines, a 28-effect chain, a sequencer with arpeggiator, a four-track MULTI mode and
+  Sound-design synth with 18 engines, a 28-effect chain, a sequencer with arpeggiator, a four-track MULTI mode and
   on-screen graphs for the parameters being edited. Free to use, with only part of its source published.
 description: >-
-  The engines include six analog-style types, six-operator FM that reads classic .syx banks, wavetable, phase
+  The engines include six analog-style types, a synthesised early-1980s digital drum machine, a sample player that takes .wav files or what the FM-1 just played, six-operator FM that reads classic .syx banks, wavetable, phase
   distortion, 8-bit, physical modelling, formant and two drum engines whose kick, snare and hi-hat models come from
   Plaits. WAVE has 16 modulation slots with a drawable LFO. There are 128 user preset slots per engine, and a manager
   page on the project's site loads .syx banks and your own wavetables, backs up presets and settings, and returns the
@@ -41,6 +41,14 @@ image:
   source_url: https://ogsynth.cc/
   first_party: true
 versions:
+- version: 2.0.1
+  date: 2026-11-24
+  url: https://github.com/mikejohnsonbeats/OG-Synth-source/releases/tag/v2.0.1
+  notes: OCT on a drum engine becomes the drums' own DRUM TUNE, kept apart from the keyboard octave, so changing octave on a synth track in MULTI no longer retunes drums on another track. Presets and patterns are untouched.
+- version: 2.0.0
+  date: 2026-11-23
+  url: https://github.com/mikejohnsonbeats/OG-Synth-source/releases/tag/v2.0.0
+  notes: Every effect now runs per track in MULTI, with a MASTER section of up to four effects over the whole mix, and an effect that does not fit shows NO CPU instead of crackling. Adds two engines, LN (a synthesised early-1980s digital drum machine) and SAMPLE (any .wav, or what the FM-1 just played), and new 99 and 88 drum models. Adds resonator materials for the drums, WAVE modulation curves, chaos sources and warp modes, 19 arpeggiator patterns with a STEPS page, new engine and preset fonts, a pink display colour, .fxp preset import and a full preset editor in the manager.
 - version: 1.8.2
   date: 2026-11-15
   url: https://github.com/mikejohnsonbeats/OG-Synth-source/releases/tag/v1.8.2

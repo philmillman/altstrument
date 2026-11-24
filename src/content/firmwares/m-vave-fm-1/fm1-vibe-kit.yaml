@@ -1,0 +1,26 @@
+device: m-vave-fm-1
+name: FM-1 Vibe Kit
+kind: tool
+summary: >-
+  Command-line development kit for macOS that sets up a container with the JieLi toolchain and SDK pinned by checksum, then builds, tests, fuzzes, flashes and inspects crashes of FM-1 firmware projects.
+description: >-
+  The fm1 command wraps a set of shell scripts. Setup downloads the JieLi Linux toolchain and the AC79 SDK into a local cache, checks them against pinned hashes and commits, and mounts them read-only into an Ubuntu 24.04 amd64 container, because the compiler binaries are x86_64 Linux. Build, fuzz with sanitizers and shell or exec commands run in that container, while host tests and flashing run natively on macOS over CoreMIDI using the target project's own fm1_install.py. Setup can clone felucca-bsp, fm1-base, dinghy or M-VAVE's fm1_open as a starter, or any repository the user names, and flash has a dry run that validates the package without writing. The kit contains no synth firmware and none of the vendor toolchain files.
+status: active
+authors:
+- name: Swaylen
+  url: https://github.com/swaynehales
+source: https://github.com/swaynehales/fm1-vibe-kit
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text, copyright Swaylen. The JieLi toolchain and AC79 SDK that setup fetches stay under their upstream terms and are not committed.
+distribution: source-only
+install_notes: >-
+  Needs the Xcode command line tools and OrbStack or Docker Desktop with linux/amd64 support on Apple Silicon. Run bin/fm1 doctor, then bin/fm1 setup, and point the commands at a firmware repository with --repo or FM1_REPO_DIR. Flashing is delegated to the target project's installer.
+brick_risk: false
+tags: [sdk, toolchain, build, flasher, macos, docker]
+versions:
+- version: main @ 27ffeae
+  date: 2026-11-24
+  url: https://github.com/swaynehales/fm1-vibe-kit/commit/27ffeaef1752ac9d8f382b2b9261abc8dd72e3d1
+  notes: No tagged releases; this is the latest commit. pins.env labels the kit version 0.1.0.

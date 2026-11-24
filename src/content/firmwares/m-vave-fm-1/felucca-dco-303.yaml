@@ -1,8 +1,8 @@
 device: m-vave-fm-1
 name: Felucca DCO and 303
 summary: >-
-  Felucca 1.8.2 fork that adds a Juno-106-style DCO engine with a BBD chorus, a TB-303 engine with the TB-3PO
-  pattern generator, and a drum pattern generator. Source only; the version string still reads 1.8.2.
+  Felucca 1.8.3 fork that adds a Juno-106-style DCO engine with a BBD chorus, a TB-303 engine with the TB-3PO
+  pattern generator, and a drum pattern generator. Source only; the version string still reads 1.8.3.
 description: >-
   The DCO engine (14) plays up to four voices a track with wave, pulse width, sub, noise, filter and range
   controls, a high-pass filter, a choice of VCA behaviour and 70 presets taken from the Juno-106 factory patches, after the KR-106 emulation
@@ -35,6 +35,10 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, oscillator, fx, sequencer, generative, fork]
 versions:
+- version: main @ 6b56aec
+  date: 2026-11-23
+  url: https://github.com/mediaworkbench/Felucca/commit/6b56aec0ea86c97f03ad55f2d86d93c1a0c36297
+  notes: No tagged releases; this is the latest commit. It merges upstream Felucca 1.8.3, which fixes USB audio and MIDI order on macOS 13 to 15, lets step recording run at its own cursor during playback and stops a click when TRIO retriggers a note, and adds a check that keeps TB-3PO's pattern state through the merge. The cost check in the MOD test now takes the least of three measures.
 - version: main @ 7626f6b
   date: 2026-11-13
   url: https://github.com/mediaworkbench/Felucca/commit/7626f6b44188c07a7fa5ce7261d3fe207630b4ef

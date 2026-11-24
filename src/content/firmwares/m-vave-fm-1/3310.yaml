@@ -1,0 +1,45 @@
+device: m-vave-fm-1
+name: "3310"
+summary: >-
+  Eight-track arranger for looping techno on M-VAVE's FM1 Open code, with an ARRANGE page of four knob modes (euclidean hits, mutate, swing, dub throw) and a two-tone green phone-style screen.
+description: >-
+  3310 adds an ARRANGE page to FM1 Open V14 that shows all eight tracks at once, each with a small phone-style symbol that
+  flips on every hit and up to 16 bar cells grouped in four sections. Four knob modes on K1 change what K2 to K4 do:
+  RHYTHM spreads a chosen number of hits evenly, rotates them and mutates the pattern once per loop (erode or evolve);
+  GROOVE sets gate, swing and chance; SPACE sets cutoff, punch and a dub-delay throw; USER lets you pick any three of
+  eleven parameters. The look is two shades of green on a pale background with a boot screen. The sequencer and sound
+  engines are M-VAVE's, so everything FM1 Open does keeps working. The README calls the firmware experimental and says it
+  has not been tried on many physical units. The project site has a web installer.
+status: active
+authors:
+- name: orion-musica
+  url: https://github.com/orion-musica
+source: https://github.com/orion-musica/3310_FM-1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE.md states GPL-3.0-only with M-VAVE's additional permission to link the FM1 binary SDK, inherited from FM1 Open.
+  THIRD_PARTY.md lists the other parts (Open303, DaisySP, stmlib, emu2149 and SEA are MIT; MSFA is Apache-2.0). The repository
+  holds M-VAVE's sdk/lib/libfm1_engine.a under M-VAVE's separate terms for FM-1 devices, and sdk/firmware/FM-1_015.fwsc,
+  which is the V15 image M-VAVE publishes under Apache-2.0 (git blob ce49cc15, identical to the one in m-vave/fm1_open).
+homepage: https://orion-musica.github.io/3310_FM-1/
+based_on: m-vave-fm-1/fm1-open
+distribution: browser-installer
+requires_stock: stock V15 or any FM1 Open build
+install_notes: >-
+  Use the web installer on the project site in desktop Chrome or Edge over USB, and back up projects, voices and samples
+  first. From stock V15 the first install needs the installer's force-flash option. The installer can put V15 back, and the
+  README advises keeping M-VAVE's FM-1.fwsc from its download page. No release has been published yet.
+brick_risk: false
+tags: [sequencer, generative, performance, groovebox, ui, web]
+image:
+  url: https://raw.githubusercontent.com/orion-musica/3310_FM-1/main/docs/assets/rhythm.png
+  alt: "3310 ARRANGE page in RHYTHM mode: pale green screen with eight tracks, each with a small icon and a row of sixteen bar cells, and a HITS, ROTATE and MUTATE knob row at the bottom"
+  credit: orion-musica
+  source_url: https://github.com/orion-musica/3310_FM-1
+  first_party: true
+versions:
+- version: main @ 02df489
+  date: 2026-11-24
+  url: https://github.com/orion-musica/3310_FM-1/commit/02df48933790
+  notes: No tagged releases; this is the latest commit.

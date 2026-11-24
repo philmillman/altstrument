@@ -1,0 +1,38 @@
+device: m-vave-fm-1
+name: GLORY PAD
+summary: >-
+  Worship-style ambient pad for the FM-1: hold a key for a six-voice pad with 20 presets, open, major or minor chords,
+  octave shimmer, chorus and a long reverb, written as one C file on the foma template.
+description: >-
+  The repository is foma's template with src/main.c replaced, and its README still describes foma, not the pad. A key
+  or MIDI note sets the root and starts a pad of six sine-based voices with fifths and octaves, in open, major or minor
+  voicing and crossfading between two banks when the chord changes. Twenty presets carry names such as Cathedral, Holy
+  Presence, Eternal and Secret Place, each with its own reverb, tail, octave-bloom, chorus and diffusion defaults. A
+  motion setting moves the chord between static, sus4, sus2 and a floating mode. The knobs and pages cover level, tone,
+  fade, shimmer, chorus, space, pan, filters and eight screen colour themes. The code header calls the current version
+  GLORY PAD 0.4, and the commit history goes through several "Worship" and "Celestial" editions.
+status: active
+authors:
+- name: juampygalan93-bit
+  url: https://github.com/juampygalan93-bit
+source: https://github.com/juampygalan93-bit/glory-pad-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE is the GPL-3.0 and the copied LICENSING.md says GPL-3.0-only, as Felucca, SLOOP and Dinghy; the bigscreen
+  folder is MIT. As in foma, the platform/mvave directory comes from M-VAVE's FM-1 Open kit, GPLv3 with M-VAVE's SDK
+  linking exception, plus a binary engine library under M-VAVE's terms for FM-1 devices only.
+based_on: m-vave-fm-1/foma
+distribution: source-only
+install_notes: >-
+  Needs Docker and foma's workflow as in its README: ./fm1 dev serves a page with the emulator and an installer that
+  writes the build to the FM-1 over USB from Chrome or Edge, or ./fm1 build makes the .fwsc and ./fm1 flash installs it.
+  The foma README lists the OCT- hold at power-on for the USB rescue and a Rescue tab that reinstalls M-VAVE's V15
+  after a hash check. No release is published.
+brick_risk: false
+tags: [ambient, synth-engine, reverb, chords, fx, midi, usb-audio, fork]
+versions:
+- version: main @ 3790692
+  date: 2026-11-24
+  url: https://github.com/juampygalan93-bit/glory-pad-fm1/commit/37906928a6bb282c04c1cdc0deae3a2f24594491
+  notes: No tagged releases; this is the latest commit.

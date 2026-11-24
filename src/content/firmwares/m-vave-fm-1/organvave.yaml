@@ -9,8 +9,7 @@ description: >-
   partly single-precision float since 0.11. It offers a bank of factory patches, upper, lower and pedal drawbar pages, two rotary models, reverb, delay, a
   three-band equaliser, an advanced page with setBfree's own tone-generator settings, split keyboard, and MIDI
   CC control with MIDI Learn. The project site has an installer, a patch editor and a browser emulator, with
-  text in English and Portuguese. A beta SMK-37 port builds from the same source (SMK37.md on the organvave-37
-  branch): the keys, pads, faders and wheels are mapped to the organ, and the project site offers packages for the
+  text in English and Portuguese. A beta SMK-37 port builds from the same source (SMK37.md in the repository): the keys, pads, faders and wheels are mapped to the organ, and the project site offers packages for the
   SMK-37 Pro, SMK-37 Elite and MKE-P37 at the same version as the FM-1 build. The board layer was verified on an
   SMK-37 Pro by its author; the organ's mapping has only been tested on the host. The README says nothing has been tested on a real FM-1 and warns against
   installing it without a way to recover the unit. The author says it was developed with Claude.
@@ -37,6 +36,10 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, fork, editor, emulator, fx]
 versions:
+- version: main @ 97bed52
+  date: 2026-11-24
+  url: https://github.com/ruppert/organvave/commit/97bed52aa4f70c252d2aba1196ca5affac348844
+  notes: No tagged releases; this is the latest commit (firmware 0.12.0). Since the previous row the installer is one page for the FM-1 and the SMK-37, packages are named organvave-fm1-vX.Y.Z.fwsc, and on the SMK-37 the top-row pads hold the owner's drawbar sets, the drawbar faders run the other way (up is off) and bank C's other faders are drive gain, reverb send and expression.
 - version: main @ 472771e
   date: 2026-11-23
   url: https://github.com/ruppert/organvave/commit/472771e3160a7fc9eaa66bf6e2d091298cac83ca

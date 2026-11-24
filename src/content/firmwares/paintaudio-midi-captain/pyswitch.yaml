@@ -7,8 +7,8 @@ description: >-
   by Python scripts or graphically in the PySwitch Emulator, which can also
   control a real Kemper from the browser and save to a connected controller over
   Web MIDI. Switches and pedals can run any number of actions. Builds on the
-  hardware reverse engineering by gstrotmann (see MidiCaptain4Kemper). Latest
-  release adds a tuner display element and a Line 6 HX Stomp example. Can run
+  hardware reverse engineering by gstrotmann (see MidiCaptain4Kemper). Version
+  2.4.9 added a tuner display element and a Line 6 HX Stomp example, and 2.4.10 replaces the Adafruit MIDI library with a smaller MIDI buffer and sets the CC/PC channel for each action. Can run
   next to the original PaintAudio firmware (multi-boot).
 status: active
 authors:
@@ -31,6 +31,10 @@ video:
   credit: "SLATEBOY"
   first_party: false
 versions:
+  - version: 2.4.10_
+    date: 2026-11-24
+    url: https://github.com/Tunetown/PySwitch/releases/tag/2.4.10_
+    notes: Replaces the Adafruit MIDI library with a minimal MIDI buffer to save RAM, so the MIDI handlers in communication.py no longer take channel arguments. The channel for CC and PC messages is now set per action and display callback, defaulting to channel 1 so existing configurations keep working.
   - version: 2.4.9
     date: 2026-07-07
     url: https://github.com/Tunetown/PySwitch/releases/tag/2.4.9

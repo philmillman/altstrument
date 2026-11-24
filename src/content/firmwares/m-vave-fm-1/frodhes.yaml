@@ -2,13 +2,13 @@ device: m-vave-fm-1
 also_devices: [m-vave-smk-37]
 name: Frodhes
 summary: >-
-  Physically modelled electric piano, vibraphone and marimba computed live with no samples: four Rhodes types, a compressor-to-reverb effects chain, arpeggiator, chord mode and a pattern recorder.
+  Physically modelled electric piano, vibraphone and marimba computed live with no samples: five electric piano types, a compressor-to-reverb effects chain, arpeggiator, chord mode and a pattern recorder.
 description: >-
-  The Rhodes has four types (Stage 77, Suitcase, Early Felt, Bell Dyno), adjustable in tone, bark, bell, hammer,
+  The electric piano has five types (Stage 77, Suitcase, Early Felt, Bell Dyno and, from 0.9.14, the reed piano Whurli), adjustable in tone, bark, bell, hammer,
   decay and noise. The effects are compressor, a three-band EQ, drive, tremolo or wah, phaser, chorus, delay and reverb, with a
   PERFORM page that puts effect amounts on the four knobs. Also included are tap tempo with MIDI clock sync,
   scales, chord mode, an arpeggiator, a 1 to 16 bar pattern recorder with quantise and overdub, a sustain pedal,
-  12 factory and 16 user presets, and MIDI over USB and TRS. The README describes it as built on Dinghy and the Felucca
+  23 factory and 16 user presets, and MIDI over USB and TRS. The README describes it as built on Dinghy and the Felucca
   platform layer, and the project site has a browser emulator and a manual. Hardware test scripts are
   in the repository. Since 0.9.5 each release also carries experimental builds for the SMK-37 Pro, Elite and MKE
   from the same code. From 0.9.8 the project also builds a module that runs it on the Ableton Move under Schwung, and from 0.9.10 it also builds CLAP, VST3 and Audio Unit plugins for computers and a two-core FM-1 package with 14 voices. From 0.9.12 that two-core package is the only FM-1 package, and the project also builds an instrument plugin for the Akai MPC.
@@ -36,6 +36,10 @@ image:
   source_url: https://github.com/leonardoMirabal/frodhes
   first_party: true
 versions:
+- version: 0.9.14
+  date: 2026-11-24
+  url: https://github.com/leonardoMirabal/frodhes/releases/tag/v0.9.14
+  notes: Adds WHURLI, a reed electric piano with a growl on hard strikes and four presets, which makes the factory presets F01 to F23 and moves saved user presets up four places automatically. The TYPE controller (CC 80) now picks among five pianos, EARLY FELT and BELL DYNO are evened out across the keyboard, and the desktop plugin gets a WARM drive. The release also carries the SMK-37, Move, desktop plugin and Akai MPC builds.
 - version: 0.9.13
   date: 2026-11-17
   url: https://github.com/leonardoMirabal/frodhes/releases/tag/v0.9.13

@@ -1,0 +1,46 @@
+device: m-vave-fm-1
+name: GWAAN-1
+summary: >-
+  Generative ambient drone firmware for the FM-1 that plays itself from power-on, with four layers, five scenes, a
+  live mixer page, arpeggiator, freeze, snapshots and USB MIDI control.
+description: >-
+  Four layers play together: a gliding FM voice, a sub drone and pad whose chord fields crossfade every 35 to 50
+  seconds, filtered noise with rare water-drop bells, and sine pings that drift in deep reverb like a distant
+  transmitter. PRESETS picks one of five scenes (DEEP, FOREST, RAIN, STARS, DAWN), SELECT is a resonant filter and
+  the four knobs are macros for glide, depth, space and drift. The live pages add a layer mixer with mutes, an FX
+  page with shimmer, bit crush, reverse echo and stereo width, an arpeggiator with slow steps, FREEZE, a filter LFO,
+  four snapshots that crossfade on recall, a randomise button and a bright key-light mode. USB MIDI notes snap to the
+  scene's scale and CCs control the mixer and macros. The sub at 73 Hz is close to inaudible on the built-in speaker.
+  The README, in Japanese with an English summary, credits the original idea to Hiroshi, guitarist of the band ASYLUM,
+  and the project is built as an app on Charles Vestal's fm1-base platform.
+status: active
+authors:
+- name: FEDLIC TOKYO (Tetsuya Ueda)
+  url: https://github.com/fedlic
+source: https://github.com/fedlic/fm1-gwaan1
+source_status: open
+license: MIT
+license_notes: >-
+  README and LICENSE give MIT for the app code written for this repository. The fm1-base platform it builds on is
+  MPL-2.0, is not included in the repository, and keeps that licence for files derived from it.
+distribution: download
+install_notes: >-
+  Download the .fwsc from a release and write it with the fm-static browser installer in Chrome over USB-C; the steps
+  ask you to tick that you have backed up what you need and not to unplug during the write, then power-cycle. To build,
+  place the repository inside an fm1-base checkout as gwaan1/ and run tools/build.py gwaan1. M-VAVE's own firmware
+  can be reinstalled with its updater or the FM-1 Firmware Hub.
+brick_risk: false
+tags: [ambient, drone, generative, synth-engine, fm, fx, arpeggiator, midi, performance]
+versions:
+- version: 0.4.3
+  date: 2026-11-24
+  url: https://github.com/fedlic/fm1-gwaan1/releases/tag/v0.4.3
+  notes: Replaces the animated screen of 0.4.2 with a performer's readout of per-layer meters, chord name and progress, filter gauge and status chips. Sound and controls are unchanged.
+- version: '0.4'
+  date: 2026-11-24
+  url: https://github.com/fedlic/fm1-gwaan1/releases/tag/v0.4
+  notes: Live edition with the mixer page, arpeggiator, FX page, FREEZE, snapshots, filter LFO, randomise, reverse echo, stereo width, stage lights and USB MIDI notes and CCs.
+- version: '0.2'
+  date: 2026-11-24
+  url: https://github.com/fedlic/fm1-gwaan1/releases/tag/v0.2
+  notes: Adds the SIGNAL ping layer and a thicker pad and sub, with a body oscillator that carries weight on the built-in speaker.

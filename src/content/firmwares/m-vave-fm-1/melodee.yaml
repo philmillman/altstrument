@@ -13,6 +13,7 @@ description: >-
   patterns on each synth track, 32 projects in a shared pool, Bluetooth MIDI and MIDI learn; 1.6.1 adds MIDI clock and
   transport output and removes internal clock drift, though the author says no external follower has been tried against it
   on hardware yet.
+  The 2.0.0-beta.1 pre-release changes how data is stored: synths become module files, and the web installer's Pre-release channel converts 1.x projects and sounds.
   1.0.0 followed 0.13.1; the 1.0.0 release is noted to have crashed on some units (fixed in later 1.x).
 status: active
 authors:
@@ -40,6 +41,10 @@ image:
   source_url: https://github.com/keremimo/melodee
   first_party: true
 versions:
+- version: 2.0.0-beta.1
+  date: 2026-11-24
+  url: https://github.com/keremimo/melodee/releases/tag/v2.0.0-beta.1
+  notes: Pre-release; stable stays 1.6.1. Turns every synth into a module file that the installer writes beside the firmware, splits DRUM into kit synths and makes user kits a 16-pad SAMPLER. Firmware 2.0 does not read 1.x records, so the web installer's Pre-release channel backs up and converts projects and sounds during the update. It also carries what was prepared for an unreleased 1.7.0 and SMK-37 Pro, Elite and MKE-P37 builds. The notes report one 1.6.1 to 2.0 update on a development FM-1 and list the SMK-37 builds as untried on hardware.
 - version: 1.6.1
   date: 2026-11-02
   url: https://github.com/keremimo/melodee/releases/tag/v1.6.1

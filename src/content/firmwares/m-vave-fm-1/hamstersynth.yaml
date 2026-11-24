@@ -1,0 +1,44 @@
+device: m-vave-fm-1
+name: HamsterSynth
+summary: >-
+  Port of the author's Hamster Piano web page: eight pixel-art hamsters sing the white keys, with a 16-step sequencer
+  of eight patterns, a song mode and drums. The README is in Norwegian.
+description: >-
+  The white keys play eight hamsters, each with its own voice, and the black keys play kick, snare, hat and clap by
+  hand. A 16-step sequencer holds patterns A to H with step glide, arpeggio, accent and ratchet set from the knobs in
+  EDIT, swing, tempo from 50 to 220 BPM, undo and a song page that chains patterns. A Tromster page programs a drummer
+  hamster's kit, and a THALL switch drops the sound an octave into distortion at double tempo. Pressing HOME makes a
+  hamster say something on the screen, partly drawn from the Propanpedia wiki. All sound is synthesised, with the
+  original page's voice kept as an option, and MIDI in and out cover notes, clock and start or stop. It is a Dinghy 0.5
+  app with a project page that runs the firmware in the browser and installs it, and a demo recording in the repository.
+  The README says it was built, tested on a computer and run in the fm1-emu emulator but not yet tried on a real FM-1.
+status: active
+authors:
+- name: joakimskurk
+  url: https://github.com/joakimskurk
+source: https://github.com/joakimskurk/fm1hamstersynth
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md gives GPL-3.0-only, as Dinghy, with Felucca, SLOOP and SMK-37 board code under their own notices. The
+  Terminus font is SIL OFL 1.1 and no samples are included.
+homepage: https://joakimskurk.github.io/fm1hamstersynth/
+distribution: browser-installer
+install_notes: >-
+  Use the installer on the project page (Chrome or Edge over USB), or build with build.sh and JieLi's toolchain and
+  install build/hamstersynth.fwsc with tools/fm1_install.py, which asks before writing. The README says that if
+  something goes wrong, holding OCT- while switching on starts the USB rescue, where an installer always works. It also
+  lists ./build.sh --board smk37 for the SMK-37.
+brick_risk: false
+tags: [game, synth-engine, sequencer, drums, voice, midi, emulator, web]
+image:
+  url: https://raw.githubusercontent.com/joakimskurk/fm1hamstersynth/main/docs/screens/ham-screens.png
+  alt: "Four HamsterSynth screens: eight pixel-art hamsters with a speech bubble, step editing, the Tromster drummer hamster with a drum grid, and a help page listing the buttons"
+  credit: joakimskurk
+  source_url: https://github.com/joakimskurk/fm1hamstersynth
+  first_party: true
+versions:
+- version: main @ a01a455
+  date: 2026-11-24
+  url: https://github.com/joakimskurk/fm1hamstersynth/commit/a01a45546120ef51323da7c8b7da95b30189642d
+  notes: No tagged releases; this is the latest commit.

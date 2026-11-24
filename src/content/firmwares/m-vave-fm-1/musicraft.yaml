@@ -1,0 +1,32 @@
+device: m-vave-fm-1
+name: FM-1 MusiCraft
+summary: >-
+  Voxel world you walk through in first person, with four 16-step sequencers built into the landscape whose volume falls off with distance.
+description: >-
+  The firmware draws a procedurally generated 256 by 32 by 256 block world in first person, streamed in chunks around the
+  player, with walking, jumping and swimming. Four sequencer stages of four rows by sixteen pads each play their own kit (a
+  pentatonic FM bell, acid bass, a music-box arpeggio and an FM lead). You look at a pad and toggle it, a lamp in the back wall
+  follows the playhead, and each sequencer plays at full level within ten blocks and fades to silence at 25. Movement is played
+  from the FM-1's keys or from MIDI notes, and a knob sets the tempo from 60 to 200 BPM. It is built on the Felucca and sloopDX
+  hardware layer with the same USB update path as FM-1 Mario. There are no releases, so it has to be built with the JieLi toolchain.
+status: active
+authors:
+- name: stevexfer
+  url: https://github.com/stevexfer
+source: https://github.com/stevexfer/FM1_MusiCraft
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states GPL-3.0-only and COPYING is the GPL v3 text. The hardware layer comes from Felucca and sloopDX.
+distribution: source-only
+install_notes: >-
+  Build build/musicraft.fwsc with build.sh (JieLi toolchain and AC79 SDK, as for FM-1 Mario) and flash it with the same
+  WebUSB installer as FM-1 Mario. The package identity is FM-1_971. The platform's USB update loader and recovery code are
+  in the repository, and the project documents no other recovery path.
+brick_risk: false
+tags: [game, sequencer, synth-engine, drums, performance]
+versions:
+- version: main @ d175364
+  date: 2026-11-23
+  url: https://github.com/stevexfer/FM1_MusiCraft/commit/d1753641f9ba
+  notes: No tagged releases; this is the latest commit.

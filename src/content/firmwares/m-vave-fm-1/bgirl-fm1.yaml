@@ -2,16 +2,16 @@ device: m-vave-fm-1
 name: BGIRL FM-1
 summary: >-
   Electro edition of Felucca with six full tracks, a sample-fed vocoder, a vocal chop bank, ten original electro sounds and
-  an arp-driven dancer page; for now a browser build only, with no hardware package.
+  an arp-driven dancer page; hardware packages are published as candidates, still in hardware testing.
 description: >-
   BGIRL is an independent derivative of Felucca v1.8.1, imported with its history, and not an official Hügelton build. It
   extends the shared eight-voice budget to six tracks, adds a bounded project save format, and ships an electro starting
   arrangement with a sample-fed vocoder on track four, a bundled vocal recording and its chops, ten original factory
   sounds (subs, kick, snare, clap, hats, stab, chord and chirp), and an arp page that steps through twelve dance poses. A
-  CIRCUIT colour style is available on the panel. The README labels it a browser development milestone, says not to
-  install it on hardware and that no hardware firmware, installer or release is published, and lists device validation as
-  a follow-up. It runs as an emulated FM-1 panel in the browser through a GitHub Pages demo, with host and browser tests in
-  CI. Old project formats are not migrated.
+  CIRCUIT colour style is available on the panel. Since v0.0.1 the releases carry a firmware-only FWSC and an optional
+  Miami vocal starter bank, which the release notes call a candidate with a physical install and return check still
+  pending. The README says the firmware is in hardware testing and that the Pages site is a playable preview. It runs as
+  an emulated FM-1 panel in the browser through a GitHub Pages demo, with host and browser tests in CI. Old project formats are not migrated.
 status: active
 authors:
 - name: track-forge
@@ -26,11 +26,12 @@ license_notes: >-
   public redistribution. No M-VAVE stock image is in the repository.
 homepage: https://track-forge.github.io/bgirl-fm1/
 based_on: m-vave-fm-1/felucca
-distribution: source-only
+distribution: download
 install_notes: >-
-  Nothing flashable is published and the README says not to install it on hardware. The browser preview runs at the
-  homepage, and ./build.sh --web builds it locally with Emscripten 6.0.10. The imported Felucca release and installer
-  workflows are kept inactive.
+  Download the release's FWSC and install it with FM-SWITCH, which installs the firmware only; the project's Pages
+  installer can also provision the optional Miami vocal bank. The v0.0.2 notes call it a candidate with a physical
+  install and return check pending, and the README says the firmware is in hardware testing. The browser preview runs at
+  the homepage, and ./build.sh --web builds it locally with Emscripten 6.0.10.
 brick_risk: false
 tags: [groovebox, sequencer, synth-engine, drums, vocoder, sampler, emulator, fork]
 image:
@@ -40,6 +41,18 @@ image:
   source_url: https://github.com/track-forge/bgirl-fm1
   first_party: true
 versions:
+- version: main @ 05b1347
+  date: 2026-11-24
+  url: https://github.com/track-forge/bgirl-fm1/commit/05b1347caedcb6ca2349d27ed64459c53e594a7e
+  notes: Made minutes after v0.0.2; it activates the v0.0.2 Pages installer on main and adds a hash file for it.
+- version: v0.0.2
+  date: 2026-11-24
+  url: https://github.com/track-forge/bgirl-fm1/releases/tag/v0.0.2
+  notes: First hardware package marked as a candidate, with the firmware-only FWSC and a matching optional Miami vocal bank. It gives BGIRL its own product identity, FM-1_247101, and the notes say a physical install and return check is still pending.
+- version: v0.0.1
+  date: 2026-11-23
+  url: https://github.com/track-forge/bgirl-fm1/releases/tag/v0.0.1
+  notes: First release, with the firmware-only FWSC (FM-1_912) and the optional Miami bank. The notes report bench checks of a Chrome install over Sloop and a cold boot, and say a fresh Miami install, saved-work preservation and an FM-SWITCH install and return without Miami are not yet verified.
 - version: main @ 9b9b3e6
   date: 2026-11-23
   url: https://github.com/track-forge/bgirl-fm1/commit/9b9b3e6c976fcc107c06db48100b7ad4b1dada33

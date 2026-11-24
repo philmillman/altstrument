@@ -1,0 +1,49 @@
+device: m-vave-fm-1
+name: PROPHET 67
+summary: >-
+  Seven-voice analogue-style polysynth after the Sequential Prophet-6, with poly mod, per-voice vintage drift, voice spread, effects, a low split, aftertouch and a four-track sequencer.
+description: >-
+  Each of the seven voices has two oscillators with a variable shape and hard sync, a triangle sub-octave, a noise
+  source, a resonant high-pass into a four-pole ladder low-pass, and two ADSR envelopes. POLY MOD routes the filter
+  envelope and oscillator 2 to oscillator and filter targets, VINTAGE gives every voice its own fixed detune, cutoff and
+  envelope offsets, and VOICE SPREAD widens the chord across the stereo field. There are two tempo-syncable LFOs, an
+  arpeggiator, unison and glide, polyphonic aftertouch from the FM-1's keys, and reverbs, chorus and delay modelled in the
+  Prophet-6's effect order. The low split and key scales come from OFFWORLD. Version 1.1 added four tracks of 64 steps with their own
+  sounds, and 1.2 reworked them into two tracks. The project has a browser emulator and a German manual. It is built on fm1-base and felucca-bsp.
+status: active
+authors:
+- name: swtdr34mz-afk
+  url: https://github.com/swtdr34mz-afk
+source: https://github.com/swtdr34mz-afk/PROPHET-67
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The LICENSE file is the MPL-2.0 text. CREDITS.md lists fm1-base and felucca-bsp as MPL-2.0, the pixel fonts as SIL OFL 1.1,
+  and three Apache-2.0 JieLi SDK files that go into each package. The README says it is unofficial and not made or endorsed by Sequential or M-VAVE.
+homepage: https://swtdr34mz-afk.github.io/PROPHET-67/emu/
+distribution: download
+install_notes: >-
+  Download the .fwsc from a release and install it like any FM-1 firmware, for example with The Firmware Hub. The README says
+  presets and the sequence are kept across updates. The platform's update loader is unchanged from fm1-base, and the project
+  gives no further recovery steps.
+brick_risk: false
+tags: [synth-engine, sequencer, arpeggiator, fx, scales, emulator]
+image:
+  url: https://raw.githubusercontent.com/swtdr34mz-afk/PROPHET-67/main/site/img/screen-main.png
+  alt: "PROPHET 67 main screen: red and black panel with the voice indicators, OSC 1 and OSC 2 waveforms, FILTER and F ENV knob rows, POLY MOD, SPREAD and VINTAGE sliders and a sequencer strip"
+  credit: swtdr34mz-afk
+  source_url: https://github.com/swtdr34mz-afk/PROPHET-67
+  first_party: true
+versions:
+- version: v1.2
+  date: 2026-11-24
+  url: https://github.com/swtdr34mz-afk/PROPHET-67/releases/tag/v1.2
+  notes: Reduces the sequencer to two tracks, keeps tracks on the bar and enlarges the step view.
+- version: v1.1
+  date: 2026-11-24
+  url: https://github.com/swtdr34mz-afk/PROPHET-67/releases/tag/v1.1
+  notes: Adds four sequencer tracks of 64 steps, each with its own sound, live recording that keeps the lengths played, and a metronome.
+- version: v1.0
+  date: 2026-11-23
+  url: https://github.com/swtdr34mz-afk/PROPHET-67/releases/tag/v1.0
+  notes: First release with the voices, poly mod, effects, low split and aftertouch.

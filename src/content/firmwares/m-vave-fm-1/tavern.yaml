@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: TAVERN
+summary: >-
+  Self-playing folk-session firmware for the FM-1 where eight regulars drift into a tavern, play generated reels, jigs and airs on fiddles, whistle, harp, lute, box, bass and bodhran, quarrel and leave at closing.
+description: >-
+  Eight regulars arrive through the evening and one starts a tune that the others join on the repeat. Tunes are generated in Dorian, Mixolydian, Aeolian and Ionian in AABB form, with reels and jigs in the busy middle of the night and waltzes and slow airs late. The regulars have moods, thirst, friends and rivals, strings break, strangers are welcomed or frozen out, some nights turn into singers' nights and the landlord calls last orders. EDIT calls for a tune, REC buys a round once an hour, and the keys ask for the next tune's key. Regulars, their quarrels and memorable nights survive power-off. The README calls it a fork of AMB-1 and it builds on fm1-base.
+status: active
+authors:
+- name: ashtonwallen
+  url: https://github.com/ashtonwallen
+source: https://github.com/ashtonwallen/fm1-firmware/tree/main/tavern
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The folder's LICENSING.md and LICENSE give MPL-2.0 file by file, with AMB-1's and fm1-base's notices kept on the files
+  that came from them. The Barlow Semi Condensed and Terminus fonts are SIL OFL 1.1 and the JieLi SDK files are read from
+  the builder's checkout.
+based_on: m-vave-fm-1/amb-1
+distribution: download
+install_notes: >-
+  Download the .fwsc from the release and write it with M-Flasher or the FM-1 Flasher in the same repository, which backs up the whole flash first and keeps the bootloader untouched. The release says it is built on fm1-base 3ae2a65, which supports both flash chips, and has not been played much on real hardware.
+brick_risk: false
+tags: [generative, ambient, synth-engine, game]
+image:
+  url: https://raw.githubusercontent.com/ashtonwallen/fm1-firmware/main/tavern/docs/img/screen-tavern.png
+  alt: "TAVERN screen: header 10:53 PM, NIGHT 1, busy, a pixel-art bar room with eight regulars along a counter, the tune Molly's Farewell, reel, B Dorian, and a line about Old Tom"
+  credit: ashtonwallen
+  source_url: https://github.com/ashtonwallen/fm1-firmware
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-24
+  url: https://github.com/ashtonwallen/fm1-firmware/releases/tag/tavern-1.0
+  notes: First release; built on fm1-base 3ae2a65.

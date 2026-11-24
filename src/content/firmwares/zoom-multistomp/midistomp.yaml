@@ -14,7 +14,7 @@ description: >-
   parallel buses, a Perform mode that assigns knobs and the footswitch to targets
   with beat-quantised moves, a tempo-synced looper that works with the GRDLOOP
   effect, metering pages, a visual that follows the MIDI clock and a higher DSP
-  limit of 300. Tested on an MS-70CDR and an MS-60B (v1.2) and an MS-50G (v2.0).
+  limit of 300. Version 2.0.4 also builds a second, opt-in updater that runs the pedal at 360 MHz. Tested on an MS-70CDR and an MS-60B (v1.2) and an MS-50G (v2.0).
   It pairs with the author's custom effects, which follow its tempo and Start and
   Stop. The repository also holds a parser and build tool for the pedals' updaters.
 status: active
@@ -45,6 +45,14 @@ video:
   first_party: true
   found_via: https://github.com/matujuice/zoom-ms-midistomp#demo
 versions:
+  - version: v2.0.4.1
+    date: 2026-11-23
+    url: https://github.com/matujuice/zoom-ms-midistomp/releases/tag/v2.0.4.1
+    notes: Fixes from a code audit, including a freeze on a MIDI CC sent to an empty effect slot, PERFORM SETUP reading past a table after a patch change, and the builder closing at once on an error. Matches effects pack v2.0.4.1.
+  - version: v2.0.4
+    date: 2026-11-23
+    url: https://github.com/matujuice/zoom-ms-midistomp/releases/tag/v2.0.4
+    notes: Lighter audio work under PERFORM to stop a crackle in a full six-effect chain, and Program Change always reloads the saved patch. SysEx edits reach all six effects. Adds an opt-in 360 MHz overclock as a second updater. Matches effects pack v2.0.4.
   - version: v2.0.3
     date: 2026-11-13
     url: https://github.com/matujuice/zoom-ms-midistomp/releases/tag/v2.0.3

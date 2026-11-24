@@ -1,14 +1,14 @@
 device: nintendo-3ds
 name: Bard Beats
 summary: >-
-  Homebrew loop maker for the 3DS with a 16-step, four-track sequencer, eight built-in instruments, live play on the buttons and circle pad, and saved loops with Standard MIDI export.
+  Homebrew loop maker for the 3DS with a 16-step, four-track sequencer, sixteen built-in instruments, live play on the buttons and circle pad, and saved loops with Standard MIDI export.
 description: >-
   A 3DS homebrew app that runs without a computer. It has a one-bar 16-step grid with drum, bass, melody and harmony
-  tracks, eight synthesised instruments on the console's audio engine, a pad view and a rendered instrument view for
+  tracks, sixteen synthesised instruments with an instrument picker on the console's audio engine, a pad view and a rendered instrument view for
   playing live, and a jam mode that quantises played notes onto the grid with undo. Loops are saved by name to the SD
   card and can be exported as Standard MIDI files. Later versions add song mode that chains saved loops
   into songs with a song shelf and WAV bounce, a vocal layer recorded with the console's microphone, two-bar loops
-  with swing, a mix drawer and an optional Wi-Fi MIDI bridge script, and v0.3.0 adds a chord and arpeggiator play mode, held note lengths, a metronome, a pattern generator and root key transpose. Each release carries a .3dsx and a .cia, and
+  with swing, a mix drawer and an optional Wi-Fi MIDI bridge script, and v0.3.0 adds a chord and arpeggiator play mode, held note lengths, a metronome, a pattern generator and root key transpose, v0.7.0 adds a master compressor and limiter, speaker or headphone voicing, per-track volume controls, selectable L/R shoulder modes, a count-in, tap tempo and undo. Each release carries a .3dsx and a .cia, and
   the repository's CI builds both on every push.
 status: active
 authors:
@@ -27,6 +27,22 @@ install_notes: >-
 brick_risk: false
 tags: [sequencer, looper, synth-engine, handheld, homebrew, midi, open-source]
 versions:
+  - version: v0.7.0
+    date: 2026-11-24
+    url: https://github.com/kiyoshithekidd/Bard-Beats/releases/tag/v0.7.0
+    notes: Adds a master envelope compressor and limiter, speaker or headphone voicing chosen automatically, track and instrument volume controls on every screen, symmetric D-pad and face-button note layout, L and R shoulder modes for octaves, accidentals or rolls, a woodblock count-in, tap tempo, song track mutes, an eight-step undo ring and a saved config file.
+  - version: v0.6.0
+    date: 2026-11-24
+    url: https://github.com/kiyoshithekidd/Bard-Beats/releases/tag/v0.6.0
+    notes: Adds a dedicated sprite for each of the 16 instruments with aligned overlays. The release page has no notes; this is from the tagged commit.
+  - version: v0.5.0
+    date: 2026-11-23
+    url: https://github.com/kiyoshithekidd/Bard-Beats/releases/tag/v0.5.0
+    notes: Raises the master gain, evens out instrument levels and adds a 0 to 200 percent gain boost per track. The release page has no notes; this is from the tagged commit.
+  - version: v0.4.0
+    date: 2026-11-23
+    url: https://github.com/kiyoshithekidd/Bard-Beats/releases/tag/v0.4.0
+    notes: Expands the instruments to 16 with a picker, fixes the Ocarina slide and tone and raises the minimum text size. The release page has no notes; this is from the tagged commit.
   - version: v0.3.0
     date: 2026-11-22
     url: https://github.com/kiyoshithekidd/Bard-Beats/releases/tag/v0.3.0

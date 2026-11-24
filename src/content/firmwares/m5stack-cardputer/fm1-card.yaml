@@ -28,10 +28,10 @@ license_notes: >-
   fm1-grid (GPL-3.0). TinyUSB, lwjson and the bundled m-bootloader 2.4 files in data/ keep their MIT licences, listed in
   THIRD-PARTY.md.
 based_on: m-vave-fm-1/fm1-grid
-distribution: source-only
+distribution: download
 requires_stock: M-VAVE FM-1 or SMK-37 to flash; Cardputer-ADV, a self-powered USB 2.0 hub and a microSD card
 install_notes: >-
-  No release is published. Build with ESP-IDF 6.1 (idf.py set-target esp32s3, then idf.py build) and write the bootloader,
+  Download a release and write fm1-card-<version>-full.bin to address 0x0 with esptool after putting the Cardputer-ADV in download mode, or write the app image alone at 0x10000. To build from source instead, use ESP-IDF 6.1 (idf.py set-target esp32s3, then idf.py build) and write the bootloader,
   partition table and fm1-card.bin with idf.py flash or esptool. To reflash the Cardputer, turn its side switch off and
   hold G0 while connecting USB-C to enter ROM download mode. Once the app runs, the USB port is a host port and the serial
   console disappears. The Rescue bootloader step reads a full flash backup to /sdcard/fm1-card/backups/ and then
@@ -41,7 +41,27 @@ install_notes: >-
 brick_risk: true
 tags: [flasher, midi, usb-midi, utility, esp32-s3, sd-card]
 versions:
-  - version: main @ e67825d
+  - version: v0.1.5
+    date: 2026-11-24
+    url: https://github.com/jasonbot/fm1-card/releases/tag/v0.1.5
+    notes: A reworked top bar, tab strip and numbered menus, local packages in the flash picker in windows of 32, flashing straight from the Library's installed firmware, a fix for package size detection that read 3 KB images, and a fix for the ROM action in Rescue.
+  - version: v0.1.4
+    date: 2026-11-24
+    url: https://github.com/jasonbot/fm1-card/releases/tag/v0.1.4
+    notes: Rebuild of the release image; the release notes name no changes.
+  - version: v0.1.3
     date: 2026-11-23
-    url: https://github.com/jasonbot/fm1-card/commit/e67825d4f4acdbc171fd0a8a426a89f9e9e33227
-    notes: No tagged releases; this is the latest commit.
+    url: https://github.com/jasonbot/fm1-card/releases/tag/v0.1.3
+    notes: A device name that persists and is editable, and a catalog upload that loads a firmware manifest through the HTTP API or from the SD card.
+  - version: v0.1.2
+    date: 2026-11-23
+    url: https://github.com/jasonbot/fm1-card/releases/tag/v0.1.2
+    notes: Wi-Fi setup on the Cardputer itself with a SYS tab, and a faster HTTP API with firmware upload and SHA-256 sidecars.
+  - version: v0.1.1
+    date: 2026-11-23
+    url: https://github.com/jasonbot/fm1-card/releases/tag/v0.1.1
+    notes: Fixes a boot loop after downloading the whole catalog by limiting the local firmware scan to 64 files.
+  - version: v0.1.0
+    date: 2026-11-23
+    url: https://github.com/jasonbot/fm1-card/releases/tag/v0.1.0
+    notes: First release, with a full-flash image and an app-only image for the Cardputer-ADV.

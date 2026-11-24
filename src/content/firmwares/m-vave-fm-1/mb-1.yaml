@@ -1,9 +1,10 @@
 device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
 name: MB-1
 summary: >-
   Minibrute-style monophonic synth for the FM-1 with Ultrasaw, PWM and Metalizer oscillators, a resonant multimode filter with Brute Factor, two ADSRs, an LFO, an arpeggiator and a browser emulator.
 description: >-
-  The voice engine is portable C written from scratch and calibrated against renders of Arturia's MiniBrute V plugin; the README says no Arturia code is used and that the unofficial project is not affiliated with Arturia. It mixes a sawtooth with Ultrasaw, a square with PWM and a triangle with Metalizer, plus a sub oscillator and noise, into a 12 dB low-pass, band-pass, high-pass or notch filter with key tracking and self-oscillation. Filter and amplifier ADSRs, a six-wave LFO to pitch, filter, PWM and amplifier, vibrato, glide, vintage drift, aftertouch and a mod wheel are included. An arpeggiator arrived in 0.8.0, 0.9 to 0.14 added a 64-step sequencer, delay, reverb, distortion, chorus and compressor effects, 128 patch slots and random patches, and 0.15.0 makes a 32-patch factory bank the starting set. It is built on fm1-base, and the repository's workflow builds the package, runs the host simulator tests and publishes a site with an installer, an emulator and a manual. The README says the measured Metalizer cycles used during development are not published.
+  The voice engine is portable C written from scratch and calibrated against renders of Arturia's MiniBrute V plugin; the README says no Arturia code is used and that the unofficial project is not affiliated with Arturia. It mixes a sawtooth with Ultrasaw, a square with PWM and a triangle with Metalizer, plus a sub oscillator and noise, into a 12 dB low-pass, band-pass, high-pass or notch filter with key tracking and self-oscillation. Filter and amplifier ADSRs, a six-wave LFO to pitch, filter, PWM and amplifier, vibrato, glide, vintage drift, aftertouch and a mod wheel are included. An arpeggiator arrived in 0.8.0, 0.9 to 0.14 added a 64-step sequencer, delay, reverb, distortion, chorus and compressor effects, 128 patch slots and random patches, and 0.15.0 makes a 32-patch factory bank the starting set. It is built on fm1-base, and the repository's workflow builds the package, runs the host simulator tests and publishes a site with an installer, an emulator and a manual. The README says the measured Metalizer cycles used during development are not published. Since 24 November 2026 the same project also runs on the SMK-37 Pro, with a page of its own on the project site that maps the keyboard's faders, knobs, keys, pads and a piano roll; the README says builds for the SMK-37 Elite and MKE-P37 exist but are untried.
 status: active
 authors:
 - name: leonardolopezchavira
@@ -27,6 +28,10 @@ image:
   source_url: https://github.com/leonardolopezchavira/minibrute-fm1/blob/main/firmware.json
   first_party: true
 versions:
+- version: main @ 01a7e31
+  date: 2026-11-24
+  url: https://github.com/leonardolopezchavira/minibrute-fm1/commit/01a7e31b7d23656eb290b3c660b77ae90dd79fed
+  notes: This is the latest commit, made after the 0.15.0 release; app/VERSION moves to 0.20.0. Since the previous row the project adds a build for the M-VAVE SMK-37 Pro with its own panel mapping, step sequencer on the pads and a piano roll, lowers latency, widens the octave range to three up or down, makes REC held for a second clear the pattern, starts on patch A01 at power-on and adds backup and restore.
 - version: main @ 240a7e7
   date: 2026-11-23
   url: https://github.com/leonardolopezchavira/minibrute-fm1/commit/240a7e761d8ddaa460afeccb9abbd5cbdceaad33

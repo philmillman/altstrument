@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: Tide Clock
+summary: >-
+  Ambient firmware for the FM-1 whose music follows the time of day, with a pixel-art coast showing sun and moon, tides, boats, gulls, weather and a lighthouse keeper called Abel.
+description: >-
+  Plays by itself from power-on: sparse drones before dawn, brighter music in the morning, full at midday, warm in the evening and slow at night, with key, mode, tempo, density, brightness and space shifting through the hours and a sea layer underneath. The screen shows the sky colour for the hour, two tides a day, three fishing boats, gulls, fog, wind and occasional storms that take over the music. Abel keeps a log of days survived and events, and the whole world is saved about once an hour, or at once with SAVE. Clock mode follows real time, which the FM-1 cannot keep, so it asks for the time at power-on and starts from the last saved one; Cycle mode runs a whole day every 1 to 12 hours. It builds on AMB-1's engine.
+status: active
+authors:
+- name: ashtonwallen
+  url: https://github.com/ashtonwallen
+source: https://github.com/ashtonwallen/fm1-firmware/tree/main/tide-clock
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The folder's LICENSING.md and LICENSE give MPL-2.0 file by file, with AMB-1's and fm1-base's notices kept on the files
+  that came from them. The Barlow Semi Condensed and Terminus fonts are SIL OFL 1.1 and the JieLi SDK files are read from
+  the builder's checkout.
+based_on: m-vave-fm-1/amb-1
+distribution: download
+install_notes: >-
+  Download the .fwsc from the release and write it with M-Flasher or the FM-1 Flasher in the same repository, which backs up the whole flash first and keeps the bootloader untouched. The release says it is built on fm1-base 3ae2a65, which supports both flash chips, and has not been played much on real hardware.
+brick_risk: false
+tags: [ambient, generative, synth-engine, game, utility]
+image:
+  url: https://raw.githubusercontent.com/ashtonwallen/fm1-firmware/main/tide-clock/docs/img/screen-scene.png
+  alt: "Tide Clock screen: evening scene with a red and white lighthouse on a cliff above a calm sea, the time 18:32, Evening, Calm, tide falling, DAY 1 and the line Abel: lighting the lamp"
+  credit: ashtonwallen
+  source_url: https://github.com/ashtonwallen/fm1-firmware
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-24
+  url: https://github.com/ashtonwallen/fm1-firmware/releases/tag/tide-clock-1.0
+  notes: First release; built on fm1-base 3ae2a65.

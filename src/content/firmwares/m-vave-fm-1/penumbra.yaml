@@ -11,7 +11,7 @@ description: >-
   play its sound, and MORPH walks to the next scene by hand. Six preset journeys and eight user slots survive a power
   cut, and there is a sleep timer, MIDI clock in and out, USB audio and screen-reader support. Version 1.1 adds a
   slow TIDES swell that opens the drone filter and breathes the space, a room size and shimmer for each scene,
-  further reverb and delay controls, an A/B comparison of two sounds and a library of eight stored sounds. Version 1.2 adds a stereo position and sway for each part, a tighter MIDI clock with song position, 44 controllers and notes and program changes in both directions, and a sound of its own for each preset journey. Version 1.3 changes HOME so that its animation follows the drones, the stereo position and the looper. Version 1.4 makes the first journey start sparse, with its drone voices drifting in and out instead of all being held. Version 1.5 adds a seventh journey, TOTALITY, that moves through its scenes by itself, an option for any journey to travel on its own, a singing VOX, loops whose notes keep their own sounds with a page for their layers, and journeys that bring their own sound. Version 1.6 gives each loop layer its own pan, drift, tone, swell and length, lets several VOX sounds sing at once, adds a BLOOM that swells by itself, and doubles the VOX voices to eight. Version 1.7 turns HOME's knobs into six pages of the sound itself, shows install progress, adds a Backup page that saves everything to one file and a USB ONLY audio option. Version 1.8 adds a hand-shaped kick held in the key, with its own DRIVE, DUCK and an option to play by itself on the clock. It carries M-VAVE's
+  further reverb and delay controls, an A/B comparison of two sounds and a library of eight stored sounds. Version 1.2 adds a stereo position and sway for each part, a tighter MIDI clock with song position, 44 controllers and notes and program changes in both directions, and a sound of its own for each preset journey. Version 1.3 changes HOME so that its animation follows the drones, the stereo position and the looper. Version 1.4 makes the first journey start sparse, with its drone voices drifting in and out instead of all being held. Version 1.5 adds a seventh journey, TOTALITY, that moves through its scenes by itself, an option for any journey to travel on its own, a singing VOX, loops whose notes keep their own sounds with a page for their layers, and journeys that bring their own sound. Version 1.6 gives each loop layer its own pan, drift, tone, swell and length, lets several VOX sounds sing at once, adds a BLOOM that swells by itself, and doubles the VOX voices to eight. Version 1.7 turns HOME's knobs into six pages of the sound itself, shows install progress, adds a Backup page that saves everything to one file and a USB ONLY audio option. Version 1.8 adds a hand-shaped kick held in the key, with its own DRIVE, DUCK and an option to play by itself on the clock. Version 1.10 adds a THROWS page of DIP, WARP, FEEDBACK and FREEZE, relative knob output for DAWs and a RESET SOUND that starts over. From 1.11 a journey can be built from scenes of any journey, each with its own time or skipped, and 1.12 adds a SCENES page for it on the FM-1 and a Journeys page on the project site. It carries M-VAVE's
   update loader so the unit can switch to another firmware. The author is credited as Lunar Eclipse Forge.
 status: active
 authors:
@@ -25,7 +25,7 @@ license_notes: >-
   files are not in the tree.
 distribution: download
 install_notes: >-
-  Write penumbra-1.8.fwsc from the release with an FM-1 firmware installer; BUILDING.md explains building and serving
+  Write penumbra-1.12.fwsc from the release with an FM-1 firmware installer; BUILDING.md explains building and serving
   a web installer, and the README says it will also be offered on The Firmware Hub. Holding OCT- and OCT+ for five
   seconds puts the FM-1 in update mode if an install does not start. Installing is at your own risk.
 brick_risk: false
@@ -37,6 +37,18 @@ image:
   source_url: https://github.com/MadMooneyham/Penumbra
   first_party: true
 versions:
+- version: '1.12'
+  date: 2026-11-23
+  url: https://github.com/MadMooneyham/Penumbra/releases/tag/v1.12
+  notes: Adds SCENES, a page that shows a whole journey with each scene's key and time, where scenes can be skipped, moved and brought in from other journeys. A Journeys page on the project site builds a journey of up to eight scenes and sends it to a user slot or plays it over USB. The package identity is FM-1_73011200 and everything carries over from 1.11.
+- version: '1.11'
+  date: 2026-11-23
+  url: https://github.com/MadMooneyham/Penumbra/releases/tag/v1.11
+  notes: Lets a journey be put together from scenes of any journey, each with its own STAYS time, a PLAYS switch that skips a scene, and BRING IN to copy a scene over; up to eight scenes can be saved in a user slot. The package identity is FM-1_73011100 and settings carry over, with journeys upgraded to format 12.
+- version: '1.10'
+  date: 2026-11-23
+  url: https://github.com/MadMooneyham/Penumbra/releases/tag/v1.10
+  notes: Adds THROWS, a seventh HOME page with DIP, WARP, FEEDBACK and FREEZE, a CC RELATIVE option for the knobs as a DAW controller, DAW feedback on the absolute CCs and a softer wind. RESET SOUND now returns Penumbra to how a new unit starts, apart from the tempo and settings. The package identity is FM-1_73011000 and journeys, slots, sounds and settings carry over.
 - version: '1.9'
   date: 2026-11-20
   url: https://github.com/MadMooneyham/Penumbra/releases/tag/v1.9

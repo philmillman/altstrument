@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: GARDEN
+summary: >-
+  Self-playing ambient firmware for the FM-1 where each key plants a melody seed that sprouts, grows a phrase, flowers with bells, seeds and withers, tended by a gardener with bees, a rabbit and weather.
+description: >-
+  A seed planted at a key's pitch sprouts, grows a short loop in the garden's scale, flowers with a full phrase and bells an octave up, scatters related seeds on nearby plots, withers and leaves a low compost drone. Every plant has a name and parents listed in a ledger page. A named gardener with a mood waters, prunes and replants, bees cross two flowers into a hybrid, a rabbit nibbles sprouts, and rain and frost speed up or end growth. A day is 15 minutes, and fuller gardens sound brighter and denser while sparse ones lean on the pad and reverb. The garden saves about once an hour, or at once with SAVE, and it builds on AMB-1's engine.
+status: active
+authors:
+- name: ashtonwallen
+  url: https://github.com/ashtonwallen
+source: https://github.com/ashtonwallen/fm1-firmware/tree/main/garden
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The folder's LICENSING.md and LICENSE give MPL-2.0 file by file, with AMB-1's and fm1-base's notices kept on the files
+  that came from them. The Barlow Semi Condensed and Terminus fonts are SIL OFL 1.1 and the JieLi SDK files are read from
+  the builder's checkout.
+based_on: m-vave-fm-1/amb-1
+distribution: download
+install_notes: >-
+  Download the .fwsc from the release and write it with M-Flasher or the FM-1 Flasher in the same repository, which backs up the whole flash first and keeps the bootloader untouched. The release says it is built on fm1-base 3ae2a65, which supports both flash chips, and has not been played much on real hardware.
+brick_risk: false
+tags: [ambient, generative, synth-engine, game]
+image:
+  url: https://raw.githubusercontent.com/ashtonwallen/fm1-firmware/main/garden/docs/img/screen-garden.png
+  alt: "GARDEN screen: a pixel-art garden with flowers in raised beds and a gardener, headed Ines, cheerful, Day 1, with the text Moss Bell went to seed: 2 seeds and 11 plants, 3 in flower"
+  credit: ashtonwallen
+  source_url: https://github.com/ashtonwallen/fm1-firmware
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-24
+  url: https://github.com/ashtonwallen/fm1-firmware/releases/tag/garden-1.0
+  notes: First release; built on fm1-base 3ae2a65.

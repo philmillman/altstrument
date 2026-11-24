@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: AMB-1 Drift
+summary: >-
+  AMB-1 variant that wanders between 24 pieces by itself and adds plucked harp and kalimba, a strings pad, bowed or glass leads, rain, wind, sea and vinyl textures and a reverb shimmer.
+description: >-
+  Starts from AMB-1's generative ambient engine, with unsynced tape loops, a gliding bass and Euclidean percussion, and adds a Wander mode (GLO twice) that glides from piece to piece. Karplus-Strong harp or kalimba figures, a single long bowed or glass lead note, a third detuned-saw pad colour and an air layer of rain, wind, sea or vinyl crackle are reached by pressing the page buttons a second time. The 24 pieces are AMB-1's eight, eight for Wander and eight new ones such as Monsoon, Lighthouse and Aurora. With the new sounds at zero the first sixteen pieces sound as in AMB-1, and saved AMB-1 projects carry over. The README is AMB-1's, extended for the Drift additions, and links Charles Vestal's AMB-1 site for the emulator, installer and manual.
+status: active
+authors:
+- name: ashtonwallen
+  url: https://github.com/ashtonwallen
+source: https://github.com/ashtonwallen/fm1-firmware/tree/main/amb1-drift
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The folder's LICENSING.md and LICENSE give MPL-2.0 file by file, with AMB-1's and fm1-base's notices kept on the files
+  that came from them. The Barlow Semi Condensed and Terminus fonts are SIL OFL 1.1 and the JieLi SDK files are read from
+  the builder's checkout.
+based_on: m-vave-fm-1/amb-1
+distribution: download
+install_notes: >-
+  Download the .fwsc from the release and write it with M-Flasher or the FM-1 Flasher in the same repository, which backs up the whole flash first and keeps the bootloader untouched. The release says it is built on fm1-base 3ae2a65, which supports both flash chips, and has not been played much on real hardware.
+brick_risk: false
+tags: [ambient, generative, synth-engine, reverb, fx, fork]
+image:
+  url: https://raw.githubusercontent.com/ashtonwallen/fm1-firmware/main/amb1-drift/docs/img/screen-garden.png
+  alt: "AMB-1 Drift Garden page on the FM-1: D Dorian, chord Dm7 over a circular garden of dots, four level bars and knobs for TEMPO 72, EVOLVE 35, MOTION 50 and DRIFT 39s"
+  credit: ashtonwallen
+  source_url: https://github.com/ashtonwallen/fm1-firmware
+  first_party: true
+versions:
+- version: '1.1'
+  date: 2026-11-24
+  url: https://github.com/ashtonwallen/fm1-firmware/releases/tag/amb1-drift-1.1
+  notes: First release; built on fm1-base 3ae2a65.

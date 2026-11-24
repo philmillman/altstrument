@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: FM-1 Flasher (ashtonwallen)
+kind: tool
+summary: >-
+  Windows script around M-Flasher that picks a firmware from a checked list, verifies its SHA-256 and the flash chip,
+  backs up the whole flash, writes and verifies the package, and sets up USB audio.
+description: >-
+  Each install follows the same steps: read the flash chip ID and stop if it is not the expected UC25HQ80, compare the
+  file's SHA-256 with catalog.json, save a full flash backup that Restore can write back later with the bootloader kept,
+  write and verify the firmware, restart the unit, and run a PowerShell script that routes the FM-1's USB audio to the
+  computer's output without making it the computer's input. Each step is logged. The catalogue lists 32 community
+  firmwares with their hashes, and the firmware files themselves are not in the repository. M-Flasher.exe is downloaded
+  separately. It is the installer of the same author's eight ambient firmware entries.
+status: active
+authors:
+- name: ashtonwallen
+  url: https://github.com/ashtonwallen
+source: https://github.com/ashtonwallen/fm1-firmware/tree/main/flasher
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The repository README gives MPL-2.0 for the project. The flasher folder has no licence file of its own.
+homepage: https://github.com/ashtonwallen/fm1-firmware
+distribution: source-only
+install_notes: >-
+  Needs Windows, Python through uv and M-Flasher.exe from M-Flasher's releases in tools/m-flasher; firmware files go in
+  firmware/<id>/<version>/ as catalog.json says. Run fm1_flasher.py, or add --selftest to check without writing. The
+  README's rules are to back up before every write, check chip support first, never touch the bootloader, write one
+  package at a time and stop if anything looks wrong.
+brick_risk: false
+tags: [flasher, backup, utility, usb-audio]
+versions:
+- version: main @ 96a30b9
+  date: 2026-11-24
+  url: https://github.com/ashtonwallen/fm1-firmware/commit/96a30b9d63875b2e26070faebe4267c007060556
+  notes: No tagged releases for the flasher; this is the latest commit.

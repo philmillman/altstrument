@@ -2,7 +2,7 @@ device: m-vave-smc-pad
 name: SMC-Pad Core
 summary: Clean-slate MIDI controller firmware for the SMC-PAD with USB and BLE MIDI, baseline drift tracking, velocity curves, banks and presets, a note repeat engine and a WebMIDI configurator.
 description: >-
-  A rewrite that turns the pad into a plain MIDI controller with no sequencer or scale layer on the chip. The 16 pads
+  A rewrite that turns the pad into a MIDI controller with no sequencer on the chip, and from the latest commits a chord engine and a scale and key mode. The 16 pads
   send velocity and aftertouch notes with continuous baseline tracking meant to stop phantom stuck notes, the eight
   encoders send MIDI CC through a Gray-code decoder, and two pad banks and two knob banks, four presets, transpose,
   four velocity curves and a channel setting sit behind a Shift layer. A note repeat engine offers eight rates,
@@ -31,6 +31,14 @@ install_notes: >-
 brick_risk: true
 tags: [controller, midi, usb-midi, bluetooth, note-repeat, editor, web-midi, velocity]
 versions:
+- version: main @ aacdde1
+  date: 2026-11-23
+  url: https://github.com/cmoran/smc-pad-core/commit/aacdde1f6ac8979c12f10a63913354db75393681
+  notes: >-
+    No tagged releases; this is the latest commit. Since the previous entry the commits add a 3.5mm TRS MIDI output,
+    transport buttons, aftertouch and clock sync, a chord engine, a scale and key mode with lit pads, encoder acceleration
+    and a live oscilloscope in the web configurator, a user guide, and fixes to the MIDI, BLE and SysEx protocols, encoder
+    banking and pad toggle.
 - version: main @ 60c5c9e
   date: 2026-11-08
   url: https://github.com/cmoran/smc-pad-core/commit/60c5c9e

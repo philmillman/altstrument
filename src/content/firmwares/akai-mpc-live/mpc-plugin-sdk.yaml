@@ -1,8 +1,8 @@
 device: akai-mpc-live
-also_devices: [akai-force]
+also_devices: [akai-force, akai-mpc-sample]
 kind: tool
 name: MPC Plugin SDK
-summary: inMusic's open SDK for building instrument and effect plugins that run inside MPC OS 3.10.1 or later on standalone MPCs and Force, with a build tool, a host simulator and agent skills.
+summary: inMusic's open SDK for building instrument and effect plugins that run inside MPC OS 3.10.1 or later on standalone MPCs and Force, and effect plugins on the MPC Sample, with a build tool, a host simulator and agent skills.
 description: >-
   A plugin is a Linux shared library that follows the VST 2.4 binary interface, packaged with a plugin.json manifest and JSON
   skins for the touch screen and the sixteen hardware knobs. The repository holds a header-only C++ framework, DSP helpers,
@@ -10,7 +10,9 @@ description: >-
   processors, a command-line host simulator and a tool that installs plugins onto an MPC over the network. It also ships agent
   skills and instructions so that a coding assistant can write a plugin from a plain-language description. The README lists
   the MPC X, X SE, Live, Live II, One, One+, Key 37, Key 61, Force, Live III and XL as targets and requires the External
-  Plugin Support option under Preferences, Enhancements, which Akai marks as beta. It does not list the MPC Sample. The README
+  Plugin Support option under Preferences, Enhancements, which Akai marks as beta. Since 2026-11-23 it also covers the MPC
+  Sample (firmware v1.4.0 or later, Custom Plug-In Support turned on in MIDI Config), which loads effect plugins only and
+  shows them as Knob FX with six parameters set in plugin.json. The README
   warns that a plugin runs inside the MPC application unprotected and that inMusic does not support third-party plugins.
 status: active
 authors:
@@ -26,13 +28,17 @@ homepage: https://www.akaipro.com/downloads-and-support/downloads/firmware/mpc/
 distribution: source-only
 requires_stock: MPC OS 3.10.1 or later
 install_notes: >-
-  Update the MPC to OS 3.10.1 or later, then turn on Enable Enhancements and External Plugin Support under Preferences,
+  MPC Sample: update to firmware v1.4.0 or later, turn on Dev Enhancements and Custom Plug-In Support in MIDI Config and copy effect plugins to VST2 Plugins on the microSD card in SD Card Access mode. Other MPCs: update to OS 3.10.1 or later, then turn on Enable Enhancements and External Plugin Support under Preferences,
   Enhancements. Build a plugin with python tools/build.py and copy the output folder to VST2 Plugins on a USB drive or SD
   card, or install it with the SDK's network tool. A faulty plugin can freeze or restart the MPC; remove its folder from the
   drive to recover.
 brick_risk: false
 tags: [official, sdk, platform, vst, dsp, plugins, ai]
 versions:
+  - version: main @ e78bad5
+    date: 2026-11-23
+    url: https://github.com/inmusic-software/mpc-plugin-builder-sdk/commit/e78bad508a305a92443758eb2bc8b428e9e7a687
+    notes: No tagged releases; this is the latest commit. Since the previous entry the commits add MPC Sample support for effect plugins as Knob FX, a page on the supported MPCs and how they differ, and updated workflow docs and diagrams.
   - version: main @ a5949cf
     date: 2026-11-17
     url: https://github.com/inmusic-software/mpc-plugin-builder-sdk/commit/a5949cf

@@ -1,6 +1,6 @@
 device: zoom-multistomp
 name: Matujuice Zoom MS ZDL effects pack
-summary: "Seventeen free custom ZDL effects for Zoom MultiStomp pedals, aimed at synths and drum machines, with source: wavefolder, pitch shifters, choir, Euclidean gate, dub siren, glitch, delay, looper, limiter, DJ filter, compressor and sweep."
+summary: "Eighteen free custom ZDL effects for Zoom MultiStomp pedals, aimed at synths and drum machines, with source: wavefolder, pitch shifters, choir, Euclidean gate, dub siren, glitch, delay, looper, limiter, DJ filter, compressor and sweep."
 description: >-
   The effects are loaded onto the pedal with Zoom's Effect Manager and are built
   from source with the free TI C6000 compiler on a linker toolchain taken from
@@ -9,7 +9,7 @@ description: >-
   running after Stop; on stock firmware they run at 120 BPM. Release v1.5 keeps
   older builds with their own Tempo knob. Release v2.0 has seventeen effects, among
   them a bar-synced looper (GRDLOOP), a mastering limiter, a DJ filter, a mix bus
-  compressor and risers, and makes several of them stereo on the MS-70CDR. Tested on an MS-60B running
+  compressor and risers, and makes several of them stereo on the MS-70CDR. Release v2.0.4 splits KickKill out of DJFilter as an eighteenth effect. Tested on an MS-60B running
   MS-50G firmware; the MS-50G, MS-70CDR and other models are untested.
 status: active
 authors:
@@ -33,6 +33,14 @@ image:
   source_url: https://github.com/matujuice/zoom-ms-zdl-effects-pack
   first_party: true
 versions:
+  - version: v2.0.4.1
+    date: 2026-11-23
+    url: https://github.com/matujuice/zoom-ms-zdl-effects-pack/releases/tag/v2.0.4.1
+    notes: GRDLOOP returns to its earlier 31,394-byte size, which v2.0.4 had grown past what the pedal is known to load; sound and knobs are unchanged.
+  - version: v2.0.4
+    date: 2026-11-23
+    url: https://github.com/matujuice/zoom-ms-zdl-effects-pack/releases/tag/v2.0.4
+    notes: Washout, DJFilter and Takeoff use less DSP so a full six-effect chain stops crackling, DJFilter no longer clicks across DJ 0, and KickKill becomes its own effect. Declared DSP costs now match bench measurements.
   - version: v2.0.3
     date: 2026-11-13
     url: https://github.com/matujuice/zoom-ms-zdl-effects-pack/releases/tag/v2.0.3

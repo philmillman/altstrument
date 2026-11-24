@@ -1,0 +1,47 @@
+device: m-vave-fm-1
+name: FREITAKT
+summary: >-
+  Hortator fork with a Model:Cycles-style workflow: six tracks of drum and synth machines plus a chord machine, free
+  polymeter, parameter and machine locks, per-track arpeggio and retrigger, patterns with chains and MIDI out.
+description: >-
+  Hortator's sound engine, loader and recovery tools are kept while the sequencer and interface are reworked in an
+  orange theme. Six tracks (down from eight) use the same machines plus CHORD, which plays four-voice chords one at a
+  time. The grids, resonator, slicer, sample layer, song mode and ten-channel USB audio are removed and each track has
+  one LFO. Polymeter adds FIT divisions such as 5:4 and 7:8 and a master length up to 1024 steps, parameter locks work
+  on any page and a held step takes a machine lock. Each track and step can be set to OFF, RTRG, ARP1 or ARP2, live on
+  the keys. Patterns are four banks of eight variations with an Elektron-style chain, copy and paste use button combos,
+  and MIDI covers sequencer out, a MIDI keyboard mode and .mid export from the web editor. Projects saved by the
+  eight-track Hortator do not load. The README says a release carries an installer page, the package and a manual in
+  English and Russian, but no release is published yet.
+status: active
+authors:
+- name: StripedBear
+  url: https://github.com/StripedBear
+source: https://github.com/StripedBear/freitakt
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE and LICENSING.md give GPL-3.0-only, with Felucca, Hortator and FREITAKT changes under the same licence. The
+  Felucca assets, among them docs/panel.jpg, are Hügelton Instruments' all rights reserved, with a section 7 permission
+  for combined works. The sample files in assets/samples-cc0 are CC0 1.0 and Mutable Instruments, DaisySP and Fukiai
+  code is MIT.
+based_on: m-vave-fm-1/hortator
+distribution: source-only
+install_notes: >-
+  The README describes installing FREITAKT-installer.html from a release in Chrome or Edge, but no release exists, so
+  build it with ./build.sh and JieLi's toolchain as in BUILDING.md. To go back, hold SEQ while powering on to reach
+  SAFE START and install M-VAVE's V15 with its M-UPGRADE updater; docs/RECOVERY.md covers a crashed unit, using the
+  chip's boot mode.
+brick_risk: false
+tags: [drums, sequencer, synth-engine, chords, arpeggiator, midi, performance, fork]
+image:
+  url: https://raw.githubusercontent.com/StripedBear/freitakt/main/docs/img/screens.png
+  alt: "Ten orange FREITAKT screens: a splash, a large BPM of 124, a K909 HOUSEBD sound page, the six-track list, a note page showing D#4, arpeggio, machine list, project, envelope and pitch pages"
+  credit: StripedBear
+  source_url: https://github.com/StripedBear/freitakt
+  first_party: true
+versions:
+- version: main @ 5f721bd
+  date: 2026-11-24
+  url: https://github.com/StripedBear/freitakt/commit/5f721bd70a71225c4230c4e419fea1fb949e7c26
+  notes: No tagged releases; this is the latest commit.

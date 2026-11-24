@@ -7,7 +7,7 @@ description: >-
   The default branch holds only a bare ESP-IDF skeleton, and the work is on the dev branch. It vendors a trimmed copy
   of isod89's SLOOP (2.8.5, pinned commit) as the sound engine and sequencer, and adds Tab5 components for the display, ES8388 audio,
   the 70-key Tab5 Keyboard on its own I2C bus, and a LVGL touch interface with Play, Tracks, Step, Transport,
-  Global, FX, Analog, FM6 and Sample pages. The project documents say the engine renders hash-identical to the upstream host
+  Global, FX, Analog, FM6, Sample and System pages. The project documents say the engine renders hash-identical to the upstream host
   build on 182 regression cases, and that the build, flash, screenshot and serial-injection checks pass on one device, while
   several listening and keyboard checks are still to be done by hand. It is a different project from SLOOP Tab5 by zircothc,
   which wraps the unmodified FM-1 firmware. The build targets early ESP32-P4 revision 1.x chips, which the author's unit
@@ -33,6 +33,10 @@ install_notes: >-
 brick_risk: false
 tags: [groovebox, sequencer, synth-engine, drums, sampler, fx, midi, performance, touchscreen, keyboard, port]
 versions:
+- version: dev @ f47ddb9
+  date: 2026-11-24
+  url: https://github.com/kennx/sloop-fm1-tab5/commit/f47ddb90b9293538f571eaf756f6189ab6b4ae56
+  notes: No tagged releases; this is the latest commit on the dev branch. Since the previous entry the commits add a SYSTEM settings page with persisted settings (display brightness, volume, output route, keyboard lighting, colour palette), a one-touch self-test chip and a raw-settings upload path; the latest commit adds the plan for the next phase. The default branch is still the skeleton.
 - version: dev @ 70c0441
   date: 2026-11-23
   url: https://github.com/kennx/sloop-fm1-tab5/commit/70c0441a4558334f0607e938506a1b1cfd8a72a7

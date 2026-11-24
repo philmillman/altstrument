@@ -1,7 +1,7 @@
 device: polyend-tracker-plus
 also_devices: [polyend-tracker-mini, polyend-tracker]
 name: Tracker Enhanced
-summary: Fork of Polyend's Tracker Community Edition for the Tracker+, Tracker Mini and Original Tracker that adds a per-project lines-per-beat setting (1, 2, 4, 8, 12 or 16) and patterns of up to 512 rows, with extended MIDI CC control and new effects planned.
+summary: Fork of Polyend's Tracker Community Edition for the Tracker+, Tracker Mini and Original Tracker that adds per-project lines per beat and 512-row patterns, with insert effects and new synth engines in the 0.1.0 release candidate.
 description: >-
   Lines per beat is the main change implemented so far. It is set for each project (1, 2, 4, 8, 12 for triplets, or 16),
   with a global default for new projects, and step effects, envelope and LFO sync, MIDI clock and the metronome follow
@@ -22,6 +22,7 @@ license: MIT
 license_notes: >-
   The LICENSE is Polyend's "MIT License with Wholesale Commercial Clone Restriction", so the complete firmware and .ptf
   builds cannot be sold. The precompiled synth libraries stay Polyend's proprietary code under their own licence file.
+based_on: polyend-tracker/tracker-ce
 distribution: download
 install_notes: >-
   Download the .ptf for your model from the release (TrackerPlus_ENH or TrackerMini_ENH; a PolyendTracker_ENH file is
@@ -32,6 +33,11 @@ install_notes: >-
 brick_risk: false
 tags: [fork, sequencer, tracker, midi, platform]
 versions:
+  - version: v0.1.0-rc.1
+    date: 2026-11-23
+    url: https://github.com/llozd/tracker-enhanced/releases/tag/v0.1.0-rc.1
+    notes: >-
+      Pre-release. Adds realtime insert effects on tracks, synth parts and the master with meters and EQ graphs, the MONO, PRISM, GRIT, HARM, PHASE and POLY synth engines with 72 factory patches, synth randomise on Shift + F7 and F8, an all tracks view, 25 generated display themes, and alpha, beta and rc version labels.
   - version: v0.1.0-beta.1
     date: 2026-11-11
     url: https://github.com/llozd/tracker-enhanced/releases/tag/v0.1.0-beta.1

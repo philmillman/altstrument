@@ -1,0 +1,24 @@
+device: m5stack-cardputer
+name: PC Cardputer-Adv MIDI Player
+summary: >-
+  PlatformIO firmware that makes the Cardputer-Adv an eight-voice sine-wave synth played live by MIDI bytes sent from a computer over the USB serial port.
+description: >-
+  The firmware reads an ordinary MIDI 1.0 byte stream from the USB CDC serial port and plays Note On and Note Off on eight voices, each a sine oscillator at 22,050 Hz with velocity scaling, with per-channel volume from controller 7 and oldest-voice stealing. A Python script on the repository's pc branch sends the notes of a MIDI file to the board. The README calls it an initial implementation and says building, volume, latency and long-run behaviour were not yet checked on the device. A roadmap note outlines sending PCM audio alongside the MIDI later; wave playback is not implemented.
+status: active
+authors:
+- name: marimutukisinnmu-rgb
+  url: https://github.com/marimutukisinnmu-rgb
+source: https://github.com/marimutukisinnmu-rgb/pc-cardputeradv-midi
+source_status: open
+license: MIT
+license_notes: The LICENSE file is the MIT text.
+distribution: source-only
+install_notes: >-
+  Build and upload with PlatformIO from the repository root (pio run -t upload), then run the sender script from the pc branch on the computer. The README is in Japanese.
+brick_risk: false
+tags: [midi, synth, usb-serial, esp32-s3, player]
+versions:
+- version: main @ 6b1cc85
+  date: 2026-11-24
+  url: https://github.com/marimutukisinnmu-rgb/pc-cardputeradv-midi/commit/6b1cc85a1f5293e2c075878b3c7dada4c2ca3122
+  notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,43 @@
+device: m-vave-fm-1
+name: DØG-5
+summary: >-
+  Aggressive eight-voice virtual-analog synth with a four-stage Psych Chain, 99 program slots and a pixel-art dog scene on screen; a fork of OberVave for the band DØGS.
+description: >-
+  DØG-5 forks OberVave v1.5.3 and keeps its eight-voice engine, then adds a Psych Chain of four effects named GROWL, ALLEY,
+  DRAIN and CHEW after the voices. It has 99 program slots with 32 factory patches, voiced in chapters. The screen is
+  hand-painted pixel art: the home page is a scene with a dog whose bark is the live scope, a turned knob shows as a dial,
+  and a fleas effect dirties the picture but never the sound. The project has a manual called COLLAR, a browser player that
+  compiles the firmware's own C sources, and a self-hosted installer page with a dry run. It is FM-1 only, with the OberVave SMK-37
+  code removed. The README says it was tested on one unit with the older flash chip and has not been run on one with the newer chip. Saved patches belong to DØG-5, which reads no other firmware's saves.
+status: active
+authors:
+- name: ZIGGY (DØGS)
+  url: https://github.com/vincentzsk-prod
+source: https://github.com/vincentzsk-prod/dog5
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  NOTICE and LICENSING.md state GPL-3.0-only, inherited from OberVave, and credit zvenson (OberVave, Dinghy), Leo Kuroshita
+  (Felucca) and isod89 (SLOOP) file by file. The fonts are SIL OFL 1.1. The art is hand-painted by the author with no AI-generated
+  art, and some pieces started from a small sampled section of a public-domain still. The repository is a GitHub fork of zvenson/obervave,
+  236 commits ahead when checked. docs/install holds the project's own v0.5.1 package, not a stock image.
+homepage: https://vincentzsk-prod.github.io/dog5/
+distribution: browser-installer
+install_notes: >-
+  Use the installer page in Chrome or Edge over USB; the package is inside the page, which shows what it will write, has a
+  dry run and resumes an interrupted install. The release also attaches dog5.fwsc, or run tools/fm1_install.py. Back up the whole
+  flash with M-Flasher first; if the unit will not boot, restore that backup with M-Flasher. The README says it was installed from stock,
+  over another Hub firmware and back again.
+brick_risk: false
+tags: [fork, synth-engine, fx, performance, emulator, ui]
+image:
+  url: https://raw.githubusercontent.com/vincentzsk-prod/dog5/main/assets/brand/dog5-github-banner.png
+  alt: "DØG-5 banner on black: a black-and-white snarling dog head in a spiked collar inside a circle, the yellow pixel title DØG-5 and the line free firmware for the M-VAVE FM-1 synth"
+  credit: ZIGGY (DØGS)
+  source_url: https://github.com/vincentzsk-prod/dog5
+  first_party: true
+versions:
+- version: v0.5.1
+  date: 2026-11-23
+  url: https://github.com/vincentzsk-prod/dog5/releases/tag/v0.5.1
+  notes: First public release, with the Psych Chain, the factory patches, the manual and the self-hosted installer, under a new package identity.

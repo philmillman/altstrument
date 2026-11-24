@@ -1,0 +1,51 @@
+device: m-vave-fm-1
+name: Zodiac
+summary: >-
+  Self-playing ambient firmware with twelve zodiac signs, each a moving picture and a piece of music that changes by
+  itself, with a browser installer and emulator.
+description: >-
+  Switch it on and it plays. Each of the twelve signs has its own picture and its own piece: horns for Aries, cellos
+  for Taurus, two harpsichord hands for Gemini, a violin for Cancer, a march for Leo, a hurdy-gurdy jig for Virgo,
+  floating violins for Libra, deep slow notes for Scorpio, a heroic theme for Sagittarius, alpine horns for Capricorn,
+  falling bells for Aquarius and a torrent for Pisces. The tempo drifts and most pieces move between three and four
+  beats in the bar. No numbers are shown; the picture is the readout. OCT- starts and stops the music, MASTER is the
+  volume and ALGORITHM turns through the tips on the screen. After 30 minutes a sign hands over to the next. PRESETS
+  steps through the signs, SELECT turns a wheel of their symbols, the twelve buttons FX to REC are the signs in order,
+  and MIDI program changes 0 to 11 choose one. The bottom left button, or any MIDI note, sets off the sign's own event
+  in the music and the picture together. The four knobs are low pass, high pass, echo and reverb, and the lower
+  buttons hold performance effects such as Echo, Dub, Repeat, Roll, Gate, Tape stop, Drive, Crush, Phaser and Freeze.
+  The pictures were made with an image-generating model and then chosen and converted by hand, and the music is
+  written as code with nothing sampled. The README says the image was built once for the FM-1 and fits with about
+  12 KB of memory to spare, and that it has not been run on an FM-1, so the processor load is not measured.
+status: active
+authors:
+- name: Stephen Cummins
+  url: https://github.com/stephencummins
+source: https://github.com/stephencummins/fm1-zodiac
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  README and LICENSE (GNU GPL version 3). The files that came from fm1-base's template (app/app.c, app/app.h,
+  app/words.tsv and the release workflow) are by Charles Vestal and stay under the Mozilla Public License 2.0, as
+  their headers say.
+homepage: https://zodiac.stephen8n.com/
+based_on: m-vave-fm-1/fm1-base
+distribution: browser-installer
+install_notes: >-
+  The project's install page, linked from the homepage, works in Chrome or Edge with the FM-1 on USB, and the
+  same page puts M-VAVE's own firmware back. The release also carries the .fwsc package. The README warns that
+  Zodiac replaces the firmware while it is installed and is an early version offered with no warranty. Installing
+  is at your own risk.
+brick_risk: false
+tags: [generative, ambient, synth-engine, fx, reverb, delay, midi, emulator, visual]
+image:
+  url: https://raw.githubusercontent.com/stephencummins/fm1-zodiac/master/docs/img/screen-playing.png
+  alt: A pixel-art ram's head with red and orange curled horns inside a white diamond outline, ringed by flames on a dark brown background
+  credit: Stephen Cummins
+  source_url: https://github.com/stephencummins/fm1-zodiac
+  first_party: true
+versions:
+- version: 1.0.0
+  date: 2026-11-23
+  url: https://github.com/stephencummins/fm1-zodiac/releases/tag/v1.0.0
+  notes: First release, with the .fwsc, a raw app image and a firmware.json. The release page has no notes beyond a changelog link. The README says it has not been tried on an FM-1.

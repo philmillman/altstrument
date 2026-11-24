@@ -15,7 +15,7 @@ description: >-
   plugins from the old location with a Move button. It started as a fork
   of poloq's Plugin Manager for MPC and keeps that project's history. v0.1.9
   was Gen2 only; v0.2.0 ships a 32-bit armv7 zip for Gen1 devices (Force, Live,
-  Live II, One, X, Key) next to the 64-bit aarch64 zip for Gen2. The author
+  Live II, One, X, Key) next to the 64-bit aarch64 zip for Gen2. Since v2.1.0 a separate Plugin Manager App for Gen2 on MPC OS 3.10.1 adds a Plugin Manager tile to MENU that opens the manager full screen, by patching MPC as it loads, and addins installed from the catalog bring Addin Restore with them so they survive a reboot. The author
   tested it on an MPC Live III with MPC OS 3.10 and on a Force; the MPC One
   layout comes from a user report and is tested offline only.
 status: active
@@ -55,6 +55,14 @@ image:
   source_url: https://github.com/open-mpc/plugin-manager
   first_party: true
 versions:
+  - version: plugin-manager-app-v2.1.0
+    date: 2026-11-24
+    url: https://github.com/open-mpc/plugin-manager/releases/tag/plugin-manager-app-v2.1.0
+    notes: The manager as an app for Gen2 on MPC OS 3.10.1 (Live III, One G2, Key G2, XL), with a Plugin Manager tile in MENU, full-screen use and the web page, without the plugin. It patches MPC while it loads, checks the exact MPC build first and changes nothing on any other, and is installed from the manager's add-ins list.
+  - version: plugin-manager-g2-v2.1.0
+    date: 2026-11-24
+    url: https://github.com/open-mpc/plugin-manager/releases/tag/plugin-manager-g2-v2.1.0
+    notes: Opens from the MENU tile when the app is installed, with six plugin cards per page in that view. On Gen2 an addin install first installs Addin Restore, with no MPC restart, so it returns after a reboot; fixes the same thumbnail showing for plugins past the first 120. The app's shim is untested on Gen1 and Force, so only a Gen2 app is released.
   - version: g2-stick-v2.0.0
     date: 2026-11-22
     url: https://github.com/open-mpc/mpc-vst-plugins/releases/tag/g2-stick-v2.0.0

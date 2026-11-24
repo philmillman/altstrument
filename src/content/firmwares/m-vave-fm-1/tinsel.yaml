@@ -1,0 +1,46 @@
+device: m-vave-fm-1
+name: Tinsel
+summary: >-
+  Christmas music toys and games for children and adults: a tree with a bauble above every key, a carol book, an
+  Advent calendar, a music box, change-ringing bells and small two-player games.
+description: >-
+  Switch it on and the Grotto shows a Christmas tree with a bauble above every key; a key rings its bell, and turning
+  a knob sends a robin to land on something that reacts. HOME opens the Sleigh, a menu of pictures. The Carol Book
+  plays eight public-domain carols in three ways, where any key plays the next note, the next key lights up and the
+  band waits, or it plays itself. Other screens are Present Catch, an Advent calendar with 24 windows, a Music Box with
+  a track of your own pins, a Bell Tower with Plain Bob and Grandsire, a Snow Globe, Jingle It, Cracker Pull,
+  Snowball Rally and Sleigh Ride. Holding EDIT shows what the screen's controls do, and EDIT with SAVE opens a
+  grown-ups' panel for the volume ceiling, game levels, the date and high scores. It is built on Dinghy and keeps its
+  saved data in its own part of the flash, so switching to Melisma or Dinghy leaves their saves alone. It has no
+  release yet: the README says to install tinsel-X.Y.fwsc from the releases, and none has been published. The
+  repository has the source, a build script, host tests and a release workflow, and the README does not say that it
+  has been tried on an FM-1.
+status: active
+authors:
+- name: Merlin Engines
+  url: https://github.com/joelio
+source: https://github.com/joelio/tinsel-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Stated in LICENSING.md. The platform comes from Felucca by way of SLOOP and Dinghy, the SMK-37 board layer is from
+  genkigenki's SLOOP branch, and the update loader screen is from OberVave. The Terminus font is SIL OFL 1.1.
+based_on: m-vave-fm-1/dinghy
+distribution: source-only
+install_notes: >-
+  No release exists yet. Build with ./build.sh --release 0.1 (Docker and the JieLi SDK, as described in Dinghy's
+  docs), then install the .fwsc with the Firmware Hub, M-Flasher's download mode or tools/fm1_install.py. The README
+  says the way back is another firmware or M-VAVE's own. Installing is at your own risk.
+brick_risk: false
+tags: [games, kids, music-toy, sequencer, educational, fx, reverb, emulator]
+image:
+  url: https://raw.githubusercontent.com/joelio/tinsel-fm1/main/docs/screens.png
+  alt: "Six pixel-art Tinsel screens: a Christmas tree with baubles, a carol book, a bell over a keyboard, a sleigh above chimneys, an Advent calendar house and a settings list"
+  credit: Merlin Engines
+  source_url: https://github.com/joelio/tinsel-fm1
+  first_party: true
+versions:
+- version: main @ 4cb3968
+  date: 2026-11-23
+  url: https://github.com/joelio/tinsel-fm1/commit/4cb3968160abdc00ae80f42b1e109921fdf31f84
+  notes: No tagged releases; this is the latest commit.

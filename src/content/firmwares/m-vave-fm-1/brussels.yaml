@@ -1,0 +1,47 @@
+device: m-vave-fm-1
+name: BRUSSELS
+summary: >-
+  Six-track firmware for the FM-1 from Piknik Elektronik with MS-20-style analog, FM6, lo-fi and drum engines, a 64-step
+  sequencer, hand-drawn Brussels characters that animate with the sound, and a web installer, emulator and editor.
+description: >-
+  Each engine on the four track-page knobs has its own animated drawing, among them Manneken-Pis for the analog engine
+  with MS-20 patch cables, a SNCB tram for the lo-fi engine, a lion for the vowel engine and a drum-X kit of 808, 909
+  and new-beat sounds. The firmware has a 64-step sequencer with a performance page, a macro layer, punch-in effects
+  and an effects rack, a mixer, song mode, chords, an arpeggiator, automation and a visualiser. The project site, in
+  French and English, hosts a browser emulator that runs the firmware, an installer, a web editor with one-click
+  backup and a manual. The code builds on JIANT FM and Felucca, and 0.9.1 restores the last session at power-on by
+  default.
+status: active
+authors:
+- name: Piknik Elektronik
+  url: https://github.com/fadyOne
+source: https://github.com/fadyOne/brussels-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  README and LICENSE give GPL-3.0-only. LICENSING.md is Felucca's, naming Juan Ignacio Antonucci's JIANT FM changes,
+  with the msfa-derived core Apache-2.0 and the bundled fonts under SIL OFL 1.1.
+based_on: m-vave-fm-1/jiant
+homepage: https://brussels.piknikelektronik.com
+distribution: browser-installer
+install_notes: >-
+  Use the installer on the project site in Chrome, Brave or Edge with the FM-1 on USB, or build with ./build.sh, which
+  writes build/felucca.fwsc. The site says the official firmware can be restored at any time, and the README advises
+  keeping M-Flasher or FM-1-transporter on hand.
+brick_risk: false
+tags: [synth-engine, drums, sequencer, fm, fx, chords, arpeggiator, editor, emulator, web, fork]
+image:
+  url: https://brussels.piknikelektronik.com/screens_bx/scr_home.webp
+  alt: "BRUSSELS home page on the FM-1 screen: tempo 120, four percentage knobs (MORPH, TUNE, TONE, DECAY), a bar-graph pyramid and a green line drawing of a small statue"
+  credit: Piknik Elektronik
+  source_url: https://brussels.piknikelektronik.com
+  first_party: true
+versions:
+- version: 0.9.1
+  date: 2026-11-24
+  url: https://github.com/fadyOne/brussels-fm1/releases/tag/v0.9.1
+  notes: Identity FM-1_1000; restores the last session at power-on by default.
+- version: '0.9'
+  date: 2026-11-24
+  url: https://github.com/fadyOne/brussels-fm1/releases/tag/v0.9
+  notes: First release.

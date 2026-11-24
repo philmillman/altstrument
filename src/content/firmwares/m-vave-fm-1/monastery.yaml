@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: MONASTERY
+summary: >-
+  Self-playing ambient firmware for the FM-1 in which seven monks chant the hours over a drone in a stone chapel, with a bell for each office and a novice, an abbot and a brother who sings flat.
+description: >-
+  Seven brothers chant slow modal lines over a drone, side answering side, through a long reverb. A bell marks each office from Matins to Compline, each with its own mode, pace and number of singers, and a day takes two hours by default. Benedict the abbot leads, Anselm the novice comes in early and misses entries but learns, Ambrose sinks flat until given the note, Gregory and Bernard argue over pitch, Columba dozes at Matins and a new novice arrives after some days. The white keys wake or cue a brother, EDIT rings the next office and OCT- and OCT+ slow or quicken the chant. The brothers' histories and the chronicle are saved about once an hour, and the engine comes from AMB-1.
+status: active
+authors:
+- name: ashtonwallen
+  url: https://github.com/ashtonwallen
+source: https://github.com/ashtonwallen/fm1-firmware/tree/main/monastery
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The folder's LICENSING.md and LICENSE give MPL-2.0 file by file, with AMB-1's and fm1-base's notices kept on the files
+  that came from them. The Barlow Semi Condensed and Terminus fonts are SIL OFL 1.1 and the JieLi SDK files are read from
+  the builder's checkout.
+based_on: m-vave-fm-1/amb-1
+distribution: download
+install_notes: >-
+  Download the .fwsc from the release and write it with M-Flasher or the FM-1 Flasher in the same repository, which backs up the whole flash first and keeps the bootloader untouched. The release says it is built on fm1-base 3ae2a65, which supports both flash chips, and has not been played much on real hardware.
+brick_risk: false
+tags: [ambient, generative, synth-engine, voice, game]
+image:
+  url: https://raw.githubusercontent.com/ashtonwallen/fm1-firmware/main/monastery/docs/img/screen-chapel.png
+  alt: "MONASTERY chapel screen: header LAUDS 05:39, a pixel-art chapel with six named brothers in choir stalls, the line Br. Anselm missed his entry, and knobs VOICES, DRONE, BELL and REVERB"
+  credit: ashtonwallen
+  source_url: https://github.com/ashtonwallen/fm1-firmware
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-24
+  url: https://github.com/ashtonwallen/fm1-firmware/releases/tag/monastery-1.0
+  notes: First release; built on fm1-base 3ae2a65.

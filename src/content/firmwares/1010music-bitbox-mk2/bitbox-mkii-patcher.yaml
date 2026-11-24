@@ -1,6 +1,6 @@
 device: 1010music-bitbox-mk2
-name: Bitbox MkII patcher (2.3.4+c11)
-summary: Browser patcher that turns your own official 2.3.4 image into 2.3.4+c11, adding a per-pad pattern generator, pitch-preserving sample speed, vertical waveform zoom, extra modulation sources and a screen saver with MIDI or CV wake.
+name: Bitbox MkII patcher (2.3.4+c12)
+summary: Browser patcher that turns your own official 2.3.4 image into 2.3.4+c12, adding a per-pad pattern generator, pitch-preserving sample speed, vertical waveform zoom, extra modulation sources and a screen saver with MIDI or CV wake.
 description: >-
   Licence note: the repository has no licence file or licence statement, only an
   "as is" disclaimer from the author, so the terms for reuse are not stated. A
@@ -9,7 +9,7 @@ description: >-
 
   The page checks your 2.3.4 image by SHA-256, applies a binary delta held in the
   repository, checks the result again and offers it as BITBOXMK2.bin to copy to
-  the card; the module identifies itself as 2.3.4+c11. Changes include vertical
+  the card; the module identifies itself as 2.3.4+c12. Changes include a cue point for the next sample trigger, a per-pad send to an external FX4 output, vertical
   waveform zoom, an optional screen saver with a MIDI or CV trigger wake, Sample
   Speed from 50 to 200 percent that keeps pitch and can combine with native
   Pitch, double-tap dial defaults, a clocked pattern generator for each of the 16
@@ -48,6 +48,10 @@ video:
   first_party: true
   found_via: https://github.com/vwal/bitbox-mkii-patcher#readme
 versions:
+  - version: 2.3.4+c12
+    date: 2026-11-24
+    url: https://github.com/vwal/bitbox-mkii-patcher/releases/tag/2.3.4%2Bc12
+    notes: Adds a cue on a single-WAV Sample pad that sets where the next trigger starts, a per-pad Pos to FX4 Send for an external effect, a per-pad choice of Sum, Left or Right as the reverb input, and a held pad's bar and Play triangle reset at the two-second stop.
   - version: 2.3.4+c11
     date: 2026-11-22
     url: https://github.com/vwal/bitbox-mkii-patcher/releases/tag/2.3.4%2Bc11

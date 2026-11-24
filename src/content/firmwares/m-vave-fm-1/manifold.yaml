@@ -12,8 +12,8 @@ description: >-
   LFOs, the knobs and the generators as sources. Effects are fuzz, a morphing filter, tempo delay, an 8-line reverb that
   can be tuned to the scale, a bus compressor and a limiter. There are 64 patches in four banks of 16, each with four scenes, MIDI over USB and
   Bluetooth, and Bluetooth audio out to headphones and speakers. It is an app on fm1-base with small patches to fm1-base
-  and felucca-bsp. The README lists 1.0 (2026-11-10) and 1.0.2 as earlier releases, but only the 1.0.3 and 1.0.4 tags and release
-  page exist on GitHub.
+  and felucca-bsp. The README lists 1.0 (2026-11-10) and 1.0.2 as earlier releases, but only the tags and release
+  pages from 1.0.3 on exist on GitHub.
 status: active
 authors:
 - name: stets43
@@ -30,7 +30,7 @@ distribution: browser-installer
 requires_stock: V15
 install_notes: >-
   Use the web installer on the project site in Chrome or Edge, or run fm1-base's tools/fm1_install.py with
-  firmware/manifold-1.0.4.fwsc from the repository. Building needs fm1-base at a pinned commit with the patches in the
+  firmware/manifold-1.0.7.fwsc from the repository. Building needs fm1-base at a pinned commit with the patches in the
   repository's patches folder applied. Release 1.0.3 adds support for FM-1s with the newer UC25HQ80 flash chip; before it,
   those units kept no settings between power-ons.
 brick_risk: false
@@ -42,6 +42,10 @@ image:
   source_url: https://github.com/stets43/Manifold
   first_party: true
 versions:
+- version: 1.0.7
+  date: 2026-11-23
+  url: https://github.com/stets43/Manifold/releases/tag/v1.0.7
+  notes: Removes the buzzy, bit-reduced edge on low notes by generating the plain harmonics, Detune copies, undertones and the fundamental's Wave from exact oscillators, and stores reverb and delay memory more precisely so tails fade to silence without hiss. Uses less CPU, rolls Dry patches two times in five and adds a quick start, a tuning guide and USB audio to the user guide. Patches move between 1.0.6 and 1.0.7 in both directions.
 - version: 1.0.6
   date: 2026-11-19
   url: https://github.com/stets43/Manifold/releases/tag/v1.0.6

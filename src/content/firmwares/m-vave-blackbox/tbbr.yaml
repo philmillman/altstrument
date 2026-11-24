@@ -8,7 +8,7 @@ description: >-
   eight scenes per preset. The pedal stores 80 presets, 20 of them factory presets, and has a tuner, an LED level meter and a global
   input noise gate. Version 0.8 added 11 factory cabinet impulse responses, four Vintage 30 captures from Jester's
   Brutal Pack (CC0) and seven Orbit cabinets from Darwin's Cat (CC BY 4.0), and lets a preset load up to 115 percent of the
-  DSP budget. An editor in French and English runs in a browser or desktop app over USB MIDI, and a Windows installer
+  DSP budget. An editor in French and English runs as a Windows desktop app or an Android app over USB MIDI, and a Windows installer
   reads the whole 1 MiB flash twice into a backup before it will install, builds the image from your own backup, keeps
   the bootloader and per-pedal data unchanged, and updates from small .tbbr packages that keep presets, IRs and captures.
   A restore rewrites the flash from the M-VAVE backup, again without the bootloader. The repository holds no M-VAVE firmware,
@@ -28,7 +28,7 @@ license_notes: >-
 homepage: https://mystery2312.github.io/tbbr/
 distribution: download
 install_notes: >-
-  Windows 10 or 11 only. Download BlackBox_TBBR_App.exe, or the installer alone, from the release, connect the pedal by
+  Windows 10 or 11 only for installing; an Android app, TBBR_Android.apk, is an editor over USB OTG. Download BlackBox_TBBR_App.exe, or the installer alone, from the release, connect the pedal by
   USB without a hub, switch it on and close M-UPGRADE. Choose Back up, which reads the flash twice and saves it, then
   Install; installing is blocked without a backup. Writes cover the application and storage area from 0x4000 and never the first
   16 KB, and the installer's Restore puts the M-VAVE flash back from the backup. Switch the pedal off and on afterwards and
@@ -36,6 +36,26 @@ install_notes: >-
 brick_risk: false
 tags: [amp-sim, nam, ir, fx, editor, flasher, loader, windows, web-midi]
 versions:
+  - version: v0.9.4
+    date: 2026-11-23
+    url: https://github.com/mystery2312/tbbr/releases/tag/v0.9.4
+    notes: Firmware fw6 0.12 shows English names for the remaining parameters and options and migrates old French scene names; no audio change.
+  - version: v0.9.3
+    date: 2026-11-23
+    url: https://github.com/mystery2312/tbbr/releases/tag/v0.9.3
+    notes: Firmware fw6 0.11 puts the whole pedal interface in English, with no audio change.
+  - version: v0.9.2
+    date: 2026-11-23
+    url: https://github.com/mystery2312/tbbr/releases/tag/v0.9.2
+    notes: Firmware fw6 0.10 makes the factory reset work on the pedal, clearing the 80 presets, user impulse responses and NAM captures. Fixes the installer opening an empty window.
+  - version: v0.9.1
+    date: 2026-11-23
+    url: https://github.com/mystery2312/tbbr/releases/tag/v0.9.1
+    notes: Firmware fw6 0.9 adds, moves and deletes blocks from the pedal by holding a family key, and makes the HOME LED flash the tempo. English becomes the default language, and the Android app updates itself.
+  - version: v0.9.0
+    date: 2026-11-23
+    url: https://github.com/mystery2312/tbbr/releases/tag/v0.9.0
+    notes: Adds an Android editor app over USB OTG and an installer check that blocks writing unless the pedal runs M-VAVE firmware V19. The online editor is removed. Firmware stays at fw6 0.8.
   - version: v0.8.0
     date: 2026-11-22
     url: https://github.com/mystery2312/tbbr/releases/tag/v0.8.0

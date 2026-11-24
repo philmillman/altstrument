@@ -1,0 +1,45 @@
+device: m-vave-fm-1
+name: Dusk
+summary: >-
+  Lofi beat maker for the FM-1: four tracks of keys, bass, drums and lead built from clips, four scenes per tape, a song
+  page and tape effects such as wobble, vinyl crackle and rain.
+description: >-
+  A tape has four scenes (A to D), and each scene has one clip on each of four tracks. The bank offers 14 chord
+  progressions, 10 keys rhythms, 8 bass lines, 10 drum grooves and 8 toplines, with 8, 4, 8 and 6 sounds for keys,
+  bass, lead and drums. SELECT moves the cursor, ALGORITHM picks a track's clip and PRESETS its sound. Chords are played
+  on the keys, drum steps on the white keys, and a topline can be recorded or written step by step. Eight pages cover
+  the lanes, chords, bass, drums, lead, tape and room effects, the song and a shelf of eight user tapes beside eight
+  factory ones. Tempo, swing, wobble, vinyl, pump and lazy-snare settings are on the knobs, and MIDI in over USB and
+  TRS plays the lead. All sound is synthesised. It is a Dinghy 0.5 app from the same author as VaveHero and FM-1 Clock,
+  with a project page that runs the firmware in the browser. The README says it is version 0.1, tested on a computer
+  and in fm1-emu and not yet tried on a real FM-1.
+status: active
+authors:
+- name: joakimskurk
+  url: https://github.com/joakimskurk
+source: https://github.com/joakimskurk/fm1dusk
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md gives GPL-3.0-only, as Dinghy, with Felucca, SLOOP and SMK-37 board code under their own notices. The
+  Terminus font is SIL OFL 1.1, and the chords, clips and factory tapes are the project's own with no samples.
+homepage: https://joakimskurk.github.io/fm1dusk/
+distribution: browser-installer
+install_notes: >-
+  Use the installer on the project page (Chrome or Edge over USB), which offers the latest build that passed its tests,
+  or build with make fw and install build/fm1dusk.fwsc with tools/fm1_install.py, which asks before writing. The README
+  says that if anything goes wrong, holding OCT- while switching on starts the USB rescue, where an installer always
+  works.
+brick_risk: false
+tags: [synth-engine, sequencer, drums, chords, fx, midi, emulator, web, groovebox]
+image:
+  url: https://raw.githubusercontent.com/joakimskurk/fm1dusk/main/docs/screens/pages.png
+  alt: "Eight Dusk pages on the FM-1 screen, each under a cassette header reading Morning Coffee, 76 BPM, key C: lanes, chords, bass, drums, lead, tape effects, song and tape shelf"
+  credit: joakimskurk
+  source_url: https://github.com/joakimskurk/fm1dusk
+  first_party: true
+versions:
+- version: main @ d23d1f0
+  date: 2026-11-23
+  url: https://github.com/joakimskurk/fm1dusk/commit/d23d1f06e730690a5bdc9e312140e655db0ad2b8
+  notes: No tagged releases; this is the latest commit.

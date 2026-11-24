@@ -1,27 +1,38 @@
 device: m-vave-fm-1
 name: Compás
 summary: >-
-  Felucca-family rhythm section firmware for cumbia, salsa, merengue and bolero from the BB1 author, with cued song
-  parts, ensemble or acid bass, hand percussion, a TR-727 pad mode and English or Spanish screens.
+  Compás is a bilingual Latin rhythm section for the M-VAVE FM-1: 38 source-labelled groove studies, 6/8 and 12/8
+  support, cued song parts, TR-727 percussion, bass, effects, persistent shows and a browser editor.
 description: >-
   Compás plays drums, bass and hand percussion as a band. Six song parts sit on the centre white keys; a cued part
   waits for the phrase, counts down the beats and comes in on the boundary, and ALGORITHM sets the next phrase to base,
   lift or break. The bass plays ensemble lines for each style or switches to an acid voice, and conga, maraca, timbal
-  and bell parts are switched in and out by hand. A 727 mode puts fifteen TR-727 percussion recordings on the pads, with
-  29 preset rhythms, 22 percussion parts in a step editor, live recording and roll.
+  and bell layers are switched in and out from the black keys. A 727 page puts fifteen TR-727 percussion recordings on
+  the pads with a rhythm bank, a sixteen-step editor, live recording and roll, and a KUMBIA page plays the four sounds
+  and four patterns of Oficina de Sonido's Hanan Cumbia on their own or layered over the band.
 
-  Version 1.1 adds a KUMBIA page with the four sounds and four patterns of the Hanan Cumbia drum machine, which can be layered over any groove.
+  Version 1.3 has 38 source-labelled groove studies. The nine new ones cover Mexican Sureste, Pará, north-coast Peru, a
+  Costa Chica 6/8 accompaniment and a 12/8 bell and block study. The README calls them accompaniment studies rather than
+  claims to reproduce a whole regional practice, and their source notes mark published reductions, authored support,
+  proxy voices and studies still awaiting local musician review. Compound-meter studies show dotted-quarter BPM while
+  MIDI clock stays at 24 PPQN. Kumbia gets a LEVEL / NIVEL knob from 0 to 100, with OCT−/+ setting its sample clock in
+  Hz, and the final digital output conversion is restored to full scale, a 6.02 dB gain correction. ROOM reverb,
+  tempo-synced ECHO, GLUE compression, MIDI clock out and the Sideman reference carry over from 1.2.
 
-  Version 1.0 has 29 groove studies covering Colombian, Mexican, Peruvian, Argentine and Chilean cumbia, salsa and son,
-  merengue, bolero, tejano and conjunto, and 28 written songs such as La Paloma, Cielito Lindo and Siboney arranged from
-  printed editions, with a melody guide and transpose. Rebajada slows the whole band to 60 % with the pitch. A
-  sixteen-song set list cues the next song at the boundary; in 1.0 the set list and user 727 rhythms are lost at power
-  off. The screens switch between English and Spanish live from the GLO page. A browser player on the project site runs
-  the same firmware code.
+  Written songs arranged from printed editions play from THE SHOW on the GLO page, with a melody guide, hold, coda and
+  transpose, and Rebajada slows the whole band to 60 % with the pitch. Supported shows, user rhythms and Kumbia settings
+  are kept across power-off in a CPS6 journal, which a firmware update clears. Big Beat Editor in desktop Chrome or Edge
+  reads and edits tempo, feel, groove, energy, key, clave, the six band lanes and effects over USB MIDI. The English and
+  Spanish packages hold the same bilingual instrument and differ only in the language shown at first boot; GLO and
+  ALGORITHM switch it live. A browser player on the project site runs the same audio engine.
+
+  History: version 1.0 (2026-11-08) had 29 groove studies and 28 written songs such as La Paloma, Cielito Lindo and
+  Siboney, and lost the set list and user 727 rhythms at power-off. Version 1.1 added the KUMBIA page, whose settings
+  reset at power-off, and 1.2 added the effects and the Big Beat Editor adapter.
 
 status: active
 authors:
-- name: TexasRADIO
+- name: Big Beat Studio
   url: https://github.com/TexasRADIO
 source: https://github.com/TexasRADIO/compas-firmware
 source_status: open
@@ -31,25 +42,42 @@ license_notes: >-
   under GPL-3.0-only, and the USB MIDI driver, updater and browser installer modules come from BB1 BAND r85 under the
   same licence. LICENSING.md says the fifteen TR-727 recordings are owned by the Compás author and released under the
   same terms. Most written songs are arranged from U.S. public-domain printed editions; Juana Quilina (CC BY-SA 3.0),
-  La Adelita (CC BY 4.0) and La Valentina (CC BY-SA 4.0) keep their editions' licences. The Kumbia Kit sounds and patterns come from Oficina de Sonido's Hanan Cumbia, based on Bleep Labs' Bleep Drum, used under CC BY-SA 3.0. The JieLi SDK SPL, configuration
-  and EQ data in the release package are Apache-2.0.
+  La Adelita (CC BY 4.0) and La Valentina (CC BY-SA 4.0) keep their editions' licences. The Kumbia Kit sounds and
+  patterns come from Oficina de Sonido's Hanan Cumbia, based on Bleep Labs' Bleep Drum, used under CC BY-SA 3.0. The
+  JieLi SDK SPL, configuration and EQ data in the release package are Apache-2.0.
 homepage: https://thebigbeat.app/compas/install/
+community:
+- label: Compás playing guide
+  url: https://thebigbeat.app/compas/guide
+- label: Compás browser player
+  url: https://thebigbeat.app/compas/play/
+- label: Big Beat Editor
+  url: https://thebigbeat.app/editor/
 distribution: browser-installer
 install_notes: >-
-  The author's installer page needs desktop Chrome or Edge and a USB data cable plugged straight into the computer, with
-  playback stopped, MASTER fully down and other music apps closed. Choose English or Español there; the release also
-  carries a separate .fwsc package for each language. To return to stock, the release notes say to use the matching
-  original M-VAVE package; stock-loader staging passed the offline release checks, but the emulator did not complete the
-  vendor-loader return, so end-to-end stock restoration is unverified. The FM-1's mask-ROM rescue is the fallback.
+  Use the author's installer page in desktop Chrome or Edge with the FM-1 on USB, and keep the cable connected through
+  the write. Choose English or Español there; the release also carries compas-1.3-en.fwsc and compas-1.3-es.fwsc, and
+  the firmware identity stays FM-1_92210003. A firmware update clears the CPS6 journal that holds shows, user rhythms
+  and Kumbia settings, so export the show with Big Beat Editor before installing. The 1.3 qualification says the
+  package writes only the application area (0x4000–0x92FFF) and a staging area, leaving the boot head and device
+  identity untouched, and that the hardware recovery route shown by the installer does not depend on Compás. To return
+  to official firmware, give an unchanged M-VAVE FM-1 package to the installer's return section. For 1.3, physical
+  installs of both packages with transport, editor and MIDI-clock checks passed, and a return to a compatible installed
+  firmware was verified. The exact 1.3-to-stock-V15 round trip, the panel knob and save/power-cycle checks, analogue
+  output measurement and regional musician review are still open. The FM-1's mask-ROM rescue is the fallback.
 brick_risk: false
 tags: [drums, sequencer, performance, synth-engine, emulator]
 image:
   url: https://thebigbeat.app/compas/media/screen-band-cue.png
   alt: "Compás band screen: CDMX Sonidera at 100 BPM on the verse with the bridge cued four beats ahead, conga, maraca, timbal and bass layers, six song parts and tempo, feel, bass and perc knobs"
-  credit: TexasRADIO
+  credit: Big Beat Studio
   source_url: https://thebigbeat.app/compas/
   first_party: true
 versions:
+- version: '1.3'
+  date: 2026-11-24
+  url: https://github.com/TexasRADIO/compas-firmware/releases/tag/compas-v1.3
+  notes: Nine more groove studies for 38 in all, 6/8 and 12/8 support, a Kumbia LEVEL / NIVEL knob and OCT−/+ sample-clock control, a 6.02 dB correction to the final digital output conversion, shows, user rhythms and Kumbia settings kept across power-off, and editor build 13. The English and Spanish packages are byte-for-byte promotions of 1.3-rc.4 and differ only in first-boot language.
 - version: compas-v1.2-editor.1
   date: 2026-11-16
   url: https://github.com/TexasRADIO/compas-firmware/releases/tag/compas-v1.2-editor.1

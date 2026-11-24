@@ -1,7 +1,7 @@
 ---
 import Base from '@/layouts/Base.astro';
 import DeviceCard from '@/components/DeviceCard.astro';
-import SearchBox, { type IndexEntry } from '@/components/SearchBox.astro';
+import DeviceListControls from '@/components/DeviceListControls.astro';
 import LatestSection from '@/components/LatestSection.astro';
 import VersionCard from '@/components/VersionCard.astro';
 import AddedDeviceCard from '@/components/AddedDeviceCard.astro';
@@ -10,7 +10,7 @@ import { getDevicesWithFirmwares, groupByCategory, groupByManufacturer, siteStat
 
 const devices = await getDevicesWithFirmwares();
 const groups = groupByCategory(devices);
-// Server order is "popularity" (the default sort); SearchBox.astro re-sorts on the client.
+// Server order is "popularity" (the default sort); DeviceListControls.astro re-sorts on the client.
 type Grp = { name: string; devices: DeviceItem[] };
 const byPopularity = (a: Grp, b: Grp) => firmwareTotal(b.devices) - firmwareTotal(a.devices) || compareText(a.name, b.name);
 const mfrs = groupByManufacturer(devices)
@@ -28,15 +28,6 @@ const stats = siteStats(devices);
 const latestFirmware = recentVersions(devices, 3, { onePerFirmware: true, kind: 'firmware' });
 const latestTools = recentVersions(devices, 3, { onePerFirmware: true, kind: 'tool' });
 const latestDevices = recentDevices(devices, 3);
-const index: IndexEntry[] = devices.map((d) => ({
-  id: d.id,
-  name: d.data.name,
-  manufacturer: d.data.manufacturer,
-  category: d.data.category,
-  tagline: d.data.tagline,
-  firmwareCount: d.firmwares.length,
-  firmwares: d.firmwares.map((f) => f.data.name),
-}));
 ---
 <Base
   home
@@ -72,10 +63,8 @@ const index: IndexEntry[] = devices.map((d) => ({
   </div>
 
   <div class="mt-6">
-    <SearchBox index={index} categories={groups.map((g) => g.category)} />
+    <DeviceListControls />
   </div>
-
-  <p id="no-results" class="mt-8 text-muted" hidden>No devices match. Try fewer words or clear the category.</p>
 
   {groups.length === 0 && <p class="mt-8 text-muted">No devices listed yet.</p>}
 

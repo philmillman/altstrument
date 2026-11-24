@@ -4,17 +4,19 @@ import { isoDate, versionAnchor, plural } from '@/lib/catalog';
 interface Props {
   /** Already sorted newest first. */
   versions: Version[];
-  /** Rows shown before the rest fold into a <details>. */
+  /** Rows shown before the rest fold behind a button (JS) or a link (moreHref). */
   visible?: number;
   /** Give rows id="v-<version>" for deep links (single-firmware pages only). */
   anchors?: boolean;
   caption?: string;
-  /** When set, older versions are a link to this page instead of a <details>. */
+  /** When set, older versions are a link to this page instead of folding in place. */
   moreHref?: string;
 }
 const { versions, visible = 5, anchors = false, caption = 'Version history', moreHref } = Astro.props;
 const head = versions.slice(0, visible);
 const rest = versions.slice(visible);
+const rows = moreHref ? head : versions;
+const folds = rest.length > 0 && !moreHref;
 const hasNotes = versions.some((v) => v.notes);
 ---
 {versions.length > 0 && (
@@ -25,12 +27,12 @@ const hasNotes = versions.some((v) => v.notes);
         <tr><th scope="col">Version</th><th scope="col">Date</th>{hasNotes && <th scope="col">Notes</th>}</tr>
       </thead>
       <tbody>
-        {head.map((v) => (
+        {rows.map((v, i) => (
           <Fragment>
-            <tr id={anchors ? versionAnchor(v.version) : undefined}>
+            <tr id={anchors ? versionAnchor(v.version) : undefined} data-older={folds && i >= visible ? '' : undefined}>
               <td class="mono" data-label="Version">{v.url ? <a href={v.url} rel="noopener">{v.version}</a> : v.version}</td>
               <td class="nowrap mono" data-label="Date">{isoDate(v.date) ?? <span class="text-muted">undated</span>}</td>
-              {hasNotes && <td data-label="Notes" class="w-full [overflow-wrap:anywhere]">{v.notes}</td>}
+              {hasNotes && <td data-label="Notes" class="no-label w-full [overflow-wrap:anywhere]">{v.notes && <div class="vnotes">{v.notes}</div>}</td>}
             </tr>
           </Fragment>
         ))}
@@ -39,22 +41,87 @@ const hasNotes = versions.some((v) => v.notes);
     {rest.length > 0 && moreHref && (
       <p class="mt-1 py-1 text-sm"><a href={moreHref} class="text-accent">{plural(rest.length, 'older version')}</a></p>
     )}
-    {rest.length > 0 && !moreHref && (
-      <details class="mt-1">
-        <summary class="cursor-pointer py-1 text-sm text-accent">{plural(rest.length, 'older version')}</summary>
-        <table class="vtable">
-          <caption class="sr-only">{caption} (older)</caption>
-          <tbody>
-            {rest.map((v) => (
-              <tr id={anchors ? versionAnchor(v.version) : undefined}>
-                <td class="mono" data-label="Version">{v.url ? <a href={v.url} rel="noopener">{v.version}</a> : v.version}</td>
-                <td class="nowrap mono" data-label="Date">{isoDate(v.date) ?? <span class="text-muted">undated</span>}</td>
-                {hasNotes && <td data-label="Notes" class="w-full [overflow-wrap:anywhere]">{v.notes}</td>}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </details>
+    {folds && (
+      <>
+        <p class="mt-1 py-1 text-sm" data-versions-more hidden>
+          <button type="button" class="text-accent hover:underline cursor-pointer">{plural(rest.length, 'older version')}</button>
+        </p>
+        <script is:inline>
+          (() => {
+            const p = document.currentScript.previousElementSibling;
+            const table = p.previousElementSibling;
+            table.setAttribute('data-folded', '');
+            p.hidden = false;
+            const open = () => { table.removeAttribute('data-folded'); p.remove(); };
+            p.querySelector('button').addEventListener('click', open);
+            const reveal = () => {
+              let id = location.hash.slice(1);
+              try { id = decodeURIComponent(id); } catch (e) {}
+              const el = id && document.getElementById(id);
+              if (el && table.contains(el)) { open(); el.scrollIntoView(); }
+            };
+            reveal();
+            addEventListener('hashchange', reveal);
+          })();
+        </script>
+      </>
     )}
   </>
 )}
+
+<style is:global>
+  table[data-folded] tr[data-older] { display: none; }
+  /* Long notes show three lines; the script below lets a click or tap open the rest.
+     Only clamped when scripting is on, so without JS the full text shows. */
+  @media (scripting: enabled) {
+    .vnotes:not([aria-expanded="true"]) {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      overflow: hidden;
+    }
+  }
+  .vnotes[aria-expanded] { cursor: pointer; }
+  .vnotes[aria-expanded="false"]:hover { color: var(--fg); text-decoration: underline dotted var(--line-strong); text-underline-offset: 3px; }
+</style>
+
+<script>
+  // Marks notes that the three-line clamp cuts off as expandable. A ResizeObserver re-checks
+  // when width changes and when folded rows first become visible (their size goes from 0).
+  const update = (el: HTMLElement) => {
+    if (el.getAttribute('aria-expanded') === 'true' || el.clientHeight === 0) return;
+    const cut = el.scrollHeight > el.clientHeight + 1;
+    if (cut && !el.hasAttribute('aria-expanded')) {
+      el.setAttribute('role', 'button');
+      el.tabIndex = 0;
+      el.setAttribute('aria-expanded', 'false');
+      el.title = 'Show the full notes';
+    } else if (!cut && el.getAttribute('aria-expanded') === 'false') {
+      el.removeAttribute('role');
+      el.removeAttribute('tabindex');
+      el.removeAttribute('aria-expanded');
+      el.removeAttribute('title');
+    }
+  };
+  const ro = new ResizeObserver((items) => items.forEach((i) => update(i.target as HTMLElement)));
+  document.querySelectorAll<HTMLElement>('.vnotes').forEach((el) => ro.observe(el));
+  const toggle = (el: HTMLElement) => {
+    const open = el.getAttribute('aria-expanded') !== 'true';
+    el.setAttribute('aria-expanded', String(open));
+    el.title = open ? '' : 'Show the full notes';
+    if (!open) update(el);
+  };
+  document.addEventListener('click', (e) => {
+    const el = (e.target as Element).closest?.<HTMLElement>('.vnotes[aria-expanded]');
+    // Leave a click that ends a text selection alone.
+    if (!el || (e.target as Element).closest('a') || String(getSelection() ?? '')) return;
+    toggle(el);
+  });
+  document.addEventListener('keydown', (e) => {
+    const el = (e.target as Element).closest?.<HTMLElement>('.vnotes[aria-expanded]');
+    if (!el || (e.key !== 'Enter' && e.key !== ' ')) return;
+    e.preventDefault();
+    toggle(el);
+  });
+</script>

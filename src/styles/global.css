@@ -432,7 +432,7 @@
 
 /*
  * Index grouping. Both groupings are in the HTML; the inline script in
- * SearchBox.astro sets html[data-grouping] before the lists are parsed.
+ * DeviceListControls.astro sets html[data-grouping] before the lists are parsed.
  * Without JS the manufacturer view shows.
  */
 [data-group-view="category"] {
@@ -446,7 +446,7 @@ html[data-grouping="category"] [data-group-view="manufacturer"] {
 }
 
 /*
- * Jump lists above the index groups show two rows by default; SearchBox.astro
+ * Jump lists above the index groups show two rows by default; DeviceListControls.astro
  * marks the entries past that with data-clipped and shows a "show all" toggle.
  * Without JS the full list shows.
  */
@@ -461,4 +461,130 @@ html[data-grouping="category"] [data-group-view="manufacturer"] {
 .jump-more:hover {
   color: var(--accent-hover);
   text-decoration: underline;
+}
+
+/*
+ * Site-wide search modal (SearchModal.astro): a native <dialog> pinned near the top,
+ * with the results scrolling inside it.
+ */
+.search-dialog {
+  width: min(42rem, calc(100% - 1.5rem));
+  max-height: min(40rem, calc(100dvh - 3rem));
+  margin: 3rem auto auto;
+  padding: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: 0.5rem;
+  background: var(--surface);
+  color: var(--fg);
+  box-shadow: 0 12px 40px rgb(0 0 0 / 0.25);
+}
+.search-dialog[open] {
+  display: flex;
+  flex-direction: column;
+}
+.search-dialog > form {
+  flex: 1 1 auto;
+}
+.search-dialog::backdrop {
+  background: rgb(0 0 0 / 0.45);
+}
+@media (max-width: 40rem) {
+  .search-dialog {
+    margin-top: 0.75rem;
+    max-height: calc(100dvh - 1.5rem);
+  }
+}
+.search-close {
+  margin: -0.25rem -0.375rem -0.25rem 0;
+  padding: 0 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  color: var(--muted);
+  cursor: pointer;
+}
+.search-close:hover {
+  color: var(--fg);
+  background: var(--surface-2);
+}
+.search-results {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0.25rem 0.5rem 0.75rem;
+}
+.search-group {
+  margin-top: 0.5rem;
+}
+.search-group-h {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+.search-option {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 0.5rem;
+  padding: 0.375rem 0.5rem;
+  border-radius: 0.375rem;
+  color: var(--fg);
+  text-decoration: none;
+}
+.search-option[aria-selected="true"] {
+  background: var(--surface-2);
+  outline: 1px solid var(--line-strong);
+}
+.search-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 0.5rem;
+}
+.search-name {
+  font-weight: 600;
+  color: var(--accent);
+}
+.search-meta {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+.search-kind {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+.search-summary {
+  flex-basis: 100%;
+  font-size: 0.875rem;
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.search-more {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+.search-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  /* Same line box as the nav links, so the label shares their baseline. */
+  height: 1.25rem;
+  line-height: 1.25rem;
+  color: var(--muted);
+  cursor: pointer;
+}
+.search-trigger:hover {
+  color: var(--fg);
+  text-decoration: underline;
+}
+.search-trigger svg {
+  width: 0.95rem;
+  height: 0.95rem;
 }

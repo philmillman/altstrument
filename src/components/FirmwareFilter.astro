@@ -78,7 +78,7 @@ const sortSelect: Select = {
 };
 const selects = [...(hasBothKinds ? [kindFilter] : []), ...(search ? filters : []), sortSelect];
 ---
-<form id="fw-filter" role={search ? 'search' : undefined} class="flex flex-col gap-2 xl:flex-row xl:items-end" hidden>
+<form id="fw-filter" role={search ? 'search' : undefined} class="flex flex-col gap-2" hidden>
   {search && (
     <div class="flex-1">
       <label for="fwf-q" class="block text-sm font-medium">Search</label>
@@ -91,9 +91,9 @@ const selects = [...(hasBothKinds ? [kindFilter] : []), ...(search ? filters : [
       />
     </div>
   )}
-  <div class:list={['grid grid-cols-2 gap-2 sm:flex sm:flex-wrap xl:flex-nowrap', !search && 'xl:flex-1']}>
+  <div class="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap lg:flex-nowrap">
     {selects.map((s, i) => (
-      <div class:list={['min-w-0 sm:flex-auto', selects.length % 2 === 1 && i === selects.length - 1 && 'col-span-2 sm:col-span-1']}>
+      <div class:list={['min-w-0 sm:flex-1', selects.length % 2 === 1 && i === selects.length - 1 && 'col-span-2 sm:col-span-1']}>
         <label for={s.id} class="block text-sm font-medium">{s.label}</label>
         <select id={s.id} class="mt-1 w-full rounded border border-line-strong bg-surface px-2 py-2 text-base text-fg sm:px-3">
           {s.all && <option value="">{s.all}</option>}

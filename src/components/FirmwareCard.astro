@@ -1,5 +1,6 @@
 ---
 import type { FirmwareItem } from '@/lib/catalog';
+import { hostOf } from '@/lib/catalog';
 import { KIND_LABELS, DISTRIBUTION_LABELS } from '@/lib/labels';
 import StatusBadge from './StatusBadge.astro';
 import SourceBadge from './SourceBadge.astro';
@@ -14,6 +15,7 @@ import { youtubeId, youtubeThumb } from '@/lib/media';
 interface Props { firmware: FirmwareItem }
 const { firmware: fw } = Astro.props;
 const d = fw.data;
+const link = d.homepage ? { label: 'Homepage', url: d.homepage } : d.source ? { label: 'Source', url: d.source } : undefined;
 // Same precedence as the firmware page: a video's thumbnail wins over the image.
 const vid = d.video ? youtubeId(d.video.url) : undefined;
 const thumb = vid ? { src: youtubeThumb(vid), cover: true } : d.image ? { src: d.image.url, cover: false } : undefined;
@@ -46,10 +48,11 @@ const thumb = vid ? { src: youtubeThumb(vid), cover: true } : d.image ? { src: d
     <LicenseBadge license={d.license} />
     <QualityBadge firmware={fw} />
   </div>
-  {(d.distribution || d.requires_stock) && (
+  {(d.distribution || d.requires_stock || link) && (
     <dl class="mt-2 grid grid-cols-[auto_minmax(0,1fr)] gap-x-3 gap-y-0.5 text-sm">
       {d.distribution && (<><dt class="text-muted">Distribution</dt><dd>{DISTRIBUTION_LABELS[d.distribution]}</dd></>)}
       {d.requires_stock && (<><dt class="text-muted">Requires stock</dt><dd class="mono [overflow-wrap:anywhere]">{d.requires_stock}</dd></>)}
+      {link && (<><dt class="text-muted">{link.label}</dt><dd class="[overflow-wrap:anywhere]"><a href={link.url} rel="noopener">{hostOf(link.url)}</a></dd></>)}
     </dl>
   )}
   {d.brick_risk && <div class="mt-2"><BrickWarning compact /></div>}

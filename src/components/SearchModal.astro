@@ -1,0 +1,246 @@
+---
+import { CATEGORIES, CATEGORY_LABELS } from '@/content/schema';
+/*
+ * Site-wide search, opened from the "search" item in the top nav (Base.astro), with "/" or
+ * Cmd/Ctrl+K, or by a /?q= link to the home page. The index (src/pages/search.json.ts) is
+ * fetched the first time the modal opens. Without JS the nav item stays hidden.
+ */
+---
+<dialog id="site-search" class="search-dialog" aria-labelledby="ss-h">
+  <form method="dialog" role="search" class="flex min-h-0 flex-col">
+    <div class="flex items-center justify-between gap-3 px-3 pt-3 sm:px-4">
+      <h2 id="ss-h" class="text-base">Search</h2>
+      <button type="submit" class="search-close" aria-label="Close search" title="Close (Esc)">×</button>
+    </div>
+    <div class="flex flex-col gap-2 px-3 pt-2 sm:flex-row sm:px-4">
+      <label for="ss-q" class="sr-only">Search devices, manufacturers, firmware and tools</label>
+      <input
+        id="ss-q"
+        type="search"
+        autocomplete="off"
+        spellcheck="false"
+        placeholder="Devices, manufacturers, firmware, tools"
+        role="combobox"
+        aria-expanded="false"
+        aria-controls="ss-results"
+        aria-autocomplete="list"
+        class="min-w-0 flex-1 rounded border border-line-strong bg-surface px-3 py-2 text-base text-fg placeholder:text-muted"
+      />
+      <label for="ss-cat" class="sr-only">Category</label>
+      <select id="ss-cat" class="rounded border border-line-strong bg-surface px-2 py-2 text-base text-fg sm:px-3">
+        <option value="">All categories</option>
+        {CATEGORIES.map((c) => <option value={c}>{CATEGORY_LABELS[c]}</option>)}
+      </select>
+    </div>
+    <p id="ss-status" class="px-3 pt-2 text-sm text-muted sm:px-4" role="status" aria-live="polite"></p>
+    <div id="ss-results" role="listbox" aria-label="Search results" class="search-results"></div>
+  </form>
+</dialog>
+<script is:inline>
+  (function () {
+    var dlg = document.getElementById('site-search');
+    if (!dlg || typeof dlg.showModal !== 'function') return;
+    var q = document.getElementById('ss-q');
+    var cat = document.getElementById('ss-cat');
+    var status = document.getElementById('ss-status');
+    var box = document.getElementById('ss-results');
+    var CAPS = { devices: 8, manufacturers: 5, entries: 20 };
+    var coll = new Intl.Collator('en', { sensitivity: 'base', numeric: true });
+    var data = null, loading = null, active = -1, options = [];
+
+    // Lowercase, strip accents (Hügelton -> hugelton), and add a copy without punctuation
+    // so "fm1" finds "FM-1".
+    function norm(s) {
+      return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+    }
+    function hayOf(parts) {
+      var h = norm(parts.join(' '));
+      return h + ' ' + h.replace(/[^a-z0-9\s]/g, '');
+    }
+    function prep(json) {
+      json.devices.forEach(function (d) { d.l = norm(d.n); d.h = hayOf([d.n, d.m, d.t || '']); });
+      json.manufacturers.forEach(function (m) { m.l = norm(m.n); m.h = hayOf([m.n]); });
+      json.entries.forEach(function (e) {
+        e.l = norm(e.n);
+        e.h = hayOf([e.n, e.d.join(' '), e.a.join(' '), (e.g || []).join(' '), e.s || '']);
+      });
+      return json;
+    }
+    function load() {
+      if (data) return Promise.resolve(data);
+      if (!loading) {
+        loading = fetch('/search.json')
+          .then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
+          .then(function (j) { data = prep(j); return data; })
+          .catch(function (e) { loading = null; throw e; });
+      }
+      return loading;
+    }
+
+    // Name starts with the query, then name contains it, then all terms in the name, then anywhere.
+    function rank(item, full, terms) {
+      if (item.l.indexOf(full) === 0) return 0;
+      if (item.l.indexOf(full) !== -1) return 1;
+      if (terms.every(function (t) { return item.l.indexOf(t) !== -1; })) return 2;
+      return 3;
+    }
+    function search(list, full, terms, keep) {
+      var out = [];
+      list.forEach(function (it) {
+        if (keep && !keep(it)) return;
+        if (!terms.every(function (t) { return it.h.indexOf(t) !== -1; })) return;
+        out.push({ it: it, r: terms.length ? rank(it, full, terms) : 0 });
+      });
+      out.sort(function (a, b) {
+        return a.r - b.r || (b.it.p || 0) - (a.it.p || 0) || coll.compare(a.it.n, b.it.n);
+      });
+      return out.map(function (x) { return x.it; });
+    }
+
+    function el(tag, cls, text) {
+      var e = document.createElement(tag);
+      if (cls) e.className = cls;
+      if (text !== undefined) e.textContent = text;
+      return e;
+    }
+    function group(title, id, items, cap, row) {
+      if (items.length === 0) return;
+      var g = el('div', 'search-group');
+      g.setAttribute('role', 'group');
+      g.setAttribute('aria-labelledby', id);
+      var h = el('h3', 'search-group-h', title + ' ');
+      h.id = id;
+      h.appendChild(el('span', 'mono font-normal', String(items.length)));
+      g.appendChild(h);
+      items.slice(0, cap).forEach(function (it) {
+        var a = el('a', 'search-option');
+        a.href = it.u;
+        a.id = 'ss-opt-' + options.length;
+        a.setAttribute('role', 'option');
+        a.setAttribute('aria-selected', 'false');
+        a.tabIndex = -1;
+        row(a, it);
+        options.push(a);
+        g.appendChild(a);
+      });
+      if (items.length > cap) g.appendChild(el('p', 'search-more', 'and ' + (items.length - cap) + ' more; add a word to narrow it down'));
+      box.appendChild(g);
+    }
+    function render() {
+      if (!data) return;
+      var full = norm(q.value).trim().replace(/\s+/g, ' ');
+      var terms = full ? full.split(' ') : [];
+      var c = cat.value;
+      box.textContent = '';
+      options = [];
+      active = -1;
+      q.removeAttribute('aria-activedescendant');
+      if (!terms.length && !c) {
+        status.textContent = 'Type to search ' + data.devices.length + ' devices, ' + data.manufacturers.length +
+          ' manufacturers and ' + data.entries.length + ' firmware and tool entries.';
+        q.setAttribute('aria-expanded', 'false');
+        return;
+      }
+      var devs = search(data.devices, full, terms, c && function (d) { return d.c === c; });
+      var mfrs = c ? [] : search(data.manufacturers, full, terms);
+      var ents = search(data.entries, full, terms, c && function (e) { return e.c.indexOf(c) !== -1; });
+      group('Devices', 'ss-g-dev', devs, CAPS.devices, function (a, d) {
+        a.appendChild(el('span', 'search-name', d.n));
+        a.appendChild(el('span', 'search-meta', d.m));
+      });
+      group('Manufacturers', 'ss-g-mfr', mfrs, CAPS.manufacturers, function (a, m) {
+        a.appendChild(el('span', 'search-name', m.n));
+        a.appendChild(el('span', 'search-meta', m.p + (m.p === 1 ? ' device' : ' devices')));
+      });
+      group('Firmware & tools', 'ss-g-ent', ents, CAPS.entries, function (a, e) {
+        var top = el('span', 'search-line');
+        top.appendChild(el('span', 'search-name', e.n));
+        if (e.k === 'tool') top.appendChild(el('span', 'search-kind', 'Tool'));
+        top.appendChild(el('span', 'search-meta', 'for ' + e.d.join(', ')));
+        a.appendChild(top);
+        if (e.s) a.appendChild(el('span', 'search-summary', e.s));
+      });
+      var n = devs.length + mfrs.length + ents.length;
+      var parts = [];
+      if (devs.length) parts.push(devs.length + (devs.length === 1 ? ' device' : ' devices'));
+      if (mfrs.length) parts.push(mfrs.length + (mfrs.length === 1 ? ' manufacturer' : ' manufacturers'));
+      if (ents.length) parts.push(ents.length + (ents.length === 1 ? ' entry' : ' entries'));
+      status.textContent = n ? parts.join(', ') : 'Nothing matches. Try fewer words or clear the category.';
+      q.setAttribute('aria-expanded', n ? 'true' : 'false');
+      if (options.length) move(0);
+    }
+    function move(i) {
+      if (active >= 0 && options[active]) options[active].setAttribute('aria-selected', 'false');
+      active = i;
+      var o = options[i];
+      if (!o) { q.removeAttribute('aria-activedescendant'); return; }
+      o.setAttribute('aria-selected', 'true');
+      q.setAttribute('aria-activedescendant', o.id);
+      o.scrollIntoView({ block: 'nearest' });
+    }
+
+    function open(text) {
+      if (typeof text === 'string') q.value = text;
+      if (!dlg.open) dlg.showModal();
+      q.focus();
+      q.select();
+      if (data) { render(); return; }
+      status.textContent = 'Loading…';
+      load().then(render, function () {
+        status.textContent = 'Search could not load. Check your connection and try again.';
+      });
+    }
+    window.altstrumentSearch = open;
+
+    q.addEventListener('input', render);
+    cat.addEventListener('change', function () { render(); });
+    q.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        if (!options.length) return;
+        e.preventDefault();
+        var d = e.key === 'ArrowDown' ? 1 : -1;
+        move((active + d + options.length) % options.length);
+      } else if (e.key === 'Escape') {
+        // A search input eats the first Esc to clear itself; close in one press instead.
+        e.preventDefault();
+        dlg.close();
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        var o = options[active];
+        if (o) location.href = o.href;
+      }
+    });
+    box.addEventListener('mousemove', function (e) {
+      var o = e.target.closest && e.target.closest('.search-option');
+      if (o) { var i = options.indexOf(o); if (i !== -1 && i !== active) move(i); }
+    });
+    // A click on the backdrop (the dialog element itself, outside the panel) closes it.
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+
+    Array.prototype.forEach.call(document.querySelectorAll('[data-search-open]'), function (b) {
+      b.addEventListener('click', function () { open(); });
+      var li = b.closest('[data-search-item]');
+      if (li) li.hidden = false;
+    });
+    document.addEventListener('keydown', function (e) {
+      if ((e.metaKey || e.ctrlKey) && !e.altKey && (e.key === 'k' || e.key === 'K')) {
+        e.preventDefault();
+        if (dlg.open) dlg.close(); else open();
+        return;
+      }
+      if (e.key !== '/' || e.metaKey || e.ctrlKey || e.altKey || dlg.open) return;
+      var t = e.target;
+      if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+      e.preventDefault();
+      open();
+    });
+
+    // Old home-page search links (/?q=…) open the modal with the query filled in.
+    if (location.pathname === '/') {
+      try {
+        var pq = new URLSearchParams(location.search).get('q');
+        if (pq) open(pq);
+      } catch (e) {}
+    }
+  })();
+</script>

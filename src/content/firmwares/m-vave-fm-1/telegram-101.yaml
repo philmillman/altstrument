@@ -1,7 +1,8 @@
 device: m-vave-fm-1
 name: Telegram 101
 summary: >-
-  101-style lead synth with the Dillo acid bass and an 808 drum machine, brought together by a Band mode that plays all three from the FM-1 keys.
+  A 101-style lead, Dillo acid bass and synthesized 808 drums on the FM-1, with Band arrangements that play all three
+  from the keys and one-bar knob-motion recording.
 description: >-
   Telegram 101 combines a 101 lead voice with Dillo, the acid bass synth from Big Beat Studio BB1, and a
   single 808 drum machine. Knob pages edit cutoff, resonance, envelope amount and decay, EDIT steps through source mix,
@@ -9,10 +10,11 @@ description: >-
   drums together from songs chosen on the white keys, with the next section cued on the next bar. A sound library opens
   on SAVE. Dillo phrases are adapted from J. McConaghy's Acid-Tabs.com under CC BY-SA 4.0, and Acid Voice charts are
   adapted under a separate project licence. Coming from BB1, the first library save asks before it replaces BB1's
-  factory sound bank. It comes from the author of BB1 and BB-BOB.
+  factory sound bank. All FM-1 voices are synthesized. Big Beat Studio, the maker of BB1 and BB-BOB, builds it from a
+  separate repository from BB–37 Telegram 101 for the SMK-37.
 status: active
 authors:
-- name: TexasRADIO
+- name: Big Beat Studio
   url: https://github.com/TexasRADIO
 source: https://github.com/TexasRADIO/telegram-101-fm1-firmware
 source_status: open
@@ -25,14 +27,24 @@ license_notes: >-
 homepage: https://thebigbeat.app/fm1/telegram-101/
 distribution: browser-installer
 install_notes: >-
-  The installer at thebigbeat.app runs in desktop Chrome or Edge, and the release also carries Telegram-101-FM1-857.fwsc
-  and a zip of the same package for other installers such as The Firmware Hub. Back up your work first and keep the USB
-  data cable connected. If a transfer is interrupted while the FM-1 is still in its MIDI updater, reconnect it and use
-  Resume install. The README says factory V15 is not needed for recovery.
+  The installer at thebigbeat.app/fm1/telegram-101/install/ runs in desktop Chrome or Edge over WebMIDI and serves only
+  the FM-1 package (identity FM-1_101857); do not install a BB–37 SMK-37 image. The release also carries
+  Telegram-101-FM1-857.fwsc and a zip with the same installer for offline use. Back up your work, close other apps using
+  the MIDI port and keep the USB data cable connected until the page confirms completion. The author says FM-1 flash
+  acceptance currently covers the Puya 0x856014 chip and does not claim UC25HQ80 support. If a transfer is interrupted
+  while the FM-1 is still in its MIDI updater, reconnect it and use Resume install. The guide says a physical return
+  from build 857 to M-VAVE factory V15 is unverified and advises keeping your current firmware if you depend on it. The
+  FM-1's mask-ROM rescue is the fallback.
 brick_risk: false
 tags: [synth-engine, drums, sequencer, performance, web]
+image:
+  url: https://raw.githubusercontent.com/TexasRADIO/telegram-101-fm1-firmware/main/media/telegram-101-card.png
+  alt: Telegram 101 screen on the FM-1 showing the E.BASS GUITAR 1982 factory patch at 118 BPM with its filter envelope, a keyboard strip and cut, res, env and dec knobs
+  credit: Big Beat Studio
+  source_url: https://github.com/TexasRADIO/telegram-101-fm1-firmware
+  first_party: true
 versions:
 - version: build-857
   date: 2026-11-23
   url: https://github.com/TexasRADIO/telegram-101-fm1-firmware/releases/tag/build-857
-  notes: Build 857, the only release so far, with Band mode that plays lead, bass and drums together.
+  notes: Build 857, the only release so far, released as Telegram 101 for FM-1 alongside BB–37 Telegram 101 build 851, with Band mode that plays lead, bass and drums together.

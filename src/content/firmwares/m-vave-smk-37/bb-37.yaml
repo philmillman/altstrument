@@ -1,55 +1,72 @@
 device: m-vave-smk-37
-name: Big Beat Studio BB-37
+name: BB–37 Telegram 101
 summary: >-
-  Firmware for the SMK-37 Pro, SMK-37 Elite and MKE-P37 with Telegram, an SH-101-style lead synth, Dillo, a TB-303-style bass synth, and a synthesized
-  808, plus a library of sounds and phrases and 16-pad Band arrangements.
+  A 101-style lead, Dillo acid bass, synthesized 808 drums, Band arrangements and one-bar knob-motion recording for the
+  SMK-37 Elite, SMK-37 Pro and MKE-P37. The installer identifies the model and selects its exact package; 727 and LATIN
+  percussion are Elite-only.
 description: >-
-  Rights warning: the phrase and Band data transcribe named songs and acid lines, such as the Acid Tracks parts, and Band presets
-  are drawn from the BB1 songs. Build 799 rested this material on the project owner's own permission statement and asserted no open licence for
-  the Acid Voice parts; the build 800 tree carries no file about these terms.
+  Rights warning: the Band and phrase data transcribe named songs and acid lines, such as 1000 Knives, 777-9311 and the
+  Acid Tracks parts, and Band presets are drawn from the BB1 songs. THIRD_PARTY.txt says the Dillo phrases adapted from
+  Acid-Tabs.com are CC BY-SA 4.0 and the Acid Voice charts are adapted under a separate project licence, but it states
+  no terms for the other song transcriptions.
 
-  BB-37 has three instruments. Telegram is a one-oscillator lead synth modelled on the SH-101, with saw, pulse, sub and noise on a mixer, a four-pole
-  filter, LFO or envelope pulse-width modulation, gate and trigger modes, legato-only auto glide, an arpeggiator and a 100-step sequencer. Its
-  patches include the 40 sounds charted in the SH-101 owner's manual and eight reader patches from 1980s magazines. Dillo is a TB-303-style bass
-  voice with accent, slide and two Devilfish-style controls (slide time and accent decay), with 106 sounds and 1,136 patterns. The 808 has 16
-  synthesized sounds. Band puts Telegram, Dillo and 808 parts on the 16 pads, each change landing on the next bar. Dillo and the 808 share their
-  sound engine with Big Beat Studio and BB1 for the FM-1. Build 800 was first released for the Elite only; the same release now carries separate packages for the SMK-37 Pro, the SMK-37 Elite and the EROK MKE-P37. Build 826 is an Elite-only application update that adds a foreground adapter for the Big Beat Editor and needs the matching 727 sound banks already on the unit. Build 851 is released as BB-37 Telegram 101, with separate packages for the Pro, Elite and MKE-P37, and its Elite package includes the 727 and Latin percussion.
+  BB–37 Telegram 101 has three instruments, made by Big Beat Studio. Telegram is a one-oscillator lead synth modelled on
+  the SH-101, with saw, pulse, sub and noise on a mixer, a four-pole filter, LFO or envelope pulse-width modulation, gate
+  and trigger modes, legato-only auto glide, an arpeggiator and a 100-step sequencer. Its patches include the 40 sounds
+  charted in the SH-101 owner's manual and eight reader patches from 1980s magazines. Dillo is a TB-303-style bass voice
+  with accent, slide and two Devilfish-style controls (slide time and accent decay), with 106 sounds and 1,136 patterns.
+  The 808 has 16 synthesized sounds. Band puts Telegram, Dillo and 808 parts on the 16 pads, each change landing on the
+  next bar, and one bar of a sound-knob movement can be recorded and looped while you play. On the Elite, the release
+  also includes 727 and LATIN percussion, recorded TR-727 sounds from Compás and Hanan Cumbia sounds; the Pro and
+  MKE-P37 keep the synthesized 808. Dillo and the 808 share their sound engine with Big Beat Studio BB1 for the FM-1, and
+  Telegram 101 for FM-1 is a separate build from its own repository.
+
+  History: build 800 (v1.0.0) was first released for the Elite only, and the same release later carried separate
+  packages for the SMK-37 Pro, the SMK-37 Elite and the EROK MKE-P37. Build 826 was an Elite-only application update
+  that added a foreground adapter for the Big Beat Editor.
 status: active
 authors:
-- name: TexasRADIO (The Big Beat)
+- name: Big Beat Studio
   url: https://github.com/TexasRADIO
 source: https://github.com/TexasRADIO/smk37-elite-firmware
 source_status: open
 license: GPL-3.0-only
 license_notes: >-
-  The README and LICENSE file give GPL-3.0-only. Retained M-VAVE SMK-37 Open sources are GPLv3 with the section 7 linking permission
+  LICENSE gives GPL-3.0-only. Retained M-VAVE SMK-37 Open sources are GPLv3 with the section 7 linking permission
   (vendor/smk37/LICENSE.md), Big Beat and Felucca-derived code is GPL-3.0-only (vendor/bb/LICENSING.md), and DaisySP, Rings, msfa, Fukiai, uPD933,
-  Terminus and Inter Tight keep their own terms. The music data is not all GPL; see the rights warning. The repository has no build script (its
-  Makefile only checks the release tree). It holds the project's own builds (firmware/BB-37-Elite, BB-37-Pro and BB-37-MKE-P37 Build 800 .fwsc
-  files) and no M-VAVE stock image.
-homepage: https://thebigbeat.app/elite/
+  Terminus and Inter Tight keep their own terms. The music data is not all GPL; see the rights warning. At v1.0.0 the repository had no
+  build script; build 851 adds BUILDING.txt and board/build.py for source builds. THIRD_PARTY.txt lists the retained
+  component notices, the Apache-2.0 JieLi SDK packaging inputs and the Terminus font, and says the Picnic glyphs come
+  from Taylor Rushing's Big Beat brand font with no open licence asserted. On the Elite, the TR-727 recordings from
+  Compás are GPL-3.0-only and the Hanan Cumbia recordings by Oficina de Sonido are CC BY-SA 3.0. The installer bundles
+  React under the MIT licence. The repository holds no M-VAVE stock image.
+homepage: https://thebigbeat.app/elite/telegram-101/
 based_on: m-vave-fm-1/bb1
 distribution: browser-installer
 install_notes: >-
-  The installer at thebigbeat.app/elite/install/ runs in current desktop Chrome or Edge over WebMIDI with SysEx permission. Connect the keyboard
-  directly with a USB data cable and keep it connected until the page reports the restart. The installer asks the connected unit for its model
-  and sends the matching SMK-37 Pro, SMK-37 Elite or MKE-P37 package; at v1.0.0 the three packages it served were identical to that release's assets, and v1.0.1 re-issues them with separate Firmware Hub identities.
-  It installs from the stock firmware by feeding the package to the keyboard's own SysEx update loader in two stages, as M-VAVE's updater does,
-  and makes no backup. The device's mask-ROM rescue and M-VAVE's updater remain the recovery route (see the device notes). The author reports
-  testing build 800 on an Elite, including a return to build 797 and a reinstall; the issue thread names no test on the Pro or MKE-P37.
+  The installer at thebigbeat.app/elite/telegram-101/install/ runs in desktop Chrome or Edge over WebMIDI. Back up your
+  work, connect one keyboard directly with a USB data cable, close other apps using its MIDI port and keep the cable
+  connected until the page confirms completion; the release zip carries the same installer for offline use. The
+  installer asks the connected unit for its model and sends the matching Pro, Elite or MKE-P37 package, which the
+  keyboard's own SysEx update loader installs. On the Elite it also checks the 727 and LATIN kits and may offer a
+  percussion backup to download; keep it, and use the installer's restore control before returning to factory firmware
+  if you want the original percussion area back. If USB is interrupted in update mode, reconnect the same keyboard and
+  install again. To return to factory firmware, use the return control on the install page with M-VAVE's version 016
+  file for your exact model. The device's mask-ROM rescue and M-VAVE's updater remain the recovery route (see the
+  device notes).
 brick_risk: false
 tags: [synth-engine, sequencer, drums, arpeggiator, performance, midi, fork]
 image:
-  url: https://raw.githubusercontent.com/TexasRADIO/smk37-elite-firmware/main/media/screen-band.png
-  alt: BB-37 BAND screen at 118 BPM showing 808, 303 and 101 rows with step bars, the 101 row active, and level, tempo, cut and main volume knobs above SEQ, FX, PATCH and BT soft keys
-  credit: TexasRADIO
+  url: https://raw.githubusercontent.com/TexasRADIO/smk37-elite-firmware/main/media/telegram-101-card.png
+  alt: Telegram 101 screen on the SMK-37 showing the E.BASS GUITAR 1982 factory patch at 118 BPM with its filter envelope, a keyboard strip and eight knob readouts
+  credit: Big Beat Studio
   source_url: https://github.com/TexasRADIO/smk37-elite-firmware
   first_party: true
 versions:
 - version: build 851
   date: 2026-11-23
   url: https://github.com/TexasRADIO/smk37-elite-firmware/releases/tag/build-851
-  notes: Released as BB-37 Telegram 101 with .fwsc packages for the SMK-37 Pro, SMK-37 Elite and MKE-P37; the Elite package also includes 727 and Latin percussion. The release notes name the Telegram 101 lead, Dillo acid bass and 808 drums.
+  notes: Released as BB–37 Telegram 101 with .fwsc packages for the SMK-37 Pro, SMK-37 Elite and MKE-P37; the Elite package also includes 727 and Latin percussion. The release notes name the Telegram 101 lead, Dillo acid bass and 808 drums.
 - version: build 826
   date: 2026-11-16
   url: https://github.com/TexasRADIO/smk37-elite-firmware/releases/tag/build-826

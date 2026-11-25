@@ -1,0 +1,26 @@
+device: m-vave-tank-mini
+name: mvave-tank-mini-findings
+kind: tool
+summary: >-
+  Portuguese-language hardware research notes for the Tank Mini (V011): USB descriptors, 1 MiB flash map and regions to preserve, boot and recovery limits, footswitch and LED pins, audio clocks and DSP timing.
+description: >-
+  A single README that collects measurements from custom firmware experiments on the Tank Mini, for people who plan to write their own. It lists the USB identities in normal and download mode, the flash map from the boot area through the application area to the VM, Bluetooth, user and unit-key regions, and the format of the application area, whose JLFS directory is encrypted with the JieLi ENC cipher. It says that no button combination into the ROM bootloader was found, and that the SysEx message that reaches it works only from a running firmware. Other sections give the footswitch pins, the nine WS2812 LEDs, the physical audio interface and sample rate, results from a neural-amp-model experiment that fit its time budget only with a second CPU core, the memory limit on delay-based effects, the control protocols of two earlier projects and the known differences from the Tank-G and FM-1. The author lists open items, among them recovery without a working application. No code, flash dumps or unit keys are included. The README is the only file.
+status: active
+authors:
+- name: Yuri Rangel
+  url: https://github.com/xxyurirangelxx
+source: https://github.com/xxyurirangelxx/mvave-tank-mini-findings
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and the README gives no licence.
+distribution: source-only
+install_notes: >-
+  Documentation only, nothing to install. The README warns not to write below 0x004000 or from 0x095000 of the 1 MiB flash, not to use Tank-G installers on the Tank Mini, and to take two matching full backups first, since it found no way back into the ROM bootloader by buttons.
+brick_risk: false
+tags: [research, usb-midi, sysex, platform]
+versions:
+- version: main @ 08bd49a
+  date: 2026-11-24
+  url: https://github.com/xxyurirangelxx/mvave-tank-mini-findings/commit/08bd49a00256653f57d1557815823b8196dcef0e
+  notes: No tagged releases; this is the latest commit.

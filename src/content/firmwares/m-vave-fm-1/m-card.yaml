@@ -1,15 +1,15 @@
 device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
 name: m-card
 kind: tool
 summary: >-
-  Open microSD add-on board for the FM-1 that plugs into the LCD's ribbon connector, with Gerbers, parts list, assembly drawing and paper template. An untested prototype.
+  Open microSD add-on board for the FM-1 and SMK-37 that plugs into the LCD's ribbon connector, with Gerbers, parts list, assembly drawing and paper template.
 description: >-
   A 30 by 25.2 mm two-layer board that sits under the audio jacks and connects between the LCD cable and the main
-  board's J12 connector, so no soldering to the FM-1 is needed. It passes all ten LCD lines through and taps four for
+  board's J12 connector, so no soldering to the FM-1 or SMK-37 is needed. It passes all ten LCD lines through and taps four for
   the card, which shares the LCD's SPI bus; an inverter selects the card whenever the LCD is not selected. The
   repository has Gerbers, a bill of materials and placement file for JLCPCB, an assembly PDF, a 1:1 paper template and the
-  Python scripts that generate the board for KiCad 9. The README calls it an untested prototype: fit was checked with a
-  paper template on a real FM-1, no board has been made, and firmware support is being worked on in m-bootloader.
+  Python scripts that generate the board for KiCad 9. Until 24 November 2026 the README called it an untested prototype, with fit checked on a real FM-1 using a paper template, no board made and firmware support being worked on in m-bootloader. That notice is gone and the README now names the SMK-37 too, but it still asks builders to report whether the planned cable type works and does not say which firmware reads the card.
 status: active
 authors:
 - name: Julius Vitkauskas (jvitkauskas)
@@ -23,7 +23,7 @@ license_notes: >-
 distribution: source-only
 install_notes: >-
   A hardware project: order the PCB from the Gerber zip, buy the listed parts, solder, then open the FM-1, move the LCD cable
-  to the board and run a short ribbon cable back to J12. It needs FM-1 firmware that reads the card, which does not exist yet.
+  to the board and run a short ribbon cable back to J12. It needs firmware that reads the card, and the README does not name one.
   Check the board and sockets with a multimeter before installing.
 brick_risk: false
 tags: [hardware, open-hardware]
@@ -34,6 +34,10 @@ image:
   source_url: https://github.com/jvitkauskas/m-card
   first_party: true
 versions:
+- version: main @ bde17a8
+  date: 2026-11-24
+  url: https://github.com/jvitkauskas/m-card/commit/bde17a8baa65a904b4163b7825267bd0167a24fb
+  notes: No tagged releases; this is the latest commit. Since the previous row the README drops its untested-prototype notice and says the board is for the SMK-37 as well as the FM-1.
 - version: main @ ec63784
   date: 2026-11-03
   url: https://github.com/jvitkauskas/m-card/commit/ec63784fe94006296ad25bdeb5d32bf7afa834d1

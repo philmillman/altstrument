@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: MINIMAL MACHINE
+summary: >-
+  Self-playing minimal techno firmware for the FM-1 built from six loops of different lengths that phase against each other and mutate slowly, shown as rotating rings.
+description: >-
+  Six short loops play a deep kick, soft hats, a rim or clap, a dub chord stab into a ping-pong echo, sub bass and a small bleep. The loops have different lengths such as 16, 12, 7 and 10 steps, so the parts phase against each other, and every few bars one thing mutates by moving a hit a step, changing a note, growing a loop by a step or resting a part. The screen shows the loops as rings turning against each other with the playing step under a read head and mutations flashing white. The knobs set Density, Drift, Filter and Echo, the white keys mute each of the six parts, EDIT mutates at once and REC holds the pattern. Twelve presets each keep their own settings, and evolved loops are saved at most hourly. The README says it was inspired by DUB-1 and uses none of its code.
+status: active
+authors:
+- name: ashtonwallen
+  url: https://github.com/ashtonwallen
+source: https://github.com/ashtonwallen/fm1-firmware/tree/main/minimal-machine
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The folder's LICENSING.md and LICENSE give MPL-2.0 file by file, with AMB-1's and fm1-base's notices kept on the files
+  that came from them. The Barlow Semi Condensed and Terminus fonts are SIL OFL 1.1 and the JieLi SDK files are read from
+  the builder's checkout.
+based_on: m-vave-fm-1/amb-1
+distribution: download
+install_notes: >-
+  Download the .fwsc from the release and write it with M-Flasher or the FM-1 Flasher in the same repository, which backs up the whole flash first and keeps the bootloader untouched. The release says it is built on fm1-base 3ae2a65, which supports both flash chips, and has not been played on real hardware.
+brick_risk: false
+tags: [generative, synth-engine, drums, sequencer]
+image:
+  url: https://raw.githubusercontent.com/ashtonwallen/fm1-firmware/main/minimal-machine/docs/img/screen-machine.png
+  alt: "MINIMAL MACHINE screen: preset Dub Chamber, 118 BPM, concentric rings of coloured dots, a part list KICK, HATS, PERC, STAB, BASS and BLEEP with step counts, and knobs DENSITY, DRIFT, FILTER, ECHO"
+  credit: ashtonwallen
+  source_url: https://github.com/ashtonwallen/fm1-firmware
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-24
+  url: https://github.com/ashtonwallen/fm1-firmware/releases/tag/minimal-machine-1.0
+  notes: First release; built on fm1-base 3ae2a65.

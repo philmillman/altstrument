@@ -1,0 +1,27 @@
+device: m5stack-cardputer
+name: WaveOS
+summary: >-
+  Custom Cardputer ADV firmware that is a menu of apps with an SD card music player, a polyphonic synth, a four-track looper and a 16-step drum machine, alongside an IR remote, tools, notes and games.
+description: >-
+  WaveOS replaces the Cardputer ADV's firmware with a pixel-art launcher and a set of apps. The music player plays MP3, FLAC, AAC and WAV files from large libraries, with folders by genre and artist, playlists, queue, album art, synced lyrics, eight equalizer presets, A-B repeat, speed control and a sleep timer. The synth has five waveforms, an ADSR envelope, a resonant filter, delay, an arpeggiator and 20 chord types. The looper has four tracks with overdub and quantize, saves to the SD card and exports MIDI files, and the drum machine has eight synthesized drums over 16 steps and four patterns that sync with the looper.
+
+  The rest of the system covers an infrared remote with learn mode and Flipper-format .ir files, calculators, electronics helpers, a metronome with tap tempo, a Markdown note editor, a flashlight, Morse, a large set of games, global search and themes. Optional Wi-Fi file transfer is kept in an extras folder and is not built in. The repository has no licence file.
+status: active
+authors:
+  - name: ssdjmjro
+    url: https://github.com/ssdjmjro
+source: https://github.com/ssdjmjro/WaveOS
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and the README states no licence.
+distribution: source-only
+requires_stock: M5Stack Cardputer ADV
+install_notes: >-
+  Build with arduino-cli and the esp32 core plus the M5Cardputer, M5Unified, M5GFX, IRremote and ESP8266Audio libraries, then run flash.sh, which saves an 8 MB backup of the current firmware the first time and then flashes. flash.sh --restore writes that backup back. If flashing fails, hold G0 while plugging in USB to enter the ESP32-S3 download mode.
+brick_risk: false
+tags: [player, synth, looper, drum-machine, ir, tools, games, sd-card, open-source]
+versions:
+  - version: main @ 1c7a055
+    date: 2026-11-25
+    url: https://github.com/ssdjmjro/WaveOS/commit/1c7a055ca4e65808eadd63533d95b49e5fa063df
+    notes: No tagged releases; this is the latest commit.

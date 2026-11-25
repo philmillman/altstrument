@@ -2,7 +2,7 @@ device: elektron-model-cycles
 name: Supermodel Edition
 summary: Fork of Modded Cycles for Model:Cycles OS 1.13 with a separate Supermodel 909 flasher that replaces the six stock machines with a 909-style kit, plus the ACID machine, Sequence Genie, a second LFO and MIDI Bank.
 description: >-
-  Rights warning: the repository commits 83 prebuilt Supermodel upgrade files under docs/flasher/, each about 2 MB with Elektron's SysEx header, although its README says no Elektron firmware, original or modified, is included. See license_notes.
+  Rights warning: the repository commits 109 prebuilt Supermodel upgrade files under docs/flasher/, each about 2 MB with Elektron's SysEx header, although its README says no Elektron firmware, original or modified, is included. See license_notes.
 
   Built on Modded Cycles by A.V. and published as a fork of it. The Supermodel
   909 flasher page asks for the official OS file and four of your own WAV files
@@ -14,7 +14,7 @@ description: >-
   lost at power-off. The README's current documentation was for release 3.05,
   which it says covers song mode, direct pattern jump, trig selection, per-track
   ACID glide and legato, arp envelope retriggering and Wizard lock priority.
-  Release 3.06 adds an INV option to the overload governor, keeps master FX with
+  Release 3.07 (24 November) makes Sample Wizard list playable sample files and hide empty folders, lets Master Scramble act on all six tracks, saves Control All selections per pattern and adds a permanent quick save and a Master Retrig trig latch. Release 3.06 adds an INV option to the overload governor, keeps master FX with
   each pattern and fixes FX restoration when patterns change during playback; later commits add
   Sequencer Directions to the 3.06 builds (hold TRACK and tap BACK to cycle Reverse, Ping Pong and Forward for a track or a whole pattern) and a boot animation;
   3.05 added a Track Swap page under Mod Setup that exchanges two tracks
@@ -34,9 +34,9 @@ license_notes: >-
   The fork has no LICENSE file at its root (the upstream Modded Cycles repository
   has an MIT one). Bundled components carry their own MIT notices, such as
   LICENSE-Punch.txt, which is the file GitHub reports as the repository's
-  licence. The repository also commits 83 prebuilt Supermodel upgrade files in
-  docs/flasher/ (Full, Lite and Optional builds from 2.53 to 3.06, sixteen of them added
-  with 3.04 to 3.06). They are about 2 MB each and start with Elektron's SysEx manufacturer
+  licence. The repository also commits 109 prebuilt Supermodel upgrade files in
+  docs/flasher/ (Full, Lite and Optional builds from 2.53 to 3.07, most of the newest ones added
+  with 3.04 to 3.07). They are about 2 MB each and start with Elektron's SysEx manufacturer
   header, so they are complete modified OS images that probably contain Elektron's
   code. The README says no Elektron firmware, original or modified, is included, and
   the repository states no permission from Elektron; the stock file was not available
@@ -52,6 +52,10 @@ install_notes: >-
   returns to stock.
 tags: [machines, drums, sampler, sequencer, lfo, midi, fx]
 versions:
+  - version: main @ 08727f9
+    date: 2026-11-24
+    url: https://github.com/AveyCole/Supermodel/commit/08727f9d7dd9deca26c08428ec3644f6e5815304
+    notes: No tagged releases; this is the latest commit, which belongs to the Supermodel 3.07 release made that day across the editions. It makes Sample Wizard show playable sample files and hide empty folders, lets Master Scramble affect all six tracks and undo the last scramble, saves Control All selections per pattern, adds FUNC with SETTINGS for a permanent quick save and a FUNC plus trig latch for a retrigger while Master Retrig is latched, and plays the Supermodel title before the boot animation.
   - version: main @ 959f8e4
     date: 2026-11-21
     url: https://github.com/AveyCole/Supermodel/commit/959f8e4c6a93a09aa1da4f1a8ea34299eb82d1cf

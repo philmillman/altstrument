@@ -1,0 +1,40 @@
+device: noise-engineering-legio
+name: open-legio
+kind: tool
+summary: Noise Engineering's open-source framework for writing custom Legio firmware, with a hardware access layer, an example firmware and Node.js build, flash and debug scripts.
+description: >-
+  Published by Noise Engineering, the maker of Legio, alongside an equivalent framework for Versio. It is a narrow
+  extract of the company's internal embedded library, lacerti, and holds a bare-metal hardware layer for the module,
+  one trivial example firmware and scripts that download the ARM GCC toolchain, build, flash over USB DFU and stream
+  a debug log over USB without a probe. It contains none of Noise Engineering's DSP code, and the full lacerti
+  library stays closed. The repository also carries instruction files for coding agents. Noise Engineering accepts
+  contributions only as GitHub issues, and its official firmware library, listed beside this entry, is closed source.
+status: active
+authors:
+  - name: Noise Engineering
+    url: https://noiseengineering.us
+source: https://github.com/noiseeng/open-legio
+source_status: open
+license: MIT
+license_notes: >-
+  Per LICENSE.md, copyright 2019-2026 Noise Engineering.
+distribution: source-only
+install_notes: >-
+  Needs Node 24 or newer. Fork and clone the repository, run npm i and npm run setup to fetch the toolchain, then
+  npm run build, and npm run flash with the module connected over USB. If the module is not found, hold button 1,
+  tap button 2 and release button 1 on the back of the module to enter DFU mode, and install the WinUSB driver with Zadig on
+  Windows. The README says official firmware can be put back at any time from Noise Engineering's firmware page.
+  Soldering a JTAG header and changing option bytes are optional and void the warranty.
+brick_risk: false
+tags: [official, sdk, framework, cpp, daisy]
+image:
+  url: https://raw.githubusercontent.com/noiseeng/open-legio/main/images/legio.webp
+  alt: Black Legio panel render titled Antri Legio, with an encoder, two knobs, two switches, blue and green LEDs and five jacks
+  credit: Noise Engineering
+  source_url: https://github.com/noiseeng/open-legio#readme
+  first_party: true
+versions:
+  - version: main @ 11be646
+    date: 2026-11-25
+    url: https://github.com/noiseeng/open-legio/commit/11be646ba1bd8e1f90ae7c4d7b47c9f5bff9221b
+    notes: No tagged releases; this is the latest commit.

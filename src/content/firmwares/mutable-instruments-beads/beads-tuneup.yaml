@@ -15,20 +15,24 @@ description: >-
   tests stay identical. The 2026.11.20 release moves the audio output one frame
   later, which the notes give as the likely fix for the historical left-channel click
   at the cost of 21 microseconds of latency at 48 kHz. The author tested installing, playback and the quality
-  button on one 2021 module. Stock settings and calibration stay compatible. It
+  button on one 2021 module. The 2026.11.24 release keeps the previous
+  calibration after a rejected or unfinished run, rejects a measured scale or
+  offset more than 25 percent from the factory value, retries a failed audio
+  start and uses fewer cycles in the delay code; it was installed by audio on
+  one module, and the notes say broader qualification is pending. Stock settings and calibration stay compatible. It
   does not come from Mutable Instruments.
 status: active
 authors:
   - name: Insolent Construct
     url: https://github.com/insolentconstruct
-source: https://github.com/insolentconstruct/eurorack/tree/beads-tuneup-2026.11.20/beads
+source: https://github.com/insolentconstruct/eurorack/tree/beads-tuneup-2026.11.24/beads
 source_status: open
 license: MIT
 license_notes: >-
   Beads source files carry the Mutable Instruments MIT notice; the release ships
   a NOTICE.txt with the collected licences. The fork has no top-level LICENSE
   file.
-homepage: https://github.com/insolentconstruct/eurorack/releases/tag/beads-tuneup-2026.11.20
+homepage: https://github.com/insolentconstruct/eurorack/releases/tag/beads-tuneup-2026.11.24
 distribution: download
 install_notes: >-
   Install by audio like any Beads update: unplug all CV cables, patch the audio
@@ -41,6 +45,10 @@ install_notes: >-
 brick_risk: false
 tags: [granular, fx, bugfixes]
 versions:
+  - version: beads-tuneup-2026.11.24
+    date: 2026-11-25
+    url: https://github.com/insolentconstruct/eurorack/releases/tag/beads-tuneup-2026.11.24
+    notes: Pre-release on GitHub. Better protects calibration and settings during interrupted saves, keeps the previous calibration after a rejected run, retries a failed audio start and uses 4 to 8 percent fewer cycles in the busiest delay blocks. The notes say it was installed on one module and broader qualification is pending.
   - version: beads-tuneup-2026.11.20
     date: 2026-11-21
     url: https://github.com/insolentconstruct/eurorack/releases/tag/beads-tuneup-2026.11.20

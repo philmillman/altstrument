@@ -36,6 +36,30 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, sequencer, generative, fx, filter, editor, emulator, fork]
 versions:
+- version: 2.3.16
+  date: 2026-11-25
+  url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v2.3.16
+  notes: The firmware does not change. The release adds sanitizer stress runs and a 600-second audio session test, re-bases two test budgets and keeps the visual baseline at 3,241 identical frames. The package is 610,933 bytes. Notes are in Spanish.
+- version: 2.3.15
+  date: 2026-11-25
+  url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v2.3.15
+  notes: Removes the MOD MAP page, which leaves nine pages in the LFO family, and redraws LFO DEST and ENV DEST with the source drawn in depth and a plate for each destination showing its range and current use. Shows the sample-and-hold LFO as a staircase and fixes SCL TUNE knob 2 writing the cents of note 3. Notes are in Spanish.
+- version: 2.3.14
+  date: 2026-11-25
+  url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v2.3.14
+  notes: Fixes FM6 voices that never became free after a note was released, because the envelope's stage 4 kept returning its level. A voice now fades after at most 5 seconds of release, and 29 golden FM6 renders were rebaselined for the ending tails. Notes are in Spanish.
+- version: 2.3.8
+  date: 2026-11-24
+  url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v2.3.8
+  notes: Replaces six near-duplicate presets with six new sounds at the same indexes (SUB FLOOR, CONCRETE KIT, FERROUS PAD, IRON PLUCK, SILT KEYS and VEIL PAD), so saved projects keep their numbers and the flash does not grow, and cuts the DC offset of MERCURY BLOOM from 12.8 percent to under 2 percent. Notes are in Spanish.
+- version: 2.3.0
+  date: 2026-11-24
+  url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v2.3.0
+  notes: Redraws the REVERB block on FX > BUSES with nine fixed bars and SIZE as the slope, so the tail no longer jumps when the knob turns. No audio sample changes (311 golden renders identical) and the image does not grow. Notes are in Spanish.
+- version: 2.2.0
+  date: 2026-11-24
+  url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v2.2.0
+  notes: First release of the 2.2 line. Adds a layered depth drawing engine used by the ENV, LFO and CHORUS pages and frees 1,296 bytes of flash while doing so. The notes say no audio sample, parameter or key changes (311 regression renders match). Notes are in Spanish.
 - version: 2.1.0
   date: 2026-11-24
   url: https://github.com/Guillel51/Quantum-GammaWave/releases/tag/v2.1.0

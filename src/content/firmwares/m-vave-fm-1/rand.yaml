@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: RAND
+summary: >-
+  Percussion synth with two oscillators, FM and sync, a Moog-style ladder filter, an eight-step sequencer whose clock runs fast enough to turn rhythm into a tone, and a patchbay on the keys.
+description: >-
+  The voice has two oscillators in triangle or pulse covering 8 Hz to 8 kHz, FM between them, hard sync, white or pink noise, pitch, filter and amplitude envelopes, drive, a ping-pong delay in tempo, a reverb and a master filter. The filter models a Moog transistor ladder and tracks pitch when it self-oscillates, and the oscillators and filter run at double rate, dropping to normal rate by themselves and showing ECO when the load passes 88 percent. The sequencer has eight steps with a pitch and a velocity knob each, and its CLOCK runs from a quarter to 128 times the sixteenth-note rate, so that from x32 the steps blur into a tone shaped by the two rows. The keys act as patch points: holding a black output key and tapping a white input key adds a cable, up to eight, saved with the sound. There are eight presets and it follows MIDI clock, start, stop and continue over USB, and MIDI notes play the voice. The README names the Behringer EDGE and Moog DFAM as models and says none of their code or artwork is used. It is built on fm1-base and felucca-bsp, and its sound core in dsp/ is plain C.
+status: active
+authors:
+- name: swtdr34mz-afk
+  url: https://github.com/swtdr34mz-afk
+source: https://github.com/swtdr34mz-afk/RAND
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The README and CREDITS.md state MPL-2.0 and the LICENSE file is the MPL-2.0 text. fm1-base and felucca-bsp are MPL-2.0, the Terminus pixel fonts are SIL OFL 1.1, and each package carries three Apache-2.0 JieLi SDK files fetched at build time. No samples are used.
+homepage: https://swtdr34mz-afk.github.io/RAND/emu/
+distribution: download
+install_notes: >-
+  Download rand-X.Y.Z.fwsc from the Releases page and install it as any FM-1 firmware. The README describes no recovery path, and the FM-1's ROM boot mode applies. Settings save themselves once the sequencer stops.
+brick_risk: false
+tags: [drums, synth-engine, sequencer, filter, fm, oscillator, delay, reverb, midi, emulator]
+image:
+  url: https://raw.githubusercontent.com/swtdr34mz-afk/RAND/main/site/img/screen-main.png
+  alt: "RAND main screen on a black panel with wooden cheeks: OSC 1 RAND KICK at 128 BPM, four silver-capped knobs, a CLOCK x1 row, eight pitch and velocity step knobs and red step lights"
+  credit: swtdr34mz-afk
+  source_url: https://github.com/swtdr34mz-afk/RAND
+  first_party: true
+versions:
+- version: 1.0.1
+  date: 2026-11-25
+  url: https://github.com/swtdr34mz-afk/RAND/releases/tag/v1.0.1
+  notes: The release page has no notes.
+- version: 1.0.0
+  date: 2026-11-25
+  url: https://github.com/swtdr34mz-afk/RAND/releases/tag/v1.0.0
+  notes: First release.

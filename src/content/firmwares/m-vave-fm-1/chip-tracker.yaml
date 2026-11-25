@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: CHIP TRACKER
+summary: >-
+  Self-playing 8-bit game music firmware for the FM-1 that generates songs on four console-style channels and shows them as a scrolling tracker with live oscilloscopes.
+description: >-
+  Each generated song has its own key, mode, tempo and title and runs through intro, verse, chorus and bridge before ending on a jingle, after which the next song starts. The four channels are two pulse waves with 12.5, 25 and 50 percent duty, a stepped triangle bass and noise drums, with a hummable lead built from short motifs and a second pulse that echoes, arpeggiates or harmonises. The screen is a tracker with four pattern columns scrolling under a cursor bar showing note, instrument and effect, four live oscilloscopes and the song title, section and pattern. Thirteen styles each keep their own settings, EDIT calls the next song and REC loops the current one. The pixel font is converted from Terminus.
+status: active
+authors:
+- name: ashtonwallen
+  url: https://github.com/ashtonwallen
+source: https://github.com/ashtonwallen/fm1-firmware/tree/main/chip-tracker
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The folder's LICENSING.md and LICENSE give MPL-2.0 file by file, with AMB-1's and fm1-base's notices kept on the files
+  that came from them. The Barlow Semi Condensed and Terminus fonts are SIL OFL 1.1 and the JieLi SDK files are read from
+  the builder's checkout.
+based_on: m-vave-fm-1/amb-1
+distribution: download
+install_notes: >-
+  Download the .fwsc from the release and write it with M-Flasher or the FM-1 Flasher in the same repository, which backs up the whole flash first and keeps the bootloader untouched. The release says it is built on fm1-base 3ae2a65, which supports both flash chips, and has not been played on real hardware.
+brick_risk: false
+tags: [generative, synth-engine, chiptune, tracker]
+image:
+  url: https://raw.githubusercontent.com/ashtonwallen/fm1-firmware/main/chip-tracker/docs/img/screen-tracker.png
+  alt: "CHIP TRACKER screen: song Whispering Cellar, verse, 104 BPM, a tracker with columns PU1, PU2, TRI and NOI showing note data and waveforms, and knobs TEMPO, ENERGY, ECHO and MOOD"
+  credit: ashtonwallen
+  source_url: https://github.com/ashtonwallen/fm1-firmware
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-25
+  url: https://github.com/ashtonwallen/fm1-firmware/releases/tag/chip-tracker-1.0
+  notes: First release; built on fm1-base 3ae2a65.

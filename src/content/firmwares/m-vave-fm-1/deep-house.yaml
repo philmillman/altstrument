@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: DEEP HOUSE DECKS
+summary: >-
+  Self-playing deep house firmware for the FM-1 that generates an endless set of records at 118 to 124 BPM and shows a virtual DJ blending them on two turntables and a mixer.
+description: >-
+  Records have a four-on-the-floor kick, offbeat open hats, shuffled sixteenths, claps on 2 and 4, shaker, conga and rim, with minor ninth and eleventh vamps on Rhodes, organ or pad stabs, a rolling bass locked to the kick and now and then a lead hook or chopped vocal stab. Each record runs in 16-bar phrases of drum intro, groove, full, breakdown with the kick out, filter build and drop. A virtual DJ blends each record into the next on a phrase line by raising the new fader, swapping the bass on the low EQ, sweeping filters and moving the crossfader, while tempo holds and the next key is always a neighbour. The screen shows two spinning platters, a mixer with faders, EQ and filter knobs and meters, and each deck's record title, mix, section and phrase. Thirteen sets each keep their own settings and EDIT starts the next mix.
+status: active
+authors:
+- name: ashtonwallen
+  url: https://github.com/ashtonwallen
+source: https://github.com/ashtonwallen/fm1-firmware/tree/main/deep-house
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The folder's LICENSING.md and LICENSE give MPL-2.0 file by file, with AMB-1's and fm1-base's notices kept on the files
+  that came from them. The Barlow Semi Condensed and Terminus fonts are SIL OFL 1.1 and the JieLi SDK files are read from
+  the builder's checkout.
+based_on: m-vave-fm-1/amb-1
+distribution: download
+install_notes: >-
+  Download the .fwsc from the release and write it with M-Flasher or the FM-1 Flasher in the same repository, which backs up the whole flash first and keeps the bootloader untouched. The release says it is built on fm1-base 3ae2a65, which supports both flash chips, and has not been played on real hardware.
+brick_risk: false
+tags: [generative, synth-engine, drums]
+image:
+  url: https://raw.githubusercontent.com/ashtonwallen/fm1-firmware/main/deep-house/docs/img/screen-decks.png
+  alt: "DEEP HOUSE DECKS screen: set Loading Bay, 122 BPM, two turntables playing Carry Me and The Doorman either side of a mixer showing Em9, and knobs ENERGY, FILTER, MIX and WARMTH"
+  credit: ashtonwallen
+  source_url: https://github.com/ashtonwallen/fm1-firmware
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-25
+  url: https://github.com/ashtonwallen/fm1-firmware/releases/tag/deep-house-1.0
+  notes: First release; built on fm1-base 3ae2a65.

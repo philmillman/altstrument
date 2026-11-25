@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: JAZZ TRIO
+summary: >-
+  Self-playing jazz piano trio firmware for the FM-1 that plays an endless set of generated tunes on piano, upright bass and drums, shown from a table in a small club.
+description: >-
+  Every tune is new, with its own key, tempo, form and title, drawn from swing, ballads, blues, rhythm changes, modal tunes and jazz waltzes. A tune goes through count-in or intro, head, piano solos that build chorus by chorus, sometimes a bass solo or fours traded with the drums, head out and a tag, ritardando or Basie ending, followed by soft applause and the next count-in. The bass walks, the ride cymbal keeps spang-a-lang, brushes take over on ballads and the piano uses rootless voicings. The screen shows the stage with a spotlight on the soloist, a candle and the tune and chord on a chalkboard. Thirteen bands each keep their own settings, EDIT calls the next tune and REC keeps the solos going.
+status: active
+authors:
+- name: ashtonwallen
+  url: https://github.com/ashtonwallen
+source: https://github.com/ashtonwallen/fm1-firmware/tree/main/jazz-trio
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The folder's LICENSING.md and LICENSE give MPL-2.0 file by file, with AMB-1's and fm1-base's notices kept on the files
+  that came from them. The Barlow Semi Condensed and Terminus fonts are SIL OFL 1.1 and the JieLi SDK files are read from
+  the builder's checkout.
+based_on: m-vave-fm-1/amb-1
+distribution: download
+install_notes: >-
+  Download the .fwsc from the release and write it with M-Flasher or the FM-1 Flasher in the same repository, which backs up the whole flash first and keeps the bootloader untouched. The release says it is built on fm1-base 3ae2a65, which supports both flash chips, and has not been played on real hardware.
+brick_risk: false
+tags: [generative, synth-engine, chords]
+image:
+  url: https://raw.githubusercontent.com/ashtonwallen/fm1-firmware/main/jazz-trio/docs/img/screen-club.png
+  alt: "JAZZ TRIO screen: band Cover Charge, 160 BPM, a club stage with pianist, upright bassist and drummer, a chalkboard reading Augie in Three, C7, and knobs TEMPO, INTENSITY, ROOM and SWING"
+  credit: ashtonwallen
+  source_url: https://github.com/ashtonwallen/fm1-firmware
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-25
+  url: https://github.com/ashtonwallen/fm1-firmware/releases/tag/jazz-trio-1.0
+  notes: First release; built on fm1-base 3ae2a65.

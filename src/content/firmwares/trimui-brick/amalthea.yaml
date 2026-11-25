@@ -1,0 +1,45 @@
+device: trimui-brick
+name: Amalthea
+summary: >-
+  Replaces the TrimUI Brick's operating system with a minimal Linux for music apps: a generative 12-track Tracker, an FX rack for an M-VAVE FM-1's USB audio and the LIFEBLOOD effect network, sharing a set of synth engines and over seventy effects.
+description: >-
+  Rights warning: the installer and boot image keep a small, listed set of TRIMUI's stock firmware 1.0.6 files, including the kernel and a few board helpers and kernel modules, redistributed unmodified. Their rights remain with the owner.
+
+  Amalthea is a whole operating system rather than an app. The installer writes a new boot partition and root filesystem, and removes the stock gaming frontend, emulators and services until the restore script puts the stock system back. Underneath sit twelve synthesis engines, more than seventy effects, random generators for notes, rhythms and parameters, a master chain, session banks and low-latency ALSA output. The Brick also acts as a class-compliant USB audio device when it is not hosting an FM-1.
+
+  Three instruments ship so far. TRACKER is a 12-track generative tracker with five independently clocked columns per track, 19 playback directions, conditional events and 38 scales. FX is a twelve-slot effect rack for the separate USB tracks of an M-VAVE FM-1 running Bigorna, Tonitor, Lilliput or Norilsk, with a parameter sequencer on each slot clocked from the FM-1. LIFEBLOOD sends those tracks through a generated, self-mutating network of effects. The README says it was developed and tested on one Brick on stock firmware 1.0.6 and that other stock versions are untested.
+status: active
+authors:
+  - name: Nuno Zimas
+    url: https://github.com/nzimas
+source: https://github.com/nzimas/amalthea
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is GPL-3.0 with no "or later" statement. The README says the code contains ports of many open-source projects, each credited in its source files and docs. The vendor components in the images are listed in installer/VENDOR-COMPONENTS.txt and remain the property of their owners; they are not committed to the repository.
+homepage: https://nzimas.github.io/amalthea/
+distribution: download
+requires_stock: TRIMUI Brick (TG3040) stock firmware 1.0.6
+install_notes: >-
+  Download the installer zip from the release page, connect the charged Brick over a USB-C data cable while the stock system is running, and run install.sh (macOS, Linux) or install.bat (Windows). The installer first saves a SHA-256 checked backup of the stock boot and root partitions on the computer, then writes only those two partitions; the bootloader, partition table and SD card are untouched. restore.sh or restore.bat writes the backup back, and a RAM recovery shell over ADB takes over if a write is interrupted. Running a newer installer updates in place and copies saved sessions off first.
+brick_risk: false
+tags: [tracker, generative, sequencer, synth-engine, fx, os, usb-audio, handheld]
+image:
+  url: https://raw.githubusercontent.com/nzimas/amalthea/main/docs/assets/screens/tracker.png
+  alt: Amalthea Tracker screen, a cyan TRACKER title with STOP and 120 BPM, a yellow pattern line, and a grid of rows with NOTE, MOD, INST, FX1 and FX2 columns holding notes such as C-3, D-3 and E-3
+  credit: Nuno Zimas
+  source_url: https://nzimas.github.io/amalthea/
+  first_party: true
+versions:
+  - version: build-38
+    date: 2026-11-25
+    url: https://github.com/nzimas/amalthea/releases/tag/build-38
+    notes: Adds MOD TRANSPOSE in the Tracker, where a MOD cell can hold a row offset or a transpose that shifts the notes after it. Sessions move to a new format and older ones load.
+  - version: build-37
+    date: 2026-11-25
+    url: https://github.com/nzimas/amalthea/releases/tag/build-37
+    notes: Adds per-row instrument variations in the Tracker, redrawing timbre, filter and envelopes while pitch stays the same.
+  - version: build-36
+    date: 2026-11-24
+    url: https://github.com/nzimas/amalthea/releases/tag/build-36
+    notes: First public release.

@@ -2,13 +2,14 @@ device: m-vave-fm-1
 name: MD-One
 summary: >-
   Work-in-progress drone machine built on Mutable Instruments' Braids oscillators, tuned combs and drift, played
-  from the keys and recorded into a DAW over USB audio; it has run only on the host and in an emulator.
+  from the keys and recorded into a DAW over USB audio; the README says it runs on an FM-1.
 description: >-
   The firmware starts from a fork of Dinghy and has a drone engine of four always-on voices with a modulation
   system and an AHDSR envelope. The synthesis code in dsp/ is the author's own MIT-licensed
   fixed-point code plus a vendored Braids port that builds for the FM-1's CPU, with the repository's
-  measurements giving four voices as roughly a fifth of the audio budget. The README says no FM-1 has been
-  connected or flashed (two units were on order) and that the playable interface is not finished. The
+  measurements giving four voices as roughly a fifth of the audio budget. The README says it was first flashed to a development unit on 22 October 2026, reports 42 percent CPU
+  for four voices on the device and describes a recovery path that was walked through on that unit. Later commits add a rack
+  with a crusher, delay, reverb rooms and other effects, move some voice rendering to the second core, and add a VST3 bridge plugin in plugin/ that edits the patch over SysEx. The
   repository also holds notes on the chip, a survey of other FM-1 firmwares and a firmware safety plan.
 status: active
 authors:
@@ -24,11 +25,15 @@ license_notes: >-
 distribution: source-only
 install_notes: >-
   Build with the scripts in the repository (JieLi toolchain under WSL, scripts/check-all.sh), which also loads
-  the result into the fm1-emu emulator. The README says nothing has been flashed to a device, and
-  docs/FIRMWARE_SAFETY.md sets conditions to meet before any physical write.
+  the result into the fm1-emu emulator. No firmware package is published. The README says the firmware has been flashed to the author's development unit, and
+  docs/FIRMWARE_SAFETY.md describes the rescue path from a running firmware (OCT- and OCT+ held for five seconds).
 brick_risk: false
 tags: [synth-engine, generative, ambient, emulator, research, usb-audio]
 versions:
+- version: main @ f5dff07
+  date: 2026-11-25
+  url: https://github.com/d0pe1/md-one/commit/f5dff0729f36006ddbe860b5ecb644ba65a8be71
+  notes: No tagged releases; this is the latest commit. Since the previous row the project adds a delay, crusher and several reverb rooms to the rack, runs part of the voice rendering on the second core, adds a VST3 bridge plugin that reads and edits the patch over SysEx, and works on Braids shapes that sound wrong.
 - version: main @ 6db1985
   date: 2026-10-23
   url: https://github.com/d0pe1/md-one/commit/6db198515da051d31b903535958788137c153dc4

@@ -1,4 +1,5 @@
 device: teenage-engineering-sp-1
+also_devices: [meng-qi-wingie2]
 name: Sleepcousonique
 summary: Patch language, desktop editor and SP-1 firmware that play modular-style patches written as dated journal entries, with the SP-1's faders, buttons and rocker mapped into the patch.
 description: >-
@@ -7,7 +8,9 @@ description: >-
   macOS and Windows editor shows the same patch as boards and cords, plays it on the computer and sends it over USB to the
   SP-1. The language has 129 module types taken from modular history and a quantizer with 38 scales plus Scala files. The
   engine is shared C code in the editor and the firmware, and the firmware's hardware layer comes from Wakes. A load meter
-  in the editor warns when a patch is too heavy for the SP-1. The README states that the project is unofficial and not
+  in the editor warns when a patch is too heavy for the SP-1. Since 1.5.0 the same
+  editor and language also target Meng Qi's Wingie2, which runs a separate GPLv3
+  firmware from the same release. The README states that the project is unofficial and not
   affiliated with Teenage Engineering.
 status: active
 authors:
@@ -26,7 +29,7 @@ install_notes: >-
   Turn the SP-1 off, hold T1 and T4 while plugging in USB, and flash sleepcousonique-sp1.bin from the release with the
   Solderless web updater in Chrome or Edge. This is needed once; later patches go over USB from the editor. FLASHING.md says
   the bootloader is never touched, so holding T1 and T4 again always allows flashing another .bin, and that reflashing can
-  clear the five stored patch slots. The macOS app is not notarised, so open it from the context menu the first time.
+  clear the five stored patch slots. The macOS app is not notarised, so open it from the context menu the first time. For the Wingie2, flash sleepcousonique-wingie.bin at address 0 with esptool; the release says Meng Qi's web flasher puts the stock firmware back.
 brick_risk: false
 tags: [synth-engine, generative, editor, performance, usb-midi, open-source]
 image:
@@ -36,6 +39,10 @@ image:
   source_url: https://github.com/femifleming/sleepcousonique
   first_party: true
 versions:
+  - version: v1.5.0
+    date: 2026-11-24
+    url: https://github.com/femifleming/sleepcousonique/releases/tag/v1.5.0
+    notes: Adds support for Meng Qi's Wingie2, with its own GPLv3 firmware, a Wingie mode in the editor, 12 slots and examples. The processing places grow from 96 to 239, with granular, spectral, time and colour effects, and any place can run at half or quarter sample rate. The notes say to flash the SP-1 again for 1.5.0.
   - version: v1.4.1
     date: 2026-11-20
     url: https://github.com/femifleming/sleepcousonique/releases/tag/v1.4.1

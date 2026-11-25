@@ -6,7 +6,7 @@ summary: >-
 description: >-
   Brickchord maps seven chord buttons to the diatonic chords of a chosen key, with modifiers for sevenths, sus4 and ninths, left-stick chord bends and right-stick reverb, delay and filter. It has 23 sounds across analog-style, FM, plucked, organ and vocal engines, a sound editor, a stackable effects rack, 15 play styles with strums, harps, arpeggiators and repeats, a drum machine with 27 beats, a synth bass and a six-track pattern recorder with a song page. Bricklab is the groovebox edition on the same engine, with a layered looper, sixteen patterns of six tracks that each hold a chord, lead, bass, drone or sample machine, per-track effects, a step-grid drum machine and sample playback from WAV files. Brickglide is an ambient machine in which chord voices slide into the next chord over seconds, with scrubbing, melody over the changes, USB MIDI input and texture beds.
 
-  Each app runs as a Ports entry on Knulli, using a bundled NumPy and pygame, and also ships as PortMaster packages for NextUI, muOS, ROCKNIX and ArkOS and as an R36 build. The README marks the project alpha and says it was tested on a Brick Pro with a Knulli beta build. It reports the other firmwares and the R36 package as untested on hardware. The project is not affiliated with TrimUI, Knulli or the makers of the chord instruments that inspired it.
+  Each app runs as a Ports entry on Knulli, using a bundled NumPy and pygame, and also ships as PortMaster packages for NextUI, muOS, ROCKNIX and ArkOS and as an R36 build. Since v0.5.0 a no-sticks mode turns on by itself when no analog sticks are found, so the apps can also be played on handhelds like the original TrimUI Brick. The README marks the project alpha and says it was tested on a Brick Pro with a Knulli beta build. It reports the other firmwares and the R36 package as untested on hardware. The project is not affiliated with TrimUI, Knulli or the makers of the chord instruments that inspired it.
 status: active
 authors:
   - name: Michael Tietjen
@@ -30,6 +30,10 @@ image:
   source_url: https://github.com/michaeltietjen/brickchord
   first_party: true
 versions:
+  - version: v0.5.0
+    date: 2026-11-25
+    url: https://github.com/michaeltietjen/brickchord/releases/tag/v0.5.0
+    notes: Adds a no-sticks mode for handhelds without analog sticks, such as the original TrimUI Brick, with F1 and F2 standing in for the sticks and chord types that latch. It also fixes the stick setup on R36 handhelds with short-throw sticks and a dArkOS RE screen problem, adds Python 3.13 support and ships PortMaster builds that are not yet tested on NextUI or NX Redux hardware.
   - version: v0.4.3-r36
     date: 2026-11-23
     url: https://github.com/michaeltietjen/brickchord/releases/tag/v0.4.3-r36

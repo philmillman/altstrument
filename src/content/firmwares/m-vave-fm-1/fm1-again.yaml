@@ -1,0 +1,48 @@
+device: m-vave-fm-1
+name: FM-1 Again
+summary: >-
+  Garage and dance groove firmware with soft FM electric piano, sung syllables, a chopped recording and a reversed stab on the keys, eight grooves, builds and drops, performance tricks and a pumping sidechain.
+description: >-
+  Rights warning: the screensaver film in app/media is cut and dithered from concert footage taken from creative files that an artist's tour team shared with the community, and the look of the screens follows that tour's posters. The project says these are not under the GPL and relies on the terms of that release, and states that no artist made or endorsed the firmware. The keys play KEYS, a soft FM electric piano with chords on one key, VOX with sung syllables, CHOP, a recording of up to eight seconds cut into slices that play forwards or backwards, RISE and DRUMS. It has eight grooves with their own swing, four chord progressions in any key, BUILD and DROP on ARP in four styles with the tempo rushing into the drop, and SONG, which plays a 72-bar track alone. PERFORM puts eleven pads on the black keys and thirteen tricks on SEL with a white key, such as stutters, reverse, tape stop and echo throws. PUMP, SPACE, ECHO and TAPE are the effects, taken in part from Arctic Scream. It also has USB MIDI, Bluetooth MIDI, USB audio, a screen reader and an editor page for values and the CHOP sample. The repository's FM-1 Again SMK-37 port has a README only and no release.
+status: active
+authors:
+- name: PolarPatch
+  url: https://github.com/PolarPatch
+source: https://github.com/PolarPatch/FM-1-Again
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0 as a whole, GPL-3.0-only because the modules from Arctic Scream are. fm1-base and felucca-bsp are MPL-2.0, the TeX Gyre Heros font is under the GUST Font License and Press Start 2P is SIL OFL 1.1. The screensaver film app/media/again_saver.bin and the tour-poster look are not under the GPL. No M-VAVE firmware image is in the repository.
+homepage: https://polarpatch.github.io/FM-1-Again/
+distribution: download
+install_notes: >-
+  Install again-X.Y.fwsc from a release with the browser installer in Chrome or Edge, or with base/tools/fm1_install.py over USB. The installer can also put M-VAVE's own firmware back, and the README sends a stuck unit to the Rescue page of The Firmware Hub. It writes over flash at 0x97000 to 0xDBFFF (the screensaver film), 0xDC000 and 0xDE000, 0xE5000 to 0xFBFFF (the CHOP sample) and 0xFC000 (settings), so samples, kits and projects of another firmware kept there are lost. Back up with that firmware's own tool first.
+brick_risk: false
+tags: [groovebox, sequencer, synth-engine, sampler, voice, fx, performance, usb-audio, ble-midi, editor, emulator]
+image:
+  url: https://raw.githubusercontent.com/PolarPatch/FM-1-Again/main/app/docs/img/screens.png
+  alt: "Nine FM-1 Again screens in a grid: the boot name, a dithered screensaver, Drop 124 BPM, Drop in 4, Stutter 1/8, CHOP Reverse with a waveform, KEYS Min9, Bar 13.3 and TAPE Warm, each with parameters"
+  credit: PolarPatch
+  source_url: https://github.com/PolarPatch/FM-1-Again
+  first_party: true
+versions:
+- version: 1.0.4
+  date: 2026-11-25
+  url: https://github.com/PolarPatch/FM-1-Again/releases/tag/v1.0.4
+  notes: Adds FOG, a chord loop that rocks between a major chord and its relative minor.
+- version: 1.0.3
+  date: 2026-11-25
+  url: https://github.com/PolarPatch/FM-1-Again/releases/tag/v1.0.3
+  notes: Changes the package identity to FM-1_242 plus the version and removes the grain from the large header while a pad is held.
+- version: 1.0.2
+  date: 2026-11-25
+  url: https://github.com/PolarPatch/FM-1-Again/releases/tag/v1.0.2
+  notes: The release page has no text beyond the changelog link.
+- version: 1.0.1
+  date: 2026-11-24
+  url: https://github.com/PolarPatch/FM-1-Again/releases/tag/v1.0.1
+  notes: The release page has no text beyond the changelog link.
+- version: '1.0'
+  date: 2026-11-24
+  url: https://github.com/PolarPatch/FM-1-Again/releases/tag/v1.0
+  notes: First release.

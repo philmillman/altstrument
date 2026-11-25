@@ -1,0 +1,27 @@
+device: m-vave-fm-1
+name: FM-1 Big Screen builds
+kind: tool
+summary: >-
+  Third-party repository of 172 prebuilt FM-1 community firmware packages, each rebuilt from its author's published source with the Big Screen screen-output addition, with a table of credit, license and source commit.
+description: >-
+  Big Screen is a small addition to an FM-1 firmware that sends the unit's screen to the FM-1 Big Screen desktop app and the FM-1 Big Screen + Spyglass Android app, with Big Knobs and Key Lights where the firmware allows. This repository holds a .fwsc package and a .patch for each build, taken from firmwares listed on The Firmware Hub. A table gives each firmware's author, license, and the source repository at the exact commit it was built from, and says whether the build uses fm1-base's own screen mirror or has the Big Screen code added. Some builds are marked squeezed, which means the USB serial console and some of the app's controls were removed to make room. The README says the builds are not made or supported by the firmware authors, that problems go to this repository's issues, that an author can ask to have a build removed or to receive the Big Screen change in their own release, and that Charles Vestal's firmwares are not built here. One build, Melodee's, also needs a resources file sent with Melodee's own script. The packages seen are community builds of about 610 KB, and no M-VAVE firmware file is in the repository.
+status: active
+authors:
+- name: pfkellogg
+  url: https://github.com/pfkellogg
+source: https://github.com/pfkellogg/fm1-big-screen-builds
+source_status: open
+license: MIT
+license_notes: >-
+  The repository has no LICENSE file. The README says the Big Screen code (screen_mirror.c, fm1bs_mirror.c, fm1bs_panel.c) is MIT and that each build as a whole is under its firmware's license, which the table lists per build (mostly GPL-3.0, some MPL-2.0, MIT and GPL-2.0-or-later). The firmware in each package is the work of its author.
+homepage: https://aikellogg.com/#/make-big-screen
+distribution: download
+install_notes: >-
+  Download a .fwsc from the fw/ folder and install it with an FM-1 installer such as M-Flasher or the FM-1 Big Screen app. The README says to back up the FM-1 with M-Flasher first, which it says saves everything and puts it all back, and that the builds are untested on most units. Melodee's build needs its resources file sent with Melodee's tools/fm1_resources.py after the package is installed.
+brick_risk: false
+tags: [flasher, utility, usb-midi, ui, fork]
+versions:
+- version: main @ 2e1665e
+  date: 2026-11-25
+  url: https://github.com/pfkellogg/fm1-big-screen-builds/commit/2e1665ed4fef24a30f4ea7015357fbac4d55e52f
+  notes: No tagged releases; this is the latest commit.

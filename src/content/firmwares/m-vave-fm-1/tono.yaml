@@ -1,0 +1,45 @@
+device: m-vave-fm-1
+name: Tono
+summary: >-
+  Generative ambient firmware with four layers that share an instrument engine, each with its own sound, modulation, effects and sequencing, plus a Garden that plays factory arrangements at startup.
+description: >-
+  Garden opens at startup and plays the factory arrangements, with Generate presets, the A22 sound bank and sampled textures also available. ALGORITHM on HOME travels through the piece, and holding HOME while turning it with a layer selected evolves that layer. Each layer has two LFOs, a layer filter, EQ and drive, with live spectrum displays, and the master has a peak limiter. A built-in contextual help opens with HOME and EDIT. The display responds to the music, and the Studio Dark, Studio Light and Dial themes are set in GLO. The README says it builds on Juan Jiant's JIANT FM, Leo Kuroshita's Felucca and Charles Vestal's fm1-amb. A browser player runs the released firmware in fm1-emu, and releases include a macOS emulator bundle, matching source and an evidence archive. The first release was 0.65-opt on 2026-11-24 and ten more followed within a day, so this entry lists only the first release and the feature releases.
+status: active
+authors:
+- name: pietrobolcato
+  url: https://github.com/pietrobolcato
+source: https://github.com/pietrobolcato/tono
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README gives GPL-3.0-only, with separate notices for incorporated code, fonts and recordings in LICENSING.md and LICENSES/ (Apache-2.0 msfa port, MPL-2.0 AMB code, CC0 Versilian samples, BSD-2-Clause CMUdict, OFL fonts).
+homepage: https://pietrobolcato.github.io/tono/
+based_on: m-vave-fm-1/jiant
+distribution: download
+install_notes: >-
+  Import the release .fwsc into FM-SWITCH. The docs ask for a whole-flash backup first and say to check that the tool shows product FM-1_900 and application writes within 0x04000 to 0x92FFF, and to stop if the identity or write area differs. Leaving Start the new firmware fresh unchecked keeps saved songs and settings. The write area stays above the first 16 KB; the docs note that a stock M-VAVE bootloader can ask for a USB_KEY if an application fails to start.
+brick_risk: false
+tags: [ambient, generative, synth-engine, lfo, fx, emulator]
+image:
+  url: https://raw.githubusercontent.com/pietrobolcato/tono/main/docs/tono/media/startup-te-dark.gif
+  alt: "Tono start-up animation in the dark theme: four short coloured bars in orange, blue, pink and yellow above the word Tono, a version number and the line FM1 Ambient Synthesizer"
+  credit: pietrobolcato
+  source_url: https://github.com/pietrobolcato/tono
+  first_party: true
+versions:
+- version: v0.71-opt
+  date: 2026-11-25
+  url: https://github.com/pietrobolcato/tono/releases/tag/v0.71-opt
+  notes: Adds sound variations, texture families, a bell filter mode, quick LFO linking, Soft Knee saturation and live EQ spectra.
+- version: v0.70-opt
+  date: 2026-11-24
+  url: https://github.com/pietrobolcato/tono/releases/tag/v0.70-opt
+  notes: Adds two LFOs per layer, live filter response displays and a master limiter page.
+- version: v0.66-opt
+  date: 2026-11-24
+  url: https://github.com/pietrobolcato/tono/releases/tag/v0.66-opt
+  notes: Adds the browser player and a macOS emulator bundle.
+- version: v0.65-opt
+  date: 2026-11-24
+  url: https://github.com/pietrobolcato/tono/releases/tag/v0.65-opt
+  notes: First public release.

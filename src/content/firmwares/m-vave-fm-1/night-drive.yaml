@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: NIGHT DRIVE
+summary: >-
+  Self-playing synthwave firmware for the FM-1 that drives an endless generated track of rolling bass, arpeggios and gated drums past a neon grid road toward a striped sun.
+description: >-
+  The engine generates rolling sixteenth-note bass, arpeggios, detuned pads, a punchy kick and a big gated snare, with a saw, square or FM-brass lead now and then, over minor progressions such as i VI III VII. Sections come round by themselves, from intro to drive, breakdown and build, with occasional key changes, and a limiter on the master keeps it from clipping. Everything is generated in code and no samples are used. The screen shows a grid road to a striped sun with mountains on the horizon, a grid that pulses on the kick and car tail lights that flare on the snare, in a colour scheme set by each preset. The Road page has Speed from 85 to 130 BPM, Bright, Arp density and Drift for how often sections and keys change. Fourteen presets each have their own key, speed, sounds and palette.
+status: active
+authors:
+- name: ashtonwallen
+  url: https://github.com/ashtonwallen
+source: https://github.com/ashtonwallen/fm1-firmware/tree/main/night-drive
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The folder's LICENSING.md and LICENSE give MPL-2.0 file by file, with AMB-1's and fm1-base's notices kept on the files
+  that came from them. The Barlow Semi Condensed and Terminus fonts are SIL OFL 1.1 and the JieLi SDK files are read from
+  the builder's checkout.
+based_on: m-vave-fm-1/amb-1
+distribution: download
+install_notes: >-
+  Download the .fwsc from the release and write it with M-Flasher or the FM-1 Flasher in the same repository, which backs up the whole flash first and keeps the bootloader untouched. The release says it is built on fm1-base 3ae2a65, which supports both flash chips, and has not been played on real hardware.
+brick_risk: false
+tags: [generative, synth-engine, arpeggiator, drums]
+image:
+  url: https://raw.githubusercontent.com/ashtonwallen/fm1-firmware/main/night-drive/docs/img/screen-drive.png
+  alt: "NIGHT DRIVE screen: preset Midnight, 100 BPM, a pink and purple synthwave scene with a striped sun, mountains and a neon grid road with a car's tail lights, and knobs SPEED, BRIGHT, ARP and DRIFT"
+  credit: ashtonwallen
+  source_url: https://github.com/ashtonwallen/fm1-firmware
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-24
+  url: https://github.com/ashtonwallen/fm1-firmware/releases/tag/night-drive-1.0
+  notes: First release; built on fm1-base 3ae2a65.

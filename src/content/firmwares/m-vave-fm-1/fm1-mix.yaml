@@ -1,0 +1,52 @@
+device: m-vave-fm-1
+name: FM1 Mix
+kind: tool
+summary: >-
+  Android app that runs an emulated FM-1 firmware on the phone and mixes it with the USB audio of a real FM-1, with a touch panel, MIDI clock sync, effects pad, loop player, slicer and project files.
+description: >-
+  FM1 Mix runs a community firmware package on an emulated FM-1 on an Android phone, using the fm1-emu core, and mixes its
+  output with the USB audio of a real FM-1 plugged into the phone, which also supplies the MIDI clock. The app has a touch
+  panel, the controls of the real FM-1 can drive the emulated one, and the phone's MIDI input can play it. A mixer has
+  strips for the emulated firmware, the real FM-1, the loops and the master, and an effects pad has up to 26 effects, one
+  per track with at most three active at once. Four loops can be played from WAV files, with a passage chooser for long files
+  and gestures recorded to the clock. A slicer taken from SLOOP's web editor cuts samples, and the app can send them to a
+  frozen LOOM-8. It records to WAV, saves and exports projects as .fm1mix or .zip files with FLAC sounds, offers a
+  catalogue of firmwares to download, and has French and English interfaces. No firmware is shipped inside the app. The README (in
+  French) lists what was and was not checked on a computer and a Pixel 8a. It is a beta, and the repository is called FM1-Studio.
+status: active
+authors:
+- name: RichAldana
+  url: https://github.com/RichAldana
+source: https://github.com/RichAldana/FM1-Studio
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  NOTICE.md puts the whole app under GPL-3.0-only because it includes code from SLOOP's web editor (the slicer), and
+  lists the other parts under their own licences: the fm1-emu core (MIT), the code that sends samples to LOOM-8 (MPL-2.0),
+  Airwindows, Eurorack-derived and Faust-generated effects, Surge effects (GPL-3.0-or-later), and the claxon FLAC reader
+  (Apache-2.0). It says no firmware is shipped, each being downloaded from the Hub's mirror or its author's release when the
+  user chooses it.
+distribution: download
+install_notes: >-
+  Download fm1mix.apk from the latest release and install it on an arm64 Android phone, allowing installs from unknown
+  sources. Each version installs over the previous one. To mix with a real FM-1, plug it into the phone by USB-C and allow
+  microphone access, which the USB audio capture needs. The app writes nothing to the real FM-1's firmware.
+brick_risk: false
+tags: [emulator, android, mixer, fx, looper, slicer, usb-audio]
+versions:
+- version: v0.28.2
+  date: 2026-11-24
+  url: https://github.com/RichAldana/FM1-Studio/releases/tag/v0.28.2
+  notes: Steadies the displayed MIDI clock tempo and plays the real FM-1's sound through the app's own USB driver again on the Pixel 8a under Android 16.
+- version: v0.28
+  date: 2026-11-24
+  url: https://github.com/RichAldana/FM1-Studio/releases/tag/v0.28
+  notes: Adds recorded gestures, one effect per track, project name and export controls, and FLAC export.
+- version: v0.25
+  date: 2026-11-24
+  url: https://github.com/RichAldana/FM1-Studio/releases/tag/v0.25
+  notes: Adds a screen for choosing the passage of a long file.
+- version: v0.21
+  date: 2026-11-24
+  url: https://github.com/RichAldana/FM1-Studio/releases/tag/v0.21
+  notes: Adds the 26 effects of the effects pad.

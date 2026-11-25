@@ -23,12 +23,14 @@ source: https://github.com/aisk/PocketCake
 source_status: open
 license: MIT
 license_notes: Portions are ported from SonicMaster, copyright Andrii Klaptsov, also MIT.
-distribution: source-only
+distribution: download
 requires_stock: Pocket Master or Smart Box; the README names no firmware version
 install_notes: >-
-  Needs the .NET 10 SDK on Windows 10 or later. Run dotnet run --project
-  src/PocketCake -p:Platform=x64 from a clone. The repository has no release
-  builds. Saving writes to user presets on the pedal.
+  The README says releases ship only through the Microsoft Store, as a packaged
+  app for Windows 10 or later; the repository has no release builds. To build
+  from source instead, install the .NET 10 SDK and run dotnet run --project
+  src/PocketCake -p:Platform=x64 from a clone. Saving writes to user presets on
+  the pedal.
 brick_risk: false
 tags: [editor, midi, bluetooth, nam, ir, mcp, fx]
 image:
@@ -38,6 +40,10 @@ image:
   source_url: https://github.com/aisk/PocketCake
   first_party: true
 versions:
+  - version: master @ f75112b
+    date: 2026-11-24
+    url: https://github.com/aisk/PocketCake/commit/f75112bce76e11212c72c50c4f73f732e26d0e29
+    notes: No tagged releases; this is the latest commit. Since the previous entry the commits fix clone parameter frames with a wrong checksum, decode preset dumps and every global setting from the dump's records, show the pedal's firmware version, add renaming, copying, resetting and .prst import and export of stored presets, hide settings a model lacks and package the app as MSIX for the Microsoft Store.
   - version: master @ 9628cb0
     date: 2026-10-17
     url: https://github.com/aisk/PocketCake/commit/9628cb0

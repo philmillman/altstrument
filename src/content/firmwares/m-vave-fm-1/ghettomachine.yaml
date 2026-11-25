@@ -1,9 +1,9 @@
 device: m-vave-fm-1
 name: GhettoMachine
 summary: >-
-  Four-track groovebox for the FM-1: a 909 or 808 drum track, three mono, poly or sampler tracks, a 64-step sequencer with 16 patterns, a scene grid, a 303 pattern generator and per-track stems over USB.
+  Four-track groovebox for the FM-1: a drum track with twelve genre kits, three mono or poly synth tracks, a sequencer of up to 128 steps a track with 16 patterns, a scene grid, 303 and beat generators, USB and Bluetooth MIDI and per-track stems over USB.
 description: >-
-  Every drum pad is editable, and the three instrument tracks each take a mono synth, a poly synth or a sampler with FM, ring modulation, a wave shaper, a modulation matrix and macro knobs. It adds an LFO on every track, an arpeggiator and chord mode, a reverb, a tempo delay and a master bus with EQ, compressor, tape saturation, width and limiter. For live use there is a scene grid, perform keys, follow actions and MIDI clock, and a computer can record the master and each track on its own pair of USB inputs. The firmware was called fm1-eight until 0.4. The project also publishes a browser build of the same firmware. The drum engines are ported from X0X and the 9W9 project, and the synth voice comes from Felucca-Engines.
+  Every drum is editable, and the three instrument tracks each take a mono synth or a poly synth with FM, ring modulation, a wave shaper, a modulation matrix and macro knobs. It adds an LFO on every track, an arpeggiator and chord mode, a reverb, a tempo delay and a master bus with EQ, compressor, tape saturation, width and limiter. For live use there is a scene grid, perform keys, follow actions and MIDI clock, and a computer can record the master and each track on its own pair of USB inputs. The firmware was called fm1-eight until 0.4. The project also publishes a browser build of the same firmware. The drums began as ports from X0X and the 9W9 project and are now a synthesized DrumEngine, the stock 808 and 909 kits having been removed from the build, and the synth voice comes from Felucca-Engines. Later builds add MIDI out from the sequencer, Bluetooth MIDI, Bluetooth audio out and Bluetooth keyboards.
 status: active
 authors:
 - name: siddholdenried-del
@@ -21,6 +21,10 @@ install_notes: >-
 brick_risk: false
 tags: [groovebox, drums, sequencer, synth-engine, fx, arpeggiator, usb-audio, emulator]
 versions:
+- version: main @ eef6bcd
+  date: 2026-11-25
+  url: https://github.com/siddholdenried-del/ghettomachine/commit/eef6bcd936311452fbcc3f534f088615d2a0029a
+  notes: No tagged releases; this is the latest commit, which publishes the current browser build. Since the previous row the firmware moves to a unified engine (BongDrums, BongSynth, BongVerb, BongDelay and BongMaster in one render) with a synthesized DrumEngine and twelve genre drum kits in place of the 808 and 909 kits, drops the sampler so T2 to T4 are mono or poly synths, and adds a quick mixer and a patterns page on HOME, a spring reverb mode, substeps, microtiming, step locks, copy and paste, swing per part, a beat generator, sequencer MIDI out, Bluetooth MIDI, audio out and keyboards, and dB levels. Projects are now format 12, and builds before 24 November cannot read newer projects.
 - version: main @ 3fa1d9d
   date: 2026-11-23
   url: https://github.com/siddholdenried-del/ghettomachine/commit/3fa1d9dd228739494b4edcc3bf0fd3f7c306c897

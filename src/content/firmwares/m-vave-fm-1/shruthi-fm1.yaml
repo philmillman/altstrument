@@ -1,0 +1,43 @@
+device: m-vave-fm-1
+name: Shruthi FM-1
+summary: >-
+  Port of the Mutable Instruments Shruthi-1 voice to the FM-1 as a SHRUTHI engine for Felucca, with 12 presets, a patch step that adds it to a Felucca build and a CI-built installer page and browser demo.
+description: >-
+  The project ports the oscillator, envelope, LFO and modulation code of Mutable Instruments' Shruthi-1 to plain C, with 24
+  oscillator shapes, a sub oscillator, a transient generator, a 12-row modulation matrix and mixing operators such as
+  sync, ring, xor, fold and crush, and wraps it as a SHRUTHI engine for Felucca with two oscillators, interval, mix,
+  operator, filter and 12 presets. The README says tests compare the oscillators, envelopes, LFOs and whole voice
+  against the original Shruthi source built on a PC, and that the Felucca engine is integer-only. A GitHub Actions
+  workflow patches the engine into Hugelton Instruments' Felucca, builds a firmware with JieLi's toolchain and
+  publishes an installer page and a browser demo to the project's site. Felucca supplies the sequencer, arpeggiator and
+  envelope stages, and the Shruthi sequencer, effects board and expansion filter modes are not ported. The repository's
+  status file predates that workflow and says nothing has been heard on hardware and the filter is an untuned estimate.
+  This entry is a test build.
+status: active
+authors:
+- name: Bowzee303
+  url: https://github.com/Bowzee303
+source: https://github.com/Bowzee303/shruthi-fm1
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file. The README says the Shruthi-1 firmware is GPL-3.0-or-later and that everything
+  derived from it is GPL, and the patch script says a firmware built with it must be distributed under GPL terms. The
+  Felucca code it builds on is read as GPL-3.0-only. The repository also holds the original source zips it was built from
+  (Shruthi-1, avril, Felucca, Felucca-Engines, felucca-bsp and M-VAVE's fm1_open) unmodified.
+homepage: https://bowzee303.github.io/shruthi-fm1/
+based_on: m-vave-fm-1/felucca
+distribution: browser-installer
+requires_stock: stock V15 or any firmware that takes an update
+install_notes: >-
+  Run the "Build and publish the test site" workflow (it patches the engine into Felucca, builds, and publishes to GitHub
+  Pages), then use the installer page the site serves in desktop Chrome or Edge over USB MIDI. The project site is
+  already published, and the README says power-on parts A, B and C play the SHRUTHI engine in the test build. No release
+  is published, and nothing has been reported as run on an FM-1.
+brick_risk: false
+tags: [synth-engine, voice, fork, ai-assisted]
+versions:
+- version: main @ 119335b
+  date: 2026-11-24
+  url: https://github.com/Bowzee303/shruthi-fm1/commit/119335b5a2a9601d7ed2cf91cfe99ad3e4e3a8c7
+  notes: No tagged releases; this is the latest commit.

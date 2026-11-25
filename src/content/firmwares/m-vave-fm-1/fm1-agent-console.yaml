@@ -1,0 +1,48 @@
+device: m-vave-fm-1
+name: FM-1 Agent Console
+summary: >-
+  Turns the FM-1 into a hardware console for coding-agent sessions in Traycer: a screen with each session's state, answer and age, key and knob input for approving, denying and prompting, and a macOS companion app.
+description: >-
+  FM1 CONSOLE is an FM-1 app built on Dinghy that shows one row per Claude Code or Codex session running in Traycer, with its
+  state (working, waiting, done), its age and the latest answer in a speech bubble. Other views show the selected session
+  as a large title with a chip for each session, and the answer as rich text with bold, inline code and tables. The keys and
+  knobs choose a session, open it on the Mac, approve or deny a request, and send canned or spoken prompts, and the Mac
+  reads the latest answer aloud. The firmware talks to a Bun companion app over USB MIDI or Bluetooth LE MIDI using a
+  documented frame protocol, and the companion also provides a web UI and a software FM-1 for testing. It does not
+  play sound as a synth. The companion needs macOS, Bun and a running Traycer host. The repository holds no firmware
+  package and no releases: the firmware is built with JieLi's toolchain and SDK, and the author's notes on
+  recovery cover a single unit. The author says it is a personal project and not affiliated with M-VAVE, Traycer, Anthropic
+  or OpenAI.
+status: active
+authors:
+- name: Dominik Jančík
+  url: https://github.com/domjancik
+source: https://github.com/domjancik/fm1-agent-console
+source_status: open
+license: MIT
+license_notes: >-
+  The root LICENSE is MIT. The firmware/ directory is GPL-3.0-only, inherited from Dinghy, with its upstream authors named
+  in firmware/LICENSING.md, and vendor/traycer/ is MIT (Traycer AI). The firmware files build on Dinghy 0.5 and are
+  otherwise byte-identical to it apart from the five listed in firmware/UPSTREAM.md.
+based_on: m-vave-fm-1/dinghy
+distribution: source-only
+requires_stock: any firmware that can take an update, such as stock V15
+install_notes: >-
+  Build the firmware as described in firmware/README.md and firmware/UPSTREAM.md (JieLi AC79 toolchain and SDK), then
+  install the package with the Dinghy USB-MIDI installer, using --port FM so it finds the console. The package identity
+  is FM-1_950. The firmware keeps Dinghy's USB rescue, which starts when OCT- is held at power-on or after two failed
+  boots. docs/recovery.md describes the author's recovery tiers up to the chip's mask ROM and says to take a full flash
+  backup first. The companion runs on macOS with Bun and Traycer.
+brick_risk: false
+tags: [ai, ai-assisted, midi, ble-midi, usb-midi, ui, utility]
+image:
+  url: https://raw.githubusercontent.com/domjancik/fm1-agent-console/main/docs/images/console-list.png
+  alt: "FM1 CONSOLE session list, rendered by the host build from test fixtures: a speech bubble with the selected session's latest answer above ten rows, each with a note name, a title and an age"
+  credit: Dominik Jančík
+  source_url: https://github.com/domjancik/fm1-agent-console
+  first_party: true
+versions:
+- version: main @ 1eacfd6
+  date: 2026-11-24
+  url: https://github.com/domjancik/fm1-agent-console/commit/1eacfd6
+  notes: No tagged releases; this is the latest commit.

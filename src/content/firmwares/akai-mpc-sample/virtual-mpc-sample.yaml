@@ -8,8 +8,8 @@ description: >-
   the stock app, with a Python server playing the panel's microcontroller over
   the same UART protocol. The page has the 320 by 240 screen, pads, knobs,
   buttons and data wheel, sound output and input, an SD card folder, SD autorun
-  packages, a root shell and SSH, the USB-C network and USB MIDI. USB audio, a
-  Windows run and other firmware versions are not done; only macOS on Apple
+  packages, a root shell and SSH, the USB-C network and USB MIDI. USB audio and a
+  Windows run are not done, and firmware other than 1.3.0.12 and the optional 1.4.0.8 profile is not supported; only macOS on Apple
   Silicon has been run. You supply the firmware partitions extracted from
   inMusic's 1.3.0.12 update, and the repository has no extractor for that image
   yet. A stock-map folder holds an offline page of about 380 screenshots of every
@@ -27,7 +27,7 @@ license_notes: >-
   stock-map and docs include screenshots of Akai's stock screens, which the
   README says are shown for documentation and interoperability.
 distribution: source-only
-requires_stock: "1.3.0.12"
+requires_stock: 1.3.0.12 (1.4.0.8 optional)
 install_notes: >-
   Needs QEMU 9 or later, Docker (for the build only), Python 3.9 or later and an
   OpenSSH client. Put the boot, rootfs and recovery partitions extracted from your
@@ -44,6 +44,10 @@ image:
   source_url: https://github.com/orrpunk-art/virtual-mpc-sample#readme
   first_party: true
 versions:
+  - version: main @ b523246
+    date: 2026-11-24
+    url: https://github.com/orrpunk-art/virtual-mpc-sample/commit/b5232466ac468a720de9c37dfeadd7ccd54d4653
+    notes: No tagged releases; this is the latest commit. Adds an optional profile for the stock MPC Sample firmware 1.4.0.8, selected with MPC_FIRMWARE=1.4.0.8.
   - version: main @ 15f732c
     date: 2026-11-01
     url: https://github.com/orrpunk-art/virtual-mpc-sample/commit/15f732c71fdd722c924590b9cdec2429f7a1ec2b

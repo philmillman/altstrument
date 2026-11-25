@@ -18,7 +18,7 @@ homepage: https://github.com/abektes/a22#readme
 distribution: download
 requires_stock: V15 or another custom firmware
 install_notes: >-
-  Download a22-0.5.0.fwsc from the release and install it from a clone with submodules by running base/tools/fm1_install.py a22-0.5.0.fwsc (pip3 install mido python-rtmidi). Every push to main also builds a development package (a22.fwsc) as a GitHub Actions artifact. It works from stock V15 and from other custom firmwares. Back up first. The package carries fm1-base's update loader, so another firmware's installer or the Firmware Hub's Back to official V15 replaces it. After two failed starts it boots into a safe mode with USB working, and holding REC while switching on enters the chip's ROM update mode, which the Hub's rescue page uses. It supports both the Puya P25Q80 and UC25HQ80 flash chips.
+  Download a22-0.6.0.fwsc from the release and install it from a clone with submodules by running base/tools/fm1_install.py a22-0.6.0.fwsc (pip3 install mido python-rtmidi). Every push to main also builds a development package (a22.fwsc) as a GitHub Actions artifact. It works from stock V15 and from other custom firmwares. Back up first. The package carries fm1-base's update loader, so another firmware's installer or the Firmware Hub's Back to official V15 replaces it. After two failed starts it boots into a safe mode with USB working, and holding REC while switching on enters the chip's ROM update mode, which the Hub's rescue page uses. It supports both the Puya P25Q80 and UC25HQ80 flash chips.
 brick_risk: false
 tags: [synth-engine, fm, looper, sequencer, fx, chords, arpeggiator, usb-audio, usb-midi]
 image:
@@ -28,6 +28,10 @@ image:
   source_url: https://github.com/abektes/a22
   first_party: true
 versions:
+- version: 0.6.0
+  date: 2026-11-25
+  url: https://github.com/abektes/a22/releases/tag/v0.6.0
+  notes: Adds CPU headroom for loop jams (J0 to J7). The rest of the release is README and site changes, including a note that A22 is on The Firmware Hub. The release holds a22-0.6.0.fwsc, the app image, firmware.json and a checksum file.
 - version: 0.5.0
   date: 2026-11-23
   url: https://github.com/abektes/a22/releases/tag/v0.5.0

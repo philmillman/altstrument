@@ -1,0 +1,49 @@
+device: m-vave-fm-1
+name: Sober Groove
+summary: >-
+  Virtual-pet recovery companion for musicians on the FM-1: a pixel-art buddy to care for, teach riffs to and keep company through craving waves, with day counts, five stages and an SOS timer.
+description: >-
+  Sober Groove replaces the FM-1 firmware with a care game in which a down-on-their-luck musician stays on your couch.
+  Holding HOME each morning counts a day, and a stage (LOST, STREET, GARAGE, CLUB, MAIN STAGE) needs both sober days and
+  taught lessons. The white keys play the buddy's instrument, Low (bass), Kit (drums) or Vinyl (DJ), and a lesson has the
+  buddy listen to a short riff and try to play it back. Black keys one to four feed, talk, exercise and rest the buddy, and
+  black key five starts a twenty-minute SOS wave with breathing prompts, a hungry-angry-lonely-tired check and tips.
+  A slip restarts the streak but keeps totals and stage. The Help screen lists support organisations without phone
+  numbers, and the README says the firmware supports and does not treat anyone. The FM-1 keeps no time while off, so a
+  day counts when HOME is held. It is built on the platform code of Trumpagotchi. The author calls this a first alpha and
+  says it has not been run on an FM-1 yet. The project site has a web installer.
+status: active
+authors:
+- name: orion-musica
+  url: https://github.com/orion-musica
+source: https://github.com/orion-musica/sobergroove
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only for the Sober Groove code and artwork, with the FM-1 platform, build and install tools
+  inherited from Trumpagotchi, FoMni, X0X and Felucca under the same licence. The repository also holds
+  docs/install/FM-1_015.fwsc, which is the V15 image M-VAVE publishes under Apache-2.0 (git blob ce49cc15, identical to
+  the one in m-vave/fm1_open). The JieLi SDK files are read from a local checkout at build time and are not in the repository.
+homepage: https://orion-musica.github.io/sobergroove/
+based_on: m-vave-fm-1/trumpagotchi
+distribution: browser-installer
+requires_stock: stock V15 or another community firmware
+install_notes: >-
+  Use the web installer on the project site in desktop Chrome or Edge over USB, tick the backup box and wait for DONE.
+  The installer has M-VAVE's V15 built in, so you can go back, and from another FM1 Open firmware the guide advises
+  installing V15 first. A command-line route runs tools/fm1_install.py, and a successful install reports
+  FM-1_506370001. An interrupted update is finished by running the same command again, and tools/fm1_rescue.py covers a
+  device stuck in update mode. The release says the package has not been tested on a device.
+brick_risk: false
+tags: [game, ui, web, performance]
+image:
+  url: https://raw.githubusercontent.com/orion-musica/sobergroove/main/docs/screens/home-street.png
+  alt: "Sober Groove home screen at the STREET stage: a pixel-art buddy with headphones sitting by a case, with a music note above, DAY 3 at top left and energy, mood and rhythm bars at the bottom"
+  credit: orion-musica
+  source_url: https://github.com/orion-musica/sobergroove
+  first_party: true
+versions:
+- version: 0.1.0-alpha
+  date: 2026-11-25
+  url: https://github.com/orion-musica/sobergroove/releases/tag/v0.1.0-alpha
+  notes: First test release. The release page describes it as source only, though it lists a sobergroove-0.1.0-alpha.fwsc asset and the web installer serves one.

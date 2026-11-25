@@ -13,7 +13,7 @@ description: >-
   screen has several themes and fonts and a language setting for English, French or Spanish. The repository has a
   browser emulator, an illustrated manual, a web installer and install scripts for Windows, macOS and Linux. It
   is derived from KAWA and reuses its platform code. The author has marked it as a beta on the start screen, in
-  the manual and on the site, and the README and site say version 1.1.01 was tested on an FM-1. Version 1.2.0 adds a GROOVE page with drum and bassline generators, MUTATE and wobble recipes.
+  the manual and on the site, and the README says version 1.2.6b was tested on the FM-1 hardware, in the emulator and by automatic tests. Version 1.2.0 adds a GROOVE page with drum and bassline generators, MUTATE and wobble recipes, 1.2.4b adds a MIDI OUT setting for the keys and the clock, and 1.2.5b adds MIDI IN over the TRS jack.
 status: active
 authors:
 - name: Omnipotard (Guizmoh)
@@ -43,6 +43,26 @@ image:
   source_url: https://github.com/Guizmoh/K-WASUB_Firmware_for_FM1
   first_party: true
 versions:
+- version: '1.2.6b'
+  date: 2026-11-25
+  url: https://github.com/Guizmoh/K-WASUB_Firmware_for_FM1/releases/tag/v1.2.6b
+  notes: On HOME, SELECT goes to the next view and ALGO changes the kind of sound, loading the first of that kind. The release page lists only a changelog link.
+- version: '1.2.5b'
+  date: 2026-11-25
+  url: https://github.com/Guizmoh/K-WASUB_Firmware_for_FM1/releases/tag/v1.2.5b
+  notes: Adds MIDI IN over the TRS jack beside USB MIDI, with running status and real-time messages handled and SysEx skipped. The commits say this version was tested on an FM-1. The release page lists only a changelog link.
+- version: '1.2.4b'
+  date: 2026-11-25
+  url: https://github.com/Guizmoh/K-WASUB_Firmware_for_FM1/releases/tag/v1.2.4b
+  notes: The CLOCK OUT setting becomes MIDI OUT, where KEYS sends the keys over USB MIDI (on by default, set once on every install), CLOCK sends the clock, or both, and RIBBON is set to CLASSIC at the first start. The release page lists only a changelog link.
+- version: '1.2.3b'
+  date: 2026-11-25
+  url: https://github.com/Guizmoh/K-WASUB_Firmware_for_FM1/releases/tag/v1.2.3b
+  notes: Fixes a crash on the FM-1 present since 1.1.02, where the DRUMS subtitle overran its 64-byte buffer, and enlarges the title buffers. A crash now shows its details (return address, last branch, vector, time, count) on the start screen and in SYSTEM > ADVANCED, kept in the settings. The release page lists only a changelog link.
+- version: '1.2.2b'
+  date: 2026-11-25
+  url: https://github.com/Guizmoh/K-WASUB_Firmware_for_FM1/releases/tag/v1.2.2b
+  notes: MUTATE keeps a setting turned by hand and GROOVE shows when the keys are locked to the scale. The release page lists only a changelog link.
 - version: 1.2.1b
   date: 2026-11-18
   url: https://github.com/Guizmoh/K-WASUB_Firmware_for_FM1/releases/tag/v1.2.1b

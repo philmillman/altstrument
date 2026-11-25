@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: Obscura Line
+summary: >-
+  Railway adventure game for the FM-1 that mixes driving a train around a synthwave loop with sound puzzles, synth jams and rhythm games, with twelve stations and a story in plain text files.
+description: >-
+  The map shows twelve stations joined by lines. Each station has a puzzle that is solved by ear and by eye, opening with a card that lists its controls, and solving a station restores it and opens the next line. Driving uses one knob for power and brake, with speed limits, a stopping marker and a graded score for the stop, and puzzles give back train parts such as a horn, a whistle and a dimmer, each tied to a button. Once the cab's synth is restored the keys play along, and synth breaks and rhythm games are part of the lines. The story, puzzles and lines are text files in content/ that can be edited and rebuilt. It builds on the Mechanica Obscura game for the FM-1 and Dinghy's platform layer, with the train engine from DENSHA FM1. The repository carries an SMK-37 board layer, but the README and release name only the FM-1.
+status: active
+authors:
+- name: MammothCheese
+  url: https://github.com/MammothCheese
+source: https://github.com/MammothCheese/obscuraline
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only for the whole tree, with the platform parts carrying the copyright of Leo Kuroshita, genkigenki, zvenson and others as listed there. The Terminus font is SIL OFL 1.1, and the JieLi SDK files the package needs are read from the builder's own checkout and are not in the repository. No M-VAVE firmware image is in the repository.
+homepage: https://mammothcheese.github.io/obscuraline/guide.html
+based_on: m-vave-fm-1/dinghy
+distribution: download
+install_notes: >-
+  Install obscura-1.0.fwsc from the release the way any FM-1 firmware is installed, or from The Firmware Hub. The README gives no recovery steps and says nothing is written beyond the normal firmware install; the platform layer is Dinghy's, which keeps the update path and USB rescue. The FM-1's ROM boot mode applies.
+brick_risk: false
+tags: [game, sequencer, synth-engine]
+image:
+  url: https://raw.githubusercontent.com/MammothCheese/obscuraline/main/docs/card/card_1.png
+  alt: "OBSCURA LINE title in pink and white lettering above the word LINE in cyan, over an oval loop of neon line with white stations, a pink light inside and a bright light running along the loop"
+  credit: MammothCheese
+  source_url: https://github.com/MammothCheese/obscuraline
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-25
+  url: https://github.com/MammothCheese/obscuraline/releases/tag/v1.0
+  notes: First release.

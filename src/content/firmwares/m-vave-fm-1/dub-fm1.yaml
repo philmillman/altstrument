@@ -1,0 +1,28 @@
+device: m-vave-fm-1
+name: DUB R39
+summary: >-
+  Experimental dub-techno instrument with four tracks, up to eight oscillators per synth track, an eleven-part sample drum bank, a mixer, two delays, reverb, MIDI and a sequencer.
+description: >-
+  Rights warning: the eleven drum waveforms were supplied by the project owner, and ATTRIBUTION.md says no sample licence accompanied them and that the code's GPL licence does not establish rights to third-party recordings.
+
+  The repository starts at revision R39 and does not import earlier history. DUB has four tracks, with the fourth carrying the sample drums, and routes modulation between them. R39 mixes drums on the second core while the first renders the synths, adds short voice-transition fades and the SLOOP master look-ahead limiter, and offers delay engines with a page-2 set of controls. A browser simulator uses the same fixed-point engine, and the repository has benchmark and profiling tools. The README calls it an experimental developer image and says local build, sanitizer and simulator checks passed while hardware performance and listening verification are pending. It is built on the Dinghy platform with SLOOP's dual-core code. It is a separate project from DUB-BOX.
+status: active
+authors:
+- name: jmfk
+  url: https://github.com/jmfk
+source: https://github.com/jmfk/dub-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and ATTRIBUTION.md give GPL-3.0-only for the application code, with Dinghy, Felucca and SLOOP notices kept. The Terminus font is SIL OFL 1.1 and the JieLi SDK files are read from the builder's checkout.
+based_on: m-vave-fm-1/dinghy
+distribution: download
+install_notes: >-
+  The repository commits the prebuilt DUB-r39.fwsc under releases/r39 with a Python updater, manual_install.py, that checks the package and then writes it over MIDI, or it can be built from source with the toolchain and SDK in BUILDING.md. The scripts ask for confirmation and say not to run another updater at the same time. The package identity is FM-1_990. It is built on the Dinghy platform, which keeps its update loader and writes only the firmware area, so the FM-1's ROM boot mode remains the way back.
+brick_risk: false
+tags: [synth-engine, drums, delay, reverb, sequencer, sampler]
+versions:
+- version: r39
+  date: 2026-11-25
+  url: https://github.com/jmfk/dub-fm1/tree/r39
+  notes: Git tag; no GitHub release page.

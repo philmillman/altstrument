@@ -1,0 +1,30 @@
+device: akai-mpc-live
+name: FM1 Sampler for MPC One
+summary: >-
+  Port of the FM1 Sampler sound engine to an Akai MPC plugin, with six sample-playing modes, envelope, LFO, arpeggiator, tape and effects, packed with LooperX on a ready-to-copy SD card image.
+description: >-
+  Rights warning: the repository's factory samples are the 17 WAV files from the FM1 Sampler Android app (ferluht/fm1-sampler), which gives no source or licence for them, and the README says that original project declares no licence and that its author should be asked for permission before the plugin is distributed publicly.
+
+  The plugin runs the FM1 Sampler engine inside the MPC, with melodic, one-shot, looped, kit or slice, granular and Paulstretch modes, an ADSR envelope, an LFO, an arpeggiator, scales and chords, tape colour, reverb and delay. Controls are arranged as rows of four for the MPC's Q-Links and the touch screen, and the pads play the sample. Samples are read from folders on the SD card or internal disk, including the folders that LooperX uses, and a checked-in SD card zip also carries the 22 LooperX plugins. A mode that treats an M-VAVE FM-1 running the FM1 Sampler firmware as a controller over USB is marked experimental. The README says it was tested with Akai's SDK simulator and the repository's own tests, which compare the plugin with the phone engine sample by sample, and not yet on a real MPC One. The repository also holds the original app's Android project and FM-1 firmware.
+status: active
+authors:
+- name: Koolkatze
+  url: https://github.com/Koolkatze
+source: https://github.com/Koolkatze/FM1-AKAI-Sampler-MPC-ONE
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no top-level LICENSE file and the README gives no licence for the plugin; it says kissfft is BSD-3-Clause, the Akai plugin SDK is MIT, and that firmware/ and android/ come from the original app with their own licences (firmware/LICENSE.md is GPL text from M-VAVE's FM1 Open). The engine comes from ferluht/fm1-sampler, which has no licence. firmware/sdk/firmware/FM-1_015.fwsc matches M-VAVE's FM-1 V15 image licensed Apache-2.0 (git blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd).
+homepage: https://github.com/Koolkatze/FM1-AKAI-Sampler-MPC-ONE
+distribution: download
+requires_stock: MPC OS 3.10.1 or later
+install_notes: >-
+  On the MPC, turn on Enable Enhancements and External Plugin Support under Preferences, Enhancements (Beta). Unzip mpc/release/FM1_LooperX_MPC_SD.zip and copy everything to the root of the SD card or a USB drive, then add the plugin to a track from External Plugins. To remove it, delete the plugin's folder from VST2 Plugins. The README warns that third-party plugins run inside the MPC without protection and a fault can hang it, so it advises saving the project often.
+brick_risk: false
+tags: [sampler, synth-engine, platform, ui]
+based_on: m-vave-fm-1/fm1-sampler
+versions:
+- version: main @ 3418444
+  date: 2026-11-25
+  url: https://github.com/Koolkatze/FM1-AKAI-Sampler-MPC-ONE/commit/3418444bb00b6652876b9360b4e9fffc5f4dd338
+  notes: No tagged releases; this is the latest commit.

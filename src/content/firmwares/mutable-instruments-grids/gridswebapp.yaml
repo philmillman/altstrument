@@ -1,0 +1,29 @@
+device: mutable-instruments-grids
+name: GridsWebApp
+kind: tool
+summary: >-
+  Browser editor and sequencer for the Grids drum map: morph between the factory nodes, edit 32-step kick, snare and hi-hat patterns with velocity, listen to the result and export a patched firmware WAV.
+description: >-
+  GridsWebApp holds the full 25-node Grids drum map in the browser. The X and Y controls morph between nodes as on the module, and edits made on the step grid are written back into every node that contributes to the current morph. A 32-step grid sets kick, snare and hi-hat hits with per-step velocity, shows which steps are stable, which depend on Chaos and which stay silent at the current Density and Chaos, and plays through a built-in drum synth with a lookahead scheduler. The Density and Chaos behaviour follows the module's firmware, including the Chaos boost that is rolled once per bar for each instrument.
+
+  For firmware work it decodes the bundled stock Grids 1.0 image, checks it, patches only the drum-map nodes you changed and round-trips the audio encoding before it exports a patched WAV, a full lookup_tables.py and a JSON snapshot of the editor state. The repository also holds the original Grids firmware and bootloader source for its regression checks.
+status: active
+authors:
+  - name: bayanisms
+    url: https://github.com/bayanisms
+source: https://github.com/bayanisms/GridsWebApp
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is MIT. THIRD_PARTY.md says the grids/ reference firmware source, the factory drum-map tables and the bundled grids_1.0.wav are from Mutable Instruments Grids by Émilie Gillet, whose firmware files carry a GPL-3.0-or-later header; those files keep their own notices. The bundled WAV is Mutable Instruments' own Grids image, and its firmware is open source, so it is not treated as redistributed closed stock.
+homepage: https://bayanisms.github.io/GridsWebApp/
+distribution: browser-installer
+install_notes: >-
+  Open the web app and edit; nothing is installed. The export step produces a patched WAV for the module's audio update, and the README says the bootloader boundary at 0x7000 is checked so that only the application area changes. Keep a copy of the stock image, since Grids can be returned to it with the original WAV.
+brick_risk: false
+tags: [editor, drums, sequencer, web, open-source]
+versions:
+  - version: main @ 434b337
+    date: 2026-11-25
+    url: https://github.com/bayanisms/GridsWebApp/commit/434b33780858ec6db1e8f897d115f75478efb575
+    notes: No tagged releases; this is the latest commit.

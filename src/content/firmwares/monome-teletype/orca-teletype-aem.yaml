@@ -1,0 +1,28 @@
+device: monome-teletype
+name: ORCA for Teletype (AE Modular Telex)
+summary: >-
+  Port of the ORCA live-coding language to the Teletype's AT32UC3B0512, tuned for the AE Modular Telex clone with 0 to 5 V outputs, a 64 by 64 grid, scales, swing, a CV input operator and scene merging for flashing.
+description: >-
+  ORCA is a two-dimensional language in which letters placed on a grid act as operators that fire on each clock tick. This firmware runs Orca-c on Teletype hardware, using the module's OLED as a 25 by 8 viewport on a 64 by 64 grid, a USB keyboard for editing, and the DACs and trigger outputs for notes and gates. It began as a port by Zsa Zsa Roboto, whose original release video the README links, and this repository adds bug fixes, a CV input operator, MPC-style swing set with the front button and PARAM knob, scales, calibration for the Telex's 0 to 5 V range, selection editing, copy and paste, undo and a scene browser.
+
+  The repository builds with the Teletype toolchain and keeps the original 0.1 release image, which its build script reproduces byte for byte from the 0.1 sources. A script merges saved scenes and calibration from a module backup into the image before flashing, and converts older 32 by 32 scenes to the 64 by 64 layout. The repository has no top-level licence file.
+status: active
+authors:
+  - name: slowscape
+    url: https://github.com/slowscape
+source: https://github.com/slowscape/teletype-orca-firmware-AEM
+source_status: open
+license: unspecified
+license_notes: >-
+  There is no top-level LICENSE file. The licenses folder holds the Orca-c MIT licence and the libavr32 GPLv2 licence, and the build links libavr32. The README states no licence for the added code.
+distribution: source-only
+requires_stock: Teletype hardware or an AE Modular Telex
+install_notes: >-
+  Build with build.sh and the pinned AVR32 toolchain, or flash the 0.1 image from release/. The README flashes from Windows with dfu-programmer in bootloader mode (hold the front button while powering on), after saving a backup of the firmware, scenes and calibration and merging them into the new image with scripts/scenes.py. The bootloader in the first 8 KB is never erased or written, but erase wipes saved scenes and calibration, so keep the backup. Flashing the 0.1 image restores the original ORCA release, and the official Teletype firmware can be flashed back the usual way.
+brick_risk: false
+tags: [live-coding, sequencer, esoteric-language, scales, swing, cv]
+versions:
+  - version: main @ 8c2a4e6
+    date: 2026-11-24
+    url: https://github.com/slowscape/teletype-orca-firmware-AEM/commit/8c2a4e62c7a928bd6b5f1229bcb9bb1dba9fb21d
+    notes: No tagged releases; this is the latest commit.

@@ -1,12 +1,12 @@
 device: m-vave-fm-1
 name: HELIO
 summary: >-
-  Drone synth module for fm1-dock with six drones of four oscillators each, resonant filters swept in opposite directions, an LFO on every oscillator and a hall reverb with a decay of up to 60 seconds.
+  Drone synth module for fm1-dock: six drones of four oscillators with swept resonant filters, a SWEET control that tunes them into pure chords, two melodic voices with a five-step sequencer, an echo and a hall reverb of up to 60 seconds.
 description: >-
   A module for the dock firmware, not a firmware of its own, inspired by Elta Music's Solar 42 drone synth. Each of the six drones has four oscillators tuned freely in
   small steps, a slow random drift and a sine to saw morph, and swells in and fades out slowly. Drones 1 to 3 feed one resonant low-pass filter and drones 4 to 6 feed a second one,
   swept in opposite directions by a slow LFO. The white keys latch the drones and select them, and the knobs on separate pages set oscillator levels, the reverb, the filters, the 24 LFOs
-  and the swell and fade times. SAVE keeps the sound for the next start. MIDI notes 48 to 53 switch the drones. The repository includes a host simulation that renders a test WAV and the
+  and the swell and fade times. Two melodic voices, each with two detuned oscillators, noise, its own filter and envelope and glide, add a five-step sequencer recorded from the keys, noise and sample and hold on cutoff and pitch, and a tape-like echo of up to a second. SWEET, on the ALGORITHM knob, morphs a drone's four oscillators into a just-tuned chord, with drone 1 choosing the chord and drones 2 to 6 following a progression. SAVE keeps the sound for the next start. MIDI notes 48 to 53 switch the drones. The repository includes a host simulation that renders a test WAV and the
   emulator save of the current build, and GitHub's workflow builds the .dock file. No hardware test is mentioned.
 status: active
 authors:
@@ -24,6 +24,10 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, drone, oscillator, microtonal, fx, reverb, filter, lfo, emulator]
 versions:
+- version: main @ 6a24b3d
+  date: 2026-11-24
+  url: https://github.com/joehard4712/Helio-FM1/commit/6a24b3d6aee66823df89a652a253249513d63f33
+  notes: No tagged releases; this is the latest commit, another emulator save for the build. Since the previous row the commits add the two melodic voices, the five-step sequencer, sample and hold, the echo and the SWEET control with chord progressions, and draw every page with the firmware's fonts.
 - version: main @ fd5bf46
   date: 2026-11-09
   url: https://github.com/joehard4712/Helio-FM1/commit/fd5bf46ae9b14fce8be681c723b5ef6a90415270

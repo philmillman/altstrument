@@ -1,0 +1,26 @@
+device: m-vave-fm-1
+name: FM-1 Walkthrough
+kind: tool
+summary: >-
+  Single-page trainer that teaches four songs' sounds on the FM-1 step by step, with the stock V16 screen, a panel diagram and an audio clip for each setting.
+description: >-
+  Four songs, Hide, the Twin Peaks theme, Take On Me and Closer, each build one sound from a blank voice, one setting at a time. Every step shows the screen that M-VAVE's stock V16 firmware produced after that change, a diagram of the controls to touch and a clip of the result, and a fifth section covers moving patches into GarageBand through the fm1-emu Audio Unit. The screens and clips were captured by running the stock firmware headless in fm1-emu with the scripts in tools/, whose paths point at the author's machine. The whole site is one index.html with the media embedded, and progress is kept in the browser. A companion repository, fm1-trainer-mobile, is meant to hold an offline phone version of the same walkthrough and is empty. The GitHub Pages addresses the README gives for both returned 404 when checked. It does not install anything on a physical unit.
+status: active
+authors:
+- name: considrew
+  url: https://github.com/considrew
+source: https://github.com/considrew/fm1-trainer/tree/claude/wonderful-newton-l15wx9
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no licence file and the README gives no licence. The embedded screens and clips are captures of M-VAVE's stock V16 firmware running in fm1-emu; the README says it is not affiliated with M-VAVE and shows the firmware screens for teaching purposes. No firmware file is in the repository.
+distribution: source-only
+install_notes: >-
+  Open index.html from the repository in a browser. It writes nothing to a physical FM-1.
+brick_risk: false
+tags: [trainer, web, dx7, emulator]
+versions:
+- version: claude/wonderful-newton-l15wx9 @ 7ea9df7
+  date: 2026-11-25
+  url: https://github.com/considrew/fm1-trainer/commit/7ea9df74977e74741aaed38a6dc6a1b8b07d6f4f
+  notes: No tagged releases; this is the latest commit. The repository's only branch is the default branch, claude/wonderful-newton-l15wx9.

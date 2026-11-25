@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: M-3rd-VAVE
+summary: >-
+  Wavetable polysynth module for fm1-dock with 24 voices of three wavetable oscillators each on the PPG Wave 2.2's 28 wavetables, 39 presets, a chord generator, an arpeggiator and a loop recorder.
+description: >-
+  Rights warning: the 28 wavetables are the PPG Wave 2.2's ROM data, taken from the avr-ppg repository's extraction of the original EPROMs. LICENSING.md says the software licence does not relicense this data.
+
+  The module is modelled on the Groove Synthesis 3rd Wave. Each voice has three wavetable oscillators in 8 bits, band-limited per note, plus noise, a resonant 4-pole low-pass filter and amp, filter and wave envelopes. A position moves through each table in the PPG's steps under the wave envelope and a tempo-synced LFO. It plays up to four detuned voices per key in unison, adds a ping-pong delay, keeps the preset, edits and player settings over a power-off, and has 39 presets in seven types plus INIT. The chord generator, arpeggiator and loop recorder are laid out as in PRO-FM-78 and follow a DAW's MIDI clock. It runs as a module in fm1-dock, with 24 voices using fm1-dock's second core and 12 without. The release notes say it was installed and played on a real FM-1 and used at most 56 percent of an audio block with all 24 voices. Deploying over a running copy needs a power cycle afterwards because fm1-dock 0.7.1 can crash at that point.
+status: active
+authors:
+- name: James Hampshire (hamperj)
+  url: https://github.com/hamperj
+source: https://github.com/hamperj/m-3rd-vave
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md gives GPL-3.0-only for the module. The players come from PRO-FM-78 and a maths header from X0X, both GPL-3.0-only. The PPG wavetable data stays PPG's and is not relicensed.
+homepage: https://github.com/hamperj/m-3rd-vave/releases/tag/v0.1
+distribution: download
+install_notes: >-
+  Needs an FM-1 already running fm1-dock. Download m3rdvave.dock from the release and deploy it with fm1-dock's tools/dock.py deploy. The module uses about 114 KiB of fm1-dock's module space, and it does not replace the firmware itself.
+brick_risk: false
+tags: [synth-engine, wavetable, arpeggiator, chords, looper, midi]
+image:
+  url: https://raw.githubusercontent.com/hamperj/m-3rd-vave/main/docs/m3rdvave-home.png
+  alt: "M-3rd-VAVE home screen: ALL 1 OF 39 and the preset name SAW SWEEP above a teal wave shape, and four knobs for CUTOFF 1.55kHz, RESO 20%, LFO AMT 100% and RELEASE 476 ms"
+  credit: James Hampshire
+  source_url: https://github.com/hamperj/m-3rd-vave
+  first_party: true
+versions:
+- version: "0.1"
+  date: 2026-11-25
+  url: https://github.com/hamperj/m-3rd-vave/releases/tag/v0.1
+  notes: First release; the fm1-dock module, built and tested on fm1-dock 0.7.1.

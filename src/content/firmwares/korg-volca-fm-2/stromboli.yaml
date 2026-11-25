@@ -9,13 +9,13 @@ description: >-
   arpeggio modes and arpeggio output on MIDI OUT. It also adds 15 musical scales with a root note that apply to the
   sequencer too, velocity humanize and random octave per pattern, and a tempo-synced or free-time delay, mono or
   ping-pong, that can stand in for the reverb, with a tape-style LOFI mode (hiss, wow and flutter, self-oscillation).
-  Release 1.29 adds three simultaneous parts, a per-voice filter, operator waveforms and a simple virtual-analog engine. Later versions add a Rhodes-style phaser or stereo tremolo in place of the chorus, ratchet, microtiming and swing per
+  Release 1.29 adds three simultaneous parts, a per-voice filter, operator waveforms and a simple virtual-analog engine. Release 1.30 replaces the reverb with a stereo plate and adds a delay-into-reverb effect. Later versions add a Rhodes-style phaser or stereo tremolo in place of the chorus, ratchet, microtiming and swing per
   pattern, play direction per pattern and note mutation within the scale. The chain feature allows free order with repeats up to 64 entries, live
   chain capture and recording while a chain plays. It is for the second-generation volca fm only, not the 2016 model.
   The repository source holds no Korg firmware: a Python script reads the official updater 1.12 zip that the user
   downloads from Korg, checks every byte it touches and writes an install WAV, a WAV that restores the original 1.12
   and checksums. Since release 1.24 the same WAVs are also attached to the GitHub release. The WAVs are played into SYNC IN with the Korg update procedure. The
-  README says the patch was tested on a real unit and in an ARM emulator, but release 1.29 was tested in the emulator only, and the licence file says it was written with
+  README says the patch was tested on a real unit and in an ARM emulator, but releases 1.29 and 1.30 were tested in the emulator only, and the licence file says it was written with
   Claude's help.
 status: active
 authors:
@@ -32,7 +32,7 @@ homepage: https://github.com/mongio/stromboli-fm2
 distribution: download
 requires_stock: "1.12"
 install_notes: >-
-  Download the FM2_1_29_BETA zip from the GitHub release, or build the WAVs yourself: download the official volca fm2
+  Download the FM2_1_30_BETA zip from the GitHub release, or build the WAVs yourself: download the official volca fm2
   System Updater 1.12 from Korg, put the zip unchanged in reference/ and run build_release.py (Python 3.11 or later
   and LLVM 18 tools). Play the install WAV into SYNC IN after powering on
   holding FUNC and PLAY, as for a Korg update. The README says the bootloader and update receiver are not changed, the
@@ -41,6 +41,10 @@ install_notes: >-
 brick_risk: false
 tags: [sequencer, arpeggiator, fx, delay, scales, patcher, midi, fm]
 versions:
+- version: v1.3.0
+  date: 2026-11-24
+  url: https://github.com/mongio/stromboli-fm2/releases/tag/v1.3.0
+  notes: Beta tested only in an emulator; 1.24 remains the last version tried on a real volca fm2. Replaces the reverb with a stereo plate with a tail-length and a brightness setting, adds a DLY REV effect, an 8-bit echo feeding the reverb, as a fourth FUNC and 4 choice, and adds STROMBOLI SysEx for editors to read and send the patch's filter, LFO and pattern effect data.
 - version: v1.2.9
   date: 2026-11-18
   url: https://github.com/mongio/stromboli-fm2/releases/tag/v1.2.9

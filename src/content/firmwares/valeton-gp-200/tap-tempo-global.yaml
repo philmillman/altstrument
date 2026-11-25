@@ -1,0 +1,35 @@
+device: valeton-gp-200
+name: GP-200 Global Tap Tempo
+summary: >-
+  An 11-byte patch for the GP-200's V1.8.2 firmware that makes a tapped tempo global, so the BPM survives patch changes and power cycles, applied to your own copy of Valeton's image by a small Windows app or a Python script.
+description: >-
+  On the stock firmware each patch stores its own BPM, so a tempo tapped on one patch is replaced by the saved value when you change patches. The patch redirects the load and tap code to the global BPM field that already exists in the pedal's global settings, so one tapped tempo applies to every patch and is kept after power-off. The delay follows it only when its Sync parameter is on, and saving a patch writes the current global BPM into it.
+
+  TapGlobalPatcher.exe accepts only the official V1.8.2 file, checked by size, SHA-256 and header, applies the patch, recalculates the header checksum and saves a new file only when the result matches the expected hash. The repository does not contain Valeton's firmware or a modified image; it holds the app source, a Python script, the reverse-engineering notes and Ghidra scripts. The README reports a test on a real GP-200 and states that the project is independent of Valeton.
+status: active
+authors:
+  - name: dkzT
+    url: https://github.com/dkzT
+source: https://github.com/dkzT/gp200-tap-tempo-global
+source_status: open
+license: MIT
+license_notes: The LICENSE file is MIT and, as the README says, does not cover Valeton's firmware, which is not in the repository.
+distribution: patch-your-own
+requires_stock: GP-200 firmware V1.8.2 (the official file from Valeton)
+install_notes: >-
+  Download the official V1.8.2 firmware from Valeton, drag the .bin into TapGlobalPatcher.exe from the release page (or run scripts/make_patch.py), and flash the generated file with Valeton's GP-200 app under Settings, Firmware Update. Back up patches first, because an update erases them. The executable is built by GitHub Actions with a checksum and a provenance attestation, and is not code-signed, so Windows SmartScreen may warn. If the pedal does not start, hold footswitches 2 and 3 and the Para knob while powering on to enter the resident Firmware Update/Restore mode and flash the official firmware.
+brick_risk: false
+tags: [patcher, tap-tempo, reverse-engineering]
+versions:
+  - version: v1.2.0
+    date: 2026-11-24
+    url: https://github.com/dkzT/gp200-tap-tempo-global/releases/tag/v1.2.0
+    notes: Adds English and Portuguese interfaces to the app.
+  - version: v1.1.0
+    date: 2026-11-24
+    url: https://github.com/dkzT/gp200-tap-tempo-global/releases/tag/v1.1.0
+    notes: New app interface that checks the dropped file straight away.
+  - version: v1.0.0
+    date: 2026-11-23
+    url: https://github.com/dkzT/gp200-tap-tempo-global/releases/tag/v1.0.0
+    notes: First release for V1.8.2.

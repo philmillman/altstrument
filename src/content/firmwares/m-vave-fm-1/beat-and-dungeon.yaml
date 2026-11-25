@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: Beat & Dungeon
+summary: >-
+  Skiff 2.7.1 fork that turns the FM-1 into a dungeon game: each room opens a track, a D20 sets the rule for composing it, and curses and creatures edit tracks you already made.
+description: >-
+  The unit starts in a dungeon with no tracks. A dungeon has four or six rooms, and each room opens one track of Skiff's six-track groovebox. At each door the player picks the track's role and throws a D20 on the keys. The result is a composing rule such as one take, no note on the beats or two kits mixed, and the firmware cannot check that rule. Cursed rooms make permanent edits to an earlier track (delay, reversal, transposition, dropped notes), creatures add an effect to the new track, and since 1.1 a rare calm room lets one earlier track be reworked and its curse undone. The preparation page sets the number of rooms, difficulty, encounters, tempo and whether the dungeon picks the sounds. The same dungeon code gives the same dice. HOME switches between the dungeon and Skiff's normal music pages. The game's rules and texts are copied from the author's separate Beat & Dungeon project, which also exists as an MPC plugin and a web game. The README says the merchant, objects, special rooms and quests of the full game are not included and the dungeon itself is not kept over a power-off, while the tracks are.
+status: active
+authors:
+- name: gonziweb
+  url: https://github.com/gonziweb
+source: https://github.com/gonziWeb/beat-and-dungeon-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is GPL-3.0 and the README says GPL-3.0-only, with Skiff's credits and licences kept. The game data copied from the author's game repository is MIT, the fonts are SIL OFL 1.1, and the instrument samples are CC0 (VSCO-2 Community Edition and VCSL); the texts are in LICENSES/.
+homepage: https://beatanddungeonfm1.gonz-music.fr/
+based_on: m-vave-fm-1/skiff
+distribution: browser-installer
+install_notes: >-
+  Use the installer page in Chrome or Edge with the FM-1 on USB, or install the release .fwsc with tools/fm1_install.py. The README says to back up first and to download M-VAVE's official FM-1.fwsc as the way back. The installer page has a return-to-official-firmware option, and M-UPGRADE also restores stock. If M-Flasher's m-bootloader is on the unit, put the stock bootloader back first. The package identity stays the same between versions, so a new version installs over the old one.
+brick_risk: false
+tags: [game, sequencer, groovebox, performance, fork]
+image:
+  url: https://raw.githubusercontent.com/gonziWeb/beat-and-dungeon-fm1/main/docs/bd/door.png
+  alt: "FM-1 screen showing Door 1 of 6 at 105 BPM in a 1-bit engraved style: a hooded figure at a doorway, a room description, the track role Drums and key hints for THROW, SHIELD and LEAVE"
+  credit: gonziweb
+  source_url: https://github.com/gonziWeb/beat-and-dungeon-fm1
+  first_party: true
+versions:
+- version: v1.1
+  date: 2026-11-25
+  url: https://github.com/gonziWeb/beat-and-dungeon-fm1/releases/tag/v1.1
+  notes: Adds the rare blessing room that lets an earlier track be reworked.
+- version: v1.0
+  date: 2026-11-25
+  url: https://github.com/gonziWeb/beat-and-dungeon-fm1/releases/tag/v1.0
+  notes: First release, built on Skiff 2.7.1.

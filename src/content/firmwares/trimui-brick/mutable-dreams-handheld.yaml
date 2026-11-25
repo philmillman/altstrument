@@ -1,0 +1,45 @@
+device: trimui-brick
+also_devices: [anbernic-rg35xx, miyoo-miyoo-mini, miyoo-miyoo-flip]
+name: Mutable Dreams for handhelds
+summary: >-
+  Port of the Mutable Dreams generative instrument to handhelds, with six tracks, 128 worlds, a Sound Lab with Mutable Instruments-based modules and musical toys. It runs as a Ports app on the Brick under Knulli, and has builds for other handhelds, Android and Linux.
+description: >-
+  Mutable Dreams for handhelds takes the six-track generative instrument that began on the M-VAVE FM-1 and runs it as a native SDL program. Six tracks play by themselves, four dials act as weather, and hundreds of Biomes, 128 worlds in 20 families, ten musical toys and a Sound Lab with modules after Plaits, Rings, Elements, Clouds, Beads, Marbles, Grids and Tides shape what is heard. The interface is in English, German, French and Spanish.
+
+  On the TrimUI Brick it is copied into the Ports folder of the SD card and started under Knulli; nothing is flashed. The release also carries packages for the Trimui Smart Pro and Anbernic H700 and RG35XX handhelds under Knulli, the Miyoo Mini, Mini Plus and Mini Flip under Onion OS, the Powkiddy RGB20S under AmberELEC, Android and Linux on x86_64 and aarch64. The author marks the Smart Pro, H700 and RG35XX packages as community tests that have not been run on real hardware, and says the 1.6.2 checks were made on a Mac only.
+status: active
+authors:
+  - name: Kid Bunka
+    url: https://github.com/kidbee85-beep
+source: https://github.com/kidbee85-beep/mutable-dreams-handheld
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file and README state GPL-3.0-only. NOTICE.md lists the included code: Mutable Instruments modules (MIT), Grids drum maps (GPL-3.0-or-later, used under GPL-3.0), stb_vorbis (public domain), the fm1-base platform layer (MPL-2.0, distributed under GPL-3.0), SDL2 headers (zlib) and the Barlow and Nunito fonts (SIL OFL 1.1).
+based_on: m-vave-fm-1/mutable-dreams
+homepage: https://kidbee85-beep.github.io/mutable-dreams-handheld/
+distribution: download
+install_notes: >-
+  Download the zip for the device from the release page, unpack it and copy the launcher script and the mutabledreams folder into roms/ports on the SD card. Then update the game lists in Knulli and start it from Ports. The Miyoo packages are for Onion OS and the RGB20S package for AmberELEC. A package can be removed by deleting those files, and nothing is written to the console's internal firmware.
+brick_risk: false
+tags: [generative, ambient, synth-engine, sequencer, drum-machine, mutable-instruments-port, android, linux, handheld]
+video:
+  url: https://youtu.be/dMS1GqUwWYo
+  title: Mutable Dreams 1.5.9 — A Garden in Your Hands | Full Feature Tour
+  credit: Kid Bunka
+  first_party: true
+  found_via: https://github.com/kidbee85-beep/mutable-dreams-handheld/releases/tag/v1.5.9
+  version: v1.5.9
+versions:
+  - version: v1.6.2
+    date: 2026-11-24
+    url: https://github.com/kidbee85-beep/mutable-dreams-handheld/releases/tag/v1.6.2
+    notes: Adds 128 worlds in 20 families, French and Spanish, more options and a package for Anbernic RG35XX handhelds.
+  - version: v1.5.10
+    date: 2026-11-20
+    url: https://github.com/kidbee85-beep/mutable-dreams-handheld/releases/tag/v1.5.10
+    notes: Adds a Trimui Smart Pro package and a new launcher for Anbernic H700 handhelds.
+  - version: v1.5.9
+    date: 2026-11-20
+    url: https://github.com/kidbee85-beep/mutable-dreams-handheld/releases/tag/v1.5.9
+    notes: First public release, with a SELECT menu on handhelds without a MENU key and Android touch controls.

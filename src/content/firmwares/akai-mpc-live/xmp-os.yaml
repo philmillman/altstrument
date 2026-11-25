@@ -1,0 +1,51 @@
+device: akai-mpc-live
+name: XMP OS
+summary: Clip-based music workstation OS for the original MPC Live (Mk1) that boots from a USB key, with a browser version, an SDK and a graphical installer for macOS and Windows.
+description: >-
+  XMP OS (eXtensible Music Platform) replaces the MPC application on an original MPC Live (Mk1, board ACV8) with a
+  clip, scene and pad workflow, with its own mixer, kits and synth modules. It runs from a USB key; the same
+  touchscreen interface is built from shared C++ and also runs in a browser at abstracteng.com/xmpos, where it can be
+  tried without hardware. The repository holds the app, a declarative module SDK with examples, build tools and
+  the installer source. The installer builds its loader and a stock-recovery copy locally from Akai's own signed
+  updater, which the owner supplies, so no Akai files are distributed. Only MPC OS 3.10.1 on the Live Mk1 is
+  supported; MPC One and One+ are planned ports with installation disabled, and Force is excluded. The authors
+  note that physical Windows PC flashing and Apple Silicon testing were still pending at 1.0.1.
+status: active
+authors:
+  - name: sandeshm
+    url: https://github.com/sandeshm
+  - name: Abstract Engineering
+    url: https://abstracteng.com
+source: https://github.com/AbstractEng/XMPOS
+source_status: open
+license: Apache-2.0
+license_notes: >-
+  Per LICENSE, the original XMP code is Apache-2.0. SDK example templates keep their MIT notices, and third-party
+  notices and source offers are listed in docs/licensing in the repository.
+homepage: https://abstracteng.com/xmpos/
+distribution: download
+requires_stock: MPC OS 3.10.1 (Gen 1)
+install_notes: >-
+  Download the installer ZIP for the computer in use from the release page, extract all of it and open the installer.
+  Supply Akai's official Gen 1 MPC OS 3.10.1 updater, enable Developer Mode on the Live and let the installer verify
+  the unit read-only. It prepares a FAT32 USB key, then, after a typed confirmation, writes a loader to the Live's
+  rootfs partition over fastboot (hold FULL LEVEL, ERASE and PAD BANK C/G while powering on). The bootloader and other
+  partitions are not written. XMP boots with the key inserted and Akai's MPC OS boots without it. A full return to
+  stock writes the original rootfs back from the same updater; the project's recovery guide covers it.
+brick_risk: false
+tags: [platform, sequencer, sampler, ui, sdk, web]
+image:
+  url: https://raw.githubusercontent.com/AbstractEng/XMPOS/main/docs/assets/readme/acid-circuit.jpg
+  alt: XMP OS browser Device view on a dark MPC Live Mk1 layout, with a four-by-four grid of green clip tiles on the screen, pads on the left and four Q-Link knobs on the right
+  credit: Abstract Engineering
+  source_url: https://github.com/AbstractEng/XMPOS#readme
+  first_party: true
+versions:
+  - version: v1.0.1
+    date: 2026-11-24
+    url: https://github.com/AbstractEng/XMPOS/releases/tag/v1.0.1
+    notes: Installer patch that adds a Windows connection repair for a Live that Device Manager lists but fastboot cannot find; the system image is unchanged.
+  - version: v1.0.0
+    date: 2026-11-23
+    url: https://github.com/AbstractEng/XMPOS/releases/tag/v1.0.0
+    notes: First stable release with the public source, SDK, browser workstation and graphical installer.

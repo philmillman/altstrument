@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: CITY POP
+summary: >-
+  Self-playing 1980s city pop firmware for the FM-1 that generates whole songs with slap bass, electric piano, chorus guitar, brass and a sax or synth lead, over a screen of a city at dusk seen from a car stereo.
+description: >-
+  Each song gets its own key, tempo between 95 and 120 BPM, groove and title, and runs intro, verse, pre-chorus, chorus, second verse and chorus, bridge or solo, a key change up for the last chorus and a fade. Chords are lush major sevenths, minor ninths and suspended sevenths with royal road and ii-V turns. The band is a fingered or slap bass locked to the kick, Rhodes or DX electric piano, a clean chorused guitar, brass stabs, strings in the choruses, a lead on synth or soprano sax and gated drums with tom fills. The screen shows a car stereo with turning reels under a city whose windows and rooftop signs light up as the chorus arrives. Thirteen styles each keep their own settings, EDIT calls the next song, REC repeats the last chorus and the keys play the electric piano along.
+status: active
+authors:
+- name: ashtonwallen
+  url: https://github.com/ashtonwallen
+source: https://github.com/ashtonwallen/fm1-firmware/tree/main/city-pop
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The folder's LICENSING.md and LICENSE give MPL-2.0 file by file, with AMB-1's and fm1-base's notices kept on the files
+  that came from them. The Barlow Semi Condensed and Terminus fonts are SIL OFL 1.1 and the JieLi SDK files are read from
+  the builder's checkout.
+based_on: m-vave-fm-1/amb-1
+distribution: download
+install_notes: >-
+  Download the .fwsc from the release and write it with M-Flasher or the FM-1 Flasher in the same repository, which backs up the whole flash first and keeps the bootloader untouched. The release says it is built on fm1-base 3ae2a65, which supports both flash chips, and has not been played on real hardware.
+brick_risk: false
+tags: [generative, synth-engine, chords]
+image:
+  url: https://raw.githubusercontent.com/ashtonwallen/fm1-firmware/main/city-pop/docs/img/screen-city.png
+  alt: "CITY POP screen: preset Sunroof, 108 BPM, a pixel-art city at dusk with BAR, HOTEL, DISCO and FM signs, a cassette, the song Apricot Escalator in its chorus at A7, and four knobs"
+  credit: ashtonwallen
+  source_url: https://github.com/ashtonwallen/fm1-firmware
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-25
+  url: https://github.com/ashtonwallen/fm1-firmware/releases/tag/city-pop-1.0
+  notes: First release; built on fm1-base 3ae2a65.

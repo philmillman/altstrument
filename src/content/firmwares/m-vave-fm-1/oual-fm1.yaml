@@ -1,0 +1,43 @@
+device: m-vave-fm-1
+name: oual FM-1
+summary: >-
+  Work-in-progress port of Philip Meyer's oual_qroccss Max patch to the FM-1: ten looping sample voices with crush, sample-rate reduction, drive, AM, random start position and an envelope, running on the device with no computer.
+description: >-
+  oual FM-1 ports the oual_qroccss Max patch, which has ten looping sample voices with Crush, SRR, Drive, AM, Rand Pos
+  and an envelope, to run on the FM-1 alone. Keys 1 to 10 switch the voices, and a GLO page shows reverb and the CPU
+  peak. Sounds are packed as 3-bit mono audio and uploaded from a local uploader page, because storage is small. The
+  README says v0.2 runs on the author's one FM-1 with up to two voices reliably, that a third can overrun, that the
+  device build has no reverb and that the sound is mono and heavily compressed, so it does not match the original
+  patch. It adds that it is not yet meant for others to flash, and that going back to stock V15 was tested. The engine
+  uses integer maths only and can also be rendered to WAV on a computer with the included host tool. The firmware tree is
+  based on the FM1 Lofi sampler, and the project's Lab page has a blind codec test.
+status: active
+authors:
+- name: niceoceanco-charlie
+  url: https://github.com/niceoceanco-charlie
+source: https://github.com/niceoceanco-charlie/oual-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL-3.0 text, and the README says the code is GPL-3.0-only. oual_qroccss by Philip Meyer is MIT
+  (THIRD_PARTY.md), and the firmware tree comes from ferluht/fm1-lofi-sampler under GPL-3.0 with M-VAVE's FM-1 SDK
+  linking exception. The repository holds M-VAVE's closed engine library (firmware/sdk/lib/libfm1_engine.a) under M-VAVE's
+  FM-1-only terms, and firmware/sdk/firmware/FM-1_015.fwsc, which is the V15 image M-VAVE publishes under Apache-2.0
+  (git blob ce49cc15, identical to the one in m-vave/fm1_open).
+homepage: https://niceocean.studio/lab/oual
+based_on: m-vave-fm-1/fm1-lofi
+distribution: source-only
+requires_stock: stock V15 or the FM1 Lofi sampler
+install_notes: >-
+  No release is published. The CI workflow builds a flash page (FM1-Lofi-Workbench.html) kept as a workflow artifact for 14
+  days, or the firmware can be built locally. Per docs/INSTALL_OUAL.md, open the page in Chrome, tick the backup box and
+  update the firmware, using force flash when coming from stock V15, then upload the sound pack with the separate uploader
+  page. The package identity is FM-1_8990001, and the page's recovery section installs the original V15. The README says to
+  back up first and adds that this chip has no proven safe recovery for every failure.
+brick_risk: false
+tags: [sampler, lo-fi, voice, performance]
+versions:
+- version: main @ 427df4b
+  date: 2026-11-24
+  url: https://github.com/niceoceanco-charlie/oual-fm1/commit/427df4b
+  notes: No tagged releases; this is the latest commit. The README calls this state v0.2.

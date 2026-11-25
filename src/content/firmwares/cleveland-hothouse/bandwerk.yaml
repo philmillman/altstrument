@@ -1,0 +1,35 @@
+device: cleveland-hothouse
+also_devices: [guitarml-funbox]
+name: Bandwerk
+summary: >-
+  Multiband bass pedal firmware for Daisy Seed pedals: an LR4 crossover, a compressor per band, an FX loop on the high band with automatic latency compensation, an octaver and three drive types.
+description: >-
+  Bandwerk splits the bass signal at an adjustable point between 100 Hz and 800 Hz into a low and a high band and compresses each band separately. The high band can be sent out through the output ring and returned through the input ring, and the pedal measures the loop delay itself and delays the low band and dry signal to match. An octaver adds a sub octave and an octave up, a drive section offers overdrive, distortion and fuzz with an oversampled path, and a band mix and soft-clipped master finish the chain. Settings are stored in the QSPI flash. An optional USB link lets a web page or the included tools show levels along the chain and control the pedal, while the pedal runs the same without a computer.
+
+  The README marks the project a v0.2 beta, says it has been tested on the Hothouse only and that the FunBox v1 to v3 builds are supported but untested, and says the FX loop has not been verified on hardware.
+status: active
+authors:
+  - name: schnell-auswahl
+    url: https://github.com/schnell-auswahl
+source: https://github.com/schnell-auswahl/bandwerk
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The README states GPL-3.0-or-later. The Hothouse hardware wrapper from the HothouseExamples repository is GPL-3.0, and the Daisy bootloader installed alongside the firmware is part of libDaisy (MIT).
+homepage: https://schnell-auswahl.github.io/bandwerk/
+distribution: browser-installer
+install_notes: >-
+  The project site offers a browser installer, or build with make and flash with tools/flash.sh. A first installation puts the Daisy bootloader in the Seed's internal flash and the program in the QSPI chip; at each power-up the bootloader waits two seconds for an update, so a failed update can be fixed by power-cycling the pedal. Holding both footswitches for about two seconds enters the bootloader for updates, and BOOT plus RESET on the Daisy Seed does the same for the first install. The FunBox build is selected with BOARD=funbox.
+brick_risk: false
+tags: [fx, bass, compressor, octaver, drive, crossover, web]
+image:
+  url: https://schnell-auswahl.github.io/bandwerk/img/og.png
+  alt: Bandwerk project card with the line Split your bass in two beside a pedal illustration with six knobs, three toggle switches and two footswitches on the DRIVE page
+  credit: schnell-auswahl
+  source_url: https://schnell-auswahl.github.io/bandwerk/
+  first_party: true
+versions:
+  - version: v0.1.0-beta
+    date: 2026-11-22
+    url: https://github.com/schnell-auswahl/bandwerk/tree/v0.1.0-beta
+    notes: Git tag; no GitHub release page. The README describes a later v0.2 beta on the main branch.

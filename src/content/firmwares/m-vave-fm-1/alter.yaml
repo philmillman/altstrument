@@ -1,9 +1,9 @@
 device: m-vave-fm-1
 name: ALTER
 summary: >-
-  Felucca fork that replaces the groovebox with three euclidean rhythm circles, seven percussive engines, dice and CHAOS, a mixer per circle, 48 scenes and a browser companion page, aimed at industrial techno and texture work.
+  Felucca fork that replaces the groovebox with three euclidean rhythm circles, seven engines, dice and CHAOS, a mixer per circle, 48 scenes and a browser companion page, aimed at industrial techno and texture work.
 description: >-
-  Keeps Felucca's hardware layer, effects and installer and puts a new instrument on top. Three circles each play a euclidean rhythm or a Turing loop through their own sound, envelope, effects and mixer channel. The seven engines include ALTER, a noise and metal voice that the README says takes its idea from Noise Engineering's Basimilus Iteritas Alter, and PHYS, NOISE, RESO, PLATE, CORDE and RING. Dice redraw a circle's pattern, velocity, chance and length, CHAOS does it for all three at once, and locks keep what must stay. Held fills (dub delay, dub reverb, destroy, rolls), scales and chord progressions, a console per circle with EQ and compressor, a master filter, a delay with a tape mode, reverb, three LFOs and a modulation matrix add to the playing. A song chains three rhythm slots A, B and C, and 48 scenes keep everything the dice drew. MIDI comes in over USB and TRS with MIDI learn and clock. The browser companion page shows every setting, and a browser build runs the firmware without an FM-1. The README says it was developed with an AI coding assistant and tested on a real FM-1 with the UC25HQ80 flash chip, and that MIDI learn is not yet tried with a hardware controller.
+  Keeps Felucca's hardware layer, effects and installer and puts a new instrument on top. Three circles each play a euclidean rhythm or a Turing loop through their own sound, envelope, effects and mixer channel. The eight engines include ALTER, a noise and metal voice that the README says takes its idea from Noise Engineering's Basimilus Iteritas Alter, WAVE, an industrial wavetable voice with a warp stage, and PHYS, NOISE, RESO, PLATE, CORDE and RING. Sixteen USER slots keep named sounds, and MIDI out over USB is off by default. Dice redraw a circle's pattern, velocity, chance and length, CHAOS does it for all three at once, and locks keep what must stay. Held fills (dub delay, dub reverb, destroy, rolls), scales and chord progressions, a console per circle with EQ and compressor, a master filter, a delay with a tape mode, reverb, three LFOs and a modulation matrix add to the playing. A song chains three rhythm slots A, B and C, and 48 scenes keep everything the dice drew. MIDI comes in over USB and TRS with MIDI learn and clock. The browser companion page shows every setting, and a browser build runs the firmware without an FM-1. The README says it was developed with an AI coding assistant and tested on a real FM-1 with the UC25HQ80 flash chip, and that MIDI learn is not yet tried with a hardware controller.
 status: active
 authors:
 - name: Forban5929
@@ -26,6 +26,10 @@ image:
   source_url: https://github.com/Forban5929/Alter-FM1
   first_party: true
 versions:
+- version: '1.1'
+  date: 2026-11-24
+  url: https://github.com/Forban5929/Alter-FM1/releases/tag/v1.1
+  notes: Adds a WAVE engine with industrial wavetables and a warp stage, 16 USER sound slots, reverb presets and a three-tab FX page, and MIDI out over USB (off by default). The companion page gains backup and restore, and the release notes say about twenty knob jumps and dead zones were fixed. Scenes, songs and settings stay on update. The notes say the WAVE engine's CPU load, backup and restore, USER sounds and MIDI out are tested in the emulator and companion page but not yet on a real FM-1.
 - version: '1.01'
   date: 2026-11-21
   url: https://github.com/Forban5929/Alter-FM1/releases/tag/v1.01

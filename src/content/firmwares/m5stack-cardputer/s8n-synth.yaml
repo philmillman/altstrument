@@ -1,0 +1,33 @@
+device: m5stack-cardputer
+name: S8N Synth
+summary: >-
+  Turns the original Cardputer and an M5 Unit Synth or Unit MIDI into a pocket groovebox, with a keyboard, an eight-lane 16-step grid, four patterns, WAV sample pads, microphone takes and project slots on the SD card.
+description: >-
+  S8N boots into a Live Keys page that plays General MIDI sounds from the Cardputer keys, then opens a four-page groovebox with Tab. The Step Grid has eight lanes (kick, snare, hat, bass, lead, chord and two sample lanes) over 16 steps, four patterns, swing, velocity and gate per step and live note overdub. The Sound page sets a General MIDI program, level, filter cutoff and reverb for the selected lane. Synth, chord and drum notes go out as MIDI from the Grove port to the attached Unit Synth or Unit MIDI, which makes the sound. The Sampler page records four 0.75-second pads from the built-in microphone or loads 16 kHz mono WAV files from the SD card, and a Project page saves eight project slots and records longer microphone takes as WAV files.
+
+  The firmware targets the original 8 MB Cardputer (K132). A repository folder of host tests covers the sequencer, MIDI parsing, sampler and project recall, and a bench-test document lists the hardware checks. The repository has no licence file.
+status: active
+authors:
+  - name: H3llawts
+    url: https://github.com/H3llawts
+source: https://github.com/H3llawts/Cardputer-S8N-Synth
+source_status: open
+license: unspecified
+license_notes: The repository has no LICENSE file and the README states no licence.
+distribution: download
+requires_stock: Original M5Stack Cardputer (K132, 8 MB); M5Stack Unit Synth or Unit MIDI on the Grove port
+install_notes: >-
+  Flash the merged image firmware/S8N-Synth-v0.2-Cardputer-merged.bin at address 0x0 from desktop Chrome or Edge with Espressif's serial flasher, leaving erase-all unchecked, or build with PlatformIO and upload. Installing replaces the current firmware, so save anything you need from the flash first. If the board needs manual download mode, hold G0 while applying power; the ESP32-S3 ROM download mode stays available for reflashing. Insert a FAT32 microSD for pads, projects and takes.
+brick_risk: false
+tags: [groovebox, sequencer, sampler, synth, midi, drums, sd-card, open-source]
+image:
+  url: https://raw.githubusercontent.com/H3llawts/Cardputer-S8N-Synth/main/docs/S8N-Synth-UI.png
+  alt: Four S8N Synth screens, Live Keys with a Saw Lead patch and one octave of keys, a Step Grid with eight lanes, a Sound page with cutoff and level sliders, and a Sampler page with a waveform in slot 2
+  credit: H3llawts
+  source_url: https://github.com/H3llawts/Cardputer-S8N-Synth
+  first_party: true
+versions:
+  - version: main @ a5e2e00
+    date: 2026-11-25
+    url: https://github.com/H3llawts/Cardputer-S8N-Synth/commit/a5e2e00971843c9b86e0be6880097306ed57a6f4
+    notes: No tagged releases; this is the latest commit. The README describes v0.2 and ships a v0.2 merged image in the repository.

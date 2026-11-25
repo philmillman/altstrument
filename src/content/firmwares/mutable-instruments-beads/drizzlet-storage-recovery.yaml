@@ -5,10 +5,13 @@ description: >-
   Published by the Drizzlet author for a Beads that stops at start-up with a
   steady LED while its updater still works, which Mutable Instruments users have
   reported with the stock firmware since 2023. The author does not know whether
-  Drizzlet can cause it. The image runs before any settings are read. It erases
-  the flash sectors that hold the saved frozen buffer without reading them,
-  keeps the CV calibration only if it reads back cleanly and is within 25
-  percent of the factory values, and rewrites the settings. The module then does
+  Drizzlet can cause it. The image runs before any settings are read. It checks
+  both stored copies of the CV calibration before erasing anything, keeps a copy
+  only if it reads back cleanly and is within 25 percent of the factory values,
+  and verifies that copy before erasing the sector that holds the other one. It
+  then erases the flash sectors that hold the saved frozen buffer without
+  reading them and rewrites the settings. The first release, 2026.10.27, could
+  erase a usable backup copy before reading it. The module then does
   nothing until a normal firmware update is installed. If the calibration was
   reset, the CV inputs need recalibrating with accurate 1 V and 3 V references.
   The author tested it on one healthy module only and says it cannot support
@@ -17,13 +20,13 @@ status: active
 authors:
   - name: Insolent Construct
     url: https://github.com/insolentconstruct
-source: https://github.com/insolentconstruct/eurorack/tree/storage-recovery-2026.10.27/beads/recovery
+source: https://github.com/insolentconstruct/eurorack/tree/storage-recovery-2026.11.24/beads/recovery
 source_status: open
 license: MIT
 license_notes: >-
   The source files carry an MIT notice from Insolent Construct. The fork has no
   top-level LICENSE file.
-homepage: https://github.com/insolentconstruct/eurorack/releases/tag/storage-recovery-2026.10.27
+homepage: https://github.com/insolentconstruct/eurorack/releases/tag/storage-recovery-2026.11.24
 distribution: download
 requires_stock: Beads with a working audio updater (FREEZE held at power-on, FREEZE and SEED LEDs flashing alternately)
 install_notes: >-
@@ -38,6 +41,10 @@ install_notes: >-
 brick_risk: false
 tags: [recovery, bugfixes]
 versions:
+  - version: storage-recovery-2026.11.24
+    date: 2026-11-25
+    url: https://github.com/insolentconstruct/eurorack/releases/tag/storage-recovery-2026.11.24
+    notes: Pre-release on GitHub. Checks both calibration copies before erasing anything, so a usable backup is no longer erased before it is read, and verifies the kept copy before erasing the other sector. The notes say this exact image was installed on a module running beads-tuneup and kept its calibration.
   - version: storage-recovery-2026.10.27
     date: 2026-10-27
     url: https://github.com/insolentconstruct/eurorack/releases/tag/storage-recovery-2026.10.27

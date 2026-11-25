@@ -14,7 +14,7 @@ description: >-
   parallel buses, a Perform mode that assigns knobs and the footswitch to targets
   with beat-quantised moves, a tempo-synced looper that works with the GRDLOOP
   effect, metering pages, a visual that follows the MIDI clock and a higher DSP
-  limit of 300. Version 2.0.4 also builds a second, opt-in updater that runs the pedal at 360 MHz. Tested on an MS-70CDR and an MS-60B (v1.2) and an MS-50G (v2.0).
+  limit of 300. Version 2.0.4 also builds a second, opt-in updater that runs the pedal at 360 MHz. Since v2.0.4.2 the builder asks which pedal you will flash, so the pedal reports its own model to editors and Zoom's updaters. Tested on an MS-70CDR and an MS-60B (v1.2) and an MS-50G (v2.0).
   It pairs with the author's custom effects, which follow its tempo and Start and
   Stop. The repository also holds a parser and build tool for the pedals' updaters.
 status: active
@@ -45,6 +45,10 @@ video:
   first_party: true
   found_via: https://github.com/matujuice/zoom-ms-midistomp#demo
 versions:
+  - version: v2.0.4.2
+    date: 2026-11-25
+    url: https://github.com/matujuice/zoom-ms-midistomp/releases/tag/v2.0.4.2
+    notes: Builder release with the same firmware features. The builder asks which pedal you will flash (MS-70CDR, MS-60B or MS-50G), so the pedal reports its own model to editors and to Zoom's updaters, and MS-60B and MS-50G builds carry the pedal in the file name. Fixes the Mac window title and the message when the second build fails.
   - version: v2.0.4.1
     date: 2026-11-23
     url: https://github.com/matujuice/zoom-ms-midistomp/releases/tag/v2.0.4.1

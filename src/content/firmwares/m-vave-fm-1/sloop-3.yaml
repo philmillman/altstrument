@@ -33,7 +33,7 @@ install_notes: >-
   M-UPGRADE on a unit still on stock. The page then connects, backs up the whole 1 MB flash and installs, reading and checking the
   package before it erases anything. Going back to SLOOP 2.8 means restoring that backup with M-Flasher. The README says
   m-bootloader opens a recovery menu if an install is interrupted, and USB download mode remains as a fallback.
-brick_risk: true
+brick_risk: false
 tags: [sequencer, synth-engine, drums, sampler, fx, performance, usb-audio, midi, fm, physical-modeling, editor]
 image:
   url: https://raw.githubusercontent.com/isod89/sloop3-fm1/main/docs/screens.png
@@ -42,6 +42,10 @@ image:
   source_url: https://github.com/isod89/sloop3-fm1
   first_party: true
 versions:
+- version: v3.4.2-beta
+  date: 2026-11-24
+  url: https://github.com/isod89/sloop3-fm1/releases/tag/v3.4.2-beta
+  notes: Pre-release. Fixes reported bugs in the sequencer (step 1 silent in SONG after an engine change, ratchets following swing, changing SEQ DIV while playing, arpeggiator timing at 1/32 and SONG starting from the edited line), raises the mix by 6 dB before the limiter, gives each drum sound its own LEVEL and adds CC 11 as track level, learnable mod wheel and CC 11, and channel aftertouch as the mod wheel. The SEL knobs stop at their ends, and the installer retries and says what to close if another program holds the MIDI port. Two reports (arpeggiator silent on track 3, a browser crash) are listed as not reproduced.
 - version: v3.4.1-beta
   date: 2026-11-20
   url: https://github.com/isod89/sloop3-fm1/releases/tag/v3.4.1-beta

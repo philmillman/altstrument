@@ -1,0 +1,38 @@
+device: moog-mother-32
+name: Rungler-32
+summary: Unofficial firmware that turns the Mother-32 sequencer into a Rungler-style shift register and adds a tape-style digital delay on the TEMPO input.
+description: >-
+  Rungler-32 replaces the sequencer firmware with an 8-bit shift register clocked by the GATE input, an internal clock
+  or MIDI clock, in the manner of Rob Hordijk's Rungler. The GLIDE knob sets the chance that a step flips a bit and
+  locks the pattern at its ends, as on a Turing Machine. The lower-row keys set the register length, and
+  KB out is quantised to C major by default. It also adds a digital delay of about 0.52 seconds, stored as 4-bit
+  ADPCM, that takes audio on TEMPO and comes out on ASSIGN, with clock sync, feedback and a freeze input. MIDI notes
+  play the synth with last-note priority. It is not made or supported by Moog Music, and nothing is saved between
+  power cycles. The repository holds the C++ source, a build script and a panel diagram.
+status: active
+authors:
+  - name: Dune Desormeaux
+    url: https://github.com/dessertplanet
+source: https://github.com/dessertplanet/Rungler-32
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The LICENSE file is the GPLv3 text; the README states "GPL-3.0-or-later".
+distribution: download
+install_notes: >-
+  Send Moog's ERASE file twice from a SysEx tool over a MIDI interface, then send rungler32.syx from the release
+  page. The ERASE file comes from Moog's own firmware package and is not included in the repository. To go back,
+  send the ERASE file twice and then Moog's firmware file. If the synth does not answer ERASE, power it on holding
+  RESET with TEMPO fully anticlockwise and SUSTAIN off to enter update mode.
+brick_risk: false
+tags: [sequencer, delay, generative, random, turing-machine]
+image:
+  url: https://raw.githubusercontent.com/dessertplanet/Rungler-32/main/panel.png
+  alt: Line drawing of the Mother-32 panel, with orange labels marking the Rungler-32 functions of the GLIDE and TEMPO knobs, the keys and the patch jacks
+  credit: Dune Desormeaux
+  source_url: https://github.com/dessertplanet/Rungler-32#readme
+  first_party: true
+versions:
+  - version: v1.0
+    date: 2026-11-25
+    url: https://github.com/dessertplanet/Rungler-32/releases/tag/v1.0

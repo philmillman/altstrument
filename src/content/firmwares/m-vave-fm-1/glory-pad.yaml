@@ -1,16 +1,16 @@
 device: m-vave-fm-1
 name: GLORY PAD
 summary: >-
-  Worship-style ambient pad for the FM-1: hold a key for a six-voice pad with 20 presets, open, major or minor chords,
-  octave shimmer, chorus and a long reverb, written as one C file on the foma template.
+  Ambient pad for the FM-1: hold a key for a wavetable pad with ten presets, open, major, minor, sus2 or sus4 voicing, shimmer, chorus and a feedback reverb,
+  written as one C file on the foma template.
 description: >-
   The repository is foma's template with src/main.c replaced, and its README still describes foma, not the pad. A key
-  or MIDI note sets the root and starts a pad of six sine-based voices with fifths and octaves, in open, major or minor
-  voicing and crossfading between two banks when the chord changes. Twenty presets carry names such as Cathedral, Holy
-  Presence, Eternal and Secret Place, each with its own reverb, tail, octave-bloom, chorus and diffusion defaults. A
-  motion setting moves the chord between static, sus4, sus2 and a floating mode. The knobs and pages cover level, tone,
-  fade, shimmer, chorus, space, pan, filters and eight screen colour themes. The code header calls the current version
-  GLORY PAD 0.4, and the commit history goes through several "Worship" and "Celestial" editions.
+  or MIDI note sets the root and starts a pad that plays looped wavetables, with a second voice that crossfades in when the
+  root or preset changes. Ten presets carry names such as Warm Cloud, Celestial Glass, Ocean of Grace and Silver Mist. A mode
+  setting adds harmonic partials for open, major, minor, sus2, sus4 or both sus voicings, or steps through a sequence of them
+  automatically. The knobs and three pages cover reverb, shimmer, cutoff, chorus, level, fade, decay and a flow motion with its depth and
+  cycle length. The screen header reads GLORY PAD 2.2, replacing the 0.4 of earlier commits, and the file is a rewrite that
+  holds the wavetable data.
 status: active
 authors:
 - name: juampygalan93-bit
@@ -32,6 +32,10 @@ install_notes: >-
 brick_risk: false
 tags: [ambient, synth-engine, reverb, chords, fx, midi, usb-audio, fork]
 versions:
+- version: main @ 42f7044
+  date: 2026-11-25
+  url: https://github.com/juampygalan93-bit/glory-pad-fm1/commit/42f7044985e7c0d213a8fd09a2c6e8d1cd3ea9a9
+  notes: No tagged releases; this is the latest commit. Since the previous row src/main.c is rewritten as GLORY PAD 2.2, with ten wavetable pad presets, seven chord modes and a FLOW page.
 - version: main @ 3790692
   date: 2026-11-24
   url: https://github.com/juampygalan93-bit/glory-pad-fm1/commit/37906928a6bb282c04c1cdc0deae3a2f24594491

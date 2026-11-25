@@ -12,7 +12,7 @@ description: >-
   the keys. Patterns are four banks of eight variations with an Elektron-style chain, copy and paste use button combos,
   and MIDI covers sequencer out, a MIDI keyboard mode and .mid export from the web editor. Projects saved by the
   eight-track Hortator do not load. The README says a release carries an installer page, the package and a manual in
-  English and Russian, but no release is published yet.
+  English and Russian, but the two releases published so far attach only the .fwsc package.
 status: active
 authors:
 - name: StripedBear
@@ -26,10 +26,11 @@ license_notes: >-
   for combined works. The sample files in assets/samples-cc0 are CC0 1.0 and Mutable Instruments, DaisySP and Fukiai
   code is MIT.
 based_on: m-vave-fm-1/hortator
-distribution: source-only
+distribution: download
 install_notes: >-
-  The README describes installing FREITAKT-installer.html from a release in Chrome or Edge, but no release exists, so
-  build it with ./build.sh and JieLi's toolchain as in BUILDING.md. To go back, hold SEQ while powering on to reach
+  The README describes installing FREITAKT-installer.html from a release in Chrome or Edge, but the releases attach only
+  freitakt-1.0.1.fwsc and freitakt-1.0.fwsc, so install the package with an FM-1 .fwsc installer, or build it with ./build.sh and
+  JieLi's toolchain as in BUILDING.md. To go back, hold SEQ while powering on to reach
   SAFE START and install M-VAVE's V15 with its M-UPGRADE updater; docs/RECOVERY.md covers a crashed unit, using the
   chip's boot mode.
 brick_risk: false
@@ -41,7 +42,11 @@ image:
   source_url: https://github.com/StripedBear/freitakt
   first_party: true
 versions:
-- version: main @ 5f721bd
-  date: 2026-11-24
-  url: https://github.com/StripedBear/freitakt/commit/5f721bd70a71225c4230c4e419fea1fb949e7c26
-  notes: No tagged releases; this is the latest commit.
+- version: v1.0.1
+  date: 2026-11-25
+  url: https://github.com/StripedBear/freitakt/releases/tag/v1.0.1
+  notes: The release notes only link the changelog. The commit before it lets the project's installer site accept longer device identities such as FM-1_9. The attached package is freitakt-1.0.1.fwsc.
+- version: v1.0
+  date: 2026-11-25
+  url: https://github.com/StripedBear/freitakt/releases/tag/v1.0
+  notes: First release; the notes only link the commit list. The attached package is freitakt-1.0.fwsc.

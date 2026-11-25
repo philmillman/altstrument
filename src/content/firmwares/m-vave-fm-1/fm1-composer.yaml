@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: COMPOSER
+summary: >-
+  Library-player firmware for pieces of up to eight parts made on a computer, with a browser studio where an AI text-to-MIDI model writes a piece and an emulated FM-1 plays it.
+description: >-
+  COMPOSER plays pieces from a library on the FM-1, each with up to eight parts and sections that are launched live at the next bar. Sounds, effects and 32 drum kits come from SLOOP's engines. Each part can be muted or soloed and given a new sound, edited in a piano roll or step sequencer, and the player can record over a part or play along with locked key and auto-chords. The repository also holds COMPOSER Studio, a web page that puts the text2midi composer beside the fm1-emu emulator joined by a virtual MIDI cable, and fm1c, a command-line tool that converts MIDI files, fits them to the FM-1, reports each reduction and pushes them over USB. The studio needs the user's own AI key for new pieces and keeps it in the browser, while the bundled examples need none. The README says the firmware has been developed and tested only in the fm1-emu emulator and has not been run on a real FM-1. CI builds the .fwsc, and the repository has no releases yet.
+status: active
+authors:
+- name: cindulasai
+  url: https://github.com/cindulasai
+source: https://github.com/cindulasai/fm1-composer
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md gives GPL-3.0-only for COMPOSER and the Dinghy platform under it. The Felucca-Engines sound engines are MIT and the Terminus font is SIL OFL 1.1. The designburg logo is not under the GPL and is not part of the firmware.
+homepage: https://cindulasai.github.io/fm1-composer/
+based_on: m-vave-fm-1/dinghy
+distribution: source-only
+install_notes: >-
+  The firmware is built by the repository's GitHub Actions workflow (gh run download -n composer-fwsc), and the fm1c tool pushes pieces to the unit over USB. The README says it has not been run on real hardware and that installing community firmware is at your own risk. It is built on the Dinghy platform, which keeps its update loader and writes only the firmware area, so the FM-1's ROM boot mode remains the way back.
+brick_risk: false
+tags: [sequencer, generative, midi, emulator, web, sdk]
+image:
+  url: https://raw.githubusercontent.com/cindulasai/fm1-composer/main/docs/studio.png
+  alt: "COMPOSER Studio in a browser: a list of generated pieces and a piano roll on the left, and the fm1-emu emulator on the right showing INTRO 1:1 with drums, bass, lead and chords parts, playing"
+  credit: cindulasai
+  source_url: https://github.com/cindulasai/fm1-composer
+  first_party: true
+versions:
+- version: main @ 480d3f7
+  date: 2026-11-25
+  url: https://github.com/cindulasai/fm1-composer/commit/480d3f7
+  notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,40 @@
+device: m-vave-fm-1
+name: FMY262
+summary: >-
+  OPL3 (YMF262) tracker for the FM-1 with 18 FM channels, 2 and 4-operator instruments, percussion mode, Adlib Tracker II effects and macros, four song slots and a browser workbench that imports AT2 and RAD songs.
+description: >-
+  The tracker runs a DBOPL emulation of the OPL3 chip at 44.1 kHz, with the second CPU core rendering half of the channels, and shows patterns, instruments, arpeggio and vibrato tables, FM register macros, the song order and a waveform view on the FM-1's 240 by 240 screen. Instruments have four editing pages, with FM, additive or 4-operator connections, and the settings cover display, controls, EQ, metronome, MIDI input and one or two cores. Four song slots live in the FM-1's flash in the project's own FMY1 format and a save cut short by a power loss leaves either the old or the new song. A workbench page runs the firmware in the browser, installs it over USB with Web Serial, moves the four song slots to and from the FM-1, and imports Adlib Tracker II .a2m and Reality AdLib Tracker .rad songs and exports .a2m. The 0.8.2 and 0.8.3 releases bring the playback of imported songs closer to AT2, checked against AdPlug's AT2 player. The README warns that FMY262 cannot read the saves of other firmwares and writes over flash they may have used, and advises a backup first. It is built on fm1-base and felucca-bsp.
+status: active
+authors:
+- name: Mr. Tracy Evans
+  url: https://github.com/jpark-spec
+source: https://github.com/jpark-spec/fmy262
+source_status: open
+license: GPL-2.0-or-later
+license_notes: >-
+  The README and NOTICE.md state GPL-2.0-or-later, which the DBOPL emulator's licence requires, and LICENSE holds the GPL version 2 text. fm1-base and felucca-bsp are MPL-2.0 and are fetched at build time, Barlow and Terminus fonts are SIL OFL 1.1, and m-bootloader is MIT. Nuked OPL3 (LGPL-2.1-or-later) is kept for comparison in the web prototype and is not in the releases. The repository holds no M-VAVE firmware file.
+homepage: https://jpark-spec.github.io/fmy262/
+distribution: browser-installer
+install_notes: >-
+  Open the workbench's Install tab in Chrome or Edge with the FM-1 on USB; the release also carries the .fwsc package, which The Firmware Hub installs. The NOTICE says the installer also puts m-bootloader on the unit when the FM-1 needs it. The README says custom firmware is installed at your own risk, that the Install tab can go back to M-VAVE's firmware once you give it M-VAVE's file, and that it offers a backup. Keep songs as .fmy or .a2m files, since another firmware can write over the flash slots.
+brick_risk: false
+tags: [tracker, sequencer, fm, chiptune, synth-engine, emulator, editor, web]
+image:
+  url: https://raw.githubusercontent.com/jpark-spec/fmy262/main/docs/card.png
+  alt: "FMY262 pattern screen on a blue grid: PATTERN 00 and CHANNEL 01 readouts, eight channel columns of notes such as D-3 and C-6, a red highlighted row and level meters along the bottom"
+  credit: Mr. Tracy Evans
+  source_url: https://github.com/jpark-spec/fmy262
+  first_party: true
+versions:
+- version: 0.8.3
+  date: 2026-11-25
+  url: https://github.com/jpark-spec/fmy262/releases/tag/v0.8.3
+  notes: Follows more of AT2's player, including vibrato and tremolo that keep their place across notes, the FM register macro level columns and volume reset by an instrument number without a note.
+- version: 0.8.2
+  date: 2026-11-25
+  url: https://github.com/jpark-spec/fmy262/releases/tag/v0.8.2
+  notes: Fixes Adlib Tracker II import and playback, including key-off notes, volume scaling, tuning, vibrato tables and tone portamento; songs need importing again.
+- version: 0.8.1
+  date: 2026-11-25
+  url: https://github.com/jpark-spec/fmy262/releases/tag/v0.8.1
+  notes: First public release.

@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: DUB DESK
+summary: >-
+  Self-playing roots dub firmware for the FM-1 where a reggae band plays sixteen riddims while a virtual engineer mixes live with drops, echo throws, spring crashes and sirens.
+description: >-
+  The band plays sixteen original riddims at 65 to 80 BPM in a half-time feel, with one-drop, rockers or steppers drums, deep sub bass that carries the tune, off-beat guitar skank, organ bubble and now and then a melodica line or horn stab over one or two minor chords or a plain I-IV-V. The engineer mixes on bar lines: dropping to drum and bass, throwing the snare and skank into tape echo, swelling the feedback, kicking the spring tank, sweeping a high-pass and sounding a siren, then bringing the band back. The screen is the mixing desk with faders that move by themselves, echo blips riding a tape loop, a shaking spring tank and the riddim name on masking tape. FX throws the echo and LFO kicks the spring tank. Thirteen styles each keep their own settings.
+status: active
+authors:
+- name: ashtonwallen
+  url: https://github.com/ashtonwallen
+source: https://github.com/ashtonwallen/fm1-firmware/tree/main/dub-desk
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The folder's LICENSING.md and LICENSE give MPL-2.0 file by file, with AMB-1's and fm1-base's notices kept on the files
+  that came from them. The Barlow Semi Condensed and Terminus fonts are SIL OFL 1.1 and the JieLi SDK files are read from
+  the builder's checkout.
+based_on: m-vave-fm-1/amb-1
+distribution: download
+install_notes: >-
+  Download the .fwsc from the release and write it with M-Flasher or the FM-1 Flasher in the same repository, which backs up the whole flash first and keeps the bootloader untouched. The release says it is built on fm1-base 3ae2a65, which supports both flash chips, and has not been played on real hardware.
+brick_risk: false
+tags: [generative, synth-engine, delay, reverb]
+image:
+  url: https://raw.githubusercontent.com/ashtonwallen/fm1-firmware/main/dub-desk/docs/img/screen-desk.png
+  alt: "DUB DESK screen: style Sixpence Bass, 72 BPM, a tape echo unit and spring reverb tank above a mixing desk with faders DRUM, BASS, GTR, ORGN, MEL, HORN, ECHO and SPRG, and four knobs"
+  credit: ashtonwallen
+  source_url: https://github.com/ashtonwallen/fm1-firmware
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-25
+  url: https://github.com/ashtonwallen/fm1-firmware/releases/tag/dub-desk-1.0
+  notes: First release; built on fm1-base 3ae2a65.

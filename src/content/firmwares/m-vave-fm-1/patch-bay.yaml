@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: Patch Bay
+summary: >-
+  Self-patching virtual modular synth firmware for the FM-1 that draws sixteen modules with coloured cables and keeps re-patching itself to new music, always in key.
+description: >-
+  Sixteen modules sit on the screen as panels with jacks, a light and a live display: clock, sequencer, random, quantizer, two LFOs, two envelopes, VCO, FM pair, noise, filter, VCA, delay, mixer and reverb. Every so often one cable lifts, flies to another jack and plugs in. Each move is checked first for pitch in key, something sounding and no audio loops, and levels stay even with a soft top end. EDIT or SEL plugs, unplugs and carries cables by hand, touching the patch pauses the auto-patcher for 90 seconds, and knobs set the auto-patch rate from off to five minutes, tempo, space and the selected module's knob. Twelve starting patches include Berlin School, Krell, Plinky and Tape Choir. The README supports a screen reader.
+status: active
+authors:
+- name: ashtonwallen
+  url: https://github.com/ashtonwallen
+source: https://github.com/ashtonwallen/fm1-firmware/tree/main/patch-bay
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The folder's LICENSING.md and LICENSE give MPL-2.0 file by file, with AMB-1's and fm1-base's notices kept on the files
+  that came from them. The Barlow Semi Condensed and Terminus fonts are SIL OFL 1.1 and the JieLi SDK files are read from
+  the builder's checkout.
+based_on: m-vave-fm-1/amb-1
+distribution: download
+install_notes: >-
+  Download the .fwsc from the release and write it with M-Flasher or the FM-1 Flasher in the same repository, which backs up the whole flash first and keeps the bootloader untouched. The release says it is built on fm1-base 3ae2a65, which supports both flash chips, and has not been played on real hardware.
+brick_risk: false
+tags: [generative, synth-engine, oscillator, filter]
+image:
+  url: https://raw.githubusercontent.com/ashtonwallen/fm1-firmware/main/patch-bay/docs/img/screen.png
+  alt: "Patch Bay screen: patch Berlin School in A minor, 112 BPM, sixteen labelled modules from CLOCK to REVERB joined by coloured cables, and knobs AUTO, TEMPO, SPACE and VCO WAVE"
+  credit: ashtonwallen
+  source_url: https://github.com/ashtonwallen/fm1-firmware
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-24
+  url: https://github.com/ashtonwallen/fm1-firmware/releases/tag/patch-bay-1.0
+  notes: First release; built on fm1-base 3ae2a65.

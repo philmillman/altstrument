@@ -15,7 +15,8 @@ description: >-
   a Library tab lists them and downloads more from the Hub and, as the README now lists, fm1-editor.com, Reverbose's FM-1 and SMK-37 lists and mutant.cloud, and a settings tab picks a colour theme, a light or dark mode and, for three of the themes, an accent colour. A pane can be pinned so its flash contents survive power-off.
   For live units, the app probes FM-1-named MIDI ports, and now SMK-37 and Starrykey port names too, with the M-UPGRADE handshake, shows which firmware is running,
   switches their clock and flashes a chosen package. A unit in ROM download mode is also listed, and with Rescue switched on it can be given the m-bootloader, on Linux, macOS (needs sudo) and Windows (needs administrator rights). An About tab shows the release history and licences. The repository also builds fm1-tty, a terminal version of the
-  library, flashing, keyboard, metronome and MIDI routing. The emulated panes accept MIDI in only. The author calls it a local tool,
+  library, flashing, keyboard, metronome and MIDI routing. Since 1.0.0 a Cardputers section lists M5Stack Cardputer-Adv handhelds running fm1-card on the network,
+  shows each one's status and the firmware packages on its SD card, keeps a catalog in sync with them and, for a Cardputer in ROM download mode, flashes the whole fm1-card image; the app also keeps a history of installs. The emulated panes accept MIDI in only. The author calls it a local tool,
   not a distributed binary, but since v0.1.1 the releases attach Windows, Linux and Flatpak builds, and since v0.1.4 a macOS zip.
 status: active
 authors:
@@ -44,6 +45,14 @@ image:
   source_url: https://github.com/jasonbot/fm1-grid
   first_party: true
 versions:
+- version: v1.0.1
+  date: 2026-11-25
+  url: https://github.com/jasonbot/fm1-grid/releases/tag/v1.0.1
+  notes: The release notes only link the changelog. The commits since v1.0.0 fix a hang.
+- version: v1.0.0
+  date: 2026-11-24
+  url: https://github.com/jasonbot/fm1-grid/releases/tag/v1.0.0
+  notes: The release notes only link the changelog. The commits since v0.1.6 add a Cardputers section that lists M5Stack Cardputer-Adv handhelds, reads their status and SD card firmware, syncs a catalog to them and flashes the fm1-card image, an install history for firmware flashed from the app and a refreshed baked-in ChoralRoot 0.46.
 - version: v0.1.6
   date: 2026-11-22
   url: https://github.com/jasonbot/fm1-grid/releases/tag/v0.1.6

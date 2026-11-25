@@ -7,7 +7,7 @@ description: >-
   machine banks (.smz4 files that can be changed without reinstalling the firmware), long-sample storage and a project sample
   pool. The mods are the SP sample machines ONE SHOT, WERP, REPITCH and SLICE, the SY FM DTONE machine, an MD MACHINEDRUM machine with the Machinedrum's 30 voices, an audio recorder, a
   third LFO per track, a Digitone-style arpeggiator, POLY for polyphonic play, a chorus, COMP, a compressor on the FX bus with Digitakt-style controls, parallel mix and a gain-reduction meter, Playhead for the step order of each track, a system information page, and a sample
-  manager. The source also has SY MnM, a Monomachine-style FM machine, which the web builder leaves out until it has a Monomachine donor recipe. Both the website builder and the repository's source build target OS 1.42 (core 2.0); the site asked for OS 1.41 until 2026-11-18. The site reads the OS file you supply, checks its hash, then patches and verifies it in the browser
+  manager. The source also has SY WAVETABLE and SP WAVETBL wavetable machines, a kit bank loader and SY MnM, a Monomachine-style FM machine, which the web builder leaves out until it has a Monomachine donor recipe. Both the website builder and the repository's source build target OS 1.42 (core 2.0); the site asked for OS 1.41 until 2026-11-18. The site reads the OS file you supply, checks its hash, then patches and verifies it in the browser
   tab; nothing is uploaded. It offers the build as a download or sends it with a built-in transfer page that also browses the
   unit's projects, sounds and samples. SY FM DTONE also needs your own Digitone OS 1.44 file, because its sound engine is
   rebuilt from that file by a recipe and no Digitone bytes are kept in the repository. The author says builds keep the
@@ -37,6 +37,11 @@ install_notes: >-
 brick_risk: false
 tags: [machines, loader, flasher, sampler, fm, lfo, arpeggiator, web, web-midi, sdk]
 versions:
+  - version: main @ 782b676
+    date: 2026-11-25
+    url: https://github.com/GSM1980/synfact-dev/commit/782b67627ca7bfb26a2d2af2c3b52f58e0a2d1ea
+    notes: >-
+      No tagged releases; this is the latest commit. The commits since the previous entry add core 2.7.0 and 2.8.0, SY WAVETABLE 0.1.0 (two wavetable oscillators with animated position) and SP WAVETBL 0.1.0, and a kitload-st mod, contributed as a pull request, that loads a whole kit from a kit bank kept in a project. They also move SP machines to 1.6.2, Playhead to 1.3.0, COMP to 1.1.0, MD KIT to 0.3, SY MnM to 0.8.2 and Sample Manager to 1.3.1.
   - version: main @ a1716a8
     date: 2026-11-23
     url: https://github.com/GSM1980/synfact-dev/commit/a1716a83ce3f1005249b1971577ff6543f135cdd

@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: DECAY LOOPS
+summary: >-
+  Self-playing tape looper firmware for the FM-1 whose recorded phrases wear away as they play, after William Basinski's Disintegration Loops, with two turning reels on screen.
+description: >-
+  The firmware writes a phrase of a few chords, a figure or a slow melody, records it onto tape and plays it over and over. On each pass the tape wears: highs roll off, dropouts open and grow, pitch wobbles and hiss rises until only fragments remain, and before a loop is gone a fresh phrase records on another layer and fades in. The tape is 27 seconds of 8-bit mu-law at 11 kHz shared by all layers, holding up to two 12-second loops or four 6-second loops. The screen shows two reels, the tape scrolling past the head with its gaps and fading oxide, and the wear of every loop. The keys play notes that go onto the next loop, REC starts a new loop at once and EDIT holds the wear. Loop life runs from 15 minutes to 39 seconds. Fourteen presets set the tape stock and mood. The README gives the idea as inspired by Basinski and says no material from it is used.
+status: active
+authors:
+- name: ashtonwallen
+  url: https://github.com/ashtonwallen
+source: https://github.com/ashtonwallen/fm1-firmware/tree/main/decay-loops
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The folder's LICENSING.md and LICENSE give MPL-2.0 file by file, with AMB-1's and fm1-base's notices kept on the files
+  that came from them. The Barlow Semi Condensed and Terminus fonts are SIL OFL 1.1 and the JieLi SDK files are read from
+  the builder's checkout.
+based_on: m-vave-fm-1/amb-1
+distribution: download
+install_notes: >-
+  Download the .fwsc from the release and write it with M-Flasher or the FM-1 Flasher in the same repository, which backs up the whole flash first and keeps the bootloader untouched. The release says it is built on fm1-base 3ae2a65, which supports both flash chips, and has not been played on real hardware.
+brick_risk: false
+tags: [generative, synth-engine, looper, ambient]
+image:
+  url: https://raw.githubusercontent.com/ashtonwallen/fm1-firmware/main/decay-loops/docs/img/screen-tape.png
+  alt: "DECAY LOOPS screen: preset Night Wire, B Phrygian, pass 8, two tape reels above a scrolling tape strip with gaps and four layer rows, and knobs DECAY, LENGTH, LAYERS and WOW"
+  credit: ashtonwallen
+  source_url: https://github.com/ashtonwallen/fm1-firmware
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-24
+  url: https://github.com/ashtonwallen/fm1-firmware/releases/tag/decay-loops-1.0
+  notes: First release; built on fm1-base 3ae2a65.

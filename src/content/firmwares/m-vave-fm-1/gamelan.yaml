@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: GAMELAN
+summary: >-
+  Self-playing gamelan firmware for the FM-1 that generates Javanese and Balinese-inspired pieces in pelog and slendro and draws each gong cycle as a mandala.
+description: >-
+  Pieces follow the gong cycles lancaran, ketawang, ladrang and gilak, marked by gong, kempul, kenong and ketuk, with the balungan on saron and slenthem and peking, bonang and interlocking kotekan around it. A kendang leads tempo changes between irama levels, and some presets add a suling. Slendro and pelog are tuned in cents, paired instruments beat against each other as ombak, and each piece ends by slowing to the gong. The screen draws the cycle as a mandala with the gong at the top, strokes that bloom, the balungan in cipher numbers and a lotus of the five tones at the centre. Fourteen presets each keep their own settings, EDIT ends the piece at the next kenong or gong and REC stays in the current piece. The README calls it an homage to gamelan traditions and not a reproduction of any repertoire.
+status: active
+authors:
+- name: ashtonwallen
+  url: https://github.com/ashtonwallen
+source: https://github.com/ashtonwallen/fm1-firmware/tree/main/gamelan
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The folder's LICENSING.md and LICENSE give MPL-2.0 file by file, with AMB-1's and fm1-base's notices kept on the files
+  that came from them. The Barlow Semi Condensed and Terminus fonts are SIL OFL 1.1 and the JieLi SDK files are read from
+  the builder's checkout.
+based_on: m-vave-fm-1/amb-1
+distribution: download
+install_notes: >-
+  Download the .fwsc from the release and write it with M-Flasher or the FM-1 Flasher in the same repository, which backs up the whole flash first and keeps the bootloader untouched. The release says it is built on fm1-base 3ae2a65, which supports both flash chips, and has not been played on real hardware.
+brick_risk: false
+tags: [generative, synth-engine, scales]
+image:
+  url: https://raw.githubusercontent.com/ashtonwallen/fm1-firmware/main/gamelan/docs/img/screen-gamelan.png
+  alt: "GAMELAN screen: preset Pelog Dawn, 66 BPM, a mandala ring of cipher numbers around a central lotus, the label Ladrang gongan 2 and IRAMA I, and knobs TEMPO, DENSITY, TUNING and OMBAK"
+  credit: ashtonwallen
+  source_url: https://github.com/ashtonwallen/fm1-firmware
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-24
+  url: https://github.com/ashtonwallen/fm1-firmware/releases/tag/gamelan-1.0
+  notes: First release; built on fm1-base 3ae2a65.

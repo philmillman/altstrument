@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: MONODRONE
+summary: >-
+  Drone instrument with four layers of held chords from twelve engines, dirt, filter, tape delay and reverb, sixteen scenes with animated 1-bit places and no sequencer.
+description: >-
+  Each of four layers holds chords from one of twelve engines and runs into dirt, filter, tape delay and reverb. There is no sequencer. The player starts layers, bends them live with eight macros and twelve punch effects on the keys, and moves between sixteen scenes, each with its own animated 1-bit place drawn on the screen. It is an app on fm1-base, in a submodule with felucca-bsp. The repository has a browser emulator, an interactive manual and printable PDF manuals, a release workflow that builds, tests, attests and publishes packages, and a host simulator with scripted tests. Each release carries a .fwsc, a .rfm1 and a plain application image.
+status: active
+authors:
+- name: monoeater
+  url: https://github.com/monoeater
+source: https://github.com/monoeater/FM-1_Monodrone
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The LICENSE file is MPL-2.0. The Barlow fonts are SIL OFL 1.1, and the base libraries keep their own notices.
+homepage: https://monoeater.github.io/FM-1_Monodrone/
+based_on: m-vave-fm-1/fm1-base
+distribution: browser-installer
+install_notes: >-
+  Use the web installer page in Chrome or Edge with the FM-1 on USB, or run base/tools/fm1_install.py with the release .fwsc. To return to stock, hold OCT- while switching on and install M-VAVE's firmware.
+brick_risk: false
+tags: [drone, ambient, performance, synth-engine, fx, emulator]
+image:
+  url: https://raw.githubusercontent.com/monoeater/FM-1_Monodrone/main/docs/img/screen.png
+  alt: "MONODRONE on the FM-1 screen: a dithered 1-bit picture of cooling towers above four layers named HOWL, HUM, GEIGER and SCRAPE with level bars, and knobs FEEDBK, DAMP, EXCITE and LEVEL"
+  credit: monoeater
+  source_url: https://github.com/monoeater/FM-1_Monodrone
+  first_party: true
+versions:
+- version: v1.0
+  date: 2026-11-25
+  url: https://github.com/monoeater/FM-1_Monodrone/releases/tag/v1.0
+  notes: First release.

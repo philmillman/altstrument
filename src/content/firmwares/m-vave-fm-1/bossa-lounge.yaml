@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: BOSSA LOUNGE
+summary: >-
+  Self-playing bossa nova firmware for the FM-1 that generates tunes for a small combo of nylon guitar, brushes, upright bass and flute or vibraphone, with a hi-fi and a neon martini glass on screen.
+description: >-
+  Each generated tune has its own title, key and form, AABA or ABAC, and runs head, solo chorus, head out and a soft tag ending before a short pause and the next tune, with some last choruses lifting a half step. The nylon guitar comps in bossa figures with jazz voicings, brushes play a rim click on the clave and the upright bass moves between root and fifth, while a flute or vibraphone carries the melody. The screen shows a hi-fi in a dim bar with a reel-to-reel whose packs grow and shrink through the tune and rewind between tunes, two VU meters, the current chord and key and a neon martini glass that flickers on accents. Fourteen styles from fast samba to slow ballads each keep their own settings, EDIT calls the next tune and REC keeps the current one playing.
+status: active
+authors:
+- name: ashtonwallen
+  url: https://github.com/ashtonwallen
+source: https://github.com/ashtonwallen/fm1-firmware/tree/main/bossa-lounge
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The folder's LICENSING.md and LICENSE give MPL-2.0 file by file, with AMB-1's and fm1-base's notices kept on the files
+  that came from them. The Barlow Semi Condensed and Terminus fonts are SIL OFL 1.1 and the JieLi SDK files are read from
+  the builder's checkout.
+based_on: m-vave-fm-1/amb-1
+distribution: download
+install_notes: >-
+  Download the .fwsc from the release and write it with M-Flasher or the FM-1 Flasher in the same repository, which backs up the whole flash first and keeps the bootloader untouched. The release says it is built on fm1-base 3ae2a65, which supports both flash chips, and has not been played on real hardware.
+brick_risk: false
+tags: [generative, synth-engine, chords]
+image:
+  url: https://raw.githubusercontent.com/ashtonwallen/fm1-firmware/main/bossa-lounge/docs/img/screen-lounge.png
+  alt: "BOSSA LOUNGE screen: style Cigarette Boat, 141 BPM, a neon martini glass, the tune Bossa de Dezembro, a reel-to-reel deck with VU meters, chord Ebm7, and knobs TEMPO, FEEL, MOOD and MELODY"
+  credit: ashtonwallen
+  source_url: https://github.com/ashtonwallen/fm1-firmware
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-25
+  url: https://github.com/ashtonwallen/fm1-firmware/releases/tag/bossa-lounge-1.0
+  notes: First release; built on fm1-base 3ae2a65.

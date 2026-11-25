@@ -3,7 +3,7 @@ name: Guru-600
 summary: >-
   Felucca-based Prophet-600 emulator for the FM-1: a six-voice P600 engine with 255 sounds, MORPH and MUTATE, a chord memory, full backup, a web editor with a Prophet-600 style panel in seven languages and a Mac app.
 description: >-
-  Rights warning: sounds 1 to 100 are the Prophet-600's factory programs under their real names, and the licence table in the repository does not state where they come from or on what terms. The P600 engine has two oscillators per voice with sync, a 24 dB filter with its own envelope, Poly-Mod, an LFO, unison and six voices. Sounds 101 to 200 are the free 2022 patch collection from the GliGli p600fw community, and 55 more were made for the project. MORPH turns one sound gradually into another and MUTATE makes a variation in one gesture. There are 55 extra places for P600 sounds, Prophet-600 .syx files can be sent from a computer and read back, and the MIDI map follows the GliGli firmware. A full FM-1 backup can be made from the editor so another firmware can be tried and the unit restored. The editor runs in the browser with a panel inspired by the Prophet-600, a keyboard and a guide in seven languages, and a Mac application for Apple silicon is attached to the release. Everything Felucca does stays, including four tracks, other engines, the 64-step sequencer, effects and songs. The repository also holds a modified FM-1 emulator and a SID synth study.
+  Rights warning: sounds 1 to 100 are the Prophet-600's factory programs under their real names, and the licence table in the repository does not state where they come from or on what terms. The P600 engine has two oscillators per voice with sync, a 24 dB filter with its own envelope, Poly-Mod, two LFOs, unison and, since 1.4.0, six or eight voices, with an EXTRAS 2 page that adds a high-pass filter, a sub-oscillator and white noise; the factory sounds stay at six voices, and the install switches on the FM-1's second core to make room for eight. Sounds 101 to 200 are the free 2022 patch collection from the GliGli p600fw community, and 55 more were made for the project. MORPH turns one sound gradually into another and MUTATE makes a variation in one gesture. There are 55 extra places for P600 sounds, Prophet-600 .syx files can be sent from a computer and read back, and the MIDI map follows the GliGli firmware. A full FM-1 backup can be made from the editor so another firmware can be tried and the unit restored. The editor runs in the browser with a panel inspired by the Prophet-600, a keyboard and a guide in seven languages, and a Mac application for Apple silicon is attached to the release. Everything Felucca does stays, including four tracks, other engines, the 64-step sequencer, effects and songs. The repository also holds a modified FM-1 emulator and a SID synth study.
 status: active
 authors:
 - name: marcgoudy
@@ -29,6 +29,10 @@ image:
   source_url: https://github.com/MarcGoudy/guru-600
   first_party: true
 versions:
+- version: '1.4.0'
+  date: 2026-11-24
+  url: https://github.com/MarcGoudy/guru-600/releases/tag/v1.4.0
+  notes: Adds an EXTRAS 2 page with a high-pass filter, a sub-oscillator and white noise, a second LFO that moves pitch, pulse width, filter or volume, Poly-Mod control of oscillator A's pulse width, a choice of six or eight voices with the FM-1's second core switched on at install, and a menu switch that turns off every sound's effects at once. The editor shows the new settings and gets three panel colours and a menu to switch the FM-1 off and on. Backups from earlier versions read back as they were.
 - version: 1.3.1
   date: 2026-11-19
   url: https://github.com/MarcGoudy/guru-600/releases/tag/v1.3.1

@@ -1,14 +1,14 @@
 device: m-vave-fm-1
 name: modd
 summary: >-
-  Early-stage framework for building one FM-1 firmware from selectable modules taken from Felucca, Melodee and
-  SLOOP; only a minimal preset that shows a boot screen builds so far.
+  Early-stage framework for building one FM-1 firmware from selectable modules taken from Felucca, Melodee, SLOOP and
+  other community firmwares, with two interface shells; the README says it builds and boots in the emulator.
 description: >-
   Configuration is done with Kconfig menus, and the chosen options are turned into C definitions at build time. The
-  source tree embeds Felucca, its separate engines repository, Melodee, SLOOP and fm_lab as pinned subtrees, and
-  includes their code in one build. Only the minimal preset is buildable; the Melodee, Felucca and SLOOP presets and
-  per-engine selection are planned, and the author says audio, engine mixing and musical workflows are still being
-  integrated and that hardware testing is pending. Recent commits add a Wi-Fi station driver written from scratch for
+  source tree pins nine community firmwares as subtrees (Felucca, Melodee, SLOOP, JIANT, FMLab, fm1-dock, Skiff,
+  Optimist and fm1-base) and includes their code in one build. Two shells ship, modd and a Felucca layout, and the default build uses Melodee's audio
+  core with FMLab's FM6 and four Felucca engines. The README says audio integration and musical workflows are still in progress, and the earlier
+  notes said hardware testing was pending. Recent commits add a Wi-Fi station driver written from scratch for
   the radio in the FM-1's chip, a simulated Bluetooth connection for emulator tests, a modd interface theme on Melodee's
   renderer (settings menu, weather page, USB-drive file browser, debug log) and a USB host driver that can write to a drive. Builds run the JieLi compiler
   on x86-64 Linux, with Docker on macOS, and are checked in a browser emulator. The packaged image carries three small
@@ -26,12 +26,16 @@ license_notes: >-
 distribution: source-only
 install_notes: >-
   Needs mise and uv. Load a preset with `task config:generate:defconfig -- minimal`, then run `task build`, which downloads the
-  SDK and compiler and writes build/modd.fwsc. A rolling pre-release
+  SDK and compiler and writes build/modd/modd.fwsc. A rolling pre-release
   with an older build exists on the releases page. The firmware is an early build that shows only a boot screen, so
   keep a backup and have a recovery route ready.
 brick_risk: false
 tags: [fork, platform, synth-engine, sdk]
 versions:
+- version: main @ cf7c7e9
+  date: 2026-11-25
+  url: https://github.com/DimmKirr/modd/commit/cf7c7e9fb3d9402f55fc3da6035bc7c16827e0e5
+  notes: No tagged releases; this is the latest commit, which gives the Felucca shell the upstream button map. Since the previous row the UI themes are renamed shells (CONFIG_UI_THEME_* becomes CONFIG_UI_SHELL_*, so defconfigs must switch) with a skin choice, the Felucca build gains sample, slice and ADPCM engines, an effects host and a core module that includes upstream Felucca files instead of forked copies, and every shell's page controls move into declarative maps.
 - version: main @ 72396fc
   date: 2026-11-22
   url: https://github.com/DimmKirr/modd/commit/72396fc65965bdb409b949c465411fcdca12deb6

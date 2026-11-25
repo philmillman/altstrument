@@ -1,0 +1,32 @@
+device: meng-qi-wingie2
+name: Wingie2 firmware (official)
+summary: Meng Qi's open firmware for the Wingie2 resonator, with a Faust DSP core, MIDI and MPE, alternate tunings and a USB configuration page.
+description: >-
+  The repository holds the Arduino sketch and Faust DSP source that run on the Wingie2's ESP32, along with English and
+  Chinese manuals, notes on alternate tunings and MPE, and a browser page that configures the instrument over USB Web
+  Serial. Releases include a single-file web flasher that talks to the ESP32 ROM bootloader, so it can also install onto a
+  blank or damaged unit. The flasher writes four fixed regions and leaves the settings area untouched. The repository
+  describes the Wingie2 as a development platform and explains how to set up the Arduino toolchain to change the firmware.
+status: active
+authors:
+  - name: Meng Qi
+    url: https://github.com/mengqimusic
+source: https://github.com/mengqimusic/Wingie2
+source_status: open
+license: GPL-3.0-only
+license_notes: The repository LICENSE is GPL-3.0, which GitHub detects.
+homepage: http://mengqimusic.com
+distribution: download
+install_notes: >-
+  Open the single-file Wingie2-v4.30.standalone.html from the release in desktop Chrome or Edge, served over HTTPS, and
+  follow its steps. The release notes say a standard install writes four fixed regions without a full erase and keeps the
+  stored settings, and that the page can also recover a blank unit or one with a broken app.
+brick_risk: false
+tags: [official, resonator, instrument, midi, mpe, tuning, open-source]
+versions:
+  - version: v4.30
+    date: 2026-10-03
+    url: https://github.com/mengqimusic/Wingie2/releases/tag/v4.30
+  - version: v4.20
+    date: 2026-08-21
+    url: https://github.com/mengqimusic/Wingie2/releases/tag/v4.20

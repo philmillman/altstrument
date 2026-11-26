@@ -1,0 +1,192 @@
+name: Release sync
+
+# Adds GitHub releases (or tags) that are missing from versions[] to the firmware
+# entries a change touches (scripts/releases/sync.ts), so updating an entry for a
+# new release does not mean typing out its version, date and URL.
+#
+#   - PRs from branches in this repo: add the rows and commit them to the PR branch.
+#   - PRs from forks: their code never runs with a write token. A separate
+#     pull_request_target job, which never checks out or runs the PR's code, only
+#     reads its YAML files as data and comments that releases are added after
+#     merge, listing any entry the script will leave alone.
+#   - Pushes to main (merged fork PRs): add the rows for the files the push changed,
+#     with main's own code. The push to main is refused by the ruleset, so it opens
+#     a PR instead.
+#
+# The token: a one-hour token from the metrics GitHub App when vars.METRICS_APP_ID
+# and secrets.METRICS_APP_PRIVATE_KEY are set, else GITHUB_TOKEN, handed only to
+# the steps that call GitHub. Commits pushed and PRs opened with GITHUB_TOKEN do
+# not start other workflows, so CI does not run on them; with the app token it
+# does. Metrics top-up may push to the same branch at the same time, so a push to
+# a PR branch rebases and retries.
+
+on:
+  pull_request:
+    paths: ['src/content/firmwares/**']
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+    paths: ['src/content/firmwares/**']
+  push:
+    branches: [main]
+    paths: ['src/content/firmwares/**']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: releases-sync-${{ github.event.pull_request.number || github.ref }}-${{ github.event_name == 'pull_request_target' && 'notice' || 'sync' }}
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    # Same-repo PRs and pushes to main.
+    if: >-
+      (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository) ||
+      github.event_name == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      BASE_REF: ${{ github.event.pull_request.base.ref }}
+      # For a push: the commit main was at before it, so only the files the push changed are checked.
+      BEFORE: ${{ github.event.before }}
+    steps:
+      - id: app-token
+        if: vars.METRICS_APP_ID != ''
+        uses: actions/create-github-app-token@fee1f7d63c2ff003460e3d139729b119787bc349 # v2.2.2
+        with:
+          app-id: ${{ vars.METRICS_APP_ID }}
+          private-key: ${{ secrets.METRICS_APP_PRIVATE_KEY }}
+          permission-contents: write
+          permission-pull-requests: write
+
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          # The PR branch itself (not the merge commit), so the rows can be committed to it.
+          ref: ${{ github.event.pull_request.head.ref || github.ref }}
+          persist-credentials: false
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4.3.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+          check-latest: true
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+      - name: Add missing releases
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token || github.token }}
+        run: |
+          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
+            if ! git cat-file -e "$BEFORE^{commit}" 2>/dev/null; then
+              echo "No previous commit to compare with ($BEFORE); nothing to do."
+              exit 0
+            fi
+            base="$BEFORE"
+          else
+            git fetch --no-tags origin "refs/heads/$BASE_REF:refs/remotes/origin/$BASE_REF"
+            base="origin/$BASE_REF"
+          fi
+          pnpm -s releases:sync --base "$base" --write > "$RUNNER_TEMP/releases.md"
+          cat "$RUNNER_TEMP/releases.md" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit the new rows
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token || github.token }}
+          APP_SLUG: ${{ steps.app-token.outputs.app-slug }}
+        run: |
+          if git diff --quiet -- src/content/firmwares; then
+            echo "No releases to add."
+            exit 0
+          fi
+          auth() {
+            git -c "http.https://github.com/.extraheader=AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 | tr -d '\n')" "$@"
+          }
+          if [ -n "$APP_SLUG" ]; then
+            bot="${APP_SLUG}[bot]"
+            git config user.name "$bot"
+            git config user.email "$(gh api "users/$bot" --jq .id)+$bot@users.noreply.github.com"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          fi
+          git add src/content/firmwares
+          git commit -m "Add new releases to updated entries" -m "From GitHub releases, by scripts/releases/sync.ts."
+
+          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
+            if auth push origin "HEAD:$GITHUB_REF_NAME"; then exit 0; fi
+            # A protected main refuses the push: open a PR instead.
+            branch="releases-sync-$(date -u +%Y%m%d-%H%M%S)"
+            auth push origin "HEAD:refs/heads/$branch"
+            gh pr create --base "$GITHUB_REF_NAME" --head "$branch" \
+              --title "Add new releases to updated entries" \
+              --body-file "$RUNNER_TEMP/releases.md"
+            exit 0
+          fi
+
+          for attempt in 1 2 3; do
+            if auth push origin "HEAD:$GITHUB_HEAD_REF"; then exit 0; fi
+            echo "Push refused; rebasing on the branch and retrying ($attempt/3)"
+            auth pull --rebase --no-tags origin "$GITHUB_HEAD_REF"
+          done
+          echo "::error::Could not push the new release rows to the PR branch; pull and rerun this workflow"
+          exit 1
+
+  fork-notice:
+    # PRs from forks. Runs with the base branch's code and never executes the PR's:
+    # its files are fetched as git objects and read with `git show`.
+    if: >-
+      github.event_name == 'pull_request_target' &&
+      github.event.pull_request.head.repo.full_name != github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pull-requests: write
+    env:
+      PR: ${{ github.event.pull_request.number }}
+      BASE_SHA: ${{ github.event.pull_request.base.sha }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          persist-credentials: false
+          # base...head needs the merge base.
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4.3.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+          check-latest: true
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+      - name: Check releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git fetch --no-tags origin "+refs/pull/$PR/head:refs/remotes/pr/head"
+          pnpm exec tsx scripts/releases/sync.ts --base "$BASE_SHA" --head refs/remotes/pr/head --notice > "$RUNNER_TEMP/releases.md"
+
+      - name: Comment
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          marker='<!-- releases-sync -->'
+          existing=$(gh api "repos/$GITHUB_REPOSITORY/issues/$PR/comments" --paginate \
+            --jq ".[] | select(.user.login == \"github-actions[bot]\" and (.body | startswith(\"$marker\"))) | .id" | head -n1)
+          if [ ! -s "$RUNNER_TEMP/releases.md" ]; then
+            if [ -n "$existing" ]; then gh api -X DELETE "repos/$GITHUB_REPOSITORY/issues/comments/$existing"; fi
+            exit 0
+          fi
+          { echo "$marker"; cat "$RUNNER_TEMP/releases.md"; } > "$RUNNER_TEMP/body.md"
+          if [ -n "$existing" ]; then
+            gh api -X PATCH "repos/$GITHUB_REPOSITORY/issues/comments/$existing" -F "body=@$RUNNER_TEMP/body.md"
+          else
+            gh pr comment "$PR" --repo "$GITHUB_REPOSITORY" --body-file "$RUNNER_TEMP/body.md"
+          fi

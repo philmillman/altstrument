@@ -74,10 +74,12 @@ scripts/
   robots-check.ts             `pnpm robots:check <url>`, and the WebFetch hook in .claude/settings.json
   build-icons.ts              rasterizes the favicon (`pnpm icons`)
   metrics/                    GitHub metrics fetch, publish, report and based_on proposals
+  releases/sync.ts            `pnpm releases:sync`: adds new GitHub releases to the entries a branch changes
 .github/
   ISSUE_TEMPLATE/             issue forms: bug report, new entry, entry update, removal request
   workflows/ci.yml            validate, type check and build on every push and PR
   workflows/metrics-*.yml     metrics top-up for new entries, and the weekly metrics refresh PR
+  workflows/releases-sync.yml adds new releases to the entries a PR or merge changes
 .claude/skills/discover/      /discover skill: gather script, config and prompt
 ```
 

@@ -29,8 +29,10 @@
  *
  * New rows are inserted as text at the top of versions[], in the file's own
  * indentation, so the rest of the file is untouched. Rows carry version, date and
- * url only, with the version spelled like the entry's (`1.2` rather than `v1.2`
- * when the entry drops the v); a `notes:` line in your own words is still welcome.
+ * url only, with the version spelled like the entry's newest tagged row: `1.2` for
+ * tag `v1.2` when the entry drops the v, `0.9.78` for `loaf-v0.9.78` when it drops
+ * the whole prefix, `build 852` for `build-852` when it writes a space. A `notes:`
+ * line in your own words is still welcome.
  *
  * stdout gets a markdown report (empty when there is nothing to say). With
  * --notice it is the comment for a fork PR instead: its releases are added after
@@ -50,6 +52,8 @@ import {
   isoDay,
   listed,
   SWEEP_SKIP_REPOS,
+  tagInUrl,
+  versionSpelling,
   type VersionRow,
 } from '../lib/releases.ts';
 
@@ -239,18 +243,16 @@ function plan(entry: Entry, refs: RepoRefs): Outcome {
   // Take only tags whose words (letters other than a lone v) match a listed version's, as
   // written or as tagged in its URL, or all appear in the entry's own name.
   const words = (tag: string) => [...new Set(tag.toLowerCase().match(/[a-z]+/g) ?? [])].filter((w) => w !== 'v').sort();
-  const tagOf = (url?: string) => /\/(?:tag|tree)\/([^/?#]+)\/?$/.exec(url ?? '')?.[1];
   const known = new Set(
-    entry.versions.flatMap((v) => [v.version, tagOf(v.url)].filter((x): x is string => !!x).map((x) => words(safeDecode(x)).join(' '))),
+    entry.versions.flatMap((v) => [v.version, tagInUrl(v.url)].filter((x): x is string => !!x).map((x) => words(x).join(' '))),
   );
   const ownName = `${entry.repo.split('/')[1]} ${entry.name}`.toLowerCase().replace(/[^a-z0-9]/g, '');
   const ours = (tag: string) => {
     const w = words(tag);
     return known.has(w.join(' ')) || (w.length > 0 && w.every((x) => ownName.includes(x)));
   };
-  // Follow the entry's spelling when it drops the tag's leading v (`1.1.1` for tag v1.1.1).
-  const dropV = !/^v\d/i.test(top.version) && tagOf(top.url) !== undefined && safeDecode(tagOf(top.url)!).toLowerCase() === `v${top.version.toLowerCase()}`;
-  const spell = (tag: string) => (dropV ? tag.replace(/^v(?=\d)/i, '') : tag);
+  // Follow the entry's spelling: `1.1.1` for tag v1.1.1, `0.9.77` for loaf-v0.9.77, `build 851` for build-851.
+  const spell = versionSpelling(entry.versions);
   // Pre-releases count when the entry already lists one.
   const takesPre = candidates.some((r) => r.prerelease && listed(entry.versions, r.name));
   const rows: NewRow[] = [];
@@ -275,14 +277,6 @@ function plan(entry: Entry, refs: RepoRefs): Outcome {
   // Keep versions[] newest first even when a release has an older date than the one above it.
   rows.sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''));
   return { ...out, rows };
-}
-
-function safeDecode(s: string): string {
-  try {
-    return decodeURIComponent(s);
-  } catch {
-    return s;
-  }
 }
 
 const scalar = (v: string) => stringify(v).trimEnd();

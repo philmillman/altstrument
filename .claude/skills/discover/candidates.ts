@@ -55,6 +55,17 @@ import {
 import { politeFetch, SkippedError } from '../../../src/lib/polite-fetch.ts';
 import { hostOf, makeUrlMatcher, repoKey } from '../../../src/lib/url-match.ts';
 import { loadExclusions } from '../../../src/lib/exclusions.ts';
+import {
+  COMMIT_VERSION,
+  escapeRe,
+  GITHUB_SOURCE,
+  isoDay,
+  listed,
+  mentions,
+  SWEEP_SKIP_REPOS,
+  versionPrefix,
+  type VersionRow,
+} from '../../../scripts/lib/releases.ts';
 
 const ROOT = new URL('../../../', import.meta.url).pathname;
 const DEFAULT_CONFIG = new URL('./config.yaml', import.meta.url).pathname;
@@ -79,8 +90,6 @@ const DESCRIPTION_MAX = 120;
 const SWEEP_CONCURRENCY = 6;
 /** Newer releases listed per entry; the rest are counted. */
 const SWEEP_HITS_MAX = 5;
-/** Repos whose releases cover many unrelated entries (PortMaster-New ships every port at once). */
-const SWEEP_SKIP_REPOS = new Set(['portsmaster/portmaster-new']);
 
 // ---- types -----------------------------------------------------------------
 
@@ -235,12 +244,10 @@ async function pool<T, R>(items: T[], limit: number, fn: (item: T) => Promise<R>
   return results;
 }
 
-const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 /** Case-insensitive match of `s` not embedded in a longer word. */
 const wordRe = (s: string) => new RegExp(`(?<![\\p{L}\\p{N}])${escapeRe(s)}(?![\\p{L}\\p{N}])`, 'iu');
 
 const truncate = (s: string, n: number) => (s.length > n ? s.slice(0, n - 1).trimEnd() + '…' : s);
-const isoDay = (d: Date | string) => (typeof d === 'string' ? d : d.toISOString()).slice(0, 10);
 
 // ---- repo keys -------------------------------------------------------------------
 
@@ -779,40 +786,9 @@ interface SweepTarget {
   /** Branch and subfolder of a `/tree/<branch>/<path>` source URL. */
   branch?: string;
   path?: string;
-  versions: { version: string; date?: string; url?: string }[];
+  versions: VersionRow[];
   /** Lowercased file text, to tell whether a tag is named outside versions[]. */
   text: string;
-}
-
-/** `main @ 1a2b3c4` style versions, which track the latest commit of a branch. */
-const COMMIT_VERSION = /^(\S+) @ ([0-9a-f]{7,40})$/i;
-const GITHUB_SOURCE = /^https:\/\/github\.com\/([\w.-]+)\/([\w.-]+?)(?:\.git)?(?:\/tree\/([^/\s]+)(?:\/(\S+?))?)?\/?$/;
-
-/** `smk-pad-lights-953` → "smk", `kit v0.5.0` → "kit"; plain versions such as `v1.2` have none. */
-function versionPrefix(v: string): string | undefined {
-  if (/^v?\d/i.test(v)) return undefined;
-  return /^([a-z][a-z0-9]*)[-_ ]/i.exec(v)?.[1].toLowerCase();
-}
-
-/** True when the tag, with or without its leading v, already appears in the file as a whole version. */
-function mentions(text: string, tag: string): boolean {
-  const forms = new Set([tag.toLowerCase(), tag.toLowerCase().replace(/^v(?=\d)/, '')]);
-  return [...forms].some((f) => new RegExp(`(?<![\\w.-])${escapeRe(f)}(?![\\w-]|\\.\\d)`).test(text));
-}
-
-/** True when a row of versions[] is this tag: by its version string, or by a URL that ends in the tag. */
-function listed(versions: SweepTarget['versions'], tag: string): boolean {
-  const bare = (v: string) => v.toLowerCase().replace(/^v(?=\d)/, '');
-  const inUrl = (url: string) => {
-    let path = url;
-    try {
-      path = decodeURIComponent(url);
-    } catch {
-      // Keep the raw URL.
-    }
-    return path.endsWith(`/tag/${tag}`) || path.endsWith(`/tree/${tag}`);
-  };
-  return versions.some((v) => bare(v.version) === bare(tag) || (v.url !== undefined && inUrl(v.url)));
 }
 
 /** Every firmware entry whose `source` is a GitHub repo, except archived ones and SWEEP_SKIP_REPOS. */

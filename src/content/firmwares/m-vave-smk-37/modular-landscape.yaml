@@ -1,0 +1,34 @@
+device: m-vave-smk-37
+name: Modular Landscape
+summary: >-
+  SMK-37 Elite firmware built around one bowed folk guitar sound recorded for it, with eight film-music effects on the pads, a screen that draws the stereo image of what is played and pad sketches. Rights warning on the recordings.
+description: >-
+  Rights warning: the guitar recordings are the author's own and are not under the GPL. They may be used through the firmware and in any music made with it, commercial music included, but may not be taken out as audio files, a sample pack or another instrument. The firmware has a single sound with no banks or menus. Pads 9 to 16 switch the effects sustain, breath, contra, drone, width, distance, mute and echo on and off, and the knob above each pad sets how much of its effect is applied. The faders set attack, release, reverb space and the length of the bow stroke, and the mod wheel removes the bow noise. Pads 1 to 8 record and loop short sketches. The screen shows the stereo image of the playing as a line drawing. The repository also builds an FM-1 version, which has its own entry and version line. The README is in English and French and says the SMK-37 build is built from Modular Compagnon's tree with the guitar engine switched on.
+status: active
+authors:
+- name: Alexis Arakis (Bungle Society)
+  url: https://github.com/bunglesociety
+source: https://github.com/bunglesociety/modular-landscape
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The code is GPL-3.0-only per the README and LICENSE file, with Felucca's third-party parts keeping their own licences (smk37/LICENSING.md and smk37/CREDITS.md). The guitar recordings (smk37/tools/archet/archet.bin and the same inside the packages) are not GPL: SOUNDS.md says they are copyright Alexis Arakis, all rights reserved, with permission to use them through the firmware and in any music, commercial included, and to share the firmware with them inside, but not to extract them.
+homepage: https://bunglesociety.github.io/modular-landscape/smk37/
+based_on: m-vave-smk-37/modular-compagnon
+distribution: browser-installer
+requires_stock: Any SMK-37 Elite firmware; the installer writes the package over it
+install_notes: >-
+  Use the project's SMK-37 install page in Chrome or Edge over USB, or the .fwsc from the release, whose SHA-256 the README lists. Installing replaces the M-VAVE firmware and its presets are lost. The same page puts the original firmware back, and the package keeps the unit's identity (SMK-37 Elite_894) so the stock updater still applies. Only the Elite model is supported.
+brick_risk: false
+tags: [guitar, film-music, sketches, fx, reverb, fork]
+image:
+  url: https://raw.githubusercontent.com/bunglesociety/modular-landscape/main/docs/img/screen-smk37.png
+  alt: "SMK-37 screen on a dark background showing the stereo image of the sound as a thin orange and white looping line, with a faint fader line along the bottom"
+  credit: Bungle Society
+  source_url: https://github.com/bunglesociety/modular-landscape
+  first_party: true
+versions:
+- version: '1.0'
+  date: 2026-11-26
+  url: https://github.com/bunglesociety/modular-landscape/releases/tag/v1.0
+  notes: First release; ships SMK-37 Elite 1.0 and the FM-1 0.4 beta.

@@ -1,0 +1,28 @@
+device: m-vave-fm-1
+name: Echo Ludwig
+summary: >-
+  Audio-first echo game for blind players on the FM-1: the unit plays a melody, you play it back on the keys and it grows each round, with spoken menus, 25 public-domain tunes remixed in five styles and light waves. Experimental.
+description: >-
+  Echo Ludwig replaces the FM-1 firmware with a memory game. A voice says listen, plays a short melody and signals your turn, and you repeat it on the keys. A wrong note gets a spoken higher or lower, the melody grows by one or two notes each round, and finishing a record earns stars and unlocks the next one. There are 25 public-domain pieces and traditional tunes in five crates (chiptune, house, trance, electro and hard techno), played as remixes with a built-in groove synth. Menus are read aloud by a small speech synth called Ludwig Voice, the screen stays black with one message for sighted helpers, and every press sends a light wave across the LEDs with limited screen flashes. By default every button does the same thing, short for select and held for back, so nothing has to be found by sight, and a Classic mode gives each button its own job. Progress is kept in the flash area of project slot 15. A browser version plays the game without hardware, and the README calls the FM-1 builds experimental first builds for device testing.
+status: active
+authors:
+- name: orion-musica
+  url: https://github.com/orion-musica
+source: https://github.com/orion-musica/Echo-Ludwig-FM-1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  GitHub shows no standard licence for the repository, but the README and LICENSE.md state GNU GPL version 3 only with M-VAVE's additional permission to link the FM1 binary SDK, inherited from FM1 Open. The repository holds M-VAVE's sdk/lib/libfm1_engine.a under M-VAVE's separate terms for FM-1 devices, and sdk/firmware/FM-1_015.fwsc, which is the V15 image M-VAVE publishes under Apache-2.0 (git blob ce49cc15, identical to the one in m-vave/fm1_open). Other parts are listed in THIRD_PARTY.md.
+homepage: https://orion-musica.github.io/Echo-Ludwig-FM-1/
+based_on: m-vave-fm-1/fm1-open
+distribution: browser-installer
+requires_stock: stock V15 or any FM1 Open build
+install_notes: >-
+  Use the web installer on the project site in desktop Chrome or Edge over USB, after backing up your FM-1 projects, since the game stores its progress in the place of project slot 15. No release has been published; the README says every push to main builds the firmware and installer in GitHub Actions.
+brick_risk: false
+tags: [game, accessibility, ui, web, voice]
+versions:
+- version: main @ c2e080c
+  date: 2026-11-26
+  url: https://github.com/orion-musica/Echo-Ludwig-FM-1/commit/c2e080c81d370169d7675dfd5cd09a574d4dc00d
+  notes: No tagged releases; this is the latest commit. It makes every button do the same thing by default.

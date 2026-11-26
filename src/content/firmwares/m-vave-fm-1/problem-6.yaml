@@ -1,0 +1,56 @@
+device: m-vave-fm-1
+name: PROBLEM 6
+summary: >-
+  Seven-voice analogue-style polysynth with poly mod, per-voice vintage drift, voice spread, reverbs including a long ambient one, chorus, a stereo delay, a low split, aftertouch, MIDI CC for nearly every knob and a two-track sequencer.
+description: >-
+  Each of the seven voices has two oscillators with a variable shape and hard sync, a triangle sub-octave, a noise source, a resonant high-pass into a four-pole ladder low-pass, and two ADSR envelopes. POLY MOD routes the filter envelope and oscillator 2 to oscillator and filter targets, VINTAGE gives every voice its own fixed detune, cutoff and envelope offsets, and VOICE SPREAD widens the chord across the stereo field. There are two tempo-syncable LFOs, an arpeggiator, unison and glide, and polyphonic aftertouch from the FM-1's keys. The effects are distortion, chorus, a stereo delay with modulation and reverbs (room, hall, plate, spring and a long ambient type with shimmer and swell). The low split and key scales come from OFFWORLD. The sequencer has two tracks of 64 steps with their own sounds, chords of up to seven notes, step and live recording, and a metronome. Nearly every knob answers a MIDI CC, using Sequential Prophet-6 numbers where that synth has the knob. The project has a browser emulator and a German manual. It is built on fm1-base and felucca-bsp. It was released as PROPHET 67 until 1.4.2 and renamed in 1.5; the README says it is unofficial and not affiliated with Sequential or Focusrite.
+status: active
+authors:
+- name: swtdr34mz-afk
+  url: https://github.com/swtdr34mz-afk
+source: https://github.com/swtdr34mz-afk/PROBLEM-6
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The LICENSE file is the MPL-2.0 text and the README states MPL-2.0. CREDITS.md lists fm1-base and felucca-bsp as MPL-2.0, the pixel fonts as SIL OFL 1.1, and three Apache-2.0 JieLi SDK files that go into each package.
+homepage: https://swtdr34mz-afk.github.io/PROBLEM-6/emu/
+distribution: download
+install_notes: >-
+  Download the .fwsc from a release and install it like any FM-1 firmware, for example with The Firmware Hub. The README says presets and the sequence are kept across updates. The platform's update loader is unchanged from fm1-base, and the project gives no further recovery steps.
+brick_risk: false
+tags: [synth-engine, sequencer, arpeggiator, fx, scales, emulator, midi, usb-midi]
+image:
+  url: https://raw.githubusercontent.com/swtdr34mz-afk/PROBLEM-6/main/site/img/screen-main.png
+  alt: "PROBLEM 6 main screen: red and black panel with seven voice lights, OSC 1 and OSC 2 waveforms, FILTER and F ENV knob rows, POLY MOD, SPREAD and VINTAGE sliders and a sequencer strip"
+  credit: swtdr34mz-afk
+  source_url: https://github.com/swtdr34mz-afk/PROBLEM-6
+  first_party: true
+versions:
+- version: v1.5
+  date: 2026-11-26
+  url: https://github.com/swtdr34mz-afk/PROBLEM-6/releases/tag/v1.5
+  notes: Renames the project from PROPHET 67 to PROBLEM 6, with a trademark note in the README.
+- version: v1.4.2
+  date: 2026-11-26
+  url: https://github.com/swtdr34mz-afk/PROBLEM-6/releases/tag/v1.4.2
+  notes: Fixes the chorus and shimmer growing coarse after about 6 minutes 20 seconds.
+- version: v1.4
+  date: 2026-11-24
+  url: https://github.com/swtdr34mz-afk/PROBLEM-6/releases/tag/v1.4
+  notes: Made without release notes. The commit since 1.3 adds MIDI CC for nearly every knob, using Prophet-6 numbers where it has the knob, with a CC list in the docs.
+- version: v1.3
+  date: 2026-11-24
+  url: https://github.com/swtdr34mz-afk/PROBLEM-6/releases/tag/v1.3
+  notes: Made without release notes. The commit since 1.2 cleans up the bells by oversampling audio-rate FM twice and adding a half-band filter to the reverb input.
+- version: v1.2
+  date: 2026-11-24
+  url: https://github.com/swtdr34mz-afk/PROBLEM-6/releases/tag/v1.2
+  notes: Reduces the sequencer to two tracks, keeps tracks on the bar and enlarges the step view.
+- version: v1.1
+  date: 2026-11-24
+  url: https://github.com/swtdr34mz-afk/PROBLEM-6/releases/tag/v1.1
+  notes: Adds four sequencer tracks of 64 steps, each with its own sound, live recording that keeps the lengths played, and a metronome.
+- version: v1.0
+  date: 2026-11-23
+  url: https://github.com/swtdr34mz-afk/PROBLEM-6/releases/tag/v1.0
+  notes: First release with the voices, poly mod, effects, low split and aftertouch.

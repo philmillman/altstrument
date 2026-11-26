@@ -3,7 +3,7 @@ name: COMPOSER
 summary: >-
   Library-player firmware for pieces of up to eight parts made on a computer, with a browser studio where an AI text-to-MIDI model writes a piece and an emulated FM-1 plays it.
 description: >-
-  COMPOSER plays pieces from a library on the FM-1, each with up to eight parts and sections that are launched live at the next bar. Sounds, effects and 32 drum kits come from SLOOP's engines. Each part can be muted or soloed and given a new sound, edited in a piano roll or step sequencer, and the player can record over a part or play along with locked key and auto-chords. The repository also holds COMPOSER Studio, a web page that puts the text2midi composer beside the fm1-emu emulator joined by a virtual MIDI cable, and fm1c, a command-line tool that converts MIDI files, fits them to the FM-1, reports each reduction and pushes them over USB. The studio needs the user's own AI key for new pieces and keeps it in the browser, while the bundled examples need none. The README says the firmware has been developed and tested only in the fm1-emu emulator and has not been run on a real FM-1. CI builds the .fwsc, and the repository has no releases yet.
+  COMPOSER plays pieces from a library on the FM-1, each with up to eight parts and sections that are launched live at the next bar; parts can be poly, mono or legato with glide. Sounds, effects and 32 drum kits come from SLOOP's engines. Each part can be muted or soloed and given a new sound, edited in a piano roll or step sequencer, and the player can record over a part or play along with locked key and auto-chords. The repository also holds COMPOSER Studio, a web page that puts the text2midi composer beside the fm1-emu emulator joined by a virtual MIDI cable, and fm1c, a command-line tool that converts MIDI files, fits them to the FM-1, reports each reduction and pushes them over USB. The studio needs the user's own AI key for new pieces and keeps it in the browser, while the bundled examples need none. The README says the firmware has been developed and tested only in the fm1-emu emulator and has not been run on a real FM-1. CI builds the .fwsc, and the repository has no releases yet.
 status: active
 authors:
 - name: cindulasai
@@ -27,6 +27,10 @@ image:
   source_url: https://github.com/cindulasai/fm1-composer
   first_party: true
 versions:
+- version: main @ 5598a13
+  date: 2026-11-25
+  url: https://github.com/cindulasai/fm1-composer/commit/5598a1300a7ddb3d1ede4e3b10c8ea23cdcc0840
+  notes: No tagged releases; this is the latest commit. Since the previous row, parts can be MONO or LEGATO voices with glide and a SLIDE option, EDIT gains part tools (shift, double or halve, transpose), Send to the unit no longer loses a frame, and the README leads with the live Studio page.
 - version: main @ 480d3f7
   date: 2026-11-25
   url: https://github.com/cindulasai/fm1-composer/commit/480d3f7

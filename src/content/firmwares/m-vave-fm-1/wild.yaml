@@ -5,10 +5,10 @@ summary: >-
   eight banks with copy and undo, automation, a song list, a Rumble drum sound and a reworked 303 filter.
 description: >-
   Keeps n001se's five tracks, chance-driven patterns, Chaos and MIDI behaviour. The sound engine renders continuous PCM
-  ahead of playback in memory, and no audio files are written. The change log, which reaches 0.3.44, lists a
+  ahead of playback in memory, and no audio files are written. The change log, which reaches 0.3.49, lists a
   diode ladder filter and calibrated 303 knobs after Open303, drums whose sound wanders at high Deviance, banks selected with SEL
   and a white key and copied with an undo journal, recorded knob automation, saved songs that can be copied, deleted or erased, a Rumble
-  kind for the drum tracks and a clear-all gesture. The README says physical FM-1 timing, audio and
+  kind for the drum tracks, a clear-all gesture and a Banks page that keeps tracks in time across bank changes. The README says physical FM-1 timing, audio and
   installation are untested, and that 0.1.0 failed hardware start-up and later versions fix it. The documentation below its first
   section is n001se's, so some status lines in it do not describe Wild.
 status: active
@@ -36,6 +36,10 @@ image:
   source_url: https://github.com/Saintpid/Wild
   first_party: true
 versions:
+- version: main @ 0800696
+  date: 2026-11-26
+  url: https://github.com/Saintpid/Wild/commit/0800696229eaa76f51a8344a29a9671c1aced7ae
+  notes: No tagged releases; this is the latest commit, version 0.3.49. Every track now counts its place from one shared origin, so tracks of the same length no longer drift apart, and a new Banks page on EDIT adds Sync, which keeps track 1 playing through a bank change, and Switch, which waits for the next phrase round. Drum pattern length can be set as a percentage.
 - version: main @ 07976d1
   date: 2026-11-24
   url: https://github.com/Saintpid/Wild/commit/07976d194c9c646967def7acc19e9b299e590f8c

@@ -1,0 +1,45 @@
+device: m5stack-cardputer-zero
+name: DAW Zero
+summary: >-
+  Closed-source pocket DAW for the Cardputer Zero with six audio and two MIDI tracks, a mixer, a plug-in effects chain and WAV and MIDI export, installed from a prebuilt .deb package.
+description: >-
+  DAW Zero records and edits up to six audio tracks and two MIDI tracks, each with four stacked subtracks, on the 320 by 170
+  screen, with 16 steps of undo and redo. Audio comes from the built-in ES8389 codec or a USB audio interface, and the
+  project can host the same author's PianoZero and DXZero instruments headlessly over a virtual PipeWire bus and bounce
+  them to a track. Effects are .so plug-ins, and the manual describes how to write them. Sessions export as WAV and MIDI
+  stems and a stereo mixdown that Ardour can open. The repository holds the packages, a manual, a changelog and screenshots, but
+  no source code.
+status: active
+authors:
+  - name: Adriano Dias Moraes
+    url: https://github.com/adrianomoraes
+source_status: binary-only
+license: MIT
+license_notes: >-
+  The LICENSE file in the repository is the MIT text, copyright 2026 Adriano Dias Moraes. The repository contains only
+  the compiled .deb packages, documentation and images; the source code of the application is not published.
+homepage: https://github.com/adrianomoraes/CardputerZero-DAWZero_release
+distribution: download
+requires_stock: CardputerZero system image with the APPLaunch launcher
+install_notes: >-
+  Download the .deb from the repository's releases folder to the Cardputer Zero and install it with sudo apt install, or
+  copy it over SSH and install it there; a SHA256SUMS.txt file sits next to each package. DAW Zero then appears in the
+  APPLaunch launcher. Remove it with sudo apt remove daw-zero; saved sessions and plug-ins in your home folder stay. It is
+  an ordinary package on the Linux system and writes nothing to the device's firmware.
+brick_risk: false
+tags: [daw, recorder, multitrack, midi, fx, usb-audio, handheld]
+image:
+  url: https://raw.githubusercontent.com/adrianomoraes/CardputerZero-DAWZero_release/main/docs/images/tab-trk-ctrl.png
+  alt: DAW Zero track console on the small screen, with tabs TRK, MIX, FX, REC, MID, AUD and SES, and rows for audio tracks 1 to 6 showing record, mute and solo buttons, volume percentages and input sources
+  credit: Adriano Dias Moraes
+  source_url: https://github.com/adrianomoraes/CardputerZero-DAWZero_release
+  first_party: true
+versions:
+  - version: v0.4.0
+    date: 2026-11-25
+    url: https://github.com/adrianomoraes/CardputerZero-DAWZero_release/releases/tag/v0.4.0
+    notes: Adds tempo sync with hosted instruments, mini waveform previews with per-subtrack mute and solo, vertical waveform zoom, a help overlay, a metronome toggle and click-free instrument bus resampling.
+  - version: v0.3.0
+    date: 2026-11-25
+    url: https://github.com/adrianomoraes/CardputerZero-DAWZero_release/releases/tag/v0.3.0
+    notes: First public package, with eight tracks, undo and redo, timeline zoom, hosted instruments and the plug-in effects host.

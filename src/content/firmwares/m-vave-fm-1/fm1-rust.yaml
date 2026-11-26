@@ -4,7 +4,7 @@ kind: tool
 summary: >-
   Bare-metal Rust board support crate for the FM-1 on embedded-hal 1.0, with no allocator and example firmwares: a blinking LED, colour test cards and a square-wave tone, plus companion crates for audio, front-panel input, text and waveform drawing and an RTICX task runtime.
 description: >-
-  The fm1 crate runs on the first core of the JieLi AC791N chip. A function passed to the entry macro receives exclusive ownership of the board: the PLAY LED and button, the switch and LED matrix, the 240 by 240 screen, a cycle counter with a delay timer, the headphone jack switch and, behind a feature, stereo audio output to the DAC. The README says the blink, display and tone examples were observed on an FM-1 running M-Bootloader. It builds on Julius Vitkauskas's Rust blink proof of concept from pi32v2-isa. Firmware builds need a patched Rust compiler, the pi32v2 LLVM tools and pi32v2-isa's packager, while host tests run on stable Rust.
+  The fm1 crate runs on the first core of the JieLi AC791N chip. A function passed to the entry macro receives exclusive ownership of the board: the PLAY LED and button, the switch and LED matrix, the 240 by 240 screen, a cycle counter with a delay timer, the headphone jack switch and, behind a feature, stereo audio output to the DAC. Releases since 0.2 add flash storage for patches and MIDI sequences, TRS MIDI input and low-battery and charger status. The README says the blink, display and tone examples were observed on an FM-1 running M-Bootloader. It builds on Julius Vitkauskas's Rust blink proof of concept from pi32v2-isa. Firmware builds need a patched Rust compiler, the pi32v2 LLVM tools and pi32v2-isa's packager, while host tests run on stable Rust.
 status: active
 authors:
 - name: FM-1 Rust Developers
@@ -21,10 +21,18 @@ install_notes: >-
 brick_risk: false
 tags: [sdk, platform, rust, research]
 versions:
+- version: main @ d482ba3
+  date: 2026-11-26
+  url: https://github.com/fm1-rust/fm1-rust/commit/d482ba39de43f4995f1d2cece447fea8509bb869
+  notes: Latest commit, 18 commits after the fm1/v0.2.0 tag. Since the tag the crate adds flash storage for patches and MIDI sequences (with CPU1 parked in SRAM while flash is written), low-battery detection and on-chip charger status, and TRS MIDI input with optional midly decoding.
 - version: main @ 655a3e4
   date: 2026-11-25
   url: https://github.com/fm1-rust/fm1-rust/commit/655a3e484af0c8e2c04a96be4f56fad013c5bd49
   notes: Latest commit, which fixes badges in the fm1-cli README. Since the previous row the commits release 0.2.0 of fm1, fm1-audio, fm1-controls, fm1-graphics, fm1-rticx, fm1-usb, fm1-cli, fm1-assets and rticx-pi32v2 (with fm1-audio 0.2.1), add an optional embedded-graphics integration, an fm1-assets crate, an opt-in DMA copy path for USB MIDI and DSP-accelerated PCM16 and Q23 block mixing.
+- version: fm1/v0.2.0
+  date: 2026-11-24
+  url: https://github.com/fm1-rust/fm1-rust/tree/fm1/v0.2.0
+  notes: Git tag; no GitHub release page. It is the fm1 crate's 0.2.0, after release candidates rc.0 to rc.2; the other crates (fm1-audio, fm1-controls, fm1-graphics, fm1-rticx, fm1-usb, fm1-cli, fm1-assets, rticx-pi32v2) carry their own 0.2.0 tags, which this entry does not list separately.
 - version: main @ 44036b3
   date: 2026-11-24
   url: https://github.com/fm1-rust/fm1-rust/commit/44036b30fad08405a88e0f69638e2a223faba2a2

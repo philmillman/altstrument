@@ -1,0 +1,26 @@
+device: m-vave-fm-1
+name: TWISTER
+summary: >-
+  Eight-voice OPL3-style FM synth after the Twisted Electrons TWISTfm: four-operator and two-operator layers with the eight OPL3 waveforms, a four-pole filter per voice with 15 modes, a four-effect chain, an arpeggiator and a 128-step sequencer.
+description: >-
+  Each of the eight voices has a four-operator FM layer with 10 algorithms and a two-operator layer, using the eight OPL3 waveforms. Every voice has a four-pole filter with 15 modes, including LIQUID and MS20 flavours and a HEAT control. The effect chain is distortion, phaser, tape echo (free or tempo-synced) and reverb with room, plate and long shimmer types. The site also lists three LFOs with modulation chains, a modulation envelope, vibrato, tremolo, portamento, an arpeggiator, scales and chords, 16 user presets and two preset packs, one for drum and bass and one for dub and psychedelic techno. It takes MIDI in over USB and the TRS jack, sends MIDI and clock out over USB and syncs to an external MIDI clock. The repository calls it a development version, and its README is in Italian. The README names the firmware TWISTFM, while the project site, the build file and the on-screen name say TWISTER. The engine and effects are MIT, and it is built on fm1-base and felucca-bsp. The README says it is unofficial and not affiliated with Twisted Electrons or M-VAVE.
+status: active
+authors:
+- name: 8blend
+  url: https://github.com/8blend
+source: https://github.com/8blend/twistfm-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states GPL-3.0-only for the firmware as a whole and the LICENSE file is the GPL-3.0 text. The engine and effects files are MIT, the screen code is GPL-3.0 and uses M-VAVE's FM1 Open 5x7 font, and fm1-base and felucca-bsp are MPL-2.0 and are downloaded at build time. No stock firmware is committed.
+homepage: https://8blend.github.io/twistfm-fm1/
+distribution: browser-installer
+install_notes: >-
+  Back up projects and sounds with the M-VAVE Workbench, then open the project's installer page in Chrome or Edge with the FM-1 connected by USB. The README says the same installer can put M-VAVE's original firmware back. GitHub builds the package on every change, and the page offers the current .fwsc. The README says to install at your own risk.
+brick_risk: false
+tags: [synth-engine, fm, oscillator, filter, fx, sequencer, arpeggiator, delay, reverb, midi, usb-midi]
+versions:
+- version: main @ f62b83e
+  date: 2026-11-26
+  url: https://github.com/8blend/twistfm-fm1/commit/f62b83e986848e13161852b757c590ba0392dc66
+  notes: No tagged releases; this is the latest commit.

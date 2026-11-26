@@ -13,13 +13,18 @@ source_status: open
 license: GPL-3.0-or-later
 license_notes: >-
   The README says GPL-3.0 and LICENSE is the GPL v3 text; the engine's source headers say GPL-3.0-or-later. fm1-dock (GPL-3.0-only), the JieLi toolchain and SDK files and fm1-emu are fetched by the build at pinned hashes and are not in the repository. data/jx8p-factory-1-32.syx is the JX-8P factory bank as downloaded from a fan site, with no stated licence.
-distribution: source-only
+homepage: https://ericdahl-dev.github.io/fm1-8p/
+distribution: browser-installer
 requires_stock: An FM-1 running fm1-dock for the .dock module; the solo .fwsc needs no particular firmware
 install_notes: >-
-  No release exists; CI builds the packages as artifacts, or tools/fm1-build.sh builds them from a Linux checkout. The .dock module goes onto an FM-1 that already runs fm1-dock, over USB without flashing. The solo .fwsc has fm1-dock's safety checks and rescue modes (OCT- at power-on for USB rescue, OCT+ for a safe start). The README advises keeping the stock V15 firmware for recovery.
+  No release exists yet; the project page (Chrome or Edge, Web MIDI) installs the build from main with fm1-dock's own installer, which the page marks as not yet tested on hardware, and carries the .fwsc and .dock for download. CI also builds the packages as artifacts, or tools/fm1-build.sh builds them from a Linux checkout. The .dock module goes onto an FM-1 that already runs fm1-dock, over USB without flashing. The solo .fwsc has fm1-dock's safety checks and rescue modes (OCT- at power-on for USB rescue, OCT+ for a safe start). The README advises keeping the stock V15 firmware for recovery.
 brick_risk: false
 tags: [synth-engine, oscillator, filter, lfo, fx, presets, midi]
 versions:
+- version: main @ e245c16
+  date: 2026-11-26
+  url: https://github.com/ericdahl-dev/fm1-8p/commit/e245c16544f6dfaa0bf70e94dee8d12ba6978eaa
+  notes: No tagged releases; this is the latest commit. Since the previous row, the repository gains a project page with the emulator playing the build from main and a browser installer, a workflow that lets The Firmware Hub build and publish v* tags, and a set of sequencer fixes for stop, play and followed-clock starts and for knob turns inside the sequencer.
 - version: main @ 00115f8
   date: 2026-11-25
   url: https://github.com/ericdahl-dev/fm1-8p/commit/00115f8388342274fa812723d81c54d4a5a31d1f

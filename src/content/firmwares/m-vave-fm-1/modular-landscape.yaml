@@ -1,0 +1,38 @@
+device: m-vave-fm-1
+name: Modular Landscape
+summary: >-
+  FM-1 firmware built around one bowed folk guitar sound recorded for it, with eight film-music effects on the buttons and knobs, a screen that draws the stereo image of what is played and Modular One's tape. Beta. Rights warning on the recordings.
+description: >-
+  Rights warning: the guitar recordings are the author's own and are not under the GPL. They may be used through the firmware and in any music made with it, commercial music included, but may not be taken out as audio files, a sample pack or another instrument. The firmware has a single sound with no banks. K1 to K4 set length, attack, space and release, and PRESETS switches off the bow noise. FX, SCL, ENV and LFO toggle sustain, breath, contra and drone, EDIT, ARP and HOME toggle distance, mute and echo, and SELECT sets how much of the last effect touched is applied. SAVE keeps the settings for the next power-on, and PLAY, REC and SEQ give Modular One's tape and sketchbook. The screen shows the stereo image of the playing as a line drawing. The repository also builds an SMK-37 Elite version, which has its own entry and version line. The README is in English and French and says the FM-1 build is Modular One's tree.
+status: active
+authors:
+- name: Alexis Arakis (Bungle Society)
+  url: https://github.com/bunglesociety
+source: https://github.com/bunglesociety/modular-landscape
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The code is GPL-3.0-only per the README and LICENSE file, with Felucca's third-party parts keeping their own licences (fm1/LICENSES). The guitar recordings (fm1/tools/archet/archet.bin and the same inside the packages) are not GPL: SOUNDS.md says they are copyright Alexis Arakis, all rights reserved, with permission to use them through the firmware and in any music, commercial included, and to share the firmware with them inside, but not to extract them.
+homepage: https://bunglesociety.github.io/modular-landscape/fm1/
+based_on: m-vave-fm-1/modular-one
+distribution: browser-installer
+requires_stock: Any FM-1 firmware; the installer writes the package over it
+install_notes: >-
+  Use the project's FM-1 install page in Chrome or Edge over USB, or the .fwsc from the release, whose SHA-256 the README lists. Installing replaces the M-VAVE firmware and its presets are lost. The package carries its own identity (FM-1_894), and M-VAVE's M-UPGRADE takes the unit back to the official firmware, V16 included from 0.4.1.
+brick_risk: false
+tags: [guitar, film-music, sketches, fx, reverb, fork]
+image:
+  url: https://raw.githubusercontent.com/bunglesociety/modular-landscape/main/docs/img/screen-fm1.png
+  alt: "FM-1 screen with a green background showing the stereo image of the sound as a thin dark looping line, the label SUSTAIN at the top left and a fader line along the bottom"
+  credit: Bungle Society
+  source_url: https://github.com/bunglesociety/modular-landscape
+  first_party: true
+versions:
+- version: 0.4.1-beta
+  date: 2026-11-26
+  url: https://github.com/bunglesociety/modular-landscape/releases/tag/fm1-v0.4.1
+  notes: Accepts M-VAVE's V16 package so M-UPGRADE works again, and stops comparing each unit's chip key when checking the flash head.
+- version: 0.4-beta
+  date: 2026-11-26
+  url: https://github.com/bunglesociety/modular-landscape/releases/tag/v1.0
+  notes: First FM-1 build, published in the same release as SMK-37 Elite 1.0.

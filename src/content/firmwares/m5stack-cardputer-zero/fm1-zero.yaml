@@ -1,0 +1,42 @@
+device: m5stack-cardputer-zero
+name: fm1-zero
+summary: >-
+  Six-operator FM synth for the Cardputer Zero: a C port of the msfa engine with the M-VAVE FM-1's factory voices, FM-1 MIDI conventions and an effects chain, so far tested only on a computer.
+description: >-
+  The engine is an integer-C port of msfa, the FM core of Google's music-synthesizer-for-android, checked on a computer for
+  bit-exact output against the original at 48 kHz. The program reads the 128 factory voices that M-VAVE publishes for the FM-1
+  or a plain DX7 SysEx file from the SD card, follows the FM-1's documented MIDI messages including effect controllers 0 to 23,
+  has an effects chain, and draws nine pages on the 320 by 170 screen. It is the Cardputer Zero follow-up to the author's
+  Cardputer ADV project. The status page says the display, audio device, keypad and real-time scheduling code has not run on
+  a Cardputer Zero, and the CPU load figure is a model, not a measurement. The program does not run on an FM-1; it reuses that
+  instrument's voices and panel conventions.
+status: active
+authors:
+  - name: NaustudentX18
+    url: https://github.com/NaustudentX18
+source: https://github.com/NaustudentX18/fm1-zero
+source_status: open
+license: Apache-2.0
+license_notes: >-
+  The repository has no LICENSE file; the README says Apache-2.0, as msfa is. It says the factory bank comes from M-VAVE's
+  V15 image in m-vave/fm1_open, which is Apache-2.0, and that Felucca (GPL-3.0) is deliberately not used.
+homepage: https://naustudentx18.github.io/fm1-zero/
+distribution: source-only
+requires_stock: CardputerZero Debian image
+install_notes: >-
+  No package is published. make builds a Linux binary that needs libasound2-dev, and tools/fetch_msfa.sh and
+  tools/run_tests.sh run the engine tests on a computer. The program is started as ./fm1-zero with the library folder, which
+  is found from $FM1_LIBRARY, the folder next to the executable or ~/roms. It has not been run on a Cardputer Zero.
+brick_risk: false
+tags: [fm, synth-engine, midi, sysex, fx, presets, handheld]
+image:
+  url: https://raw.githubusercontent.com/NaustudentX18/fm1-zero/main/docs/screens/home.png
+  alt: "Rendered synth home page on a dark blue screen: patch name PIANO 1, a green waveform trace, a list with ALG 5, FEED 6 and TRNS 24, operator boxes OP6 to OP1 and left and right level bars"
+  credit: NaustudentX18
+  source_url: https://github.com/NaustudentX18/fm1-zero
+  first_party: true
+versions:
+  - version: main @ ca3eb25
+    date: 2026-11-14
+    url: https://github.com/NaustudentX18/fm1-zero/commit/ca3eb25dc6ed4c0777e97cf234a10139621ef3d6
+    notes: No tagged releases; this is the latest commit.

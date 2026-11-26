@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: PLUMB
+summary: >-
+  Pendulum-wave sequencer for the FM-1: twelve pendulums released together play their notes as they pass a strike point, with wavefolder, phase-distortion and pulsar engines. Pre-release; not yet run on a real FM-1.
+description: >-
+  Twelve pendulums hang in a row, each a little shorter than the last, and PLAY releases them together. Pendulum k swings a set number of times more than the first in one cycle, so they form a line, then a snake, then scatter, and meet again at the end of the cycle. Each pass of a strike point plays that pendulum's note. The cycle runs from 4 to 128 beats, a grid option snaps the strikes to note divisions, and the row of notes can be shaped by presets such as rise, arch or fifths, recorded by hand or caught pendulum by pendulum. Three oscillator engines are included: a wavefolder through a low-pass gate, Casio-style phase distortion and pulsar synthesis. The ARP lets the strikes walk through a held chord, and the LFO can also bend time. It has 48 scales, eight presets and eight user slots, and from Dinghy it has MIDI clock sync, MIDI in and out, USB audio and a backup page. The README warns that it has only been tested on a computer and not on a physical FM-1.
+status: active
+authors:
+- name: Eric St-Jacques
+  url: https://github.com/jaak-stjaaques
+source: https://github.com/jaak-stjaaques/Plumb
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states GPL-3.0-only and the LICENSE file is the GPL-3.0 text. Dinghy's platform files keep their upstream notices and LICENSING.md lists the separately licensed assets, including the IBM Plex Mono font under SIL OFL 1.1. The JieLi SDK files are read from the builder's own checkout at build time.
+homepage: https://github.com/jaak-stjaaques/Plumb
+based_on: m-vave-fm-1/dinghy
+distribution: source-only
+install_notes: >-
+  Build with sh build.sh (Python 3 with Pillow, the JieLi toolchain and three AC79 SDK files, through Docker on macOS); every push to main also builds a package onto the repository's build branch. The README says to keep stock firmware or another firmware ready to flash back. It says nothing has been installed on a real FM-1, so treat it as untested.
+brick_risk: false
+tags: [sequencer, generative, rhythm, synth-engine, arpeggiator, scales, midi, usb-audio, experimental]
+image:
+  url: https://raw.githubusercontent.com/jaak-stjaaques/Plumb/main/docs/screenshots/home.png
+  alt: "PLUMB HOME page: twelve amber dots forming a wave across the screen with the first one boxed, and four settings: NOTE 1 C3, ROW RISE, PENDULUMS 12 and DAMP NEVER"
+  credit: Eric St-Jacques
+  source_url: https://github.com/jaak-stjaaques/Plumb
+  first_party: true
+versions:
+- version: '0.3'
+  date: 2026-11-26
+  url: https://github.com/jaak-stjaaques/Plumb/releases/tag/v0.3
+  notes: Pre-release; the only tagged build.

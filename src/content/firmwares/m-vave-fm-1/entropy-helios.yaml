@@ -18,7 +18,7 @@ based_on: m-vave-fm-1/fm1-base
 distribution: browser-installer
 requires_stock: Any FM-1 firmware; the installer writes the package over it
 install_notes: >-
-  Open the install page in Chrome or Edge, connect the FM-1 over USB-C and press Install; after the restart the screen shows HELIOS 1.2. The repository also holds the .fwsc package. The README describes no recovery path of its own, and the FM-1's ROM boot mode applies.
+  Open the install page in Chrome or Edge, connect the FM-1 over USB-C and press Install; after the restart the screen shows the HELIOS version. The repository also holds the .fwsc package. The README describes no recovery path of its own, and the FM-1's ROM boot mode applies.
 brick_risk: false
 tags: [synth-engine, drone, ambient, generative, fx, reverb, filter, usb-audio, editor, web]
 image:
@@ -28,6 +28,14 @@ image:
   source_url: https://github.com/behn1220/entropy-helios
   first_party: true
 versions:
+- version: 1.3.1
+  date: 2026-11-26
+  url: https://github.com/behn1220/entropy-helios/releases/tag/v1.3.1
+  notes: "Adds a phase offset for sequencer step timing, a continuous Reich-style phase drift and sequencer sync, and updates the WebMIDI Hardware Studio and the FM-1 screens. The release also carries the browser flasher page as a separate file."
+- version: 1.3.0
+  date: 2026-11-25
+  url: https://github.com/behn1220/entropy-helios/releases/tag/v1.3.0
+  notes: "Release page has no text; the tagged commit adds a three-band parametric master EQ with an FM-1 screen, WebMIDI Studio and SysEx control, saved to flash."
 - version: 1.2.0
   date: 2026-11-24
   url: https://github.com/behn1220/entropy-helios/releases/tag/v1.2.0

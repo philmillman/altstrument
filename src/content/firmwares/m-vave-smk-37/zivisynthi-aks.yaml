@@ -1,0 +1,38 @@
+device: m-vave-smk-37
+name: ziviSynthi AKS
+summary: >-
+  SMK-37 Pro synth modelled on the EMS Synthi AKS: a 16 x 16 pin matrix routing three oscillators, a resonant filter, ring modulator, envelope and reverb, with a KS-style sequencer, 128 presets and four USB effects. Pre-release.
+description: >-
+  The pin matrix keeps the 256 coordinates of the original, so a pin turns any source into the input of any module, and the editor shows the same patch in the browser. The sound path has three oscillators, a filter that can self-oscillate, ring modulation, a trapezoid envelope and a spring-style reverb, with the Pro's PITCH and MOD controls acting as the joystick. A KS-style recorder, a 64-step sequencer, an arpeggiator and 128 instrument presets sit on top, and four USB effects process audio coming in over USB. A bilingual Web Studio (English and Portuguese) plays the synth in the browser without hardware, edits patches and talks to a connected Pro over USB MIDI. The firmware is built on fm1-base and felucca-bsp. The project says it is written with AI-assisted coding under the author's direction. Its notes say an earlier build was installed on a real Pro and that the 3.9.7 build was checked by automated tests and awaits a flash test on hardware.
+status: active
+authors:
+- name: Victor Valentim
+  url: https://github.com/vicvalentim
+source: https://github.com/vicvalentim/ziviSynthi-AKS
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README, NOTICES.md and LICENSE file give GPL-3.0-only for the original code and assets. Third-party parts keep their own terms: fm1-base files are MPL-2.0, the felucca-bsp files are MPL-2.0 with other terms in bsp/NOTICE, micro-ecc is BSD-2-Clause, the Bluetooth tables include Apache-2.0 code and the Barlow Semi Condensed font is SIL OFL 1.1. The JieLi SDK is fetched at build time.
+homepage: https://vicvalentim.github.io/ziviSynthi-AKS/
+based_on: m-vave-fm-1/fm1-base
+distribution: browser-installer
+requires_stock: SMK-37 Pro only; the installer checks the model and the unit's current firmware hash
+install_notes: >-
+  Open the project's Web Studio in Chrome or Edge, choose Firmware, grant USB MIDI access and install the embedded package or the .fwsc from the release, checking SHA256SUMS.txt. Back up patches and sequences first, since flashing can erase them. The Studio accepts recognised, hash-verified files for rollback, and the install guide points to M-VAVE's smk37_open recovery procedure for the Pro. Coming from an Open-branch build needs a Pro-specific recovery step because the flash layouts differ. Only the Pro is supported by this package.
+brick_risk: false
+tags: [synth-engine, synthi, matrix, sequencer, arpeggiator, fx, reverb, editor, usb-audio, emulator]
+image:
+  url: https://raw.githubusercontent.com/vicvalentim/ziviSynthi-AKS/main/docs/img/smk37-pro-matrix.png
+  alt: "ziviSynthi AKS Overview screen on the simulated SMK-37 Pro: a 16 by 16 grid of pin squares, a side panel naming pin A12 as ENV SIGNAL to OUT 1, and tune, shape and level knobs"
+  credit: Victor Valentim
+  source_url: https://github.com/vicvalentim/ziviSynthi-AKS
+  first_party: true
+versions:
+- version: 3.9.7
+  date: 2026-11-26
+  url: https://github.com/vicvalentim/ziviSynthi-AKS/releases/tag/v3.9.7
+  notes: Pre-release. Adds English and Portuguese Web Studio, SEQ patterns that play in KS with rests and legato, and a new USB identity; the exact build awaits a hardware flash test.
+- version: 3.9.6
+  date: 2026-11-25
+  url: https://github.com/vicvalentim/ziviSynthi-AKS/releases/tag/v3.9.6
+  notes: Pre-release. Redesigned boot screen and an English-first site; DSP and live-edit protocol unchanged from 3.9.5.

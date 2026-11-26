@@ -21,6 +21,7 @@ license_notes: >-
   LICENSING.md gives GPL-3.0-only, as Dinghy, with Felucca, SLOOP and OberVave platform code under their own notices.
   The Terminus font is SIL OFL 1.1, and the designburg logo in assets/ is all rights reserved and not under the GPL.
 homepage: https://joakimskurk.github.io/fm1stardistroyer/
+based_on: m-vave-fm-1/dinghy
 distribution: browser-installer
 install_notes: >-
   The project page installs the latest build of main from Chrome or Edge over USB. Or build with build.sh and install the package with tools/fm1_install.py over USB, on an FM-1 running M-VAVE's V15 or
@@ -29,6 +30,10 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, oscillator, filter, fx, arpeggiator, sequencer, generative, fork]
 versions:
+- version: 0.4-beta
+  date: 2026-11-25
+  url: https://github.com/joakimskurk/fm1stardistroyer/releases/tag/v0.4-beta
+  notes: Pre-release. Adds 12 MOD slots where every knob is a destination, a SUB that follows SEQ A, SEQ B, the keys or the arpeggiator, a looper that keeps its level, length, tempo and pitch, and chord recording on the SEQ. Chords in DUO and POLY no longer overdrive, holding OCT- at power-on starts the USB rescue, and CPU load is lower. Tested on the FM-1.
 - version: 0.3-beta
   date: 2026-11-14
   url: https://github.com/joakimskurk/fm1stardistroyer/releases/tag/v0.3-beta

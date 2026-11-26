@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: Looching 2026
+summary: >-
+  Revival of Brad Garton's 1991 NeXT drone generator Looching: four slow wavetable voices on a lazy random scheduler, five tone rows, and a mode that keeps the original program's quirks.
+description: >-
+  Four voices each use two 64-sample wavetable oscillators with seven partials, the second detuned by a spread, each with its own sine vibrato, a very slow envelope and a short delay on the right channel. A scheduler wakes every 2 to 10 seconds and each free voice starts a note about half the time, with a random wave, a random pitch from the chosen tone row and a length of 5 to 20 seconds. There are five tone rows, the Original in just intonation, morning stuff, the Big Drone, Schoenberg and Bach. ORIGINAL mode keeps the bugs of the 1991 code that shaped its sound, and INTENDED plays what the code meant. Three knobs set vibrato rate limit, vibrato width limit and frequency spread, and the keys play nothing but light up with the pitches sounding. The wavetables, tone rows and icon come from the original with Garton's agreement. It speaks every page and control through fm1-reader, sends the voices as MIDI notes with pitch bend and the panel as CC and NRPN over USB, and has a device file for synthaccess MIDItoSpeech. It has no MIDI input. The README says it runs on a real FM-1, and it is built on the Felucca platform as M-Vave-OP1 carries it.
+status: active
+authors:
+- name: R. Luke DuBois
+  url: https://github.com/rev3rend
+- name: Brad Garton
+source: https://github.com/rev3rend/looching2026
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and LICENSING.md state GPL-3.0-only, as Felucca, with copyright to R. Luke DuBois and Brad Garton and the platform code by Leo Kuroshita (Hügelton Instruments) and the M-Vave-OP1 contributors. The repository holds vendor/m-vave/FM-1_015.fwsc, which is the V15 image M-VAVE publishes under Apache-2.0 (git blob ce49cc15, identical to the one in m-vave/fm1_open).
+homepage: https://github.com/rev3rend/looching2026
+distribution: download
+install_notes: >-
+  Install looching2026-1.0.fwsc with tools/fm1_install.py (Python with mido and python-rtmidi) or the web installer in the repository, and check the file against SHA256SUMS. The README says there is one firmware bank and no recovery button, but the platform's boot guard drops the unit into the chip's boot mode after two failed boots (OCT- and OCT+ held for 5 s does it on purpose), and the update path stays available while the firmware runs. To go back, run fm1_install.py --stock, use the installer's Return to official V15 or use M-VAVE's own updater. It lists FM-1-transporter as optional recovery hardware.
+brick_risk: false
+tags: [generative, ambient, drone, synth-engine, accessibility, midi, usb-midi, emulator]
+image:
+  url: https://raw.githubusercontent.com/rev3rend/looching2026/main/docs/images/pages.png
+  alt: "Three Looching 2026 screens side by side in grey: MAIN with a dog icon, ENOUGH! and five tone rows, Preferences with MODE ORIGINAL, MIDI OUT ON, KEY LEDS ON and LEVEL 80 %, and an Info page"
+  credit: R. Luke DuBois
+  source_url: https://github.com/rev3rend/looching2026
+  first_party: true
+versions:
+- version: v1.0
+  date: 2026-11-26
+  url: https://github.com/rev3rend/looching2026/releases/tag/v1.0
+  notes: First release.

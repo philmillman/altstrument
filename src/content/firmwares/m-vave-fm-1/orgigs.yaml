@@ -2,17 +2,17 @@ device: m-vave-fm-1
 also_devices: [m-vave-smk-37]
 name: OrGigs
 summary: >-
-  Organ firmware for the FM-1 and the SMK-37 Elite: three manuals of 84 free-running tone generators, eight organ models,
+  Organ firmware for the FM-1 and the SMK-37 Elite: three manuals of 84 free-running tone generators, sixteen organ models,
   drawbars, rotary, drive, delay and reverb, 16 performance setups, three MIDI zones and Yamaha SEQTRAK control.
 description: >-
   Built on Dinghy's platform layer, with the sound running in the audio interrupt and per-board code for the panel and screens. There is no voice stealing,
-  because every note has its own generator. The eight models run from tonewheel and combo organs to pipe organs and free reeds, with
+  because every note has its own generator. Since 1.5 the sixteen models are eight vintage and combo organs, four pipe organs with their own stops and historic tunings and four free reeds, with
   drawbar and registration lists, percussion, vibrato and tremulant, a rotary speaker, per-manual drive and sends, and a shared delay
   and reverb. The three MIDI zones route, clone, harmonise in nine channels and remember chords, and a module for a Yamaha SEQTRAK
   follows that device's tracks and sounds over USB. On the FM-1 the panel's buttons and knobs reach the drawbars and effect screens,
   and a browser simulator lets you try it without the unit. The SMK-37 package is built for the Elite and puts drawbars on the knobs
-  and faders and shows them on the pads; the source also builds for the Pro and the MKE-P37, but the releases carry only the FM-1 and
-  Elite packages. The README says it runs on an FM-1 since 2026-10-23 and on an SMK-37 Elite since 2026-11-05.
+  and faders and shows them on the pads; the source also builds for the Pro and the MKE-P37. Release 1.5 adds an SMK-37 Pro package, which the author marks untested and asks testers for;
+  earlier releases carry only the FM-1 and Elite packages. The README says it runs on an FM-1 since 2026-10-23 and on an SMK-37 Elite since 2026-11-05.
 status: active
 authors:
 - name: orgelbobo
@@ -23,7 +23,7 @@ license: GPL-3.0-only
 license_notes: >-
   The LICENSE file is the GPL-3.0 text and the README says GPL-3.0-only, as Dinghy, Felucca and SLOOP. LICENSING.md covers the
   parts that keep their own terms; the SEQTRAK sound names come from jaeggerr/seqtrak-docs (MIT), and the repository holds
-  that data file. The repository holds no firmware package; the release carries two.
+  that data file. The repository holds no firmware package; releases carry the FM-1 and Elite packages, and 1.5 a Pro one.
 based_on: m-vave-fm-1/dinghy
 homepage: https://orgelbobo.github.io/orgigs/install/
 distribution: browser-installer
@@ -42,6 +42,10 @@ image:
   source_url: https://github.com/orgelbobo/orgigs
   first_party: true
 versions:
+- version: '1.5'
+  date: 2026-11-25
+  url: https://github.com/orgelbobo/orgigs/releases/tag/v1.5
+  notes: Grows from eight to sixteen models, adding pipe organs and free reeds, with a new look on both keyboards, an ORGAN OCTAVE setting per zone, and a sustain pedal over MIDI that also holds the keyboard's own keys. The Elite gets its own browser simulator. Adds an SMK-37 Pro package that the author marks as untested. Setups and settings carry over from 1.1.
 - version: '1.1'
   date: 2026-11-20
   url: https://github.com/orgelbobo/orgigs/releases/tag/v1.1

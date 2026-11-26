@@ -12,7 +12,7 @@ description: >-
   and rescue a unit that cannot start. The update loader has a fast install that writes only the sectors that changed, tools/fm1_rescue.py accepts the newer UC25HQ80 flash chip, and the USB audio input can be built with 4 to 10 channels. A hwtest example firmware exercises the screen, knobs, buttons, LEDs and USB serial. The
   README labels the second core, expanded flash and USB host as beta or experimental, a higher clock as a concept, and lists the SMK-37 Elite and
   Pro as planned without board support. Its chip/ folder also holds Bluetooth LE and BR/EDR radio drivers from Optimist, the radio's start-up tables and a
-  calibration routine; fm1-base's own Bluetooth stack uses them. fm1-base, CTL-1 and a WiFi radio firmware build on it. Some macros still carry the FELUCCA name.
+  calibration routine; fm1-base's own Bluetooth stack uses them; a Wi-Fi radio driver and its tuning facts (chip/fm1_wifi.h) serve fm1-base's own Wi-Fi stack. An optional CDC-NCM USB network adapter (FELUCCA_NCM) is off by default. fm1-base, CTL-1 and a WiFi radio firmware build on it. Some macros still carry the FELUCCA name.
 status: active
 authors:
 - name: Leo Kuroshita (@kurogedelic), Hügelton Instruments
@@ -34,6 +34,10 @@ install_notes: >-
 brick_risk: false
 tags: [platform, sdk, usb-midi]
 versions:
+- version: main @ fdd709f
+  date: 2026-11-26
+  url: https://github.com/hugelton/felucca-bsp/commit/fdd709fd0066b878b03c144776404d63811db13e
+  notes: No tagged releases; this is the latest commit. Since the previous row, it adds a Wi-Fi radio driver with its tuning facts for fm1-base's own Wi-Fi stack, an optional CDC-NCM USB network adapter (FELUCCA_NCM, off by default), and loader support for extra read-only regions that a package writes into the flash windows outside the app and data areas, with tests for power cuts and flash failures.
 - version: main @ 2bd9dbe
   date: 2026-11-22
   url: https://github.com/hugelton/felucca-bsp/commit/2bd9dbe1fcbb8c67ba6721b2435f3fb0597a202a

@@ -9,7 +9,7 @@ description: >-
   board's J12 connector, so no soldering to the FM-1 or SMK-37 is needed. It passes all ten LCD lines through and taps four for
   the card, which shares the LCD's SPI bus; an inverter selects the card whenever the LCD is not selected. The
   repository has Gerbers, a bill of materials and placement file for JLCPCB, an assembly PDF, a 1:1 paper template and the
-  Python scripts that generate the board for KiCad 9. Until 24 November 2026 the README called it an untested prototype, with fit checked on a real FM-1 using a paper template, no board made and firmware support being worked on in m-bootloader. That notice is gone and the README now names the SMK-37 too, but it still asks builders to report whether the planned cable type works and does not say which firmware reads the card.
+  Python scripts that generate the board for KiCad 9. Until 24 November 2026 the README called it an untested prototype, with fit checked on a real FM-1 using a paper template, no board made and firmware support being worked on in m-bootloader. That notice is gone and the README now names the SMK-37 too, but it still asks builders to report whether the planned cable type works. The 1.0 release notes describe the board as built and used, and say the card needs m-bootloader 2.4 or newer, whose menu then has an SD card item.
 status: active
 authors:
 - name: Julius Vitkauskas (jvitkauskas)
@@ -23,7 +23,7 @@ license_notes: >-
 distribution: source-only
 install_notes: >-
   A hardware project: order the PCB from the Gerber zip, buy the listed parts, solder, then open the FM-1, move the LCD cable
-  to the board and run a short ribbon cable back to J12. It needs firmware that reads the card, and the README does not name one.
+  to the board and run a short ribbon cable back to J12. The 1.0 release notes say it needs m-bootloader 2.4 or newer on the unit, and point to m-apps for a ready card.
   Check the board and sockets with a multimeter before installing.
 brick_risk: false
 tags: [hardware, open-hardware]
@@ -34,10 +34,10 @@ image:
   source_url: https://github.com/jvitkauskas/m-card
   first_party: true
 versions:
-- version: main @ bde17a8
-  date: 2026-11-24
-  url: https://github.com/jvitkauskas/m-card/commit/bde17a8baa65a904b4163b7825267bd0167a24fb
-  notes: No tagged releases; this is the latest commit. Since the previous row the README drops its untested-prototype notice and says the board is for the SMK-37 as well as the FM-1.
+- version: '1.0'
+  date: 2026-11-26
+  url: https://github.com/jvitkauskas/m-card/releases/tag/v1.0
+  notes: The board as built and used, with Gerbers, assembly PDF, 1:1 paper template, and the parts and placement lists in JLCPCB format. Tagged on the commit that drops the untested-prototype notice and names the SMK-37. Needs m-bootloader 2.4 or newer.
 - version: main @ ec63784
   date: 2026-11-03
   url: https://github.com/jvitkauskas/m-card/commit/ec63784fe94006296ad25bdeb5d32bf7afa834d1

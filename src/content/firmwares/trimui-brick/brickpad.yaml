@@ -1,0 +1,58 @@
+device: trimui-brick
+name: BrickPad
+summary: >-
+  Source-visible sampler, synth and clip sequencer for the TrimUI Brick on Knulli, with twelve pads, sixteen scenes, four sound engines, effects and MIDI, played from the d-pad and buttons. Beta.
+description: >-
+  Licence note: the source is published to read and to build for personal use on your own devices, but the licence
+  forbids redistributing the program, modified or not, outside the project's own releases, and forbids selling it.
+  BrickPad runs as a native program from the Ports menu. A project has twelve pads, each holding an instrument and
+  sixteen patterns, and sixteen scenes that switch every pad at once on the bar. The four engines are a sampler with
+  slicing, tempo warp and loops, GRAND (a two-oscillator synth with a patch bay), ACID (a 303-style line) and CLOUD
+  (a granular player). Patterns are written as steps with chance, ratchets and sub-steps, in a piano roll or as chord
+  slots. Each pad has two insert effects, with reverb and delay sends, four LFOs, ducking, automation and a freeze
+  function that renders a pad to audio. There is a mixer, WAV export of scenes or pads, a simple large view for
+  children, themes, and USB MIDI with clock out, clock in, note input and MIDI learn. The author describes it as a
+  beta whose project file format may still change, and it was written for the Brick running Knulli.
+status: active
+authors:
+  - name: Timothy Gurto
+    url: https://github.com/obhateion
+source: https://github.com/obhateion/brickpad
+source_status: open
+license: proprietary
+license_notes: >-
+  The LICENSE file is an all-rights-reserved licence. It allows reading the source, installing the official releases
+  on devices you own, building it for personal use and forking on GitHub to propose changes, and it forbids
+  redistributing copies outside the official repository and releases, selling it, reusing the code or design in
+  another product, and using the name for another product. Songs made with it belong to the user. SDL2 headers and
+  libSDL2 (zlib), stb_vorbis.c and font8x8_basic.h (public domain) keep their own licences. GitHub reports the
+  licence as NOASSERTION.
+distribution: download
+requires_stock: Knulli on a TrimUI Brick
+install_notes: >-
+  Download the brickpad zip for the Brick from the latest release, unpack it and copy the launcher script and the
+  brickpad folder into roms/ports/ on the SD card (or /userdata/roms/ports/ on the Brick), refresh the game list and
+  start BrickPad from Ports. Each version has its own folder, so an older one stays in place; to update, replace the
+  launcher and the program file only. Put your own WAV or OGG samples in the version's samples folder. Hold MENU for
+  three seconds to quit. Nothing is written to the console's firmware.
+brick_risk: false
+tags: [sampler, synth-engine, sequencer, granular, fx, midi, handheld]
+image:
+  url: https://raw.githubusercontent.com/obhateion/brickpad/main/docs/screenshots/pads.png
+  alt: BrickPad PADS screen with twelve pad tiles in a grid, named KICK, CLAP, HATS, OPEN HAT, BASS, CHORDS, LEAD, CONGA, CYMBAL, ATMOS, ARP LOOP and CRASH, each labelled with its engine and pattern
+  credit: Timothy Gurto
+  source_url: https://github.com/obhateion/brickpad#readme
+  first_party: true
+versions:
+- version: 1.2 Beta
+  date: 2026-11-20
+  url: https://github.com/obhateion/brickpad/releases/tag/v1.2-beta
+  notes: Adds a chord mode, sub-steps and probability modes for steps, reverb, delay and equaliser inserts, twelve filter modes, USB MIDI with clock in and out, MIDI learn, an export menu and an output trim.
+- version: 1.1 Beta
+  date: 2026-11-18
+  url: https://github.com/obhateion/brickpad/releases/tag/v1.1-beta
+  notes: Stops land on the launch grid, a new SWITCHBACK demo and confirmation windows before resetting parts of a project.
+- version: 1.0 beta
+  date: 2026-11-16
+  url: https://github.com/obhateion/brickpad/releases/tag/v1.0-beta
+  notes: A new interface with scenes; the version numbering starts again here.

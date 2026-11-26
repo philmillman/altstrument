@@ -1,4 +1,5 @@
 device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
 name: FM-1 Swap
 kind: tool
 summary: >-
@@ -12,7 +13,8 @@ description: >-
   SLOOP), and an interrupted write can be resumed. The TRY screen boots a package on the fm1-emu emulator so
   it can be heard first. A PATCHES screen sends DX7 patches to a connected FM-1. The app bundles M-VAVE's
   official V15 package unmodified, under the Apache-2.0 notice from fm1_open, so there is always a way back
-  to stock. It also lists M-VAVE's Official Open V14, fetched from the fm1_open release page.
+  to stock. It also lists M-VAVE's Official Open V14, fetched from the fm1_open release page. From 0.7.0 it also flashes the M-VAVE SMK-37 Pro, Elite and
+  MKE-P37 from a separate firmware list that follows the plugged-in keyboard.
 status: active
 authors:
 - name: HyruleanHero1988
@@ -42,6 +44,14 @@ image:
   source_url: https://hyruleanhero1988.github.io/FM-1-Swap/
   first_party: true
 versions:
+- version: 0.7.0
+  date: 2026-11-26
+  url: https://github.com/HyruleanHero1988/FM-1-Swap/releases/tag/v0.7.0
+  notes: "Adds the SMK-37 family to the app: a KEYBOARD MODE setting in SETUP (AUTO, FM-1 or SMK-37) that follows the plugged-in keyboard, packages picked for the Pro, Elite or MKE-P37 model, and a separate SMK-37 firmware list that includes M-VAVE's stock images, flashable in the app. SAVED lists are filtered by keyboard family, and DEVICE plays a short test jingle."
+- version: 0.6.6
+  date: 2026-11-25
+  url: https://github.com/HyruleanHero1988/FM-1-Swap/releases/tag/v0.6.6
+  notes: "TRY steps its emulator clock down on its own (240, 200, 160, 120) when the phone cannot keep real time, and SETUP gains options to open TRY full screen and to stretch the panel sideways. The emulator core is fm1-emu v0.5.1."
 - version: 0.6.5
   date: 2026-11-18
   url: https://github.com/HyruleanHero1988/FM-1-Swap/releases/tag/v0.6.5

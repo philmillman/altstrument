@@ -1,0 +1,55 @@
+device: m-vave-fm-1
+name: Drum Peter
+summary: >-
+  Drum machine for the FM-1 with 808, 909, 606 and 707 kits, eight built-in songs, a TR-style DRUM page (16 step keys, drum pads on the black keys, velocity and chance per step) and panel lights that blink in time; a variant of HYPNOTIC MIKE.
+description: >-
+  Drum Peter replaces the ARRANGE page of HYPNOTIC MIKE with a classic drum page: one row per drum, sixteen steps, the
+  white keys as step buttons and the black keys as pads. Four tracks hold the 808, 909, 606 and 707 kits with eleven
+  drums each. Velocity and chance are set per step, tracks run 16 to 64 steps, and the arpeggiator key rolls the drum.
+  Eight songs (hypno, hard techno, electro, house, minimal, breaks, dub and boom bap) are loadable templates, and an
+  empty project loads song 1 on start. SAVE opens a project menu to save, load a saved project, load a template or start
+  a new one. The panel lights follow a set of blink codes that show the playhead, edited step, unsaved changes and
+  mutes. The DX7, 303, PSG and pluck editors of FM1 Open are compiled out to make room; its step editor, drum sound
+  editor, FX, mixer, MIDI and arpeggiator stay. The project was called 6210 Drum Peter until 2026-11-26, when it dropped
+  the 6210 number. The README calls it a beta (0.2) that is tested on an original FM-1 with every build.
+status: active
+authors:
+- name: orion-musica
+  url: https://github.com/orion-musica
+source: https://github.com/orion-musica/6210-FM-1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE.md states GPL-3.0-only with M-VAVE's additional permission to link the FM1 binary SDK, inherited from FM1 Open.
+  The repository holds M-VAVE's sdk/lib/libfm1_engine.a under M-VAVE's separate terms for FM-1 devices, and
+  sdk/firmware/FM-1_015.fwsc, which is the V15 image M-VAVE publishes under Apache-2.0 (git blob ce49cc15, identical to
+  the one in m-vave/fm1_open). Other parts are listed in THIRD_PARTY.md.
+homepage: https://orion-musica.github.io/6210-FM-1/
+based_on: m-vave-fm-1/hypnotic-mike
+distribution: browser-installer
+requires_stock: stock V15 or any FM1 Open build
+install_notes: >-
+  Use the web installer on the project site in desktop Chrome or Edge over USB, and back up projects, voices and samples
+  first. From stock V15 the first install needs the installer's force-flash option. The installer's Restore original V15
+  choice goes back to stock. No release has been published yet; the README says the workflow publishes drum-peter.fwsc to a GitHub release when a version tag is pushed.
+brick_risk: false
+tags: [drums, groovebox, sequencer, performance, ui, web]
+image:
+  url: https://raw.githubusercontent.com/orion-musica/6210-FM-1/main/docs/assets/drum-playing.png
+  alt: "Drum Peter DRUM page: green screen with track 1 on the 808 engine at 120 BPM, a grid of eleven drum rows from BD to CH with sixteen steps each, and a knob row for drum, velocity, chance and tune"
+  credit: orion-musica
+  source_url: https://github.com/orion-musica/6210-FM-1
+  first_party: true
+versions:
+- version: main @ f93319d
+  date: 2026-11-26
+  url: https://github.com/orion-musica/6210-FM-1/commit/f93319d56501c4b85fead713b107c469dd9d8817
+  notes: No tagged releases; this is the latest commit. The project is renamed Drum Peter; the README and site now say every build is tested on a real FM-1. The repository itself is still named 6210-FM-1.
+- version: main @ 6b5a38c
+  date: 2026-11-24
+  url: https://github.com/orion-musica/6210-FM-1/commit/6b5a38c667409172ad3a21fb27a0ee77afacdc46
+  notes: No tagged releases; this is the latest commit, which touches only the browser simulator and its test harness.
+- version: main @ 8683f9d
+  date: 2026-11-24
+  url: https://github.com/orion-musica/6210-FM-1/commit/8683f9d9f05d
+  notes: No tagged releases; this is the latest commit.

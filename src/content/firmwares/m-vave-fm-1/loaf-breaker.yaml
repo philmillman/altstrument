@@ -17,7 +17,7 @@ description: >-
   breaks, and builds lead into a drop. A mix page has a compressor, ducking and a limiter, and the screen can show the
   mix scrolling past as a DJ player does. Panel pages come in tutorial, beginner and expert modes. The firmware has no
   Bluetooth. Nine breaks are built in, and the project site's Breaks page can write a few of your own after them. A browser emulator, an installer page, a manual,
-  a sound editor, a VST page for a computer build and, since 0.9.43, a Studio page that mirrors the FM-1's screen and panel over USB are published on the project site. The README calls it a 0.2xx beta on the way to 1.0, and every push to the loaf
+  a sound editor, a VST page for a computer build (which the FM-1 can drive as a USB controller since 0.9.79) and, since 0.9.43, a Studio page that mirrors the FM-1's screen and panel over USB are published on the project site. The README calls it a 0.2xx beta on the way to 1.0, and every push to the loaf
   branch is released.
 status: active
 authors:
@@ -48,6 +48,22 @@ image:
   source_url: https://github.com/FLEXOR-R/loaf-breaker
   first_party: true
 versions:
+- version: '0.9.82'
+  date: 2026-11-26
+  url: https://github.com/FLEXOR-R/loaf-breaker/releases/tag/loaf-v0.9.82
+  notes: Adds a three-band PRE EQ on the kick ahead of its drive, and a SUB SPLIT that sends the kick's lows around the distortion and back in clean with their own level and decay. KICK DIRT is renamed DIST, and every page's foot shows each knob as a card with a fader.
+- version: '0.9.81'
+  date: 2026-11-26
+  url: https://github.com/FLEXOR-R/loaf-breaker/releases/tag/loaf-v0.9.81
+  notes: Adds a fine tempo knob in 0.1 BPM steps with tap tempo on any white key, and four black-key drum functions (KCK, SNR, HAT, CLP) that play a drum and write it into its lane while recording. 0.9.80 came a few hours earlier and is not listed.
+- version: '0.9.79'
+  date: 2026-11-25
+  url: https://github.com/FLEXOR-R/loaf-breaker/releases/tag/loaf-v0.9.79
+  notes: Adds a CONTROLLER mode, in which an FM-1 plugged into a computer by USB plays the LOAF BREAKER VST with its keys, buttons and knobs and shows the plugin's lights. Needs VST 0.9.79.
+- version: '0.9.78'
+  date: 2026-11-25
+  url: https://github.com/FLEXOR-R/loaf-breaker/releases/tag/loaf-v0.9.78
+  notes: Fixes memory corruption when a kick's FX held MAGIC MBC and its algorithm was set to the X-OVER part. Adds an SPL black-key function that splits the playing break and a remade FLEXOR LAYOUT with its own SEL layer.
 - version: '0.9.77'
   date: 2026-11-25
   url: https://github.com/FLEXOR-R/loaf-breaker/releases/tag/loaf-v0.9.77

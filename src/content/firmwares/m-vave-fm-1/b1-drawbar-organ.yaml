@@ -7,10 +7,9 @@ description: >-
   Builds the sound from tonewheel-style harmonics instead of recordings, with up to 12 voices. Two engines are
   offered, sine and a band-limited sawtooth, each with a cleaner organ character and a driven amplifier and cabinet
   character. Performance features include four keyboard ranges, chord assignment with a humanised onset, 48 scales and MIDI
-  routing. It is built on SikkenWorks' BEETLE and ETCH and on Felucca. The README now leads with V5.6, an update-path
-  repair that leaves the sound, interface and project storage unchanged, and says that release was flashed and tested on
-  physical hardware. The older install text kept below it still carries earlier cautions about 12-voice timing and an
-  on-device update failure.
+  routing. It is built on SikkenWorks' BEETLE and ETCH and on Felucca. The README's status section still describes V5.4 and V5.5, says the V5.5
+  update changes had not been tested on hardware and carries cautions about 12-voice timing and an on-device update
+  failure. The changelog records V5.7 to V5.9 as flash-chip, update-path and polyphony work checked on a computer.
 status: active
 authors:
 - name: SikkenWorks
@@ -37,6 +36,14 @@ image:
   source_url: https://github.com/SikkenWorks/B1-Drawbar-Organ
   first_party: true
 versions:
+- version: V5.9
+  date: 2026-11-26
+  url: https://github.com/SikkenWorks/B1-Drawbar-Organ/releases/tag/V5.9
+  notes: Release page has no text; the changelog says it groups sustained ORGAN and SAW wheel calculations in 16-frame tiles and reuses settled contact gains in the attack and release mixer, to lower the cost of busy chords. A polyphony measurement report is in the repository.
+- version: V5.7
+  date: 2026-11-26
+  url: https://github.com/SikkenWorks/B1-Drawbar-Organ/releases/tag/V5.7
+  notes: Release page has no text; the changelog says it accepts both the Puya P25Q80H and the newer UCUN UC25HQ80 flash chip for B1's writes, repairs the updater's reading of M-VAVE's original V15 package and refuses unknown or V16 boot sectors before staging an update. The audio code is unchanged from V5.2, and the changelog says the update checks were replays on a computer, not hardware flash tests.
 - version: V5.6
   date: 2026-11-02
   url: https://github.com/SikkenWorks/B1-Drawbar-Organ/releases/tag/V5.6

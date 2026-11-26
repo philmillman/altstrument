@@ -1,9 +1,10 @@
 device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
 name: P-Vox
 summary: >-
   Polivoks-style synth: two generators, a two-op-amp filter, Bass Support, a sequencer, a drum generator with 12-pattern packs and effects on the second core. The release is a compiled package without firmware source.
 description: >-
-  Rights warning: the HV logo is Hans Volt's, all rights reserved, and not under the GPL, and the boot voice was made with Microsoft Edge text-to-speech with no confirmed redistribution licence. It imitates the Soviet Polivoks with two generators and a two-op-amp filter, a sequencer with live transpose from the keys, and a drum generator with 12-pattern packs for house, dubstep, drum and bass and techno at 130 BPM. The selected drum pattern is saved across power cycles. Effects run on the second core. The repository holds the compiled .fwsc as a release asset, a single-page web flash helper and a copy of the Felucca update loader source, but not the firmware source. The release notes say the author flashed and tested it on a real FM-1. The author also makes FORM.
+  Rights warning: the HV logo is Hans Volt's, all rights reserved, and not under the GPL, and the boot voice was made with Microsoft Edge text-to-speech with no confirmed redistribution licence. It imitates the Soviet Polivoks with two generators and a two-op-amp filter, a sequencer with live transpose from the keys, and a drum generator with 12-pattern packs for house, dubstep, drum and bass and techno at 130 BPM. The selected drum pattern is saved across power cycles. Effects run on the second core. The repository holds the compiled .fwsc as a release asset, a single-page web flash helper and a copy of the Felucca update loader source, but not the firmware source. The release notes say the author flashed and tested it on a real FM-1. Release v1.1 adds an SMK-37 Elite package, with its own flash page, that the release notes say was tested on real hardware. The author also makes FORM.
 status: active
 authors:
 - name: HanzVolt
@@ -25,6 +26,14 @@ image:
   source_url: https://github.com/HanzVolt/P-Vox
   first_party: true
 versions:
+- version: v1.1-7869-fm1
+  date: 2026-11-25
+  url: https://github.com/HanzVolt/P-Vox/releases/tag/v1.1-7869-fm1
+  notes: Package FM-1_7869, the 23 November parity firmware plus a DRUM STEP toggle, ONPLAY, on knob K3 that is off at power-up and kept in RAM only. When on, each PLAY press writes a fresh generated drum loop into the playing copy without touching saved patterns. The release notes say it was tested on real hardware and the boot voice is waiting to be replaced by the author's own recording.
+- version: v1.1-smk37-900
+  date: 2026-11-25
+  url: https://github.com/HanzVolt/P-Vox/releases/tag/v1.1-smk37-900
+  notes: The SMK-37 Elite build (package SMK-37 Elite_900) of the same PlayGen firmware, with the ONPLAY drum toggle on knob K7, its own .fwsc and flash page. Not for the FM-1.
 - version: v1.0-7869
   date: 2026-11-22
   url: https://github.com/HanzVolt/P-Vox/releases/tag/v1.0-7869

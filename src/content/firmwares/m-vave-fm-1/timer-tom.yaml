@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: Timer Tom
+summary: >-
+  Kitchen multi-timer firmware for the FM-1: four timers on K1 to K4 with dish icons, soft ambient-techno percussion that adds a layer per running timer, key loops and key lights that run like an hourglass. Beta.
+description: >-
+  Timer Tom replaces the FM-1 firmware with four countdown timers shown on one screen, each with a dish icon and a bar that empties like sand. K1 to K4 set the timers up to four hours, PRESETS picks one of twelve icons, PLAY starts or pauses the active timer or all of them, and REC resets one. While timers run, each adds a layer of soft percussion (kick, open hat, rim with dub echo, shaker), or the sound can be switched to a plain clock tick or silence. Each of the 27 keys starts its own slow melodic loop in one key, which moves to the next key after a while, and the key lights show an hourglass with a grain falling on every beat. Alarms play a three-note motif per timer. The sound engines and sequencer are those of FM1 Open, and the changes sit in the app layer. Timers and loops are not saved. The README calls it a beta that has passed testing on an original FM-1, and the project says its code was written together with Claude.
+status: active
+authors:
+- name: orion-musica
+  url: https://github.com/orion-musica
+source: https://github.com/orion-musica/timer-tom-FM-1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  GitHub shows no standard licence for the repository, but LICENSE.md states GNU GPL version 3 only with M-VAVE's additional permission to link the FM1 binary SDK, inherited from FM1 Open. The repository holds M-VAVE's sdk/lib/libfm1_engine.a under M-VAVE's separate terms for FM-1 devices, and sdk/firmware/FM-1_015.fwsc, which is the V15 image M-VAVE publishes under Apache-2.0 (git blob ce49cc15, identical to the one in m-vave/fm1_open). Other parts are listed in THIRD_PARTY.md.
+homepage: https://orion-musica.github.io/timer-tom-FM-1/
+based_on: m-vave-fm-1/fm1-open
+distribution: browser-installer
+requires_stock: stock V15 or any FM1 Open build
+install_notes: >-
+  Use the web installer on the project site in desktop Chrome or Edge over USB, and back up projects, voices and samples first. From stock V15 the first install needs the installer's force-flash option. The installer has the original V15 built in, so it can put the stock firmware back. The README says a tagged release will attach timer-tom.fwsc, and none has been published yet.
+brick_risk: false
+tags: [timer, utility, ambient, performance, ui, web, game]
+image:
+  url: https://raw.githubusercontent.com/orion-musica/timer-tom-FM-1/main/docs/assets/running-leds.png
+  alt: "Timer Tom KITCHEN page on the FM-1 screen: four timer rows with dish icons, three running (eggs 00:16, soup 01:26, meat 46:56) and rice off, with the hourglass on the key-light strip below"
+  credit: orion-musica
+  source_url: https://github.com/orion-musica/timer-tom-FM-1
+  first_party: true
+versions:
+- version: main @ 4ea1151
+  date: 2026-11-26
+  url: https://github.com/orion-musica/timer-tom-FM-1/commit/4ea1151ffda0050068de665e44c05a3942ce6b8f
+  notes: No tagged releases; this is the latest commit.

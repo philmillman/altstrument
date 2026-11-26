@@ -1,0 +1,32 @@
+device: m-vave-fm-1
+name: FM-1 Big Screen +/Minus
+kind: tool
+summary: >-
+  Logic, Ableton Live and FL Studio plug-in for macOS that shows the FM-1's screen, with Big Screen builds of Hortator and MNM-1 that send it and a host-clock sync button; the README is in French.
+description: >-
+  The repository builds three things in GitHub Actions: a Hortator and an MNM-1 firmware package, each made from the original project at a pinned commit with Big Screen code added, and a plug-in for macOS 10.15 on Intel, as an Audio Units MIDI effect for Logic, a VST3 audio effect for Ableton Live and FL Studio, and a standalone app. The Big Screen code is Patrick Kellogg's screen-over-SysEx protocol, so the plug-in also reads ChoralRoot, JIANT FM, Sloop and Melodee builds that carry it. The firmware patch only adds lines, and a later one adds remote editing, so the plug-in can place sequencer steps, solo and mute tracks, drag track levels and undo up to 12 edits from the screen. The plug-in has two skins, a backlit-screen look and an amber LED scoreboard. Its SYNC / HOST button sends MIDI clock from the host so the FM-1 follows the project tempo, starts on play and stops on stop, with an offset of minus 50 to plus 100 ms. The firmware packages are unofficial builds, and the README says that the Hortator and MNM-1 authors have nothing to do with them. Installation is through web installers on the repository's GitHub Pages, and the plug-in is copied into the plug-in folders from Terminal. Both releases are pre-releases.
+status: active
+authors:
+- name: +/Minus
+  url: https://github.com/suburbbeat-hub
+source: https://github.com/suburbbeat-hub/FM1-Big-Screen
+source_status: open
+license: MIT
+license_notes: >-
+  Read in the repository's LICENSE file, which names +/Minus as the copyright holder and credits Patrick F. Kellogg for the screen_mirror and bs_mirror files. The same file says that the Hortator and MNM-1 firmware builds are GPL-3.0-only as a whole, with their source in the original repositories at the pinned commits plus firmware-patch/, and that the plug-in uses JUCE under JUCE's own licence. The skin fonts are under the SIL Open Font License and are fetched at build time. No M-VAVE firmware file is in the repository.
+homepage: https://github.com/suburbbeat-hub/FM1-Big-Screen
+based_on: m-vave-fm-1/fm1-big-screen
+distribution: browser-installer
+install_notes: >-
+  Connect the FM-1 directly to the computer over USB, without a hub, open the installer page in Chrome and choose Hortator or MNM-1 with Big Screen. The README says to go back to the official firmware with M-VAVE's M-UPGRADE and the FM-1 V15 file. The plug-in zip is built for macOS 10.15 on Intel and installed with copy and quarantine-removal commands in Terminal. It has to be validated with auval, and in Logic SysEx needs to be ticked in the project's MIDI input filter.
+brick_risk: false
+tags: [usb-midi, midi, ui, plugin, vst, au, fork]
+versions:
+- version: v1.1-beta
+  date: 2026-11-25
+  url: https://github.com/suburbbeat-hub/FM1-Big-Screen/releases/tag/v1.1-beta
+  notes: Pre-release with the Hortator and MNM-1 Big Screen packages and plug-in v1.1, which adds the SYNC / HOST button, two skins, mouse editing of steps and track levels, and undo.
+- version: v1.0-beta
+  date: 2026-11-25
+  url: https://github.com/suburbbeat-hub/FM1-Big-Screen/releases/tag/v1.0-beta
+  notes: First pre-release, with the Hortator and MNM-1 Big Screen packages and the plug-in.

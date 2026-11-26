@@ -1,13 +1,17 @@
 device: m-vave-fm-1
 name: MPS-16 ver FM1
 summary: >-
-  MIDI phrase sampler and chord player for the FM-1: a loaded MIDI file plays on 16 A pads on the white keys, the first seven black keys play bass and lead, the last four change key, with strum, arp, humanize and MIDI out on a channel per pad group.
+  Chord builder for the FM-1 (SEED): play a few notes, pick a scale, and the 16 white keys hold its chords and progressions, the black keys play the key's notes, with a note length, strum, humanize, arp and a MIDI loop recorder, out over USB MIDI.
 description: >-
-  A loaded MIDI file is spread over the 16 A pads on the white keys in its own key. The B pads, the first seven black keys, play bass and lead in the key, the C pads, the last four, change key for a bridge, and MUTATE varies repeated chords. Each pad group sends MIDI on its own channel. MIDI files can be copied
-  onto the FM-1 as on a USB drive or recorded into it, then cut into slices that go on pads. The README calls it early test builds by BeatSmith (originally published as ChordSmith FM) and
-  the hardware version of MPS-16 ver WEB and groundwork for MPS-16. It is built on fm1-base and felucca-bsp with Felucca-Engines voices. The project site has
-  a browser emulator that runs the same code, a browser installer that can put M-VAVE's own firmware back, and a .fwsc download for the command-line installer.
-  The licence for the project's own code is still undecided.
+  From build 0.30 the firmware is SEED, the chord builder of MPS-16. Play a few notes you like and pick a scale that fits, and the 16 white keys hold the key's
+  eight chords and eight progressions (triads, sevenths, ninths, sus2, sus4 or add9). The first seven black keys play the notes of the key and light with the
+  bass of the chord played, and the last four are BASS, NO BASS, NO ROOT and a tap-tempo key. Every change goes to the group played last, or to one held key.
+  K3 sets a note length from 1/32 to four bars, as played or legato, and per-pad edit pages set rhythm, strum, speed, humanize, swing, inversion and an arpeggio
+  direction. A LOOP recorder records a bar-quantized MIDI loop layer by layer, and COACH walks a first-time user through the keys. MIDI goes out over USB on four
+  fixed channels (pads 1 to 8, pads 9 to 16, the note keys and the keyboard), and eight built-in sounds from Felucca-Engines can be heard with it or alone. The
+  README calls these early test builds by BeatSmith (originally ChordSmith FM). The MIDI phrase sampler of builds up to 0.25 was dropped from the firmware; it
+  stays on the sampler-0.25 branch and its builds stay on the site under /v/. It is built on fm1-base and felucca-bsp. The project site has a browser emulator that
+  runs the same code and a browser installer that can put M-VAVE's own firmware back. The licence for the project's own code is still undecided.
 status: active
 authors:
 - name: Brent Walker
@@ -29,12 +33,16 @@ install_notes: >-
 brick_risk: false
 tags: [chords, performance, sequencer, midi, synth-engine]
 image:
-  url: https://brentwalker.github.io/MPS-16-fm1/manual/img/screen-playing.png
-  alt: MPS-16 ver FM1's screen showing Kit 01 in A minor, pad 2 with the chord B minor 7 flat 5, a row of sixteen pad cells, root buttons 1 to 7 and strum, arp, humanize and tempo values
+  url: https://raw.githubusercontent.com/BrentWalker/MPS-16-fm1/main/app/docs/img/seed-home.png
+  alt: "SEED home screen: TYPE 7THS and PROG 6 at the top, seven coloured note keys C to B, chord and progression key rows, BASS, NO BASS, NO ROOT and TAP buttons, and key C MAJ, length AS IS, tap BPM 90"
   credit: Brent Walker
   source_url: https://brentwalker.github.io/MPS-16-fm1/
   first_party: true
 versions:
+- version: main @ 05d9e14
+  date: 2026-11-26
+  url: https://github.com/BrentWalker/MPS-16-fm1/commit/05d9e14849dd193f69436b3ae3e7e5d3f6030953
+  notes: No tagged releases; this is the latest commit, and its message calls the build 0.38. Build 0.30 turns the firmware into SEED, a chord builder only, and moves the MIDI phrase sampler to the sampler-0.25 branch. Builds 0.31 to 0.38 follow within a day with MIDI on four fixed channels, a sound for each MIDI group, a pad editor with a playhead, a MIDI FX page, per-key edits, a LOOP recorder and a LENGTH control.
 - version: main @ 0643b98
   date: 2026-11-19
   url: https://github.com/BrentWalker/MPS-16-fm1/commit/0643b98b8c4ad7fe3e1d51a7e3e7d0366d1e8e17

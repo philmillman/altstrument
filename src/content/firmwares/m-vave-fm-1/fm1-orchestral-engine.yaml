@@ -1,0 +1,47 @@
+device: m-vave-fm-1
+name: FM1 Orchestral Engine
+summary: >-
+  Physical-modelling orchestra for the FM-1: 30 instruments played by waveguides on 16 voices across eight MIDI-channel parts, with an adaptive arpeggiator and sequencer, a stage-view panel and an effects chain. Beta, not yet heard on a unit.
+description: >-
+  Source note: the default branch holds only the licence file, and the source is in the commits that the version tags and the beta and feature branches point to. Each player is a digital waveguide, and the eight parts share one pool of voices, with a per-part envelope and LFO, connected legato and loudness that follows the register. The arpeggiator, phrase generator, call-and-response patterns and adaptive 16-step sequencer play the sections, and eight factory scenes are included. The panel has seven pages (stage, arp, sequence, console, FX, envelope, LFO), with the stage drawn as a seating plan, and a console control sets a shared sympathetic resonance. From 0.6.4 the firmware answers MIDI as a Yamaha XG part, 0.6.6 takes tempo from MIDI clock, and 0.6.9 renders the voices on both of the processor's cores. The firmware is built by GitHub Actions from Plieuw's HAWK CHUA at a pinned commit with this project's engine and panel laid over it, and keeps HAWK CHUA's boot, update and USB and TRS MIDI code. A WebAssembly build of the same engine and panel is in the source. The README says nothing has been heard on an FM-1: the tests pass and the package builds, links and fits. It says to flash it only with a recovery route at hand.
+status: active
+authors:
+- name: Plieuw
+  url: https://github.com/Plieuw
+source: https://github.com/Plieuw/fm1orkestpm/tree/v0.7.1-beta
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Read in the repository's LICENSE file, which is the GPL v3 text, and the README, which says the project's GPL-3.0 licence covers its original application code and that the FM1 Core platform, HAWK CHUA and the JieLi SDK keep their own licences. Neither says "or later". No M-VAVE firmware file is in the repository or its release assets.
+homepage: https://github.com/Plieuw/fm1orkestpm/releases
+based_on: m-vave-fm-1/hawk-chua
+distribution: download
+install_notes: >-
+  The releases attach a .fwsc package, and the release notes say to install it with the tools/fm1_install.py script from HAWK CHUA. The repository's boot-safety notes say an application update must never write the first 0x4000 bytes or replace the bootloader, that the pinned loader writes only the application area and leaves out the user-data region, and that it checks the flash chip's ID before every erase and write and reads back each changed sector. The notes also say recovery is not guaranteed to cover every failure. Holding OCT- and OCT+ for five seconds enters the UBOOT recovery mode, as in HAWK CHUA, and the notes name the m-bootloader recovery menu on PLAY at power-on.
+brick_risk: false
+tags: [synth, physical-modeling, orchestral, sequencer, arpeggiator, midi, fork]
+versions:
+- version: v0.7.1-beta
+  date: 2026-11-25
+  url: https://github.com/Plieuw/fm1orkestpm/releases/tag/v0.7.1-beta
+  notes: Pre-release with 30 instruments and 16 voices.
+- version: v0.7.0-beta
+  date: 2026-11-25
+  url: https://github.com/Plieuw/fm1orkestpm/releases/tag/v0.7.0-beta
+  notes: Pre-release that computes slowly changing values once per 32-sample chunk, which the README says halves the instructions executed.
+- version: v0.6.9-beta
+  date: 2026-11-25
+  url: https://github.com/Plieuw/fm1orkestpm/releases/tag/v0.6.9-beta
+  notes: Pre-release that renders the voices on both processor cores with the same output as on one.
+- version: v0.6.4-beta
+  date: 2026-11-25
+  url: https://github.com/Plieuw/fm1orkestpm/releases/tag/v0.6.4-beta
+  notes: Pre-release that answers MIDI as a Yamaha XG part and spreads velocity over 32 dB.
+- version: v0.6.0-beta
+  date: 2026-11-25
+  url: https://github.com/Plieuw/fm1orkestpm/releases/tag/v0.6.0-beta
+  notes: Pre-release with retuned waveguides, an even mix over the voices, reworked adaptive playing, arpeggiator and sequencer, and a vector-drawn panel.
+- version: v0.5.0-beta
+  date: 2026-11-25
+  url: https://github.com/Plieuw/fm1orkestpm/releases/tag/v0.5.0-beta
+  notes: Pre-release that merges the author's two development lines into one.

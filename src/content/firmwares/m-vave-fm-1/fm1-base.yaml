@@ -7,9 +7,9 @@ description: >-
   Provides the platform layer above the hardware (screen, drawing and fonts, panel and LEDs, audio, MIDI over USB
   and TRS, storage, a screen reader channel) so an app supplies only its own sound, screen and controls. The
   same app builds for the FM-1, a host simulator and a browser emulator. Bluetooth MIDI and WiFi are build
-  options that cannot be combined, since the chip lacks the RAM for both. WiFi and the default Bluetooth stack need
+  options that cannot be combined on JieLi's libraries, since the chip lacks the RAM for both. WiFi and the default Bluetooth stack need
   JieLi's SDK libraries; an own stack taken from Optimist (build option ble_stack = "own") links none of them and also
-  offers pairing, connecting to Bluetooth MIDI devices and Bluetooth audio to headphones and speakers. The
+  offers pairing, connecting to Bluetooth MIDI devices and Bluetooth audio to headphones and speakers. With the own Bluetooth and own WiFi stacks together (wifi_stack = "own") a firmware can have both, with an access point mode (MODE AP), opt-in Ableton Link, which makes the firmware GPL-3.0-only as a whole, and an optional USB network adapter (usb_net) that runs Link and the app's UDP over the cable. The
   repository includes a skill file for moving a Felucca-based firmware onto it, which only works for firmware
   that keeps nothing of Felucca beyond what felucca-bsp and fm1-base already carry. A companion service, switched on in fm1.toml, lets a computer or the repository's companion web page ask a firmware what it is and has, copy, replace, back up and restore the app's files and edit its parameters over SysEx. The template is a flashable
   firmware with its own installer and emulator page, tagged as firmware rather than tool for that reason. The
@@ -45,6 +45,10 @@ image:
   source_url: https://charlesvestal.github.io/fm1-base/
   first_party: true
 versions:
+- version: main @ 3039770
+  date: 2026-11-26
+  url: https://github.com/charlesvestal/fm1-base/commit/30397702339c2ecb8fe20aa89e4cda0b4975f0d8
+  notes: No tagged releases; this is the latest commit. Since the previous row, the own WiFi stack with its access point mode and opt-in Ableton Link is merged, a USB network option (usb_net) is added, packages can carry extra read-only regions (fm1.toml extras), app_steps and app_clear_top are added, the updater stops swallowing a SysEx frame another handler took, and the build gains a PLAT_SPARE section for RAM left over from the reset-kept records. felucca-bsp is updated to fdd709f.
 - version: main @ 2bb8e74
   date: 2026-11-22
   url: https://github.com/charlesvestal/fm1-base/commit/2bb8e74f2962475eeeefd5179420bd8d73a3da6c

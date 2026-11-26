@@ -1,0 +1,45 @@
+device: meng-qi-wingie2
+name: Blippoo for Wingie
+summary: Meng Qi's alternative firmware for the Wingie2, inspired by Rob Hordijk's Blippoo Box, that turns it into a standalone instrument generating sounds and patterns from controlled chaos.
+description: >-
+  Blippoo for Wingie replaces the Wingie2's resonator firmware with a self-contained chaotic instrument, written as a
+  Faust DSP core with an Arduino sketch for the ESP32. The README says it is inspired by Rob Hordijk's Blippoo Box and
+  that it can produce many sounds and patterns on its own through chaotic behaviour. The repository holds the Faust
+  source, the sketch, English and Chinese manuals as PDFs and a Max for Live device, Blippoocon, for controlling it. The
+  release is an upload pack with esptool and USB drivers, run with a double click on Windows or a command script on
+  macOS, and the release notes link a demonstration video. The project had a single release in February 2023 and has not
+  changed since.
+status: dormant
+authors:
+  - name: Meng Qi
+    url: https://github.com/mengqimusic
+source: https://github.com/mengqimusic/bfw
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The repository LICENSE is the GPL version 3 text, which GitHub detects. The licence file's own text says "or any later
+  version" only in its generic how-to-apply section and the repository carries no per-file notice, so it is recorded as
+  -only.
+homepage: http://mengqimusic.com
+distribution: download
+requires_stock: Wingie2
+install_notes: >-
+  Connect the Wingie2 to a computer (silver units need a USB A-C cable), download Blippoo_for_Wingie_upload_pack.zip from the release and unzip it. On
+  Windows run _windows_upload; on macOS give Terminal Full Disk Access, run esptool once from the right-click menu, then
+  run _osx_upload.command. If the upload fails, install the driver from the Drivers folder. The upload pack was not
+  opened here, so what it writes and whether stored settings are kept are not stated; the ESP32's ROM serial bootloader
+  stays available for re-flashing with the official Wingie2 flasher.
+brick_risk: false
+tags: [official, chaos, instrument, generative, faust, open-source]
+video:
+  url: https://youtu.be/bu-L-I0M0TI
+  title: "Blippoo for Wingie: a Wingie2's alternative firmware"
+  credit: 合成少数派 Synthesis Minority
+  first_party: true
+  found_via: https://github.com/mengqimusic/bfw/releases/tag/v1.0
+  version: v1.0
+versions:
+- version: v1.0
+  date: 2023-02-26
+  url: https://github.com/mengqimusic/bfw/releases/tag/v1.0
+  notes: First and only release; an upload pack, two manuals and the Blippoocon Max for Live device.

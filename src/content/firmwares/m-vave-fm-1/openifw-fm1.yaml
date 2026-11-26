@@ -12,7 +12,7 @@ description: >-
   three user programs. DSP was ported to fixed-point C, and the same C code runs in the browser demo. The window
   layout and user-slot operations follow Ghoulbox, and the platform is Dinghy and Felucca. The README is in Chinese,
   says the author had no FM-1 in the development environment, and reports from device feedback that 0.4.5 had
-  serious problems and that 0.4.6-rc1 had distortion. The latest candidate, 0.4.7-rc15, restyles the screen after SLOOP with a Terminus Bold font, four parameter colours and eight colour themes with black backgrounds, goes back to rc8's output level, adds an editable breath curve and selectable breath CC, and takes wind-controller notes and breath from the FM-1's TRS MIDI input as well as USB. It is described as checked on the host and against a model rather than accepted on a device; earlier 0.4.7 candidates were withdrawn.
+  serious problems and that 0.4.6-rc1 had distortion. The candidates up to 0.4.7-rc18 restyle the screen after SLOOP with a Terminus Bold font, four parameter colours and eight colour themes with black backgrounds, go back to rc8's output level, add an editable breath curve and selectable breath CC, and take wind-controller notes and breath from the FM-1's TRS MIDI input as well as USB; rc18 applies MIDI events at 32-frame render slice boundaries. It is described as checked on the host and against a model rather than accepted on a device; earlier 0.4.7 candidates were withdrawn.
 status: active
 authors:
 - name: rcell233
@@ -35,6 +35,10 @@ install_notes: >-
 brick_risk: false
 tags: [synth-engine, fm, midi, usb-midi, emulator, fx, oscillator]
 versions:
+- version: main @ 6c23308
+  date: 2026-11-26
+  url: https://github.com/rcell233/OpenIFW-fm1/commit/6c23308e7fcb3a6723eb549c99ca8a13adbdcc0b
+  notes: No tagged releases; this is the latest commit, release candidate 0.4.7-rc18, which applies MIDI at 32-frame render slice boundaries instead of the next 256-frame block and adds a replay harness that compares the DSP with OpenIFW 1.3.1; rc17 stays as a rollback.
 - version: main @ e4d04de
   date: 2026-11-23
   url: https://github.com/rcell233/OpenIFW-fm1/commit/e4d04deec02a2991ba401e7ba09701292fceb841

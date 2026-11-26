@@ -37,6 +37,10 @@ image:
   source_url: https://github.com/SikkenWorks/BEETLE
   first_party: true
 versions:
+- version: '1.9'
+  date: 2026-11-26
+  url: https://github.com/SikkenWorks/BEETLE/releases/tag/V1.90.0
+  notes: "Experimental. Release page has no text; the changelog calls it V1.9, titled OTA cross-firmware switching and flash recovery preflight. It rechecks the flash chip twice before an update so a failed probe no longer blocks later update writes, lets a requested and fully checked update reclaim BEETLE's update staging range and accepts a variable-size application slot. Images larger than 0x93000 bytes, including M-VAVE's V16, are refused before any write. The changelog says it was checked on a computer only and that the handoff to the Firmware Hub, both flash chip types and power-loss recovery are not verified on hardware. The tag is V1.90.0 and the package is BEETLE-V1.9.fwsc."
 - version: 1.8.3
   date: 2026-11-09
   url: https://github.com/SikkenWorks/BEETLE/releases/tag/V1.8.3

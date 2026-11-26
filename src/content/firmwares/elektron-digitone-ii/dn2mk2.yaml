@@ -12,7 +12,7 @@ description: >-
   The sample import page connects over Web MIDI, shows what the mod holds on the instrument, and sends dropped files
   or folders to the library with replace or add modes, using the mod's own SysEx commands. Builds from v0.24 to v0.43 and v0.45 to v0.48 are
   kept as zip archives of the build code. The page builds on OS 1.11, so a unit on 1.12 or later goes back to a
-  1.11-based OS, except for one test build, v0.73-t1, that moves the mod onto OS 1.12.
+  1.11-based OS, except for one test build, v0.73-t1, that moved the mod onto OS 1.12 and was pulled after it crashed at boot on a unit.
 status: active
 authors:
   - name: De-Pattern
@@ -38,6 +38,11 @@ install_notes: >-
 brick_risk: false
 tags: [flasher, machines, sampler, web-midi, sysex, usb-midi, web, patch, os]
 versions:
+  - version: main @ b94d636
+    date: 2026-11-26
+    url: https://github.com/De-Pattern/dn2mk2/commit/b94d6368a6550927565ed81e23b0de21fe5e9da0
+    notes: >-
+      No tagged releases; this is the latest commit. Since the previous entry the patcher offers v0.74 (LIVEREC) and v0.75 (PILEVEL), and the RIFT list gains v0.25 (SPALL), v0.26 (VOC) and v0.27 (FLOW), each with an updated manual and quick guide. The test build v0.73-t1 for OS 1.12 was pulled after a boot crash on a unit. The MOD and RIFT sections also show a live build status read from the gate-status branches every 30 seconds.
   - version: main @ e5b3923
     date: 2026-11-25
     url: https://github.com/De-Pattern/dn2mk2/commit/e5b3923c03d0ea5ab0b9d3147c94cd5e59744f5e

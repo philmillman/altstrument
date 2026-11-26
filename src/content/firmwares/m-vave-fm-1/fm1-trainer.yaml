@@ -4,7 +4,7 @@ kind: tool
 summary: >-
   Single-page trainer that teaches four songs' sounds on the FM-1 step by step, with the stock V16 screen, a panel diagram and an audio clip for each setting.
 description: >-
-  Four songs, Hide, the Twin Peaks theme, Take On Me and Closer, each build one sound from a blank voice, one setting at a time. Every step shows the screen that M-VAVE's stock V16 firmware produced after that change, a diagram of the controls to touch and a clip of the result, and a fifth section covers moving patches into GarageBand through the fm1-emu Audio Unit. The screens and clips were captured by running the stock firmware headless in fm1-emu with the scripts in tools/, whose paths point at the author's machine. The whole site is one index.html with the media embedded, and progress is kept in the browser. A companion repository, fm1-trainer-mobile, is meant to hold an offline phone version of the same walkthrough and is empty. The GitHub Pages addresses the README gives for both returned 404 when checked. It does not install anything on a physical unit.
+  Four songs, Hide, the Twin Peaks theme, Take On Me and Closer, each build one sound from a blank voice, one setting at a time. Every step shows the screen that M-VAVE's stock V16 firmware produced after that change, a diagram of the controls to touch and a clip of the result, and a fifth section covers moving patches into GarageBand through the fm1-emu Audio Unit. The screens and clips were captured by running the stock firmware headless in fm1-emu with the scripts in tools/, whose paths point at the author's machine. The whole site is one index.html with the media embedded, and progress is kept in the browser. A phone version, fm1-trainer-mobile (FM-1 Pocket Trainer, https://github.com/considrew/fm1-trainer-mobile), is a separate repository with the same four songs rebuilt from the same step definitions: lessons are in a JSON file and the screens and clips are separate files, it works offline after the first visit, can be added to a phone's home screen, and uses swipe or a bottom bar to move between steps and a button that keeps the screen awake. Both sites are served on GitHub Pages and loaded when checked on 2026-11-26. It does not install anything on a physical unit.
 status: active
 authors:
 - name: considrew
@@ -14,9 +14,10 @@ source_status: open
 license: unspecified
 license_notes: >-
   The repository has no licence file and the README gives no licence. The embedded screens and clips are captures of M-VAVE's stock V16 firmware running in fm1-emu; the README says it is not affiliated with M-VAVE and shows the firmware screens for teaching purposes. No firmware file is in the repository.
+homepage: https://considrew.github.io/fm1-trainer/
 distribution: source-only
 install_notes: >-
-  Open index.html from the repository in a browser. It writes nothing to a physical FM-1.
+  Open the hosted page in a browser, or open index.html from the repository. The phone version has its own page, which the browser can install as a home-screen app. Neither writes anything to a physical FM-1.
 brick_risk: false
 tags: [trainer, web, dx7, emulator]
 versions:

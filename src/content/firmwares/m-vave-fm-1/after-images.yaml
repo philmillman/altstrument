@@ -1,0 +1,48 @@
+device: m-vave-fm-1
+name: After Images
+summary: >-
+  Generative ambient composer: REC writes a new piece with four layers, 30 sound engines, eleven rule-based sequencers, an ambient mixer and three visuals, and the next piece follows on round the circle of fifths.
+description: >-
+  Pressing REC deals a key, tempo, four sounds, four sequencers, a featured effect, a colour palette and a name. The four layers (ground, body, light and dust) each keep to their own part of the spectrum and answer each other. The eleven sequencers include Euclidean rings, a Turing machine, Markov chains, the Lorenz attractor, Conway's Life and Reich-style phasing, and one layer's notes can nudge another's system. Thirty engines cover FM, string, glass, voice, organ, choir, mallet, wavetable and bass sounds, with per-layer effect sends for reverb with shimmer, tape echo, chorus and tape saturation. Four macros (mood, activity, evolve and drift) steer the piece, and a PERSONALITY page sets what REC favours. The keys play the scale on the chosen layer. MATRIX, RORSCHACH and MOSH are three screens that react to the notes. It follows MIDI clock to the beat and bar, can send clock, sends each layer on its own MIDI channel, and streams a stereo mix over USB audio. The README says it is built on fm1-base, works on both FM-1 flash chips and is not affiliated with M-VAVE. Pieces and settings save themselves a few seconds after stopping with PLAY.
+status: active
+authors:
+- name: TheGrizard
+  url: https://github.com/TheGrizard
+source: https://github.com/TheGrizard/After-Images
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The README states MPL-2.0 and the LICENSE file is the MPL-2.0 text. The screen font is DejaVu Sans under its own licence file in app/fonts, and the README points to fm1-base's LICENSING.md for the parts it is built from.
+homepage: https://TheGrizard.github.io/After-Images/install/
+distribution: browser-installer
+install_notes: >-
+  Open the web installer in Chrome or Edge, connect the FM-1 by USB and follow the page, or download the .fwsc from Releases and use fm1-base's command-line installer. The README says the web installer can put M-VAVE's own firmware back at any time and that earlier releases stay available. Stop with PLAY and wait a few seconds before switching off so the piece and settings save.
+brick_risk: false
+tags: [generative, ambient, sequencer, synth-engine, fx, midi, usb-midi, visuals, performance]
+image:
+  url: https://raw.githubusercontent.com/TheGrizard/After-Images/main/docs/screen.png
+  alt: "After Images MATRIX screen: a pegboard of small coloured dots in blue, green, teal, orange and violet on a black background, clustered in the middle and thinning towards the edges"
+  credit: TheGrizard
+  source_url: https://github.com/TheGrizard/After-Images
+  first_party: true
+versions:
+- version: v3.1
+  date: 2026-11-25
+  url: https://github.com/TheGrizard/After-Images/releases/tag/v3.1
+  notes: Silent power-on until the volume knob has been read, and quick MOOD turns no longer crackle. The release page has no notes.
+- version: v3.0
+  date: 2026-11-25
+  url: https://github.com/TheGrizard/After-Images/releases/tag/v3.0
+  notes: USB AUDIO gains a CONTROL setting, volume knob or a fixed gain. The release page has no notes.
+- version: v2.12
+  date: 2026-11-25
+  url: https://github.com/TheGrizard/After-Images/releases/tag/v2.12
+  notes: Brings the engines to 30 with five new ones, keeps ENTROPY from overwhelming each engine and plays the bass in mono. The release page has no notes.
+- version: v2.9
+  date: 2026-11-25
+  url: https://github.com/TheGrizard/After-Images/releases/tag/v2.9
+  notes: Adds the PERSONALITY page, which sets four kinds of piece for REC. The release page has no notes.
+- version: v2.0
+  date: 2026-11-23
+  url: https://github.com/TheGrizard/After-Images/releases/tag/v2.0
+  notes: First release not marked as a pre-release. The release page has no notes.

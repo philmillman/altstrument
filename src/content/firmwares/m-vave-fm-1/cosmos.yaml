@@ -11,14 +11,13 @@ description: >-
   and chords, there is an arpeggiator that plays the stars and planets, and a browser build of the real firmware runs on
   the project site.
 
-  The Wi-Fi feature runs on the FM-1 itself, with no companion page or app. The firmware starts the unit's Wi-Fi at
+  The Wi-Fi feature runs on the FM-1 itself. The firmware starts the unit's Wi-Fi at
   power-on (Bluetooth is off), and the ENV key opens a Wi-Fi page where you pick a network and type its password with
   the panel controls; it remembers up to six networks. Once connected, and every half hour, it fetches cloud cover and
   pressure from Open-Meteo and the planetary Kp index from NOAA's Space Weather Prediction Center over HTTPS. Its design
   notes say the servers' certificates are not checked. REC on the Wi-Fi page turns it off, and without news for three
-  hours the weather drifts by itself. The USB installer page is the only web part used. From 0.21 an FX RADIO page also joins a public MQTT broker
-  (broker.hivemq.com, plain connection) to pair players and send note messages between units, with a web test player. The README still calls the
-  project a design plus a test firmware (COSMOS PROBE), while the install page offers COSMOS 0.23.
+  hours the weather drifts by itself. From 1.3 a page on the project site can also set up the Wi-Fi from a computer over USB (networks, password typed on the keyboard); the password goes through the cable only. From 1.1 the ARP key opens VOYAGE, a world map where a journey of 1 to 60 minutes glides the weather and the sky from your place to another. From 0.21 an FX RADIO page also joins a public MQTT broker
+  (broker.hivemq.com, plain connection) to pair players and send note messages between units, with a web test player. The README now describes version 1.3.
 status: active
 authors:
 - name: Gadlele
@@ -47,6 +46,10 @@ image:
   source_url: https://gadlele.github.io/COSMOS/
   first_party: true
 versions:
+- version: main @ 5359d15
+  date: 2026-11-26
+  url: https://github.com/Gadlele/COSMOS/commit/5359d15f52c60454ede7e54fb3135d0742428c70
+  notes: No tagged releases; this is the latest commit. The README and site now call the firmware COSMOS 1.0, then 1.1 adds VOYAGE, a world map on ARP that glides the weather and sky to another place, 1.2 always has a planet chosen and moves the voyage's sky with the dot, and 1.3 adds a site page that sets up the Wi-Fi from a computer over USB. Later commits add a planet picked at power-on and Ko-fi links on the site.
 - version: main @ 1fbabe1
   date: 2026-10-30
   url: https://github.com/Gadlele/COSMOS/commit/1fbabe1bc3323ba482a88206ce08c155ca2d59ce

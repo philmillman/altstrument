@@ -1,9 +1,9 @@
 device: ableton-move
 name: TinyVoice
 summary: >-
-  Schwung audio effect for the Move's voice input with two engines: a 13-mode vocoder and voice transformer that includes robot, auto-tune, harmony and Dalek modes, and a vowel-formant talking filter with six presets.
+  Schwung audio effect for the Move's voice input with four engines: a 13-mode vocoder, a vowel-formant Synth Voice filter, Resynth harmonic resynthesis and Mangler pitch and formant shifting.
 description: >-
-  The Vocoder engine has three pages of controls and thirteen modes. Some use a carrier played from the pads, and others process the voice directly, such as a PSOLA-based scream shifter. The Voice FX engine is a four-formant vowel filter with eight knobs on one page. Each engine has its own parameters and a built-in demo phrase, and the Vocoder keeps its own five knob values per mode. Pitch tracking covers about 70 Hz to 1 kHz. The README calls version 1.0.1 a public preview and says the modes were tuned on synthetic voices and a built-in mic rather than many singers. Both published releases are marked as pre-releases.
+  The Vocoder engine has three pages of controls and thirteen modes. Some use a carrier played from the pads, and others process the voice directly, such as a PSOLA-based scream shifter. The Synth Voice engine (called Voice FX before 1.5.0) is a four-formant vowel filter with eight knobs on one page. Resynth rebuilds the voice from its harmonics with a wavetable synth, and Mangler is a multi-voice pitch and formant shifter with chords from the pads. A browser Remote UI shows every control of the active engine, and a Looper can save a processed loop as a WAV in the Move's sample library. Each engine has its own parameters and a built-in demo phrase, and the Vocoder keeps its own five knob values per mode. Pitch tracking covers about 70 Hz to 1 kHz. The README calls version 1.0.1 a public preview and says the modes were tuned on synthetic voices and a built-in mic rather than many singers. All published releases are marked as pre-releases.
 status: active
 authors:
   - name: Mathew Taylor
@@ -20,6 +20,14 @@ install_notes: >-
 brick_risk: false
 tags: [fx, voice, performance]
 versions:
+  - version: v1.5.1
+    date: 2026-11-25
+    url: https://github.com/fleshinachair/TinyVoice/releases/tag/v1.5.1
+    notes: Pre-release. Fixes the Bank knob on the Move, which did nothing, so Resynth and Mangler can switch banks.
+  - version: v1.5.0
+    date: 2026-11-25
+    url: https://github.com/fleshinachair/TinyVoice/releases/tag/v1.5.0
+    notes: Pre-release. Adds the Resynth and Mangler engines, renames Voice FX to Synth Voice, adds a browser Remote UI with user preset banks, a Looper with WAV save and on-screen help.
   - version: v1.0.1
     date: 2026-10-14
     url: https://github.com/fleshinachair/TinyVoice/releases/tag/v1.0.1

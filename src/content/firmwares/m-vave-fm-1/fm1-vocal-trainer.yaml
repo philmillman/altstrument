@@ -1,0 +1,28 @@
+device: m-vave-fm-1
+name: FM1 Vocal Trainer
+summary: >-
+  Vocal practice firmware for the FM-1 with scale, arpeggio, interval and melody exercises that play reference notes and score sung pitch, fed by a Windows microphone companion over USB MIDI. Early; first hardware test pending.
+description: >-
+  The FM-1 runs the practice session. K1 picks freestyle, major scale, minor scale, arpeggio, melodic or harmonic intervals, or a seven-note melody, K2 sets the root, K3 the tempo, and PLAY sounds the root and fifth before the exercise starts. A Windows companion app listens to one microphone or audio interface, detects the pitch and sends it to the FM-1 over USB MIDI, raised an octave for the display. The FM-1 shows the target and the sung note and finishes with a score, the share of target-note time within 50 cents. A script swaps the embedded melody for another monophonic MIDI track, and command-line sessions can run from the PC instead. The firmware is a small patch against M-VAVE's FM1 Open V14, and the README documents the USB MIDI messages so another controller could replace the companion. The author calls it an attempt at vibe coding, and the README says the build has passed static SDK checks only and has not been run on an FM-1.
+status: active
+authors:
+- name: Eaglegor
+  url: https://github.com/Eaglegor
+source: https://github.com/Eaglegor/fm1-vocal-trainer
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The repository has no top-level licence file or licence statement. The firmware folder carries FM1 Open's LICENSE.md (GPL-3.0-only with M-VAVE's SDK linking exception) and THIRD_PARTY.md, and the README says the pinned SDK's licence and binary SDK terms apply to the firmware. That is the basis for the licence given here, which covers the firmware only; the Python companion and tools state no licence.
+homepage: https://github.com/Eaglegor/fm1-vocal-trainer
+based_on: m-vave-fm-1/fm1-open
+distribution: download
+requires_stock: Any FM-1; installed with M-Flasher 0.12.1
+install_notes: >-
+  Back up the whole flash with M-Flasher 0.12.1, decline its optional bootloader prompt, then install firmware/vocal-trainer.fwsc after checking that the proposed write range starts at 0x04000 or above and ends before 0x73000. The README gives a command to compare the first 0x4000 bytes of the backups before and after, and says to roll back from your own backup while keeping the unit's bootloader. It says first boot, LCD, sound, later updates and recovery are untested on a physical unit. The Windows companion needs Python 3.13 and a microphone or ASIO interface.
+brick_risk: false
+tags: [trainer, vocal, pitch, midi, usb-midi, experimental]
+versions:
+- version: main @ 5b7104c
+  date: 2026-11-26
+  url: https://github.com/Eaglegor/fm1-vocal-trainer/commit/5b7104c2bb4d5e2134211d2adce3d8183dde01c4
+  notes: No tagged releases; this is the latest commit.

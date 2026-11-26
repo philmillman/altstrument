@@ -1,0 +1,27 @@
+device: m-vave-fm-1
+name: Dino Band
+summary: >-
+  Toddler looper built on Rainbow mode: six dinosaurs, each a sound and a two-bar loop, played on the keys and recorded by letting notes stick while the band plays, with a pixel-art screen where the dinos react.
+description: >-
+  Each of six buttons (FX, SCL, ENV, LFO, EDIT and GLO) is a dinosaur with its own sound and loop: Trice on drums, Rexy on bass, Bronto on pads, Ptera on bells, Steggy on plucks and Nessie on ambient. Tapping one plays it on the keys and zooms into its page, and holding it for two seconds makes it fall asleep and clears its loop. PLAY runs a two-bar loop of 32 sixteenth steps on Felucca's sequencer, and notes played while it runs stick to the selected dino's loop. Four knobs set a day and night low-pass, a roar drive, a cave echo send and a wobble. ALGORITHM picks a world with its own scale, sky and reverb, PRESETS a costume, and the keys light the scale. The screen draws each dino as a 20 by 16 pixel sprite in the tape of its loop; the dinos sleep, roar on a note, dance on the beat, hatch eggs into babies, and big moments such as thunder, a meteor or a volcano hide behind glowing keys. SAVE starts a copy-me game, and holding HOME and SAVE opens the full Felucca. The repository's README is Rainbow mode's own, and this description comes from the source file firmware/src/dino.c, the commit history and the repository description. It imports Rainbow mode v1.1.5 as its baseline and adds M-VAVE's FM-1 factory DX7 voices from FM1 Open.
+status: active
+authors:
+- name: maasanto
+  url: https://github.com/maasanto
+source: https://github.com/maasanto/dino-band
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL-3.0 text and dino.c carries a GPL-3.0-only header, as Felucca and Rainbow mode do. third_party/fm1_open holds M-VAVE's factory voice data from FM1 Open under Apache-2.0, and the CC0 samples and the Inter Tight font keep their own licences. No stock firmware image is committed.
+homepage: https://github.com/maasanto/dino-band
+based_on: m-vave-fm-1/rainbow-mode
+distribution: source-only
+install_notes: >-
+  There is no release. The repository has a build.sh and a BUILDING.md for building the package, and it carries Rainbow mode's README, which says the installer can put the official firmware back. Felucca's recovery notes apply.
+brick_risk: false
+tags: [looper, performance, kids, synth-engine, sequencer, drums, fork]
+versions:
+- version: main @ 4a60933
+  date: 2026-11-25
+  url: https://github.com/maasanto/dino-band/commit/4a60933586b71e87f1ff56cd1a37bf1af0fa9cff
+  notes: No tagged releases; this is the latest commit.

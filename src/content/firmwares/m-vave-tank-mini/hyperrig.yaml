@@ -1,0 +1,62 @@
+device: m-vave-tank-mini
+name: HyperRig
+summary: >-
+  Alternative firmware, editor and installer for the Tank Mini, derived from UltraRig, with a free effects chain, NAM amp captures, cab IRs, 32 presets with eight scenes each and a Windows desktop editor.
+description: >-
+  HyperRig replaces the Tank Mini's application firmware and is based on UltraRig, which targets the
+  Tank-G; it is a separate project by a different author. The effects chain is built from 39 kinds of
+  blocks in series or in two paths around a NAM amp capture. The pedal holds 32 presets with eight scenes
+  each, 15 captures and 8 cabinet IRs, and each footswitch can be given its own action. It adds an acoustic
+  guitar block, a harmonizer that follows a key and scale, Cab low cut and high cut, a tuner and tap tempo.
+  A single Windows program holds the editor and the installer, loads captures from files or from TONE3000,
+  previews presets shared on Patchstorage on the pedal before saving them, and backs up the whole pedal to
+  one file. The repository publishes the firmware as assembly and C source, derived from UltraRig's
+  application, together with a documented reproducible build. It has been tried on one pedal only, and it
+  installs from factory firmware 011 only. Bluetooth audio and a USB sound card are not included. The
+  author says installing it is at the user's own risk.
+status: active
+authors:
+- name: danmigdev
+  url: https://github.com/danmigdev
+source: https://github.com/danmigdev/hyperrig
+source_status: open
+license: PolyForm-Noncommercial-1.0.0
+license_notes: >-
+  LICENSE.md applies PolyForm Noncommercial 1.0.0 to HyperRig's own code and to the UltraRig-derived
+  firmware: free for personal use, and selling the firmware or pedals with it installed is not allowed.
+  release/NOTICE.md lists the parts of others, including JieLi's Apache-2.0 AC79 SDK, FreeRTOS under
+  GPL-2.0 with its exception, micro-ecc, m-bootloader (MIT), and parts of the SDK's Bluetooth library that
+  appear to derive from BlueKitchen's BTstack, whose licence is personal and noncommercial. It states that
+  no firmware, capture or impulse response of M-VAVE is included. GitHub's licence detector reports the
+  file as NOASSERTION because of the Required Notice lines.
+based_on: m-vave-tank-g/ultrarig
+distribution: download
+requires_stock: Tank Mini factory firmware 011 (update with M-Upgrade first if the pedal has another version)
+install_notes: >-
+  Windows 10 or 11 (64 bit). Extract the whole release zip, start HyperRig.exe and connect the pedal
+  straight to the computer by USB, with M-Upgrade and other editors closed. The installer first reads the
+  whole flash, saves it under %APPDATA%\HyperRig\pedals and checks the copy, then writes HyperRig and checks
+  every byte; this takes about two minutes. Keep the saved copies: they are for that pedal only, and
+  "Restore the original firmware" in the Firmware settings puts the original back from them. Only the
+  application and user areas are written; the boot area is not touched, and an interrupted install is
+  finished from the program ("Let's finish the job"). Export the presets before restoring, because the
+  program has no button to put the saved copy of HyperRig presets back. The project says it was tried on
+  one Tank Mini, that the chip has an update mode of its own which the program cannot enter, and that
+  nothing is guaranteed.
+brick_risk: false
+tags: [fx, amp-sim, nam, ir, editor, tuner, harmonizer, windows]
+image:
+  url: https://raw.githubusercontent.com/danmigdev/hyperrig/main/docs/images/editor.png
+  alt: HyperRig editor in a dark theme with a preset list at left and a signal chain of noise gate, compressor, NAM amp, cab IR, chorus, delay and plate reverb, with the delay knobs below
+  credit: danmigdev
+  source_url: https://github.com/danmigdev/hyperrig#readme
+  first_party: true
+versions:
+- version: 0.3.0
+  date: 2026-11-26
+  url: https://github.com/danmigdev/hyperrig/releases/tag/v0.3.0
+  notes: Adds Cab low cut and high cut, a cab for each scene, backup and restore of the whole pedal, automatic easing of a block on CPU overload, Browse Patchstorage, a tuner that opens beside heavy presets and a battery readout.
+- version: 0.2.1
+  date: 2026-11-25
+  url: https://github.com/danmigdev/hyperrig/releases/tag/v0.2.1
+  notes: First release.

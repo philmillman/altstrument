@@ -1,0 +1,40 @@
+device: m5stack-cardputer-zero
+name: AcidZero
+summary: >-
+  Acid bass synthesizer with a 16-step sequencer and MIDI input for the Cardputer Zero, built on the Open303 engine and installed from a .deb package you build.
+description: >-
+  AcidZero plays a 303-style bass voice with cutoff, resonance, envelope modulation, decay and accent knobs, a saw or square
+  wave, slide, accent and rest flags per step, and a tempo from 60 to 200 BPM. The keyboard enters notes into the 16 steps and
+  adjusts the knobs. MIDI comes in through an ALSA sequencer port that connects itself to every source it finds, including
+  USB and network devices. Notes can be played from MIDI while the sequencer is stopped, controllers can be learned for each
+  knob, and MIDI start and stop control the sequencer. The sound engine is Open303, which the build script downloads.
+status: active
+authors:
+  - name: Leo Kuroshita (@kurogedelic)
+    url: https://github.com/kurogedelic
+source: https://github.com/kurogedelic/AcidZero
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text, copyright 2026 Leo Kuroshita. The NOTICE file says the Open303 engine (Robin Schmidt,
+  MIT) is fetched unmodified at build time and is not in the repository, that fft4g (Takuya Ooura) is free for any use, and
+  that font8x8 is public domain.
+distribution: source-only
+requires_stock: CardputerZero Debian image
+install_notes: >-
+  Run scripts/fetch_open303.sh once, then tools/build_arm64.sh, which builds the binary and a .deb in a Docker container.
+  Install the package with sudo dpkg -i, and AcidZero appears in the launcher. It runs as an application on the Linux
+  system and writes nothing to the device's firmware.
+brick_risk: false
+tags: [synth, bass, acid, sequencer, midi, usb-midi, handheld]
+image:
+  url: https://raw.githubusercontent.com/kurogedelic/AcidZero/main/docs/acidzero-main.png
+  alt: AcidZero main screen with six knobs labelled cutoff, reso, envmod, decay, accent and tempo, the wave and octave settings, and a row of 16 sequencer steps with note names and accent and slide markers
+  credit: Leo Kuroshita
+  source_url: https://github.com/kurogedelic/AcidZero
+  first_party: true
+versions:
+  - version: main @ f2b9e88
+    date: 2026-11-16
+    url: https://github.com/kurogedelic/AcidZero/commit/f2b9e88ce05e182259556aba2a271e59653af030
+    notes: No tagged releases; this is the latest commit.

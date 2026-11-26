@@ -9,7 +9,8 @@ description: >-
   the README lists measurements against setBfree running on a Raspberry Pi. Drawbars, percussion and effects
   follow setBfree's default MIDI controller numbers over USB and TRS. The repository also has a WebAssembly
   build of the engine to play in a browser and a host mode that writes WAV files. The README says release 0.1
-  has been tested on one FM-1. From 0.2 the overdrive follows setBfree's preamp model, and the firmware identifies as FM-1_953. From 0.3 it has three manuals (upper, lower and pedal) on MIDI channels 1 to 3, each with its own drawbars, and accepts the newer UC25HQ80 flash chip.
+  has been tested on one FM-1. From 0.2 the overdrive follows setBfree's preamp model, and the firmware identifies as FM-1_953. From 0.3 it has three manuals (upper, lower and pedal) on MIDI channels 1 to 3, each with its own drawbars, and accepts the newer UC25HQ80 flash chip. From 0.7 the release also carries an experimental SMK-37 build, which its notes say was
+  tested in an emulator only.
 status: active
 authors:
 - name: R-Jeb
@@ -23,7 +24,7 @@ license_notes: >-
 based_on: m-vave-fm-1/dinghy
 distribution: browser-installer
 install_notes: >-
-  Download b3organ-0.6.fwsc from the release and install it through the FM-1 Firmware Hub in Chrome or Edge, or
+  Download b3organ-0.7.fwsc from the release and install it through the FM-1 Firmware Hub in Chrome or Edge, or
   with tools/fm1_install.py over USB. Hold OCT- while switching on for the USB rescue. The official firmware can
   be put back the usual way.
 brick_risk: false
@@ -35,6 +36,10 @@ image:
   source_url: https://github.com/R-Jeb/setBfree-fm1
   first_party: true
 versions:
+- version: "0.7"
+  date: 2026-11-26
+  url: https://github.com/R-Jeb/setBfree-fm1/releases/tag/v0.7
+  notes: "Adds an experimental build for the SMK-37 (Pro, Elite and MKE-P37), with the pads as drawbars and the faders on the 1' drawbars. The notes say it was tested in an emulator only, and only the Pro package was run; these packages are offered on the release page and not on the installer site. The FM-1 program is byte for byte the same as 0.6.1, the packages are now built and signed by the Firmware Hub's shared workflow, and the web editor pages and equalizer sliders are restyled."
 - version: '0.6.1'
   date: 2026-11-22
   url: https://github.com/R-Jeb/setBfree-fm1/releases/tag/v0.6.1

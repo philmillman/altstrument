@@ -8,8 +8,9 @@ description: >-
   describes only as supplied reference artwork, with no source or licence, and the firmware's screen art and intro are
   generated from them.
 
-  Two engines share one recorded tape. FRIPP plays plucked guitar voices through two simulated tape decks, and ENO plays
-  piano, bright piano, glass bell and tape choir, with note effects and an optional second playback head. REC records,
+  Four engines share one recorded tape. FRIPP plays plucked guitar voices through two simulated tape decks, ENO plays
+  piano, bright piano, glass bell and tape choir, with note effects and an optional second playback head, RILEY layers sustained organ and reed voices,
+  and RADIGUE (since 1.7) layers four slowly beating drone voices. REC records,
   overdubs or holds the loop, SEQ plays it in reverse, and the internal delay runs from 4 to 8 seconds. Pre-tape
   effects are compression, fuzz, wah, amplifier and EQ, followed by a stereo plate reverb that stays out of the
   recording. Tape character, off-tape monitoring, key backlight and MIDI or Bluetooth MIDI are on the GLO page, and
@@ -33,11 +34,15 @@ install_notes: >-
   Download Mariotronics_Editor_FM1.zip from the release, extract it and open Mariotronics_1_1.html in desktop Chrome or
   Edge. Power on tries the offline emulator, and Install Mariotronics writes the firmware to a USB-connected FM-1 after
   granting MIDI SysEx access; leave power and USB connected until the page reports the install. The installation
-  replaces the existing firmware, and the zip also holds mariotronics-1.1.fwsc for other installers. The README gives no
+  replaces the existing firmware, and the zip also holds mariotronics-1.1.fwsc for other installers. The 1.7 release attaches a single Mariotronics_FM1_1_7.zip of firmware and editor. The README gives no
   recovery steps; M-VAVE's own firmware can be reinstalled with its updater or the FM-1 Firmware Hub.
 brick_risk: false
 tags: [ambient, looper, synth-engine, fx, delay, performance, midi, ble-midi, editor, web]
 versions:
+- version: '1.7'
+  date: 2026-11-25
+  url: https://github.com/mongio/Mariotronics-FM1/releases/tag/v1.7
+  notes: Adds the RADIGUE engine with four drone voices layered over the tape loop, a six-string fretboard view on SEL, voice-specific EDIT pages for ENO and RILEY, and four arpeggio patterns (Climb, Fold, Phase, Orbit). The release says it was tested in emulation only. The README has since moved on to 1.18 as a pre-release.
 - version: '1.1'
   date: 2026-11-24
   url: https://github.com/mongio/Mariotronics-FM1/releases/tag/v1.1

@@ -1,0 +1,40 @@
+device: m-vave-fm-1
+name: MONSUN
+summary: >-
+  Monophonic synth in the spirit of the Dreadbox Typhon: two oscillators on one wave-morph knob, a 24 dB ladder filter, three modulators with 13 destinations each, three effect slots, a 32-step sequencer and a ten-style beat with sidechain pump.
+description: >-
+  A single WAVE knob fades through combinations of the two oscillators, including soft and hard FM, and TUNE 2 sets the second oscillator's pitch. The filter is a 24 dB ladder low-pass run at twice the sample rate, with a high-pass ahead of it, two ADSR envelopes whose times scale together, glide, legato and velocity routing. A STORM control adds a detuned copy, a slow filter wander and a moving side channel. Three modulators (LFO, envelope, random or step) each send a level to 13 destinations at once. The effects follow the Typhon's order, with six distortion types, chorus, ensemble and flanger, and delay and reverb with delay times up to one second. The sequencer has 32 steps with note, gate and velocity, can record from the keys, and is transposed by the keys while it runs. A GROOVE section adds ten drum styles with a sidechain that ducks the synth and its effects. It follows MIDI clock, start, stop and continue over USB. There are 16 presets, and the oversampling drops by itself and shows ECO when the load passes 88 percent. The README says it is not connected with Dreadbox. It is built on fm1-base and felucca-bsp, and its sound core in dsp/ is plain C.
+status: active
+authors:
+- name: swtdr34mz-afk
+  url: https://github.com/swtdr34mz-afk
+source: https://github.com/swtdr34mz-afk/MONSUN
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The README states MPL-2.0 and the LICENSE file is the MPL-2.0 text. It points to CREDITS.md for the components, which in the author's sibling projects are fm1-base and felucca-bsp (MPL-2.0), pixel fonts under SIL OFL 1.1 and three Apache-2.0 JieLi SDK files. No samples are used.
+homepage: https://github.com/swtdr34mz-afk/MONSUN
+distribution: download
+install_notes: >-
+  Download monsun-X.Y.Z.fwsc from the Releases page and install it as any FM-1 firmware. The README describes no recovery path, and the FM-1's ROM boot mode applies. The sound being edited saves itself once the sequencer stops, and preset slots save with SAVE.
+brick_risk: false
+tags: [synth-engine, mono, sequencer, filter, fx, drums, midi, usb-midi, oscillator]
+image:
+  url: https://raw.githubusercontent.com/swtdr34mz-afk/MONSUN/main/site/img/screen-main.png
+  alt: "MONSUN panel page in yellow and teal on a dark background: WAVE 2 SAW, TUNE 2 +0.1, FILT TIME X1 and AMP TIME X1 knobs above a yellow-framed display showing a teal two-saw waveform"
+  credit: swtdr34mz-afk
+  source_url: https://github.com/swtdr34mz-afk/MONSUN
+  first_party: true
+versions:
+- version: v0.2.2
+  date: 2026-11-26
+  url: https://github.com/swtdr34mz-afk/MONSUN/releases/tag/v0.2.2
+  notes: The release page has no notes.
+- version: v0.2.0
+  date: 2026-11-26
+  url: https://github.com/swtdr34mz-afk/MONSUN/releases/tag/v0.2.0
+  notes: Adds GROOVE, ten drum styles with a pumping sidechain. The release page has no notes.
+- version: v0.1.0
+  date: 2026-11-26
+  url: https://github.com/swtdr34mz-afk/MONSUN/releases/tag/v0.1.0
+  notes: First release. The release page has no notes.

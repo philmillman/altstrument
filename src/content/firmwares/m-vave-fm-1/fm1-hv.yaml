@@ -17,7 +17,7 @@ based_on: m-vave-fm-1/dinghy
 distribution: source-only
 requires_stock: Any FM-1 firmware; the installer writes the package over it
 install_notes: >-
-  No release. The JieLi toolchain build is described in the Dinghy notes in docs/, and GitHub Actions builds the package on every push to main and uploads it as the fm1-hv-fwsc artifact. The README warns against installing it on a unit you depend on, and the Dinghy platform provides a USB rescue and an update loader.
+  No release. The JieLi toolchain build is described in the Dinghy notes in docs/, and GitHub Actions builds the package on every push to main and uploads it as the fm1-hv-fwsc artifact and puts each package on the repository's builds branch. The README warns against installing it on a unit you depend on, and the Dinghy platform provides a USB rescue and an update loader.
 brick_risk: false
 tags: [synth-engine, oscillator, filter, lfo, fx, chorus, unison, sysex, platform]
 image:
@@ -27,6 +27,10 @@ image:
   source_url: https://github.com/brianmccalla/fm1-hv
   first_party: true
 versions:
+- version: main @ ed31c92
+  date: 2026-11-25
+  url: https://github.com/brianmccalla/fm1-hv/commit/ed31c92bd37656df7bc4b9d65ea49527352b3181
+  notes: No tagged releases; this is the latest commit, which makes CI put each FM-1 package on a builds branch.
 - version: main @ 6c7cd6f
   date: 2026-11-23
   url: https://github.com/brianmccalla/fm1-hv/commit/6c7cd6fe633380dca4b7b2b0a490a12ddc45ae2e

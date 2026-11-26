@@ -6,7 +6,7 @@ summary: >-
 description: >-
   The engines include six analog-style types, a synthesised early-1980s digital drum machine, a sample player that takes .wav files or what the FM-1 just played, six-operator FM that reads classic .syx banks, wavetable, phase
   distortion, 8-bit, physical modelling, formant and two drum engines whose kick, snare and hi-hat models come from
-  Plaits. WAVE has 16 modulation slots with a drawable LFO. There are 128 user preset slots per engine, and a manager
+  Plaits. WAVE has 16 modulation slots with a drawable LFO. There are 256 user preset slots per engine since 2.1 (128 before), and a manager
   page on the project's site loads .syx banks and your own wavetables, backs up presets and settings, and returns the
   FM-1 to the stock firmware. A browser emulator runs the same code. The firmware is built on fm1-base and
   felucca-bsp, and the author's site calls it free with a tip jar. The sound engines, effects and sequencer are not
@@ -41,6 +41,14 @@ image:
   source_url: https://ogsynth.cc/
   first_party: true
 versions:
+- version: '2.1.1'
+  date: 2026-11-26
+  url: https://github.com/mikejohnsonbeats/OG-Synth-source/releases/tag/v2.1.1
+  notes: In MULTI, the arpeggiator's CHORD now belongs to each track instead of only the selected one, so a chord part keeps playing when another track is picked. Also stops a preset's own chord notes hanging when another track is picked mid-step.
+- version: '2.1.0'
+  date: 2026-11-25
+  url: https://github.com/mikejohnsonbeats/OG-Synth-source/releases/tag/v2.1.0
+  notes: Fourteen of the effects can sit in a chain up to eight times, each copy with its own settings, and there are 256 USER presets instead of 128, moved over on first start (going back to 2.0 hides them). WAVE and PHASE thin their unison before the processor runs out, which removes dropouts. Adds engine switching from a DAW with Bank Select and Program Change, and MPE per-note bend.
 - version: '2.0.2'
   date: 2026-11-24
   url: https://github.com/mikejohnsonbeats/OG-Synth-source/releases/tag/v2.0.2

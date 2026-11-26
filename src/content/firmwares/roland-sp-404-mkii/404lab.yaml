@@ -9,7 +9,7 @@ description: >-
   hypothesis, and byte facts can be rechecked against your own image. The tools identify known firmware by hash (stock
   3.02 to 5.52, DOOM OS 0.6 to 0.7.4 and Tampal builds), read, disassemble and search an image, build a C mod onto an
   identified base, tie the result to its base and sources, and refuse known loader-erasing routines and oversized
-  images. An optional packaging route runs the firmware on the separate DM-404 emulator. Two small example mods are
+  images. An optional packaging route runs the firmware on the separate DM-404 emulator, and a native 2D desktop preview of that emulator (lab404 gui) shows the panel. Two small example mods are
   included. The README says no package built by these tools has been tested on a unit and that most hardware facts come
   from one unit. The project ships no firmware, so you supply your own SP404MKII_APP1.bin, and it does not flash the
   unit.
@@ -34,6 +34,11 @@ install_notes: >-
 brick_risk: false
 tags: [research, emulator, reverse-engineering, ai, utility]
 versions:
+  - version: main @ 76d14db
+    date: 2026-11-26
+    url: https://github.com/jjjadeRRR/404Lab/commit/76d14db59643cbb66ae07b079cd4ee7e7cdf5eee
+    notes: >-
+      No tagged releases; this is the latest commit. Since the previous entry the commits add a native 2D desktop preview of the DM-404 emulator (lab404 gui) with a panel layout drawn from the SP-404MKII, document it in the Russian README and move its section below Quick start.
   - version: main @ b4920d3
     date: 2026-11-25
     url: https://github.com/jjjadeRRR/404Lab/commit/b4920d350ddbad03062876b804f32fe17f745c62

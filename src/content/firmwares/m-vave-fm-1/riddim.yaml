@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: RIDDIM
+summary: >-
+  Roots reggae groovebox derived from GR!MM, in development: a synthesized 20-drum roots kit with eight drummer styles, band lines over a held chord and 35 roots sounds, with the dub desk planned but not built.
+description: >-
+  Version 0.1 replaces GR!MM's voice source with a DRUM source of 20 synthesized drums on 27 keys in four kits, with tune, decay and a HUMAN control that plays behind the beat, and nine factory kits. GROOVE is a drummer that plays eight styles by itself while the sequencer runs (one drop, rockers, steppers, flyers, rocksteady, early reggae, rub-a-dub and dub), with split parts, fills every 2, 4 or 8 bars and swing. The arpeggiator gains band lines over the chord held, namely skank, organ bubble, one-drop bass, steppers bass and horn answers, played slightly behind the beat. There are 35 roots sounds, a new boot screen with a turning record, and a HOME screen drawn as a sound system with one speaker per track. Underneath is GR!MM's groovebox with four tracks, a 64-step sequencer per track, tape, grain, delay, reverb, song mode and MIDI. The project has a browser emulator, an editor and a live view that draws a connected FM-1. The dub desk with spring reverb, tape echo, throws and an automatic VERSION is a plan in the repository. The README says it is not released and has not been tested on an FM-1, and it uses its own package identity and its own saves. It is a modified GR!MM 2.0.2 and so also descends from Dinghy, Felucca and SLOOP.
+status: active
+authors:
+- name: saulofilho
+  url: https://github.com/saulofilho
+source: https://github.com/saulofilho/riddim-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only, kept from GR!MM, Dinghy, Felucca and SLOOP. msfa is Apache-2.0, the DaisySP and Rings parts are MIT, the factory samples are CC0 1.0, and the fonts are SIL OFL 1.1. GR!MM's choir wavetables (CC BY 4.0) were removed in 0.1. tests/data holds a 24 KB binary save fixture, and no M-VAVE firmware image is in the repository.
+homepage: https://saulofilho.github.io/riddim-fm1/
+based_on: m-vave-fm-1/grimm
+distribution: source-only
+install_notes: >-
+  There is no release. The README says 0.1 has not been on an FM-1, and that building it with the JieLi toolchain gives riddim.fwsc, which tools/fm1_install.py can install at your own risk. It says the FM-1 Firmware Hub's Rescue page brings a stuck unit back, with OCT- held while switching on. The browser emulator runs the firmware without a device.
+brick_risk: false
+tags: [groovebox, drums, synth-engine, sequencer, arpeggiator, fx, reggae, dub, editor, emulator, midi, fork]
+image:
+  url: https://raw.githubusercontent.com/saulofilho/riddim-fm1/main/docs/screens/riddim-home.png
+  alt: "RIDDIM HOME screen: four speaker boxes in red, green, grey and blue for tracks T1 to T4, the third wearing a DROP strip, above four track tiles marked VA with level bars and 079"
+  credit: saulofilho
+  source_url: https://github.com/saulofilho/riddim-fm1
+  first_party: true
+versions:
+- version: main @ f2aa505
+  date: 2026-11-25
+  url: https://github.com/saulofilho/riddim-fm1/commit/f2aa505dc5b56cbef4ffbcd0b252c821a4209d72
+  notes: No tagged releases; this is the latest commit.

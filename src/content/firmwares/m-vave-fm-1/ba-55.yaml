@@ -1,0 +1,32 @@
+device: m-vave-fm-1
+name: BA-55
+summary: >-
+  Bassline synth after the Erica Synths Bassline DB-01: a 64-step sequencer with accent, slide and probability, a state-variable filter, a bucket-brigade detune, a mod track recorded live and a ten-style beat with sidechain pump.
+description: >-
+  The voice has a triangle, saw or square wave, a sub-octave square, noise into the filter, a detune blended in through a bucket-brigade line, an overdrive blend and an LFO that can modulate pitch up to audio rate. The filter is a 12 dB state-variable design with low-pass and band-pass modes that self-oscillates, with an envelope for decay and depth and a sustain-release amplifier envelope. The sequencer has 64 steps in four bars, each with a note, gate length, accent, slide, a cutoff offset, a pitch envelope and a probability, plus five play directions, shuffle and tempo. The mod track records live while the pattern runs, notes can be entered from the keys, a random pattern generator works from a scale and root, and an arpeggiator and step copy and paste are included. A GROOVE section taken from MONSUN adds ten drum styles that duck the bassline with a pumping sidechain. It follows MIDI clock, start, stop and continue over USB, and MIDI notes play the voice. There are 16 preset slots, each holding a sound and its pattern. The README says it is unofficial and not connected with Erica Synths, and that it is built on fm1-base and felucca-bsp. Its sound core in dsp/ is plain C.
+status: active
+authors:
+- name: swtdr34mz-afk
+  url: https://github.com/swtdr34mz-afk
+source: https://github.com/swtdr34mz-afk/BA-55
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The README states MPL-2.0 and the LICENSE file is the MPL-2.0 text. It points to CREDITS.md for the components, which in the author's sibling projects are fm1-base and felucca-bsp (MPL-2.0), pixel fonts under SIL OFL 1.1 and three Apache-2.0 JieLi SDK files. No samples are used.
+homepage: https://github.com/swtdr34mz-afk/BA-55
+distribution: download
+install_notes: >-
+  Download ba55-X.Y.Z.fwsc from the Releases page and install it as any FM-1 firmware. The README describes no recovery path, and the FM-1's ROM boot mode applies. The sound being edited saves itself once the pattern stops, and preset slots save with SAVE.
+brick_risk: false
+tags: [synth-engine, bass, sequencer, arpeggiator, filter, drums, midi, usb-midi]
+image:
+  url: https://raw.githubusercontent.com/swtdr34mz-afk/BA-55/main/site/img/screen-main.png
+  alt: "BA-55 VCO page: WAVE SAW, SUB 31, NOISE 0 and DETUNE 0 knobs, a red readout showing P14 and a red dot-matrix view of a rising saw pattern above a row of step keys"
+  credit: swtdr34mz-afk
+  source_url: https://github.com/swtdr34mz-afk/BA-55
+  first_party: true
+versions:
+- version: v0.1.0
+  date: 2026-11-26
+  url: https://github.com/swtdr34mz-afk/BA-55/releases/tag/v0.1.0
+  notes: First release. The release page has no notes.

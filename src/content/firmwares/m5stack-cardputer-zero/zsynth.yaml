@@ -1,0 +1,41 @@
+device: m5stack-cardputer-zero
+name: ZSynth
+summary: >-
+  Pocket groovebox for the Cardputer Zero with lead and bass synths, a mic sampler and drums, eight patterns per song, a song chain and libraries of songs, samples and instruments.
+description: >-
+  ZSynth has four tracks (lead, bass, sampler and drums) that each play an instrument and keep their own pattern, with eight
+  patterns per song of 1 to 32 steps in any time signature, and a song mode that chains them. The synths have band-limited
+  oscillators, an ADSR envelope and a resonant filter; the sampler records up to five seconds from the built-in microphone or
+  loads 16-bit WAV files; the drums are ten synthesised sounds. A piano roll and a drum grid edit steps, and the Sound screen
+  designs instruments that are kept in a library. The first run adds 18 starter samples from the CC0 Versilian Community
+  Sample Library, starter instruments and a demo song. The README says the screens are drawn with Python and pygame and
+  the sound engine is C that is compiled on the device.
+status: active
+authors:
+  - name: calanjoyce
+    url: https://github.com/calanjoyce
+source: https://github.com/calanjoyce/zsynth
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text, copyright 2026 calanjoyce. The starter samples are from the Versilian Community Sample
+  Library (CC0 1.0), as listed in samples/CREDITS.md.
+distribution: source-only
+requires_stock: Official 64-bit Debian 13 CardputerZero image with SSH and passwordless sudo
+install_notes: >-
+  Run ./install.sh user@cardputer-ip from a computer. It copies the sources, installs libpulse-dev if needed, compiles the
+  engine on the device, installs to /opt/zsynth and adds ZSynth to the launcher. ./package.sh builds a .deb for the
+  CardputerZero app store tooling. It runs as an application on the Linux system and writes nothing to the device's firmware.
+brick_risk: false
+tags: [groovebox, synth, sampler, drums, sequencer, looper, song-mode, handheld]
+image:
+  url: https://raw.githubusercontent.com/calanjoyce/zsynth/main/docs/drums.png
+  alt: ZSynth main screen with track tabs for lead, bass, sample and drums, a tempo of 110 BPM, the instrument assigned to each track and a 16-step grid with four drum steps lit
+  credit: calanjoyce
+  source_url: https://github.com/calanjoyce/zsynth
+  first_party: true
+versions:
+  - version: main @ 995ae5f
+    date: 2026-11-18
+    url: https://github.com/calanjoyce/zsynth/commit/995ae5f6d59f9c3d09132b06e01da95dd67e1d58
+    notes: No tagged releases; this is the latest commit.

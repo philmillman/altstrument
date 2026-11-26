@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: GigBox (FM-1 Fleet Manager)
+kind: tool
+summary: >-
+  Raspberry Pi touchscreen box, also served to a phone, that installs community firmware on several FM-1s by flash id, backs each unit up before writing, and can route USB MIDI between them.
+description: >-
+  The Pi drives m-flasher as a separate program and identifies each FM-1 by the factory id read from its flash chip while it is in download mode, because units on one USB hub look alike while running. A write goes only to the unit whose id was just read, needs two deliberate confirmations, takes an automatic backup first and is refused if the backup fails. Backups can be restored from the panel, and a unit left in download mode can be restarted. Firmware packages come from a local folder or from the catalog of The Firmware Hub, with the SHA-256 checked, and no firmware file is committed to the repository. An optional MIDI router connects the units' USB MIDI ports through the Pi with saved patches, per-route channel remap, filters and a panic button; it never writes to a unit's flash. The README calls it a bench tool used on one setup, a Pi 3B+ with a 5-inch panel and four FM-1s, not ready for general use. Registering a new unit, flashing several units and the firmware list are tested only with fakes, the udev port paths and panel timing are specific to that bench, and the web page is plain HTTP for a local network.
+status: active
+authors:
+- name: jazzcat007
+  url: https://github.com/jazzcat007
+source: https://github.com/jazzcat007/GigBox
+source_status: open
+license: MIT
+license_notes: >-
+  Read in the repository's LICENSE file. m-flasher, which does every read and write, is a separate MIT-licensed program that the repository does not bundle.
+homepage: https://github.com/jazzcat007/GigBox
+distribution: source-only
+install_notes: >-
+  Needs a Raspberry Pi running 64-bit Raspberry Pi OS Lite, the m-flasher package and a clone of the repository, installed with its setup.sh script and systemd services. The udev rule's USB port paths were measured on the author's hub and must be edited for another one. The README says to back up each unit first, and the tool does so before every write. It flashes .fwsc packages through m-flasher. A unit that stays in download mode can be restarted from the panel, and a backup can be restored from it.
+brick_risk: false
+tags: [flasher, utility, usb-midi, backup, raspberry-pi, midi-router]
+image:
+  url: https://raw.githubusercontent.com/jazzcat007/GigBox/main/docs/screenshots/fleet.png
+  alt: GigBox touch screen titled FM-1 Fleet, showing four unit tiles A to D, each marked RUNNING with a name, Felucca firmware and a flash id, above buttons for Sets, Routes and Settings
+  credit: jazzcat007
+  source_url: https://github.com/jazzcat007/GigBox#readme
+  first_party: true
+versions:
+- version: main @ effa107
+  date: 2026-11-25
+  url: https://github.com/jazzcat007/GigBox/commit/effa1070a3d59be0688173f9fe9c16f8b28d2d26
+  notes: No tagged releases; this is the latest commit.

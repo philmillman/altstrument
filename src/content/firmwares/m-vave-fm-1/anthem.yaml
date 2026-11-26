@@ -1,0 +1,33 @@
+device: m-vave-fm-1
+name: ANTHEM
+summary: >-
+  Generative firmware for the FM-1 in which up to four Langton's-ant-style walkers paint a grid and sing the note of each cell, with time that can run backwards, wave terrain synthesis and a chord arpeggiator. Early; not yet run on a real FM-1.
+description: >-
+  Up to four ants walk a grid of cells, and on each step an ant reads the colour under it, turns by its rule, repaints the cell and sings that cell's note. There are nine rules, from Langton's ant to square, mirror and spiral families, and a seed sets the starting ground. Nothing is random, so a seed and rule always give the same song, and the rule runs exactly backwards: OCT- steps the colony back and un-paints it, OCT+ goes forward, and SEL freezes the paint so the walk becomes a loop. A cell's note comes from a map with step counts across and up, folded into a range of octaves, with 48 scales. The sound is wave terrain synthesis, where the painted grid is a landscape of heights and each note traces an orbit over it. The keys only set the root or, on the ARP page, the chord the ants sing. It carries eight presets and eight user slots that store the colony too, and from Dinghy it has MIDI clock sync, MIDI in and out, USB audio and a backup page. The README warns that it has only been tested on a computer and not on a physical FM-1, and the project says it was written with Claude.
+status: active
+authors:
+- name: Eric St-Jacques
+  url: https://github.com/jaak-stjaaques
+source: https://github.com/jaak-stjaaques/Anthem
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and LICENSING.md state GPL-3.0-only and the LICENSE file is the GPL-3.0 text. Dinghy's platform files keep their upstream notices, the screen mirror is MIT, the IBM Plex Mono and Terminus fonts are SIL OFL 1.1 and the JieLi SDK files are read from the builder's own checkout at build time and are not in the repository.
+homepage: https://github.com/jaak-stjaaques/Anthem
+based_on: m-vave-fm-1/dinghy
+distribution: source-only
+install_notes: >-
+  Build with sh build.sh (Python 3 with Pillow, the JieLi toolchain and three AC79 SDK files, through Docker on macOS); every push to main also builds a package onto the repository's build branch. The README says to keep stock firmware or another firmware ready to flash back, and that holding OCT- at power-on starts the USB rescue mode, with the Firmware Hub's rescue page explaining the way back to the official firmware. It says nothing has been installed on a real FM-1, so treat it as untested.
+brick_risk: false
+tags: [generative, sequencer, synth-engine, arpeggiator, scales, midi, usb-audio, experimental]
+image:
+  url: https://raw.githubusercontent.com/jaak-stjaaques/Anthem/main/docs/screenshots/home.png
+  alt: "ANTHEM HOME page: a T+420 time bar going forward, an amber square and a blue and amber cross painted on a grid by two ants, and settings ANTS 2, RULE MIRROR RLLR, STEP 1/8 T, SEED CROSS"
+  credit: Eric St-Jacques
+  source_url: https://github.com/jaak-stjaaques/Anthem
+  first_party: true
+versions:
+- version: main @ e584892
+  date: 2026-11-26
+  url: https://github.com/jaak-stjaaques/Anthem/commit/e584892b9a6ba29e640ebecd91767994a3772c5c
+  notes: No tagged releases; this is the latest commit. The README names it version 0.1.7.

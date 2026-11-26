@@ -1,0 +1,37 @@
+device: m-vave-fm-1
+name: AutoJam FM-1
+summary: >-
+  Improvising band for the FM-1: lead, bass, harmony and drums play on PLAY, and a few notes recorded on REC are answered on the next chords, in 14 styles with 125 melodic presets and 41 drum kits.
+description: >-
+  Pressing PLAY starts a lead, bass, harmony and drum part. Pressing REC, playing a few notes and pressing REC again lets the band remember the pauses and lengths played and answer on the coming chords. ALGORITHM picks one of 14 styles, among them lo-fi, ambient, bossa nova, synthwave, rock, Chinese pentatonic, swing, bluegrass, 8-bit and blues, each with its own poster, typeface and palette on the screen. The TRACKS page selects a track with SELECT and a preset with PRESETS, and saves a setup per style. The drum machine has 41 kits, drum hits on 16 white keys and four saved 16-step overlay patterns that can be entered on the keys. The screen shows a pixel stage whose band members move with the notes played. The code ports the motion engine of the author's AutoJam onto Felucca's audio and hardware base, with drum definitions and presets adapted from sloop-fm1. The README and its guide are in Chinese. The author reports a timing test of all 14 styles on one FM-1 and says the 1.1.0 release had not been flashed to a device.
+status: active
+authors:
+- name: nasonliu
+  url: https://github.com/nasonliu
+source: https://github.com/nasonliu/AutoJam-FM1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL-3.0 text and LICENSING.md, carried over from Felucca, states GPL-3.0-only. The motion engine in firmware/autojam has its own Apache-2.0 LICENSE, and bundled parts keep their own licences under LICENSES/ (MIT, Apache-2.0, LGPL-2.1, SIL OFL 1.1, MPL-2.0 for felucca-bsp). The sloop-fm1 material is GPL-3.0-only. No stock firmware is committed.
+based_on: m-vave-fm-1/felucca
+homepage: https://github.com/nasonliu/AutoJam-FM1
+distribution: download
+install_notes: >-
+  Download the .fwsc from a release. BUILDING.md installs it with tools/fm1_install.py (Python with mido and python-rtmidi) on a unit already running AutoJam or another custom firmware, after following that firmware's migration steps, or from a locally served copy of the web installer. It says that if an install fails and the FM-1 no longer starts, recovery needs FM-1-transporter. Stop playback and save the session before installing.
+brick_risk: false
+tags: [generative, drums, sequencer, synth-engine, performance, arpeggiator, chords, midi]
+image:
+  url: https://raw.githubusercontent.com/nasonliu/AutoJam-FM1/main/docs/media/FM1-736-themes.png
+  alt: "Fourteen AutoJam style posters in two columns, each a name with a small icon: Lo-Fi cassette, Ambient planet, Bossa Nova toucan, Synthwave sunset, Rock guitar, Swing trumpet, Bluegrass banjo, 8-bit"
+  credit: nasonliu
+  source_url: https://github.com/nasonliu/AutoJam-FM1
+  first_party: true
+versions:
+- version: v1.2.0
+  date: 2026-11-26
+  url: https://github.com/nasonliu/AutoJam-FM1/releases/tag/v1.2.0
+  notes: Package FM-1_736. Adds illustrated posters for each of the 14 styles, K1 to K4 labels on the screen, 125 melodic presets, 41 drum kits and a per-style TRACKS setup, with the timing test on a real FM-1.
+- version: v1.1.0
+  date: 2026-11-26
+  url: https://github.com/nasonliu/AutoJam-FM1/releases/tag/v1.1.0
+  notes: First release, package FM-1_732, checked in a build and offline audio tests but not flashed to a device.

@@ -17,13 +17,17 @@ source: https://github.com/Ma94xx/TonverkBridge
 source_status: open
 license: GPL-3.0-only
 license_notes: The README and the LICENSE file state GPL-3.0; the bundled libusb is LGPL-2.1.
-distribution: source-only
+distribution: download
 install_notes: >-
-  Build with Android Studio (Gradle 8.7, NDK 26) or gradle assembleDebug on JDK 17 or later, install on an Android 10+
-  phone, connect the Tonverk in audio mode and press Start.
+  Install the signed APK from the releases page on an Android 10+ phone (uninstall a debug build first), or build with
+  Android Studio (Gradle 8.7, NDK 26) or gradle assembleDebug on JDK 17 or later. Connect the Tonverk in audio mode and press Start.
 brick_risk: false
 tags: [usb-audio, utility, android]
 versions:
+  - version: v1.4
+    date: 2026-11-25
+    url: https://github.com/Ma94xx/TonverkBridge/releases/tag/v1.4
+    notes: Fixes a "driver error -4" recording failure after the latest Tonverk OS update. Also reads format, sample rate and clock from other class-compliant USB audio devices (UAC1 and UAC2) and resamples when 48 kHz is unsupported; only the Tonverk has been tested on hardware.
   - version: v1.3
     date: 2026-10-23
     url: https://github.com/Ma94xx/TonverkBridge/releases/tag/v1.3

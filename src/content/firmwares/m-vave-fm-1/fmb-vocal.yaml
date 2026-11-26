@@ -1,0 +1,47 @@
+device: m-vave-fm-1
+name: FMB Vocal
+summary: >-
+  Physically modelled singing voice for the FM-1, a variation of FM-1 Chimera Vocal with a Bestiary that adds a dubstep robot, a babbling squid and a cat, a beatbox sequencer and a melody page. Pre-release.
+description: >-
+  FMB stands for Flying Mythical Beast. The sound comes from a simulated airway of lungs, vocal folds, throat, mouth and nose, ported from Jameson Hodge's CHIMERA, with no samples. In WORDS mode each key sings the next syllable of a line, VOWEL and TONGUE modes let the knobs move the mouth, and ALGORITHM picks a male, female, child or blended body. ENV sings a word slot on one of six tunes, SEQ is a beatbox with ten mouth-made drum sounds and a 16-step editor, and a second SEQ press opens a 32-step melody page that the voice or a creature plays. The Bestiary on LFO holds the robot, Squidlad, a cat, a songbird, a seal, an alligator and an elephant, each with its own calls. A web Studio prepares words with the CMU Pronouncing Dictionary and sends them over USB, and words can also be typed on the unit. It uses both processor cores and accepts both FM-1 flash chips. The package has its own identity, FM-1_043, so it is kept apart from FM-1 Chimera Vocal. The project uses CHIMERA's name and head with its author's permission.
+status: active
+authors:
+- name: shan-sherif
+  url: https://github.com/shan-sherif
+- name: Jameson Hodge
+  url: https://github.com/jamesondh
+source: https://github.com/shan-sherif/fm-1-fmb-vocal
+source_status: open
+license: MIT
+license_notes: >-
+  A mixed licence, read from the LICENSE file and README. The port of CHIMERA's voice (engine/ and some app/dsp files) is MIT with Jameson Hodge's copyright, and the project's own Studio, site, tools and lab are MIT. The files started from fm1-base's template are MPL-2.0, and the firmware package is MPL-2.0 AND MIT. The CMU Pronouncing Dictionary entries keep Carnegie Mellon's BSD-style licence, fm1-base and felucca-bsp are MPL-2.0 and each package carries JieLi AC79 SDK files under Apache-2.0. The LICENSE file still carries the FM-1 Chimera Vocal name.
+homepage: https://shan-sherif.github.io/fm-1-fmb-vocal/
+based_on: m-vave-fm-1/chimera-vocal
+distribution: browser-installer
+install_notes: >-
+  Use the install page in Chrome or Edge with the FM-1 on USB; the README says it can put M-VAVE's own firmware back. The release holds the .fwsc and .bin with SHA256SUMS. Both FM-1 flash chips (Puya P25Q80 and UC25HQ80) are accepted, but the README says the newer chip has not been tested with this firmware on a unit. Saved settings use their own tags, so switching with FM-1 Chimera Vocal starts each from its defaults.
+brick_risk: false
+tags: [synth, voice, speech, vocal, physical-modelling, beatbox, editor, emulator, fork]
+image:
+  url: https://raw.githubusercontent.com/shan-sherif/fm-1-fmb-vocal/main/app/site/img/banner.png
+  alt: "FMB Vocal banner with three FM-1 screens: the Bestiary robot page at 131 Hz, the beatbox sequencer playing hi-hat, and the voice page singing the syllable LO"
+  credit: shan-sherif
+  source_url: https://github.com/shan-sherif/fm-1-fmb-vocal
+  first_party: true
+versions:
+- version: 0.4.0
+  date: 2026-11-26
+  url: https://github.com/shan-sherif/fm-1-fmb-vocal/releases/tag/v0.4.0
+  notes: Pre-release. Adds Squidlad to the Bestiary and puts FMB Vocal's own creatures first.
+- version: 0.3.0
+  date: 2026-11-26
+  url: https://github.com/shan-sherif/fm-1-fmb-vocal/releases/tag/v0.3.0
+  notes: Pre-release. Adds a dubstep robot to the Bestiary.
+- version: 0.2.0
+  date: 2026-11-26
+  url: https://github.com/shan-sherif/fm-1-fmb-vocal/releases/tag/v0.2.0
+  notes: Pre-release. The Bestiary creatures play tunes and melodies.
+- version: 0.1.0
+  date: 2026-11-25
+  url: https://github.com/shan-sherif/fm-1-fmb-vocal/releases/tag/v0.1.0
+  notes: Pre-release. First version, a variant of fm-1-chimera-vocal 1.1.0 with its own name and identity.

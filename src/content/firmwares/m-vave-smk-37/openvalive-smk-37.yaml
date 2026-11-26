@@ -12,7 +12,7 @@ description: >-
   M-VAVE's Bluetooth stack, and the Bluetooth button taps the tempo and opens the CONTROL MAP. The app and synth come
   from the MIT OpenVALive CORE repository as a git submodule. The README says the firmware runs on an SMK-37 Elite in
   first tests and that the Pro build is untested. The project was called OpenLive until 19 November 2026; the
-  repository so far has only a preview-dev pre-release with Elite and Pro packages.
+  repository so far has only the rolling preview-dev and preview-ram-check pre-releases, which the author calls previews of a branch, not releases.
 status: active
 authors:
 - name: Tom-Rfid
@@ -28,7 +28,7 @@ based_on: m-vave-fm-1/openvalive-fm-1
 distribution: source-only
 requires_stock: M-VAVE's SMK-37 Open firmware tools are used to go back; one package per model, Elite or Pro
 install_notes: >-
-  Download the package for your model from a release or the preview-dev pre-release, or build it with the repository's
+  Download the package for your model from a release or a preview pre-release, or build it with the repository's
   recipe, which needs the pinned smk37_open checkout, fm1-base and the JieLi toolchain. Install it with FLASH-SMK37.bat
   on Windows or fm1_install.py --port SMK --force --no-resources. An interrupted install leaves the keyboard in update
   mode, where running the same command resumes it. OpenVALive keeps its data in Open's project slots 6 to 16 and

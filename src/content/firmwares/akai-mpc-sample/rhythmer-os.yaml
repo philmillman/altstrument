@@ -1,11 +1,11 @@
 device: akai-mpc-sample
 name: RHYTHMER OS
 summary: >-
-  Groovebox environment for the MPC Sample built on Melodee and started from the microSD card, with a 20-entry plug-in picker, 36 drum kits, a generator for patterns and a break engine.
+  Groovebox environment for the MPC Sample built on Melodee and started from the microSD card, with a 24-entry plug-in picker, 69 drum kits, a generator for patterns and a break engine.
 description: >-
   Rights warning: the repository includes the MPC Sample wordmark, drawn from the vector outlines on the cover of inMusic's user guide. assets/device/NOTICE.md says inMusic keeps its trademark and copyright rights in it and that public redistribution rights are still under review. The project's THIRD_PARTY_NOTICES.md and CREDITS_AUDIT.md say the combination of licences has not been fully cleared.
 
-  RHYTHMER OS is a fork of keremimo's Melodee for the MPC Sample, with the sampler, sequencer, mixer, effects and recovery path kept. It adds a Rhythmer Kit that fills 16 pads from 36 kit presets, and a plug-in picker with 20 entries: native ports of FM-1 and Schwung synths and drum engines such as Elixir, Hortator, Dexed, Plaits, Braids, Hera, OberVave, S1Vave and FMini-1, plus an acid line, a break engine and the original sample kit. A GEN page, taken from the author's FM-1 Rhythmer firmware, drafts patterns for a group of four tracks, and the break engine slices a loop you supply, since no break recordings are bundled. The engine ports are kept in a second repository, mpc-sample-engine-ports, which holds the adapters and pinned copies of each original source. Releases are pre-releases; the README says builds and host tests pass and that testing on a physical MPC Sample is still pending.
+  RHYTHMER OS is a fork of keremimo's Melodee for the MPC Sample, with the sampler, sequencer, mixer, effects and recovery path kept. It adds a Rhythmer Kit that fills 16 pads from 69 kit presets, and a plug-in picker with 24 entries: native ports of FM-1 and Schwung synths and drum engines such as Elixir, Hortator, Dexed, Plaits, Braids, Hera, OberVave, S1Vave and FMini-1, plus an acid line, a break engine and the original sample kit. A GEN page, taken from the author's FM-1 Rhythmer firmware, drafts patterns for a group of four tracks, and the break engine slices a loop you supply, since no break recordings are bundled. The engine ports are kept in a second repository, mpc-sample-engine-ports, which holds the adapters and pinned copies of each original source. Releases are pre-releases; the README says builds and host tests pass and that testing on a physical MPC Sample is still pending.
 status: active
 authors:
 - name: Jazzy Rhythmer
@@ -30,6 +30,10 @@ image:
   source_url: https://github.com/jazzyrhythmer/jazzyrhythmer#readme
   first_party: true
 versions:
+- version: v0.3.0
+  date: 2026-11-25
+  url: https://github.com/jazzyrhythmer/mpc-sample-rhythmer-os/releases/tag/v0.3.0
+  notes: Adds the Amino wavetable and Fizzik physical-modelling engines, 33 more Rhythmer Kits for 69 in all, and MPC Sample firmware 1.4 support. Break PERF effects, A/B switching and Return follow the FM-1 version more closely. Use the full SD package and back up the card first.
 - version: v0.2.0
   date: 2026-11-17
   url: https://github.com/jazzyrhythmer/mpc-sample-rhythmer-os/releases/tag/v0.2.0

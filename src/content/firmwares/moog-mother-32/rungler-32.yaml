@@ -9,13 +9,17 @@ description: >-
   signal arrives at the RUN/STOP input, it replaces the internal noise, so only the input jacks decide the flips. The
   lower-row keys set the register length. KB out spans up to five octaves from middle C, scaled down by a range
   setting (50 % by default, set with SHIFT and TEMPO or SHIFT and a lower-row key) and quantised to the major scale
-  by default. It also adds a lo-fi digital delay effect with delay times up to about 520 ms, stored as 4-bit ADPCM,
+  by default. It also adds a lo-fi digital delay effect with delay times up to about 510 ms, stored as 4-bit ADPCM,
   that takes audio on TEMPO and comes out on ASSIGN, with clock sync, feedback and a freeze input. MIDI notes play
   the synth with last-note priority. It is not made or supported by Moog Music, and nothing is saved between power cycles; the register starts
   with random bits. The repository holds the C++ source, a build script and a panel diagram.
 
   Version 1.1 adds the range control for KB out, replaces the internal noise with the RUN/STOP input while it receives
   a signal so the register locks up as a Benjolin's does, and stops a held SHIFT from toggling quantisation.
+
+  Version 1.2 interpolates the delay with four points instead of two, so repeats keep more of their treble, starts
+  feedback at 40 %, fixes the averaging of the clock-synced delay time, and shortens the longest delay slightly to
+  about 510 ms.
 
 status: active
 authors:

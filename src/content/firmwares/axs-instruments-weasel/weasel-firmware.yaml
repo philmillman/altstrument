@@ -4,7 +4,7 @@ kind: firmware
 summary: >-
   The maker's open source firmware for the WEASEL west coast synth, an Arduino sketch for the Daisy Seed. It has a complex oscillator with wavefolder, a modulation oscillator, low pass gates, an envelope, a pulsar, random voltage, a five-step sequencer and a patch bay.
 description: >-
-  The README gives firmware 1.0, and the sketch in the repository reports 1.1.5. Since 1.1.1 it has gained panel memory that powers up with the last button modes, sequencer clock reporting to the web editor, a circuit model of the Buchla 292 low pass gate (1.1.2), buttons that act on release with a MIDI shift to choose which oscillators follow MIDI pitch (1.1.3), MIDI clock sync that counts ticks (1.1.4) and a USB port named WEASEL (1.1.5). It reads 32 pots through two multiplexers and two button matrices. The README lists every pot function and button position, the MIDI implementation (notes trigger the sequencer, pulsar and random source and can set the oscillator pitch)
+  The README gives firmware 1.0, and the sketch in the repository reports 1.2. Since 1.1.1 it has gained panel memory that powers up with the last button modes, sequencer clock reporting to the web editor, a circuit model of the Buchla 292 low pass gate (1.1.2), buttons that act on release with a MIDI shift to choose which oscillators follow MIDI pitch (1.1.3), MIDI clock sync that counts ticks (1.1.4) a USB port named WEASEL (1.1.5) and a 4x oversampled, anti-aliased complex oscillator, wavefolder and AM with the sketch split into modules (1.2). It reads 32 pots through two multiplexers and two button matrices. The README lists every pot function and button position, the MIDI implementation (notes trigger the sequencer, pulsar and random source and can set the oscillator pitch)
   and the Arduino setup with DaisyDuino. The repository also has KiCad files and design drawings. The README links the web flasher and editor, whose USB editor link (WeaselEditor.h) lives in the Weasel-Flasher repository, and has build options for the LED wiring and the sequencer step switches.
 status: active
 authors:
@@ -21,6 +21,11 @@ install_notes: >-
 brick_risk: false
 tags: [official, open-source, synth-engine, sequencer, midi, daisy, lpg, platform]
 versions:
+  - version: main @ 414d708
+    date: 2026-11-26
+    url: https://github.com/joebmz98/Weasel-West-Coast-Synthesiser/commit/414d708edf47e235e65215be9c5e0761a0aba62c
+    notes: >-
+      No tagged releases; this is the latest commit. Since the previous entry the commits release firmware 1.2: the sketch is split into modules with no change in behaviour, and the complex oscillator, wavefolder and AM run oversampled with band-limited waveforms and an anti-aliased folder. They also add a CPU meter and desktop tools, re-render the images and add a compiled build.
   - version: main @ 2ffb2ab
     date: 2026-11-26
     url: https://github.com/joebmz98/Weasel-West-Coast-Synthesiser/commit/2ffb2abae4c2ec3f843220ee42c84e84ac09f64f

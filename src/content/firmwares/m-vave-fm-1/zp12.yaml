@@ -6,7 +6,7 @@ summary: >-
 description: >-
   A SLOOP fork on sloopDX's platform that saves beside sloopDX's banks without touching them. User samples
   are dropped onto pads from a browser editor and sent over WebMIDI. The fm1-editor.com directory lists
-  it as a test build. Version 2.5 can sample on the machine over USB, with the FM-1 acting as the computer's speaker. A community compatibility build for FM-1s with the newer UC25HQ80 flash chip, and a Linux sample manager, are published by turbo399 as zip archives with their source inside, in turbo399/ZP12-FM1-UCUN.
+  it as a test build. Version 2.5 can sample on the machine over USB, with the FM-1 acting as the computer's speaker, and version 3.0 lengthens sampling to about 15 seconds at 26 kHz. A community compatibility build for FM-1s with the newer UC25HQ80 flash chip, and a Linux sample manager, are published by turbo399 as zip archives with their source inside, in turbo399/ZP12-FM1-UCUN.
 status: active
 authors:
 - name: Sven Trogus (zvenson)
@@ -28,6 +28,18 @@ video:
   credit: "zvenson"
   first_party: true
 versions:
+- version: "3.0"
+  date: 2026-11-27
+  url: https://github.com/zvenson/zp12/tree/v3.0
+  notes: Git tag; no GitHub release page. Adds longer sampling. The factory kit moves to its own deletable and restorable sample area, own samples survive updates, and a take can run about 15 s at 26 kHz.
+- version: 2.5.2
+  date: 2026-11-27
+  url: https://github.com/zvenson/zp12/tree/v2.5.2
+  notes: Git tag; no GitHub release page. Saves, recovery and updates work on newer FM-1s with the UC25HQ80 flash chip.
+- version: 2.5.1
+  date: 2026-11-27
+  url: https://github.com/zvenson/zp12/tree/v2.5.1
+  notes: Git tag; no GitHub release page. Sends newer FM-1s' screen the M-VAVE ST7789V settings.
 - version: '2.5'
   date: 2026-10-24
   url: https://github.com/zvenson/zp12/tree/v2.5

@@ -1,0 +1,28 @@
+device: m-vave-fm-1
+name: Loom (Hi-Fi-Hopes)
+summary: >-
+  Wavetable groovebox test build on fm1-base: a six-voice dual-wavetable synth, four synth drums and a pattern and song sequencer, so far run only in the simulator and browser emulator.
+description: >-
+  Source note: the README calls this a test build 0.1 that runs in fm1-base's host simulator and browser emulator and has not been built for or run on a real FM-1, and says not to flash it.
+  The synth track has six voices, each with two wavetable oscillators over six tables of eight frames with position and warp (sync, bend, PWM, mirror and FM from the other oscillator), a sub, noise, drive, a multimode filter, two envelopes, glide and an LFO. Four synth drums (kick, snare, hat and metallic percussion) have tune, decay, tone and level. The sequencer holds eight patterns of up to 16 steps over five tracks with live recording, two parameter locks per step, swing, mutes and pattern copy, plus a song of up to 16 slots, 16 factory synth presets that can be saved over, and several live visuals. Unison, a mod matrix, effects and wavetable import are listed as not done yet. It is a different project from Loom FM-1 and LOOM-8, which are built on Felucca.
+status: active
+authors:
+- name: Hi-Fi-Hopes
+  url: https://github.com/Hi-Fi-Hopes
+source: https://github.com/Hi-Fi-Hopes/Loom-fm1
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The LICENSE file is the MPL 2.0 text, and the README says fm1-base and felucca-bsp, which the project pulls in as a submodule, are MPL-2.0 too.
+based_on: m-vave-fm-1/fm1-base
+homepage: https://github.com/Hi-Fi-Hopes/Loom-fm1
+distribution: source-only
+install_notes: >-
+  Clone with --recursive and build with fm1-base's tools/build.py: --host for the simulator, --web for the browser emulator, which needs emcc. A package for the FM-1 needs JieLi's toolchain. The README says to back up the whole flash with M-Flasher before flashing anything and not to flash this build yet. It documents no recovery steps of its own.
+brick_risk: false
+tags: [synth-engine, wavetable, sequencer, drums, groovebox, emulator]
+versions:
+- version: main @ 905023f
+  date: 2026-11-26
+  url: https://github.com/Hi-Fi-Hopes/Loom-fm1/commit/905023f67e7bd77f913358f782d84a7a738636f1
+  notes: No tagged releases; this is the latest commit.

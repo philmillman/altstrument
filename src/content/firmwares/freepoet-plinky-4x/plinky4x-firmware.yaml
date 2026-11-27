@@ -1,0 +1,36 @@
+device: freepoet-plinky-4x
+name: Plinky4x Firmware
+kind: firmware
+summary: FREEPOET's firmware for the large-format Plinky 4X, a Plinky LPE 0.4.0 derivative with touch processing tuned for long strips, a new calibration, an LED brightness setting, a pitch CV fix and a boot animation.
+description: >-
+  The firmware starts from Plinky LPE 0.4.0 and leaves everything not listed in its README as in that version. Touch handling is reworked for the
+  longer electrodes with spike removal, a tracked baseline, hysteresis and smoothed finger position. Touch calibration is tagged so that calibration
+  made by other firmware is detected and redone on first boot, and it shows progress on the screen. A new LED bright setting scales the 72 panel LEDs.
+  The displayed note and the pitch hi and lo CV outputs follow the strings that are actually pressed again, a stack overflow that froze the unit on
+  the boot logo is fixed, and a boot animation plays on the screen and the LEDs.
+
+  The README calls it beta and says it is still being validated on Plinky 4X hardware. The 8 LEDs on the CV expander are driven by the CV outputs and
+  are not affected by the brightness setting.
+status: active
+authors:
+  - name: FREEPOET
+    url: https://github.com/FreepoetOfficial
+source: https://github.com/FreepoetOfficial/Plinky4x-Firmware
+source_status: open
+license: MIT
+license_notes: LICENSE.md is the official Plinky license text. The software is MIT, graphics are CC BY-SA 4.0, the hardware design is CERN-OHL-P v2 and third-party code keeps its own licenses. The builds folder also holds older official Plinky and Plinky LPE images, which are open source under MIT.
+homepage: https://github.com/FreepoetOfficial/Plinky4x-Firmware
+distribution: download
+requires_stock: Plinky 4X with the official Plinky bootloader
+install_notes: >-
+  Enter bootloader mode the same way as for an official Plinky firmware update, so that a drive named PLINKY appears, drag
+  builds/Plinky4x-LPE-0.4.0-touch7.uf2 onto it and wait for the unit to restart. On first boot the firmware starts a forced touch calibration, in
+  which every lit pad is pressed slowly and evenly; CV calibration is kept. The README also gives a raw .bin for loading at 0x08010000 with a programmer.
+brick_risk: false
+based_on: plinky-plinky/plinky-lpe
+tags: [fork, open-source, synth-engine, sequencer, sampler, midi, ui, platform]
+versions:
+  - version: main @ 86c4e27
+    date: 2026-11-27
+    url: https://github.com/FreepoetOfficial/Plinky4x-Firmware/commit/86c4e27fd995afcf8680621839cde24d0351b339
+    notes: No tagged releases; this is the latest commit.

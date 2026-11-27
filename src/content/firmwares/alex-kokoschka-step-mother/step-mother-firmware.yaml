@@ -1,6 +1,6 @@
 device: alex-kokoschka-step-mother
 name: Step Mother firmware (StepDaddy)
-summary: Open firmware for the Step Mother controller, in Teensy 4.1 and RP2040 versions, with the StepBro MIDI step sequencer and the Yummy Gummy 303-style bass synth, installed with the StepDaddy updater for macOS and Windows or with Teensy Loader or a UF2 copy.
+summary: Open firmware for the Step Mother controller, in Teensy 4.1 and RP2040 versions, and for the Step Sister, with the StepBro MIDI step sequencer and the Yummy Gummy 303-style bass synth, installed with the StepDaddy updater for macOS and Windows or with Teensy Loader or a UF2 copy.
 description: >-
   Two engines run in one firmware and keep playing while the panel is switched between them. StepBro is a MIDI step
   sequencer with two banks of patterns, pattern chaining, per-step velocity, note repeat and a density knob, and it
@@ -10,7 +10,8 @@ description: >-
   only while the sequencer is stopped, and an update keeps them. StepDaddy is a separate updater app, unsigned on both
   platforms, that carries the firmware file and can ask a running unit to restart into the Teensy bootloader. The
   Version 1.1.0 adds firmware for the Step Mother 2, a revision built around an RP2040 instead of a Teensy 4.1, with
-  the same two engines; one StepDaddy updates both boards. The
+  the same two engines; one StepDaddy updates both boards. Version 1.4.0 adds firmware for the Step Sister, the
+  Step Mother (USB-C) on a smaller panel, so one StepDaddy updates all three boards. The
   README states that the 303 name is a Roland trademark and that the project is not affiliated with Roland.
 status: active
 authors:
@@ -55,6 +56,11 @@ videos:
     found_via: https://github.com/AlexKokoschka/StepDaddy#readme
     version: 1.0.0
 versions:
+  - version: 1.4.0
+    date: 2026-11-27
+    url: https://github.com/AlexKokoschka/StepDaddy/releases/tag/v1.4.0
+    notes: >-
+      Adds firmware for the Step Sister, the Step Mother (USB-C) on a smaller panel, and StepDaddy now updates all three boards and asks before putting Step Mother firmware on a Step Sister or the reverse. StepBro and Yummy Gummy are unchanged.
   - version: 1.3.0
     date: 2026-11-15
     url: https://github.com/AlexKokoschka/StepDaddy/releases/tag/v1.3.0

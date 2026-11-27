@@ -1,0 +1,26 @@
+device: m-vave-fm-1
+name: Percolator
+summary: >-
+  23-track percussion sequencer on the Synthesis ToolKit's PhISEM Shakers models, with per-step locks, probability and ratchets, songs, effects, MIDI sync and screen-reader support.
+description: >-
+  Each of the 23 tracks is one Shakers instrument, from maraca, cabasa and tambourine to sleigh bells, bamboo chimes, rocks, a mug with coins, a wrench and water drops, with energy, decay, objects and frequency on the knobs plus level and pan. The sequencer has 16 steps per track with accents, parameter locks, probability, ratchets, A:B, FILL and FIRST conditions, nudge, per-track length and clock divide, swing, note repeat, live recording, mute and solo, and a grid view of all tracks next to a single-track view. It holds 32 patterns, 12 kits and 8 songs, with the factory ones in hand percussion, ambient, metal and industrial, and generative styles, and effects on the mix are a filter with drive, chorus, a tempo-synced ping-pong delay, a short reverb and a limiter. MIDI notes and CCs come in over USB and TRS, clock goes in and out, and hits, knob moves and pattern changes go out over USB. It speaks every screen through the fm1-reader screen reader and has a device file for synthaccess MIDItoSpeech. The sound models are Perry Cook's PhISEM from STK, and the firmware is built on the Felucca platform as M-Vave-OP1 carries it. The README says it runs on a real FM-1.
+status: active
+authors:
+- name: R. Luke DuBois
+  url: https://github.com/rev3rend
+source: https://github.com/rev3rend/percolator
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and LICENSING.md state GPL-3.0-only, as Felucca, with copyright to R. Luke DuBois and the platform code by Leo Kuroshita (Hügelton Instruments) and the M-Vave-OP1 contributors. The STK Shakers models are under STK's MIT-style licence (LICENSING.md). The repository holds vendor/m-vave/FM-1_015.fwsc, which is the V15 image M-VAVE publishes under Apache-2.0 (git blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd, 699,956 bytes, identical to the one in m-vave/fm1_open).
+homepage: https://github.com/rev3rend/percolator
+distribution: download
+install_notes: >-
+  Install percolator-1.0.fwsc with tools/fm1_install.py (Python with mido and python-rtmidi) or the web installer in the repository, and check the file against SHA256SUMS. The README says there is one firmware bank and no recovery button, but the platform's boot guard drops the unit into the chip's boot mode after two failed boots (OCT- and OCT+ held for 5 s does it on purpose), and the update path stays available while the firmware runs. To go back, run fm1_install.py --stock, use the installer's Return to official V15 or use M-VAVE's own updater. It lists FM-1-transporter as optional recovery hardware.
+brick_risk: false
+tags: [sequencer, drums, synth-engine, fx, midi, usb-midi, accessibility, emulator]
+versions:
+- version: v1.0
+  date: 2026-11-27
+  url: https://github.com/rev3rend/percolator/releases/tag/v1.0
+  notes: First release with the 23 tracks, the sequencer, patterns, kits and songs, the effects, MIDI sync and screen-reader support.

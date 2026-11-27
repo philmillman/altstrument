@@ -3,7 +3,7 @@ name: ENTROPY HELIOS
 summary: >-
   Ambient drone and microtonal synth for the FM-1 with a generative ENTROPY mode and a hands-on PURE HW mode, two-core voices, 16 stackable effect cartridges and a browser installer and studio page.
 description: >-
-  Two modes are switched with SEL and REC. ENTROPY, the mode at power-on, runs a generative engine with three behaviours (DRIFT, CINEMA and WILD), 18 factory presets grouped as calm, lush and edge, and eight user slots. PURE HW removes the generative presets and leaves 16 blank hardware slots with no autonomous drift. The voices run on both cores: six swarm drone voices of five oscillators each and two melodic voices, through two modelled op-amp filters, with an eight-voice play mode that responds to velocity and per-key aftertouch. Sixteen effect cartridges can be stacked, each with its own level and tone, ahead of a three-spring tank, and external USB audio can be routed through the filters and effects. The screen is drawn as a hardware panel with five selectable finishes saved to flash. A WebMIDI studio page adds an 8x8 pin matrix, a two-axis joystick, a cartridge selector and JSON backup of the user slots, and can use the computer's webcam as a light sensor and a desk tap as a piezo input. It runs on both FM-1 flash chips and is built on fm1-base and felucca-bsp.
+  Two modes are switched with SEL and REC. ENTROPY, the mode at power-on, runs a generative engine with three behaviours (DRIFT, CINEMA and WILD), 18 factory presets grouped as calm, lush and edge, and eight user slots. PURE HW removes the generative presets and leaves 16 blank hardware slots that start with no autonomous drift, and since 1.3.4 the Evolve behaviours can be switched on there by hand. The voices run on both cores: six swarm drone voices of five oscillators each and two melodic voices, through two modelled op-amp filters, with an eight-voice play mode that responds to velocity and per-key aftertouch. Sixteen effect cartridges can be stacked, each with its own level and tone, ahead of a three-spring tank, and external USB audio can be routed through the filters and effects. The screen is drawn as a hardware panel with five selectable finishes saved to flash. A WebMIDI studio page adds an 8x8 pin matrix, a two-axis joystick, a cartridge selector and JSON backup of the user slots, and can use the computer's webcam as a light sensor and a desk tap as a piezo input. It runs on both FM-1 flash chips and is built on fm1-base and felucca-bsp.
 status: active
 authors:
 - name: behn1220
@@ -28,6 +28,18 @@ image:
   source_url: https://github.com/behn1220/entropy-helios
   first_party: true
 versions:
+- version: 1.3.4
+  date: 2026-11-27
+  url: https://github.com/behn1220/entropy-helios/releases/tag/v1.3.4
+  notes: The release is titled Beta. Lets the generative Evolve behaviours (SLOW DRIFT, CINEMA, WILD) be switched on in PURE mode from the SELECT encoder or the Studio page, saved with each PURE slot, and crossfades a stacked effect cartridge's level when Evolve switches it on.
+- version: 1.3.3
+  date: 2026-11-27
+  url: https://github.com/behn1220/entropy-helios/releases/tag/v1.3.3
+  notes: Fixes a stack overflow that sent 1.3.2 into safe mode on FM-1 hardware and fixes editing of active effect cartridges. Adds a master and a per-module random button with a 16-step undo.
+- version: 1.3.2
+  date: 2026-11-26
+  url: https://github.com/behn1220/entropy-helios/releases/tag/v1.3.2
+  notes: Adds a master volume and quick mute, raises the tempo limit from 160 to 240 BPM, adds a Core 0 and Core 1 CPU meter, tap tempo, preset steppers and keyboard shortcuts to the Studio page. The notes say it trapped into safe mode on FM-1 hardware, which 1.3.3 fixes.
 - version: 1.3.1
   date: 2026-11-26
   url: https://github.com/behn1220/entropy-helios/releases/tag/v1.3.1

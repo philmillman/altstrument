@@ -1,0 +1,52 @@
+device: valeton-gp-5
+kind: firmware
+name: Frost
+summary: Alternative firmware for the Valeton GP-5 with a six-slot editable signal chain, 62 effect and amp types, converted NAM captures, cabinet IRs, setlists, USB audio and MIDI, and a browser editor and installer. Built on OpenGP5.
+description: >-
+  Frost replaces the GP-5's application firmware with a six-block chain whose effects can be chosen, reordered and
+  bypassed from the pedal or from the Frost Studio website. It has 62 effect and amp types, 60 presets (20 factory sounds on
+  first use), a built-in cabinet plus 63 custom cabinet slots, and up to 64 model positions for capture models converted
+  from Neural Amp Modeler A2 files. The README states that these play as approximations and that Frost does not run native
+  NAM. There are Chain, Stomp, Preset and Setlist home screens, song and part setlists advanced with the foot switch, a
+  tuner and global settings. The 0.1.0 image adds USB MIDI, stereo 16-bit 44.1 kHz USB audio and Bluetooth MIDI reception,
+  and Frost Studio edits live, manages models, cabinets and presets, makes backups and installs the firmware over WebMIDI.
+  The release notes describe it as a preview: USB audio and Bluetooth are experimental, preset changes cut effect tails and
+  heavy chains can exceed the DSP budget. The project states it is independent of Valeton.
+status: active
+authors:
+  - name: Frost contributors
+    url: https://github.com/freelender
+source: https://github.com/freelender/frost-gp5
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT License, with copyright held by the Frost contributors and the OpenGP5 contributors.
+  THIRD_PARTY_NOTICES.md carries the MIT notices of OpenGP5, Aleksandar Vukasinovic and Thomas Hammer for adapted code, and
+  credits the CC0 "Cookie Monster" impulse response embedded as the built-in cabinet. The README states that no stock
+  firmware, private captures or user IR files are distributed.
+homepage: https://freelender.github.io/frost-gp5/
+based_on: valeton-gp-5/opengp5
+distribution: browser-installer
+requires_stock: Valeton GP-5
+install_notes: >-
+  Back up your sounds first: with Valeton's editor for the stock firmware, or with Presets, Back up everything in Frost
+  Studio for an existing Frost install. Open Frost Studio in desktop Chrome or Edge, connect the pedal over a USB data cable,
+  choose the downloaded .bin on the Firmware page and confirm; the image takes about 90 seconds and Frost storage is kept
+  across updates. To recover from an interrupted update, disconnect power, hold the foot switch and PARA while reconnecting
+  to enter the factory update mode, and install again. To go back to stock, install Valeton's own GP-5 image with the same
+  installer. The guide describes a fault in the DSP updater of some pedals that blocks every update, Valeton's included, and
+  can only be fixed with an FT232H adapter wired to the J7 header, following OpenGP5's recovery guide; the guide says the
+  fault belongs to the pedal and not to Frost.
+brick_risk: true
+tags: [fx, amp-modeler, nam, ir, setlist, usb-audio, usb-midi, bluetooth-midi, web]
+image:
+  url: https://raw.githubusercontent.com/freelender/frost-gp5/main/assets/docs/website-live-editor.webp
+  alt: Frost Studio editor in demo mode with a six-slot signal chain, a NAM capture block with its model selector and five knobs below, and an effects library on the right
+  credit: Frost contributors
+  source_url: https://github.com/freelender/frost-gp5#readme
+  first_party: true
+versions:
+  - version: 0.1.0
+    date: 2026-11-27
+    url: https://github.com/freelender/frost-gp5/releases/tag/v0.1.0
+    notes: Pre-release, the initial public preview. Adds USB MIDI, USB audio, Bluetooth MIDI, per-effect CTL toggling and saved Direct Monitoring and Bluetooth settings, and fades preset recall through silence.

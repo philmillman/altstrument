@@ -45,6 +45,10 @@ image:
   source_url: https://charlesvestal.github.io/fm1-base/
   first_party: true
 versions:
+- version: main @ f4bd9c5
+  date: 2026-11-27
+  url: https://github.com/charlesvestal/fm1-base/commit/f4bd9c5798f7e398f7a93e0d891f7d878121f1de
+  notes: No tagged releases; this is the latest commit. Since the previous row an update or UBOOT ends a SysEx stream an app left open, the SD card read-ahead interrupt moves to the input scan's priority after USB MIDI input went silent at the old one, the audio_ahead option drops a half only when a render is missed anyway, the app can choose the 396 MHz clock at each start, and build.py can use the open pi32v2 LLVM toolchain in place of JieLi's.
 - version: main @ 3039770
   date: 2026-11-26
   url: https://github.com/charlesvestal/fm1-base/commit/30397702339c2ecb8fe20aa89e4cda0b4975f0d8

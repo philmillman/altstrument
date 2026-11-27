@@ -1,0 +1,49 @@
+device: m-vave-fm-1
+name: Contagion
+kind: firmware
+summary: >-
+  Eight-voice dual-core wavetable synth for the FM-1 with 64 oscillator waveforms, four controls per page, 16 USER
+  patches with SysEx backup, and three images that carry the Access Virus A, B or C factory preset collections.
+description: >-
+  Rights warning: the repository commits Access Virus factory bank dumps (reference/factory-sysex) and a Virus C ROM
+  dump that the build converts into the factory presets, and it holds copies of a third-party browser emulator's
+  scripts and WebAssembly module (reference/, captured from virooos.vercel.app on 2026-11-12) that the engine is
+  checked against. The README says Access and Virus only identify the instrument and preset families. The firmware
+  plays three oscillators from 64 waveforms that are rebuilt from stored coefficients into a RAM cache by pitch band,
+  with up to four unison layers per note, filters, envelopes, LFOs, a modulation matrix, distortion, EQ and
+  saturation. A page-based screen shows the oscillators, filter and global CPU counters, with a cyan blueprint
+  splash, and one control group of four knobs per page. The three images hold 227, 648 and 650 programs; programs
+  that use arpeggiation were skipped and some patches differ where the originals use effects such as delay, reverb or
+  vocoder. Sixteen native USER patches back up and restore over USB MIDI SysEx. The release notes say hardware testing
+  of the release binaries is pending, and it is built on the VIROOOS engine, fm1-base and the Felucca BSP.
+status: active
+authors:
+- name: Kayman18
+  url: https://github.com/Kayman18
+source: https://github.com/Kayman18/Contagion
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no root LICENSE and the README names none. The bundled platform sources carry Apache-2.0,
+  GPL-3.0-only and MPL-2.0 notices (base/LICENSES, base/bsp/LICENSES), but nothing says what covers the Contagion
+  engine and app. The three committed .fwsc files (610,108 bytes each) are the project's own builds and match none of
+  M-VAVE's licensed images.
+homepage: https://github.com/Kayman18/Contagion
+distribution: download
+install_notes: >-
+  Pick the image for the factory collection you want (Virus A, B or C), then install the .fwsc with your usual
+  FM-1-compatible updater. The README says to back up important USER patches first. Building needs Linux, the JieLi
+  PI32v2 toolchain and the AC79 SDK, one VIRUS_MODEL at a time with build-firmware.sh.
+brick_risk: false
+tags: [synth-engine, oscillator, filter, usb-midi]
+image:
+  url: https://raw.githubusercontent.com/Kayman18/Contagion/main/docs/screenshots/access-oscillators.png
+  alt: "Screen capture titled OSCILLATORS, Init Patch, with four knobs: Wave 1 00, Shape 1 64, Wave 2 00 and Shape 2 64, and an ALGO NEXT PAGE hint"
+  credit: Kayman18
+  source_url: https://github.com/Kayman18/Contagion
+  first_party: true
+versions:
+- version: v1.0.0
+  date: 2026-11-26
+  url: https://github.com/Kayman18/Contagion/releases/tag/v1.0.0
+  notes: The release holds the three 8-voice images, one per Virus A, B and C collection, with a checksum file.

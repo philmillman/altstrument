@@ -1,0 +1,45 @@
+device: sony-psp
+name: Qew
+summary: >-
+  PSP homebrew that makes the console a USB-MIDI controller for the Mixxx DJ software, with two-deck transport, mixer,
+  hotcue, loop, library and effect pages and deck feedback on the PSP screen.
+description: >-
+  A PSP program that shows up on the computer as a class-compliant USB MIDI device, so no driver or companion program
+  is needed on the PC. It ships a mapping and script for Mixxx that the PSP's buttons and analog stick drive. Four
+  pages, switched with START, cover play, cue, sync and headphone cue per deck, gain, three-band EQ, filter, volume and
+  crossfader; hotcues, loops and beat jump; browsing the library and loading tracks; and two effect units. The PSP
+  screen shows each deck's lit buttons, knobs, level, tempo, beat light and time left as Mixxx reports them. The
+  program keeps the PSP awake while it runs and tells Mixxx to release held controls if the cable is pulled.
+status: active
+authors:
+  - name: boubounokefalos
+    url: https://github.com/boubounokefalos
+source: https://github.com/boubounokefalos/qew
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GNU GPL version 3 and the README says GPL-3.0. The GPU set-up code is adapted from the XLT
+  renderer, which in part comes from psp5 (GPL-3.0), and the USB driver structures follow PSPLINK's usbhostfs (BSD
+  licence).
+distribution: download
+requires_stock: PSP custom firmware (ARK)
+install_notes: >-
+  Copy the PSP folder from the release zip to the root of the Memory Stick, which puts the program and its usbmidi.prx
+  in ms0:/PSP/GAME/QEW/. Copy Qew.midi.xml and Qew-scripts.js from the zip's Mixxx folder into Mixxx's controllers
+  folder, then enable the PSP's MIDI device in Preferences > Controllers and load the Qew mapping. Start Qew on the PSP
+  before Mixxx, because Mixxx 2.5 does not pick up devices plugged in while it runs. The author tried a PSP-3004 and a
+  PSP-E1004 with Mixxx 2.5.6 on Linux and Windows 11, and has not tried a PSP Go or macOS. It runs as an application
+  from the game menu and writes nothing to the system firmware.
+brick_risk: false
+tags: [usb-midi, midi, controller, dj, homebrew]
+image:
+  url: https://raw.githubusercontent.com/boubounokefalos/qew/main/docs/screenshots/mixer.png
+  alt: Qew's Mixer page on the PSP screen with the Mixer tab selected, showing deck A at 132 BPM playing and deck B at 130 BPM paused, gain, EQ and filter knobs, volume faders and a crossfader
+  credit: boubounokefalos
+  source_url: https://github.com/boubounokefalos/qew
+  first_party: true
+versions:
+  - version: 1.0.0
+    date: 2026-11-26
+    url: https://github.com/boubounokefalos/qew/releases/tag/v1.0.0
+    notes: First release.

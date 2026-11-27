@@ -1,0 +1,32 @@
+device: m-vave-smk-37
+also_devices: [m-vave-fm-1]
+name: SMK-37 Firmware Manager
+kind: tool
+summary: >-
+  Android app that installs community and official firmware packages on an SMK-37, MKE-P37, Starrykey 37 Play or FM-1 over USB-MIDI, with genkigenki's SMK-37 catalog built in.
+description: >-
+  The app lists the firmwares on genkigenki's SMK-37 site for the connected model, downloads a package when it is installed and checks it against the SHA-256 the site lists. A .fwsc file of your own can be imported, and the app reports which keyboard it is for, whether it is official or custom and whether its internal checksums agree. The install goes through the keyboard's own update mode, using a Java port of the Felucca installer's protocol code, and an interrupted update can be resumed. Check keyboard shows the running firmware or that the unit is stuck in update mode. The app refuses damaged packages, packages for another device, M-VAVE firmware older than V016 and units running a firmware with its own updater, and it stops before writing in an update mode it does not know unless a switch allows it. It hosts no firmware, does not back up presets and cannot read back the installed firmware. The README describes installing Baud Girl's SMK-37+VA package and going back to stock by importing M-VAVE's official file. It needs Android 8.0 or newer with USB host support and a USB-C OTG cable.
+status: active
+authors:
+- name: ODeath
+  url: https://github.com/gybe808-dotcom
+source: https://github.com/gybe808-dotcom/smk37-firmware-manager
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE is the GPL v3 text and the README says GPL-3.0-only, because the protocol code is derived from a GPL-3.0 installer. No firmware package is in the repository; the app downloads them from their publishers.
+distribution: download
+install_notes: >-
+  Download the signed APK from the release and allow installs from that source on the phone. Connect the keyboard with a USB-C OTG cable, close other MIDI apps and any Chrome tab using the keyboard, then use Check keyboard before installing. The README advises a full flash backup and installing m-bootloader with jvitkauskas' M-Flasher first, which gives a download mode and a recovery menu even when no firmware starts; installing without it is documented as supported, and the official package for your model can be imported to return to stock.
+brick_risk: false
+tags: [flasher, android, usb-midi, catalog]
+image:
+  url: https://raw.githubusercontent.com/gybe808-dotcom/smk37-firmware-manager/main/docs/screenshot.png
+  alt: "The app on a phone: a keyboard card with SMK-37 Elite_016 and a Check keyboard button, a Catalog list with Makkuro37, Vector37 and Speak37, and an Install button"
+  credit: gybe808-dotcom
+  source_url: https://github.com/gybe808-dotcom/smk37-firmware-manager#readme
+  first_party: true
+versions:
+- version: 0.2.0
+  date: 2026-11-26
+  url: https://github.com/gybe808-dotcom/smk37-firmware-manager/releases/tag/v0.2.0

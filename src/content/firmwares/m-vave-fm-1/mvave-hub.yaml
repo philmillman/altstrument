@@ -1,0 +1,44 @@
+device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
+name: mvave-hub
+kind: tool
+summary: >-
+  Browser workbench that auditions community FM-1 and SMK-37 firmware on an on-screen faceplate and installs
+  .fwsc packages over Web MIDI after a verified backup, with a calibration and Bluetooth repair wizard for the SMK-37.
+description: >-
+  The Box runs a firmware in the browser on a faceplate of the SMK-37 or the FM-1 with the 240 by 240 screen, labelled
+  knobs, faders and pads, Web MIDI input with MIDI learn, and saves kept in IndexedDB. A cartridge (.mvcart) bundles a
+  WebAssembly core built from the firmware source, an optional hardware .fwsc image, a manifest and its licences, or
+  the Box runs a raw .fwsc inside the MIT-licensed fm1-emu SoC emulator. Built-in cartridges are SMKSYNTH Hub,
+  winampFM, InfeKt-FM1, Vector37, Speak37, Makkuro37 and M-VAVE's open SMK-37 and FM-1 firmware, each staged at build
+  time from a pinned upstream commit and checksum rather than committed. The installer validates .fwsc headers, CRC and
+  SHA-256, checks the board family and the connected unit, requires a stored backup archive before a write and keeps
+  the calibration, Bluetooth and MAC regions protected. The five-step repair wizard installs a repair firmware to
+  stash an SMK-37's calibration, wheel endpoints and pairings, reinstalls stock V016 so the key mapping rebuilds, and
+  writes the stash back. A native macOS reader for a full flash backup is experimental. The project is a derivative of
+  the upstream firmwares and says it is not affiliated with M-VAVE, and the README places it before its DAW plugin
+  host stage, with hardware acceptance tests still open. It is a community fork, not maintained by the upstream authors.
+status: active
+authors:
+- name: yurirusanovskiy
+  url: https://github.com/yurirusanovskiy
+source: https://github.com/yurirusanovskiy/mvave-hub
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states GPL-3.0-only and LICENSE is the GPL v3 text. Each cartridge keeps its upstream licence in its
+  manifest and provenance bundle. No stock firmware is committed: the SMK-37 V016 and FM-1 V015 recovery baselines are
+  staged at build time from pinned publisher sources.
+distribution: source-only
+install_notes: >-
+  Build it on macOS arm64 with Node 24, pnpm, Zig, Binaryen, uv and Docker (docs/builds.md): pnpm install, pnpm bootstrap,
+  then pnpm dev for the workbench at localhost:4173. The installer writes only after a verified backup and the repo's
+  rules say hardware tests are run by hand; the repair wizard writes the unit's own calibration and Bluetooth data back
+  and the README is explicit that this is experimental and still awaiting hardware acceptance.
+brick_risk: true
+tags: [emulator, flasher, web, platform, librarian]
+versions:
+- version: main @ 953739e
+  date: 2026-11-27
+  url: https://github.com/yurirusanovskiy/mvave-hub/commit/953739e744c40fff961247d5a7b1a9408fd7d233
+  notes: No tagged releases; this is the latest commit.

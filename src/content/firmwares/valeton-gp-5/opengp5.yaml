@@ -10,7 +10,7 @@ description: >-
   two example effects, adds a pass-through template with a tutorial for a first tremolo, a strobe tuner demo, an audio
   link that lets the two processors exchange data after every audio block and smooth text in any font. From 0.5.4-alpha it adds file storage read directly from flash, live settings changes from a computer over USB and maths functions on both processors. The repository has a command line flasher, a
   browser flasher and tools that run an effect on a WAV file or boot the DSP image in an emulator. The author states that it
-  contains no Valeton code or data and no chip vendor SDK code. It is alpha and has been tested on one pedal.
+  contains no Valeton code or data and no chip vendor SDK code. From 1.0.0 the pedal is a USB audio interface and can offer Bluetooth MIDI, and the platform API is stable through 1.x. It was alpha up to 0.8.0 and has been tested on one pedal.
 status: active
 authors:
   - name: the OpenGP5 contributors
@@ -37,6 +37,10 @@ image:
   source_url: https://github.com/OpenGP5/OpenGP5#readme
   first_party: true
 versions:
+  - version: 1.0.0
+    date: 2026-11-26
+    url: https://github.com/OpenGP5/OpenGP5/releases/tag/v1.0.0
+    notes: First stable release, with an API promised to stay compatible through 1.x. The pedal becomes a class-compliant two-channel USB audio interface, can offer BLE-MIDI per firmware, and gets more control-processor RAM (264,160 bytes). It adds gp5tool.py tickfix and unstick for pedals whose DSP updater stalls and a documentation website. Over USB the pedal is now named OpenGP5, so Launchpad 0.3 and earlier no longer find it outside update mode.
   - version: 0.8.0-alpha
     date: 2026-11-20
     url: https://github.com/OpenGP5/OpenGP5/releases/tag/v0.8.0-alpha

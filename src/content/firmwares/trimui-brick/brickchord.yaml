@@ -2,9 +2,9 @@ device: trimui-brick
 also_devices: [portmaster-compatible-handhelds]
 name: Brickchord
 summary: >-
-  Alpha chord-machine apps for the TrimUI Brick Pro on Knulli, written in Python: Brickchord plays diatonic chords from the buttons over a synth and drum engine, Bricklab adds a groovebox and looper, and Brickglide is an ambient glide machine.
+  Alpha chord-machine apps for the TrimUI Brick Pro on Knulli, written in Python: Brickchord plays diatonic chords from the buttons over a synth and drum engine, Bricklab adds a groovebox and looper, and Brickglide is an ambient glide machine, and Brickchop is a pad sampler.
 description: >-
-  Brickchord maps seven chord buttons to the diatonic chords of a chosen key, with modifiers for sevenths, sus4 and ninths, left-stick chord bends and right-stick reverb, delay and filter. It has 23 sounds across analog-style, FM, plucked, organ and vocal engines, a sound editor, a stackable effects rack, 15 play styles with strums, harps, arpeggiators and repeats, a drum machine with 27 beats, a synth bass and a six-track pattern recorder with a song page. Bricklab is the groovebox edition on the same engine, with a layered looper, sixteen patterns of six tracks that each hold a chord, lead, bass, drone or sample machine, per-track effects, a step-grid drum machine and sample playback from WAV files. Brickglide is an ambient machine in which chord voices slide into the next chord over seconds, with scrubbing, melody over the changes, USB MIDI input and texture beds.
+  Brickchord maps seven chord buttons to the diatonic chords of a chosen key, with modifiers for sevenths, sus4 and ninths, left-stick chord bends and right-stick reverb, delay and filter. It has 23 sounds across analog-style, FM, plucked, organ and vocal engines, a sound editor, a stackable effects rack, 15 play styles with strums, harps, arpeggiators and repeats, a drum machine with 27 beats, a synth bass and a six-track pattern recorder with a song page. Bricklab is the groovebox edition on the same engine, with a layered looper, sixteen patterns of six tracks that each hold a chord, lead, bass, drone or sample machine, per-track effects, a step-grid drum machine and sample playback from WAV files. Brickglide is an ambient machine in which chord voices slide into the next chord over seconds, with scrubbing, melody over the changes, USB MIDI input and texture beds. Brickchop, added in v0.6.0, is a sampler with four groups of twelve pads, loop chopping, punch-in effects and eight song slots.
 
   Each app runs as a Ports entry on Knulli, using a bundled NumPy and pygame, and also ships as PortMaster packages for NextUI, muOS, ROCKNIX and ArkOS and as an R36 build. Since v0.5.0 a no-sticks mode turns on by itself when no analog sticks are found, so the apps can also be played on handhelds like the original TrimUI Brick. The README marks the project alpha and says it was tested on a Brick Pro with a Knulli beta build. It reports the other firmwares and the R36 package as untested on hardware. The project is not affiliated with TrimUI, Knulli or the makers of the chord instruments that inspired it.
 status: active
@@ -30,6 +30,11 @@ image:
   source_url: https://github.com/michaeltietjen/brickchord
   first_party: true
 versions:
+  - version: v0.6.0
+    date: 2026-11-26
+    url: https://github.com/michaeltietjen/brickchord/releases/tag/v0.6.0
+    notes: >-
+      Adds Brickchop, a fourth app: a sampler with four groups of twelve pads, chopping, punch-in effects and eight song slots. Tested on the TrimUI Brick Pro with KNULLI only; the R36 and PortMaster builds are new.
   - version: v0.5.1-portmaster
     date: 2026-11-25
     url: https://github.com/michaeltietjen/brickchord/releases/tag/v0.5.1-portmaster

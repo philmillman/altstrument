@@ -8,7 +8,7 @@ description: >-
   adjusts the pedal's drum patterns. It also assigns the three knobs and CTRL 1 to 4, each of which can
   drive several blocks. Saving reads the slot back and compares it with what was sent before confirming. An
   offline mode lets the interface be explored without a pedal. It also keeps favourite effects, lets user IR and SnapTone slots be named and
-  saved to another slot, and syncs the library on the first connection of each day. The project version is 1.0.8; no APK is
+  saved to another slot, and syncs the library on every connection. It stores presets per effect block. The project version is 1.0.10; no APK is
   published, so the app has to be built with Gradle on JDK 21. Parts of the preset and protocol code are
   adapted from Preset Forge, and the pedal artwork comes from GP200 Studio. The author notes that the CTRL
   assignment tests passed on a real pedal without recording its model or firmware. Not affiliated with
@@ -38,6 +38,11 @@ image:
   source_url: https://github.com/marcosepifanio/gp200-android-editor
   first_party: true
 versions:
+- version: main @ 8e8bbd2
+  date: 2026-11-26
+  url: https://github.com/marcosepifanio/gp200-android-editor/commit/8e8bbd2564fba8ebfef261e7c4184616798d236e
+  notes: >-
+    No tagged releases; this is the latest commit, which is project version 1.0.10. Since the previous entry the commits add persistent per-block presets, sync the whole library on every connection, refresh the interface contrast and chain controls, and update the screenshots.
 - version: main @ 219272c
   date: 2026-11-01
   url: https://github.com/marcosepifanio/gp200-android-editor/commit/219272ca1e0dc47436d71325fbc6e566f99ce966

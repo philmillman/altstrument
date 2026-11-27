@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+name: FM1_GTA
+kind: firmware
+summary: >-
+  Top-down open-world crime game, Out on Parole, with story missions, police chases, a four-station synth radio and key LEDs that act as a lightbar and speedometer.
+description: >-
+  Rights warning: this is a port of the game Out on Parole by shaydex-codes, whose repository states no licence, and the port is released under the GPL-3.0-only without any statement of permission from the original author.
+
+  The player walks and drives through a 64 by 64 coastal city with a day and night cycle, traffic, pedestrians, ten vehicle types and four weapons. Five story missions start at a parking lot, and side activities include taxi fares, shop robberies, a car export dock, a gun shop, a respray garage and sixteen hidden cash stashes. Police chases run from one to five stars, with a helicopter from three stars and short cutscenes for carjackings and arrests. The 27 key LEDs flash red and blue while wanted and show speed or health otherwise, and a radio cycles through four synthesised stations and a police scanner. A browser emulator and installer are on the project site. It is built on the foma, Felucca, SLOOP and Dinghy toolchain. A Wi-Fi multiplayer build is listed separately as FM1_GTA Network.
+status: active
+authors:
+- name: mlwilki
+  url: https://github.com/mlwilki
+source: https://github.com/mlwilki/FM1_GTA
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and LICENSING.md give GPL-3.0-only, as Felucca, SLOOP and Dinghy. Platform files from fm1-base, felucca-bsp and M-VAVE's fm1_open keep the licences LICENSING.md lists for them. The game itself is a port of shaydex-codes/outonparole, which has no licence file.
+homepage: https://mlwilki.github.io/FM1_GTA/
+distribution: browser-installer
+install_notes: >-
+  The project site offers a browser emulator and installer, or ./fm1 build makes the .fwsc package and ./fm1 flash writes it over USB. The package identity is FM-1_18. It is built on the foma platform, which keeps its update loader, so the FM-1's ROM boot mode remains the way back.
+brick_risk: false
+tags: [game, emulator, led]
+video:
+  url: https://youtu.be/-YgpPS0PEE8
+  title: M-VAVE FM1_GTA
+  credit: LazyMike
+  first_party: true
+  found_via: https://github.com/mlwilki/FM1_GTA#readme
+  version: v0.7.0
+versions:
+- version: v0.7.0
+  date: 2026-11-27
+  url: https://github.com/mlwilki/FM1_GTA/releases/tag/v0.7.0

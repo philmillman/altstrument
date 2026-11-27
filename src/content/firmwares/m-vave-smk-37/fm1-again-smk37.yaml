@@ -1,0 +1,26 @@
+device: m-vave-smk-37
+name: FM-1 Again SMK-37
+summary: >-
+  Port of the FM-1 Again groove firmware to the SMK-37 Pro and MKE-P37, with Ableton Link and MIDI over Wi-Fi and Bluetooth. An early version: the pads, faders and wheels are not mapped yet.
+description: >-
+  Rights warning: the FM-1 Again project's screensaver film and the look of its screens come from concert footage and posters in creative files that an artist's tour team shared with the community. The project says these are not under the GPL, relies on the terms of that release, and states that no artist made or endorsed the firmware. The SMK-37 build has no screensaver film. It carries the FM-1 Again 1.0.7 engine over to the SMK-37 on the same version line as the FM-1 entry, with the FM-1's controls on the 27 middle keys, the buttons and the knobs. SCALE, CHORD, NOTE REPEAT, PARA, GLOBE and PATCH stand in for the FM-1's SEL, ENV, LFO, EDIT, GLO and HOME, SAVE is the BT button, and K5 is the volume. It has Ableton Link over Wi-Fi, either joining a home network or with the SMK-37 as its own access point, and sends notes to a phone over Bluetooth MIDI or over Wi-Fi as RTP-MIDI. The release notes say it was tested on an SMK-37 Pro with an iPhone and Ableton Note. The README says the pads, faders and wheels come in a later release, and the Elite package is not built yet.
+status: active
+authors:
+- name: PolarPatch
+  url: https://github.com/PolarPatch
+source: https://github.com/PolarPatch/FM-1-Again-SMK-37
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0 as a whole, GPL-3.0-only because the Ableton Link port and the modules from Arctic Scream are. The fm1-base submodule and its board layer are MPL-2.0, the TeX Gyre Heros font is under the GUST Font License and Press Start 2P is SIL OFL 1.1. The film and the tour-poster look of the FM-1 entry are not under the GPL. No M-VAVE firmware image is in the repository.
+based_on: m-vave-fm-1/fm1-again
+distribution: download
+install_notes: >-
+  Install again-smk37-1.0.7.fwsc (SMK-37 Pro) or again-smk37-mke-1.0.7.fwsc (MKE-P37) from the release the way other SMK-37 firmwares are installed, with The Firmware Hub. NETMIDI is off by default and must be turned on; WI-FI, LINK and NETMIDI are kept after a power cycle once SAVE (BT) is pressed. The developer notes say the app never writes the boot area at 0x0 to 0x3FFF or the calibration at 0xC0000 to 0xC1FFF, and advise a full flash backup before installing.
+brick_risk: false
+tags: [groovebox, sequencer, synth-engine, sampler, voice, fx, performance, ble-midi, wifi, ableton-link, port]
+versions:
+- version: 1.0.7
+  date: 2026-11-27
+  url: https://github.com/PolarPatch/FM-1-Again-SMK-37/releases/tag/v1.0.7
+  notes: First release for the SMK-37, with Ableton Link, MIDI over Wi-Fi and Bluetooth MIDI. The notes call it an early version and say it was tested on an SMK-37 Pro.

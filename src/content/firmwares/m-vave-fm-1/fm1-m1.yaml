@@ -1,0 +1,27 @@
+device: m-vave-fm-1
+name: fm1-m1
+summary: >-
+  Korg M1 sound module for the FM-1 that plays the M1's 100 factory programs and three drum kits, with effects, from a data file you make from your own M1's ROM dumps.
+description: >-
+  The firmware reuses fm1-sf2's sample engine on fm1-base, with 16 MIDI channels, key and velocity zones, loops, envelopes, a filter, an LFO, layered Double programs and reverb, chorus and the M1's other effect types. A set of Python and Node tools reads the M1's PCM ROM chips, its operating system ROM and a SysEx dump of its factory programs, and packs them into an FM1B bank of about 695 KB, most of it as MP3 decoded into a cache while playing. Without that bank the screen shows NO M1 DATA. The keys play F3 to C5 with velocity, OCT- and OCT+ shift them, PRESETS picks the program, and all MIDI channels, program change, bend, modulation, volume, pan and sustain are handled, with channel 10 for the drum kits. The M1's combinations and sequencer are not made yet. It is a BYOR project: the README says the repository, the install page, the emulator and the releases hold no Korg data, and a package built with your own bank is for your own use. A browser emulator and an install page run on GitHub Pages.
+status: active
+authors:
+- name: mwedmark
+  url: https://github.com/mwedmark
+source: https://github.com/mwedmark/fm1-m1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is M-VAVE's FM1 APP licence, GPL-3.0 only with a linking exception for the binary FM1 SDK, and the engine folder is copied from fm1-sf2 under the same terms; minimp3 keeps its own licence under engine/third_party/mp3. The M1's PCM ROM, operating system and factory programs are Korg's, are not in the repository and must not be distributed.
+based_on: m-vave-fm-1/fm1-sf2
+homepage: https://mwedmark.github.io/fm1-m1/
+distribution: browser-installer
+install_notes: >-
+  Make your data file first with the repository's tools from your own ROM dumps and factory SysEx dump (INSTALL.md), then open the install page in Chrome or Edge over USB, pick your file and install; the page writes the firmware and then your data. Installing the firmware again keeps your data, and a new data file replaces it. The release package m1-0.1.fwsc holds the firmware only and was built on the author's computer. The project documents no recovery steps of its own; fm1-base's tools and M-VAVE's updater are the usual ways back to the stock firmware.
+brick_risk: false
+tags: [synth-engine, sampler, emulator, sysex, midi, usb-midi, fx, web]
+versions:
+- version: v0.1
+  date: 2026-11-26
+  url: https://github.com/mwedmark/fm1-m1/releases/tag/v0.1
+  notes: First public release with the factory programs and drum kits, the M1's effect types, a limiter and a voice cap setup page.

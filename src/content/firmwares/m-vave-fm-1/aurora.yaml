@@ -1,0 +1,41 @@
+device: m-vave-fm-1
+name: AURORA
+summary: >-
+  Generative ambient firmware that plays itself: pads, bells, drone, wind and soft drums over a very large reverb, under an aurora drawn on the screen, with a keyboard that plays pads, bells or a choir.
+description: >-
+  Pads move through chord progressions and keep returning to a motif, bells play phrases of it, and the piece drifts through sections and keys, with an EVOLVE knob setting how much changes. Every button opens a page of four knobs and adds its own light to the sky: sky, effects, pad shape and tone, motion, drone, machine, drums, a mixer and a night page. The keys play snapped pads, latch a drone, strike bells or sing with a choir of recorded voices, and drums are a heartbeat, a rim, a shaker and chord mallets. A freeze mode holds the reverb and the sky still, a night page adds lake sounds, loon calls and a sleep timer, four saved moments recall a whole setup, and everything it plays goes out over USB MIDI. The firmware runs in the browser as well. It is built on GR!MM's platform, DSP and reverb, with small build-time patches for newer FM-1s that use a UC25HQ80 flash chip. The choir comes from the VocalSet dataset.
+status: active
+authors:
+- name: Andrew D'Amelio
+  url: https://github.com/andrewdamelio
+source: https://github.com/andrewdamelio/aurora-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL v3 text and LICENSING.md states GPL-3.0, with GR!MM and the Felucca, Dinghy, SLOOP and X0X work under it also GPL-3.0. The choir cycles are made from VocalSet (Northwestern University, 2018), licensed CC BY 4.0, and the screen font is Terminus under SIL OFL 1.1. The repository holds no M-VAVE firmware image.
+based_on: m-vave-fm-1/grimm
+homepage: https://andrewdamelio.github.io/aurora-fm1/web/dist/
+distribution: browser-installer
+install_notes: >-
+  Releases are built from source and attested on GitHub by the FM-1 Firmware Hub's shared workflow, and carry aurora-X.Y.fwsc with SHA256SUMS. Install from the Firmware Hub in Chrome or Edge, or load the package with a FM-1 firmware loader. The package identity is FM-1_9441126. The project documents no recovery steps of its own; the hub's Rescue page and M-VAVE's updater are the usual ways back.
+brick_risk: false
+tags: [generative, ambient, synth-engine, drums, fx, reverb, chords, midi, usb-midi, emulator, web, fork]
+image:
+  url: https://raw.githubusercontent.com/andrewdamelio/aurora-fm1/main/docs/web.png
+  alt: "AURORA in the browser: a drawing of the FM-1 panel with knobs labelled Density, Bright, Space and Drift, page buttons, and a square screen showing green aurora curtains over a dark lake and pine shore"
+  credit: Andrew D'Amelio
+  source_url: https://github.com/andrewdamelio/aurora-fm1
+  first_party: true
+versions:
+- version: v1.4
+  date: 2026-11-26
+  url: https://github.com/andrewdamelio/aurora-fm1/releases/tag/v1.4
+  notes: Adds the night page with lake sounds, loon calls, a choir on the keys and a sleep timer, MIDI out, and four saved moments.
+- version: v1.3
+  date: 2026-11-26
+  url: https://github.com/andrewdamelio/aurora-fm1/releases/tag/v1.3
+  notes: Accepts the UC25HQ80 flash chip and M-VAVE's full screen setup of newer FM-1s.
+- version: v1.2
+  date: 2026-11-26
+  url: https://github.com/andrewdamelio/aurora-fm1/releases/tag/v1.2
+  notes: Gives the package its own identity and adds the generative chords, motif and sections, ambient drums, per-button pages and key modes.

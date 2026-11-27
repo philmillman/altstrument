@@ -3,7 +3,7 @@ name: BOURDON
 summary: >-
   Drone instrument firmware for the FM-1 (called DR1 until V0.33) with three voices of six styles and free frequencies, links between the voices, shared noise, chop and ring disruptors, a bank of twelve LFOs, a mixer, delay, reverb and compressor.
 description: >-
-  Each voice has a style (FLOOR, REED, GLASS, GROWL, TIDE or PULSE), a frequency set by an encoder instead of notes, four knobs for tone, move, grit and link, and a link to the voice before it in a ring. A link can make the other voice's loudness open this voice's filter, run the other voice's sound through this voice's filter, or bend this voice's pitch with FM. Three disruptors on the FX button, NOISE, CHOP and RING, are shared sources that each voice takes in its own amount into its sound, pitch, cutoff or level. A bank of twelve LFOs on the LFO button runs from one shared clock, each with one of 14 shapes, a Euclidean step pattern and a loop, and can be sent to the voices' knobs and frequency or to each other. A mixer gives each voice level, pan and two pre or post sends into a delay and a reverb, followed by a compressor. The project was renamed from DR1 to BOURDON with V0.34, and its USB MIDI port is now SINT_BOURDON. The README calls the six styles and knob ranges a first estimate, says nothing is saved at power-off, and says it was tested on one FM-1 with a Puya P25Q80 flash, over DR1, back to M-VAVE's V15 and over V15. It is built on felucca-bsp. The author's site has a page for the project, and the Firmware Hub lists it.
+  Each voice has a style (FLOOR, REED, GLASS, GROWL, TIDE or PULSE), a frequency set on a knob instead of by notes, four knobs for tone, speed, grit and link, and a link to the voice before it in a ring. A link can make the other voice's loudness open this voice's filter, run the other voice's sound through this voice's filter, or bend this voice's pitch with FM. Three disruptors on the FX button, NOISE, CHOP and RING, are shared sources that each voice takes in its own amount into its sound, pitch, cutoff or level. A bank of twelve LFOs on the LFO button runs from one shared clock, each with one of 14 shapes, a Euclidean step pattern and a loop, and can be sent to the voices' knobs and frequency or to each other. A mixer gives each voice level, pan and two pre or post sends into a delay and a reverb, followed by a compressor. The project was renamed from DR1 to BOURDON with V0.34, and its USB MIDI port is now SINT_BOURDON. The README calls the six styles and knob ranges a first estimate, says SAVE keeps the values for the next power-on (from V0.38), and says it was tested on one FM-1 with a Puya P25Q80 flash, over DR1, back to M-VAVE's V15 and over V15. It is built on felucca-bsp. The author's site has a page for the project, and the Firmware Hub lists it.
 status: active
 authors:
 - name: Kevin Sint
@@ -21,6 +21,18 @@ install_notes: >-
 brick_risk: false
 tags: [drone, synth-engine, fx, performance]
 versions:
+- version: V0.38
+  date: 2026-11-27
+  url: https://github.com/kevinsint/bourdon/releases/tag/v0.38
+  notes: SAVE now stores the voices, mixer, effects, disruptors, LFOs and tempo for the next power-on, EDIT randomises the selected voice, the mixer becomes the first module of the end of the chain, and the lit buttons show which pages have a use. Package identity FM-1_2090038.
+- version: V0.37
+  date: 2026-11-27
+  url: https://github.com/kevinsint/bourdon/releases/tag/v0.37
+  notes: An LFO can move every knob value in every layer (hold LFO and turn the knob), with new SPEED, GAIN, OWN, PHASE, SLEW, PAD and RAND targets, and no longer pushes TONE or GRIT past the knob's ends. The layer keys move to the four leftmost white keys. Package identity FM-1_2090037.
+- version: V0.36
+  date: 2026-11-26
+  url: https://github.com/kevinsint/bourdon/releases/tag/v0.36
+  notes: Reorganises the play page into two layers, with frequency on a knob, LFOs able to move frequency and style, MOVE replaced by SPEED, and OCT- as a snap key. Package identity FM-1_2090036.
 - version: V0.35
   date: 2026-11-23
   url: https://github.com/kevinsint/bourdon/releases/tag/v0.35

@@ -1,0 +1,32 @@
+device: m-vave-fm-1
+name: MDMA
+kind: firmware
+summary: >-
+  Performance firmware with six toggled layers, four scenes for each city preset and a 16-step drum sequencer, plus a browser page that backs up and restores the cities.
+description: >-
+  Each city is a preset with INTRO, GROOVE, TENSION and PEAK scenes. Six layers (drums, bass, ambient, pluck, lead and sparks) are switched on and off with the black keys, while the white keys play the selected layer in the city's scale. The pages cover a mixer with volume, pan, filter and resonance, an effects bank with reverb, delay, phaser and saturation, a four-band EQ, tone controls for each layer and a scale page. The drum sequencer edits 16 steps in six lanes with velocity, timing, attack and release for each step, queued fills and a draft HAT and PERC variation. A separate HTML page backs up the cities as JSON over WebMIDI and restores them. The source is published as a patch against the Dinghy platform plus a pattern file. The release notes say installation and update transitions on 0.5.7 were not yet confirmed on hardware.
+status: active
+authors:
+- name: mdmarinato
+  url: https://github.com/mdmarinato
+source: https://github.com/mdmarinato/MDMA
+source_status: open
+license: GPL-3.0-or-later
+license_notes: >-
+  The LICENSE file is the GPL-3.0 text, and its appended notice grants use under version 3 or, at the user's option, any later version. GitHub reports it as unrecognised. The notice names 2024 as the copyright year.
+homepage: https://github.com/mdmarinato/MDMA
+based_on: m-vave-fm-1/dinghy
+distribution: download
+install_notes: >-
+  The README links the 0.5.7 .fwsc package, committed under downloads/ with its SHA-256 in the release notes, and gives no install steps; the package identity is FM-1_63620001. docs/build.md gives a build that applies the repository's patches to a Dinghy checkout, then checks the result against that checksum. Dinghy keeps its update loader and writes only the firmware area, so the FM-1's ROM boot mode remains the way back.
+brick_risk: false
+tags: [groovebox, sequencer, drums, performance, backup]
+versions:
+- version: 0.5.7
+  date: 2026-11-26
+  url: https://github.com/mdmarinato/MDMA/releases/tag/v0.5.7
+  notes: Adds a dedicated USB product name, MDMA FM-1, and package identity FM-1_63620001.
+- version: 0.5.6-controls
+  date: 2026-11-26
+  url: https://github.com/mdmarinato/MDMA/releases/tag/v0.5.6-controls
+  notes: Redesigned musical controls; the package is a zip under downloads/.

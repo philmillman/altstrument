@@ -1,0 +1,30 @@
+device: m-vave-fm-1
+name: Ouroloops
+kind: tool
+summary: >-
+  Boss-style three-track loop station that runs in a browser on a phone or computer, with the FM-1 as its controller, second screen and audio output through the project's own control-surface firmware.
+description: >-
+  The web app records from the phone's microphone and does the looping, drums and effects, while the FM-1 shows the tracks and sends the button, key and knob presses. It has three loop tracks with record, overdub, play, undo and redo, mute and clear per track, where the first take sets the loop length and tempo. A 16-step drum track offers a CC0 rock kit and two generated kits with 12 patterns and pads recorded into the pattern. Effects are tempo-synced delay, reverb, chorus, a filter, bitcrusher, sample-rate reduction, stutter and per-track reverse. On the FM-1, keys 1 to 16 show the steps of the selected drum sound, keys 17 to 27 are pads, and K1 to K4 set the page values. The project was called FM-1 Loop Station and is named HMS Ouroloops (Hardware Meets Smartphone) in the README. The FM-1 runs the project's modified copy of ferluht's FM1 Sampler control-surface firmware, which has its own entry, and the app speaks that firmware's USB MIDI protocol. The app also keeps projects in the browser, records the live output, a mix or stems as files, installs as an offline web app and has an interface in German and English. The commit messages credit Claude.
+status: active
+authors:
+- name: brotschuh
+  url: https://github.com/brotschuh
+source: https://github.com/brotschuh/ouroloops
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL v3 text and the README says GPL-3.0, with no "or later" statement. The rock kit is Big Rusty Drums by Karoryfer Samples, CC0 1.0. The firmware folder's licence is covered in the Ouroloops firmware entry.
+homepage: https://brotschuh.github.io/ouroloops/
+install_notes: >-
+  The app writes nothing to the FM-1. Install the Ouroloops firmware first with the project's flash page, then connect the FM-1 to the phone by USB-C and open the app in Chrome on Android or a computer, allowing the microphone and MIDI. The README says M-VAVE's M-UPGRADE puts the original firmware back.
+brick_risk: false
+tags: [looper, drums, fx, delay, reverb, web, usb-midi]
+versions:
+- version: main @ 62d6e74
+  date: 2026-11-27
+  url: https://github.com/brotschuh/ouroloops/commit/62d6e74beb8196e31e4d0115ff074eacf191893b
+  notes: No tagged releases; this is the latest commit. Since the previous row the project is renamed Ouroloops and gains its own flash page for a modified fm1-sampler firmware, a metronome click, effects per track, saving of projects, live recordings, mixes and stems, a drum track of 1 to 4 bars with per-sound length, pitch and level, and an installable offline web app.
+- version: main @ ad7232e
+  date: 2026-11-26
+  url: https://github.com/brotschuh/fm1-loopstation/commit/ad7232e325aa0fb7d3dcaed5031ee67b7170bc24
+  notes: No tagged releases; this is the latest commit.

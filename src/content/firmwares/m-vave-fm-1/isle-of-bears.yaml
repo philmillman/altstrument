@@ -1,0 +1,35 @@
+device: m-vave-fm-1
+name: Isle of Bears
+kind: firmware
+summary: >-
+  Two-player stacking card game, Isle of Bears, played against the computer on the FM-1's screen, keys and speaker.
+description: >-
+  Rights warning: the bear, isle and card artwork belongs to HEYBYE GAMING, who reserve all rights; the repository's LICENSING.md allows it only as part of this firmware and its builds.
+
+  The player's black bears play against the computer's white bears on a grid, choosing cards from a hand and following prompts to place, leap or push. The low keys act as a pad, F5 confirms a turn and G5 takes it back, and EDIT shows the controls and then the rulebook as a QR code. The rules engine is a C port of the web game's engine, checked step by step against it in tests, and the computer's search runs in short slices so the screen keeps updating. The win and loss record is kept in flash. It is built on fm1-base with controls modelled on Mighty Arcade.
+status: active
+authors:
+- name: richardvt
+  url: https://github.com/richardvt
+source: https://github.com/richardvt/isle-of-bears-fm1
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  Code is MPL-2.0, copyright HEYBYE GAMING (LICENSING.md). The artwork in app/art.h and app/docs/img/ is HEYBYE GAMING's, all rights reserved. fm1-base is MPL-2.0 and carries SIL OFL fonts.
+homepage: https://isle-of-bears.heybyedesign.com
+distribution: source-only
+install_notes: >-
+  Build with ./build.sh, which needs Docker and JieLi's toolchain, then install the .fwsc over USB with base/tools/fm1_install.py. The README says installing is at your own risk, that fm1-base's installer can put M-VAVE's own firmware back and that an FM-1 that fails to start twice comes up in a safe mode the installer can reach. A browser emulator builds with ./build.sh --web.
+brick_risk: false
+tags: [game, emulator]
+image:
+  url: https://raw.githubusercontent.com/richardvt/isle-of-bears-fm1/main/app/docs/img/play.png
+  alt: "Isle of Bears play screen: a four by four grid of white and black bears on blue ice, CPU and player decks of 10 cards, a hand of leap, push and wild cards, and twice, dismiss and discard buttons"
+  credit: HEYBYE GAMING
+  source_url: https://github.com/richardvt/isle-of-bears-fm1#readme
+  first_party: true
+versions:
+- version: main @ a98fbd3
+  date: 2026-11-26
+  url: https://github.com/richardvt/isle-of-bears-fm1/commit/a98fbd3
+  notes: No tagged releases; this is the latest commit.

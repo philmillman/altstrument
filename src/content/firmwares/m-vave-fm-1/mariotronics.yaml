@@ -14,7 +14,7 @@ description: >-
   overdubs or holds the loop, SEQ plays it in reverse, and the internal delay runs from 4 to 8 seconds. Pre-tape
   effects are compression, fuzz, wah, amplifier and EQ, followed by a stereo plate reverb that stays out of the
   recording. Tape character, off-tape monitoring, key backlight and MIDI or Bluetooth MIDI are on the GLO page, and
-  PRESETS recall 64 stored sounds. The piano bank is synthesised in tools/piano.py. The author says it was written with
+  PRESETS recall 64 stored sounds. A second LFO and a stereo ensemble effect (string ensemble, chorus, phaser or flanger) were added in the 1.9 release. The piano bank is synthesised in tools/piano.py. The author says it was written with
   Claude's help, and the README calls 1.1 a pre-release tested in emulation, with installation, audio performance and
   Bluetooth pairing on a physical FM-1 still to be verified. It grew out of the same author's VIRGO and GRANA
   and draws its guitar excitation from Ravel.
@@ -34,11 +34,15 @@ install_notes: >-
   Download Mariotronics_Editor_FM1.zip from the release, extract it and open Mariotronics_1_1.html in desktop Chrome or
   Edge. Power on tries the offline emulator, and Install Mariotronics writes the firmware to a USB-connected FM-1 after
   granting MIDI SysEx access; leave power and USB connected until the page reports the install. The installation
-  replaces the existing firmware, and the zip also holds mariotronics-1.1.fwsc for other installers. The 1.7 release attaches a single Mariotronics_FM1_1_7.zip of firmware and editor. The README gives no
+  replaces the existing firmware, and the zip also holds mariotronics-1.1.fwsc for other installers. The 1.7 release attaches a single Mariotronics_FM1_1_7.zip of firmware and editor, and the 1.9 release a Mariotronics_1.19.zip. The README gives no
   recovery steps; M-VAVE's own firmware can be reinstalled with its updater or the FM-1 Firmware Hub.
 brick_risk: false
 tags: [ambient, looper, synth-engine, fx, delay, performance, midi, ble-midi, editor, web]
 versions:
+- version: '1.9'
+  date: 2026-11-27
+  url: https://github.com/mongio/Mariotronics-FM1/releases/tag/v1.9
+  notes: The tag is v1.9, but the release notes and the attached zip call it 1.19. Gives every page four controls, adds options to the ENO, RILEY, RADIGUE and STOCKHAUSEN voices, a second LFO, a stereo ensemble effect, keyboard hold and arpeggio feel controls. The audio path now runs from RAM, which the notes say ends the overloads with polyphonic pianos. FRIPP is unchanged.
 - version: '1.7'
   date: 2026-11-25
   url: https://github.com/mongio/Mariotronics-FM1/releases/tag/v1.7

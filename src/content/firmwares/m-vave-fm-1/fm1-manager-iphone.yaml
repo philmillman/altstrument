@@ -27,7 +27,7 @@ license_notes: >-
 distribution: source-only
 requires_stock: A firmware with a compatible USB updater; tested on fm1-dock 0.9.0
 install_notes: >-
-  No App Store or TestFlight release is linked in the README, so the app has to be built. It needs a Mac with Xcode
+  The README links a TestFlight beta that opens once Apple approves the first public build (submitted 27 November 2026); until then the app has to be built. Building needs a Mac with Xcode
   26, XcodeGen and an Apple developer account (a free one runs it on your own phone), iOS 17 or later, with your own
   team ID and bundle identifier set in project.yml. It writes firmware or modules to the unit through the installers
   it loads, so the README warns that a cut cable or flat battery can leave the FM-1 in update mode. It lists
@@ -36,6 +36,10 @@ install_notes: >-
 brick_risk: false
 tags: [flasher, librarian, ios, usb-midi, web-midi]
 versions:
+  - version: main @ 3dbbf30
+    date: 2026-11-27
+    url: https://github.com/KonradHerman/fm1-manager/commit/3dbbf30bb69d30c75113187165c83072ed7f805f
+    notes: No tagged releases; this is the latest commit, which adds the TestFlight link to the README. Since the previous row the commits add an Update mode screen that says what the unit is doing and what to do, a Baud Girl installer on the home screen, detection of the newer flash chip with a Hub filter for it, a known-problems list, builds 8 and 9, and a test workflow with issue templates.
   - version: main @ a49d12b
     date: 2026-11-18
     url: https://github.com/KonradHerman/fm1-manager/commit/a49d12b

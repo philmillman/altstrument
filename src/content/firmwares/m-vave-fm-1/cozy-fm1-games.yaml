@@ -1,5 +1,6 @@
 device: m-vave-fm-1
-name: FM-1 Arcade
+also_devices: [m-vave-smk-37]
+name: Cozy FM-1 Games
 summary: >-
   Rights warning: ten-game arcade firmware for the FM-1 (Snake, Tetris, Arkanoid, OutRun, Synth Hero, Frogger, Galaga, Pac-Man, Dino Run, Flappy Bird) built on Dinghy, with chiptune music and high scores saved to flash.
 description: >-
@@ -10,21 +11,34 @@ status: active
 authors:
 - name: gaskb
   url: https://github.com/gaskb
-source: https://github.com/gaskb/fm1-snake
+source: https://github.com/gaskb/cozy-fm1-games
 source_status: open
 license: GPL-3.0-only
 license_notes: >-
   The README and LICENSING.md give GPL-3.0-only; LICENSING.md is Dinghy's text and its logo exclusion, for the designburg signet, does not apply here. The platform code is Felucca's with changes by SLOOP and Dinghy.
   Game and music content is not covered by any statement in the repository.
 based_on: m-vave-fm-1/dinghy
-distribution: source-only
+distribution: download
 install_notes: >-
-  Build with ./build.sh --release 0.3, which needs Docker or Linux x86-64, JieLi's toolchain and the AC79 SDK, and produces build/fm1-snake-0.3.fwsc (identity FM-1_963). The repository carries Dinghy's update loader and USB rescue, but
+  Download the cozy-fm1-games-X.Y.Z.fwsc package from a release (SHA256SUMS is attached) and load it with a FM-1 firmware loader; the release also carries SMK-37, SMK-37 MKE and SMK-37 Elite builds. Or build with ./build.sh --release 0.8.2,
+  which needs Docker or Linux x86-64, JieLi's toolchain and the AC79 SDK, and produces build/cozy-fm1-games-0.8.2.fwsc (identity FM-1_02700802). The repository carries Dinghy's update loader and USB rescue, but
   the README gives no install or recovery steps of its own.
 brick_risk: false
 tags: [game, chiptune, platform, fork]
 versions:
+- version: v0.8.2
+  date: 2026-11-27
+  url: https://github.com/gaskb/cozy-fm1-games/releases/tag/v0.8.2
+  notes: Extends the HI score display to four digits in Arkanoid, Frogger, Galaga and Pac-Man, which cut it off at 999.
+- version: v0.8.1
+  date: 2026-11-27
+  url: https://github.com/gaskb/cozy-fm1-games/releases/tag/v0.8.1
+  notes: Moves the package identity to the eight-digit FM-1_027xyyzz form that The Firmware Hub expects.
+- version: v0.8
+  date: 2026-11-26
+  url: https://github.com/gaskb/cozy-fm1-games/releases/tag/v0.8
+  notes: Lights the buttons and piano keys that apply to each game or menu, adds a Firmware Hub manifest, and publishes FM-1 and SMK-37 packages as release downloads.
 - version: main @ 892ff63
   date: 2026-11-19
   url: https://github.com/gaskb/fm1-snake/commit/892ff639a95c19e1270385df10ae1a1ccc69930c
-  notes: No tagged releases; this is the latest commit. It adds Dino Run and Flappy Bird, making the README's 10-in-1 arcade. The README refers to a 0.3 build.
+  notes: Last commit before the first release. It adds Dino Run and Flappy Bird, making the README's 10-in-1 arcade. The README then referred to a 0.3 build.

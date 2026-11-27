@@ -1,0 +1,75 @@
+device: m-vave-fm-1
+name: Viscera
+kind: firmware
+summary: >-
+  Overdubbing four-track tape looper for the FM-1 in the spirit of a Portastudio, with a mixer, bounce, a resonant
+  filterbank, tape wear, a splice mode, lo-fi delay and verb, and a browser emulator and installer.
+description: >-
+  Viscera records audio arriving over Bluetooth or USB onto four mono tracks of 4-bit ADPCM tape in the FM-1's memory
+  at one of three tape speeds, and overdubs them: the first take sets the loop, then armed tracks punch in and out in
+  DUB or REPLACE. SPEED is varispeed and PITCH shifts the mix without changing its time. Each of the four channel
+  strips has trim into a preamp model, pan, level, a VU meter and a send to a lo-fi 8-bit delay and a 12-bit verb. Any
+  tracks can be bounced onto a free track through RESON, an eight-band resonant filterbank, and through a worn
+  reel-to-reel effect ported from Ravel. SPLICE prints track 3 onto 4 or the reverse through a degrader while a key is
+  held. Two robots move speed, pitch, levels, pans or RESON as LFOs or as a recorded knob gesture, with an eight-route
+  LFO matrix, and MIDI learn covers the knobs and the transport keys. The screen is drawn as a tape machine with
+  winding reels and a mechanical counter, with a light IVORY look by default and the earlier SMOKE look in the settings.
+  It builds on M-VAVE's FM-1 Open SDK, so Bluetooth, USB audio and MIDI keep working. The README says the firmware is
+  being tested on hardware and that the version 1.x line, which was a different live-capture firmware, stays on the
+  install page and its projects do not load in 2.x. It shares an author with Ravel.
+status: active
+authors:
+- name: De-Pattern
+  url: https://github.com/De-Pattern
+source: https://github.com/De-Pattern/viscera
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE.md is the GPL v3 text inherited from M-VAVE's FM-1 Open app sources, with M-VAVE's linking exception for the
+  SDK; no file says "or later". The README adds that the SEA decoder table is MIT (Dani Biro, M-VAVE). The repository
+  commits M-VAVE's FM-1 V15 image for its installer (site/firmware/stock/FM-1_015.fwsc, blob ce49cc15, 699,956 bytes),
+  which is the Apache-2.0 file M-VAVE licenses in m-vave/fm1_open.
+homepage: https://de-pattern.github.io/viscera/
+distribution: browser-installer
+install_notes: >-
+  Open the install page in Chrome or Edge on a computer with the FM-1 on and connected by USB; it uses M-VAVE's own
+  update protocol and refuses to install over Ravel or other Felucca-based firmware, so start from M-VAVE's stock V15.
+  Back up projects and samples with M-VAVE's workbench first, which can also put the stock firmware back, and Ravel's
+  install page can restore V15 from a file. The README says not to flash the older .fwsc files on the releases page.
+brick_risk: false
+tags: [looper, fx, filter, emulator, web]
+image:
+  url: https://raw.githubusercontent.com/De-Pattern/viscera/main/docs/art/icon.png
+  alt: "Black ink splatter forming a ring of ridged tape-reel spokes around a small circle on a white background"
+  credit: De-Pattern
+  source_url: https://github.com/De-Pattern/viscera
+  first_party: true
+versions:
+- version: v2.9.2
+  date: 2026-11-22
+  url: https://github.com/De-Pattern/viscera/releases/tag/v2.9.2
+  notes: Adjusts the IVORY look with a deeper green for lit keys, spreading VU lamp light and moulded bezels. There is no change to the sound.
+- version: v2.9.0
+  date: 2026-11-22
+  url: https://github.com/De-Pattern/viscera/releases/tag/v2.9.0
+  notes: Adds the IVORY look as the default and keeps the first look as SMOKE.
+- version: v2.8.0
+  date: 2026-11-21
+  url: https://github.com/De-Pattern/viscera/releases/tag/v2.8.0
+  notes: Adds TAPE, Ravel's worn reel-to-reel effect, on a track, the input or the bounce.
+- version: v2.7.0
+  date: 2026-11-20
+  url: https://github.com/De-Pattern/viscera/releases/tag/v2.7.0
+  notes: Adds SPLICE, with tracks 3 and 4 as two spools printed onto each other through a degrader.
+- version: v2.6.0
+  date: 2026-11-17
+  url: https://github.com/De-Pattern/viscera/releases/tag/v2.6.0
+  notes: Adds a send on each mixer strip into a lo-fi delay and a 12-bit verb on the MASTER page.
+- version: v2.5.0
+  date: 2026-11-16
+  url: https://github.com/De-Pattern/viscera/releases/tag/v2.5.0
+  notes: Adds holding LFO while turning a knob to route a robot to it, and an eight-route LFO matrix.
+- version: v2.0.0
+  date: 2026-11-16
+  url: https://github.com/De-Pattern/viscera/releases/tag/v2.0.0
+  notes: Replaces the 1.x live-capture firmware with the overdubbing four-track tape looper; 1.x projects do not load.

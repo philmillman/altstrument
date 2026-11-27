@@ -1,0 +1,28 @@
+device: m-vave-fm-1
+name: PHEBUS
+kind: firmware
+summary: >-
+  Groovebox firmware forked from KARMA, with three melodic voices, 16 editable drum sounds and 22 effect pads that stutter, reverse and sweep the whole mix.
+description: >-
+  The synth side has three voices that share the same pages: an oscillator with 31 types, including ACID, JUNO and Plaits and Elements models, three macros, a resonant filter with its own envelope, an amp envelope, three effect slots and a modulation matrix. Drums are 16 sounds with source, filter, amp and LFO pages, editable kits, velocity, conditions, chance, nudge and retrigger per step. In the perform view, 22 effect pads act on the full mix, and pads played while recording go into a fifth sequencer lane. There are four patterns with autosave, MIDI, and USB audio as a stereo mix or six stems. A browser simulator, installer and backup page are on the project site. The README calls it a personal firmware and says it has not been measured on a real FM-1, and it waits for the slower UC25HQ80 flash chip on newer units. Its package identity is FM-1_926.
+status: active
+authors:
+- name: bashidrum
+  url: https://github.com/bashidrum
+source: https://github.com/bashidrum/phebus
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSE and LICENSING.md give GPL-3.0-only with Felucca's additional permission. The icon atlas in assets/ is Hügelton Instruments' and not under the GPL. Parts from KARMA, SLOOP, X0X, FM-106, Mutable Instruments Plaits and Elements, Erica Synths' LXR-02 firmware, msfa and others keep the licences listed in LICENSING.md and LICENSES/.
+homepage: https://bashidrum.github.io/phebus/webapp/installer/
+based_on: m-vave-fm-1/karma
+distribution: browser-installer
+install_notes: >-
+  Back up first with the project's backup page, then install from the browser installer in Chrome or Edge over USB; updating PHEBUS keeps projects and settings. Official firmware returns through M-VAVE's M-UPGRADE updater. An FM-1 running M-VAVE's FM1 Open needs the official V15 restored first with the FM1 Workbench. Holding OCT- while switching on starts the USB rescue if an install is interrupted.
+brick_risk: false
+tags: [groovebox, sequencer, synth-engine, drums, fx, usb-audio, midi, emulator, editor, fork]
+versions:
+- version: main @ 14fc64f
+  date: 2026-11-26
+  url: https://github.com/bashidrum/phebus/commit/14fc64f
+  notes: No tagged releases; this is the latest commit.

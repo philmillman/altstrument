@@ -1,0 +1,33 @@
+device: hermetic-modular-alchemy-lab
+name: Paradox
+summary: Eight-voice cross-coupled FM and ring-modulation feedback synth with an eight-voice stereo exponential reverb and leveler for the Alchemy Lab V2, after a Reaktor ensemble by Lazyfish.
+description: >-
+  Paradox is described by its README as a recreation of the Reaktor community ensemble "h e i s h e r e" by Lazyfish. Its
+  first page runs eight voices that feed each other through one shared modulation bus, each with amplitude, pitch,
+  ring-mod, FM, mod-send and feedback-delay parameters that have a variable and a random layer, and the six bipolar CV inputs
+  are mapped to the variable layer. The second page is a stereo cross-coupled comb reverb with up to 10 seconds per voice,
+  damping filters and a per-voice leveler, and it can blend in external audio. There are 16 preset slots in QSPI flash, parameter
+  locks recorded with B1 and a settings page for LED brightness. The build uses the Alchemy SDK and libDaisy as submodules.
+status: active
+authors:
+  - name: awonak
+    url: https://github.com/awonak
+source: https://github.com/awonak/paradox
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT License with copyright held by Hermetic Modular LLC. The README states that the Alchemy SDK
+  and libDaisy submodules are independently MIT-licensed.
+distribution: download
+requires_stock: Alchemy Lab V2
+install_notes: >-
+  Connect the front USB-C port and hold B3 during the boot animation to enter DFU, then run make program-dfu, or run make
+  program-live to reboot into the bootloader without a button press, or upload the release .bin in Hermetic Modular's web
+  programmer. The flash goes over DFU to the module's QSPI program area, as for the other Alchemy Lab firmwares.
+brick_risk: false
+tags: [synth-engine, fm, ring-mod, reverb, polyphonic, open-source]
+versions:
+  - version: v0.2.0
+    date: 2026-11-27
+    url: https://github.com/awonak/paradox/releases/tag/v0.2.0
+    notes: Initial release.

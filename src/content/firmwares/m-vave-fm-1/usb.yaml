@@ -1,0 +1,28 @@
+device: m-vave-fm-1
+name: USB
+kind: firmware
+summary: >-
+  Experimental firmware that takes two stereo USB audio sources and routes USB MIDI from each input to any set of output ports.
+description: >-
+  The project turns the FM-1's USB host side into a small mixer and MIDI router: two stereo USB audio sources feed an output device, and each USB MIDI input can be routed to any set of output ports, with software capacity for 32 inputs and 32 outputs that the README says is not a measured throughput. The screen uses main menus for USB, MIDI and monitor, bus and shift pages, with a link page for editing a stopped route. Later revisions add a performance page and frozen SysEx diagnostic reports, which a bundled Python tool arms, fetches and compares on a computer. The README says firmware and hardware support remain experimental and that the latest prepared package, R13, is not confirmed installed or hardware-verified, though an owner-run installer of R4 reported success. Earlier packages are kept unchanged in the repository. It is built on a vendored snapshot of Dinghy and began as work extracted from a larger private project.
+status: active
+authors:
+- name: jmfk
+  url: https://github.com/jmfk
+source: https://github.com/jmfk/USB
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The LICENSE file is the GPL-3.0 text; vendor/README.md describes the Dinghy base as a GPL-3.0 snapshot and says its licence and notices are retained.
+homepage: https://github.com/jmfk/USB
+based_on: m-vave-fm-1/dinghy
+distribution: download
+install_notes: >-
+  The repository commits prebuilt .fwsc packages for each revision, each with a double-clickable Flash USB script that checks the package and writes it over MIDI; the README says only the owner launches these installers and that build.py and prepare_manual.py install nothing. Building needs a JieLi toolchain, the AC79 SDK and Docker. Dinghy keeps its update loader and writes only the firmware area, so the FM-1's ROM boot mode remains the way back.
+brick_risk: false
+tags: [usb-audio, usb-midi, midi, utility, research]
+versions:
+- version: main @ 491c7f3
+  date: 2026-11-26
+  url: https://github.com/jmfk/USB/commit/491c7f3
+  notes: No tagged releases; this is the latest commit.

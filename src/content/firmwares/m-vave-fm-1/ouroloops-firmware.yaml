@@ -1,0 +1,30 @@
+device: m-vave-fm-1
+name: Ouroloops firmware
+kind: firmware
+summary: >-
+  Control-surface build of fm1-sampler that turns the FM-1 into the controller, second screen and audio output of the Ouroloops web looper, with dimmable button lights added.
+description: >-
+  This is the firmware half of Ouroloops; the browser looper that drives it has its own entry. It is a copy of the control-surface firmware from ferluht's FM1 Sampler, itself built on M-VAVE's open firmware FM1 Open V14, so the FM-1 sends its button, key and knob presses over USB MIDI and shows what the app sends to its screen. The changes are a SysEx command that sets button lights to one of eight dimmed levels, driven by short pulses on each scan tick, and an "HMS OUROLOOPS" splash screen; a renamed source file lets M-VAVE's own build script compile it. A GitHub workflow builds it with JieLi's toolchain and publishes a flash page.
+status: active
+authors:
+- name: brotschuh
+  url: https://github.com/brotschuh
+- name: ferluht
+  url: https://github.com/ferluht
+source: https://github.com/brotschuh/ouroloops
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The firmware folder keeps fm1-sampler's licence (firmware/LICENSE.md): GPL-3.0 with the FM1 SDK linking exception of M-VAVE's open firmware, whose SDK binaries have their own terms (firmware/THIRD_PARTY.md). The repository's top-level LICENSE is the GPL v3 text. The folder also carries M-VAVE's FM-1 V15 image from the FM1 Open SDK, sdk/firmware/FM-1_015.fwsc (git blob ce49cc15…, 699,956 bytes), the file M-VAVE publishes under Apache-2.0.
+based_on: m-vave-fm-1/fm1-sampler
+homepage: https://brotschuh.github.io/ouroloops/firmware/
+distribution: browser-installer
+install_notes: >-
+  Open the flash page in Chrome on a computer, connect the FM-1 and use the Device update tab with the backup box ticked, or Force flash when coming from another firmware. The README says M-VAVE's M-UPGRADE puts the original firmware back.
+brick_risk: false
+tags: [looper, usb-midi, controller, fork]
+versions:
+- version: main @ 96493d8
+  date: 2026-11-26
+  url: https://github.com/brotschuh/ouroloops/commit/96493d8230bc118c3e0ffca312df29813092a489
+  notes: No tagged releases; this is the latest commit that changes the firmware folder.

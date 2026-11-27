@@ -1,0 +1,48 @@
+device: m-vave-fm-1
+name: nullwave
+kind: firmware
+summary: >-
+  Six-channel groovebox for the FM-1 where any channel can be a synth, drum kit, sampler or granular voice, with
+  per-channel sequencers, scenes chained into songs, punch-in effects and USB, TRS and Bluetooth MIDI.
+description: >-
+  All six channels share one pool of voices, so there is no fixed drum track. Each channel plays one of fourteen
+  engines: ANALOG, FM6, PHASE, LOFI, SAMPLE, VOICE, TRIO, WHEEL, GRAIN, PHYS, NOISE, SLICE, DRUM and a SUPER saw-stack
+  engine, with two edit pages and a list of sounds each. The ANALOG, LOFI, TRIO, WHEEL, NOISE and PHASE engines come
+  from Felucca-Engines. Every channel has its own pattern sequencer, mix strip and MIDI channel; held buttons turn the
+  white keys and four knobs into layers such as punch-in effects, and the keys can play scales and chords. Patterns
+  go into scenes that switch live and chain into songs, with eight songs kept on the unit. The built-in samples are
+  CC0 recordings of a piano, a flute and a tenor saxophone plus a generated drum break. The README lists a looper
+  that records the internal mix, a web editor, user samples and a fuller engine set as the plan for 1.0, and the
+  manual says user samples are not available yet. It builds on fm1-base and felucca-bsp and shares no code with
+  GPL-licensed firmware.
+status: active
+authors:
+- name: nullwave
+  url: https://github.com/nullwave-cc
+source: https://github.com/nullwave-cc/fm1
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The LICENSE file is the MPL-2.0 text. The built-in recordings are CC0 1.0 (assets/samples-cc0), Felucca-Engines is
+  MIT, fm1-base and felucca-bsp are MPL-2.0, and CREDITS.md lists the Apache-2.0 JieLi SDK files the build takes.
+homepage: https://nullwave.cc/fm1/
+distribution: browser-installer
+install_notes: >-
+  The docs ask for a full flash backup with M-Flasher first, without its bootloader option, then install from the
+  project's web installer in Chrome or Edge over USB, or with base/tools/fm1_install.py. The way back is the installer's
+  Back to the stock firmware button, M-UPGRADE, or restoring the backup. Holding REC at power-on enters the chip's update
+  mode, two failed starts open a safe mode, and holding HOME resets settings. Installing m-bootloader is an optional
+  extra the installer offers.
+brick_risk: false
+tags: [groovebox, sequencer, synth-engine, drums, sampler, performance]
+image:
+  url: https://raw.githubusercontent.com/nullwave-cc/fm1/main/app/docs/img/screen-playing.png
+  alt: "FM-1 screen at song A1, 120 BPM: four channel rows, BASS (SQR BASS), ARP (BELL), LEAD (SAX) and KEYS (FULL ORGAN), with step lights, M and S buttons and Swing, Level, Bars and Pan knobs below"
+  credit: nullwave
+  source_url: https://github.com/nullwave-cc/fm1
+  first_party: true
+versions:
+- version: v0.1.0
+  date: 2026-11-26
+  url: https://github.com/nullwave-cc/fm1/releases/tag/v0.1.0
+  notes: First release. It holds nullwave-0.1.0.fwsc and archives of the screens and the site.

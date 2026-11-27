@@ -9,8 +9,8 @@ description: >-
   the README lists measurements against setBfree running on a Raspberry Pi. Drawbars, percussion and effects
   follow setBfree's default MIDI controller numbers over USB and TRS. The repository also has a WebAssembly
   build of the engine to play in a browser and a host mode that writes WAV files. The README says release 0.1
-  has been tested on one FM-1. From 0.2 the overdrive follows setBfree's preamp model, and the firmware identifies as FM-1_953. From 0.3 it has three manuals (upper, lower and pedal) on MIDI channels 1 to 3, each with its own drawbars, and accepts the newer UC25HQ80 flash chip. From 0.7 the release also carries an experimental SMK-37 build, which its notes say was
-  tested in an emulator only.
+  has been tested on one FM-1. From 0.2 the overdrive follows setBfree's preamp model, and the firmware identifies as FM-1_953. From 0.3 it has three manuals (upper, lower and pedal) on MIDI channels 1 to 3, each with its own drawbars, and accepts the newer UC25HQ80 flash chip. From 0.7 the release also carries an experimental SMK-37 build, which its notes said was
+  tested in an emulator only; the 0.7.1 notes report a first test on a real SMK-37 Elite.
 status: active
 authors:
 - name: R-Jeb
@@ -24,7 +24,7 @@ license_notes: >-
 based_on: m-vave-fm-1/dinghy
 distribution: browser-installer
 install_notes: >-
-  Download b3organ-0.7.fwsc from the release and install it through the FM-1 Firmware Hub in Chrome or Edge, or
+  Download b3organ-0.7.1.fwsc from the release and install it through the FM-1 Firmware Hub in Chrome or Edge, or
   with tools/fm1_install.py over USB. Hold OCT- while switching on for the USB rescue. The official firmware can
   be put back the usual way.
 brick_risk: false
@@ -36,6 +36,10 @@ image:
   source_url: https://github.com/R-Jeb/setBfree-fm1
   first_party: true
 versions:
+- version: 0.7.1
+  date: 2026-11-27
+  url: https://github.com/R-Jeb/setBfree-fm1/releases/tag/v0.7.1
+  notes: "Reverses the expression pedal on the SMK-37 so toe down is louder, makes hard pad hits (velocity 120 or more) move a drawbar all the way, and keeps the organ at about 10 percent level when the swell pedal is closed, on FM-1 and SMK-37 alike. The notes cite the first test report from a real SMK-37 Elite, saying the organ runs on the hardware."
 - version: "0.7"
   date: 2026-11-26
   url: https://github.com/R-Jeb/setBfree-fm1/releases/tag/v0.7

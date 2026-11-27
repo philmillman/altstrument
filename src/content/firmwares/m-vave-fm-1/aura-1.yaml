@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: AURA-1
+kind: firmware
+summary: >-
+  Generative ambient firmware modified from AMB-1, adding a Solo Mode for playing polyphonic synth over the generated music and a Random World patch generator.
+description: >-
+  AURA-1 keeps AMB-1's self-playing ambient design of breathing voices, bells on tape loops of unequal length, a gliding bass and quiet Euclidean percussion through a tape echo, a long loop and a plate reverb. There are sixteen pieces and a choice of scale, and the keys add or remove notes of the scale. Solo Mode turns the keys into a live polyphonic synth over the generated music, with six pages for preset, ADSR, tone, delay, reverb and arpeggiator, and a user preset slot. Random World generates new ambient patches from a held EDIT press. It reports its screen to the FM-1 Screen Reader page over USB. A browser emulator, installer and manual are on the project site, which follows main, while tagged releases are the verified versions.
+status: active
+authors:
+- name: ahaku
+  url: https://github.com/ahaku
+source: https://github.com/ahaku/AURA-1
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSING.md gives MPL-2.0, file by file, on fm1-base and felucca-bsp, which are MPL-2.0. AMB-1 0.9 and earlier were GPL-3.0-only and stay so; AMB-1's later code was relicensed by its author.
+homepage: https://ahaku.github.io/AURA-1/
+based_on: m-vave-fm-1/amb-1
+distribution: browser-installer
+install_notes: >-
+  Browser installer in Chrome or Edge over USB. The site installs the latest development build from main; tagged releases are listed on GitHub. The README says the installer can put M-VAVE's own firmware back and that an FM-1 that fails to start twice comes up in a safe mode the installer can reach.
+brick_risk: false
+tags: [ambient, generative, synth-engine, performance, fork]
+image:
+  url: https://raw.githubusercontent.com/ahaku/AURA-1/main/docs/img/screen-garden.png
+  alt: "AURA-1 garden page: D Dorian, a Dm7 chord over a field of dots, four level bars and tempo 72, evolve 35, motion 50 and drift 39s knobs"
+  credit: ahaku
+  source_url: https://github.com/ahaku/AURA-1#readme
+  first_party: true
+versions:
+- version: v0.0.3
+  date: 2026-11-26
+  url: https://github.com/ahaku/AURA-1/releases/tag/v0.0.3
+  notes: Release page has no text beyond a changelog link.

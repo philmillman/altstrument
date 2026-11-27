@@ -1,0 +1,54 @@
+device: m-vave-fm-1
+name: FIKH-S
+kind: firmware
+summary: >-
+  Experimental drone and texture synth for the FM-1 with 22 algorithms in three banks, a filter, a metallic or diffuse
+  delay with a frequency shifter, an ambient reverb with five modes, snapshots and a freeze.
+description: >-
+  Twenty-two algorithms for drones, basses, textures and noise play from one root key that the keys set: pairs of
+  oscillators with exponential FM or ring modulation, wavetable and waveshaper voices, sine clusters, quantised
+  chords, partial stacks, comb swarms, a shortwave radio dial, wind and rain, struck or bowed bodies and saw stacks.
+  Several scan a row of frequency and wave pairs with MORPH. Every algorithm runs through a filter into a stereo
+  processor, either DUNGEON, a metallic delay, or REFLEKTA, a diffuse one, each with a frequency shifter in its
+  feedback, then a reverb with DREAM, DARK, RISE, LIGHT and RAIN modes. Controls include HOLD for a drone, FREEZE, a
+  random SEED and SCAN, DICE, eight snapshots that store the whole sound on the first white keys, and per-algorithm
+  or global time. It plays fewer oscillators and shows ECO when the CPU passes 88 percent for a second. The README
+  says the concept and control names follow the Forge TME VHIKK X and the reverb modes the Walrus Audio SLOER, that
+  none of their code, sound or artwork is used, and that it runs on both FM-1 chips. English and German manuals are in
+  the repository, and it is built on fm1-base and felucca-bsp.
+status: active
+authors:
+- name: swtdr34mz-afk
+  url: https://github.com/swtdr34mz-afk
+source: https://github.com/swtdr34mz-afk/FIKH-S
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The LICENSE file is the MPL-2.0 text. The serif face is SIL OFL 1.1 (fonts/LiberationSerif-OFL.txt), fm1-base and
+  felucca-bsp are MPL-2.0, and CREDITS.md lists the Apache-2.0 JieLi SDK files that a package carries.
+homepage: https://swtdr34mz-afk.github.io/FIKH-S/
+distribution: download
+install_notes: >-
+  Download the .fwsc from the Releases page and install it as any FM-1 firmware. The README calls it unofficial and at
+  your own risk and describes no recovery path. The FM-1's ROM boot mode applies.
+brick_risk: false
+tags: [synth-engine, fx, reverb, delay, performance, ambient]
+image:
+  url: https://raw.githubusercontent.com/swtdr34mz-afk/FIKH-S/main/site/img/screen-main.png
+  alt: "FIKH-S main screen in black, gold and red: algorithm 1 METAL PAIR, root key C4, knobs Warp, Span, Morph and Fuse, a waveform window and a row of page tabs"
+  credit: swtdr34mz-afk
+  source_url: https://github.com/swtdr34mz-afk/FIKH-S
+  first_party: true
+versions:
+- version: v0.4.3
+  date: 2026-11-27
+  url: https://github.com/swtdr34mz-afk/FIKH-S/releases/tag/v0.4.3
+  notes: Changing the PRESET no longer causes dropouts, with the audio buffer cleared in pieces and level, width, MIX and FEED applied per sample.
+- version: v0.4.0
+  date: 2026-11-27
+  url: https://github.com/swtdr34mz-afk/FIKH-S/releases/tag/v0.4.0
+  notes: Improvements made after the author's reference manual; FX and LFO then swap pages in 0.4.1 to put VERB on FX and PROC on LFO.
+- version: v0.3.0
+  date: 2026-11-26
+  url: https://github.com/swtdr34mz-afk/FIKH-S/releases/tag/v0.3.0
+  notes: Adds a second bank of nine algorithms and eight snapshots, for 18 algorithms in two banks.

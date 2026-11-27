@@ -11,6 +11,8 @@ description: >-
   and workarounds added. The kernel measures about 23% of a block in the simulator, and the README explains how to
   tune the declared DSP cost by hand.
 
+  In 1.0.0, selecting Reverb > Nonlinear froze the unit on the full build; 1.0.1 fixes that. If a unit freezes at start-up, holding FS4 and FS5 while switching on starts it on preset 1A with global settings reset, which keeps presets.
+
   Original effects can go into the same image. Click is a metronome block that takes over the mono Mod/Chorus Echo delay,
   with a Time knob synced to tap tempo, beats per bar, accent, three sounds, level and subdivision. Geiger is a bit crusher with
   16 shaping curves that takes over the mono Megaphone. Commander (octave fuzz), Corrupt (tracking square synth), Ottobit (sequenced
@@ -58,6 +60,15 @@ video:
   first_party: true
   found_via: https://github.com/scottlynn73/hx-effects-nam-lite#get-started
 versions:
+  - version: v1.0.1
+    date: 2026-11-27
+    url: https://github.com/scottlynn73/hx-effects-nam-lite/releases/tag/v1.0.1
+    notes: Fixes the freeze when Reverb > Nonlinear is chosen on the NAM + Amps + Effects build; Drum Chapel had taken a DSP routine slot that Nonlinear needs and now uses a free one.
+  - version: v1.0.0
+    date: 2026-11-27
+    url: https://github.com/scottlynn73/hx-effects-nam-lite/releases/tag/v1.0.0
+    notes: >-
+      Release page for HX Effects 3.80.0 with no firmware attached; you build it from your own stock file with the setup page or the repository. It has the NAM, NAM + Amps and NAM + Amps + Effects builds, a preset builder and the setup page. It lists a known issue: selecting Reverb > Nonlinear freezes the unit, and FS4 + FS5 held at power-on starts it on preset 1A if it freezes at start-up.
   - version: main @ 52aef86
     date: 2026-11-24
     url: https://github.com/scottlynn73/hx-effects-nam-lite/commit/52aef8645502ebdbf46b1227fb05621052bc9e8d

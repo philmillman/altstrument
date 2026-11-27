@@ -2,7 +2,7 @@ device: m-vave-fm-1
 name: FM-1 Big Screen builds
 kind: tool
 summary: >-
-  Third-party repository of 176 prebuilt FM-1 community firmware packages, each rebuilt from its author's published source with the Big Screen screen-output addition, with a table of credit, license and source commit.
+  Third-party repository of 184 prebuilt FM-1 community firmware packages, each rebuilt from its author's published source with the Big Screen screen-output addition, with a table of credit, license and source commit.
 description: >-
   Big Screen is a small addition to an FM-1 firmware that sends the unit's screen to the FM-1 Big Screen desktop app and the FM-1 Big Screen + Spyglass Android app, with Big Knobs and Key Lights where the firmware allows. This repository holds a .fwsc package and a .patch for each build, taken from firmwares listed on The Firmware Hub. A table gives each firmware's author, license, and the source repository at the exact commit it was built from, and says whether the build uses fm1-base's own screen mirror or has the Big Screen code added. Some builds are marked squeezed, which means the USB serial console and some of the app's controls were removed to make room. The README says the builds are not made or supported by the firmware authors, that problems go to this repository's issues, that an author can ask to have a build removed or to receive the Big Screen change in their own release, and that Charles Vestal's firmwares are not built here. One build, Melodee's, also needs a resources file sent with Melodee's own script. The packages seen are community builds of about 610 KB, and no M-VAVE firmware file is in the repository.
 status: active
@@ -21,6 +21,10 @@ install_notes: >-
 brick_risk: false
 tags: [flasher, utility, usb-midi, ui, fork]
 versions:
+- version: main @ 046da10
+  date: 2026-11-27
+  url: https://github.com/pfkellogg/fm1-big-screen-builds/commit/046da104820471079205bcf29d7ac7aa9eabd4e3
+  notes: No tagged releases; this is the latest commit. Since the previous row a nightly commit updates 50 packages from The Firmware Hub, and the last two commits publish a Big Screen build of fm1-dock 1.0.0 and rebuild it with a whole-screen redraw for a new viewer and the synth's name sent to the app. The README now counts 184 builds.
 - version: main @ dd7f9c0
   date: 2026-11-26
   url: https://github.com/pfkellogg/fm1-big-screen-builds/commit/dd7f9c03339a2d7f23eb0f78daf2eae154d70ac5

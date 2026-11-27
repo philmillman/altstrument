@@ -3,7 +3,7 @@ name: RAND
 summary: >-
   Percussion synth with two oscillators, FM and sync, a Moog-style ladder filter, an eight-step sequencer whose clock runs fast enough to turn rhythm into a tone, and a patchbay on the keys.
 description: >-
-  The voice has two oscillators in triangle or pulse covering 8 Hz to 8 kHz, FM between them, hard sync, white or pink noise, pitch, filter and amplitude envelopes, drive, a ping-pong delay in tempo, a reverb and a master filter. The filter models a Moog transistor ladder and tracks pitch when it self-oscillates, and the oscillators and filter run at double rate, dropping to normal rate by themselves and showing ECO when the load passes 88 percent. The sequencer has eight steps with a pitch and a velocity knob each, and its CLOCK runs from a quarter to 128 times the sixteenth-note rate, so that from x32 the steps blur into a tone shaped by the two rows. The keys act as patch points: holding a black output key and tapping a white input key adds a cable, up to eight, saved with the sound. There are eight presets and it follows MIDI clock, start, stop and continue over USB, and MIDI notes play the voice. The README names the Behringer EDGE and Moog DFAM as models and says none of their code or artwork is used. It is built on fm1-base and felucca-bsp, and its sound core in dsp/ is plain C.
+  The voice has two oscillators in triangle or pulse covering 8 Hz to 8 kHz, FM between them, hard sync, white or pink noise, pitch, filter and amplitude envelopes, drive, a ping-pong delay in tempo, a reverb and a master filter. The filter models a Moog transistor ladder and tracks pitch when it self-oscillates, and the oscillators and filter run at double rate, dropping to normal rate by themselves and showing ECO when the load passes 88 percent. The sequencer has eight steps with a pitch and a velocity knob each, and its CLOCK runs from a quarter to 128 times the sixteenth-note rate, so that from x32 the steps blur into a tone shaped by the two rows. The keys act as patch points: holding a black output key and tapping a white input key adds a cable, up to eight, saved with the sound. There are 64 pattern places, eight of them factory patterns that hold a sound, sequence, tempo and cables each (the 1.1.0 release), and it follows MIDI clock, start, stop and continue over USB, and MIDI notes play the voice. The README names the Behringer EDGE and Moog DFAM as models and says none of their code or artwork is used. It is built on fm1-base and felucca-bsp, and its sound core in dsp/ is plain C.
 status: active
 authors:
 - name: swtdr34mz-afk
@@ -26,6 +26,14 @@ image:
   source_url: https://github.com/swtdr34mz-afk/RAND
   first_party: true
 versions:
+- version: 1.1.0
+  date: 2026-11-26
+  url: https://github.com/swtdr34mz-afk/RAND/releases/tag/v1.1.0
+  notes: The release page has no notes. Adds 64 pattern places that each store the sound, both sequencer rows, the tempo and the cables and switch on the beat, with the eight factory patterns in places 1 to 8, and picks them by MIDI Program Change.
+- version: 1.0.2
+  date: 2026-11-26
+  url: https://github.com/swtdr34mz-afk/RAND/releases/tag/v1.0.2
+  notes: The release page has no notes. The commits add a battery display at the top right and sharper smoothed text and controls on the screen.
 - version: 1.0.1
   date: 2026-11-25
   url: https://github.com/swtdr34mz-afk/RAND/releases/tag/v1.0.1

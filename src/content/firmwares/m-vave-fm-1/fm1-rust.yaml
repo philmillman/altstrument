@@ -4,7 +4,7 @@ kind: tool
 summary: >-
   Bare-metal Rust board support crate for the FM-1 on embedded-hal 1.0, with no allocator and example firmwares: a blinking LED, colour test cards and a square-wave tone, plus companion crates for audio, front-panel input, text and waveform drawing and an RTICX task runtime.
 description: >-
-  The fm1 crate runs on the first core of the JieLi AC791N chip. A function passed to the entry macro receives exclusive ownership of the board: the PLAY LED and button, the switch and LED matrix, the 240 by 240 screen, a cycle counter with a delay timer, the headphone jack switch and, behind a feature, stereo audio output to the DAC. Releases since 0.2 add flash storage for patches and MIDI sequences, TRS MIDI input and low-battery and charger status. The README says the blink, display and tone examples were observed on an FM-1 running M-Bootloader. It builds on Julius Vitkauskas's Rust blink proof of concept from pi32v2-isa. Firmware builds need a patched Rust compiler, the pi32v2 LLVM tools and pi32v2-isa's packager, while host tests run on stable Rust.
+  The fm1 crate runs on the first core of the JieLi AC791N chip. A function passed to the entry macro receives exclusive ownership of the board: the PLAY LED and button, the switch and LED matrix, the 240 by 240 screen, a cycle counter with a delay timer, the headphone jack switch and, behind a feature, stereo audio output to the DAC. Releases since 0.2 add flash storage for patches and MIDI sequences, TRS MIDI input and low-battery and charger status, and 0.2.1 adds stereo USB audio capture next to MIDI and watchdog and reset control. The README says the blink, display and tone examples were observed on an FM-1 running M-Bootloader. It builds on Julius Vitkauskas's Rust blink proof of concept from pi32v2-isa. Firmware builds need a patched Rust compiler, the pi32v2 LLVM tools and pi32v2-isa's packager, while host tests run on stable Rust.
 status: active
 authors:
 - name: FM-1 Rust Developers
@@ -21,6 +21,10 @@ install_notes: >-
 brick_risk: false
 tags: [sdk, platform, rust, research]
 versions:
+- version: fm1/v0.2.1
+  date: 2026-11-26
+  url: https://github.com/fm1-rust/fm1-rust/tree/fm1/v0.2.1
+  notes: Git tag; no GitHub release page. It is the fm1 crate's 0.2.1, which adds stereo USB audio capture alongside MIDI and a Power type for watchdog control, reboot and reset reporting; fm1-rticx has a matching 0.2.1 tag.
 - version: main @ d482ba3
   date: 2026-11-26
   url: https://github.com/fm1-rust/fm1-rust/commit/d482ba39de43f4995f1d2cece447fea8509bb869

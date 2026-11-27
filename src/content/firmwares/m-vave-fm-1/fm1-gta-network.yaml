@@ -1,0 +1,34 @@
+device: m-vave-fm-1
+name: FM1_GTA Network
+kind: firmware
+summary: >-
+  Wi-Fi multiplayer build of FM1_GTA for two to four FM-1s with no router: other players appear in the city, can shoot each other, and one can play police.
+description: >-
+  Rights warning: this build carries the game code ported from Out on Parole by shaydex-codes, whose repository states no licence, and the repository has no licence file of its own.
+
+  FM-1 units running this firmware find each other over open ad-hoc 802.11 on a shared channel and sync about 15 times a second, using fm1-base's own Wi-Fi stack with no router or password. Remote players show in the city on foot or in their vehicles, tagged P2 to P4, with screen-edge arrows and dots on the city map, and bullets sent by one unit can hit another. One knob switches a unit between outlaw and police, and another selects one of nine rooms. The repository's benchmark sheet lists range and coexistence tests across three units as not yet done. It is the networked branch of FM1_GTA, in its own repository with its own version line. The README names stages two and three, whose repositories are still empty.
+status: active
+authors:
+- name: mlwilki
+  url: https://github.com/mlwilki
+source: https://github.com/mlwilki/fm1_gta_stage1_jank
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no licence file and its README states none. FM1_GTA, which it extends, is GPL-3.0-only, and the game code derives from shaydex-codes/outonparole, which has no licence file.
+homepage: https://github.com/mlwilki/fm1_gta_stage1_jank
+based_on: m-vave-fm-1/fm1-gta
+distribution: browser-installer
+install_notes: >-
+  The README gives ./build.sh in network_build to compile the .fwsc package, and the repository's GitHub Pages site and releases carry a prebuilt firmware.fwsc with a browser installer. The package identity is FM-1_18800. The README documents no recovery step; it is built on fm1-base, which keeps its update loader, so the FM-1's ROM boot mode remains the way back.
+brick_risk: false
+tags: [game, wifi, multiplayer]
+versions:
+- version: v0.2.0
+  date: 2026-11-27
+  url: https://github.com/mlwilki/fm1_gta_stage1_jank/releases/tag/v0.2.0
+  notes: Adds a Wi-Fi multiplayer menu; package identity FM-1_188000200.
+- version: v0.1.0
+  date: 2026-11-27
+  url: https://github.com/mlwilki/fm1_gta_stage1_jank/releases/tag/v0.1.0
+  notes: First release, with the browser emulator and USB installer.

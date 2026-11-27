@@ -25,7 +25,7 @@ license_notes: >-
   A 1 KB test fixture .fwsc in the repository is not a stock image.
 distribution: download
 install_notes: >-
-  Download FMutate.apk (the same file as fmutate-0.3.0.apk) from the release and open it on an Android 9 or later phone, or run adb install; the release is signed with the
+  Download FMutate.apk (the same file as fmutate-0.3.3.apk) from the release and open it on an Android 9 or later phone, or run adb install; the release is signed with the
   project's key, which changed in 0.2.0, so 0.1.0 has to be uninstalled first, and a copy built from source has to be uninstalled first because it uses a debug key. To build it yourself, use mise (Erlang, Elixir, Java, Zig and Rust at the pinned versions), the Android SDK with NDK 27.2 and adb, then deploy with mix mob.deploy to a
   phone with USB debugging on. The app writes nothing to a physical FM-1.
 brick_risk: false
@@ -37,6 +37,10 @@ image:
   source_url: https://github.com/GenericJam/fmutate
   first_party: true
 versions:
+- version: 0.3.3
+  date: 2026-11-27
+  url: https://github.com/GenericJam/fmutate/releases/tag/v0.3.3
+  notes: Installs over 0.2.x and 0.3.x and keeps layouts, sounds and saves. Adds a Reset to original action in the Sounds menu, with an undo, that puts the running synth back on its first-start settings, and stops a confirmation answered during a load or save from starting a second one.
 - version: 0.3.2
   date: 2026-11-24
   url: https://github.com/GenericJam/fmutate/releases/tag/v0.3.2

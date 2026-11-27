@@ -161,7 +161,17 @@ Use the repository URL for GitHub candidates and the article or project URL othe
 
 ## 7. Report and stop
 
-Before the report, run `pnpm metrics:fetch --missing --publish` once, so the new entries get quality scores. It fetches only the repos the snapshot lacks, uploads the new snapshot to the `metrics` release and changes `src/data/repo-metrics.lock.json`. The lock change belongs with the new entries: leave it in the working tree for the maintainer, or in headless mode commit it with them.
+Before the report, sync releases one last time. Projects keep publishing while a run is under way, and the Release sync workflow runs `pnpm releases:sync` on every firmware file a push to `main` changes; whatever it finds becomes a follow-up PR from the bot (#45 and #48 were both releases published between a run's last check and its push). Run the same check locally, against the same base, so the push has nothing left for it:
+
+```sh
+git fetch origin main
+pnpm releases:sync --base origin/main          # report
+pnpm releases:sync --base origin/main --write  # add the rows it reported
+```
+
+`--base origin/main` covers every file the run added or changed, which is what the workflow compares after the push. Review each inserted row the way the sweep does (section 2): spelling that matches the entry, no pre-release or burst the file leaves out, a short `notes:` line in your own words, and any prose the release makes untrue. Entries it leaves alone (a commit top row, too many missing releases, another component) don't produce a bot PR; act only on ones this run hasn't already settled. Then run `ALTSTRUMENT_SKIP_REMOTE=1 pnpm validate` again.
+
+Run `pnpm metrics:fetch --missing --publish` once, so the new entries get quality scores. It fetches only the repos the snapshot lacks, uploads the new snapshot to the `metrics` release and changes `src/data/repo-metrics.lock.json`. The lock change belongs with the new entries: leave it in the working tree for the maintainer, or in headless mode commit it with them.
 
 End with a short report:
 
@@ -176,6 +186,8 @@ End with a short report:
 
 Leave the working tree uncommitted. Do not run `git add`, `git commit`, `git push`, `gh pr create`, or `git stash`.
 
+If the maintainer then asks you to commit or push, run the two `releases:sync` commands above again first and finish any rows they add: the review can take hours, and releases land in the meantime.
+
 ## Running elsewhere
 
-Headless (`claude -p "/discover"` from a launchd or cron job) or as a scheduled cloud routine, nobody is at the keyboard to review the working tree. In those modes, and only those modes, create a branch named `discover/<YYYY-MM-DD>` from `main` before writing, commit the files with a message per entry, push the branch and open a draft pull request whose body is the report above. Everything else in this skill is unchanged. An interactive session never does this.
+Headless (`claude -p "/discover"` from a launchd or cron job) or as a scheduled cloud routine, nobody is at the keyboard to review the working tree. In those modes, and only those modes, create a branch named `discover/<YYYY-MM-DD>` from `main` before writing, commit the files with a message per entry, run the section 7 release sync once more right before pushing (committing its rows), push the branch and open a draft pull request whose body is the report above. Everything else in this skill is unchanged. An interactive session never does this.

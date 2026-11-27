@@ -130,9 +130,10 @@ function changedFiles(): string[] {
   if (positionals.length) return positionals.filter((f) => FIRMWARE_FILE.test(f));
   const base = values.base!;
   const range = values.head ? [`${base}...${values.head}`] : [git(['merge-base', base, 'HEAD']).trim()];
-  return git(['diff', '-z', '--no-renames', '--diff-filter=AM', '--name-only', ...range, '--', 'src/content/firmwares'])
-    .split('\0')
-    .filter((f) => FIRMWARE_FILE.test(f));
+  const changed = git(['diff', '-z', '--no-renames', '--diff-filter=AM', '--name-only', ...range, '--', 'src/content/firmwares']);
+  // New files not yet added to git are part of the change too (a discover run leaves its entries untracked).
+  const untracked = values.head ? '' : git(['ls-files', '-z', '--others', '--exclude-standard', '--', 'src/content/firmwares']);
+  return [...new Set(`${changed}\0${untracked}`.split('\0'))].filter((f) => FIRMWARE_FILE.test(f));
 }
 
 const readEntry = (file: string) => (values.head ? git(['show', `${values.head}:${file}`]) : readFileSync(file, 'utf8'));

@@ -8,9 +8,11 @@ description: >-
   A2 Lite captures and short cabinet filters into 216 amp and 216 cab effect slots, a Web MIDI Patch Editor with a DSP
   meter, and a cover editor for the 128 by 64 pedal screen. Effects are installed with Zoom Effect Manager or, on the
   MS-70CDR, from the Patch Editor over USB. The build scripts need the TI C6000 compiler, and the docs map the ZDL
-  wrapper, runtime ABI, safe DSP rules and an effect-ID registry. In November 2026 the project merged Roman Rusinov's fork
-  (themanro/ZoomMultistompZDL) back into this repository and began building effects with their own
-  runtime instead of code taken from Zoom's effects; the first such release was a single effect, Loop 0.03, and Manro's Scope, Spectrum, Scorch, Stasis, Mangle and Microloom followed as separate per-effect releases. Testing is
+  wrapper, runtime ABI, safe DSP rules and an effect-ID registry. In November 2026 the project began building effects with their own
+  runtime instead of code taken from Zoom's effects. The original repository (repeat98/ZoomMultistompZDL) is no longer on GitHub, along with its per-effect
+  releases (Loop 0.03, Scope, Spectrum, Scorch, Stasis, Mangle and Microloom); the project now lives in Roman Rusinov's
+  repository (themanro/ZoomMultistompZDL), which has no tags or releases. By 2026-11-23 its README counts 35 custom effects and its MultiStomp Editor
+  also reads the MS-50G's amps and removes several of Zoom's effects at once. Testing is
   narrow: the primary target is the MS-70CDR on firmware 2.10, the MS-50G on 3.10 is reported working for NAM and cab
   effects by a user, other ZDL pedals are unconfirmed and ZD2-based pedals are unsupported. Two effects with the same
   effect ID once left a pedal unable to boot until its ROM was reprogrammed.
@@ -20,7 +22,7 @@ authors:
     url: https://github.com/repeat98
   - name: Roman Rusinov
     url: https://github.com/themanro
-source: https://github.com/repeat98/ZoomMultistompZDL
+source: https://github.com/themanro/ZoomMultistompZDL
 source_status: open
 license: MIT
 license_notes: >-
@@ -29,7 +31,7 @@ license_notes: >-
   Airwindows-derived DSP (MIT, Chris Johnson), Dustbox (MIT, Marcelo Fuentes) and the Matujuice pack (MIT) under their
   own terms. Built ZDLs other than the own-runtime builds embed small pieces of Zoom runtime code that the licence does not
   cover. The README says no Zoom or TI code is committed and a check script looks for stock code in a build.
-homepage: https://themanro.github.io/ZoomMultistompZDL/tools/patch_editor.html
+homepage: https://themanro.github.io/ZoomMultistompZDL/tools/editor.html
 distribution: download
 install_notes: >-
   Back up your patches and effect list, then install effects from the dist folder with Zoom Effect Manager 2.3.3 or newer,
@@ -44,9 +46,14 @@ video:
   title: "FREE Nam A2, custom effects and IR's for Zoom MultiStomp Series effect pedals. Overview and tutorial"
   credit: FARLOW
   first_party: true
-  found_via: https://github.com/repeat98/ZoomMultistompZDL#readme
+  found_via: https://github.com/themanro/ZoomMultistompZDL#readme
 versions:
+  - version: main @ e91fd48
+    date: 2026-11-23
+    url: https://github.com/themanro/ZoomMultistompZDL/commit/e91fd480c9f965503c63ed6d6bef0b378d9441b0
+    notes: >-
+      No tagged releases; this is the latest commit. Since the previous entry the commits add a Cloud reverb, Loop 0.05, a Ceiling probe, MIDISTOMP support and live edits in slots 4 to 6 in the editor, reading the MS-50G's amps and installing on the MS-50G, removing several of Zoom's effects at once, Connect and live screens on the G1on family, and new effect IDs 421 and 422 for Carillon and Droplets so they stay clear of the Matujuice pack.
   - version: main @ 32f3d68
     date: 2026-11-09
-    url: https://github.com/repeat98/ZoomMultistompZDL/commit/32f3d6877d892409c6defeeeec57040ad004d31f
-    notes: No tagged releases for the pack; this is the latest commit. The GitHub releases are individual effects built with the project's own runtime, from loop-0.03 (2026-11-09) to scope, spectrum, scorch, stasis, mangle and microlm (2026-11-10), not versions of the pack.
+    url: https://github.com/themanro/ZoomMultistompZDL/commit/32f3d6877d892409c6defeeeec57040ad004d31f
+    notes: No tagged releases for the pack; this is the latest commit. The GitHub releases were individual effects built with the project's own runtime, from loop-0.03 (2026-11-09) to scope, spectrum, scorch, stasis, mangle and microlm (2026-11-10), not versions of the pack; they went with the original repository.

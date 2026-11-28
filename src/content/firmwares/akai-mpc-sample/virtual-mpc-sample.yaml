@@ -10,9 +10,9 @@ description: >-
   buttons and data wheel, sound output and input, an SD card folder, SD autorun
   packages, a root shell and SSH, the USB-C network and USB MIDI. USB audio and a
   Windows run are not done, and firmware other than 1.3.0.12 and the optional 1.4.0.8 profile is not supported; only macOS on Apple
-  Silicon has been run. You supply the firmware partitions extracted from
-  inMusic's 1.3.0.12 update, and the repository has no extractor for that image
-  yet. A stock-map folder holds an offline page of about 380 screenshots of every
+  Silicon has been run. You supply inMusic's 1.3.0.12 update image, and since
+  2026-11-28 the build extracts the boot, root filesystem and recovery partitions from it and
+  checks their hashes. A stock-map folder holds an offline page of about 380 screenshots of every
   stock screen. The README says it was developed with Claude.
 status: active
 authors:
@@ -30,9 +30,9 @@ distribution: source-only
 requires_stock: 1.3.0.12 (1.4.0.8 optional)
 install_notes: >-
   Needs QEMU 9 or later, Docker (for the build only), Python 3.9 or later and an
-  OpenSSH client. Put the boot, rootfs and recovery partitions extracted from your
-  own copy of the 1.3.0.12 update into firmware/extracted/, check them against
-  inputs.sha256, then run python3 lab.py build (the kernel build takes about 15
+  OpenSSH client. Save your own copy of the 1.3.0.12 update image as
+  firmware/Firmware/MPCSAMPLE-1.3.0.12-update.img (the build extracts the boot, rootfs and recovery partitions into
+  firmware/extracted/ and checks them against inputs.sha256, or use partitions you extracted yourself), then run python3 lab.py build (the kernel build takes about 15
   minutes the first time) and python3 lab.py run, and open http://127.0.0.1:8765/.
   Nothing is written to a physical device.
 brick_risk: false
@@ -44,6 +44,11 @@ image:
   source_url: https://github.com/orrpunk-art/virtual-mpc-sample#readme
   first_party: true
 versions:
+  - version: main @ f8e0900
+    date: 2026-11-28
+    url: https://github.com/orrpunk-art/virtual-mpc-sample/commit/f8e090037974458c11eb9c51281239b2ca620f8e
+    notes: >-
+      No tagged releases; this is the latest commit. Since the previous entry the build extracts the 1.3.0.12 partitions itself from inMusic's update image, checking each section against the SHA-256 stored in the container, as the 1.4.0.8 profile already did, and REBUILD_EMMC is passed on to the Docker build container.
   - version: main @ b523246
     date: 2026-11-24
     url: https://github.com/orrpunk-art/virtual-mpc-sample/commit/b5232466ac468a720de9c37dfeadd7ccd54d4653

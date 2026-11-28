@@ -1,0 +1,41 @@
+device: m-vave-fm-1
+name: FM1_GTA Multiplayer
+kind: firmware
+summary: >-
+  Multiplayer edition of the FM1_GTA crime game that links FM-1s over a home Wi-Fi router or router-free ad-hoc Wi-Fi and lets browser emulators join through a small relay program.
+description: >-
+  Rights warning: this is a port of the game Out on Parole by shaydex-codes, whose repository states no licence, and the port is released under the GPL-3.0-only without any statement of permission from the original author.
+
+  The game is the 64 by 64 coastal city of FM1_GTA with vehicles, weapons, police chases with a helicopter, story missions, shops, cutscenes, a four-station synth radio and key LEDs that act as a lightbar. This edition adds a Wi-Fi menu on EDIT with three modes: a home router (WPA2 and DHCP), a router-free ad-hoc mode for FM-1 to FM-1 play in nine groups, and off. A player can be outlaw or police, and a test ping reaches the other players. Positions, vehicles, sirens and shots are sent in 28-byte UDP packets at 15 Hz, and other players show in the city and on the map as P2 to P4. A relay program in Node.js, with install scripts for Linux, macOS, Windows, Docker and iOS, connects the units on the LAN to browser emulators over WebSocket. The Wi-Fi name and password are sent to the FM-1 over USB MIDI from the project site, and each unit derives its Wi-Fi address from its flash chip id so that several units can share a router. The site has the browser emulator and the installer. This repository is a third line of the project, separate from FM1_GTA and from the earlier FM1_GTA Network entry.
+status: active
+authors:
+- name: mlwilki
+  url: https://github.com/mlwilki
+source: https://github.com/mlwilki/FM1_GTA_multiplayer
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and LICENSE file give GPL-3.0-only. The game code is ported from shaydex-codes/outonparole, which has no licence file, and the README credits fm1-base and felucca-bsp for the platform.
+homepage: https://mlwilki.github.io/FM1_GTA_multiplayer/
+based_on: m-vave-fm-1/fm1-gta
+distribution: browser-installer
+install_notes: >-
+  Open the project site in Chrome or Edge with the FM-1 connected by USB and use its installer, or download the .fwsc from the releases and build with build.sh from source. Playing with several units needs the Node.js relay for the browser players and a 2.4 GHz router, or the router-free mode. The README gives no recovery step; it is built on fm1-base, which keeps its update loader, so the FM-1's ROM boot mode remains the way back. The firmware identity is FM-1_107000202 for v0.2.2.
+brick_risk: false
+tags: [game, wifi, multiplayer, emulator, led]
+video:
+  url: https://youtu.be/BKW8oLJH2QA
+  title: FM1_GTA Multiplayer 60-second 3-emulator demo
+  credit: mlwilki
+  first_party: true
+  found_via: https://github.com/mlwilki/FM1_GTA_multiplayer#readme
+  version: v0.2.2
+versions:
+- version: v0.2.2
+  date: 2026-11-27
+  url: https://github.com/mlwilki/FM1_GTA_multiplayer/releases/tag/v0.2.2
+  notes: Derives each unit's Wi-Fi address from its flash chip id, recovers from stalled DHCP and gives each unit its own USB serial number.
+- version: v0.2.0
+  date: 2026-11-27
+  url: https://github.com/mlwilki/FM1_GTA_multiplayer/releases/tag/v0.2.0
+  notes: First release of this repository.

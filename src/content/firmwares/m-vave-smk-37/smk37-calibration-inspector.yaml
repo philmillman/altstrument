@@ -1,0 +1,26 @@
+device: m-vave-smk-37
+name: SMK-37 Calibration Inspector
+kind: tool
+summary: >-
+  Browser tool that reads an SMK-37 Pro or Elite's factory calibration block over Web MIDI, or from a flash backup file, and charts the pad, key and pedal response curves against the stock defaults.
+description: >-
+  The calibration block, called USRTRIM, sits at 0xC1000 in the unit's flash. The page draws the 16 pad curves, the 37 key curves with a contact-delay axis and the pedal curve, each with five points, and marks curves that are not monotonic or that deviate from the stock defaults or from the other keys. It can read the block from the connected unit over USB MIDI, or open a 1 MiB backup made with M-Flasher or a 4 KiB dump, and it exports the block as a .bin, JSON, CSV or a C header. The code only sends identity, info, read and check commands and never builds erase or write frames, so it changes nothing on the keyboard. Where a firmware refuses raw flash reads, the README suggests m-bootloader's MIDI mode or loading a backup. It is served from GitHub Pages and can run from a local Python server. The author also makes NACHTBAR, FM-1 PIANO and NACHTFAHRT.
+status: active
+authors:
+- name: FartyPants
+  url: https://github.com/FartyPants
+source: https://github.com/FartyPants/smk37-calibration-inspector
+source_status: open
+license: MIT
+license_notes: >-
+  The LICENSE file is the MIT text, with the copyright line in the name FPHam.
+homepage: https://fartypants.github.io/smk37-calibration-inspector/
+install_notes: >-
+  Open the page in desktop Chrome or Edge (Web MIDI with SysEx is not available in Firefox or Safari), close any DAW or MIDI monitor, and choose Connect SMK-37, or drop a backup .bin on the page. To run it locally use server.py. The tool only reads from the unit, and its Save .bin button downloads the calibration sector alone, so take a full flash backup before flashing other firmware.
+brick_risk: false
+tags: [backup, utility, midi, web, research, editor]
+versions:
+- version: main @ 715a0e5
+  date: 2026-11-27
+  url: https://github.com/FartyPants/smk37-calibration-inspector/commit/715a0e56275a200f9ca0c7ef92b8d147c70387e2
+  notes: No tagged releases; this is the latest commit.

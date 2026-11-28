@@ -1,0 +1,34 @@
+device: oberheim-matrix-1000
+name: MTRX-1K
+kind: tool
+summary: >-
+  Windows VST3 instrument and standalone app that runs the Matrix-1000's v1.20 firmware on an emulated 6809 board with six voice-chip models, with a rack panel and a full patch editor.
+description: >-
+  A modified version of discoDSP's Retromulator reduced to its Matrix-1000 core. It runs the original firmware on an emulated 6809 board with timers, UART, sample-and-hold DAC and latches, and drives six models of the CEM3396 voice chip with band-limited oscillators and the three voice-board sync modes. The firmware calibrates the voices on first start and reads the factory banks from the patch EPROM. It adds a rack panel in a black or white finish, an editor with all patch parameters and the ten modulation buses on one page, MIDI learn profiles, an effects chain of ensemble, delay and reverb, and 12 or 24 voices by running more instances. The firmware is not included: you supply the 32 KB v1.20 system EPROM and, optionally, the 64 KB patch EPROM. The source is GPL-3.0 and the maker sells a package with an installer, manual and a 41-preset bank; the repository has no releases. It is not affiliated with Oberheim and was tested on Windows 11 only.
+status: active
+authors:
+  - name: GPR Music Project
+    url: https://github.com/gprmusicproject
+source: https://github.com/gprmusicproject/mtrx-1k
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  Read from LICENSE.txt and the README. It is based on Retromulator by discoDSP, also GPL-3.0. The Matrix-1000 firmware is not in the repository and must be supplied by the user.
+homepage: https://www.gprmusic.com/product/mtrx-1k/
+distribution: source-only
+requires_stock: Your own copy of the Matrix-1000 v1.20 system EPROM image (32 KB), and optionally the 64 KB patch EPROM; put both in Documents/GPR Music Project/MTRX-1K/ROM.
+install_notes: >-
+  Build on Windows with Visual Studio and run build_win.bat, then copy MTRX-1K.vst3 into the VST3 folder, or buy the maker's package that includes an installer. Nothing is written to a Matrix-1000.
+brick_risk: false
+tags: [emulator, vst3, editor, windows, open-source]
+image:
+  url: https://raw.githubusercontent.com/gprmusicproject/mtrx-1k/main/docs/images/editor.png
+  alt: MTRX-1K with a rack panel showing patch 200 above the patch editor, which has panels for DCO 1 and 2, filter, three envelopes, two LFOs, tracking and the modulation matrix
+  credit: GPR Music Project
+  source_url: https://github.com/gprmusicproject/mtrx-1k#readme
+  first_party: true
+versions:
+  - version: v1.0.0
+    date: 2026-11-04
+    url: https://github.com/gprmusicproject/mtrx-1k/tree/v1.0.0
+    notes: Git tag; no GitHub release page.

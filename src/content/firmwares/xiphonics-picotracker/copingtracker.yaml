@@ -5,7 +5,7 @@ description: >-
   copingTracker keeps the picoTracker song structure of eight channels, 256 chains and 128 phrases and raises the
   instrument count to 32. Its additions include a stack instrument that builds chord wavetables from multiple saws,
   an internal 135-instrument General MIDI bank, chiptune drum and lead instruments, a modulation page on the
-  instrument screen, a delay effect, 3-band EQ on the master and per channel, a compressor and a CPU load readout. Version 0.5.0 adds a piano roll for phrases and nudging of steps in the phrase, song and table views.
+  instrument screen, a delay effect, 3-band EQ on the master and per channel, a compressor and a CPU load readout. Version 0.5.0 adds a piano roll for phrases and nudging of steps in the phrase, song and table views, and 0.6.0 adds global undo and redo for song data and scale-aware transposition of chain entries.
   It targets the RP2040 and RP2350, and the README says there is no manual yet and points to a Discord server for
   discussion.
 status: active
@@ -25,6 +25,11 @@ install_notes: >-
 brick_risk: false
 tags: [tracker, fork, sequencer, synth-engine, chiptune, eq, delay, open-source]
 versions:
+  - version: main @ da53c72
+    date: 2026-11-27
+    url: https://github.com/n1LS/copingTracker/commit/da53c72ae24e20c2165f3eb6d795c435faf8ca2f
+    notes: >-
+      No tagged releases; this is the latest commit. Since the previous entry the commits mark version 0.6.0, replace XML project files with JSON, add global undo and redo for song data, add help legends to the buttons, rework transposition with a scale-aware option for chain entries and fix an autosave that could reload an older state.
   - version: main @ 6fa401f
     date: 2026-11-24
     url: https://github.com/n1LS/copingTracker/commit/6fa401f883f1cd0c6c0cbc8f0232e60241924160

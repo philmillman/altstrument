@@ -1,0 +1,29 @@
+device: valeton-gp-200
+kind: tool
+name: GP-200 Mod Studio
+summary: >-
+  Linux and Android editor for the GP-200 with a songbook, tuner, NAM and IR upload and a builder that writes recolored custom firmware images, with self-updating app and interface.
+description: >-
+  Rights warning: the firmware builder works on the image embedded in the Goaltoday Custom0.7.5 patcher page, which it downloads from the Goaltoday GP-200 Firmware Mods repository on request, and that page carries Valeton's firmware. This repository itself commits no firmware image.
+
+  A local Python server with a browser interface for Linux, and an Android app that talks to the pedal over USB MIDI. It edits patches and effect chains, keeps a songbook with a bundled pack of 250 worship songs, includes a tuner and a remote panel, and uploads NAM models and impulse responses, with a TONE3000 download helper. The Custom Firmware Studio checks that the embedded base image matches an expected SHA-256 and size, then changes the interface in place: LCD color themes with a custom tint, six styles for the effect block icons, the SAVE LED color, seven optional byte patches that each check the original bytes first, and the firmware checksum is recomputed. It previews the pedal's five screens and writes a .bin to a local folder; the tool does not flash the pedal itself. The Android app's cloud OTA downloads a new interface and a new app package from the user's own PC running the server. The interface is in Spanish. The repository was created on 2026-11-28, has no README or license file and publishes no releases, only two copies of the same 1.5.0 APK committed to the tree.
+status: active
+authors:
+  - name: cabreraguido2023-svg
+    url: https://github.com/cabreraguido2023-svg
+source: https://github.com/cabreraguido2023-svg/gp200-mod-studio
+source_status: open
+license: unspecified
+license_notes: No LICENSE file in the repository.
+homepage: https://github.com/cabreraguido2023-svg/gp200-mod-studio
+distribution: source-only
+requires_stock: Goaltoday's Custom0.7.5.html patcher page, placed in the patchers folder or fetched by the app from the Goaltoday repository, for the firmware builder only; the editor works without it.
+install_notes: >-
+  On Linux, clone the repository and run launch.sh to start the server and open it in a browser; on Android, install GP200-Mod-Studio.apk from the repository, which is unsigned by any store and not built from a release. The firmware builder writes images to ~/Documentos/GP200/firmware/mod and flashing them is a separate step that this tool does not perform; use Valeton's own updater and keep the stock image for rollback.
+brick_risk: false
+tags: [editor, firmware-patching, songbook, tuner, nam, usb-midi, android, linux]
+versions:
+  - version: main @ a5757b1
+    date: 2026-11-28
+    url: https://github.com/cabreraguido2023-svg/gp200-mod-studio/commit/a5757b1a7f55f7a6882578363c2c2be2a01c5a1f
+    notes: No tagged releases; this is the latest commit.

@@ -3,7 +3,7 @@ name: Doinua
 summary: >-
   Music companion for the FM-1 that teaches while you play: a four-track song of chords, bass, melody and drums with key detection and adjustable help, plus Producer, Guided and Game modes. Early; not yet run on a real FM-1.
 description: >-
-  Doinua is Basque for melody, and the project began as fm1-scales. The FM-1 holds one loop of up to eight bars with four tracks, each of which can be played freely, played in the detected key, shown what to play, or played from one finger on a chord pad. Recordings are kept as played. Producer mode leaves everything open, Guided mode steps beginners through lessons, and Game mode has children play along with a unicorn or a dinosaur. The firmware draws on 41 sounds from seven engines, including ported fmini-1 and FM-106 (Juno) engines, and has a click with count-in, per-track MIDI channels, tuning and a screen timeout. An fm1kit API for screen, keys with velocity, sound, music theory, storage and MIDI sits under the apps, and the repository runs scripted checks on a PC simulator and on the real firmware inside the fm1-emu emulator. The README says the work is in its first phase and that nothing has been installed on a real FM-1 yet. The project says its code was written by AI agents under automated checks and that it began as one published commit without its earlier history.
+  Doinua is Basque for melody, and the project began as fm1-scales. The FM-1 holds one loop of up to eight bars with four tracks, each of which can be played freely, played in the detected key, shown what to play, or played from one finger on a chord pad. Recordings are kept as played. Producer mode leaves everything open, Guided mode steps beginners through lessons, and Game mode has children play along with a unicorn or a dinosaur. The firmware draws on 178 sounds from seven engines, including ported fmini-1 and FM-106 (Juno) engines, and has a click with count-in, per-track MIDI channels, tuning and a screen timeout. The README lists a sampler inside the drums, the kit's effects and USB audio in both directions as part of the first build. An fm1kit API for screen, keys with velocity, sound, music theory, storage and MIDI sits under the apps, and the repository runs scripted checks on a PC simulator and on the real firmware inside the fm1-emu emulator. The README says the work is in its first phase and that nothing has been installed on a real FM-1 yet. The project says its code was written by AI agents under automated checks and that it began as one published commit without its earlier history.
 status: active
 authors:
 - name: ekhve
@@ -21,6 +21,10 @@ install_notes: >-
 brick_risk: false
 tags: [sequencer, chords, scales, synth-engine, drums, game, midi, emulator]
 versions:
+- version: main @ 8cbe109
+  date: 2026-11-28
+  url: https://github.com/ekhve/Doinua/commit/8cbe10937ad42460fe5b855bb5a0bc12436aa5ec
+  notes: "No tagged releases; this is the latest commit. Since the previous row the commits add recording changes (a grid as you record, feel afterwards, erase only with REC on, save redo and three kept kits), the kit effects PUNCH, COLOR and SPACE with per-key sends, USB audio both ways, and a CPU check that allows a pass while a computer records over USB. The product package is now named Doinua.fwsc and the README is rewritten; it still says nothing has been installed on a real FM-1."
 - version: main @ 1a8267e
   date: 2026-11-27
   url: https://github.com/ekhve/Doinua/commit/1a8267e9537fb6b115208793362ed3ae74961af4

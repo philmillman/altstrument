@@ -34,6 +34,7 @@ license_notes: >-
   The repository also holds JieLi's unmodified wl82loader.bin RAM recovery helper (Apache-2.0) and no M-VAVE
   firmware.
 homepage: https://keremimo.github.io/saadet/
+based_on: m-vave-fm-1/melodee
 distribution: browser-installer
 install_notes: >-
   Browser WebMIDI installer (Chrome or Edge, USB). Back up sounds first; the optional m-bootloader 1.2 recovery
@@ -49,6 +50,10 @@ image:
   source_url: https://github.com/keremimo/saadet
   first_party: true
 versions:
+- version: 1.1.0
+  date: 2026-11-28
+  url: https://github.com/keremimo/saadet/releases/tag/v1.1.0
+  notes: "Adds DAW mode on the SMK-37, which turns the keyboard into a low-latency MIDI controller, MIDI program changes with Bank Select, and a GLOBAL > AUTOSAVE option. SMK-37 packages take new identities, so the installer offers 1.1 to an SMK-37 on any 1.0 release as an update."
 - version: 1.0.5
   date: 2026-11-12
   url: https://github.com/keremimo/saadet/releases/tag/v1.0.5

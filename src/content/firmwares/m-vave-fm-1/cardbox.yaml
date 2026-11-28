@@ -1,0 +1,32 @@
+device: m-vave-fm-1
+name: Cardbox
+summary: >-
+  Clip groovebox with a DAW-style timeline: record takes straight into clips, edit them in note cards, a piano roll or a drum grid, and send each lane out on its own MIDI channel. Early beta.
+description: >-
+  Cardbox has one drum lane of eight synthesised drums and four synth lanes with five engines (analog, FM, plucked string, supersaw and organ), a resonant filter, three envelopes, two LFOs, 128 synth presets and 10 drum kits. Pressing REC writes what is played as a quantised clip at the playhead on an arrangement timeline, with loop overdub, undo of the last take, and copy, paste, split and glue of clips. Delay, reverb, drive, crush and lo-fi, an arpeggiator and a scale lock complete the sound. MIDI clock, start and song position are sent or followed over USB or TRS, and each lane sends on its own channel so a DAW can record the lanes as separate tracks. Version 0.2 adds a song library of up to 17 songs in the unit's flash, time signatures, a song dump that OpenMelodies SongMaker imports, and sound in the opening animation. The screen is dressed as a card table. It is built on the FM-1 firmware kit from Leo Kuroshita's Felucca, through M-Vave-OP1, and the README calls it an early beta.
+status: active
+authors:
+- name: Alex Wang
+  url: https://github.com/alex32125
+source: https://github.com/alex32125/cardbox
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  LICENSING.md states GPL-3.0-only, as Felucca, with copyright held by Leo Kuroshita, the M-Vave-OP1 contributors and Alex Wang. The packages hold three unmodified JieLi AC79 SDK files under Apache-2.0, the fonts Inter Tight and Bebas Neue are SIL OFL 1.1, and the browser emulator's design comes from X0X (GPL-3.0). The repository also holds M-VAVE's FM-1 V15 image (vendor/m-vave/FM-1_015.fwsc, git blob ce49cc15, the Apache-2.0 file licensed for redistribution) for the return to stock; it is never part of a package.
+distribution: download
+requires_stock: V15
+install_notes: >-
+  Download cardbox_v0.2.fwsc from the release and install it with tools/fm1_install.py (needs mido and python-rtmidi), or build it from source with Docker or Linux. fm1_install.py --stock, the web installer's return to V15 or M-VAVE's own updater puts the stock firmware back while Cardbox still starts. The README says the unit has one firmware bank and no recovery button, and lists a boot guard that sends the unit to the chip's boot mode after two failed starts, a recovery gesture of holding OCT- and OCT+ for 5 seconds, and the update entry that takes a new package over USB. It advises keeping an FM-1-transporter at hand for a first install and backing up the flash first.
+brick_risk: false
+tags: [groovebox, sequencer, drums, synth-engine, fx, midi, arpeggiator, usb-midi, emulator]
+image:
+  url: https://raw.githubusercontent.com/alex32125/cardbox/main/docs/images/cover.png
+  alt: "Cardbox cover art: the title, \"A clip groovebox for the M-VAVE FM-1\" and three FM-1 screens (clip view, five-lane arrangement, reverb page) on a green card-table background"
+  credit: Alex Wang
+  source_url: https://github.com/alex32125/cardbox
+  first_party: true
+versions:
+- version: v0.2
+  date: 2026-11-27
+  url: https://github.com/alex32125/cardbox/releases/tag/v0.2
+  notes: Adds a song library of up to 17 songs, time signatures, sending a song to OpenMelodies SongMaker and sound in the opening. Package FM-1_900.

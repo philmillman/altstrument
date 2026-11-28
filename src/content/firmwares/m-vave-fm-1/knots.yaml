@@ -1,0 +1,45 @@
+device: m-vave-fm-1
+name: KNOTS
+summary: >-
+  Four-track groovebox for the FM-1 that ports Mutable Instruments Grids, Plaits and Rings: Grids picks the steps,
+  Plaits is every voice and Rings is the effect. Pre-release; not yet run on a real FM-1.
+description: >-
+  Each track follows one part of a Grids groove on its own map X, map Y, chaos and fill, with 32 steps of notes or
+  rests, and Plaits supplies the voices: eight synth engines and three drum engines with harmonics, timbre and morph.
+  Every track has a send into Rings, in modal, sympathetic-string or string mode tuned to the last note played, then
+  Rings' reverb. Buttons open pages for envelope, LFOs, arpeggiator, sequencer and effect, and the keys write steps
+  after REC. Scale and root move the synth tracks onto a scale. It has eight kits named after knots and eight user
+  kits that SAVE keeps, and MIDI in and out for four channels with clock. The ports are fixed-point rewrites of
+  Émilie Gillet's code running at 22.05 kHz with 12 Rings partials, and the boot screen credits Gillet. The README
+  and release warn that it has only been tested on a computer and in the emulator.
+status: active
+authors:
+- name: Eric St-Jacques
+  url: https://github.com/jaak-stjaaques
+source: https://github.com/jaak-stjaaques/Knots
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README states GPL-3.0-only and the LICENSE file is the GPL-3.0 text. LICENSING.md keeps the upstream notices
+  (Grids GPL-3.0; Plaits, Rings and stmlib MIT) and lists the separately licensed assets.
+homepage: https://github.com/jaak-stjaaques/Knots
+based_on: m-vave-fm-1/dinghy
+distribution: download
+install_notes: >-
+  Make a full backup first, then install knots_0.3.1.fwsc with M-Flasher (Install firmware, bootloader option left
+  unchecked) or with tools/fm1_install.py, which asks before writing. Holding OCT- at power-on enters USB rescue, and
+  the docs point to the Firmware Hub rescue guide for returning to official firmware. The README says to keep stock
+  firmware or another firmware ready to flash back.
+brick_risk: false
+tags: [groovebox, sequencer, drums, synth-engine, scales, midi, fx, experimental]
+image:
+  url: https://raw.githubusercontent.com/jaak-stjaaques/Knots/main/docs/screenshots/home.png
+  alt: "KNOTS home page: a flow from Grids to Plaits to Rings above four tracks with their 32 steps as amber and grey blocks, and levels KICK 90%, SNARE 70%, HI-HAT 55% and ANALOG 70%"
+  credit: Eric St-Jacques
+  source_url: https://github.com/jaak-stjaaques/Knots
+  first_party: true
+versions:
+- version: v0.3.1
+  date: 2026-11-28
+  url: https://github.com/jaak-stjaaques/Knots/releases/tag/v0.3.1
+  notes: Pre-release; the release notes warn it is not tested on a real FM-1.

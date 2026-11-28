@@ -5,11 +5,11 @@ summary: Browser pattern editor for the Analog Rytm over Web MIDI. It pulls the 
 description: >-
   The grid shows 12 tracks of up to 64 steps over two pages, with flags for accent, mute, swing and slide and lock trigs. A step
   panel edits every SYN, SMP, FLTR, AMP and LFO parameter lock, trig conditions, retrig settings and sound locks, and a track name
-  opens its defaults, speed and length. A groove template adds per-track shuffle and a per-track MIDI export was added in June 2026.
+  opens its defaults, speed and length. Undo and redo cover every edit, and a bank editor fetches stored patterns A01 to H16 or loads a .syx bank backup and writes edits to a test bank. A groove template adds per-track shuffle and a per-track MIDI export was added in June 2026.
   A built-in preview plays rough 909-style voices and the page lists what it ignores, such as parameter locks and samples. The
   byte layouts come from libanalogrytm and are for firmware 1.70, said to work with 1.72. The page, labelled v0.9.0-beta,
   warns that sending SysEx can overwrite patterns, kits, sounds and settings, and tells users to back up first. It
-  connects to the first MIDI port with "rytm" in its name. The page says it was built by a human and a Claude.
+  connects to the first MIDI port with "rytm" in its name. A Claude adapter (page API, local WebSocket bridge, MCP server and skill) lets a Claude Code session read and edit the open page, and appears only on local copies and the password-protected studio page. The page says it was built by a human and a Claude.
 status: active
 authors:
   - name: Plenty of Names in the Club
@@ -28,6 +28,11 @@ install_notes: >-
 brick_risk: false
 tags: [editor, web-midi, sysex, usb-midi, midi, sequencer, web, presets]
 versions:
+  - version: main @ 05a19fe
+    date: 2026-11-28
+    url: https://github.com/plentyofnames/plock/commit/05a19fe4814d211feabd9e3fc4d16f66105ab9cf
+    notes: >-
+      The repository's one tag, v1.0 (2026-03-13), points at an early commit 68 commits behind this one, so this is the latest commit. Since the previous entry the commits fix trig conditions, dump validation and groove and MIDI export bugs, add undo and redo, a semantic edit layer with JSON ops, a bank pattern editor that fetches stored patterns from the Rytm and writes to a test bank, a Claude adapter (page API, WebSocket bridge, MCP server and skill) and a hardware test checklist, and add a password-protected studio page; the Claude adapter is kept off the public page.
   - version: main @ 12ef58a
     date: 2026-06-19
     url: https://github.com/plentyofnames/plock/commit/12ef58a78f6ec83d814edabeca5d628455bcfce9

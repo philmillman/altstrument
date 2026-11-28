@@ -1,0 +1,44 @@
+device: m-vave-fm-1
+name: CIANI
+summary: >-
+  Work-in-progress generative Buchla-style voice for the FM-1, after Suzanne Ciani's solo Buchla concerts: three
+  self-mutating pattern layers and a pad through a model of a low pass gate.
+description: >-
+  Each of three layers has four voices made from an FM pair, a wavefolder and a low pass gate model, struck by its own
+  pattern. A Source of Uncertainty control changes notes, bends fold and decay and skips or accents steps, so the
+  patterns keep shifting, and the layers run at fractions of one tempo with lengths of 8, 5 and 7 steps. Layer A is an
+  arpeggio, B a bass and C a lead made from two detuned saws into a ladder filter with reverb. A pad holds an open
+  chord with slow LFOs. The keys steer every layer to a new root, with two-key combinations choosing major or minor.
+  The gate and folder follow published DAFx papers on the Buchla 292 and 259. The README calls it a working name, lists
+  stereo movement, macros, presets and a release as later steps, and the repository has no release yet.
+status: active
+authors:
+- name: sethgraves
+  url: https://github.com/sethgraves
+source: https://github.com/sethgraves/fm1-ciani
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The LICENSE file is MPL-2.0 and LICENSING.md says the app code is Seth Graves' under it. The vendored platform is
+  fm1-base and felucca-bsp (MPL-2.0), fonts are SIL OFL 1.1, and the JieLi SDK files are read from the builder's
+  checkout at build time.
+homepage: https://github.com/sethgraves/fm1-ciani
+based_on: m-vave-fm-1/amb-1
+distribution: source-only
+install_notes: >-
+  The firmware builds in the repository's GitHub Actions workflow, and a host simulator builds with
+  python3 base/tools/build.py app --host. No installer steps are written in the README; the vendored base/ carries
+  fm1-base's tools and a web emulator.
+brick_risk: false
+tags: [generative, synth-engine, sequencer, drone, fm, experimental]
+image:
+  url: https://raw.githubusercontent.com/sethgraves/fm1-ciani/main/app/docs/img/screen-playing.png
+  alt: "CIANI screen while playing: four lamps for layers A, B, C and the pad with A selected, Root A3 minor, Tempo 2.4, a row of bars for the pattern, and Pitch A3, Speed 2, Strike 45 and Decay 50 below"
+  credit: sethgraves
+  source_url: https://github.com/sethgraves/fm1-ciani
+  first_party: true
+versions:
+- version: main @ 65463f4
+  date: 2026-11-28
+  url: https://github.com/sethgraves/fm1-ciani/commit/65463f4a96bf3108fe93477e3352205f6c37983c
+  notes: No tagged releases; this is the latest commit.

@@ -1,0 +1,26 @@
+device: m-vave-fm-1
+name: FM1 Tilt Controller
+kind: tool
+summary: >-
+  Web app that turns an iPhone or iPad into a Bluetooth MIDI controller for an FM-1 running FM1 Open V14, with a touch keyboard, an XY pad and device tilt mapped to effect controllers.
+description: >-
+  The phone sends notes and controller messages to the FM-1 and makes no sound itself. A track selector uses MIDI channels 1 to 7 for tracks 1 to 7 and channel 10 for the drum track, a keyboard shifts by octave, and an XY pad sends CC 10 and CC 11 by default. Tilt from the phone's orientation sensors can drive the same controllers, with a calibrated baseline, a dead zone and smoothing, and a panic button sends all-notes-off. It is a small static page of plain JavaScript with tests for the mapping and MIDI code, and it runs on iOS in the MIDIWeb Browser app, which supplies Web MIDI over Bluetooth. The README says it targets FM1 Open V14, M-VAVE's open-source firmware, not the factory firmware. The repository also holds a plan document.
+status: active
+authors:
+- name: doohinkus
+  url: https://github.com/doohinkus
+source: https://github.com/doohinkus/fm1-tilt-controller
+source_status: open
+license: unspecified
+license_notes: No LICENSE file or license statement in the repository.
+distribution: source-only
+requires_stock: FM1 Open V14
+install_notes: >-
+  Serve the folder over HTTPS (localhost works on a computer), open it in MIDIWeb Browser on the phone, set the FM-1's Bluetooth page to on with the role set to device, then use the app's Bluetooth MIDI setup button and Connect MIDI. The FM-1 accepts one Bluetooth MIDI connection at a time. The app writes nothing to the unit.
+brick_risk: false
+tags: [ios, ble-midi, midi, performance, ui, web]
+versions:
+- version: main @ ea42fe8
+  date: 2026-11-28
+  url: https://github.com/doohinkus/fm1-tilt-controller/commit/ea42fe8bb5f920651fa14ad4460620018a3120aa
+  notes: No tagged releases; this is the latest commit.

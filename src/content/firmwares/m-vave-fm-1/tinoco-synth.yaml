@@ -1,0 +1,28 @@
+device: m-vave-fm-1
+name: Tinoco Synth
+kind: firmware
+summary: >-
+  Four-track performance synth for the FM-1 built on Felucca 1.8.2, with an FM6 bank, mixer, per-track mute, A to D project scenes, MIDI Learn for any CC and a web editor for FM6 voices.
+description: >-
+  The firmware has four tracks with Home screens for the track view, a mixer, a MIDI channel per track, octave, mute, and BPM, swing and click. Engines include FM6, drums, physical modelling, voice, grain, sample, slice, digital and ADPCM, with eight FM6 patches from the author's v1.0 bank and added GM PIANO and GM DRUM sounds that are not a full General MIDI set. MIDI Learn assigns any CC from 0 to 119 to a parameter or to actions such as tap tempo, track mutes and scenes, and the envelope, LFO, filter, arpeggiator and other parameters have CC numbers listed in the MIDI document. Scenes A to D recall a whole project from the keys, a CC or Program Change, and tap tempo takes two taps. A click can be panned to one channel. A web editor in the repository converts DX7 banks, edits FM6 voices and sends banks to the FM-1 over Web MIDI SysEx. The README, manuals and validation reports are in Portuguese. The notes say installation and downgrade were not tested on a physical FM-1, and that the return to the original firmware is unconfirmed. Source is published as zip archives in the repository, not as a browsable tree, and the project has no licence file.
+status: active
+authors:
+- name: tinocosiqueira
+  url: https://github.com/tinocosiqueira
+source: https://github.com/tinocosiqueira/Tinoco-Synth-Fm1
+source_status: open
+license: unspecified
+license_notes: >-
+  The repository has no licence file and its README states none. It is derived from Felucca 1.8.2, and the source archives were not unpacked for this entry.
+homepage: https://github.com/tinocosiqueira/Tinoco-Synth-Fm1
+based_on: m-vave-fm-1/felucca
+distribution: download
+install_notes: >-
+  Download tinoco-synth-1.2.1.fwsc from the repository, the complete package with the app and loader, and install it like any FM-1 firmware; the README says not to install the separate .bin from the source archive. SHA-256 sums are published beside the files. Back up first: the notes state that installation and downgrade have not been tested on hardware and that a reported error 258 is not confirmed as fixed. The FM-1's ROM boot mode applies.
+brick_risk: false
+tags: [synth-engine, fm, performance, midi, midi-learn, editor, sysex]
+versions:
+- version: main @ 202d63a
+  date: 2026-11-28
+  url: https://github.com/tinocosiqueira/Tinoco-Synth-Fm1/commit/202d63a
+  notes: No tagged releases; this is the latest commit. The README names the package tinoco-synth-1.2.1.fwsc and keeps 1.1 as the previous version.

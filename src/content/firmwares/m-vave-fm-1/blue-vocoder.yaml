@@ -1,0 +1,43 @@
+device: m-vave-fm-1
+name: Blue Vocoder
+summary: >-
+  16-band vocoder for the FM-1: a voice streams in from a computer over USB audio and the unit's own two-oscillator
+  synth is shaped by it, with freeze, stereo spread, arpeggiator, MIDI sync and screen-reader support.
+description: >-
+  The FM-1 appears as a class-compliant 16-bit, 44.1 kHz stereo USB audio device, with the voice on channel 1 and the
+  output returned to the computer. The vocoder has 16 bands from 104.5 Hz to 4.6 kHz, ported from the author's Max
+  gen~ patch, with resonance, gain, noise and spread controls, and REC freezes the vowel being sung. The carrier is a
+  six-voice synth with two oscillators, a low-pass and high-pass filter on one knob, an ADSR and an LFO, or comes from
+  USB channel 2. It adds an arpeggiator, a short reverb, MIDI in and out with a CC for every control, clock out and
+  clock follow, and saved settings. It speaks every screen through the fm1-reader screen reader, with a device file for
+  synthaccess. It is built on the Felucca platform as M-Vave-OP1 carries it, with parts of Solinaesque and Percolator.
+  The README says it was tested on a real FM-1.
+status: active
+authors:
+- name: R. Luke DuBois
+  url: https://github.com/rev3rend
+source: https://github.com/rev3rend/bluevocoder
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and LICENSING.md state GPL-3.0-only, as Felucca, with copyright to R. Luke DuBois, Leo Kuroshita
+  (Hügelton Instruments) and the M-Vave-OP1 contributors. The repository holds vendor/m-vave/FM-1_015.fwsc, which is
+  the V15 image M-VAVE publishes under Apache-2.0 (git blob ce49cc1595b67347c68a3ac7463017f9fa8c19dd, 699,956 bytes,
+  identical to the one in m-vave/fm1_open).
+homepage: https://github.com/rev3rend/bluevocoder
+based_on: m-vave-fm-1/felucca
+distribution: browser-installer
+install_notes: >-
+  Use the web installer on the project's Pages site in Chrome or Edge over USB, or tools/fm1_install.py with
+  bluevocoder-1.0.fwsc (mido and python-rtmidi); SHA256SUMS is in the release. The README says there is one firmware
+  bank and no recovery button, but the boot guard drops the unit into the chip's boot mode after two failed boots
+  (OCT- and OCT+ held 5 s does it on purpose) and the update path stays open while the firmware runs. The way back is
+  fm1_install.py --stock, the installer's Return to official V15, or M-VAVE's updater, and FM-1-transporter is
+  listed as optional recovery hardware.
+brick_risk: false
+tags: [synth-engine, fx, voice, arpeggiator, midi, usb-audio, accessibility, emulator]
+versions:
+- version: v1.0
+  date: 2026-11-28
+  url: https://github.com/rev3rend/bluevocoder/releases/tag/v1.0
+  notes: First release.

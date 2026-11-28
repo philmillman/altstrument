@@ -1,0 +1,53 @@
+device: m-vave-fm-1
+name: Melodrum
+summary: >-
+  Generative melody and drum firmware for the FM-1: four melody generators and the Grids drum map run on the unit
+  and play out over USB or BLE MIDI, with a small preview synth voice so it also makes sound alone.
+description: >-
+  Melogen writes the tune with Random, Markov, Euclidean and Contour generators over twelve scales, seeded so a
+  pattern can be reproduced, and a DrumMap port of the Mutable Instruments Grids pattern map plays kick, snare and
+  hat underneath. Melody goes out on MIDI channel 1 and drums on channel 10 as GM notes 36, 38 and 42. Six pages
+  (main piano roll, drum, step, generator, synth, system) cover density, map position, fills, levels, swing and a
+  two-channel 16-step kick and snare sequencer that replaces the map for a part once a step is set. Each kick ducks
+  the preview voice, which is an oscillator into a resonant low-pass filter and an ADSR. The system page chooses
+  between internal tempo and MIDI clock from USB, the TRS jack or BLE MIDI. Settings autosave, and the About
+  screen shows the version and seed. The README notes that the TRS jack is MIDI in only, so a computer or USB-MIDI
+  bridge is needed to reach other gear. It builds with the foma toolchain. The author reports it verified on an
+  original FM-1 and untested on units with the newer UC25HQ80 flash chip.
+status: active
+authors:
+- name: yakovkhalinsky
+  url: https://github.com/yakovkhalinsky
+source: https://github.com/yakovkhalinsky/melodrum-fm1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README says Melodrum is GPL-3.0, following the foma and Felucca platform and the Grids pattern data (Mutable
+  Instruments, GPL-3.0); the repository has no LICENSE file and the statement names no version, so -only is used.
+  The DrumMap applet algorithm is MIT (Ben Rosenbach, Phazerville) and Melogen is the author's own.
+homepage: https://github.com/yakovkhalinsky/melodrum-fm1
+based_on: m-vave-fm-1/foma
+distribution: download
+install_notes: >-
+  The docs ask for a full backup in Tessera's web editor first, then installing melodrum-1.5.fwsc from the release with
+  the foma installer page in Chrome or Edge, fm1_install.py or ./fm1 flash, without a hub. Holding OCT- while
+  switching on gives USB rescue, two failed boots do the same, and stock V15 can be reinstalled with the installers.
+brick_risk: false
+tags: [generative, sequencer, drums, midi, usb-midi, ble-midi, synth-engine]
+versions:
+- version: v1.5
+  date: 2026-11-28
+  url: https://github.com/yakovkhalinsky/melodrum-fm1/releases/tag/v1.5
+  notes: Each kick hit ducks the synth voice.
+- version: v1.3
+  date: 2026-11-28
+  url: https://github.com/yakovkhalinsky/melodrum-fm1/releases/tag/v1.3
+  notes: New page order and controls, settings autosave, button LEDs showing state.
+- version: v1.0
+  date: 2026-11-28
+  url: https://github.com/yakovkhalinsky/melodrum-fm1/releases/tag/v1.0
+  notes: Adds the kick and snare step sequencer and live drum mutes.
+- version: v0.9
+  date: 2026-11-28
+  url: https://github.com/yakovkhalinsky/melodrum-fm1/releases/tag/v0.9
+  notes: First public release; the author flashed it on a real FM-1.

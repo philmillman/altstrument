@@ -1,0 +1,42 @@
+device: m-vave-fm-1
+name: nullwave editor
+kind: tool
+summary: >-
+  Browser editor for the FM-1 running nullwave: live parameters for each channel, a step grid for patterns,
+  scenes and song chain, sound-pack loading, file backup and presets over Web MIDI.
+description: >-
+  Connects over USB with Web MIDI in Chrome, Edge or Opera, or to the firmware's browser emulator in another tab of
+  the same site. It shows each parameter of the selected channel in both directions, draws the oscillator, envelopes
+  and four mod slots, and tells the FM-1 which panel is open so its knobs and keys follow. It edits patterns a bar at
+  a time while the unit plays, the sixteen scenes and the song chain, and loads factory and user sounds onto a
+  channel. It lists the unit's files for download, upload, delete and zip backup, keeps presets as JSON, and sends
+  whole sound packs, or only ticked sounds, into the user slots after reading which ones it will replace. It never
+  sends a firmware update, and anything that writes the unit's flash asks first. The protocol code in src/protocol/
+  has no DOM dependency so other apps can reuse it, and it builds on fm1-base's companion services.
+status: active
+authors:
+- name: nullwave
+  url: https://github.com/nullwave-cc
+source: https://github.com/nullwave-cc/fm1-editor
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The LICENSE file is the MPL-2.0 text. CREDITS.md lists fm1-base (MPL-2.0), fm-static (MPL-2.0) and the Baloo Da 2
+  font (SIL OFL 1.1).
+homepage: https://nullwave.cc/fm1/editor/
+requires_stock: nullwave
+distribution: browser-installer
+install_notes: >-
+  Open the hosted editor in a Web MIDI browser with the FM-1 on USB and nullwave installed, or build it locally
+  with npm. It says when the connected firmware is older than the one the site offers and links the installer.
+brick_risk: false
+tags: [editor, midi, web-midi, backup, presets, librarian]
+versions:
+- version: v0.1.3
+  date: 2026-11-28
+  url: https://github.com/nullwave-cc/fm1-editor/tree/v0.1.3
+  notes: Git tag; no GitHub release page.
+- version: v0.1.0
+  date: 2026-11-27
+  url: https://github.com/nullwave-cc/fm1-editor/tree/v0.1.0
+  notes: Git tag; no GitHub release page.

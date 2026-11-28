@@ -1,0 +1,32 @@
+device: m-vave-fm-1
+also_devices: [m-vave-smk-37]
+name: HV-303
+summary: >-
+  Bass-line machine modelled on the TB-303, with Original and Devil Fish models, a 16-pattern sequencer, a random acid pattern generator, a pad synth and the author's own 808 and 909 drum recordings. The release is a compiled package without firmware source.
+description: >-
+  The keyboard plays a monophonic 303-style voice with accent, slide and a switchable bass compensation, in an Original and a Devil Fish model. A sequencer holds 16 patterns with step edit and step record, including ties and rests. ACID GEN writes a new random pattern, and since v1.8 an EVOLVE page, off until switched on, moves a few notes to a neighbouring note of the scale and can do so by itself every 4, 8 or 16 bars. An eight-lane drum machine plays the author's own 808 and 909 recordings, and a six-oscillator pad follows the bass pattern in pad, stab, strum and arpeggio modes. MIDI clock runs internal, external or automatic, and two screen skins, Large and Classic, are chosen on the setup page. The repository holds only the README and two screenshots, with the packages, flash pages and a PDF manual as release assets. FM-1 and SMK-37 Elite are separate builds that must not be flashed on each other's device, and the README says the v1.8 package has been tested only in host simulation, not on a real unit. The author also makes P-Vox and FORM.
+status: active
+authors:
+- name: HanzVolt
+  url: https://github.com/HanzVolt
+source: https://github.com/HanzVolt/HV-303
+source_status: binary-only
+license: unspecified
+license_notes: >-
+  The repository has no LICENSE file and the README makes no license statement. The firmware source is not published; the release holds compiled packages only.
+distribution: download
+install_notes: >-
+  Open the .html flash page for your device from the release in desktop Chrome or Edge with the unit on USB, tick the confirmation box and flash; the matching .fwsc can also be installed directly. The release gives each package's SHA-256. The README says to use a spare unit, because an interrupted write can leave the unit in update mode, and not to use M-VAVE's own update loader for the SMK-37 Elite build. It documents no recovery steps; M-VAVE's own updater puts the stock firmware back.
+brick_risk: false
+tags: [synth-engine, sequencer, drums, generative, oscillator, fx, midi]
+image:
+  url: https://raw.githubusercontent.com/HanzVolt/HV-303/main/docs/screenshots/fm1-large-home.png
+  alt: HV-303 Large skin in Original mode, 303 panel 1 of 2, with knobs for cutoff 40, resonance 100, env mod 70 and decay 50, tempo 125 and a row of eight step keys
+  credit: HanzVolt
+  source_url: https://github.com/HanzVolt/HV-303
+  first_party: true
+versions:
+- version: v1.8-3030
+  date: 2026-11-28
+  url: https://github.com/HanzVolt/HV-303/releases/tag/v1.8-3030
+  notes: Packages FM-1_3030 and SMK-37 Elite_3030. Adds the EVOLVE page, off by default, with the pad synth and the Large and Classic skins from earlier builds. The notes say it has not been flashed on real hardware.

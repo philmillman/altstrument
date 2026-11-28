@@ -1,0 +1,27 @@
+device: m-vave-fm-1
+name: Medieval Monsters Sounds
+summary: >-
+  Groovebox in progress, forked from FIZZ, in which six creatures from medieval manuscript margins each play an instrument and move on screen when their track sounds. Not yet ready to install.
+description: >-
+  Rights warning: the speech code in core/voice/sam, inherited from the base, is a port of the 1982 Software Automatic Mouth that has no licence, and its original rights belong to SoftVoice, Inc.; LICENSING.md says it is being removed. The design gives each track a beast and an instrument: shawm, formant chant sung in Latin, hurdy-gurdy, inharmonic bells, tabor and psaltery. The edit page is drawn as an illuminated folio with the steps on a vine, and eight effects are rooms, with a send per track into each. Per-step locks, chance, conditions, ratchets, micro-timing and MIDI effects per track come from FIZZ, as do USB and Bluetooth MIDI and USB audio. The README says the sequencer, controls and platform are in place and tested, while the medieval engines, art and screens are still being built, so today the firmware sounds and looks like its base. There is no release or package yet, only source with host tests, screen renders and a build for the FM-1, plus a mood-board site.
+status: announced
+authors:
+- name: saulofilho
+  url: https://github.com/saulofilho
+source: https://github.com/saulofilho/medieval-monsters-sounds
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  LICENSING.md states MPL-2.0 for the firmware, a fork of Michael P Jones's FIZZ, with the fm1-base port under MPL-2.0 and test oracles that build ChoralRoot's GPL-3.0-only code used for development only. Third-party parts are plutovg (MIT with FreeType License parts), stb headers (MIT or Unlicense), the Inter Tight font (SIL OFL 1.1) and a SID model (BSD-2-Clause). The SAM speech port has no licence, as the rights warning says.
+homepage: https://saulofilho.github.io/medieval-monsters-sounds/
+based_on: m-vave-fm-1/fizz
+distribution: source-only
+install_notes: >-
+  Not ready to install according to the README. To build the package, update the submodules and run firmware/build.py with Docker, the JieLi toolchain and the AC79 SDK as BUILDING.md describes. The README documents no recovery steps; M-VAVE's own V15 package and updater put the stock firmware back.
+brick_risk: false
+tags: [groovebox, sequencer, synth-engine, fx, fork, voice, midi]
+versions:
+- version: main @ 2558476
+  date: 2026-11-27
+  url: https://github.com/saulofilho/medieval-monsters-sounds/commit/2558476289860c5ced191cd6baab471614db80b1
+  notes: No tagged releases; this is the latest commit.

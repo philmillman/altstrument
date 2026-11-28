@@ -20,13 +20,18 @@ install_notes: >-
   Flash fmzx.fwsc from the release with M-Flasher, felucca-bsp's fm1_install.py, or the FM-1 Firmware Hub, which finds the unit over USB when the firmware is running. The install guide marks one route, starting from the stock firmware, as unverified. The loader writes from 0x4000 and leaves the unit's bootloader alone, an interrupted install resumes when started again, and OCT- held for one second at power-on enters the update mode. The install guide describes the way back to stock by restoring an M-Flasher backup.
 brick_risk: false
 tags: [emulator, game, fx, synth-engine, usb-midi]
-image:
-  url: https://raw.githubusercontent.com/okulik/fm1-zx/main/docs/images/fm1-zx.jpg
-  alt: "Photo of a pink FM-1 whose screen shows a ZX Spectrum platform game level named Central Cavern, with the purple keys and buttons below"
-  credit: Orest Kulik
-  source_url: https://github.com/okulik/fm1-zx
+video:
+  url: https://youtu.be/Is4KYSKhlqY
+  title: "FM-1 ZX: ZX Spectrum games on the FM-1 synth, with beeper music played through FM"
+  credit: Orest K
   first_party: true
+  found_via: https://github.com/okulik/fm1-zx/releases/tag/v1.3.0
+  version: v1.3.0
 versions:
+- version: v1.3.0
+  date: 2026-11-27
+  url: https://github.com/okulik/fm1-zx/releases/tag/v1.3.0
+  notes: "Adds learned music for the built-in games: with Sound set to FM engines, the title tunes of Black Star and Magic Tokens play from notes read from each game's own music engine, and those of Micro INC and Escape from Colony 8 go through the firmware's player for their engine. The pack-studio tool builds packages of your own games and lets you pick each game's music by ear."
 - version: v1.2.0
   date: 2026-11-19
   url: https://github.com/okulik/fm1-zx/releases/tag/v1.2.0

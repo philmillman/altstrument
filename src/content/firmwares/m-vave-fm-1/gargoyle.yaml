@@ -1,0 +1,36 @@
+device: m-vave-fm-1
+name: GARGOYLE
+summary: >-
+  Drone synth for the FM-1 with 16 algorithms modelled on old console, home computer and PC sound chips, one knob per parameter, a chiptune dungeon-noise groove and a dungeon scene on every page.
+description: >-
+  Each of the 16 algorithms follows the principles of an old sound chip: the NES pulse pair and noise register, the Game Boy's two pulse channels and 4-bit wave channel, C64 arpeggio chords and ring or sync modulation, Atari POKEY polynomial counters, AdLib-style FM and the 1-bit PC speaker. The four knobs set the curse, horde, rune and alchemy of the selected algorithm, and a WRATH macro moves everything at once for live play. Further pages cover an 8-bit echo with a feedback that turns into a fog, filters and attack and release, glide and drifting pitch, timbre and level, bit depth and sample rate reduction, a resonator, and four LFOs with twelve shapes. A GROOVE adds ten styles of dungeon noise, such as footsteps and a heartbeat, tuned to the drone and following MIDI clock. Snapshots are stored on the 27 keys, and a long hold of SEQ resets the sound or everything to its INIT state. The README says all sounds are synthesised in the firmware, with no code or sound taken from any chip or game, and that the room pictures were made by the author with ChatGPT. The manuals are in English and German, and the project site has a browser emulator.
+status: active
+authors:
+- name: swtdr34mz-afk
+  url: https://github.com/swtdr34mz-afk
+source: https://github.com/swtdr34mz-afk/GARGOYLE
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The LICENSE file is the MPL-2.0 text. fm1-base and felucca-bsp are MPL-2.0 too, the serif font is SIL OFL 1.1, and the package carries three Apache-2.0 JieLi SDK files that are fetched at build time (CREDITS.md).
+homepage: https://swtdr34mz-afk.github.io/GARGOYLE/emu/
+distribution: download
+install_notes: >-
+  Download the .fwsc from the Releases page and install it like any FM-1 firmware, with The Firmware Hub or the M-Flasher. The README describes no recovery path; the FM-1's ROM boot mode applies. The release notes say existing sounds and snapshots stay after an update.
+brick_risk: false
+tags: [synth-engine, drone, chiptune, fx, lfo, midi, emulator]
+image:
+  url: https://raw.githubusercontent.com/swtdr34mz-afk/GARGOYLE/main/site/img/screen-main.png
+  alt: "GARGOYLE SUMMON page: a green goblin with a shield in a torch-lit dungeon corridor, with Curse, Horde, Rune and Alchemy knob panels and the line 01 TORCHLIGHT, NES pulse pair"
+  credit: swtdr34mz-afk
+  source_url: https://github.com/swtdr34mz-afk/GARGOYLE#readme
+  first_party: true
+versions:
+- version: v0.1.9
+  date: 2026-11-27
+  url: https://github.com/swtdr34mz-afk/GARGOYLE/releases/tag/v0.1.9
+  notes: Holding SEQ for 3 seconds sets all algorithms, SPELL, the four LFOs, WRATH, the GROOVE knobs and FREEZE to INIT; snapshots stay.
+- version: v0.1.0
+  date: 2026-11-27
+  url: https://github.com/swtdr34mz-afk/GARGOYLE/releases/tag/v0.1.0
+  notes: First release.

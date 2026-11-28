@@ -18,7 +18,7 @@ description: >-
   16 shaping curves that takes over the mono Megaphone. Commander (octave fuzz), Corrupt (tracking square synth), Ottobit (sequenced
   bit crusher with random stutters) and Doom Chug (low drone generator) take over other fuzz and crusher blocks, and the
   stock Line 6 amps are a separate list. The README's amps build lists the 111 HX Stomp amps (94 guitar, 17 bass) under Distortion > Amps
-  and the 112 preamps under EQ > Preamps, up to three amps and preamps per preset, without replacing a stock block, and adds a small USB diagnostic interface for reading the unit's log.
+  and the 112 preamps under EQ > Preamps, up to three amps and preamps per preset, without replacing a stock block, and adds a small USB diagnostic interface for reading the unit's log. Since 1.2.0 the NAM + Amps and full builds also add the HX Stomp's 41 legacy cabs under EQ > Cabs, up to two per preset.
   build.py makes three images: nam (NAM and Click), amps (adds the amps) and full (adds Geiger, Commander, Corrupt, Ottobit and Doom Chug). The author reports the
   all-in-one image running on their unit on 2026-11-11. A tools/flash.py script repeats the Line 6 Updater update over USB and checks that the unit boots.
 
@@ -60,6 +60,15 @@ video:
   first_party: true
   found_via: https://github.com/scottlynn73/hx-effects-nam-lite#get-started
 versions:
+  - version: v1.2.0
+    date: 2026-11-27
+    url: https://github.com/scottlynn73/hx-effects-nam-lite/releases/tag/v1.2.0
+    notes: >-
+      Adds the HX Stomp's 41 legacy cabs under EQ > Cabs (up to two per preset) in the NAM + Amps and full builds, an optional Real names setting that shows the gear a block is based on, and corrections to cab names and amp footswitch LED colours in the preset builder. The NAM build is unchanged.
+  - version: v1.1.0
+    date: 2026-11-27
+    url: https://github.com/scottlynn73/hx-effects-nam-lite/releases/tag/v1.1.0
+    notes: Drum Chapel's Acoustic kit is now sampled from recorded hits (Naked Drums, CC BY 4.0), and a new groove editor page sends up to 20 user grooves to the unit, stored in User IR slot 128. Includes the 1.0.1 Nonlinear fix.
   - version: v1.0.1
     date: 2026-11-27
     url: https://github.com/scottlynn73/hx-effects-nam-lite/releases/tag/v1.0.1

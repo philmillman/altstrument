@@ -1,9 +1,9 @@
 device: m-vave-fm-1
 name: Noeulim
 summary: >-
-  Ambient firmware that plays itself: six ink-wash landscapes whose movement (a wave, snow, rain, a bamboo leaf) becomes the notes, with five tracks, a mixer, effects and 36 instruments. Source preview; no release is published.
+  Ambient firmware that plays itself: six ink-wash landscapes whose movement (a wave, snow, rain, a bamboo leaf) becomes the notes, with five tracks, a mixer, effects and 36 instruments. Release 1.0 has a firmware package, a browser installer and an emulator.
 description: >-
-  Source note: the repository is labelled a source preview for USB product ID review and private testing. It publishes no release and no package, and the firmware is built from source. The README says public distribution waits for a USB ID allocation and hardware verification, and the application uses the unassigned product ID 4601 under vendor ID 1209, with a shared test ID in the update loader.
+  Version 1.0 (28 November) is the first release and ships a .fwsc package with its source archive and checksums, installed from a browser installer or with tools/noeulim_install.py. The application enumerates as USB ID 1209:4601, which is not registered with pid.codes, and the update loader keeps the shared test ID 1209:0002. The release notes report one FM-1 with the original flash chip, installed in both directions with Felucca 1.8.2 and official V15; units with the newer UC25HQ80 flash chip are untested.
   The six scenes are Sunset, Snow, Aurora, Rain, Willow and Grove, each with five moods and two knobs of its own. A conductor decides which events are heard, using a note budget, returning motifs, three drones, a bass that follows the chords, echoes and rests, in scales that include pentatonic, Korean Pyeongjo and Gyemyeon, church modes and just, overtone, slendro and pelog tunings. The 36 instruments are 10 FM patches and 26 from modal, noise, formant, virtual analog, plucked string and phase distortion engines. EDIT opens a track mode, LFO the effects (reverb, delay, chorus, tape colour, drift), ENV the mixer and GLO a global menu. The keys play along in the scene's scale, with one-finger chords, track mutes and effect bypass. Five scene tracks, transport, clock, program change and CC go in and out over MIDI. It is built on ZEN-1, with credits to FuMi-1, FoMni and Felucca, and the guide is in Korean.
 status: active
 authors:
@@ -16,9 +16,9 @@ license_notes: >-
   The LICENSE file is the GPL v3 text and LICENSING.md states GPL-3.0-only, listing the origin of each part. msfa is Apache-2.0, the modal resonator from DaisySP is MIT, Open Sans is Apache-2.0 and the nature recordings are CC0. The JieLi SDK files that go into a package are read from the vendor's own SDK checkout and are not in the repository. The repository holds no M-VAVE firmware image.
 based_on: m-vave-fm-1/zen-1
 homepage: https://github.com/Uendeligh/noeulim-fm1-source
-distribution: source-only
+distribution: browser-installer
 install_notes: >-
-  Build with ./build.sh (Docker or Linux x86-64, JieLi's toolchain and the pinned AC79 SDK; BUILDING.md) and install the package with tools/noeulim_install.py or the local install page. The README asks that builds be used only for private testing until USB IDs are authorised. The project's notes say to start from stock V15, keep M-VAVE's FM-1.fwsc to go back, and hold OCT- and OCT+ for 5 s for the update mode; two failed boots start a safe mode with USB on, and tools/fm1_rescue.sh puts stock firmware back from the chip's update mode, with FM-1-transporter as a hardware fallback.
+  Use the Install page of the project site in Chrome or Edge, or download the .fwsc and source archive from the release and run tools/noeulim_install.py; the README says to back up settings, projects and samples first, since Noeulim cannot import another firmware's projects. To build instead, use ./build.sh (Docker or Linux x86-64, JieLi's toolchain and the pinned AC79 SDK; BUILDING.md) and install the package with tools/noeulim_install.py or the local install page. The project's notes say to start from stock V15, keep M-VAVE's FM-1.fwsc to go back, and hold OCT- and OCT+ for 5 s for the update mode; two failed boots start a safe mode with USB on, and tools/fm1_rescue.sh puts stock firmware back from the chip's update mode, with FM-1-transporter as a hardware fallback.
 brick_risk: false
 tags: [generative, ambient, synth-engine, sequencer, fx, midi, usb-midi, emulator, fork]
 image:
@@ -28,7 +28,11 @@ image:
   source_url: https://github.com/Uendeligh/noeulim-fm1-source
   first_party: true
 versions:
+- version: "1.0"
+  date: 2026-11-28
+  url: https://github.com/Uendeligh/noeulim-fm1-source/releases/tag/v1.0
+  notes: "First release, with noeulim-1.0.fwsc, a source archive and checksums; the firmware reports FM-1_4010000. Key release, MIDI note release, scene stop and panic survive a full audio command queue, the installers check the firmware identity after the restart, and a failed boot-time settings read loads the best readable settings. The notes say a clean build from the archive matched the tested package byte for byte."
 - version: main @ abd4283
   date: 2026-11-27
   url: https://github.com/Uendeligh/noeulim-fm1-source/commit/abd42837d62390884d9f10d88e727b58c0d6ad0c
-  notes: No tagged releases; this is the latest commit.
+  notes: Before the v1.0 release, this was the latest commit.

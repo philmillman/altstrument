@@ -1,0 +1,26 @@
+device: m-vave-tank-pro
+name: M-Vave Tank Pro custom firmware
+kind: tool
+summary: >-
+  Windows updater written in Rust plus Python tools that patch the decrypted app.bin of your own Tank Pro firmware package and flash the result through the vendor's upgrade backend.
+description: >-
+  The patch tools unpack a .fwsc package, replace bytes in the decrypted app.bin after checking the original bytes, and rebuild the checksums that cover the change, from the app data and header up to the outer container. They include a disassembler for the pedal's pi32v2 code. The updater scans for the pedal, takes the full .fwsc, strips the interleaved label bytes and hands it to the manufacturer's installed upgrade_core.exe over USB. The workflow document was verified on firmware 040 with one example: a Hard Gate threshold change and a renamed HYST Gate marker, and it notes earlier failed attempts caused by a stale header checksum. No firmware is committed; you supply the vendor package and the M-UPGRADE software.
+status: active
+authors:
+  - name: KristjanKruusPriv
+    url: https://github.com/KristjanKruusPriv
+source: https://github.com/KristjanKruusPriv/m-vave-custom-firmware
+source_status: open
+license: unspecified
+license_notes: No LICENSE file in the repository.
+distribution: patch-your-own
+requires_stock: Your own Tank Pro .fwsc from M-VAVE and the vendor's M-UPGRADE package extracted to Downloads/M-UPGRADE; the workflow was verified on firmware 040 and the offsets must be rechecked on other versions.
+install_notes: >-
+  Download the unsigned Windows updater from the release or build it with cargo, then follow docs/tank-pro-firmware-workflow.md to patch and verify a package offline before flashing. Keep the stock .fwsc for rollback, close other programs that use the pedal's MIDI port, and keep it connected through the reboot. The updater sends the image through the vendor's backend as the stock update does.
+brick_risk: false
+tags: [firmware-patching, flasher, reverse-engineering, usb-midi, windows]
+versions:
+  - version: v0.1.0
+    date: 2026-11-27
+    url: https://github.com/KristjanKruusPriv/m-vave-custom-firmware/releases/tag/v0.1.0
+    notes: First release, with the unsigned Windows x64 updater executable.

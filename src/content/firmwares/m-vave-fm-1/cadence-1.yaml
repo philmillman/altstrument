@@ -1,0 +1,41 @@
+device: m-vave-fm-1
+name: CADENCE-1
+summary: >-
+  Music theory practice on the FM-1, answered on its own keys: 35 exercises on note names, intervals, scales,
+  chords, keys and melodies, with levels, hints, ear training and saved progress.
+description: >-
+  The exercises sit in eight groups: play a named item on the keys, play it from the staff, play back what you hear,
+  play chords and progressions in a key, read the staff, write on the staff, pick from lit keys, and ear training.
+  Answers come from the FM-1's keys, TRS MIDI in or USB MIDI. Each kind of material has levels, new material is shown
+  before it is asked, a two-step hint gives a clue and then the answer, and wrong answers say what was right and what
+  was wrong. A round has 5 to 30 questions, optionally timed, and each item keeps a proficiency score on the unit.
+  Study pages show chords, intervals and scales on a staff with the matching keys, and the firmware has eight
+  reference cards and six calculators including Roman numeral harmony and a twelve-tone matrix. Sound is a grand
+  piano sample or a pure tone. The README is in Chinese and the on-device text is English. It was called KeyStudy
+  before 0.5.0, and the author reports 0.6.1 running on one FM-1. A browser emulator and installer are published.
+status: active
+authors:
+- name: Reytian
+  url: https://github.com/Reytian
+source: https://github.com/Reytian/fm1-cadence1
+source_status: open
+license: MPL-2.0
+license_notes: >-
+  The README and LICENSE file are MPL-2.0, covering the firmware and platform code from fm1-base and felucca-bsp.
+  The JieLi SDK components, Barlow font and Bravura notation glyphs carry their own licences (dist/licenses), and the
+  piano recordings are the Salamander Grand Piano set (dist/licenses/Salamander-Attribution.md).
+homepage: https://formelocale.studio/FM-1/CADENCE-1/
+based_on: m-vave-fm-1/fm1-base
+distribution: browser-installer
+install_notes: >-
+  The README asks for a backup of the current firmware and data first (M-Flasher is named), then installing from
+  the project's web installer in Chrome or Edge over USB, or with fm1_install.py from fm1-base on a unit already
+  running compatible community firmware, which shows the detected unit and asks before writing. The firmware
+  identity is FM-1_54000601, and SHA256SUMS lists the package hashes.
+brick_risk: false
+tags: [education, ear-training, scales, chords, emulator, ui]
+versions:
+- version: 0.6.1
+  date: 2026-11-28
+  url: https://github.com/Reytian/fm1-cadence1/releases/tag/v0.6.1
+  notes: Release with the 35 exercises, levels, hints and feedback; the README says it passed the desktop emulator tests and ran on one FM-1.

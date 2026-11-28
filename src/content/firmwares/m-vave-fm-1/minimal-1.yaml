@@ -1,0 +1,38 @@
+device: m-vave-fm-1
+name: MINIMAL-1
+summary: >-
+  Performance-focused fork of DUB-1 for the FM-1: black keys mute six parts, white keys trigger sixteen effects that
+  can be latched, plus a browser emulator built from the same source. Untested on a real FM-1.
+description: >-
+  The author made it as a low-attention rhythm section next to a second FM-1 playing ambient textures. The layout is
+  inspired by SIX MACHINES and uses DUB-1's six parts and effects. Six black keys mute Chord, Pings, Bass, Kick, Hats
+  and Noise, and holding one opens its channel strip. Sixteen white keys trigger DUB-1's sixteen effects, and holding
+  a pad while tapping ARP latches it until the pad is tapped again. A seventh black key is Echo Push with the same
+  latch, and the other four keep the Wail, Whoop, Hi-Lo and Laser sirens. Leaving the performance page clears latches.
+  DUB-1's generative engine, pieces, patterns and project, set and cue formats are kept. The browser emulator compiles
+  the same app and DSP source to WebAssembly. The README says a hardware package was built but has not been installed
+  or tested on a physical FM-1.
+status: active
+authors:
+- name: typodok
+  url: https://github.com/typodok
+source: https://github.com/typodok/MINIMAL-1
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The repository keeps the GPL-3.0 LICENSE of DUB-1, which is GPL-3.0-only (LICENSING.md), and the AMB-1 and Felucca
+  attribution.
+homepage: https://github.com/typodok/MINIMAL-1
+based_on: m-vave-fm-1/dub-1
+distribution: source-only
+install_notes: >-
+  Build with the instructions in BUILDING.md (JieLi toolchain and three AC79 SDK files). The README says to back up
+  the existing firmware and check device compatibility first, since the package has not been run on a physical FM-1.
+  It documents no recovery steps of its own, so the platform's usual rescue applies.
+brick_risk: false
+tags: [fork, performance, generative, drums, fx, emulator]
+versions:
+- version: main @ de32c7b
+  date: 2026-11-28
+  url: https://github.com/typodok/MINIMAL-1/commit/de32c7bc4a6ec4507f1c2754b4982da964caf351
+  notes: No tagged releases; this is the latest commit.

@@ -12,7 +12,7 @@ description: >-
   hardware but has rough edges, and says it only drives Schwung modules, not Move's native instruments. It
   credits dAVEBOx for the sequencer approach. Since 0.38.0 it can generate parts from a clip (Smart Quantize, Variation, New Clip and Smart Double), freeze a track into loops and join an Ableton Link session. Since 0.36.0 it runs as a standalone
   Schwung tool that takes over the whole device while open, can be chosen in the
-  boot picker and keeps its own Sets.
+  boot picker and keeps its own Sets. With 0.38.1 the author put Movy on pause: no new features are planned and feature pull requests are not reviewed, though 0.38.1 stays in the module store and a serious fix may still be merged.
 status: active
 authors:
   - name: megadake
@@ -31,6 +31,10 @@ install_notes: >-
 brick_risk: false
 tags: [sequencer, ui, performance, midi]
 versions:
+  - version: v0.38.1
+    date: 2026-11-28
+    url: https://github.com/DimaDake/schwung-movy/releases/tag/v0.38.1
+    notes: Fixes a Schwung restart when a 4K EQ went on a track or the master, caused by an old-format movy_config.json left in the module folder, and a synth on USB-A keeping its last note after Movy closed. The notes say Movy is on pause after this release with no new features planned.
   - version: v0.38.0
     date: 2026-11-22
     url: https://github.com/DimaDake/schwung-movy/releases/tag/v0.38.0

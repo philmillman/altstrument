@@ -1,0 +1,26 @@
+device: m-vave-fm-1
+name: MASSA
+summary: >-
+  Latching drone synth for the FM-1 with detuned saw or feedback-FM layers, fuzz into a 4x12 cabinet, a tape echo and a cassette looper with wow, flutter, reverse and tape stop.
+description: >-
+  Keys latch, so a note drones until its key is pressed again, with up to four notes at once. Two bodies, BLACK HOLE with fuzz and cabinet and QUASAR with a softer fuzz, chorus and reverb, each have 16 sounds, their own effects page, colours and home picture. The engine is switched between detuned saws with a sub and feedback FM. Four knobs set mass, beats, dark and breath on the home page. The tape echo can bend time between repeats and freeze, and the cassette records the instrument's own output and plays it back at half speed, in reverse or with a tape-stop brake, with pitch apart from speed and 15 pads. Scales and Sunn-style chords glide between each other on the keys. Every page is a moving picture rather than a list of parameters. The spec calls it version 0.1, in development, and nothing in the repository says it has run on a real FM-1. It has host tests, a browser emulator and a web installer with a return to official V15, and the repository carries the licensed V15 package for that. The code was written with Claude Code skills that are included in the repository.
+status: active
+authors:
+- name: Vlad Kuznetsov
+  url: https://github.com/vladkuznetsov404-hue
+source: https://github.com/vladkuznetsov404-hue/fm1-drone-synth
+source_status: open
+license: GPL-3.0-only
+license_notes: >-
+  The README and LICENSE file give GPL-3.0-only, as Felucca. The platform comes from Felucca by Leo Kuroshita and the M-Vave-OP1 contributors, and LICENSING.md lists the third-party parts. vendor/m-vave/FM-1_015.fwsc is M-VAVE's own V15 package, Apache-2.0 in m-vave/fm1_open, and its blob hash ce49cc15 matches the licensed file.
+homepage: https://vladkuznetsov404-hue.github.io/fm1-drone-synth/
+distribution: source-only
+install_notes: >-
+  Run setup_env.sh once for the JieLi toolchain and Emscripten, then ./build.sh to make build/firmware.fwsc, and install it with tools/fm1_install.py or the web installer. The README warns that the FM-1 has one firmware bank and that a firmware that does not start needs extra hardware, naming FM-1-transporter, so back up the flash first; the platform keeps a boot guard and a USB update entry, and the way back is tools/fm1_install.py --stock, the installer's Return to official V15, or M-VAVE's updater. The FM-1's ROM boot mode also applies.
+brick_risk: false
+tags: [synth-engine, drone, looper, fx, delay, emulator]
+versions:
+- version: main @ ef5ee70
+  date: 2026-11-28
+  url: https://github.com/vladkuznetsov404-hue/fm1-drone-synth/commit/ef5ee70
+  notes: No tagged releases; this is the latest commit.

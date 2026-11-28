@@ -1,0 +1,30 @@
+device: nintendo-game-boy
+name: Canvas Radio
+summary: >-
+  Game Boy Color ROMs that show BasePaint pixel-art canvases and play a chiptune generated from each image's measurements.
+description: >-
+  The eight ROMs together cover BasePaint days 1 to 1206. Each canvas gets its own tune, built by a C sequencer from eight bytes of musical controls that an import script derives from the image: edge contrast sets tempo, rhythm and layers, dominant hue the root note, brightness and color intensity the scale and lead sound, and the day and artwork hash seed the motif and chords. The sequencer drives the console's sound hardware, with a shared bank of instruments for notes, rests and percussion. A slideshow changes the picture on a musical downbeat after 4 to 256 bars, in ordered, shuffled, same-subject or similar-canvas playlists, and the gallery has subject and day browsers and a zoomable detail view. The ROMs need a Game Boy Color or ModRetro Chromatic with a writable 4 MiB MBC5 cartridge, or an emulator, and do not run on the monochrome Game Boy. It is an independent fan project, and the artwork is BasePaint's CC0 canvases.
+status: active
+authors:
+  - name: ryanfoxeth
+    url: https://github.com/ryanfoxeth
+source: https://github.com/ryanfoxeth/canvas-radio
+source_status: open
+license: unspecified
+license_notes: >-
+  No LICENSE file in the repository. The releases include the GBDK runtime and a ZX0 decompressor, listed in THIRD_PARTY_NOTICES.md.
+distribution: download
+requires_stock: Game Boy Color or ModRetro Chromatic with a writable 4 MiB MBC5 flash cartridge, or a Game Boy Color emulator such as SameBoy.
+install_notes: >-
+  Download one of the eight .gbc editions or the archive zip from the release, check it against the published checksums and load it with the tool for your flash cartridge or open it in an emulator. The ROM contains the artwork and runs offline. To build, install GBDK 4.5.0 and run make edition; the fetch step downloads the original PNGs from BasePaint and checks each hash.
+brick_risk: false
+tags: [generative, chiptune, sequencer, gbc, art, open-source]
+versions:
+  - version: v0.2.0
+    date: 2026-11-28
+    url: https://github.com/ryanfoxeth/canvas-radio/releases/tag/v0.2.0
+    notes: Eight editions covering BasePaint days 1 to 1206, with the archive zip and a canvas day index.
+  - version: v0.1.0
+    date: 2026-11-28
+    url: https://github.com/ryanfoxeth/canvas-radio/releases/tag/v0.1.0
+    notes: First edition, Games and Sci-Fi, 157 canvases.

@@ -1,0 +1,26 @@
+device: m5stack-cardputer
+name: MD-Synth
+summary: >-
+  Wavetable synth firmware for the Cardputer ADV that acts as a one-channel USB and BLE MIDI sound module, with 38 presets and an on-device editor.
+description: >-
+  Each note has three layers of two wavetable oscillators with unison, a sub oscillator, noise, a state-variable filter, three envelopes, two LFOs, four macros and an eight-slot modulation matrix. Effects are drive, bit crush, chorus, flanger, phaser, delay, reverb, EQ, compressor and a limiter, and polyphony is one to five notes or mono with glide. Every parameter is on 14-bit NRPN, and USB MIDI and BLE MIDI can run together. It ships with 38 factory presets, 22 original and 16 FM sounds, and loads MothDeck patches from the SD card. It plays through the speaker or the headphone jack. The project was called MothTrio until 2026-11-27, and the SD folder and preset headers keep the old name. The README says the source is closed and only the binary and documentation are published, and that a full play-through and pairing with an Akai MPC Live II have not been confirmed for this build. The current release is a pre-release candidate.
+status: active
+authors:
+  - name: shard76-dark
+    url: https://github.com/shard76-dark
+source_status: binary-only
+license: proprietary
+license_notes: >-
+  The README says the binary is free to use on a Cardputer ADV you own and that all rights in the firmware and its source are reserved.
+homepage: https://shard76-dark.github.io/MD-Synth-Cardputer-ADV/
+distribution: download
+requires_stock: M5Launcher on the Cardputer ADV; the .bin is an application image for a Launcher slot, not a full flash image.
+install_notes: >-
+  Copy the application .bin from the release to a FAT32 card, check its SHA-256 against the README, and install it from the M5Launcher SD browser into a free slot. Do not flash a full-device image or a partition table. Power-cycle and press a key at the Launcher start screen to return. Turn the volume down on first use.
+brick_risk: false
+tags: [synth, wavetable, midi, ble-midi, usb-midi, fm]
+versions:
+  - version: v0.2.0-rc1
+    date: 2026-11-28
+    url: https://github.com/shard76-dark/MD-Synth-Cardputer-ADV/releases/tag/v0.2.0-rc1
+    notes: GitHub pre-release; the README says a full play-through has not been confirmed for this build.
